@@ -2,16 +2,16 @@
 	ID = "hardened",
 	Name = "Hardened",
 	Version = "0.1.0",
-	Const = {
+
+	// Const
 		// Write your Const-Variables in here.
 		// These variables are not supposed to be tweaked by users.
 		// They are often carefully chosen and changing them likely breaks the mod
-	},
-	Config = {
+
+	// Config
 		// Write your Configurable Variables in here.
 		// These variables are there to be tweaked by the modder or users to their liking.
 		// Changing them within boundaries is usually encouraged.
-	}
 }
 
 ::mods_registerMod(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);

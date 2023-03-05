@@ -11,11 +11,7 @@ Write a short summary about what your mod does without going into specific. This
 
 ### Requirements ###
 
-- This mod is required to run this mod
-- This other mod is required with atleast the version X to run this mod
-Examples:
-- Modding Script Hooks
-- Modding Standards and Utilities (MSU)
+- Reforged
 
 ### Known Issues: ###
 
