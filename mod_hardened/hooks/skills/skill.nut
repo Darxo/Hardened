@@ -1,0 +1,12 @@
+::mods_hookBaseClass("skills/skill", function(o) {
+	o = o[o.SuperName];
+
+	o.isDuelistValid = function()
+	{
+		local mainhandItem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (mainhandItem == null) return false;
+		if (mainhandItem.isItemType(::Const.Items.ItemType.OneHanded) == false) return false;
+
+        return true;
+	}
+});
