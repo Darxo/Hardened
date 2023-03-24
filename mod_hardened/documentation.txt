@@ -4,10 +4,17 @@ Write a short summary about what your mod does without going into specific. This
 
 ### Main Changes ###
 
-- Write all- or your most important specific changes here
-- What new content/functionality does your mod introduce?
-- What existent content/functionality is reworked/fixed?
-- This is a great place to go into specific numbers and lay it all out for people who really want to know what they are getting into
+- Veteran Perks are disabled
+
+## Balance
+- Melee Defense bonus from dodge is nerfed for low initiative builds
+- Duelist only works for one-handed weapons
+- Formidable Approach only works for Two-Handed weapons
+
+## Quality of Life
+- Legendary Armor and Armor with an attachement that you un-equip is now automatically marked as to-be-repaired
+- Night Effect no longer displays a Mini-Icon
+- Double Grip no longer displays a Mini-Icon
 
 ### Requirements ###
 
@@ -15,33 +22,16 @@ Write a short summary about what your mod does without going into specific. This
 
 ### Known Issues: ###
 
-- Use this as an unsorted list of all the major or minor problems/issues that this mod has
-- This can be everything from bugs, crashes and exploits to missing content or realism issues
-- This list will help users of your mod to quickly find out whether a issue they encountered with your mod is already known to you
+- Enemies may spawn with perks that they can't use anymore because I didn't touch their spawning behaviors in that regard
 
 ### Compatibility ###
 
-- Are there versions of the vanilla game that this mod is not compatible with?
-- Is this mod save to add/remove from running games?
-- Are there known problems with other mods?
-Examples:
 - Should be safe to remove from- and add to running games and should not corrupt anything upon removal
 - Should be safe to remove from- and add to any existing savegames
 
 ### Future Plans: ###
 
-- This is a checklist of ideas that you consider adding to the mod in the future
-- This will help users to not suggest things to you that you already have plans for
-- And its a basic checklist for yourself if you return to one of your older mods later on
-
 ### Changes: ###
 
-0.2.0
-    - adds some_feature
-    - adds some_content
-
-0.1.1
-    - fixes some_bug
-
 0.1.0
-    - released on some_platform
+    - released on discord
