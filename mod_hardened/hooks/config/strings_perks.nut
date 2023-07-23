@@ -84,6 +84,21 @@ local adjustedDescriptions = [
  				]
  			}]
 	 	})
+	},
+	{
+		ID = "perk.inspiring_presence",
+		Key = "InspiringPresence",
+		Description = ::UPD.getDescription({
+			Fluff = "Standing next to a company\'s leader figure inspires your men to go beyond their limits!",
+	 		Effects = [{
+ 				Type = ::UPD.EffectType.Passive,
+ 				Description = [
+					"At the start of each battle, if you have the highest Resolve out of all Brothers with this perk, gain the [Inspiring Presence|Skill+perk_inspiring_presence] effect until the end of this battle.",
+					"While you have that effect: Any ally that starts their turn adjacent to you gains " + ::MSU.Text.colorGreen("+3") + " Action Points if they are adjacent to an enemy, or have an adjacent ally who is adjacent to an enemy.",
+					"Only affects allies that have less Resolve than you."
+ 				]
+ 			}]
+	 	})
 	}
 ];
 

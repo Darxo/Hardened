@@ -10,10 +10,11 @@ Write a short summary about what your mod does without going into specific. This
 - Dodge effect is now depending on the adjacent empty tiles
 - Duelist only works for one-handed weapons
 - Formidable Approach only works for Two-Handed weapons
+- Inspiring Presence no longer requires a banner, only affects brothers with less resolve. If multiple 'Inspiring Presence' perks are present on your brothers only one is active in each battle
 - The skill 'Sprint' is no longer part of 'Pathfinder' and now it's part of 'Footwork'. 'Footwork' has been renamed to 'Escape Artist'
 
 ## Quality of Life
-- Legendary Armor and Armor with an attachement that you un-equip is now automatically marked as to-be-repaired
+- Legendary Armor and Armor with an attachement that you un-equip are now automatically marked as to-be-repaired
 - Night Effect no longer displays a Mini-Icon
 - Double Grip no longer displays a Mini-Icon
 
