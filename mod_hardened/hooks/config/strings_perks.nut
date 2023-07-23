@@ -8,12 +8,12 @@ local adjustedDescriptions = [
 	 		Effects = [{
  				Type = ::UPD.EffectType.Passive,
  				Description = [
-					"Gain " + ::MSU.Text.colorGreen("20%") + " of the character\'s current Initiative as a bonus to Melee and Ranged Defense.",
-					"The Melee Defense bonus is reduced by " + ::MSU.Text.colorRed("10")
-					"These boni can never be negative"
+					"Gain " + ::MSU.Text.colorGreen("5%") + " of the character\'s current Initiative as a bonus to Melee and Ranged Defense.",
+					"Gain " + ::MSU.Text.colorGreen("2,5%") + " of the character\'s current Initiative as a bonus to Melee and Ranged Defense for each empty adjacent tile.",
+					"This bonus can never be negative"
 				]
  			}]
-	 	}),
+	 	})
 	},
 	{
 		ID = "perk.duelist",
