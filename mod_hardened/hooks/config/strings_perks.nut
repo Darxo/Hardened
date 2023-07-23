@@ -1,5 +1,6 @@
 
 local adjustedDescriptions = [
+	// Vanilla Perks
 	{
 		ID = "perk.dodge",
 		Key = "Dodge",
@@ -32,6 +33,44 @@ local adjustedDescriptions = [
 	 	})
 	},
 	{
+		ID = "perk.footwork",
+		Key = "Footwork",
+		Description = ::UPD.getDescription({
+	 		Effects = [
+				{
+					Type = ::UPD.EffectType.Active,
+					Description = [
+						"Unlocks the [Footwork|Skill+footwork] skill which allows you to leave a [Zone of Control|Concept.ZoneOfControl] without triggering free attacks.",
+					]
+				},
+				{
+					Type = ::UPD.EffectType.Active,
+					Description = [
+						"Unlocks the [Sprint|Skill+rf_sprint_skill] skill that allows you to travel longer distances during your [turn|Concept.Turn]."
+					]
+				}
+			]
+	 	})
+	},
+	{
+		ID = "perk.pathfinder",
+		Key = "Pathfinder",
+		Description = ::UPD.getDescription({
+	 		Fluff = "Learn to move on difficult terrain.",
+	 		Effects = [
+		 		{
+	 				Type = ::UPD.EffectType.Passive,
+	 				Description = [
+	 					"[Action Point|Concept.ActionPoints] costs for movement on all terrain is reduced by " + ::MSU.Text.colorRed("-1") + " to a minimum of 2 [Action Points|Concept.ActionPoints] per tile, and [Fatigue|Concept.Fatigue] cost is reduced to half.",
+	 					"Changing height levels also has no additional [Action Point|Concept.ActionPoints] cost anymore."
+	 				]
+	 			}
+ 			]
+	 	})
+	},
+
+	// Reforged Perks
+	{
 		ID = "perk.rf_formidable_approach",
 		Key = "RF_FormidableApproach",
 		Description = ::UPD.getDescription({
@@ -52,3 +91,6 @@ foreach (description in adjustedDescriptions)
 {
 	::UPD.setDescription(description.ID, description.Key, ::Reforged.Mod.Tooltips.parseString(description.Description));
 }
+
+::Const.Strings.PerkName.Footwork = "Escape Artist";
+::Const.Perks.findById("perk.footwork").Name = ::Const.Strings.PerkName.Footwork;
