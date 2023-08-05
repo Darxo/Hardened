@@ -9,7 +9,7 @@
 			id = 11,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Any ally with less Resolve that starts their turn adjacent to you gains " + ::MSU.Text.colorizeValue(this.m.BonusActionPoints) + " Action Points if they are adjacent to an enemy, or have an adjacent ally who is adjacent to an enemy."
+			text = "At the start of each round any adjacent ally with less Resolve gains " + ::MSU.Text.colorizeValue(this.m.BonusActionPoints) + " Action Points if they are adjacent to an enemy, or have an adjacent ally who is adjacent to an enemy."
 		});
 		return tooltip;
 	}
@@ -28,12 +28,49 @@
 
 			local inspiringPresencePerk = ally.getSkills().getSkillByID(this.getID());
 			if (inspiringPresencePerk == null) continue;					// Only other brothers with this exact perk may prevent our perk from going active
-			if (inspiringPresencePerk.m.IsForceEnabled) return;				// If that other perk is force enabled then we don't activate, because we still respect the limit of 1
-			if (inspiringPresencePerk.m.IsEnabledForThisCombat) return;		// If that other perk is already active then we can't also go active
+
+			if (inspiringPresencePerk.isEnabled()) return;
 			if (ally.getCurrentProperties().getBravery() > actor.getCurrentProperties().getBravery()) return;	// Another Inspire brother has more resolve than us
 		}
 
 		this.m.IsEnabledForThisCombat = true;
+	}
+
+	o.onNewRound <- function()
+	{
+		if (!this.isEnabled()) return;
+
+		local actor = this.getContainer().getActor();
+		local allies = ::Tactical.Entities.getFactionActors(actor.getFaction(), actor.getTile(), 1, true);
+		foreach (ally in allies)
+		{
+			if (ally.getCurrentProperties().getBravery() > actor.getCurrentProperties().getBravery()) continue;
+
+			local adjacentEnemies = ::Tactical.Entities.getHostileActors(ally.getFaction(), ally.getTile(), 1, true);
+			if (adjacentEnemies.len() != 0)	// We found adjacent enemies
+			{
+				::logWarning("adjacentEnemies " + adjacentEnemies);
+				local skill = ::new("scripts/skills/effects/hd_inspiring_presence_buff_effect");
+				skill.m.BonusActionPoints = this.m.BonusActionPoints;
+				ally.getSkills().add(skill);
+				continue;
+			}
+
+			// We didn't find directly adjacent enemies
+			local grandAllies = ::Tactical.Entities.getFactionActors(ally.getFaction(), ally.getTile(), 1, true);
+			foreach (grandAlly in grandAllies)
+			{
+				local adjacentGrandEnemies = ::Tactical.Entities.getHostileActors(grandAlly.getFaction(), grandAlly.getTile(), 1, true);
+				if (adjacentGrandEnemies.len() != 0)	// We found enemies 2 tiles away with an ally in between
+				{
+					::logWarning("adjacentGrandEnemies " + adjacentGrandEnemies);
+					local skill = ::new("scripts/skills/effects/hd_inspiring_presence_buff_effect");
+					skill.m.BonusActionPoints = this.m.BonusActionPoints;
+					ally.getSkills().add(skill);
+					break;
+				}
+			}
+		}
 	}
 
 	o.isEnabled = function()
