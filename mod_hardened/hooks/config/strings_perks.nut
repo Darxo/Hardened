@@ -120,6 +120,20 @@ local adjustedDescriptions = [
  				]
  			}]
 	 	})
+	},
+	{
+		ID = "perk.rf_spear_advantage",
+		Key = "RF_SpearAdvantage",
+		Description = ::UPD.getDescription({
+			Fluff = "Stick \'em with the pointy end.",
+			Requirement = "Spear",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"[Melee Skill|Concept.MeleeSkill] is increased by another " + ::MSU.Text.colorGreen((::Reforged.Reach.ReachAdvantageMult * 100 - 100) + "%") + " while you have [Reach Advantage|Concept.ReachAdvantage]"
+				]
+		    }]
+	 	})
 	}
 ];
 
