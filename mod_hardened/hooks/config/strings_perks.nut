@@ -95,13 +95,13 @@ local adjustedDescriptions = [
 		ID = "perk.rf_formidable_approach",
 		Key = "RF_FormidableApproach",
 		Description = ::UPD.getDescription({
-			Fluff = "Make them think twice about getting close!",
+			// Fluff = "Make them think twice about getting close!",
 	 		Requirement = "Two-Handed Melee Weapon",
 	 		Effects = [{
  				Type = ::UPD.EffectType.Passive,
  				Description = [
-					"Your [Reach|Concept.Reach] is increased by " + ::MSU.Text.colorGreen("+2") + " against enemies in your [Zone of Control|Concept.ZoneOfControl], until they hit you.",
-					"After being hit the effect expires, but is reset if the [Zone of Control|Concept.ZoneOfControl] is broken."
+					"Moving next to an enemy that has no adjacent enemies now triggers a morale check.",
+					"Moving next to an enemy that has no adjacent enemies grants " + ::MSU.Text.colorGreen("+15") + " [Melee Skill|Concept.MeleeSkill] against them until they land a hit against you."
  				]
  			}]
 	 	})
