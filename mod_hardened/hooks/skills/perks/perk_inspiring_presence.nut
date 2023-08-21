@@ -49,7 +49,6 @@
 			local adjacentEnemies = ::Tactical.Entities.getHostileActors(ally.getFaction(), ally.getTile(), 1, true);
 			if (adjacentEnemies.len() != 0)	// We found adjacent enemies
 			{
-				::logWarning("adjacentEnemies " + adjacentEnemies);
 				local skill = ::new("scripts/skills/effects/hd_inspiring_presence_buff_effect");
 				skill.m.BonusActionPoints = this.m.BonusActionPoints;
 				ally.getSkills().add(skill);
@@ -63,7 +62,6 @@
 				local adjacentGrandEnemies = ::Tactical.Entities.getHostileActors(grandAlly.getFaction(), grandAlly.getTile(), 1, true);
 				if (adjacentGrandEnemies.len() != 0)	// We found enemies 2 tiles away with an ally in between
 				{
-					::logWarning("adjacentGrandEnemies " + adjacentGrandEnemies);
 					local skill = ::new("scripts/skills/effects/hd_inspiring_presence_buff_effect");
 					skill.m.BonusActionPoints = this.m.BonusActionPoints;
 					ally.getSkills().add(skill);
