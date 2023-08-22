@@ -5,18 +5,22 @@
 	// Overwrite of Vanilla function to stop its effects and apply our own
 	o.onAfterUpdate = function( _properties )
 	{
-		local defenseValue = this.calculateBonus();
-		_properties.MeleeDefense += defenseValue;
-		_properties.RangedDefense += defenseValue;
+		if (this.getContainer().getActor().isPlacedOnMap())
+		{
+			local defenseValue = this.calculateBonus();
+			_properties.MeleeDefense += defenseValue;
+			_properties.RangedDefense += defenseValue;
+		}
 	}
 
 	// Overwrite of Vanilla function to stop its effects and apply our own
 	o.getTooltip = function()
 	{
 		local ret = this.skill.getTooltip();	// Get name and description the way that the base class does it
-		local defenseValue = this.calculateBonus();
-		if (defenseValue != 0)
+
+		if (this.getContainer().getActor().isPlacedOnMap())
 		{
+			local defenseValue = this.calculateBonus();
 			ret.extend([
 				{
 					id = 10,
@@ -30,8 +34,28 @@
 					icon = "ui/icons/ranged_defense.png",
 					text = ::MSU.Text.colorizeValue(defenseValue) + " Ranged Defense"
 				}
+			]);
+		}
+		else
+		{
+			local minValue = this.calculateBonus(0);
+			local maxValue = this.calculateBonus(6);
+			ret.extend([
+				{
+					id = 10,
+					type = "text",
+					icon = "ui/icons/melee_defense.png",
+					text = "Grants between " + ::MSU.Text.colorizeValue(minValue) + " and " + ::MSU.Text.colorizeValue(maxValue) + " Melee Defense during combat"
+				},
+				{
+					id = 11,
+					type = "text",
+					icon = "ui/icons/ranged_defense.png",
+					text = "Grants between " + ::MSU.Text.colorizeValue(minValue) + " and " + ::MSU.Text.colorizeValue(maxValue) + " Ranged Defense during combat"
+				}
 			])
 		}
+
 		return ret;
 	}
 
@@ -43,21 +67,29 @@
 	}
 
 	// private
-	o.calculateBonus <- function()
+	o.calculateBonus <- function( _emptyTilesOverwrite = null )
 	{
 		local combinedMultiplier = this.m.BaseMultiplier;
-		if (this.getContainer().getActor().isPlacedOnMap())
-		{
-			local myTile = this.getContainer().getActor().getTile();
-			for( local i = 0; i < 6; i = ++i )
-			{
-				if (!myTile.hasNextTile(i)) continue;
 
-				if (myTile.getNextTile(i).IsEmpty)
+		if (_emptyTilesOverwrite == null)
+		{
+			if (this.getContainer().getActor().isPlacedOnMap())
+			{
+				local myTile = this.getContainer().getActor().getTile();
+				for( local i = 0; i < 6; i = ++i )
 				{
-					combinedMultiplier += this.m.MultiplierPerEmptyTile;
+					if (!myTile.hasNextTile(i)) continue;
+
+					if (myTile.getNextTile(i).IsEmpty)
+					{
+						combinedMultiplier += this.m.MultiplierPerEmptyTile;
+					}
 				}
 			}
+		}
+		else
+		{
+			combinedMultiplier += (_emptyTilesOverwrite * this.m.MultiplierPerEmptyTile);
 		}
 
 		local defenseValue = ::Math.floor(this.getContainer().getActor().getInitiative() * (combinedMultiplier / 100.0));

@@ -39,5 +39,8 @@ Write a short summary about what your mod does without going into specific. This
 
 ### Changes: ###
 
+0.1.1
+	- improve dodge tooltip out of combat
+
 0.1.0
     - released on discord
