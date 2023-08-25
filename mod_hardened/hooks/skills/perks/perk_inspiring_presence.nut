@@ -45,6 +45,7 @@
 		foreach (ally in allies)
 		{
 			if (ally.getCurrentProperties().getBravery() > actor.getCurrentProperties().getBravery()) continue;
+			if (ally.getMoraleState() == ::Const.MoraleState.Fleeing) continue;
 
 			local adjacentEnemies = ::Tactical.Entities.getHostileActors(ally.getFaction(), ally.getTile(), 1, true);
 			if (adjacentEnemies.len() != 0)	// We found adjacent enemies
