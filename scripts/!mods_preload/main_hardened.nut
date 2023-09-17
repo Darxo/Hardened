@@ -10,6 +10,6 @@
 {
 	::Hardened.Mod <- ::MSU.Class.Mod(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
 
-	::includeFiles(::IO.enumerateFiles("mod_hardened/hooks"));		// This will load and execute all hooks that you created
+	::include("mod_hardened/load");		// Load Reforged-Adjustments and other hooks
 
 });

@@ -68,6 +68,27 @@ local adjustedDescriptions = [
  			]
 	 	})
 	},
+	{	// This perk Description doesn't line up with my shield-group reworks.
+		ID = "perk.shield_expert",
+		Key = "ShieldExpert",
+		Description = ::UPD.getDescription({
+	 		Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"The shield defense bonus is increased by " + ::MSU.Text.colorGreen("25%") + ". This also applies to the additional defense bonus of the [Shieldwall|Skill+shieldwall] skill.",
+						"Shield damage received is reduced by " + ::MSU.Text.colorRed("50%") + " to a minimum of 1.",
+						"The [Knock Back|Skill+knock_back] skill gains " + ::MSU.Text.colorGreen("+15%") + " chance to hit and now applies the [Staggered|Skill+staggered_effect] effect.",
+						"Missed attacks against you no longer increase your [Fatigue|Concept.Fatigue]."					]
+				},
+				{
+					Type = ::UPD.EffectType.Active,
+					Description = [
+						"Unlocks the [Cover Ally|Skill+rf_cover_ally_skill] skill which allows you to target an ally to allow them to move 1 tile ignoring [Zone of Control|Concept.ZoneOfControl] on their [turn|Concept.Turn] while improving their position in the turn order in the next [round|Concept.Round]."					]
+				}
+			]
+	 	})
+	},
 
 	// Reforged Perks
 	{
