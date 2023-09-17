@@ -1,46 +1,69 @@
-### Description ###
+# Description
 
 Write a short summary about what your mod does without going into specific. This text can then be copy&pasted and used whenever you publish the mod
 
-### Main Changes ###
+# Main Changes
 
-- Veteran Perks are disabled
+- Disable Veteran Perks
+- Rework Reach completely
+
+### Reach Rework
+
+- Reach Advantage always grants 13% increased Melee Skill
+- Reach Disadvantage has no effect
+- Overcoming reach temporarily is removed
+- Shields do not have any effect on Reach
 
 ## Additions
 - New 'Battle Song' skill while holding a 'Lute' for applying a temporary Resolve buff to nearby allies
 
 ## Balance
+
+### Perks
 - Dodge effect is now depending on the adjacent empty tiles
 - Duelist only works for one-handed weapons. The Penetration is now also halfed with 2 enemies and disabled with 3+
-- Formidable Approach only works for Two-Handed weapons
+- Rework Formidable Approach to only works for Two-Handed weapons, grant 15 Melee Skill instead of Reach and trigger a morale check on approaching enemies
+- Rework Spear Advantage to double the effect of Reach Advantage on you
 - Inspiring Presence no longer requires a banner but is only active for the brother with the highest resolve among all brothers with that perk
 - Inspiring Presence now proccs on Round-Start instead of Turn-Start and only affects brothers with less resolve than the Leader
 - The skill 'Sprint' is no longer part of the perk 'Pathfinder' and now it's part of the perk 'Footwork'. 'Footwork' has been renamed to 'Escape Artist'
+
+### Other
+
+- Puncture now requires the target to be surrounded by atleast 2 enemies
 
 ## Quality of Life
 - Legendary Armor and Armor with an attachement that you un-equip are now automatically marked as to-be-repaired
 - Night Effect no longer displays a Mini-Icon
 - Double Grip no longer displays a Mini-Icon
+- Brawny and Fortified Mind on all NPCs are now replaced with an equivalent amount of stats
 
-### Requirements ###
+## Requirements ###
 
 - Reforged
 
-### Known Issues: ###
+## Known Issues: ###
 
 - Enemies may spawn with perks that they can't use anymore (Duelist/Formidable Approach) because I didn't touch their spawning behaviors in that regard
 
-### Compatibility ###
+## Compatibility ###
 
 - Should be safe to remove from- and add to running games and should not corrupt anything upon removal
 - Should be safe to remove from- and add to any existing savegames
 
-### Future Plans: ###
+## Future Plans: ###
 
-### Changes: ###
+## Changes: ###
 
-0.1.1
-	- improve dodge tooltip out of combat
+0.2.0
+	- Completely rework Reach
+	- Rework Spear Advantage Perk
+	- Rework Formidable Approach Perk
+	- Improve dodge tooltip out of combat
+	- Require Puncture to have the enemy be surrounded by 2+ enemies
+	- Replace Brawny and Fortified Mind with raw stats on all NPCs
+	- Remove LogInfos spam in the log
+	- Prevent fleeing characters from receiving Inspiring Presence effect
 
 0.1.0
     - released on discord
