@@ -17,9 +17,9 @@
 
 	o.onVerifyTarget <- function( _originTile, _targetTile )
 	{
-		local ret = o.skill.onVerifyTarget(_originTile, _targetTile);
+		local ret = this.skill.onVerifyTarget(_originTile, _targetTile);
 		if (ret == false) return false;
 
-		return (_targetTile.getEntity().m.MaxEnemiesThisTurn >= 2);
+		return (_targetTile.getEntity().getSurroundedCount() >= 1);		// 1 means that 2 enemies are around that target
 	}
 });
