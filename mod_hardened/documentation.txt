@@ -55,6 +55,11 @@ Write a short summary about what your mod does without going into specific. This
 
 ## Changes: ###
 
+0.2.1
+	- fix Puncture sometimes not usable/unusable despite its condition being met/not met
+	- fix spear advantage not giving any bonus
+	- formidable approach now spawns an icon when triggered
+
 0.2.0
 	- Completely rework Reach
 	- Rework Spear Advantage Perk
