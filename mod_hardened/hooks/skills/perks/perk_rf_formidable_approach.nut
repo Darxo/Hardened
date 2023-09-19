@@ -1,18 +1,18 @@
-// We replace the Reforged-Perk file because we
-// - want to be backwards compatible
-// - but our changes (rework) are too vast so it doesn't make sense using hooks
+::mods_hookExactClass("skills/perks/perk_rf_formidable_approach", function(o) {
+	::Hardened.wipeFunctions(o);	// Wipe the original perk
 
-this.perk_rf_formidable_approach <- ::inherit("scripts/skills/skill", {
-	m = {
+	o.m <- {
 		MeleeSkillBonus = 15,
 		Enemies = []
 	},
-	function create()
+
+	o.create <- function()
 	{
 		this.m.ID = "perk.rf_formidable_approach";
 		this.m.Name = ::Const.Strings.PerkName.RF_FormidableApproach;
 		this.m.Description = ::Const.Strings.PerkDescription.RF_FormidableApproach;
 		this.m.Icon = "ui/perks/rf_formidable_approach.png";
+		this.m.Overlay = "rf_formidable_approach";
 		// TODO: add IconMini
 		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
 		this.m.Order = ::Const.SkillOrder.Perk;
@@ -21,9 +21,9 @@ this.perk_rf_formidable_approach <- ::inherit("scripts/skills/skill", {
 		this.m.IsHidden = true;
 	}
 
-	function getTooltip()
+	o.getTooltip <- function()
 	{
-		local tooltip = this.getDefaultTooltip();
+		local tooltip = this.skill.getTooltip();
 
 		if (this.requirementsMet())
 		{
@@ -44,14 +44,14 @@ this.perk_rf_formidable_approach <- ::inherit("scripts/skills/skill", {
 		return tooltip;
 	}
 
-	function isHidden()
+	o.isHidden <- function()
 	{
 		if (this.requirementsMet() == false) return true;
 
 		return (this.m.Enemies.len() == 0);
 	}
 
-	function onMovementFinished( _tile )
+	o.onMovementFinished <- function( _tile )
 	{
 		if (this.requirementsMet() == false) return;
 
@@ -71,7 +71,7 @@ this.perk_rf_formidable_approach <- ::inherit("scripts/skills/skill", {
 		}
 	}
 
-	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
+	o.onDamageReceived <- function( _attacker, _damageHitpoints, _damageArmor )
 	{
 		if (_attacker != null && this.hasEnemy(_attacker))
 		{
@@ -79,7 +79,7 @@ this.perk_rf_formidable_approach <- ::inherit("scripts/skills/skill", {
 		}
 	}
 
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	o.onAnySkillUsed <- function( _skill, _targetEntity, _properties )
 	{
 		if (this.requirementsMet() == false) return;
 
@@ -89,7 +89,7 @@ this.perk_rf_formidable_approach <- ::inherit("scripts/skills/skill", {
 		}
 	}
 
-	function onGetHitFactors( _skill, _targetTile, _tooltip )
+	o.onGetHitFactors <- function( _skill, _targetTile, _tooltip )
 	{
 		if (this.requirementsMet() == false) return;
 
@@ -102,37 +102,40 @@ this.perk_rf_formidable_approach <- ::inherit("scripts/skills/skill", {
 		});
 	}
 
-	function onOtherActorDeath( _killer, _victim, _skill, _deathTile, _corpseTile, _fatalityType )
+	o.onOtherActorDeath <- function( _killer, _victim, _skill, _deathTile, _corpseTile, _fatalityType )
 	{
 		this.unregisterEnemy(_victim);
 	}
 
-	function onCombatFinished()
+	o.onCombatFinished <- function()
 	{
 		this.skill.onCombatFinished();
 		this.m.Enemies.clear();
 	}
 
 // New Private Functions
-	function requirementsMet()
+	o.requirementsMet <- function()
 	{
 		local weapon = this.getContainer().getActor().getMainhandItem();
 
 		return (weapon != null && weapon.isItemType(::Const.Items.ItemType.TwoHanded));
 	}
 
-	function registerEnemy( _actor )
+	o.registerEnemy <- function( _actor )
 	{
 		if (this.m.Enemies.find(_actor.getID()) == null)
+		{
 			this.m.Enemies.push(_actor.getID());
+			this.spawnIcon(this.m.Overlay, this.getContainer().getActor().getTile());
+		}
 	}
 
-	function unregisterEnemy( _actor )
+	o.unregisterEnemy <- function( _actor )
 	{
 		::MSU.Array.removeByValue(this.m.Enemies, _actor.getID());
 	}
 
-	function hasEnemy( _actor )
+	o.hasEnemy <- function( _actor )
 	{
 		return this.m.Enemies.find(_actor.getID()) != null;
 	}

@@ -1,3 +1,5 @@
 <brush name="gfx/mod_hardened.png" version ="17" b1="2" b5="0">
 	<sprite id="rf_battle_song_skill" ic = "FF23165B" img="..\..\gfx\skills\rf_battle_song_skill.png" />
+
+	<sprite id="rf_formidable_approach" ic = "FF23165B" img="..\..\gfx\ui\perks\rf_formidable_approach.png" />
 </brush>
