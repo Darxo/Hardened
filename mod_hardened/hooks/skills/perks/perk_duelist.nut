@@ -21,6 +21,6 @@
         return 0.0;
     }
 
-    o.onAnySkillUsed = o.skill.onAnySkillUsed;
-    o.onBeingAttacked = o.skill.onBeingAttacked;
+	if ("onAnySkillUsed" in o) delete o.onAnySkillUsed;
+	if ("onBeingAttacked" in o) delete o.onBeingAttacked;
 });
