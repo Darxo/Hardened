@@ -1,3 +1,5 @@
+::Const.CharacterProperties.InitiativeAfterWaitMult = 1.0;	// This debuff is now applied via a new effect
+
 ::Const.CharacterProperties.ReachAdvantageMult <- ::Reforged.Reach.ReachAdvantageMult;
 ::Const.CharacterProperties.getReachAdvantageMult <- function()
 {

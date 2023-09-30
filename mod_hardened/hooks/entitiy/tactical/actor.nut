@@ -15,4 +15,11 @@
 
 		oldOnDamageReceived(_attacker, _skill, _hitInfo);
 	}
+
+	local oldWait = o.wait;
+	o.wait = function()
+	{
+		oldWait();
+		this.getSkills().add(::new("scripts/skills/effects/hd_wait_effect"));
+	}
 });
