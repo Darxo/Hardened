@@ -30,7 +30,11 @@ Write a short summary about what your mod does without going into specific. This
 
 ### Other
 
+- 'Wait' now debuffs the actual Initiative until the start of that brothers next turn
 - Puncture now requires the target to be surrounded by atleast 2 enemies
+- Thrust now has 0% Hitchance bonus (down from 10%)
+- Slash now has 0% Hitchance bonus (down from 5%)
+- Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied.
 
 ## Quality of Life
 - Legendary Armor and Armor with an attachement that you un-equip are now automatically marked as to-be-repaired
@@ -54,6 +58,13 @@ Write a short summary about what your mod does without going into specific. This
 ## Future Plans: ###
 
 ## Changes: ###
+
+0.2.2
+	- Thrust now has 0% Hitchance bonus (down from 10%)
+	- Slash now has 0% Hitchance bonus (down from 5%)
+	- 'Wait' now debuffs the actual Initiative until the start of that brothers next turn
+	- Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied.
+	- Sprint no longer increases the fatigue cost for moving. Thit was always intended but never in effect due to a typo
 
 0.2.1
 	- fix Puncture sometimes not usable/unusable despite its condition being met/not met

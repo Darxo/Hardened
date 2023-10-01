@@ -1,7 +1,7 @@
 ::Hardened <- {
 	ID = "hardened",
 	Name = "Hardened",
-	Version = "0.2.1",
+	Version = "0.2.2",
 }
 
 ::mods_registerMod(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
