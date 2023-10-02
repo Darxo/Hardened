@@ -1,4 +1,4 @@
-::mods_hookExactClass("skills/effect/rf_sprint_effect", function(o) {
+::mods_hookExactClass("skills/effects/rf_sprint_effect", function(o) {
 	local oldGetTooltip = o.getTooltip;
 	o.getTooltip = function()
 	{
