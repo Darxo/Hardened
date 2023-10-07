@@ -1,7 +1,7 @@
 ::Hardened <- {
 	ID = "hardened",
 	Name = "Hardened",
-	Version = "0.2.2",
+	Version = "0.2.3",
 	GitHubURL = "https://github.com/Darxo/Hardened",
 }
 

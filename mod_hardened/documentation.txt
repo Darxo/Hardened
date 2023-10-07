@@ -16,6 +16,7 @@ Write a short summary about what your mod does without going into specific. This
 
 ## Additions
 - New 'Battle Song' skill while holding a 'Lute' for applying a temporary Resolve buff to nearby allies
+- Add face warpaint to all fast bandits
 
 ## Balance
 
@@ -35,6 +36,7 @@ Write a short summary about what your mod does without going into specific. This
 - Thrust now has 0% Hitchance bonus (down from 10%)
 - Slash now has 0% Hitchance bonus (down from 5%)
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied.
+- Goblin Pikes, Ancient Pikes and Pikes are now also of weapontype Spear
 
 ## Quality of Life
 - Legendary Armor and Armor with an attachement that you un-equip are now automatically marked as to-be-repaired
@@ -58,6 +60,11 @@ Write a short summary about what your mod does without going into specific. This
 ## Future Plans: ###
 
 ## Changes: ###
+
+0.2.3
+	- fix burning ground freezing the game (caused by the armor penetration cap from 0.2.2)
+	- add the weapontype 'Spear' to Goblin Pikes, Ancient Pikes and Pikes
+	- add face warpaint to all fast bandits
 
 0.2.2
 	- Thrust now has 0% Hitchance bonus (down from 10%)
