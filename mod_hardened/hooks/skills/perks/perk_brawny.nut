@@ -6,7 +6,7 @@
 		if (actor.getFaction() != ::Const.Faction.Player)
 		{
 			local fat = actor.getItems().getStaminaModifier([::Const.ItemSlot.Body, ::Const.ItemSlot.Head]);
-			actor.m.BaseProperties.Stamina += ::Math.floor(fat * 0.3);
+			actor.m.BaseProperties.Stamina -= ::Math.floor(fat * 0.3);
 			this.removeSelf();
 		}
 	}
