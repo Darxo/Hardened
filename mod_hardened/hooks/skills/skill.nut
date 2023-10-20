@@ -7,6 +7,6 @@
 		if (mainhandItem == null) return false;
 		if (mainhandItem.isItemType(::Const.Items.ItemType.OneHanded) == false) return false;
 
-        return true;
+		return true;
 	}
 });

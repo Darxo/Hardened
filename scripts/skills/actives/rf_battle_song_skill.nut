@@ -72,7 +72,7 @@ this.rf_battle_song_skill <- ::inherit("scripts/skills/skill", {
 				ally.getSkills().add(effect);
 				continue;
 			}
-			else if (existingSkill.m.Musician.getID() == _user.getID()) 		// You can only stack songs from the same musician
+			else if (existingSkill.m.Musician.getID() == _user.getID())		// You can only stack songs from the same musician
 			{
 				existingSkill.increaseBonus(this.getBonus());
 			}
