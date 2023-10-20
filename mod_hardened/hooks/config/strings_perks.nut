@@ -53,6 +53,21 @@ local adjustedDescriptions = [
 	 	})
 	},
 	{
+		ID = "perk.mastery.dagger",
+		Key = "SpecDagger",
+		Description = ::UPD.getDescription({
+			Fluff = "Master swift and deadly daggers.",
+			Requirement = "Dagger",
+	 		Effects = [{
+ 				Type = ::UPD.EffectType.Passive,
+ 				Description = [
+					"Skills build up " + ::MSU.Text.colorGreen("25%") + " less Fatigue.",
+					"The [Action Point|Concept.ActionPoints] cost of [Puncture|Skill+puncture] and [Deathblow|Skill+deathblow_skill] is reduced to " + ::MSU.Text.colorGreen("3") + ".",
+				]
+ 			}]
+	 	})
+	},
+	{
 		ID = "perk.pathfinder",
 		Key = "Pathfinder",
 		Description = ::UPD.getDescription({
