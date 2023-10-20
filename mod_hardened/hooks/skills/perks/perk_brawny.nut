@@ -1,5 +1,4 @@
 ::mods_hookExactClass("skills/perks/perk_brawny", function (o) {
-
 	o.onCombatStarted <- function()
 	{
 		local actor = this.getContainer().getActor();
@@ -13,14 +12,26 @@
 });
 
 ::mods_hookExactClass("skills/perks/perk_fortified_mind", function (o) {
-
 	o.onCombatStarted <- function()
 	{
 		local actor = this.getContainer().getActor();
 		if (actor.getFaction() != ::Const.Faction.Player)
 		{
-			actor.m.BaseProperties.Bravery += ::Math.floor(actor.m.BaseProperties.Bravery * 0.25);
+			actor.m.BaseProperties.BraveryMult *= 1.25;
 			this.removeSelf();
 		}
 	}
 });
+
+::mods_hookExactClass("skills/perks/perk_colossus", function (o) {
+	o.onCombatStarted <- function()
+	{
+		local actor = this.getContainer().getActor();
+		if (actor.getFaction() != ::Const.Faction.Player)
+		{
+			actor.m.BaseProperties.HitpointsMult *= 1.25;
+			this.removeSelf();
+		}
+	}
+});
+
