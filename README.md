@@ -28,14 +28,14 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Change **Duelist** to only works for one-handed weapons. The Penetration is increased to 30% and is now also halfed with 2 enemies and disabled with 3+
 - Rework **Formidable Approach** to only works for Two-Handed weapons, grant 15 Melee Skill instead of Reach and trigger a morale check on being the first to approach an enemy
 - Rework **Spear Advantage** to double the effect of Reach Advantage on you
-- **Inspiring Presence** no longer requires a banner but is only active for the brother with the highest resolve among all brothers with that perk
-- **Inspiring Presence** now proccs on Round-Start instead of Turn-Start and only affects brothers with less resolve than the Leader
+- **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
 - Relocate the skill **Sprint** from **Pathfinder** to **Footwork**. **Footwork** has been renamed to **Escape Artist**
 
 ### Other
 
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies
+- **Stab** now costs 3 Action Points (down from 4)
 - **Thrust** now has 0% Hitchance bonus (down from 10%)
 - **Slash** now has 0% Hitchance bonus (down from 5%)
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied.
@@ -44,9 +44,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 ## Quality of Life
 
 - Legendary Armor and Armor with an attachement that you un-equip are now automatically marked as to-be-repaired
-- **Night Effect** no longer displays a Mini-Icon
-- **Double Grip** no longer displays a Mini-Icon
-- **Brawny** and **Fortified Mind** on all NPCs are now replaced with an equivalent amount of stats
+- **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
+- **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 
 # Requirements
 
@@ -54,7 +53,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Known Issues:
 
-- Enemies may spawn with perks that they can't use anymore (**Duelist**/**Formidable Approach**) because I didn't touch their spawning behaviors in that regard
+- Enemies may spawn with perks that they can't use anymore (**Duelist**/**Formidable Approach**) because I didn't touch their spawning behaviors in that regard.
 
 # Compatibility
 

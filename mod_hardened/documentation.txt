@@ -18,6 +18,14 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.2.4
+	- reduce action point cost of Stab to 3
+	- replace colossus on enemies with equavalent stats
+	- hide mini icon for pattern recognition
+	- slightly improve reach tooltip
+	- fix Brawny on NPCs reducing their Stamina and instead of increasing it
+	- fix fall damage and certain other direct damage sources being reduced by armor
+
 0.2.3
 	- fix burning ground freezing the game (caused by the armor penetration cap from 0.2.2)
 	- add the weapontype 'Spear' to Goblin Pikes, Ancient Pikes and Pikes
@@ -46,4 +54,4 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- Prevent fleeing characters from receiving Inspiring Presence effect
 
 0.1.0
-    - released on discord
+	- released on discord
