@@ -1,12 +1,4 @@
 ::mods_hookExactClass("skills/actives/puncture", function(o) {
-
-	local oldCreate = o.create;
-	o.create = function()
-	{
-		oldCreate();
-		this.m.IsIgnoringArmorReduction = true;
-	}
-
 	local oldGetTooltip = o.getTooltip;
 	o.getTooltip = function()
 	{
