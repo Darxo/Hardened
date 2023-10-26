@@ -84,6 +84,21 @@ local adjustedDescriptions = [
 		})
 	},
 	{	// This perk Description doesn't line up with my shield-group reworks.
+		ID = "perk.relentless",
+		Key = "Relentless",
+		Description = ::UPD.getDescription({
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Initiative is reduced only by " + ::MSU.Text.colorRed("50%") + " of your Fatigue, instead of all of it.",
+						"Using the \'Wait\' command or [Recover|Skill+recover_skill] will no longer give you a penalty to Initiative until your next turn."
+					]
+				}
+			]
+		})
+	},
+	{	// This perk Description doesn't line up with my shield-group reworks.
 		ID = "perk.shield_expert",
 		Key = "ShieldExpert",
 		Description = ::UPD.getDescription({
