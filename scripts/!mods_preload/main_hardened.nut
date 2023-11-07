@@ -15,6 +15,16 @@
 	::Hardened.Mod.Registry.setUpdateSource(::MSU.System.Registry.ModSourceDomain.GitHub);
 
 	::include("mod_hardened/load");		// Load Reforged-Adjustments and other hooks
+
+	// Remove the Fangshire Helmet
+	foreach(index, itemScript in ::Const.World.Assets.NewCampaignEquipment)
+	{
+		if (itemScript == "scripts/items/helmets/legendary/fangshire")
+		{
+			::Const.World.Assets.NewCampaignEquipment.remove(index);
+			break;
+		}
+	}
 });
 
 // Wipe all functions in the passed class
