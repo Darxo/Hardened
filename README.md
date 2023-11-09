@@ -31,15 +31,22 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
 - Relocate the skill **Sprint** from **Pathfinder** to **Footwork**. **Footwork** has been renamed to **Escape Artist**
 
+### Items
+
+- Wodden Flail now deals 15-30 damage (up from 10-25) and costs 60 gold (up from 40)
+- Goblin Pikes, Ancient Pikes and Pikes are now also of weapontype Spear
+- Fangshire will no longer spawn at the start of the game
+
 ### Other
 
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
+- **Recover** now applies the same Initiative debuff as using **Wait**
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies
 - **Stab** now costs 3 Action Points (down from 4)
 - **Thrust** now has 0% Hitchance bonus (down from 10%)
 - **Slash** now has 0% Hitchance bonus (down from 5%)
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied.
-- Goblin Pikes, Ancient Pikes and Pikes are now also of weapontype Spear
+- Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 
 ## Quality of Life
 
@@ -54,6 +61,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 # Known Issues:
 
 - Enemies may spawn with perks that they can't use anymore (**Duelist**/**Formidable Approach**) because I didn't touch their spawning behaviors in that regard.
+- Using Recover will prevent you from using **Wait Round** for the rest of this round
 
 # Compatibility
 

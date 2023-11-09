@@ -9,6 +9,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 # Known Issues:
 
 - Enemies may spawn with perks that they can't use anymore (**Duelist**/**Formidable Approach**) because I didn't touch their spawning behaviors in that regard
+- Using Recover will prevent you from using **Wait Round** for the rest of this round
 
 # Compatibility
 
@@ -17,6 +18,12 @@ This submod is a collection of changes to Reforged that I suggested internally t
 # Future Plans:
 
 # Changes:
+
+0.2.5
+	- Recover now applies the same Initiative debuff as using Wait
+	- Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
+	- Wodden Flail now deals 15-30 damage (up from 10-25) and costs 60 gold (up from 40)
+	- Fangshire will no longer spawn at the start of the game
 
 0.2.4
 	- reduce action point cost of Stab to 3
