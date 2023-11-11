@@ -1,8 +1,8 @@
-::mods_hookExactClass("skills/perks/perk_inspiring_presence", function(o) {
-	o.m.IsEnabledForThisCombat <- false;
-	o.m.BonusActionPoints <- 3;
+::Hardened.HooksMod.hook("scripts/skills/perks/perk_inspiring_presence", function(q) {
+	q.m.IsEnabledForThisCombat <- false;
+	q.m.BonusActionPoints <- 3;
 
-	o.getTooltip = function()
+	q.getTooltip = @() function()
 	{
 		local tooltip = this.skill.getTooltip();
 		tooltip.push({
@@ -15,7 +15,7 @@
 	}
 
 	// Overwrite the vanilla function to nullify its effects. Reverting the effect of making allies confident is annoying
-	o.onCombatStarted = function()
+	q.onCombatStarted = @() function()
 	{
 		this.skill.onCombatStarted();
 
@@ -36,8 +36,9 @@
 		this.m.IsEnabledForThisCombat = true;
 	}
 
-	o.onNewRound <- function()
+	q.onNewRound = @(__original) function()
 	{
+		__original();
 		if (!this.isEnabled()) return;
 
 		local actor = this.getContainer().getActor();
@@ -72,7 +73,7 @@
 		}
 	}
 
-	o.isEnabled = function()
+	q.isEnabled = @() function()
 	{
 		if (this.m.IsForceEnabled) return true;
 

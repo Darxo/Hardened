@@ -1,8 +1,7 @@
-::mods_hookExactClass("skills/actives/thrust", function(o) {
-	local create = o.create;
-	o.create = function()
+::Hardened.HooksMod.hook("scripts/skills/actives/thrust", function(q) {
+	q.create = @(__original) function()
 	{
-		create();
+		__original();
 		this.m.HitChanceBonus = 0;
 	}
 });

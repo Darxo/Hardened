@@ -1,8 +1,7 @@
-::mods_hookExactClass("skills/actives/recover_skill", function(o) {
-	local oldGetTooltip = o.getTooltip;
-	o.getTooltip = function()
+::Hardened.HooksMod.hook("scripts/skills/actives/recover_skill", function(q) {
+	q.getTooltip = @(__original) function()
 	{
-		local ret = oldGetTooltip();
+		local ret = __original();
 		ret.push({
 			id = 8,
 			type = "text",
@@ -12,10 +11,9 @@
 		return ret;
 	}
 
-	local oldOnUse = o.onUse;
-	o.onUse = function( _user, _targetTile )
+	q.onUse = @(__original) function( _user, _targetTile )
 	{
-		if (oldOnUse(_user, _targetTile))
+		if (__original(_user, _targetTile))
 		{
 			this.getContainer().getActor().m.IsWaitActionSpent = true;
 			this.getContainer().add(::new("scripts/skills/effects/hd_wait_effect"));

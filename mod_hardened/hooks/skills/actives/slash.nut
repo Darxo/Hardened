@@ -1,8 +1,7 @@
-::mods_hookExactClass("skills/actives/slash", function(o) {
-	local create = o.create;
-	o.create = function()
+::Hardened.HooksMod.hook("scripts/skills/actives/slash", function(q) {
+	q.create = @(__original) function()
 	{
-		create();
+		__original();
 		this.m.HitChanceBonus = 0;
 	}
 });

@@ -1,8 +1,7 @@
-::mods_hookExactClass("skills/actives/puncture", function(o) {
-	local oldGetTooltip = o.getTooltip;
-	o.getTooltip = function()
+::Hardened.HooksMod.hook("scripts/skills/actives/puncture", function(q) {
+	q.getTooltip = @(__original) function()
 	{
-		local ret = oldGetTooltip();
+		local ret = __original();
 
 		ret.push({
 			id = 8,
@@ -14,7 +13,7 @@
 		return ret;
 	}
 
-	o.onVerifyTarget <- function( _originTile, _targetTile )
+	q.onVerifyTarget <- function( _originTile, _targetTile )
 	{
 		local ret = this.skill.onVerifyTarget(_originTile, _targetTile);
 		if (ret == false) return false;

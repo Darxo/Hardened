@@ -1,9 +1,9 @@
-::mods_hookExactClass("skills/perks/perk_rf_spear_advantage", function(o) {
-	::Hardened.wipeFunctions(o);	// Wipe the original perk
+::Hardened.HooksMod.rawHook("scripts/skills/perks/perk_rf_spear_advantage", function(p) {
+	::Hardened.wipeFunctions(p);	// Wipe the original perk
+});
 
-	o.m <- {};
-
-	o.create <- function()
+::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_spear_advantage", function(q) {
+	q.create <- function()
 	{
 		this.m.ID = "perk.rf_spear_advantage";
 		this.m.Name = ::Const.Strings.PerkName.RF_SpearAdvantage;
@@ -16,7 +16,7 @@
 		this.m.IsHidden = false;
 	}
 
-	o.onUpdate <- function( _properties )
+	q.onUpdate <- function( _properties )
 	{
 		if (this.getContainer().getActor().isDisarmed()) return false;
 

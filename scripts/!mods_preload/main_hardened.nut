@@ -1,20 +1,20 @@
 ::Hardened <- {
-	ID = "hardened",
+	ID = "mod_hardened",
 	Name = "Hardened",
 	Version = "0.2.5",
 	GitHubURL = "https://github.com/Darxo/Hardened",
 }
 
-::mods_registerMod(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
+::Hardened.HooksMod <- ::Hooks.register(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
+::Hardened.HooksMod.require(["mod_reforged"]);
 
-::mods_queue(::Hardened.ID, "mod_reforged", function()
-{
+::Hardened.HooksMod.queue(">mod_reforged", function() {
 	::Hardened.Mod <- ::MSU.Class.Mod(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
 
 	::Hardened.Mod.Registry.addModSource(::MSU.System.Registry.ModSourceDomain.GitHub, ::Hardened.GitHubURL);
 	::Hardened.Mod.Registry.setUpdateSource(::MSU.System.Registry.ModSourceDomain.GitHub);
 
-	::include("mod_hardened/load");		// Load Reforged-Adjustments and other hooks
+	::include("mod_hardened/load");		// Load Hardened-Adjustments and other hooks
 
 	// Remove the Fangshire Helmet
 	foreach(index, itemScript in ::Const.World.Assets.NewCampaignEquipment)

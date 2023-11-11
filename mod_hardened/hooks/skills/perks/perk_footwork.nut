@@ -1,15 +1,13 @@
-::mods_hookExactClass("skills/perks/perk_footwork", function (o) {
-	local onAdded = o.onAdded;
-	o.onAdded = function()
+::Hardened.HooksMod.hook("scripts/skills/perks/perk_footwork", function(q) {
+	q.onAdded = @(__original) function()
 	{
-		onAdded();
+		__original();
 		this.getContainer().add(::new("scripts/skills/actives/rf_sprint_skill"));
 	}
 
-	local onRemoved = o.onRemoved;
-	o.onRemoved <- function()
+	q.onRemoved = @(__original) function()
 	{
-		onRemoved();
+		__original();
 		this.getContainer().removeByID("actives.rf_sprint");
 	}
 });

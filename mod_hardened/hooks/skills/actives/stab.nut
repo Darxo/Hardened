@@ -1,8 +1,7 @@
-::mods_hookExactClass("skills/actives/stab", function(o) {
-	local oldCreate = o.create;
-	o.create = function()
+::Hardened.HooksMod.hook("scripts/skills/actives/stab", function(q) {
+	q.create = @(__original) function()
 	{
-		oldCreate();
+		__original();
 		this.m.ActionPointCost = 3;
 	}
 });

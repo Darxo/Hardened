@@ -1,8 +1,7 @@
-::mods_hookExactClass("items/weapons/wooden_flail", function(o) {
-	local oldCreate = o.create;
-	o.create = function()
+::Hardened.HooksMod.hook("scripts/items/weapons/wooden_flail", function(q) {
+	q.create = @(__original) function()
 	{
-		oldCreate();
+		__original();
 		this.m.RegularDamage += 5;
 		this.m.RegularDamageMax += 5;
 		this.m.Value += 20;

@@ -1,8 +1,7 @@
-::mods_hookExactClass("skills/special/double_grip", function(o) {
-	local oldCreate = o.create;
-	o.create = function()
+::Hardened.HooksMod.hook("scripts/skills/special/double_grip", function(q) {
+	q.create = @(__original) function()
 	{
-		oldCreate();
+		__original();
 		this.m.IconMini = "";
 	}
 });

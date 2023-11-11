@@ -1,15 +1,13 @@
-::mods_hookExactClass("skills/special/rf_reach", function (o) {
-	local oldCreate = o.create;
-	o.create = function()
+::Hardened.HooksMod.hook("scripts/skills/special/rf_reach", function(q) {
+	q.create = @(__original) function()
 	{
-		oldCreate();
+		__original();
 		this.m.Description = ::Reforged.Mod.Tooltips.parseString("Reach is a depiction of how far a character\'s attacks can reach, making melee combat easier against targets with shorter reach.\n\n[Melee skill|Concept.MeleeSkill] is increased by " + ::MSU.Text.colorGreen((::Reforged.Reach.ReachAdvantageMult * 100.0 - 100.0) + "%") + " when attacking opponents with shorter reach. Characters who are [stunned|Skill+stunned_effect], fleeing, or without a melee attack have no Reach.");
 	}
 
-	local oldGetTooltip = o.getTooltip;
-	o.getTooltip = function()
+	q.getTooltip = @(__original) function()
 	{
-		local ret = oldGetTooltip();
+		local ret = __original();
 
 		local properties = this.getContainer().getActor().getCurrentProperties();
 		if (properties.getReachAdvantageMult() > 1.0)
@@ -36,7 +34,7 @@
 	}
 
 // Overwrites
-	o.onAnySkillUsed = function( _skill, _targetEntity, _properties )
+	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties )
 	{
 		this.m.CurrBonus = 0;
 
@@ -57,7 +55,7 @@
 		}
 	}
 
-	o.onGetHitFactors = function( _skill, _targetTile, _tooltip )
+	q.onGetHitFactors = @() function( _skill, _targetTile, _tooltip )
 	{
 		if (this.m.CurrBonus > 0)
 		{
@@ -69,19 +67,19 @@
 	}
 
 // New Functions
-	o.calculateBonus <- function( _properties )
+	q.calculateBonus <- function( _properties )
 	{
 		local bonus = _properties.getReachAdvantageBonus() + ::Math.floor(_properties.MeleeSkill * (_properties.getReachAdvantageMult() - 1.0));
 		this.m.CurrBonus = bonus;
 		return bonus;
 	}
 
-// Deleted Functions
-	o.onUpdate = function(...){};
-	o.onTargetMissed = function(...){};
-	o.onTurnStart = function(...){};
-	o.onTurnEnd = function(...){};
-	o.onWaitTurn = function(...){};
-	o.onPayForItemAction = function(...){};
-	o.onCombatFinished = function(...){};
+	// Delete Functions
+	if (q.contains("onUpdate")) delete q.onUpdate;
+	if (q.contains("onTargetMissed")) delete q.onTargetMissed;
+	if (q.contains("onTurnStart")) delete q.onTurnStart;
+	if (q.contains("onTurnEnd")) delete q.onTurnEnd;
+	if (q.contains("onWaitTurn")) delete q.onWaitTurn;
+	if (q.contains("onPayForItemAction")) delete q.onPayForItemAction;
+	if (q.contains("onCombatFinished")) delete q.onCombatFinished;
 });

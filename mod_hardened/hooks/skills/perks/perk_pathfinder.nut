@@ -1,5 +1,5 @@
-::mods_hookExactClass("skills/perks/perk_pathfinder", function (o) {
+::Hardened.HooksMod.hook("scripts/skills/perks/perk_pathfinder", function(q) {
 	// Prevent pathfinder from adding sprint skill
-	if ("onAdded" in o) delete o.onAdded;
-	if ("onRemoved" in o) delete o.onRemoved;
+	if (q.contains("onAdded")) delete q.onAdded;
+	if (q.contains("onRemoved")) delete q.onRemoved;
 });

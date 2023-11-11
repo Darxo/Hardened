@@ -1,6 +1,5 @@
-::mods_hookNewObject("skills/skill_container", function(o) {
-	local oldCollectGarbage = o.collectGarbage;
-	o.collectGarbage = function( _performUpdate = true )
+::Hardened.HooksMod.hook("scripts/skills/skill_container", function(q) {
+	q.collectGarbage = @(__original) function( _performUpdate = true )
 	{
 		local oldLogDebug = ::logDebug;
 		::logDebug = function( _log )
@@ -10,7 +9,7 @@
 			oldLogDebug(_log);
 		}
 
-		oldCollectGarbage(_performUpdate);
+		__original(_performUpdate);
 
 		::logDebug = oldLogDebug;
 	}

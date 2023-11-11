@@ -1,12 +1,11 @@
-::mods_hookExactClass("skills/perks/perk_rf_formidable_approach", function(o) {
-	::Hardened.wipeFunctions(o);	// Wipe the original perk
+::Hardened.HooksMod.rawHook("scripts/skills/perks/perk_rf_formidable_approach", function(p) {
+	::Hardened.wipeFunctions(p);	// Wipe the original perk
+});
 
-	o.m <- {
-		MeleeSkillBonus = 15,
-		Enemies = []
-	},
+::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_formidable_approach", function(q) {
+	q.m.MeleeSkillBonus <- 15;
 
-	o.create <- function()
+	q.create <- function()
 	{
 		this.m.ID = "perk.rf_formidable_approach";
 		this.m.Name = ::Const.Strings.PerkName.RF_FormidableApproach;
@@ -21,7 +20,7 @@
 		this.m.IsHidden = true;
 	}
 
-	o.getTooltip <- function()
+	q.getTooltip <- function()
 	{
 		local tooltip = this.skill.getTooltip();
 
@@ -44,14 +43,14 @@
 		return tooltip;
 	}
 
-	o.isHidden <- function()
+	q.isHidden <- function()
 	{
 		if (this.requirementsMet() == false) return true;
 
 		return (this.m.Enemies.len() == 0);
 	}
 
-	o.onMovementFinished <- function( _tile )
+	q.onMovementFinished <- function( _tile )
 	{
 		if (this.requirementsMet() == false) return;
 
@@ -71,7 +70,7 @@
 		}
 	}
 
-	o.onDamageReceived <- function( _attacker, _damageHitpoints, _damageArmor )
+	q.onDamageReceived <- function( _attacker, _damageHitpoints, _damageArmor )
 	{
 		if (_attacker != null && this.hasEnemy(_attacker))
 		{
@@ -79,7 +78,7 @@
 		}
 	}
 
-	o.onAnySkillUsed <- function( _skill, _targetEntity, _properties )
+	q.onAnySkillUsed <- function( _skill, _targetEntity, _properties )
 	{
 		if (this.requirementsMet() == false) return;
 
@@ -89,7 +88,7 @@
 		}
 	}
 
-	o.onGetHitFactors <- function( _skill, _targetTile, _tooltip )
+	q.onGetHitFactors <- function( _skill, _targetTile, _tooltip )
 	{
 		if (this.requirementsMet() == false) return;
 
@@ -102,26 +101,26 @@
 		});
 	}
 
-	o.onOtherActorDeath <- function( _killer, _victim, _skill, _deathTile, _corpseTile, _fatalityType )
+	q.onOtherActorDeath <- function( _killer, _victim, _skill, _deathTile, _corpseTile, _fatalityType )
 	{
 		this.unregisterEnemy(_victim);
 	}
 
-	o.onCombatFinished <- function()
+	q.onCombatFinished <- function()
 	{
 		this.skill.onCombatFinished();
 		this.m.Enemies.clear();
 	}
 
 // New Private Functions
-	o.requirementsMet <- function()
+	q.requirementsMet <- function()
 	{
 		local weapon = this.getContainer().getActor().getMainhandItem();
 
 		return (weapon != null && weapon.isItemType(::Const.Items.ItemType.TwoHanded));
 	}
 
-	o.registerEnemy <- function( _actor )
+	q.registerEnemy <- function( _actor )
 	{
 		if (this.m.Enemies.find(_actor.getID()) == null)
 		{
@@ -130,12 +129,12 @@
 		}
 	}
 
-	o.unregisterEnemy <- function( _actor )
+	q.unregisterEnemy <- function( _actor )
 	{
 		::MSU.Array.removeByValue(this.m.Enemies, _actor.getID());
 	}
 
-	o.hasEnemy <- function( _actor )
+	q.hasEnemy <- function( _actor )
 	{
 		return this.m.Enemies.find(_actor.getID()) != null;
 	}

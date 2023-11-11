@@ -1,8 +1,7 @@
-::mods_hookExactClass("items/weapons/pike", function(o) {
-	local create = o.create;
-	o.create = function()
+::Hardened.HooksMod.hook("scripts/items/weapons/pike", function(q) {
+	q.create = @(__original) function()
 	{
-		create();
+		__original();
 		this.addWeaponType(::Const.Items.WeaponType.Spear);
 	}
 });

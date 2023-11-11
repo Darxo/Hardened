@@ -1,6 +1,7 @@
-::mods_hookExactClass("skills/perks/perk_duelist", function(o) {
-	o.onUpdate = function( _properties )	// This will maybe cause issues with Lunge.
+::Hardened.HooksMod.hook("scripts/skills/perks/perk_duelist", function(q) {
+	q.onUpdate = @(__original) function( _properties )	// This will maybe cause issues with Lunge.
 	{
+		__original(_properties);
 		local mainhandItem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 
 		if (mainhandItem == null) return;
@@ -11,7 +12,7 @@
 		_properties.Reach += (2 * multiplier);
 	}
 
-	o.getBonusMultiplier <- function()
+	q.getBonusMultiplier <- function()
 	{
 		if (!this.getContainer().getActor().isPlacedOnMap()) return 1.0;	// Outside of battle this is treated as being fully active
 		local numAdjacentEnemies = ::Tactical.Entities.getHostileActors(this.getContainer().getActor().getFaction(), this.getContainer().getActor().getTile(), 1, true).len();
@@ -21,6 +22,6 @@
 		return 0.0;
 	}
 
-	if ("onAnySkillUsed" in o) delete o.onAnySkillUsed;
-	if ("onBeingAttacked" in o) delete o.onBeingAttacked;
+	if (q.contains("onAnySkillUsed")) delete q.onAnySkillUsed;
+	if (q.contains("onBeingAttacked")) delete q.onBeingAttacked;
 });

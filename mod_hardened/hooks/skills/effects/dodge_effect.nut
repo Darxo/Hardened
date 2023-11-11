@@ -1,9 +1,9 @@
-::mods_hookExactClass("skills/effects/dodge_effect", function (o) {
-	o.m.BaseMultiplier <- 5.0;
-	o.m.MultiplierPerEmptyTile <- 2.5;
+::Hardened.HooksMod.hook("scripts/skills/effects/dodge_effect", function(q) {
+	q.m.BaseMultiplier <- 5.0;
+	q.m.MultiplierPerEmptyTile <- 2.5;
 
 	// Overwrite of Vanilla function to stop its effects and apply our own
-	o.onAfterUpdate = function( _properties )
+	q.onAfterUpdate = @() function( _properties )
 	{
 		if (this.getContainer().getActor().isPlacedOnMap())
 		{
@@ -14,7 +14,7 @@
 	}
 
 	// Overwrite of Vanilla function to stop its effects and apply our own
-	o.getTooltip = function()
+	q.getTooltip = @() function()
 	{
 		local ret = this.skill.getTooltip();	// Get name and description the way that the base class does it
 
@@ -60,14 +60,14 @@
 	}
 
 	// new function to have a variable description text
-	o.getDescription <- function()
+	q.getDescription <- function()
 	{
 		local ret = ::Reforged.Mod.Tooltips.parseString("Gain " + ::MSU.Text.colorGreen(this.m.BaseMultiplier + "%") + " + an additional " + ::MSU.Text.colorGreen(this.m.MultiplierPerEmptyTile + "%") + " per empty adjacent tile of this character\'s current [Initiative|Concept.Initiative] as a bonus to Melee- and Ranged Defense.");
 		return ret;
 	}
 
 	// private
-	o.calculateBonus <- function( _emptyTilesOverwrite = null )
+	q.calculateBonus <- function( _emptyTilesOverwrite = null )
 	{
 		local combinedMultiplier = this.m.BaseMultiplier;
 

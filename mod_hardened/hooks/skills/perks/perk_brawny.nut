@@ -1,6 +1,7 @@
-::mods_hookExactClass("skills/perks/perk_brawny", function (o) {
-	o.onCombatStarted <- function()
+::Hardened.HooksMod.hook("scripts/skills/perks/perk_brawny", function(q) {
+	q.onCombatStarted = @(__original) function()
 	{
+		__original();
 		local actor = this.getContainer().getActor();
 		if (actor.getFaction() != ::Const.Faction.Player)
 		{
@@ -11,9 +12,10 @@
 	}
 });
 
-::mods_hookExactClass("skills/perks/perk_fortified_mind", function (o) {
-	o.onCombatStarted <- function()
+::Hardened.HooksMod.hook("scripts/skills/perks/perk_fortified_mind", function(q) {
+	q.onCombatStarted = @(__original) function()
 	{
+		__original();
 		local actor = this.getContainer().getActor();
 		if (actor.getFaction() != ::Const.Faction.Player)
 		{
@@ -23,9 +25,10 @@
 	}
 });
 
-::mods_hookExactClass("skills/perks/perk_colossus", function (o) {
-	o.onCombatStarted <- function()
+::Hardened.HooksMod.hook("scripts/skills/perks/perk_colossus", function(q) {
+	q.onCombatStarted = @(__original) function()
 	{
+		__original();
 		local actor = this.getContainer().getActor();
 		if (actor.getFaction() != ::Const.Faction.Player)
 		{

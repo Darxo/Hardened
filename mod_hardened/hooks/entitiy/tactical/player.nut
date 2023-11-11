@@ -1,8 +1,7 @@
-::mods_hookExactClass("entity/tactical/player", function(o) {
-	local oldFillAttributeLevelUpValues = o.fillAttributeLevelUpValues;
-	o.fillAttributeLevelUpValues = function( _amount, _maxOnly = false, _minOnly = false )
+::Hardened.HooksMod.hook("scripts/entity/tactical/player", function(q) {
+	q.fillAttributeLevelUpValues = @(__original) function( _amount, _maxOnly = false, _minOnly = false )
 	{
-		oldFillAttributeLevelUpValues(_amount, _maxOnly, _minOnly);
+		__original(_amount, _maxOnly, _minOnly);
 
 		if (_amount == 0) return;
 		if (_maxOnly || _minOnly) return;	// Stars do not influence these level-ups so we don't need to adjust anything
@@ -19,10 +18,9 @@
 		}
 	}
 
-	local oldGetProjectedAttributes = o.getProjectedAttributes;
-	o.getProjectedAttributes = function()
+	q.getProjectedAttributes = @(__original) function()
 	{
-		local ret = oldGetProjectedAttributes();
+		local ret = __original();
 		local baseProperties = this.getBaseProperties();
 
 		foreach (attributeName, attribute in ::Const.Attributes)

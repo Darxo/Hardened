@@ -1,16 +1,13 @@
-::mods_hookExactClass("skills/actives/rf_sprint_skill", function(o) {
-
-	local oldCreate = o.create;
-	o.create = function()
+::Hardened.HooksMod.hook("scripts/skills/actives/rf_sprint_skill", function(q) {
+	q.create = @(__original) function()
 	{
-		oldCreate();
+		__original();
 		this.m.ActionPointCost = 1;
 	}
 
-	local oldGetTooltip = o.getTooltip;
-	o.getTooltip = function()
+	q.getTooltip = @(__original) function()
 	{
-		local ret = oldGetTooltip();
+		local ret = __original();
 		foreach (index, entry in ret)
 		{
 			if (entry.id == 10 && ::String.contains(entry.text, "Fatigue cost for movement on all terrain will be increased by"))

@@ -1,15 +1,13 @@
-::mods_hookExactClass("entity/tactical/actor", function(o) {
-	local oldOnInit = o.onInit;
-	o.onInit = function()
+::Hardened.HooksMod.hook("scripts/entity/tactical/actor", function(q) {
+	q.onInit = @(__original) function()
 	{
-		oldOnInit();
+		__original();
 		this.getSkills().add(::new("scripts/skills/special/hd_direct_damage_limiter"));
 	}
 
-	local oldWait = o.wait;
-	o.wait = function()
+	q.wait = @(__original) function()
 	{
-		oldWait();
+		__original();
 		this.getSkills().add(::new("scripts/skills/effects/hd_wait_effect"));
 	}
 });

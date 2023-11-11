@@ -1,8 +1,7 @@
-::mods_hookExactClass("skills/effects/rf_sprint_effect", function(o) {
-	local oldGetTooltip = o.getTooltip;
-	o.getTooltip = function()
+::Hardened.HooksMod.hook("scripts/skills/effects/rf_sprint_effect", function(q) {
+	q.getTooltip = @(__original) function()
 	{
-		local ret = oldGetTooltip();
+		local ret = __original();
 		foreach (index, entry in ret)
 		{
 			if (entry.id == 10 && ::String.contains(entry.text, "more Fatigue built per tile traveled"))
@@ -15,7 +14,7 @@
 	}
 
 	// This overwrite approach is just a bit quicker to apply
-	o.onUpdate = function( _properties )
+	q.onUpdate = @() function( _properties )
 	{
 		_properties.MovementAPCostAdditional -= 1;
 		// _properties.MovementFatigueCostMult *= 2.0;

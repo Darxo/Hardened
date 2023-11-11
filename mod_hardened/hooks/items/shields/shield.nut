@@ -1,8 +1,7 @@
-::mods_hookExactClass("items/shields/shield", function(o) {
-	local getTooltip = o.getTooltip;
-	o.getTooltip = function()
+::Hardened.HooksMod.hook("scripts/items/shields/shield", function(q) {
+	q.getTooltip = @(__original) function()
 	{
-		local ret = getTooltip();
+		local ret = __original();
 		foreach (index, entry in ret)
 		{
 			if (entry.id == 8 && entry.text.find("Ignores ") != null)
