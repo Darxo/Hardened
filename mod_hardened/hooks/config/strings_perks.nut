@@ -2,6 +2,19 @@
 local adjustedDescriptions = [
 	// Vanilla Perks
 	{
+		ID = "perk.battle_forged",
+		Key = "BattleForged",
+		Description = ::UPD.getDescription({
+			Fluff = "Specialize in heavy armor!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Armor damage taken from Attacks is reduced by a percentage equal to " + ::MSU.Text.colorGreen("5%") + " of the current total armor value of both body and head armor.",
+				]
+			}]
+		}),
+	},
+	{
 		ID = "perk.dodge",
 		Key = "Dodge",
 		Description = ::UPD.getDescription({
@@ -51,6 +64,21 @@ local adjustedDescriptions = [
 				}
 			]
 		})
+	},
+	{
+		ID = "perk.nimble",
+		Key = "Nimble",
+		Description = ::UPD.getDescription({
+	 		Fluff = "Specialize in light armor! By nimbly dodging or deflecting blows, convert any hits to glancing hits.",
+	 		Effects = [{
+ 				Type = ::UPD.EffectType.Passive,
+ 				Description = [
+ 					"Damage from Attacks to [Hitpoints|Concept.Hitpoints] is reduced by " + ::MSU.Text.colorGreen("50%") + " and that to armor by " + ::MSU.Text.colorGreen("25%") + ".",
+ 					"The bonus drops exponentially when wearing head and body armor with a combined base penalty to [Maximum Fatigue|Concept.MaximumFatigue] above 15.",
+				]
+ 			}],
+			Footer = ::MSU.Text.colorRed("Cannot be picked if you have [Poise|Perk+perk_rf_poise].")
+	 	}),
 	},
 	{
 		ID = "perk.mastery.dagger",
@@ -149,6 +177,21 @@ local adjustedDescriptions = [
 					"Only affects allies that have less Resolve than you."
 				]
 			}]
+		})
+	},
+	{
+		ID = "perk.rf_poise",
+		Key = "RF_Poise",
+		Description = ::UPD.getDescription({
+			Fluff = "Specialize in Medium Armor! Not as nimble as some but more lithe than others!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Damage from Attacks to [Hitpoints|Concept.Hitpoints] is reduced by " + ::MSU.Text.colorGreen("30%") + " and to Armor by " + ::MSU.Text.colorGreen("20%") + ".",
+					"The bonus drops exponentially when wearing head and body armor with a combined base penalty to [Maximum Fatigue|Concept.MaximumFatigue] above 35."
+				]
+			}],
+			Footer = ::MSU.Text.colorRed("Cannot be picked if you have [Nimble|Perk+perk_nimble].")
 		})
 	},
 	{
