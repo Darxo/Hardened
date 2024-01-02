@@ -10,10 +10,12 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 ### Reach Rework
 
-- Reach Advantage always grants 13% increased Melee Skill
-- Reach Disadvantage has no effect
-- Overcoming reach temporarily is removed
-- Shields do not have any effect on Reach
+- You have Reach Advantage during any melee attack if your Reach is greater than the Reach of the entity you are attacking
+- Reach Advantage always grants 13% increased Melee Skill (it is unaffected by the difference in Reach)
+**Removed from Reforged:**
+- penalty for Reach Disadvantage
+- overcoming Reach Temporarily
+- Reach Ignore Stat on Shields
 
 ## Additions
 
@@ -24,7 +26,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 ### Perks
 
-- Change **Dodge** effect is now between 5% and 20% (instead of always 15%) depending on the amount of adjacent empty tiles
+- Change **Dodge** effect is now between 5% and 20% of Initiative (instead of always 15%) depending on the amount of adjacent empty tiles
 - Change **Duelist** to only works for one-handed weapons. The Penetration is increased to 30% and is now also halfed with 2 enemies and disabled with 3+
 - Rework **Formidable Approach** to only works for Two-Handed weapons, grant 15 Melee Skill instead of Reach and trigger a morale check on being the first to approach an enemy
 - Rework **Spear Advantage** to double the effect of Reach Advantage on you
@@ -33,9 +35,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 ### Items
 
-- Wodden Flail now deals 15-30 damage (up from 10-25) and costs 60 gold (up from 40)
-- Goblin Pikes, Ancient Pikes and Pikes are now also of weapontype Spear
-- Fangshire will no longer spawn at the start of the game
+- **Wodden Flail** now deals 15-30 damage (up from 10-25) and costs 60 gold (up from 40)
+- **Goblin Pikes**, **Ancient Pikes** and **Pikes** are now also of weapontype Spear
+- **Fangshire** will no longer spawn at the start of the game
 
 ### Other
 
