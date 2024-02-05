@@ -19,6 +19,13 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.3.0
+	- Hardened is now rewritten with modern hooks
+	- **Nimble**, **Poise** and **Battle Forged** no longer provide any Reach Ignore
+	- **Discovered Talent** can no longer be picked while you have any pending attribute level-ups
+	- **Bags and Belts** will no longer appear on every brother. It is now part of the **Light Armor** group.
+	- **Dodge** will no longer appear on every brother. It is now part of the **Medium Armor** group.
+
 0.2.5
 	- Recover now applies the same Initiative debuff as using Wait
 	- Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)

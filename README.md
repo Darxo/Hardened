@@ -32,6 +32,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Rework **Spear Advantage** to double the effect of Reach Advantage on you
 - **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
 - Relocate the skill **Sprint** from **Pathfinder** to **Footwork**. **Footwork** has been renamed to **Escape Artist**
+- **Nimble**, **Poise** and **Battle Forged** no longer provide any Reach Ignore
 
 ### Items
 
@@ -39,22 +40,32 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Goblin Pikes**, **Ancient Pikes** and **Pikes** are now also of weapontype Spear
 - **Fangshire** will no longer spawn at the start of the game
 
-### Other
+### Skills
 
-- **Wait** now debuffs the actual Initiative until the start of that brothers next turn
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies
 - **Stab** now costs 3 Action Points (down from 4)
 - **Thrust** now has 0% Hitchance bonus (down from 10%)
 - **Slash** now has 0% Hitchance bonus (down from 5%)
+
+### Other
+
+- **Wait** now debuffs the actual Initiative until the start of that brothers next turn
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied.
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
+- **Bags and Belts** is now part of the **Light Armor** group instead of being available for everyone
+- **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
 
 ## Quality of Life
 
 - Legendary Armor and Armor with an attachement that you un-equip are now automatically marked as to-be-repaired
 - **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
 - **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
+- Improve formatting of **Nimble** and **Poise** perk desriptions
+
+## Fixes
+
+- **Discovered Talent** can no longer be picked while you have any pending attribute level-ups. As a result it can no longer accidentally overwrite pending artificial level-ups that were granted by effects other than Gifted (e.g. from Blue Vial)
 
 # Requirements
 
@@ -68,3 +79,4 @@ This submod is a collection of changes to Reforged that I suggested internally t
 # Compatibility
 
 - Is safe to remove from- and add to any existing savegames
+- Removing or adding this mod will not update existing perk trees. Only after some days you will encounter brothers with the changed perk trees.
