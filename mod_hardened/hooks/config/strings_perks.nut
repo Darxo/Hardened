@@ -73,8 +73,8 @@ local adjustedDescriptions = [
 	 		Effects = [{
  				Type = ::UPD.EffectType.Passive,
  				Description = [
- 					"Damage from Attacks to [Hitpoints|Concept.Hitpoints] is reduced by " + ::MSU.Text.colorGreen("50%") + " and that to armor by " + ::MSU.Text.colorGreen("25%") + ".",
- 					"The bonus drops exponentially when wearing head and body armor with a combined base penalty to [Maximum Fatigue|Concept.MaximumFatigue] above 15.",
+ 					"Damage from Attacks to [Hitpoints|Concept.Hitpoints] is reduced by " + ::MSU.Text.colorGreen("60%") + ".",
+ 					"Damage from Attacks to Armor is increased by the combined weight of your head and body armor.",
 				]
  			}],
 			Footer = ::MSU.Text.colorRed("Cannot be picked if you have [Poise|Perk+perk_rf_poise].")

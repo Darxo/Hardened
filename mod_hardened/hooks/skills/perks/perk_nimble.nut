@@ -13,7 +13,29 @@
 			}
 		}
 
+		local armorDamageMult = this.getArmorDamage();
+		if (armorDamageMult > 1.0)
+		{
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Damage to armor from attacks is increased by " + ::MSU.Text.colorizeMult(armorDamageMult, {InvertColor = true})
+			});
+		}
+
 		return ret;
+	}
+
+	q.getHitpointsDamage = @() function()
+	{
+		return 0.4;
+	}
+
+	q.getArmorDamage = @() function()
+	{
+		local weight = -1 * this.getContainer().getActor().getItems().getStaminaModifier([::Const.ItemSlot.Body, ::Const.ItemSlot.Head]);
+		return 1.0 + (weight / 100.0);
 	}
 
 	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties )
