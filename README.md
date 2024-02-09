@@ -28,16 +28,18 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Change **Dodge** effect is now between 5% and 20% of Initiative (instead of always 15%) depending on the amount of adjacent empty tiles
 - Change **Duelist** to only works for one-handed weapons. The Penetration is increased to 30% and is now also halfed with 2 enemies and disabled with 3+
+- **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy.
 - Rework **Formidable Approach** to only works for Two-Handed weapons, grant 15 Melee Skill instead of Reach and trigger a morale check on being the first to approach an enemy
 - Rework **Spear Advantage** to double the effect of Reach Advantage on you
 - **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
 - Relocate the skill **Sprint** from **Pathfinder** to **Footwork**. **Footwork** has been renamed to **Escape Artist**
 - **Nimble**, **Poise** and **Battle Forged** no longer provide any Reach Ignore
+- **Nimble** now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
 
 ### Items
 
 - **Wodden Flail** now deals 15-30 damage (up from 10-25) and costs 60 gold (up from 40)
-- **Goblin Pikes**, **Ancient Pikes** and **Pikes** are now also of weapontype Spear
+- **Goblin Pikes**, **Ancient Pikes** and **Pikes** are now also of the weapontype Spear
 - **Fangshire** will no longer spawn at the start of the game
 
 ### Skills
@@ -45,8 +47,24 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies
 - **Stab** now costs 3 Action Points (down from 4)
+
+- **Hand-to-Hand Attack** now has 0% Hitchance bonus (up from -10%)
 - **Thrust** now has 0% Hitchance bonus (down from 10%)
 - **Slash** now has 0% Hitchance bonus (down from 5%)
+- **Gash** now has 0% Hitchance bonus (down from 5%)
+- **Overhead Strike** now has 0% Hitchance bonus (down from 5%)
+- **Swing** now has -10% Hitchance bonus (down from -5%)
+- **Split** now has -10% Hitchance bonus (down from -5%)
+- **Impale** now has 0% Hitchance bonus (down from 10%)
+- **Prong** now has 0% Hitchance bonus (down from 10%)
+- **Rupture** now has 0% Hitchance bonus (down from 5%)
+- **Strike** now has 0% Hitchance bonus (down from 5%)
+
+### Traits
+
+- **Lucky** no longer grants a chance to reroll incoming attacks. It now provides a 5% chance to avoid damage from any source.
+- **Weasel** now provides an additional 25 Melee Defense during that brothers turn while fleeing.
+- **Irrational** will no longer appear on recruits.
 
 ### Other
 
@@ -65,7 +83,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 ## Fixes
 
-- **Discovered Talent** can no longer be picked while you have any pending attribute level-ups. As a result it can no longer accidentally overwrite pending artificial level-ups that were granted by effects other than Gifted (e.g. from Blue Vial)
+- **Discovered Talent** can no longer be picked while you have any pending attribute level-ups. As a result it can no longer be used to transform pending artificial level-ups (Gifted, Blue Vial, Veteran Level-Ups) into ones that scale with stars
+- Parties on the world map are no longer hidden after loading a game, while the game is still paused
 
 # Requirements
 
