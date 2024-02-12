@@ -46,6 +46,20 @@ local adjustedDescriptions = [
 		})
 	},
 	{
+		ID = "perk.rf_flail_spinner",
+		Key = "RF_FlailSpinner",
+		Description = ::UPD.getDescription({
+			Fluff = "Use the momentum of your flail to enable quick follow-up blows!",
+			Requirement = "Flail",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Attacks have a " + ::MSU.Text.colorGreen("100%") + " chance to perform a free extra attack of the same type with " + ::MSU.Text.colorRed("50%") + " reduced damage to a different valid enemiy within 2 tiles."
+				]
+			}]
+		})
+	},
+	{
 		ID = "perk.footwork",
 		Key = "Footwork",
 		Description = ::UPD.getDescription({
