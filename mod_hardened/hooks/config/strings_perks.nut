@@ -110,6 +110,23 @@ local adjustedDescriptions = [
 		})
 	},
 	{
+		ID = "perk.mastery.sword",
+		Key = "SpecSword",
+		Description = ::UPD.getDescription({
+			Fluff = "Master the art of swordfighting and using your opponent\'s mistakes to your advantage.",
+			Requirement = "Sword",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Skills build up " + ::MSU.Text.colorGreen("25%") + " less Fatigue.",
+					"Riposte no longer has a penalty to hitchance.",
+					"Gash has a " + ::MSU.Text.colorGreen("50%") + " lower threshold to inflict injuries.",
+					"Split and Swing no longer have a penalty to hitchance."
+				]
+			}]
+		})
+	},
+	{
 		ID = "perk.pathfinder",
 		Key = "Pathfinder",
 		Description = ::UPD.getDescription({
