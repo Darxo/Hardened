@@ -2,4 +2,6 @@
 	<sprite id="rf_battle_song_skill" ic = "FF23165B" img="..\..\gfx\skills\rf_battle_song_skill.png" />
 
 	<sprite id="rf_formidable_approach" ic = "FF23165B" img="..\..\gfx\ui\perks\rf_formidable_approach.png" />
+
+	<sprite id="rf_lucky_trait" ic = "FF23165B" img="..\..\gfx\ui\traits\trait_icon_54.png" />
 </brush>
