@@ -6,16 +6,19 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 ## Major Changes
 
-- Disable Veteran Perks
-
 ### Reach Rework
 
 - You have Reach Advantage during any melee attack if your Reach is greater than the Reach of the entity you are attacking
 - Reach Advantage always grants 13% increased Melee Skill (it is unaffected by the difference in Reach)
+
 **Removed from Reforged:**
 - penalty for Reach Disadvantage
 - overcoming Reach Temporarily
 - Reach Ignore Stat on Shields
+
+### Misc
+
+- Disable Veteran Perks
 
 ## Additions
 
@@ -28,13 +31,13 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Change **Dodge** effect is now between 5% and 20% of Initiative (instead of always 15%) depending on the amount of adjacent empty tiles
 - Change **Duelist** to only works for one-handed weapons. The Penetration is increased to 30% and is now also halfed with 2 enemies and disabled with 3+
-- **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy.
-- Rework **Formidable Approach** to only works for Two-Handed weapons, grant 15 Melee Skill instead of Reach and trigger a morale check on being the first to approach an enemy
-- Rework **Spear Advantage** to double the effect of Reach Advantage on you
-- **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
-- Relocate the skill **Sprint** from **Pathfinder** to **Footwork**. **Footwork** has been renamed to **Escape Artist**
 - **Nimble**, **Poise** and **Battle Forged** no longer provide any Reach Ignore
 - **Nimble** now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
+
+- **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy.
+- **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
+- Rework **Spear Advantage** to double the effect of Reach Advantage on you
+- Relocate the skill **Sprint** from **Pathfinder** to **Footwork**. **Footwork** has been renamed to **Escape Artist**
 
 ### Items
 
