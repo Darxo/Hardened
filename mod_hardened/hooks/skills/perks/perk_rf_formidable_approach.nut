@@ -54,18 +54,15 @@
 	{
 		if (this.requirementsMet() == false) return;
 
+		// MoraleCheck
 		local actor = this.getContainer().getActor();
 
 		local adjacentEnemies = ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true);
 		foreach (enemy in adjacentEnemies)
 		{
-			if (enemy.m.MaxEnemiesThisTurn == 1)
+			if (actor.getHitpointsMax() > enemy.getHitpointsMax() && enemy.getMoraleState() == ::Const.MoraleState.Confident)
 			{
-				// This difficulty calculation is copied from how vanilla handles these morale checks
-				local difficulty = ::Math.maxf(10.0, 50.0 - actor.getXPValue() * 0.1);
-				enemy.checkMorale(-1, difficulty);
-
-				this.registerEnemy(enemy);
+				enemy.setMoraleState(::Const.MoraleState.Steady);
 			}
 		}
 	}
@@ -75,6 +72,7 @@
 		if (_attacker != null && this.hasEnemy(_attacker))
 		{
 			this.unregisterEnemy(_attacker);
+			this.spawnIcon(this.m.Overlay, _actor.getTile());
 		}
 	}
 
@@ -125,7 +123,7 @@
 		if (this.m.Enemies.find(_actor.getID()) == null)
 		{
 			this.m.Enemies.push(_actor.getID());
-			this.spawnIcon(this.m.Overlay, this.getContainer().getActor().getTile());
+			this.spawnIcon(this.m.Overlay, _actor.getTile());
 		}
 	}
 

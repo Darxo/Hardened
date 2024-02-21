@@ -189,8 +189,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Moving next to an enemy that has no adjacent enemies now triggers a morale check.",
-					"Moving next to an enemy that has no adjacent enemies grants " + ::MSU.Text.colorGreen("+15") + " [Melee Skill|Concept.MeleeSkill] against them until they land a hit against you."
+					"Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them.",
+					"Moving next to an enemy grants " + ::MSU.Text.colorGreen("+15") + " [Melee Skill|Concept.MeleeSkill] against them until they damage you."
 				]
 			}]
 		})
