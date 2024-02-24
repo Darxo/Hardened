@@ -156,7 +156,7 @@ local adjustedDescriptions = [
 				}
 			]
 		})
-	},
+	},/*
 	{	// This perk Description doesn't line up with my shield-group reworks.
 		ID = "perk.shield_expert",
 		Key = "ShieldExpert",
@@ -177,7 +177,8 @@ local adjustedDescriptions = [
 				}
 			]
 		})
-	},
+	},*/
+
 
 	// Reforged Perks
 	{
