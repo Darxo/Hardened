@@ -3,5 +3,7 @@
 
 	<sprite id="rf_formidable_approach" ic = "FF23165B" img="..\..\gfx\ui\perks\rf_formidable_approach.png" />
 
+	<sprite id="hd_reload_disorientation_effect_mini" ic = "FF23165B" img="mini\hd_reload_disorientation_effect_mini.png" />
+
 	<sprite id="rf_lucky_trait" ic = "FF23165B" img="..\..\gfx\ui\traits\trait_icon_54.png" />
 </brush>
