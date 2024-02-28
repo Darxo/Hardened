@@ -80,6 +80,20 @@ local adjustedDescriptions = [
 		})
 	},
 	{
+		ID = "perk.fortified_mind",
+		Key = "FortifiedMind",
+		Description = ::UPD.getDescription({
+			Fluff = "An iron will is not swayed from the true path easily.",
+	 		Effects = [{
+ 				Type = ::UPD.EffectType.Passive,
+ 				Description = [
+					"Resolve is increased by " + ::MSU.Text.colorGreen("30%") + "."
+					"This Bonus is reduced by 1% for each Base Weight on your Helmet."
+				]
+ 			}]
+	 	}),
+	},
+	{
 		ID = "perk.nimble",
 		Key = "Nimble",
 		Description = ::UPD.getDescription({
