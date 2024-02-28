@@ -15,6 +15,7 @@
 	::Hardened.Mod.Registry.setUpdateSource(::MSU.System.Registry.ModSourceDomain.GitHub);
 
 	::include("mod_hardened/load");		// Load Hardened-Adjustments and other hooks
+	::include("mod_hardened/ui/load");	// Load Hardened JS Adjustments and Hooks
 
 	// Remove the Fangshire Helmet
 	foreach(index, itemScript in ::Const.World.Assets.NewCampaignEquipment)
