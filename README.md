@@ -16,6 +16,19 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - overcoming Reach Temporarily
 - Reach Ignore Stat on Shields
 
+### Reworked Day-Night-Cycle
+
+- Each Day now consists of **Sunset** (2 hours) followed by **Morning** (6 hours), **Midday** (2 hours), **Afternoon** (6 hours) and ending with **Sunset** (2 hours)
+- Each Night now consists of **Dusk** (2 hours), followed by **Midnight** (2 hours) and **Dawn** (2 hours)
+- Each new day now starts exactly the moment that night changes to day (Double Arena fix)
+
+### Crossbows
+
+- Shooting Crossbows now costs -1 Action Point and has +10% chance to hit
+- Reloading Crossbows now costs +1 Action Point
+- Reloading Crossbows now applies **Reload Disrientation** to you until the start of your next turn.
+- **Reload Disorientation** applies  -10 Ranged Skill and -10 Ranged Defense
+
 ### Misc
 
 - Disable Veteran Perks
@@ -31,10 +44,12 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Change **Dodge** effect is now between 5% and 20% of Initiative (instead of always 15%) depending on the amount of adjacent empty tiles
 - Change **Duelist** to only works for one-handed weapons. The Penetration is increased to 30% and is now also halfed with 2 enemies and disabled with 3+
+- **Fortified Mind** now provides 30% Resolve (up from 25%). This Bonus is now reduces by 1% for each Helmet Weight.
 - **Nimble**, **Poise** and **Battle Forged** no longer provide any Reach Ignore
 - **Nimble** now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
 
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy.
+- Rework **Formidable Approach** to only works for Two-Handed weapons. It now grant 15 Melee Skill instead of Reach but only triggers when you are the one moving next to an enemy. When your maximum Hitpoints are higher than those of your opponent, it removes confident from them.
 - **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
 - Rework **Spear Advantage** to double the effect of Reach Advantage on you
 - Relocate the skill **Sprint** from **Pathfinder** to **Footwork**. **Footwork** has been renamed to **Escape Artist**
@@ -83,11 +98,18 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
 - **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - Improve formatting of **Nimble** and **Poise** perk desriptions
+- The tooltips of your attributes now display your Base Attribute value and the difference between that Base value and your current value
 
 ## Fixes
 
+### Reforged
+
 - **Discovered Talent** can no longer be picked while you have any pending attribute level-ups. As a result it can no longer be used to transform pending artificial level-ups (Gifted, Blue Vial, Veteran Level-Ups) into ones that scale with stars
+
+### Vanilla
+
 - Parties on the world map are no longer hidden after loading a game, while the game is still paused
+- You can no longer do two Arenas during the same day
 
 # Requirements
 

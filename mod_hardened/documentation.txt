@@ -19,6 +19,16 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.3.2
+	- Shooting Crossbows now costs -1 Action Point and has +10% chance to hit
+	- Reloading Crossbows now costs +1 Action Point
+	- Reloading Crossbows now applies **Reload Disrientation** to you until the start of your next turn
+	- **Reload Disorientation** applies  -10 Ranged Skill and -10 Ranged Defense
+	- **Fortified Mind** now provides 30% Resolve (up from 25%). This Bonus is now reduces by 1% for each Helmet Weight
+	- **Formidable Approach** now always triggers on moving next to an enemy. Whenever you move next to an enemy whose maximum Hitpoints are less than yours, remove confident from them. **Formidable Approach** no longer triggers a morale check.
+	- Attribute Tooltips now display the base attribute of that brother aswell as the difference between base and current value.
+	- Vanilla Day-Night-Cycle has been reworked to be much more consistent. No longer can you do two Arena fights during the same day.
+
 0.3.1
 	- **Nimble** now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
 	- **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy
