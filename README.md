@@ -18,7 +18,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 ### Reworked Day-Night-Cycle
 
-- Each Day now consists of **Sunset** (2 hours) followed by **Morning** (6 hours), **Midday** (2 hours), **Afternoon** (6 hours) and ending with **Sunset** (2 hours)
+- Each Day now consists of **Sunrise** (2 hours) followed by **Morning** (6 hours), **Midday** (2 hours), **Afternoon** (6 hours) and ending with **Sunset** (2 hours)
 - Each Night now consists of **Dusk** (2 hours), followed by **Midnight** (2 hours) and **Dawn** (2 hours)
 - Each new day now starts exactly the moment that night changes to day (Double Arena fix)
 
@@ -47,7 +47,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Fortified Mind** now provides 30% Resolve (up from 25%). This Bonus is now reduces by 1% for each Helmet Weight.
 - **Nimble**, **Poise** and **Battle Forged** no longer provide any Reach Ignore
 - **Nimble** now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
-
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy.
 - Rework **Formidable Approach** to only works for Two-Handed weapons. It now grant 15 Melee Skill instead of Reach but only triggers when you are the one moving next to an enemy. When your maximum Hitpoints are higher than those of your opponent, it removes confident from them.
 - **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
@@ -65,7 +64,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies
 - **Stab** now costs 3 Action Points (down from 4)
-
 - **Hand-to-Hand Attack** now has 0% Hitchance bonus (up from -10%)
 - **Thrust** now has 0% Hitchance bonus (down from 10%)
 - **Slash** now has 0% Hitchance bonus (down from 5%)
