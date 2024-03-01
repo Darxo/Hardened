@@ -73,7 +73,7 @@
 		if (_attacker != null && this.hasEnemy(_attacker))
 		{
 			this.unregisterEnemy(_attacker);
-			this.spawnIcon(this.m.Overlay, _actor.getTile());
+			this.spawnIcon(this.m.Overlay, this.getContainer().getActor().getTile());
 		}
 	}
 
