@@ -19,6 +19,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.3.4
+	- fix formidable approach never registering enemies
+
 0.3.3
 	- fix day-night not working correctly
 
