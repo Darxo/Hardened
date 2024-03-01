@@ -60,6 +60,7 @@
 		local adjacentEnemies = ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true);
 		foreach (enemy in adjacentEnemies)
 		{
+			this.registerEnemy(enemy);
 			if (actor.getHitpointsMax() > enemy.getHitpointsMax() && enemy.getMoraleState() == ::Const.MoraleState.Confident)
 			{
 				enemy.setMoraleState(::Const.MoraleState.Steady);
