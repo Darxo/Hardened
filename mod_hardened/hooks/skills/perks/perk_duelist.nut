@@ -1,7 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_duelist", function(q) {
 	q.onUpdate = @(__original) function( _properties )	// This will maybe cause issues with Lunge.
 	{
-		__original(_properties);
+		// __original(_properties);
 		local mainhandItem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 
 		if (mainhandItem == null) return;
