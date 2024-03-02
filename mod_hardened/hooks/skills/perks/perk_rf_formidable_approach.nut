@@ -63,6 +63,7 @@
 			this.registerEnemy(enemy);
 			if (actor.getHitpointsMax() > enemy.getHitpointsMax() && enemy.getMoraleState() == ::Const.MoraleState.Confident)
 			{
+				this.spawnIcon(this.m.Overlay, enemy.getTile());
 				enemy.setMoraleState(::Const.MoraleState.Steady);
 			}
 		}
@@ -124,7 +125,6 @@
 		if (this.m.Enemies.find(_actor.getID()) == null)
 		{
 			this.m.Enemies.push(_actor.getID());
-			this.spawnIcon(this.m.Overlay, _actor.getTile());
 		}
 	}
 
