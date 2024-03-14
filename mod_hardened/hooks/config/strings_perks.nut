@@ -1,4 +1,3 @@
-
 local adjustedDescriptions = [
 	// Vanilla Perks
 	{
@@ -105,7 +104,6 @@ local adjustedDescriptions = [
  					"Damage from Attacks to Armor is increased by the combined weight of your head and body armor.",
 				]
  			}],
-			Footer = ::MSU.Text.colorRed("Cannot be picked if you have [Poise|Perk+perk_rf_poise].")
 	 	}),
 	},
 	{
@@ -229,15 +227,15 @@ local adjustedDescriptions = [
 		ID = "perk.rf_poise",
 		Key = "RF_Poise",
 		Description = ::UPD.getDescription({
-			Fluff = "Specialize in Medium Armor! Not as nimble as some but more lithe than others!",
+			Fluff = "Deftly shift and twist, even within your armor, to minimize the impact of attacks.",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Damage from Attacks to [Hitpoints|Concept.Hitpoints] is reduced by " + ::MSU.Text.colorGreen("30%") + " and to Armor by " + ::MSU.Text.colorGreen("20%") + ".",
-					"The bonus drops exponentially when wearing head and body armor with a combined base penalty to [Maximum Fatigue|Concept.MaximumFatigue] above 35."
+					"Reduce the damage which ignores Armor by " + ::MSU.Text.colorGreen("60%") + ". Lose " + ::MSU.Text.colorRed("1%") + " reduction for each weight on your helmet and body armor combined.",
+					"Armor damage taken from attacks is reduced by a percentage equal to " + ::MSU.Text.colorGreen("40%") + " of your current [Initiative|Concept.Initiative], up to a maximum of " + ::MSU.Text.colorGreen("40%"),
+					// "Ranged Defense is increased by the percentage of your missing total armor. An empty armor slot counts as missing half of your armor."
 				]
-			}],
-			Footer = ::MSU.Text.colorRed("Cannot be picked if you have [Nimble|Perk+perk_nimble].")
+			}]
 		})
 	},
 	{
@@ -263,3 +261,5 @@ foreach (description in adjustedDescriptions)
 
 ::Const.Strings.PerkName.Footwork = "Escape Artist";
 ::Const.Perks.findById("perk.footwork").Name = ::Const.Strings.PerkName.Footwork;
+::Const.Strings.PerkName.RF_Poise = "Flexible";
+::Const.Perks.findById("perk.rf_poise").Name = ::Const.Strings.PerkName.RF_Poise;
