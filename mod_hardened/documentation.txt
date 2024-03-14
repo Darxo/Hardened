@@ -16,8 +16,18 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Is safe to remove from- and add to any existing savegames
 
 # Future Plans:
+- Hide/Improve information about allies/enemies composition/amount on the battle field
 
 # Changes:
+
+0.3.6
+	- Poise is now called Flexible and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. It also reduces your armor damage taken by a percentage equal to 40% of your current Initiative (up to a maximum of 40%)
+	- Nimble and Flexible (formerly Poise) can now be picked at the same time on the same character
+	- The Sergeants Sash now only provides its Resolve bonus if the character its equipped to has the perk Rally the Troops
+	- Actors which are not visible to the player will no longer produce idle or death sounds.
+	- Formidable Approach no longer spawns an overlay icon every time you move to an enemy, only when you remove confident from them.
+	- fix: Duelist no longer provides a Reach Bonus while wielding two-handed weapons
+	- fix: Reach is now correctly set to 0 when a character is stunned or fleeing
 
 0.3.5
 	- fix formidable approach becoming buggy when the user gets hit

@@ -10,6 +10,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - You have Reach Advantage during any melee attack if your Reach is greater than the Reach of the entity you are attacking
 - Reach Advantage always grants 13% increased Melee Skill (it is unaffected by the difference in Reach)
+- Reach is 0 while the character does not emit a zone of control (e.g. stunned, fleeing)
+- Reach is halved while the character is rooted
 
 **Removed from Reforged:**
 - penalty for Reach Disadvantage
@@ -26,7 +28,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Shooting Crossbows now costs -1 Action Point and has +10% chance to hit
 - Reloading Crossbows now costs +1 Action Point
-- Reloading Crossbows now applies **Reload Disrientation** to you until the start of your next turn.
+- Reloading Crossbows now applies **Reload Disorientation** to you until the start of your next turn.
 - **Reload Disorientation** applies  -10 Ranged Skill and -10 Ranged Defense
 
 ### Misc
@@ -45,10 +47,12 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Change **Dodge** effect is now between 5% and 20% of Initiative (instead of always 15%) depending on the amount of adjacent empty tiles
 - Change **Duelist** to only works for one-handed weapons. The Penetration is increased to 30% and is now also halfed with 2 enemies and disabled with 3+
 - **Fortified Mind** now provides 30% Resolve (up from 25%). This Bonus is now reduces by 1% for each Helmet Weight.
-- **Nimble**, **Poise** and **Battle Forged** no longer provide any Reach Ignore
-- **Nimble** now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
+- **Battle Forged** no longer provide any Reach Ignore
+- **Nimble** is completely reworked: It now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
+- **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. It also increases your Ranged Defense by the percentage of your missing total armor.
+- **Nimble** and **Flexible** (formerly Poise) no longer exclude each other from being picked, after one of them is learned
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy.
-- Rework **Formidable Approach** to only works for Two-Handed weapons. It now grant 15 Melee Skill instead of Reach but only triggers when you are the one moving next to an enemy. When your maximum Hitpoints are higher than those of your opponent, it removes confident from them.
+- Rework **Formidable Approach** to only work for Two-Handed weapons. It now grant 15 Melee Skill instead of Reach but only triggers when you are the one moving next to an enemy. When your maximum Hitpoints are higher than those of your opponent, it removes confident from them.
 - **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
 - Rework **Spear Advantage** to double the effect of Reach Advantage on you
 - Relocate the skill **Sprint** from **Pathfinder** to **Footwork**. **Footwork** has been renamed to **Escape Artist**
@@ -57,6 +61,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - **Wodden Flail** now deals 15-30 damage (up from 10-25) and costs 60 gold (up from 40)
 - **Goblin Pikes**, **Ancient Pikes** and **Pikes** are now also of the weapontype Spear
+- **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk Rally the Troops
 - **Fangshire** will no longer spawn at the start of the game
 
 ### Skills
@@ -89,6 +94,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 - **Bags and Belts** is now part of the **Light Armor** group instead of being available for everyone
 - **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
+- Characters which are not visible to the player will no longer produce idle or death sounds.
 
 ## Quality of Life
 
