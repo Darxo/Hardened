@@ -147,7 +147,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"[Action Point|Concept.ActionPoints] costs for movement on all terrain is reduced by " + ::MSU.Text.colorRed("-1") + " to a minimum of 2 [Action Points|Concept.ActionPoints] per tile, and [Fatigue|Concept.Fatigue] cost is reduced to half.",
+						"[Action Point|Concept.ActionPoints] costs for movement on all terrain is reduced by " + ::MSU.Text.colorGreen("1") + " to a minimum of 2 [Action Points|Concept.ActionPoints] per tile, and [Fatigue|Concept.Fatigue] cost is reduced to " + ::MSU.Text.colorGreen("half") + ".",
 						"Changing height levels also has no additional [Action Point|Concept.ActionPoints] cost anymore."
 					]
 				}
@@ -162,7 +162,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Initiative is reduced only by " + ::MSU.Text.colorRed("50%") + " of your Fatigue, instead of all of it.",
+						"Initiative is reduced only by " + ::MSU.Text.colorGreen("50%") + " of your Fatigue, instead of all of it.",
 						"Using the \'Wait\' command or [Recover|Skill+recover_skill] will no longer give you a penalty to Initiative until your next turn."
 					]
 				}
@@ -247,7 +247,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"[Melee Skill|Concept.MeleeSkill] is increased by another " + ::MSU.Text.colorGreen((::Reforged.Reach.ReachAdvantageMult * 100 - 100) + "%") + " while you have [Reach Advantage|Concept.ReachAdvantage]"
+					"[Melee Skill|Concept.MeleeSkill] is increased by another " + ::MSU.Text.colorizeMult(::Reforged.Reach.ReachAdvantageMult) + " while you have [Reach Advantage|Concept.ReachAdvantage]"
 				]
 			}]
 		})
