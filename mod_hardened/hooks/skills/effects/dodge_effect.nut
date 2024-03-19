@@ -62,7 +62,7 @@
 	// new function to have a variable description text
 	q.getDescription <- function()
 	{
-		local ret = ::Reforged.Mod.Tooltips.parseString("Gain " + ::MSU.Text.colorGreen(this.m.BaseMultiplier + "%") + " + an additional " + ::MSU.Text.colorGreen(this.m.MultiplierPerEmptyTile + "%") + " per empty adjacent tile of this character\'s current [Initiative|Concept.Initiative] as a bonus to Melee- and Ranged Defense.");
+		local ret = ::Reforged.Mod.Tooltips.parseString("Gain " + ::MSU.Text.colorPositive(this.m.BaseMultiplier + "%") + " + an additional " + ::MSU.Text.colorPositive(this.m.MultiplierPerEmptyTile + "%") + " per empty adjacent tile of this character\'s current [Initiative|Concept.Initiative] as a bonus to Melee- and Ranged Defense.");
 		return ret;
 	}
 

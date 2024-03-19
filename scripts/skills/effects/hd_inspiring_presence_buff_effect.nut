@@ -30,7 +30,7 @@ this.hd_inspiring_presence_buff_effect <- ::inherit("scripts/skills/skill", {
 			id = 10,
 			type = "text",
 			icon = "ui/icons/action_points.png",
-			text = ::MSU.Text.colorGreen("+" + this.m.BonusActionPoints) + " Action Points"
+			text = ::MSU.Text.colorizeValue(this.m.BonusActionPoints) + " Action Points"
 		});
 
 		return tooltip;

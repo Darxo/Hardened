@@ -35,7 +35,7 @@ this.rf_battle_song_skill <- ::inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Grant \'Inspired by Song\' effect to all allies within " + ::MSU.Text.colorGreen(this.getMaxRange()) + " tiles adding " + ::MSU.Text.colorGreen(this.m.ResolveBuffPercentage + "%") + " of your current Resolve to them or increase the current bonus of an existing effect by the same amount."
+				text = "Grant \'Inspired by Song\' effect to all allies within " + ::MSU.Text.colorPositive(this.getMaxRange()) + " tiles adding " + ::MSU.Text.colorPositive(this.m.ResolveBuffPercentage + "%") + " of your current Resolve to them or increase the current bonus of an existing effect by the same amount."
 			},
 			{
 				id = 10,

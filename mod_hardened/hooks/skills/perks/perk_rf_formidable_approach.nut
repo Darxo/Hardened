@@ -34,7 +34,7 @@
 						id = 10,
 						type = "text",
 						icon = "ui/icons/damage_dealt.png",
-						text = ::MSU.Text.colorGreen("+" + this.m.MeleeSkillBonus) + " Melee Skill when attacking " + ::Const.UI.getColorizedEntityName(enemy)
+						text = ::MSU.Text.colorPositive("+" + this.m.MeleeSkillBonus) + " Melee Skill when attacking " + ::Const.UI.getColorizedEntityName(enemy)
 					}
 				)
 			}
@@ -97,7 +97,7 @@
 
 		_tooltip.push({
 			icon = "ui/tooltips/positive.png",
-			text = ::MSU.Text.colorGreen(this.m.MeleeSkillBonus + "% ") + this.getName()
+			text = ::MSU.Text.colorPositive(this.m.MeleeSkillBonus + "% ") + this.getName()
 		});
 	}
 

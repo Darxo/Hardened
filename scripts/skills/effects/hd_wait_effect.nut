@@ -22,7 +22,7 @@ this.hd_wait_effect <- this.inherit("scripts/skills/skill", {
 				id = 12,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = ::MSU.Text.colorRed((this.m.InitiativeMultiplier * 100.0) - 100 + "%") + " Initiative"
+				text = ::MSU.Text.colorNegative((this.m.InitiativeMultiplier * 100.0) - 100 + "%") + " Initiative"
 			}
 		)
 		return ret;

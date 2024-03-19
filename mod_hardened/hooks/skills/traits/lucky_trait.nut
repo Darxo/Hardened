@@ -31,7 +31,7 @@
 
 			this.spawnIcon("rf_lucky_trait", this.getContainer().getActor().getTile());
 
-			local logText = ::Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " was lucky and takes " + ::MSU.Text.colorGreen("no damage");
+			local logText = ::Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " was lucky and takes " + ::MSU.Text.colorPositive("no damage");
 			if (_attacker != null) logText += " from " + ::Const.UI.getColorizedEntityName(_attacker);
 			::Tactical.EventLog.logEx(logText);
 		}
