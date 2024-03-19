@@ -34,6 +34,19 @@
 	}
 
 // Overwrites
+	q.onUpdate = @() function( _properties )	// we overwrite reforged functions
+	{
+		local actor = this.getContainer().getActor();
+		if (!actor.hasZoneOfControl())
+		{
+			_properties.ReachMult = 0.0;
+		}
+		else if (_properties.IsRooted)
+		{
+			_properties.ReachMult = 0.5;
+		}
+	}
+
 	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties )
 	{
 		this.m.CurrBonus = 0;
@@ -75,7 +88,6 @@
 	}
 
 	// Delete Functions
-	if (q.contains("onUpdate")) delete q.onUpdate;
 	if (q.contains("onTargetMissed")) delete q.onTargetMissed;
 	if (q.contains("onTurnStart")) delete q.onTurnStart;
 	if (q.contains("onTurnEnd")) delete q.onTurnEnd;
