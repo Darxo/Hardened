@@ -141,7 +141,7 @@
 					id = 6,
 					type = "text",
 					icon = "ui/icons/bag.png",
-					text = "Total Weight: " + ::Math.abs(entity.getItems().getStaminaModifier())
+					text = "Total Weight: " + ::Math.abs(entity.getItems().getWeight())
 				}
 			]);
 		}

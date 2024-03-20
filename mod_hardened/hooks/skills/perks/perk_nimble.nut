@@ -34,7 +34,7 @@
 
 	q.getArmorDamage = @() function()
 	{
-		local weight = -1 * this.getContainer().getActor().getItems().getStaminaModifier([::Const.ItemSlot.Body, ::Const.ItemSlot.Head]);
+		local weight = this.getContainer().getActor().getItems().getWeight([::Const.ItemSlot.Body, ::Const.ItemSlot.Head]);
 		return 1.0 + (weight / 100.0);
 	}
 

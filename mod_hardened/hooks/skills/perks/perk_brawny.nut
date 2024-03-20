@@ -5,8 +5,8 @@
 		local actor = this.getContainer().getActor();
 		if (actor.getFaction() != ::Const.Faction.Player)
 		{
-			local fat = actor.getItems().getStaminaModifier([::Const.ItemSlot.Body, ::Const.ItemSlot.Head]);
-			actor.m.BaseProperties.Stamina -= ::Math.floor(fat * 0.3);
+			local weight = actor.getItems().getWeight([::Const.ItemSlot.Body, ::Const.ItemSlot.Head]);
+			actor.m.BaseProperties.Stamina += ::Math.floor(weight * 0.3);
 			this.removeSelf();
 		}
 	}

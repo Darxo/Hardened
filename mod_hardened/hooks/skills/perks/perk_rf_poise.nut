@@ -64,8 +64,8 @@
 // New Functions
 	q.getDirectDamageReceivedMult <- function()
 	{
-		local totalWeight = this.getContainer().getActor().getItems().getStaminaModifier([::Const.ItemSlot.Body, ::Const.ItemSlot.Head]);
-		local directDamageMult = this.m.DirectDamageReceivedMult + (-1.0 * totalWeight / 100.0);
+		local totalWeight = this.getContainer().getActor().getItems().getWeight([::Const.ItemSlot.Body, ::Const.ItemSlot.Head]);
+		local directDamageMult = this.m.DirectDamageReceivedMult + (totalWeight / 100.0);
 		return ::Math.minf(1.0, directDamageMult);	// We never want this perk to ever increase damage taken
 	}
 
