@@ -87,6 +87,10 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Weasel** now provides an additional 25 Melee Defense during that brothers turn while fleeing.
 - **Irrational** will no longer appear on recruits.
 
+### Enemies
+
+- Zombies no longer have **Double Grip** but gain +5 Melee Skill in return.
+
 ### Other
 
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
@@ -95,6 +99,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Bags and Belts** is now part of the **Light Armor** group instead of being available for everyone
 - **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
 - Characters which are not visible to the player will no longer produce idle or death sounds.
+- The combat map is no longer revealed at the end of a battle
+- Every accessory now plays a default sound when moved around in the inventory
 
 ## Quality of Life
 
@@ -103,17 +109,17 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - Improve formatting of **Nimble** and **Poise** perk desriptions
 - The tooltips of your attributes now display your Base Attribute value and the difference between that Base value and your current value
+- Settlements now display a tooltip showing how many days ago you last visited that location
 
 ## Fixes
 
 ### Reforged
 
-- **Discovered Talent** can no longer be picked while you have any pending attribute level-ups. As a result it can no longer be used to transform pending artificial level-ups (Gifted, Blue Vial, Veteran Level-Ups) into ones that scale with stars
-
 ### Vanilla
 
 - Parties on the world map are no longer hidden after loading a game, while the game is still paused
 - You can no longer do two Arenas during the same day
+- Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
 
 # Requirements
 
@@ -123,6 +129,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Enemies may spawn with perks that they can't use anymore (**Duelist**/**Formidable Approach**) because I didn't touch their spawning behaviors in that regard.
 - Using Recover will prevent you from using **Wait Round** for the rest of this round
+- Famed Shields can still roll shieldignore stat even though that is now hidden and doesn't do anything
 
 # Compatibility
 

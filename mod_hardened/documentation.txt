@@ -16,9 +16,16 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Is safe to remove from- and add to any existing savegames
 
 # Future Plans:
-- Hide/Improve information about allies/enemies composition/amount on the battle field
+- Hide information about enemy composition on the battle field
 
 # Changes:
+
+0.3.7
+	- Zombies no longer have **Double Grip** but gain +5 Melee Skill in return
+	- Settlements now display a tooltip showing how many days ago you last visited that location
+	- The combat map is no longer revealed at the end of a battle
+	- Every accessory now plays a default sound when moved around in the inventory
+	- fix(vanilla): Newly spawned parties no longer teleport a few tiles towards their destination during the first tick
 
 0.3.6
 	- Poise is now called Flexible and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. It also reduces your armor damage taken by a percentage equal to 40% of your current Initiative (up to a maximum of 40%)
