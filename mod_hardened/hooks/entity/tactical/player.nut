@@ -1,4 +1,12 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/player", function(q) {
+	q.onInit = @(__original) function()
+	{
+		__original();
+
+		// Apply difficulty-specific damage multiplier
+		this.m.BaseProperties.DamageReceivedRegularMult *= ::Const.Difficulty.getPlayerDamageReceivedMult();
+	}
+
 	q.fillAttributeLevelUpValues = @(__original) function( _amount, _maxOnly = false, _minOnly = false )
 	{
 		__original(_amount, _maxOnly, _minOnly);
