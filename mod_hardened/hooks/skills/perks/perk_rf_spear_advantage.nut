@@ -1,6 +1,4 @@
-::Hardened.HooksMod.rawHook("scripts/skills/perks/perk_rf_spear_advantage", function(p) {
-	::Hardened.wipeFunctions(p);	// Wipe the original perk
-});
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_spear_advantage");
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_spear_advantage", function(q) {
 	q.create <- function()

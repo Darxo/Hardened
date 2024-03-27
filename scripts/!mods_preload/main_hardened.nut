@@ -62,17 +62,19 @@
 	::DynamicPerks.addPerkGroupToTooltips();	// Update all perk tooltips to reflect the possible changes done to them by moving them around
 }, ::Hooks.QueueBucket.AfterHooks);
 
-// Wipe all functions in the passed class
-::Hardened.wipeFunctions <- function( _hookedClass )
+// Delete all functions in the passed class so that its shell can be repurposed without changing every instance that was pointing to the old script
+::Hardened.wipeClass <- function( _classPath )
 {
-	local toDelete = [];
-	foreach (name, func in _hookedClass)
-	{
-		if (typeof func == "function") toDelete.push(name);
-	}
+	::Hardened.HooksMod.rawHook(_classPath, function(p) {
+		local toDelete = [];
+		foreach (name, func in p)
+		{
+			if (typeof func == "function") toDelete.push(name);
+		}
 
-	foreach(functionName in toDelete)
-	{
-		delete _hookedClass[functionName];
-	}
+		foreach(functionName in toDelete)
+		{
+			delete p[functionName];
+		}
+	});
 }

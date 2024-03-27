@@ -1,6 +1,4 @@
-::Hardened.HooksMod.rawHook("scripts/skills/perks/perk_rf_formidable_approach", function(p) {
-	::Hardened.wipeFunctions(p);	// Wipe the original perk
-});
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_formidable_approach");
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_formidable_approach", function(q) {
 	q.m.MeleeSkillBonus <- 15;
