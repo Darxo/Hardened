@@ -33,7 +33,7 @@
 			]);
 		}
 
-		if (_elementId == "character-stats.RangeSkill")
+		else if (_elementId == "character-stats.RangeSkill")
 		{
 			ret.extend([
 				{
@@ -72,7 +72,7 @@
 			]);
 		}
 
-		if (_elementId == "character-stats.RangeDefense")
+		else if (_elementId == "character-stats.RangeDefense")
 		{
 			ret.extend([
 				{
@@ -92,7 +92,7 @@
 			]);
 		}
 
-		if (_elementId == "character-stats.Hitpoints")
+		else if (_elementId == "character-stats.Hitpoints")
 		{
 			ret.extend([
 				{
@@ -112,7 +112,7 @@
 			]);
 		}
 
-		if (_elementId == "character-stats.Fatigue")
+		else if (_elementId == "character-stats.Fatigue")
 		{
 			ret.extend([
 				{
@@ -146,7 +146,7 @@
 			]);
 		}
 
-		if (_elementId == "character-stats.Initiative")
+		else if (_elementId == "character-stats.Initiative")
 		{
 			ret.extend([
 				{
@@ -166,7 +166,7 @@
 			]);
 		}
 
-		if (_elementId == "character-stats.Bravery")
+		else if (_elementId == "character-stats.Bravery")
 		{
 			ret.extend([
 				{
