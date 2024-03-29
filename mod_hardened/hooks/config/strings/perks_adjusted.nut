@@ -132,28 +132,31 @@ local adjustedDescriptions = [
 				},
 			],
 		}),
-	},/*
-	{	// This perk Description doesn't line up with my shield-group reworks.
+	},
+	{
 		ID = "perk.shield_expert",
 		Key = "ShieldExpert",
 		Description = ::UPD.getDescription({
-			Effects = [
-				{
-					Type = ::UPD.EffectType.Passive,
-					Description = [
-						"The shield defense bonus is increased by " + ::MSU.Text.colorPositive("25%") + ". This also applies to the additional defense bonus of the [Shieldwall|Skill+shieldwall] skill.",
-						"Shield damage received is reduced by " + ::MSU.Text.colorNegative("50%") + " to a minimum of 1.",
-						"The [Knock Back|Skill+knock_back] skill gains " + ::MSU.Text.colorPositive("+15%") + " chance to hit and now applies the [Staggered|Skill+staggered_effect] effect.",
-						"Missed attacks against you no longer increase your [Fatigue|Concept.Fatigue]."					]
-				},
-				{
-					Type = ::UPD.EffectType.Active,
-					Description = [
-						"Unlocks the [Cover Ally|Skill+rf_cover_ally_skill] skill which allows you to target an ally to allow them to move 1 tile ignoring [Zone of Control|Concept.ZoneOfControl] on their [turn|Concept.Turn] while improving their position in the turn order in the next [round|Concept.Round]."					]
-				}
-			]
-		})
-	},*/
+	 		Fluff = "Learn to better deflect hits to the side instead of blocking them head on.",
+	 		Effects = [
+		 		{
+	 				Type = ::UPD.EffectType.Passive,
+	 				Description = [
+						"Enemies will never have [Reach Advantage|Concept.ReachAdvantage] against you",
+						"Your shield takes " + ::MSU.Text.colorGreen("50%") + " less damage up to a minimum of 1",
+	 					"The drop in shield defense bonus at maximum [fatigue|Concept.Fatigue] is reduced from " + ::MSU.Text.colorRed("50%") + " to " + ::MSU.Text.colorRed("25%") + ".",
+	 					"Missed attacks against you no longer increase your [Fatigue|Concept.Fatigue].",
+	 				],
+	 			},
+	 			{
+	 				Type = ::UPD.EffectType.Active,
+	 				Description = [
+	 					"Unlocks the [Cover Ally|Skill+rf_cover_ally_skill] skill which allows you to target an ally to allow them to move 1 tile ignoring [Zone of Control|Concept.ZoneOfControl] on their [turn|Concept.Turn] while improving their position in the turn order in the next [round|Concept.Round].",
+	 				],
+	 			},
+ 			],
+	 	}),
+	},
 
 
 	// Reforged Perks
