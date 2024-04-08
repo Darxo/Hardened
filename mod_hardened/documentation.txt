@@ -17,8 +17,17 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Future Plans:
 - Hide information about enemy composition on the battle field
+- Fix Spider Egg bug where they just don't give up
+- Only reveal attacking/casting entities if they are on a tile which is already discovered by the player. This should make scouting/high vision more important
 
 # Changes:
+
+0.3.8
+	- Now compatible with Reforged 0.5.0
+	- **Sweeping Strikes** is compeltely reworked: It now grants +3 Melee Defense for every adjacent enemy until the start of your next turn whenever you use a melee attack skill. It still requires a two-handed weapon
+	- **Shield Expert** no longer grants 25% increased shield defenses. Instead it makes it so enemies will never have Reach Advantage over the shield user.
+	- **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back.
+	- Nachzehrer can no longer swallow player characters while in a net.
 
 0.3.7
 	- Zombies no longer have **Double Grip** but gain +5 Melee Skill in return

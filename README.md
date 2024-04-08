@@ -54,12 +54,11 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy.
 - Rework **Formidable Approach** to only work for Two-Handed weapons. It now grant 15 Melee Skill instead of Reach but only triggers when you are the one moving next to an enemy. When your maximum Hitpoints are higher than those of your opponent, it removes confident from them.
 - **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
-- Rework **Spear Advantage** to double the effect of Reach Advantage on you
-- Relocate the skill **Sprint** from **Pathfinder** to **Footwork**. **Footwork** has been renamed to **Escape Artist**
+- **Shield Expert** no longer grants 25% increased shield defenses. Instead it makes it so enemies will never have Reach Advantage over the shield user.
+- **Sweeping Strikes** is compeltely reworked: It now grants +3 Melee Defense for every adjacent enemy until the start of your next turn whenever you use a melee attack skill. It still requires a two-handed weapon.
 
 ### Items
 
-- **Wodden Flail** now deals 15-30 damage (up from 10-25) and costs 60 gold (up from 40)
 - **Goblin Pikes**, **Ancient Pikes** and **Pikes** are now also of the weapontype Spear
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk Rally the Troops
 - **Fangshire** will no longer spawn at the start of the game
@@ -80,6 +79,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Prong** now has 0% Hitchance bonus (down from 10%)
 - **Rupture** now has 0% Hitchance bonus (down from 5%)
 - **Strike** now has 0% Hitchance bonus (down from 5%)
+- **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back.
 
 ### Traits
 
@@ -90,6 +90,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 ### Enemies
 
 - Zombies no longer have **Double Grip** but gain +5 Melee Skill in return.
+- Nachzehrer can no longer swallow player characters while in a net.
 
 ### Other
 
