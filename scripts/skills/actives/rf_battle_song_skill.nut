@@ -42,7 +42,7 @@ this.rf_battle_song_skill <- ::inherit("scripts/skills/skill", {
 				type = "text",
 				text = "Does not affect allies who are currently inspired by someone elses song."
 			}
-		]);
+		]);asd
 
 		if (::Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
 		{
