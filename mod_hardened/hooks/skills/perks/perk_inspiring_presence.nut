@@ -5,12 +5,14 @@
 	q.getTooltip = @() function()
 	{
 		local tooltip = this.skill.getTooltip();
+
 		tooltip.push({
 			id = 11,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "At the start of each round any adjacent ally with less Resolve gains " + ::MSU.Text.colorizeValue(this.m.BonusActionPoints) + " Action Points if they are adjacent to an enemy, or have an adjacent ally who is adjacent to an enemy."
+			text = ::Reforged.Mod.Tooltips.parseString("At the start of each round any adjacent ally with less [Resolve|Concept.Bravery] gains " + ::MSU.Text.colorizeValue(this.m.BonusActionPoints) + " [Action Points|Concept.ActionPoints] if they are adjacent to an enemy, or have an adjacent ally who is adjacent to an enemy."),
 		});
+
 		return tooltip;
 	}
 

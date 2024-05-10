@@ -7,7 +7,7 @@
 			id = 8,
 			type = "text",
 			icon = "ui/icons/warning.png",
-			text = "Target must be surrounded by atleast two enemies"
+			text = "Target must be surrounded by atleast two enemies",
 		})
 
 		return ret;

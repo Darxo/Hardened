@@ -22,7 +22,7 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/direct_damage.png",
-				text = "Armor penetrating damage from attacks is reduced by " + ::MSU.Text.colorizeMult(directDamageReceivedMult, {InvertColor = true})
+				text = "Armor penetrating damage from attacks is reduced by " + ::MSU.Text.colorizeMult(directDamageReceivedMult, {InvertColor = true}),
 			});
 		}
 
@@ -33,7 +33,7 @@
 				id = 11,
 				type = "text",
 				icon = "ui/icons/armor_body.png",
-				text = "Only receive " + ::MSU.Text.colorizeFraction(armorDamageReceivedMult) + " of any damage to armor from attacks"
+				text = "Only receive " + ::MSU.Text.colorizeFraction(armorDamageReceivedMult) + " of any damage to armor from attacks",
 			});
 		}
 

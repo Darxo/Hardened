@@ -45,14 +45,14 @@
 					id = 10,
 					type = "text",
 					icon = "ui/icons/melee_defense.png",
-					text = "Grants between " + ::MSU.Text.colorizeValue(minValue) + " and " + ::MSU.Text.colorizeValue(maxValue) + " Melee Defense during combat"
+					text = "Grants between " + ::MSU.Text.colorizeValue(minValue) + " and " + ::MSU.Text.colorizeValue(maxValue) + " Melee Defense during combat",
 				},
 				{
 					id = 11,
 					type = "text",
 					icon = "ui/icons/ranged_defense.png",
-					text = "Grants between " + ::MSU.Text.colorizeValue(minValue) + " and " + ::MSU.Text.colorizeValue(maxValue) + " Ranged Defense during combat"
-				}
+					text = "Grants between " + ::MSU.Text.colorizeValue(minValue) + " and " + ::MSU.Text.colorizeValue(maxValue) + " Ranged Defense during combat",
+				},
 			])
 		}
 

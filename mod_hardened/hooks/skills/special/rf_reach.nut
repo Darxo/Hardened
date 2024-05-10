@@ -9,6 +9,16 @@
 	{
 		local ret = __original();
 
+		if (properties.getReachAdvantageBonus() != 0)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/melee_skill.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Reach Advantage grants " + ::MSU.Text.colorizeValue(properties.getReachAdvantageBonus()) + " [Melee Skill|Concept.MeleeSkill]"),
+			});
+		}
+
 		local properties = this.getContainer().getActor().getCurrentProperties();
 		if (properties.getReachAdvantageMult() > 1.0)
 		{
@@ -16,17 +26,7 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "Reach Advantage increases Melee Skill by " + ::MSU.Text.colorizeMult(properties.getReachAdvantageMult())
-			});
-		}
-
-		if (properties.getReachAdvantageBonus() != 0)
-		{
-			ret.push({
-				id = 10,
-				type = "text",
-				icon = "ui/icons/melee_skill.png",
-				text = "Reach Advantage grants " + ::MSU.Text.colorizeValue(properties.getReachAdvantageBonus()) + " Melee Skill"
+				text = ::Reforged.Mod.Tooltips.parseString("Reach Advantage grants " + ::MSU.Text.colorizeMult(properties.getReachAdvantageMult() + " more [Melee Skill|Concept.MeleeSkill]")),
 			});
 		}
 

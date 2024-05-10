@@ -6,7 +6,7 @@
 			id = 8,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Spends your wait action and causes the Wait-Debuff"
+			text = "Spends your wait action and causes the Wait-Debuff",
 		})
 		return ret;
 	}

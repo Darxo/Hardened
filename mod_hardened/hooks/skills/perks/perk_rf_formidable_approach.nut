@@ -27,14 +27,12 @@
 			foreach (enemyID in this.m.Enemies)
 			{
 				local enemy = ::Tactical.getEntityByID(enemyID);
-				tooltip.push(
-					{
-						id = 10,
-						type = "text",
-						icon = "ui/icons/damage_dealt.png",
-						text = ::MSU.Text.colorPositive("+" + this.m.MeleeSkillBonus) + " Melee Skill when attacking " + ::Const.UI.getColorizedEntityName(enemy)
-					}
-				)
+				tooltip.push({
+					id = 10,
+					type = "text",
+					icon = "ui/icons/damage_dealt.png",
+					text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(this.m.MeleeSkillBonus) + " [Melee Skill|Concept.MeleeSkill] when attacking " + ::Const.UI.getColorizedEntityName(enemy)),
+				})
 			}
 		}
 

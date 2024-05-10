@@ -20,7 +20,7 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Damage to armor from attacks is increased by " + ::MSU.Text.colorizeMult(armorDamageMult, {InvertColor = true})
+				text = "Damage to armor from attacks is increased by " + ::MSU.Text.colorizeMult(armorDamageMult, {InvertColor = true}),
 			});
 		}
 
