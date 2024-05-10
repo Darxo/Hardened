@@ -218,6 +218,20 @@ local adjustedDescriptions = [
 			}],
 		}),
 	},
+	{
+		ID = "perk.rf_sweeping_strikes",
+		Key = "RF_SweepingStrikes",
+		Description = ::UPD.getDescription({
+			Fluff = "Keep your enemies at bay with the sweeping swings of your weapon!",
+			Requirement = "Two-Handed Melee Attack",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Whenever you use an attack on an enemy, gain " + ::MSU.Text.colorGreen("+3") + " [Melee Defense|Concept.MeleeDefense] for every adjacent enemy until the start of your next [turn|Concept.Turn].",
+				],
+			}],
+		}),
+	},
 ];
 
 foreach (description in adjustedDescriptions)
