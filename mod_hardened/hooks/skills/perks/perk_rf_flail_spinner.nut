@@ -16,7 +16,7 @@
 			local tileToCheck = enemy.getTile();
 			if (tileToCheck.ID == _targetTile.ID) continue;	// We don't allow this perk to hit the same entity again
 
-			if (this.isUsableOn(_skill, actor.getTile(), tileToCheck))
+			if (this.__isUsableOn(_skill, actor.getTile(), tileToCheck))
 			{
 				potentialTargets.push(tileToCheck);
 			}
@@ -29,7 +29,7 @@
 	}
 
 	// New Functions
-	q.isUsableOn <- function( _skill, _userTile, _targetTile )	// custom implementation of this skill.nut function which assumes the skill will be used for free
+	q.__isUsableOn <- function( _skill, _userTile, _targetTile )	// custom implementation of this skill.nut function which assumes the skill will be used for free
 	{
 		if (_skill.m.IsVisibleTileNeeded && !_targetTile.IsVisibleForEntity)
 		{
