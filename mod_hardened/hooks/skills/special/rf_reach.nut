@@ -9,6 +9,7 @@
 	{
 		local ret = __original();
 
+		local properties = this.getContainer().getActor().getCurrentProperties();
 		if (properties.getReachAdvantageBonus() != 0)
 		{
 			ret.push({
@@ -19,14 +20,23 @@
 			});
 		}
 
-		local properties = this.getContainer().getActor().getCurrentProperties();
 		if (properties.getReachAdvantageMult() > 1.0)
 		{
 			ret.push({
-				id = 10,
+				id = 11,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Reach Advantage grants " + ::MSU.Text.colorizeMult(properties.getReachAdvantageMult() + " more [Melee Skill|Concept.MeleeSkill]")),
+				text = ::Reforged.Mod.Tooltips.parseString("Reach Advantage grants " + ::MSU.Text.colorizeMult(properties.getReachAdvantageMult()) + " more [Melee Skill|Concept.MeleeSkill]"),
+			});
+		}
+
+		if (!properties.IsAffectedByReach)
+		{
+			ret.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Enemies will never have [Reach Advantage|Concept.ReachAdvantage] against you"),
 			});
 		}
 
