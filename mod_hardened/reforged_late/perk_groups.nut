@@ -1,7 +1,7 @@
 // Adjust Reforged Perk Groups
-::Hardened.HooksMod.queue(">mod_reforged", function() {
+{
 	// Always Group
-	foreach (row in ::DynamicPerks.PerkGroups.findById("pg.rf_shield").getTree())
+	foreach (row in ::DynamicPerks.PerkGroups.findById("pg.rf_always_1").getTree())
 	{
 		foreach (i, perk in row)
 		{
@@ -30,4 +30,4 @@
 	}
 
 	::DynamicPerks.addPerkGroupToTooltips();	// Update all perk tooltips to reflect the possible changes done to them by moving them around
-}, ::Hooks.QueueBucket.AfterHooks);
+}

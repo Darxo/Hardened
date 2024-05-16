@@ -28,6 +28,10 @@
 	}
 });
 
+::Hardened.HooksMod.queue(">mod_reforged", function() {
+	::include("mod_hardened/reforged_late/perk_groups");
+}, ::Hooks.QueueBucket.AfterHooks);
+
 // Delete all functions in the passed class so that its shell can be repurposed without changing every instance that was pointing to the old script
 ::Hardened.wipeClass <- function( _classPath )
 {
