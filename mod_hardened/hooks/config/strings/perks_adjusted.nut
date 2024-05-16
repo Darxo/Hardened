@@ -203,7 +203,7 @@ local adjustedDescriptions = [
 				],
 			}],
 		}),
-	},
+	},/*	This perk was removed from Reforged
 	{
 		ID = "perk.rf_spear_advantage",
 		Key = "RF_SpearAdvantage",
@@ -217,7 +217,7 @@ local adjustedDescriptions = [
 				],
 			}],
 		}),
-	},
+	},*/
 	{
 		ID = "perk.rf_sweeping_strikes",
 		Key = "RF_SweepingStrikes",

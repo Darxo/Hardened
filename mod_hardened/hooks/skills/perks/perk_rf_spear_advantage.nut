@@ -1,3 +1,4 @@
+/*	This perk was removed from Reforged. Maybe I reactive this idea in the future
 ::Hardened.wipeClass("scripts/skills/perks/perk_rf_spear_advantage");
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_spear_advantage", function(q) {
@@ -24,3 +25,4 @@
 		_properties.ReachAdvantageMult += (::Reforged.Reach.ReachAdvantageMult - 1.0);
 	}
 });
+*/
