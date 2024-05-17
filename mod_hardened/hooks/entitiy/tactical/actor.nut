@@ -30,4 +30,9 @@
 
 		__original(_type, _volume, _pitch = 1.0);
 	}
+
+	q.hasZoneOfControl = @(__original) function()
+	{
+		return __original() && this.getCurrentProperties().CanExertZoneOfControl;
+	}
 });
