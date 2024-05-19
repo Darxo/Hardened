@@ -1,7 +1,9 @@
 // Adjust Reforged Perk Groups
 {
 	// Always Group
-	foreach (row in ::DynamicPerks.PerkGroups.findById("pg.rf_always_1").getTree())
+	local pgAlwaysGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_always_1");
+	pgAlwaysGroup.getTree()[0].push("perk.student");	// Add Student
+	foreach (row in pgAlwaysGroup.getTree())
 	{
 		foreach (i, perk in row)
 		{

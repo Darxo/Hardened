@@ -1,3 +1,5 @@
+// This is loaded AFTER perk_defs.nut is loaded
+
 local adjustedDescriptions = [
 	// Vanilla Perks
 	{
@@ -165,6 +167,20 @@ local adjustedDescriptions = [
 	 				],
 	 			},
  			],
+	 	}),
+	},
+	{
+		ID = "perk.student",	// This does not need to be the updated id
+		Key = "Student",
+		Description = ::UPD.getDescription({
+			Fluff = "Everything can be learned if you put your mind to it.",
+	 		Effects = [{
+ 				Type = ::UPD.EffectType.OneTimeEffect,
+ 				Description = [
+					"Gain " + ::MSU.Text.colorGreen(1) + " perk point upon completing your next 3 [levels|Concept.Level] after picking this perk.",
+				],
+ 			}],
+			Footer = ::MSU.Text.colorRed("This perk cannot be refunded."),
 	 	}),
 	},
 
