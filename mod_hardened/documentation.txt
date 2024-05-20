@@ -22,6 +22,14 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.3.9
+	- **Student** is completely reworked: It is now always available on everybody. It grants +1 Perk Point after 3 more levels have been gained.
+	- **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
+	- The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event.
+	- Fix **Reload Disorientation** missing icons
+	- Fix perk group changes not being applied correctly
+	- Fix Sword Mastery perk description to align with reforged again
+
 0.3.8
 	- Now compatible with Reforged 0.5.0
 	- **Sweeping Strikes** is compeltely reworked: It now grants +3 Melee Defense for every adjacent enemy until the start of your next turn whenever you use a melee attack skill. It still requires a two-handed weapon

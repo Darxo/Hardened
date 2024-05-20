@@ -55,7 +55,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Rework **Formidable Approach** to only work for Two-Handed weapons. It now grant 15 Melee Skill instead of Reach but only triggers when you are the one moving next to an enemy. When your maximum Hitpoints are higher than those of your opponent, it removes confident from them.
 - **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
 - **Shield Expert** no longer grants 25% increased shield defenses. Instead it makes it so enemies will never have Reach Advantage over the shield user.
-- **Sweeping Strikes** is compeltely reworked: It now grants +3 Melee Defense for every adjacent enemy until the start of your next turn whenever you use a melee attack skill. It still requires a two-handed weapon.
+- **Student** is completely reworked: It is now always available on everybody. It grants +1 Perk Point after 3 more levels have been gained.
+- **Sweeping Strikes** is completely reworked: It now grants +3 Melee Defense for every adjacent enemy until the start of your next turn whenever you use a melee attack skill. It still requires a two-handed weapon.
 
 ### Items
 
@@ -80,6 +81,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Rupture** now has 0% Hitchance bonus (down from 5%)
 - **Strike** now has 0% Hitchance bonus (down from 5%)
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back.
+- **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
 
 ### Traits
 
@@ -89,7 +91,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 ### Enemies
 
-- Zombies no longer have **Double Grip** but gain +5 Melee Skill in return.
+- Zombies no longer have **Double Grip** but gain +5 Melee Skill.
 - Nachzehrer can no longer swallow player characters while in a net.
 
 ### Other
@@ -111,6 +113,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Improve formatting of **Nimble** and **Poise** perk desriptions
 - The tooltips of your attributes now display your Base Attribute value and the difference between that Base value and your current value
 - Settlements now display a tooltip showing how many days ago you last visited that location
+- The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event.
 
 ## Fixes
 
@@ -131,6 +134,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Enemies may spawn with perks that they can't use anymore (**Duelist**/**Formidable Approach**) because I didn't touch their spawning behaviors in that regard.
 - Using Recover will prevent you from using **Wait Round** for the rest of this round
 - Famed Shields can still roll shieldignore stat even though that is now hidden and doesn't do anything
+- **Student** will double-dip for the Manhunter Origin for Slaves.
 
 # Compatibility
 
