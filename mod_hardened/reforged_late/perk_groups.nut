@@ -31,5 +31,15 @@
 		}
 	}
 
+	// Leadership
+	local pgLeadership = ::DynamicPerks.PerkGroups.findById("pg.special.rf_leadership");
+	foreach (row in pgLeadership.getTree())
+	{
+		foreach (i, perk in row)
+		{
+			if (perk == "perk.mastery.polearm") row.remove(i);	// Remove Polearm Mastery
+		}
+	}
+
 	::DynamicPerks.addPerkGroupToTooltips();	// Update all perk tooltips to reflect the possible changes done to them by moving them around
 }
