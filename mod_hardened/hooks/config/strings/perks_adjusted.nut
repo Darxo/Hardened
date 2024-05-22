@@ -55,7 +55,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Attacks have a " + ::MSU.Text.colorPositive("100%") + " chance to perform a free extra attack of the same type with " + ::MSU.Text.colorNegative("50%") + " reduced damage to a different valid enemiy within 2 tiles.",
+					"Attacks have a " + ::MSU.Text.colorPositive("100%") + " chance to perform a free extra attack of the same type to a different valid enemiy within 2 tiles. This attack deals " + ::MSU.Text.colorNegative("50%") + " less damage.",
 				],
 			}],
 		}),
@@ -82,8 +82,8 @@ local adjustedDescriptions = [
 	 		Effects = [{
  				Type = ::UPD.EffectType.Passive,
  				Description = [
- 					"Damage from Attacks to [Hitpoints|Concept.Hitpoints] is reduced by " + ::MSU.Text.colorPositive("60%") + ".",
- 					"Damage from Attacks to Armor is increased by the combined weight of your head and body armor.",
+ 					"Take " + ::MSU.Text.colorPositive("60%") + " less [Hitpoint|Concept.Hitpoints] damage from Attacks.",
+ 					"Take more armor damage equal to the combined weight of your head and body armor as a percentage.",
 				],
  			}],
 	 	}),
@@ -138,8 +138,8 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Initiative is reduced only by " + ::MSU.Text.colorPositive("50%") + " of your Fatigue, instead of all of it.",
-						"Using the \'Wait\' command or [Recover|Skill+recover_skill] will no longer give you a penalty to Initiative until your next turn.",
+						"Receive " + ::MSU.Text.colorPositive("50%") + " less Initiative penalty from your [Fatigue|Concept.Fatigue].",
+						"Using the \'Wait\' command or [Recover|Skill+recover_skill] will no longer give you a penalty to [Initiative|Concept.Initiative] until your next turn.",
 					],
 				},
 			],
@@ -157,7 +157,7 @@ local adjustedDescriptions = [
 						"Enemies will never have [Reach Advantage|Concept.ReachAdvantage] against you",
 						"Your shield takes " + ::MSU.Text.colorGreen("50%") + " less damage up to a minimum of 1",
 	 					"The drop in shield defense bonus at maximum [fatigue|Concept.Fatigue] is reduced from " + ::MSU.Text.colorRed("50%") + " to " + ::MSU.Text.colorRed("25%") + ".",
-	 					"Missed attacks against you no longer increase your [Fatigue|Concept.Fatigue].",
+	 					"Missed attacks against you no longer build up [Fatigue|Concept.Fatigue].",
 	 				],
 	 			},
 	 			{
@@ -224,8 +224,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Reduce the damage which ignores Armor by " + ::MSU.Text.colorPositive("60%") + ". Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each weight on your helmet and body armor combined.",
-					"Armor damage taken from attacks is reduced by a percentage equal to " + ::MSU.Text.colorPositive("40%") + " of your current [Initiative|Concept.Initiative], up to a maximum of " + ::MSU.Text.colorPositive("40%"),
+					"Take up to " + ::MSU.Text.colorPositive("60%") + " less armor penetration damage from attacks. Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each weight on your helmet and body armor combined.",
+					"Take up to " + ::MSU.Text.colorPositive("40%") + " less armor damage from attack. This reduction is a percentage equal to " + ::MSU.Text.colorPositive("40%") + " of your current [Initiative|Concept.Initiative].",
 				],
 			}],
 		}),

@@ -2,7 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Description = ::Reforged.Mod.Tooltips.parseString("Reach is a depiction of how far a character\'s attacks can reach, making melee combat easier against targets with shorter reach.\n\n[Melee skill|Concept.MeleeSkill] is increased by " + ::MSU.Text.colorPositive((::Reforged.Reach.ReachAdvantageMult * 100.0 - 100.0) + "%") + " when attacking opponents with shorter reach. Characters who are [stunned|Skill+stunned_effect], fleeing, or without a melee attack have no Reach.");
+		this.m.Description = ::Reforged.Mod.Tooltips.parseString("Reach is a depiction of how far a character\'s attacks can reach, making melee combat easier against targets with shorter reach.\n\nGain " + ::MSU.Text.colorizeMult(::Reforged.Reach.ReachAdvantageMult) + " more [Melee skill|Concept.MeleeSkill] when attacking someone with shorter reach. Characters who are [stunned|Skill+stunned_effect], fleeing, or without a melee attack have no Reach.");
 	}
 
 	q.getTooltip = @(__original) function()

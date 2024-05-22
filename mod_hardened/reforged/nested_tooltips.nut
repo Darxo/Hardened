@@ -1,3 +1,5 @@
-::Reforged.NestedTooltips.Tooltips.Concept.Reach = ::MSU.Class.BasicTooltip("Reach", ::Reforged.Mod.Tooltips.parseString("Reach is a depiction of how far a character\'s attacks can reach, making melee combat easier against targets with shorter reach.\n\n[Melee skill|Concept.MeleeSkill] is increased by " + ::MSU.Text.colorPositive((::Reforged.Reach.ReachAdvantageMult * 100 - 100) + "%") + " when attacking opponents with shorter Reach.\n\nCharacters who are [stunned|Skill+stunned_effect], fleeing, or without a melee attack have no Reach."));
+local reachSkillDescription = ::new("scripts/skills/special/rf_reach").m.Description;
+
+::Reforged.NestedTooltips.Tooltips.Concept.Reach = ::MSU.Class.BasicTooltip("Reach", reachSkillDescription);
 ::Reforged.NestedTooltips.Tooltips.Concept.ReachAdvantage = ::MSU.Class.BasicTooltip("Reach Advantage", ::Reforged.Mod.Tooltips.parseString("A character is considered to have Reach Advantage when their [Reach|Concept.Reach] is greater than that of the other character during a melee attack."));
 ::Reforged.NestedTooltips.Tooltips.Concept.ReachDisadvantage = ::MSU.Class.BasicTooltip("Reach Disadvantage", ::Reforged.Mod.Tooltips.parseString("A character is considered to have Reach Disadvantage when their [Reach|Concept.Reach] is lower than that of the other character during a melee attack."));
