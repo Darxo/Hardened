@@ -229,7 +229,22 @@ local adjustedDescriptions = [
 				],
 			}],
 		}),
-	},/*	This perk was removed from Reforged
+	},
+	{
+		ID = "perk.rf_skirmisher",
+		Key = "RF_Skirmisher",
+		Description = ::UPD.getDescription({
+			Fluff = "Gain increased speed and endurance by balancing your armor and mobility.",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain [Initiative|Concept.Initiative] equal to " + ::MSU.Text.colorPositive("50%") + " of the weight of your body armor.",
+					"You lose " + ::MSU.Text.colorPositive("50%") + " less [Initiative|Concept.Initiative] from your current [Fatigue|Concept.Fatigue].",
+				],
+			}],
+		}),
+	},
+	/*	This perk was removed from Reforged
 	{
 		ID = "perk.rf_spear_advantage",
 		Key = "RF_SpearAdvantage",

@@ -3,6 +3,11 @@
 	{
 		__original();
 
-		this.m.IsHidden = true;		// The information from this perk is very useless. At that point we might aswell display Colossus and Fortified Mind
+		this.m.IsHidden = true;
+	}
+
+	q.getInitiativeBonus = @() function()
+	{
+		return ::Math.floor(this.getContainer().getActor().getItems().getWeight([::Const.ItemSlot.Body]) * 0.5);
 	}
 });
