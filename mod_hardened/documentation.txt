@@ -19,6 +19,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Hide information about enemy composition on the battle field
 - Fix Spider Egg bug where they just don't give up
 - Only reveal attacking/casting entities if they are on a tile which is already discovered by the player. This should make scouting/high vision more important
+- Fix enemies being visible upon loading even though they should not be visible (enemies in forest)
+- Remove pocket sand from nomads
+- make shields destructable again
 
 # Changes:
 
