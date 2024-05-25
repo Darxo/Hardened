@@ -273,6 +273,19 @@ local adjustedDescriptions = [
 			}],
 		}),
 	},
+	{
+		ID = "perk.rf_wears_it_well",
+		Key = "RF_WearsItWell",
+		Description = ::UPD.getDescription({
+			Fluff = "Years of carrying heavy loads has given you the capability to carry the burden of your mercenary gear with ease!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain [Stamina|Concept.MaximumFatigue] and [Initiative|Concept.Initiative] equal to " + ::MSU.Text.colorPositive("50%") + " of your combined mainhand and offhand weight.",
+				],
+			}],
+		}),
+	},
 ];
 
 foreach (description in adjustedDescriptions)
