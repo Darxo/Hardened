@@ -274,6 +274,21 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_through_the_gaps",
+		Key = "RF_ThroughTheGaps",
+		Description = ::UPD.getDescription({
+			Fluff = "Learn to call your strikes and target gaps in your opponents\' armor!",
+			Requirement = "Spear and Piercing Attack",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Your attacks against targets with armor will always target the body part with the lowest armor.",
+					"Armor penetration is reduced by " + ::MSU.Text.colorNegative("10%") + ".",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_wears_it_well",
 		Key = "RF_WearsItWell",
 		Description = ::UPD.getDescription({
