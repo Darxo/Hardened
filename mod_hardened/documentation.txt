@@ -25,6 +25,17 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.3.10
+	- **Skirmisher** now grants 50% of body armor weight as initiative (previously 30% of body/helmet armor weight) and no longer displays an effect icon
+	- **Through the Gaps** is now always active but now lowers your armor penetration by 10% (down from increasing it by 25%)
+	- **Wears it well** no grants 50% of combined Mainhand and Offhand weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest)
+	- **Polearm Mastery** is no longer part of **Leadership** group
+	- Reach Advantage now grants 15% more Melee Skill (up from 13%)
+	- Fallen Heroes no longer have **Nine Lives** but +15 Hitpoints
+	- Necromancer no longer have 20 natural body armor
+	- Distance text in rumors and contracts now display the tile distance range in brackets
+	- Fix enemy parties not showing up when loading a savegame from within another savegame
+
 0.3.9
 	- **Student** is completely reworked: It is now always available on everybody. It grants +1 Perk Point after 3 more levels have been gained.
 	- **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect

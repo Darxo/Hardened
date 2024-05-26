@@ -9,11 +9,11 @@ This submod is a collection of changes to Reforged that I suggested internally t
 ### Reach Rework
 
 - You have Reach Advantage during any melee attack if your Reach is greater than the Reach of the entity you are attacking
-- Reach Advantage always grants 13% increased Melee Skill (it is unaffected by the difference in Reach)
+- Reach Advantage always grants 15% more Melee Skill (it is unaffected by the difference in Reach)
 - Reach is 0 while the character does not emit a zone of control (e.g. stunned, fleeing)
 - Reach is halved while the character is rooted
 
-**Removed from Reforged:**
+**Removed compared to Reforged:**
 - penalty for Reach Disadvantage
 - overcoming Reach Temporarily
 - Reach Ignore Stat on Shields
@@ -55,8 +55,17 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Rework **Formidable Approach** to only work for Two-Handed weapons. It now grant 15 Melee Skill instead of Reach but only triggers when you are the one moving next to an enemy. When your maximum Hitpoints are higher than those of your opponent, it removes confident from them.
 - **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
 - **Shield Expert** no longer grants 25% increased shield defenses. Instead it makes it so enemies will never have Reach Advantage over the shield user.
+- **Skirmisher** now grants 50% of body armor weight as initiative (previously 30% of body/helmet armor weight) and no longer displays an effect icon
 - **Student** is completely reworked: It is now always available on everybody. It grants +1 Perk Point after 3 more levels have been gained.
 - **Sweeping Strikes** is completely reworked: It now grants +3 Melee Defense for every adjacent enemy until the start of your next turn whenever you use a melee attack skill. It still requires a two-handed weapon.
+- **Through the Gaps** is now always active but now lowers your armor penetration by 10% (down from increasing it by 25%)
+- **Wears it well** no grants 50% of combined Mainhand and Offhand weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest)
+
+### Perk Groups
+
+- **Bags and Belts** is now part of the **Light Armor** group instead of being available for everyone
+- **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
+- **Polearm Mastery** is no longer part of **Leadership** group
 
 ### Items
 
@@ -92,15 +101,15 @@ This submod is a collection of changes to Reforged that I suggested internally t
 ### Enemies
 
 - Zombies no longer have **Double Grip** but gain +5 Melee Skill.
+- Fallen Heroes no longer have **Nine Lives** but +15 Hitpoints
 - Nachzehrer can no longer swallow player characters while in a net.
+- Necromancer no longer have 20 natural body armor
 
 ### Other
 
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied.
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
-- **Bags and Belts** is now part of the **Light Armor** group instead of being available for everyone
-- **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
 - Characters which are not visible to the player will no longer produce idle or death sounds.
 - The combat map is no longer revealed at the end of a battle
 - Every accessory now plays a default sound when moved around in the inventory
@@ -114,6 +123,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - The tooltips of your attributes now display your Base Attribute value and the difference between that Base value and your current value
 - Settlements now display a tooltip showing how many days ago you last visited that location
 - The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event.
+- Distance text in rumors and contracts now display the tile distance range in brackets
+- Slightly Lower the volume of the sfx of the annoying kid calling out for his daddy
 
 ## Fixes
 
@@ -124,6 +135,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Parties on the world map are no longer hidden after loading a game, while the game is still paused
 - You can no longer do two Arenas during the same day
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
+- Remove a duplicate loading screen
 
 # Requirements
 
