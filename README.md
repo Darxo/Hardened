@@ -49,7 +49,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Fortified Mind** now provides 30% Resolve (up from 25%). This Bonus is now reduces by 1% for each Helmet Weight.
 - **Battle Forged** no longer provide any Reach Ignore
 - **Nimble** is completely reworked: It now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
-- **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. It also increases your Ranged Defense by the percentage of your missing total armor.
+- **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. It also reduces your armor damage taken by a percentage equal to 40% of your current Initiative (up to a maximum of 40%)
 - **Nimble** and **Flexible** (formerly Poise) no longer exclude each other from being picked, after one of them is learned
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy.
 - Rework **Formidable Approach** to only work for Two-Handed weapons. It now grant 15 Melee Skill instead of Reach but only triggers when you are the one moving next to an enemy. When your maximum Hitpoints are higher than those of your opponent, it removes confident from them.
@@ -63,6 +63,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 ### Perk Groups
 
+- **Student** is now available for everyone
 - **Bags and Belts** is now part of the **Light Armor** group instead of being available for everyone
 - **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
 - **Polearm Mastery** is no longer part of **Leadership** group
@@ -116,15 +117,14 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 ## Quality of Life
 
+- The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event
+- Settlements now display a tooltip showing how many days ago you last visited that location
+- Distance text in rumors and contracts now display the tile distance range in brackets
 - Legendary Armor and Armor with an attachement that you un-equip are now automatically marked as to-be-repaired
+- The tooltips of your attributes now display your Base Attribute value and the difference between that Base value and your current value
 - **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
 - **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
-- Improve formatting of **Nimble** and **Poise** perk desriptions
-- The tooltips of your attributes now display your Base Attribute value and the difference between that Base value and your current value
-- Settlements now display a tooltip showing how many days ago you last visited that location
-- The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event.
-- Distance text in rumors and contracts now display the tile distance range in brackets
-- Slightly Lower the volume of the sfx of the annoying kid calling out for his daddy
+- Slightly Lower the sfx volume of the annoying kid calling out for his daddy
 
 ## Fixes
 
@@ -145,7 +145,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Enemies may spawn with perks that they can't use anymore (**Duelist**/**Formidable Approach**) because I didn't touch their spawning behaviors in that regard.
 - Using Recover will prevent you from using **Wait Round** for the rest of this round
-- Famed Shields can still roll shieldignore stat even though that is now hidden and doesn't do anything
 - **Student** will double-dip for the Manhunter Origin for Slaves.
 
 # Compatibility
