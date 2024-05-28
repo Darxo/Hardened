@@ -33,7 +33,7 @@
 				id = 11,
 				type = "text",
 				icon = "ui/icons/armor_body.png",
-				text = "Take " + ::MSU.Text.colorizeMult(armorDamageReceivedMult) + " less armor damage from attacks",
+				text = "Take " + ::MSU.Text.colorizeMult(armorDamageReceivedMult, {InvertColor = true}) + " less armor damage from attacks",
 			});
 		}
 
