@@ -24,4 +24,21 @@
 			_properties.MeleeSkill += 10;	// This reverts the vanilla -10 Modifier
 		}
 	}
+
+	q.isUsable = @(__original) function()
+	{
+		return __original() || this.__usesEmptyThrowingWeapon();
+	}
+
+	q.isHidden = @(__original) function()
+	{
+		return __original() && !this.__usesEmptyThrowingWeapon();
+	}
+
+// New Functions
+	q.__usesEmptyThrowingWeapon <- function()
+	{
+		local mainhand = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
+		return (mainhand != null && mainhand.isWeaponType(::Const.Items.WeaponType.Throwing) && mainhand.getAmmo() == 0);
+	}
 });
