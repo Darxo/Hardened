@@ -7,4 +7,62 @@
 
 		return true;
 	}
+
+	/* This change will make it so both, armor and health damage use the exact same base damage roll
+	 * No longer is it possible to low-roll on armor damage and high-roll on the hightpoint damage part.
+	 * This is only confusing when trying to understand the damage dealt in combat and can create additional frustration
+	 */
+	q.onScheduledTargetHit = @(__original) function( _info )
+	{
+		if (!_info.TargetEntity.isAlive())
+		{
+			return __original(_info);;
+		}
+
+		local oldMathRand = ::Math.rand;
+
+		local endSwitcheroo = function()
+		{
+			::Math.rand = oldMathRand;
+		}
+
+		local startSwitcheroo = function()
+		{
+			local previosResult = null;
+			local prevMax = null;
+
+			// We will encounter ::Math.rand in this switcheroo operation exactly two times
+			::Math.rand = function( _min, _max )
+			{
+				if (previosResult == null)	// First time we need to note the min and max range for the base values
+				{
+					previosResult = oldMathRand(_min, _max);
+				}
+
+				return previosResult;	// We now return the same roll in both situations
+			}
+
+			// Exit Plant
+			local oldMax = ::Math.max;
+			::Math.max = function( _a, _b )
+			{
+				endSwitcheroo();
+				local ret = oldMax(_a, _b);
+				::Math.max = oldMax;	// Revert Plant
+				return ret;
+			}
+		}
+
+		// Entry Plant
+		local oldGetHitChance = _info.Properties.getHitchance;
+		_info.Properties.getHitchance = function( _bodyPart )
+		{
+			startSwitcheroo();
+			local ret = oldGetHitChance(_bodyPart);
+			_info.Properties.getHitchance = oldGetHitChance;	// Revert Plant
+			return ret;
+		}
+
+		__original(_info);
+	}
 });
