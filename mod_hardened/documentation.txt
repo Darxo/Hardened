@@ -20,8 +20,13 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Fix Spider Egg bug where they just don't give up
 - Only reveal attacking/casting entities if they are on a tile which is already discovered by the player. This should make scouting/high vision more important
 - Fix enemies being visible upon loading even though they should not be visible (enemies in forest)
-- Remove pocket sand from nomads
+- Remove pocket sand from nomad background
 - make shields destructable again
+- certain unholds/high end orcs being able to throw their own allies behind their back in order to advance into tight spaces
+- During the first tick upon loading, enemy name colors do not always match their alliance status to you (enemy mercenary companies during noble war)
+- Make it so Hook will also move the guy who does the hooking one tile back
+- Make it so hook and push (polearm) ignore shield defense bonus when polearm mastery is picked
+- Move Polearm Mastery AP reduction in an extry perk
 
 # Changes:
 
