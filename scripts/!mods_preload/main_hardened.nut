@@ -32,6 +32,12 @@
 	::include("mod_hardened/reforged_late/perk_groups");
 }, ::Hooks.QueueBucket.AfterHooks);
 
+::Hardened.HooksMod.queue(">mod_reforged", function() {
+	::includeFiles(::IO.enumerateFiles("mod_hardened/first_world_init"));
+}, ::Hooks.QueueBucket.FirstWorldInit);
+
+
+
 // Delete all functions in the passed class so that its shell can be repurposed without changing every instance that was pointing to the old script
 ::Hardened.wipeClass <- function( _classPath )
 {
