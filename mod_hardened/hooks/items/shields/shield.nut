@@ -20,4 +20,8 @@
 		return __original(_damage, _playHitSound);
 	}
 
+	q.RF_getDefenseMult = @() function()
+	{
+		return 1.0;	// Fatigue no longer affects the shield defense in any way
+	}
 });

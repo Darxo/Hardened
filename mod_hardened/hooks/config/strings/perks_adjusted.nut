@@ -156,7 +156,6 @@ local adjustedDescriptions = [
 	 				Description = [
 						"Enemies will never have [Reach Advantage|Concept.ReachAdvantage] against you",
 						"Your shield takes " + ::MSU.Text.colorGreen("50%") + " less damage up to a minimum of 1",
-	 					"The drop in shield defense bonus at maximum [fatigue|Concept.Fatigue] is reduced from " + ::MSU.Text.colorRed("50%") + " to " + ::MSU.Text.colorRed("25%") + ".",
 	 					"Missed attacks against you no longer build up [Fatigue|Concept.Fatigue].",
 	 				],
 	 			},
