@@ -51,10 +51,6 @@
 		{
 			_properties.ReachMult = 0.0;
 		}
-		else if (_properties.IsRooted)
-		{
-			_properties.ReachMult = 0.5;
-		}
 	}
 
 	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties )
