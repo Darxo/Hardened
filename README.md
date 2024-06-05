@@ -11,7 +11,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - You have Reach Advantage during any melee attack if your Reach is greater than the Reach of the entity you are attacking
 - Reach Advantage always grants 15% more Melee Skill (it is unaffected by the difference in Reach)
 - Reach is 0 while the character does not emit a zone of control (e.g. stunned, fleeing)
-- Reach is halved while the character is rooted
 
 **Removed compared to Reforged:**
 - penalty for Reach Disadvantage
@@ -72,6 +71,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - **Goblin Pikes**, **Ancient Pikes** and **Pikes** are now also of the weapontype Spear
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk Rally the Troops
+- **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 1000 Value (up rom 200) and grants 10 Resolve (up from 5)
 - **Fangshire** will no longer spawn at the start of the game
 
 ### Skills
@@ -79,7 +79,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies
 - **Stab** now costs 3 Action Points (down from 4)
-- **Hand-to-Hand Attack** now has 0% Hitchance bonus (up from -10%)
+- **Hand-to-Hand Attack** now has 0% Hitchance bonus (up from -10%). It is now enabled if you carry an empty throwing weapon in your main hand.
 - **Thrust** now has 0% Hitchance bonus (down from 10%)
 - **Slash** now has 0% Hitchance bonus (down from 5%)
 - **Gash** now has 0% Hitchance bonus (down from 5%)
@@ -102,14 +102,15 @@ This submod is a collection of changes to Reforged that I suggested internally t
 ### Enemies
 
 - Zombies no longer have **Double Grip** but gain +5 Melee Skill.
-- Fallen Heroes no longer have **Nine Lives** but +15 Hitpoints
 - Nachzehrer can no longer swallow player characters while in a net.
 - Necromancer no longer have 20 natural body armor
 
 ### Other
 
+- Fatigue no longer has any effect on the defenses granted by shields
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied.
+- The legendary Location Ancient Spire now reveals an area of 3000 (up from 1900). It now also discovers every location in that radius for the player.
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 - Characters which are not visible to the player will no longer produce idle or death sounds.
 - The combat map is no longer revealed at the end of a battle
@@ -133,9 +134,25 @@ This submod is a collection of changes to Reforged that I suggested internally t
 ### Vanilla
 
 - Parties on the world map are no longer hidden after loading a game, while the game is still paused
+- Spiders will now give up when their team has given up even if there are still eggs on the battlefield
 - You can no longer do two Arenas during the same day
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
+- Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
+- Change the inventory icon of the **Witchhunter's Hat** to look exactly like the sprite on the brother
+- The id of the item `mouth_piece` is changed to `armor.head.mouth_piece` (it used to be `armor.head.witchhunter_hat`)
 - Remove a duplicate loading screen
+
+## For Modders
+
+- Entities which have `this.m.IsActingEachTurn = false` (e.g. Donkeys, Phylactery, Spider Eggs) will now trigger `onRoundEnd` after every other entity has triggered it and trigger `onRoundStart` before every other entity has triggered it
+- `IsSpecializedInShields` is no longer set to `true` by **Shield Expert**
+
+### New Character Properties
+
+- `ShieldDamageMult` multiplies incoming shield damage up to a minimum of 1
+- `ReachAdvantageMult` is a multiplier for melee skill during reach advantage
+- `ReachAdvantageBonus` is a flat bonus for melee skill during reach advantage
+- `CanExertZoneOfControl` (`true` by default) can be set to `false` to force an entity to no longer exert zone of control
 
 # Requirements
 

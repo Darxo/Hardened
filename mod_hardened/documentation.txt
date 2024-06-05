@@ -30,6 +30,21 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.3.11
+	- Fatigue no longer has any effect on the defenses granted by shields
+	- **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 1000 Value (up from 200) and grants 10 Resolve (up from 5)
+	- **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand
+	- The Location **Ancient Spire** now reveals an area of 3000 (up from 1900). It now also discovers every location in that radius for the player
+	- Reach is no longer halved while rooted
+	- Remove 15 Hitpoints from Fallen Heroes
+	- Fix Shield Expert not giving Cover Ally
+	- Fix regular crossbow reload cost being reduced by mastery
+	- Fix Sweeping strikes not stacking correctly and keeping its stacks
+	- Vanilla Fix: Spiders Eggs will no longer prevent Spiders from giving up early
+	- Vanilla Fix: Hitpoint and Armor damage base damage rolls for attacks are no longer independant. Now the same base damage roll is used for both damage types
+	- Vanilla Fix: Change the Witchhunter's Hat icon to look exactly like its sprite
+	- Vanilla Fix: Change the id of the item `mouth_piece` to `armor.head.mouth_piece` (it used to be `armor.head.witchhunter_hat`)
+
 0.3.10
 	- **Skirmisher** now grants 50% of body armor weight as initiative (previously 30% of body/helmet armor weight) and no longer displays an effect icon
 	- **Through the Gaps** is now always active but now lowers your armor penetration by 10% (down from increasing it by 25%)
