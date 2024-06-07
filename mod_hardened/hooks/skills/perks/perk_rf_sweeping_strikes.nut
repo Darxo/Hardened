@@ -52,13 +52,23 @@
 		{
 			local actor = this.getContainer().getActor();
 			local adjacentHostiles = ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true);
-			this.m.CurrentMeleeDefenseModifier = adjacentHostiles.len() * this.m.MeleeDefenseModifier;
+			this.m.CurrentMeleeDefenseModifier += adjacentHostiles.len() * this.m.MeleeDefenseModifier;
 		}
 	}
 
 	q.onUpdate <- function( _properties )
 	{
 		_properties.MeleeDefense += this.getCurrentMeleeDefenseModifier();
+	}
+
+	q.onTurnStart <- function()
+	{
+		this.m.CurrentMeleeDefenseModifier = 0;
+	}
+
+	q.onCombatFinished <- function()
+	{
+		this.m.CurrentMeleeDefenseModifier = 0;
 	}
 
 // New Functions
