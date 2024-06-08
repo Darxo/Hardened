@@ -118,6 +118,23 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.mastery.polearm",
+		Key = "SpecPolearm",
+		Description = ::UPD.getDescription({
+	 		Fluff = "Master polearms and keeping the enemy at bay.",
+	 		Requirement = "Polearm",
+	 		Effects = [{
+ 				Type = ::UPD.EffectType.Passive,
+ 				Description = [
+ 					"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue].",
+					"[Hook|Skill+hook] and [Repel|Skill+repel] have " + ::MSU.Text.colorPositive("+15%") + " chance to hit.",
+ 					"Polearms no longer have a penalty for attacking targets directly adjacent.",
+ 					"Gain the [Bolster|Perk+perk_rf_bolster] perk.",
+ 				],
+ 			}],
+	 	}),
+	},
+	{
 		ID = "perk.mastery.sword",
 		Key = "SpecSword",
 		Description = ::UPD.getDescription({
