@@ -12,7 +12,7 @@
 	}
 });
 
-::Reforged.HooksMod.hookTree("scripts/items/shields/shield", function(q) {
+::Hardened.HooksMod.hookTree("scripts/items/shields/shield", function(q) {
 	q.create = @(__original) function()
 	{
 		__original();

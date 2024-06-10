@@ -1,4 +1,4 @@
-::Reforged.HooksMod.hook("scripts/skills/perks/perk_student", function(q) {
+::Hardened.HooksMod.hook("scripts/skills/perks/perk_student", function(q) {
 	// Config
 	q.m.LevelsRequiredForPerk <- 3;		// A character needs to gain this many levels in order to reimburse Student
 
