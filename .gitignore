@@ -1,0 +1,4 @@
+*.zip
+brushes/
+gfx/*.png
+!gfx/*/.png
