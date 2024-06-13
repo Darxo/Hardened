@@ -39,6 +39,6 @@
 	q.__usesEmptyThrowingWeapon <- function()
 	{
 		local mainhand = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
-		return (mainhand != null && mainhand.isWeaponType(::Const.Items.WeaponType.Throwing) && mainhand.getAmmo() == 0);
+		return (mainhand != null && mainhand.isWeaponType(::Const.Items.WeaponType.Throwing) && mainhand.getAmmo() == 0 && mainhand.getAmmoMax() != 0);
 	}
 });
