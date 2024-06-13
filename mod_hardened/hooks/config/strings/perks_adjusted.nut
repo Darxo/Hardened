@@ -317,6 +317,21 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_king_of_all_weapons",
+		Key = "RF_KingOfAllWeapons",
+		Description = ::UPD.getDescription({
+			Fluff = "Wield the spear with unmatched endurance!",
+			Requirement = "Spear",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Your spear attacks no longer build up fatigue.",
+					"Deal " + ::MSU.Text.colorNegative("10%") + " less damage.",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_unstoppable",
 		Key = "RF_Unstoppable",
 		Description = ::UPD.getDescription({
@@ -355,3 +370,6 @@ foreach (description in adjustedDescriptions)
 
 ::Const.Strings.PerkName.RF_Poise = "Flexible";
 ::Const.Perks.findById("perk.rf_poise").Name = ::Const.Strings.PerkName.RF_Poise;
+
+::Const.Strings.PerkName.RF_KingOfAllWeapons = "Spear Flurry";
+::Const.Perks.findById("perk.rf_king_of_all_weapons").Name = ::Const.Strings.PerkName.RF_KingOfAllWeapons;
