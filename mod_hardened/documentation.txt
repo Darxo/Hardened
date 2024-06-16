@@ -30,6 +30,15 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.3.12
+	- When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. No more than 5% of his maximum exp each.
+	- Encumbrance no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level.
+	- Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken.
+	- Necromancer no longer have **Inspiring Presence**. They now have **Soul Link**.
+	- Brothers that "die" outside of combat will now always transfer their equipment into your stash
+	  - Desertion (Expert difficulty) and Sellswords leaving company during events no longer take their gear with them
+	- Fix slings dealing almost no damage and having hand to hand enabled
+
 0.3.11
 	- Fatigue no longer has any effect on the defenses granted by shields
 	- **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 1000 Value (up from 200) and grants 10 Resolve (up from 5)

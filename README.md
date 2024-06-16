@@ -33,11 +33,11 @@ This submod is a collection of changes to Reforged that I suggested internally t
 ### Misc
 
 - Disable Veteran Perks
+- When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. No more than 5% of his maximum exp each.
 
 ## Additions
 
 - Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
-- Add face warpaint to all fast bandits
 
 ## Balance & Polishing
 
@@ -79,7 +79,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies
 - **Stab** now costs 3 Action Points (down from 4)
-- **Hand-to-Hand Attack** now has 0% Hitchance bonus (up from -10%). It is now enabled if you carry an empty throwing weapon in your main hand.
+- **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
 - **Thrust** now has 0% Hitchance bonus (down from 10%)
 - **Slash** now has 0% Hitchance bonus (down from 5%)
 - **Gash** now has 0% Hitchance bonus (down from 5%)
@@ -103,24 +103,27 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Zombies no longer have **Double Grip** but gain +5 Melee Skill.
 - Nachzehrer can no longer swallow player characters while in a net.
-- Necromancer no longer have 20 natural body armor
+- Necromancer no longer have 20 natural body armor or **Inspiring Presence**. They now have **Soul Link**.
+- Add face warpaint to all fast bandits
 
 ### Other
 
 - Fatigue no longer has any effect on the defenses granted by shields
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
+- Encumbrance no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level.
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied.
 - The legendary Location Ancient Spire now reveals an area of 3000 (up from 1900). It now also discovers every location in that radius for the player.
+- Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken.
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 - Characters which are not visible to the player will no longer produce idle or death sounds.
 - The combat map is no longer revealed at the end of a battle
-- Every accessory now plays a default sound when moved around in the inventory
 
 ## Quality of Life
 
 - The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event
 - Settlements now display a tooltip showing how many days ago you last visited that location
 - Distance text in rumors and contracts now display the tile distance range in brackets
+- Brothers that "die" outside of combat will now always transfer their equipment into your stash
 - Legendary Armor and Armor with an attachement that you un-equip are now automatically marked as to-be-repaired
 - The tooltips of your attributes now display your Base Attribute value and the difference between that Base value and your current value
 - **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
@@ -138,6 +141,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - You can no longer do two Arenas during the same day
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
 - Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
+- Characters spawning mid battle can no longer be morale checked by side-stepping (e.g. Goblin Wolfrider)
+- Every accessory now plays a default sound when moved around in the inventory
 - Change the inventory icon of the **Witchhunter's Hat** to look exactly like the sprite on the brother
 - The id of the item `mouth_piece` is changed to `armor.head.mouth_piece` (it used to be `armor.head.witchhunter_hat`)
 - Remove a duplicate loading screen
