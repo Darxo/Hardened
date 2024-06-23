@@ -30,7 +30,7 @@
 			});
 		}
 
-		if (!properties.IsAffectedByReach)
+		if (!properties.CanEnemiesHaveReachAdvantage)
 		{
 			ret.push({
 				id = 12,
@@ -59,9 +59,10 @@
 
 		if (_skill.isRanged()) return;
 		if (!_properties.IsAffectedByReach) return;
-		if (_targetEntity == null || !_targetEntity.getCurrentProperties().IsAffectedByReach) return;
+		if (_targetEntity == null) return;
+		if (!_targetEntity.getCurrentProperties().CanEnemiesHaveReachAdvantage || !_targetEntity.getCurrentProperties().IsAffectedByReach) return;
 
-		local targetReach = 0
+		local targetReach = 0;
 		if (_targetEntity.getMoraleState() != ::Const.MoraleState.Fleeing && _targetEntity.getSkills().getAttackOfOpportunity() != null)
 		{
 			targetReach = _targetEntity.getSkills().buildPropertiesForDefense(this.getContainer().getActor(), _skill).getReach();

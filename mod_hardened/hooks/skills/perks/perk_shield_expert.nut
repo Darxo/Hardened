@@ -6,7 +6,7 @@
 		if (this.getContainer().getActor().isArmedWithShield())
 		{
 			_properties.ShieldDamageMult *= this.m.ShieldDamageMult;
-			_properties.IsAffectedByReach = false;
+			_properties.CanEnemiesHaveReachAdvantage = false;
 		}
 	}
 });

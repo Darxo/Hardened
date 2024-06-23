@@ -2,6 +2,7 @@
 
 // New Values
 ::Const.CharacterProperties.ShieldDamageMult <- 1.0;
+::Const.CharacterProperties.CanEnemiesHaveReachAdvantage <- true;
 ::Const.CharacterProperties.ReachAdvantageMult <- ::Reforged.Reach.ReachAdvantageMult;
 ::Const.CharacterProperties.getReachAdvantageMult <- function()
 {
