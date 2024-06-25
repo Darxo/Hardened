@@ -130,7 +130,7 @@ local adjustedDescriptions = [
 			],
 		}),
 	},
-	{	// This perk Description doesn't line up with my shield-group reworks.
+	{
 		ID = "perk.relentless",
 		Key = "Relentless",
 		Description = ::UPD.getDescription({
@@ -283,6 +283,23 @@ local adjustedDescriptions = [
 				Description = [
 					"Your attacks against targets with armor will always target the body part with the lowest armor.",
 					"Armor penetration is reduced by " + ::MSU.Text.colorNegative("10%") + ".",
+				],
+			}],
+		}),
+	},
+	{
+		ID = "perk.rf_unstoppable",
+		Key = "RF_Unstoppable",
+		Description = ::UPD.getDescription({
+			Fluff = "Once you get going, you cannot be stopped!",
+			Requirement = "Melee Attack",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Whenever you end your [turn|Concept.Turn] with half or fewer of your [Action Points|Concept.ActionPoints] remaining, gain a stack, up to a maximum of 5 stacks.",
+					"Each stack increases [Action Points|Concept.ActionPoints] by " + ::MSU.Text.colorGreen("+1") + " and [Initiative|Concept.Initiative] by " + ::MSU.Text.colorGreen("+10") + ".",
+					"All the stacks are lost if you [wait|Concept.Wait] or end your [turn|Concept.Turn] with more than half of your [Action Points|Concept.ActionPoints] remaining.",
+					"All the stacks are lost if you use [Recover|Skill+recover_skill], or get [Stunned|Skill+stunned_effect], Rooted or [Staggered|Skill+staggered_effect].",
 				],
 			}],
 		}),
