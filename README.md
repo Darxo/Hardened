@@ -50,6 +50,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Nimble** is completely reworked: It now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
 - **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. It also reduces your armor damage taken by a percentage equal to 40% of your current Initiative (up to a maximum of 40%)
 - **Nimble** and **Flexible** (formerly Poise) no longer exclude each other from being picked, after one of them is learned
+- **Fencer** no longer grants +10 chance to hit or 20% less fatigue cost. It now causes your fencing swords to lose 50% less durability.
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy.
 - Rework **Formidable Approach** to only work for Two-Handed weapons. It now grant 15 Melee Skill instead of Reach but only triggers when you are the one moving next to an enemy. When your maximum Hitpoints are higher than those of your opponent, it removes confident from them.
 - **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
@@ -58,6 +59,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Student** is completely reworked: It is now always available on everybody. It grants +1 Perk Point after 3 more levels have been gained.
 - **Sweeping Strikes** is completely reworked: It now grants +3 Melee Defense for every adjacent enemy until the start of your next turn whenever you use a melee attack skill. It still requires a two-handed weapon.
 - **Through the Gaps** is now always active but now lowers your armor penetration by 10% (down from increasing it by 25%)
+- **Unstoppable** no longer loses all Stacks when you use **Wait** if you spent atleast half of your action points by that time.
 - **Wears it well** no grants 50% of combined Mainhand and Offhand weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest)
 
 ### Perk Groups
@@ -90,6 +92,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Prong** now has 0% Hitchance bonus (down from 10%)
 - **Rupture** now has 0% Hitchance bonus (down from 5%)
 - **Strike** now has 0% Hitchance bonus (down from 5%)
+- **Lunge** now have -10% Hitchance bonus (up from -20%)
+- **Sword Thrust** now has -10% Hitchance bonus (up from -20%)
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back.
 - **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
 
@@ -102,6 +106,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 ### Enemies
 
 - Zombies no longer have **Double Grip** but gain +5 Melee Skill.
+- Barbarian Drummer now have +1 Action Point and grant +150 Experience
 - Nachzehrer can no longer swallow player characters while in a net.
 - Necromancer no longer have 20 natural body armor or **Inspiring Presence**. They now have **Soul Link**.
 - Add face warpaint to all fast bandits
@@ -112,6 +117,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
 - Encumbrance no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level.
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied.
+- Burning Damage (Fire Pot, Burning Arrow, Burning Ground) now remove all root-like effects from the targets.
 - The legendary Location Ancient Spire now reveals an area of 3000 (up from 1900). It now also discovers every location in that radius for the player.
 - Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken.
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
@@ -141,7 +147,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - You can no longer do two Arenas during the same day
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
 - Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
-- Characters spawning mid battle can no longer be morale checked by side-stepping (e.g. Goblin Wolfrider)
+- Bandaging allies now updates their overlay ui correctly
+- Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Every accessory now plays a default sound when moved around in the inventory
 - Change the inventory icon of the **Witchhunter's Hat** to look exactly like the sprite on the brother
 - The id of the item `mouth_piece` is changed to `armor.head.mouth_piece` (it used to be `armor.head.witchhunter_hat`)

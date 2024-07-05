@@ -30,6 +30,16 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.3.13
+	- **Sword Thrust** and **Lunge** now have -10 chance to hit (up from -20)
+	- The perk **Fencer** no longer grants +10 chance to hit or 20% less fatigue cost. It now causes your fencing swords to lose 50% less durability.
+	- **Unstoppable** no longer loses all Stacks when you use **Wait** if you spent atleast half of your action points by that time.
+	- Burning Damage (Fire Pot, Burning Arrow, Burning Ground) now remove all root-like effects from the targets
+	- Barbarian Drummer now have +1 Action Point and grant +150 Experience
+	- Fix shield expert preventing reach advantage of shield user
+	- Vanilla Fix: Bandaging allies now updates their overlay ui correctly
+	- Vanilla Fix: Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
+
 0.3.12
 	- When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. No more than 5% of his maximum exp each.
 	- Encumbrance no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level.
