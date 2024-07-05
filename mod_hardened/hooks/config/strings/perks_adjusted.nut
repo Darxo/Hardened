@@ -47,6 +47,22 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_fencer",
+		Key = "RF_Fencer",
+		Description = ::UPD.getDescription({
+			Fluff = "Master the art of fighting with a nimble sword.",
+			Requirement = "Fencing Sword",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Your weapon loses " + ::MSU.Text.colorPositive("50%") + " less durability.",
+					"When using a one-handed fencing sword, the [Action Point|Concept.ActionPoints] costs of [Sword Thrust|Skill+rf_sword_thrust_skill], [Riposte|Skill+riposte] and [Lunge|Skill+lunge_skill] are reduced by " + ::MSU.Text.colorGreen(1) + ".",
+					"When using a two-handed fencing sword, the range of [Lunge|Skill+lunge_skill] is increased by " + ::MSU.Text.colorGreen(1) + " tile.",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_flail_spinner",
 		Key = "RF_FlailSpinner",
 		Description = ::UPD.getDescription({
