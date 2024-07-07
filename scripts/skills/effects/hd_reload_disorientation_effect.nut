@@ -9,9 +9,8 @@ this.hd_reload_disorientation_effect <- ::inherit("scripts/skills/skill", {
 		this.m.Name = "Reload Disorientation";
 		this.m.Description = "This character focussed on the lengthy process of reloading their weapon ignoring anything else going on in the distance. This effect lasts until the start of their next turn.";
 		this.m.Icon = "skills/hd_reload_disorientation_effect.png";
-		this.m.IconMini = "hd_reload_disorientation_effect_mini";	// Todo, add mini icon for better visibility
+		this.m.IconMini = "hd_reload_disorientation_effect_mini";
 		this.m.Type = ::Const.SkillType.StatusEffect;
-		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
 		this.m.IsStacking = false;		// This debuff does not stack
 	}
