@@ -23,9 +23,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("5%") + " of the character\'s current Initiative as a bonus to Melee and Ranged Defense.",
-					"Gain " + ::MSU.Text.colorPositive("2,5%") + " of the character\'s current Initiative as a bonus to Melee and Ranged Defense for each empty adjacent tile.",
-					"This bonus can never be negative",
+					"Gain " + ::MSU.Text.colorPositive("4%") + " of the character\'s current Initiative as a bonus to [Melee Defense|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense] for each empty adjacent tile. This bonus can never be negative",
 				],
 			}],
 		}),
