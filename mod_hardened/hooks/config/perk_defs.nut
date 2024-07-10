@@ -12,13 +12,13 @@
 
 ::Const.Perks.findById("perk.student").verifyPrerequisites <- function( _player, _tooltip )
 {
-	if (_player.getPerkTier() >= 8)
+	if (_player.getLevel() >= 8)
 	{
 		_tooltip.push({
 			id = 20,
 			type = "hint",
 			icon = "ui/icons/icon_locked.png",
-			text = "Locked because this character has already unlocked all perk tiers"
+			text = "Locked because this character is already level 8"
 		});
 
 		return false;

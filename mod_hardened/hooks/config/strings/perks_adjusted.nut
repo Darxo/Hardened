@@ -190,7 +190,7 @@ local adjustedDescriptions = [
 	 		Effects = [{
  				Type = ::UPD.EffectType.OneTimeEffect,
  				Description = [
-					"Gain " + ::MSU.Text.colorGreen(1) + " perk point upon completing your next 3 [levels|Concept.Level] after picking this perk.",
+					"Gain " + ::MSU.Text.colorGreen(1) + " perk point when you reach [level|Concept.Level] 8.",
 				],
  			}],
 			Footer = ::MSU.Text.colorRed("This perk cannot be refunded."),

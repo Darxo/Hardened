@@ -39,20 +39,4 @@
 
 		return ret;
 	}
-
-	q.onDeserialize = @(__original) function( _in )
-	{
-		__original(_in);
-
-		// To make this backwards compatible to normal reforged we unlearn Student immediately if we came from Reforged
-		local studentPerk = this.getSkills().getSkillByID("perk.student");
-		if (studentPerk != null && !this.getFlags().has(studentPerk.m.StudentStartLevelFlag))
-		{
-			// Refund the student perk
-			this.m.PerkPoints++;
-			this.m.PerkPointsSpent--;
-			this.setPerkTier(::Math.max(this.getPerkTier() - 1, ::DynamicPerks.Const.DefaultPerkTier));
-			studentPerk.removeSelf();
-		}
-	}
 });
