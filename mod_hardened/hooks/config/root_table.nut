@@ -16,6 +16,7 @@ local oldGetTime = ::World.getTime;
 
 	// calculate TimeOfDay into a 12-block day
 	ret.TimeOfDay <- ::Math.floor(time.Hours / 2);
+	if (ret.TimeOfDay == 11) ret.Days++;	// Vanilla treats hour 22 and 23 as day even though its still the previous day. So we flip the day counter over already during these hours
 
 	// Adjust DayTime slightly
 	ret.IsDaytime <- ::Const.World.TimeOfDay.isDay(ret.TimeOfDay);

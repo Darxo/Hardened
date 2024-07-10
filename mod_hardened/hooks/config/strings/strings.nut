@@ -1,5 +1,4 @@
 ::Const.Strings.World.TimeOfDay <- [
-	"Sunrise",
 	"Morning",
 	"Morning",
 	"Morning",
@@ -10,7 +9,8 @@
 	"Sunset",
 	"Dusk",
 	"Midnight",
-	"Dawn"
+	"Dawn",
+	"Sunrise",
 ];
 
 ::Const.Strings.Distance[0] += " (0 - 5 tiles)";
