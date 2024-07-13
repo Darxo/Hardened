@@ -215,6 +215,21 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_en_garde",
+		Key = "RF_EnGarde",
+		Description = ::UPD.getDescription({
+			Fluff = "You\'ve become so well-practiced with a blade that attacking and defending are done congruously!",
+			Requirement = "Sword",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive("+15") + " [Melee Skill|Concept.MeleeSkill] while it is not your [turn|Concept.Turn].",
+					"[Riposte|Skill+riposte_effect] is no longer removed when you get hit or do a counter attack.",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.inspiring_presence",
 		Key = "InspiringPresence",
 		Description = ::UPD.getDescription({
