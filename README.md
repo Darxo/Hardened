@@ -43,10 +43,11 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 ### Perks
 
-- Change **Dodge** effect is now between 5% and 20% of Initiative (instead of always 15%) depending on the amount of adjacent empty tiles
+- Change **Dodge** effect to grant 4% of Initiative as extra Melee Defense and Ranged Defense for every empty adjacent tile
 - Change **Duelist** to only works for one-handed weapons. The Penetration is increased to 30% and is now also halfed with 2 enemies and disabled with 3+
 - **Fortified Mind** now provides 30% Resolve (up from 25%). This Bonus is now reduces by 1% for each Helmet Weight.
 - **Battle Forged** no longer provide any Reach Ignore
+- **En Garde** is completely reworked. It now grants +15 Melee Skill while it is not your turn. It also makes it so **Riposte** is no longer disabled when you get hit or deal a counter attack (so like in Vanilla).
 - **Nimble** is completely reworked: It now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
 - **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. It also reduces your armor damage taken by a percentage equal to 40% of your current Initiative (up to a maximum of 40%)
 - **Nimble** and **Flexible** (formerly Poise) no longer exclude each other from being picked, after one of them is learned
@@ -56,7 +57,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
 - **Shield Expert** no longer grants 25% increased shield defenses. Instead it makes it so enemies will never have Reach Advantage over the shield user.
 - **Skirmisher** now grants 50% of body armor weight as initiative (previously 30% of body/helmet armor weight) and no longer displays an effect icon
-- **Student** is completely reworked: It is now always available on everybody. It grants +1 Perk Point after 3 more levels have been gained.
+- **Student** is completely reworked: It is now always available on everybody. It grants +1 Perk Point when you reach level 8 but no longer grants any experience.
 - **Sweeping Strikes** is completely reworked: It now grants +3 Melee Defense for every adjacent enemy until the start of your next turn whenever you use a melee attack skill. It still requires a two-handed weapon.
 - **Through the Gaps** is now always active but now lowers your armor penetration by 10% (down from increasing it by 25%)
 - **Unstoppable** no longer loses all Stacks when you use **Wait** if you spent atleast half of your action points by that time.
@@ -80,8 +81,10 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies
+- **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It is now disabled when you get hit or after your first counter-attack
 - **Stab** now costs 3 Action Points (down from 4)
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
+- **Lightbringer** now has 0% Hitchance bonus (down from 10%)
 - **Thrust** now has 0% Hitchance bonus (down from 10%)
 - **Slash** now has 0% Hitchance bonus (down from 5%)
 - **Gash** now has 0% Hitchance bonus (down from 5%)

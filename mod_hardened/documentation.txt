@@ -27,8 +27,18 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Make it so Hook will also move the guy who does the hooking one tile back
 - Make it so hook and push (polearm) ignore shield defense bonus when polearm mastery is picked
 - Move Polearm Mastery AP reduction in an extry perk
+- change handgonne aoe pattern in some directions to a triangle
 
 # Changes:
+
+0.3.14
+	- **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It is now disabled when you get hit or after your first counter-attack.
+	- **En Garde** is completely reworked. It now grants +15 Melee Skill while it is not your turn. It also makes it so **Riposte** lasts until your next turn (like in Vanilla).
+	- **Dodge now grants 4% of initiative as defense per empty tile (up from 2,5%). Dodge no longer grants baseline 5% initiative as extra defense.
+	- **Student** is now refunded at level 8, instead of in 3 levels after picking the perk.
+	- **Lightbringer** now has 0% Hitchance bonus (down from 10%)
+	- Move Day-Night-Cycle 2 hours back so it aligns with the vanilla world lighting
+	- Add tip of the day for firebomb burning root effects
 
 0.3.13
 	- **Sword Thrust** and **Lunge** now have -10 chance to hit (up from -20)
