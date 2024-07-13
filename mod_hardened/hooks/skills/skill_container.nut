@@ -10,4 +10,12 @@
 
 		__original(_fatalityType);
 	}
+
+// New Functions
+	q.onOtherSkillAdded <- function( _skill )
+	{
+		this.callSkillsFunction("onOtherSkillAdded", [
+			_skill
+		], false);
+	}
 });

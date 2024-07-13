@@ -65,4 +65,19 @@
 
 		__original(_info);
 	}
+
+// New Functions
+	q.onOtherSkillAdded <- function( _skill )
+	{
+	}
 });
+
+::Hardened.HooksMod.hookTree("scripts/skills/skill", function(q) {
+	q.onAdded = @(__original) function()
+	{
+		__original();
+		this.getContainer().onOtherSkillAdded(this);
+	}
+});
+
+
