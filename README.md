@@ -81,7 +81,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies
-- **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It is now disabled when you get hit or after your first counter-attack
+- **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack
 - **Stab** now costs 3 Action Points (down from 4)
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
 - **Lightbringer** now has 0% Hitchance bonus (down from 10%)
