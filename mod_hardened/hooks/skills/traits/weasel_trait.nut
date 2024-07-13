@@ -31,7 +31,7 @@
 
 		local actor = this.getContainer().getActor();
 		if (!actor.isPlacedOnMap()) return;
-		if (::Tactical.TurnSequenceBar.getActiveEntity() == null || ::Tactical.TurnSequenceBar.getActiveEntity().getID() == actor.getID()) return;
+		if (::Tactical.TurnSequenceBar.isActiveEntity(actor)) return;
 
 		if (actor.getMoraleState() == ::Const.MoraleState.Fleeing)
 		{
