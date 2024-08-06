@@ -11,7 +11,7 @@
 		{
 			if (entry.id == 11)
 			{
-				entry.text = "Deal " + ::MSU.Text.colorizeMult(this.m.DamageTotalMult) + " less damage";
+				entry.text = "Deal " + ::MSU.Text.colorizeMultWithText(this.m.DamageTotalMult) + " damage";
 				break;
 			}
 		}

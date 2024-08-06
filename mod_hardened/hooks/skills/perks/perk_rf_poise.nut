@@ -22,7 +22,7 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/direct_damage.png",
-				text = "Take " + ::MSU.Text.colorizeMult(directDamageReceivedMult, {InvertColor = true}) + " less armor penetration damage from attacks",
+				text = "Take " + ::MSU.Text.colorizeMultWithText(directDamageReceivedMult, {InvertColor = true}) + " armor penetration damage from attacks",
 			});
 		}
 
@@ -33,7 +33,7 @@
 				id = 11,
 				type = "text",
 				icon = "ui/icons/armor_body.png",
-				text = "Take " + ::MSU.Text.colorizeMult(armorDamageReceivedMult, {InvertColor = true}) + " less armor damage from attacks",
+				text = "Take " + ::MSU.Text.colorizeMultWithText(armorDamageReceivedMult, {InvertColor = true}) + " armor damage from attacks",
 			});
 		}
 
