@@ -59,6 +59,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Skirmisher** now grants 50% of body armor weight as initiative (previously 30% of body/helmet armor weight) and no longer displays an effect icon
 - **Student** is completely reworked: It is now always available on everybody. It grants +1 Perk Point when you reach level 8 but no longer grants any experience.
 - **Sweeping Strikes** is completely reworked: It now grants +3 Melee Defense for every adjacent enemy until the start of your next turn whenever you use a melee attack skill. It still requires a two-handed weapon.
+- **Swift Stabs** has been completely reworked. It's now called **Hit and Run**. It makes it so all dagger attacks can be used at 2 tiles and will move the user one tile closer before the attack. When the attack hits the enemy, the user is moved back to the original tile.
 - **Through the Gaps** is now always active but now lowers your armor penetration by 10% (down from increasing it by 25%)
 - **Unstoppable** no longer loses all Stacks when you use **Wait** if you spent atleast half of your action points by that time.
 - **Wears it well** no grants 50% of combined Mainhand and Offhand weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest)
@@ -124,6 +125,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - The legendary Location Ancient Spire now reveals an area of 3000 (up from 1900). It now also discovers every location in that radius for the player.
 - Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken.
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
+- Beginner combat difficulty difficulty now grants enemy parties 100% resources (up from 85%)
+- Beginner combat difficulty difficulty now causes player characters to receive 15% less damage from all sources
+- Expert combat difficulty difficulty now grants enemy parties 120% resources (up from 115%)
 - Characters which are not visible to the player will no longer produce idle or death sounds.
 - The combat map is no longer revealed at the end of a battle
 
@@ -137,7 +141,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - The tooltips of your attributes now display your Base Attribute value and the difference between that Base value and your current value
 - **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
 - **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
-- Slightly Lower the sfx volume of the annoying kid calling out for his daddy
+- All effects of the difficulty settings are now listed as tooltips during world generation
+- Slightly Lower the sfx volume of the annoying kid sfx in towns
 
 ## Fixes
 

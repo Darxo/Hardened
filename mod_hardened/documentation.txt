@@ -31,6 +31,15 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.3.15
+	- **King of all Weapons** has been completely reworked. It's now called **Spear Flurry**. It makes it so all spear attacks cost 0 Fatigue but it reduces the damage dealt by 10% while a spear is equipped.
+	- **Swift Stabs** has been completely reworked. It's now called **Hit and Run**. It makes it so all dagger attacks can be used at 2 tiles and will move the user one tile closer before the attack. When the attack hits the enemy, the user is moved back to the original tile.
+	- Enemy parties on beginner combat difficulty now have 100% resources available (up from 85%)
+	- Player characters take 15% less damage on beginner combat difficulty
+	- Enemy parties on expert difficulty now have 120% resources available (up from 115%)
+	- Add descriptions for the difficulty tooltips showing what their effects are
+	- Add tooltips to burning arrow and fire pot about their new ability to remove rooted effects
+
 0.3.14
 	- **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack.
 	- **En Garde** is completely reworked. It now grants +15 Melee Skill while it is not your turn. It also makes it so **Riposte** lasts until your next turn (like in Vanilla).
