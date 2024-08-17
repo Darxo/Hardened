@@ -54,8 +54,8 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Your weapon loses " + ::MSU.Text.colorPositive("50%") + " less durability.",
-					"When using a one-handed fencing sword, the [Action Point|Concept.ActionPoints] costs of [Sword Thrust|Skill+rf_sword_thrust_skill], [Riposte|Skill+riposte] and [Lunge|Skill+lunge_skill] are reduced by " + ::MSU.Text.colorGreen(1) + ".",
-					"When using a two-handed fencing sword, the range of [Lunge|Skill+lunge_skill] is increased by " + ::MSU.Text.colorGreen(1) + " tile.",
+					"When using a one-handed fencing sword, the [Action Point|Concept.ActionPoints] costs of [Sword Thrust|Skill+rf_sword_thrust_skill], [Riposte|Skill+riposte] and [Lunge|Skill+lunge_skill] are reduced by " + ::MSU.Text.colorPositive(1) + ".",
+					"When using a two-handed fencing sword, the range of [Lunge|Skill+lunge_skill] is increased by " + ::MSU.Text.colorPositive(1) + " tile.",
 				],
 			}],
 		}),
@@ -169,7 +169,7 @@ local adjustedDescriptions = [
 	 				Type = ::UPD.EffectType.Passive,
 	 				Description = [
 						"Enemies will never have [Reach Advantage|Concept.ReachAdvantage] against you",
-						"Your shield takes " + ::MSU.Text.colorGreen("50%") + " less damage up to a minimum of 1",
+						"Your shield takes " + ::MSU.Text.colorPositive("50%") + " less damage up to a minimum of 1",
 	 					"Missed attacks against you no longer build up [Fatigue|Concept.Fatigue].",
 	 				],
 	 			},
@@ -190,10 +190,10 @@ local adjustedDescriptions = [
 	 		Effects = [{
  				Type = ::UPD.EffectType.OneTimeEffect,
  				Description = [
-					"Gain " + ::MSU.Text.colorGreen(1) + " perk point when you reach [level|Concept.Level] 8.",
+					"Gain " + ::MSU.Text.colorPositive(1) + " perk point when you reach [level|Concept.Level] 8.",
 				],
  			}],
-			Footer = ::MSU.Text.colorRed("This perk cannot be refunded."),
+			Footer = ::MSU.Text.colorNegative("This perk cannot be refunded."),
 	 	}),
 	},
 
@@ -296,7 +296,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever you use an attack on an enemy, gain " + ::MSU.Text.colorGreen("+3") + " [Melee Defense|Concept.MeleeDefense] for every adjacent enemy until the start of your next [turn|Concept.Turn].",
+					"Whenever you use an attack on an enemy, gain " + ::MSU.Text.colorPositive("+3") + " [Melee Defense|Concept.MeleeDefense] for every adjacent enemy until the start of your next [turn|Concept.Turn].",
 				],
 			}],
 		}),
@@ -341,7 +341,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Whenever you end your [turn|Concept.Turn] with half or fewer of your [Action Points|Concept.ActionPoints] remaining, gain a stack, up to a maximum of 5 stacks.",
-					"Each stack increases [Action Points|Concept.ActionPoints] by " + ::MSU.Text.colorGreen("+1") + " and [Initiative|Concept.Initiative] by " + ::MSU.Text.colorGreen("+10") + ".",
+					"Each stack increases [Action Points|Concept.ActionPoints] by " + ::MSU.Text.colorPositive("+1") + " and [Initiative|Concept.Initiative] by " + ::MSU.Text.colorPositive("+10") + ".",
 					"All the stacks are lost if you [wait|Concept.Wait] or end your [turn|Concept.Turn] with more than half of your [Action Points|Concept.ActionPoints] remaining.",
 					"All the stacks are lost if you use [Recover|Skill+recover_skill], or get [Stunned|Skill+stunned_effect], Rooted or [Staggered|Skill+staggered_effect].",
 				],
