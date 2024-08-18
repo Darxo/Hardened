@@ -336,7 +336,6 @@ local adjustedDescriptions = [
 		Key = "RF_Unstoppable",
 		Description = ::UPD.getDescription({
 			Fluff = "Once you get going, you cannot be stopped!",
-			Requirement = "Melee Attack",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
