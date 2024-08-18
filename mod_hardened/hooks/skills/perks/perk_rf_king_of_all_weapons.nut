@@ -1,21 +1,31 @@
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_king_of_all_weapons");
+
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_king_of_all_weapons", function(q) {
 	q.m.HD_DamageTotalMult <- 0.9;
 	q.m.HD_FatigueCostMult <- 0.0;
 
-	q.create = @(__original) function()
+	q.create <- function()
 	{
-		__original();
-		this.m.ActionPointsModifier = 0;
-		this.m.DamageTotalMult = 0;
+		this.m.ID = "perk.rf_king_of_all_weapons";
+		this.m.Name = ::Const.Strings.PerkName.RF_KingOfAllWeapons;
+		this.m.Description = "This character is exceptionally skilled with the spear, which is known by many to be the king of all weapons.";
+		this.m.Icon = "ui/perks/perk_rf_king_of_all_weapons.png";
+		this.m.IconMini = "perk_rf_king_of_all_weapons_mini";
+		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
+		this.m.Order = ::Const.SkillOrder.VeryLast;
 	}
 
-	q.isHidden = @() function()
+	q.onUpdate <- function( _properties )
 	{
-		return true;	// This perk no longer displays any tooltip
+		local actor = this.getContainer().getActor();
+		local mainhand = actor.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
+		if (mainhand != null && mainhand.isWeaponType(::Const.Items.WeaponType.Spear) && !actor.isDisarmed())
+		{
+			_properties.DamageTotalMult *= this.m.HD_DamageTotalMult;
+		}
 	}
 
-	// Overwrite original for performance reasons
-	q.onAfterUpdate = @() function( _properties )
+	q.onAfterUpdate <- function( _properties )
 	{
 		// Reduce fatigue cost of all spear attacks
 		foreach (skill in this.getContainer().m.Skills)
@@ -27,14 +37,15 @@
 		}
 	}
 
-// New Overrides
-	q.onUpdate = @() function( _properties )
+// New Function
+	q.isSkillValid <- function( _skill )
 	{
-		local actor = this.getContainer().getActor();
-		local mainhand = actor.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
-		if (mainhand != null && mainhand.isWeaponType(::Const.Items.WeaponType.Spear) && !actor.isDisarmed())
+		if (_skill.isRanged() || !_skill.isAttack())
 		{
-			_properties.DamageTotalMult *= this.m.HD_DamageTotalMult;
+			return false;
 		}
+
+		local weapon = _skill.getItem();
+		return !::MSU.isNull(weapon) && weapon.isItemType(::Const.Items.ItemType.Weapon) && weapon.isWeaponType(::Const.Items.WeaponType.Spear);
 	}
 });
