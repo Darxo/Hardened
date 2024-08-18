@@ -53,7 +53,7 @@
 					id = 10,
 					type = "text",
 					icon = "ui/icons/melee_defense.png",
-					text = ::Reforged.Mod.Tooltips.parseString("Gain " + ::MSU.Text.colorizeFraction(this.m.BaseFraction) + " (" + ::MSU.Text.colorPositive(baseBonus) + ") of this character\'s current [Initiative|Concept.Initiative] as a bonus to [Melee Defense|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense]."),
+					text = ::Reforged.Mod.Tooltips.parseString("Gain " + ::MSU.Text.colorizePct(this.m.BaseFraction) + " (" + ::MSU.Text.colorPositive(baseBonus) + ") of this character\'s current [Initiative|Concept.Initiative] as a bonus to [Melee Defense|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense]."),
 				});
 			}
 
@@ -63,7 +63,7 @@
 					id = 10,
 					type = "text",
 					icon = "ui/icons/melee_defense.png",
-					text = ::Reforged.Mod.Tooltips.parseString("Gain " + ::MSU.Text.colorizeFraction(this.m.FractionPerEmptyTile) + " (" + ::MSU.Text.colorPositive(bonusPerTile) + ") of this character\'s current [Initiative|Concept.Initiative] as a bonus to [Melee Defense|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense] for every adjacent empty tile."),
+					text = ::Reforged.Mod.Tooltips.parseString("Gain " + ::MSU.Text.colorizePct(this.m.FractionPerEmptyTile) + " (" + ::MSU.Text.colorPositive(bonusPerTile) + ") of this character\'s current [Initiative|Concept.Initiative] as a bonus to [Melee Defense|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense] for every adjacent empty tile."),
 				});
 			}
 		}
