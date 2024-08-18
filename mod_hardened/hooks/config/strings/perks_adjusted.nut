@@ -302,6 +302,22 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_swift_stabs",
+		Key = "RF_SwiftStabs",
+		Description = ::UPD.getDescription({
+			Fluff = "Strike swiftly and vanish before your enemies can react, mastering the art of elusive combat!",
+			Requirement = "Dagger Attack",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Dagger attacks can now target enemies up to 2 tiles away. Attacking from 2 tiles away moves you 1 tile closer before the attack.",
+					"If the attack hits, you automatically return to your original tile.",
+					"Does not affect dagger attacks with a range of 2 tiles or more.",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_through_the_gaps",
 		Key = "RF_ThroughTheGaps",
 		Description = ::UPD.getDescription({
@@ -372,3 +388,6 @@ foreach (description in adjustedDescriptions)
 
 ::Const.Strings.PerkName.RF_KingOfAllWeapons = "Spear Flurry";
 ::Const.Perks.findById("perk.rf_king_of_all_weapons").Name = ::Const.Strings.PerkName.RF_KingOfAllWeapons;
+
+::Const.Strings.PerkName.RF_SwiftStabs = "Hit and Run";
+::Const.Perks.findById("perk.rf_swift_stabs").Name = ::Const.Strings.PerkName.RF_SwiftStabs;
