@@ -32,8 +32,10 @@
 			local prevMax = null;
 
 			// We will encounter ::Math.rand in this switcheroo operation exactly two times
-			::Math.rand = function( _min, _max )
+			::Math.rand = function( _min = null, _max = null )
 			{
+				if (_min == null && _max == null) return oldMathRand();
+
 				if (previosResult == null)	// First time we need to note the min and max range for the base values
 				{
 					previosResult = oldMathRand(_min, _max);
