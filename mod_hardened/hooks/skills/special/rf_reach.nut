@@ -94,7 +94,7 @@
 		{
 			_tooltip.push({
 				icon = this.m.CurrBonus > 0 ? "ui/tooltips/positive.png" : "ui/tooltips/negative.png",
-				text = ::MSU.Text.colorizePercentage(this.m.CurrBonus, {AddSign = false}) + " Reach Advantage"
+				text = ::MSU.Text.colorizeValue(this.m.CurrBonus, {AddSign = false, AddPercent = true}) + " Reach Advantage"
 			});
 		}
 	}
