@@ -31,6 +31,14 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.3.16
+	- fix hitchance preview not showing up
+	- fix dodge description not showing up
+	- fix goblin wolfrider sometimes freezing the game when they die
+	- fix stab being falsely discounted from dagger mastery
+	- fix glitch when enemies throw throwing spears
+	- fix crash when reloading a crossbow
+
 0.3.15
 	- **King of all Weapons** has been completely reworked. It's now called **Spear Flurry**. It makes it so all spear attacks cost 0 Fatigue but it reduces the damage dealt by 10% while a spear is equipped.
 	- **Swift Stabs** has been completely reworked. It's now called **Hit and Run**. It makes it so all dagger attacks can be used at 2 tiles and will move the user one tile closer before the attack. When the attack hits the enemy, the user is moved back to the original tile.
