@@ -20,7 +20,7 @@
 	q.onRemoved = @() function() {}
 
 // Hardened Functions
-	q.onOtherSkillAdded = @(__original) function( _skill )
+	q.onOtherSkillAdded = @() function( _skill )
 	{
 		if (_skill.getID() == "effects.riposte")
 		{

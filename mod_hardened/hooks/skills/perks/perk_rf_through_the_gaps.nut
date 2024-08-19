@@ -16,7 +16,7 @@
 	{
 		__original(_skill, _targetTile, _targetEntity, _forFree);
 		this.m.IsSpent = false;		// We reset this back to false so it stays active all the time
-		return true;	// This is now always hidden because it is always active
+		return;
 	}
 
 	q.onCombatFinished = @(__original) function()
