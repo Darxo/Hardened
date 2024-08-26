@@ -5,4 +5,11 @@
 		this.getSkills().removeByID("special.double_grip");
 		this.m.BaseProperties.MeleeSkill += 5;	// To offset the loss of double grip
 	}
+
+	q.onResurrected = @(__original) function( _info )
+	{
+		__original(_info);
+		this.m.GrantsXPOnDeath = false;		// Resurrected zombies no longer grant any experience on death
+	}
+});
 });
