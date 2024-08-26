@@ -1,4 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/actor", function(q) {
+	// public
+	q.m.GrantsXPOnDeath <- true;
+
 	q.onInit = @(__original) function()
 	{
 		__original();
@@ -34,5 +37,19 @@
 	q.hasZoneOfControl = @(__original) function()
 	{
 		return __original() && this.getCurrentProperties().CanExertZoneOfControl;
+	}
+
+	// For Vanilla you'd hook onActorKilled on player.nut. But Reforged moved the exp calculation over into the onDeath of actor.nut
+	q.onDeath = @(__original) function( _killer, _skill, _tile, _fatalityType )
+	{
+		local oldGlobalXPMult = ::Const.Combat.GlobalXPMult;
+		if (this.isAlliedWithPlayer() || !this.m.GrantsXPOnDeath)
+		{
+			::Const.Combat.GlobalXPMult = 0;	// The player no longer gains any experience when allies are dying
+		}
+
+		__original(_killer, _skill, _tile, _fatalityType);
+
+		::Const.Combat.GlobalXPMult = oldGlobalXPMult;
 	}
 });
