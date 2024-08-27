@@ -188,3 +188,11 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 - Removing or adding this mod will not update existing perk trees. Only after some days you will encounter brothers with the changed perk trees.
+
+# License
+
+This mod is licensed under the **Zero-Money License**, which is a custom license based on the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License with additional restrictions, see LICENSE.txt.
+
+## Key Differences from CC BY-NC-SA 4.0:
+
+- **No Donations:** Explicitly prohibits soliciting or accepting any form of financial contributions related to the mod.

@@ -1,0 +1,17 @@
+# Zero-Money License
+
+This mod is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License with additional terms outlined below.
+
+## Key Differences from CC BY-NC-SA 4.0:
+
+- **No Donations:** Explicitly prohibits soliciting or accepting any form of financial contributions related to the mod.
+
+## License Terms:
+
+- **Attribution:** You must give appropriate credit, provide a link to the original mod, and indicate if changes were made.
+- **NonCommercial:** You may not use this mod for commercial purposes. This includes, but is not limited to:
+  - **Monetization:** You may not generate any form of revenue through the mod, including direct sales, advertisements, or other financial compensations.
+  - **Donations:** You may not solicit or accept any form of financial contributions related to this mod.
+- **ShareAlike:** If you remix or build upon this mod, you must distribute your contributions under the same license. This includes maintaining the zero-money terms.
+
+For full license details, visit the [Creative Commons license page](https://creativecommons.org/licenses/by-nc-sa/4.0/).
