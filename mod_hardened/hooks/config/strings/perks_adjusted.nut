@@ -376,6 +376,20 @@ local adjustedDescriptions = [
 			}],
 		}),
 	},
+	{
+		ID = "perk.rf_whirling_death",
+		Key = "RF_WhirlingDeath",
+		Description = ::UPD.getDescription({
+			Fluff = "Create a whirlwind of death with the spinning head of your flail!",
+			Requirement = "Flail",
+			Effects = [{
+				Type = ::UPD.EffectType.Active,
+				Description = [
+					"Unlocks the [Whirling Death|Skill+hd_whirling_death_skill] skill, allowing you to prepare a devastating attack.",
+				]
+			}],
+		}),
+	},
 ];
 
 foreach (description in adjustedDescriptions)

@@ -1,9 +1,11 @@
 <brush name="gfx/mod_hardened.png" version ="17" b1="2" b5="0">
 	<sprite id="rf_battle_song_skill" ic = "FF23165B" img="..\..\gfx\skills\rf_battle_song_skill.png" />
+	<sprite id="hd_whirling_death_skill" ic = "FF23165B" img="..\..\gfx\skills\hd_whirling_death_skill.png" />
 
 	<sprite id="rf_formidable_approach" ic = "FF23165B" img="..\..\gfx\ui\perks\rf_formidable_approach.png" />
 
 	<sprite id="hd_reload_disorientation_effect_mini" ic = "FF23165B" img="mini\hd_reload_disorientation_effect_mini.png" />
+	<sprite id="hd_whirling_death_effect_mini" ic = "FF23165B" img="mini\hd_whirling_death_effect_mini.png" />
 
 	<sprite id="rf_lucky_trait" ic = "FF23165B" img="..\..\gfx\ui\traits\trait_icon_54.png" />
 </brush>
