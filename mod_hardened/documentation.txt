@@ -10,6 +10,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Enemies may spawn with perks that they can't use anymore (**Duelist**/**Formidable Approach**) because I didn't touch their spawning behaviors in that regard
 - Using Recover will prevent you from using **Wait Round** for the rest of this round
+- Loading the game over an enemy allows them to instantly engage the player in battle
 
 # Compatibility
 
@@ -17,19 +18,32 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Future Plans:
 - Hide information about enemy composition on the battle field
-- Fix Spider Egg bug where they just don't give up
 - Only reveal attacking/casting entities if they are on a tile which is already discovered by the player. This should make scouting/high vision more important
-- Fix enemies being visible upon loading even though they should not be visible (enemies in forest)
 - Remove pocket sand from nomad background
 - make shields destructable again
 - certain unholds/high end orcs being able to throw their own allies behind their back in order to advance into tight spaces
-- During the first tick upon loading, enemy name colors do not always match their alliance status to you (enemy mercenary companies during noble war)
 - Make it so Hook will also move the guy who does the hooking one tile back
 - Make it so hook and push (polearm) ignore shield defense bonus when polearm mastery is picked
 - Move Polearm Mastery AP reduction in an extry perk
 - change handgonne aoe pattern in some directions to a triangle
+- Rebalance SpiderEgg hunting? Give them XP/Loot?
 
 # Changes:
+
+0.4.0
+	- **Bandage Ally** can now also be used during battle to treat (as if you visited the temple) any temporary injury which was received at most 1 round ago
+	- **Grazed Neck**, **Cut Throat** and **Cut Artery** no longer deal damage over time. Instead they now apply stacks of bleed equal to their previous damage per round, when received
+	- Grazed Neck, Cut Throat and Cut Artery are no longer removed, when bandaged
+	- Completely rework **Whirling Death**. It now grants a new active skill which grants a buff for two turns granting 30% more damage, 2 Reach and 10 Melee Defense
+	- Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and **Large Powder Bags** weigh 4.
+	- Gun Powder now costs 2 Ammunition Supply each (up from 1)
+	- Quiver now display the cost for replacing ammunition in them
+	- All Zombies and Skeletons now grant 20% more XP
+	- All Zombies and Skeletons no longer grant XP after they were ressurected
+	- Donkeys now grant 0 XP (down from 50 XP)
+	- Brothers no longer gain any XP when allies die
+	- Improve artwork for Nimble perk
+	- fix some world parties being visible when they should not during the first frame on loading a world (e.g. Alps during day, Enemies in Forests)
 
 0.3.16
 	- fix hitchance preview not showing up

@@ -11,6 +11,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - You have Reach Advantage during any melee attack if your Reach is greater than the Reach of the entity you are attacking
 - Reach Advantage always grants 15% more Melee Skill (it is unaffected by the difference in Reach)
 - Reach is 0 while the character does not emit a zone of control (e.g. stunned, fleeing)
+- Most attack skills have lost their innate hit chance bonus (see Skills section)
 
 **Removed compared to Reforged:**
 - penalty for Reach Disadvantage
@@ -28,7 +29,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Shooting Crossbows now costs -1 Action Point and has +10% chance to hit
 - Reloading Crossbows now costs +1 Action Point
 - Reloading Crossbows now applies **Reload Disorientation** to you until the start of your next turn.
-- **Reload Disorientation** applies  -10 Ranged Skill and -10 Ranged Defense
+  - **Reload Disorientation** applies -10 Ranged Skill and -10 Ranged Defense
 
 ### Misc
 
@@ -63,6 +64,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Through the Gaps** is now always active but now lowers your armor penetration by 10% (down from increasing it by 25%)
 - **Unstoppable** no longer loses all Stacks when you use **Wait** if you spent atleast half of your action points by that time.
 - **Wears it well** no grants 50% of combined Mainhand and Offhand weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest)
+- **Whirling Death** is completely reworked. It now grants a new active skill which creates a buff for two turns granting 30% more damage, 2 Reach and 10 Melee Defense to the user.
 
 ### Perk Groups
 
@@ -73,6 +75,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 ### Items
 
+- Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and **Large Powder Bags** weigh 4.
+- Gun Powder now costs 2 Ammunition Supply each (up from 1)
 - **Goblin Pikes**, **Ancient Pikes** and **Pikes** are now also of the weapontype Spear
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk Rally the Troops
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 1000 Value (up rom 200) and grants 10 Resolve (up from 5)
@@ -80,6 +84,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 ### Skills
 
+- **Bandage Ally** now also treats any injury which was recveid at most 1 round ago
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies
 - **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack
@@ -107,13 +112,24 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Weasel** now provides an additional 25 Melee Defense during that brothers turn while fleeing.
 - **Irrational** will no longer appear on recruits.
 
+### Injuries
+
+- **Grazed Neck**, **Cut Artery** and **Cut Throat** are no longer removed, when bandaged
+- **Grazed Neck**, **Cut Artery** and **Cut Throat** no longer deals damage over time
+- **Grazed Neck** now applies 1 stack of bleed when inflicted
+- **Cut Artery** now applies 3 stack of bleed when inflicted
+- **Cut Throat** now applies 6 stack of bleed when inflicted
+
 ### Enemies
 
-- Zombies no longer have **Double Grip** but gain +5 Melee Skill.
-- Barbarian Drummer now have +1 Action Point and grant +150 Experience
-- Nachzehrer can no longer swallow player characters while in a net.
-- Necromancer no longer have 20 natural body armor or **Inspiring Presence**. They now have **Soul Link**.
-- Add face warpaint to all fast bandits
+- **Donkeys** now grant 0 XP (down from 50 XP)
+- **Zombies** no longer have **Double Grip** but gain +5 Melee Skill.
+- **Zombies** and **Skeletons** grant 20% more experience
+- **Zombies** and **Skeletons** no longer grant experience after resurrecting
+- **Barbarian Drummer** now have +1 Action Point and grant +150 Experience
+- **Nachzehrer** can no longer swallow player characters while in a net.
+- **Necromancer** no longer have 20 natural body armor or **Inspiring Presence**. They now have **Soul Link**.
+- Add face warpaint to all **Fast Bandits**
 
 ### Other
 
@@ -128,6 +144,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Beginner combat difficulty difficulty now grants enemy parties 100% resources (up from 85%)
 - Beginner combat difficulty difficulty now causes player characters to receive 15% less damage from all sources
 - Expert combat difficulty difficulty now grants enemy parties 120% resources (up from 115%)
+- Brothers no longer gain any XP when allies die
 - Characters which are not visible to the player will no longer produce idle or death sounds.
 - The combat map is no longer revealed at the end of a battle
 
@@ -139,6 +156,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Brothers that "die" outside of combat will now always transfer their equipment into your stash
 - Legendary Armor and Armor with an attachement that you un-equip are now automatically marked as to-be-repaired
 - The tooltips of your attributes now display your Base Attribute value and the difference between that Base value and your current value
+- Quiver now display the supply cost for replacing ammunition in them
+- Improve artwork for **Nimble** perk
 - **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
 - **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - All effects of the difficulty settings are now listed as tooltips during world generation
@@ -186,7 +205,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Compatibility
 
-- Is safe to remove from- and add to any existing savegames
+- Is safe to remove from- and add to any savegame
 - Removing or adding this mod will not update existing perk trees. Only after some days you will encounter brothers with the changed perk trees.
 
 # License
