@@ -381,6 +381,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_leverage",
+		Key = "RF_Leverage",
+		Description = ::UPD.getDescription({
+			Fluff = "Use the support of your comrades to amplify your strikes!",
+			Requirement = "Polearm",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Your first polearm attack each turn costs " + ::MSU.Text.colorPositive("-1") + " [Action Point|Concept.ActionPoints] for every adjacent ally.",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_wears_it_well",
 		Key = "RF_WearsItWell",
 		Description = ::UPD.getDescription({
