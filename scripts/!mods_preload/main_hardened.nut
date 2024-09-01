@@ -18,7 +18,7 @@
 	::include("mod_hardened/ui/load");	// Load Hardened JS Adjustments and Hooks
 
 	// Remove the Fangshire Helmet
-	foreach(index, itemScript in ::Const.World.Assets.NewCampaignEquipment)
+	foreach (index, itemScript in ::Const.World.Assets.NewCampaignEquipment)
 	{
 		if (itemScript == "scripts/items/helmets/legendary/fangshire")
 		{
@@ -48,7 +48,7 @@
 			if (typeof func == "function") toDelete.push(name);
 		}
 
-		foreach(functionName in toDelete)
+		foreach (functionName in toDelete)
 		{
 			delete p[functionName];
 		}

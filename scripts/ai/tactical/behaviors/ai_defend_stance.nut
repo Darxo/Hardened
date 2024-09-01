@@ -41,7 +41,7 @@ this.ai_defend_stance <- this.inherit("scripts/ai/tactical/behavior", {
 		// Do I die this turn?
 		local dotDamage = 0;
 		local effects = _entity.getSkills().getAllSkillsOfType(::Const.SkillType.DamageOverTime);
-		foreach( dot in effects )
+		foreach (dot in effects)
 		{
 			dotDamage = dotDamage + dot.getDamage();
 		}

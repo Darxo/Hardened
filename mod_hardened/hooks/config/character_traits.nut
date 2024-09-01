@@ -1,4 +1,4 @@
-foreach(index, traitArray in ::Const.CharacterTraits)
+foreach (index, traitArray in ::Const.CharacterTraits)
 {
 	if (traitArray[0] == "trait.irrational")
 	{

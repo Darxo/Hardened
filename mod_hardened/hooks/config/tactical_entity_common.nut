@@ -15,7 +15,7 @@ local oldOnApplyFire = ::Const.Tactical.Common.onApplyFire;
 	local skills = _entity.getSkills();
 
 	local rootEffect = null;
-	foreach(rootEffectID in _rootSkillIDs)
+	foreach (rootEffectID in _rootSkillIDs)
 	{
 		rootEffect = skills.getSkillByID(rootEffectID);
 		if (rootEffect != null) break;

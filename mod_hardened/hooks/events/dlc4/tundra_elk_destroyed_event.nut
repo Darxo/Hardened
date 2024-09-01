@@ -1,4 +1,4 @@
-::Hardened.HooksMod.hook("scripts/events/events/dlc4/location/tundra_elk_destroyed_event", function (q) {
+::Hardened.HooksMod.hook("scripts/events/events/dlc4/location/tundra_elk_destroyed_event", function(q) {
 	q.create = @(__original) function()
 	{
 		__original();
