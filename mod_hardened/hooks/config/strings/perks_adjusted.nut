@@ -217,6 +217,21 @@ local adjustedDescriptions = [
 
 	// Reforged Perks
 	{
+		ID = "perk.rf_between_the_ribs",
+		Key = "RF_BetweenTheRibs",
+		Description = ::UPD.getDescription({
+			Fluff = "Striking when an enemy is distracted allows this character to aim for the vulnerable bits!",
+			Requirement = "Dagger and Piercing Attack",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Deal " + ::MSU.Text.colorPositive("10%") + " more damage and gain " + ::MSU.Text.colorPositive("+10%") + " armor penetration per character [surrounding|Concept.Surrounding] the target.",
+					"Lose " + ::MSU.Text.colorNegative("10%") + " [chance to hit the head|Concept.ChanceToHitHead] per character [surrounding|Concept.Surrounding] the target.",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_formidable_approach",
 		Key = "RF_FormidableApproach",
 		Description = ::UPD.getDescription({
