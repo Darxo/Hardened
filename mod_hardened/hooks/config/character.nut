@@ -16,5 +16,6 @@
 
 ::Const.CharacterProperties.CanExertZoneOfControl <- true;	// Additional property for controlling whether a actor actually can have zone of control
 
+::Const.CharacterProperties.ShieldDamageMult <- 1.0;
 ::Const.CharacterProperties.ShieldDamageReceivedMult <- 1.0;
 ::Const.CharacterProperties.WeaponDurabilityLossMult <- 1.0;
