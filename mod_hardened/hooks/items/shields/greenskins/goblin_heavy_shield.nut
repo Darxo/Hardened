@@ -11,6 +11,16 @@
 		this.m.ConditionMax = 16;
 
 	// Hardened Adjustments
+		this.m.MeleeDefense = 15;
+		this.m.RangedDefense = 15;
+	}
+
+	// Overwrite because Reforged skill preview does not work with removing skills
+	q.onEquip = @() function()
+	{
+		this.shield.onEquip();
+		// this.addSkill(::new("scripts/skills/actives/shieldwall"));
+		this.addSkill(::new("scripts/skills/actives/knock_back"));
 	}
 });
 

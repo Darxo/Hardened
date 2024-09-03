@@ -11,6 +11,15 @@
 		this.m.ConditionMax = 18;
 
 	// Hardened Adjustments
+		this.m.StaminaModifier = -8;
+	}
+
+	// Overwrite because Reforged skill preview does not work with removing skills
+	q.onEquip = @() function()
+	{
+		this.shield.onEquip();
+		this.addSkill(::new("scripts/skills/actives/shieldwall"));
+		// this.addSkill(::new("scripts/skills/actives/knock_back"));
 	}
 });
 

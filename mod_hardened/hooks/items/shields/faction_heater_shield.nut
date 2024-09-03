@@ -11,6 +11,16 @@
 		this.m.ConditionMax = 32;
 
 	// Hardened Adjustments
+		// Now it's an more of a combat shield (higher tier buckler) and less of a line-shield
+		this.m.MeleeDefense = 25;
+	}
+
+	// Overwrite because Reforged skill preview does not work with removing skills
+	q.onEquip = @() function()
+	{
+		this.shield.onEquip();
+		// this.addSkill(::new("scripts/skills/actives/shieldwall"));
+		this.addSkill(::new("scripts/skills/actives/knock_back"));
 	}
 });
 

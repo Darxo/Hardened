@@ -11,6 +11,8 @@
 		this.m.ConditionMax = 16;
 
 	// Hardened Adjustments
+		this.m.MeleeDefense = 13;
+		this.m.RangedDefense = 13;
 	}
 });
 

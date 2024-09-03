@@ -12,6 +12,8 @@
 		this.m.FatigueOnSkillUse = 5;
 
 	// Hardened Adjustments
+		this.m.MeleeDefense = 20;
+		this.m.RangedDefense = 20;
 	}
 });
 
