@@ -37,6 +37,9 @@
 	::includeFiles(::IO.enumerateFiles("mod_hardened/first_world_init"));
 }, ::Hooks.QueueBucket.FirstWorldInit);
 
+::Hardened.HooksMod.queue(">mod_reforged", function() {
+	::include("mod_hardened/reforged_late/shield_last");
+}, ::Hooks.QueueBucket.Last);
 
 
 // Delete all functions in the passed class so that its shell can be repurposed without changing every instance that was pointing to the old script
@@ -54,6 +57,20 @@
 			delete p[functionName];
 		}
 	});
+}
+
+// Round a number only if it falls within 0.01 of the next whole number
+::Hardened.controlledRound <- function( _value, _tolerance = 0.01)
+{
+	local roundedValue = ::Math.round(_value);
+	if (::fabs(_value - roundedValue) < _tolerance)
+	{
+		return roundedValue;
+	}
+	else
+	{
+		return _value;
+	}
 }
 
 ::Hardened.snipeHook <- function( _src, _modID )
