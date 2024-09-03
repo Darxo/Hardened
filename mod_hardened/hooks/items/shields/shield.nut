@@ -20,7 +20,7 @@
 	// Save the reforged shield condition
 	// Calculate the multiplier on how well this named shields condiiton rolled
 	// This can be called twice per item (curing create() and durin deSerialize()) so it must be robust against that
-	q.recordReforgedCondition <- function( _named = false )
+	q.recordReforgedCondition <- function()
 	{
 		this.m.ReforgedShieldConditionMax = this.m.ConditionMax;
 	}

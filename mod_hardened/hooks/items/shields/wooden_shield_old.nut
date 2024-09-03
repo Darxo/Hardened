@@ -1,0 +1,25 @@
+::Hardened.HooksMod.hook("scripts/items/shields/wooden_shield_old", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+		recordReforgedCondition();
+
+	// Vanilla Stats
+		this.m.MeleeDefense = 15;
+		this.m.RangedDefense = 15;
+		this.m.StaminaModifier = -10;
+		this.m.ConditionMax = 16;
+
+	// Hardened Adjustments
+	}
+});
+
+/*
+Vanilla
+	Armored Wiederganger
+	Barbarian Marauder
+	Barbarian Thrall
+
+Reforged
+	-
+*/
