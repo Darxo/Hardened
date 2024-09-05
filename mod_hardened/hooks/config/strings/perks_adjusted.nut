@@ -39,7 +39,7 @@ local adjustedDescriptions = [
 				Description = [
 					"An additional " + ::MSU.Text.colorPositive("30%") + " of damage ignores armor while attacking adjacent enemies.",
 					"Gain " + ::MSU.Text.colorPositive("+2") + " [Reach|Concept.Reach]",
-					"These boni are halfed while engaged with 2 enemies and disabled while engaged with 3 or more enemies.",
+					"These bonuses are halved while engaged with 2 enemies and disabled while engaged with 3 or more enemies.",
 				],
 			}],
 		}),
