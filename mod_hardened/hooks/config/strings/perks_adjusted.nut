@@ -262,6 +262,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_phalanx",
+		Key = "RF_Phalanx",
+		Description = ::UPD.getDescription({
+			Fluff = "Learn the ancient art of fighting in a shielded formation.",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive("+1") + " [Reach|Concept.Reach] per adjacent ally also equipped with a shield.",
+					"[Shieldwall|Skill+shieldwall_effect] does not expire at the start of your [turn|Concept.Turn] if an adjacent ally is also using [Shieldwall.|Skill+shieldwall_effect]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.inspiring_presence",
 		Key = "InspiringPresence",
 		Description = ::UPD.getDescription({
