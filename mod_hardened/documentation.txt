@@ -11,6 +11,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Enemies may spawn with perks that they can't use anymore (**Duelist**/**Formidable Approach**) because I didn't touch their spawning behaviors in that regard
 - Using Recover will prevent you from using **Wait Round** for the rest of this round
 - Loading the game over an enemy allows them to instantly engage the player in battle
+- **Shield Sergeant** can push multiple enemies into the same tile when used with **Line Breaker**
 
 # Compatibility
 
@@ -27,8 +28,45 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Move Polearm Mastery AP reduction in an extry perk
 - change handgonne aoe pattern in some directions to a triangle
 - Rebalance SpiderEgg hunting? Give them XP/Loot?
+- Rebalance enemy skills/perks considering hardened reworks
 
 # Changes:
+
+0.5.0
+	- All reforged changes to Condition, Melee Defense, Ranged Defense and Weight of vanilla shields have been reverted.
+	- Additionally the following balance changes have been made compared to the vanilla stats:
+		- **Tower Shields** now have 30 Condition (up from 24) and no longer grant **Knock Back**
+		- **Heater Shields** now have 25 Melee Defense (up from 20) and no longer grant **Shieldwall**
+		- **Kite Shields** no longer grant **Knock Back**
+		- **Reinforced Skirmisher Shields** now have 15 Melee Defense (up from 10), 15 Ranged Defense (up from 10), no longer grants **Shieldwall** and now grants **Knock Back**
+		- **Wooden Skirmisher Shield** no longer grants **Shieldwall** and now grants **Knock Back**
+		- **Heavy Metal shields** now have 20 Melee Defense (up from 15) and 20 Ranged Defense (up from 15)
+		- **Feral Shields** now have 20 Melee Defense (up from 15), 25 Ranged Defense (up from 20), 20 Weight (up from 12), 24 Condition (up from 16), +5 Fatige on use (up from 0) and they no longer grant **Knock Back**
+		- **Adarga Shields** now have 8 Weight (down from 10) and no longer grant **Knock Back**
+		- **Old Wooden Shields** now have 13 Melee Defense (down from 15) and 13 Ranged Defense (down from 15)
+		- **Worn Heater Shields** now have 23 Melee Defense (up from 20), 13 Ranged Defense (down from 15) and no longer grant **Shieldwall**
+		- **Worn Kite Shields** now have 13 Melee Defense (down from 15), 23 Ranged Defense (down from 25) and no longer grant **Knock Back**
+	- **Throwing Spear** now deals 26 shield damage (up from 0)
+	- **Brigand Leader**, **Brigand Raider** and **Noble Footman** no longer have **Shield Expert**
+	- **Shield Sergeant** is mostly reworked. It still grants **Shieldwall** to all allies at the start of each combat. It now causes allies to imitate shield skills for free that you use. It also allows you to use **Knock Back** on empty tiles.
+	- **Polearm Mastery** no longer reduces the Action Point cost of 2 handed reach weapons by 1. It now grants +15% chance to hit for **Repel** and **Hook**.
+	- **Leverage** is completely reworked. It now reduces the Action Point cost of your first polearm attack each turn by 1 for each adjacent ally.
+	- **Between the Ribs** no also lowers your chance to hit the head by 10% for each surrounding character
+	- **Axe Mastery** no longer grants **Hook Shield**. It now causes **Split Shield** to apply **Dazed** for 1 turn
+	- **Dismantle** has been completely reworked. It now grants +40% Armor Damage and 100% more Shield Damage against enemies who have full health
+	- **Phalanx** now works even with a **Buckler** and it now also counts allies with a **Buckler** for the effect
+	- Add new **Goblin** racial effect that grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
+	- **Smoke Bomb** now costs 400 Crowns (up from 275). Smoke now lasts 2 Rounds (up from 1)
+	- Add tooltip for the duration of tile effects (smoke, flames, miasma)
+	- Introduce new **ShieldDamageMult** character property. Rename existing **ShieldDamageMult** character property into **ShieldDamageReceivedMult**
+	- fix nimble displaying tooltip line about reach
+	- fix **Shieldwall effect** nested tooltip missing when no shield is present
+	- fix some enemies gaining Duelist even though they wield a two-handed weapon
+	- fix **Line Breaker** is now considered an item skill
+	- fix typos in duelist perk description
+
+	- shielddamage mult? split shield rewrite?
+
 
 0.4.0
 	- **Bandage Ally** can now also be used during battle to treat (as if you visited the temple) any temporary injury which was received at most 1 round ago
