@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/skill", function(q) {
+	q.m.HD_Temp_IsFree <- false;	// Ignore fatigue and action point cost during isAffordable check
+
 	q.isDuelistValid = @() function()
 	{
 		local mainhandItem = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
@@ -6,6 +8,12 @@
 		if (mainhandItem.isItemType(::Const.Items.ItemType.OneHanded) == false) return false;
 
 		return true;
+	}
+
+	q.isAffordable = @(__original) function()
+	{
+		if (this.m.HD_Temp_IsFree) return true;	// Allows us to do a vanilla isUsableOn check without considering the cost. Useful for triggering other characters skills
+		return __original();
 	}
 
 	/* This change will make it so both, armor and health damage use the exact same base damage roll

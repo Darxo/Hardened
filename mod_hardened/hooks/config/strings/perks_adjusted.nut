@@ -305,6 +305,21 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_shield_sergeant",
+		Key = "RF_ShieldSergeant",
+		Description = ::UPD.getDescription({
+			Fluff = "Lock and Shield",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Allies with a shield will gain [Shieldwall|Skill+shieldwall_effect] for free at the start of each battle.",
+					"Whenever you use a non-free shield skill, all allies within " + ::MSU.Text.colorPositive(3) + " tiles who also have that skill will use it for free on a random valid adjacent tile.",
+					"[Knock Back|Skill+knock_back] can be used on empty tiles.",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_skirmisher",
 		Key = "RF_Skirmisher",
 		Description = ::UPD.getDescription({
