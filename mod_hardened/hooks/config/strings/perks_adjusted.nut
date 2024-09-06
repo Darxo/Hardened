@@ -103,6 +103,31 @@ local adjustedDescriptions = [
 	 	}),
 	},
 	{
+		ID = "perk.mastery.axe",
+		Key = "SpecAxe",
+		Description = ::UPD.getDescription({
+			Fluff = "Master combat with axes and destroying shields.",
+			Requirement = "Axe",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue.|Concept.Fatigue]",
+						"[Round Swing|Skill+round_swing] gains " + ::MSU.Text.colorPositive("+5%") + " chance to hit.",
+						"[Split Shield|Skill+split_shield] applies [Dazed|Skill+dazed_effect] for " + ::MSU.Text.colorPositive(1) + " turn.",
+						"The [Longaxe|Item+longaxe] no longer has a penalty for attacking targets directly adjacent.",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Active,
+					Description = [
+						"Unlocks the [Bearded Blade|Skill+rf_bearded_blade_skill] skill which allows you to disarm your opponents during an attack or when they miss attacks against you.",
+					],
+				},
+			],
+		}),
+	},
+	{
 		ID = "perk.mastery.dagger",
 		Key = "SpecDagger",
 		Description = ::UPD.getDescription({
