@@ -16,6 +16,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_dismantle",
+		Key = "RF_Dismantle",
+		Description = ::UPD.getDescription({
+			Fluff = "Strip them of their protection first!",
+			Requirement = "Axe",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Deal " + ::MSU.Text.colorPositive("+40%") + " Armor Damage and " + ::MSU.Text.colorPositive("100%") + " more Shield Damage against enemies who have full health.",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.dodge",
 		Key = "Dodge",
 		Description = ::UPD.getDescription({
