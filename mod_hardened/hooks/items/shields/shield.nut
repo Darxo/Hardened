@@ -1,7 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/items/shields/shield", function(q) {
 	q.applyShieldDamage = @(__original) function( _damage, _playHitSound = true )
 	{
-		_damage = ::Math.max(1, ::Math.ceil(_damage * this.getContainer().getActor().getCurrentProperties().ShieldDamageMult));
+		_damage = ::Math.max(1, ::Math.ceil(_damage * this.getContainer().getActor().getCurrentProperties().ShieldDamageReceivedMult));
 
 		return __original(_damage, _playHitSound);
 	}
