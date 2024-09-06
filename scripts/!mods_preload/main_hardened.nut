@@ -30,6 +30,7 @@
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
 	::include("mod_hardened/reforged_late/perk_groups");
+	::include("mod_hardened/snipe_hooks");
 }, ::Hooks.QueueBucket.AfterHooks);
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
@@ -54,3 +55,22 @@
 		}
 	});
 }
+
+::Hardened.snipeHook <- function( _src, _modID )
+{
+	if (_src in ::Hooks.BBClass)
+	{
+		for (local i = ::Hooks.BBClass[_src].RawHooks.len() - 1; i >= 0; --i)
+		{
+			if (::Hooks.BBClass[_src].RawHooks[i].Mod.ID == _modID)
+			{
+				::Hooks.BBClass[_src].RawHooks.remove(i);
+			}
+		}
+	}
+	else
+	{
+		::logWarning("Warning: Path " + _src + " is never hooked. Hooks from mod " + _modID + " could not be sniped");
+	}
+}
+
