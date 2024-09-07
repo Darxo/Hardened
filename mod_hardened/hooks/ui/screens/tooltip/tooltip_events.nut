@@ -28,5 +28,44 @@
 
 		return ret;
 	}
+
+	q.tactical_queryTileTooltipData = @(__original) function()
+	{
+		local ret = __original();
+
+		if (ret != null)
+		{
+			local lastTileHovered = ::Tactical.State.getLastTileHovered();
+			// Straight up copy of vanilla condition. I didnt bother rewriting/inverting it yet
+			if (lastTileHovered.IsDiscovered && !lastTileHovered.IsEmpty && (!lastTileHovered.IsOccupiedByActor || lastTileHovered.IsVisibleForPlayer))
+			{
+			}
+			else if (lastTileHovered.IsVisibleForPlayer && lastTileHovered.Properties.Effect != null)
+			{
+				local remainingRounds = lastTileHovered.Properties.Effect.Timeout - ::Time.getRound();
+				local tooltipText = null;
+				if (remainingRounds == 1)
+				{
+					tooltipText = "Lasts until the end of this round";
+				}
+				else if (remainingRounds > 1)
+				{
+					tooltipText = "Lasts for " + ::MSU.Text.colorPositive(remainingRounds) + " Round(s)";
+				}
+
+				if (tooltipText != null)
+				{
+					ret.push({
+						id = 101,
+						type = "text",
+						icon = "ui/tooltips/warning.png",
+						text = tooltipText
+					});
+				}
+			}
+		}
+
+		return ret;
+	}
 });
 
