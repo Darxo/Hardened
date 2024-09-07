@@ -17,10 +17,17 @@ this.hd_goblin_racial <- this.inherit("scripts/skills/skill", {
 	{
 		local ret = this.skill.getTooltip();
 
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/sturdiness.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Can use [Shieldwall|Skill+shieldwall] with any shield"),
+		});
+
 		if (this.m.ShieldMeleeDefensePct != 0)
 		{
 			ret.push({
-				id = 10,
+				id = 11,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
 				text = "Gain " + ::MSU.Text.colorizePct(this.m.ShieldMeleeDefensePct) + " more Melee Defense from equipped shield",
@@ -30,7 +37,7 @@ this.hd_goblin_racial <- this.inherit("scripts/skills/skill", {
 		if (this.m.ShieldRangedDefensePct != 0)
 		{
 			ret.push({
-				id = 10,
+				id = 11,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
 				text = "Gain " + ::MSU.Text.colorizePct(this.m.ShieldRangedDefensePct) + " more Ranged Defense from equipped shield",
@@ -38,6 +45,20 @@ this.hd_goblin_racial <- this.inherit("scripts/skills/skill", {
 		}
 
 		return ret;
+	}
+
+	function onAdded()
+	{
+		local shield = this.getContainer().getActor().getOffhandItem();
+		if (shield != null) this.onEquip(shield);
+	}
+
+	function onEquip( _item )
+	{
+		if (_item.isItemType(::Const.Items.ItemType.Shield))
+		{
+			_item.addSkill(::new("scripts/skills/actives/shieldwall"));	// Always add shieldwall
+		}
 	}
 
 	function onUpdate( _properties )
