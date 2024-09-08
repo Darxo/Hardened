@@ -16,4 +16,8 @@
 		}
 		return count;
 	}
+
+	// No longer display any hitfactor tooltips
+	q.onGetHitFactors = @() function(_skill, _targetTile, _tooltip) {}
+	q.onGetHitFactorsAsTarget = @() function(_skill, _targetTile, _tooltip) {}
 });
