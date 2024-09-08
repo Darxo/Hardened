@@ -1,3 +1,6 @@
+::Hardened.Temp.LastUsedSkill <- null;		// This is used to be able to calculate shield damage multipliers during the applyShieldDamage function
+::Hardened.Temp.LastUsedSkillOwner <- null;	// This is used to be able to calculate shield damage multipliers during the applyShieldDamage function
+
 ::Hardened.HooksMod.hook("scripts/skills/skill", function(q) {
 	q.m.HD_Temp_IsFree <- false;	// Ignore fatigue and action point cost during isAffordable check
 
@@ -14,6 +17,14 @@
 	{
 		if (this.m.HD_Temp_IsFree) return true;	// Allows us to do a vanilla isUsableOn check without considering the cost. Useful for triggering other characters skills
 		return __original();
+	}
+
+	q.use = @(__original) function( _targetTile, _forFree = false )
+	{
+		::Hardened.Temp.LastUsedSkill = ::MSU.asWeakTableRef(this);		// We can expect the skill to exist long enough, even if it is removed from the actor, usually within delayed events
+		::Hardened.Temp.LastUsedSkillOwner = ::MSU.asWeakTableRef(this.getContainer().getActor());	// The skill might not have an owner anymore by that time, e.g. with Throwing Spear skill
+
+		__original(_targetTile, _forFree);
 	}
 
 	/* This change will make it so both, armor and health damage use the exact same base damage roll

@@ -3,9 +3,28 @@
 	q.m.ReforgedShieldConditionMax <- null;	// Condition this item would have in reforged
 	q.m.ShieldConditionMult <- 1.0;	// Bonus Condition rolled by named items
 
+	// Hook, in order to implement the new character properties ShieldDamageMult and ShieldDamageReceivedMult
+	// The information to calculate those are fetched at the start of `function use` of `skill.nut` and saved in a global variable
+	// Known Issues:
+	// - Shield damage which is generated outside of skill use (e.g. tile effects, or passive skills) will be use the last used Skill for calculation
 	q.applyShieldDamage = @(__original) function( _damage, _playHitSound = true )
 	{
-		_damage = ::Math.max(1, ::Math.ceil(_damage * this.getContainer().getActor().getCurrentProperties().ShieldDamageReceivedMult));
+		local receiver = this.getContainer().getActor();
+		if (::Hardened.Temp.LastUsedSkill != null && ::Hardened.Temp.LastUsedSkillOwner)
+		{
+			local damagingSkill = ::Hardened.Temp.LastUsedSkill;
+			local attacker = ::Hardened.Temp.LastUsedSkillOwner;
+
+			_damage *= attacker.getSkills().buildPropertiesForUse(damagingSkill, receiver).ShieldDamageMult;
+			_damage *= receiver.getSkills().buildPropertiesForDefense(attacker, damagingSkill).ShieldDamageReceivedMult;
+		}
+		else	// at least apply the defender values fetched from his CurrentProperties
+		{
+			_damage *= receiver.getCurrentProperties().ShieldDamageReceivedMult;
+		}
+
+		// Vanilla Mechanic: damage is rounded and must always be at least 1
+		_damage = ::Math.max(1, ::Math.round(_damage));
 
 		return __original(_damage, _playHitSound);
 	}

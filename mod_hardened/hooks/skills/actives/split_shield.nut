@@ -45,7 +45,7 @@
 			this.spawnAttackEffect(_targetTile, ::Const.Tactical.AttackEffectSplitShield);
 
 			local conditionBefore = shield.getCondition();
-			shield.applyShieldDamage(_user.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand).getShieldDamage(this, targetEntity));
+			shield.applyShieldDamage(_user.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand).getShieldDamage());
 
 			if (shield.getCondition() == 0)
 			{

@@ -3,6 +3,7 @@
 	Name = "Hardened",
 	Version = "0.5.0",
 	GitHubURL = "https://github.com/Darxo/Hardened",
+	Temp = {},	// Used to globally store variables between function calls to implement more advanced, albeit hacky behavior
 }
 
 ::Hardened.HooksMod <- ::Hooks.register(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
