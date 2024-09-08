@@ -18,14 +18,14 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 ### Shield Revert/Rework
 
-All reforged changes to Condition, Melee Defense, Ranged Defense and Weight of vanilla shields have been reverted.
-Additionally the following balance changes have been made compared to the vanilla stats:
+- All reforged changes to Condition, Melee Defense, Ranged Defense and Weight of vanilla shields have been reverted.
+- Additionally the following balance changes have been made compared to the vanilla stats:
 	- **Tower Shields** now have 30 Condition (up from 24) and no longer grant **Knock Back**
 	- **Heater Shields** now have 25 Melee Defense (up from 20) and no longer grant **Shieldwall**
 	- **Kite Shields** no longer grant **Knock Back**
 	- **Reinforced Skirmisher Shields** now have 15 Melee Defense (up from 10), 15 Ranged Defense (up from 10), no longer grants **Shieldwall** and now grants **Knock Back**
 	- **Wooden Skirmisher Shield** no longer grants **Shieldwall** and now grants **Knock Back**
-	- **Heavy Metal shields** now have 20 Melee Defense (up from 15) and 20 Ranged Defense (up from 15)
+	- **Heavy Metal Shields** now have 20 Melee Defense (up from 15) and 20 Ranged Defense (up from 15)
 	- **Feral Shields** now have 20 Melee Defense (up from 15), 25 Ranged Defense (up from 20), 20 Weight (up from 12), 24 Condition (up from 16), +5 Fatige on use (up from 0) and they no longer grant **Knock Back**
 	- **Adarga Shields** now have 8 Weight (down from 10) and no longer grant **Knock Back**
 	- **Old Wooden Shields** now have 13 Melee Defense (down from 15) and 13 Ranged Defense (down from 15)
@@ -84,7 +84,7 @@ Additionally the following balance changes have been made compared to the vanill
 - Change **Duelist** to only works for one-handed weapons. The Penetration is increased to 30% and is now also halfed with 2 enemies and disabled with 3+
 - **Fortified Mind** now provides 30% Resolve (up from 25%). This Bonus is now reduces by 1% for each Helmet Weight.
 - **Battle Forged** no longer provide any Reach Ignore
-- **Between the Ribs** no also lowers your chance to hit the head by 10% for each surrounding character
+- **Between the Ribs** now also lowers your chance to hit the head by 10% for each surrounding character
 - **Dismantle** has been completely reworked. It now grants +40% Armor Damage and 100% more Shield Damage against enemies who have full health.
 - **En Garde** is completely reworked. It now grants +15 Melee Skill while it is not your turn. It also makes it so **Riposte** is no longer disabled when you get hit or deal a counter attack (so like in Vanilla).
 - **Fencer** no longer grants +10 chance to hit or 20% less fatigue cost. It now causes your fencing swords to lose 50% less durability.
@@ -105,7 +105,7 @@ Additionally the following balance changes have been made compared to the vanill
 - **Swift Stabs** has been completely reworked. It's now called **Hit and Run**. It makes it so all dagger attacks can be used at 2 tiles and will move the user one tile closer before the attack. When the attack hits the enemy, the user is moved back to the original tile.
 - **Through the Gaps** is now always active but now lowers your armor penetration by 10% (down from increasing it by 25%)
 - **Unstoppable** no longer loses all Stacks when you use **Wait** if you spent atleast half of your action points by that time.
-- **Wears it well** no grants 50% of combined Mainhand and Offhand weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest)
+- **Wears it well** now grants 50% of combined Mainhand and Offhand Weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest Weight)
 - **Whirling Death** is completely reworked. It now grants a new active skill which creates a buff for two turns granting 30% more damage, 2 Reach and 10 Melee Defense to the user.
 
 ### Perk Groups
