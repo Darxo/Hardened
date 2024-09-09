@@ -80,9 +80,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 ### Perks
 
 - **Axe Mastery** no longer grants **Hook Shield**. It now causes **Split Shield** to apply **Dazed** for 1 turn.
-- Change **Dodge** effect to grant 4% of Initiative as extra Melee Defense and Ranged Defense for every empty adjacent tile
-- Change **Duelist** to only works for one-handed weapons. The Penetration is increased to 30% and is now also halfed with 2 enemies and disabled with 3+
-- **Fortified Mind** now provides 30% Resolve (up from 25%). This Bonus is now reduces by 1% for each Helmet Weight.
+- **Dodge** now grants 4% of Initiative as extra Melee Defense and Ranged Defense for every empty adjacent tile (down from always 15%)
+- **Duelist** is completely reworked. It now only works for one-handed weapons. It grants 30% Armor Penetration and +2 Reach while adjacent to 0 or 1 enemies and it grants 15% Armor Penetration and +1 Reach while adjacent to 2 enemies.
+- **Fortified Mind** now grants 30% more Resolve (up from 25%). This Bonus is now reduces by 1% for each point of Weight on your Helmet.
 - **Battle Forged** no longer provide any Reach Ignore
 - **Between the Ribs** now also lowers your chance to hit the head by 10% for each surrounding character
 - **Dismantle** has been completely reworked. It now grants +40% Armor Damage and 100% more Shield Damage against enemies who have full health.
@@ -90,7 +90,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - **Fencer** no longer grants +10 chance to hit or 20% less fatigue cost. It now causes your fencing swords to lose 50% less durability.
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy.
 - **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
-- Rework **Formidable Approach** to only work for Two-Handed weapons. It now grant 15 Melee Skill instead of Reach but only triggers when you are the one moving next to an enemy. When your maximum Hitpoints are higher than those of your opponent, it removes confident from them.
+- **Formidable Approach** is completely reworked. It now only works for Two-Handed weapons. It now grant 15 Melee Skill instead of Reach but only triggers when you are the one moving next to an enemy. When your maximum Hitpoints are higher than those of your opponent, it removes confident from them.
 - **King of all Weapons** is now called **Spear Flurry** and is completely reworked. It now reduces your damage by 10% but prevents spear attacks from building up any fatigue.
 - **Leverage** is completely reworked. It now reduces the Action Point cost of your first polearm attack each turn by 1 for each adjacent ally.
 - **Nimble** is completely reworked: It now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
@@ -143,7 +143,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 ### Enemies
 
 - Add new **Goblin** racial effect that grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
-- **Brigand Leader**, **Brigand Raider** and **Noble Footman** no longer have **Shield Expert**
+- **Brigand Leader**, **Brigand Raider** and **Noble Footmen** no longer have **Shield Expert**
 - **Zombies** no longer have **Double Grip** but gain +5 Melee Skill.
 - **Zombies** and **Skeletons** grant 20% more experience
 - **Zombies** and **Skeletons** no longer grant experience after resurrecting
