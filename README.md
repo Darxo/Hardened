@@ -1,6 +1,10 @@
 # Description
 
-This submod is a collection of changes to Reforged that I suggested internally that didn't make it into the mod [yet]. In order to still enjoy those ideas/tweaks I made them into this submod for myself; and maybe others.
+Hardened is a submod for Reforged, offering an alternate vision while staying fully savegame compatible: Players can freely switch between Reforged and Hardened.
+
+While Reforged focuses on realism and polished mechanics, Hardened embraces a simpler, more experimental approach. The submod takes more risks with innovative perk designs and mechanics, unlocking new possibilities for gameplay, though this can occasionally introduce more bugs or incompatibilities than Reforged. Hardened also walks back several of Reforged's more complex or restrictive design choices, opting for streamlined systems that prioritize fluidity and player freedom.
+
+Hardened reflects my personal vision of Battle Brothers — a balanced, varied, and challenging experience, with enough randomness to keep each playthrough fresh and unpredictable.
 
 # List of all Changes
 
