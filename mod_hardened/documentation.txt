@@ -32,6 +32,15 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.5.1
+	- Reduce Meele Skill and Melee Defense of all Goblins by 5
+	- **Scoundrels** will no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**
+	- **Vandal** will no longer spawn with **Kite Shields**. Instead they can now spawn with **Old Wooden Shields**
+	- **Raider** will no longer spawn with **Kite Shields**. Instead they can now spawn with **Worn Kite/Heater Shields**
+	- **Highwaymen** can now also spawn with **Worn Kite/Heater Shields**
+	- Simplify **Shield Sergeant** perk description slightly
+	- Fix mod not loading under Reforged 0.6.3
+
 0.5.0
 	- All reforged changes to Condition, Melee Defense, Ranged Defense and Weight of vanilla shields have been reverted.
 	- Additionally the following balance changes have been made compared to the vanilla stats:

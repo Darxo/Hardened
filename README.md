@@ -142,7 +142,12 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 ### Enemies
 
+- All Goblins have -5 Melee Skill and -5 Melee Defense
 - Add new **Goblin** racial effect that grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
+- **Scoundrels** will no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**
+- **Vandals** will no longer spawn with **Kite Shields**. Instead they can now spawn with **Old Wooden Shields**
+- **Raider** will no longer spawn with **Kite Shields**. Instead they can now spawn with **Worn Kite/Heater Shields**
+- **Highwaymen** can now also spawn with **Worn Kite/Heater Shields**
 - **Brigand Leader**, **Brigand Raider** and **Noble Footmen** no longer have **Shield Expert**
 - **Zombies** no longer have **Double Grip** but gain +5 Melee Skill.
 - **Zombies** and **Skeletons** grant 20% more experience
