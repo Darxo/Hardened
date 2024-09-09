@@ -32,6 +32,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.5.2
+	- Fix game crash when fleeing characters are killed
+
 0.5.1
 	- Reduce Meele Skill and Melee Defense of all Goblins by 5
 	- **Scoundrels** will no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**
