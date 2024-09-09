@@ -24,7 +24,7 @@
 		::Hardened.Temp.LastUsedSkill = ::MSU.asWeakTableRef(this);		// We can expect the skill to exist long enough, even if it is removed from the actor, usually within delayed events
 		::Hardened.Temp.LastUsedSkillOwner = ::MSU.asWeakTableRef(this.getContainer().getActor());	// The skill might not have an owner anymore by that time, e.g. with Throwing Spear skill
 
-		__original(_targetTile, _forFree);
+		return __original(_targetTile, _forFree);
 	}
 
 	/* This change will make it so both, armor and health damage use the exact same base damage roll
