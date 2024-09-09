@@ -8,7 +8,11 @@
 	1.0,
 ]
 
-::Const.Difficulty.getPlayerDamageReceivedMult <- function() {
+::Const.Difficulty.getPlayerDamageReceivedMult <- function()
+{
+	if (!::MSU.Utils.hasState("tactical_state")) return 1.0;
+	if (::Tactical.State.isScenarioMode()) return 1.0;
+
 	local difficulty = ::World.Assets.getCombatDifficulty();
 	if (difficulty >= ::Const.Difficulty.PlayerDamageReceivedMult.len())
 	{
