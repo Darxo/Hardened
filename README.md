@@ -219,7 +219,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 ### New Character Properties
 
-- 'ShieldDamageMult' multiplies shield damage dealt via **Split Shield**
+- `ShieldDamageMult` multiplies shield damage dealt via active skills
 - `ShieldDamageReceivedMult` multiplies incoming shield damage up to a minimum of 1
 - `ReachAdvantageMult` is a multiplier for melee skill during reach advantage
 - `ReachAdvantageBonus` is a flat bonus for melee skill during reach advantage

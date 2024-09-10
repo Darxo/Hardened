@@ -29,8 +29,16 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - change handgonne aoe pattern in some directions to a triangle
 - Rebalance SpiderEgg hunting? Give them XP/Loot?
 - Rebalance enemy skills/perks considering hardened reworks
+- Fix orcs sometimes using charge, even though they decided to give up
+- Fix perma stunning enemies on the world map
 
 # Changes:
+
+0.5.3
+	- Add nested tooltips to hardened exlusive skills
+	- Fix scenarios not starting
+	- Fix crash when equipping/viewing a Lute
+	- Fix shieldwall effect not showing up outside of nested tooltips
 
 0.5.2
 	- Fix game crash when fleeing characters are killed
