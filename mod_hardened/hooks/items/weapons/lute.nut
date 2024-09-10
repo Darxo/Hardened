@@ -2,6 +2,6 @@
 	q.onEquip = @(__original) function()
 	{
 		__original();
-		this.addSkill(::MSU.new("scripts/skills/actives/rf_battle_song_skill"));
+		this.addSkill(::new("scripts/skills/actives/hd_battle_song_skill"));
 	}
 });
