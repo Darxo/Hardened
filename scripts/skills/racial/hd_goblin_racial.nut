@@ -30,7 +30,7 @@ this.hd_goblin_racial <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "Gain " + ::MSU.Text.colorizePct(this.m.ShieldMeleeDefensePct) + " more Melee Defense from equipped shield",
+				text = ::Reforged.Mod.Tooltips.parseString("Gain " + ::MSU.Text.colorizePct(this.m.ShieldMeleeDefensePct) + " more [Melee Defense|Concept.MeleeDefense] from equipped shield"),
 			});
 		}
 
@@ -40,7 +40,7 @@ this.hd_goblin_racial <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "Gain " + ::MSU.Text.colorizePct(this.m.ShieldRangedDefensePct) + " more Ranged Defense from equipped shield",
+				text = ::Reforged.Mod.Tooltips.parseString("Gain " + ::MSU.Text.colorizePct(this.m.ShieldRangedDefensePct) + " more [Ranged Defense|Concept.RangeDefense] from equipped shield"),
 			});
 		}
 

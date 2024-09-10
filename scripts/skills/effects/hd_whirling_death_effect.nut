@@ -7,7 +7,7 @@ this.hd_whirling_death_effect <- this.inherit("scripts/skills/skill", {
 		DurationInTurns = 2,
 
 		// Private
-		TurnsLeft = 0,
+		TurnsLeft = 2,	// so that nested tooltips has something to display
 	},
 
 	function create()
@@ -60,7 +60,7 @@ this.hd_whirling_death_effect <- this.inherit("scripts/skills/skill", {
 			id = 20,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Lasts for " + ::MSU.Text.colorPositive(this.m.TurnsLeft) + " turn(s).",
+			text = ::Reforged.Mod.Tooltips.parseString("Lasts for " + ::MSU.Text.colorPositive(this.m.TurnsLeft) + " [turn(s)|Concept.Turn]"),
 		});
 
 		return ret;

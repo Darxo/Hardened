@@ -17,14 +17,12 @@ this.hd_wait_effect <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.skill.getTooltip();
-		ret.push(
-			{
-				id = 12,
-				type = "text",
-				icon = "ui/icons/initiative.png",
-				text = ::MSU.Text.colorNegative((this.m.InitiativeMultiplier * 100.0) - 100 + "%") + " Initiative"
-			}
-		)
+		ret.push({
+			id = 12,
+			type = "text",
+			icon = "ui/icons/initiative.png",
+			text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeMultWithText(this.m.InitiativeMultiplier) + " [Initiative|Concept.Initiative]"),
+		});
 		return ret;
 	}
 

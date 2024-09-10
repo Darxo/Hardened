@@ -23,14 +23,14 @@ this.hd_reload_disorientation_effect <- ::inherit("scripts/skills/skill", {
 			id = 10,
 			type = "text",
 			icon = "ui/icons/ranged_skill.png",
-			text = ::MSU.Text.colorizeValue(this.m.RangedSkillModifier) + " Ranged Defense"
+			text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(this.m.RangedSkillModifier) + " [Ranged Skill|Concept.RangeSkill]"),
 		});
 
 		tooltip.push({
 			id = 11,
 			type = "text",
 			icon = "ui/icons/ranged_defense.png",
-			text = ::MSU.Text.colorizeValue(this.m.RangedDefenseModifier) + " Ranged Defense"
+			text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(this.m.RangedDefenseModifier) + " [Ranged Defense|Concept.RangeDefense]"),
 		});
 
 		return tooltip;

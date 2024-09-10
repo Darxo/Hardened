@@ -30,7 +30,7 @@ this.hd_inspiring_presence_buff_effect <- ::inherit("scripts/skills/skill", {
 			id = 10,
 			type = "text",
 			icon = "ui/icons/action_points.png",
-			text = ::MSU.Text.colorizeValue(this.m.BonusActionPoints) + " Action Points"
+			text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(this.m.BonusActionPoints, {AddSign = true}) + " [Action Points|Concept.ActionPoints]"),
 		});
 
 		return tooltip;
@@ -41,7 +41,7 @@ this.hd_inspiring_presence_buff_effect <- ::inherit("scripts/skills/skill", {
 		this.spawnIcon("rf_inspiring_presence_buff_effect", this.getContainer().getActor().getTile());
 
 		// Maybe playing 6 of these at the same time ends up too dank. But for now I will leave it like this
-		::Sound.play(this.m.SoundOnUse[::Math.rand(0, this.m.SoundOnUse.len() - 1)], ::Const.Sound.Volume.Skill * this.m.SoundVolume, this.getContainer().getActor().getPos());
+		::Sound.play(::MSU.Array.rand(this.m.SoundOnUse), ::Const.Sound.Volume.Skill * this.m.SoundVolume, this.getContainer().getActor().getPos());
 	}
 
 	function onUpdate( _properties )
