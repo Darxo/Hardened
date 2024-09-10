@@ -1,5 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/skills/effects/shieldwall_effect", function(q) {
-	q.getTooltip = @() function()
+	q.getTooltip = @(__original) function()
 	{
 		if (this.getContainer().getActor().getID() ==  ::MSU.getDummyPlayer().getID())
 		{
