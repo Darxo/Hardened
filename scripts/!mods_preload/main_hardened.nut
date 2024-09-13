@@ -31,7 +31,6 @@
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
 	::include("mod_hardened/reforged_late/perk_groups");
-	::include("mod_hardened/snipe_hooks");
 }, ::Hooks.QueueBucket.AfterHooks);
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
@@ -40,6 +39,7 @@
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
 	::include("mod_hardened/reforged_late/shield_last");
+	::include("mod_hardened/snipe_hooks");
 }, ::Hooks.QueueBucket.Last);
 
 
@@ -78,12 +78,18 @@
 {
 	if (_src in ::Hooks.BBClass)
 	{
+		local modIDFound = false;
 		for (local i = ::Hooks.BBClass[_src].RawHooks.len() - 1; i >= 0; --i)
 		{
 			if (::Hooks.BBClass[_src].RawHooks[i].Mod.ID == _modID)
 			{
 				::Hooks.BBClass[_src].RawHooks.remove(i);
+				modIDFound = true;
 			}
+		}
+		if (!modIDFound)
+		{
+			::logWarning("Warning: modID " + _modID + " was never sniped. You might have mistyped it");
 		}
 	}
 	else
