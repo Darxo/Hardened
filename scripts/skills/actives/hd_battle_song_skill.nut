@@ -35,7 +35,7 @@ this.hd_battle_song_skill <- ::inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Grant [Inspired by Song|Skill+hd_inspired_by_song_effect] to all allies within " + ::MSU.Text.colorPositive(this.getMaxRange()) + " tiles adding " + ::MSU.Text.colorizeValue(this.getBonus(), {AddSign = true}) + " [Resolve|Concept.Bravery] (" + ::MSU.Text.colorizePct(this.m.ResolveBonusPct) + " of your current [Resolve|Concept.Bravery]) to them."),
+				text = ::Reforged.Mod.Tooltips.parseString("Grant [Inspired by Song|Skill+hd_inspired_by_song_effect] to all allies within " + ::MSU.Text.colorPositive(this.getMaxRange()) + " tiles adding " + ::MSU.Text.colorizePct(this.m.ResolveBonusPct) + " (" + ::MSU.Text.colorizeValue(this.getBonus()) + ") of your current [Resolve|Concept.Bravery]) to them."),
 			},
 			{
 				id = 20,
