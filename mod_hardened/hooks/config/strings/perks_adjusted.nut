@@ -471,10 +471,10 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever you end your [turn|Concept.Turn] with half or fewer of your [Action Points|Concept.ActionPoints] remaining, gain a stack, up to a maximum of 5 stacks.",
-					"Each stack increases [Action Points|Concept.ActionPoints] by " + ::MSU.Text.colorPositive("+1") + " and [Initiative|Concept.Initiative] by " + ::MSU.Text.colorPositive("+10") + ".",
-					"All the stacks are lost if you [wait|Concept.Wait] or end your [turn|Concept.Turn] with more than half of your [Action Points|Concept.ActionPoints] remaining.",
-					"All the stacks are lost if you use [Recover|Skill+recover_skill], or get [Stunned|Skill+stunned_effect], Rooted or [Staggered|Skill+staggered_effect].",
+					"If you have attacked at least once this [turn|Concept.Turn] and end your [turn|Concept.Turn] with half or fewer of your [Action Points|Concept.ActionPoints] remaining, gain a stack, up to a maximum of 5 stacks",
+					"Each stack grants " + ::MSU.Text.colorPositive("+1") + " [Action Point(s)|Concept.ActionPoints] and " + ::MSU.Text.colorPositive("+10") + " [Initiative.|Concept.Initiative]",
+					"All the stacks are lost if you [wait|Concept.Wait] or end your [turn|Concept.Turn] with more than half of your [Action Points|Concept.ActionPoints] remaining",
+					"All the stacks are lost if you use [Recover|Skill+recover_skill], or get [Stunned|Skill+stunned_effect], Rooted or [Staggered|Skill+staggered_effect]",
 				],
 			}],
 		}),
