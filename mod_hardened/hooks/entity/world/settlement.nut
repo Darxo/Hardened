@@ -31,6 +31,60 @@
 		return ret;
 	}
 
+	q.onUpdateShopList = @(__original) function( _id, _list )
+	{
+		foreach (entry in _list)
+		{
+			if (entry.S == "shields/wooden_shield")
+			{
+				// We increase the rarity because all towns supplement wooden shields with old/worn variants
+				entry.R = 50;	// In Vanilla this is 20
+			}
+			else if (entry.S == "shields/buckler_shield")
+			{
+				// We increase the rarity in bigger settlements because buckler are not that useful beyond the early game
+				if (this.getSize() == 3 || this.isMilitary())
+				{
+					entry.R = 40;	// In Vanilla this is 15
+				}
+			}
+		}
+
+		switch (_id)
+		{
+			case "building.marketplace":
+			{
+				// Add old wooden shields to lower tier settlements
+				if (this.getSize() <= 2 && !this.isMilitary())
+				{
+					_list.push({
+						R = 30,
+						P = 1.0,
+						S = "shields/wooden_shield_old",
+					});
+				}
+
+				// Add worn kite/heater shields to higher tier settlements
+				if (this.getSize() == 3 || this.isMilitary())
+				{
+					_list.push({
+						R = 60,
+						P = 1.0,
+						S = "shields/worn_kite_shield"
+					});
+
+					_list.push({
+						R = 60,
+						P = 1.0,
+						S = "shields/worn_heater_shield"
+					});
+				}
+			}
+		}
+
+		__original(_id, _list);
+	}
+
 // New Functions
 	q.getLastVisitedString <- function()
 	{
