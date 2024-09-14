@@ -1,6 +1,12 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/puncture", function(q) {
 	q.m.RequiredSurroundedCount <- 1;	// 0 is either caused by none, or one adjacent character. 1 SurroundedCount requires two characters
 
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.Description = ::MSU.String.replace(this.m.Description, ", nor inflict additional damage with double grip", "");
+	}
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();

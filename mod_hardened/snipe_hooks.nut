@@ -5,3 +5,6 @@
 // Prevent a tooltip about the now deleted skill "Hook Shield" from being added
 // Prevent a tooltip about the fatigue mechanic from being added
 ::Hardened.snipeHook("scripts/skills/actives/shieldwall", "mod_reforged");
+
+// Completely Revert Reforged Double Grip rework
+::Hardened.snipeHook("scripts/skills/special/double_grip", "mod_reforged");
