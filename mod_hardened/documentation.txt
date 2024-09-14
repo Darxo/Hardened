@@ -20,7 +20,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 # Future Plans:
 - Hide information about enemy composition on the battle field
 - Only reveal attacking/casting entities if they are on a tile which is already discovered by the player. This should make scouting/high vision more important
-- Remove pocket sand from nomad background
 - make shields destructable again
 - certain unholds/high end orcs being able to throw their own allies behind their back in order to advance into tight spaces
 - Make it so Hook will also move the guy who does the hooking one tile back
@@ -31,8 +30,26 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Rebalance enemy skills/perks considering hardened reworks
 - Fix orcs sometimes using charge, even though they decided to give up
 - Fix perma stunning enemies on the world map
+- Fix enemy AI ranged arrow magnet (they choose big groups over actually vulnerable targets)
 
 # Changes:
+
+0.6.0
+	- **Double Grip** now always grants 20% more damage and 20% less fatigue cost of non-attack skills
+	- **Hybridization** is completely reworked. It still grants 10% of your base Ranged Skill as Melee Skill/Defense. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type hits to inflict **Overwhelmed**, blunt type hits to have 50% chance to inflict stagger and 100% to stun a staggered opponent and throwing spears to deal 50% more damage to shields.
+	- **Throwing Mastery** no longer grants any throwing type specific hit effects. It now allows swapping a throwing weapon with an empty throwing weapon or empty slot for free, once per turn.
+	- **Feral Shield** now has a value of 400 (up from 50)
+	- The value of almost all non-named shields is increased by 50%-100%
+	- **Wooden Shields** appear less common im marketplaces
+	- **Buckler** appear less common in big settlements
+	- Small civilian settlements now sell **Old Wooden Shields**
+	- Big settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
+	- The traits **Huge** and **Tiny** no longer influence the reach of the character
+	- The hireable nomad background no longer grants **Throw Dirt**
+	- Throwing Spears no longer inflict any fatigue when hitting the shield
+	- Fix shield sergeant still triggering shieldwall each turn
+	- Fix shieldwall still mentioning hook shield
+	- Fix **Unstoppable** perk description having no mention of the condition of needing to attack
 
 0.5.3
 	- Add nested tooltips to hardened exlusive skills

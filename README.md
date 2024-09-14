@@ -22,6 +22,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 ### Shield Revert/Rework
 
+- Fatigue no longer has any effect on the defenses granted by shields
 - All reforged changes to Condition, Melee Defense, Ranged Defense and Weight of vanilla shields have been reverted.
 - Additionally the following balance changes have been made compared to the vanilla stats:
 	- **Tower Shields** now have 30 Condition (up from 24) and no longer grant **Knock Back**
@@ -35,6 +36,11 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 	- **Old Wooden Shields** now have 13 Melee Defense (down from 15) and 13 Ranged Defense (down from 15)
 	- **Worn Heater Shields** now have 23 Melee Defense (up from 20), 13 Ranged Defense (down from 15) and no longer grant **Shieldwall**
 	- **Worn Kite Shields** now have 13 Melee Defense (down from 15), 23 Ranged Defense (down from 25) and no longer grant **Knock Back**
+
+### Double Grip Rework
+
+- Double Grip no longer provides unique effects for each weapon type
+- Double Grip now always grants 20% more damage and 20% reduced cost of non-attack skills
 
 ### Reworked Day-Night-Cycle
 
@@ -66,6 +72,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies
 - **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack
 - **Stab** now costs 3 Action Points (down from 4)
+- The hireable **Nomad Background** no longer grants the **Throw Dirt** skill
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
 - **Sword Thrust** now has -10% Hitchance bonus (up from -20%)
 - **Lightbringer** now has 0% Hitchance bonus (down from 10%)
@@ -93,6 +100,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **En Garde** is completely reworked. It now grants +15 Melee Skill while it is not your turn. It also makes it so **Riposte** is no longer disabled when you get hit or deal a counter attack (so like in Vanilla).
 - **Fencer** no longer grants +10 chance to hit or 20% less fatigue cost. It now causes your fencing swords to lose 50% less durability.
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy.
+- **Hybridization** is completely reworked. It still grants 10% of your base Ranged Skill as Melee Skill/Defense. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type hits to inflict **Overwhelmed**, blunt type hits to have 50% chance to inflict stagger and 100% to stun a staggered opponent and throwing spears to deal 50% more damage to shields
 - **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
 - **Formidable Approach** is completely reworked. It now only works for Two-Handed weapons. It now grant 15 Melee Skill instead of Reach but only triggers when you are the one moving next to an enemy. When your maximum Hitpoints are higher than those of your opponent, it removes confident from them.
 - **King of all Weapons** is now called **Spear Flurry** and is completely reworked. It now reduces your damage by 10% but prevents spear attacks from building up any fatigue.
@@ -108,7 +116,8 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Sweeping Strikes** is completely reworked: It now grants +3 Melee Defense for every adjacent enemy until the start of your next turn whenever you use a melee attack skill. It still requires a two-handed weapon.
 - **Swift Stabs** has been completely reworked. It's now called **Hit and Run**. It makes it so all dagger attacks can be used at 2 tiles and will move the user one tile closer before the attack. When the attack hits the enemy, the user is moved back to the original tile.
 - **Through the Gaps** is now always active but now lowers your armor penetration by 10% (down from increasing it by 25%)
-- **Unstoppable** no longer loses all Stacks when you use **Wait** if you spent atleast half of your action points by that time.
+- **Throwing Mastery** no longer grants any throwing type specific hit effects. It now allows swapping a throwing weapon with an empty throwing weapon or empty slot for free, once per turn
+- **Unstoppable** no longer loses all Stacks when you use **Wait** if you spent at least half of your action points by that time.
 - **Wears it well** now grants 50% of combined Mainhand and Offhand Weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest Weight)
 - **Whirling Death** is completely reworked. It now grants a new active skill which creates a buff for two turns granting 30% more damage, 2 Reach and 10 Melee Defense to the user.
 
@@ -121,9 +130,15 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 ### Items
 
-- **Throwing Spear** now deals 26 shield damage (up from 0)
+- Throwing Spears no longer inflict any fatigue when hitting a shield
 - Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and **Large Powder Bags** weigh 4.
 - Gun Powder now costs 2 Ammunition Supply each (up from 1)
+- **Feral Shield** now has a value of 400 (up from 50)
+- The value of almost all other non-named shields is increased by 50%-100%
+- **Wooden Shields** appear less common im marketplaces
+- **Buckler** appear less common in big settlements
+- Small civilian settlements now sell **Old Wooden Shields**
+- Big settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
 - **Goblin Pikes**, **Ancient Pikes** and **Pikes** are now also of the weapontype Spear
 - **Smoke Bomb** now costs 400 Crowns (up from 275). Smoke now lasts 2 Rounds (up from 1)
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk Rally the Troops
@@ -134,6 +149,8 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 - **Lucky** no longer grants a chance to reroll incoming attacks. It now provides a 5% chance to avoid damage from any source.
 - **Weasel** now provides an additional 25 Melee Defense during that brothers turn while fleeing.
+- **Huge** no longer increases the Reach by 1
+- **Tiny** no longer reduces the Reach by 1
 - **Irrational** will no longer appear on recruits.
 
 ### Injuries
@@ -164,7 +181,6 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 ### Other
 
-- Fatigue no longer has any effect on the defenses granted by shields
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
 - Encumbrance no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level.
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied.
@@ -175,7 +191,6 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - Beginner combat difficulty difficulty now grants enemy parties 100% resources (up from 85%)
 - Beginner combat difficulty difficulty now causes player characters to receive 15% less damage from all sources
 - Expert combat difficulty difficulty now grants enemy parties 120% resources (up from 115%)
-- Brothers no longer gain any XP when allies die
 - Characters which are not visible to the player will no longer produce idle or death sounds.
 - The combat map is no longer revealed at the end of a battle
 
@@ -206,6 +221,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
 - Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
 - Bandaging allies now updates their overlay ui correctly
+- Brothers no longer gain any XP when allies die
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Every accessory now plays a default sound when moved around in the inventory
 - Change the inventory icon of the **Witchhunter's Hat** to look exactly like the sprite on the brother
