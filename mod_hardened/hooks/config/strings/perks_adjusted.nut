@@ -103,6 +103,25 @@ local adjustedDescriptions = [
 	 	}),
 	},
 	{
+		ID = "perk.rf_hybridization",
+		Key = "RF_Hybridization",
+		Description = ::UPD.getDescription({
+			Fluff = "\'Hatchet, throwing axe, spear, javelin... they all kill just the same!\'",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Gain " + ::MSU.Text.colorPositive("10%") + " of your Base [Ranged Skill|Concept.RangeSkill] as additional [Melee Skill|Concept.MeleeSkill] and [Melee Defense.|Concept.MeleeDefense]",
+						"Piercing type throwing attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body.",
+						"Cutting type throwing attacks apply [Overwhelmed|Skill+overwhelmed_effect] on a hit.",
+						"Hits with blunt type throwing attacks have a " + ::MSU.Text.colorPositive("50%") + " chance to [stagger|Skill+staggered_effect] and will always [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect].",
+						"[Throwing Spear|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(1.5) + " damage to shields.",
+					],
+				},
+			],
+		}),
+	},
+	{
 		ID = "perk.nimble",
 		Key = "Nimble",
 		Description = ::UPD.getDescription({
@@ -199,6 +218,22 @@ local adjustedDescriptions = [
 				},
 			],
 		}),
+	},
+	{
+		ID = "perk.mastery.throwing",
+		Key = "SpecThrowing",
+		Description = ::UPD.getDescription({
+			Fluff = "Master throwing weapons to wound or kill the enemy before they even get close.",
+			Requirement = "Throwing Weapon",
+	 		Effects = [{
+ 				Type = ::UPD.EffectType.Passive,
+ 				Description = [
+ 					"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue].",
+ 					"Deal " + ::MSU.Text.colorizeMultWithText(1.3) + " damage when attacking at a distance of 2 tiles and " + ::MSU.Text.colorizeMultWithText(1.2) + " damage when attacking at a distance of 3 tiles.",
+					"Swapping a throwing weapon with an empty throwing weapon or an empty slot becomes a free action once per turn.",
+ 				],
+ 			}],
+	 	}),
 	},
 	{
 		ID = "perk.relentless",
