@@ -11,6 +11,7 @@
 		this.m.ConditionMax = 20;
 
 	// Hardened Adjustments
+		this.m.Value = 200;		// In Vanilla this is 100
 	}
 });
 

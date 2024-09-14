@@ -11,6 +11,7 @@
 		this.m.StaminaModifier = -18;
 
 	// Hardened Adjustments
+		this.m.Value = 450;		// In Vanilla this is 250
 	}
 });
 

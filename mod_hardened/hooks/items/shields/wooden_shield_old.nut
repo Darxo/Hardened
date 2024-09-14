@@ -11,6 +11,7 @@
 		this.m.ConditionMax = 16;
 
 	// Hardened Adjustments
+		this.m.Value = 100;		// In Vanilla this is 60
 		this.m.MeleeDefense = 13;
 		this.m.RangedDefense = 13;
 	}

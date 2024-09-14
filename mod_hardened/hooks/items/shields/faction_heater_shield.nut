@@ -11,6 +11,7 @@
 		this.m.ConditionMax = 32;
 
 	// Hardened Adjustments
+		this.m.Value = 400;		// In Vanilla this is 250
 		// Now it's an more of a combat shield (higher tier buckler) and less of a line-shield
 		this.m.MeleeDefense = 25;
 	}
