@@ -10,7 +10,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Armor damage taken from Attacks is reduced by a percentage equal to " + ::MSU.Text.colorPositive("5%") + " of the current total armor value of both body and head armor.",
+					"Armor damage taken from Attacks is reduced by a percentage equal to " + ::MSU.Text.colorPositive("5%") + " of the current total armor value of both body and head armor",
 				],
 			}],
 		}),
@@ -24,7 +24,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Deal " + ::MSU.Text.colorPositive("+40%") + " Armor Damage and " + ::MSU.Text.colorPositive("100%") + " more Shield Damage against enemies who have full health.",
+					"Deal " + ::MSU.Text.colorPositive("+40%") + " Armor Damage and " + ::MSU.Text.colorPositive("100%") + " more Shield Damage against enemies who have full health",
 				],
 			}],
 		}),
@@ -51,9 +51,9 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"An additional " + ::MSU.Text.colorPositive("30%") + " of damage ignores armor while attacking adjacent enemies.",
+					"An additional " + ::MSU.Text.colorPositive("30%") + " of damage ignores armor while attacking adjacent enemies",
 					"Gain " + ::MSU.Text.colorPositive("+2") + " [Reach|Concept.Reach]",
-					"These bonuses are halved while engaged with 2 enemies and disabled while engaged with 3 or more enemies.",
+					"These bonuses are halved while engaged with 2 enemies and disabled while engaged with 3 or more enemies",
 				],
 			}],
 		}),
@@ -62,14 +62,14 @@ local adjustedDescriptions = [
 		ID = "perk.rf_fencer",
 		Key = "RF_Fencer",
 		Description = ::UPD.getDescription({
-			Fluff = "Master the art of fighting with a nimble sword.",
+			Fluff = "Master the art of fighting with a nimble sword",
 			Requirement = "Fencing Sword",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Your weapon loses " + ::MSU.Text.colorPositive("50%") + " less durability.",
-					"When using a one-handed fencing sword, the [Action Point|Concept.ActionPoints] costs of [Sword Thrust|Skill+rf_sword_thrust_skill], [Riposte|Skill+riposte] and [Lunge|Skill+lunge_skill] are reduced by " + ::MSU.Text.colorPositive(1) + ".",
-					"When using a two-handed fencing sword, the range of [Lunge|Skill+lunge_skill] is increased by " + ::MSU.Text.colorPositive(1) + " tile.",
+					"When using a one-handed fencing sword, the [Action Point|Concept.ActionPoints] costs of [Sword Thrust|Skill+rf_sword_thrust_skill], [Riposte|Skill+riposte] and [Lunge|Skill+lunge_skill] are reduced by " + ::MSU.Text.colorPositive(1),
+					"When using a two-handed fencing sword, the range of [Lunge|Skill+lunge_skill] is increased by " + ::MSU.Text.colorPositive(1) + " tile",
 				],
 			}],
 		}),
@@ -83,7 +83,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Attacks have a " + ::MSU.Text.colorPositive("100%") + " chance to perform a free extra attack of the same type to a different valid enemiy within 2 tiles. This attack deals " + ::MSU.Text.colorNegative("50%") + " less damage.",
+					"Attacks have a " + ::MSU.Text.colorPositive("100%") + " chance to perform a free extra attack of the same type to a different valid enemiy within 2 tiles. This attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
 				],
 			}],
 		}),
@@ -92,15 +92,15 @@ local adjustedDescriptions = [
 		ID = "perk.fortified_mind",
 		Key = "FortifiedMind",
 		Description = ::UPD.getDescription({
-			Fluff = "An iron will is not swayed from the true path easily.",
-	 		Effects = [{
- 				Type = ::UPD.EffectType.Passive,
- 				Description = [
-					"Resolve is increased by " + ::MSU.Text.colorPositive("30%") + ".",
-					"This Bonus is reduced by 1% for each Base Weight on your Helmet.",
+			Fluff = "An iron will is not swayed from the true path easily",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Resolve is increased by " + ::MSU.Text.colorPositive("30%") + "",
+					"This Bonus is reduced by 1% for each Base Weight on your Helmet",
 				],
- 			}],
-	 	}),
+			}],
+		}),
 	},
 	{
 		ID = "perk.rf_hybridization",
@@ -112,10 +112,10 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Gain " + ::MSU.Text.colorPositive("10%") + " of your Base [Ranged Skill|Concept.RangeSkill] as additional [Melee Skill|Concept.MeleeSkill] and [Melee Defense.|Concept.MeleeDefense]",
-						"Piercing type throwing attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body.",
-						"Cutting type throwing attacks apply [Overwhelmed|Skill+overwhelmed_effect] on a hit.",
-						"Hits with blunt type throwing attacks have a " + ::MSU.Text.colorPositive("50%") + " chance to [stagger|Skill+staggered_effect] and will always [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect].",
-						"[Throwing Spear|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(1.5) + " damage to shields.",
+						"Piercing type throwing attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body",
+						"Cutting type throwing attacks apply [Overwhelmed|Skill+overwhelmed_effect] on a hit",
+						"Hits with blunt type throwing attacks have a " + ::MSU.Text.colorPositive("50%") + " chance to [stagger|Skill+staggered_effect] and will always [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
+						"[Throwing Spear|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(1.5) + " damage to shields",
 					],
 				},
 			],
@@ -125,36 +125,36 @@ local adjustedDescriptions = [
 		ID = "perk.nimble",
 		Key = "Nimble",
 		Description = ::UPD.getDescription({
-	 		Fluff = "Specialize in light armor! By nimbly dodging or deflecting blows, convert any hits to glancing hits.",
-	 		Effects = [{
- 				Type = ::UPD.EffectType.Passive,
- 				Description = [
- 					"Take " + ::MSU.Text.colorPositive("60%") + " less [Hitpoint|Concept.Hitpoints] damage from Attacks.",
- 					"Take more armor damage equal to the combined weight of your head and body armor as a percentage.",
+			Fluff = "Specialize in light armor! By nimbly dodging or deflecting blows, convert any hits to glancing hits",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Take " + ::MSU.Text.colorPositive("60%") + " less [Hitpoint|Concept.Hitpoints] damage from Attacks",
+					"Take more armor damage equal to the combined weight of your head and body armor as a percentage",
 				],
- 			}],
-	 	}),
+			}],
+		}),
 	},
 	{
 		ID = "perk.mastery.axe",
 		Key = "SpecAxe",
 		Description = ::UPD.getDescription({
-			Fluff = "Master combat with axes and destroying shields.",
+			Fluff = "Master combat with axes and destroying shields",
 			Requirement = "Axe",
 			Effects = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue.|Concept.Fatigue]",
-						"[Round Swing|Skill+round_swing] gains " + ::MSU.Text.colorPositive("+5%") + " chance to hit.",
-						"[Split Shield|Skill+split_shield] applies [Dazed|Skill+dazed_effect] for " + ::MSU.Text.colorPositive(1) + " turn.",
-						"The [Longaxe|Item+longaxe] no longer has a penalty for attacking targets directly adjacent.",
+						"[Round Swing|Skill+round_swing] gains " + ::MSU.Text.colorPositive("+5%") + " chance to hit",
+						"[Split Shield|Skill+split_shield] applies [Dazed|Skill+dazed_effect] for " + ::MSU.Text.colorPositive(1) + " turn",
+						"The [Longaxe|Item+longaxe] no longer has a penalty for attacking targets directly adjacent",
 					],
 				},
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlocks the [Bearded Blade|Skill+rf_bearded_blade_skill] skill which allows you to disarm your opponents during an attack or when they miss attacks against you.",
+						"Unlocks the [Bearded Blade|Skill+rf_bearded_blade_skill] skill which allows you to disarm your opponents during an attack or when they miss attacks against you",
 					],
 				},
 			],
@@ -164,13 +164,13 @@ local adjustedDescriptions = [
 		ID = "perk.mastery.dagger",
 		Key = "SpecDagger",
 		Description = ::UPD.getDescription({
-			Fluff = "Master swift and deadly daggers.",
+			Fluff = "Master swift and deadly daggers",
 			Requirement = "Dagger",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue].",
-					"The [Action Point|Concept.ActionPoints] cost of [Puncture|Skill+puncture] and [Deathblow|Skill+deathblow_skill] is reduced to " + ::MSU.Text.colorPositive("3") + ".",
+					"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+					"The [Action Point|Concept.ActionPoints] cost of [Puncture|Skill+puncture] and [Deathblow|Skill+deathblow_skill] is reduced to " + ::MSU.Text.colorPositive("3"),
 				],
 			}],
 		}),
@@ -179,41 +179,41 @@ local adjustedDescriptions = [
 		ID = "perk.mastery.polearm",
 		Key = "SpecPolearm",
 		Description = ::UPD.getDescription({
-	 		Fluff = "Master polearms and keeping the enemy at bay.",
-	 		Requirement = "Polearm",
-	 		Effects = [{
- 				Type = ::UPD.EffectType.Passive,
- 				Description = [
- 					"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue].",
-					"[Hook|Skill+hook] and [Repel|Skill+repel] have " + ::MSU.Text.colorPositive("+15%") + " chance to hit.",
- 					"Polearms no longer have a penalty for attacking targets directly adjacent.",
- 					"Gain the [Bolster|Perk+perk_rf_bolster] perk.",
- 				],
- 			}],
-	 	}),
+			Fluff = "Master polearms and keeping the enemy at bay",
+			Requirement = "Polearm",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+					"[Hook|Skill+hook] and [Repel|Skill+repel] have " + ::MSU.Text.colorPositive("+15%") + " chance to hit",
+					"Polearms no longer have a penalty for attacking targets directly adjacent",
+					"Gain the [Bolster|Perk+perk_rf_bolster] perk",
+				],
+			}],
+		}),
 	},
 	{
 		ID = "perk.mastery.sword",
 		Key = "SpecSword",
 		Description = ::UPD.getDescription({
-			Fluff = "Master the art of swordfighting and using your opponent\'s mistakes to your advantage.",
+			Fluff = "Master the art of swordfighting and using your opponent\'s mistakes to your advantage",
 			Requirement = "Sword",
 			Effects = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue].",
-						"Riposte no longer has a penalty to hitchance.",
-						"Gash has a " + ::MSU.Text.colorPositive("50%") + " lower threshold to inflict injuries.",
-						"Split and Swing no longer have a penalty to hitchance.",
+						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+						"Riposte no longer has a penalty to hitchance",
+						"Gash has a " + ::MSU.Text.colorPositive("50%") + " lower threshold to inflict injuries",
+						"Split and Swing no longer have a penalty to hitchance",
 					],
 				},
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlocks the [Kata Step|Skill+rf_kata_step_skill] skill which, immediately after a successful attack, allows you to move one tile ignoring [Zone of Control|Concept.ZoneOfControl] with reduced [Action Point|Concept.ActionPoints] cost and [Fatigue|Concept.Fatigue] cost of movement.",
-						"The target tile for the movement must be adjacent to an enemy.",
-						"Only works with Two-Handed swords or with One-Handed swords with the offhand free.",
+						"Unlocks the [Kata Step|Skill+rf_kata_step_skill] skill which, immediately after a successful attack, allows you to move one tile ignoring [Zone of Control|Concept.ZoneOfControl] with reduced [Action Point|Concept.ActionPoints] cost and [Fatigue|Concept.Fatigue] cost of movement",
+						"The target tile for the movement must be adjacent to an enemy",
+						"Only works with Two-Handed swords or with One-Handed swords with the offhand free",
 					],
 				},
 			],
@@ -223,17 +223,17 @@ local adjustedDescriptions = [
 		ID = "perk.mastery.throwing",
 		Key = "SpecThrowing",
 		Description = ::UPD.getDescription({
-			Fluff = "Master throwing weapons to wound or kill the enemy before they even get close.",
+			Fluff = "Master throwing weapons to wound or kill the enemy before they even get close",
 			Requirement = "Throwing Weapon",
-	 		Effects = [{
- 				Type = ::UPD.EffectType.Passive,
- 				Description = [
- 					"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue].",
- 					"Deal " + ::MSU.Text.colorizeMultWithText(1.3) + " damage when attacking at a distance of 2 tiles and " + ::MSU.Text.colorizeMultWithText(1.2) + " damage when attacking at a distance of 3 tiles.",
-					"Swapping a throwing weapon with an empty throwing weapon or an empty slot becomes a free action once per turn.",
- 				],
- 			}],
-	 	}),
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+ 					"Deal " + ::MSU.Text.colorizeMultWithText(1.3) + " damage when attacking at a distance of 2 tiles and " + ::MSU.Text.colorizeMultWithText(1.2) + " damage when attacking at a distance of 3 tiles",
+					"Swapping a throwing weapon with an empty throwing weapon or an empty slot becomes a free action once per turn",
+				],
+			}],
+		}),
 	},
 	{
 		ID = "perk.relentless",
@@ -243,8 +243,8 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Receive " + ::MSU.Text.colorPositive("50%") + " less Initiative penalty from your [Fatigue|Concept.Fatigue].",
-						"Using the \'Wait\' command or [Recover|Skill+recover_skill] will no longer give you a penalty to [Initiative|Concept.Initiative] until your next turn.",
+						"Receive " + ::MSU.Text.colorPositive("50%") + " less Initiative penalty from your [Fatigue|Concept.Fatigue]",
+						"Using the \'Wait\' command or [Recover|Skill+recover_skill] will no longer give you a penalty to [Initiative|Concept.Initiative] until your next turn",
 					],
 				},
 			],
@@ -254,38 +254,38 @@ local adjustedDescriptions = [
 		ID = "perk.shield_expert",
 		Key = "ShieldExpert",
 		Description = ::UPD.getDescription({
-	 		Fluff = "Learn to better deflect hits to the side instead of blocking them head on.",
-	 		Effects = [
-		 		{
-	 				Type = ::UPD.EffectType.Passive,
-	 				Description = [
+			Fluff = "Learn to better deflect hits to the side instead of blocking them head on",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
 						"Enemies will never have [Reach Advantage|Concept.ReachAdvantage] against you",
 						"Your shield takes " + ::MSU.Text.colorPositive("50%") + " less damage up to a minimum of 1",
-	 					"Missed attacks against you no longer build up [Fatigue|Concept.Fatigue].",
-	 				],
-	 			},
-	 			{
-	 				Type = ::UPD.EffectType.Active,
-	 				Description = [
-	 					"Unlocks the [Cover Ally|Skill+rf_cover_ally_skill] skill which allows you to target an ally to allow them to move 1 tile ignoring [Zone of Control|Concept.ZoneOfControl] on their [turn|Concept.Turn] while improving their position in the turn order in the next [round|Concept.Round].",
-	 				],
-	 			},
- 			],
-	 	}),
+						"Missed attacks against you no longer build up [Fatigue|Concept.Fatigue]",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Active,
+					Description = [
+						"Unlocks the [Cover Ally|Skill+rf_cover_ally_skill] skill which allows you to target an ally to allow them to move 1 tile ignoring [Zone of Control|Concept.ZoneOfControl] on their [turn|Concept.Turn] while improving their position in the turn order in the next [round|Concept.Round]",
+					],
+				},
+			],
+		}),
 	},
 	{
 		ID = "perk.student",	// This does not need to be the updated id
 		Key = "Student",
 		Description = ::UPD.getDescription({
-			Fluff = "Everything can be learned if you put your mind to it.",
-	 		Effects = [{
- 				Type = ::UPD.EffectType.OneTimeEffect,
- 				Description = [
-					"Gain " + ::MSU.Text.colorPositive(1) + " perk point when you reach [level|Concept.Level] 8.",
+			Fluff = "Everything can be learned if you put your mind to it",
+			Effects = [{
+				Type = ::UPD.EffectType.OneTimeEffect,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive(1) + " perk point when you reach [level|Concept.Level] 8",
 				],
- 			}],
+			}],
 			Footer = ::MSU.Text.colorNegative("This perk cannot be refunded."),
-	 	}),
+		}),
 	},
 
 
@@ -299,8 +299,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Deal " + ::MSU.Text.colorPositive("10%") + " more damage and gain " + ::MSU.Text.colorPositive("+10%") + " armor penetration per character [surrounding|Concept.Surrounding] the target.",
-					"Lose " + ::MSU.Text.colorNegative("10%") + " [chance to hit the head|Concept.ChanceToHitHead] per character [surrounding|Concept.Surrounding] the target.",
+					"Deal " + ::MSU.Text.colorPositive("10%") + " more damage and gain " + ::MSU.Text.colorPositive("+10%") + " armor penetration per character [surrounding|Concept.Surrounding] the target",
+					"Lose " + ::MSU.Text.colorNegative("10%") + " [chance to hit the head|Concept.ChanceToHitHead] per character [surrounding|Concept.Surrounding] the target",
 				],
 			}],
 		}),
@@ -314,8 +314,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them.",
-					"Moving next to an enemy grants " + ::MSU.Text.colorPositive("+15") + " [Melee Skill|Concept.MeleeSkill] against them until they damage you.",
+					"Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them",
+					"Moving next to an enemy grants " + ::MSU.Text.colorPositive("+15") + " [Melee Skill|Concept.MeleeSkill] against them until they damage you",
 				],
 			}],
 		}),
@@ -329,8 +329,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("+15") + " [Melee Skill|Concept.MeleeSkill] while it is not your [turn|Concept.Turn].",
-					"[Riposte|Skill+riposte_effect] is no longer removed when you get hit or do a counter attack.",
+					"Gain " + ::MSU.Text.colorPositive("+15") + " [Melee Skill|Concept.MeleeSkill] while it is not your [turn|Concept.Turn]",
+					"[Riposte|Skill+riposte_effect] is no longer removed when you get hit or do a counter attack",
 				],
 			}],
 		}),
@@ -339,11 +339,11 @@ local adjustedDescriptions = [
 		ID = "perk.rf_phalanx",
 		Key = "RF_Phalanx",
 		Description = ::UPD.getDescription({
-			Fluff = "Learn the ancient art of fighting in a shielded formation.",
+			Fluff = "Learn the ancient art of fighting in a shielded formation",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("+1") + " [Reach|Concept.Reach] per adjacent ally also equipped with a shield.",
+					"Gain " + ::MSU.Text.colorPositive("+1") + " [Reach|Concept.Reach] per adjacent ally also equipped with a shield",
 					"[Shieldwall|Skill+shieldwall_effect] does not expire at the start of your [turn|Concept.Turn] if an adjacent ally is also using [Shieldwall.|Skill+shieldwall_effect]",
 				],
 			}],
@@ -357,9 +357,9 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"At the start of each battle, if you have the highest Resolve out of all Brothers with this perk, gain the [Inspiring Presence|Skill+perk_inspiring_presence] effect until the end of this battle.",
-					"While you have that effect: At the start of each round every adjacent ally gains " + ::MSU.Text.colorPositive("+3") + " Action Points if they are adjacent to an enemy, or have an adjacent ally who is adjacent to an enemy.",
-					"Only affects allies that have less Resolve than you.",
+					"At the start of each battle, if you have the highest Resolve out of all Brothers with this perk, gain the [Inspiring Presence|Skill+perk_inspiring_presence] effect until the end of this battle",
+					"While you have that effect: At the start of each round every adjacent ally gains " + ::MSU.Text.colorPositive("+3") + " Action Points if they are adjacent to an enemy, or have an adjacent ally who is adjacent to an enemy",
+					"Only affects allies that have less Resolve than you",
 				],
 			}],
 		}),
@@ -373,9 +373,9 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"The first 2 throwing attacks during a combat have their [Action Point|Concept.ActionPoints] costs " + ::MSU.Text.colorPositive("halved") + ".",
-					"Every time you stand over an enemy\'s corpse during your [turn,|Concept.Turn] gain " + ::MSU.Text.colorPositive(1) + " ammo and restore " + ::MSU.Text.colorPositive(4) + " [Action Points.|Concept.ActionPoints] Afterward, the next throwing attack has its [Fatigue|Concept.Fatigue] cost " + ::MSU.Text.colorPositive("halved") + ".",
-					"A corpse can only be used once per combat and cannot be used by multiple characters with this perk.",
+					"The first 2 throwing attacks during a combat have their [Action Point|Concept.ActionPoints] costs " + ::MSU.Text.colorPositive("halved"),
+					"Every time you stand over an enemy\'s corpse during your [turn,|Concept.Turn] gain " + ::MSU.Text.colorPositive(1) + " ammo and restore " + ::MSU.Text.colorPositive(4) + " [Action Points.|Concept.ActionPoints] Afterward, the next throwing attack has its [Fatigue|Concept.Fatigue] cost " + ::MSU.Text.colorPositive("halved"),
+					"A corpse can only be used once per combat and cannot be used by multiple characters with this perk",
 				],
 			}],
 		}),
@@ -384,12 +384,12 @@ local adjustedDescriptions = [
 		ID = "perk.rf_poise",
 		Key = "RF_Poise",
 		Description = ::UPD.getDescription({
-			Fluff = "Deftly shift and twist, even within your armor, to minimize the impact of attacks.",
+			Fluff = "Deftly shift and twist, even within your armor, to minimize the impact of attacks",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Take up to " + ::MSU.Text.colorPositive("60%") + " less armor penetration damage from attacks. Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each weight on your helmet and body armor combined.",
-					"Take up to " + ::MSU.Text.colorPositive("40%") + " less armor damage from attack. This reduction is a percentage equal to " + ::MSU.Text.colorPositive("40%") + " of your current [Initiative|Concept.Initiative].",
+					"Take up to " + ::MSU.Text.colorPositive("60%") + " less armor penetration damage from attacks. Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each weight on your helmet and body armor combined",
+					"Take up to " + ::MSU.Text.colorPositive("40%") + " less armor damage from attack. This reduction is a percentage equal to " + ::MSU.Text.colorPositive("40%") + " of your current [Initiative|Concept.Initiative]",
 				],
 			}],
 		}),
@@ -402,9 +402,9 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Allies with a shield will gain [Shieldwall|Skill+shieldwall_effect] for free at the start of each battle.",
-					"Whenever you use a non-free shield skill, all allies within " + ::MSU.Text.colorPositive(3) + " tiles who also have that skill will use it for free on a random valid tile.",
-					"[Knock Back|Skill+knock_back] can be used on empty tiles.",
+					"Allies with a shield will gain [Shieldwall|Skill+shieldwall_effect] for free at the start of each battle",
+					"Whenever you use a non-free shield skill, all allies within " + ::MSU.Text.colorPositive(3) + " tiles who also have that skill will use it for free on a random valid tile",
+					"[Knock Back|Skill+knock_back] can be used on empty tiles",
 				],
 			}],
 		}),
@@ -413,12 +413,12 @@ local adjustedDescriptions = [
 		ID = "perk.rf_skirmisher",
 		Key = "RF_Skirmisher",
 		Description = ::UPD.getDescription({
-			Fluff = "Gain increased speed and endurance by balancing your armor and mobility.",
+			Fluff = "Gain increased speed and endurance by balancing your armor and mobility",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain [Initiative|Concept.Initiative] equal to " + ::MSU.Text.colorPositive("50%") + " of the weight of your body armor.",
-					"You lose " + ::MSU.Text.colorPositive("50%") + " less [Initiative|Concept.Initiative] from your current [Fatigue|Concept.Fatigue].",
+					"Gain [Initiative|Concept.Initiative] equal to " + ::MSU.Text.colorPositive("50%") + " of the weight of your body armor",
+					"You lose " + ::MSU.Text.colorPositive("50%") + " less [Initiative|Concept.Initiative] from your current [Fatigue|Concept.Fatigue]",
 				],
 			}],
 		}),
@@ -428,7 +428,7 @@ local adjustedDescriptions = [
 		ID = "perk.rf_spear_advantage",
 		Key = "RF_SpearAdvantage",
 		Description = ::UPD.getDescription({
-			Fluff = "Stick \'em with the pointy end.",
+			Fluff = "Stick \'em with the pointy end",
 			Requirement = "Spear",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
@@ -447,7 +447,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever you use an attack on an enemy, gain " + ::MSU.Text.colorPositive("+3") + " [Melee Defense|Concept.MeleeDefense] for every adjacent enemy until the start of your next [turn|Concept.Turn].",
+					"Whenever you use an attack on an enemy, gain " + ::MSU.Text.colorPositive("+3") + " [Melee Defense|Concept.MeleeDefense] for every adjacent enemy until the start of your next [turn|Concept.Turn]",
 				],
 			}],
 		}),
@@ -461,9 +461,9 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Dagger attacks can now target enemies up to 2 tiles away. Attacking from 2 tiles away moves you 1 tile closer before the attack.",
-					"If the attack hits, you automatically return to your original tile.",
-					"Does not affect dagger attacks with a range of 2 tiles or more.",
+					"Dagger attacks can now target enemies up to 2 tiles away. Attacking from 2 tiles away moves you 1 tile closer before the attack",
+					"If the attack hits, you automatically return to your original tile",
+					"Does not affect dagger attacks with a range of 2 tiles or more",
 				],
 			}],
 		}),
@@ -477,8 +477,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your attacks against targets with armor will always target the body part with the lowest armor.",
-					"Armor penetration is reduced by " + ::MSU.Text.colorNegative("10%") + ".",
+					"Your attacks against targets with armor will always target the body part with the lowest armor",
+					"Armor penetration is reduced by " + ::MSU.Text.colorNegative("10%"),
 				],
 			}],
 		}),
@@ -492,8 +492,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your spear attacks no longer build up fatigue.",
-					"Deal " + ::MSU.Text.colorNegative("10%") + " less damage.",
+					"Your spear attacks no longer build up fatigue",
+					"Deal " + ::MSU.Text.colorNegative("10%") + " less damage",
 				],
 			}],
 		}),
@@ -523,7 +523,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your first polearm attack each turn costs " + ::MSU.Text.colorPositive("-1") + " [Action Point|Concept.ActionPoints] for every adjacent ally.",
+					"Your first polearm attack each turn costs " + ::MSU.Text.colorPositive("-1") + " [Action Point|Concept.ActionPoints] for every adjacent ally",
 				],
 			}],
 		}),
@@ -536,7 +536,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain [Stamina|Concept.MaximumFatigue] and [Initiative|Concept.Initiative] equal to " + ::MSU.Text.colorPositive("50%") + " of your combined mainhand and offhand weight.",
+					"Gain [Stamina|Concept.MaximumFatigue] and [Initiative|Concept.Initiative] equal to " + ::MSU.Text.colorPositive("50%") + " of your combined mainhand and offhand weight",
 				],
 			}],
 		}),
@@ -550,7 +550,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlocks the [Whirling Death|Skill+hd_whirling_death_skill] skill, allowing you to prepare a devastating attack.",
+					"Unlocks the [Whirling Death|Skill+hd_whirling_death_skill] skill, allowing you to prepare a devastating attack",
 				]
 			}],
 		}),
