@@ -9,4 +9,17 @@
 			_properties.HitChance[::Const.BodyPart.Head] += _targetEntity.getSurroundedCount() * this.m.HeadShotChancePerSurround;
 		}
 	}
+
+	// Overwrite to remove the condition about needing to be a piercing attack
+	q.isSkillValid = @() function( _skill )
+	{
+		if (!_skill.isAttack() || _skill.isRanged())
+			return false;
+
+		if (this.m.RequiredWeaponType == null)
+			return true;
+
+		local weapon = _skill.getItem();
+		return !::MSU.isNull(weapon) && weapon.isItemType(::Const.Items.ItemType.Weapon) && weapon.isWeaponType(this.m.RequiredWeaponType);
+	}
 });
