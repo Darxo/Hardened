@@ -306,6 +306,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_exploit_opening",
+		Key = "RF_ExploitOpening",
+		Description = ::UPD.getDescription({
+			Fluff = "A low shield. A slobby stab. A fake stumble. All are ways that you\'ve learned to tempt your opponent into a fatal false move!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain a stacking " + ::MSU.Text.colorPositive("+10%") + " chance to hit whenever an opponent misses an attack against you",
+					"Bonus is reset upon landing a hit",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_formidable_approach",
 		Key = "RF_FormidableApproach",
 		Description = ::UPD.getDescription({
