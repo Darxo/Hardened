@@ -58,7 +58,7 @@
 					::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(actor) + " has stunned " + ::Const.UI.getColorizedEntityName(_targetEntity) + " for " + effect.m.TurnsLeft + " turn");
 				}
 			}
-			else if (::Math.rand(1, 100) <= 50)
+			else if (_bodyPart == ::Const.BodyPart.Head)
 			{
 				local effect = ::new("scripts/skills/effects/staggered_effect");
 				_targetEntity.getSkills().add(effect);
