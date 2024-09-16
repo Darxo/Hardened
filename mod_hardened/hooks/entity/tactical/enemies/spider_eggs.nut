@@ -4,6 +4,13 @@
 	// Private
 	q.m.CurrentSpiderTimer <- 0;
 
+	q.onInit = @(__original) function()
+	{
+		__original();
+
+		this.getSkills().add(::new("scripts/skills/effects/hd_headless_effect"));
+	}
+
 	q.onPlacedOnMap = @(__original) function()
 	{
 		__original();
