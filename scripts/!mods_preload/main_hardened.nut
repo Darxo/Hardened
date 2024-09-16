@@ -6,11 +6,6 @@
 	Temp = {},	// Used to globally store variables between function calls to implement more advanced, albeit hacky behavior
 }
 
-if (::Hooks.Version == "0.5.2")	// Remove this, when a new modern hooks version releases
-{
-	::include("mod_hardened/early_modern_hooks_0.5.3");
-}
-
 ::Hardened.HooksMod <- ::Hooks.register(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
 ::Hardened.HooksMod.require(["mod_reforged"]);
 
