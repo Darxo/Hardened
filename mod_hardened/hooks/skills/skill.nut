@@ -1,6 +1,12 @@
 ::Hardened.Temp.LastUsedSkill <- null;		// This is used to be able to calculate shield damage multipliers during the applyShieldDamage function
 ::Hardened.Temp.LastUsedSkillOwner <- null;	// This is used to be able to calculate shield damage multipliers during the applyShieldDamage function
 
+// The last target/skill/user of the onScheduledTargetHit or getExpectedDamage function
+// This is only used in the getHitchance function from character.nut to predict the headshot chance more accurately
+::Hardened.Temp.TargetToBeHit <- null;
+::Hardened.Temp.SkillToBeHitWith <- null;
+::Hardened.Temp.UserWantingToHit <- null;
+
 ::Hardened.HooksMod.hook("scripts/skills/skill", function(q) {
 	q.m.HD_Temp_IsFree <- false;	// Ignore fatigue and action point cost during isAffordable check
 
@@ -84,7 +90,38 @@
 			return ret;
 		}
 
+		// We save the target skill and user of the last scheduled hit.
+		// This conflicts a bit with getExpectedDamage but both functions should not be called intertwined
+		// That way any headshot chance during this call will be calculated with the target in mind
+		::Hardened.Temp.TargetToBeHit <- ::MSU.asWeakTableRef(_info.TargetEntity);
+		::Hardened.Temp.SkillToBeHitWith <- ::MSU.asWeakTableRef(_info.Skill);
+		::Hardened.Temp.UserWantingToHit = ::MSU.asWeakTableRef(_info.User);
+
 		__original(_info);
+
+		// future headshot chance calculations not be influenced by this
+		::Hardened.Temp.TargetToBeHit = null;
+		::Hardened.Temp.SkillToBeHitWith = null;
+		::Hardened.Temp.UserWantingToHit = null;
+	}
+
+	q.getExpectedDamage = @(__original) function( _target )
+	{
+		// We save the target, skill and user of the last expected damage calculation call.
+		// This conflicts a bit with onScheduledTargetHit but both functions should not be called intertwined
+		// That way any headshot chance during this call will be calculated with the target in mind
+		::Hardened.Temp.TargetToBeHit <- ::MSU.asWeakTableRef(_target);
+		::Hardened.Temp.SkillToBeHitWith <- ::MSU.asWeakTableRef(this);
+		::Hardened.Temp.UserWantingToHit = ::MSU.asWeakTableRef(this.getContainer().getActor());
+
+		local ret = __original(_target);
+
+		// future headshot chance calculations not be influenced by this
+		::Hardened.Temp.TargetToBeHit = null;
+		::Hardened.Temp.SkillToBeHitWith = null;
+		::Hardened.Temp.UserWantingToHit = null;
+
+		return ret;
 	}
 
 // New Functions
