@@ -33,6 +33,30 @@
 		return __original(_targetTile, _forFree);
 	}
 
+	q.getHitFactors = @(__original) function( _targetTile )
+	{
+		local ret = __original(_targetTile);
+
+		// New Entries
+		if (_targetTile.IsOccupiedByActor)
+		{
+			local target = _targetTile.getEntity();
+			local properties = this.m.Container.buildPropertiesForUse(this, target);
+
+			// Headshot chance
+			if (this.isAttack())
+			{
+				local headshotChance = properties.getHeadHitchance(::Const.BodyPart.Head, this.getContainer().getActor(), this, target);
+				ret.insert(0, {
+					icon = "ui/icons/chance_to_hit_head.png",
+					text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(headshotChance, {AddPercent = true}) + " headshot chance"),
+				});
+			}
+		}
+
+		return ret;
+	}
+
 	/* This change will make it so both, armor and health damage use the exact same base damage roll
 	 * No longer is it possible to low-roll on armor damage and high-roll on the hightpoint damage part.
 	 * This is only confusing when trying to understand the damage dealt in combat and can create additional frustration
