@@ -164,13 +164,14 @@ local adjustedDescriptions = [
 		ID = "perk.mastery.dagger",
 		Key = "SpecDagger",
 		Description = ::UPD.getDescription({
-			Fluff = "Master swift and deadly daggers",
+			Fluff = "Master swift and versatile daggers",
 			Requirement = "Dagger",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 					"The [Action Point|Concept.ActionPoints] cost of [Puncture|Skill+puncture] and [Deathblow|Skill+deathblow_skill] is reduced to " + ::MSU.Text.colorPositive("3"),
+					"Swapping items becomes a free action once per [turn.|Concept.Turn]",
 				],
 			}],
 		}),
