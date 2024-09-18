@@ -5,7 +5,7 @@
 
 		foreach (index, entry in ret)
 		{
-			if (entry.id == 12 && entry.icon == "ui/icons/reach.png")
+			if (entry.id == 12 && entry.icon == "ui/icons/rf_reach.png")
 			{
 				ret.remove(index);
 				break;
