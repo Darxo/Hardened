@@ -20,19 +20,43 @@ This submod is a collection of changes to Reforged that I suggested internally t
 # Future Plans:
 - Hide information about enemy composition on the battle field
 - Only reveal attacking/casting entities if they are on a tile which is already discovered by the player. This should make scouting/high vision more important
-- make shields destructable again
 - certain unholds/high end orcs being able to throw their own allies behind their back in order to advance into tight spaces
 - Make it so Hook will also move the guy who does the hooking one tile back
-- Make it so hook and push (polearm) ignore shield defense bonus when polearm mastery is picked
-- Move Polearm Mastery AP reduction in an extry perk
 - change handgonne aoe pattern in some directions to a triangle
 - Rebalance SpiderEgg hunting? Give them XP/Loot?
 - Rebalance enemy skills/perks considering hardened reworks
 - Fix orcs sometimes using charge, even though they decided to give up
 - Fix perma stunning enemies on the world map
 - Fix enemy AI ranged arrow magnet (they choose big groups over actually vulnerable targets)
+- Give bros +1 AP while retreating
+- gambeson coloring
 
 # Changes:
+
+0.7.0
+	- Your Headshot chance is now displayed in the combat tooltip when targeting enemies
+	- **Tree Limb** now deals 30-50 damage (up from 25-40), has an armor penetration of 90% (up from 75%), a weight of 15 (down from 20), a value of 300 (up from 150). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
+	- **Cudgel** now deals 40-60 damage (up from 30-50), has an armor penetration of 110% (up from 90%), a value of 400 (up from 300). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
+	- **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
+	- **Thug** now spawn with **Tree Limb** instead of **Goedendag**
+	- **Pillager** can now also spawn with **Cudgel**. **Pillager** no longer spawn with **Woodcutters Axe**, **Two Handed Mace** or **Two Handed Hammer**
+	- **Exploit Opening** is completely reworked. It now grants a stacking +10% chance to hit whenever an opponent misses an attack against you. Bonus is reset upon landing a hit (just like Fast Adaptation)
+	- **Spear Mastery** no longer provides a free spear attack each turn. Instead of now grants 15% more Melee Skill while you have Reach Advantage
+	- **Dagger Mastery** now allows free swapping of any items once per turn (while a dagger is equipped)
+	- **Throwing Mastery** no longer grants damage at close range. Instead it now grants 30% more damage for your first throwing attack each turn at any range.
+	- **Offhand Training** no longer raises your Reach to 4
+	- **Hybridization** now requires the blunt throwing attack to hit the head in order to inflict Stagger, instead of being a 50% chance
+	- **Between The Ribs** no longer requires the dagger attack to be of piercing type
+	- Reachignore values are removed from the Combat Tooltip
+	- Add new **Headless** effect to Ifrit, Spider Egg, Headless Zombie, Sapling and Kraken Tentacle
+	- Remove **Steelbrow** from Ifrit, Sapling and Kraken Tentacle
+	- Enemies which spawn with **Spear Flurry** now automatically gain **Double Strike** (to balance out how bad that perk is by itself)
+	- Introduce new HeadshotReceivedChance and HeadshotReceivedChanceMult properties for Character.nut
+	- Introduce new setWeight function for item.nut
+	- Improve various perk descriptions and some effect descriptions
+	- Fix Vanilla Enemies (except Lindwurm Tail) being decapitatable or smashable even if they don't have a head
+	- Fix Vanilla Enemies (except Lindwurm Tail) taking bonus damage from headshots even if they don't have a head
+	- Fix Nimble tooltip displaying a line about Reach Ignore
 
 0.6.0
 	- **Double Grip** now always grants 20% more damage and 20% less fatigue cost of non-attack skills

@@ -65,9 +65,8 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 ### Skills
 
 - Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
-- **Bandage Ally** now also treats any injury which was recveid at most 1 round ago
+- **Bandage Ally** now also treats any injury which was received at most 1 round ago
 - **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
-- **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back.
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies
 - **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack
@@ -95,28 +94,32 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Duelist** is completely reworked. It now only works for one-handed weapons. It grants 30% Armor Penetration and +2 Reach while adjacent to 0 or 1 enemies and it grants 15% Armor Penetration and +1 Reach while adjacent to 2 enemies.
 - **Fortified Mind** now grants 30% more Resolve (up from 25%). This Bonus is now reduces by 1% for each point of Weight on your Helmet.
 - **Battle Forged** no longer provide any Reach Ignore
-- **Between the Ribs** now also lowers your chance to hit the head by 10% for each surrounding character
+- **Between the Ribs** no longer requires the attack to be of piercing type. It now also lowers your chance to hit the head by 10% for each surrounding character
+- **Dagger Mastery** now allows free swapping of any items once per turn (while a dagger is equipped)
 - **Dismantle** has been completely reworked. It now grants +40% Armor Damage and 100% more Shield Damage against enemies who have full health.
 - **En Garde** is completely reworked. It now grants +15 Melee Skill while it is not your turn. It also makes it so **Riposte** is no longer disabled when you get hit or deal a counter attack (so like in Vanilla).
-- **Fencer** no longer grants +10 chance to hit or 20% less fatigue cost. It now causes your fencing swords to lose 50% less durability.
+- **Exploit Opening** is completely reworked. It now grants a stacking +10% chance to hit whenever an opponent misses an attack against you. Bonus is reset upon landing a hit (just like Fast Adaptation)
+- **Fencer** no longer grants +10% chance to hit or 20% less fatigue cost. It now causes your fencing swords to lose 50% less durability.
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy.
-- **Hybridization** is completely reworked. It still grants 10% of your base Ranged Skill as Melee Skill/Defense. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type hits to inflict **Overwhelmed**, blunt type hits to have 50% chance to inflict stagger and 100% to stun a staggered opponent and throwing spears to deal 50% more damage to shields
+- **Hybridization** is completely reworked. It still grants 10% of your base Ranged Skill as Melee Skill/Defense. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type hits to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 50% more damage to shields
 - **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
 - **Formidable Approach** is completely reworked. It now only works for Two-Handed weapons. It now grant 15 Melee Skill instead of Reach but only triggers when you are the one moving next to an enemy. When your maximum Hitpoints are higher than those of your opponent, it removes confident from them.
 - **King of all Weapons** is now called **Spear Flurry** and is completely reworked. It now reduces your damage by 10% but prevents spear attacks from building up any fatigue.
 - **Leverage** is completely reworked. It now reduces the Action Point cost of your first polearm attack each turn by 1 for each adjacent ally.
 - **Nimble** is completely reworked: It now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
+- **Offhand Training** no longer raises your Reach to 4
 - **Phalanx** now works even with a **Buckler** and it now also counts allies with a **Buckler** for the effect
 - **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. It also reduces your armor damage taken by a percentage equal to 40% of your current Initiative (up to a maximum of 40%)
 - **Polearm Mastery** no longer reduces the Action Point cost of 2 handed reach weapons by 1. It now grants +15% chance to hit for **Repel** and **Hook**.
-- **Shield Expert** no longer grants 25% increased shield defenses. Instead it makes it so enemies will never have Reach Advantage over the shield user.
+- **Shield Expert** no longer grants 25% increased shield defenses. It now grants 50% less shield damage taken and it makes it so enemies will never have Reach Advantage over the shield user.
 - **Shield Sergeant** is mostly reworked. It still grants **Shieldwall** to all allies at the start of each combat. It now causes allies to imitate shield skills for free that you use. It also allows you to use **Knock Back** on empty tiles.
 - **Skirmisher** now grants 50% of body armor weight as initiative (previously 30% of body/helmet armor weight) and no longer displays an effect icon
+- **Spear Mastery** no longer provides a free spear attack each turn. Instead of now grants 15% more Melee Skill while you have Reach Advantage
 - **Student** no longer grants any experience. It now grants +1 Perk Point when you reach level 8 instead of level 11.
 - **Sweeping Strikes** is completely reworked: It now grants +3 Melee Defense for every adjacent enemy until the start of your next turn whenever you use a melee attack skill. It still requires a two-handed weapon.
 - **Swift Stabs** has been completely reworked. It's now called **Hit and Run**. It makes it so all dagger attacks can be used at 2 tiles and will move the user one tile closer before the attack. When the attack hits the enemy, the user is moved back to the original tile.
-- **Through the Gaps** is now always active but now lowers your armor penetration by 10% (down from increasing it by 25%)
-- **Throwing Mastery** no longer grants any throwing type specific hit effects. It now allows swapping a throwing weapon with an empty throwing weapon or empty slot for free, once per turn
+- **Through the Gaps** is now always active but now lowers your armor penetration by 10% (down from increasing it by 10%)
+- **Throwing Mastery** is mostly completely reworked. It now grants 30% more damage for your first throwing attack each turn, no matter the range. It now allows swapping a throwing weapon with an empty throwing weapon or empty slot for free, once per turn
 - **Unstoppable** no longer loses all Stacks when you use **Wait** if you spent at least half of your action points by that time.
 - **Wears it well** now grants 50% of combined Mainhand and Offhand Weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest Weight)
 - **Whirling Death** is completely reworked. It now grants a new active skill which creates a buff for two turns granting 30% more damage, 2 Reach and 10 Melee Defense to the user.
@@ -130,6 +133,9 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 ### Items
 
+- **Tree Limb** now deals 30-50 damage (up from 25-40), has an armor penetration of 90% (up from 75%), a weight of 15 (down from 20), a value of 300 (up from 150). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
+- **Cudgel** now deals 40-60 damage (up from 30-50), has an armor penetration of 110% (up from 90%), a value of 400 (up from 300). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
+- **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
 - Throwing Spears no longer inflict any fatigue when hitting a shield
 - Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and **Large Powder Bags** weigh 4.
 - Gun Powder now costs 2 Ammunition Supply each (up from 1)
@@ -141,7 +147,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - Big settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
 - **Goblin Pikes**, **Ancient Pikes** and **Pikes** are now also of the weapontype Spear
 - **Smoke Bomb** now costs 400 Crowns (up from 275). Smoke now lasts 2 Rounds (up from 1)
-- **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk Rally the Troops
+- **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 1000 Value (up rom 200) and grants 10 Resolve (up from 5)
 - **Fangshire** will no longer spawn at the start of the game
 
@@ -169,6 +175,8 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Vandals** will no longer spawn with **Kite Shields**. Instead they can now spawn with **Old Wooden Shields**
 - **Raider** will no longer spawn with **Kite Shields**. Instead they can now spawn with **Worn Kite/Heater Shields**
 - **Highwaymen** can now also spawn with **Worn Kite/Heater Shields**
+- **Thug** now spawn with **Tree Limb** instead of **Goedendag**
+- **Pillager** can now also spawn with **Cudgel**. **Pillager** no longer spawn with **Woodcutters Axe**, **Two Handed Mace** or **Two Handed Hammer**
 - **Brigand Leader**, **Brigand Raider** and **Noble Footmen** no longer have **Shield Expert**
 - **Zombies** no longer have **Double Grip** but gain +5 Melee Skill.
 - **Zombies** and **Skeletons** grant 20% more experience
@@ -178,6 +186,8 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Necromancer** no longer have 20 natural body armor or **Inspiring Presence**
 - **Donkeys** now grant 0 XP (down from 50 XP)
 - Add face warpaint to all **Fast Bandits**
+- Remove **Steelbrow** from Ifrit, Sapling and Kraken Tentacle
+- Enemies which spawn with **Spear Flurry** now automatically gain **Double Strike** (to balance out how bad that perk is by itself)
 
 ### Other
 
@@ -196,6 +206,8 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 ## Quality of Life
 
+- Your headshot chance is now displayed in the combat tooltip when targeting enemies
+- Introduce a new **Headless** effect, which signalizes that certain enemies can never receive hits to the head. Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles receive this new effect
 - The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event
 - Settlements now display a tooltip showing how many days ago you last visited that location
 - Distance text in rumors and contracts now display the tile distance range in brackets
@@ -208,6 +220,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - All effects of the difficulty settings are now listed as tooltips during world generation
 - Slightly Lower the sfx volume of the annoying kid sfx in towns
+- **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back
 
 ## Fixes
 
@@ -215,6 +228,8 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 ### Vanilla
 
+- Vanilla Enemies that have no head (except Lindwurm Tail) are no longer decapitatable or smashable
+- Vanilla Enemies that have no head (except Lindwurm Tail) no longer take bonus damage from headshots
 - Parties on the world map are no longer hidden after loading a game, while the game is still paused
 - Spiders will now give up when their team has given up even if there are still eggs on the battlefield
 - You can no longer do two Arenas during the same day
@@ -232,14 +247,18 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 - Entities which have `this.m.IsActingEachTurn = false` (e.g. Donkeys, Phylactery, Spider Eggs) will now trigger `onRoundEnd` after every other entity has triggered it and trigger `onRoundStart` before every other entity has triggered it
 - `IsSpecializedInShields` is no longer set to `true` by **Shield Expert**
+- Introduce new `setWeight` and `getWeight` function for `item.nut` to make code around itemweight more readable. They work on the same underlying StaminaModifier but in a reversed way
 
 ### New Character Properties
 
+- `HeadshotReceivedChance` is a modifier for the incoming headshot chance
+- `HeadshotReceivedChanceMult` is a multiplier for the incoming headshot chance
 - `ShieldDamageMult` multiplies shield damage dealt via active skills
 - `ShieldDamageReceivedMult` multiplies incoming shield damage up to a minimum of 1
 - `ReachAdvantageMult` is a multiplier for melee skill during reach advantage
 - `ReachAdvantageBonus` is a flat bonus for melee skill during reach advantage
 - `CanExertZoneOfControl` (`true` by default) can be set to `false` to force an entity to no longer exert zone of control
+
 
 # Requirements
 
