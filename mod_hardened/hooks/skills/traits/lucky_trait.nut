@@ -8,7 +8,7 @@
 		{
 			if (entry.id == 10 && entry.text.find("any attacker require two") != null)
 			{
-				entry.text = "Has a " + ::MSU.Text.colorizeValue(this.m.ChanceToAvoidDamage, {AddSign = false, AddPercent = true}) + " chance to avoid all damage from any source."
+				entry.text = "Has a " + ::MSU.Text.colorizeValue(this.m.ChanceToAvoidDamage, {AddPercent = true}) + " chance to avoid all damage from any source."
 			}
 		}
 		return ret;

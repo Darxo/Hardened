@@ -19,7 +19,7 @@
 					id = 10,
 					type = "text",
 					icon = "ui/icons/melee_skill.png",
-					text = ::Reforged.Mod.Tooltips.parseString("Reach Advantage grants " + ::MSU.Text.colorizeValue(properties.getReachAdvantageBonus()) + " [Melee Skill|Concept.MeleeSkill]"),
+					text = ::Reforged.Mod.Tooltips.parseString("Reach Advantage grants " + ::MSU.Text.colorizeValue(properties.getReachAdvantageBonus(), {AddSign = true}) + " [Melee Skill|Concept.MeleeSkill]"),
 				});
 			}
 
@@ -94,7 +94,7 @@
 		{
 			_tooltip.push({
 				icon = this.m.CurrBonus > 0 ? "ui/tooltips/positive.png" : "ui/tooltips/negative.png",
-				text = ::MSU.Text.colorizeValue(this.m.CurrBonus, {AddSign = false, AddPercent = true}) + " Reach Advantage"
+				text = ::MSU.Text.colorizeValue(this.m.CurrBonus, {AddPercent = true}) + " Reach Advantage"
 			});
 		}
 	}

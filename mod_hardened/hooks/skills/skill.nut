@@ -65,7 +65,7 @@
 	{
 		if (!_info.TargetEntity.isAlive())
 		{
-			return __original(_info);;
+			return __original(_info);
 		}
 
 		local oldMathRand = ::Math.rand;
