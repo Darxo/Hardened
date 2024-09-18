@@ -194,6 +194,25 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.mastery.spear",
+		Key = "SpecSpear",
+		Description = ::UPD.getDescription({
+			Fluff = "Master fighting with spears and keeping the enemy at bay",
+			Requirement = "Spear",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue.|Concept.Fatigue]",
+						"[Spearwall|Skill+spearwall] can be used while engaged in melee and is no longer disabled when enemies overcome it",
+						"The [Spetum|Item+spetum] and [Warfork|Item+warfork] no longer have a penalty for attacking targets directly adjacent",
+						"[Reach Advantage|Concept.ReachAdvantage] grants an additional " + ::MSU.Text.colorizeMultWithText(::Reforged.Reach.ReachAdvantageMult) + " [Melee Skill|Concept.MeleeSkill]",
+					],
+				},
+			],
+		}),
+	},
+	{
 		ID = "perk.mastery.sword",
 		Key = "SpecSword",
 		Description = ::UPD.getDescription({
