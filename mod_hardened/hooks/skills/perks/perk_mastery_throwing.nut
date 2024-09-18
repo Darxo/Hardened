@@ -1,11 +1,40 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_throwing", function(q) {
+	// Public
+	q.m.UnderhandThrowDamageMult <- 1.3;
+
 	// Private
-	q.m.IsSpent <- false;	// Is quickswitching spent this turn?
+	q.m.IsQuickSwitchSpent <- false;		// Is quickswitching spent this turn?
+	q.m.IsUnderhandThrowSpent <- false;		// Is first damaging attack spent this turn?
+
+	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties )
+	{
+		if (this.m.IsUnderhandThrowSpent) return;
+		if (!this.isSkillValid(_skill)) return;
+
+		_properties.DamageTotalMult	*= this.m.UnderhandThrowDamageMult;
+	}
+
+	q.onAnySkillExecuted = @(__original) function( _skill, _targetTile, _targetEntity, _forFree )
+	{
+		__original(_skill, _targetTile, _targetEntity, _forFree);
+		if (this.isSkillValid(_skill) && ::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()))
+		{
+			this.m.IsUnderhandThrowSpent = true;
+		}
+	}
 
 	q.onTurnStart = @(__original) function()
 	{
 		__original();
-		this.m.IsSpent = false;	// IsSpent now stays always stays on true to disable swapping and hide the effect icon
+		this.m.IsQuickSwitchSpent = false;
+		this.m.IsUnderhandThrowSpent = false;
+	}
+
+	q.onCombatFinished = @(__original) function()
+	{
+		__original();
+		this.m.IsQuickSwitchSpent = true;
+		this.m.IsUnderhandThrowSpent = false;	// So that it shows up in your tooltip
 	}
 
 	q.onPayForItemAction = @(__original) function( _skill, _items )
@@ -13,7 +42,7 @@
 		__original(_skill, _items);
 		if (_skill == this)
 		{
-			this.m.IsSpent = true;
+			this.m.IsQuickSwitchSpent = true;
 		}
 	}
 
@@ -22,7 +51,7 @@
 	{
 		__original(_items);
 
-		if (this.m.IsSpent) return null;
+		if (this.m.IsQuickSwitchSpent) return null;
 
 		local sourceItem = _items[0];
 		local targetItem = _items.len() > 1 ? _items[1] : null;

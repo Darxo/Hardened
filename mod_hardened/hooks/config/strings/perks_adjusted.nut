@@ -230,7 +230,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
- 					"Deal " + ::MSU.Text.colorizeMultWithText(1.3) + " damage when attacking at a distance of 2 tiles and " + ::MSU.Text.colorizeMultWithText(1.2) + " damage when attacking at a distance of 3 tiles",
+					"Your first throwing attack each turn deals " + ::MSU.Text.colorizeMultWithText(1.3) + " damage",
 					"Swapping a throwing weapon with an empty throwing weapon or an empty slot becomes a free action once per turn",
 				],
 			}],
