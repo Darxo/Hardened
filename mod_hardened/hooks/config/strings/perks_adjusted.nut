@@ -67,7 +67,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your weapon loses " + ::MSU.Text.colorPositive("50%") + " less durability.",
+					"Your weapon loses " + ::MSU.Text.colorPositive("50%") + " less condition",
 					"When using a one-handed fencing sword, the [Action Point|Concept.ActionPoints] costs of [Sword Thrust|Skill+rf_sword_thrust_skill], [Riposte|Skill+riposte] and [Lunge|Skill+lunge_skill] are reduced by " + ::MSU.Text.colorPositive(1),
 					"When using a two-handed fencing sword, the range of [Lunge|Skill+lunge_skill] is increased by " + ::MSU.Text.colorPositive(1) + " tile",
 				],
@@ -114,7 +114,7 @@ local adjustedDescriptions = [
 						"Gain " + ::MSU.Text.colorPositive("10%") + " of your Base [Ranged Skill|Concept.RangeSkill] as additional [Melee Skill|Concept.MeleeSkill] and [Melee Defense.|Concept.MeleeDefense]",
 						"Piercing type throwing attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body",
 						"Cutting type throwing attacks apply [Overwhelmed|Skill+overwhelmed_effect] on a hit",
-						"Headshots with blunt type throwing attacks apply [stagger|Skill+staggered_effect]. All hits with blunt type throwing attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
+						"Headshots with blunt type throwing attacks apply [Staggered|Skill+staggered_effect]. All hits with blunt type throwing attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
 						"[Throwing Spear|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(1.5) + " damage to shields",
 					],
 				},
@@ -223,17 +223,15 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
-						"Riposte no longer has a penalty to hitchance",
-						"Gash has a " + ::MSU.Text.colorPositive("50%") + " lower threshold to inflict injuries",
-						"Split and Swing no longer have a penalty to hitchance",
+						"[Riposte|Skill+riposte] no longer has a penalty to hitchance",
+						"[Gash|Skill+gash_skill] has a " + ::MSU.Text.colorPositive("50%") + " lower threshold to inflict injuries",
+						"[Split|Skill+split] and [Swing|Skill+swing] no longer have a penalty to hitchance",
 					],
 				},
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlocks the [Kata Step|Skill+rf_kata_step_skill] skill which, immediately after a successful attack, allows you to move one tile ignoring [Zone of Control|Concept.ZoneOfControl] with reduced [Action Point|Concept.ActionPoints] cost and [Fatigue|Concept.Fatigue] cost of movement",
-						"The target tile for the movement must be adjacent to an enemy",
-						"Only works with Two-Handed swords or with One-Handed swords with the offhand free",
+						"Unlocks the [Kata Step|Skill+rf_kata_step_skill] skill which allows you to dance around your opponent after a successful attack",
 					],
 				},
 			],
@@ -263,8 +261,8 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Receive " + ::MSU.Text.colorPositive("50%") + " less Initiative penalty from your [Fatigue|Concept.Fatigue]",
-						"Using the \'Wait\' command or [Recover|Skill+recover_skill] will no longer give you a penalty to [Initiative|Concept.Initiative] until your next turn",
+						"Receive " + ::MSU.Text.colorPositive("50%") + " less [Initiative|Concept.Initiative] penalty from your [Fatigue|Concept.Fatigue]",
+						"Using [Wait|Concept.Wait] or [Recover|Skill+recover_skill] will no apply the [Waiting|Skill+hd_wait_effect] debuff",
 					],
 				},
 			],
@@ -465,8 +463,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
+					"Receive " + ::MSU.Text.colorPositive("50%") + " less [Initiative|Concept.Initiative] penalty from your [Fatigue|Concept.Fatigue]",
 					"Gain [Initiative|Concept.Initiative] equal to " + ::MSU.Text.colorPositive("50%") + " of the weight of your body armor",
-					"You lose " + ::MSU.Text.colorPositive("50%") + " less [Initiative|Concept.Initiative] from your current [Fatigue|Concept.Fatigue]",
 				],
 			}],
 		}),
@@ -505,7 +503,7 @@ local adjustedDescriptions = [
 		Key = "RF_SwiftStabs",
 		Description = ::UPD.getDescription({
 			Fluff = "Strike swiftly and vanish before your enemies can react, mastering the art of elusive combat!",
-			Requirement = "Dagger Attack",
+			Requirement = "Dagger",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
@@ -521,7 +519,7 @@ local adjustedDescriptions = [
 		Key = "RF_ThroughTheGaps",
 		Description = ::UPD.getDescription({
 			Fluff = "Learn to call your strikes and target gaps in your opponents\' armor!",
-			Requirement = "Spear and Piercing Attack",
+			Requirement = "Piercing Attack with Spear",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [

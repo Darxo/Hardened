@@ -17,12 +17,21 @@ this.hd_wait_effect <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.skill.getTooltip();
+
 		ret.push({
 			id = 12,
 			type = "text",
 			icon = "ui/icons/initiative.png",
 			text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeMultWithText(this.m.InitiativeMultiplier) + " [Initiative|Concept.Initiative]"),
 		});
+
+		ret.push({
+			id = 20,
+			type = "text",
+			icon = "ui/icons/action_points.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Lasts until the start of your next [turn|Concept.turn]"),
+		});
+
 		return ret;
 	}
 
