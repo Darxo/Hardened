@@ -380,6 +380,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_offhand_training",
+		Key = "RF_OffhandTraining",
+		Description = ::UPD.getDescription({
+			Fluff = "Frequent use of tools with your offhand has given you an enviable level of ambidexterity!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Once per [turn,|Concept.Turn] the first use of your offhand item weighing less than " + ::MSU.Text.colorNegative(10) + " costs no [Action Points|Concept.ActionPoints]",
+					"When wielding any [net|Item+throwing_net], the first successful melee attack every [turn|Concept.Turn] against an adjacent target will [stagger|Skill+staggered_effect] them",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_opportunist",
 		Key = "RF_Opportunist",
 		Description = ::UPD.getDescription({
