@@ -133,15 +133,15 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 ### Items
 
-- **Tree Limb** now deals 30-50 damage (up from 25-40), has an armor penetration of 90% (up from 75%), a weight of 15 (down from 20), a value of 300 (up from 150). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
-- **Cudgel** now deals 40-60 damage (up from 30-50), has an armor penetration of 110% (up from 90%), a value of 400 (up from 300). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
+- **Tree Limb** now deals 30-50 damage (up from 25-40), has an armor penetration of 90% (up from 75%), a Reach of 5 (up from 3), a weight of 15 (down from 20), a value of 300 (up from 150). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
+- **Cudgel** now deals 40-60 damage (up from 30-50), has an armor penetration of 110% (up from 90%), a Reach of 5 (up from 3), a value of 400 (up from 300). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
 - **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
 - Throwing Spears no longer inflict any fatigue when hitting a shield
 - Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and **Large Powder Bags** weigh 4.
 - Gun Powder now costs 2 Ammunition Supply each (up from 1)
 - **Feral Shield** now has a value of 400 (up from 50)
 - The value of almost all other non-named shields is increased by 50%-100%
-- **Wooden Shields** appear less common im marketplaces
+- **Wooden Shields** appear less common in marketplaces
 - **Buckler** appear less common in big settlements
 - Small civilian settlements now sell **Old Wooden Shields**
 - Big settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
@@ -219,7 +219,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
 - **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - All effects of the difficulty settings are now listed as tooltips during world generation
-- Slightly Lower the sfx volume of the annoying kid sfx in towns
+- Slightly Lower the volume of the annoying kid sfx in towns
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back
 
 ## Fixes
@@ -266,6 +266,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 # Known Issues:
 
+- Using **Line Breaker** as a **Shield Sergeant** can sometimes push multiple enemies into the same tile
 - Using Recover will prevent you from using **Wait Round** for the rest of this round
 - **Student** will double-dip for the Manhunter Origin for Slaves.
 

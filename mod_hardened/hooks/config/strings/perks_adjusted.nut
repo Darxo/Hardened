@@ -428,7 +428,7 @@ local adjustedDescriptions = [
 	},
 	{
 		ID = "perk.rf_poise",
-		Key = "RF_Poise",
+		Key = "RF_Poise",		// Current name is 'Flexible'
 		Description = ::UPD.getDescription({
 			Fluff = "Deftly shift and twist, even within your armor, to minimize the impact of attacks",
 			Effects = [{
@@ -531,7 +531,7 @@ local adjustedDescriptions = [
 	},
 	{
 		ID = "perk.rf_king_of_all_weapons",
-		Key = "RF_KingOfAllWeapons",
+		Key = "RF_KingOfAllWeapons",		// Current name is 'Spear Flurry'
 		Description = ::UPD.getDescription({
 			Fluff = "Wield the spear with unmatched endurance!",
 			Requirement = "Spear",
