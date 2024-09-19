@@ -20,7 +20,7 @@
 		// Quick and Dirty way to balance out enemies getting King of all Weapons, because that perk
 		if (!this.getContainer().getActor().isPlayerControlled())
 		{
-			this.getSkills().add(::new("scripts/skills/perks/perk_rf_double_strike"));
+			this.getContainer().getActor().getSkills().add(::new("scripts/skills/perks/perk_rf_double_strike"));
 		}
 	}
 
