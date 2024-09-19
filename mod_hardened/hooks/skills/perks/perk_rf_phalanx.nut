@@ -4,7 +4,6 @@
 	{
 		local actor = this.getContainer().getActor();
 		if (!actor.isPlacedOnMap()) return 0;
-		if (!actor.isArmedWithShield()) return 0;
 
 		local count = 0;
 		foreach (ally in ::Tactical.Entities.getAlliedActors(actor.getFaction(), actor.getTile(), 1))
