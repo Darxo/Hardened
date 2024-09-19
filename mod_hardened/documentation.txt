@@ -35,6 +35,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.7.2
+	- Fix crash when **King of all Weapons** is added to NPCs
+
 0.7.1
 	- Fix crash when **King of all Weapons** perk is added to anyone
 
