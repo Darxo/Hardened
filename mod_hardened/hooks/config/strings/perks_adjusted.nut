@@ -352,6 +352,21 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_entrenched",
+		Key = "RF_Entrenched",
+		Description = ::UPD.getDescription({
+			Fluff = "From an advantageous position, you control the battlefield!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive("+5") + " [Resolve.|Concept.Bravery] per adjacent ally",
+					"Gain " + ::MSU.Text.colorPositive("+5") + " [Ranged Defense|Concept.RangeDefense] per adjacent obstacle",
+					"Gain " + ::MSU.Text.colorPositive("15%") + " more [Ranged Skill|Concept.RangeSkill] while at least 3 adjacent tiles are occupied by allies or obstacles",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_exploit_opening",
 		Key = "RF_ExploitOpening",
 		Description = ::UPD.getDescription({
