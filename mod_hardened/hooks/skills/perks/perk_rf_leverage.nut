@@ -64,17 +64,7 @@
 			return 0;
 		}
 
-		local adjacentAllies = 0;
-		local myTile = actor.getTile();
-		for (local i = 0; i < 6; ++i)
-		{
-			if (!myTile.hasNextTile(i)) continue;
-			local nextTile = myTile.getNextTile(i);
-			if (nextTile.IsOccupiedByActor && actor.isAlliedWith(nextTile.getEntity()))
-			{
-				++adjacentAllies;
-			}
-		}
+		local adjacentAllies = ::Tactical.Entities.getAlliedActors(actor.getFaction(), actor.getTile(), 1, true).len();
 		return adjacentAllies * this.m.ActionPointModifierPerAlly;
 	}
 });
