@@ -18,4 +18,21 @@
 			_skill
 		], false);
 	}
+
+	q.onReallyBeforeSkillExecuted <- function( _skill, _targetTile )
+	{
+		this.callSkillsFunction("onReallyBeforeSkillExecuted", [
+			_skill,
+			_targetTile,
+		], false);
+	}
+
+	q.onReallyAfterSkillExecuted <- function( _skill, _targetTile, _success )
+	{
+		this.callSkillsFunction("onReallyAfterSkillExecuted", [
+			_skill,
+			_targetTile,
+			_success,
+		], false);
+	}
 });

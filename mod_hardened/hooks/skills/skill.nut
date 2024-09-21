@@ -152,6 +152,15 @@
 	q.onOtherSkillAdded <- function( _skill )
 	{
 	}
+
+	q.onReallyBeforeSkillExecuted <- function( _skill, _targetTile )
+	{
+	}
+
+	// This event is only called directly after a skills
+	q.onReallyAfterSkillExecuted <- function( _skill, _targetTile, _success )
+	{
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/skills/skill", function(q) {
@@ -159,6 +168,15 @@
 	{
 		__original();
 		this.getContainer().onOtherSkillAdded(this);
+	}
+
+	q.onUse = @(__original) function( _user, _targetTile )
+	{
+		local container = this.getContainer();	// Some skills remove themselves during onUse, causingthem to not being attached to their container anymore
+		container.onReallyBeforeSkillExecuted(this, _targetTile);
+		local ret = __original(_user, _targetTile);
+		container.onReallyAfterSkillExecuted(this, _targetTile, ret);
+		return ret;
 	}
 });
 
