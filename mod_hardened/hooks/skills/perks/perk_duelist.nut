@@ -1,30 +1,52 @@
+::Hardened.wipeClass("scripts/skills/perks/perk_duelist");
+
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_duelist", function(q) {
-	q.m.DamageDirectAddBonus <- 0.3;
-	q.m.ReachBonus <- 2;
+	// Private
+	q.m.ArmorPenetrationModifierFull <- 0.30;	// This modifier is added while 0 or 1 enemies are adjacent
+	q.m.ArmorPenetrationModifierHalf <- 0.15;	// This modifier is added to Armor Penetration while 2 enemies are adjacent
+	q.m.ReachModifierFull <- 2;					// This modifier is added to Reach while 0 or 1 enemies are adjacent
+	q.m.ReachModifierHalf <- 1;					// This modifier is added to Reach  while 2 enemies are adjacent
 
-	q.onUpdate = @() function( _properties )	// This will maybe cause issues with Lunge.
+	q.create <- function()
 	{
-		local mainhandItem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		this.m.ID = "perk.duelist";
+		this.m.Name = ::Const.Strings.PerkName.Duelist;
+		this.m.Description = ::Const.Strings.PerkDescription.Duelist;
+		this.m.Icon = "skills/passive_03.png";
+		this.m.Type = ::Const.SkillType.Perk;
+		this.m.Order = ::Const.SkillOrder.Perk;
+	}
 
+	q.onUpdate <- function( _properties )	// This will maybe cause issues with Lunge.
+	{
+		local mainhandItem = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
 		if (mainhandItem == null) return;
 		if (mainhandItem.isItemType(::Const.Items.ItemType.OneHanded) == false) return;
 
-		local multiplier = this.getBonusMultiplier();
-		_properties.DamageDirectAdd += (this.m.DamageDirectAddBonus * multiplier);
-		_properties.Reach += (this.m.ReachBonus * multiplier);
+		_properties.DamageDirectAdd += this.getArmorPenetrationModifier();
+		_properties.Reach += this.getReachModifier();
 	}
 
 // New Functions
-	q.getBonusMultiplier <- function()
+	q.getArmorPenetrationModifier <- function()
 	{
-		if (!this.getContainer().getActor().isPlacedOnMap()) return 1.0;	// Outside of battle this is treated as being fully active
-		local numAdjacentEnemies = ::Tactical.Entities.getHostileActors(this.getContainer().getActor().getFaction(), this.getContainer().getActor().getTile(), 1, true).len();
-		if (numAdjacentEnemies == 0) return 1.0;	// Maybe not allow this?
-		if (numAdjacentEnemies == 1) return 1.0;
-		if (numAdjacentEnemies == 2) return 0.5;
-		return 0.0;
+		local actor = this.getContainer().getActor();
+		if (!actor.isPlacedOnMap()) return this.m.ArmorPenetrationModifierFull;
+
+		local numAdjacentEnemies = ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true).len();
+		if (numAdjacentEnemies <= 1) return this.m.ArmorPenetrationModifierFull;
+		if (numAdjacentEnemies == 2) return this.m.ArmorPenetrationModifierHalf;
+		return 0;
 	}
 
-	if (q.contains("onAnySkillUsed")) delete q.onAnySkillUsed;
-	if (q.contains("onBeingAttacked")) delete q.onBeingAttacked;
+	q.getReachModifier <- function()
+	{
+		local actor = this.getContainer().getActor();
+		if (!actor.isPlacedOnMap()) return this.m.ReachModifierFull;
+
+		local numAdjacentEnemies = ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true).len();
+		if (numAdjacentEnemies <= 1) return this.m.ReachModifierFull;
+		if (numAdjacentEnemies == 2) return this.m.ReachModifierHalf;
+		return 0;
+	}
 });
