@@ -14,15 +14,6 @@
 		_properties.DamageTotalMult	*= this.m.UnderhandThrowDamageMult;
 	}
 
-	q.onAnySkillExecuted = @(__original) function( _skill, _targetTile, _targetEntity, _forFree )
-	{
-		__original(_skill, _targetTile, _targetEntity, _forFree);
-		if (this.isSkillValid(_skill) && ::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()))
-		{
-			this.m.IsUnderhandThrowSpent = true;
-		}
-	}
-
 	q.onTurnStart = @(__original) function()
 	{
 		__original();
@@ -81,8 +72,25 @@
 		return null;
 	}
 
+	// Overwrite: Mastery no longer applies onHit effects. This is now moved to hybridization
 	q.onTargetHit = @() function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		// Do nothing. Mastery no longer applies onHit effects. This is now moved to hybridization
+		if (this.isSkillValid(_skill) && ::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()))
+		{
+			this.m.IsUnderhandThrowSpent = true;
+		}
+	}
+
+	q.onTargetMissed = @(__original) function( _skill, _targetEntity )
+	{
+		__original(_skill, _targetEntity);
+
+		if (this.isSkillValid(_skill) && ::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()))
+		{
+			this.m.IsUnderhandThrowSpent = true;
+			// Note, this will also be triggered just before the throwing attack goes astray and potentially still hits someone else.
+			// That astrayed shot will then not profit from any damage.
+			// However we can't differentiate such an astray shot for a legit miss at the moment, so this is "good enough"
+		}
 	}
 });
