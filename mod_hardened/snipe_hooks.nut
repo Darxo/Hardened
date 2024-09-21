@@ -8,3 +8,6 @@
 
 // Completely Revert Reforged Double Grip rework
 ::Hardened.snipeHook("scripts/skills/special/double_grip", "mod_reforged");
+
+// Completely Revert Reforged Quickhands nerf
+::Hardened.snipeHook("scripts/skills/perks/perk_quick_hands", "mod_reforged");

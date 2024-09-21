@@ -254,6 +254,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.quick_hands",
+		Key = "QuickHands",
+		Description = ::UPD.getDescription({
+			Fluff = "Fastest hands in the West.",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Swapping items, except shields, becomes a free action once per [turn|Concept.Turn]",
+				]
+			}]
+		})
+	},
+	{
 		ID = "perk.relentless",
 		Key = "Relentless",
 		Description = ::UPD.getDescription({
