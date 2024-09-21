@@ -152,7 +152,7 @@ local hookDaggerAttack = function( _o )
 			::Sound.play(::MSU.Array.rand(this.m.SoundOnUse), ::Const.Sound.Volume.Skill * this.m.SoundVolume, _entity.getPos());
 		}
 
-		local success = this.onUse(_entity, _tag.TargetTile);	// Use onUse once again, this time against an adjacent target
+		local success = this.useForFree(_tag.TargetTile);	// Use onUse once again, this time against an adjacent target
 		if (success)	// We return to the original tile only after a successful hit
 		{
 			::Time.scheduleEvent(::TimeUnit.Virtual, 50, _tag.OnReturned, _tag);
