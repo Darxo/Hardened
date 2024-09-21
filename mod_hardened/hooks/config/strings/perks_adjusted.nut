@@ -103,6 +103,21 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_rattle",
+		Key = "RF_Rattle",		// Current name is 'Full Force'
+		Description = ::UPD.getDescription({
+			Fluff = "Leave nothing in reserve, strike with everything you've got!",
+			Requirement = "Hammer",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Whenever you use an attack, spend all remaining [Action Points|Concept.ActionPoints] and deal " + ::MSU.Text.colorizeMultWithText(1.1) + " damage during this attack for every [Action Point|Concept.ActionPoints] spent this way",
+					"This bonus is double for one-handed weapons",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_hybridization",
 		Key = "RF_Hybridization",
 		Description = ::UPD.getDescription({
@@ -626,6 +641,9 @@ foreach (description in adjustedDescriptions)
 
 ::Const.Strings.PerkName.RF_KingOfAllWeapons = "Spear Flurry";
 ::Const.Perks.findById("perk.rf_king_of_all_weapons").Name = ::Const.Strings.PerkName.RF_KingOfAllWeapons;
+
+::Const.Strings.PerkName.RF_Rattle = "Full Force";
+::Const.Perks.findById("perk.rf_rattle").Name = ::Const.Strings.PerkName.RF_Rattle;
 
 ::Const.Strings.PerkName.RF_SwiftStabs = "Hit and Run";
 ::Const.Perks.findById("perk.rf_swift_stabs").Name = ::Const.Strings.PerkName.RF_SwiftStabs;
