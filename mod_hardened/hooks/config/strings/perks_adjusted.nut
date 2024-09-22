@@ -16,6 +16,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.bullseye",
+		Key = "Bullseye",
+		Description = ::UPD.getDescription({
+			Fluff = "An open shot is all you need!",
+			Requirement = "Ranged Weapon",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive("+25%") + " Armor Penetration against targets who are not in cover",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_dismantle",
 		Key = "RF_Dismantle",
 		Description = ::UPD.getDescription({
