@@ -27,19 +27,18 @@
 			break;
 		}
 	}
-});
+});	// QueueBucket.Normal
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
-	::include("mod_hardened/reforged_late/perk_groups");
+	::includeFiles(::IO.enumerateFiles("mod_hardened/hooks_afterhooks"));
 }, ::Hooks.QueueBucket.AfterHooks);
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
-	::includeFiles(::IO.enumerateFiles("mod_hardened/first_world_init"));
+	::includeFiles(::IO.enumerateFiles("mod_hardened/hooks_first_world_init"));
 }, ::Hooks.QueueBucket.FirstWorldInit);
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
-	::include("mod_hardened/reforged_late/shield_last");
-	::include("mod_hardened/snipe_hooks");
+	::includeFiles(::IO.enumerateFiles("mod_hardened/hooks_last"));
 }, ::Hooks.QueueBucket.Last);
 
 
