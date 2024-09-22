@@ -60,7 +60,8 @@
 	q.onUpdate = @() function( _properties )	// we overwrite reforged functions
 	{
 		local actor = this.getContainer().getActor();
-		if (!actor.hasZoneOfControl())
+		// We could normally also just ask actor.hasZoneOfControl(). However in Hardened the ZOC can also be disabled by an additional character property, so this check is not correct anymore
+		if (actor.getCurrentProperties().IsStunned || actor.m.MoraleState == ::Const.MoraleState.Fleeing || actor.getSkills().getAttackOfOpportunity() == null)
 		{
 			_properties.ReachMult = 0.0;
 		}
