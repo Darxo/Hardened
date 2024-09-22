@@ -41,7 +41,7 @@ this.hd_whirling_death_effect <- this.inherit("scripts/skills/skill", {
 			ret.push({
 				id = 10,
 				type = "text",
-				icon = "ui/icons/reach.png",
+				icon = "ui/icons/rf_reach.png",
 				text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(this.m.ReachModifier, {AddSign = true}) + " [Reach|Concept.Reach]"),
 			});
 		}
