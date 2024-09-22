@@ -7,7 +7,7 @@
 	q.onAdded = @(__original) function()
 	{
 		__original();
-		if (this.getContainer().getActor().isPlacedOnMap())		// Todo find more general condition to check for whether its combat
+		if (::Tactical.isActive())
 		{
 			this.m.RoundAdded = ::Tactical.TurnSequenceBar.getCurrentRound();
 		}

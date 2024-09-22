@@ -65,9 +65,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"An additional " + ::MSU.Text.colorPositive("30%") + " of damage ignores armor while attacking adjacent enemies",
-					"Gain " + ::MSU.Text.colorPositive("+2") + " [Reach|Concept.Reach]",
-					"These bonuses are halved while engaged with 2 enemies and disabled while engaged with 3 or more enemies",
+					"While adjacent to at most 1 enemy, gain " + ::MSU.Text.colorPositive("+30%") + " armor penetration and " + ::MSU.Text.colorPositive("+2") + " [Reach|Concept.Reach]",
+					"While adjacent to exactly 2 enemies, gain " + ::MSU.Text.colorPositive("+15%") + " armor penetration and " + ::MSU.Text.colorPositive("+1") + " [Reach|Concept.Reach]",
 				],
 			}],
 		}),
@@ -97,7 +96,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Attacks have a " + ::MSU.Text.colorPositive("100%") + " chance to perform a free extra attack of the same type to a different valid enemiy within 2 tiles. This attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
+					"During your turn, attacks have a " + ::MSU.Text.colorPositive("100%") + " chance to perform a free extra attack of the same type to a different valid enemiy within 2 tiles. This attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
 				],
 			}],
 		}),
@@ -110,7 +109,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Resolve is increased by " + ::MSU.Text.colorPositive("30%") + "",
+					"[Resolve.|Concept.Bravery] is increased by " + ::MSU.Text.colorPositive("30%") + "",
 					"This Bonus is reduced by 1% for each Base Weight on your Helmet",
 				],
 			}],
@@ -140,7 +139,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Gain " + ::MSU.Text.colorPositive("10%") + " of your Base [Ranged Skill|Concept.RangeSkill] as additional [Melee Skill|Concept.MeleeSkill] and [Melee Defense.|Concept.MeleeDefense]",
+						"Gain " + ::MSU.Text.colorPositive("10%") + " of your Base [Ranged Skill|Concept.RangeSkill] as additional [Melee Skill|Concept.MeleeSkill] and [Melee Defense|Concept.MeleeDefense]",
 						"Piercing type throwing attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body",
 						"Cutting type throwing attacks apply [Overwhelmed|Skill+overwhelmed_effect] on a hit",
 						"Headshots with blunt type throwing attacks apply [Staggered|Skill+staggered_effect]. All hits with blunt type throwing attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
@@ -174,7 +173,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue.|Concept.Fatigue]",
+						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 						"[Round Swing|Skill+round_swing] gains " + ::MSU.Text.colorPositive("+5%") + " chance to hit",
 						"[Split Shield|Skill+split_shield] applies [Dazed|Skill+dazed_effect] for " + ::MSU.Text.colorPositive(1) + " turn",
 						"The [Longaxe|Item+longaxe] no longer has a penalty for attacking targets directly adjacent",
@@ -200,7 +199,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 					"The [Action Point|Concept.ActionPoints] cost of [Puncture|Skill+puncture] and [Deathblow|Skill+deathblow_skill] is reduced to " + ::MSU.Text.colorPositive("3"),
-					"Swapping items becomes a free action once per [turn.|Concept.Turn]",
+					"Swapping items becomes a free action once per [turn|Concept.Turn]",
 				],
 			}],
 		}),
@@ -232,7 +231,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue.|Concept.Fatigue]",
+						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 						"[Spearwall|Skill+spearwall] can be used while engaged in melee and is no longer disabled when enemies overcome it",
 						"The [Spetum|Item+spetum] and [Warfork|Item+warfork] no longer have a penalty for attacking targets directly adjacent",
 						"[Reach Advantage|Concept.ReachAdvantage] grants an additional " + ::MSU.Text.colorizeMultWithText(::Reforged.Reach.ReachAdvantageMult) + " [Melee Skill|Concept.MeleeSkill]",
@@ -304,7 +303,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Receive " + ::MSU.Text.colorPositive("50%") + " less [Initiative|Concept.Initiative] penalty from your [Fatigue|Concept.Fatigue]",
-						"Using [Wait|Concept.Wait] or [Recover|Skill+recover_skill] will no apply the [Waiting|Skill+hd_wait_effect] debuff",
+						"Using [Wait|Concept.Wait] or [Recover|Skill+recover_skill] will no longer apply the [Waiting|Skill+hd_wait_effect] debuff",
 					],
 				},
 			],
@@ -446,8 +445,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("+1") + " [Reach|Concept.Reach] per adjacent ally also equipped with a shield",
-					"[Shieldwall|Skill+shieldwall_effect] does not expire at the start of your [turn|Concept.Turn] if an adjacent ally is also using [Shieldwall.|Skill+shieldwall_effect]",
+					"Gain " + ::MSU.Text.colorPositive("+1") + " [Reach|Concept.Reach] per adjacent ally equipped with a shield",
+					"[Shieldwall|Skill+shieldwall_effect] does not expire at the start of your [turn|Concept.Turn] if an adjacent ally is also using [Shieldwall|Skill+shieldwall_effect]",
 				],
 			}],
 		}),
@@ -460,9 +459,9 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"At the start of each battle, if you have the highest Resolve out of all Brothers with this perk, gain the [Inspiring Presence|Skill+perk_inspiring_presence] effect until the end of this battle",
+					"At the start of each battle, if you have the highest [Resolve.|Concept.Bravery] out of all Brothers with this perk, gain the [Inspiring Presence|Skill+perk_inspiring_presence] effect until the end of this battle",
 					"While you have that effect: At the start of each round every adjacent ally gains " + ::MSU.Text.colorPositive("+3") + " Action Points if they are adjacent to an enemy, or have an adjacent ally who is adjacent to an enemy",
-					"Only affects allies that have less Resolve than you",
+					"Only affects allies that have less [Resolve.|Concept.Bravery] than you",
 				],
 			}],
 		}),
@@ -573,7 +572,7 @@ local adjustedDescriptions = [
 		ID = "perk.rf_swift_stabs",
 		Key = "RF_SwiftStabs",
 		Description = ::UPD.getDescription({
-			Fluff = "Strike swiftly and vanish before your enemies can react, mastering the art of elusive combat!",
+			Fluff = "Strike swiftly and vanish before your enemies can react!",
 			Requirement = "Dagger",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
@@ -638,7 +637,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"If you have attacked at least once this [turn|Concept.Turn] and end your [turn|Concept.Turn] with half or fewer of your [Action Points|Concept.ActionPoints] remaining, gain a stack, up to a maximum of 5 stacks",
-					"Each stack grants " + ::MSU.Text.colorPositive("+1") + " [Action Point(s)|Concept.ActionPoints] and " + ::MSU.Text.colorPositive("+10") + " [Initiative.|Concept.Initiative]",
+					"Each stack grants " + ::MSU.Text.colorPositive("+1") + " [Action Point|Concept.ActionPoints] and " + ::MSU.Text.colorPositive("+10") + " [Initiative|Concept.Initiative]",
 					"All the stacks are lost if you [wait|Concept.Wait] or end your [turn|Concept.Turn] with more than half of your [Action Points|Concept.ActionPoints] remaining",
 					"All the stacks are lost if you use [Recover|Skill+recover_skill], or get [Stunned|Skill+stunned_effect], Rooted or [Staggered|Skill+staggered_effect]",
 				],
