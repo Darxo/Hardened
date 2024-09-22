@@ -307,7 +307,6 @@ local adjustedDescriptions = [
 					Description = [
 						"Enemies will never have [Reach Advantage|Concept.ReachAdvantage] against you",
 						"Your shield takes " + ::MSU.Text.colorPositive("50%") + " less damage up to a minimum of 1",
-						"Missed attacks against you no longer build up [Fatigue|Concept.Fatigue]",
 					],
 				},
 				{

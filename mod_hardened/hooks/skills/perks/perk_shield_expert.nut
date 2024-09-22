@@ -9,4 +9,8 @@
 			_properties.CanEnemiesHaveReachAdvantage = false;
 		}
 	}
+
+	// Overwrite these two function to disable the no-fatigue-on-miss reforged effect
+	q.onBeingAttacked = @() function( _attacker, _skill, _properties ) {}
+	q.onMissed = @() function( _attacker, _skill ) {}
 });
