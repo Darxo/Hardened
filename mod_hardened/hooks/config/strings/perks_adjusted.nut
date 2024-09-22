@@ -586,6 +586,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_target_practice",
+		Key = "RF_TargetPractice",
+		Description = ::UPD.getDescription({
+			Fluff = "With the right focus, your arrows will find their way!",
+			Requirement = "Bow",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Your attacks are " + ::MSU.Text.colorPositive("50%") + " less likely to hit the cover, when you have no clear line of fire on your target",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_through_the_gaps",
 		Key = "RF_ThroughTheGaps",
 		Description = ::UPD.getDescription({
