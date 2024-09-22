@@ -9,5 +9,8 @@
 			[1, "scripts/items/shields/wooden_shield_old"],
 		]).roll();
 		::Hardened.util.replaceOffhand(this, shield);
+
+		// In order to improve progression, Scoundrels no longer drop Dagger and instead appear with Knifes
+		::Hardened.util.replaceMainhand(this, "scripts/items/weapons/knife", ["weapon.dagger"]);
 	}
 });
