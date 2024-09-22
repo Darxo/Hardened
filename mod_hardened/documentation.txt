@@ -27,13 +27,42 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Rebalance enemy skills/perks considering hardened reworks
 - Fix orcs sometimes using charge, even though they decided to give up
 - Fix perma stunning enemies on the world map
-- Fix enemy AI ranged arrow magnet (they choose big groups over actually vulnerable targets)
+- Fix enemy AI ranged arrow magnet (they choose big groups over actually vulnerable targets). Ifrits choosing the shield guy in the middle, instead of the low rdef guys around him
 - Give bros +1 AP while retreating
 - gambeson coloring
 - nerf cover ally initiative bonus and give it additional defense
 - opportunist to work with all throwing weapons
+- New parry mechanic? Could be a perk that only works if you are not wearing a shield but a melee weapon. Core feature would be a *cling* sound when you parry. It should work seemlessly with Riposte and Rebuke.
+	- Maybe getting a melee defense bonus if you didn't attack during your turn? For example three times your reach as melee defense
+- remove fatigue build up prevention from shield expert (it still does too much)
+- perk for civilians (e.g. caravan guys), called "First Aid", making: Injuries you treat during battle are removed instead
+- rewrite reach tooltip in combat tooltip
 
 # Changes:
+
+0.8.0
+	- **Rattle** is now called **Full Force** and has been completely reworked. It now causes you to spend all remaining Action Points whenever you attack and gain 10% more damage per Action Point spent. The effect is double for one-handed weapons
+	- **Entrenched** has been completely reworked. It now grants +5 Resolve per adjacent ally, +5 Ranged Defense per adjacent obstacle and 15% more Ranged Skill if at least 3 adjacent tiles are allies or obstacles
+	- **Dismemberment** no longer causes any morale checks. It now grants +20% chance to hit the body part with the most temporary injuries
+	- **Weapon Master** no longer works with hybrid weapons. When you learn **Weapon Master** you now gain a new random weapon perk group
+	- **Target Practice** has been completely reworked. It now makes it 50% less likely for your arrows to hit the cover, when you have no clear line of fire (stronger than vanilla Bullseye)
+	- **Bullseye** no longer reduces the penalty for shooting behind cover. It also no longer works with **Take Aim**
+	- **Shield Expert** no longer prevents fatigue build-up from avoided attacks
+	- **Quickhands** can now also swap two two-handed weapons
+	- **Phalanx** no longer requires a shield to be equipped
+	- The positions of **Rattle** (now **Full Force**) and **Deep Impact** in the Hammer Perk Group have been swapped
+	- Scoundrels now spawn with Knifes instead of Dagger
+	- Outlaws no longer spawn with Two Handed Wooden Flail or Greatsword
+	- Enemy archers are 66% less likely to target someone because of how many potential scatter targets are adjacent	- Marauder no longer spawn with Two Handed Wooden Flail and are twice as likely to spawn with a Greatsword
+	- World Parties with champions will display an orange skull on top of their socket
+	- **Nomad Sling** and **Staff Sling** no longer have the weapontype **Sling**
+	- Add new 'AffectedBodyPart' member for injury.nut (temporary injuries) which specifies which bodypart that injury belongs to
+	- Add two new events 'onReallyBeforeSkillExecuted' and 'onReallyAfterSkillExecuted' for skill.nut which guarantee to only trigger when a skill is actually used
+	- Add new 'isHybridWeapon' function for weapon.nut
+	- Improve **Dismantle** perk icon
+	- Fix Reach tooltip being wrong
+	- Fix throwing mastery not actually giving any damage bonus
+	- Fix **Distracted** setting Reach to 0
 
 0.7.2
 	- Fix crash when **King of all Weapons** is added to NPCs
