@@ -660,6 +660,29 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_weapon_master",
+		Key = "RF_WeaponMaster",
+		Description = ::UPD.getDescription({
+			Fluff = "You\'ve learned well that weapons are like tools, tailor-made to accomplish specific tasks. Therefore, you carry a small arsenal, ready to handle any situation!",
+			Requirement = "Non-Hybrid Weapon",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.OneTimeEffect,
+					Description = [
+						"Unlock a new random weapon perk group",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"When you equip a weapon whose perk group you have access to, gain the first, second, or third perk in that weapon\'s perk group if you have the corresponding perk in another weapon\'s perk group, regardless of its tier."
+					],
+				},
+			],
+			Footer = ::MSU.Text.colorNegative("This perk cannot be refunded."),
+		}),
+	},
+	{
 		ID = "perk.rf_wears_it_well",
 		Key = "RF_WearsItWell",
 		Description = ::UPD.getDescription({
