@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/injury/injury", function(q) {
+	q.m.AffectedBodyPart <- -1;		// -1 means no location is specified. So any body part check will fail
+
 	// Private
 	q.m.RoundAdded <- 0;
 

@@ -30,6 +30,10 @@
 });	// QueueBucket.Normal
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
+	::includeFiles(::IO.enumerateFiles("mod_hardened/hooks_early"));
+}, ::Hooks.QueueBucket.Early);
+
+::Hardened.HooksMod.queue(">mod_reforged", function() {
 	::includeFiles(::IO.enumerateFiles("mod_hardened/hooks_afterhooks"));
 }, ::Hooks.QueueBucket.AfterHooks);
 
