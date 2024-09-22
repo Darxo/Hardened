@@ -5,4 +5,10 @@
 		local scaledValue = _value * this.getContainer().getActor().getCurrentProperties().WeaponDurabilityLossMult;
 		__original(scaledValue);
 	}
+
+// New Function
+	q.isHybridWeapon <- function()
+	{
+		return ((this.m.WeaponType & (this.m.WeaponType - 1)) != 0);
+	}
 });
