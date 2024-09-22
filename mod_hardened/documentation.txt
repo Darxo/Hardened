@@ -40,6 +40,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.8.1
+	- Fix potential freeze against enemies with **Dismemberment** perk
+
 0.8.0
 	- **Rattle** is now called **Full Force** and has been completely reworked. It now causes you to spend all remaining Action Points whenever you attack and gain 10% more damage per Action Point spent. The effect is double for one-handed weapons
 	- **Entrenched** has been completely reworked. It now grants +5 Resolve per adjacent ally, +5 Ranged Defense per adjacent obstacle and 15% more Ranged Skill if at least 3 adjacent tiles are allies or obstacles
