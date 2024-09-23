@@ -13,6 +13,7 @@ this.hd_headless_effect <- ::inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		_properties.HeadshotReceivedChanceMult = 0.0;
+		_properties.ArmorMult[1] *= 0.0;
 	}
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, superCurrent )
