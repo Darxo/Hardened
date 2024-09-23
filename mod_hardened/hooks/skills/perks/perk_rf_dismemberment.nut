@@ -8,6 +8,7 @@
 	{
 		__original(_skill, _targetEntity, _properties);
 
+		if (_targetEntity == null) return;
 		if (!this.isSkillValid(_skill)) return;
 
 		local bodyPartCounter = 0;
