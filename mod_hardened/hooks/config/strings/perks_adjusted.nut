@@ -30,20 +30,6 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
-		ID = "perk.rf_dismantle",
-		Key = "RF_Dismantle",
-		Description = ::UPD.getDescription({
-			Fluff = "Strip them of their protection first!",
-			Requirement = "Axe",
-			Effects = [{
-				Type = ::UPD.EffectType.Passive,
-				Description = [
-					"Deal " + ::MSU.Text.colorPositive("+40%") + " Armor Damage and " + ::MSU.Text.colorPositive("100%") + " more Shield Damage against enemies who have full health",
-				],
-			}],
-		}),
-	},
-	{
 		ID = "perk.dodge",
 		Key = "Dodge",
 		Description = ::UPD.getDescription({
@@ -72,36 +58,6 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
-		ID = "perk.rf_fencer",
-		Key = "RF_Fencer",
-		Description = ::UPD.getDescription({
-			Fluff = "Master the art of fighting with a nimble sword",
-			Requirement = "Fencing Sword",
-			Effects = [{
-				Type = ::UPD.EffectType.Passive,
-				Description = [
-					"Your weapon loses " + ::MSU.Text.colorPositive("50%") + " less condition",
-					"When using a one-handed fencing sword, the [Action Point|Concept.ActionPoints] costs of [Sword Thrust|Skill+rf_sword_thrust_skill], [Riposte|Skill+riposte] and [Lunge|Skill+lunge_skill] are reduced by " + ::MSU.Text.colorPositive(1),
-					"When using a two-handed fencing sword, the range of [Lunge|Skill+lunge_skill] is increased by " + ::MSU.Text.colorPositive(1) + " tile",
-				],
-			}],
-		}),
-	},
-	{
-		ID = "perk.rf_flail_spinner",
-		Key = "RF_FlailSpinner",
-		Description = ::UPD.getDescription({
-			Fluff = "Use the momentum of your flail to enable quick follow-up blows!",
-			Requirement = "Flail",
-			Effects = [{
-				Type = ::UPD.EffectType.Passive,
-				Description = [
-					"During your turn, attacks have a " + ::MSU.Text.colorPositive("100%") + " chance to perform a free extra attack of the same type to a different valid enemiy within 2 tiles. This attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
-				],
-			}],
-		}),
-	},
-	{
 		ID = "perk.fortified_mind",
 		Key = "FortifiedMind",
 		Description = ::UPD.getDescription({
@@ -116,37 +72,18 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
-		ID = "perk.rf_rattle",
-		Key = "RF_Rattle",		// Current name is 'Full Force'
+		ID = "perk.inspiring_presence",
+		Key = "InspiringPresence",
 		Description = ::UPD.getDescription({
-			Fluff = "Leave nothing in reserve, strike with everything you've got!",
-			Requirement = "Hammer",
+			Fluff = "Standing next to a company\'s leader figure inspires your men to go beyond their limits!",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever you use an attack, spend all remaining [Action Points|Concept.ActionPoints] and deal " + ::MSU.Text.colorizeMultWithText(1.1) + " damage during this attack for every [Action Point|Concept.ActionPoints] spent this way",
-					"This bonus is double for one-handed weapons",
+					"At the start of each battle, if you have the highest [Resolve|Concept.Bravery] out of all Brothers with this perk, gain the [Inspiring Presence|Skill+perk_inspiring_presence] effect until the end of this battle",
+					"While you have that effect: At the start of each round every adjacent ally gains " + ::MSU.Text.colorPositive("+3") + " Action Points if they are adjacent to an enemy, or have an adjacent ally who is adjacent to an enemy",
+					"Only affects allies that have less [Resolve|Concept.Bravery] than you",
 				],
 			}],
-		}),
-	},
-	{
-		ID = "perk.rf_hybridization",
-		Key = "RF_Hybridization",
-		Description = ::UPD.getDescription({
-			Fluff = "\'Hatchet, throwing axe, spear, javelin... they all kill just the same!\'",
-			Effects = [
-				{
-					Type = ::UPD.EffectType.Passive,
-					Description = [
-						"Gain " + ::MSU.Text.colorPositive("10%") + " of your Base [Ranged Skill|Concept.RangeSkill] as additional [Melee Skill|Concept.MeleeSkill] and [Melee Defense|Concept.MeleeDefense]",
-						"Piercing type throwing attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body",
-						"Cutting type throwing attacks apply [Overwhelmed|Skill+overwhelmed_effect] on a hit",
-						"Headshots with blunt type throwing attacks apply [Staggered|Skill+staggered_effect]. All hits with blunt type throwing attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
-						"[Throwing Spear|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(1.5) + " damage to shields",
-					],
-				},
-			],
 		}),
 	},
 	{
@@ -364,6 +301,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_dismantle",
+		Key = "RF_Dismantle",
+		Description = ::UPD.getDescription({
+			Fluff = "Strip them of their protection first!",
+			Requirement = "Axe",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Deal " + ::MSU.Text.colorPositive("+40%") + " Armor Damage and " + ::MSU.Text.colorPositive("100%") + " more Shield Damage against enemies who have full health",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_dismemberment",
 		Key = "RF_Dismemberment",
 		Description = ::UPD.getDescription({
@@ -374,6 +325,21 @@ local adjustedDescriptions = [
 				Description = [
 					"When inflicting an [injury|Concept.InjuryTemporary] with a cutting damage attack, if you meet the [threshold|Concept.InjuryThreshold] for the lowest possible [injury|Concept.InjuryTemporary], instead inflict one with the highest [threshold|Concept.InjuryThreshold]",
 					"Gain " + ::MSU.Text.colorPositive("+20%") + " chance to hit the body part with the most [temporary injuries|Concept.InjuryTemporary]",
+				],
+			}],
+		}),
+	},
+	{
+		ID = "perk.rf_en_garde",
+		Key = "RF_EnGarde",
+		Description = ::UPD.getDescription({
+			Fluff = "You\'ve become so well-practiced with a blade that attacking and defending are done congruously!",
+			Requirement = "Sword",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive("+15") + " [Melee Skill|Concept.MeleeSkill] while it is not your [turn|Concept.Turn]",
+					"[Riposte|Skill+riposte_effect] is no longer removed when you get hit or do a counter attack",
 				],
 			}],
 		}),
@@ -408,6 +374,36 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_fencer",
+		Key = "RF_Fencer",
+		Description = ::UPD.getDescription({
+			Fluff = "Master the art of fighting with a nimble sword",
+			Requirement = "Fencing Sword",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Your weapon loses " + ::MSU.Text.colorPositive("50%") + " less condition",
+					"When using a one-handed fencing sword, the [Action Point|Concept.ActionPoints] costs of [Sword Thrust|Skill+rf_sword_thrust_skill], [Riposte|Skill+riposte] and [Lunge|Skill+lunge_skill] are reduced by " + ::MSU.Text.colorPositive(1),
+					"When using a two-handed fencing sword, the range of [Lunge|Skill+lunge_skill] is increased by " + ::MSU.Text.colorPositive(1) + " tile",
+				],
+			}],
+		}),
+	},
+	{
+		ID = "perk.rf_flail_spinner",
+		Key = "RF_FlailSpinner",
+		Description = ::UPD.getDescription({
+			Fluff = "Use the momentum of your flail to enable quick follow-up blows!",
+			Requirement = "Flail",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"During your turn, attacks have a " + ::MSU.Text.colorPositive("100%") + " chance to perform a free extra attack of the same type to a different valid enemiy within 2 tiles. This attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_formidable_approach",
 		Key = "RF_FormidableApproach",
 		Description = ::UPD.getDescription({
@@ -423,16 +419,49 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
-		ID = "perk.rf_en_garde",
-		Key = "RF_EnGarde",
+		ID = "perk.rf_hybridization",
+		Key = "RF_Hybridization",
 		Description = ::UPD.getDescription({
-			Fluff = "You\'ve become so well-practiced with a blade that attacking and defending are done congruously!",
-			Requirement = "Sword",
+			Fluff = "\'Hatchet, throwing axe, spear, javelin... they all kill just the same!\'",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Gain " + ::MSU.Text.colorPositive("10%") + " of your Base [Ranged Skill|Concept.RangeSkill] as additional [Melee Skill|Concept.MeleeSkill] and [Melee Defense|Concept.MeleeDefense]",
+						"Piercing type throwing attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body",
+						"Cutting type throwing attacks apply [Overwhelmed|Skill+overwhelmed_effect] on a hit",
+						"Headshots with blunt type throwing attacks apply [Staggered|Skill+staggered_effect]. All hits with blunt type throwing attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
+						"[Throwing Spear|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(1.5) + " damage to shields",
+					],
+				},
+			],
+		}),
+	},
+	{
+		ID = "perk.rf_king_of_all_weapons",
+		Key = "RF_KingOfAllWeapons",		// Current name is 'Spear Flurry'
+		Description = ::UPD.getDescription({
+			Fluff = "Wield the spear with unmatched endurance!",
+			Requirement = "Spear",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("+15") + " [Melee Skill|Concept.MeleeSkill] while it is not your [turn|Concept.Turn]",
-					"[Riposte|Skill+riposte_effect] is no longer removed when you get hit or do a counter attack",
+					"Your spear attacks no longer build up [Fatigue|Concept.Fatigue]",
+					"Deal " + ::MSU.Text.colorNegative("10%") + " less damage",
+				],
+			}],
+		}),
+	},
+	{
+		ID = "perk.rf_leverage",
+		Key = "RF_Leverage",
+		Description = ::UPD.getDescription({
+			Fluff = "Use the support of your comrades to amplify your strikes!",
+			Requirement = "Polearm",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Your first attack each turn costs " + ::MSU.Text.colorPositive("-1") + " [Action Point|Concept.ActionPoints] for every adjacent ally",
 				],
 			}],
 		}),
@@ -447,21 +476,6 @@ local adjustedDescriptions = [
 				Description = [
 					"Gain " + ::MSU.Text.colorPositive("+1") + " [Reach|Concept.Reach] per adjacent ally equipped with a shield",
 					"[Shieldwall|Skill+shieldwall_effect] does not expire at the start of your [turn|Concept.Turn] if an adjacent ally is also using [Shieldwall|Skill+shieldwall_effect]",
-				],
-			}],
-		}),
-	},
-	{
-		ID = "perk.inspiring_presence",
-		Key = "InspiringPresence",
-		Description = ::UPD.getDescription({
-			Fluff = "Standing next to a company\'s leader figure inspires your men to go beyond their limits!",
-			Effects = [{
-				Type = ::UPD.EffectType.Passive,
-				Description = [
-					"At the start of each battle, if you have the highest [Resolve.|Concept.Bravery] out of all Brothers with this perk, gain the [Inspiring Presence|Skill+perk_inspiring_presence] effect until the end of this battle",
-					"While you have that effect: At the start of each round every adjacent ally gains " + ::MSU.Text.colorPositive("+3") + " Action Points if they are adjacent to an enemy, or have an adjacent ally who is adjacent to an enemy",
-					"Only affects allies that have less [Resolve.|Concept.Bravery] than you",
 				],
 			}],
 		}),
@@ -506,6 +520,21 @@ local adjustedDescriptions = [
 				Description = [
 					"Take up to " + ::MSU.Text.colorPositive("60%") + " less armor penetration damage from attacks. Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each weight on your helmet and body armor combined",
 					"Take up to " + ::MSU.Text.colorPositive("40%") + " less armor damage from attack. This reduction is a percentage equal to " + ::MSU.Text.colorPositive("40%") + " of your current [Initiative|Concept.Initiative]",
+				],
+			}],
+		}),
+	},
+	{
+		ID = "perk.rf_rattle",
+		Key = "RF_Rattle",		// Current name is 'Full Force'
+		Description = ::UPD.getDescription({
+			Fluff = "Leave nothing in reserve, strike with everything you've got!",
+			Requirement = "Hammer",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Whenever you use an attack, spend all remaining [Action Points|Concept.ActionPoints] and deal " + ::MSU.Text.colorizeMultWithText(1.1) + " damage during this attack for every [Action Point|Concept.ActionPoints] spent this way",
+					"This bonus is doubled for one-handed weapons",
 				],
 			}],
 		}),
@@ -614,21 +643,6 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
-		ID = "perk.rf_king_of_all_weapons",
-		Key = "RF_KingOfAllWeapons",		// Current name is 'Spear Flurry'
-		Description = ::UPD.getDescription({
-			Fluff = "Wield the spear with unmatched endurance!",
-			Requirement = "Spear",
-			Effects = [{
-				Type = ::UPD.EffectType.Passive,
-				Description = [
-					"Your spear attacks no longer build up fatigue",
-					"Deal " + ::MSU.Text.colorNegative("10%") + " less damage",
-				],
-			}],
-		}),
-	},
-	{
 		ID = "perk.rf_unstoppable",
 		Key = "RF_Unstoppable",
 		Description = ::UPD.getDescription({
@@ -640,20 +654,6 @@ local adjustedDescriptions = [
 					"Each stack grants " + ::MSU.Text.colorPositive("+1") + " [Action Point|Concept.ActionPoints] and " + ::MSU.Text.colorPositive("+10") + " [Initiative|Concept.Initiative]",
 					"All the stacks are lost if you [wait|Concept.Wait] or end your [turn|Concept.Turn] with more than half of your [Action Points|Concept.ActionPoints] remaining",
 					"All the stacks are lost if you use [Recover|Skill+recover_skill], or get [Stunned|Skill+stunned_effect], Rooted or [Staggered|Skill+staggered_effect]",
-				],
-			}],
-		}),
-	},
-	{
-		ID = "perk.rf_leverage",
-		Key = "RF_Leverage",
-		Description = ::UPD.getDescription({
-			Fluff = "Use the support of your comrades to amplify your strikes!",
-			Requirement = "Polearm",
-			Effects = [{
-				Type = ::UPD.EffectType.Passive,
-				Description = [
-					"Your first polearm attack each turn costs " + ::MSU.Text.colorPositive("-1") + " [Action Point|Concept.ActionPoints] for every adjacent ally",
 				],
 			}],
 		}),
