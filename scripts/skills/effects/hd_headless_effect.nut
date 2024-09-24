@@ -40,6 +40,13 @@ this.hd_headless_effect <- ::inherit("scripts/skills/skill", {
 			text = "Incoming attack will never hit the head",
 		});
 
+		tooltip.push({
+			id = 11,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Immunne to [Distracted|Skill+distracted_effect]"),
+		});
+
 		return tooltip;
 	}
 });

@@ -26,6 +26,16 @@
 		return ret;
 	}
 
+	q.onAdded = @(__original) function()
+	{
+		__original();
+		// Throw Dirt can not be used anyways on headless targets in Hardened. This check is meant for other sources of Distracted, from other mods
+		if (this.getContainer().hasSkill("effects.hd_headless"))
+		{
+			this.removeSelfe();
+		}
+	}
+
 	q.onUpdate = @(__original) function( _properties )
 	{
 		local oldDamageTotalMult = _properties.DamageTotalMult;
