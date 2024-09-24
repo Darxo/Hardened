@@ -51,7 +51,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("4%") + " of the character\'s current Initiative as a bonus to [Melee Defense|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense] for each empty adjacent tile. This bonus can never be negative",
+					"Gain " + ::MSU.Text.colorPositive("4%") + " of the character\'s current [Initiative|Concept.Initiative] as a bonus to [Melee Defense|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense] for each empty adjacent tile. This bonus can never be negative",
 				],
 			}],
 		}),
@@ -109,7 +109,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"[Resolve.|Concept.Bravery] is increased by " + ::MSU.Text.colorPositive("30%") + "",
+					"[Resolve|Concept.Bravery] is increased by " + ::MSU.Text.colorPositive("30%") + "",
 					"This Bonus is reduced by 1% for each Base Weight on your Helmet",
 				],
 			}],
@@ -386,7 +386,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("+5") + " [Resolve.|Concept.Bravery] per adjacent ally",
+					"Gain " + ::MSU.Text.colorPositive("+5") + " [Resolve|Concept.Bravery] per adjacent ally",
 					"Gain " + ::MSU.Text.colorPositive("+5") + " [Ranged Defense|Concept.RangeDefense] per adjacent obstacle",
 					"Gain " + ::MSU.Text.colorPositive("15%") + " more [Ranged Skill|Concept.RangeSkill] while at least 3 adjacent tiles are occupied by allies or obstacles",
 				],
@@ -416,7 +416,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them",
+					"Moving next to an enemy that has less maximum [Hitpoints|Concept.Hitpoints] than you, removes [Confident|Concept.Morale] from them",
 					"Moving next to an enemy grants " + ::MSU.Text.colorPositive("+15") + " [Melee Skill|Concept.MeleeSkill] against them until they damage you",
 				],
 			}],
@@ -662,7 +662,7 @@ local adjustedDescriptions = [
 		ID = "perk.rf_weapon_master",
 		Key = "RF_WeaponMaster",
 		Description = ::UPD.getDescription({
-			Fluff = "You\'ve learned well that weapons are like tools, tailor-made to accomplish specific tasks. Therefore, you carry a small arsenal, ready to handle any situation!",
+			Fluff = "Weapons are like tools, tailor-made to accomplish specific tasks.",
 			Requirement = "Non-Hybrid Weapon",
 			Effects = [
 				{
