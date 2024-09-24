@@ -4,7 +4,7 @@
 		local ret = __original();
 		foreach (index, entry in ret)
 		{
-			if (entry.id == 10 && ::String.contains(entry.text, "more Fatigue built per tile traveled"))
+			if (entry.id == 11 && entry.icon == "ui/icons/fatigue.png")
 			{
 				ret.remove(index);
 				break;
