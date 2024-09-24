@@ -31,14 +31,29 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Give bros +1 AP while retreating
 - gambeson coloring
 - nerf cover ally initiative bonus and give it additional defense
-- opportunist to work with all throwing weapons
 - New parry mechanic? Could be a perk that only works if you are not wearing a shield but a melee weapon. Core feature would be a *cling* sound when you parry. It should work seemlessly with Riposte and Rebuke.
 	- Maybe getting a melee defense bonus if you didn't attack during your turn? For example three times your reach as melee defense
-- remove fatigue build up prevention from shield expert (it still does too much)
 - perk for civilians (e.g. caravan guys), called "First Aid", making: Injuries you treat during battle are removed instead
-- rewrite reach tooltip in combat tooltip
+- perks list old perk groups in their information. THat needs to be updated
+- nerf encourage and bolster confident ability
+- clarify weight, e.g. with new concept/nested tooltips
+- confirmation button when retiring ironman runs
+- remove close ranged penalty for reach weapons (its now covered by crowded)
+- move weapon mastery effects into the weapon mastery itself, instead of being implemented by the skills
+- make alps more smart on overworld (stalk player during day)
+- prevent allied parties from following you, just because you are being targeted by their allies. Sometimes mercenary companies/nobles think they can/should attack you but you are still allied
+- Make raider playstyle more sufficient by giving caravans consistent tool loot
+- Poison reduce recovery rate
 
 # Changes:
+
+0.8.2
+	- All ifrits now have 50% less hitpoints and 50% more armor
+	- **Estoc** now has 6 Reach (up from 5)
+	- Increase roster size of Lone Wolf and Gladiator origins to 13
+	- The headless effect now sets the head armor of the entity to 0
+	- Fix dismemberment perk error when targeting empty tiles with any skill
+	- Fix missing icon in whirling dance description
 
 0.8.1
 	- Fix potential freeze against enemies with **Dismemberment** perk

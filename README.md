@@ -1,10 +1,20 @@
-# Description
+# Introduction
 
 Hardened is a submod for Reforged, offering an alternate vision while staying fully savegame compatible: Players can freely switch between Reforged and Hardened.
 
 While Reforged focuses on realism and polished mechanics, Hardened embraces a simpler, more experimental approach. The submod takes more risks with innovative perk designs and mechanics, unlocking new possibilities for gameplay, though this can occasionally introduce more bugs or incompatibilities than Reforged. Hardened also walks back several of Reforged's more complex or restrictive design choices, opting for streamlined systems that prioritize fluidity and player freedom.
 
 Hardened reflects my personal vision of Battle Brothers — a balanced, varied, and challenging experience, with enough randomness to keep each playthrough fresh and unpredictable.
+
+# Overview
+
+- Reach Mechanic has been simplified
+- Almost all shield changes have been reverted
+- A huge amount of perks are reworked or rebalanced
+- Some skills are tweaked
+- Some enemies are tweaked
+- Several smaller QoL features have been added
+- Several niche vanilla bugs are fixed
 
 # List of all Changes
 
@@ -14,11 +24,12 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 - You have **Reach Advantage** during any melee attack if your Reach is greater than the Reach of the entity you are attacking
 - **Reach Advantage** always grants 15% more Melee Skill (it is unaffected by the difference in Reach)
+- **Reach Disadvantage** does nothing
+- Goblins, Humans and Orcs now have 0 Reach by default
 - **Reach** is 0 while the character does not emit a zone of control (e.g. stunned, fleeing)
 - Most attack skills have lost their innate hit chance bonus (see Skills section)
-- **Reach Disadvantage** does nothing
 - You can no longer overcome **Reach** temporarily
-- **Reach Ignore** is removed
+- **Reach Ignore** stat is removed
 
 ### Shield Revert/Rework
 
@@ -149,8 +160,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Tree Limb** now deals 30-50 damage (up from 25-40), has an armor penetration of 90% (up from 75%), a Reach of 5 (up from 3), a weight of 15 (down from 20), a value of 300 (up from 150). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
 - **Cudgel** now deals 40-60 damage (up from 30-50), has an armor penetration of 110% (up from 90%), a Reach of 5 (up from 3), a value of 400 (up from 300). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
 - **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
+- **Estoc** now has 6 Reach (up from 5)
 - Throwing Spears no longer inflict any fatigue when hitting a shield
-- Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and **Large Powder Bags** weigh 4.
+- Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and
+**Large Powder Bags** weigh 4.
 - Gun Powder now costs 2 Ammunition Supply each (up from 1)
 - **Feral Shield** now has a value of 400 (up from 50)
 - The value of almost all other non-named shields is increased by 50%-100%
@@ -184,6 +197,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - All Goblins have -5 Melee Skill and -5 Melee Defense
 - Add new **Goblin** racial effect that grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
+- All ifrits have 50% less Hitpoints and 50% more Armor
 - **Scoundrels** will no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**. They now spawn with a **Knife** instead of **Dagger**
 - **Vandals** will no longer spawn with **Kite Shields**. Instead they can now spawn with **Old Wooden Shields**
 - **Raider** will no longer spawn with **Kite Shields**. Instead they can now spawn with **Worn Kite/Heater Shields**
@@ -214,6 +228,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - The legendary Location Ancient Spire now reveals an area of 3000 (up from 1900). It now also discovers every location in that radius for the player.
 - Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken.
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
+- The **Lone Wolf** and **Gladiator** origins now have a roster size of 13 (up from 12)
 - Beginner combat difficulty difficulty now grants enemy parties 100% resources (up from 85%)
 - Beginner combat difficulty difficulty now causes player characters to receive 15% less damage from all sources
 - Expert combat difficulty difficulty now grants enemy parties 120% resources (up from 115%)
@@ -223,7 +238,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ## Quality of Life
 
 - Your headshot chance is now displayed in the combat tooltip when targeting enemies
-- Introduce a new **Headless** effect, which signalizes that certain enemies can never receive hits to the head. Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles receive this new effect
+- Introduce a new **Headless** effect, which sets the headarmor to 0 and redirects any attack to hit the body. Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles receive this new effect
 - The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event
 - Settlements now display a tooltip showing how many days ago you last visited that location
 - Distance text in rumors and contracts now display the tile distance range in brackets
@@ -240,8 +255,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back
 
 ## Fixes
-
-### Reforged
 
 ### Vanilla
 
