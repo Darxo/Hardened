@@ -438,6 +438,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_ghostlike",
+		Key = "RF_Ghostlike",
+		Description = ::UPD.getDescription({
+			Fluff = "Blink and you\'ll miss me.",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"During your turn, gain " + ::MSU.Text.colorPositive("50%") + " of your [Resolve|Concept.Bravery] as additional [Melee Defense|Concept.MeleeDefense]"
+					"When you start your turn not adjacent to enemies, gain " + ::MSU.Text.colorPositive("+15%") + " Armor Penetration and " + ::MSU.Text.colorPositive("15%") + " more Damage against adjacent targets until the end of this turn"
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_king_of_all_weapons",
 		Key = "RF_KingOfAllWeapons",		// Current name is 'Spear Flurry'
 		Description = ::UPD.getDescription({
