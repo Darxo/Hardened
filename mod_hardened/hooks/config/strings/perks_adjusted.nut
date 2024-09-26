@@ -144,6 +144,30 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.mastery.crossbow",
+		Key = "SpecCrossbow",
+		Description = ::UPD.getDescription({
+			Fluff = "Master crossbows and firearms, and how best to aim.",
+			Requirement = "Crossbow",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+						"[Reload|Skill+reload_bolt] with [Heavy Crossbows|Item+heavy_crossbow] costs " + ::MSU.Text.colorPositive("-1") + "[Action Point|Concept.ActionPoints]",
+						"[Reload|Skill+reload_handgonne_skill] with [Handgonnes|Item+handgonne] costs " + ::MSU.Text.colorPositive("-3") + " [Action Points|Concept.ActionPoints]",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Active,
+					Description = [
+						"Unlocks the [Take Aim|Skill+rf_take_aim_skill] skill which allows you to target opponents behind obstacles with a [crossbow|Item+crossbow] or hit more targets with a [handgonne.|Item+handgonne]",
+					],
+				},
+			],
+		}),
+	},
+	{
 		ID = "perk.mastery.dagger",
 		Key = "SpecDagger",
 		Description = ::UPD.getDescription({
