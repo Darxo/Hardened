@@ -15,4 +15,13 @@
 
 		return ret;
 	}
+
+// New Functions
+	// Is this faction technically owned by another faction?
+	// @return null, if this faction is not owned by another faction or a reference to the other faction, if the first settlement of it is owned by that one
+	q.getOwner <- function()
+	{
+		if (this.getSettlements().len() == 0) return null;
+		return this.getSettlements()[0].getOwner();		// For simplicity, we pretend like all settlements of a faction are owned by the same faction if any
+	}
 });
