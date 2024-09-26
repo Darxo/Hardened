@@ -42,6 +42,16 @@
 	// For Vanilla you'd hook onActorKilled on player.nut. But Reforged moved the exp calculation over into the onDeath of actor.nut
 	q.onDeath = @(__original) function( _killer, _skill, _tile, _fatalityType )
 	{
+		local lootTile = _tile;
+		if (lootTile == null && this.isPlacedOnMap()) lootTile = this.getTile();
+		if (lootTile != null)
+		{
+			foreach (item in this.getDroppedLoot(_killer, _skill, _fatalityType))
+			{
+				item.drop(lootTile);
+			}
+		}
+
 		local oldGlobalXPMult = ::Const.Combat.GlobalXPMult;
 		if (this.isAlliedWithPlayer() || !this.m.GrantsXPOnDeath)
 		{
@@ -51,5 +61,12 @@
 		__original(_killer, _skill, _tile, _fatalityType);
 
 		::Const.Combat.GlobalXPMult = oldGlobalXPMult;
+	}
+
+// New Events
+	// This is called just before onDeath of this entity is called
+	q.getDroppedLoot <- function( _killer, _skill, _fatalityType )
+	{
+		return [];
 	}
 });
