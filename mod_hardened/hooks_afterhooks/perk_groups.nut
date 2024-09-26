@@ -57,4 +57,15 @@
 			if (perk == "perk.mastery.polearm") row.remove(i);	// Remove Polearm Mastery
 		}
 	}
+
+	// Swift Strikes
+	local pgSwiftPerkGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_swift");
+	pgSwiftPerkGroup.getTree()[2].push("perk.reach_advantage");	// Add Reach Advantage (Parry) into the Tier 3 row
+	foreach (row in pgSwiftPerkGroup.getTree())
+	{
+		foreach (i, perk in row)
+		{
+			if (perk == "perk.rf_vigorous_assault") row.remove(i);	// Remove Vigorous Assault
+		}
+	}
 }
