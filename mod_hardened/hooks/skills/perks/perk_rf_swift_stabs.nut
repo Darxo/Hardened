@@ -54,6 +54,7 @@ local hookDaggerAttack = function( _o )
 		return true
 	}
 
+	// TODO: improve code using onbefore skill executed events
 	local oldUse = _o.use;
 	_o.use = function( _targetTile, _forFree = false )
 	{

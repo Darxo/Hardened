@@ -70,6 +70,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 - Disable **Veteran Perks**. Your brothers no longer gain perk points after Level 11
 - When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. No more than 5% of his maximum exp each.
+- Add new **Parry** perk in Tier 3 of **Swift Group**. It requires a one handed melee weapon. It grants Melee Defense equal to your base Ranged Defense against weapon attacks. While engage with someone wielding a melee weapon, you have 70% less Ranged Defense. Does not work with shields, while stunned, fleeing or disarmed.
 
 ## Balance & Polishing
 
@@ -78,14 +79,14 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
 - **Bandage Ally** now also treats any injury which was received at most 1 round ago
 - **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
-- **Recover** now applies the same Initiative debuff as using **Wait**
-- **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
-- **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack
-- **Stab** now costs 3 Action Points (down from 4)
-- The hireable **Nomad Background** no longer grants the **Throw Dirt** skill
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
-- **Sword Thrust** now has -10% Hitchance bonus (up from -20%)
+- **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
+- **Recover** now applies the same Initiative debuff as using **Wait**
+- **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack
+- **Sprint** now costs 1 Action Point (up from 0) but no longer increases the fatigue cost per tile while sprinting
+- **Stab** now costs 3 Action Points (down from 4)
 - **Lunge** now have -10% Hitchance bonus (up from -20%)
+- **Sword Thrust** now has -10% Hitchance bonus (up from -20%)
 
 Skill nerfs as a result of the Reach system:
 - **Lightbringer** now has 0% Hitchance bonus (down from 10%)
@@ -120,6 +121,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Fencer** no longer grants +10% chance to hit or 20% less fatigue cost. It now causes your fencing swords to lose 50% less durability
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy
 - **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you
+- **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until the end of the turn
 - **Hybridization** is completely reworked. It still grants 10% of your base Ranged Skill as Melee Skill/Defense. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type hits to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 50% more damage to shields
 - **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
 - **King of all Weapons** is now called **Spear Flurry** and is completely reworked. It now reduces your damage by 10% but prevents spear attacks from building up any fatigue.
@@ -154,6 +156,11 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
 - **Deep Impact** is now a T3 perk and **Rattle** (now **Full Force**) is now a T6 perk
 - **Polearm Mastery** is no longer part of **Leadership** group
+
+### Backgrounds
+
+- **Nomad** no longer grants the **Throw Dirt** skill
+- **Swordmaster** no longer has **Sword Mastery** unlocked by default
 
 ### Items
 
@@ -215,6 +222,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Necromancer** no longer have 20 natural body armor or **Inspiring Presence**
 - **Donkeys** now grant 0 XP (down from 50 XP)
 - Add face warpaint to all **Fast Bandits**
+- Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop crowns, food or tools or a valueable ring.
 - Remove **Steelbrow** from Ifrit, Sapling and Kraken Tentacle
 - Enemies which spawn with **Spear Flurry** now automatically gain **Double Strike** (to balance out how bad that perk is by itself)
 - Enemy archers are 66% less likely to target someone because of how many potential scatter targets are adjacent
@@ -237,22 +245,31 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ## Quality of Life
 
+### Combat
+
 - Your headshot chance is now displayed in the combat tooltip when targeting enemies
-- Introduce a new **Headless** effect, which sets the headarmor to 0 and redirects any attack to hit the body. Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles receive this new effect
+- Introduce a new **Headless** effect, which sets the headarmor to 0 and redirects any attack to hit the body and grants immunity to **Distracted**. Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles receive this new effect
+- Add tooltip for the duration of tile effects (smoke, flames, miasma)
+- **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back
+- **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
+- **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
+
+### World
+
 - The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event
 - Settlements now display a tooltip showing how many days ago you last visited that location
 - Distance text in rumors and contracts now display the tile distance range in brackets
-- Brothers that "die" outside of combat (e.g. Events) will now always transfer their equipment into your stash
 - World Parties with champions will display an orange skull on top of their socket
+- Peasants and Caravans on the world map display a banner
+- Brothers that "die" outside of combat (e.g. Events) will now always transfer their equipment into your stash
+- Slightly Lower the volume of the annoying kid sfx in towns
+
+### Misc
+
 - Legendary Armor and Armor with an attachement that you un-equip are now automatically marked as to-be-repaired
 - Quiver now display the supply cost for replacing ammunition in them
 - Improve artwork for **Nimble** perk
-- Add tooltip for the duration of tile effects (smoke, flames, miasma)
-- **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
-- **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - All effects of the difficulty settings are now listed as tooltips during world generation
-- Slightly Lower the volume of the annoying kid sfx in towns
-- **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back
 
 ## Fixes
 
@@ -282,6 +299,11 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Add two new events `onReallyBeforeSkillExecuted` and `onReallyAfterSkillExecuted` for `skill.nut` which guarantee to only trigger when a skill is actually onUsed
 - Add new `isHybridWeapon` function for `weapon.nut`
 - **Nomad Sling** and **Staff Sling** no longer have the weapontype **Sling**
+- Parties that are spawned without a banner will be assigned the banner of the faction who owns their faction (mostly relevant for civilian factions)
+- Introduce new `LastSpawnedParty` member for `faction.nut` which always contains the last party spawned by that faction
+- Introduce new `getOwner` function for factions, which returns the owner of this factions first settlement
+- Introduce new virtual `getDroppedLoot` function for `actor.nut` returning an array of created items, which will be dropped when that actor dies
+- Supply Items (Money, Tools, Medicine, Ammunition) are now droppable
 
 ### New Character Properties
 
