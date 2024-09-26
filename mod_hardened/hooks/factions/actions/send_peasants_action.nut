@@ -7,6 +7,7 @@
 		if (lastSpawnedParty != null)
 		{
 			lastSpawnedParty.getSprite("banner").Visible = true;
+			lastSpawnedParty.getLoot().Money = 0;	// Loot
 		}
 	}
 });
