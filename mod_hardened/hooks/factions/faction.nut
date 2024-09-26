@@ -11,6 +11,15 @@
 		waitOrder.setTime(1);	// About 14 ingame minutes
 		ret.getController().addOrder(waitOrder);
 
+		if (this.m.BannerPrefix == "")
+		{
+			local owner = this.getOwner();
+			if (owner != null && owner.m.BannerPrefix != "")
+			{
+				ret.getSprite("banner").setBrush(owner.m.BannerPrefix + (owner.m.Banner < 10 ? "0" + owner.m.Banner : owner.m.Banner));
+			}
+		}
+
 		this.m.LastSpawnedParty <- ::MSU.asWeakTableRef(ret);
 
 		return ret;
