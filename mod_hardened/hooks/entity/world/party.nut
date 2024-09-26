@@ -44,4 +44,14 @@
 			}
 		}
 	}
+
+	q.onDeserialize = @(__original) function( _in )
+	{
+		__original(_in);
+
+		if (this.getFlags().has("IsCaravan") && this.hasSprite("banner"))
+		{
+			this.getSprite("banner").setOffset(::Hardened.Const.CaravanBannerOffset);
+		}
+	}
 });

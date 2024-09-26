@@ -4,6 +4,7 @@
 	Version = "0.8.2",
 	GitHubURL = "https://github.com/Darxo/Hardened",
 	Temp = {},	// Used to globally store variables between function calls to implement more advanced, albeit hacky behavior
+	Const = {},
 }
 
 ::Hardened.HooksMod <- ::Hooks.register(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
@@ -27,6 +28,8 @@
 			break;
 		}
 	}
+
+	::Hardened.Const.CaravanBannerOffset <- ::createVec(0, 50);
 });	// QueueBucket.Normal
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
