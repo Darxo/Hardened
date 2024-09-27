@@ -48,7 +48,7 @@
 	// Convert the shield condition values to the unit system of Hardened
 	q.convertToHardened <- function()
 	{
-		local conditionFraction = this.m.Condition / this.m.ConditionMax;
+		local conditionFraction = (this.m.Condition * 1.0) / this.m.ConditionMax;
 
 		// Revert the Reforged shield condition changes
 		this.m.ConditionMax = ::Math.round(this.m.HardenedShieldConditionMax * this.m.ShieldConditionMult);
@@ -64,12 +64,14 @@
 	{
 		if (this.m.ReforgedShieldConditionMax != null)	// Some shields might snuck past the reforged condition grab
 		{
-			local conditionFraction = this.m.Condition / this.m.ConditionMax;
+			local conditionFraction = (this.m.Condition * 1.0) / this.m.ConditionMax;
+
+			// Apply the Reforged shield condition changes again
 			this.m.ConditionMax = ::Math.round(this.m.ReforgedShieldConditionMax * this.m.ShieldConditionMult);
 
 			// Scale the condition relative to what it was under hardened
 			// This must be rounded very little, otherwise we get float rounding errors which turn a 100 into a 99.99999
-			this.m.Condition = this.m.Condition = ::Hardened.controlledRound(conditionFraction * this.m.ConditionMax);
+			this.m.Condition = ::Hardened.controlledRound(conditionFraction * this.m.ConditionMax);
 		}
 	}
 });

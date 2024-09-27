@@ -28,6 +28,8 @@
 
 	q.onDeserialize = @(__original) function(_in)
 	{
+		convertToReforged();	// Shields are first created under the Hardened ruleset with vanilla values. So we need to convert them to Reforged numbers before we can load the reforged values
+
 		__original(_in);
 		if (this.isItemType(::Const.Items.ItemType.Named) && this.m.BaseItemScript != null)
 		{
