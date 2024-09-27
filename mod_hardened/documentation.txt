@@ -47,8 +47,14 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Replace more/all occurences of Maximum Fatigue and Penalty to Maximum Fatigue with Stamina and Weight
 - New Non-Combatant effect, that signalises that an enemy has no regular turn, grants no exp (as per design of Hardened) and is not required to be killed in order to win the battle
 - Add flags for caravans/peasants
+- Improve Inspiring Presence Description. Maybe rework it once more
+- fix bottom left nimble perk icon. Fix mini rach advantage icon
 
 # Changes:
+
+0.9.1
+	- Add sound when parrying an attack
+	- Fix shields having full condition after loading
 
 0.9.0
 	- Add new **Parry** perk in Tier 3 of **Swift Group**. It requires a one handed melee weapon. It grants Melee Defense equal to your base Ranged Defense against melee attacks. While engage with someone wielding a melee weapon, you have 70% less Ranged Defense. Does not work with shields, while stunned, fleeing or disarmed.
@@ -63,7 +69,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- Introduce new `getOwner` function for factions, which returns the owner of this factions first settlement
 	- Introduce new virtual `getDroppedLoot` function for `actor.nut` returning an array of created items, which will be dropped when that actor dies
 	- Supply Items (Money, Tools, Medicine, Ammunition) are now droppable
-	- Fix Sprint effect saying it increases fatigue cost. This is no not the case Hardened
+	- Fix Sprint effect saying it increases fatigue cost. This is not the case Hardened
 	- Fix clarify in crossbow tooltip that reload is reduced only by 1 for heavy crossbows
 
 0.8.2

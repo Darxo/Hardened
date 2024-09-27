@@ -156,6 +156,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
 - **Deep Impact** is now a T3 perk and **Rattle** (now **Full Force**) is now a T6 perk
 - **Polearm Mastery** is no longer part of **Leadership** group
+- **Vigorous Assault** is no longer part of **Swift Strikes** group
 
 ### Backgrounds
 
