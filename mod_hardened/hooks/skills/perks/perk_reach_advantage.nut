@@ -8,6 +8,7 @@
 
 	// Private
 	q.m.OriginalIconMini <- "perk_hd_parry_mini";
+	q.m.SoundOnParry <- ::Const.Sound.ShieldHitMetal;
 
 	q.create <- function()
 	{
@@ -71,6 +72,25 @@
 		if (this.isSkillParryable(_skill))
 		{
 			_properties.MeleeDefense += this.getMeleeDefenseModifier();
+		}
+	}
+
+	q.onMissed <- function( _attacker, _skill )
+	{
+		if (::Hardened.Temp.LastAttackInfo != null)
+		{
+			if (this.isSkillParryable(_skill))
+			{
+				// parryChance is an approximation of how much this perk contributed to us dodging. It's not accurate because vanilla halves the melee defense above 50
+				local parryChance = ::Math.round(this.getMeleeDefenseModifier() * ::Hardened.Temp.LastAttackInfo.TargetProperties.MeleeDefenseMult);
+
+				// Our Parry perk was the deciding factor to make us dodge this attack
+				if (::Hardened.Temp.LastAttackInfo.Roll - parryChance <= ::Hardened.Temp.LastAttackInfo.ChanceToHit)
+				{
+					local actor = this.getContainer().getActor();
+					::Sound.play(::MSU.Array.rand(this.m.SoundOnParry), ::Const.Sound.Volume.Skill, actor.getPos());
+				}
+			}
 		}
 	}
 
