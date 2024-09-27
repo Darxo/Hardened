@@ -7,6 +7,9 @@
 ::Hardened.Temp.SkillToBeHitWith <- null;
 ::Hardened.Temp.UserWantingToHit <- null;
 
+// Modular Vanilla Temp Variables
+::Hardened.Temp.LastAttackInfo <- null;		// weakref to the last AttackInfo created. Usually only useful to have access to it during onTargetMissed or onMissed calls
+
 ::Hardened.HooksMod.hook("scripts/skills/skill", function(q) {
 	q.m.HD_Temp_IsFree <- false;	// Ignore fatigue and action point cost during isAffordable check
 
@@ -146,6 +149,12 @@
 		::Hardened.Temp.UserWantingToHit = null;
 
 		return ret;
+	}
+// Modular Vanilla Functions
+	q.onAttackEntityMissed = @(__original) function( _attackInfo )
+	{
+		::Hardened.Temp.LastAttackInfo = ::MSU.asWeakTableRef(_attackInfo);
+		__original(_attackInfo);
 	}
 
 // New Functions
