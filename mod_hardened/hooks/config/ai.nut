@@ -7,5 +7,11 @@
 ::Const.AI.Behavior.StanceRangedTargetMult <- 0.8;	// Don't stand around being a target with a lot of ranged enemies
 ::Const.AI.Behavior.StanceMeleeTargetMult <- 1.1;
 
+// Nets
+::Const.AI.Behavior.ThrowNetMeleeDefenseMult <- 1.0;	// How much do we value Melee Defense on the target when considering netting them?
+::Const.AI.Behavior.ThrowNetInitiativeMult <- 0.50;	// How much do we value Initiative on the target when considering netting them?
+::Const.AI.Behavior.ThrowNetTargetAllyHeatMult <- 0.90; // How much more valueable does a target become for netting for each of its allies around it? This is applied once at a distance of 3 tiles and thrice at a distance of 1 tiles
+::Const.AI.Behavior.ThrowNetTargetHostileHeatMult <- 1.10; // How much more valueable does a target become for netting for each of its hostiles around it? This is applied once at a distance of 3 tiles and thrice at a distance of 1 tiles
+
 // Throwables
 ::Const.AI.Behavior.OffhandDiscardDoubleGripMult <- 2.0;	// When we consider using an offhand item while we are engaged in melee considering that using it would active double grip
