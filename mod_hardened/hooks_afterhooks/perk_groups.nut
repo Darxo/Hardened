@@ -69,3 +69,28 @@
 		}
 	}
 }
+
+// Re-calculate the perk groups listed on the perks
+// This is a 1:1 copy of how dynamic perks does it. There is currently no API to force that calculation again in a cleaner way via DP mod
+foreach (perk in ::Const.Perks.LookupMap)
+{
+	perk.PerkGroupIDs <- [];
+}
+
+local tooltipImageKeywords = {};
+foreach (perkGroup in ::DynamicPerks.PerkGroups.getAll())
+{
+	foreach (row in perkGroup.getTree())
+	{
+		foreach (perkID in row)
+		{
+			::logWarning("Push " + perkGroup.getID() + " into the perk " + perkID);
+			::Const.Perks.findById(perkID).PerkGroupIDs.push(perkGroup.getID());
+		}
+	}
+	if (perkGroup.getIcon() != "")
+	{
+		tooltipImageKeywords[perkGroup.getIcon()] <- "PerkGroup+" + perkGroup.getID();
+	}
+}
+::DynamicPerks.Mod.Tooltips.setTooltipImageKeywords(tooltipImageKeywords);
