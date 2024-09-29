@@ -6,3 +6,6 @@
 // New Hardened Values
 ::Const.AI.Behavior.StanceRangedTargetMult <- 0.8;	// Don't stand around being a target with a lot of ranged enemies
 ::Const.AI.Behavior.StanceMeleeTargetMult <- 1.1;
+
+// Throwables
+::Const.AI.Behavior.OffhandDiscardDoubleGripMult <- 2.0;	// When we consider using an offhand item while we are engaged in melee considering that using it would active double grip
