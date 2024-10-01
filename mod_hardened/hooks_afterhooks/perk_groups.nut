@@ -91,7 +91,6 @@ foreach (perkGroup in ::DynamicPerks.PerkGroups.getAll())
 	{
 		foreach (perkID in row)
 		{
-			::logWarning("Push " + perkGroup.getID() + " into the perk " + perkID);
 			::Const.Perks.findById(perkID).PerkGroupIDs.push(perkGroup.getID());
 		}
 	}
