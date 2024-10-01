@@ -79,6 +79,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 - **Bandage Ally** now also treats any injury which was received at most 1 round ago
 - **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
+- **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
 - **Recover** now applies the same Initiative debuff as using **Wait**
@@ -123,7 +124,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until the end of the turn
 - **Hybridization** is completely reworked. It still grants 10% of your base Ranged Skill as Melee Skill/Defense. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type hits to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 50% more damage to shields
-- **Inspiring Presence** no longer requires a banner. It is only active for the brother with the highest resolve among all brothers with that perk and only affects brothers with less resolve than the Leader. It now proccs on Round-Start instead of Turn-Start.
+- **Inspiring Presence** no longer requires a banner. At the start of each round it grants adjacent allies of your faction +3 Action Points for this turn, if they are adjacent to an enemy and have less Resolve than you. The same target can't be inspired multiple times per turn.
 - **King of all Weapons** is now called **Spear Flurry** and is completely reworked. It now reduces your damage by 10% but prevents spear attacks from building up any fatigue.
 - **Leverage** is completely reworked. It now reduces the Action Point cost of your first polearm attack each turn by 1 for each adjacent ally.
 - **Nimble** is completely reworked: It now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
@@ -155,13 +156,14 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bags and Belts** is now part of the **Light Armor** group instead of being available for everyone
 - **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
 - **Deep Impact** is now a T3 perk and **Rattle** (now **Full Force**) is now a T6 perk
+- **Inspiring Presence** is now also part of the **Noble** group at Tier 7
 - **Polearm Mastery** is no longer part of **Leadership** group
 - **Vigorous Assault** is no longer part of **Swift Strikes** group
 
 ### Backgrounds
 
 - **Nomad** no longer grants the **Throw Dirt** skill
-- **Swordmaster** no longer has **Sword Mastery** unlocked by default
+- **Swordmaster** no longer has **Sword Mastery** unlocked by default. This perk is now moved to Tier 3 (down from 4) for them
 
 ### Items
 

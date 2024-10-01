@@ -48,8 +48,18 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Improve Inspiring Presence Description. Maybe rework it once more
 - fix bottom left nimble perk icon. Fix mini rach advantage icon
 - Fix weapons that lost hitchance bonus for some of their skills. Goedendag Cudgel is now almost alwasy the best choice
+- Maybe remove the replacement of Brawny, Colossus and Fortified Mindon NPCs. Hardened has stepped away from these perks and mods might introduce new secondary effects on them?
+- Make it so ranged troop AI is less likely to be dumb (leave perfectly fine positions)
 
 # Changes:
+
+0.9.3
+	- Completely rework and simplify **Inspiring Presence**. At the start of each round it causes adjacent allies of your faction to gain +3 Action Points for this turn, if they are adjacent to an enemy and have less resolve than you. The effect doesn't stack on the same target, otherwise it has no restrictions
+	- **Encourage** can no longer make someone **confident** and it no longer requires the user to have a higher morale than the target per tile distance
+	- Add **Inspiring Presence** to **Noble** perk group at Tier 7
+	- Fix Special Student group still being displayed even though Student is now part of General Group
+	- Fix remove accidental logWarning when adding perks to perk groups
+	- Fix log errors from adding the same perk group icons multiple times
 
 0.9.2
 	- Swamp no longer reduces Melee Skill by 25%. Instead it now reduces Initiative by 25%
