@@ -58,6 +58,10 @@
 		}
 	}
 
+	// Noble
+	local pgNobleGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_noble");
+	pgNobleGroup.getTree()[6].push("perk.inspiring_presence");	// Add Inspiring Presence to Tier 7
+
 	// Swift Strikes
 	local pgSwiftPerkGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_swift");
 	pgSwiftPerkGroup.getTree()[2].push("perk.reach_advantage");	// Add Reach Advantage (Parry) into the Tier 3 row
