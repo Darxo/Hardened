@@ -11,7 +11,7 @@
 		{
 			if (entry.id == 7 && ::String.contains(entry.text, "Cut Artery"))
 			{
-				entry.text = "Treats any injury that was received at most " + ::MSU.Text.colorPositive(this.m.TreatableRoundWindow) + " [Round(s)|Concept.Round] ago";
+				entry.text = ::Reforged.Mod.Tooltips.parseString("Treats any injury that was received at most " + ::MSU.Text.colorPositive(this.m.TreatableRoundWindow) + " [Round(s)|Concept.Round] ago");
 			}
 		}
 
