@@ -94,9 +94,5 @@ foreach (perkGroup in ::DynamicPerks.PerkGroups.getAll())
 			::Const.Perks.findById(perkID).PerkGroupIDs.push(perkGroup.getID());
 		}
 	}
-	if (perkGroup.getIcon() != "")
-	{
-		tooltipImageKeywords[perkGroup.getIcon()] <- "PerkGroup+" + perkGroup.getID();
-	}
 }
 ::DynamicPerks.Mod.Tooltips.setTooltipImageKeywords(tooltipImageKeywords);
