@@ -70,6 +70,11 @@
 		}
 		target.setDirty(true);	// Update the targets UI so that bleedings are removed immediately
 
+		if (this.getItem() != null && !this.getItem().isNull())
+		{
+			this.getItem().removeSelf();
+		}
+
 		this.updateAchievement("FirstAid", 1, 1);
 		return true;
 	}
