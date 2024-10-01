@@ -14,7 +14,7 @@ this.hd_whirling_death_skill <- this.inherit("scripts/skills/skill", {
 		this.m.SoundOnUse = [
 			"sounds/combat/flail_01.wav",
 			"sounds/combat/flail_02.wav",
-			"sounds/combat/flail_03.wav"
+			"sounds/combat/flail_03.wav",
 		];
 		this.m.Type = ::Const.SkillType.Active;
 		this.m.Order = ::Const.SkillOrder.Offensive;

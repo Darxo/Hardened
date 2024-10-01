@@ -31,8 +31,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Give bros +1 AP while retreating
 - gambeson coloring
 - nerf cover ally initiative bonus and give it additional defense
-- New parry mechanic? Could be a perk that only works if you are not wearing a shield but a melee weapon. Core feature would be a *cling* sound when you parry. It should work seemlessly with Riposte and Rebuke.
-	- Maybe getting a melee defense bonus if you didn't attack during your turn? For example three times your reach as melee defense
 - perk for civilians (e.g. caravan guys), called "First Aid", making: Injuries you treat during battle are removed instead
 - perks list old perk groups in their information. THat needs to be updated
 - nerf encourage and bolster confident ability
@@ -49,8 +47,20 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Add flags for caravans/peasants
 - Improve Inspiring Presence Description. Maybe rework it once more
 - fix bottom left nimble perk icon. Fix mini rach advantage icon
+- Fix weapons that lost hitchance bonus for some of their skills. Goedendag Cudgel is now almost alwasy the best choice
 
 # Changes:
+
+0.9.2
+	- Swamp no longer reduces Melee Skill by 25%. Instead it now reduces Initiative by 25%
+	- Remove **Battleforged** from Ancient Auxiliary
+	- Improve visibility of Miasma and Fire ground effects
+	- Improve AI targeting for throwing nets: They value the targets melee defense twice as much. They now also value the targets initiative and prefer isolated targets.
+	- AI is now twice as likely to throw a net or use a throwing pot/bomb while adjacent to an enemy
+	- Fix perks displaying old/wrong perk groups in their tooltips
+	- Fix bandage not being consumed when used
+	- Fix broken hyperlink in bandage ally skill description
+	- Fix old misleading tooltip lines in swordmaster and nomad background
 
 0.9.1
 	- Add sound when parrying an attack

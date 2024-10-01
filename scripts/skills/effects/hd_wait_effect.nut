@@ -9,8 +9,6 @@ this.hd_wait_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Waiting";
 		this.m.Icon = "ui/traits/trait_icon_25.png";
 		this.m.Type = ::Const.SkillType.StatusEffect;
-		this.m.IsActive = false;
-		this.m.IsStacking = false;
 		this.m.IsRemovedAfterBattle = true;
 	}
 

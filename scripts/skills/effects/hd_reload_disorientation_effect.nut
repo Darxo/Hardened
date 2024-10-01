@@ -12,7 +12,6 @@ this.hd_reload_disorientation_effect <- ::inherit("scripts/skills/skill", {
 		this.m.IconMini = "hd_reload_disorientation_effect_mini";
 		this.m.Type = ::Const.SkillType.StatusEffect;
 		this.m.IsRemovedAfterBattle = true;
-		this.m.IsStacking = false;		// This debuff does not stack
 	}
 
 	function getTooltip()

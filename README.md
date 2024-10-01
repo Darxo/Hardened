@@ -71,12 +71,12 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - Disable **Veteran Perks**. Your brothers no longer gain perk points after Level 11
 - When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. No more than 5% of his maximum exp each.
 - Add new **Parry** perk in Tier 3 of **Swift Group**. It requires a one handed melee weapon. It grants Melee Defense equal to your base Ranged Defense against weapon attacks. While engage with someone wielding a melee weapon, you have 70% less Ranged Defense. Does not work with shields, while stunned, fleeing or disarmed.
+- Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
 
 ## Balance & Polishing
 
 ### Skills
 
-- Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
 - **Bandage Ally** now also treats any injury which was received at most 1 round ago
 - **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
@@ -221,16 +221,22 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Barbarian Drummer** now have +1 Action Point and grant +150 Experience
 - **Nachzehrer** can no longer swallow player characters while in a net.
 - **Necromancer** no longer have 20 natural body armor or **Inspiring Presence**
+- **Ancient Auxiliary** no longer have **Battleforged**
 - **Donkeys** now grant 0 XP (down from 50 XP)
 - Add face warpaint to all **Fast Bandits**
 - Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop crowns, food or tools or a valueable ring.
 - Remove **Steelbrow** from Ifrit, Sapling and Kraken Tentacle
 - Enemies which spawn with **Spear Flurry** now automatically gain **Double Strike** (to balance out how bad that perk is by itself)
+
+### Enemy AI
 - Enemy archers are 66% less likely to target someone because of how many potential scatter targets are adjacent
+- Improve AI targeting for throwing nets: They value the targets melee defense twice as much. They now also value the targets initiative and prefer isolated targets.
+- AI is now twice as likely to throw a net or use a throwing pot/bomb while adjacent to an enemy
 
 ### Other
 
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
+- **Swamp** tiles no longer reduce Melee Skill by 25%. Instead they now reduce Initiative by 25%
 - Encumbrance no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level.
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied.
 - Burning Damage (Fire Pot, Burning Arrow, Burning Ground) now remove all root-like effects from the targets.
@@ -316,7 +322,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - `ReachAdvantageBonus` is a flat bonus for melee skill during reach advantage
 - `CanExertZoneOfControl` (`true` by default) can be set to `false` to force an entity to no longer exert zone of control
 
-
 # Requirements
 
 - Reforged
@@ -325,12 +330,13 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - Using **Line Breaker** as a **Shield Sergeant** can sometimes push multiple enemies into the same tile
 - Using Recover will prevent you from using **Wait Round** for the rest of this round
-- **Student** will double-dip for the Manhunter Origin for Slaves.
+- **Student** will double-dip in the Manhunter Origin for Slaves
 
 # Compatibility
 
 - Is safe to remove from- and add to any savegame
-- Removing or adding this mod will not update existing perk trees. Only after some days you will encounter brothers with the changed perk trees.
+- Removing or adding this mod will not update existing perk trees. Only after some days you will encounter brothers with the changed perk trees
+- Removing this mod will replace **Parry** with the vanilla perk **Reach Advantage**
 
 # License
 
