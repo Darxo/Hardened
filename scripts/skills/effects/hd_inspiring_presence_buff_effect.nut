@@ -17,6 +17,7 @@ this.hd_inspiring_presence_buff_effect <- ::inherit("scripts/skills/skill", {
 		];
 		this.m.IsSerialized = false;
 		this.m.IsRemovedAfterBattle = true;
+		this.m.IsStacking = false;
 	}
 
 	function getTooltip()

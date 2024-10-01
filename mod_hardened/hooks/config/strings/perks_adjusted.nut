@@ -79,9 +79,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"At the start of each battle, if you have the highest [Resolve|Concept.Bravery] out of all Brothers with this perk, gain the [Inspiring Presence|Skill+perk_inspiring_presence] effect until the end of this battle",
-					"While you have that effect: At the start of each round every adjacent ally gains " + ::MSU.Text.colorPositive("+3") + " Action Points if they are adjacent to an enemy, or have an adjacent ally who is adjacent to an enemy",
-					"Only affects allies that have less [Resolve|Concept.Bravery] than you",
+					"At the start of each [round|Concept.Round] every adjacent ally from your company, with less [Resolve|Concept.Bravery] than you, gains " + ::MSU.Text.colorPositive("+3") + " [Action Points|Concept.ActionPoints] if they are adjacent to an enemy",
+					"Does not affect [stunned|Skill+stunned_effect] or [fleeing|Concept.Morale] allies. Every character can only be [inspired|Skill+hd_inspiring_presence_buff_effect] once per turn"
 				],
 			}],
 		}),
