@@ -33,6 +33,6 @@
 		if (target.getCurrentProperties().IsStunned || target.getMoraleState() == ::Const.MoraleState.Fleeing) return false;
 		if (target.getMoraleState() >= ::Const.MoraleState.Steady || target.getMoraleState() >= target.m.MaxMoraleState) return false;
 
-		return actor.getFaction() == target.getFaction();
+		return this.getContainer().getActor().getFaction() == target.getFaction();
 	}
 });
