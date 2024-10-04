@@ -24,6 +24,17 @@
 			case "menu-screen.new-campaign.HardDifficulty":
 				::Const.Difficulty.generateTooltipInfo(ret, ::Const.Difficulty.Hard);
 				return ret;
+
+			case "tactical-screen.topbar.options-bar-module.FleeButton":
+			{
+				ret.push({
+					id = 11,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = ::Reforged.Mod.Tooltips.parseString("Your characters have " + ::MSU.Text.colorizeValue(1, {AddSign = true}) + " [Action Point(s)|Concept.ActionPoints] during retreat"),
+				});
+				return ret;
+			}
 		}
 
 		return ret;
