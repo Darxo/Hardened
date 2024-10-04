@@ -608,6 +608,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_rebuke",
+		Key = "RF_Rebuke",
+		Description = ::UPD.getDescription({
+			Fluff = "Show \'em how it\'s done!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Whenever an opponent misses a melee attack against you while it is not your [turn,|Concept.Turn] gain the [Rebuke|Skill+hd_rebuke_effect] effect until the start of your next [turn|Concept.Turn]",
+					"Requires a usable [Attack of Opportunity.|Concept.ZoneOfControl] Does not work while [stunned|Skill+stunned_effect] or [fleeing|Concept.Morale]"
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_shield_sergeant",
 		Key = "RF_ShieldSergeant",
 		Description = ::UPD.getDescription({
