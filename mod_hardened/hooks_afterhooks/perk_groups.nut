@@ -62,6 +62,16 @@
 	local pgNobleGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_noble");
 	pgNobleGroup.getTree()[6].push("perk.inspiring_presence");	// Add Inspiring Presence to Tier 7
 
+	// Shield
+	local pgShield = ::DynamicPerks.PerkGroups.findById("pg.rf_shield");
+	foreach (row in pgShield.getTree())
+	{
+		foreach (i, perk in row)
+		{
+			if (perk == "perk.duelist") row.remove(i);	// Remove Duelist fomr Shields
+		}
+	}
+
 	// Special Student
 	::DynamicPerks.PerkGroups.remove("pg.special.rf_student");
 
