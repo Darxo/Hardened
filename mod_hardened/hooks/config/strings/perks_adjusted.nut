@@ -445,6 +445,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_flaming_arrows",
+		Key = "RF_FlamingArrows",
+		Description = ::UPD.getDescription({
+			Fluff = "Burn them all!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"A successful [Aimed Shot|Skill+aimed_shot] will now light the target tile on fire for 2 [rounds|Concept.Round] and trigger a [Morale Check|Concept.Morale] for all adjacent enemies",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_formidable_approach",
 		Key = "RF_FormidableApproach",
 		Description = ::UPD.getDescription({
