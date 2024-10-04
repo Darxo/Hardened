@@ -11,7 +11,6 @@ this.hd_battle_song_skill <- ::inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/hd_battle_song_skill_bw.png";
 		this.m.Overlay = "hd_battle_song_skill";
 		this.m.SoundOnUse = [
-			"sounds/combat/hd_lute_song_01.wav",
 			"sounds/combat/hd_lute_song_02.wav",
 			"sounds/combat/hd_lute_song_03.wav",
 			"sounds/combat/hd_lute_song_04.wav",
