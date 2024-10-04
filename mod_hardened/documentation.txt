@@ -50,8 +50,17 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Fix weapons that lost hitchance bonus for some of their skills. Goedendag Cudgel is now almost alwasy the best choice
 - Maybe remove the replacement of Brawny, Colossus and Fortified Mindon NPCs. Hardened has stepped away from these perks and mods might introduce new secondary effects on them?
 - Make it so ranged troop AI is less likely to be dumb (leave perfectly fine positions)
+- Opportunist: pick up actual ammuition: Next attack costs no fatigue and no ammo (can fire even if no ammo in weapon). Every tile you move reduces cost of next throwing attack by 1
+- Fix dog release sound being mono right ear when placed right side
+- Remove fourth similar sounding lute sfx
+- include my more indirect numeral mod
 
 # Changes:
+
+0.9.4
+	- Fleeing characters now have +1 Action Point
+	- All player characters now have +1 Action Point during AutoRetreat
+	- Fix encourage skill not working correctly
 
 0.9.3
 	- Completely rework and simplify **Inspiring Presence**. At the start of each round it causes adjacent allies of your faction to gain +3 Action Points for this turn, if they are adjacent to an enemy and have less resolve than you. The effect doesn't stack on the same target, otherwise it has no restrictions

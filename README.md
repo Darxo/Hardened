@@ -237,6 +237,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Other
 
+- All fleeing characters now have +1 Action Point
+- All player characters now have +1 Action Point during AutoRetreat
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
 - **Swamp** tiles no longer reduce Melee Skill by 25%. Instead they now reduce Initiative by 25%
 - Encumbrance no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level.
