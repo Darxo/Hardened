@@ -4,6 +4,7 @@
 
 ::MSU.Table.merge(::Reforged.NestedTooltips.Tooltips.Concept, {
 	ArmorPenetration = ::MSU.Class.BasicTooltip("Armor Penetration", ::Reforged.Mod.Tooltips.parseString("Armor Penetration is a property that determines how much of an attack\'s damage bypasses armor and directly affects the target's hitpoints.\n\nIt is expressed as a percentage, ranging from " + ::MSU.Text.colorPositive("0%") + " to a maximum of " + ::MSU.Text.colorPositive("100%") + ".\n\nBefore the damage reaches the hitpoints, any regular damage reduction from other effects is applied first. Then, the remaining armor on the body part hit reduces the damage further by " + ::MSU.Text.colorizePct(::Const.Combat.ArmorDirectDamageMitigationMult) + " of its current value.")),
+	Weight = ::MSU.Class.BasicTooltip("Weight", ::Reforged.Mod.Tooltips.parseString("Each equippable item can have a weight value, which determines how much it impacts a character\'s performance.\n\nWhen equipped, an item\'s weight is subtracted from both [Stamina|Concept.MaximumFatigue] and [Initiative.|Concept.Initiative]\n\nIf an item is equipped in a [Bag slot,|Concept.BagSlots] only half of its weight (rounded up) is subtracted from [Stamina|Concept.MaximumFatigue] and [Initiative|Concept.Initiative] instead.")),
 });
 
 ::Reforged.Mod.Tooltips.setTooltips(::Reforged.NestedTooltips.Tooltips);
