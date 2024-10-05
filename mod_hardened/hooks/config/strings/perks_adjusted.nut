@@ -24,7 +24,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("+25%") + " Armor Penetration against targets who are not in cover",
+					"Gain " + ::MSU.Text.colorPositive("+25%") + " [Armor Penetration|Concept.ArmorPenetration] against targets who are not in cover",
 				],
 			}],
 		}),
@@ -51,8 +51,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"While adjacent to at most 1 enemy, gain " + ::MSU.Text.colorPositive("+30%") + " armor penetration and " + ::MSU.Text.colorPositive("+2") + " [Reach|Concept.Reach]",
-					"While adjacent to exactly 2 enemies, gain " + ::MSU.Text.colorPositive("+15%") + " armor penetration and " + ::MSU.Text.colorPositive("+1") + " [Reach|Concept.Reach]",
+					"While adjacent to at most 1 enemy, gain " + ::MSU.Text.colorPositive("+30%") + " [Armor Penetration|Concept.ArmorPenetration] and " + ::MSU.Text.colorPositive("+2") + " [Reach|Concept.Reach]",
+					"While adjacent to exactly 2 enemies, gain " + ::MSU.Text.colorPositive("+15%") + " [Armor Penetration|Concept.ArmorPenetration] and " + ::MSU.Text.colorPositive("+1") + " [Reach|Concept.Reach]",
 				],
 			}],
 		}),
@@ -335,7 +335,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Deal " + ::MSU.Text.colorPositive("10%") + " more damage and gain " + ::MSU.Text.colorPositive("+10%") + " armor penetration per character [surrounding|Concept.Surrounding] the target",
+					"Deal " + ::MSU.Text.colorPositive("10%") + " more damage and gain " + ::MSU.Text.colorPositive("+10%") + " [Armor Penetration|Concept.ArmorPenetration] per character [surrounding|Concept.Surrounding] the target",
 					"Lose " + ::MSU.Text.colorNegative("10%") + " [chance to hit the head|Concept.ChanceToHitHead] per character [surrounding|Concept.Surrounding] the target",
 				],
 			}],
@@ -500,7 +500,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"During your turn, gain " + ::MSU.Text.colorPositive("50%") + " of your [Resolve|Concept.Bravery] as additional [Melee Defense|Concept.MeleeDefense]"
-					"When you start your turn not adjacent to enemies, gain " + ::MSU.Text.colorPositive("+15%") + " Armor Penetration and " + ::MSU.Text.colorPositive("15%") + " more Damage against adjacent targets until the end of this turn"
+					"When you start your turn not adjacent to enemies, gain " + ::MSU.Text.colorPositive("+15%") + " [Armor Penetration|Concept.ArmorPenetration] and " + ::MSU.Text.colorPositive("15%") + " more Damage against adjacent targets until the end of this turn"
 				],
 			}],
 		}),
@@ -586,7 +586,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Take up to " + ::MSU.Text.colorPositive("60%") + " less armor penetration damage from attacks. Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each weight on your helmet and body armor combined",
+					"Take up to " + ::MSU.Text.colorPositive("60%") + " less [Armor Penetration|Concept.ArmorPenetration] damage from attacks. Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each weight on your helmet and body armor combined",
 					"Take up to " + ::MSU.Text.colorPositive("40%") + " less armor damage from attack. This reduction is a percentage equal to " + ::MSU.Text.colorPositive("40%") + " of your current [Initiative|Concept.Initiative]",
 				],
 			}],
@@ -705,7 +705,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Your attacks against targets with armor will always target the body part with the lowest armor",
-					"Armor penetration is reduced by " + ::MSU.Text.colorNegative("10%"),
+					"[Armor Penetration|Concept.ArmorPenetration] is reduced by " + ::MSU.Text.colorNegative("10%"),
 				],
 			}],
 		}),

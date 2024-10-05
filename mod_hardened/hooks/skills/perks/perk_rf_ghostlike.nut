@@ -36,7 +36,7 @@
 				id = 12,
 				type = "text",
 				icon = "ui/icons/direct_damage.png",
-				text = ::MSU.Text.colorizePct(this.m.DirectDamageModifier, {AddSign = true}) + " Armor Penetration when attacking adjacent targets",
+				text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizePct(this.m.DirectDamageModifier, {AddSign = true}) + " [Armor Penetration|Concept.ArmorPenetration] when attacking adjacent targets"),
 			});
 		}
 
