@@ -65,8 +65,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"[Resolve|Concept.Bravery] is increased by " + ::MSU.Text.colorPositive("30%") + "",
-					"This Bonus is reduced by 1% for each Base Weight on your Helmet",
+					"Gain " + ::MSU.Text.colorPositive("30%") + " more [Resolve|Concept.Bravery]",
+					"This Bonus is reduced by " + ::MSU.Text.colorNegative("1%") + " for each [Weight|Concept.Weight] on your Helmet",
 				],
 			}],
 		}),
@@ -94,7 +94,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Take " + ::MSU.Text.colorPositive("60%") + " less [Hitpoint|Concept.Hitpoints] damage from Attacks",
-					"Take more armor damage equal to the combined weight of your head and body armor as a percentage",
+					"Take more armor damage equal to the combined [Weight|Concept.Weight] of your helmet and body armor as a percentage",
 				],
 			}],
 		}),
@@ -556,7 +556,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per [turn,|Concept.Turn] the first use of your offhand item weighing less than " + ::MSU.Text.colorNegative(10) + " costs no [Action Points|Concept.ActionPoints]",
+					"Once per [turn,|Concept.Turn] the first use of your offhand item [weighing|Concept.Weight] less than " + ::MSU.Text.colorPositive(10) + " costs no [Action Points|Concept.ActionPoints]",
 					"When wielding any [net|Item+throwing_net], the first successful melee attack every [turn|Concept.Turn] against an adjacent target will [stagger|Skill+staggered_effect] them",
 				],
 			}],
@@ -586,7 +586,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Take up to " + ::MSU.Text.colorPositive("60%") + " less [Armor Penetration|Concept.ArmorPenetration] damage from attacks. Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each weight on your helmet and body armor combined",
+					"Take up to " + ::MSU.Text.colorPositive("60%") + " less [Armor Penetration|Concept.ArmorPenetration] damage from attacks. Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each [Weight|Concept.Weight] on your helmet and body armor combined",
 					"Take up to " + ::MSU.Text.colorPositive("40%") + " less armor damage from attack. This reduction is a percentage equal to " + ::MSU.Text.colorPositive("40%") + " of your current [Initiative|Concept.Initiative]",
 				],
 			}],
@@ -645,7 +645,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Receive " + ::MSU.Text.colorPositive("50%") + " less [Initiative|Concept.Initiative] penalty from your [Fatigue|Concept.Fatigue]",
-					"Gain [Initiative|Concept.Initiative] equal to " + ::MSU.Text.colorPositive("50%") + " of the weight of your body armor",
+					"Gain [Initiative|Concept.Initiative] equal to " + ::MSU.Text.colorPositive("50%") + " of the [Weight|Concept.Weight] of your body armor",
 				],
 			}],
 		}),
@@ -771,7 +771,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain [Stamina|Concept.MaximumFatigue] and [Initiative|Concept.Initiative] equal to " + ::MSU.Text.colorPositive("50%") + " of your combined mainhand and offhand weight",
+					"Gain [Stamina|Concept.MaximumFatigue] and [Initiative|Concept.Initiative] equal to " + ::MSU.Text.colorPositive("50%") + " of your combined mainhand and offhand [Weight|Concept.Weight]",
 				],
 			}],
 		}),
