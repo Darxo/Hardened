@@ -4,11 +4,12 @@ Stances share in common that you wanna use them as preparation for action
 - you have nothing better to do (defending, hiding)
 
 It's a bad idea to use a stance skill when
+- it costs equal or more than your maximum actionpoints -4 (e.g. Zombies)
 - you are engaged in battle
 - there are a lot of enemy ranged troops nearby that need to be engaged asap
 - you are almost dead
 */
-this.ai_defend_stance <- this.inherit("scripts/ai/tactical/behavior", {
+this.hd_ai_defend_stance <- this.inherit("scripts/ai/tactical/behavior", {
 	m = {
 		PossibleSkills = [
 			"actives.hd_whirling_death",
@@ -37,6 +38,8 @@ this.ai_defend_stance <- this.inherit("scripts/ai/tactical/behavior", {
 		// Pick a Skill
 		this.m.Skill = this.selectSkill(this.m.PossibleSkills);
 		if (this.m.Skill == null) return zero;
+
+		if (_entity.getActionPointsMax() - this.m.Skill.getActionPointCost() < 4) return zero;	// We shouldn't even think about defensive stances if they leave barely any action points for movement (e.g. Zombies)
 
 		// Do I die this turn?
 		local dotDamage = 0;
