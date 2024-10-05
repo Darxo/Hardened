@@ -94,6 +94,16 @@
 		}
 	}
 
+	q.addResources = @(__original) function()
+	{
+		__original();
+
+		foreach (resource in this.m.SoundOnParry)
+		{
+			::Tactical.addResource(resource);	// Make it so these sfx will actually loaded and able to be played
+		}
+	}
+
 // New Functions
 	q.getMeleeDefenseModifier <- function()
 	{
