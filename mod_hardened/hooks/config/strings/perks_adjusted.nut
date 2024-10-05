@@ -80,7 +80,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"At the start of each [round|Concept.Round] every adjacent ally from your company, with less [Resolve|Concept.Bravery] than you, gains " + ::MSU.Text.colorPositive("+3") + " [Action Points|Concept.ActionPoints] if they are adjacent to an enemy",
-					"Does not affect [stunned|Skill+stunned_effect] or [fleeing|Concept.Morale] allies. Every character can only be [inspired|Skill+hd_inspiring_presence_buff_effect] once per turn"
+					"Does not affect [stunned|Skill+stunned_effect] or [fleeing|Concept.Morale] allies. Every character can only be [inspired|Skill+hd_inspiring_presence_buff_effect] once per [turn|Concept.Turn]"
 				],
 			}],
 		}),
@@ -129,7 +129,7 @@ local adjustedDescriptions = [
 					Description = [
 						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 						"[Round Swing|Skill+round_swing] gains " + ::MSU.Text.colorPositive("+5%") + " chance to hit",
-						"[Split Shield|Skill+split_shield] applies [Dazed|Skill+dazed_effect] for " + ::MSU.Text.colorPositive(1) + " turn",
+						"[Split Shield|Skill+split_shield] applies [Dazed|Skill+dazed_effect] for " + ::MSU.Text.colorPositive(1) + " [turn|Concept.Turn]",
 						"The [Longaxe|Item+longaxe] no longer has a penalty for attacking targets directly adjacent",
 					],
 				},
@@ -253,8 +253,8 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
-					"Your first throwing attack each turn deals " + ::MSU.Text.colorizeMultWithText(1.3) + " damage",
-					"Swapping a throwing weapon with an empty throwing weapon or an empty slot becomes a free action once per turn",
+					"Your first throwing attack each [turn|Concept.Turn] deals " + ::MSU.Text.colorizeMultWithText(1.3) + " damage",
+					"Swapping a throwing weapon with an empty throwing weapon or an empty slot becomes a free action once per [turn|Concept.Turn]",
 				],
 			}],
 		}),
@@ -303,7 +303,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlocks the [Cover Ally|Skill+rf_cover_ally_skill] skill which allows you to target an ally to allow them to move 1 tile ignoring [Zone of Control|Concept.ZoneOfControl] on their [turn|Concept.Turn] while improving their position in the turn order in the next [round|Concept.Round]",
+						"Unlocks the [Cover Ally|Skill+rf_cover_ally_skill] skill which allows you to target an ally to allow them to move 1 tile ignoring [Zone of Control|Concept.ZoneOfControl] on their [turn|Concept.Turn] while improving their position in the [turn|Concept.Turn] order in the next [round|Concept.Round]",
 					],
 				},
 			],
@@ -439,7 +439,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"During your turn, attacks have a " + ::MSU.Text.colorPositive("100%") + " chance to perform a free extra attack of the same type to a different valid enemiy within 2 tiles. This attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
+					"During your [turn,|Concept.Turn] attacks have a " + ::MSU.Text.colorPositive("100%") + " chance to perform a free extra attack of the same type to a different valid enemiy within 2 tiles. This attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
 				],
 			}],
 		}),
@@ -499,8 +499,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"During your turn, gain " + ::MSU.Text.colorPositive("50%") + " of your [Resolve|Concept.Bravery] as additional [Melee Defense|Concept.MeleeDefense]"
-					"When you start your turn not adjacent to enemies, gain " + ::MSU.Text.colorPositive("+15%") + " [Armor Penetration|Concept.ArmorPenetration] and " + ::MSU.Text.colorPositive("15%") + " more Damage against adjacent targets until the end of this turn"
+					"During your [turn|Concept.Turn], gain " + ::MSU.Text.colorPositive("50%") + " of your [Resolve|Concept.Bravery] as additional [Melee Defense|Concept.MeleeDefense]"
+					"When you start your [turn|Concept.Turn] not adjacent to enemies, gain " + ::MSU.Text.colorPositive("+15%") + " [Armor Penetration|Concept.ArmorPenetration] and " + ::MSU.Text.colorPositive("15%") + " more Damage against adjacent targets until the end of this [turn|Concept.Turn]"
 				],
 			}],
 		}),
@@ -529,7 +529,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your first attack each turn costs " + ::MSU.Text.colorPositive("-1") + " [Action Point|Concept.ActionPoints] for every adjacent ally",
+					"Your first attack each [turn|Concept.Turn] costs " + ::MSU.Text.colorPositive("-1") + " [Action Point|Concept.ActionPoints] for every adjacent ally",
 				],
 			}],
 		}),
