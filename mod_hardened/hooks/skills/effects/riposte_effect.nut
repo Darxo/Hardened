@@ -90,15 +90,12 @@
 
 	q.onRiposteExecuted <- function( _data )
 	{
-		if (!_data.User.isAlive())
-		{
-			return;
-		}
+		if (!_data.User.isAlive()) return;
+		if (_data.User.m.RiposteSkillCounter == ::Const.SkillCounter) return;	// This is a shared variable used by all riposte effects and ensures that no two riposte effects can trigger from the same attack
 
-		if (_data.User.m.RiposteSkillCounter == ::Const.SkillCounter)
-		{
-			return;
-		}
+		// Check whether our ZOC skill is valid. We can't use isUsableOn because that function checks for skill cost too, which we do not want
+		if (!_data.User.getTile().hasLineOfSightTo(_data.TargetTile, _data.User.getCurrentProperties().getVision())) return;
+		if (!_data.Skill.verifyTargetAndRange(_data.TargetTile, _data.User.getTile())) return;
 
 		_data.User.m.RiposteSkillCounter = ::Const.SkillCounter;
 		_data.Skill.useForFree(_data.TargetTile);
