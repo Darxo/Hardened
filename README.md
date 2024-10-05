@@ -58,6 +58,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - Each Day now consists of **Sunrise** (2 hours) followed by **Morning** (6 hours), **Midday** (2 hours), **Afternoon** (6 hours) and ending with **Sunset** (2 hours)
 - Each Night now consists of **Dusk** (2 hours), followed by **Midnight** (2 hours) and **Dawn** (2 hours)
 - Each new day now starts exactly the moment that night changes to day (Double Arena fix)
+- The Day-Night disk on the world map now aligns correctly with the current time
 
 ### Crossbows
 
@@ -129,12 +130,13 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Leverage** is completely reworked. It now reduces the Action Point cost of your first polearm attack each turn by 1 for each adjacent ally.
 - **Nimble** is completely reworked: It now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
 - **Offhand Training** no longer raises your Reach to 4
-- **Opportunist** now also works with slings
+- **Opportunist** is completely reworked. It now grants throwing attacks -1 Action Point cost per tile moved, until you use a throwing attack, wait or end your turn. Changing height levels also no longer has an additional Action Point cost.
 - **Phalanx** now works even with a **Buckler** and it now also counts allies with a **Buckler** for the effect. It no longer requires you to have a shield equipped for it to work
 - **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. It also reduces your armor damage taken by a percentage equal to 40% of your current Initiative (up to a maximum of 40%)
 - **Polearm Mastery** no longer reduces the Action Point cost of 2 handed reach weapons by 1. It now grants +15% chance to hit for **Repel** and **Hook**.
 - **Quickhands** can now also swap two two-handed weapons
 - **Rattle** is now called **Full Force** and has been completely reworked. It now causes you to spend all remaining Action Points whenever you attack and gain 10% more damage per Action Point spent. The effect is double for one-handed weapons
+- **Rebuke** is completely reworked. It now grants the **Rebuke Effect** whenever an opponent misses a melee attack against you while it's not your turn, until the start of your next turn. This effect reduces your damage by 25% but will make you retaliate every melee attack miss against you.
 - **Shield Expert** no longer grants 25% increased shield defenses and no longer prevents fatigue build-up when you dodge attacks. It now grants 50% less shield damage taken and it makes it so enemies will never have Reach Advantage over the shield user
 - **Shield Sergeant** is mostly reworked. It still grants **Shieldwall** to all allies at the start of each combat. It now causes allies to imitate shield skills for free that you use. It also allows you to use **Knock Back** on empty tiles.
 - **Skirmisher** now grants 50% of body armor weight as initiative (previously 30% of body/helmet armor weight) and no longer displays an effect icon
@@ -145,6 +147,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Target Practice** has been completely reworked. It now makes it 50% less likely for your arrows to hit the cover, when you have no clear line of fire (stronger than vanilla Bullseye)
 - **Through the Gaps** is now always active but now lowers your armor penetration by 10% (down from increasing it by 10%)
 - **Throwing Mastery** is mostly completely reworked. It now grants 30% more damage for your first throwing attack each turn, no matter the range. It now allows swapping a throwing weapon with an empty throwing weapon or empty slot for free, once per turn
+- **Trick Shooter** no longer causes your **Aimed Shot** to trigger a morale check on the main target hit
 - **Unstoppable** no longer loses all Stacks when you use **Wait** if you spent at least half of your action points by that time
 - **Weapon Master** no longer works with hybrid weapons. When you learn **Weapon Master** you now gain a new random weapon perk group
 - **Wears it well** now grants 50% of combined Mainhand and Offhand Weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest Weight)
@@ -152,16 +155,18 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Perk Groups
 
-- **Student** is now available for everyone
 - **Bags and Belts** is now part of the **Light Armor** group instead of being available for everyone
-- **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
 - **Deep Impact** is now a T3 perk and **Rattle** (now **Full Force**) is now a T6 perk
+- **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
+- **Duelist** is no longer part of **Shield** group
 - **Inspiring Presence** is now also part of the **Noble** group at Tier 7
 - **Polearm Mastery** is no longer part of **Leadership** group
+- **Student** is now available for everyone
 - **Vigorous Assault** is no longer part of **Swift Strikes** group
 
 ### Backgrounds
 
+- **Assassin** now has +5 to minimum Ranged Skill (up from 0) and +10 to maximum Ranged Skill (up from 0)
 - **Nomad** no longer grants the **Throw Dirt** skill
 - **Swordmaster** no longer has **Sword Mastery** unlocked by default. This perk is now moved to Tier 3 (down from 4) for them
 
@@ -207,7 +212,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - All Goblins have -5 Melee Skill and -5 Melee Defense
 - Add new **Goblin** racial effect that grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
-- All ifrits have 50% less Hitpoints and 50% more Armor
+- All ifrits have 50% less Hitpoints and 50% more Armor. They no longer have **Bullseye**.
 - **Scoundrels** will no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**. They now spawn with a **Knife** instead of **Dagger**
 - **Vandals** will no longer spawn with **Kite Shields**. Instead they can now spawn with **Old Wooden Shields**
 - **Raider** will no longer spawn with **Kite Shields**. Instead they can now spawn with **Worn Kite/Heater Shields**
@@ -220,6 +225,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Zombies** no longer have **Double Grip** but gain +5 Melee Skill.
 - **Zombies** and **Skeletons** grant 20% more experience
 - **Zombies** and **Skeletons** no longer grant experience after resurrecting
+- **Geists** no longer have **Fearsome**. They now have **Backstabber**
 - **Barbarian Drummer** now have +1 Action Point and grant +150 Experience
 - **Nachzehrer** can no longer swallow player characters while in a net.
 - **Necromancer** no longer have 20 natural body armor or **Inspiring Presence**
@@ -277,6 +283,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Misc
 
+- Add new concepts for **Armor Penetration** and **Weight** and apply these concept to existing weapons and items
 - Legendary Armor and Armor with an attachement that you un-equip are now automatically marked as to-be-repaired
 - Quiver now display the supply cost for replacing ammunition in them
 - Improve artwork for **Nimble** perk

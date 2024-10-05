@@ -27,35 +27,44 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Rebalance enemy skills/perks considering hardened reworks
 - Fix orcs sometimes using charge, even though they decided to give up
 - Fix perma stunning enemies on the world map
-- Fix enemy AI ranged arrow magnet (they choose big groups over actually vulnerable targets). Ifrits choosing the shield guy in the middle, instead of the low rdef guys around him
-- Give bros +1 AP while retreating
 - gambeson coloring
 - nerf cover ally initiative bonus and give it additional defense
 - perk for civilians (e.g. caravan guys), called "First Aid", making: Injuries you treat during battle are removed instead
-- perks list old perk groups in their information. THat needs to be updated
-- nerf encourage and bolster confident ability
-- clarify weight, e.g. with new concept/nested tooltips
-- confirmation button when retiring ironman runs
 - remove close ranged penalty for reach weapons (its now covered by crowded)
 - move weapon mastery effects into the weapon mastery itself, instead of being implemented by the skills
 - make alps more smart on overworld (stalk player during day)
 - prevent allied parties from following you, just because you are being targeted by their allies. Sometimes mercenary companies/nobles think they can/should attack you but you are still allied
 - Make raider playstyle more sufficient by giving caravans consistent tool loot
 - Poison reduce recovery rate
-- Replace more/all occurences of Maximum Fatigue and Penalty to Maximum Fatigue with Stamina and Weight
 - New Non-Combatant effect, that signalises that an enemy has no regular turn, grants no exp (as per design of Hardened) and is not required to be killed in order to win the battle
-- Add flags for caravans/peasants
-- Improve Inspiring Presence Description. Maybe rework it once more
-- fix bottom left nimble perk icon. Fix mini rach advantage icon
+- fix bottom left nimble perk icon. Fix mini reach advantage icon
 - Fix weapons that lost hitchance bonus for some of their skills. Goedendag Cudgel is now almost alwasy the best choice
-- Maybe remove the replacement of Brawny, Colossus and Fortified Mindon NPCs. Hardened has stepped away from these perks and mods might introduce new secondary effects on them?
+- Maybe remove the replacement of Brawny, Colossus and Fortified Mind on NPCs. Hardened has stepped away from these perks and mods might introduce new secondary effects on them?
 - Make it so ranged troop AI is less likely to be dumb (leave perfectly fine positions)
-- Opportunist: pick up actual ammuition: Next attack costs no fatigue and no ammo (can fire even if no ammo in weapon). Every tile you move reduces cost of next throwing attack by 1
-- Fix dog release sound being mono right ear when placed right side
-- Remove fourth similar sounding lute sfx
 - include my more indirect numeral mod
+- fruits of labor ramping up until level 10
+- make throwing weapons into hybrid weapon types to profit from axe/spear/flail perks
+- mauler -> replace second effect with 15% more damage when hitting body parts that have no remaining armor
+- make disloyal have more of a downside
 
 # Changes:
+
+0.10.0
+	- **Rebuke** is completely reworked. It now grants the **Rebuke Effect** whenever an opponent misses a melee attack against you while it's not your turn, until the start of your next turn. This effect reduces your damage by 25% but will make you retaliate every melee attack miss against you.
+	- **Opportunist** is completely reworked. It now grants throwing attacks -1 Action Point cost per tile moved, until you use a throwing attack, wait or end your turn. Changing height levels also no longer has an additional Action Point cost.
+	- **Flaming Arrow** no longer causes a Morale Check on the main Target
+	- Geists no longer have **Fearsome**. They now have **Backstabber**
+	- Ifrits no longer have **Bullseye**
+	- Assassin Background now has +5 to minimum Ranged Skill (up from 0) and +10 to maximum Ranged Skill (up from 0)
+	- Remove **Duelist** from Shield Perk Group
+	- Add new **Armor Penetration** Concept and add nested tooltips for this in several places
+	- Add new **Weight** Concept and add nested tooltips for this in several places
+	- Add tooltip line to autoretreat button about the Action Point bonus
+	- Remove lute sfx that was too similar
+	- Improve size of parry mini icon
+	- Fix enemies with too few maximum action points wasting those on using **Whirling Death**
+	- Fix day-night disk on the world map being slightly de-synched from the actual time
+	- Fix parry sfx never playing
 
 0.9.4
 	- Fleeing characters now have +1 Action Point
