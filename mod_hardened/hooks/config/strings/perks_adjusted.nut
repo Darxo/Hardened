@@ -566,14 +566,13 @@ local adjustedDescriptions = [
 		ID = "perk.rf_opportunist",
 		Key = "RF_Opportunist",
 		Description = ::UPD.getDescription({
-			Fluff = "\'I\'m not lootin\' Captain! Just grabbing my javelin!\'",
+			Fluff = "Glide over terrain and strike before your enemies even see you coming.",
 			Requirement = "Throwing Weapon",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"The first 2 throwing attacks during a combat have their [Action Point|Concept.ActionPoints] costs " + ::MSU.Text.colorPositive("halved"),
-					"Every time you stand over an enemy\'s corpse during your [turn,|Concept.Turn] gain " + ::MSU.Text.colorPositive(1) + " ammo and restore " + ::MSU.Text.colorPositive(4) + " [Action Points.|Concept.ActionPoints] Afterward, the next throwing attack has its [Fatigue|Concept.Fatigue] cost " + ::MSU.Text.colorPositive("halved"),
-					"A corpse can only be used once per combat and cannot be used by multiple characters with this perk",
+					"Throwing Attacks cost " + ::MSU.Text.colorPositive(-1) + " [Action Point|Concept.ActionPoints] per tile moved during your turn, until you use a throwing attack, [wait|Concept.Wait] or end your turn",
+					"Changing height levels has no additional [Action Point|Concept.ActionPoints] cost",
 				],
 			}],
 		}),
