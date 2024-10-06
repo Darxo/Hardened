@@ -1,4 +1,17 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_rebuke", function(q) {
+	q.m.RebukeTriggerSounds <- [
+		"sounds/combat/return_favor_01.wav",
+	];
+
+	q.addResources = @(__original) function()
+	{
+		__original();
+		foreach (r in this.m.RebukeTriggerSounds)
+		{
+			::Tactical.addResource(r);
+		}
+	}
+
 	q.onQueryTooltip = @(__original) function( _skill, _tooltip )
 	{
 		local ret = __original(_skill, _tooltip);
@@ -21,8 +34,9 @@
 		if (this.canProc(_attacker, _skill))
 		{
 			local rebukeEffect = ::new("scripts/skills/effects/hd_rebuke_effect");
-			rebukeEffect.m.ParentPerk = ::MSU.asWeakTableRef(this);;
+			rebukeEffect.m.ParentPerk = ::MSU.asWeakTableRef(this);
 			this.getContainer().add(rebukeEffect);
+			::Sound.play(::MSU.Array.rand(this.m.ReturnFavorSounds), ::Const.Sound.Volume.Skill * this.m.SoundVolume, this.getContainer().getActor().getPos());
 		}
 	}
 
