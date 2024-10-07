@@ -51,6 +51,10 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.10.2
+	- Fix error in trick shooter perk
+	- Fix rebuke sfx not playing correctly
+
 0.10.1
 	- NPCs with **Spear Flurry** no longer automatically gain **Double Strike**. Instead they gain **Fresh and Furious**
 	- Remove perk prerequisite from battle forged
