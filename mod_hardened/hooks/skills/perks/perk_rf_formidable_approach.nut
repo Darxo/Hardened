@@ -50,9 +50,10 @@
 	{
 		if (this.requirementsMet() == false) return;
 
-		// MoraleCheck
 		local actor = this.getContainer().getActor();
+		if (actor.m.CurrentMovementType == ::Const.Tactical.MovementType.Involuntary) return;	// Pushing/Pulling an enemy does not trigger formidable approach
 
+		// MoraleCheck
 		local adjacentEnemies = ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true);
 		foreach (enemy in adjacentEnemies)
 		{
