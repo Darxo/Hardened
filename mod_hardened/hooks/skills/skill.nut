@@ -120,8 +120,8 @@
 		// We save the target skill and user of the last scheduled hit.
 		// This conflicts a bit with getExpectedDamage but both functions should not be called intertwined
 		// That way any headshot chance during this call will be calculated with the target in mind
-		::Hardened.Temp.TargetToBeHit <- ::MSU.asWeakTableRef(_info.TargetEntity);
-		::Hardened.Temp.SkillToBeHitWith <- ::MSU.asWeakTableRef(_info.Skill);
+		::Hardened.Temp.TargetToBeHit = ::MSU.asWeakTableRef(_info.TargetEntity);
+		::Hardened.Temp.SkillToBeHitWith = ::MSU.asWeakTableRef(_info.Skill);
 		::Hardened.Temp.UserWantingToHit = ::MSU.asWeakTableRef(_info.User);
 
 		__original(_info);
@@ -137,8 +137,8 @@
 		// We save the target, skill and user of the last expected damage calculation call.
 		// This conflicts a bit with onScheduledTargetHit but both functions should not be called intertwined
 		// That way any headshot chance during this call will be calculated with the target in mind
-		::Hardened.Temp.TargetToBeHit <- ::MSU.asWeakTableRef(_target);
-		::Hardened.Temp.SkillToBeHitWith <- ::MSU.asWeakTableRef(this);
+		::Hardened.Temp.TargetToBeHit = ::MSU.asWeakTableRef(_target);
+		::Hardened.Temp.SkillToBeHitWith = ::MSU.asWeakTableRef(this);
 		::Hardened.Temp.UserWantingToHit = ::MSU.asWeakTableRef(this.getContainer().getActor());
 
 		local ret = __original(_target);

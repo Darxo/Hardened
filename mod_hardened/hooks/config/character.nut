@@ -11,7 +11,7 @@ local oldGetHitChance = ::Const.CharacterProperties.getHitchance;
 	}
 	else
 	{
-		return ::Const.CharacterProperties.getHeadHitchance(_bodyPart, ::Hardened.Temp.UserWantingToHit, ::Hardened.Temp.SkillToBeHitWith, ::Hardened.Temp.TargetToBeHit);
+		return this.getHeadHitchance(_bodyPart, ::Hardened.Temp.UserWantingToHit, ::Hardened.Temp.SkillToBeHitWith, ::Hardened.Temp.TargetToBeHit);
 	}
 }
 
@@ -55,7 +55,7 @@ local oldGetHitChance = ::Const.CharacterProperties.getHitchance;
 // New Functions
 ::Const.CharacterProperties.getHeadHitchance <- function( _bodyPart, _user = null, _skill = null, _target = null )
 {
-	if (_user == null || _skill == null || _target = null)
+	if (_user == null || _skill == null || _target == null)
 	{
 		return oldGetHitChance(_bodyPart);
 	}
