@@ -108,42 +108,44 @@ local hookKnockBack = function( _o )
 #
 		local triggeredSkill = false;
 
-		foreach (activeSkill in ally.getSkills().getAllSkillsOfType(::Const.SkillType.Active))
+		if (!ally.getCurrentProperties().IsStunned && ally.m.MoraleState != ::Const.MoraleState.Fleeing)
 		{
-			if (activeSkill.getID() == _data.SkillID)
+			foreach (activeSkill in ally.getSkills().getAllSkillsOfType(::Const.SkillType.Active))
 			{
-				activeSkill.m.HD_Temp_IsFree = true;
-				if (activeSkill.isUsable())
+				if (activeSkill.getID() == _data.SkillID)
 				{
-					local allyTile = ally.getTile();
-					local validTargets = [];
-					if (activeSkill.isUsableOn(allyTile))
+					activeSkill.m.HD_Temp_IsFree = true;
+					if (activeSkill.isUsable())
 					{
-						validTargets.push(allyTile);	// Allows skills like shieldwall to be used
-					}
-					for (local i = 0; i <= 5; ++i)
-					{
-						if (!allyTile.hasNextTile(i)) continue;
-
-						local nextTile = allyTile.getNextTile(i);
-						if (activeSkill.isUsableOn(nextTile))
+						local allyTile = ally.getTile();
+						local validTargets = [];
+						if (activeSkill.isUsableOn(allyTile))
 						{
-							validTargets.push(nextTile);
+							validTargets.push(allyTile);	// Allows skills like shieldwall to be used
 						}
-					}
-					if (validTargets.len() != 0)
-					{
-						local chosenTile = ::MSU.Array.rand(validTargets);
-						activeSkill.use(chosenTile, true);
+						for (local i = 0; i <= 5; ++i)
+						{
+							if (!allyTile.hasNextTile(i)) continue;
+
+							local nextTile = allyTile.getNextTile(i);
+							if (activeSkill.isUsableOn(nextTile))
+							{
+								validTargets.push(nextTile);
+							}
+						}
+						if (validTargets.len() != 0)
+						{
+							local chosenTile = ::MSU.Array.rand(validTargets);
+							activeSkill.use(chosenTile, true);
+						}
+						activeSkill.m.HD_Temp_IsFree = false;
+						triggeredSkill = true;
+						break;	// We ignore multiple active skills using the same ID
 					}
 					activeSkill.m.HD_Temp_IsFree = false;
-					triggeredSkill = true;
-					break;	// We ignore multiple active skills using the same ID
 				}
-				activeSkill.m.HD_Temp_IsFree = false;
 			}
 		}
-
 
 		if (triggeredSkill)
 		{
