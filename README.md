@@ -108,6 +108,7 @@ Skill nerfs as a result of the Reach system:
 Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-changes-Side‐By‐Side
 
 - **Axe Mastery** no longer grants **Hook Shield**. It now causes **Split Shield** to apply **Dazed** for 1 turn
+- **Battle Forged** no longer has any prerequisites. You can pick it alongside **Nimble** or **Poise**
 - **Bullseye** no longer reduces the penalty for shooting behind cover. It also no longer works with **Take Aim**
 - **Dodge** now grants 4% of Initiative as extra Melee Defense and Ranged Defense for every empty adjacent tile (down from always 15%)
 - **Duelist** is completely reworked. It now only works for one-handed weapons. It grants 30% Armor Penetration and +2 Reach while adjacent to 0 or 1 enemies and it grants 15% Armor Penetration and +1 Reach while adjacent to 2 enemies
@@ -212,7 +213,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - All Goblins have -5 Melee Skill and -5 Melee Defense
 - Add new **Goblin** racial effect that grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
-- All ifrits have 50% less Hitpoints and 50% more Armor. They no longer have **Bullseye**.
+- All ifrits have 50% less Hitpoints and 50% more Armor.
 - **Scoundrels** will no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**. They now spawn with a **Knife** instead of **Dagger**
 - **Vandals** will no longer spawn with **Kite Shields**. Instead they can now spawn with **Old Wooden Shields**
 - **Raider** will no longer spawn with **Kite Shields**. Instead they can now spawn with **Worn Kite/Heater Shields**
@@ -234,7 +235,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Add face warpaint to all **Fast Bandits**
 - Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop crowns, food or tools or a valueable ring.
 - Remove **Steelbrow** from Ifrit, Sapling and Kraken Tentacle
-- Enemies which spawn with **Spear Flurry** now automatically gain **Double Strike** (to balance out how bad that perk is by itself)
+- Enemies which spawn with **Spear Flurry** now automatically gain **Fresh and Furious** (to balance out how bad that perk is by itself)
 
 ### Enemy AI
 - Enemy archers are 66% less likely to target someone because of how many potential scatter targets are adjacent

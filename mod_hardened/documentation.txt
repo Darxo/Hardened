@@ -46,8 +46,16 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - make throwing weapons into hybrid weapon types to profit from axe/spear/flail perks
 - mauler -> replace second effect with 15% more damage when hitting body parts that have no remaining armor
 - make disloyal have more of a downside
+- new T7 ranged perk "Impossible Shot", which reduces ranged skill by your current Ranged Defense and increases Ranged damage by a percentage equal to your
+- Remove Heater/Kite Shields from southern markets?
 
 # Changes:
+
+0.10.1
+	- NPCs with **Spear Flurry** no longer automatically gain **Double Strike**. Instead they gain **Fresh and Furious**
+	- Remove perk prerequisite from battle forged
+	- Fix headshot chance calculation being wrong in many cases
+	- Fix parry sfx sometimes not playing at all
 
 0.10.0
 	- **Rebuke** is completely reworked. It now grants the **Rebuke Effect** whenever an opponent misses a melee attack against you while it's not your turn, until the start of your next turn. This effect reduces your damage by 25% but will make you retaliate every melee attack miss against you.
