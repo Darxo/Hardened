@@ -39,17 +39,16 @@
 				icon = "ui/icons/special.png",
 				text = ::Reforged.Mod.Tooltips.parseString("Burns away any [rooted|Rooted.StatusEffect] effects on the target"),
 			});
-		}
 
-		foreach (index, entry in ret)
-		{
-			if (entry.id == 100)
+			foreach (entry in ret)
 			{
-				entry.text = ::Reforged.Mod.Tooltips.parseString("A hit will trigger a negative [morale check|Concept.MoraleCheck] for all adjacent enemies")
-				break;
+				if (entry.id == 100)
+				{
+					entry.text = ::Reforged.Mod.Tooltips.parseString("A hit will trigger a negative [morale check|Concept.MoraleCheck] for all adjacent enemies")
+					break;
+				}
 			}
 		}
-
 
 		return ret;
 	}
