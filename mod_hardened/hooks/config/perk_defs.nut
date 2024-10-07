@@ -8,6 +8,11 @@
 	return true;
 }
 
+::Const.Perks.findById("perk.battle_forged").verifyPrerequisites <- function( _player, _tooltip )
+{
+	return true;
+}
+
 ::Const.Perks.findById("perk.nimble").verifyPrerequisites <- function( _player, _tooltip )
 {
 	return true;
