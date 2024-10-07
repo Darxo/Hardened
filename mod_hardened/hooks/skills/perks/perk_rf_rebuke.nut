@@ -36,7 +36,7 @@
 			local rebukeEffect = ::new("scripts/skills/effects/hd_rebuke_effect");
 			rebukeEffect.m.ParentPerk = ::MSU.asWeakTableRef(this);
 			this.getContainer().add(rebukeEffect);
-			::Sound.play(::MSU.Array.rand(this.m.ReturnFavorSounds), ::Const.Sound.Volume.Skill * this.m.SoundVolume, this.getContainer().getActor().getPos());
+			::Sound.play(::MSU.Array.rand(this.m.RebukeTriggerSounds), ::Const.Sound.Volume.Skill * this.m.SoundVolume, this.getContainer().getActor().getPos());
 		}
 	}
 
