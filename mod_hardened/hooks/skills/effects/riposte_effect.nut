@@ -103,6 +103,7 @@
 		if (this.m.OnlyOneCounterAttack)
 		{
 			this.removeSelf();
+			_data.User.setDirty(true);
 		}
 	}
 });
