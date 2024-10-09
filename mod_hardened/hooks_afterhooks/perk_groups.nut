@@ -85,6 +85,17 @@
 			if (perk == "perk.rf_vigorous_assault") row.remove(i);	// Remove Vigorous Assault
 		}
 	}
+
+	// Trained
+	local pgTrainedGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_trained");
+	foreach (row in pgTrainedGroup.getTree())
+	{
+		foreach (i, perk in row)
+		{
+			if (perk == "perk.quick_hands") row.remove(i);	// Remove Quickhands
+		}
+	}
+	pgTrainedGroup.getTree()[0].push("perk.quick_hands");	// Add Quickhands into the Tier 1 row
 }
 
 // Re-calculate the perk groups listed on the perks
