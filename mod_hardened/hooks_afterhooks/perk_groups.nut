@@ -86,6 +86,17 @@
 		}
 	}
 
+	// Tough
+	local pgToughGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_tough");
+	pgToughGroup.getTree()[1].push("perk.hold_out");	// Add Resilient into the Tier 2 row
+	foreach (row in pgToughGroup.getTree())
+	{
+		foreach (i, perk in row)
+		{
+			if (perk == "perk.steel_brow") row.remove(i);	// Remove Steelbrow
+		}
+	}
+
 	// Trained
 	local pgTrainedGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_trained");
 	foreach (row in pgTrainedGroup.getTree())
@@ -96,6 +107,18 @@
 		}
 	}
 	pgTrainedGroup.getTree()[0].push("perk.quick_hands");	// Add Quickhands into the Tier 1 row
+
+	// Vigorous
+	local pgVigorousGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_vigorous");
+	pgVigorousGroup.getTree()[1].push("perk.steel_brow");	// Add Steelbrow into the Tier 2 row
+	pgVigorousGroup.m.Icon = "ui/perks/perk_30.png";	// Replace perk group icon with that of Indomitable (It's Resilient in Reforged)
+	foreach (row in pgVigorousGroup.getTree())
+	{
+		foreach (i, perk in row)
+		{
+			if (perk == "perk.hold_out") row.remove(i);	// Remove Resilient
+		}
+	}
 }
 
 // Re-calculate the perk groups listed on the perks
