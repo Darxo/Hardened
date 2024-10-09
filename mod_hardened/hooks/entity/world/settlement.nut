@@ -64,19 +64,19 @@
 					});
 				}
 
-				// Add worn kite/heater shields to higher tier settlements
-				if (this.getSize() == 3 || this.isMilitary())
+				// Add worn kite/heater shields to higher tier settlements which are not southern
+				if (!this.isSouthern() && (this.getSize() == 3 || this.isMilitary()))
 				{
 					_list.push({
 						R = 60,
 						P = 1.0,
-						S = "shields/worn_kite_shield"
+						S = "shields/worn_kite_shield",
 					});
 
 					_list.push({
 						R = 60,
 						P = 1.0,
-						S = "shields/worn_heater_shield"
+						S = "shields/worn_heater_shield",
 					});
 				}
 			}
