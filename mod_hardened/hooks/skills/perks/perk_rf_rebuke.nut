@@ -31,7 +31,7 @@
 
 	q.onMissed <- function( _attacker, _skill )
 	{
-		if (this.canProc(_attacker, _skill))
+		if (this.canProc(_attacker, _skill) && !this.getContainer().hasSkill("effects.hd_rebuke"))
 		{
 			local rebukeEffect = ::new("scripts/skills/effects/hd_rebuke_effect");
 			rebukeEffect.m.ParentPerk = ::MSU.asWeakTableRef(this);
