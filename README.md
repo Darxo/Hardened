@@ -162,6 +162,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Duelist** is no longer part of **Shield** group
 - **Inspiring Presence** is now also part of the **Noble** group at Tier 7
 - **Polearm Mastery** is no longer part of **Leadership** group
+- **Quickhands** from the perk group **Trained** is now a Tier 1 perk (was Tier 2 before)
+- **Resilient** is now Tier 2 of the **Tough** perk group (was Tier 2 in **Vigorous** before)
+- **Steelbrow** is now Tier 2 of the **Vigorous** perk group (was Tier 2 in **Tough** before)
 - **Student** is now available for everyone
 - **Vigorous Assault** is no longer part of **Swift Strikes** group
 
@@ -186,7 +189,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Wooden Shields** appear less common in marketplaces
 - **Buckler** appear less common in big settlements
 - Small civilian settlements now sell **Old Wooden Shields**
-- Big settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
+- Big non-southern settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
 - **Goblin Pikes**, **Ancient Pikes** and **Pikes** are now also of the weapontype Spear
 - **Smoke Bomb** now costs 400 Crowns (up from 275). Smoke now lasts 2 Rounds (up from 1)
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**

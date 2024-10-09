@@ -48,8 +48,21 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - make disloyal have more of a downside
 - new T7 ranged perk "Impossible Shot", which reduces ranged skill by your current Ranged Defense and increases Ranged damage by a percentage equal to your
 - Remove Heater/Kite Shields from southern markets?
+- Fortified Mind into a flat bonus of 25 or 30. Weight resuces flat
+- Display mood icon during events (Turn that sprite visible / rendertotexture to false/true?)
 
 # Changes:
+
+0.10.3
+	- **Quickhands** from the perk group **Trained** is now a Tier 1 perk
+	- **Steelbrow** is now Tier 2 of the **Vigorous** perk group (was Tier 2 in **Tough** before)
+	- **Resilient** is now Tier 2 of the **Tough** perk group (was Tier 2 in **Vigorous** before)
+	- The perk group icon for **Vigorous** is now that of the **Indomitable** perk
+	- Fix Cudgel having the an unintendedly high minimum damage
+	- Fix **En Garde** giving melee skill during the wrong time
+	- Fix worn kit/heater shields appearing in southern city marketplaces
+	- Fix **Shield Sergeant** affecting fleeing or stunned allies
+	- Fix **Formidable Approach** triggering on involuntary movement
 
 0.10.2
 	- Fix error in trick shooter perk
