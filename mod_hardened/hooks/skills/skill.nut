@@ -157,7 +157,7 @@
 		__original(_attackInfo);
 	}
 
-// New Functions
+// New Events
 	q.onOtherSkillAdded <- function( _skill )
 	{
 	}
@@ -168,6 +168,16 @@
 
 	// This event is only called directly after a skills
 	q.onReallyAfterSkillExecuted <- function( _skill, _targetTile, _success )
+	{
+	}
+
+	// if _attacker is null then _defenderProps is just the currentProperties of the defender
+	q.onBeforeShieldDamageReceived <- function( _damage, _shield, _defenderProps, _attacker = null, _attackerProps = null, _skill = null )
+	{
+	}
+
+	// Beware at this point, this shield might be "broken", aka unequipped
+	q.onAfterShieldDamageReceived <- function( _initialDamage, _damageReceived, _shield, _attacker = null, _skill = null )
 	{
 	}
 });

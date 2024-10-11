@@ -26,6 +26,8 @@
 			defenderProps = receiver.getCurrentProperties();
 		}
 
+		// Event: Give skills a last chance to do some changes or calculations, before the shield gets damaged
+		receiver.getSkills().onBeforeShieldDamageReceived( _damage, this, defenderProps, attacker, attackerProps, skill );
 
 		// Do final damage adjustments until we pass it off to the vanilla function
 		if (attackerProps != null) _damage *= attackerProps.ShieldDamageMult;
@@ -35,6 +37,8 @@
 		local conditionBefore = this.getCondition();
 		__original(_damage, _playHitSound);
 
+		// Event:
+		receiver.getSkills().onAfterShieldDamageReceived( _damage, conditionBefore - this.getCondition(), this, attacker, skill );
 	}
 
 // Reforged Functions
