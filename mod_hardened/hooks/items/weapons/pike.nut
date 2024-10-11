@@ -2,6 +2,6 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.addWeaponType(::Const.Items.WeaponType.Spear);
+		this.addWeaponType(::Const.Items.WeaponType.Spear, true);
 	}
 });
