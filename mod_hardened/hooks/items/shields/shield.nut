@@ -10,23 +10,31 @@
 	q.applyShieldDamage = @(__original) function( _damage, _playHitSound = true )
 	{
 		local receiver = this.getContainer().getActor();
-		if (::Hardened.Temp.LastUsedSkill != null && ::Hardened.Temp.LastUsedSkillOwner)
+		local attacker = null;
+		local attackerProps = null;
+		local defenderProps = null;
+		local skill = ::Hardened.Temp.LastUsedSkill;
+		if (skill != null && ::Hardened.Temp.LastUsedSkillOwner)
 		{
-			local damagingSkill = ::Hardened.Temp.LastUsedSkill;
-			local attacker = ::Hardened.Temp.LastUsedSkillOwner;
+			attacker = ::Hardened.Temp.LastUsedSkillOwner;
 
-			_damage *= attacker.getSkills().buildPropertiesForUse(damagingSkill, receiver).ShieldDamageMult;
-			_damage *= receiver.getSkills().buildPropertiesForDefense(attacker, damagingSkill).ShieldDamageReceivedMult;
+			attackerProps = attacker.getSkills().buildPropertiesForUse(skill, receiver);
+			defenderProps = receiver.getSkills().buildPropertiesForDefense(attacker, skill);
 		}
 		else	// at least apply the defender values fetched from his CurrentProperties
 		{
-			_damage *= receiver.getCurrentProperties().ShieldDamageReceivedMult;
+			defenderProps = receiver.getCurrentProperties();
 		}
 
-		// Vanilla Mechanic: damage is rounded and must always be at least 1
-		_damage = ::Math.max(1, ::Math.round(_damage));
 
-		return __original(_damage, _playHitSound);
+		// Do final damage adjustments until we pass it off to the vanilla function
+		if (attackerProps != null) _damage *= attackerProps.ShieldDamageMult;
+		if (defenderProps != null) _damage *= defenderProps.ShieldDamageReceivedMult;
+		_damage = ::Math.max(1, ::Math.round(_damage));		// Vanilla Mechanic: damage is rounded and must always be at least 1
+
+		local conditionBefore = this.getCondition();
+		__original(_damage, _playHitSound);
+
 	}
 
 // Reforged Functions
