@@ -3,6 +3,20 @@
 local adjustedDescriptions = [
 	// Vanilla Perks
 	{
+		ID = "perk.anticipation",
+		Key = "Anticipation",
+		Description = ::UPD.getDescription({
+			Fluff = "I saw these coming!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Take reduced damage from the first " + ::MSU.Text.colorPositive(2) + " attacks you, or your shield receive each battle",
+					"This reduction is a percentage equal to your current [Ranged Defense|Concept.RangeDefense] plus an additional " + ::MSU.Text.colorPositive("10%") + " for each tile between the attacker and you",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.battle_forged",
 		Key = "BattleForged",
 		Description = ::UPD.getDescription({
