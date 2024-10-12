@@ -107,6 +107,7 @@ Skill nerfs as a result of the Reach system:
 
 Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-changes-Side‐By‐Side
 
+- **Anticipation** now also proccs whenever your shield takes damage from an attack
 - **Axe Mastery** no longer grants **Hook Shield**. It now causes **Split Shield** to apply **Dazed** for 1 turn
 - **Battle Forged** no longer has any prerequisites. You can pick it alongside **Nimble** or **Poise**
 - **Bullseye** no longer reduces the penalty for shooting behind cover. It also no longer works with **Take Aim**
@@ -124,6 +125,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Fencer** no longer grants +10% chance to hit or 20% less fatigue cost. It now causes your fencing swords to lose 50% less durability
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy
 - **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you
+- **Fresh and Furious** now has a fatigue threshold of 50% (up from 30%). It now checks your fatige when you end your turn, instead of at the start of your turn
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until the end of the turn
 - **Hybridization** is completely reworked. It still grants 10% of your base Ranged Skill as Melee Skill/Defense. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type hits to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 50% more damage to shields
 - **Inspiring Presence** no longer requires a banner. At the start of each round it grants adjacent allies of your faction +3 Action Points for this turn, if they are adjacent to an enemy and have less Resolve than you. The same target can't be inspired multiple times per turn.
@@ -176,10 +178,12 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Items
 
-- **Tree Limb** now deals 30-50 damage (up from 25-40), has an armor penetration of 90% (up from 75%), a Reach of 5 (up from 3), a weight of 15 (down from 20), a value of 300 (up from 150). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
 - **Cudgel** now deals 40-60 damage (up from 30-50), has an armor penetration of 110% (up from 90%), a Reach of 5 (up from 3), a value of 400 (up from 300). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
-- **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
 - **Estoc** now has 6 Reach (up from 5)
+- **Hooked Blade** now deals 60 Maximum Damage (down from 70) and costs 550 Crowns (down from 700)
+- **Tree Limb** now deals 30-50 damage (up from 25-40), has an armor penetration of 90% (up from 75%), a Reach of 5 (up from 3), a weight of 15 (down from 20), a value of 300 (up from 150). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
+- **Warfork** now deals 90% Armor Damage (down from 100%) and costs 550 Crowns (up from 400)
+- **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
 - Throwing Spears no longer inflict any fatigue when hitting a shield
 - Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and
 **Large Powder Bags** weigh 4.
@@ -216,16 +220,21 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - All Goblins have -5 Melee Skill and -5 Melee Defense
 - Add new **Goblin** racial effect that grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
-- All ifrits have 50% less Hitpoints and 50% more Armor.
-- **Scoundrels** will no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**. They now spawn with a **Knife** instead of **Dagger**
-- **Vandals** will no longer spawn with **Kite Shields**. Instead they can now spawn with **Old Wooden Shields**
-- **Raider** will no longer spawn with **Kite Shields**. Instead they can now spawn with **Worn Kite/Heater Shields**
+- All ifrits have 50% less Hitpoints and 50% more Armor
+- **Scoundrels** no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**. They now spawn with a **Knife** instead of **Dagger**/**Woodcutters Axe**
+- **Vandals** no longer spawn with **Kite Shields**. Instead they can now spawn with **Old Wooden Shields**
+- **Raider** no longer have **Shield Expert**. They no longer spawn with **Kite Shields**. Instead they can now spawn with **Worn Kite/Heater Shields**
 - **Highwaymen** can now also spawn with **Worn Kite/Heater Shields**
 - **Thug** now spawn with **Tree Limb** instead of **Goedendag**
 - **Pillager** can now also spawn with **Cudgel**. **Pillager** no longer spawn with **Woodcutters Axe**, **Two Handed Mace** or **Two Handed Hammer**
 - **Outlaws** no longer spawn with **Two Handed Wooden Flail** or **Greatsword**
 - **Marauder** no longer spawn with **Two Handed Wooden Flail** and are twice as likely to spawn with a **Greatsword**
-- **Brigand Leader**, **Brigand Raider** and **Noble Footmen** no longer have **Shield Expert**
+- Fast Brigands (Robber, Bandit, Killer) now always spawn with a net if they are one-handed, and with a throwing weapon if two-handed
+- **Robber** no longer spawn with a **Pike** or **Reinforced Wooden Poleflail**
+- **Bandits** no longer spawn with a **Poleflail**, **Warbrand** or **Throwing Spear**. The can now spawn with a **Reinforced Wooden Poleflail**
+- **Killer** no longer spawn with **Scramasax**, **Pike**, **Spetum**, **Warbrand** or **Throwing Spear**
+- **Brigand Leader** no longer have **Shield Expert**
+- **Noble Footmen** no longer have **Shield Expert**
 - **Zombies** no longer have **Double Grip** but gain +5 Melee Skill.
 - **Zombies** and **Skeletons** grant 20% more experience
 - **Zombies** and **Skeletons** no longer grant experience after resurrecting
@@ -245,8 +254,12 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Improve AI targeting for throwing nets: They value the targets melee defense twice as much. They now also value the targets initiative and prefer isolated targets.
 - AI is now twice as likely to throw a net or use a throwing pot/bomb while adjacent to an enemy
 
-### Other
+### World Map
+- At the start of each new campaign ~5 additional small bandit camps are spawned in the world
+- World Parties are no longer stunned, when you cancel the combat dialog with them
+- The legendary Location Ancient Spire now reveals an area of 3000 (up from 1900). It now also discovers every location in that radius for the player.
 
+### Other
 - All fleeing characters now have +1 Action Point
 - All player characters now have +1 Action Point during AutoRetreat
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
@@ -254,7 +267,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Encumbrance no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level.
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied.
 - Burning Damage (Fire Pot, Burning Arrow, Burning Ground) now remove all root-like effects from the targets.
-- The legendary Location Ancient Spire now reveals an area of 3000 (up from 1900). It now also discovers every location in that radius for the player.
 - Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken.
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 - The **Lone Wolf** and **Gladiator** origins now have a roster size of 13 (up from 12)
@@ -274,6 +286,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back
 - **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
+- All Skills from the **Lorekeeper** now have skill descriptions
 
 ### World
 
@@ -319,7 +332,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Introduce new `setWeight` and `getWeight` function for `item.nut` to make code around itemweight more readable. They work on the same underlying StaminaModifier but in a reversed way
 - Add new `AffectedBodyPart` member for `injury.nut` (temporary injuries) which specifies which bodypart that injury belongs to. It defaults to -1 and is adjusted depending on the vanilla injury lists
 - Add two new events `onReallyBeforeSkillExecuted` and `onReallyAfterSkillExecuted` for `skill.nut` which guarantee to only trigger when a skill is actually onUsed
-- Add new `isHybridWeapon` function for `weapon.nut`
+- Add two new events `onBeforeShieldDamageReceived` and `onAfterShieldDamageReceived` for `skill.nut`
+- Add new `isHybridWeapon` helper function for `weapon.nut`
 - **Nomad Sling** and **Staff Sling** no longer have the weapontype **Sling**
 - Parties that are spawned without a banner will be assigned the banner of the faction who owns their faction (mostly relevant for civilian factions)
 - Introduce new `LastSpawnedParty` member for `faction.nut` which always contains the last party spawned by that faction

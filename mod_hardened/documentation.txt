@@ -26,7 +26,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Rebalance SpiderEgg hunting? Give them XP/Loot?
 - Rebalance enemy skills/perks considering hardened reworks
 - Fix orcs sometimes using charge, even though they decided to give up
-- Fix perma stunning enemies on the world map
 - gambeson coloring
 - nerf cover ally initiative bonus and give it additional defense
 - perk for civilians (e.g. caravan guys), called "First Aid", making: Injuries you treat during battle are removed instead
@@ -37,21 +36,43 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Make raider playstyle more sufficient by giving caravans consistent tool loot
 - Poison reduce recovery rate
 - New Non-Combatant effect, that signalises that an enemy has no regular turn, grants no exp (as per design of Hardened) and is not required to be killed in order to win the battle
-- fix bottom left nimble perk icon. Fix mini reach advantage icon
+- fix bottom left nimble perk icon
 - Fix weapons that lost hitchance bonus for some of their skills. Goedendag Cudgel is now almost alwasy the best choice
 - Maybe remove the replacement of Brawny, Colossus and Fortified Mind on NPCs. Hardened has stepped away from these perks and mods might introduce new secondary effects on them?
 - Make it so ranged troop AI is less likely to be dumb (leave perfectly fine positions)
+	- Often times ranged troops go before their melee army.
+		- In this case they should actively wait, realising that they first need to see how their melee troops behave
+		- Alternatively they should move only very slightly forward and/or only into cover
 - include my more indirect numeral mod
 - fruits of labor ramping up until level 10
 - make throwing weapons into hybrid weapon types to profit from axe/spear/flail perks
 - mauler -> replace second effect with 15% more damage when hitting body parts that have no remaining armor
 - make disloyal have more of a downside
 - new T7 ranged perk "Impossible Shot", which reduces ranged skill by your current Ranged Defense and increases Ranged damage by a percentage equal to your
-- Remove Heater/Kite Shields from southern markets?
 - Fortified Mind into a flat bonus of 25 or 30. Weight resuces flat
 - Display mood icon during events (Turn that sprite visible / rendertotexture to false/true?)
+- Prevent AI from shieldwalling when its the only one left (unless they have rebuke/riposte)
+- Scrapper-Retinue member making it so armor damage above a certain threshold (e.g. at least 50 per hit) produces tools. But
 
 # Changes:
+
+0.11.0
+	- At the start of each new campaign ~5 additional small bandit camps are spawned in the world
+	- **Anticipation** now also proccs whenever your shield takes damage from an attack
+	- **Fresh and Furious** now has a fatigue threshold of 50% (up from 30%). It now checks your fatige when you end your turn, instead of at the start of your turn
+	- Fast Brigands (Robber, Bandit, Killer) now always spawn with a net if they spawn with a one-handed weapon, and with a throwing weapon if two-handed
+	- **Robber** no longer spawn with a **Pike** or **Reinforced Wooden Poleflail**
+	- **Bandits** no longer spawn with a **Poleflail**, **Warbrand** or **Throwing Spear**. The can now spawn with a **Reinforced Wooden Poleflail**
+	- **Killer** no longer spawn with **Scramasax**, **Pike**, **Spetum**, **Warbrand** or **Throwing Spear**
+	- **Scoundrels** now spawn with **Knifes** instead of **Woodcutters Axes**
+	- **Fermented Unhold Heart** now has an expiry date of 40 days (up from 20)
+	- **Hooked Blade** now deals 60 Maximum Damage (down from 70) and costs 550 Crowns (down from 700)
+	- **Warfork** now deals 90% Armor Damage (down from 100%) and costs 550 Crowns (up from 400)
+	- Add missing skill descriptions for the **Lorekeeper** skills
+	- Add two new events 'onBeforeShieldDamageReceived' and 'onAfterShieldDamageReceived' for skill.nut
+	- World Parties are no longer stunned, when you cancel the combat dialog with them
+	- Fix Pikes not displaying their new Spear weapontype correctly
+	- Fix incompatibility with **Autopilot New** mod and **Throwing Mastery**
 
 0.10.3
 	- **Quickhands** from the perk group **Trained** is now a Tier 1 perk
