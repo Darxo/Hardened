@@ -487,6 +487,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_fresh_and_furious",
+		Key = "RF_FreshAndFurious",
+		Description = ::UPD.getDescription({
+			Fluff = "The period of vigor at the beginning of the fight is when you do the most damage!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"The [Action Point|Concept.ActionPoints] cost of the first skill, that costs [Action Points|Concept.ActionPoints], used every [turn|Concept.Turn] is " + ::MSU.Text.colorPositive("halved"),
+					"The effect becomes disabled if you end your [turn|Concept.Turn] with " + ::MSU.Text.colorNegative("50%") + " or more [Fatigue|Concept.Fatigue] and remains disabled until you use [Recover|Skill+recover_skill]"
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_hybridization",
 		Key = "RF_Hybridization",
 		Description = ::UPD.getDescription({
