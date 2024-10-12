@@ -11,6 +11,7 @@
 		::Hardened.util.replaceOffhand(this, shield);
 
 		// In order to improve progression, Scoundrels no longer drop Dagger and instead appear with Knifes
-		::Hardened.util.replaceMainhand(this, "scripts/items/weapons/knife", ["weapon.dagger"]);
+		// Woodcutters axes are also replaced with Knifes. Ideally I would just roll the weapon again but that is less compatible and requires more code
+		::Hardened.util.replaceMainhand(this, "scripts/items/weapons/knife", ["weapon.dagger", "weapon.woodcutters_axe"]);
 	}
 });
