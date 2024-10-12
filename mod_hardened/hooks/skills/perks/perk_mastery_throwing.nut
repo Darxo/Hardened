@@ -40,9 +40,10 @@
 	// You can now swap a throwing weapon with an empty slot or an empty throwing weapon
 	q.getItemActionCost = @(__original) function( _items )
 	{
-		__original(_items);
-
 		if (this.m.IsQuickSwitchSpent) return null;
+
+		// Currently we have no guarantee about how _items actually looks like or whether it contains elements, see https://github.com/MSUTeam/MSU/issues/435
+		if (_items.len() == 0) return null;
 
 		local sourceItem = _items[0];
 		local targetItem = _items.len() > 1 ? _items[1] : null;
