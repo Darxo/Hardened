@@ -70,7 +70,7 @@
 		}
 		target.setDirty(true);	// Update the targets UI so that bleedings are removed immediately
 
-		if (this.getItem() != null && !this.getItem().isNull())
+		if (!::MSU.isNull(this.getItem()))
 		{
 			this.getItem().removeSelf();
 		}

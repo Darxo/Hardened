@@ -58,7 +58,8 @@ local hookKnockBack = function( _o )
 		__original(_skill, _targetTile, _targetEntity, _forFree);
 
 		// In order to prevent loops, we secretly prevent a free use from triggering
-		if (!_forFree && _skill.getItem() != null && _skill.getItem().isItemType(::Const.Items.ItemType.Shield))
+		local item = _skill.getItem();
+		if (!_forFree && !::MSU.isNull(item) && item.isItemType(::Const.Items.ItemType.Shield))
 		{
 			local potentialAllies = [];
 			local actor = this.getContainer().getActor();

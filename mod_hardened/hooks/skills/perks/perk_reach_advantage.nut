@@ -139,7 +139,7 @@
 		if (!this.__isEnabled()) return false;
 
 		local item = _skill.getItem();
-		if (item != null && item.isItemType(::Const.Items.ItemType.MeleeWeapon) && _skill.isAttack())
+		if (!::MSU.isNull(item) && item.isItemType(::Const.Items.ItemType.MeleeWeapon) && _skill.isAttack())
 		{
 			return true;
 		}

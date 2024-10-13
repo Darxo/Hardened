@@ -252,7 +252,7 @@ local hookDaggerAttack = function( _o )
 			if (_activeSkill.isAttack() && _activeSkill.getBaseValue("MaxRange") == 1)
 			{
 				local item = _activeSkill.getItem();
-				if (item != null && item.isItemType(::Const.Items.ItemType.Weapon) && item.isWeaponType(::Const.Items.WeaponType.Dagger))
+				if (!::MSU.isNull(item) && item.isItemType(::Const.Items.ItemType.Weapon) && item.isWeaponType(::Const.Items.WeaponType.Dagger))
 				{
 					// use locally defined function
 					hookDaggerAttack(_activeSkill);

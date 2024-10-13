@@ -128,7 +128,7 @@
 		if (!_skill.isRanged()) return false;
 
 		local skillItem = _skill.getItem();
-		if (skillItem == null) return false;
+		if ::MSU.isNull(skillItem) return false;
 		if (!skillItem.isItemType(::Const.Items.ItemType.Weapon)) return false;
 		if (!skillItem.isWeaponType(::Const.Items.WeaponType.Throwing)) return false;
 
