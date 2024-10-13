@@ -56,6 +56,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.11.1
+	- Fix freeze at the end of any combats making them not being completable
+
 0.11.0
 	- At the start of each new campaign ~5 additional small bandit camps are spawned in the world
 	- **Anticipation** now also proccs whenever your shield takes damage from an attack
