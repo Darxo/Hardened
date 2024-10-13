@@ -181,6 +181,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Cudgel** now deals 40-60 damage (up from 30-50), has an armor penetration of 110% (up from 90%), a Reach of 5 (up from 3), a value of 400 (up from 300). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
 - **Estoc** now has 6 Reach (up from 5)
 - **Hooked Blade** now deals 60 Maximum Damage (down from 70) and costs 550 Crowns (down from 700)
+- **Player Banner** now grants -5 to Ranged Defense
 - **Tree Limb** now deals 30-50 damage (up from 25-40), has an armor penetration of 90% (up from 75%), a Reach of 5 (up from 3), a weight of 15 (down from 20), a value of 300 (up from 150). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
 - **Warfork** now deals 90% Armor Damage (down from 100%) and costs 550 Crowns (up from 400)
 - **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
@@ -203,6 +204,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Traits
 
+- **Aisling** now also makes all temporary injuries last 50% longer
 - **Lucky** no longer grants a chance to reroll incoming attacks. It now provides a 5% chance to avoid damage from any source.
 - **Weasel** now provides an additional 25 Melee Defense during that brothers turn while fleeing.
 - **Huge** no longer increases the Reach by 1

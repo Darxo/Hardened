@@ -53,8 +53,15 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Display mood icon during events (Turn that sprite visible / rendertotexture to false/true?)
 - Prevent AI from shieldwalling when its the only one left (unless they have rebuke/riposte)
 - Scrapper-Retinue member making it so armor damage above a certain threshold (e.g. at least 50 per hit) produces tools. But
+- Add more exclusive groups to various Backgrounds
 
 # Changes:
+
+0.11.2
+	- **Player Banner** now grants -5 Ranged Defense while equipped
+	- **Ailing** Trait now also causes temporary injuries to last 50% longer
+	- Fix freeze when an enemy with **Shield Sergeant** uses a **Throwing Spear**
+	- Fix various missing signs in tooltips
 
 0.11.1
 	- Fix freeze at the end of any combats making them not being completable
