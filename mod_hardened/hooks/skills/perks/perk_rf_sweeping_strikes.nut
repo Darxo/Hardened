@@ -32,7 +32,7 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = ::MSU.Text.colorizeValue(this.getCurrentMeleeDefenseModifier()) + " Melee Defense",
+				text = ::MSU.Text.colorizeValue(this.getCurrentMeleeDefenseModifier(), {AddSign = true}) + " Melee Defense",
 			});
 
 			ret.push({

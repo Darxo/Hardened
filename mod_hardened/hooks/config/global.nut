@@ -71,7 +71,7 @@
 			id = 7,
 			type = "text",
 			icon = "ui/icons/melee_defense.png",
-			text = ::MSU.Text.colorizeValue(::Const.Difficulty.RetreatDefenseBonus[_difficulty]) + " Melee Defense during Auto-Retreat",
+			text = ::MSU.Text.colorizeValue(::Const.Difficulty.RetreatDefenseBonus[_difficulty], {AddSign = true}) + " Melee Defense during Auto-Retreat",
 		});
 	}
 

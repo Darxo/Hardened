@@ -13,7 +13,7 @@
 			id = 11,
 			type = "text",
 			icon = "ui/icons/melee_defense.png",
-			text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(this.m.MeleeDefenseModifier) + " [Melee Defense|Concept.MeleeDefense]"),
+			text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(this.m.MeleeDefenseModifier, {AddSign = true}) + " [Melee Defense|Concept.MeleeDefense]"),
 		});
 
 		ret.push({

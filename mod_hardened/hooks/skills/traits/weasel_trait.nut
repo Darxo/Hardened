@@ -10,7 +10,7 @@
 		{
 			if (entry.id == 10)
 			{
-				entry.text = ::MSU.Text.colorizeValue(this.m.RetreatingDefenseModifier) + " Melee Defense during your turn while retreating";
+				entry.text = ::MSU.Text.colorizeValue(this.m.RetreatingDefenseModifier, {AddSign = true}) + " Melee Defense during your turn while retreating";
 				break;
 			}
 		}
@@ -19,7 +19,7 @@
 			id = 12,
 			type = "text",
 			icon = "ui/icons/melee_defense.png",
-			text = ::MSU.Text.colorizeValue(this.m.FleeingDefenseModifier) + " Melee Defense during your turn while fleeing",
+			text = ::MSU.Text.colorizeValue(this.m.FleeingDefenseModifier, {AddSign = true}) + " Melee Defense during your turn while fleeing",
 		});
 
 		return ret;
