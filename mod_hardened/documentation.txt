@@ -54,8 +54,12 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Prevent AI from shieldwalling when its the only one left (unless they have rebuke/riposte)
 - Scrapper-Retinue member making it so armor damage above a certain threshold (e.g. at least 50 per hit) produces tools. But
 - Add more exclusive groups to various Backgrounds
+- New AI Behavior for Shield Seargeant (Includes current shield skills and scans for each whether allies profit from it too)
 
 # Changes:
+
+0.11.3
+	- Fix wrong version in last release
 
 0.11.2
 	- **Player Banner** now grants -5 Ranged Defense while equipped

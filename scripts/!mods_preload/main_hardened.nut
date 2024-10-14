@@ -1,7 +1,7 @@
 ::Hardened <- {
 	ID = "mod_hardened",
 	Name = "Hardened",
-	Version = "0.11.2",
+	Version = "0.11.3",
 	GitHubURL = "https://github.com/Darxo/Hardened",
 	Temp = {},	// Used to globally store variables between function calls to implement more advanced, albeit hacky behavior
 	Const = {},
