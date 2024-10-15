@@ -30,7 +30,17 @@
 
 	q.isHidden = @() function()
 	{
-		return false;	// Always show this effect. Either it's disabled or enabled.
+		return;	// Always show this effect. Either it's disabled or enabled.
+	}
+
+	q.onAnySkillExecuted = @(__original) function( _skill, _targetTile, _targetEntity, _forFree )
+	{
+		__original(_skill, _targetTile, _targetEntity, _forFree);
+
+		if (_skill.getID() == "actives.recover")
+		{
+			this.turnEffectOn();
+		}
 	}
 
 	// Overwrite because the fatigue check no longer happens at the start of the turn
@@ -44,20 +54,33 @@
 		this.checkFatigueThreshold();
 	}
 
+	q.onCombatFinished = @(__original) function()
+	{
+		__original();
+		this.turnEffectOn();
+	}
+
 // New Functions
 	q.checkFatigueThreshold <- function()
 	{
 		local actor = this.getContainer().getActor();
 		if (actor.getFatigue() >= this.m.FatigueThreshold * actor.getFatigueMax())
 		{
-			this.m.RequiresRecover = true;
-			this.m.Icon = ::Const.Perks.findById(this.getID()).IconDisabled;
-			this.m.IconMini = "";
+			this.turnEffectOff();
 		}
-		else
-		{
-			this.m.Icon = ::Const.Perks.findById(this.getID()).Icon;
-			this.m.IconMini = this.m.IconMiniBackup;
-		}
+	}
+
+	q.turnEffectOn <- function()
+	{
+		this.m.RequiresRecover = false;
+		this.m.Icon = ::Const.Perks.findById(this.getID()).Icon;
+		this.m.IconMini = this.m.IconMiniBackup;
+	}
+
+	q.turnEffectOff <- function()
+	{
+		this.m.RequiresRecover = true;
+		this.m.Icon = ::Const.Perks.findById(this.getID()).IconDisabled;
+		this.m.IconMini = "";
 	}
 });
