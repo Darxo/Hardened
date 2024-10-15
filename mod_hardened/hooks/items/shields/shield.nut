@@ -14,7 +14,7 @@
 		local attackerProps = null;
 		local defenderProps = null;
 		local skill = ::Hardened.Temp.LastUsedSkill;
-		if (skill != null && ::Hardened.Temp.LastUsedSkillOwner)
+		if (!::MSU.isNull(skill) && !::MSU.isNull(::Hardened.Temp.LastUsedSkillOwner))
 		{
 			attacker = ::Hardened.Temp.LastUsedSkillOwner;
 

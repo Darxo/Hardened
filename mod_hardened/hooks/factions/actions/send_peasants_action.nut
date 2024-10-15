@@ -4,7 +4,7 @@
 		__original(_faction);
 
 		local lastSpawnedParty = this.m.Faction == null ? null : this.m.Faction.m.LastSpawnedParty;
-		if (lastSpawnedParty != null)
+		if (!::MSU.isNull(lastSpawnedParty))
 		{
 			lastSpawnedParty.getSprite("banner").Visible = true;
 			lastSpawnedParty.getLoot().Money = 0;	// Loot

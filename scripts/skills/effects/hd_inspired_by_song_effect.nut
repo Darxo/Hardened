@@ -48,7 +48,7 @@ this.hd_inspired_by_song_effect <- ::inherit("scripts/skills/skill", {
 			text = ::Reforged.Mod.Tooltips.parseString("At the end of your turn, lose " + ::MSU.Text.colorizePct(this.m.ResolveLossPct) + " of this bonus and remove this effect when it reaches " + ::MSU.Text.colorNegative(this.m.RemoveThreshold) + " [Resolve|Concept.Bravery]"),
 		});
 
-		if (this.m.Musician != null)
+		if (!::MSU.isNull(this.m.Musician))
 		{
 			ret.push({
 				id = 12,

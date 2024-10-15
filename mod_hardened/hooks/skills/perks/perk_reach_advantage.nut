@@ -77,7 +77,7 @@
 
 	q.onMissed <- function( _attacker, _skill )
 	{
-		if (::Hardened.Temp.LastAttackInfo != null)
+		if (!::MSU.isNull(::Hardened.Temp.LastAttackInfo))
 		{
 			if (this.isSkillParryable(_skill))
 			{

@@ -55,7 +55,7 @@ local oldGetHitChance = ::Const.CharacterProperties.getHitchance;
 // New Functions
 ::Const.CharacterProperties.getHeadHitchance <- function( _bodyPart, _user = null, _skill = null, _target = null )
 {
-	if (_user == null || _skill == null || _target == null)
+	if (::MSU.isNull(_user) || ::MSU.isNull(_skill) || ::MSU.isNull(_target))
 	{
 		return oldGetHitChance(_bodyPart);
 	}
