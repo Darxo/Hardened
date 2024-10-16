@@ -33,27 +33,27 @@
 
 	q.onUpdateShopList = @(__original) function( _id, _list )
 	{
-		foreach (entry in _list)
-		{
-			if (entry.S == "shields/wooden_shield")
-			{
-				// We increase the rarity because all towns supplement wooden shields with old/worn variants
-				entry.R = 50;	// In Vanilla this is 20
-			}
-			else if (entry.S == "shields/buckler_shield")
-			{
-				// We increase the rarity in bigger settlements because buckler are not that useful beyond the early game
-				if (this.getSize() == 3 || this.isMilitary())
-				{
-					entry.R = 40;	// In Vanilla this is 15
-				}
-			}
-		}
-
 		switch (_id)
 		{
 			case "building.marketplace":
 			{
+				foreach (entry in _list)
+				{
+					if (entry.S == "shields/wooden_shield")
+					{
+						// We increase the rarity because all towns supplement wooden shields with old/worn variants
+						entry.R = 50;	// In Vanilla this is 20
+					}
+					else if (entry.S == "shields/buckler_shield")
+					{
+						// We increase the rarity in bigger settlements because buckler are not that useful beyond the early game
+						if (this.getSize() == 3 || this.isMilitary())
+						{
+							entry.R = 40;	// In Vanilla this is 15
+						}
+					}
+				}
+
 				// Add old wooden shields to lower tier settlements
 				if (this.getSize() <= 2 && !this.isMilitary())
 				{
