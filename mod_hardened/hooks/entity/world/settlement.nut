@@ -79,6 +79,21 @@
 						S = "shields/worn_heater_shield",
 					});
 				}
+				break;
+			}
+			case "building.fletcher":
+			{
+				foreach (entry in _list)
+				{
+					if (entry.S == "weapons/throwing_spear")
+					{
+						// We reduce the rarity to make Throwing Spears and make it more expensive to make it on par with throwing nets that are also now sold here
+						entry.R = 30;	// In Vanilla this is 90
+						entry.P = 2.0;	// In Vanilla this is 1.0
+						break;
+					}
+				}
+				break;
 			}
 		}
 
