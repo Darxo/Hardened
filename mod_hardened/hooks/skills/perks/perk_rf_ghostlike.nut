@@ -72,7 +72,17 @@
 		}
 	}
 
+	q.onResumeTurn <- function()
+	{
+		this.onTurnStart();
+	}
+
 	q.onTurnEnd <- function()
+	{
+		this.m.IsInEffect = false;
+	}
+
+	q.onWaitTurn <- function()
 	{
 		this.m.IsInEffect = false;
 	}
