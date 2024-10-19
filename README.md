@@ -48,10 +48,23 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 	- **Worn Heater Shields** now have 23 Melee Defense (up from 20), 13 Ranged Defense (down from 15) and no longer grant **Shieldwall**
 	- **Worn Kite Shields** now have 13 Melee Defense (down from 15), 23 Ranged Defense (down from 25) and no longer grant **Knock Back**
 
+### Throwing Weapon Rework
+
+- Throwing regular **Throwing Weapons** now cost 15 Fatigue (up from 10 for Axes, 14 for Javelins and 12 for Bolas), just like in Vanilla
+- Throwing **Heavy Throwing Weapons** now costs 5 Action Points (up from 4) and 18 Fatigue (up from 15)
+- Throwing **Crude Javelins** now costs 5 Action Points (up from 4)
+- **Heavy Javelin** now deal 40-50 Damage (up from 35-50), have 85% Armor Damage (up from 80%), have +0% Hitchance (up from -5%), 4 Maximum Ammo (down from 5), 0 Weight (down from 8), 4 Weight per Ammo, 4 Ammo Cost (up from 3) and a value of 500 (up from 300)
+- **Heavy Throwing Axes** now deal 45-60 Damage (up from 30-50), have 120% Armor Damage (up from 115%), have -10% Hitchance (down from -5%), +10% Headshot Chance (up from +5%), 4 Maximum Ammo (down from 5), 0 Weight (down from 8), 3 Weight per Ammo and a value of 600 (up from 300)
+- **Bolas** now deal 25-40 Damage (up from 20-35), has 0 Weight (down from 3), 1.5 Weight per Ammo and a value of 300 (up from 150)
+- **Crude Javelins** now deal 35-45 Damage (up from 30-40), have 4 Maximum Ammo (down from 5), 0 Weight (down from 8) and 3 Weight per Ammo
+- **Javelins** now deal 35-45 Damage (up from 30-45), have 0 Weight (down from 6), 2 Weight per Ammo and a value of 350 (up from 200)
+- **Throwing Axes** now deal 35-50 Damage (up from 30-50), have -10% Hitchance (down from +0%), +10% Headshot Chance (up from +5%), 0 Weight (down from 4), 2 Weight per Ammo and a value of 400 (up from 200)
+- Marketplaces now sell **Crude Javelins** instead of regular **Javelins**
+
 ### Double Grip Rework
 
 - Double Grip no longer provides unique effects for each weapon type
-- Double Grip now always grants 20% more damage and 20% reduced cost of non-attack skills
+- Double Grip now always grants 20% more damage and 20% reduced fatigue cost of non-attack skills
 
 ### Reworked Day-Night-Cycle
 
@@ -66,6 +79,14 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - Reloading Crossbows now costs +1 Action Point
 - Reloading Crossbows now applies **Reload Disorientation** to you until the start of your next turn.
   - **Reload Disorientation** applies -10 Ranged Skill and -10 Ranged Defense
+
+### Weight on Items
+
+- A new term **Weight** replaces the existing **Maximum Fatigue** property on equippable items but works very similar
+- The Stamina penalty from Weight is now applied last (after Stamina Multiplier from effects)
+  - Therefor debuffs and injuries affecting Stamina are stronger
+- You no longer gain Initiative, when you gain Stamina (e.g. from Strong Trait)
+- No Character can ever have less than 10 Stamina
 
 ### Misc
 
@@ -109,6 +130,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - **Anticipation** now also proccs whenever your shield takes damage from an attack
 - **Axe Mastery** no longer grants **Hook Shield**. It now causes **Split Shield** to apply **Dazed** for 1 turn
+- **Bags and Belts** now also includes two-handed weapons but no longer grants Initiative
 - **Battle Forged** no longer has any prerequisites. You can pick it alongside **Nimble** or **Poise**
 - **Bullseye** no longer reduces the penalty for shooting behind cover. It also no longer works with **Take Aim**
 - **Dodge** now grants 4% of Initiative as extra Melee Defense and Ranged Defense for every empty adjacent tile (down from always 15%)
@@ -116,6 +138,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Fortified Mind** now grants 30% more Resolve (up from 25%). This Bonus is now reduces by 1% for each point of Weight on your Helmet
 - **Battle Forged** no longer provide any Reach Ignore
 - **Between the Ribs** no longer requires the attack to be of piercing type. It now also lowers your chance to hit the head by 10% for each surrounding character
+- **Brawny** no longer grants Initiative
 - **Dagger Mastery** now allows free swapping of any items once per turn (while a dagger is equipped)
 - **Dismantle** has been completely reworked. It now grants +40% Armor Damage and 100% more Shield Damage against enemies who have full health.
 - **Dismemberment** no longer causes any morale checks. It now grants +20% chance to hit the body part with the most temporary injuries
@@ -126,7 +149,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy
 - **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you
 - **Fresh and Furious** now has a fatigue threshold of 50% (up from 30%). It now checks your fatige when you end your turn, instead of at the start of your turn
-- **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until the end of the turn
+- **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
 - **Hybridization** is completely reworked. It still grants 10% of your base Ranged Skill as Melee Skill/Defense. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type hits to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 50% more damage to shields
 - **Inspiring Presence** no longer requires a banner. At the start of each round it grants adjacent allies of your faction +3 Action Points for this turn, if they are adjacent to an enemy and have less Resolve than you. The same target can't be inspired multiple times per turn.
 - **King of all Weapons** is now called **Spear Flurry** and is completely reworked. It now reduces your damage by 10% but prevents spear attacks from building up any fatigue.
@@ -180,14 +203,15 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - **Cudgel** now deals 40-60 damage (up from 30-50), has an armor penetration of 110% (up from 90%), a Reach of 5 (up from 3), a value of 400 (up from 300). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
 - **Estoc** now has 6 Reach (up from 5)
+- **Fighting Axe** now has a value of 2300 (down from 2800)
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
 - **Player Banner** now grants -5 to Ranged Defense
+- **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and a value of 600 (up from 400)
 - **Tree Limb** now deals 30-50 damage (up from 25-40), has an armor penetration of 90% (up from 75%), a Reach of 5 (up from 3), a weight of 15 (down from 20), a value of 300 (up from 150). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
 - **Warfork** now deals 90% Armor Damage (down from 100%) and costs 550 Crowns (up from 400)
 - **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
-- Throwing Spears no longer inflict any fatigue when hitting a shield
-- Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and
-**Large Powder Bags** weigh 4.
+- **Throwing Spears** no longer inflict any fatigue when hitting a shield and have a value of 60 (down from 80)
+- Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and **Large Powder Bags** weigh 4.
 - Gun Powder now costs 2 Ammunition Supply each (up from 1)
 - **Feral Shield** now has a value of 400 (up from 50)
 - The value of almost all other non-named shields is increased by 50%-100%
@@ -304,8 +328,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Misc
 
 - Add new concepts for **Armor Penetration** and **Weight** and apply these concept to existing weapons and items
+- Supplies (Crowns, Tools, Medicine, Ammo) are now consumed instantly after buying, looting
 - Legendary Armor and Armor with an attachement that you un-equip are now automatically marked as to-be-repaired
-- Quiver now display the supply cost for replacing ammunition in them
+- Quiver and Weapons that contain Ammo now display the supply cost for replacing ammunition in them
 - Improve artwork for **Nimble** perk
 - All effects of the difficulty settings are now listed as tooltips during world generation
 
@@ -342,17 +367,19 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Introduce new `LastSpawnedParty` member for `faction.nut` which always contains the last party spawned by that faction
 - Introduce new `getOwner` function for factions, which returns the owner of this factions first settlement
 - Introduce new virtual `getDroppedLoot` function for `actor.nut` returning an array of created items, which will be dropped when that actor dies
-- Supply Items (Money, Tools, Medicine, Ammunition) are now droppable
+- Supplies (Money, Tools, Medicine, Ammunition) are now droppable
 
 ### New Character Properties
 
+- `CanExertZoneOfControl` (`true` by default) can be set to `false` to force an entity to no longer exert zone of control
 - `HeadshotReceivedChance` is a modifier for the incoming headshot chance
 - `HeadshotReceivedChanceMult` is a multiplier for the incoming headshot chance
-- `ShieldDamageMult` multiplies shield damage dealt via active skills
-- `ShieldDamageReceivedMult` multiplies incoming shield damage up to a minimum of 1
 - `ReachAdvantageMult` is a multiplier for melee skill during reach advantage
 - `ReachAdvantageBonus` is a flat bonus for melee skill during reach advantage
-- `CanExertZoneOfControl` (`true` by default) can be set to `false` to force an entity to no longer exert zone of control
+- `ShieldDamageMult` multiplies shield damage dealt via active skills
+- `ShieldDamageReceivedMult` multiplies incoming shield damage up to a minimum of 1
+- `WeightStaminaMult` is an array of multipliers, mirroring `::Const.ItemSlotSpaces`, which control how much the Weight of each Itemslot affects this characters Stamina
+- `WeightInitiativeMult` is an array of multipliers, mirroring `::Const.ItemSlotSpaces`, which control how much the Weight of each Itemslot affects this characters Initiative
 
 # Requirements
 

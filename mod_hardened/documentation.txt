@@ -19,9 +19,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Future Plans:
 - Hide information about enemy composition on the battle field
-- Only reveal attacking/casting entities if they are on a tile which is already discovered by the player. This should make scouting/high vision more important
 - certain unholds/high end orcs being able to throw their own allies behind their back in order to advance into tight spaces
-- Make it so Hook will also move the guy who does the hooking one tile back
 - change handgonne aoe pattern in some directions to a triangle
 - Rebalance SpiderEgg hunting? Give them XP/Loot?
 - Rebalance enemy skills/perks considering hardened reworks
@@ -55,8 +53,53 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Scrapper-Retinue member making it so armor damage above a certain threshold (e.g. at least 50 per hit) produces tools. But
 - Add more exclusive groups to various Backgrounds
 - New AI Behavior for Shield Seargeant (Includes current shield skills and scans for each whether allies profit from it too)
+- Add information in Docs that Anatomist and Oathtaker are unsupported
+- Switch Cheap Trick and Hidden Pockets
+- Prevent cheese where one puts their best bros on the bench in response to a hopeless ambush
+- Rework supply-system: If you max out a supply, all remaining ones stay in the inventory instead of being voided
+- Shield Skill/attack damage prediction (destruction prediction?)
+- prevent/reduce morale cascades and the lags from it
+- AI Logic:
+	- Function for calculating the worth of any single entity
+		- This already exists in Vanilla, just listing it here because it stay in contrast to the danger
+	- Function for calculating the danger of any single entity in isolation
+		- This function will look at the targeted entities surrounding to evaluate this
+			- e.g. are they an axe wielder near shield users?
+			- are they a hammer user next to characters with no armor left?
+		- An archer who is in melee is not a huge amount of danger but might still have a lot of "worth" to us, if he is high level or the only enemy archer
+- understand MSU cost prediction and apply it for reworked Leverage
 
 # Changes:
+
+0.12.0
+	- Throwing a Throwing Weapons now cost 15 Fatigue (up from 10 for Axes, 14 for Javelins and 12 for Bolas)
+	- Throwing a Heavy Throwing Weapon now costs 5 Action Points (up from 4) and 18 Fatigue (up from 15)
+	- Throwing Crude Javelins now costs 5 Action Points (up from 4)
+	- **Heavy Javelin** now deal 40-50 Damage (up from 35-50), have 85% Armor Damage (up from 80%), have +0% Hitchance (up from -5%), 4 Maximum Ammo (down from 5), 0 Weight (down from 8), 4 Weight per Ammo, 4 Ammo Cost (up from 3) and a value of 500 (up from 300)
+	- **Heavy Throwing Axes** now deal 45-60 Damage (up from 30-50), have 120% Armor Damage (up from 115%), have -10% Hitchance (down from -5%), +10% Headshot Chance (up from +5%), 4 Maximum Ammo (down from 5), 0 Weight (down from 8), 3 Weight per Ammo and a value of 600 (up from 300)
+	- **Bolas** now deal 25-40 Damage (up from 20-35), has 0 Weight (down from 3), 1.5 Weight per Ammo and a value of 300 (up from 150)
+	- **Crude Javelins** now deal 35-45 Damage (up from 30-40), have 4 Maximum Ammo (down from 5), 0 Weight (down from 8) and 3 Weight per Ammo
+	- **Javelins** now deal 35-45 Damage (up from 30-45), have 0 Weight (down from 6), 2 Weight per Ammo and a value of 350 (up from 200)
+	- **Throwing Axes** now deal 35-50 Damage (up from 30-50), have -10% Hitchance (down from +0%), +10% Headshot Chance (up from +5%), 0 Weight (down from 4), 2 Weight per Ammo and a value of 400 (up from 200)
+	- Supplies (Tools, Medicine, Ammo) are now consumed instantly after buying, looting
+	- **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and a value of 600 (up from 400)
+	- **Throwing Spear** now costs 60 Crowns (down from 80)
+	- **Throwing Spear** is now much more often sold in the Fletcher but costs 100% more crowns there
+	- Marketplaces now sell **Crude Javelins** instead of regular **Javelins**
+	- **Fighting Axe** now costs 2300 Crowns (down from 2800)
+	- You no longer gain Initiative, when you gain Stamina (e.g. from Strong Trait)
+	- The Stamina penalty from Weight is now applied last
+	- Stamina can never be lower than 10
+	- **Brawny** no longer grants Initiative
+	- **Bags and Belts** now also includes two-handed weapons but no longer grants Initiative
+	- You now also lose **Ghostlike** when you wait, but regain it when resuming your turn if not adjacent to enemies
+	- Weight per Ammo is now displayed on quivers
+	- Weapons with Ammo (throwing weapons, firelance) now display the cost of refilling the Ammo and their maximum Ammo in the Tooltip
+	- Weapons with Ammo now support AmmoWeight
+	- Implement new 'WeightStaminaMult' and 'WeightInitiativeMult' Arrays in 'character.nut' which have a multiplier for every slot type, allowing skills to manipulate how individual item slots affect the player
+	- Fix fresh and furious not deactivating correctly after battle
+	- Fix parry description not mentioning the term 'attacks'
+	- Fix **Wears it Well** giving way too little Stamina and Initiative
 
 0.11.3
 	- Fix wrong version in last release
