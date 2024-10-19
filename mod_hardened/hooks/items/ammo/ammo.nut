@@ -51,11 +51,21 @@
 			});
 		}
 
+		if (this.getAmmoWeight() != 0.0)
+		{
+			ret.push({
+				id = 15,
+				type = "text",
+				icon = "ui/icons/bag.png",
+				text = "Weight per Ammo: " + ::MSU.Text.colorNegative(this.getAmmoWeight()),
+			});
+		}
+
 		ret.push({
-			id = 12,
+			id = 16,
 			type = "text",
 			icon = "ui/icons/asset_ammo.png",
-			text = "Refill cost per ammunition: " + ::MSU.Text.colorNegative(this.m.AmmoCost),
+			text = "Refill cost per Ammo: " + ::MSU.Text.colorNegative(this.getAmmoCost()),
 		});
 
 		return ret;
@@ -64,7 +74,7 @@
 	q.getStaminaModifier = @() function()
 	{
 		local staminaModifier = this.m.StaminaModifier;		// flat modifier
-		staminaModifier -= ::Math.ceil(this.getAmmo() * this.m.AmmoWeight)		// scaling modifier
+		staminaModifier -= this.getCombinedAmmoWeight();		// scaling modifier
 		return staminaModifier;
 	}
 
@@ -75,6 +85,11 @@
 	}
 
 // New Functions
+	q.getCombinedAmmoWeight <- function()
+	{
+		return ::Math.ceil(this.getAmmo() * this.getAmmoWeight());
+	}
+
 	q.getAmmoWeight <- function()
 	{
 		return this.m.AmmoWeight;
