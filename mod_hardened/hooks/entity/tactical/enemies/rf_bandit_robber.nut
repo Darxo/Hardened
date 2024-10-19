@@ -11,8 +11,7 @@
 		"scripts/items/weapons/warfork",
 	]);
 	q.m.AvailableThrowingWeapons <- ::MSU.Class.WeightedContainer().addMany(1, [
-		"scripts/items/weapons/javelin",
-		"scripts/items/weapons/throwing_axe",
+		"scripts/items/weapons/greenskins/orc_javelin",
 	]);
 
 	q.onInit = @(__original) function()
