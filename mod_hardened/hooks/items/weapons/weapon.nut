@@ -12,6 +12,16 @@
 			}
 		}
 
+		if (this.m.AmmoMax != 0)
+		{
+			ret.push({
+				id = 16,
+				type = "text",
+				icon = "ui/icons/asset_ammo.png",
+				text = "Refill cost per Ammo: " + ::MSU.Text.colorNegative(this.getAmmoCost()),
+			});
+		}
+
 		return ret;
 	}
 
