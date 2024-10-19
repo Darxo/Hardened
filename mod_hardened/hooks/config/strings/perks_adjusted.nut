@@ -17,6 +17,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.bags_and_belts",
+		Key = "BagsAndBelts",
+		Description = ::UPD.getDescription({
+			Fluff = "Preparedness is the key to victory.",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Unlock two extra [bag slots.|Concept.BagSlots]",
+					"Items placed in [bags|Concept.BagSlots] no longer apply a penalty to [Stamina|Concept.MaximumFatigue]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.battle_forged",
 		Key = "BattleForged",
 		Description = ::UPD.getDescription({
@@ -39,6 +53,19 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Gain " + ::MSU.Text.colorPositive("+25%") + " [Armor Penetration|Concept.ArmorPenetration] against targets who are not in cover",
+				],
+			}],
+		}),
+	},
+	{
+		ID = "perk.brawny",
+		Key = "Brawny",
+		Description = ::UPD.getDescription({
+			Fluff = "Wear your armor like a tortoise wears its shell.",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"The [Stamina|Concept.Stamina] penalty from your Body Armor and Helmet [Weight|Concept.Weight] is reduced by " + ::MSU.Text.colorPositive("30%"),
 				],
 			}],
 		}),
@@ -672,7 +699,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Receive " + ::MSU.Text.colorPositive("50%") + " less [Initiative|Concept.Initiative] penalty from your [Fatigue|Concept.Fatigue]",
-					"Gain [Initiative|Concept.Initiative] equal to " + ::MSU.Text.colorPositive("50%") + " of the [Weight|Concept.Weight] of your body armor",
+					"The [Initiative|Concept.Initiative] penalty from your Body Armor [Weight|Concept.Weight] is reduced by " + ::MSU.Text.colorPositive("50%"),
 				],
 			}],
 		}),
@@ -798,7 +825,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain [Stamina|Concept.MaximumFatigue] and [Initiative|Concept.Initiative] equal to " + ::MSU.Text.colorPositive("50%") + " of your combined mainhand and offhand [Weight|Concept.Weight]",
+					"The [Stamina|Concept.Stamina] and [Initiative|Concept.Initiative] penalty from your Mainhand and Offhand [Weight|Concept.Weight] is reduced by " + ::MSU.Text.colorPositive("50%"),
 				],
 			}],
 		}),

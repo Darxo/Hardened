@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_skirmisher", function(q) {
+	q.m.WeightInitiativeMult <- 0.5;
+
 	q.create = @(__original) function()
 	{
 		__original();
@@ -6,8 +8,9 @@
 		this.m.IsHidden = true;
 	}
 
-	q.getInitiativeBonus = @() function()
+	// Replace Reforged calculation
+	q.onUpdate = @() function( _properties )
 	{
-		return ::Math.floor(this.getContainer().getActor().getItems().getWeight([::Const.ItemSlot.Body]) * 0.5);
+		_properties.WeightInitiativeMult[::Const.ItemSlot.Body] *= this.m.WeightInitiativeMult;
 	}
 });
