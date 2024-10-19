@@ -4,7 +4,12 @@
 
 	q.getTooltip = @(__original) function()
 	{
+		// We pretend like every item has a Weight so that Vanilla always produces its weight tooltip at the same consistent position
+		// This is important, because Vanilla does a StaminaModifier check on the member, instead of using the getter. So it will not work with our ammunition/throwing items which have no base weight
+		local oldStaminaModifier = this.m.StaminaModifier;
+		this.m.StaminaModifier = -1;	// Any negative number will work
 		local ret = __original();
+		this.m.StaminaModifier = oldStaminaModifier;
 
 		foreach (entry in ret)
 		{
