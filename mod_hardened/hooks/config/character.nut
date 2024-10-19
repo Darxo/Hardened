@@ -77,3 +77,11 @@ local oldGetHitChance = ::Const.CharacterProperties.getHitchance;
 		return 100.0 - headshotChance;
 	}
 }
+
+// New function for gaining the Stamina before weight reductions
+::Const.CharacterProperties.getStamina <- function()
+{
+	// A negative Stamina should get worse from a positive StaminaMult, so we reverse the effect of the StaminaMult in this case
+	local staminaMult = (this.Stamina >= 0) ? this.StaminaMult : (1 / this.StaminaMult);
+	return ::Math.floor(this.Stamina * staminaMult);
+}
