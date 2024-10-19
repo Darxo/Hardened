@@ -52,6 +52,11 @@
 							entry.R = 40;	// In Vanilla this is 15
 						}
 					}
+					else if (entry.S == "weapons/javelin")
+					{
+						entry.R = 25;	// In Vanilla this is 30
+						entry.S = "weapons/greenskins/orc_javelin";
+					}
 				}
 
 				// Add old wooden shields to lower tier settlements
