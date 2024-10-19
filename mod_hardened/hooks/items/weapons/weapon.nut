@@ -22,9 +22,23 @@
 		__original(scaledValue);
 	}
 
+	q.onDeserialize = @(__original) function( _in )
+	{
+		__original(_in);
+		this.m.Ammo = ::Math.min(this.m.Ammo, this.m.AmmoMax);	// Prevent Ammo from ever being larger than AmmoMax
+	}
+
 // New Function
 	q.isHybridWeapon <- function()
 	{
 		return ((this.m.WeaponType & (this.m.WeaponType - 1)) != 0);
+	}
+});
+
+::Hardened.HooksMod.hookTree("scripts/items/weapons/weapon", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.Ammo = ::Math.min(this.m.Ammo, this.m.AmmoMax);	// Prevent Ammo from ever being larger than AmmoMax
 	}
 });
