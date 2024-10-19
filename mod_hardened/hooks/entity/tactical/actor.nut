@@ -1,5 +1,8 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/actor", function(q) {
-	// public
+	// Public
+	q.m.StaminaMin <- 10;	// This actor can never have less than this amount of Stamina
+
+	// Private
 	q.m.GrantsXPOnDeath <- true;
 
 	q.onInit = @(__original) function()
@@ -61,6 +64,59 @@
 		__original(_killer, _skill, _tile, _fatalityType);
 
 		::Const.Combat.GlobalXPMult = oldGlobalXPMult;
+	}
+
+	// Overwrite because we don't want the Vanilla way of calculating
+	q.getFatigueMax = @() function()
+	{
+		return this.getStamina();
+	}
+
+	// Overwrite because we don't want the Vanilla way of calculating
+	q.getInitiative = @() function()
+	{
+		local initiative = this.m.CurrentProperties.getInitiative();
+		initiative -= this.getFatigue() * this.m.CurrentProperties.FatigueToInitiativeRate;		// Subtract Accumulated Fatigue from Initiative
+		initiative += this.getInitiativeModifierFromWeight();
+		return ::Math.round(initiative);
+	}
+
+// New Functions
+	q.getStamina <- function()
+	{
+		local stamina = this.getCurrentProperties().getStamina();
+		stamina += this.getStaminaModifierFromWeight();	// Stamina modifiers from weight are now applied AFTER the StaminaMult from effects (injuries, perks) is applied
+		return ::Math.max(stamina, this.m.StaminaMin);	// New: We now introduce a minimum Stamina value. At worst a character should still be able to throw a fist or move one tile
+	}
+
+	// Calculate the total Stamina Modifier from the Weight of all equipped gear
+	q.getStaminaModifierFromWeight <- function()
+	{
+		local staminaModifier = 0;
+		foreach (index, _ in ::Const.ItemSlotSpaces) // index corresponds to a valid slot in ::Const.ItemSlot
+		{
+			local mult = this.m.CurrentProperties.WeightStaminaMult[index];
+			foreach (item in this.getItems().getAllItemsAtSlot(index))
+			{
+				staminaModifier -= item.getWeight() * mult;
+			}
+		}
+		return ::Math.round(staminaModifier);
+	}
+
+	// Calculate the total Initiative Modifier from the Weight of all equipped gear
+	q.getInitiativeModifierFromWeight <- function()
+	{
+		local initiativeModifier = 0;
+		foreach (itemSlot, _ in ::Const.ItemSlotSpaces)
+		{
+			local mult = this.m.CurrentProperties.WeightInitiativeMult[itemSlot];
+			foreach (item in this.getItems().getAllItemsAtSlot(itemSlot))
+			{
+				initiativeModifier -= item.getWeight() * mult;
+			}
+		}
+		return ::Math.round(initiativeModifier);
 	}
 
 // New Events

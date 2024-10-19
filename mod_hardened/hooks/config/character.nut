@@ -15,6 +15,20 @@ local oldGetHitChance = ::Const.CharacterProperties.getHitchance;
 	}
 }
 
+local oldGetClone = ::Const.CharacterProperties.getClone;
+::Const.CharacterProperties.getClone = function()
+{
+	local ret = oldGetClone();
+	ret.WeightStaminaMult = clone this.WeightStaminaMult;
+	ret.WeightInitiativeMult = clone this.WeightInitiativeMult;
+	return ret;
+}
+
+::Const.CharacterProperties.WeightStaminaMult <- array(::Const.ItemSlotSpaces.len(), 1.0);		// StaminaMult for every equipment slot
+::Const.CharacterProperties.WeightInitiativeMult <- array(::Const.ItemSlotSpaces.len(), 1.0);		// InitiativeMult for every equipment slot
+::Const.CharacterProperties.WeightStaminaMult[::Const.ItemSlot.Bag] = 0.5;
+::Const.CharacterProperties.WeightInitiativeMult[::Const.ItemSlot.Bag] = 0.5;
+
 // New Values
 ::Const.CharacterProperties.CanEnemiesHaveReachAdvantage <- true;
 ::Const.CharacterProperties.ReachAdvantageMult <- ::Reforged.Reach.ReachAdvantageMult;
