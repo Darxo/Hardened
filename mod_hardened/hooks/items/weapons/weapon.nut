@@ -1,4 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/items/weapons/weapon", function(q) {
+	// Public
+	q.m.AmmoWeight <- 0.0;			// Every Ammo in this weapon applies this value as a Weight while equipped in additiona to the base weight of this item
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
@@ -8,8 +11,22 @@
 			if (entry.id == 64 && entry.icon == "ui/icons/direct_damage.png")
 			{
 				entry.text = ::MSU.String.replace(entry.text, "of damage ignores armor", ::Reforged.Mod.Tooltips.parseString("[Armor Penetration|Concept.ArmorPenetration]"));
-				break;
 			}
+			else if (entry.id == 10 && entry.icon == "ui/icons/ammo.png")
+			{
+				// Vanilla does not show the maximum ammunition. We now also color the remaining ammunition in the negative color if it is 0
+				entry.text = "Remaining Ammo: " + ::MSU.Text.colorizeValue(this.getAmmo(), {CompareTo = 1}) + " / " + this.getAmmoMax();
+			}
+		}
+
+		if (this.m.AmmoWeight != 0.0)
+		{
+			ret.push({
+				id = 15,
+				type = "text",
+				icon = "ui/icons/bag.png",
+				text = "Weight per Ammo: " + ::MSU.Text.colorNegative(this.getAmmoWeight()),
+			});
 		}
 
 		if (this.m.AmmoMax != 0)
@@ -32,6 +49,15 @@
 		__original(scaledValue);
 	}
 
+	q.onUpdateProperties = @(__original) function( _properties )
+	{
+		// Switcheroo because the vanilla function accesses the StaminaModifier variable directly instead of using the getter function
+		local oldStaminaModifier = this.m.StaminaModifier;
+		this.m.StaminaModifier = this.getStaminaModifier();
+		__original(_properties);
+		this.m.StaminaModifier = oldStaminaModifier;
+	}
+
 	q.onDeserialize = @(__original) function( _in )
 	{
 		__original(_in);
@@ -43,6 +69,16 @@
 	{
 		return ((this.m.WeaponType & (this.m.WeaponType - 1)) != 0);
 	}
+
+	q.getCombinedAmmoWeight <- function()
+	{
+		return ::Math.ceil(this.getAmmo() * this.getAmmoWeight());
+	}
+
+	q.getAmmoWeight <- function()
+	{
+		return this.m.AmmoWeight;
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/items/weapons/weapon", function(q) {
@@ -50,5 +86,11 @@
 	{
 		__original();
 		this.m.Ammo = ::Math.min(this.m.Ammo, this.m.AmmoMax);	// Prevent Ammo from ever being larger than AmmoMax
+	}
+
+	// We replace the vanilla weight tooltip on all items with a more descriptive and hyperlinked term
+	q.getStaminaModifier = @(__original) function()
+	{
+		return __original() - this.getCombinedAmmoWeight();
 	}
 });
