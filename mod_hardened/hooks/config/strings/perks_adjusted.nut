@@ -383,6 +383,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_concussive_strikes",
+		Key = "RF_ConcussiveStrikes",
+		Description = ::UPD.getDescription({
+			Fluff = "Crush one, and watch the shockwave rattle the rest!",
+			Requirement = "Mace",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Whenever you stun or kill an enemy, apply [Dazed|Skill+dazed_effect] to all enemies adjacent to the target for " + ::MSU.Text.colorPositive(1) + " [turn|Concept.Turn]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_dismantle",
 		Key = "RF_Dismantle",
 		Description = ::UPD.getDescription({
@@ -850,6 +864,9 @@ foreach (description in adjustedDescriptions)
 {
 	::UPD.setDescription(description.ID, description.Key, ::Reforged.Mod.Tooltips.parseString(description.Description));
 }
+
+::Const.Strings.PerkName.RF_ConcussiveStrikes = "Shockwave";
+::Const.Perks.findById("perk.rf_concussive_strikes").Name = ::Const.Strings.PerkName.RF_ConcussiveStrikes;
 
 ::Const.Strings.PerkName.RF_Poise = "Flexible";
 ::Const.Perks.findById("perk.rf_poise").Name = ::Const.Strings.PerkName.RF_Poise;
