@@ -383,6 +383,21 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_bloodlust",
+		Key = "RF_Bloodlust",
+		Description = ::UPD.getDescription({
+			Fluff = "When surrounded by carnage, you feel revitalized and right at home!",
+			Requirement = "Cleaver",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Deal " + ::MSU.Text.colorPositive("10%") + " more damage against [bleeding|Skill+bleeding_effect] characters",
+					"Receive " + ::MSU.Text.colorPositive("10%") + " less damage from [bleeding|Skill+bleeding_effect] characters",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_concussive_strikes",
 		Key = "RF_ConcussiveStrikes",
 		Description = ::UPD.getDescription({
