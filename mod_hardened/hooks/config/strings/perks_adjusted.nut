@@ -398,6 +398,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_bolster",
+		Key = "RF_Bolster",
+		Description = ::UPD.getDescription({
+			Fluff = "Your battle brothers feel confident when you\'re there backing them up!",
+			Requirement = "Polearm",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"While not engaged in melee, whenever you attack, trigger a Positive [Morale Check|Concept.Morale] for adjacent members of your company",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_concussive_strikes",
 		Key = "RF_ConcussiveStrikes",
 		Description = ::UPD.getDescription({
@@ -655,7 +669,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Throwing Attacks cost " + ::MSU.Text.colorPositive(-1) + " [Action Point|Concept.ActionPoints] per tile moved during your turn, until you use a throwing attack, [wait|Concept.Wait] or end your turn",
+					"Throwing Attacks cost " + ::MSU.Text.colorPositive(-1) + " [Action Point|Concept.ActionPoints] per tile moved during your [turn|Concept.Turn], until you use a throwing attack, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
 					"Changing height levels has no additional [Action Point|Concept.ActionPoints] cost",
 				],
 			}],
