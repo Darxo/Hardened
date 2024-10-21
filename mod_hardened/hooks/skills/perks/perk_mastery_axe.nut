@@ -2,7 +2,7 @@
 	q.onAnySkillExecuted = @(__original) function( _skill, _targetTile, _targetEntity, _forFree )
 	{
 		__original(_skill, _targetTile, _targetEntity, _forFree);
-		if (_skill.getID() == "actives.split_shield" && !_targetEntity.getSkills().hasSkill("effects.dazed"))
+		if (_skill.getID() == "actives.split_shield" && !_targetEntity.getCurrentProperties().IsImmuneToDaze && !_targetEntity.getSkills().hasSkill("effects.dazed"))
 		{
 			local effect = ::new("scripts/skills/effects/dazed_effect");
 			_targetEntity.getSkills().add(effect);
