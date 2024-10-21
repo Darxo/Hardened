@@ -1,3 +1,5 @@
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_leverage");
+
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_leverage", function(q) {
 	// Public
 	q.m.ActionPointModifierPerAlly <- -1;
@@ -5,10 +7,18 @@
 	// Private
 	q.m.IsSpent <- false;
 
-	q.onAfterUpdate = @(__original) function( _properties )
+	q.create <- function()
 	{
-		__original(_properties);
+		this.m.ID = "perk.rf_leverage";
+		this.m.Name = ::Const.Strings.PerkName.RF_Leverage;
+		this.m.Description = ::Const.Strings.PerkDescription.RF_Leverage;
+		this.m.Icon = "ui/perks/perk_rf_leverage.png";
+		this.m.Type = ::Const.SkillType.Perk;
+		this.m.Order = ::Const.SkillOrder.Perk;
+	}
 
+	q.onAfterUpdate <- function( _properties )
+	{
 		if (this.m.IsSpent)
 			return;
 
@@ -25,24 +35,20 @@
 		}
 	}
 
-	q.onAnySkillExecuted = @(__original) function( _skill, _targetTile, _targetEntity, _forFree )
+	q.onAnySkillExecuted <- function( _skill, _targetTile, _targetEntity, _forFree )
 	{
-		__original(_skill, _targetTile, _targetEntity, _forFree);
-
 		if (this.isSkillValid(_skill) && ::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()))
 		{
 			this.m.IsSpent = true;
 		}
 	}
-	q.onTurnStart = @(__original) function()
+	q.onTurnStart <- function()
 	{
-		__original();
 		this.m.IsSpent = false;
 	}
 
-	q.onCombatFinished = @(__original) function()
+	q.onCombatFinished <- function()
 	{
-		__original();
 		this.m.IsSpent = true;
 	}
 
