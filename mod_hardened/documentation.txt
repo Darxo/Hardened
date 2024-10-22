@@ -68,8 +68,22 @@ This submod is a collection of changes to Reforged that I suggested internally t
 			- are they a hammer user next to characters with no armor left?
 		- An archer who is in melee is not a huge amount of danger but might still have a lot of "worth" to us, if he is high level or the only enemy archer
 - understand MSU cost prediction and apply it for reworked Leverage
+- make it so multiple NPC bannerman dont stick together and spread out
+- THere is probably a bug rn, where when you load, all armor with upgrades will miss exactly as much armor, as the upgrade would grant it
+	- This has probably to do with the onDeserialize hookTree in item.nut
+- Review Stamina penalty on injuries (temp/perm)
 
 # Changes:
+
+0.12.1
+	- **Concussive strikes** is completely reworked. It is now called **Shockwave** and it makes it so your kills or stuns with maces will daze all enemies adjacent to your target for 1 turn
+	- **Bloodlust** is completely reworked. It now grants 10% more damage against bleeding enemies and makes you receive 10% less damage from bleeding enemies.
+	- **Bolster** now requires a Polearm equipped, instead of any weapon with a Reach of 6 or more
+	- **Dazed** no longer reduces the Stamina by 25%. It now increases the fatigue cost of all non-attacks by 25%
+	- **Flail** now deals 30-55 damage (up from 25-55)
+	- Fix daze from **Axe Mastery** not respecting immunity to dazed
+	- Fix **Leverage** still giving 20% headshots chance
+	- Fix non-named armor with attachement losing some condition upon loading a savegame
 
 0.12.0
 	- Throwing a Throwing Weapons now cost 15 Fatigue (up from 10 for Axes, 14 for Javelins and 12 for Bolas)
