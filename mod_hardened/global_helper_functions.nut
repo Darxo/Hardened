@@ -84,3 +84,27 @@
 
 	return replacedSomething;
 }
+
+// Share _experience equally among all brothers in the player roster, never giving any singular brother more than _maximumXPFractionPerBrother
+// @return experience given to every single brother
+// _excludedBrotherIDs - array of brother id's which are meant to be excluded from receiving XP
+::Hardened.util.shareExperience <- function( _experience, _maximumXPFractionPerBrother, _excludedBrotherIDs = [] )
+{
+	local roster = ::World.getPlayerRoster().getAll();
+	local brotherCount = roster.len() - _excludedBrotherIDs.len();
+	if (brotherCount == 0) return;
+
+	local maximumXP = _experience * _maximumXPFractionPerBrother;
+	local xpPerBrother = ::Math.min(maximumXP, _experience / brotherCount);
+
+	foreach (otherBro in roster)
+	{
+		if (_excludedBrotherIDs.find(otherBro.getID()) == null)		// Skip every brother that was meant to be excluded from the xp receiving
+		{
+			otherBro.addXP(xpPerBrother, false);	// This xp does not scale with other modifiers. It already scaled with them when it was first acquired
+			otherBro.updateLevel();
+		}
+	}
+
+	return xpPerBrother;
+}
