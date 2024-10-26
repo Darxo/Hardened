@@ -59,3 +59,28 @@
 	}
 	return false;
 }
+
+// If there is a bag item on the character equal to any of the IDs inside _existingIDArray, then it is removed and _newItemPath is added to the first empty slot
+// This function will replaces all bag items found
+// Returns true if any bag item was replaced, return false otherwise
+::Hardened.util.replaceBagItem <- function( _entity, _newItemPath, _existingIDArray )
+{
+	::logWarning("::Hardened.util.replaceBagItem replace " + _existingIDArray.len() + " on " + _entity.getName());
+	local replacedSomething = false;
+
+	local items = _entity.getItems().getAllItemsAtSlot(::Const.ItemSlot.Bag);
+	::logWarning("items.len() " + items.len());
+	foreach (item in items)
+	{
+		::logWarning("Trying to find " + item.getID() + " within " + _existingIDArray[0]);
+		if (_existingIDArray.find(item.getID()) != null)
+		{
+			::logWarning("Successfully removing " + item.getName() + " from " + _entity.getName() + " and adding " + _newItemPath + " to it!");
+			_entity.getItems().removeFromBag(item);
+			_entity.getItems().addToBag(::new(_newItemPath));
+			replacedSomething = true;
+		}
+	}
+
+	return replacedSomething;
+}
