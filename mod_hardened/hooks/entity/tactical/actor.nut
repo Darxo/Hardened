@@ -66,6 +66,44 @@
 		::Const.Combat.GlobalXPMult = oldGlobalXPMult;
 	}
 
+	q.onOtherActorDeath = @(__original) function( _killer, _victim, _skill )
+	{
+		if (!this.m.IsAlive || this.m.IsDying) return;
+
+		// Morale Checks from allies fleeing are no longer triggered for you if you can't see them
+		local curProp = this.getCurrentProperties();
+		local distanceToVictim = this.getTile().getDistanceTo(_victim.getTile());
+		local oldIsAffectedByDyingAllies = curProp.IsAffectedByDyingAllies;
+		if (_victim.getFaction() == this.getFaction() && distanceToVictim > curProp.getVision())
+		{
+			curProp.IsAffectedByDyingAllies = false;
+		}
+
+		__original(_killer, _victim, _skill);
+
+		curProp.IsAffectedByDyingAllies = oldIsAffectedByDyingAllies;
+	}
+
+	// This event is only fired for characters of the same faction as the one who started fleeing
+	q.onOtherActorFleeing = @(__original) function( _actor )
+	{
+		if (!this.m.IsAlive || this.m.IsDying) return;
+
+		// Morale Checks from allies fleeing are no longer triggered for you if you can't see them
+		local curProp = this.getCurrentProperties();
+		local oldIsAffectedByFleeingAllies = curProp.IsAffectedByFleeingAllies;
+
+		local distanceToVictim = this.getTile().getDistanceTo(_actor.getTile());
+		if (distanceToVictim > curProp.getVision())
+		{
+			curProp.IsAffectedByFleeingAllies = false;
+		}
+
+		__original(_actor);
+
+		curProp.IsAffectedByFleeingAllies = oldIsAffectedByFleeingAllies;
+	}
+
 	// Overwrite because we don't want the Vanilla way of calculating
 	q.getFatigueMax = @() function()
 	{
