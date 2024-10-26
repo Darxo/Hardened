@@ -78,7 +78,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("4%") + " of the character\'s current [Initiative|Concept.Initiative] as a bonus to [Melee Defense|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense] for each empty adjacent tile. This bonus can never be negative",
+					"For each empty adjacent tile, gain " + ::MSU.Text.colorPositive("4%") + " of your current [Initiative|Concept.Initiative] as a bonus to [Melee Defense|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense]",
 				],
 			}],
 		}),
@@ -523,7 +523,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"During your [turn,|Concept.Turn] attacks have a " + ::MSU.Text.colorPositive("100%") + " chance to perform a free extra attack of the same type to a different valid enemiy within 2 tiles. This attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
+					"Whenever you use an Attack during your [turn,|Concept.Turn], perform a free extra attack of the same type to a different valid enemy within 2 tiles. This attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
 				],
 			}],
 		}),
