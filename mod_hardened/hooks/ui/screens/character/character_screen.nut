@@ -1,30 +1,19 @@
 ::Hardened.HooksMod.hook("scripts/ui/screens/character/character_screen", function(q) {
 	q.m.DistributedXPFraction <- 0.5;
-	q.m.MaximumXPFractionPerBrother <- 0.05;
+	q.m.MaximumXPFractionPerBrother <- 0.1;
 
 	q.onDismissCharacter = @(__original) function( _data )
 	{
 		local bro = ::Tactical.getEntityByID(_data[0]);
+		if (bro == null) return __original();
+
 		local payCompensation = _data[1];
-
-		if (bro != null && payCompensation)
+		if (payCompensation)
 		{
-			local roster = this.World.getPlayerRoster().getAll();
-			local brotherCount = roster.len() - 1;
-
-			local maximumXP = bro.getXP() * this.m.MaximumXPFractionPerBrother;
-			local xpPerBrother = ::Math.min(maximumXP, (bro.getXP() * this.m.DistributedXPFraction) / brotherCount);
-
-			foreach (otherBro in roster)
-			{
-				if (otherBro != bro)
-				{
-					otherBro.addXP(xpPerBrother, false);	// This xp does not scale with other modifiers. It already scaled with them when it was first acquired
-					otherBro.updateLevel();
-				}
-			}
+			::Hardened.util.shareExperience(bro.getXP() * this.m.DistributedXPFraction, this.m.MaximumXPFractionPerBrother, [bro.getID()]);
 		}
 
 		__original(_data);
+
 	}
 });
