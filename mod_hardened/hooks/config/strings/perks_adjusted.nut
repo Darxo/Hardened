@@ -383,6 +383,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_bestial_vigor",
+		Key = "RF_BestialVigor",
+		Description = ::UPD.getDescription({
+			Fluff = "Time for Plan B!",
+			Effects = [{
+				Type = ::UPD.EffectType.Active,
+				Description = [
+					"Unlocks the [Backup Plan|Skill+hd_backup_plan_skill] skill, allowing you to recover [Action Points|Concept.ActionPoints] once per battle",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_bloodlust",
 		Key = "RF_Bloodlust",
 		Description = ::UPD.getDescription({
@@ -893,6 +906,9 @@ foreach (description in adjustedDescriptions)
 {
 	::UPD.setDescription(description.ID, description.Key, ::Reforged.Mod.Tooltips.parseString(description.Description));
 }
+
+::Const.Strings.PerkName.RF_BestialVigor = "Backup Plan";
+::Const.Perks.findById("perk.rf_bestial_vigor").Name = ::Const.Strings.PerkName.RF_BestialVigor;
 
 ::Const.Strings.PerkName.RF_ConcussiveStrikes = "Shockwave";
 ::Const.Perks.findById("perk.rf_concussive_strikes").Name = ::Const.Strings.PerkName.RF_ConcussiveStrikes;

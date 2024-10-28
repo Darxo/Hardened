@@ -86,6 +86,10 @@
 		}
 	}
 
+	// Tactician
+	local pgTacticialGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_tactician");
+	pgTacticialGroup.getTree()[1].push("perk.rf_bestial_vigor");	// Add Bestial Vigor (Backup Plan) into the Tier 2 row
+
 	// Tough
 	local pgToughGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_tough");
 	pgToughGroup.getTree()[1].push("perk.hold_out");	// Add Resilient into the Tier 2 row
@@ -117,6 +121,16 @@
 		foreach (i, perk in row)
 		{
 			if (perk == "perk.hold_out") row.remove(i);	// Remove Resilient
+		}
+	}
+
+	// Wildling
+	local pgWildling = ::DynamicPerks.PerkGroups.findById("pg.rf_wildling");
+	foreach (row in pgWildling.getTree())
+	{
+		foreach (i, perk in row)
+		{
+			if (perk == "perk.rf_bestial_vigor") row.remove(i);	// Remove Bestial Vigor (now Backup Plan) from Wildling
 		}
 	}
 }
