@@ -157,6 +157,37 @@
 		return ::Math.round(initiativeModifier);
 	}
 
+	/*
+	Try to recover up to _amount Action Points
+	@param _printLog if true, print a combat log entry stating how many Action Points were recovered
+	@param _canExceedMaximum if true, then the maximum Action Points can be exceeded.
+		Note: This only makes sense if you also increase the maximum action points with that same skill, otherwise they can clamped again during the next onUpdate loop
+	@return actual amount of ActionPoints recovered
+	*/
+	q.recoverActionPoints <- function( _amount, _printLog = true, _canExceedMaximum = false )
+	{
+		if (_amount <= 0) return;
+
+		local oldActionPoints = this.getActionPoints();
+
+		if (_canExceedMaximum)
+		{
+			this.setActionPoints(this.getActionPoints() + _amount);
+		}
+		else
+		{
+			this.setActionPoints(::Math.min(this.getActionPointsMax(), this.getActionPoints() + _amount));
+		}
+
+		local recoveredActionPoints = this.getActionPoints() - oldActionPoints;
+		if (_printLog && recoveredActionPoints > 0 && this.isPlacedOnMap() && this.getTile().IsVisibleForPlayer)
+		{
+			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + " recovers " + ::MSU.Text.colorGreen(recoveredActionPoints) + " Action Points");
+		}
+
+		return recoveredActionPoints;
+	}
+
 // New Events
 	// This is called just before onDeath of this entity is called
 	q.getDroppedLoot <- function( _killer, _skill, _fatalityType )
