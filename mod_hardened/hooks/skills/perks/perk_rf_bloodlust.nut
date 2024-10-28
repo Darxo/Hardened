@@ -18,7 +18,8 @@
 		this.m.Description = "This character gains increased vigor when inflicting fatalities.";
 		this.m.Icon = "ui/perks/perk_rf_bloodlust.png";
 		this.m.IconMini = "perk_rf_bloodlust_mini";
-		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
+		this.m.Type = ::Const.SkillType.Perk;
+		this.m.IsHidden = true;
 	}
 
 	q.onAnySkillUsed <- function( _skill, _targetEntity, _properties )
