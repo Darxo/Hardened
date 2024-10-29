@@ -133,7 +133,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Axe Mastery** no longer grants **Hook Shield**. It now causes **Split Shield** to apply **Dazed** for 1 turn
 - **Bags and Belts** now also includes two-handed weapons but no longer grants Initiative
 - **Battle Forged** no longer has any prerequisites. It no longer provide any Reach Ignore
+- **Bestial Vigor** is completely reworked. It is now called **Backup Plan** andand grants the skill **Backup Plan** which can be used once per battle to recover 7 Action Points and disable all Attack-Skills for the rest of this turn. It has been removed from the **Wildling** perk group and added to the **Tactician** perk group at Tier 2
 - **Between the Ribs** no longer requires the attack to be of piercing type. It now also lowers your chance to hit the head by 10% for each surrounding character
+- **Blitzkrieg** now costs 9 Action Points (up from 7), 50 Fatigue (up from 30), no longer requires 10 usable fatigue on the targets. It no longer has a shared cooldown. It is now limited to being used once per battle instead of once per day
 - **Bloodlust** is completely reworked. It now grants 10% more damage against bleeding enemies and makes you receive 10% less damage from bleeding enemies
 - **Bolster** now requires a Polearm equipped, instead of any weapon with a Reach of 6 or more
 - **Bullseye** no longer reduces the penalty for shooting behind cover. It also no longer works with **Take Aim**
@@ -159,6 +161,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Leverage** is completely reworked. It now reduces the Action Point cost of your first polearm attack each turn by 1 for each adjacent ally.
 - **Nimble** is completely reworked: It now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
 - **Offhand Training** no longer raises your Reach to 4
+- **Onslaught** no longer has a shared cooldown
 - **Opportunist** is completely reworked. It now grants throwing attacks -1 Action Point cost per tile moved, until you use a throwing attack, wait or end your turn. Changing height levels also no longer has an additional Action Point cost.
 - **Phalanx** now works even with a **Buckler** and it now also counts allies with a **Buckler** for the effect. It no longer requires you to have a shield equipped for it to work
 - **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. It also reduces your armor damage taken by a percentage equal to 40% of your current Initiative (up to a maximum of 40%)
@@ -241,6 +244,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Injuries
 
+- **Collapsed Lung** no longer reduces the Stamina. Instead it now disables the use of **Recover**
+- **Crushed Windpipe** no longer reduces the Stamina. Instead it now disables the use of **Recover**
+- **Pierced Lung** now reduces Stamina by 30% (down from 60%) and disables the use of **Recover**
 - **Grazed Neck**, **Cut Artery** and **Cut Throat** are no longer removed, when bandaged
 - **Grazed Neck**, **Cut Artery** and **Cut Throat** no longer deals damage over time
 - **Grazed Neck** now applies 1 stack of bleed when inflicted
@@ -271,6 +277,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Zombies** and **Skeletons** no longer grant experience after resurrecting
 - **Geists** no longer have **Fearsome**. They now have **Backstabber**
 - **Barbarian Drummer** now have +1 Action Point and grant +150 Experience
+- **Barbarian Thralls** now spawn twice as often with **Crude Javelins** and half as often with regular throwing weapons
 - **Nachzehrer** can no longer swallow player characters while in a net.
 - **Necromancer** no longer have 20 natural body armor or **Inspiring Presence**
 - **Ancient Auxiliary** no longer have **Battleforged**
@@ -297,8 +304,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Swamp** tiles no longer reduce Melee Skill by 25%. Instead they now reduce Initiative by 25%
 - Encumbrance no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level.
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied.
+- Dying or Fleeing characters no longer trigger negative morale checks for their allies if the distance between them is greater than the vision of the receiving ally
 - Burning Damage (Fire Pot, Burning Arrow, Burning Ground) now remove all root-like effects from the targets.
 - Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken.
+- The **Orc Slayer** and **Crusader** (temporary Crisis backgrounds) now share 100% of their experience with your remaining party, when they leave you after the Crisis ended
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 - The **Lone Wolf** and **Gladiator** origins now have a roster size of 13 (up from 12)
 - Beginner combat difficulty difficulty now grants enemy parties 100% resources (up from 85%)
@@ -318,11 +327,13 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
 - All Skills from the **Lorekeeper** now have skill descriptions
+- Add Setting for making the hotkeys for **Wait** fire continuously, instead of only when released
 
 ### World
 
 - The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event
 - Settlements now display a tooltip showing how many days ago you last visited that location
+- The Tavern now displays to you how many rumors you received so far
 - Distance text in rumors and contracts now display the tile distance range in brackets
 - World Parties with champions will display an orange skull on top of their socket
 - Peasants and Caravans on the world map display a banner
@@ -333,10 +344,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - Add new concepts for **Armor Penetration** and **Weight** and apply these concept to existing weapons and items
 - Supplies (Crowns, Tools, Medicine, Ammo) are now consumed instantly after buying, looting
-- Legendary Armor and Armor with an attachement that you un-equip are now automatically marked as to-be-repaired
 - Quiver and Weapons that contain Ammo now display the supply cost for replacing ammunition in them
 - Improve artwork for **Nimble** perk
 - All effects of the difficulty settings are now listed as tooltips during world generation
+- Add Setting for marking named/legendary helmets/armor or armor with attachements as to-be-repaired whenever it enters your inventory
 
 ## Fixes
 

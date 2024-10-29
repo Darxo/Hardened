@@ -58,7 +58,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Prevent cheese where one puts their best bros on the bench in response to a hopeless ambush
 - Rework supply-system: If you max out a supply, all remaining ones stay in the inventory instead of being voided
 - Shield Skill/attack damage prediction (destruction prediction?)
-- prevent/reduce morale cascades and the lags from it
 - AI Logic:
 	- Function for calculating the worth of any single entity
 		- This already exists in Vanilla, just listing it here because it stay in contrast to the danger
@@ -69,11 +68,42 @@ This submod is a collection of changes to Reforged that I suggested internally t
 		- An archer who is in melee is not a huge amount of danger but might still have a lot of "worth" to us, if he is high level or the only enemy archer
 - understand MSU cost prediction and apply it for reworked Leverage
 - make it so multiple NPC bannerman dont stick together and spread out
-- THere is probably a bug rn, where when you load, all armor with upgrades will miss exactly as much armor, as the upgrade would grant it
-	- This has probably to do with the onDeserialize hookTree in item.nut
-- Review Stamina penalty on injuries (temp/perm)
+- new "Unworthy Opponent" effect, that prevents them from granting XP on death. Will be given to reanimated zombies
+- new "Non-Combatant" effect, that prevents them from granting XP and causes them to die automatically once the battle is over
+- improve visibility during night (overlay night color). Instead the A moon could be visible in the top middle
+- Custom Names on enemy Leader and Champions is cool and flavorful, but it gets increasingly confusing as it makes it much harder to identify them correctly. What their base troop is.
+	- Maybe there can be a middle ground. Some custom name but also the original name still alongside
+	- Maybe a Setting can disable custom names on enemies
+- Tooltip about reworked Day-Night-Cycle when hovering over the world map clock
+- Put Anticipation on some enemies with Nimble
+- Hitpoint Mults on some injuries -> Injury Threshold Mult / Damage Dealt Mult / get dazed when hit
+	- grazed_kidney_injury 60%
+	- cut_throat_injury 50%
+	- stabbed_guts_injury 40%
+	- weakened_heart_injury 30%
+- Infrit new skill "Armor as a Weapon": Deal more damage equal to your total remaining armor as a percentage
+- new sfx and icons for "Backup Plan"
+- expirable potions (so you are forced to use them and so they can be sold/given out more frequently)
 
 # Changes:
+
+0.13.0
+	- **Bestial Vigor** is completely reworked. It is now called **Backup Plan** and grants the skill **Backup Plan** which can be used once per battle to recover 7 Action Points and disable all Attack-Skills for the rest of this turn. It has been removed from the **Wildling** perk group and added to the **Tactician** perk group at Tier 2
+	- **Blitzkrieg** now costs 9 Action Points (up from 7), 50 Fatigue (up from 30), no longer requires 10 usable fatigue on the targets. It no longer has a shared cooldown. It is now limited to being used once per battle instead of once per day
+	- **Hold Steady** now costs 8 Action Points (up from 7), 40 Fatigue (up from 30). It no longer has a shared cooldown
+	- **Onslaught** no longer has a shared cooldown
+	- **Crushed Windpipe** Injury and **Collapsed Lung** permanent Injury no longer reduce the Stamina of the character. Instead they now disable the use of **Recover**
+	- **Pierced Lung** Injury now reduces Stamina by 30% (down from 60%) and disables the use of **Recover**
+	- Dying or Fleeing characters no longer trigger negative morale checks for their allies if the distance between them is greater than the vision of the receiving ally
+	- **Barbarian Thralls** spawn more often with crude javelins instead of regular throwing weapons
+	- The **Orc Slayer** and **Crusader** (temporary Crisis backgrounds) now share 100% of their experience with your remaining party, when they leave you after the Crisis ended
+	- The Tavern now displays to you how many rumors you received so far
+	- **Exploit Opening** now displays the amount of stacks behind the name in brackets
+	- **Bloodlust** no longer displays an effect icon or mini icon
+	- Add QoL setting for marking named/legendary helmets/armor or armor with attachements as to-be-repaired whenever it enters your inventory
+	- Add QoL setting for making the hotkeys for **Wait** fire continuously, instead of only when released
+	- Fix fleeing from a caravan contract not stunning the attacker correctly and forcing you into a fight with them anyways
+	- Fix Stamina hyperlinks in **Brawny** and **Wears it Well** perks
 
 0.12.1
 	- **Concussive strikes** is completely reworked. It is now called **Shockwave** and it makes it so your kills or stuns with maces will daze all enemies adjacent to your target for 1 turn
