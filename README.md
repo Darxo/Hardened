@@ -53,9 +53,9 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - Throwing regular **Throwing Weapons** now cost 15 Fatigue (up from 10 for Axes, 14 for Javelins and 12 for Bolas), just like in Vanilla
 - Throwing **Heavy Throwing Weapons** now costs 5 Action Points (up from 4) and 18 Fatigue (up from 15)
 - Throwing **Crude Javelins** now costs 5 Action Points (up from 4)
-- **Heavy Javelin** now deal 40-50 Damage (up from 35-50), have 85% Armor Damage (up from 80%), have +0% Hitchance (up from -5%), 4 Maximum Ammo (down from 5), 0 Weight (down from 8), 4 Weight per Ammo, 4 Ammo Cost (up from 3) and a value of 500 (up from 300)
+- **Heavy Javelin** now deal 40-50 Damage (up from 35-50), have 85% Armor Damage (up from 80%), have +0% Hitchance (up from -5%), 4 Maximum Ammo (down from 5), 0 Weight (down from 8), 3 Weight per Ammo, 4 Ammo Cost (up from 3) and a value of 500 (up from 300)
 - **Heavy Throwing Axes** now deal 45-60 Damage (up from 30-50), have 120% Armor Damage (up from 115%), have -10% Hitchance (down from -5%), +10% Headshot Chance (up from +5%), 4 Maximum Ammo (down from 5), 0 Weight (down from 8), 3 Weight per Ammo and a value of 600 (up from 300)
-- **Bolas** now deal 25-40 Damage (up from 20-35), has 0 Weight (down from 3), 1.5 Weight per Ammo and a value of 300 (up from 150)
+- **Bolas** now deal 25-40 Damage (up from 20-35), have 0 Weight (down from 3), 1.5 Weight per Ammo and a value of 300 (up from 150)
 - **Crude Javelins** now deal 35-45 Damage (up from 30-40), have 4 Maximum Ammo (down from 5), 0 Weight (down from 8) and 3 Weight per Ammo
 - **Javelins** now deal 35-45 Damage (up from 30-45), have 0 Weight (down from 6), 2 Weight per Ammo and a value of 350 (up from 200)
 - **Throwing Axes** now deal 35-50 Damage (up from 30-50), have -10% Hitchance (down from +0%), +10% Headshot Chance (up from +5%), 0 Weight (down from 4), 2 Weight per Ammo and a value of 400 (up from 200)
@@ -109,21 +109,21 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack
 - **Sprint** now costs 1 Action Point (up from 0) but no longer increases the fatigue cost per tile while sprinting
 - **Stab** now costs 3 Action Points (down from 4)
-- **Lunge** now have -10% Hitchance bonus (up from -20%)
-- **Sword Thrust** now has -10% Hitchance bonus (up from -20%)
+- **Lunge** now have -10% additional Hitchance (up from -20%)
+- **Sword Thrust** now has -10% additional Hitchance (up from -20%)
 
 Skill nerfs as a result of the Reach system:
-- **Lightbringer** now has 0% Hitchance bonus (down from 10%)
-- **Thrust** now has 0% Hitchance bonus (down from 10%)
-- **Slash** now has 0% Hitchance bonus (down from 5%)
-- **Gash** now has 0% Hitchance bonus (down from 5%)
-- **Overhead Strike** now has 0% Hitchance bonus (down from 5%)
-- **Swing** now has -10% Hitchance bonus (down from -5%)
-- **Split** now has -10% Hitchance bonus (down from -5%)
-- **Impale** now has 0% Hitchance bonus (down from 10%)
-- **Prong** now has 0% Hitchance bonus (down from 10%)
-- **Rupture** now has 0% Hitchance bonus (down from 5%)
-- **Strike** now has 0% Hitchance bonus (down from 5%)
+- **Lightbringer** now has 0% additional Hitchance (down from 10%)
+- **Thrust** now has 0% additional Hitchance (down from 10%)
+- **Slash** now has 0% additional Hitchance (down from 5%)
+- **Gash** now has 0% additional Hitchance (down from 5%)
+- **Overhead Strike** now has 0% additional Hitchance (down from 5%)
+- **Swing** now has -10% additional Hitchance (down from -5%)
+- **Split** now has -10% additional Hitchance (down from -5%)
+- **Impale** now has 0% additional Hitchance (down from 10%)
+- **Prong** now has 0% additional Hitchance (down from 10%)
+- **Rupture** now has 0% additional Hitchance (down from 5%)
+- **Strike** now has 0% additional Hitchance (down from 5%)
 
 ### Perks
 
@@ -132,26 +132,25 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Anticipation** now also proccs whenever your shield takes damage from an attack
 - **Axe Mastery** no longer grants **Hook Shield**. It now causes **Split Shield** to apply **Dazed** for 1 turn
 - **Bags and Belts** now also includes two-handed weapons but no longer grants Initiative
-- **Battle Forged** no longer has any prerequisites. You can pick it alongside **Nimble** or **Poise**
+- **Battle Forged** no longer has any prerequisites. It no longer provide any Reach Ignore
+- **Between the Ribs** no longer requires the attack to be of piercing type. It now also lowers your chance to hit the head by 10% for each surrounding character
 - **Bloodlust** is completely reworked. It now grants 10% more damage against bleeding enemies and makes you receive 10% less damage from bleeding enemies
 - **Bolster** now requires a Polearm equipped, instead of any weapon with a Reach of 6 or more
 - **Bullseye** no longer reduces the penalty for shooting behind cover. It also no longer works with **Take Aim**
-- **Concussive strikes** is completely reworked. It is now called **Shockwave** and it makes it so your kills or stuns with maces will daze all enemies adjacent to your target for 1 turn
-- **Dodge** now grants 4% of Initiative as extra Melee Defense and Ranged Defense for every empty adjacent tile (down from always 15%)
-- **Duelist** is completely reworked. It now only works for one-handed weapons. It grants 30% Armor Penetration and +2 Reach while adjacent to 0 or 1 enemies and it grants 15% Armor Penetration and +1 Reach while adjacent to 2 enemies
-- **Fortified Mind** now grants 30% more Resolve (up from 25%). This Bonus is now reduces by 1% for each point of Weight on your Helmet
-- **Battle Forged** no longer provide any Reach Ignore
-- **Between the Ribs** no longer requires the attack to be of piercing type. It now also lowers your chance to hit the head by 10% for each surrounding character
 - **Brawny** no longer grants Initiative
+- **Concussive strikes** is completely reworked. It is now called **Shockwave** and it makes it so your kills or stuns with maces will daze all enemies adjacent to your target for 1 turn
 - **Dagger Mastery** now allows free swapping of any items once per turn (while a dagger is equipped)
 - **Dismantle** has been completely reworked. It now grants +40% Armor Damage and 100% more Shield Damage against enemies who have full health.
 - **Dismemberment** no longer causes any morale checks. It now grants +20% chance to hit the body part with the most temporary injuries
+- **Dodge** now grants 4% of Initiative as extra Melee Defense and Ranged Defense for every empty adjacent tile (down from always 15%)
+- **Duelist** is completely reworked. It now only works for one-handed weapons. It grants 30% Armor Penetration and +2 Reach while adjacent to 0 or 1 enemies and it grants 15% Armor Penetration and +1 Reach while adjacent to 2 enemies
 - **En Garde** is completely reworked. It now grants +15 Melee Skill while it is not your turn. It also makes it so **Riposte** is no longer disabled when you get hit or deal a counter attack (so like in Vanilla)
 - **Entrenched** has been completely reworked. It now grants +5 Resolve per adjacent ally, +5 Ranged Defense per adjacent obstacle and 15% more Ranged Skill if at least 3 adjacent tiles are allies or obstacles
 - **Exploit Opening** is completely reworked. It now grants a stacking +10% chance to hit whenever an opponent misses an attack against you. Bonus is reset upon landing a hit (just like Fast Adaptation)
 - **Fencer** no longer grants +10% chance to hit or 20% less fatigue cost. It now causes your fencing swords to lose 50% less durability
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy
 - **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you
+- **Fortified Mind** now grants 30% more Resolve (up from 25%). This Bonus is now reduces by 1% for each point of Weight on your Helmet
 - **Fresh and Furious** now has a fatigue threshold of 50% (up from 30%). It now checks your fatige when you end your turn, instead of at the start of your turn
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
 - **Hybridization** is completely reworked. It still grants 10% of your base Ranged Skill as Melee Skill/Defense. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type hits to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 50% more damage to shields
