@@ -8,4 +8,8 @@
 
 ::include("mod_hardened/global_helper_functions");
 
-::includeFiles(::IO.enumerateFiles("mod_hardened/hooks"));		// This will load and execute all hooks that you created
+// API Hooks
+::includeFiles(::IO.enumerateFiles("mod_hardened/api"));
+
+// Regular Hooks
+::includeFiles(::IO.enumerateFiles("mod_hardened/hooks"));
