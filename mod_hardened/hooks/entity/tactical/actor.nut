@@ -3,7 +3,7 @@
 	q.m.StaminaMin <- 10;	// This actor can never have less than this amount of Stamina
 
 	// Private
-	q.m.GrantsXPOnDeath <- true;
+	q.m.GrantsXPOnDeath <- true;	// After initialisation this should ideally only ever be set in one direction (to false)
 
 	q.onInit = @(__original) function()
 	{

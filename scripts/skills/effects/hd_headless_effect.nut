@@ -8,6 +8,7 @@ this.hd_headless_effect <- ::inherit("scripts/skills/skill", {
 		this.m.Description = "This character has no head.";
 		this.m.Icon = "skills/hd_headless_effect.png";
 		this.m.Type = ::Const.SkillType.StatusEffect;
+		this.m.IsSerialized = false;
 	}
 
 	function onUpdate( _properties )

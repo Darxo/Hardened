@@ -2,7 +2,6 @@
 	q.m.DamageTotalMult <- 0.80;
 	q.m.InitiativeMult <- 0.65;
 
-	// Overwrite of Vanilla function to stop its effects and apply our own
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
