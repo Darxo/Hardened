@@ -50,6 +50,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 ### Throwing Weapon Rework
 
+- Throwing Weapons now have a minimum attack range of 1, just like all other ranged attacks
 - Throwing regular **Throwing Weapons** now cost 15 Fatigue (up from 10 for Axes, 14 for Javelins and 12 for Bolas), just like in Vanilla
 - Throwing **Heavy Throwing Weapons** now costs 5 Action Points (up from 4) and 18 Fatigue (up from 15)
 - Throwing **Crude Javelins** now costs 5 Action Points (up from 4)
@@ -104,9 +105,11 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
+- **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (up from 50%)
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack
+- **Spider Poison** now also reduces the Hitpoints Recovery of the target by 50%
 - **Sprint** now costs 1 Action Point (up from 0) but no longer increases the fatigue cost per tile while sprinting
 - **Stab** now costs 3 Action Points (down from 4)
 - **Lunge** now have -10% additional Hitchance (up from -20%)
@@ -198,6 +201,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Steelbrow** is now Tier 2 of the **Vigorous** perk group (was Tier 2 in **Tough** before)
 - **Student** is now available for everyone
 - **Vigorous Assault** is no longer part of **Swift Strikes** group
+- **Knave** no longer guarantees the **Dagger** perk group. Now it is just twice as likely
+- **Wildling** no longer prevents the perk groups **Ranged**, **Gifted** and **Leadership** from appearing
 
 ### Backgrounds
 
@@ -289,6 +294,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Enemy AI
 - Enemy archers are 66% less likely to target someone because of how many potential scatter targets are adjacent
+- Necrosavants are a bit more likely to stay on the same tile and attack twice, rather than teleport to a slightly better tile
 - Improve AI targeting for throwing nets: They value the targets melee defense twice as much. They now also value the targets initiative and prefer isolated targets.
 - AI is now twice as likely to throw a net or use a throwing pot/bomb while adjacent to an enemy
 
@@ -302,6 +308,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - All player characters now have +1 Action Point during AutoRetreat
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
 - **Swamp** tiles no longer reduce Melee Skill by 25%. Instead they now reduce Initiative by 25%
+- The **Hidden** effect (granted by certain tiles) now also provides +10 Ranged Defense
 - Encumbrance no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level.
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied.
 - Dying or Fleeing characters no longer trigger negative morale checks for their allies if the distance between them is greater than the vision of the receiving ally
@@ -322,6 +329,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - Your headshot chance is now displayed in the combat tooltip when targeting enemies
 - Introduce a new **Headless** effect, which sets the headarmor to 0 and redirects any attack to hit the body and grants immunity to **Distracted**. Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles receive this new effect
+- Introduce a new **Unworthy Opponent** effect which prevents the character from granting experience on death, and give it to enemies which do not grant experience
+- Introduce a new cosmetic **Non-Combatant**, to non-combatant enemies, which explains that they do not need to be killed in order to win
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back
 - **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
@@ -360,6 +369,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - You can no longer do two Arenas during the same day
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
 - Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
+- Hitpoints recovery on brothers is now more accurate (The Cook Follower now actually increases the hitpoint recovery)
 - Bandaging allies now updates their overlay ui correctly
 - Brothers no longer gain any XP when allies die
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
@@ -395,6 +405,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - `ShieldDamageReceivedMult` multiplies incoming shield damage up to a minimum of 1
 - `WeightStaminaMult` is an array of multipliers, mirroring `::Const.ItemSlotSpaces`, which control how much the Weight of each Itemslot affects this characters Stamina
 - `WeightInitiativeMult` is an array of multipliers, mirroring `::Const.ItemSlotSpaces`, which control how much the Weight of each Itemslot affects this characters Initiative
+- `HitpointRecoveryMult` multiplies to anything that would add a flat amount of hitpoints to the characters
 
 # Requirements
 
@@ -411,6 +422,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Is safe to remove from- and add to any savegame
 - Removing or adding this mod will not update existing perk trees. Only after some days you will encounter brothers with the changed perk trees
 - Removing this mod will replace **Parry** with the vanilla perk **Reach Advantage**
+
+## Incompatible with
+- [**Cook and Blacksmith Fix**](https://www.nexusmods.com/battlebrothers/mods/668): Hardened ships its own fix for the cook. Though it does not fix the Blacksmith (yet?)
 
 # License
 

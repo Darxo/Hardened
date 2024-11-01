@@ -21,7 +21,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Hide information about enemy composition on the battle field
 - certain unholds/high end orcs being able to throw their own allies behind their back in order to advance into tight spaces
 - change handgonne aoe pattern in some directions to a triangle
-- Rebalance SpiderEgg hunting? Give them XP/Loot?
+- Rebalance SpiderEgg hunting? Give them Loot?
 - Rebalance enemy skills/perks considering hardened reworks
 - Fix orcs sometimes using charge, even though they decided to give up
 - gambeson coloring
@@ -32,8 +32,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - make alps more smart on overworld (stalk player during day)
 - prevent allied parties from following you, just because you are being targeted by their allies. Sometimes mercenary companies/nobles think they can/should attack you but you are still allied
 - Make raider playstyle more sufficient by giving caravans consistent tool loot
-- Poison reduce recovery rate
-- New Non-Combatant effect, that signalises that an enemy has no regular turn, grants no exp (as per design of Hardened) and is not required to be killed in order to win the battle
 - fix bottom left nimble perk icon
 - Fix weapons that lost hitchance bonus for some of their skills. Goedendag Cudgel is now almost alwasy the best choice
 - Maybe remove the replacement of Brawny, Colossus and Fortified Mind on NPCs. Hardened has stepped away from these perks and mods might introduce new secondary effects on them?
@@ -51,7 +49,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Display mood icon during events (Turn that sprite visible / rendertotexture to false/true?)
 - Prevent AI from shieldwalling when its the only one left (unless they have rebuke/riposte)
 - Scrapper-Retinue member making it so armor damage above a certain threshold (e.g. at least 50 per hit) produces tools. But
-- Add more exclusive groups to various Backgrounds
+- Add more exclusive groups to various Background
 - New AI Behavior for Shield Seargeant (Includes current shield skills and scans for each whether allies profit from it too)
 - Add information in Docs that Anatomist and Oathtaker are unsupported
 - Switch Cheap Trick and Hidden Pockets
@@ -68,8 +66,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 		- An archer who is in melee is not a huge amount of danger but might still have a lot of "worth" to us, if he is high level or the only enemy archer
 - understand MSU cost prediction and apply it for reworked Leverage
 - make it so multiple NPC bannerman dont stick together and spread out
-- new "Unworthy Opponent" effect, that prevents them from granting XP on death. Will be given to reanimated zombies
-- new "Non-Combatant" effect, that prevents them from granting XP and causes them to die automatically once the battle is over
 - improve visibility during night (overlay night color). Instead the A moon could be visible in the top middle
 - Custom Names on enemy Leader and Champions is cool and flavorful, but it gets increasingly confusing as it makes it much harder to identify them correctly. What their base troop is.
 	- Maybe there can be a middle ground. Some custom name but also the original name still alongside
@@ -84,8 +80,28 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Infrit new skill "Armor as a Weapon": Deal more damage equal to your total remaining armor as a percentage
 - new sfx and icons for "Backup Plan"
 - expirable potions (so you are forced to use them and so they can be sold/given out more frequently)
+- show disabled ports (e.g. during noble or southern/northern crisis; or because of situations)
+- Make it so wait can not be used if you have less than half of your AP remaining
+- Make certain items unsellable
+- Play around with getQueryTargetMultAsUser function from modular Vanilla PR
+
+- Move huge chunks of the hooks over to the API section
 
 # Changes:
+
+0.13.1
+	- The **Wildling** perk group no longer prevents the perk groups **Ranged**, **Gifted** and **Leadership** from appearing
+	- The **Knave** perk group no longer guarantees the **Dagger** perk group. Now it is just twice as likely
+	- Throwing weapons now have a minimum attack range of 1, just like all other ranged attacks
+	- **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (up from 50%)
+	- Spider Poison now reduces the Hitpoints Recovery of the target by 50%
+	- The **Hidden** effect (hiding in tall grass) now also provides +10 Ranged Defense
+	- Add new **Unworthy Opponent** effect to some NPCs (Donkey, Mortar, Spider Eggs, reanimated Zombies, etc.) which prevents them from granting experience when they die
+	- Add new **Non-Combatant** effect to non-combatant enemies, which explains that they do not need to be killed in order to win
+	- Reduce the chance that Necrosavants teleport to a tile that is only slightly better than their current one
+	- Introduce new 'HitpointRecoveryMult' property for characters
+	- Fix (Vanilla) hitpoint recovery on brothers being inconsistent during camping and when using the cook follower
+	- This mod is now incompatible with the **Cook and Blacksmith Fix** mod
 
 0.13.0
 	- **Bestial Vigor** is completely reworked. It is now called **Backup Plan** and grants the skill **Backup Plan** which can be used once per battle to recover 7 Action Points and disable all Attack-Skills for the rest of this turn. It has been removed from the **Wildling** perk group and added to the **Tactician** perk group at Tier 2
