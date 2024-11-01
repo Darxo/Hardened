@@ -127,6 +127,11 @@
 		{
 			this.getSkills().add(::new("scripts/skills/effects/hd_unworthy_opponent_effect"));	// Every NPC who grants 0 XP now gains this effect to showcase that fact
 		}
+
+		if (this.m.IsNonCombatant)
+		{
+			this.getSkills().add(::new("scripts/skills/special/hd_non_combatant_effect"));	// Every NPC who is a non combatant now gains this effect to showcase that fact
+		}
 	}
 
 // New Functions
