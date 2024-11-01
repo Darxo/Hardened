@@ -15,3 +15,6 @@
 
 // Throwables
 ::Const.AI.Behavior.OffhandDiscardDoubleGripMult <- 2.0;	// When we consider using an offhand item while we are engaged in melee considering that using it would active double grip
+
+// Make it more likely that necrosavants stay on the same tile to utilize 2 attack
+::Const.AI.Behavior.DarkflightStayOnTileBonus = 4.0;	// In Vanilla this is 2.5
