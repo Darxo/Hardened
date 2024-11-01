@@ -119,6 +119,16 @@
 		return ::Math.round(initiative);
 	}
 
+// Reforged Events
+	q.onSpawned = @(__original) function()
+	{
+		__original();
+		if (this.m.XP == 0 && !this.isPlayerControlled())
+		{
+			this.getSkills().add(::new("scripts/skills/effects/hd_unworthy_opponent_effect"));	// Every NPC who grants 0 XP now gains this effect to showcase that fact
+		}
+	}
+
 // New Functions
 	q.getStamina <- function()
 	{
