@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/actor", function(q) {
+	q.m.HD_recoveredHitpointsOverflow <- 0.0;	// float between 0.0 and 1.0. Is not deserialized, meaning that we lose a tiny bit hitpoint recovery when saving/loading often
+
 	q.setHitpoints = @(__original) function( _newHitpoints )
 	{
 		// We redirect any positive changes to the hitpoints to use recoverHitpoints and therefor be affected by the new 'HitpointRecoveryMult' property
@@ -15,26 +17,31 @@
 // New Utility Functions:
 	// Recover hitpoints up to the maximum and return the amount of hitpoints that were recovered
 	// _hitpoints are being scaled by the character property 'HitpointRecoveryMult'
+	// @return amount of hitpoints recovered
 	q.recoverHitpoints <- function( _hitpointsToRecover, _printLog = false )
 	{
 		if (_hitpointsToRecover <= 0.0) return 0;
 		if (this.getHitpoints() == this.getHitpointsMax()) return 0;
 
-		_hitpointsToRecover = ::Math.round(_hitpointsToRecover * this.getCurrentProperties().HitpointRecoveryMult);
+		_hitpointsToRecover = _hitpointsToRecover * this.getCurrentProperties().HitpointRecoveryMult;
+		_hitpointsToRecover += this.m.HD_recoveredHitpointsOverflow;
+
+		local flooredRecoveredHitpoints = ::Math.floor(_hitpointsToRecover);
+		this.m.HD_recoveredHitpointsOverflow = _hitpointsToRecover - flooredRecoveredHitpoints;
 
 		// Never recover more hitpoints than the maximum hitpoints
-		_hitpointsToRecover = ::Math.min(_hitpointsToRecover, this.getHitpointsMax() - this.getHitpoints());
+		flooredRecoveredHitpoints = ::Math.min(flooredRecoveredHitpoints, this.getHitpointsMax() - this.getHitpoints());
 
-		this.m.Hitpoints = ::Math.round(this.getHitpoints() + _hitpointsToRecover);
+		this.m.Hitpoints = this.getHitpoints() + flooredRecoveredHitpoints;
 
-		if (_printLog && ::MSU.Utils.hasState("tactical_state") && _hitpointsToRecover > 0 && this.isPlacedOnMap() && !this.isHiddenToPlayer())
+		if (_printLog && ::MSU.Utils.hasState("tactical_state") && flooredRecoveredHitpoints > 0 && this.isPlacedOnMap() && !this.isHiddenToPlayer())
 		{
-			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + " recovers " + ::MSU.Text.colorGreen(_hitpointsToRecover) + " Hitpoints");
+			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + " recovers " + ::MSU.Text.colorGreen(flooredRecoveredHitpoints) + " Hitpoints");
 		}
 
 		this.onUpdateInjuryLayer();
 
-		return _hitpointsToRecover;
+		return flooredRecoveredHitpoints;
 	}
 
 	// Private function only meant for converting instances of vanilla hitpoint recovery to utilize our new system
