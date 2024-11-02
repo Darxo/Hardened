@@ -9,7 +9,7 @@
 
 ::Hardened.HooksMod <- ::Hooks.register(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
 ::Hardened.HooksMod.require(["mod_reforged"]);
-::Reforged.HooksMod.conflictWith(
+::Hardened.HooksMod.conflictWith(
 	"mod_heal_repair_fix"	// We already fix the cook and camping recovery, so using both mods together is undefined behavior. Unfortunately we don't fix the blacksmith
 );
 
