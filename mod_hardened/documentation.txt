@@ -89,6 +89,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Changes:
 
+0.13.2
+	- Fix mod being completely broken
+
 0.13.1
 	- The **Wildling** perk group no longer prevents the perk groups **Ranged**, **Gifted** and **Leadership** from appearing
 	- The **Knave** perk group no longer guarantees the **Dagger** perk group. Now it is just twice as likely
