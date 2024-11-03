@@ -660,6 +660,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_professional",
+		Key = "RF_Professional",
+		Description = ::UPD.getDescription({
+			Fluff = "I know what I\'m doing, I\'m a professional.",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain the first two [perks|Concept.Perk] in a random melee perk group that you have access to",
+					"Gain " + ::MSU.Text.colorNegative("5%") + " less [Experience|Concept.Experience]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_offhand_training",
 		Key = "RF_OffhandTraining",
 		Description = ::UPD.getDescription({
