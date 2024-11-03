@@ -1,10 +1,4 @@
 ::Hardened.HooksMod.hookTree("scripts/items/item", function(q) {
-	q.create = @(__original) function()
-	{
-		__original();
-		this.m.Condition = ::Math.minf(this.m.Condition, this.m.ConditionMax);	// Prevent Condition from ever being larger than ConditionMax
-	}
-
 	// We replace the vanilla weight tooltip on all items with a more descriptive and hyperlinked term
 	q.getTooltip = @(__original) function()
 	{
