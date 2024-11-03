@@ -1,5 +1,4 @@
-::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/schrat_small", function(q) {
-
+::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/zombie_knight", function(q) {
 	q.onResurrected = @(__original) function( _info)
 	{
 		__original(_info);
@@ -7,5 +6,12 @@
 		{
 			this.getSkills().add(::new("scripts/skills/effects/hd_headless_effect"));
 		}
+	}
+
+	q.assignRandomEquipment = @(__original) function()
+	{
+		__original();
+		::Hardened.util.replaceMainhand(this, "scripts/items/weapons/winged_mace", ["weapon.morning_star"]);
+		::Hardened.util.replaceMainhand(this, "scripts/items/weapons/fighting_axe", ["weapon.hand_axe"]);
 	}
 });
