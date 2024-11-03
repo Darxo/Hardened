@@ -35,5 +35,6 @@
 		{
 			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " anticipated the attack of " + ::Const.UI.getColorizedEntityName(_attacker) + " on their shield, reducing incomding damage by " + ::MSU.Text.colorPositive(this.m.TempDamageReduction + "%"));
 		}
+		this.getContainer().getActor().setDirty(true);
 	}
 });
