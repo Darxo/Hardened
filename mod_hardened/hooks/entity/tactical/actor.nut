@@ -2,9 +2,6 @@
 	// Public
 	q.m.StaminaMin <- 10;	// This actor can never have less than this amount of Stamina
 
-	// Private
-	q.m.GrantsXPOnDeath <- true;	// After initialisation this should ideally only ever be set in one direction (to false)
-
 	q.onInit = @(__original) function()
 	{
 		__original();
@@ -37,29 +34,11 @@
 		__original(_type, _volume, _pitch = 1.0);
 	}
 
-	q.hasZoneOfControl = @(__original) function()
-	{
-		return __original() && this.getCurrentProperties().CanExertZoneOfControl;
-	}
-
 	// For Vanilla you'd hook onActorKilled on player.nut. But Reforged moved the exp calculation over into the onDeath of actor.nut
 	q.onDeath = @(__original) function( _killer, _skill, _tile, _fatalityType )
 	{
-		local lootTile = _tile;
-		if (lootTile == null && this.isPlacedOnMap()) lootTile = this.getTile();
-		if (lootTile != null)
-		{
-			foreach (item in this.getDroppedLoot(_killer, _skill, _fatalityType))
-			{
-				item.drop(lootTile);
-			}
-		}
-
 		local oldGlobalXPMult = ::Const.Combat.GlobalXPMult;
-		if (this.isAlliedWithPlayer() || !this.m.GrantsXPOnDeath)
-		{
-			::Const.Combat.GlobalXPMult = 0;	// The player no longer gains any experience when allies are dying
-		}
+		if (this.isAlliedWithPlayer()) ::Const.Combat.GlobalXPMult = 0;	// The player no longer gains any experience when allies are dying
 
 		__original(_killer, _skill, _tile, _fatalityType);
 
@@ -134,7 +113,9 @@
 		}
 	}
 
-// New Functions
+// New Getter
+	// Return the Stamina of this character utilizing the new Hardened formula
+	// @return Stamina (Maximum Fatigue) of this character
 	q.getStamina <- function()
 	{
 		local stamina = this.getCurrentProperties().getStamina();
@@ -170,43 +151,5 @@
 			}
 		}
 		return ::Math.round(initiativeModifier);
-	}
-
-	/*
-	Try to recover up to _amount Action Points
-	@param _printLog if true, print a combat log entry stating how many Action Points were recovered
-	@param _canExceedMaximum if true, then the maximum Action Points can be exceeded.
-		Note: This only makes sense if you also increase the maximum action points with that same skill, otherwise they can clamped again during the next onUpdate loop
-	@return actual amount of ActionPoints recovered
-	*/
-	q.recoverActionPoints <- function( _amount, _printLog = true, _canExceedMaximum = false )
-	{
-		if (_amount <= 0) return;
-
-		local oldActionPoints = this.getActionPoints();
-
-		if (_canExceedMaximum)
-		{
-			this.setActionPoints(this.getActionPoints() + _amount);
-		}
-		else
-		{
-			this.setActionPoints(::Math.min(this.getActionPointsMax(), this.getActionPoints() + _amount));
-		}
-
-		local recoveredActionPoints = this.getActionPoints() - oldActionPoints;
-		if (_printLog && recoveredActionPoints > 0 && this.isPlacedOnMap() && this.getTile().IsVisibleForPlayer)
-		{
-			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + " recovers " + ::MSU.Text.colorGreen(recoveredActionPoints) + " Action Points");
-		}
-
-		return recoveredActionPoints;
-	}
-
-// New Events
-	// This is called just before onDeath of this entity is called
-	q.getDroppedLoot <- function( _killer, _skill, _fatalityType )
-	{
-		return [];
 	}
 });
