@@ -1,4 +1,3 @@
-::include("mod_hardened/hooks/msu");	// This file needs priority as it contains new global functions
 ::include("mod_hardened/msu_settings");		// generate all msu mod settings
 
 ::include("mod_hardened/msu_settings");
