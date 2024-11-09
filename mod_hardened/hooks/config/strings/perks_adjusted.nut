@@ -106,8 +106,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("30%") + " more [Resolve|Concept.Bravery]",
-					"This Bonus is reduced by " + ::MSU.Text.colorNegative("1%") + " for each [Weight|Concept.Weight] on your Helmet",
+					"Gain " + ::MSU.Text.colorPositive("+30") + " [Resolve|Concept.Bravery]",
+					"Lose [Resolve|Concept.Bravery] equal to the [Weight|Concept.Weight] of your Helmet",
 				],
 			}],
 		}),

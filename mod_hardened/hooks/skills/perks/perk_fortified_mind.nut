@@ -1,12 +1,16 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_fortified_mind", function(q) {
-	q.m.BaseResolveMult <- 1.3;
-	q.m.ResolveModifierPerWeight <- -0.01;
+	q.m.ResolveModifier <- 30;
+	q.m.ResolveModifierPerWeight <- -1;
 
-	q.onUpdate = @() function( _properties )
+	q.onUpdate = @(__original) function( _properties )
 	{
-		local helmetWeight = ::Math.max(0, this.getContainer().getActor().getItems().getWeight([::Const.ItemSlot.Head]));
-		local resolveMult = ::Math.maxf(1.0, this.m.BaseResolveMult + (this.m.ResolveModifierPerWeight * helmetWeight));
-		_properties.BraveryMult *= resolveMult;
+		// Fortified Mind no longer applies any BraveryMult
+		local oldBraveryMult = _properties.BraveryMult;
+		__original(_properties);
+		_properties.BraveryMult = oldBraveryMult;
+
+		// Now we apply our own resolve adjustment
+		_properties.Bravery += this.getResolveModifier();
 	}
 
 	// QOL: Reduce perk bloat on NPCs by replacing static perks with roughly the same amount of baes stats
@@ -16,8 +20,17 @@
 		local actor = this.getContainer().getActor();
 		if (actor.getFaction() != ::Const.Faction.Player)
 		{
-			actor.m.BaseProperties.BraveryMult *= 1.25;
+			actor.m.BaseProperties.Bravery += this.m.ResolveModifier - 10;	// Abstraction for the average helmet that is expected
 			this.removeSelf();
 		}
+	}
+
+// New Functions
+	q.getResolveModifier <- function()
+	{
+		local resolveModifier = this.m.ResolveModifier;
+		local helmetWeight = this.getContainer().getActor().getItems().getWeight([::Const.ItemSlot.Head]);
+		resolveModifier += helmetWeight * this.m.ResolveModifierPerWeight;
+		return resolveModifier;
 	}
 });
