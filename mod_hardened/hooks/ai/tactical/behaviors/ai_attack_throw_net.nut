@@ -14,6 +14,11 @@
 
 		if (ret != ::Const.AI.Behavior.Score.Zero)	// We need the ret != null check because onEvaluate is a generator
 		{
+			if (this.getStrategy().isDefending())
+			{
+				return ::Const.AI.Behavior.Score.Zero;	// Never throw net prematurely while your faction is still defending
+			}
+
 			foreach (opponent in this.getStrategy().getKnownOpponents())
 			{
 				local targetDistance = _entity.getTile().getDistanceTo(opponent.Actor.getTile());
