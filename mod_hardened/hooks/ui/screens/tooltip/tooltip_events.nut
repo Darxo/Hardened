@@ -47,6 +47,18 @@
 		if (ret != null)
 		{
 			local lastTileHovered = ::Tactical.State.getLastTileHovered();
+			if (lastTileHovered.IsCorpseSpawned)
+			{
+				local corpse = lastTileHovered.Properties.get("Corpse");
+				foreach (entry in ret)
+				{
+					if ("id" in entry && entry.id == 3 && "RoundAdded" in corpse)
+					{
+						entry.text = corpse.CorpseName + " was slain here on round " + corpse.RoundAdded;
+					}
+				}
+			}
+
 			// Straight up copy of vanilla condition. I didnt bother rewriting/inverting it yet
 			if (lastTileHovered.IsDiscovered && !lastTileHovered.IsEmpty && (!lastTileHovered.IsOccupiedByActor || lastTileHovered.IsVisibleForPlayer))
 			{
