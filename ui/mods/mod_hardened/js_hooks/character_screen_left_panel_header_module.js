@@ -47,3 +47,11 @@ CharacterScreenLeftPanelHeaderModule.prototype.createDIV = function (_parentDiv)
 	}, 'display-none', 6);
 }
 
+Hardened.Hooks.CharacterScreenLeftPanelHeaderModule_updateControls = CharacterScreenLeftPanelHeaderModule.prototype.updateControls;
+CharacterScreenLeftPanelHeaderModule.prototype.updateControls = function (_data)
+{
+	Hardened.Hooks.CharacterScreenLeftPanelHeaderModule_updateControls.call(this, _data);
+
+	this.mXPProgressbar.unbindTooltip();
+	this.mXPProgressbar.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.LeftPanelHeaderModule.Experience, entityId: _data['id'] });
+};

@@ -35,6 +35,23 @@
 				});
 				return ret;
 			}
+
+			case "character-screen.left-panel-header-module.Experience":
+			{
+				local entity = _entityId == null ? null : ::Tactical.getEntityByID(_entityId);
+				if (entity != null && entity != ::MSU.getDummyPlayer())
+				{
+					ret.extend([
+						{
+							id = 3,
+							type = "text",
+							icon = "/ui/icons/xp_received.png",
+							text = "Current XP Mult: " + ::MSU.Text.colorizePct(entity.getXPMult(), {CompareTo = 1.0}),
+						},
+					]);
+				}
+				return ret;
+			}
 		}
 
 		return ret;
