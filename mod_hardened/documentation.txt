@@ -33,7 +33,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - prevent allied parties from following you, just because you are being targeted by their allies. Sometimes mercenary companies/nobles think they can/should attack you but you are still allied
 - Make raider playstyle more sufficient by giving caravans consistent tool loot
 - fix bottom left nimble perk icon
-- Fix weapons that lost hitchance bonus for some of their skills. Goedendag Cudgel is now almost alwasy the best choice
 - Maybe remove the replacement of Brawny, Colossus and Fortified Mind on NPCs. Hardened has stepped away from these perks and mods might introduce new secondary effects on them?
 - Make it so ranged troop AI is less likely to be dumb (leave perfectly fine positions)
 	- Often times ranged troops go before their melee army.
@@ -45,10 +44,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - mauler -> replace second effect with 15% more damage when hitting body parts that have no remaining armor
 - make disloyal have more of a downside
 - new T7 ranged perk "Impossible Shot", which reduces ranged skill by your current Ranged Defense and increases Ranged damage by a percentage equal to your
-- Fortified Mind into a flat bonus of 25 or 30. Weight resuces flat
+
 - Display mood icon during events (Turn that sprite visible / rendertotexture to false/true?)
 - Prevent AI from shieldwalling when its the only one left (unless they have rebuke/riposte)
-- Scrapper-Retinue member making it so armor damage above a certain threshold (e.g. at least 50 per hit) produces tools. But
 - Add more exclusive groups to various Background
 - New AI Behavior for Shield Seargeant (Includes current shield skills and scans for each whether allies profit from it too)
 - Add information in Docs that Anatomist and Oathtaker are unsupported
@@ -70,7 +68,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Custom Names on enemy Leader and Champions is cool and flavorful, but it gets increasingly confusing as it makes it much harder to identify them correctly. What their base troop is.
 	- Maybe there can be a middle ground. Some custom name but also the original name still alongside
 	- Maybe a Setting can disable custom names on enemies
-- Tooltip about reworked Day-Night-Cycle when hovering over the world map clock
 - Put Anticipation on some enemies with Nimble
 - Hitpoint Mults on some injuries -> Injury Threshold Mult / Damage Dealt Mult / get dazed when hit
 	- grazed_kidney_injury 60%
@@ -78,16 +75,59 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- stabbed_guts_injury 40%
 	- weakened_heart_injury 30%
 - Infrit new skill "Armor as a Weapon": Deal more damage equal to your total remaining armor as a percentage
-- new sfx and icons for "Backup Plan"
 - expirable potions (so you are forced to use them and so they can be sold/given out more frequently)
-- show disabled ports (e.g. during noble or southern/northern crisis; or because of situations)
 - Make it so wait can not be used if you have less than half of your AP remaining
 - Make certain items unsellable
 - Play around with getQueryTargetMultAsUser function from modular Vanilla PR
+- Savage Strength: Immune to Disarm?
 
-- Move huge chunks of the hooks over to the API section
+- Scrapper-Retinue member making it so armor damage above a certain threshold (e.g. at least 50 per hit) produces tools. But
+- Make "Obtain" quests harder. E.g. by starting in an ambush or by making the location hidden by default
+- Names above locations if you are near them?
+- Look into throwing weapons not producing miss-projectiles correctly when missing, sometimes
+	- Need more evidence
+- nerf ports (to make good maps less reliable on them)
+- usings just fists (empty throwing weapon) with no offhand should also grant 20% fatigue discount (like from double grip)
+- Unwieldy Weapons could lose reach when engage in melee
+	- Currently its very weird that its the best play to switch to a pike before ending your turn to maximize reach during opponents turn
+- Swap Tempo and En Guard
+- Nested Tooltips for faction/city banner to see relation
+- burning damage destroys zombie corpses
+	- Needs more research into how corpse removal affects loot
+	- This is unlikely to affect corpses that are about to be resurrecte, as those arent marked as "consumable"
+
+- sometimes audio is coming from the right or left ear. Maybe if sounds are played quickly after another? Do some tests with audio spawning
+	- This seems to happen with freshly spawned dogs:
+		- The spawn sfx is played correctly in both ears
+		- When its the dogs turn its attack sfx is only played in one ear
+	- I can't reproduce this bug, need more evidence and reproducible steps
+	- In the Vanilla Code I couldn't find an obvious issue on first glance. Probably something todo with the engine
+- Display vision of currently active entity, by outlining border of view field on tiles
 
 # Changes:
+
+0.14.0
+	- **Goedendag** no longer grants **Cudgel**
+	- **Night Effect** now grants -3 Vision (down from -2)
+	- **Night Owl** now grants +2 Vision during night (up from +1)
+	- **Night Blind** now grants -2 Vision during night (down from -1)
+	- **Professional** now reduces the experience gained by 5%
+	- **Fortified Mind** now grants +30 Resolve (previously 30% more Resolve) and you lose Resolve equal to your Helmetweight (previously 1% less per Helmetweight)
+	- Bandit Killer can now become Champions
+	- Introduce new **Bite Reach** effect, which reduces headshot chance by 10% and increases chance to receive headshot by 10%. This effect is given to all Dogs, Wolfs and Hyenas.
+	- Fallen Heroes no longer spawn with Morning Stars or Handaxes
+	- NPCs will no longer throw nets while their strategy is defending
+	- Dismissing a freshly hired recruit (0 days with the company) will skip the confirmation dialog
+	- Add new setting for displaying forbidden destination ports (even when they are hostile to you or the origin port)
+	- Display the current XP Multiplier of the viewed character when hovering over the Experience bar
+	- Add Concept and Tooltip for Day-Night Cycle
+	- Corpses will now display the round, in which they were created
+	- Prevent the same random name to be generated in succession
+	- **Backup Plan** will now play a sfx (same as that for 'new round')
+	- Only show **Entrenched** mini-icon while you have the ranged skill bonus
+	- Split API related hooks into their own folder
+	- Fix fallen heroes not receiving headless effect correctly
+	- Fix **Anticipation** mini icon not being removed correctly when the shield takes damage
 
 0.13.2
 	- Fix mod being completely broken

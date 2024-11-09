@@ -91,6 +91,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 ### Misc
 
+- **Night Effect** now grants -3 Vision (down from -2)
 - Disable **Veteran Perks**. Your brothers no longer gain perk points after Level 11
 - When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. No more than 5% of his maximum exp each.
 - Add new **Parry** perk in Tier 3 of **Swift Group**. It requires a one handed melee weapon. It grants Melee Defense equal to your base Ranged Defense against weapon attacks. While engage with someone wielding a melee weapon, you have 70% less Ranged Defense. Does not work with shields, while stunned, fleeing or disarmed.
@@ -155,7 +156,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Fencer** no longer grants +10% chance to hit or 20% less fatigue cost. It now causes your fencing swords to lose 50% less durability
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy
 - **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you
-- **Fortified Mind** now grants 30% more Resolve (up from 25%). This Bonus is now reduces by 1% for each point of Weight on your Helmet
+- **Fortified Mind** now grants +30 Resolve (instead of 25% more) and you lose Resolve equal to the Weight of your Helmetweight
 - **Fresh and Furious** now has a fatigue threshold of 50% (up from 30%). It now checks your fatige when you end your turn, instead of at the start of your turn
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
 - **Hybridization** is completely reworked. It still grants 10% of your base Ranged Skill as Melee Skill/Defense. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type hits to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 50% more damage to shields
@@ -169,6 +170,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Phalanx** now works even with a **Buckler** and it now also counts allies with a **Buckler** for the effect. It no longer requires you to have a shield equipped for it to work
 - **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. It also reduces your armor damage taken by a percentage equal to 40% of your current Initiative (up to a maximum of 40%)
 - **Polearm Mastery** no longer reduces the Action Point cost of 2 handed reach weapons by 1. It now grants +15% chance to hit for **Repel** and **Hook**.
+- **Professional** now reduces the experience gained by 5%
 - **Quickhands** can now also swap two two-handed weapons
 - **Rattle** is now called **Full Force** and has been completely reworked. It now causes you to spend all remaining Action Points whenever you attack and gain 10% more damage per Action Point spent. The effect is double for one-handed weapons
 - **Rebuke** is completely reworked. It now grants the **Rebuke Effect** whenever an opponent misses a melee attack against you while it's not your turn, until the start of your next turn. This effect reduces your damage by 25% but will make you retaliate every melee attack miss against you.
@@ -214,6 +216,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - **Cudgel** now deals 40-60 damage (up from 30-50), has an armor penetration of 110% (up from 90%), a Reach of 5 (up from 3), a value of 400 (up from 300). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
 - **Estoc** now has 6 Reach (up from 5)
+- **Goedendag** no longer grants **Cudgel** skill
 - **Fighting Axe** now has a value of 2300 (down from 2800)
 - **Flail** now deals 30-55 damage (up from 25-55)
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
@@ -244,6 +247,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Lucky** no longer grants a chance to reroll incoming attacks. It now provides a 5% chance to avoid damage from any source.
 - **Weasel** now provides an additional 25 Melee Defense during that brothers turn while fleeing.
 - **Huge** no longer increases the Reach by 1
+- **Night Blind** now grants -2 Vision during night (down from -1)
+- **Night Owl** now grants +2 Vision during night (up from +1)
 - **Tiny** no longer reduces the Reach by 1
 - **Irrational** will no longer appear on recruits.
 
@@ -273,13 +278,14 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Marauder** no longer spawn with **Two Handed Wooden Flail** and are twice as likely to spawn with a **Greatsword**
 - Fast Brigands (Robber, Bandit, Killer) now always spawn with a net if they are one-handed, and with a throwing weapon if two-handed
 - **Robber** no longer spawn with a **Pike** or **Reinforced Wooden Poleflail**
-- **Bandits** no longer spawn with a **Poleflail**, **Warbrand** or **Throwing Spear**. The can now spawn with a **Reinforced Wooden Poleflail**
+- **Bandits** no longer spawn with a **Poleflail**, **Warbrand** or **Throwing Spear**. The can now spawn with a **Reinforced Wooden Poleflail**. They can no appear as Champions
 - **Killer** no longer spawn with **Scramasax**, **Pike**, **Spetum**, **Warbrand** or **Throwing Spear**
 - **Brigand Leader** no longer have **Shield Expert**
 - **Noble Footmen** no longer have **Shield Expert**
 - **Zombies** no longer have **Double Grip** but gain +5 Melee Skill.
 - **Zombies** and **Skeletons** grant 20% more experience
 - **Zombies** and **Skeletons** no longer grant experience after resurrecting
+- **Fallen Heroes** no longer spawn with Morning Stars or Handaxes
 - **Geists** no longer have **Fearsome**. They now have **Backstabber**
 - **Barbarian Drummer** now have +1 Action Point and grant +150 Experience
 - **Barbarian Thralls** now spawn twice as often with **Crude Javelins** and half as often with regular throwing weapons
@@ -297,6 +303,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Necrosavants are a bit more likely to stay on the same tile and attack twice, rather than teleport to a slightly better tile
 - Improve AI targeting for throwing nets: They value the targets melee defense twice as much. They now also value the targets initiative and prefer isolated targets.
 - AI is now twice as likely to throw a net or use a throwing pot/bomb while adjacent to an enemy
+- AI will no longer throw nets while their strategy is defending
 
 ### World Map
 - At the start of each new campaign ~5 additional small bandit camps are spawned in the world
@@ -328,7 +335,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Combat
 
 - Your headshot chance is now displayed in the combat tooltip when targeting enemies
-- Introduce a new **Headless** effect, which sets the headarmor to 0 and redirects any attack to hit the body and grants immunity to **Distracted**. Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles receive this new effect
+- Introduce new **Bite Reach** effect, which reduces headshot chance by 10% and increases chance to receive headshot by 10%
+	- This effect is given to all Dogs, Wolfs and Hyenas
+- Introduce a new **Headless** effect, which sets the headarmor to 0 and redirects any attack to hit the body and grants immunity to **Distracted**
+	- This effect is given to Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles
 - Introduce a new **Unworthy Opponent** effect which prevents the character from granting experience on death, and give it to enemies which do not grant experience
 - Introduce a new cosmetic **Non-Combatant**, to non-combatant enemies, which explains that they do not need to be killed in order to win
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
@@ -336,6 +346,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
 - All Skills from the **Lorekeeper** now have skill descriptions
+- Corpses will now display the round, in which they were created
 - Add Setting for making the hotkeys for **Wait** fire continuously, instead of only when released
 
 ### World
@@ -343,10 +354,14 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event
 - Settlements now display a tooltip showing how many days ago you last visited that location
 - The Tavern now displays to you how many rumors you received so far
+- Add new setting for displaying forbidden destination ports (even when they are hostile to you or the origin port)
+- Dismissing a freshly hired recruit (0 days with the company) will skip the confirmation dialog
 - Distance text in rumors and contracts now display the tile distance range in brackets
+- Display the current XP Multiplier of the viewed character when hovering over the Experience bar
 - World Parties with champions will display an orange skull on top of their socket
 - Peasants and Caravans on the world map display a banner
 - Brothers that "die" outside of combat (e.g. Events) will now always transfer their equipment into your stash
+- Add Concept and Tooltip for Day-Night Cycle
 - Slightly Lower the volume of the annoying kid sfx in towns
 
 ### Misc
@@ -376,6 +391,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Every accessory now plays a default sound when moved around in the inventory
 - Change the inventory icon of the **Witchhunter's Hat** to look exactly like the sprite on the brother
 - The id of the item `mouth_piece` is changed to `armor.head.mouth_piece` (it used to be `armor.head.witchhunter_hat`)
+- Prevent the same random name to be generated in succession
 - Remove a duplicate loading screen
 
 ## For Modders
