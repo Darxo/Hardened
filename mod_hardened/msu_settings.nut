@@ -20,4 +20,8 @@
 		}
 	};
 	continuousWaitKeybindSetting.addAfterChangeCallback(continuousWaitKeybindCallback);
+
+	qolPage.addDivider("MiscDivider2");
+
+	qolPage.addBooleanSetting("DisplayForbiddenPorts", true, "Display forbidden Ports", "Enable this setting to also list Ports which are currently considered 'forbidden' due to hostile status with the player or the origin port.");
 }
