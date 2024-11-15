@@ -1,137 +1,77 @@
+// Todo: explanation why this file has to be in afterhooks bucket
+
+local changePerkTier = function( _perkGroup, _perkID, _newTier )
+{
+	if (_perkGroup.hasPerk(_perkID))
+	{
+		_perkGroup.removePerk(_perkID);
+		_perkGroup.addPerk(_perkID, _newTier);
+	}
+}
+
 // Adjust Reforged Perk Groups
 {
-	// Always Group
-	local pgAlwaysGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_always_1");
-	pgAlwaysGroup.getTree()[0].push("perk.student");	// Add Student
-	foreach (row in pgAlwaysGroup.getTree())
-	{
-		foreach (i, perk in row)
-		{
-			if (perk == "perk.bags_and_belts") row.remove(i);		// Remove Bags and Belts
-		}
+	{	// Always Group
+		local pgAlwaysGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_always_1");
+		pgAlwaysGroup.addPerk("perk.student", 1);	// Add Student
+		pgAlwaysGroup.removePerk("perk.bags_and_belts");
 	}
 
-	// Hammer Group
-	local pgHammerArmorGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_hammer");
-	foreach (row in pgHammerArmorGroup.getTree())
-	{
-		foreach (i, perk in row)
-		{
-			if (perk == "perk.rf_rattle")
-			{
-				row[i] = "perk.rf_deep_impact";		// Move Deep Impact into the position where Rattle (Full Force) was previously
-			}
-			else if (perk == "perk.rf_deep_impact")
-			{
-				row[i] = "perk.rf_rattle";		// Move rattle (Full Force) into the position where Deep Impact was previously
-			}
-		}
+	{	// Hammer Group
+		local pgHammerArmorGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_hammer");
+		changePerkTier(pgHammerArmorGroup, "perk.rf_rattle", 6);			// Move rattle (Full Force) into the position where Deep Impact was previously
+		changePerkTier(pgHammerArmorGroup, "perk.rf_deep_impact", 3);	// Move Deep Impact into the position where Rattle (Full Force) was previously
 	}
 
-	// Laborer Group
-	foreach (row in ::DynamicPerks.PerkGroups.findById("pg.rf_laborer").getTree())
-	{
-		foreach (i, perk in row)
-		{
-			if (perk == "perk.bags_and_belts") row.remove(i);		// Remove Bags and Belts
-		}
+	{	// Laborer Group
+		local pgLaborerGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_laborer");
+		pgLaborerGroup.removePerk("perk.bags_and_belts");	// Remove Bags and Belts
 	}
 
-	// Light Armor Group
-	local pgLightArmorGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_light_armor");
-	pgLightArmorGroup.getTree()[0].push("perk.bags_and_belts");	// Add Bags and Belts
-	foreach (row in pgLightArmorGroup.getTree())
-	{
-		foreach (i, perk in row)
-		{
-			if (perk == "perk.dodge") row.remove(i);	// Remove Dodge
-		}
+	{	// Light Armor Group
+		local pgLightArmorGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_light_armor");
+		pgLightArmorGroup.addPerk("perk.bags_and_belts", 1);	// Add Bags and Belts
+		pgLightArmorGroup.removePerk("perk.dodge");					// Remove Dodge
 	}
 
-	// Leadership
-	local pgLeadership = ::DynamicPerks.PerkGroups.findById("pg.special.rf_leadership");
-	foreach (row in pgLeadership.getTree())
-	{
-		foreach (i, perk in row)
-		{
-			if (perk == "perk.mastery.polearm") row.remove(i);	// Remove Polearm Mastery
-		}
+	{	// Leadership Group
+		local pgLeadership = ::DynamicPerks.PerkGroups.findById("pg.special.rf_leadership");
+		pgLeadership.removePerk("perk.mastery.polearm");		// Remove Polearm Mastery
 	}
 
-	// Noble
-	local pgNobleGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_noble");
-	pgNobleGroup.getTree()[6].push("perk.inspiring_presence");	// Add Inspiring Presence to Tier 7
-
-	// Shield
-	local pgShield = ::DynamicPerks.PerkGroups.findById("pg.rf_shield");
-	foreach (row in pgShield.getTree())
-	{
-		foreach (i, perk in row)
-		{
-			if (perk == "perk.duelist") row.remove(i);	// Remove Duelist fomr Shields
-		}
+	{	// Noble Group
+		local pgNobleGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_noble");
+		pgNobleGroup.addPerk("perk.inspiring_presence", 7);		// Add Inspiring Presence to Tier 7
 	}
 
-	// Special Student
-	::DynamicPerks.PerkGroups.remove("pg.special.rf_student");
-
-	// Swift Strikes
-	local pgSwiftPerkGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_swift");
-	pgSwiftPerkGroup.getTree()[2].push("perk.reach_advantage");	// Add Reach Advantage (Parry) into the Tier 3 row
-	foreach (row in pgSwiftPerkGroup.getTree())
-	{
-		foreach (i, perk in row)
-		{
-			if (perk == "perk.rf_vigorous_assault") row.remove(i);	// Remove Vigorous Assault
-		}
+	{	// Shield Group
+		local pgShieldGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_shield");
+		pgShieldGroup.removePerk("perk.duelist");		// Remove Duelist fomr Shields
 	}
 
-	// Tactician
-	local pgTacticialGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_tactician");
-	pgTacticialGroup.getTree()[1].push("perk.rf_bestial_vigor");	// Add Bestial Vigor (Backup Plan) into the Tier 2 row
-
-	// Tough
-	local pgToughGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_tough");
-	pgToughGroup.getTree()[1].push("perk.hold_out");	// Add Resilient into the Tier 2 row
-	foreach (row in pgToughGroup.getTree())
-	{
-		foreach (i, perk in row)
-		{
-			if (perk == "perk.steel_brow") row.remove(i);	// Remove Steelbrow
-		}
+	{	// Special Student Group
+		::DynamicPerks.PerkGroups.remove("pg.special.rf_student");	// This group does no longer exist in Hardened
 	}
 
-	// Trained
-	local pgTrainedGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_trained");
-	foreach (row in pgTrainedGroup.getTree())
-	{
-		foreach (i, perk in row)
-		{
-			if (perk == "perk.quick_hands") row.remove(i);	// Remove Quickhands
-		}
-	}
-	pgTrainedGroup.getTree()[0].push("perk.quick_hands");	// Add Quickhands into the Tier 1 row
-
-	// Vigorous
-	local pgVigorousGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_vigorous");
-	pgVigorousGroup.getTree()[1].push("perk.steel_brow");	// Add Steelbrow into the Tier 2 row
-	pgVigorousGroup.m.Icon = "ui/perks/perk_30.png";	// Replace perk group icon with that of Indomitable (It's Resilient in Reforged)
-	foreach (row in pgVigorousGroup.getTree())
-	{
-		foreach (i, perk in row)
-		{
-			if (perk == "perk.hold_out") row.remove(i);	// Remove Resilient
-		}
+	{	// Swift Strikes Group
+		local pgSwiftPerkGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_swift");
+		pgSwiftPerkGroup.removePerk("perk.rf_vigorous_assault");	// Remove Vigorous Assault
+		pgSwiftPerkGroup.addPerk("perk.reach_advantage", 3);			// Add Reach Advantage (Parry) into the Tier 3 row
 	}
 
-	// Wildling
-	local pgWildling = ::DynamicPerks.PerkGroups.findById("pg.rf_wildling");
-	foreach (row in pgWildling.getTree())
-	{
-		foreach (i, perk in row)
-		{
-			if (perk == "perk.rf_bestial_vigor") row.remove(i);	// Remove Bestial Vigor (now Backup Plan) from Wildling
-		}
+	{	// Tactician Group
+		local pgTacticialGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_tactician");
+		pgTacticialGroup.addPerk("perk.rf_bestial_vigor", 2);			// Add Bestial Vigor (Backup Plan) into the Tier 2 row
+	}
+
+	{	// Trained Group
+		local pgTrainedGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_trained");
+		changePerkTier(pgTrainedGroup, "perk.quick_hands", 1);			// Move Quickhands down to the lowest tier
+	}
+
+	{	// Wildling Group
+		local pgWildling = ::DynamicPerks.PerkGroups.findById("pg.rf_wildling");
+		pgWildling.removePerk("perk.rf_bestial_vigor");	// Remove Bestial Vigor (now Backup Plan) from Wildling
 	}
 }
 
