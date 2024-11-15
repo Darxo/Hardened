@@ -7,7 +7,14 @@
 
 	qolPage.addDivider("MiscDivider1");
 
-	local continuousWaitKeybindSetting = qolPage.addBooleanSetting("ContinuousWaitKeybind", false , "Continuous Wait Keybind", "While active it is enough to hold down your 'wait' Keybind in order to wait so you can more easily wait with multiple brothers.");
+	qolPage.addBooleanSetting("DisplayForbiddenPorts", true, "Display forbidden Ports", "Enable this setting to also list Ports which are currently considered 'forbidden' due to hostile status with the player or the origin port.");
+}
+
+// QOL: Combat
+{
+	local qolCombatPage = ::Hardened.Mod.ModSettings.addPage("Combat");
+
+	local continuousWaitKeybindSetting = qolCombatPage.addBooleanSetting("ContinuousWaitKeybind", false , "Continuous Wait Keybind", "While active it is enough to hold down your 'wait' Keybind in order to wait so you can more easily wait with multiple brothers.");
 	local continuousWaitKeybindCallback = function( _oldValue )
 	{
 		if (this.Value)
@@ -21,14 +28,7 @@
 	};
 	continuousWaitKeybindSetting.addAfterChangeCallback(continuousWaitKeybindCallback);
 
-	qolPage.addDivider("MiscDivider2");
-
-	qolPage.addBooleanSetting("DisplayForbiddenPorts", true, "Display forbidden Ports", "Enable this setting to also list Ports which are currently considered 'forbidden' due to hostile status with the player or the origin port.");
-}
-
-// QOL: Combat
-{
-	local qolCombatPage = ::Hardened.Mod.ModSettings.addPage("Combat");
+	qolCombatPage.addDivider("MiscDivider1");
 
 	qolCombatPage.addBooleanSetting("HideTileTooltipsDuringNPCTurn", true, "Hide Tooltips during NPC Turn", "Tile and Character tooltips will not show up, while it is not your turn.");
 }
