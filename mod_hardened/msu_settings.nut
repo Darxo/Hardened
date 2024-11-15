@@ -25,3 +25,10 @@
 
 	qolPage.addBooleanSetting("DisplayForbiddenPorts", true, "Display forbidden Ports", "Enable this setting to also list Ports which are currently considered 'forbidden' due to hostile status with the player or the origin port.");
 }
+
+// QOL: Combat
+{
+	local qolCombatPage = ::Hardened.Mod.ModSettings.addPage("Combat");
+
+	qolCombatPage.addBooleanSetting("HideTileTooltipsDuringNPCTurn", true, "Hide Tooltips during NPC Turn", "Tile and Character tooltips will not show up, while it is not your turn.");
+}

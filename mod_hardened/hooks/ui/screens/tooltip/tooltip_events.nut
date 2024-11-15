@@ -57,9 +57,28 @@
 		return ret;
 	}
 
+	// Setting: No longer show the tooltips for characters, while it is not the turn of the player
+	q.tactical_queryEntityTooltipData = @(__original) function( _entityId, _isTileEntity )
+	{
+		if (::Hardened.Mod.ModSettings.getSetting("HideTileTooltipsDuringNPCTurn").getValue())
+		{
+			local activeEntity = ::Tactical.TurnSequenceBar.getActiveEntity();
+			if (activeEntity == null || !activeEntity.isPlayerControlled()) return null;
+		}
+
+		return __original(_entityId, _isTileEntity);
+	}
+
 	q.tactical_queryTileTooltipData = @(__original) function()
 	{
 		local ret = __original();
+
+		// Setting: No longer show the tooltips for tiles, while it is not the turn of the player
+		if (::Hardened.Mod.ModSettings.getSetting("HideTileTooltipsDuringNPCTurn").getValue())
+		{
+			local activeEntity = ::Tactical.TurnSequenceBar.getActiveEntity();
+			if (activeEntity == null || !activeEntity.isPlayerControlled()) return null;
+		}
 
 		if (ret != null)
 		{
