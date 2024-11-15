@@ -1,31 +1,61 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_dagger", function(q) {
+	// Public
+	q.m.WeightThreshold <- 10;	// Offhand item must weigh less than this to be eligable for free use
+
 	// Private
-	q.m.IsQuickSwitchSpent <- false;		// Is quickswitching spent this turn?
+	q.m.IsSpent <- true;	// Has the free offhand item use already been spent?
+	q.m.LastExecutedSkillForFree <- false;	// Temp: so that we know, whether the last executed skill was for free
+
+	q.onReallyBeforeSkillExecuted = @(__original) function( _skill, _targetTile )
+	{
+		__original(_skill, _targetTile);
+
+		if (this.m.IsSpent) return;
+		if (this.m.LastExecutedSkillForFree) return;
+		if (!this.isEnabled()) return;
+		if (!::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()))	return;
+
+		if (!::MSU.isNull(_skill.getItem()) && ::MSU.isEqual(_skill.getItem(), this.getContainer().getActor().getOffhandItem()))
+		{
+			this.m.IsSpent = true;
+		}
+	}
+
+	q.onAfterUpdate = @(__original) function( _properties )
+	{
+		__original(_properties);
+
+		if (this.m.IsSpent) return;
+		if (!this.isEnabled()) return;
+
+		local offhand = this.getContainer().getActor().getOffhandItem();
+		if (offhand != null && offhand.getWeight() < this.m.WeightThreshold)
+		{
+			foreach (skill in offhand.getSkills())
+			{
+				skill.m.ActionPointCost = 0;
+			}
+		}
+	}
 
 	q.onTurnStart = @(__original) function()
 	{
 		__original();
-		this.m.IsQuickSwitchSpent = false;
+		this.m.IsSpent = false;
 	}
 
-	q.onPayForItemAction = @(__original) function( _skill, _items )
+	q.onCombatFinished = @(__original) function()
 	{
-		__original(_skill, _items);
-		if (_skill == this)
-		{
-			this.m.IsQuickSwitchSpent = true;
-		}
+		__original();
+		this.skill.onCombatFinished();
+		this.m.IsSpent = true;
 	}
 
-	// Swapping items becomes a free action once per turn if one of them is a dagger
-	q.getItemActionCost = @(__original) function( _items )
+// MSU Events
+	q.onBeforeAnySkillExecuted = @(__original) function( _skill, _targetTile, _targetEntity, _forFree )
 	{
-		__original(_items);
-
-		if (this.m.IsQuickSwitchSpent) return null;
-		if (!this.isEnabled()) return null;
-
-		return 0;
+		__original(_skill, _targetTile, _targetEntity, _forFree);
+		this.m.LastExecutedSkillForFree = _forFree;
 	}
 
 // New Functions
