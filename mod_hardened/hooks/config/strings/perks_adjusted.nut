@@ -696,8 +696,9 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per [turn,|Concept.Turn] the first use of your offhand item [weighing|Concept.Weight] less than " + ::MSU.Text.colorPositive(10) + " costs no [Action Points|Concept.ActionPoints]",
-					"When wielding any [net|Item+throwing_net], the first successful melee attack every [turn|Concept.Turn] against an adjacent target will [stagger|Skill+staggered_effect] them",
+					"Tool skills cost " + ::MSU.Text.colorPositive("-1") + " [Action Point|Concept.ActionPoints]",
+					"Wielding a tool in your offhand does not disable [Double Grip|Skill+double_grip]",
+					"While wielding a tool in your offhand, the first successful attack each [turn|Concept.Turn] will [stagger|Skill+staggered_effect] your target",
 				],
 			}],
 		}),
