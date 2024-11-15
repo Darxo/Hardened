@@ -617,6 +617,21 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_iron_sights",
+		Key = "RF_IronSights",
+		Description = ::UPD.getDescription({
+			Fluff = "With a little tinkering, you\'ve managed to rig up sighting methods for your ranged weapons that allow more focused shots!",
+			Requirement = "Crossbow or Firearm",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Attacks have an additional " + ::MSU.Text.colorPositive("25%") + " chance to hit the head.",
+					"Headshots from ranged attacks with firearms apply the [Shellshocked|Skill+shellshocked_effect] effect except on characters with " + ::Const.MoraleStateName[::Const.MoraleState.Ignore] + " [morale.|Concept.Morale]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_king_of_all_weapons",
 		Key = "RF_KingOfAllWeapons",		// Current name is 'Spear Flurry'
 		Description = ::UPD.getDescription({
