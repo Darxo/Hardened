@@ -468,6 +468,28 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_dynamic_duo",
+		Key = "RF_DynamicDuo",
+		Description = ::UPD.getDescription({
+			Fluff = "You\'ve learned that you fight best with a buddy to watch your back!",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"You and your Partner gain the [Shuffle|Skill+rf_dynamic_duo_shuffle_skill] skill that allows you to swap places with your partner once per [turn|Concept.Turn] for free",
+						"You and your Partner gain " + ::MSU.Text.colorPositive("+20") + " [Resolve|Concept.Bravery] and [Initiative|Concept.Initiative] while are adjacent to each other and there are no other member of your company adjacent to you or your partner",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Active,
+					Description = [
+						"Gain the [Select Partner|Skill+rf_dynamic_duo_select_partner_skill] skill which allows you to choose a partner, if you don\'t already have one",
+					]
+				}
+			],
+		}),
+	},
+	{
 		ID = "perk.rf_en_garde",
 		Key = "RF_EnGarde",
 		Description = ::UPD.getDescription({
