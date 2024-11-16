@@ -109,6 +109,21 @@
 		this.m.Enemies.clear();
 	}
 
+// New Getter
+	// If _user is evaluating our value, potentially targeting us with _usedSkill, how would that change our perceived value for them?
+	q.getQueryTargetMultAsTarget = @(__original) function( _user, _usedSkill = null )
+	{
+		local ret = __original(_user, _usedSkill);
+		if (_usedSkill == null) return ret;
+
+		if (_usedSkill.isAttack() && this.hasEnemy(_user))
+		{
+			ret *= 1.2;	// _user should try asap to remove themselves from the enemy list of FormidableApproach to remove the bonus hitchance
+		}
+
+		return ret;
+	}
+
 // New Private Functions
 	q.requirementsMet <- function()
 	{

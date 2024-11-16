@@ -72,6 +72,24 @@
 		this.m.CurrentMeleeDefenseModifier = 0;
 	}
 
+// New Getter
+	// If we are evaluating _target, potentially targeting them with _usedSkill, how would that change the targets perceived value?
+	q.getQueryTargetMultAsUser = @(__original) function( _target, _usedSkill = null )	// Const
+	{
+		local ret = __original(_target, _usedSkill);
+		if (_usedSkill == null) return ret;
+
+		if (this.isSkillValid(_usedSkill))
+		{
+			local actor = this.getContainer().getActor();
+
+			// Every adjacent hostile characters makes it more attractive to use an attack boosting my melee defense
+			ret *= 1 + (0.1 * ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true).len());
+		}
+
+		return ret;
+	}
+
 // New Functions
 	q.getCurrentMeleeDefenseModifier <- function()
 	{

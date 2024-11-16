@@ -16,6 +16,21 @@
 	// Overwrite to remove the effect of Reforged
 	q.onTargetHit = @() function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor ) {}
 
+// New Getter
+	// If we are evaluating _target, potentially targeting them with _usedSkill, how would that change the targets perceived value?
+	q.getQueryTargetMultAsUser = @(__original) function( _target, _usedSkill = null )	// Const
+	{
+		local ret = __original(_target, _usedSkill);
+		if (_usedSkill == null) return ret;
+
+		if (this.isSkillValid(_usedSkill) && _targetTile.getEntity().getHitpointsPct() >= this.m.TargetHealthThreshold)
+		{
+			ret *= 1.2;
+		}
+
+		return ret;
+	}
+
 // MSU Functions
 	q.onGetHitFactors = @(__original) function( _skill, _targetTile, _tooltip )
 	{

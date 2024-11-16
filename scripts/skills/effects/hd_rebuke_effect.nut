@@ -73,6 +73,20 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 		}
 	}
 
+// New Getter
+	// If _user is evaluating our value, potentially targeting us with _usedSkill, how would that change our perceived value for them?
+	function getQueryTargetMultAsTarget( _user, _usedSkill = null )
+	{
+		if (_usedSkill == null) return 0.9;
+
+		if (!::MSU.isNull(this.m.ParentPerk) && this.m.ParentPerk.canProc(_user, _usedSkill))
+		{
+			return 0.5;		// Right now we don't check whether our weapon would outrange the target or whether they can even see us
+		}
+
+		return 1.0;
+	}
+
 // New Functions
 	function onRiposte( _info )	// async function
 	{
