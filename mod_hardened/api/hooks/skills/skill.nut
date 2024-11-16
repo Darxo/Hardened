@@ -125,6 +125,21 @@
 		__original(_attackInfo);
 	}
 
+// New Getter
+	// If we are evaluating _target, potentially targeting them with _usedSkill, how would that change the targets perceived value?
+	// @return a non-negative float value
+	q.getQueryTargetMultAsUser <- function( _target, _usedSkill = null )	// Const
+	{
+		return 1.0;
+	}
+
+	// If _user is evaluating our value, potentially targeting us with _usedSkill, how would that change our perceived value for them?
+	// @return a non-negative float value
+	q.getQueryTargetMultAsTarget <- function( _user, _usedSkill = null )	// Const
+	{
+		return 1.0;
+	}
+
 // New Events
 	q.onOtherSkillAdded <- function( _skill )
 	{
