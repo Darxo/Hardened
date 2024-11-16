@@ -38,7 +38,7 @@
 		if (this.m.CanSkillCauseShockwave && _targetTile.IsOccupiedByActor)
 		{
 			local targetEntity = _targetTile.getEntity();
-			if (targetEntity.getSkills().hasSkill("effects.stunned"))	// The target might already be dead, but that shouldn't concern us. We still applied a stun, therefor triggering a hockwave
+			if (targetEntity.getSkills().hasSkill("effects.stunned"))	// The target might already be dead, but that shouldn't concern us. We still applied a stun, therefor triggering a shockwave
 			{
 				this.triggerShockwave(_targetTile);
 			}

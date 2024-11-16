@@ -18,6 +18,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Is safe to remove from- and add to any existing savegames
 
 # Future Plans:
+- Nerf Dogs vision to 5 or 6 (Actually they are probably fine. Nice scouting alternative to falcon)
+- Change Night Owl/Blindg to stop working when the character is immune to night effect
 - Hide information about enemy composition on the battle field
 - certain unholds/high end orcs being able to throw their own allies behind their back in order to advance into tight spaces
 - change handgonne aoe pattern in some directions to a triangle
@@ -43,6 +45,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - make throwing weapons into hybrid weapon types to profit from axe/spear/flail perks
 - mauler -> replace second effect with 15% more damage when hitting body parts that have no remaining armor
 - make disloyal have more of a downside
+- Dynamic Duo You deal 50% less damage to your partner
 - new T7 ranged perk "Impossible Shot", which reduces ranged skill by your current Ranged Defense and increases Ranged damage by a percentage equal to your
 
 - Display mood icon during events (Turn that sprite visible / rendertotexture to false/true?)
@@ -78,12 +81,11 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - expirable potions (so you are forced to use them and so they can be sold/given out more frequently)
 - Make it so wait can not be used if you have less than half of your AP remaining
 - Make certain items unsellable
-- Play around with getQueryTargetMultAsUser function from modular Vanilla PR
+
 - Savage Strength: Immune to Disarm?
 
 - Scrapper-Retinue member making it so armor damage above a certain threshold (e.g. at least 50 per hit) produces tools. But
 - Make "Obtain" quests harder. E.g. by starting in an ambush or by making the location hidden by default
-- Names above locations if you are near them?
 - Look into throwing weapons not producing miss-projectiles correctly when missing, sometimes
 	- Need more evidence
 - nerf ports (to make good maps less reliable on them)
@@ -102,9 +104,63 @@ This submod is a collection of changes to Reforged that I suggested internally t
 		- When its the dogs turn its attack sfx is only played in one ear
 	- I can't reproduce this bug, need more evidence and reproducible steps
 	- In the Vanilla Code I couldn't find an obvious issue on first glance. Probably something todo with the engine
+- Improve AI by taking into account whether they are already known to the player. And make them prefer steping onto tiles that are already revealed to the player
+- New effect given to defender of camps, called "Defender's Advantage". It grants +1 Vision and +10 Resolve. Maybe some other buffs. It reads "You know this place in and out, you have a natural advantage defending it"
+- Nerf Formidable Approach by also making enemies have +5% chance to hit you, if they are on your list
+- Make it so the winner of AI battles also gets all look spawned by the opponents 'getDroppedLoot' function.
+	- Or rather whenever a unit dies during an AI battle, the result of that function is pushed into its party Loot
+- Docs: Make list of existing functions, that this mod overwrites
+- Bug: "playInventorySound" error. Probably because supplies are instantly consumed, leaving only a null object to try to play the sound of
+	- tactical_combat_result_screen.nut: L189: stashItems[j].playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag);
+- Make three headed flail only hit once during opponents turn (or have it have less chance to hit)
 - Display vision of currently active entity, by outlining border of view field on tiles
+	- Grey out the tiles not visible to the current entity
+
+
+
+Training Hall:
+- "Crashcourse"
+	- Costs a good amount of money
+	- Can only be used once for every brother
+	- You can choose one weapon or one armor group that the brother does not yet know and teach it to them
+	- Requires brother to have neutral mood or higher
+	- Causes Brother to lose 1.0 mood
+	- Applies "Exhausted" to the brother for a few days
+
+
+
+This will unbrick your end-of-combat screen, if it doesnt show
+::Tactical.State.m.TacticalCombatResultScreen.show();
 
 # Changes:
+
+0.15.0
+	- **Offhand Training** is completely reworked. It now reduces the AP cost of tool skills by 1. Wielding a tool in your offhand does not disable Double Grip and while wielding a tool in your offhand, the first successful attack each turn, will stagger your target
+	- **Dagger Mastery** no longer grants a free swap once per turn. It now reduces the AP cost of the first offhand item skill to 0, if that item has a weight of less than 10.
+	- **Phalanx** no longer grants a discount for shieldwall. Instead it prevents your shieldwall from running out while an adjacent ally has shieldwall (just like it was before)
+	- **Dynamic Duo** no longer grants Melee Skill or Melee Defense
+	- **Lone Wolf** is now only active is no ally from your company is within 2 tiles
+	- **Iron Sights** headshot chance now also works with melee weapons
+	- Throw Pot/Flask skills are no longer considered an attack
+	- **Firelance** now also has the **Firearm** weapontype
+	- **Crowded** now also applies -5% chance to hit for every adjacent ally (ignoring the first two)
+	- **Knave** perk group no longer guarantees **Light Armor** perk group or affects its chance to appear more often
+	- All two-handed hammer now have 5 Reach (up from 4)
+	- The Event-Option to shoot down the bird who shat your brother now costs 5 Ammunition
+	- Add new setting for displaying non-settlement location names of nearby locations (Lairs, Unique Locations, Attached Locations)
+	- Add new setting for preventing tile/enemy tooltips from being generated while it is not your turn
+	- Reduce the Attack sfx volume of Wardogs and Warhounds by 20%
+	- Add new 'getQueryTargetMultAsUser' and 'getQueryTargetMultAsTarget' ai related getter for skill.nut
+	- Improve various AI decisions:
+		- NPCs with **Bolster** are more likely to attack with their polarm as they are surrounded by more potential targets
+		- NPCs with **Dismantle** are more likely to target enemies with 100% hitpoints
+		- NPCs with **Sweeping Strikes** are more likely to use an appropriate attack as they are surrounded by more enemies
+		- NPCs are more likely to target enemies with **Formidable Approach** if it has been procced against them
+		- NPCs are far less likely to attack into an active **Rebuke**
+	- Fix **Sweeping Strikes** being usable with any melee weapon
+	- Slings now have the sling weapontype again. This will fix them not being able to sling pots/flasks
+
+0.15.0
 
 0.14.0
 	- **Goedendag** no longer grants **Cudgel**
