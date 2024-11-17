@@ -137,6 +137,11 @@ This will unbrick your end-of-combat screen, if it doesnt show
 
 # Changes:
 
+0.15.2
+	- Update **Lone Wolf** description to reflect changes made in 0.15.0
+	- Fix **Bullseye** not working at 2 tile range when an ally is blocking Line of Sight
+	- Fix crash when last hitting an enemy while havving **Offhand Training** perk
+
 0.15.1
 	- Fix NPCs with dismantle freezing the game during battles
 	- Fix named shields not mirroring the skills from their base version
