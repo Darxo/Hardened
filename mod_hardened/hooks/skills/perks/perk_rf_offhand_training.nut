@@ -86,10 +86,9 @@
 	{
 		__original(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor);
 
-		if (this.isEnabledForStagger() && _skill.isAttack())
+		if (_targetEntity.isAlive() && !_targetEntity.isDying() && this.isEnabledForStagger() && _skill.isAttack())
 		{
 			this.m.IsStaggerSpent = true;
-
 			_targetEntity.getSkills().add(::new("scripts/skills/effects/staggered_effect"));
 			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " has staggered " + ::Const.UI.getColorizedEntityName(_targetEntity));
 		}
