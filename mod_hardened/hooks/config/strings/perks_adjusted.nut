@@ -127,6 +127,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.lone_wolf",
+		Key = "LoneWolf",
+		Description = ::UPD.getDescription({
+			Fluff = "I work best alone.",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"When no members of your faction are within 2 tiles of distance from you, gain " + ::MSU.Text.colorPositive("15%") + " more [Melee Skill,|Concept.MeleeSkill] [Ranged Skill,|Concept.RangeSkill] [Melee Defense,|Concept.MeleeDefense] [Ranged Defense,|Concept.RangeDefense] and [Resolve|Concept.Bravery]",
+				],
+			}]
+		})
+	},
+	{
 		ID = "perk.nimble",
 		Key = "Nimble",
 		Description = ::UPD.getDescription({
