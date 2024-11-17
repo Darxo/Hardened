@@ -116,6 +116,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Display vision of currently active entity, by outlining border of view field on tiles
 	- Grey out the tiles not visible to the current entity
 
+## AI
+- Make ANticipation influence attacker with stuns to be more likely to attack
+
 
 
 Training Hall:
@@ -133,6 +136,10 @@ This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
 # Changes:
+
+0.15.1
+	- Fix NPCs with dismantle freezing the game during battles
+	- Fix named shields not mirroring the skills from their base version
 
 0.15.0
 	- **Offhand Training** is completely reworked. It now reduces the AP cost of tool skills by 1. Wielding a tool in your offhand does not disable Double Grip and while wielding a tool in your offhand, the first successful attack each turn, will stagger your target
