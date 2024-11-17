@@ -10,7 +10,7 @@
 		if (_targetEntity == null || !this.isSkillValid(_skill)) return;
 
 		local actor = this.getContainer().getActor();
-		if (::Const.Tactical.Common.getBlockedTiles(actor.getTile(), _targetEntity.getTile(), _targetEntity.getFaction()).len() == 0)
+		if (::Const.Tactical.Common.getBlockedTiles(actor.getTile(), _targetEntity.getTile(), actor.getFaction()).len() == 0)
 		{
 			_properties.DamageDirectAdd += this.m.DamageDirectAdd;
 		}
