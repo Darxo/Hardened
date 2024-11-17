@@ -23,7 +23,7 @@
 		local ret = __original(_target, _usedSkill);
 		if (_usedSkill == null) return ret;
 
-		if (this.isSkillValid(_usedSkill) && _targetTile.getEntity().getHitpointsPct() >= this.m.TargetHealthThreshold)
+		if (this.isSkillValid(_usedSkill) && _target.getHitpointsPct() >= this.m.TargetHealthThreshold)
 		{
 			ret *= 1.2;
 		}
