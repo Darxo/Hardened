@@ -47,6 +47,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	{	// Shield Group
 		local pgShieldGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_shield");
 		pgShieldGroup.removePerk("perk.duelist");		// Remove Duelist fomr Shields
+		pgShieldGroup.addPerk("perk.recover", 7);
 	}
 
 	{	// Special Student Group
