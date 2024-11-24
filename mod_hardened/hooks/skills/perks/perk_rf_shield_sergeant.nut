@@ -76,7 +76,6 @@ local hookKnockBack = function( _o )
 				RemainingAllies = potentialAllies,
 			});
 		}
-
 	}
 
 	q.onAfterUpdate <- function( _properties )

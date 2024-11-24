@@ -8,7 +8,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Known Issues:
 
-- Enemies may spawn with perks that they can't use anymore (**Duelist**/**Formidable Approach**) because I didn't touch their spawning behaviors in that regard
 - Using Recover will prevent you from using **Wait Round** for the rest of this round
 - Loading the game over an enemy allows them to instantly engage the player in battle
 - **Shield Sergeant** can push multiple enemies into the same tile when used with **Line Breaker**
@@ -32,6 +31,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - remove close ranged penalty for reach weapons (its now covered by crowded)
 - move weapon mastery effects into the weapon mastery itself, instead of being implemented by the skills
 - make alps more smart on overworld (stalk player during day)
+	- Make it so alps are more aggressive, but they dislike roads. So you are very safe against them while on roads
+		- Maybe they dont get a movement bonus anywhere
 - prevent allied parties from following you, just because you are being targeted by their allies. Sometimes mercenary companies/nobles think they can/should attack you but you are still allied
 - Make raider playstyle more sufficient by giving caravans consistent tool loot
 - fix bottom left nimble perk icon
@@ -89,6 +90,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Look into throwing weapons not producing miss-projectiles correctly when missing, sometimes
 	- Need more evidence
 - nerf ports (to make good maps less reliable on them)
+	- setVirtualTime when using ports (to pass time) - This does not work. VirtualTime has nothing to do with DayCount
 - usings just fists (empty throwing weapon) with no offhand should also grant 20% fatigue discount (like from double grip)
 - Unwieldy Weapons could lose reach when engage in melee
 	- Currently its very weird that its the best play to switch to a pike before ending your turn to maximize reach during opponents turn
@@ -116,26 +118,28 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Display vision of currently active entity, by outlining border of view field on tiles
 	- Grey out the tiles not visible to the current entity
 
+- update description of iron sights so specify that the shellshocked part only works with ranged attacks?
+- new DayCreated member for locations
+	- Can be used to adjust scaling so that newly created locations scale slower than ones already there longer?
+	- Can be used for upgrading, so that locations left along can upgrade into stronger versions?
+	- Can be used for rumors, where they say: "Recently a new location has appeared there and there"
 ## AI
 - Make ANticipation influence attacker with stuns to be more likely to attack
-
-
-
-Training Hall:
-- "Crashcourse"
-	- Costs a good amount of money
-	- Can only be used once for every brother
-	- You can choose one weapon or one armor group that the brother does not yet know and teach it to them
-	- Requires brother to have neutral mood or higher
-	- Causes Brother to lose 1.0 mood
-	- Applies "Exhausted" to the brother for a few days
-
-
 
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
 # Changes:
+
+0.16.0
+	- Add new **One with the Shield** perk in Tier 7 of **Shield Group**. It requires a shield. It grants 25% more Injury Threshold. While you have Shieldwall effect you take 40% less Hitpoint damage from head attack. While you don't have Shieldwall effect you take 40% less Hitpoint damage from body attacks
+	- **Deep Impact** is now called **Breakthrough** and has been completely reworked. It grants the **Pummel** skill, which can now be used with any hammer. It also makes it so **Shatter** has a 100% chance to knock targets back on a hit
+	- **Hammer Mastery** no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part.
+	- **Bear Down** (granted by **Mace Mastery**) is completely reworked. It now causes every headshot to daze the target for 1 turn, or increase the duration of an existing daze by 1 turn
+	- Fix (Vanilla): Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
+	- Add new ::Hardened.TileReservation backend system, where modder can check, which tiles are currently reserved for travel by the teleport function
+	- Clarify in **Shield Expert** perk description that it requires a Shield
+	- Improve effect order of **Formidable Approach**
 
 0.15.2
 	- Update **Lone Wolf** description to reflect changes made in 0.15.0
