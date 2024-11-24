@@ -490,6 +490,28 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_deep_impact",
+		Key = "RF_DeepImpact",
+		Description = ::UPD.getDescription({
+			Fluff = "Clear a path with every strike, claiming the ground as your own.",
+			Requirement = "Hammer",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"[Shatter|Skill+shatter_skill] will always knock back enemies you hit"
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Active,
+					Description = [
+						"Gain the [Pummel|Skill+rf_pummel_skill] skill allowing you to hit an enemy and take their position, all in one action",
+					],
+				},
+			],
+		}),
+	},
+	{
 		ID = "perk.rf_dismantle",
 		Key = "RF_Dismantle",
 		Description = ::UPD.getDescription({
@@ -1015,6 +1037,9 @@ foreach (description in adjustedDescriptions)
 
 ::Const.Strings.PerkName.RF_ConcussiveStrikes = "Shockwave";
 ::Const.Perks.findById("perk.rf_concussive_strikes").Name = ::Const.Strings.PerkName.RF_ConcussiveStrikes;
+
+::Const.Strings.PerkName.RF_DeepImpact = "Breakthrough";
+::Const.Perks.findById("perk.rf_deep_impact").Name = ::Const.Strings.PerkName.RF_DeepImpact;
 
 ::Const.Strings.PerkName.RF_Poise = "Flexible";
 ::Const.Perks.findById("perk.rf_poise").Name = ::Const.Strings.PerkName.RF_Poise;
