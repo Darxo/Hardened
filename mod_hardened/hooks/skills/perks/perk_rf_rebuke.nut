@@ -48,7 +48,7 @@
 	q.canProc <- function ( _attacker, _skill )
 	{
 		if (!isEnabled()) return false;
-		if (!isValidSkill(_skill)) return false;
+		if (!isSkillValid(_skill)) return false;
 
 		local actor = this.getContainer().getActor();
 		if (!_attacker.isAlive() || !_attacker.isPlacedOnMap()) return false;
@@ -68,7 +68,7 @@
 		return true;
 	}
 
-	q.isValidSkill <- function( _skill )
+	q.isSkillValid <- function( _skill )
 	{
 		return _skill.isAttack() && !_skill.isRanged() && !_skill.isIgnoringRiposte();
 	}
