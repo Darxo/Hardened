@@ -419,6 +419,20 @@ local adjustedDescriptions = [
 
 	// Reforged Perks
 	{
+		ID = "perk.rf_bear_down",
+		Key = "RF_BearDown",
+		Description = ::UPD.getDescription({
+			Fluff = "\'Give their \'ed a nice knock, then move in for the kill!\'",
+			Requirement = "Mace",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Every hit to the head will [daze|Skill+dazed_effect] your target for " + ::MSU.Text.colorPositive(1) + " turn or increase the duration of an existing [daze|Skill+dazed_effect] by " + ::MSU.Text.colorPositive(1) + " turn",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_between_the_ribs",
 		Key = "RF_BetweenTheRibs",
 		Description = ::UPD.getDescription({
