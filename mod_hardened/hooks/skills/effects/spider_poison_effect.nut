@@ -1,4 +1,4 @@
-::Reforged.HooksMod.hook("scripts/skills/effects/spider_poison_effect", function (q) {
+::Hardened.HooksMod.hook("scripts/skills/effects/spider_poison_effect", function (q) {
 	q.m.HitpointRecoveryMult <- 0.5;
 
 	q.onUpdate = @(__original) function( _properties )
