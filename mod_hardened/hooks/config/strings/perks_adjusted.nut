@@ -364,6 +364,7 @@ local adjustedDescriptions = [
 		Key = "ShieldExpert",
 		Description = ::UPD.getDescription({
 			Fluff = "Learn to better deflect hits to the side instead of blocking them head on",
+			Requirement = "Shield",
 			Effects = [
 				{
 					Type = ::UPD.EffectType.Passive,
@@ -616,8 +617,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Moving next to an enemy that has less maximum [Hitpoints|Concept.Hitpoints] than you, removes [Confident|Concept.Morale] from them",
 					"Moving next to an enemy grants " + ::MSU.Text.colorPositive("+15") + " [Melee Skill|Concept.MeleeSkill] against them until they damage you",
+					"Moving next to an enemy that has less maximum [Hitpoints|Concept.Hitpoints] than you, removes [Confident|Concept.Morale] from them",
 				],
 			}],
 		}),
