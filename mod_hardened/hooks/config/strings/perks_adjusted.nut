@@ -255,6 +255,25 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.mastery.hammer",
+		Key = "SpecHammer",
+		Description = ::UPD.getDescription({
+			Fluff = "Master hammers and fighting against heavily armored opponents.",
+			Requirement = "Hammer",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue.|Concept.Fatigue]",
+						"[Shatter|Skill+shatter_skill] gains " + ::MSU.Text.colorPositive("+5%") + " chance to hit.",
+						"The [Polehammer|Item+polehammer] no longer has a penalty for attacking targets directly adjacent.",
+						::MSU.Text.colorPositive("50%") + " of the Armor Damage you deal to one body part is also dealt to the other body part",
+					],
+				},
+			],
+		}),
+	},
+	{
 		ID = "perk.mastery.polearm",
 		Key = "SpecPolearm",
 		Description = ::UPD.getDescription({

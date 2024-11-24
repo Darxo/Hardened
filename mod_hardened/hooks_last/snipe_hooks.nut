@@ -11,3 +11,6 @@
 
 // Completely Revert Reforged Quickhands nerf
 ::Hardened.snipeHook("scripts/skills/perks/perk_quick_hands", "mod_reforged");
+
+// Completely Revert Reforged Hammer Mastery additions
+::Hardened.snipeHook("scripts/skills/perks/perk_mastery_hammer", "mod_reforged");
