@@ -6,6 +6,5 @@
 		{
 			_tile.Properties.get("Corpse").RoundAdded <- ::Tactical.TurnSequenceBar.getCurrentRound();
 		}
-
 	}
 });
