@@ -1,11 +1,13 @@
 ::Hardened.HooksMod.hook("scripts/items/accessory/sergeant_badge_item", function(q) {
+	q.m.ResolveModifier <- 10;
+
 	q.onUpdateProperties = @() function( _properties )
 	{
 		this.accessory.onUpdateProperties(_properties);
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.rally_the_troops"))
 		{
-			_properties.Bravery += 10;
+			_properties.Bravery += this.m.ResolveModifier;
 		}
 	}
 
@@ -19,8 +21,8 @@
 		{
 			if (entry.id == 10)
 			{
-				entry.icon = "ui/icons/warning.png";
-				entry.text = "This character requires the perk \'Rally the Troops\' to receive a bonus from this item";
+				entry.icon = "ui/tooltips/warning.png";
+				entry.text = ::Reforged.Mod.Tooltips.parseString("Grants " + ::MSU.Text.colorizeValue(this.m.ResolveModifier, {AddSign = true}) + " [Resolve|Concept.Bravery] if you have [Rally|Perk+perk_rally_the_troops]");
 			}
 		}
 
