@@ -419,6 +419,29 @@ local adjustedDescriptions = [
 
 	// Reforged Perks
 	{
+		ID = "perk.rf_angler",
+		Key = "RF_Angler",
+		Description = ::UPD.getDescription({
+			Fluff = "Throw nets in a way that perfectly billows around your targets.",
+			Requirement = "Throwing Net",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"[Throw Net|Skill+throw_net] applies [Staggered|Skill+staggered_effect]",
+						"The range of [Throw Net|Skill+throw_net] is increased by " + ::MSU.Text.colorGreen(1) + " tile",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Active,
+					Description = [
+						"Unlocks the [Net Pull|Skill+rf_net_pull_skill] skill that allows you to pull a target and [net|Skill+net_effect] it",
+					],
+				},
+			],
+		}),
+	},
+	{
 		ID = "perk.rf_bear_down",
 		Key = "RF_BearDown",
 		Description = ::UPD.getDescription({

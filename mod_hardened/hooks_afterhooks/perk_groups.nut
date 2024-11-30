@@ -39,6 +39,11 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		pgLeadership.removePerk("perk.mastery.polearm");		// Remove Polearm Mastery
 	}
 
+	{	// Net Group
+		local pgNetGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_trapper");
+		changePerkTier(pgNetGroup, "perk.rf_angler", 2);			// Move Angler from Tier 3 down to Tier 2
+	}
+
 	{	// Noble Group
 		local pgNobleGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_noble");
 		pgNobleGroup.addPerk("perk.inspiring_presence", 7);		// Add Inspiring Presence to Tier 7
