@@ -1,7 +1,11 @@
 local oldTeleport = ::TacticalNavigator.teleport;
 ::TacticalNavigator.teleport <- function(_user, _targetTile, _onDone, _table, _bool, _float = 1.0)
 {
-	if (::Hardened.TileReservation.isReserved(_targetTile.ID)) return;	// We no longer allow two entities to teleport onto the same tile
+	if (::Hardened.TileReservation.isReserved(_targetTile.ID))
+	{
+		::logWarning("Hardened: Prevented teleport onto reserved Tile");
+		return;	// We no longer allow two entities to teleport onto the same tile
+	}
 
 	local oldCallback = _onDone;
 	_onDone = function( _entity, _tag )
