@@ -53,13 +53,24 @@
 
 
 // Delete all functions in the passed class so that its shell can be repurposed without changing every instance that was pointing to the old script
-::Hardened.wipeClass <- function( _classPath )
+// @param _functionsToIgnore array of function names that should not be wiped
+::Hardened.wipeClass <- function( _classPath, _functionsToIgnore = [] )
 {
 	::Hardened.HooksMod.rawHook(_classPath, function(p) {
 		local toDelete = [];
 		foreach (name, func in p)
 		{
-			if (typeof func == "function") toDelete.push(name);
+			if (typeof func == "function")
+			{
+				if (_functionsToIgnore.find(name) == null)
+				{
+					toDelete.push(name);
+				}
+				else
+				{
+					::logWarning(name + " exists in _functionsToIgnore and will be skipped");
+				}
+			}
 		}
 
 		foreach (functionName in toDelete)
