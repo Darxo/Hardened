@@ -1,5 +1,5 @@
 ::Hardened.TileReservation <- {
-	TilesUsed = [],	// Array of tile IDs, that are currently empty but about to be filled with an entity
+	TilesUsed = [],	// Array of tile {ID and RoundReserved}, that are currently empty but about to be filled with an entity
 
 	// Must be called once at the start of every combat
 	function onCombatStarted()
@@ -12,7 +12,7 @@
 	{
 		for (local i = this.TilesUsed.len() - 1; i >= 0; --i)
 		{
-			if (tileReservation[i].Round < ::Time.getRound())
+			if (this.TilesUsed[i].RoundReserved < ::Time.getRound())
 			{
 				this.TilesUsed.remove(i);
 			}
