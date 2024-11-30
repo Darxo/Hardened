@@ -72,7 +72,6 @@
 	{
 		__original(_properties);
 
-		local actor = this.getContainer().getActor();
 		foreach (skill in this.getContainer().m.Skills)
 		{
 			if (this.isSkillValid(skill))
