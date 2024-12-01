@@ -28,7 +28,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - gambeson coloring
 - nerf cover ally initiative bonus and give it additional defense
 - perk for civilians (e.g. caravan guys), called "First Aid", making: Injuries you treat during battle are removed instead
-- remove close ranged penalty for reach weapons (its now covered by crowded)
 - move weapon mastery effects into the weapon mastery itself, instead of being implemented by the skills
 - make alps more smart on overworld (stalk player during day)
 	- Make it so alps are more aggressive, but they dislike roads. So you are very safe against them while on roads
@@ -107,18 +106,17 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- I can't reproduce this bug, need more evidence and reproducible steps
 	- In the Vanilla Code I couldn't find an obvious issue on first glance. Probably something todo with the engine
 - Improve AI by taking into account whether they are already known to the player. And make them prefer steping onto tiles that are already revealed to the player
-- New effect given to defender of camps, called "Defender's Advantage". It grants +1 Vision and +10 Resolve. Maybe some other buffs. It reads "You know this place in and out, you have a natural advantage defending it"
 - Nerf Formidable Approach by also making enemies have +5% chance to hit you, if they are on your list
 - Make it so the winner of AI battles also gets all look spawned by the opponents 'getDroppedLoot' function.
 	- Or rather whenever a unit dies during an AI battle, the result of that function is pushed into its party Loot
 - Docs: Make list of existing functions, that this mod overwrites
-- Bug: "playInventorySound" error. Probably because supplies are instantly consumed, leaving only a null object to try to play the sound of
-	- tactical_combat_result_screen.nut: L189: stashItems[j].playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag);
 - Make three headed flail only hit once during opponents turn (or have it have less chance to hit)
 - Display vision of currently active entity, by outlining border of view field on tiles
 	- Grey out the tiles not visible to the current entity
+- New enemy skill "Gravecall" for ancient undead
+- Kingfisher Rename -> Entangler?
+	- Close the distance, and snare your foe with a net in the heat of Battle
 
-- update description of iron sights so specify that the shellshocked part only works with ranged attacks?
 - new DayCreated member for locations
 	- Can be used to adjust scaling so that newly created locations scale slower than ones already there longer?
 	- Can be used for upgrading, so that locations left along can upgrade into stronger versions?
@@ -129,7 +127,25 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+- Separate Lindwurm
+- Bug: "playInventorySound" error. Probably because supplies are instantly consumed, leaving only a null object to try to play the sound of
+	- tactical_combat_result_screen.nut: L189: stashItems[j].playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag);
+
+- remove close ranged penalty for reach weapons (its now covered by crowded)
+- New effect given to defender of camps, called "Defender's Advantage". It grants +1 Vision and +10 Resolve. Maybe some other buffs. It reads "You know this place in and out, you have a natural advantage defending it"
+
+
 # Changes:
+
+0.17.0
+	- The **Net Effect** no longer reduces the Initiative of the target
+	- **Angler** no longer increases the cost of **Break Free** on the target. It now increases the maximum range of **Throw Net** by 1 and it staggers every character that you net. **Net Pull** now has a Range of 3 (up from 2)
+	- **Savage Strength** now reduces fatigue cost of weapon skills by 20% (down from 25%). It now grants immunity to Disarm
+	- Schrats no longer take 70% reduced damage while their shield is up. They now have +200 Hitpoints and gain the **One with the Shield** perk
+	- **Disarm** (granted by whips) can no longer target enemies who are immune to disarm
+	- NPCs are more likely to use **Disarm** on targets with an active **Spearwall** or **Riposte**
+	- Improve Sergeant Sash description
+	- Fix combat glitches after characters teleport
 
 0.16.0
 	- Add new **One with the Shield** perk in Tier 7 of **Shield Group**. It requires a shield. It grants 25% more Injury Threshold. While you have Shieldwall effect you take 40% less Hitpoint damage from head attack. While you don't have Shieldwall effect you take 40% less Hitpoint damage from body attacks

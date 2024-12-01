@@ -10,11 +10,12 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 - Reach Mechanic has been simplified
 - Almost all shield changes have been reverted
-- A huge amount of perks are reworked or rebalanced
-- Some skills are tweaked
-- Some enemies are tweaked
-- Several smaller QoL features have been added
-- Several niche vanilla bugs are fixed
+- ~60 perks are reworked or rebalanced
+- 2 new perks are introduced
+- ~25 skills are tweaked
+- ~20 enemies are slightly tweaked
+- ~30 QoL features or changes
+- ~13 niche vanilla bugs are fixed
 
 # List of all Changes
 
@@ -109,13 +110,14 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
 - **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (up from 50%)
+- **Net Effect** no longer reduces the Initiative of the target
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack
 - **Spider Poison** now also reduces the Hitpoints Recovery of the target by 50%
-- **Sprint** now costs 1 Action Point (up from 0) but no longer increases the fatigue cost per tile while sprinting
+- **Sprint** (granted by **Footwork**) now costs 1 Action Point (up from 0) but no longer increases the fatigue cost per tile while sprinting
 - **Stab** now costs 3 Action Points (down from 4)
-- **Lunge** now have -10% additional Hitchance (up from -20%)
+- **Lunge** now hase -10% additional Hitchance (up from -20%)
 - **Sword Thrust** now has -10% additional Hitchance (up from -20%)
 - Throw Pot/Flask skills are no longer considered an attack
 
@@ -136,6 +138,7 @@ Skill nerfs as a result of the Reach system:
 
 Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-changes-Side‐By‐Side
 
+- **Angler** no longer increases the cost of **Break Free** on the target. It now increases the maximum range of **Throw Net** by 1 and it staggers every character that you net. **Net Pull** now has a Range of 3 (up from 2)
 - **Anticipation** now also proccs whenever your shield takes damage from an attack
 - **Axe Mastery** no longer grants **Hook Shield**. It now causes **Split Shield** to apply **Dazed** for 1 turn
 - **Bags and Belts** now also includes two-handed weapons but no longer grants Initiative
@@ -183,6 +186,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Quickhands** can now also swap two two-handed weapons
 - **Rattle** is now called **Full Force** and has been completely reworked. It now causes you to spend all remaining Action Points whenever you attack and gain 10% more damage per Action Point spent. The effect is double for one-handed weapons
 - **Rebuke** is completely reworked. It now grants the **Rebuke Effect** whenever an opponent misses a melee attack against you while it's not your turn, until the start of your next turn. This effect reduces your damage by 25% but will make you retaliate every melee attack miss against you.
+- **Savage Strength** now reduces fatigue cost of weapon skills by 20% (down from 25%). It now grants Immunity to Disarm
 - **Shield Expert** no longer grants 25% increased shield defenses and no longer prevents fatigue build-up when you dodge attacks. It now grants 50% less shield damage taken and it makes it so enemies will never have Reach Advantage over the shield user
 - **Shield Sergeant** is mostly reworked. It still grants **Shieldwall** to all allies at the start of each combat. It now causes allies to imitate shield skills for free that you use. It also allows you to use **Knock Back** on empty tiles.
 - **Skirmisher** now grants 50% of body armor weight as initiative (previously 30% of body/helmet armor weight) and no longer displays an effect icon
@@ -191,7 +195,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Sweeping Strikes** is completely reworked: It now grants +3 Melee Defense for every adjacent enemy until the start of your next turn whenever you use a melee attack skill. It still requires a two-handed weapon
 - **Swift Stabs** has been completely reworked. It's now called **Hit and Run**. It makes it so all dagger attacks can be used at 2 tiles and will move the user one tile closer before the attack. When the attack hits the enemy, the user is moved back to the original tile
 - **Target Practice** has been completely reworked. It now makes it 50% less likely for your arrows to hit the cover, when you have no clear line of fire (stronger than vanilla Bullseye)
-- **Through the Gaps** is now always active but now lowers your armor penetration by 10% (down from increasing it by 10%)
+- **Through the Gaps** is now always active but. It now lowers your armor penetration by 10% (down from increasing it by 10%)
 - **Throwing Mastery** is mostly completely reworked. It now grants 30% more damage for your first throwing attack each turn, no matter the range. It now allows swapping a throwing weapon with an empty throwing weapon or empty slot for free, once per turn
 - **Trick Shooter** no longer causes your **Aimed Shot** to trigger a morale check on the main target hit
 - **Unstoppable** no longer loses all Stacks when you use **Wait** if you spent at least half of your action points by that time
@@ -202,7 +206,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Perk Groups
 
 - **Bags and Belts** is now part of the **Light Armor** group instead of being available for everyone
-- **Deep Impact** is now a T3 perk and **Rattle** (now **Full Force**) is now a T6 perk
+- **Deep Impact** (now **Breakthrough**) is now a T3 perk and **Rattle** (now **Full Force**) is now a T6 perk
 - **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
 - **Duelist** is no longer part of **Shield** group
 - **Inspiring Presence** is now also part of the **Noble** group at Tier 7
@@ -273,9 +277,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Enemies
 
-- All Goblins have -5 Melee Skill and -5 Melee Defense
-- Add new **Goblin** racial effect that grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
-- All ifrits have 50% less Hitpoints and 50% more Armor
+**Bandits:**
 - **Scoundrels** no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**. They now spawn with a **Knife** instead of **Dagger**/**Woodcutters Axe**
 - **Vandals** no longer spawn with **Kite Shields**. Instead they can now spawn with **Old Wooden Shields**
 - **Raider** no longer have **Shield Expert**. They no longer spawn with **Kite Shields**. Instead they can now spawn with **Worn Kite/Heater Shields**
@@ -284,26 +286,34 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Pillager** can now also spawn with **Cudgel**. **Pillager** no longer spawn with **Woodcutters Axe**, **Two Handed Mace** or **Two Handed Hammer**
 - **Outlaws** no longer spawn with **Two Handed Wooden Flail** or **Greatsword**
 - **Marauder** no longer spawn with **Two Handed Wooden Flail** and are twice as likely to spawn with a **Greatsword**
-- Fast Brigands (Robber, Bandit, Killer) now always spawn with a net if they are one-handed, and with a throwing weapon if two-handed
+- Fast Brigands (Robber, Bandit, Killer) now always spawn with a net if they are one-handed, and with a throwing weapon if two-handed. They also have cosmetic face warpaint
 - **Robber** no longer spawn with a **Pike** or **Reinforced Wooden Poleflail**
 - **Bandits** no longer spawn with a **Poleflail**, **Warbrand** or **Throwing Spear**. The can now spawn with a **Reinforced Wooden Poleflail**. They can no appear as Champions
 - **Killer** no longer spawn with **Scramasax**, **Pike**, **Spetum**, **Warbrand** or **Throwing Spear**
 - **Brigand Leader** no longer have **Shield Expert**
+- Add
+**Humans**
+- Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop crowns, food or tools or a valueable ring.
 - **Noble Footmen** no longer have **Shield Expert**
-- **Zombies** no longer have **Double Grip** but gain +5 Melee Skill.
-- **Zombies** and **Skeletons** grant 20% more experience
-- **Zombies** and **Skeletons** no longer grant experience after resurrecting
+**Undead**
+- all **Zombies** gain +5 Melee Skill and grant 20% more experience. They no longer have **Double Grip** and no longer grant experience after being ressurected
+- all **Skeletons** grant 20% more experience. They no longer grant experience after being ressurected
 - **Fallen Heroes** no longer spawn with Morning Stars or Handaxes
 - **Geists** no longer have **Fearsome**. They now have **Backstabber**
-- **Barbarian Drummer** now have +1 Action Point and grant +150 Experience
-- **Barbarian Thralls** now spawn twice as often with **Crude Javelins** and half as often with regular throwing weapons
-- **Nachzehrer** can no longer swallow player characters while in a net.
 - **Necromancer** no longer have 20 natural body armor or **Inspiring Presence**
 - **Ancient Auxiliary** no longer have **Battleforged**
+**Greenskin**
+- All Goblins have -5 Melee Skill and -5 Melee Defense
+- Add new **Goblin** racial effect that grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
+**Barbarian**
+- **Barbarian Thralls** now spawn twice as often with **Crude Javelins** and half as often with regular throwing weapons
+- **Barbarian Drummer** now have +1 Action Point and grant +150 Experience
+**Beasts**
+- All ifrits have 50% less Hitpoints and 50% more Armor
+- **Nachzehrer** can no longer swallow player characters while in a net.
 - **Donkeys** now grant 0 XP (down from 50 XP)
-- Add face warpaint to all **Fast Bandits**
-- Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop crowns, food or tools or a valueable ring.
-- Remove **Steelbrow** from Ifrit, Sapling and Kraken Tentacle
+- **Schrats** no longer take 70% reduced damage while their shield is up. They now have +200 Hitpoints and gain the **One with the Shield** perk
+**Other**
 - Enemies which spawn with **Spear Flurry** now automatically gain **Fresh and Furious** (to balance out how bad that perk is by itself)
 
 ### Enemy AI
@@ -317,6 +327,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - NPCs with **Sweeping Strikes** are more likely to use an appropriate attack as they are surrounded by more enemies
 - NPCs are more likely to target enemies with **Formidable Approach** if it has been procced against them
 - NPCs are far less likely to attack into an active **Rebuke**
+- NPCs are more likely use **Disarm** onto enemies with **Spearwall** or **Riposte**
 
 ### World Map
 
@@ -358,10 +369,12 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 	- This effect is given to all Dogs, Wolfs and Hyenas
 - Introduce a new **Headless** effect, which sets the headarmor to 0 and redirects any attack to hit the body and grants immunity to **Distracted**
 	- This effect is given to Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles
+	- Remove the now redundant perk **Steelbrow** from Ifrit, Sapling and Kraken Tentacle
 - Introduce a new **Unworthy Opponent** effect which prevents the character from granting experience on death, and give it to enemies which do not grant experience
 - Introduce a new cosmetic **Non-Combatant**, to non-combatant enemies, which explains that they do not need to be killed in order to win
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back
+- **Disarm** can no longer be used on enemies which are immune to disarm
 - **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
 - All Skills from the **Lorekeeper** now have skill descriptions
