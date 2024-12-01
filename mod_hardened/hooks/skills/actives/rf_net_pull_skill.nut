@@ -5,7 +5,7 @@
 		this.m.MaxRange = 3;	// In Reforged this is 2
 	}
 
-	q.getTooltip = @(__original) function()
+	q.getTooltip = @(__original) function()	// This will be redundant with the next Reforged update and must be removed then
 	{
 		local ret = __original();
 

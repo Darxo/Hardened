@@ -16,7 +16,7 @@
 	// Overwrite to remove the effect of Reforged
 	q.onTargetHit = @() function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor ) {}
 
-// New Getter
+// Hardened Functions
 	// If we are evaluating _target, potentially targeting them with _usedSkill, how would that change the targets perceived value?
 	q.getQueryTargetMultAsUser = @(__original) function( _target, _usedSkill = null )	// Const
 	{

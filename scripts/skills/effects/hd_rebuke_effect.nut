@@ -73,7 +73,7 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 		}
 	}
 
-// New Getter
+// Hardened Functions
 	// If _user is evaluating our value, potentially targeting us with _usedSkill, how would that change our perceived value for them?
 	function getQueryTargetMultAsTarget( _user, _usedSkill = null )
 	{

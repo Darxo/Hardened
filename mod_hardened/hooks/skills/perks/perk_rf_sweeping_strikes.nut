@@ -72,7 +72,7 @@
 		this.m.CurrentMeleeDefenseModifier = 0;
 	}
 
-// New Getter
+// Hardened Functions
 	// If we are evaluating _target, potentially targeting them with _usedSkill, how would that change the targets perceived value?
 	q.getQueryTargetMultAsUser = @(__original) function( _target, _usedSkill = null )	// Const
 	{

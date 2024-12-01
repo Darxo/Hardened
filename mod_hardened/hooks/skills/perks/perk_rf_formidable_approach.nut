@@ -109,7 +109,7 @@
 		this.m.Enemies.clear();
 	}
 
-// New Getter
+// Hardened Functions
 	// If _user is evaluating our value, potentially targeting us with _usedSkill, how would that change our perceived value for them?
 	q.getQueryTargetMultAsTarget = @(__original) function( _user, _usedSkill = null )
 	{
