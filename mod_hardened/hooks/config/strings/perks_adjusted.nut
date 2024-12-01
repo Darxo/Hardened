@@ -199,7 +199,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+						"Axe Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 						"[Round Swing|Skill+round_swing] gains " + ::MSU.Text.colorPositive("+5%") + " chance to hit",
 						"[Split Shield|Skill+split_shield] applies [Dazed|Skill+dazed_effect] for " + ::MSU.Text.colorPositive(1) + " [turn|Concept.Turn]",
 						"The [Longaxe|Item+longaxe] no longer has a penalty for attacking targets directly adjacent",
@@ -224,7 +224,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+						"Crossbow and Firearm Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 						"[Reload|Skill+reload_bolt] with [Heavy Crossbows|Item+heavy_crossbow] costs " + ::MSU.Text.colorPositive("-1") + "[Action Point|Concept.ActionPoints]",
 						"[Reload|Skill+reload_handgonne_skill] with [Handgonnes|Item+handgonne] costs " + ::MSU.Text.colorPositive("-3") + " [Action Points|Concept.ActionPoints]",
 					],
@@ -247,7 +247,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+					"Dagger Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 					"The [Action Point|Concept.ActionPoints] cost of [Puncture|Skill+puncture] and [Deathblow|Skill+deathblow_skill] is reduced to " + ::MSU.Text.colorPositive("3"),
 					"Once per [turn,|Concept.Turn] the first use of your offhand item [weighing|Concept.Weight] less than " + ::MSU.Text.colorPositive(10) + " costs no [Action Points|Concept.ActionPoints]",
 				],
@@ -264,7 +264,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue.|Concept.Fatigue]",
+						"Hammer Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue.|Concept.Fatigue]",
 						"[Shatter|Skill+shatter_skill] gains " + ::MSU.Text.colorPositive("+5%") + " chance to hit.",
 						"The [Polehammer|Item+polehammer] no longer has a penalty for attacking targets directly adjacent.",
 						::MSU.Text.colorPositive("50%") + " of the Armor Damage you deal to one body part is also dealt to the other body part",
@@ -282,7 +282,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+					"Polearm Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 					"[Hook|Skill+hook] and [Repel|Skill+repel] have " + ::MSU.Text.colorPositive("+15%") + " chance to hit",
 					"Polearms no longer have a penalty for attacking targets directly adjacent",
 					"Gain the [Bolster|Perk+perk_rf_bolster] perk",
@@ -300,7 +300,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+						"Spear Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 						"[Spearwall|Skill+spearwall] can be used while engaged in melee and is no longer disabled when enemies overcome it",
 						"The [Spetum|Item+spetum] and [Warfork|Item+warfork] no longer have a penalty for attacking targets directly adjacent",
 						"[Reach Advantage|Concept.ReachAdvantage] grants an additional " + ::MSU.Text.colorizeMultWithText(::Reforged.Reach.ReachAdvantageMult) + " [Melee Skill|Concept.MeleeSkill]",
@@ -319,7 +319,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+						"Sword Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 						"[Riposte|Skill+riposte] no longer has a penalty to hitchance",
 						"[Gash|Skill+gash_skill] has a " + ::MSU.Text.colorPositive("50%") + " lower threshold to inflict injuries",
 						"[Split|Skill+split] and [Swing|Skill+swing] no longer have a penalty to hitchance",
@@ -343,7 +343,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+					"Throwing Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 					"Your first throwing attack each [turn|Concept.Turn] deals " + ::MSU.Text.colorizeMultWithText(1.3) + " damage",
 					"Swapping a throwing weapon with an empty throwing weapon or an empty slot becomes a free action once per [turn|Concept.Turn]",
 				],
