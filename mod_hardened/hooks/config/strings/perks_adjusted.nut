@@ -894,6 +894,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_savage_strength",
+		Key = "RF_SavageStrength",
+		Description = ::UPD.getDescription({
+			Fluff = "Orcs call me brother!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Weapon Skills cost " + ::MSU.Text.colorPositive("20%") + " less [Fatigue|Concept.Fatigue]",
+					"You are immune to [disarm|Skill+disarmed_effect]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_shield_sergeant",
 		Key = "RF_ShieldSergeant",
 		Description = ::UPD.getDescription({
