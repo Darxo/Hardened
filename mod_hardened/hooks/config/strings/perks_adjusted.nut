@@ -773,7 +773,6 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Your spear attacks no longer build up [Fatigue|Concept.Fatigue]",
-					"Deal " + ::MSU.Text.colorNegative("10%") + " less damage",
 				],
 			}],
 		}),
