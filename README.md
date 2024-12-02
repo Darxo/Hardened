@@ -277,7 +277,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Enemies
 
-**Bandits:**
+**Brigands:**
 - **Scoundrels** no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**. They now spawn with a **Knife** instead of **Dagger**/**Woodcutters Axe**
 - **Vandals** no longer spawn with **Kite Shields**. Instead they can now spawn with **Old Wooden Shields**
 - **Raider** no longer have **Shield Expert**. They no longer spawn with **Kite Shields**. Instead they can now spawn with **Worn Kite/Heater Shields**
@@ -291,8 +291,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bandits** no longer spawn with a **Poleflail**, **Warbrand** or **Throwing Spear**. The can now spawn with a **Reinforced Wooden Poleflail**. They can no appear as Champions
 - **Killer** no longer spawn with **Scramasax**, **Pike**, **Spetum**, **Warbrand** or **Throwing Spear**
 - **Brigand Leader** no longer have **Shield Expert**
-- Add
-**Humans**
+
+**Humans:**
 - Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop crowns, food or tools or a valueable ring.
 - **Noble Footmen** no longer have **Shield Expert**
 **Undead**
@@ -302,18 +302,21 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Geists** no longer have **Fearsome**. They now have **Backstabber**
 - **Necromancer** no longer have 20 natural body armor or **Inspiring Presence**
 - **Ancient Auxiliary** no longer have **Battleforged**
-**Greenskin**
+
+**Greenskins:**
 - All Goblins have -5 Melee Skill and -5 Melee Defense
 - Add new **Goblin** racial effect that grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
 **Barbarian**
 - **Barbarian Thralls** now spawn twice as often with **Crude Javelins** and half as often with regular throwing weapons
 - **Barbarian Drummer** now have +1 Action Point and grant +150 Experience
-**Beasts**
+
+**Beasts:**
 - All ifrits have 50% less Hitpoints and 50% more Armor
 - **Nachzehrer** can no longer swallow player characters while in a net.
 - **Donkeys** now grant 0 XP (down from 50 XP)
 - **Schrats** no longer take 70% reduced damage while their shield is up. They now have +200 Hitpoints and gain the **One with the Shield** perk
-**Other**
+
+**Others:**
 - Enemies which spawn with **Spear Flurry** now automatically gain **Fresh and Furious** (to balance out how bad that perk is by itself)
 
 ### Enemy AI
@@ -465,9 +468,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 # Known Issues:
 
-- New perks introduced by **Hardened** (**Parry** and **One with the Shield**) will change into other unused vanilla perks, while you player just Reforged
+- New perks introduced by **Hardened** (**Parry** and **One with the Shield**) will change into other unused vanilla perks, when you switch back to just Reforged
 - Using Recover will prevent you from using **Wait Round** for the rest of this round
 - **Student** will double-dip in the Manhunter Origin for Slaves
+- Vanilla Bug: Ifrit take far more armor damage than intended per hit
 
 # Compatibility
 
