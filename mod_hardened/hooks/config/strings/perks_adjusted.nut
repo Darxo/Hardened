@@ -71,6 +71,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.colossus",
+		Key = "Colossus",
+		Description = ::UPD.getDescription({
+			Fluff = "Bring it on!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive("+15") + " [Hitpoints|Concept.Hitpoints]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.dodge",
 		Key = "Dodge",
 		Description = ::UPD.getDescription({
