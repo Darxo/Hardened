@@ -49,10 +49,19 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		pgNobleGroup.addPerk("perk.inspiring_presence", 7);		// Add Inspiring Presence to Tier 7
 	}
 
+	{	// Ranged Combat
+		local pgRangedGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_ranged");
+		pgRangedGroup.addPerk("perk.rf_marksmanship", 7);
+	}
+
 	{	// Shield Group
 		local pgShieldGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_shield");
 		pgShieldGroup.removePerk("perk.duelist");		// Remove Duelist fomr Shields
 		pgShieldGroup.addPerk("perk.recover", 7);
+	}
+
+	{	// Special Marksman Group
+		::DynamicPerks.PerkGroups.remove("pg.special.rf_marksman");	// This group does no longer exist in Hardened
 	}
 
 	{	// Special Student Group

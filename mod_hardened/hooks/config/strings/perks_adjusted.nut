@@ -805,6 +805,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_marksmanship",
+		Key = "RF_Marksmanship",
+		Description = ::UPD.getDescription({
+			Fluff = "Free of nearby threats, your awareness sharpens.",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"While no enemy is within 2 tiles of you, gain " + ::MSU.Text.colorPositive("+10") + " to Minimum and Maximum Damage",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_phalanx",
 		Key = "RF_Phalanx",
 		Description = ::UPD.getDescription({
