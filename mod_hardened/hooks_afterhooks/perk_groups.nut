@@ -87,6 +87,8 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	{	// Wildling Group
 		local pgWildling = ::DynamicPerks.PerkGroups.findById("pg.rf_wildling");
 		pgWildling.removePerk("perk.rf_bestial_vigor");	// Remove Bestial Vigor (now Backup Plan) from Wildling
+		pgWildling.removePerk("perk.pathfinder");
+		pgWildling.addPerk("perk.colossus", 1);
 	}
 }
 
