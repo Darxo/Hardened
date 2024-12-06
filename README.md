@@ -151,6 +151,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bolster** now requires a Polearm equipped, instead of any weapon with a Reach of 6 or more
 - **Bullseye** no longer reduces the penalty for shooting behind cover. It also no longer works with **Take Aim**. It now provides 25% Armor Penetration (up from 20%)
 - **Brawny** no longer grants Initiative
+- **Colossus** now grants +15 Hitpoints, instead of 25% more Hitpoints
 - **Concussive strikes** is completely reworked. It is now called **Shockwave** and it makes it so your kills or stuns with maces will daze all enemies adjacent to your target for 1 turn
 - **Dagger Mastery** no longer grant any reach ignore. It now reduces the action point cost of the first offhand skill each turn to 0, if your offhand item has a weight lower than 10
 - **Deep Impact** is now called **Breakthrough** and has been completely reworked. It grants the **Pummel** skill, which can now be used with any hammer. It also makes it so **Shatter** has a 100% chance to knock targets back on a hit
@@ -172,9 +173,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Hybridization** is completely reworked. It still grants 10% of your base Ranged Skill as Melee Skill/Defense. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type hits to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 50% more damage to shields
 - **Inspiring Presence** no longer requires a banner. At the start of each round it grants adjacent allies of your faction +3 Action Points for this turn, if they are adjacent to an enemy and have less Resolve than you. The same target can't be inspired multiple times per turn.
 - **Iron Sights** headshot chance now also works with melee weapons
-- **King of all Weapons** is now called **Spear Flurry** and is completely reworked. It now reduces your damage by 10% but prevents spear attacks from building up any fatigue.
+- **King of all Weapons** is now called **Spear Flurry** and is completely reworked. It now prevents spear attacks from building up any fatigue
 - **Leverage** is completely reworked. It now reduces the Action Point cost of your first polearm attack each turn by 1 for each adjacent ally.
 - **Lone Wolf** is now only active is no ally from your company is within 2 tiles
+- **Marksmanship** is completely reworked. It now grants +10 minimum and maximum damage while there are no enemies within 2 tiles
 - **Nimble** is completely reworked: It now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
 - **Offhand Training** is completely reworked. It now reduces the AP cost of tool skills by 1. Wielding a tool in your offhand no longer disables **Double Grip** and while wielding a tool in your offhand, the first successful attack each turn, will stagger your target
 - **Onslaught** no longer has a shared cooldown
@@ -192,7 +194,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Skirmisher** now grants 50% of body armor weight as initiative (previously 30% of body/helmet armor weight) and no longer displays an effect icon
 - **Spear Mastery** no longer provides a free spear attack each turn. Instead of now grants 15% more Melee Skill while you have Reach Advantage
 - **Student** no longer grants any experience. It now grants +1 Perk Point when you reach level 8 instead of level 11
-- **Sweeping Strikes** is completely reworked: It now grants +3 Melee Defense for every adjacent enemy until the start of your next turn whenever you use a melee attack skill. It still requires a two-handed weapon
+- **Sweeping Strikes** is completely reworked: It now grants +5 Melee Defense for every adjacent enemy until the start of your next turn the first time you use a melee attack skill on an adjacent enemy. It still requires a two-handed weapon
 - **Swift Stabs** has been completely reworked. It's now called **Hit and Run**. It makes it so all dagger attacks can be used at 2 tiles and will move the user one tile closer before the attack. When the attack hits the enemy, the user is moved back to the original tile
 - **Target Practice** has been completely reworked. It now makes it 50% less likely for your arrows to hit the cover, when you have no clear line of fire (stronger than vanilla Bullseye)
 - **Through the Gaps** is now always active but. It now lowers your armor penetration by 10% (down from increasing it by 10%)
@@ -206,16 +208,23 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Perk Groups
 
 - **Bags and Belts** is now part of the **Light Armor** group instead of being available for everyone
+- **Colossus** is now also part of the **Wildling** perk group in Tier 1
 - **Deep Impact** (now **Breakthrough**) is now a T3 perk and **Rattle** (now **Full Force**) is now a T6 perk
 - **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
 - **Duelist** is no longer part of **Shield** group
 - **Inspiring Presence** is now also part of the **Noble** group at Tier 7
-- **Polearm Mastery** is no longer part of **Leadership** group
+- **Marksmanship** is no longer a special perk. It is now a T7 perk in the **Ranged** perk group
 - **Quickhands** from the perk group **Trained** is now a Tier 1 perk (was Tier 2 before)
+- **Pathfinder** and **Decisive** are now part of **Leadership** group
+- **Pathfinder** is no longer part of the **Wildling** group
+- **Polearm Mastery** and **Fortified Mind** are removed from the **Leadership** group
+- **Rally the Troops** from the **Leadership** group is now a Tier 3 perk (was Tier 2 before)
 - **Student** is now available for everyone
 - **Vigorous Assault** is no longer part of **Swift Strikes** group
 - **Knave** no longer guarantees the **Dagger** perk group. Now it is just twice as likely. It also no longer guarantees the **Nimble** per group
 - **Wildling** no longer prevents the perk groups **Ranged**, **Gifted** and **Leadership** from appearing
+- **Leadership** perk group is now part of the **Shared** perk group collection and will compete with shared perk groups
+- **Tactician** is now a **Special** perk group and no longer replaces a shared perk group, when it appears
 
 ### Backgrounds
 

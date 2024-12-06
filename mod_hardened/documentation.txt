@@ -46,7 +46,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - mauler -> replace second effect with 15% more damage when hitting body parts that have no remaining armor
 - make disloyal have more of a downside
 - Dynamic Duo You deal 50% less damage to your partner
-- new T7 ranged perk "Impossible Shot", which reduces ranged skill by your current Ranged Defense and increases Ranged damage by a percentage equal to your
 
 - Display mood icon during events (Turn that sprite visible / rendertotexture to false/true?)
 - Prevent AI from shieldwalling when its the only one left (unless they have rebuke/riposte)
@@ -81,9 +80,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - expirable potions (so you are forced to use them and so they can be sold/given out more frequently)
 - Make it so wait can not be used if you have less than half of your AP remaining
 - Make certain items unsellable
-
-- Savage Strength: Immune to Disarm?
-
 - Scrapper-Retinue member making it so armor damage above a certain threshold (e.g. at least 50 per hit) produces tools. But
 - Make "Obtain" quests harder. E.g. by starting in an ambush or by making the location hidden by default
 - Look into throwing weapons not producing miss-projectiles correctly when missing, sometimes
@@ -136,6 +132,17 @@ This will unbrick your end-of-combat screen, if it doesnt show
 
 
 # Changes:
+
+0.18.0
+	- **Marksmanship** is completely reworked. It now grants +10 minimum and maximum damage while there are no enemies within 2 tiles
+	- **Colossus** now grants +15 Hitpoints, instead of 25% more Hitpoints
+	- **Sweeping Strikes** now grants +5 Melee Defense perk adjacent enemy (up from +3) but will only trigger once per turn
+	- **Spear Flurry** no longer applies any damage penalty (down from 10% less damage)
+	- **Marksmanship** is no longer a special perk. It is now a T7 perk in the **Ranged** perk group
+	- **Colossus** is now also a T1 perk in the **Wildling** group. **Pathfinder** is removed from the **Wildling**  group
+	- **Pathfinder** is now also a T1 perk in the **Leadership** group. **Decisive** is now also a T4 perk in the **Leadership** group. **Fortified Mind** is removed from the
+	- **Leadership** perk group is now part of the **Shared** perk group collection and will compete with shared perk groups
+	- **Tactician** is now a **Special** perk group and no longer replaces a shared perk group, when it appears
 
 0.17.0
 	- The **Net Effect** no longer reduces the Initiative of the target
