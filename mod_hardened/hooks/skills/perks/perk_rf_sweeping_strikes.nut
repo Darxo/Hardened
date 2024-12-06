@@ -2,7 +2,7 @@
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_sweeping_strikes", function(q) {
 	// Config
-	q.m.MeleeDefenseModifier <- 3;
+	q.m.MeleeDefenseModifier <- 5;
 	q.m.RequiredItemType <- ::Const.Items.ItemType.TwoHanded;
 
 	// Private
@@ -49,11 +49,14 @@
 
 	q.onBeforeAnySkillExecuted <- function( _skill, _targetTile, _targetEntity, _forFree )
 	{
-		if (this.isSkillValid(_skill))
+		if (this.m.CurrentMeleeDefenseModifier == 0 && this.isSkillValid(_skill))
 		{
 			local actor = this.getContainer().getActor();
-			local adjacentHostiles = ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true);
-			this.m.CurrentMeleeDefenseModifier += adjacentHostiles.len() * this.m.MeleeDefenseModifier;
+			if (actor.getTile().getDistanceTo(_targetEntity.getTile()) == 1)
+			{
+				local adjacentHostiles = ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true);
+				this.m.CurrentMeleeDefenseModifier += adjacentHostiles.len() * this.m.MeleeDefenseModifier;
+			}
 		}
 	}
 
