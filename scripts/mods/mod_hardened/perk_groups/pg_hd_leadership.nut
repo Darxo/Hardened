@@ -7,10 +7,10 @@ this.pg_hd_leadership <- ::inherit(::DynamicPerks.Class.PerkGroup, {
 		this.m.Name = "Leadership";
 		this.m.Icon = "ui/perk_groups/rf_leadership.png";
 		this.m.Tree = [
-			["perk.rf_supporter"],
-			["perk.rally_the_troops"],
-			["perk.fortified_mind"],
-			[],
+			["perk.pathfinder", "perk.rf_supporter"],
+			[],								// In Reforged this has rally the troops
+			["perk.rally_the_troops"],		// In Reforged this has fortified mind
+			["perk.rf_decisive"],			// In Reforged this has polarm mastery
 			["perk.rf_command"],
 			[],
 			["perk.inspiring_presence"],
