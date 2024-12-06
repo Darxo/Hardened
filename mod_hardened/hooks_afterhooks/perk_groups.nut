@@ -35,11 +35,8 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	}
 
 	{	// Leadership Group
-		local pgLeadership = ::DynamicPerks.PerkGroups.findById("pg.special.rf_leadership");
-		pgLeadership.removePerk("perk.mastery.polearm");		// Remove Polearm Mastery
-		pgLeadership.removePerk("perk.fortified_mind");
-		pgLeadership.addPerk("perk.pathfinder", 1);
-		pgLeadership.addPerk("perk.rf_decisive", 4);
+		::DynamicPerks.PerkGroups.remove("pg.special.rf_leadership");
+		::DynamicPerks.PerkGroups.add(::new("scripts/mods/mod_hardened/perk_groups/pg_hd_leadership"));		// We introduce our own non-special Leadership Group
 	}
 
 	{	// Net Group
@@ -78,8 +75,8 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	}
 
 	{	// Tactician Group
-		local pgTacticialGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_tactician");
-		pgTacticialGroup.addPerk("perk.rf_bestial_vigor", 2);			// Add Bestial Vigor (Backup Plan) into the Tier 2 row
+		::DynamicPerks.PerkGroups.remove("pg.rf_tactician");
+		::DynamicPerks.PerkGroups.add(::new("scripts/mods/mod_hardened/perk_groups/special/pg_special_hd_tactician"));		// We introduce our own special Tactician Group
 	}
 
 	{	// Trained Group
