@@ -37,6 +37,9 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	{	// Leadership Group
 		local pgLeadership = ::DynamicPerks.PerkGroups.findById("pg.special.rf_leadership");
 		pgLeadership.removePerk("perk.mastery.polearm");		// Remove Polearm Mastery
+		pgLeadership.removePerk("perk.fortified_mind");
+		pgLeadership.addPerk("perk.pathfinder", 1);
+		pgLeadership.addPerk("perk.rf_decisive", 4);
 	}
 
 	{	// Net Group
