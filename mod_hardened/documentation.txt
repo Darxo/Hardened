@@ -133,6 +133,11 @@ This will unbrick your end-of-combat screen, if it doesnt show
 
 # Changes:
 
+0.18.1
+	- Fix character bugging out when viewing flaming arrow tooltip
+	- Fix rooted hyperlink not showing up correctly
+	- Fix marksmanship special perk group still showing up
+
 0.18.0
 	- **Marksmanship** is completely reworked. It now grants +10 minimum and maximum damage while there are no enemies within 2 tiles
 	- **Colossus** now grants +15 Hitpoints, instead of 25% more Hitpoints
