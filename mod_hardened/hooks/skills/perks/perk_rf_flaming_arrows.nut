@@ -29,18 +29,18 @@
 
 	q.onQueryTooltip = @(__original) function( _skill, _tooltip )
 	{
-		local ret = __original(_skill, _tooltip);
+		__original(_skill, _tooltip);
 
 		if (_skill.getID() == "actives.aimed_shot")
 		{
-			ret.push({
+			_tooltip.push({
 				id = 102,
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = ::Reforged.Mod.Tooltips.parseString("Burns away any [rooted|Rooted.StatusEffect] effects on the target"),
 			});
 
-			foreach (entry in ret)
+			foreach (entry in _tooltip)
 			{
 				if (entry.id == 100)
 				{
@@ -49,7 +49,5 @@
 				}
 			}
 		}
-
-		return ret;
 	}
 });
