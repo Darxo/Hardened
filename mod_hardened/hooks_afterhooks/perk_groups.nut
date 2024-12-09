@@ -61,7 +61,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	}
 
 	{	// Special Marksman Group
-		::DynamicPerks.PerkGroups.remove("pg.special.rf_marksman");	// This group does no longer exist in Hardened
+		::DynamicPerks.PerkGroups.remove("pg.special.rf_marksmanship");	// This group does no longer exist in Hardened
 	}
 
 	{	// Special Student Group
