@@ -13,7 +13,7 @@
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Burns away any [rooted|Rooted.StatusEffect] effects on the target"),
+			text = ::Reforged.Mod.Tooltips.parseString("Burns away any [rooted|Concept.Rooted] effects on the target"),
 		});
 
 		return ret;
