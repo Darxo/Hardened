@@ -23,6 +23,13 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		changePerkTier(pgHammerArmorGroup, "perk.rf_deep_impact", 3);	// Move Deep Impact into the position where Rattle (Full Force) was previously
 	}
 
+	{	// Knave Group
+		local pgKnaveGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_knave");
+		changePerkTier(pgKnaveGroup, "perk.rf_cheap_trick", 1);			// Move "Cheap Trick" to Tier 1 (down from Tier 2)
+		changePerkTier(pgKnaveGroup, "perk.rf_tricksters_purses", 3);		// Move "Tricksters Purses" to Tier 3 (up from Tier 1)
+		changePerkTier(pgKnaveGroup, "perk.rf_ghostlike", 5);				// Move "Ghostlike" to Tier 5 (up from Tier 4)
+	}
+
 	{	// Laborer Group
 		local pgLaborerGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_laborer");
 		pgLaborerGroup.removePerk("perk.bags_and_belts");	// Remove Bags and Belts
