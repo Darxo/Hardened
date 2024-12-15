@@ -100,6 +100,18 @@
 				}
 				break;
 			}
+			case "building.weaponsmith":
+			case "building.weaponsmith_oriental":
+			case "building.armorsmith":
+			case "building.armorsmith_oriental":
+			{
+				_list.push({
+					R = 10,
+					P = 1.5,
+					S = "supplies/armor_parts_item",
+				});
+				break;
+			}
 		}
 
 		__original(_id, _list);
