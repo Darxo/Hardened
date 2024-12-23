@@ -48,6 +48,13 @@ this.hd_headless_effect <- ::inherit("scripts/skills/skill", {
 			text = ::Reforged.Mod.Tooltips.parseString("Immunne to [Distracted|Skill+distracted_effect]"),
 		});
 
+		tooltip.push({
+			id = 12,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Immunne to [Sleeping|Skill+sleeping_effect]"),
+		});
+
 		return tooltip;
 	}
 });
