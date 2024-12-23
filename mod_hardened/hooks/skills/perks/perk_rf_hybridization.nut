@@ -1,6 +1,18 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_hybridization", function(q) {
 	q.m.ThrowingSpearShieldDamageMult <- 1.5;
 
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.RangedSkillToMeleeMult = 0.15;	// In Reforged this is 0.10
+	}
+
+	// Overwrite because we no longer grant melee defense
+	q.onUpdate = @() function( _properties )
+	{
+		_properties.MeleeSkill += this.getMeleeBonus();
+	}
+
 	q.onAnySkillUsed = @(__original) function( _skill, _targetEntity, _properties )
 	{
 		__original(_skill, _targetEntity, _properties);
