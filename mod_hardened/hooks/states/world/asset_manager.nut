@@ -11,4 +11,28 @@
 			::World.Events.fire("event.retinue_slot", false);
 		}
 	}
+
+	q.getMoralReputationAsText = @(__original) function()
+	{
+		local ret = __original();
+
+		if (::Hardened.Mod.ModSettings.getSetting("DisplayMoraleValue").getValue())
+		{
+			ret += " (" + this.m.MoralReputation + ")";
+		}
+
+		return ret;
+	}
+
+	q.getBusinessReputationAsText = @(__original) function()
+	{
+		local ret = __original();
+
+		if (::Hardened.Mod.ModSettings.getSetting("AlwaysDisplayRenownValue").getValue())
+		{
+			ret += " (" + this.m.BusinessReputation + ")";
+		}
+
+		return ret;
+	}
 });

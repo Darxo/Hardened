@@ -16,6 +16,12 @@
 	qolWorldPage.addBooleanSetting("DisplayUniqueLocationsNames", true, "Display Unique Location Names", "Unique display their name to you while you are near them.");
 	qolWorldPage.addBooleanSetting("DisplayCampLocationsNames", true, "Display Lair Location Names", "Lairs display their name to you while you are near them.");
 	qolWorldPage.addBooleanSetting("DisplayAttachedLocationNames", false, "Display Attached Location Names", "Attached Location display their name to you while you are near them.");
+
+	qolWorldPage.addDivider("MiscDivider3");
+
+	qolWorldPage.addBooleanSetting("AlwaysDisplayRenownValue", true, "Always Display Renwon Value", "Always display your exact renown value in brackets whenever displaying your current renown state.");
+	qolWorldPage.addBooleanSetting("DisplayRelationValue", true, "Display Relation Value", "Always display your exact relation value in brackets when displaying the current relationship state.");
+	qolWorldPage.addBooleanSetting("DisplayMoraleValue", true, "Display Morale Reputation Value", "Always display your exact morale value in brackets when displaying the current morale reputation state.");
 }
 
 // QOL: Combat

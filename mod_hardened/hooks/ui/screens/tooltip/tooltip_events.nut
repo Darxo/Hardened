@@ -76,6 +76,23 @@
 				});
 				break;
 			}
+
+			case "assets.BusinessReputation":
+			{
+				if (::Hardened.Mod.ModSettings.getSetting("AlwaysDisplayRenownValue").getValue())
+				{
+					// Remove the square bracket reputation number because we add that from within the asset_manager
+					foreach (entry in ret)
+					{
+						if ("id" in entry && entry.id == 1)
+						{
+							entry.text = "Renown: " + ::World.Assets.getBusinessReputationAsText();
+							break;
+						}
+					}
+				}
+				break;
+			}
 		}
 
 		return ret;

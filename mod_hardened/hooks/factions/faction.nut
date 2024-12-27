@@ -25,6 +25,18 @@
 		return ret;
 	}
 
+	q.getPlayerRelationAsText = @(__original) function()
+	{
+		local ret = __original();
+
+		if (::Hardened.Mod.ModSettings.getSetting("DisplayRelationValue").getValue())
+		{
+			ret += " (" + this.m.PlayerRelation + ")";
+		}
+
+		return ret;
+	}
+
 // New Functions
 	// Is this faction technically owned by another faction?
 	// @return null, if this faction is not owned by another faction or a reference to the other faction, if the first settlement of it is owned by that one
