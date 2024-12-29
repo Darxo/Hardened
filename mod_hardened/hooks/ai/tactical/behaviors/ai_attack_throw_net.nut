@@ -79,7 +79,6 @@
 	 * - Melee Defense now counts for the score
 	 *
 	 * Additions:
-	 * - Targets Initiative now counts for the score
 	 * - Presence of nearby allies of the target are taken into account
 	 * - Presence of nearby hostiles of the target are taken into account
 	 */
@@ -94,7 +93,7 @@
 
 	// Score Modifier / Reasons to net in the first place
 		local score = _target.getCurrentProperties().getMeleeDefense() * ::Const.AI.Behavior.ThrowNetMeleeDefenseMult;
-		score += _target.getCurrentProperties().getInitiative() * ::Const.AI.Behavior.ThrowNetInitiativeMult;
+		// score += _target.getCurrentProperties().getInitiative() * ::Const.AI.Behavior.ThrowNetInitiativeMult;
 
 		score = score - targetTile.TVTotal * ::Const.AI.Behavior.ThrowNetTVMult;
 
