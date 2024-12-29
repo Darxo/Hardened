@@ -68,7 +68,7 @@
 				}
 				else
 				{
-					::logWarning(name + " exists in _functionsToIgnore and will be skipped");
+					// ::logWarning(name + " exists in _functionsToIgnore and will be skipped");
 				}
 			}
 		}
