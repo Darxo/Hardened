@@ -81,7 +81,7 @@
 			if (this.getContainer().getActor().isPlacedOnMap())
 			{
 				local myTile = this.getContainer().getActor().getTile();
-				for (local i = 0; i < 6; i = ++i)
+				for (local i = 0; i < 6; ++i)
 				{
 					if (!myTile.hasNextTile(i)) continue;
 

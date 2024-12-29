@@ -33,7 +33,7 @@ local oldOnApplyFire = ::Const.Tactical.Common.onApplyFire;
 
 		if (ourTile.Properties.has("IsItemSpawned") || ourTile.IsCorpseSpawned)
 		{
-			for (local i = 0; i < ::Const.Direction.COUNT; i = ++i)
+			for (local i = 0; i < ::Const.Direction.COUNT; ++i)
 			{
 				if (ourTile.hasNextTile(i))
 				{
