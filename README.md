@@ -170,7 +170,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Fresh and Furious** now has a fatigue threshold of 50% (up from 30%). It now checks your fatige when you end your turn, instead of at the start of your turn
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
 - **Hammer Mastery** no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part.
-- **Hybridization** is completely reworked. It still grants 10% of your base Ranged Skill as Melee Skill/Defense. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type hits to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 50% more damage to shields
+- **Hybridization** is completely reworked. It still grants 15% of your base Ranged Skill as Melee Skill. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type hits to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 50% more damage to shields
 - **Inspiring Presence** no longer requires a banner. At the start of each round it grants adjacent allies of your faction +3 Action Points for this turn, if they are adjacent to an enemy and have less Resolve than you. The same target can't be inspired multiple times per turn.
 - **Iron Sights** headshot chance now also works with melee weapons
 - **King of all Weapons** is now called **Spear Flurry** and is completely reworked. It now prevents spear attacks from building up any fatigue
@@ -208,10 +208,12 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Perk Groups
 
 - **Bags and Belts** is now part of the **Light Armor** group instead of being available for everyone
+- **Cheap Trick** is now Tier 1 (down from Tier 2)
 - **Colossus** is now also part of the **Wildling** perk group in Tier 1
 - **Deep Impact** (now **Breakthrough**) is now a T3 perk and **Rattle** (now **Full Force**) is now a T6 perk
 - **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
 - **Duelist** is no longer part of **Shield** group
+- **Ghostlike** is now Tier 5 (up from Tier 4)
 - **Inspiring Presence** is now also part of the **Noble** group at Tier 7
 - **Marksmanship** is no longer a special perk. It is now a T7 perk in the **Ranged** perk group
 - **Quickhands** from the perk group **Trained** is now a Tier 1 perk (was Tier 2 before)
@@ -220,6 +222,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Polearm Mastery** and **Fortified Mind** are removed from the **Leadership** group
 - **Rally the Troops** from the **Leadership** group is now a Tier 3 perk (was Tier 2 before)
 - **Student** is now available for everyone
+- **Tricksters Purses** is now Tier 3 (up from Tier 1)
 - **Vigorous Assault** is no longer part of **Swift Strikes** group
 - **Knave** no longer guarantees the **Dagger** perk group. Now it is just twice as likely. It also no longer guarantees the **Nimble** per group
 - **Wildling** no longer prevents the perk groups **Ranged**, **Gifted** and **Leadership** from appearing
@@ -251,16 +254,17 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Gun Powder now costs 2 Ammunition Supply each (up from 1)
 - **Feral Shield** now has a value of 400 (up from 50)
 - The value of almost all other non-named shields is increased by 50%-100%
-- **Wooden Shields** appear less common in marketplaces
-- **Buckler** appear less common in big settlements
-- Small civilian settlements now sell **Old Wooden Shields**
-- Big non-southern settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
 - **Goblin Pikes**, **Ancient Pikes** and **Pikes** are now also of the weapontype Spear
 - **Smoke Bomb** now costs 400 Crowns (up from 275). Smoke now lasts 2 Rounds (up from 1)
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 1000 Value (up rom 200) and grants 10 Resolve (up from 5)
 - **Fermented Unhold Heart** now has an expiry date of 40 days (up from 20)
 - **Fangshire** will no longer spawn at the start of the game
+- **Wooden Shields** appear less common in marketplaces
+- **Buckler** appear less common in big settlements
+- Small civilian settlements now sell **Old Wooden Shields**
+- Big non-southern settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
+- Weaponsmiths and Armorsmiths now sell Armor Parts but for a higher price
 
 ### Traits
 
@@ -300,6 +304,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bandits** no longer spawn with a **Poleflail**, **Warbrand** or **Throwing Spear**. The can now spawn with a **Reinforced Wooden Poleflail**. They can no appear as Champions
 - **Killer** no longer spawn with **Scramasax**, **Pike**, **Spetum**, **Warbrand** or **Throwing Spear**
 - **Brigand Leader** no longer have **Shield Expert**
+- **Hedge Knights** are now immune to **Disarm** as a result of them having **Savage Strength**
 
 **Humans:**
 - Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop crowns, food or tools or a valueable ring.
@@ -315,23 +320,30 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 **Greenskins:**
 - All Goblins have -5 Melee Skill and -5 Melee Defense
 - Add new **Goblin** racial effect that grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
+- **Orc Warlords** now have **Savage Strength** which makes them immune to **Disarm**
+
 **Barbarian**
 - **Barbarian Thralls** now spawn twice as often with **Crude Javelins** and half as often with regular throwing weapons
 - **Barbarian Drummer** now have +1 Action Point and grant +150 Experience
+- **Barbarian Kings** now have **Savage Strength** which makes them immune to **Disarm**
 
 **Beasts:**
+- Lindwurms Head and Tail no longer share hitpoints and effects but killing the tail will no longer kill the Head
+  - Lindwurm Head now has 1000 Hitpoints (down from 1100) and gains **Exude Confidence**
+  - The Lindwurm Tail still inherits most of the stats from the head but has 50% less Hitpoints and Resolve and 50% more Melee Defense. Lindwurm Tails no longer have **Fearsome**
+  - The Lindwurm Tail can now be stunned and netted but those effects are removed whenever the Head moves away
 - All ifrits have 50% less Hitpoints and 50% more Armor
 - **Nachzehrer** can no longer swallow player characters while in a net.
 - **Donkeys** now grant 0 XP (down from 50 XP)
 - **Schrats** no longer take 70% reduced damage while their shield is up. They now have +200 Hitpoints and gain the **One with the Shield** perk
 
-**Others:**
-- Enemies which spawn with **Spear Flurry** now automatically gain **Fresh and Furious** (to balance out how bad that perk is by itself)
+**Undead**
+- **The Conqueror** now has **Savage Strength**. This has no gameplay impact and is only meant to visualize that he is immune to **Disarm**
 
 ### Enemy AI
 - Enemy archers are 66% less likely to target someone because of how many potential scatter targets are adjacent
 - Necrosavants are a bit more likely to stay on the same tile and attack twice, rather than teleport to a slightly better tile
-- Improve AI targeting for throwing nets: They value the targets melee defense twice as much. They now also value the targets initiative and prefer isolated targets.
+- Improve AI targeting for throwing nets: They value the targets melee defense twice as much and prefer isolated targets
 - AI is now twice as likely to throw a net or use a throwing pot/bomb while adjacent to an enemy
 - AI will no longer throw nets while their strategy is defending
 - NPCs with **Bolster** are more likely to attack with their polarm as they are surrounded by more allies
@@ -340,6 +352,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - NPCs are more likely to target enemies with **Formidable Approach** if it has been procced against them
 - NPCs are far less likely to attack into an active **Rebuke**
 - NPCs are more likely use **Disarm** onto enemies with **Spearwall** or **Riposte**
+- NPCs are now less likely to use Break Free if they have almost no Melee Defense to begin with and more likely if they have a lot of Melee Defense
 
 ### World Map
 
@@ -403,6 +416,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Distance text in rumors and contracts now display the tile distance range in brackets
 - Display the current XP Multiplier of the viewed character when hovering over the Experience bar
 - World Parties with champions will display an orange skull on top of their socket
+- Display price multiplier from relation in factions & relations screen
+- Add 3 new settings or displaying exact relation, morale and renown values after the respective state term
 - Peasants and Caravans on the world map display a banner
 - Add new setting for displaying non-settlement location names of nearby locations (Lairs, Unique Locations, Attached Locations)
 - Brothers that "die" outside of combat (e.g. Events) will now always transfer their equipment into your stash
@@ -423,11 +438,12 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Vanilla
 
-- Vanilla Enemies that have no head (except Lindwurm Tail) are no longer decapitatable or smashable
-- Vanilla Enemies that have no head (except Lindwurm Tail) no longer take bonus damage from headshots
+- Vanilla Enemies that have no head are no longer decapitatable or smashable
+- Vanilla Enemies that have no head no longer take bonus damage from headshots
 - Parties on the world map are no longer hidden after loading a game, while the game is still paused
 - Spiders will now give up when their team has given up even if there are still eggs on the battlefield
 - You can no longer do two Arenas during the same day
+- Improve knock back logic for Spiked Impaler to behave like the Knock Back skill from shields
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
 - Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
 - Hitpoints recovery on brothers is now more accurate (The Cook Follower now actually increases the hitpoint recovery)

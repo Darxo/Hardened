@@ -17,14 +17,10 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Is safe to remove from- and add to any existing savegames
 
 # Future Plans:
-- Nerf Dogs vision to 5 or 6 (Actually they are probably fine. Nice scouting alternative to falcon)
-- Change Night Owl/Blindg to stop working when the character is immune to night effect
 - Hide information about enemy composition on the battle field
 - certain unholds/high end orcs being able to throw their own allies behind their back in order to advance into tight spaces
 - change handgonne aoe pattern in some directions to a triangle
 - Rebalance SpiderEgg hunting? Give them Loot?
-- Rebalance enemy skills/perks considering hardened reworks
-- Fix orcs sometimes using charge, even though they decided to give up
 - gambeson coloring
 - nerf cover ally initiative bonus and give it additional defense
 - perk for civilians (e.g. caravan guys), called "First Aid", making: Injuries you treat during battle are removed instead
@@ -34,7 +30,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 		- Maybe they dont get a movement bonus anywhere
 - prevent allied parties from following you, just because you are being targeted by their allies. Sometimes mercenary companies/nobles think they can/should attack you but you are still allied
 - Make raider playstyle more sufficient by giving caravans consistent tool loot
-- fix bottom left nimble perk icon
 - Maybe remove the replacement of Brawny, Colossus and Fortified Mind on NPCs. Hardened has stepped away from these perks and mods might introduce new secondary effects on them?
 - Make it so ranged troop AI is less likely to be dumb (leave perfectly fine positions)
 	- Often times ranged troops go before their melee army.
@@ -52,7 +47,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Add more exclusive groups to various Background
 - New AI Behavior for Shield Seargeant (Includes current shield skills and scans for each whether allies profit from it too)
 - Add information in Docs that Anatomist and Oathtaker are unsupported
-- Switch Cheap Trick and Hidden Pockets
 - Prevent cheese where one puts their best bros on the bench in response to a hopeless ambush
 - Rework supply-system: If you max out a supply, all remaining ones stay in the inventory instead of being voided
 - Shield Skill/attack damage prediction (destruction prediction?)
@@ -78,12 +72,10 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- weakened_heart_injury 30%
 - Infrit new skill "Armor as a Weapon": Deal more damage equal to your total remaining armor as a percentage
 - expirable potions (so you are forced to use them and so they can be sold/given out more frequently)
-- Make it so wait can not be used if you have less than half of your AP remaining
+- Make it so wait can not be used if you have less than half of your AP remaining?
 - Make certain items unsellable
 - Scrapper-Retinue member making it so armor damage above a certain threshold (e.g. at least 50 per hit) produces tools. But
 - Make "Obtain" quests harder. E.g. by starting in an ambush or by making the location hidden by default
-- Look into throwing weapons not producing miss-projectiles correctly when missing, sometimes
-	- Need more evidence
 - nerf ports (to make good maps less reliable on them)
 	- setVirtualTime when using ports (to pass time) - This does not work. VirtualTime has nothing to do with DayCount
 - usings just fists (empty throwing weapon) with no offhand should also grant 20% fatigue discount (like from double grip)
@@ -93,16 +85,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Nested Tooltips for faction/city banner to see relation
 - burning damage destroys zombie corpses
 	- Needs more research into how corpse removal affects loot
-	- This is unlikely to affect corpses that are about to be resurrecte, as those arent marked as "consumable"
-
-- sometimes audio is coming from the right or left ear. Maybe if sounds are played quickly after another? Do some tests with audio spawning
-	- This seems to happen with freshly spawned dogs:
-		- The spawn sfx is played correctly in both ears
-		- When its the dogs turn its attack sfx is only played in one ear
-	- I can't reproduce this bug, need more evidence and reproducible steps
-	- In the Vanilla Code I couldn't find an obvious issue on first glance. Probably something todo with the engine
+	- This is unlikely to affect corpses that are about to be resurrecte, as those arent marked as "consumab
 - Improve AI by taking into account whether they are already known to the player. And make them prefer steping onto tiles that are already revealed to the player
-- Nerf Formidable Approach by also making enemies have +5% chance to hit you, if they are on your list
 - Make it so the winner of AI battles also gets all look spawned by the opponents 'getDroppedLoot' function.
 	- Or rather whenever a unit dies during an AI battle, the result of that function is pushed into its party Loot
 - Docs: Make list of existing functions, that this mod overwrites
@@ -112,26 +96,59 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - New enemy skill "Gravecall" for ancient undead
 - Kingfisher Rename -> Entangler?
 	- Close the distance, and snare your foe with a net in the heat of Battle
-
+- If a Brother dies for sure, a special ghost animation could be played. Maybe something like the Geist death or a spiritual soul leaving the body towards the sky
+- new hostility state with factions, where they dont give you contracts but are not yet hostile to you
+- remove close ranged penalty for reach weapons (its now covered by crowded)
+- New effect given to defender of camps, called "Defender's Advantage". It grants +1 Vision and +10 Resolve. Maybe some other buffs. It reads "You know this place in and out, you have a natural advantage defending it"
 - new DayCreated member for locations
 	- Can be used to adjust scaling so that newly created locations scale slower than ones already there longer?
 	- Can be used for upgrading, so that locations left along can upgrade into stronger versions?
 	- Can be used for rumors, where they say: "Recently a new location has appeared there and there"
+
 ## AI
+- make it so enemies are less likely to remove the net if it doesnt affect them (e.g. Orcs)
+- Change AI Rotation to not/rarely rotate your brothers into battle?
 - Make ANticipation influence attacker with stuns to be more likely to attack
 
+## Fix:
+- Look into throwing weapons not producing miss-projectiles correctly when missing, sometimes
+	- Need more evidence
+- fix bottom left nimble perk icon
+- Fix orcs sometimes using charge, even though they decided to give uple"
+- sometimes audio is coming from the right or left ear. Maybe if sounds are played quickly after another? Do some tests with audio spawning
+	- This seems to happen with freshly spawned dogs:
+		- The spawn sfx is played correctly in both ears
+		- When its the dogs turn its attack sfx is only played in one ear
+	- I can't reproduce this bug, need more evidence and reproducible steps
+	- In the Vanilla Code I couldn't find an obvious issue on first glance. Probably something todo with the engine
+
+## Debug:
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
-- Separate Lindwurm
-- Bug: "playInventorySound" error. Probably because supplies are instantly consumed, leaving only a null object to try to play the sound of
-	- tactical_combat_result_screen.nut: L189: stashItems[j].playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag);
-
-- remove close ranged penalty for reach weapons (its now covered by crowded)
-- New effect given to defender of camps, called "Defender's Advantage". It grants +1 Vision and +10 Resolve. Maybe some other buffs. It reads "You know this place in and out, you have a natural advantage defending it"
-
-
 # Changes:
+
+0.19.0
+	- Lindwurms Head and Tail no longer share hitpoints and effects but killing the tail will no longer kill the Head
+	  - Lindwurm Head now has 1000 Hitpoints (down from 1100) and gains **Exude Confidence**
+	  - The Lindwurm Tail has half as much Hitpoints than the Head, half as much Resolve, but 50% more Melee Defense. Lindwurm Tails no longer have **Fearsome**
+	  - The Lindwurm Tail can now be stunned and netted but those effects are removed whenever the Head moves away
+	- **Hybridization** now grants 15% of base Ranged Skill as Melee Skill (up from 10%) but no longer grants Melee Defense
+	- **Cheap Trick** is now Tier 1 (down from Tier 2)
+	- **Tricksters Purses** is now Tier 3 (up from Tier 1)
+	- **Ghostlike** is now Tier 5 (up from Tier 4)
+	- Improve knock back logic for Spiked Impaler to behave like the Knock Back skill from shields
+	- Weaponsmiths and Armorsmiths now sell Armor Parts but for a higher price
+	- Orc Warlords and Barbarian Kings now have **Savage Strength** which will make them immune to Disarm
+	- The Conqueror now has **Savage Strength** to indicate better that he is immune to Disarm
+	- Enemies with **Spear Flurry** no longer gain **Fresh and Furious** for free (as the former perk was recently buffed)
+	- The **Headless** effect now also grants immunity to sleep
+	- NPCs are now less likely to use Break Free if they have almost no Melee Defense to begin with and more likely if they have a lot of Melee Defense
+	- Display price multiplier from relation in factions & relations screen
+	- Add 3 new settings or displaying exact relation, morale and renown values after the respective state term
+	- Fix script error when pressing LootAllItems after battle
+	- Fix remove initiative calculation from net ai behavior as that stat is no longer relevant here
+	- Fix Sweeping Strikes not being force enabled correctly for Lindwurm Tails
 
 0.18.1
 	- Fix character bugging out when viewing flaming arrow tooltip
