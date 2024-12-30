@@ -3,7 +3,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_sweeping_strikes", function(q) {
 	// Config
 	q.m.MeleeDefenseModifier <- 5;
-	q.m.RequiredItemType <- ::Const.Items.ItemType.TwoHanded;
+	q.m.RequiredItemType <- ::Const.Items.ItemType.TwoHanded;	// If this is null, then we dont care about the weapon or wether any weapon is equipped
 
 	// Private
 	q.m.CurrentMeleeDefenseModifier <- 0;
@@ -104,10 +104,10 @@
 		if (_skill.isRanged()) return false;
 		if (!_skill.isAttack()) return false;
 
-		local weapon = _skill.getItem();
-		if (::MSU.isNull(weapon))
-			return this.m.RequiredItemType == null;
+		if (this.m.IsForceEnabled) return true;	// To backwards support reforged force enabled member
+		if (this.m.RequiredItemType == null) return true;
 
-		return weapon.isItemType(::Const.Items.ItemType.Weapon) && weapon.isItemType(this.m.RequiredItemType);
+		local weapon = _skill.getItem();
+		return !::MSU.isNull(weapon) && weapon.isItemType(::Const.Items.ItemType.Weapon) && weapon.isItemType(this.m.RequiredItemType);
 	}
 });
