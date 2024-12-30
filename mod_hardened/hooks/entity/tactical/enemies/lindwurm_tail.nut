@@ -33,6 +33,12 @@
 		this.getSkills().removeByID("racial.lindwurm");
 		this.getSkills().add(::new("scripts/skills/racial/hd_lindwurm_tail_racial"));	// Unlike the normal racial, this one does not grant immunity to stun/root
 
+		// Fix(Reforged): remove weapon type restriction as lindwurm tails wield no weapon
+		this.getSkills().removeByID("perk.rf_sweeping_strikes");
+		this.m.Skills.add(::Reforged.new("scripts/skills/perks/perk_rf_sweeping_strikes", function(o) {
+			o.m.RequiredItemType = null;
+		}));
+
 		this.getSkills().add(::new("scripts/skills/effects/hd_headless_effect"));
 	}
 
