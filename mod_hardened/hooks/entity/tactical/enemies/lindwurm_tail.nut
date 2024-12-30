@@ -39,6 +39,7 @@
 			o.m.RequiredItemType = null;
 		}));
 
+		this.getSkills().removeByID("perk.fearsome");
 		this.getSkills().add(::new("scripts/skills/effects/hd_headless_effect"));
 	}
 
