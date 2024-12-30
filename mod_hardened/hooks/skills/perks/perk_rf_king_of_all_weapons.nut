@@ -14,15 +14,6 @@
 		this.m.Order = ::Const.SkillOrder.VeryLast;
 	}
 
-	q.onAdded <- function()
-	{
-		// Quick and Dirty way to balance out enemies getting King of all Weapons, because that perk
-		if (!this.getContainer().getActor().isPlayerControlled())
-		{
-			this.getContainer().getActor().getSkills().add(::new("scripts/skills/perks/perk_rf_fresh_and_furious"));
-		}
-	}
-
 	q.onUpdate <- function( _properties )
 	{
 		local actor = this.getContainer().getActor();
