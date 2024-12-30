@@ -4,7 +4,8 @@
 	q.onLootAllItemsButtonPressed = @(__original) function()	// This is called during battle
 	{
 		::Hardened.Temp.LootAllItemsButtonPressed = true;
-		__original();
+		local ret = __original();
 		::Hardened.Temp.LootAllItemsButtonPressed = false;
+		return ret;
 	}
 });
