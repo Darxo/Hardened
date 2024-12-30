@@ -104,6 +104,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- Can be used to adjust scaling so that newly created locations scale slower than ones already there longer?
 	- Can be used for upgrading, so that locations left along can upgrade into stronger versions?
 	- Can be used for rumors, where they say: "Recently a new location has appeared there and there"
+- revert some 5 AP two handed weapons
 
 ## AI
 - make it so enemies are less likely to remove the net if it doesnt affect them (e.g. Orcs)
@@ -127,6 +128,9 @@ This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
 # Changes:
+
+0.19.1
+	- Fix LootAll button after battle not working correctly
 
 0.19.0
 	- Lindwurms Head and Tail no longer share hitpoints and effects but killing the tail will no longer kill the Head
