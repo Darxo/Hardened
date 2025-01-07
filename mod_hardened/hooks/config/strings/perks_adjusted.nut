@@ -38,7 +38,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Armor damage taken from Attacks is reduced by a percentage equal to " + ::MSU.Text.colorPositive("5%") + " of the current total armor value of both body and head armor",
+					"Armor Damage taken from Attacks is reduced by a percentage equal to " + ::MSU.Text.colorPositive("5%") + " of the current total armor value of both Body Armor and Helmet",
 				],
 			}],
 		}),
@@ -105,8 +105,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"While adjacent to at most 1 enemy, gain " + ::MSU.Text.colorPositive("+30%") + " [Armor Penetration|Concept.ArmorPenetration] and " + ::MSU.Text.colorPositive("+2") + " [Reach|Concept.Reach]",
-					"While adjacent to exactly 2 enemies, gain " + ::MSU.Text.colorPositive("+15%") + " [Armor Penetration|Concept.ArmorPenetration] and " + ::MSU.Text.colorPositive("+1") + " [Reach|Concept.Reach]",
+					"While adjacent to at most 1 enemy, gain "  + ::MSU.Text.colorPositive("+2") + " [Reach|Concept.Reach] and " + ::MSU.Text.colorPositive("+30%") + " [Armor Penetration|Concept.ArmorPenetration]",
+					"While adjacent to exactly 2 enemies, gain "  + ::MSU.Text.colorPositive("+1") + " [Reach|Concept.Reach] and " + ::MSU.Text.colorPositive("+15%") + " [Armor Penetration|Concept.ArmorPenetration]",
 				],
 			}],
 		}),
@@ -161,7 +161,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Take " + ::MSU.Text.colorPositive("60%") + " less [Hitpoint|Concept.Hitpoints] damage from Attacks",
-					"Take more armor damage equal to the combined [Weight|Concept.Weight] of your helmet and body armor as a percentage",
+					"Take more Armor Damage equal to the combined [Weight|Concept.Weight] of your Body Armor and Helmet as a percentage",
 				],
 			}],
 		}),
@@ -883,8 +883,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Take up to " + ::MSU.Text.colorPositive("60%") + " less [Armor Penetration|Concept.ArmorPenetration] damage from attacks. Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each [Weight|Concept.Weight] on your helmet and body armor combined",
-					"Take up to " + ::MSU.Text.colorPositive("40%") + " less armor damage from attack. This reduction is a percentage equal to " + ::MSU.Text.colorPositive("40%") + " of your current [Initiative|Concept.Initiative]",
+					"Take up to " + ::MSU.Text.colorPositive("60%") + " less [Armor Penetration|Concept.ArmorPenetration] damage from attacks. Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each [Weight|Concept.Weight] on your Body Armor and Helmet combined",
+					"Take up to " + ::MSU.Text.colorPositive("40%") + " less Armor Damage from attacks. This reduction is a percentage equal to " + ::MSU.Text.colorPositive("40%") + " of your current [Initiative|Concept.Initiative]",
 				],
 			}],
 		}),
@@ -1030,7 +1030,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Your attacks against targets with armor will always target the body part with the lowest armor",
-					"[Armor Penetration|Concept.ArmorPenetration] is reduced by " + ::MSU.Text.colorNegative("10%"),
+					"Lose " + ::MSU.Text.colorNegative("10%") + " [Armor Penetration|Concept.ArmorPenetration]",
 				],
 			}],
 		}),
