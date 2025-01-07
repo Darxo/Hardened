@@ -109,7 +109,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
-- **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (up from 50%)
+- **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%)
 - **Net Effect** no longer reduces the Initiative of the target
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
 - **Recover** now applies the same Initiative debuff as using **Wait**
@@ -290,6 +290,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Enemies
 
+- Introduce a new **Headless** effect, which sets the headarmor to 0 and redirects any attack to hit the body and grants immunity to **Distracted**
+	- This effect is given to Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles
+	- Remove the now redundant perk **Steelbrow** from Ifrit, Sapling and Kraken Tentacle
+
 **Brigands:**
 - **Scoundrels** no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**. They now spawn with a **Knife** instead of **Dagger**/**Woodcutters Axe**
 - **Vandals** no longer spawn with **Kite Shields**. Instead they can now spawn with **Old Wooden Shields**
@@ -309,6 +313,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 **Humans:**
 - Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop crowns, food or tools or a valueable ring.
 - **Noble Footmen** no longer have **Shield Expert**
+
 **Undead**
 - all **Zombies** gain +5 Melee Skill and grant 20% more experience. They no longer have **Double Grip** and no longer grant experience after being ressurected
 - all **Skeletons** grant 20% more experience. They no longer grant experience after being ressurected
@@ -316,6 +321,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Geists** no longer have **Fearsome**. They now have **Backstabber**
 - **Necromancer** no longer have 20 natural body armor or **Inspiring Presence**
 - **Ancient Auxiliary** no longer have **Battleforged**
+- **The Conqueror** now has **Savage Strength**. This has no gameplay impact and is only meant to visualize that he is immune to **Disarm**
 
 **Greenskins:**
 - All Goblins have -5 Melee Skill and -5 Melee Defense
@@ -328,6 +334,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Barbarian Kings** now have **Savage Strength** which makes them immune to **Disarm**
 
 **Beasts:**
+- Introduce new **Bite Reach** effect, which reduces headshot chance by 10% and increases chance to receive headshot by 10%
+	- This effect is given to all Dogs, Wolfs and Hyenas
 - Lindwurms Head and Tail no longer share hitpoints and effects but killing the tail will no longer kill the Head
   - Lindwurm Head now has 1000 Hitpoints (down from 1100) and gains **Exude Confidence**
   - The Lindwurm Tail still inherits most of the stats from the head but has 50% less Hitpoints and Resolve and 50% more Melee Defense. Lindwurm Tails no longer have **Fearsome**
@@ -336,9 +344,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Nachzehrer** can no longer swallow player characters while in a net.
 - **Donkeys** now grant 0 XP (down from 50 XP)
 - **Schrats** no longer take 70% reduced damage while their shield is up. They now have +200 Hitpoints and gain the **One with the Shield** perk
-
-**Undead**
-- **The Conqueror** now has **Savage Strength**. This has no gameplay impact and is only meant to visualize that he is immune to **Disarm**
 
 ### Enemy AI
 - Enemy archers are 66% less likely to target someone because of how many potential scatter targets are adjacent
@@ -379,9 +384,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - The **Orc Slayer** and **Crusader** (temporary Crisis backgrounds) now share 100% of their experience with your remaining party, when they leave you after the Crisis ended
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 - The **Lone Wolf** and **Gladiator** origins now have a roster size of 13 (up from 12)
-- Beginner combat difficulty difficulty now grants enemy parties 100% resources (up from 85%)
-- Beginner combat difficulty difficulty now causes player characters to receive 15% less damage from all sources
-- Expert combat difficulty difficulty now grants enemy parties 120% resources (up from 115%)
+- Beginner combat difficulty now grants enemy parties 100% resources (up from 85%)
+- Beginner combat difficulty now causes player characters to receive 15% less damage from all sources
+- Expert combat difficulty now grants enemy parties 120% resources (up from 115%)
 - Characters which are not visible to the player will no longer produce idle or death sounds.
 - The combat map is no longer revealed at the end of a battle
 
@@ -390,13 +395,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Combat
 
 - Your headshot chance is now displayed in the combat tooltip when targeting enemies
-- Introduce new **Bite Reach** effect, which reduces headshot chance by 10% and increases chance to receive headshot by 10%
-	- This effect is given to all Dogs, Wolfs and Hyenas
-- Introduce a new **Headless** effect, which sets the headarmor to 0 and redirects any attack to hit the body and grants immunity to **Distracted**
-	- This effect is given to Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles
-	- Remove the now redundant perk **Steelbrow** from Ifrit, Sapling and Kraken Tentacle
-- Introduce a new **Unworthy Opponent** effect which prevents the character from granting experience on death, and give it to enemies which do not grant experience
-- Introduce a new cosmetic **Non-Combatant**, to non-combatant enemies, which explains that they do not need to be killed in order to win
+- Introduce a new **Unworthy Opponent** effect which prevents the character from granting experience on death. This is given to all enemiey, which do not grant experience
+- Introduce a new cosmetic **Non-Combatant** effect, to non-combatant characters, which explains that they do not need to be killed in order to win
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back
 - **Disarm** can no longer be used on enemies which are immune to disarm
@@ -502,7 +502,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - Is safe to remove from- and add to any savegame
 - Removing or adding this mod will not update existing perk trees. Only after some days you will encounter brothers with the changed perk trees
-- Removing this mod will replace **Parry** with the vanilla perk **Reach Advantage**
+- Removing this mod will replace **Parry** with the vanilla perk **Reach Advantage** and it will replace **One with the Shield** with the vanilla perk **Recover**
 
 ## Incompatible with
 - [**Cook and Blacksmith Fix**](https://www.nexusmods.com/battlebrothers/mods/668): Hardened ships its own fix for the cook. Though it does not fix the Blacksmith (yet?)
