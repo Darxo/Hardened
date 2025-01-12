@@ -104,7 +104,7 @@
 		__original();
 		if (this.m.XP == 0 && !this.isPlayerControlled())
 		{
-			this.getSkills().add(::new("scripts/skills/effects/hd_unworthy_opponent_effect"));	// Every NPC who grants 0 XP now gains this effect to showcase that fact
+			this.getSkills().add(::new("scripts/skills/effects/hd_unworthy_effect"));	// Every NPC who grants 0 XP now gains this effect to showcase that fact
 		}
 
 		if (this.m.IsNonCombatant)

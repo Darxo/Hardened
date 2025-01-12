@@ -1,9 +1,9 @@
-this.hd_unworthy_opponent_effect <- ::inherit("scripts/skills/skill", {
+this.hd_unworthy_effect <- ::inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
 		this.m.ID = "effects.hd_unworthy_opponent";
-		this.m.Name = "Unworthy Opponent";
+		this.m.Name = "Unworthy";
 		this.m.Description = "This character is unworthy.";
 		this.m.Icon = "ui/traits/trait_icon_17.png";	// Vanilla icon for the trait Dumb
 		this.m.Type = ::Const.SkillType.StatusEffect;
