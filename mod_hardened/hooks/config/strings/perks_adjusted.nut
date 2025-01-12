@@ -232,7 +232,7 @@ local adjustedDescriptions = [
 		Key = "SpecCrossbow",
 		Description = ::UPD.getDescription({
 			Fluff = "Master crossbows and firearms, and how best to aim.",
-			Requirement = "Crossbow",
+			Requirement = "Crossbow or Firearm",
 			Effects = [
 				{
 					Type = ::UPD.EffectType.Passive,
