@@ -67,6 +67,11 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		pgShieldGroup.addPerk("perk.recover", 7);		// Add Recover (One with the Shield) into the Tier 7
 	}
 
+	{	// Soldier Group
+		local pgSoldierGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_soldier");
+		pgSoldierGroup.addPerk("perk.rally_the_troops", 3);		// Add Rally the Troops into the Tier 3
+	}
+
 	{	// Special Marksman Group
 		::DynamicPerks.PerkGroups.remove("pg.special.rf_marksmanship");	// This group does no longer exist in Hardened
 	}
