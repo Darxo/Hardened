@@ -78,6 +78,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	{	// Swift Strikes Group
 		local pgSwiftPerkGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_swift");
 		pgSwiftPerkGroup.removePerk("perk.rf_vigorous_assault");	// Remove Vigorous Assault
+		pgSwiftPerkGroup.addPerk("perk.rf_trip_artist", 2);		// Add Trip Artist (Elusive) into the Tier 2
 		pgSwiftPerkGroup.addPerk("perk.reach_advantage", 3);			// Add Reach Advantage (Parry) into the Tier 3
 	}
 
