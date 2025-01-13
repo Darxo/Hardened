@@ -11,6 +11,9 @@
 ::Hardened.Temp.LastAttackInfo <- null;		// weakref to the last AttackInfo created. Usually only useful to have access to it during onTargetMissed or onMissed calls
 
 ::Hardened.HooksMod.hook("scripts/skills/skill", function(q) {
+	// Public
+	q.m.IsHidingIconMini <- false;	// If set to true, then the IconMini will be treated as if it was an empty string and never display
+
 	// Private
 	q.m.HD_Temp_IsFree <- false;	// Ignore fatigue and action point cost during isAffordable check
 
@@ -118,6 +121,19 @@
 
 		return ret;
 	}
+
+	q.getIconMini = @(__original) function()
+	{
+		if (this.m.IsHidingIconMini)
+		{
+			return "";
+		}
+		else
+		{
+			return __original();
+		}
+	}
+
 // Modular Vanilla Events
 	q.onAttackEntityMissed = @(__original) function( _attackInfo )
 	{
