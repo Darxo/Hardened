@@ -13,7 +13,6 @@
 		this.m.Name = ::Const.Strings.PerkName.Recover;
 		this.m.Description = "Shift your shield to guard vital points; raised to protect your head, lowered to shield your body";
 		this.m.Icon = "ui/perks/perk_02.png";
-		this.m.IconMini = "";
 		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
 		this.m.Order = ::Const.SkillOrder.Last;		// We need to apply our effect after other effects, like headless, apply their bodypart redirecting effects
 	}

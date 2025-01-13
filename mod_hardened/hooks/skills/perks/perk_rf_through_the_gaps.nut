@@ -2,7 +2,6 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.IconMini = "";
 		this.m.IsSpent = false;	// this is now active all the time
 		this.m.DirectDamageModifier = -0.1;
 	}
