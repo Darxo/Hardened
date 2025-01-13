@@ -96,6 +96,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - Disable **Veteran Perks**. Your brothers no longer gain perk points after Level 11
 - When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. No more than 5% of his maximum exp each.
 - The **Crowded** debuff for long distance melee attacks now also applies -5% chance to hit for every adjacent ally, ignoring the first two allies.
+- Add new **Elusive** perk in Tier 2 of **Swift Group**. It reduces the AP cost for movement on all terrain by 1 to a minimum of 2. This does not stack with Pathfinder. After moving 2 tiles, become immune to rooted effects, until the start of your next turn.
 - Add new **Parry** perk in Tier 3 of **Swift Group**. It requires a one handed melee weapon. It grants Melee Defense equal to your base Ranged Defense against weapon attacks. While engage with someone wielding a melee weapon, you have 70% less Ranged Defense. Does not work with shields, while stunned, fleeing or disarmed.
 - Add new **One with the Shield** perk in Tier 7 of **Shield Group**. It requires a shield. It grants 25% more Injury Threshold. While you have Shieldwall effect you take 40% less Hitpoint damage from head attack. While you don't have Shieldwall effect you take 40% less Hitpoint damage from body attacks
 - Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
@@ -138,6 +139,7 @@ Skill nerfs as a result of the Reach system:
 
 Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-changes-Side‐By‐Side
 
+- **Adrenaline** skill now costs 15 Fatigue (up from 10)
 - **Angler** no longer increases the cost of **Break Free** on the target. It now increases the maximum range of **Throw Net** by 1 and it staggers every character that you net. **Net Pull** now has a Range of 3 (up from 2)
 - **Anticipation** now also proccs whenever your shield takes damage from an attack
 - **Axe Mastery** no longer grants **Hook Shield**. It now causes **Split Shield** to apply **Dazed** for 1 turn
@@ -153,6 +155,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Brawny** no longer grants Initiative
 - **Colossus** now grants +15 Hitpoints, instead of 25% more Hitpoints
 - **Concussive strikes** is completely reworked. It is now called **Shockwave** and it makes it so your kills or stuns with maces will daze all enemies adjacent to your target for 1 turn
+- **Crossbow Mastery** now grants +1 Vision while you wear a Helmet with a Vision Penalty
 - **Dagger Mastery** no longer grant any reach ignore. It now reduces the action point cost of the first offhand skill each turn to 0, if your offhand item has a weight lower than 10
 - **Deep Impact** is now called **Breakthrough** and has been completely reworked. It grants the **Pummel** skill, which can now be used with any hammer. It also makes it so **Shatter** has a 100% chance to knock targets back on a hit
 - **Dismantle** has been completely reworked. It now grants +40% Armor Damage and 100% more Shield Damage against enemies who have full health.
@@ -213,6 +216,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Deep Impact** (now **Breakthrough**) is now a T3 perk and **Rattle** (now **Full Force**) is now a T6 perk
 - **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
 - **Duelist** is no longer part of **Shield** group
+- **En Garde** is now Tier 3 (down from Tier 7)
 - **Ghostlike** is now Tier 5 (up from Tier 4)
 - **Inspiring Presence** is now also part of the **Noble** group at Tier 7
 - **Marksmanship** is no longer a special perk. It is now a T7 perk in the **Ranged** perk group
@@ -220,8 +224,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Pathfinder** and **Decisive** are now part of **Leadership** group
 - **Pathfinder** is no longer part of the **Wildling** group
 - **Polearm Mastery** and **Fortified Mind** are removed from the **Leadership** group
-- **Rally the Troops** from the **Leadership** group is now a Tier 3 perk (was Tier 2 before)
+- **Rally the Troops** from the **Leadership** group is now a Tier 3 perk (was Tier 2 before). It is now also part of the **Soldier Group** at Tier 3
 - **Student** is now available for everyone
+- **Tempo** is now Tier 5 (up from Tier 3)
 - **Tricksters Purses** is now Tier 3 (up from Tier 1)
 - **Vigorous Assault** is no longer part of **Swift Strikes** group
 - **Knave** no longer guarantees the **Dagger** perk group. Now it is just twice as likely. It also no longer guarantees the **Nimble** per group
@@ -334,6 +339,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Barbarian Kings** now have **Savage Strength** which makes them immune to **Disarm**
 
 **Beasts:**
+- **Alps** now have **Elusive**
 - Introduce new **Bite Reach** effect, which reduces headshot chance by 10% and increases chance to receive headshot by 10%
 	- This effect is given to all Dogs, Wolfs and Hyenas
 - Lindwurms Head and Tail no longer share hitpoints and effects but killing the tail will no longer kill the Head
@@ -395,7 +401,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Combat
 
 - Your headshot chance is now displayed in the combat tooltip when targeting enemies
-- Introduce a new **Unworthy Opponent** effect which prevents the character from granting experience on death. This is given to all enemiey, which do not grant experience
+- Introduce a new **Unworthy** effect which prevents the character from granting experience on death. This is given to all non-player controlled characters who grant 0 XP on death or are allied to the player
 - Introduce a new cosmetic **Non-Combatant** effect, to non-combatant characters, which explains that they do not need to be killed in order to win
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back
@@ -448,7 +454,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
 - Hitpoints recovery on brothers is now more accurate (The Cook Follower now actually increases the hitpoint recovery)
 - Bandaging allies now updates their overlay ui correctly
-- Brothers no longer gain any XP when allies die
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
 - Every accessory now plays a default sound when moved around in the inventory
@@ -472,6 +477,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Introduce new `getOwner` function for factions, which returns the owner of this factions first settlement
 - Introduce new virtual `getDroppedLoot` function for `actor.nut` returning an array of created items, which will be dropped when that actor dies
 - Introduce new `::Hardened.TileReservation` with `function isReserved( _tileID )` which can be used to check whether a targeted tile is about to be filled with an entity from a vanilla `teleport` call
+- Add new `IsHidingIconMini` flag for skills (`false` by default), that can be used by modder to force-hide the mini icon
+- Add new `onSpawned` event for skills that can be used in place of `onCombatStarted` to more consistently configure entities/skills even if they spawn mid battle
 - Supplies (Money, Tools, Medicine, Ammunition) are now droppable
 
 ### New Character Properties

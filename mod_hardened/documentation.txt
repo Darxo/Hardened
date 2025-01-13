@@ -105,6 +105,11 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- Can be used for upgrading, so that locations left along can upgrade into stronger versions?
 	- Can be used for rumors, where they say: "Recently a new location has appeared there and there"
 - revert some 5 AP two handed weapons
+- Change the campfire story events to always consume a little food but also always provide a random tavern rumor
+- change Rising Star to only gain exp until lvl 12 and grant the two perks always at level 12
+- remove fatigue-on-hit from most attacks, except specialized weapons (hammer, mace)
+- rework of the repair system?
+	- remove "repair for profit" system, e.g. by removing the fact that price is calcualted by condition
 
 ## AI
 - make it so enemies are less likely to remove the net if it doesnt affect them (e.g. Orcs)
@@ -112,6 +117,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Make ANticipation influence attacker with stuns to be more likely to attack
 
 ## Fix:
+- Make Rotate no longer cause resolve checks
 - Look into throwing weapons not producing miss-projectiles correctly when missing, sometimes
 	- Need more evidence
 - fix bottom left nimble perk icon
@@ -122,12 +128,31 @@ This submod is a collection of changes to Reforged that I suggested internally t
 		- When its the dogs turn its attack sfx is only played in one ear
 	- I can't reproduce this bug, need more evidence and reproducible steps
 	- In the Vanilla Code I couldn't find an obvious issue on first glance. Probably something todo with the engine
+- Alps that teleport during first turn before revealing, might be shown as unknown, even though you can see them because they arrived on visible tiles
+
+## Rework Training Hall
+- Once per battle if you start your turn fleeing and not adjacent to an enemy, recover your morale to steady
 
 ## Debug:
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
 # Changes:
+
+0.20.0
+	- Add new **Elusive** perk in Tier 2 of **Swift Group**. It reduces the AP cost for movement on all terrain by 1 to a minimum of 2. This does not stack with Pathfinder. After moving 2 tiles, become immune to rooted effects, until the start of your next turn
+	- **Crossbow Mastery** now also grants +1 Vision if you wear a Helmet with a vision penalty
+	- **Adrenaline** now costs 15 Fatigue (up from 10)
+	- **Rally the Troops** is now also a Tier 3 perk in the **Soldier Group**
+	- **En Garde** is now a Tier 3 perk
+	- **Tempo** is now a Tier 5 perk
+	- **Alps** now have **Elusive**
+	- Rename **Unworthy Opponent** into **Unworthy**
+	- Non-player controlled allies now also gain the **Unworthy** effect, signifying that they do not grant any experience
+	- Add new IsHidingIconMini flag for skills (false by default), that can be used by modder to force-hide the mini icon
+	- Add new onSpawned event for skills, that can be used by modder in place of onCombatStarted to more consistently configure entities/skills even if they spawn mid battle
+	- Fix Firearm requirement missing in **Crossbow and Firearm Mastery** perk
+	- Fix remove old redundant tooltip line in offhand training effect
 
 0.19.1
 	- Fix LootAll button after battle not working correctly
