@@ -170,6 +170,12 @@
 	{
 	}
 
+	// This event is called when this entity is spawned and placed on the map.
+	// It should be used in place of onCombatStarted to catch entities spawning mid battle
+	q.onSpawned <- function()
+	{
+	}
+
 	// if _attacker is null then _defenderProps is just the currentProperties of the defender
 	q.onBeforeShieldDamageReceived <- function( _damage, _shield, _defenderProps, _attacker = null, _attackerProps = null, _skill = null )
 	{

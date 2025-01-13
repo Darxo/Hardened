@@ -24,6 +24,12 @@
 		], false);
 	}
 
+	// This event is called when this entity is spawned and placed on the map
+	q.onSpawned <- function()
+	{
+		this.callSkillsFunction("onSpawned", [], false);
+	}
+
 	q.onBeforeShieldDamageReceived <- function( _damage, _shield, _defenderProps, _attacker = null, _attackerProps = null, _skill = null )
 	{
 		this.callSkillsFunction("onBeforeShieldDamageReceived", [

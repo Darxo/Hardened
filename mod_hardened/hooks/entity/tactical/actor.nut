@@ -145,5 +145,7 @@
 		{
 			this.getSkills().add(::new("scripts/skills/special/hd_non_combatant_effect"));	// Every NPC who is a non combatant now gains this effect to showcase that fact
 		}
+
+		this.getSkills().onSpawned();
 	}
 });
