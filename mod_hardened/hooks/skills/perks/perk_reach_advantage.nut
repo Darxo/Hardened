@@ -7,7 +7,6 @@
 	q.m.RangedDefenseMultWhenEngaged <- 0.3;
 
 	// Private
-	q.m.OriginalIconMini <- "perk_hd_parry_mini";
 	q.m.SoundOnParry <- ::Const.Sound.ShieldHitMetal;
 
 	q.create <- function()
@@ -16,7 +15,7 @@
 		this.m.Name = this.Const.Strings.PerkName.ReachAdvantage;
 		this.m.Description = "Your attention is fully on deflecting weapon strikes, making it potentially harder to guard against distant threats.";
 		this.m.Icon = "ui/perks/perk_hd_parry.png";
-		this.m.IconMini = "";
+		this.m.IconMini = "perk_hd_parry_mini";
 		this.m.Type = ::Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = ::Const.SkillOrder.Perk;
 	}
@@ -59,11 +58,11 @@
 		if (this.isEnabledRangedLoss())
 		{
 			_properties.RangedDefenseMult *= this.m.RangedDefenseMultWhenEngaged;
-			this.m.IconMini = this.m.OriginalIconMini;
+			this.m.IsHidingIconMini = false;
 		}
 		else
 		{
-			this.m.IconMini = "";
+			this.m.IsHidingIconMini = true;
 		}
 	}
 

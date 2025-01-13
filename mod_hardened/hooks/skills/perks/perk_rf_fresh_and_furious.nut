@@ -74,13 +74,13 @@
 	{
 		this.m.RequiresRecover = false;
 		this.m.Icon = ::Const.Perks.findById(this.getID()).Icon;
-		this.m.IconMini = this.m.IconMiniBackup;
+		this.m.IsHidingIconMini = false;
 	}
 
 	q.turnEffectOff <- function()
 	{
 		this.m.RequiresRecover = true;
 		this.m.Icon = ::Const.Perks.findById(this.getID()).IconDisabled;
-		this.m.IconMini = "";
+		this.m.IsHidingIconMini = true;
 	}
 });

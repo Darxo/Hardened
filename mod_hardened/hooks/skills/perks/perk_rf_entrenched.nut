@@ -8,16 +8,13 @@
 	q.m.RequiredAdjacentObjects <- 3;	// Atleast this many adjacent tiles must be allies/obstacles for the ranged skill bonus to activate
 
 	// Overwrite of Reforged: Buckler no longer set the count to 0 or are ignored when counting.
-	// Private
-	q.m.IconMiniOriginal <- "perk_rf_entrenched_mini";
-
 	q.create <- function()
 	{
 		this.m.ID = "perk.rf_entrenched";
 		this.m.Name = ::Const.Strings.PerkName.RF_Entrenched;
 		this.m.Description = "This character\'s confidence in combat is increased due to support from adjacent allies and cover.";
 		this.m.Icon = "ui/perks/perk_rf_entrenched.png";
-		this.m.IconMini = "";
+		this.m.IconMini = "perk_rf_entrenched_mini";
 		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
 		this.m.Order = ::Const.SkillOrder.Perk;
 	}
@@ -85,9 +82,9 @@
 // New Functions
 	q.updateMiniIcon <- function()
 	{
-		local oldMiniIcon = this.m.IconMini;
-		this.m.IconMini = (this.getRangedSkillMult() == 1.0) ? "" : this.m.IconMiniOriginal;	// Mini-Icon is only shown while the ranged skill bonus is active
-		if (oldMiniIcon != this.m.IconMini)
+		oldIsHidingIconMini = this.m.IsHidingIconMini;
+		this.m.IsHidingIconMini = (this.getRangedSkillMult() != 1.0);	// Mini-Icon is only shown while the ranged skill bonus is active
+		if (oldIsHidingIconMini != this.m.IsHidingIconMini)
 		{
 			this.getContainer().getActor().setDirty(true);	// Update UI overlay
 		}
