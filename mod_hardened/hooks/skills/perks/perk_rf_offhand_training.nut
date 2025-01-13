@@ -15,10 +15,19 @@
 	{
 		local ret = __original();
 
+		foreach (index, entry in ret)
+		{
+			if (entry.id == 10)
+			{
+				ret.remove(index);	// Remove the mention of the now removed free offhand use effect
+				break;
+			}
+		}
+
 		if (!this.m.IsStaggerSpent)
 		{
 			local tooltip = {
-				id = 11,
+				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = ::Reforged.Mod.Tooltips.parseString("Your next hit will [stagger|Skill+staggered_effect] your target"),
@@ -36,9 +45,9 @@
 		return ret;
 	}
 
-	q.isHidden = @(__original) function()
+	q.isHidden = @() function()
 	{
-		return __original() && this.m.IsStaggerSpent;
+		return this.m.IsStaggerSpent;
 	}
 
 	// Overwrite because we no longer add the trip_artist effect
