@@ -87,22 +87,6 @@
 		return ::Math.round(initiative);
 	}
 
-// Reforged Events
-	q.onSpawned = @(__original) function()
-	{
-		__original();
-		// The player no longer gains any experience when allies are dying
-		if (!this.isPlayerControlled() && (this.m.XP == 0 || this.isAlliedWithPlayer()))
-		{
-			this.getSkills().add(::new("scripts/skills/effects/hd_unworthy_effect"));	// Every NPC who grants 0 XP now gains this effect to showcase that fact
-		}
-
-		if (this.m.IsNonCombatant)
-		{
-			this.getSkills().add(::new("scripts/skills/special/hd_non_combatant_effect"));	// Every NPC who is a non combatant now gains this effect to showcase that fact
-		}
-	}
-
 // New Getter
 	// Return the Stamina of this character utilizing the new Hardened formula
 	// @return Stamina (Maximum Fatigue) of this character
@@ -141,5 +125,25 @@
 			}
 		}
 		return ::Math.round(initiativeModifier);
+	}
+});
+
+::Hardened.HooksMod.hookTree("scripts/entity/tactical/actor", function(q) {
+// Reforged Events
+	// This must happen as hookTree because there is no guarantee that someone overwriting it will call the child function
+	q.onSpawned = @(__original) function()
+	{
+		__original();
+
+		// The player no longer gains any experience when allies are dying
+		if (!this.isPlayerControlled() && (this.m.XP == 0 || this.isAlliedWithPlayer()))
+		{
+			this.getSkills().add(::new("scripts/skills/effects/hd_unworthy_effect"));	// Every NPC who grants 0 XP now gains this effect to showcase that fact
+		}
+
+		if (this.m.IsNonCombatant)
+		{
+			this.getSkills().add(::new("scripts/skills/special/hd_non_combatant_effect"));	// Every NPC who is a non combatant now gains this effect to showcase that fact
+		}
 	}
 });
