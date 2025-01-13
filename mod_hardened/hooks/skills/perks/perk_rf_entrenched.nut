@@ -81,8 +81,8 @@
 // New Functions
 	q.updateMiniIcon <- function()
 	{
-		oldIsHidingIconMini = this.m.IsHidingIconMini;
-		this.m.IsHidingIconMini = (this.getRangedSkillMult() != 1.0);	// Mini-Icon is only shown while the ranged skill bonus is active
+		local oldIsHidingIconMini = this.m.IsHidingIconMini;
+		this.m.IsHidingIconMini = (this.getRangedSkillMult() == 1.0);	// Mini-Icon is only shown while the ranged skill bonus is active
 		if (oldIsHidingIconMini != this.m.IsHidingIconMini)
 		{
 			this.getContainer().getActor().setDirty(true);	// Update UI overlay
