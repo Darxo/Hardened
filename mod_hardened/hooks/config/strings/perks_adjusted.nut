@@ -1130,14 +1130,14 @@ foreach (description in adjustedDescriptions)
 ::Const.Strings.PerkName.RF_SwiftStabs = "Hit and Run";
 ::Const.Perks.findById("perk.rf_swift_stabs").Name = ::Const.Strings.PerkName.RF_SwiftStabs;
 
-// Hijack unused vanilla perk "Reach Advantage"
+// Hijack unused vanilla perk "Reach Advantage" into "Parry"
 ::Const.Strings.PerkName.ReachAdvantage = "Parry";
 local reachAdvantagePerkDef = ::Const.Perks.findById("perk.reach_advantage");
 reachAdvantagePerkDef.Name = ::Const.Strings.PerkName.ReachAdvantage;
 reachAdvantagePerkDef.Icon = "ui/perks/perk_hd_parry.png";
 reachAdvantagePerkDef.IconDisabled = "ui/perks/perk_hd_parry_sw.png";
 
-// Hijack unused reforged perk "Recover"
+// Hijack unused reforged perk "Recover" into "One with the Shield"
 ::Const.Strings.PerkName.Recover = "One with the Shield";
 local recoverPerkDef = ::Const.Perks.findById("perk.recover");
 recoverPerkDef.Name = ::Const.Strings.PerkName.Recover;

@@ -64,7 +64,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	{	// Shield Group
 		local pgShieldGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_shield");
 		pgShieldGroup.removePerk("perk.duelist");		// Remove Duelist fomr Shields
-		pgShieldGroup.addPerk("perk.recover", 7);
+		pgShieldGroup.addPerk("perk.recover", 7);		// Add Recover (One with the Shield) into the Tier 7
 	}
 
 	{	// Special Marksman Group
@@ -78,7 +78,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	{	// Swift Strikes Group
 		local pgSwiftPerkGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_swift");
 		pgSwiftPerkGroup.removePerk("perk.rf_vigorous_assault");	// Remove Vigorous Assault
-		pgSwiftPerkGroup.addPerk("perk.reach_advantage", 3);			// Add Reach Advantage (Parry) into the Tier 3 row
+		pgSwiftPerkGroup.addPerk("perk.reach_advantage", 3);			// Add Reach Advantage (Parry) into the Tier 3
 	}
 
 	{	// Sword Group

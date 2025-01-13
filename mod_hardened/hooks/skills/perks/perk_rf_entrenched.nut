@@ -7,7 +7,6 @@
 	q.m.RangedSkillMult <- 1.15;
 	q.m.RequiredAdjacentObjects <- 3;	// Atleast this many adjacent tiles must be allies/obstacles for the ranged skill bonus to activate
 
-	// Overwrite of Reforged: Buckler no longer set the count to 0 or are ignored when counting.
 	q.create <- function()
 	{
 		this.m.ID = "perk.rf_entrenched";
