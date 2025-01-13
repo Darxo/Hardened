@@ -34,17 +34,6 @@
 		__original(_type, _volume, _pitch = 1.0);
 	}
 
-	// For Vanilla you'd hook onActorKilled on player.nut. But Reforged moved the exp calculation over into the onDeath of actor.nut
-	q.onDeath = @(__original) function( _killer, _skill, _tile, _fatalityType )
-	{
-		local oldGlobalXPMult = ::Const.Combat.GlobalXPMult;
-		if (this.isAlliedWithPlayer()) ::Const.Combat.GlobalXPMult = 0;	// The player no longer gains any experience when allies are dying
-
-		__original(_killer, _skill, _tile, _fatalityType);
-
-		::Const.Combat.GlobalXPMult = oldGlobalXPMult;
-	}
-
 	q.onOtherActorDeath = @(__original) function( _killer, _victim, _skill )
 	{
 		if (!this.m.IsAlive || this.m.IsDying) return;
@@ -102,7 +91,8 @@
 	q.onSpawned = @(__original) function()
 	{
 		__original();
-		if (this.m.XP == 0 && !this.isPlayerControlled())
+		// The player no longer gains any experience when allies are dying
+		if (!this.isPlayerControlled() && (this.m.XP == 0 || this.isAlliedWithPlayer()))
 		{
 			this.getSkills().add(::new("scripts/skills/effects/hd_unworthy_effect"));	// Every NPC who grants 0 XP now gains this effect to showcase that fact
 		}
