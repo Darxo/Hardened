@@ -81,7 +81,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - usings just fists (empty throwing weapon) with no offhand should also grant 20% fatigue discount (like from double grip)
 - Unwieldy Weapons could lose reach when engage in melee
 	- Currently its very weird that its the best play to switch to a pike before ending your turn to maximize reach during opponents turn
-- Swap Tempo and En Guard
 - Nested Tooltips for faction/city banner to see relation
 - burning damage destroys zombie corpses
 	- Needs more research into how corpse removal affects loot
@@ -138,6 +137,9 @@ This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
 # Changes:
+
+0.20.1
+	- Fix savegames not loading when someone with **Entrenched** perk is present
 
 0.20.0
 	- Add new **Elusive** perk in Tier 2 of **Swift Group**. It reduces the AP cost for movement on all terrain by 1 to a minimum of 2. This does not stack with Pathfinder. After moving 2 tiles, become immune to rooted effects, until the start of your next turn
