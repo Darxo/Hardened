@@ -1051,6 +1051,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_through_the_ranks",	// This rarely used Reforged perk is hijacked an renamed into "Scout"
+		Key = "RF_ThroughTheRanks",
+		Description = ::UPD.getDescription({
+			Fluff = "High ground and a clear view are your greatest assets.",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"You have " + ::MSU.Text.colorPositive("+1") + " [Vision|Concept.SightDistance] for every 3 adjacent tiles that are either empty or at least 2 levels below your tile",
+					"Changing height levels has no additional [Action Point|Concept.ActionPoints] cost",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_unstoppable",
 		Key = "RF_Unstoppable",
 		Description = ::UPD.getDescription({
@@ -1162,3 +1176,10 @@ local recoverPerkDef = ::Const.Perks.findById("perk.recover");
 recoverPerkDef.Name = ::Const.Strings.PerkName.Recover;
 recoverPerkDef.Icon = "ui/perks/perk_02.png";
 recoverPerkDef.IconDisabled = "ui/perks/perk_02_sw.png";
+
+// Hijack rarely used reforged perk "Through the Ranks" into "Scout"
+::Const.Strings.PerkName.RF_ThroughTheRanks = "Scout";
+local throughTheRanksPerkDef = ::Const.Perks.findById("perk.rf_through_the_ranks");
+throughTheRanksPerkDef.Name = ::Const.Strings.PerkName.RF_ThroughTheRanks;
+throughTheRanksPerkDef.Icon = "ui/perks/perk_hd_scout.png";
+throughTheRanksPerkDef.IconDisabled = "ui/perks/perk_hd_scout_sw.png";

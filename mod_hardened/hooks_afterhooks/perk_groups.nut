@@ -58,6 +58,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 
 	{	// Ranged Combat
 		local pgRangedGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_ranged");
+		pgRangedGroup.addPerk("perk.rf_through_the_ranks", 1);	// Add Through the Ranks (Scout) into the Tier 1
 		pgRangedGroup.addPerk("perk.rf_marksmanship", 7);
 	}
 
