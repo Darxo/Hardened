@@ -95,7 +95,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- Close the distance, and snare your foe with a net in the heat of Battle
 - If a Brother dies for sure, a special ghost animation could be played. Maybe something like the Geist death or a spiritual soul leaving the body towards the sky
 - new hostility state with factions, where they dont give you contracts but are not yet hostile to you
-- remove close ranged penalty for reach weapons (its now covered by crowded)
 - New effect given to defender of camps, called "Defender's Advantage". It grants +1 Vision and +10 Resolve. Maybe some other buffs. It reads "You know this place in and out, you have a natural advantage defending it"
 - new DayCreated member for locations
 	- Can be used to adjust scaling so that newly created locations scale slower than ones already there longer?
@@ -107,13 +106,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - rework of the repair system?
 	- remove "repair for profit" system, e.g. by removing the fact that price is calcualted by condition
 	- Raise minimum sell price of condition gear to 50%? This would reduce the profit from tool repairs by half
-- Display Renown gained from Contracts in the reward screen of contracts alongside the money
 - move death dealer over to powerful strikes group. its more fitting there and that group could use a sixth perk
 	- however then the agile tree is a bit lacking
 - change cover ally to debuff the targets melee skill and melee defense, to make it harder to use offensively
-- implement cooldown framework for skills (including once-per-turn framework)
-	- this.m.Cooldown
-	- this.m.CooldownMode = ::CooldownMode.StartOfTurn;	(EndOfTurn, StartOfRound, EndOfRound)
 - Make Wiki Page specifically noting "Cheese" strategies from Vanilla that are patched out
 	- T3 nacho swallowing bro
 	- perma stunning enemies
@@ -125,12 +120,12 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - what does this.Time.setVirtualTime(0); do? Can I manipulate daytime with this?
 - Auto Focus the input boxes during campaign creation. Support Enter/Backspace to move forward and backwards during that screen. Both are a bit tricky because the js code is a huge block
 - Display Reputation/Payment changes during payment negotiation
-- lower hound initiative?
 - selling quiver returns their ammo to the player pool?
 - highlight destination locations/entities, while the player is moving towards them explicitely
 - Make brothers dying in battle more punishing, mood wise (out of combat). To prevent you disposing unwanted brothers this way or discouraging using unwanted brothers as fodder
 - Reduce enemies with Survival Instinct
 - Raise fatigue cost of high tier two-handed weapons beyond 15 again
+- Clean up Readme section "For Modder": add default values consitently; add new subsubsections "New Events", "General Decisions"
 
 ## Perks Review/Rework
 - Relentless: misses dont build up fatigue on you while waiting
@@ -158,16 +153,11 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	- Whenever you wait or end your turn, gain a stacking +5% chance to hit. All bonus is lost, when you attack or move.
 	- Unlock **Take Aim** skill, which does the same thing as the mastery thingy stuff
 
-- remove rally the roops restriction when someone is already rallied
 - split hyena/nachzehrer troops in combat/world map
 - orc slayer / crusader events, make them cost 5k crowns each to hire those guys
 
 ## Test:
 - Does reload disorientation apply to the currently fired bolt if used too quick?
-
-## TODO:
-
-- Clean up Readme section "For Modder": add default values consitently; add new subsubsections "New Events", "General Decisions"
 
 ## AI
 - make it so enemies are less likely to remove the net if it doesnt affect them (e.g. Orcs)
@@ -179,6 +169,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Make someone with **Crowded** less likely to be targeted by displacement skills (knock back/repel). That would only help those
 
 ## Fix:
+- Fix Vig assault over in Reforged (use same logic as Opportunist)
 - dog ai too fast, not realizing reanimating zombies and dying to ZOC hits
 - remove double ammo from towns, spawned by fletcher (as fletcher sells its own ammo)
 - Vanilly Pasting pasting way too many times. I could use a variable thats turned on on pressing and turned off on releasing the paste combination
@@ -189,7 +180,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	- Need more evidence
 - Fix orcs sometimes using charge, even though they decided to give uple"
 - Alps that teleport during first turn before revealing, might be shown as unknown, even though you can see them because they arrived on visible tiles
-- Bug with Library Cheese
 
 ## For modder:
 - Framework for tracking round number of a skill for an entity https://github.com/MSUTeam/MSU/issues/351
@@ -201,21 +191,36 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
-# Changes:
+# Current Todo:
 
-
-# Today Todo:
-
-- Show daily pay in brackets behind crowns (mod setting)
+- Display Renown gained from Contracts in the reward screen of contracts alongside the money
+- Reload disorientation AI
 - add small delay after new round, before reanimation begines (100ms) so that new-round effects are more visible
-- Display amount of days that your food lasts for in brackets
 - Give Bog Unhold split shield
-- Test Vigorous Assault weapon swapping?
-- Improve ::Const.World.Common.generateName random name feature to also affect generateName from random enemy types (hookTree of actor.nut?)
-- Attached locations at game start never clear their name if you turn off the option
-- Prevent Attack-Skill usage after using sprint
-- Introduce delay before you can click the event choice of the first page (like 1 second) to prevent you from accidentally clicking it when you walk the overworld and get suprised by one
-- Make ANticipation influence attacker with stuns to be more likely to attack
+- Make Anticipation influence attacker with stuns to be more likely to attack
+
+0.26.0
+	- **Hybridization** is now called **Toolbox**. It is now Tier 2 (down from Tier 3). It now requires a Throwing Weapon and no longer grants 15% of Ranged Skill as extra Melee Skill. Throwing Axes now always overwhelm, even on a miss
+	- Being rallied no longer prevents a character from using **Rally the Troops** themselves
+	- Using **Sprint** now disables all Attack-Skills until the end of the turn
+	- 2-tile melee weapons no longer have a penalty when attacking adjacent targets
+	- **Repel** no longer has +10% chance to hit
+	- **Hook** no longer has +10% chance to hit
+	- **Warhound** now has 100 Initiative (down from 110)
+	- Pimp Background now has 0 Minium Melee Skill (up from -5) and +5 Maximum Melee Skill (up from -5)
+	- **Bandage** now costs 40 crowns (up from 25)
+	- Add settings to display food duration, repair duration and minimum medicine cost in brackets behind those supply values
+	- Add 1 second delay, before you can click the buttons in event screens to prevent accidental missclicks
+	- Limit Ctrl-Combinations, Delete and Arrow Keys in input fields to one per press
+	- Enforce randomly generated human names (e.g. Leader or Knights) to no be duplicates with the last 5 names
+	- Improve tooltip line on 2-tile attacks, advertising **Crowded** effect
+	- Improve tooltip of **Bandage**
+	- Fix `mockFunction` not working correctly with WeakTableRefs
+	- Fix(Vanilla) dying enemies flipping the LastCombatResult, unless they were the last one to die (Sunken Library Fix)
+	- Fix typo in crossbow mastery perk description
+	- Fix location names persisting after turning off the setting to show them
+	- Add `setSkillsIsUsable` for skill.nut, which turns toggles `IsUsable` of all skills on the actor matching a certain condition
+	- Add simple cooldown framework for skills. Set `this.m.HD_Cooldown = X` to enforce a round-based cooldown
 
 0.25.0
 	- **Shield Sergeant** now requires the user to be the active entity for it to trigger but it triggers from free skill uses
