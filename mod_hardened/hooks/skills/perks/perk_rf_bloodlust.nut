@@ -15,7 +15,6 @@
 	{
 		this.m.ID = "perk.rf_bloodlust";
 		this.m.Name = ::Const.Strings.PerkName.RF_Bloodlust;
-		this.m.Description = "This character gains increased vigor when inflicting fatalities.";
 		this.m.Icon = "ui/perks/perk_rf_bloodlust.png";
 		this.m.IconMini = "perk_rf_bloodlust_mini";
 		this.m.Type = ::Const.SkillType.Perk;
