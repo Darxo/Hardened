@@ -1104,6 +1104,21 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_wear_them_down",
+		Key = "RF_WearThemDown",
+		Description = ::UPD.getDescription({
+			Fluff = "Overwhelm your foes with metal and meat!"
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Any hit builds up an additional " + ::MSU.Text.colorNegative("10") + " [Fatigue|Concept.Fatigue] on the target",
+					"Any miss builds up an additional " + ::MSU.Text.colorNegative("5") + " [Fatigue|Concept.Fatigue] on the target",
+					"After your attack, if your target is fully [fatigued|Concept.Fatigue], apply [Worn Down|Skill+rf_worn_down_effect] until the end of their turn",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_wears_it_well",
 		Key = "RF_WearsItWell",
 		Description = ::UPD.getDescription({
