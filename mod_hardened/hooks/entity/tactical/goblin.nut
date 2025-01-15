@@ -8,7 +8,13 @@
 		// So in Hardened they lose some stats
 		bp.MeleeSkill -= 5;
 		bp.MeleeDefense -= 5;
+	}
 
-		this.m.Skills.add(::new("scripts/skills/racial/hd_goblin_racial"));
+	q.onSpawned = @(__original) function()
+	{
+		this.getSkills().add(::new("scripts/skills/racial/hd_goblin_racial"));
+
+		this.getSkills().removeByID("perk.pathfinder");
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_trip_artist"));	// Add Elusive perk as a replacement for Pathfinder
 	}
 });
