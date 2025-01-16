@@ -17,6 +17,11 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		pgAlwaysGroup.removePerk("perk.bags_and_belts");
 	}
 
+	{	// Axe Group
+		local pgAxeGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_axe");
+		changePerkTier(pgAxeGroup, "perk.rf_dismantle", 6);			// Move Dismantle to Tier 6 (down from Tier 7)
+	}
+
 	{	// Hammer Group
 		local pgHammerArmorGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_hammer");
 		changePerkTier(pgHammerArmorGroup, "perk.rf_rattle", 6);			// Move rattle (Full Force) into the position where Deep Impact was previously
