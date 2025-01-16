@@ -962,21 +962,6 @@ local adjustedDescriptions = [
 			}],
 		}),
 	},
-	/*	This perk was removed from Reforged
-	{
-		ID = "perk.rf_spear_advantage",
-		Key = "RF_SpearAdvantage",
-		Description = ::UPD.getDescription({
-			Fluff = "Stick \'em with the pointy end",
-			Requirement = "Spear",
-			Effects = [{
-				Type = ::UPD.EffectType.Passive,
-				Description = [
-					"[Melee Skill|Concept.MeleeSkill] is increased by another " + ::MSU.Text.colorizeMult(::Reforged.Reach.ReachAdvantageMult) + " while you have [Reach Advantage|Concept.ReachAdvantage]",
-				],
-			}],
-		}),
-	},*/
 	{
 		ID = "perk.rf_survival_instinct",
 		Key = "RF_SurvivalInstinct",
