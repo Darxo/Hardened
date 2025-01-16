@@ -5,8 +5,9 @@
 
 	<sprite id="rf_formidable_approach" ic = "FF23165B" img="..\..\gfx\ui\perks\rf_formidable_approach.png" />
 
-	<sprite id="hd_reload_disorientation_effect_mini" ic = "FF23165B" img="mini\hd_reload_disorientation_effect_mini.png" />
+	<sprite id="perk_hd_elusive_mini" ic = "FF23165B" img="mini\perk_hd_elusive_mini.png" />
 	<sprite id="perk_hd_parry_mini" ic = "FF23165B" img="mini\perk_hd_parry_mini.png" />
+	<sprite id="hd_reload_disorientation_effect_mini" ic = "FF23165B" img="mini\hd_reload_disorientation_effect_mini.png" />
 	<sprite id="hd_whirling_death_effect_mini" ic = "FF23165B" img="mini\hd_whirling_death_effect_mini.png" />
 
 	<sprite id="rf_lucky_trait" ic = "FF23165B" img="..\..\gfx\ui\traits\trait_icon_54.png" />

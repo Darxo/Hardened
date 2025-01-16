@@ -17,7 +17,7 @@
 
 		this.m.Description = "You are impossible to pin down!";
 		this.m.Icon = "ui/perks/perk_rf_trip_artist.png";
-		this.m.IconMini = "";	// TODO
+		this.m.IconMini = "perk_hd_elusive_mini";
 		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
 		this.m.Order = ::Const.SkillOrder.Perk;
 	}
