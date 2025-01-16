@@ -978,6 +978,21 @@ local adjustedDescriptions = [
 		}),
 	},*/
 	{
+		ID = "perk.rf_survival_instinct",
+		Key = "RF_SurvivalInstinct",
+		Description = ::UPD.getDescription({
+			Fluff = "Your will to live is strong!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Whenever you get hit by an attack, gain 1 stack",
+					"Whenever an attack misses you, lose 1 stack",
+					"You gain " + ::MSU.Text.colorPositive("+10") + " [Melee Defense|Concept.MeleeDefense] and " + ::MSU.Text.colorPositive("+10") + " [Ranged Defense|Concept.RangeDefense] per stack",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_sweeping_strikes",
 		Key = "RF_SweepingStrikes",
 		Description = ::UPD.getDescription({
