@@ -1,4 +1,10 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/zombie_knight", function(q) {
+	q.onSpawned = @(__original) function()
+	{
+		__original();
+		this.getSkills().add(::new("scripts/skills/perks/perk_overwhelm"));	// Re-Add Overwhelm because it was removed from base zombie class
+	}
+
 	q.onResurrected = @(__original) function( _info)
 	{
 		__original(_info);

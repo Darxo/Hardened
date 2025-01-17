@@ -6,9 +6,16 @@
 		this.m.BaseProperties.MeleeSkill += 5;	// To offset the loss of double grip
 	}
 
+	q.onSpawned = @(__original) function()
+	{
+		__original();
+		this.getSkills().removeByID("perk.overwhelm");	// Their Worn Down perk was buffed a bit and overwhelm feels too oppressive this early on
+	}
+
 	q.onResurrected = @(__original) function( _info )
 	{
 		__original(_info);
+
 		this.getSkills().add(::new("scripts/skills/effects/hd_unworthy_effect"));	// Resurrected skeletons no longer grant any experience on death
 	}
 });
