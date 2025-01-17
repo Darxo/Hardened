@@ -1081,6 +1081,21 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_vigorous_assault",
+		Key = "RF_VigorousAssault",
+		Description = ::UPD.getDescription({
+			Fluff = "You\'ve learned to use the very momentum of your movement as a weapon unto itself!",
+			Requirement = "Melee or Throwing Attack",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"For every 2 tiles moved, your next Attack costs " + ::MSU.Text.colorPositive(-1) + " [Action Point|Concept.ActionPoints] (to a minimum of " + ::MSU.Text.colorPositive(1) + ") and " + ::MSU.Text.colorPositive("10%") + " less [Fatigue|Concept.Fatigue]",
+					"The effect is lost when you use any skill, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_weapon_master",
 		Key = "RF_WeaponMaster",
 		Description = ::UPD.getDescription({
