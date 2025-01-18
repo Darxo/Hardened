@@ -5,6 +5,19 @@
 	// Private
 	q.m.HD_recoveredHitpointsOverflow <- 0.0;	// float between 0.0 and 1.0. Is not deserialized, meaning that we lose a tiny bit hitpoint recovery when saving/loading often
 
+	q.onMovementStep = @(__original) function( _tile, _levelDifference )
+	{
+		// Switcheroo to prevent the vanilla implementation from calling updateVisibility
+		local oldUpdateVisibility = this.updateVisibility;
+		this.updateVisibility = function( _tile, _vision, _faction ) {};
+
+		local ret = __original(_tile, _levelDifference);
+
+		this.updateVisibility = oldUpdateVisibility;
+
+		return ret;
+	}
+
 	q.onMovementFinish = @(__original) function ( _tile )
 	{
 		this.getSkills().update();	// This will allow skills to influence the vision of this entity, before updateVisibility with the destination tile is called
@@ -148,5 +161,21 @@
 
 			combatLog.log = oldLog;	// Revert the vanilla log function to what it was before
 		}
+	}
+});
+
+::Hardened.HooksMod.hookTree("scripts/entity/tactical/actor", function(q) {
+	q.onMovementStep = @(__original) function( _tile, _levelDifference )
+	{
+		local ret = __original(_tile, _levelDifference);
+
+		// We skipped Vanillas updateVisibility call so we will do that now at the very end.
+		// This will give skills time to call a last-minute update with an adjusted Vision value when they grant it depending on terrain/tile conditions
+		if (ret)
+		{
+			this.updateVisibilityForFaction();
+		}
+
+		return ret;
 	}
 });
