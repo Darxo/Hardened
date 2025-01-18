@@ -5,6 +5,12 @@
 	// Private
 	q.m.HD_recoveredHitpointsOverflow <- 0.0;	// float between 0.0 and 1.0. Is not deserialized, meaning that we lose a tiny bit hitpoint recovery when saving/loading often
 
+	q.onMovementFinish = @(__original) function ( _tile )
+	{
+		this.getSkills().update();	// This will allow skills to influence the vision of this entity, before updateVisibility with the destination tile is called
+		__original(_tile);
+	}
+
 	q.hasZoneOfControl = @(__original) function()
 	{
 		return __original() && this.getCurrentProperties().CanExertZoneOfControl;
