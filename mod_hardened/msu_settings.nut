@@ -19,7 +19,7 @@
 
 	qolWorldPage.addDivider("MiscDivider3");
 
-	qolWorldPage.addBooleanSetting("AlwaysDisplayRenownValue", true, "Always Display Renwon Value", "Always display your exact renown value in brackets whenever displaying your current renown state.");
+	qolWorldPage.addBooleanSetting("AlwaysDisplayRenownValue", true, "Always Display Renown Value", "Always display your exact renown value in brackets whenever displaying your current renown state.");
 	qolWorldPage.addBooleanSetting("DisplayRelationValue", true, "Display Relation Value", "Always display your exact relation value in brackets when displaying the current relationship state.");
 	qolWorldPage.addBooleanSetting("DisplayMoraleValue", true, "Display Morale Reputation Value", "Always display your exact morale value in brackets when displaying the current morale reputation state.");
 }
