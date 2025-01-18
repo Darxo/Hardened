@@ -871,7 +871,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Throwing Attacks cost " + ::MSU.Text.colorPositive(-1) + " [Action Point|Concept.ActionPoints] per tile moved during your [turn|Concept.Turn], until you use a throwing attack, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
-					"Changing height levels has no additional [Action Point|Concept.ActionPoints] cost",
+					"Moving costs " + ::MSU.Text.colorPositive(-2) + " [Fatigue|Concept.Fatigue]",
 				],
 			}],
 		}),

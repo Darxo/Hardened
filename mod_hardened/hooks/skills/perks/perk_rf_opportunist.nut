@@ -3,6 +3,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_opportunist", function(q) {
 	// Public
 	q.m.ActionPointModifierPerTile <- -1;
+	q.m.MovementFatigueCostAdditional <- -2;
 
 	// Private
 	q.m.TilesMovedThisTurn <- 0;
@@ -59,7 +60,7 @@
 	{
 		if (this.isEnabled())
 		{
-			this.getContainer().getActor().m.LevelActionPointCost = 0;	// Moving up and down hills no longer costs additional AP
+			_properties.MovementFatigueCostAdditional += this.m.MovementFatigueCostAdditional;
 		}
 	}
 
