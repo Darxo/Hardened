@@ -109,17 +109,35 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - remove fatigue-on-hit from most attacks, except specialized weapons (hammer, mace)
 - rework of the repair system?
 	- remove "repair for profit" system, e.g. by removing the fact that price is calcualted by condition
+- Display Renown gained from Contracts in the reward screen of contracts alongside the money
+- switch footwork with combo, to break up the combination of pathfinder and footwork in the same group
+- move death dealer over to powerful strikes group. its more fitting there and that group could use a sixth perk
+	- however then the agile tree is a bit lacking
+- change cover ally to debuff the targets melee skill and melee defense, to make it harder to use offensively
+- implement cooldown framework for skills (including once-per-turn framework)
+	- this.m.Cooldown
+	- this.m.CooldownMode = ::CooldownMode.StartOfTurn;	(EndOfTurn, StartOfRound, EndOfRound)
+- Simplify Double Strike
+
+## TODO:
+
+- Debug Scout (so that it correctly reveals when moving)
+- Test Stab injury threshold as I apply it in a simpler/different way than Vanilla
+- Test Vigorous Assault weapon swapping?
 
 ## AI
 - make it so enemies are less likely to remove the net if it doesnt affect them (e.g. Orcs)
 - Change AI Rotation to not/rarely rotate your brothers into battle?
 - Make ANticipation influence attacker with stuns to be more likely to attack
+- Make enemy archers prefer to use wait instead of blindly advancing, if their frontline hasn't advanced yet
+	- Make make enemy archers prefer wait during the first turn in general, if they have no target?
+- Make root skills much more likely to target someone with Unstoppable stacks (because they cancel unstoppable)
+- Lower the urge for nachzehrers to kill themselves to ZOC just to seek out a corpse
 
 ## Fix:
 - Make Rotate no longer cause resolve checks
 - Look into throwing weapons not producing miss-projectiles correctly when missing, sometimes
 	- Need more evidence
-- fix bottom left nimble perk icon
 - Fix orcs sometimes using charge, even though they decided to give uple"
 - sometimes audio is coming from the right or left ear. Maybe if sounds are played quickly after another? Do some tests with audio spawning
 	- This seems to happen with freshly spawned dogs:
@@ -137,6 +155,26 @@ This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
 # Changes:
+
+0.21.0
+	- Add new **Scout** perk in Tier 1 of **Ranged Group**. It grants +1 Vision for every 3 adjacent tiles that are either empty or at least 2 levels below your tile. It also removes the Action Point cost for changing height levels, just like **Pathfinder**
+	- **Wear them Down** is completely reworked. It now causes your hits to apply an additional 10 Fatigue on the target and your misses to apply 5 Fatigue. After your attack, if your target is fully fatigued, apply **Worn Down** effect until the end of their turn, which prevents them from using **Recover**
+	- **Survival Instinct** is completely reworked. It now grants 1 stack, when you get hit, and you lose 1 stack when you dodge an attack. Every stack grants 10 Melee Defense and 10 Ranged Defense
+	- **Opportunist** no longer removes Action Point cost when changing height. Instead it now grants -2 Fatigue cost while moving, just like the **Athletic** Trait
+	- **Vigorous Assault** discount is no longer removed when switching items
+	- **Dismantle** is now a Tier 6 perk (down from Tier 7)
+	- **Stab** now has a 25% higher threshold to inflict injuries
+	- **Cruel Falchion** (goblin weapon) are now a Sword/Dagger hybrid. They now also grant **Stab**. **Slash** and **Rispote** no longer have any discount
+	- **Goblin Skewer** are now a Spear/Dagger hybrid. **Thrust** is replaced with **Stab**. **Spearwall** no longer has any discount. **Riposte** is removed
+	- **Elusive** now also displays a mini icon while active
+	- All **Goblins** (except **Goblin Wolfrider**) now have **Elusive** instead of **Pathfinder**
+	- All **Goblins** (except **Goblin Overseer** and **Champion Goblin Ambusher**) lose **Bullseye**
+	- **Champion Goblin Ambusher** lose **Target Practice**
+	- **Goblin Ambusher** now always spawn with the **Reinforced Boondock Bow** variant
+	- Normal **Zombies** no longer have **Overwhelm**
+	- **Armored Wiederganger** now display their complete name during battle, instead of just **Wiederganger**
+	- Fix **Recover** being disabled even after **Pierced Lung** or **Collapsed Lung** were removed
+	- Fix typo in renown mod setting
 
 0.20.1
 	- Fix savegames not loading when someone with **Entrenched** perk is present
