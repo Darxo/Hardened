@@ -16,5 +16,7 @@
 
 		this.getSkills().removeByID("perk.pathfinder");
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_trip_artist"));	// Add Elusive perk as a replacement for Pathfinder
+
+		this.getSkills().removeByID("perk.bullseye");	// Only select goblins have Bullseye now
 	}
 });
