@@ -81,6 +81,7 @@
 	{
 		local ret = __original(_target, _usedSkill);
 		if (_usedSkill == null) return ret;
+		if (this.getCurrentMeleeDefenseModifier() != 0) return ret;	// We already triggered this skill once this turn and cannot do it again
 
 		if (this.isSkillValid(_usedSkill))
 		{
