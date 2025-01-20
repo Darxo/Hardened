@@ -105,7 +105,6 @@
 		if (_skill.isRanged()) return false;
 		if (!_skill.isAttack()) return false;
 
-		if (this.m.IsForceEnabled) return true;	// To backwards support reforged force enabled member
 		if (this.m.RequiredItemType == null) return true;
 
 		local weapon = _skill.getItem();
