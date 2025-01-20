@@ -12,6 +12,7 @@
 		this.m.IconMini = "perk_rf_king_of_all_weapons_mini";
 		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
 		this.m.Order = ::Const.SkillOrder.VeryLast;
+		this.m.IsHidden = true;
 	}
 
 	q.onUpdate <- function( _properties )
