@@ -12,6 +12,7 @@
 		this.m.BonusPerMiss = 0;
 	}
 
+	// Overwrite, because we display only one type of stacks without any name attached to the type
 	q.getName = @() function()
 	{
 		local name = this.m.Name;

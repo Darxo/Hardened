@@ -156,6 +156,11 @@ This will unbrick your end-of-combat screen, if it doesnt show
 
 # Changes:
 
+0.21.1
+	- Mention **Encumbrance** in the **Weight** Concept
+	- Hide **Spear Flurry** effect and mini icon during battle
+	- Fix crash in battles with **Sweeping Strikes**
+
 0.21.0
 	- Add new **Scout** perk in Tier 1 of **Ranged Group**. It grants +1 Vision for every 3 adjacent tiles that are either empty or at least 2 levels below your tile. It also removes the Action Point cost for changing height levels, just like **Pathfinder**
 	- **Wear them Down** is completely reworked. It now causes your hits to apply an additional 10 Fatigue on the target and your misses to apply 5 Fatigue. After your attack, if your target is fully fatigued, apply **Worn Down** effect until the end of their turn, which prevents them from using **Recover**
