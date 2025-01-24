@@ -72,6 +72,14 @@
 	}
 
 // New Utility Functions:
+	/// Utility function similar to the MSU function ::Tactical.TurnSequenceBar.isActiveEntity except that it first checks whether we are even in combat
+	/// @return true if it is currently this entities turn
+	/// @return false otherwise
+	q.isActiveEntity <- function()
+	{
+		return ::MSU.Utils.hasState("tactical_state") && ::Tactical.TurnSequenceBar.isActiveEntity(this);
+	}
+
 	/*
 	Try to recover up to _amount Action Points
 	@param _printLog if true, print a combat log entry stating how many Action Points were recovered
