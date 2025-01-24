@@ -30,8 +30,7 @@
 		__original(_properties);
 
 		local actor = this.getContainer().getActor();
-		if (!actor.isPlacedOnMap()) return;
-		if (::Tactical.TurnSequenceBar.isActiveEntity(actor)) return;
+		if (!actor.isActiveEntity()) return;
 
 		if (actor.getMoraleState() == ::Const.MoraleState.Fleeing)
 		{

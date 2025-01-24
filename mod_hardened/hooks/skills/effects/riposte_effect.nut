@@ -66,7 +66,7 @@
 		if (_skill == null) return;
 
 		local actor = this.getContainer().getActor();
-		if (!_attacker.isAlliedWith(actor) && _attacker.getTile().getDistanceTo(actor.getTile()) <= this.m.RiposteRange && !_skill.isIgnoringRiposte() && ::Tactical.TurnSequenceBar.isActiveEntity(_attacker))
+		if (!_attacker.isAlliedWith(actor) && _attacker.getTile().getDistanceTo(actor.getTile()) <= this.m.RiposteRange && !_skill.isIgnoringRiposte() && _attacker.isActiveEntity())
 		{
 			this.onRiposteTriggered(_attacker);
 		}

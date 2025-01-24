@@ -59,8 +59,7 @@
 	q.isEnabled <- function()
 	{
 		local actor = this.getContainer().getActor();
-		if (!actor.isPlacedOnMap()) return false;
-		if (::Tactical.TurnSequenceBar.isActiveEntity(actor)) return false;
+		if (!actor.isActiveEntity()) return false;
 		if (actor.getMoraleState() == ::Const.MoraleState.Fleeing || actor.getCurrentProperties().IsStunned) return false;
 		if (actor.getCurrentProperties().IsRiposting) return false;
 		if (this.getContainer().getAttackOfOpportunity() == null) return false;

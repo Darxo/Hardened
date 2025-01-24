@@ -74,7 +74,7 @@ this.hd_backup_plan_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (this.m.IsEffectActive && ::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()))
+		if (this.m.IsEffectActive && this.getContainer().getActor().isActiveEntity())
 		{
 			this.setAllAttacks(false);
 		}
@@ -117,7 +117,7 @@ this.hd_backup_plan_skill <- this.inherit("scripts/skills/skill", {
 // MSU Events
 	function onQueryTooltip( _skill, _tooltip )
 	{
-		if (this.m.IsEffectActive && _skill.isAttack() && ::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()))
+		if (this.m.IsEffectActive && _skill.isAttack() && this.getContainer().getActor().isActiveEntity())
 		{
 			_tooltip.push({
 				id = 100,

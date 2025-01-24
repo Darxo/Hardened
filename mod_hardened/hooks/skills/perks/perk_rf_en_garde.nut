@@ -5,13 +5,9 @@
 	{
 		__original(_properties);
 
-		local actor = this.getContainer().getActor();
-		if (actor.isPlacedOnMap())
+		if (this.isEnabled() && this.getContainer().getActor().isActiveEntity())
 		{
-			if (this.isEnabled() && !::Tactical.TurnSequenceBar.isActiveEntity(actor))
-			{
-				_properties.MeleeSkill += this.m.MeleeSkillModifier;
-			}
+			_properties.MeleeSkill += this.m.MeleeSkillModifier;
 		}
 	}
 

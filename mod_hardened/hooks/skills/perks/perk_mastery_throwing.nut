@@ -76,7 +76,7 @@
 	// Overwrite: Mastery no longer applies onHit effects. This is now moved to hybridization
 	q.onTargetHit = @() function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (this.isSkillValid(_skill) && ::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()))
+		if (this.isSkillValid(_skill) && this.getContainer().getActor().isActiveEntity())
 		{
 			this.m.IsUnderhandThrowSpent = true;
 		}
@@ -86,7 +86,7 @@
 	{
 		__original(_skill, _targetEntity);
 
-		if (this.isSkillValid(_skill) && ::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()))
+		if (this.isSkillValid(_skill) && this.getContainer().getActor().isActiveEntity())
 		{
 			this.m.IsUnderhandThrowSpent = true;
 			// Note, this will also be triggered just before the throwing attack goes astray and potentially still hits someone else.

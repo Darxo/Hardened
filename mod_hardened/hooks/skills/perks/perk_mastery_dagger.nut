@@ -13,7 +13,6 @@
 		if (this.m.IsSpent) return;
 		if (this.m.LastExecutedSkillForFree) return;
 		if (!this.isEnabled()) return;
-		if (!::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()))	return;
 
 		if (!::MSU.isNull(_skill.getItem()) && ::MSU.isEqual(_skill.getItem(), this.getContainer().getActor().getOffhandItem()))
 		{
@@ -61,7 +60,10 @@
 // New Functions
 	q.isEnabled <- function()
 	{
-		local weapon = this.getContainer().getActor().getMainhandItem();
+		local actor = this.getContainer().getActor();
+		if (!actor.isActiveEntity()) return;
+
+		local weapon = actor.getMainhandItem();
 		if (weapon == null || !weapon.isWeaponType(::Const.Items.WeaponType.Dagger))
 		{
 			return false;

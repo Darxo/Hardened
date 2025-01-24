@@ -101,7 +101,7 @@
 // New Functions
 	q.getMeleeDefenseModifier <- function( _properties )
 	{
-		if (::Tactical.isActive() && ::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()))
+		if (this.getContainer().getActor().isActiveEntity())
 		{
 			return ::Math.ceil(_properties.getBravery() * this.m.ResolveAsMeleeDefensePct);
 		}

@@ -37,7 +37,7 @@
 
 	q.onAnySkillExecuted <- function( _skill, _targetTile, _targetEntity, _forFree )
 	{
-		if (this.isSkillValid(_skill) && ::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()))
+		if (this.isSkillValid(_skill) && this.getContainer().getActor().isActiveEntity())
 		{
 			this.m.IsSpent = true;
 		}
