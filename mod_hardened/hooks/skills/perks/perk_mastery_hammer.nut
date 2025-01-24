@@ -4,11 +4,9 @@
 
 	q.onTargetHit = @(__original) function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		::logWarning("Hammer Mastery: onTargetHit _damageInflictedArmor " + _damageInflictedArmor);
 		// Spread some of the armor damage dealt to one of the bodyparts to the other
 		if (_damageInflictedArmor != 0 && this.m.ArmorDamageSpreadPct != 0 && this.isEnabled() && this.isSkillValid(_skill) && _targetEntity.isAlive() && !_targetEntity.isDying())
 		{
-			::logWarning("redirect damage");
 			local newBodyPart = (_bodyPart == ::Const.BodyPart.Head) ? ::Const.BodyPart.Body : ::Const.BodyPart.Head;
 			local armorDamageSpread = ::Math.floor(_damageInflictedArmor * this.m.ArmorDamageSpreadPct);
 
