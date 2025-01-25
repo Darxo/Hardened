@@ -1,4 +1,10 @@
 ::Hardened.HooksMod.hook("scripts/skills/backgrounds/swordmaster_background", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.HiringCost = 400; 	// In Reforged this is 2400; In Vanilla this is 400
+	}
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
