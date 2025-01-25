@@ -9,7 +9,7 @@
 		this.m.RegularDamage = 35;		// In Vanilla this is 25
 		this.m.RegularDamageMax = 50;	// In Vanilla this is 40
 		this.m.ChanceToHitHead = 10;	// In Vanilla this is 5
-		this.m.AdditionalAccuracy = -10;	// In Vanilla this is 0
+		this.m.AdditionalAccuracy -= 10;	// In Vanilla this is 0
 
 		this.m.AmmoWeight = 2.0;
 	}
