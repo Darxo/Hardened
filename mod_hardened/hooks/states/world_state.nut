@@ -52,8 +52,7 @@
 	// Cheese Fix: Prevent Perma-Stunning World Parties
 	q.stunPartiesNearPlayer = @(__original) function( _isMinor = false )
 	{
-		local stackInfo = ::getstackinfos(4);	// 1 & 2 are "Unknown"; 3 == "pop"
-		if (stackInfo != null && stackInfo.func == "combat_dialog_module_onCancelPressed")
+		if (::Hardened.getFunctionCaller(1) == "combat_dialog_module_onCancelPressed")	// 0 = "pop"
 		{
 			return;	// Cancelling the combat menu no longer stuns nearby parties
 		}
