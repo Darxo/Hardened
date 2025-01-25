@@ -3,7 +3,7 @@ local oldTeleport = ::TacticalNavigator.teleport;
 {
 	if (::Hardened.TileReservation.isReserved(_targetTile.ID))
 	{
-		::logWarning("Hardened: Prevented teleport onto reserved Tile");
+		::logInfo("Hardened: Prevented teleport onto reserved Tile");
 		return;	// We no longer allow two entities to teleport onto the same tile
 	}
 

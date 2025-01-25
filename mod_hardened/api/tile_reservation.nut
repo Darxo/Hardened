@@ -22,7 +22,11 @@
 	// Return true if the tile with the ID _tileID is currently the reserved because it is the target of a movement
 	function isReserved( _tileID )
 	{
-		return this.TilesUsed.find(_tileID) != null;
+		foreach (reservation in this.TilesUsed)
+		{
+			if (reservation.ID == _tileID) return true;
+		}
+		return false;
 	}
 
 	function reserveTile( _tileID )
