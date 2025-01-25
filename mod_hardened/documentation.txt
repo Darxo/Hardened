@@ -117,12 +117,25 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - implement cooldown framework for skills (including once-per-turn framework)
 	- this.m.Cooldown
 	- this.m.CooldownMode = ::CooldownMode.StartOfTurn;	(EndOfTurn, StartOfRound, EndOfRound)
-- Simplify Double Strike
+- Tempo
+	- Unlock Kata Step
+	- Whenever you move a tile, except involuntary, gain +10 Initiative until the start of your next turn
+- Sword Mastery
+	- When attacking someone with more Initiative, apply a stacking "From all Sides" debuff on them until the start of their next turn
+		- 20% less Initiative
+- Make Wiki Page specifically noting "Cheese" strategies from Vanilla that are patched out
+	- T3 nacho swallowing bro
+	- perma stunning enemies
+	- listening for idle sounds to "scout" locations
+- Take Aim Perk (previously Power Shot)
+	- Whenever you wait or end your turn, gain a stacking +5% chance to hit. All bonus is lost, when you attack or move.
+	- Unlock **Take Aim** skill, which does the same thing as the mastery thingy stuff
+- Make End Turn no longer waste all AP?
+	- Make Vigilant explicitely spend all your remaining AP when ending turn
+	- Make Command being able to target allies who ended their turns already (if that does not cause too many issues)
 
 ## TODO:
 
-- Debug Scout (so that it correctly reveals when moving)
-- Test Stab injury threshold as I apply it in a simpler/different way than Vanilla
 - Test Vigorous Assault weapon swapping?
 
 ## AI
@@ -146,6 +159,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- I can't reproduce this bug, need more evidence and reproducible steps
 	- In the Vanilla Code I couldn't find an obvious issue on first glance. Probably something todo with the engine
 - Alps that teleport during first turn before revealing, might be shown as unknown, even though you can see them because they arrived on visible tiles
+- Bug with Library Cheese
 
 ## Rework Training Hall
 - Once per battle if you start your turn fleeing and not adjacent to an enemy, recover your morale to steady
@@ -155,6 +169,24 @@ This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
 # Changes:
+
+
+0.22.0
+	- Add new **Retreat** skill for player characters, which allows you to retreat individual brothers from a battle if they stand on a border tile
+	- **Double Strike** damage bonus is no longer lost when you swap weapons
+	- **Net Effect** now applies 50% less Melee Defense (down from 45%) and 50% less Ranged Defense (down from 45%)
+	- **Throw Axe** now has a 50% chance to decapitate (up from 0%) and 25% chance to disembowel (up from 0%)
+	- **Chop** now has a 50% chance to decapitate (up from 25%)
+	- **Craftable Schrat Shield** no longer spawns saplings
+	- **Swordmaster** now have 60 Melee Defense (down from 80) and 30 Ranged Defense (up from 15). They now have **Parry** instead of **Dodge**
+	- **T3 Nachzehrer** can now also swallow the last player character who is alive
+	- **Swordmaster Background** now has a hiring cost of 400 Crowns (down from 2400), just like in Vanilla
+	- Improve perk description of **Nailed It** to clarify that it grants 30% hitchance at a range of 1
+	- Add new isActiveEntity function for actor.nut, which is a shorter version of ::Tactical.TurnSequenceBar.isActiveEntity
+	- Add new ::Hardened.getFunctionCaller global function which returns the name of the caller of the function you were in when you called getFunctionCaller
+	- Add new ::Hardened.mockFunction global function allowing you to mod vanilla functions in a precise way
+	- Fix throwing weapons missing 15% chance to hit across the board
+	- Remove some logWarnings from hammer mastery perk
 
 0.21.1
 	- Mention **Encumbrance** in the **Weight** Concept

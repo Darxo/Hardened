@@ -48,6 +48,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 	- **Old Wooden Shields** now have 13 Melee Defense (down from 15) and 13 Ranged Defense (down from 15)
 	- **Worn Heater Shields** now have 23 Melee Defense (up from 20), 13 Ranged Defense (down from 15) and no longer grant **Shieldwall**
 	- **Worn Kite Shields** now have 13 Melee Defense (down from 15), 23 Ranged Defense (down from 25) and no longer grant **Knock Back**
+	- **Craftable Schrat Shield** no longer spawns saplings
 
 ### Throwing Weapon Rework
 
@@ -103,26 +104,28 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - Disable **Veteran Perks**. Your brothers no longer gain perk points after Level 11
 - When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. No more than 5% of his maximum exp each
 - You can now use **Bandages** to treat injuries during battle that were received at most 1 round ago
+- Add new **Retreat** skill for player characters, which allows you to retreat individual brothers from a battle if they stand on a border tile
 - Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
 
 ## Balance & Polishing
 
 ### Skills
 
-
+- **Chop** now has a 50% chance to decapitate (up from 25%)
 - **Crowded** debuff for long distance melee attacks now also applies -5% chance to hit for every adjacent ally, ignoring the first two allies
 - **Dazed** no longer reduces the Stamina by 25%. It now increases the fatigue cost of all non-attacks by 25%
 - **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
 - **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%)
-- **Net Effect** no longer reduces the Initiative of the target
+- **Net Effect** no longer affects the Initiative of the target. It now applies 50% less Melee Defense (down from 45%) and 50% less Ranged Defense (down from 45%)
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack
 - **Spider Poison** now also reduces the Hitpoints Recovery of the target by 50%
 - **Sprint** (granted by **Footwork**) now costs 1 Action Point (up from 0) but no longer increases the fatigue cost per tile while sprinting
 - **Stab** now costs 3 Action Points (down from 4) and has a 25% higher threshold to inflict injuries
+- **Throw Axe** now has a 50% chance to decapitate (up from 0%) and 25% chance to disembowel (up from 0%)
 - **Lunge** now hase -10% additional Hitchance (up from -20%)
 - **Sword Thrust** now has -10% additional Hitchance (up from -20%)
 - Throw Pot/Flask skills are no longer considered an attack
@@ -166,6 +169,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Dismantle** has been completely reworked. It now grants +40% Armor Damage and 100% more Shield Damage against enemies who have full health.
 - **Dismemberment** no longer causes any morale checks. It now grants +20% chance to hit the body part with the most temporary injuries
 - **Dodge** now grants 4% of Initiative as extra Melee Defense and Ranged Defense for every empty adjacent tile (down from always 15%)
+- **Double Strike** damage bonus is no longer lost when you swap weapons
 - **Duelist** is completely reworked. It now only works for one-handed weapons. It grants 30% Armor Penetration and +2 Reach while adjacent to 0 or 1 enemies and it grants 15% Armor Penetration and +1 Reach while adjacent to 2 enemies
 - **Dynamic Duo** no longer grants Melee Skill or Melee Defense
 - **En Garde** is completely reworked. It now grants +15 Melee Skill while it is not your turn. It also makes it so **Riposte** is no longer disabled when you get hit or deal a counter attack (so like in Vanilla)
@@ -246,7 +250,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Backgrounds
 
 - **Assassin** now has +5 to minimum Ranged Skill (up from 0) and +10 to maximum Ranged Skill (up from 0)
-- **Swordmaster** no longer has **Sword Mastery** unlocked by default. This perk is now moved to Tier 3 (down from 4) for them
+- **Swordmaster** no longer has **Sword Mastery** unlocked by default. This perk is now moved to Tier 3 (down from 4) for them. They now have a hiring cost of 400 Crowns (down from 2400), just like in Vanilla
 
 ### Items
 
@@ -329,6 +333,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 **Humans:**
 - Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop crowns, food or tools or a valueable ring.
 - **Noble Footmen** no longer have **Shield Expert**
+- **Swordmaster** now have 60 Melee Defense (down from 80) and 30 Ranged Defense (up from 15). They now have **Parry** instead of **Dodge**
 
 **Undead**
 - All **Wiederganger** types gain +5 Melee Skill and grant 20% more experience. They no longer have **Double Grip** and no longer grant experience after being ressurected
@@ -363,7 +368,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
   - The Lindwurm Tail still inherits most of the stats from the head but has 50% less Hitpoints and Resolve and 50% more Melee Defense. Lindwurm Tails no longer have **Fearsome**
   - The Lindwurm Tail can now be stunned and netted but those effects are removed whenever the Head moves away
 - All ifrits have 50% less Hitpoints and 50% more Armor
-- **Nachzehrer** can no longer swallow player characters while in a net.
+- **Nachzehrer** can no longer swallow player characters while in a net. They can now also swallow the last player character who is alive
 - **Donkeys** now grant 0 XP (down from 50 XP)
 - **Schrats** no longer take 70% reduced damage while their shield is up. They now have +200 Hitpoints and gain the **One with the Shield** perk
 
@@ -492,12 +497,15 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Add new `getQueryTargetMultAsUser` and `getQueryTargetMultAsTarget` ai related getter for `skill.nut`
 - Add new `isHybridWeapon` helper function for `weapon.nut`
 - Parties that are spawned without a banner will be assigned the banner of the faction who owns their faction (mostly relevant for civilian factions)
-- Introduce new `LastSpawnedParty` member for `faction.nut` which always contains the last party spawned by that faction
-- Introduce new `getOwner` function for factions, which returns the owner of this factions first settlement
-- Introduce new virtual `getDroppedLoot` function for `actor.nut` returning an array of created items, which will be dropped when that actor dies
-- Introduce new `::Hardened.TileReservation` with `function isReserved( _tileID )` which can be used to check whether a targeted tile is about to be filled with an entity from a vanilla `teleport` call
+- Add new `LastSpawnedParty` member for `faction.nut` which always contains the last party spawned by that faction
+- Add new `getOwner` function for factions, which returns the owner of this factions first settlement
+- Add new virtual `getDroppedLoot` function for `actor.nut` returning an array of created items, which will be dropped when that actor dies
+- Add new `::Hardened.TileReservation` with `function isReserved( _tileID )` which can be used to check whether a targeted tile is about to be filled with an entity from a vanilla `teleport` call
 - Add new `IsHidingIconMini` flag for skills (`false` by default), that can be used by modder to force-hide the mini icon
 - Add new `onSpawned` event for skills that can be used in place of `onCombatStarted` to more consistently configure entities/skills even if they spawn mid battle
+- Add new `isActiveEntity` function for `actor.nut`, which is a shorter version of ::Tactical.TurnSequenceBar.isActiveEntity
+- Add new `::Hardened.getFunctionCaller` global function which returns the name of the caller of the function you were in when you called getFunctionCaller
+- Add new `::Hardened.mockFunction` global function allowing you to mod vanilla functions in a precise way
 - Supplies (Money, Tools, Medicine, Ammunition) are now droppable
 
 ### New Character Properties
@@ -519,7 +527,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 # Known Issues:
 
-- New perks introduced by **Hardened** (**Elusive**, **Parry** and **One with the Shield**) will change into other unused vanilla perks, when you switch back to just Reforged
 - Using Recover will prevent you from using **Wait Round** for the rest of this round
 - **Student** will double-dip in the Manhunter Origin for Slaves
 - Vanilla Bug: Ifrit take far more armor damage than intended per hit
