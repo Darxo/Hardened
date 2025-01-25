@@ -592,6 +592,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_double_strike",
+		Key = "RF_DoubleStrike",
+		Description = ::UPD.getDescription({
+			Fluff = "Here, have another!",
+			Requirement = "Non-AOE Melee Attack",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"After a successful hit, deal " + ::MSU.Text.colorPositive("20%") + " more damage until you miss an attack, move, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_dynamic_duo",
 		Key = "RF_DynamicDuo",
 		Description = ::UPD.getDescription({
