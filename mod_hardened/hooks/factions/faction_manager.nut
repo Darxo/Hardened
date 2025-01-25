@@ -36,7 +36,6 @@
 	// Return true if it was successful
 	q.tryBuildBanditLocation <- function( _maxTries, _dummyAction )
 	{
-		// ::logWarning("tryBuildBanditLocation");
 		local faction = this.getFactionOfType(::Const.FactionType.Bandits);
 		local minDistToSettlements = 7;		// In Vanilla this is 6, but was treated as 7 anyways, because of minDistToEnemies
 		local maxDistToSettlements = 18;	// In Vanilla this is 12

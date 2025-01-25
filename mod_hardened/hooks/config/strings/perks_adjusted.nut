@@ -696,7 +696,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever you use an Attack during your [turn,|Concept.Turn], perform a free extra attack of the same type to a different valid enemy within 2 tiles. This attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
+					"Whenever you use an Attack during your [turn,|Concept.Turn] perform a free extra attack of the same type to a different valid enemy within 2 tiles. This attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
 				],
 			}],
 		}),
@@ -756,7 +756,7 @@ local adjustedDescriptions = [
 						"Piercing type throwing attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body",
 						"Cutting type throwing attacks apply [Overwhelmed|Skill+overwhelmed_effect] on a hit",
 						"Headshots with blunt type throwing attacks apply [Staggered|Skill+staggered_effect]. All hits with blunt type throwing attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
-						"[Throwing Spear|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(1.5) + " damage to shields",
+						"[Throwing Spears|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(1.5) + " damage to shields",
 					],
 				},
 			],
@@ -970,7 +970,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Allies with a shield will gain [Shieldwall|Skill+shieldwall_effect] for free at the start of each battle",
+					"Allies with a shield will gain the [Shieldwall effect|Skill+shieldwall_effect] for free at the start of each battle",
 					"Whenever you use a non-free shield skill, all allies within " + ::MSU.Text.colorPositive(3) + " tiles who also have that skill will use it for free on a random valid tile",
 					"[Knock Back|Skill+knock_back] can be used on empty tiles",
 				],
