@@ -833,6 +833,21 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_nailed_it",
+		Key = "RF_NailedIt",
+		Description = ::UPD.getDescription({
+			Fluff = "\'One javelin to the head will take \'em right out!\'",
+			Requirement = "Ranged attack",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive("30%") + " [chance to hit the head.|Concept.ChanceToHitHead] Lose " + ::MSU.Text.colorNegative("5%") + " of that bonus for every tile between you and your target",
+					"The penalty to hitchance from obstructed line of sight is reduced by " + ::MSU.Text.colorPositive("50%") + " at a distance of 2 tiles",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_phalanx",
 		Key = "RF_Phalanx",
 		Description = ::UPD.getDescription({
