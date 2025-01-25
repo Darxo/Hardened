@@ -5,6 +5,8 @@
 
 		// Apply difficulty-specific damage multiplier
 		this.m.BaseProperties.DamageReceivedRegularMult *= ::Const.Difficulty.getPlayerDamageReceivedMult();
+
+		this.getSkills().add(::new("scripts/skills/actives/hd_retreat_skill"));
 	}
 
 	q.fillAttributeLevelUpValues = @(__original) function( _amount, _maxOnly = false, _minOnly = false )
