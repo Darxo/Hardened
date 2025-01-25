@@ -118,3 +118,33 @@
 	}
 }
 
+/// return the first function name in the function caller chain of the function you are currently in, which is not "unkown" (probably because its a low or anonymous function)
+/// _skipFunctions allows you to skip this many valid functions
+/// @return the name of the caller function, if it exists
+/// @return an empty string if the caller function does not exists
+::Hardened.getFunctionCaller <- function( _skipFunctions = 0 )
+{
+	// 0 = "getstackinfos"; 1 = "getParentFunctionName"; 2 = whatever function wanted to know its caller
+	local currentLevel = 3;
+
+	while (true)
+	{
+		local stackInfo = ::getstackinfos(currentLevel);
+		if (stackInfo == null) return "";
+
+		if (stackInfo.func != "unknown")	// We skip all "unknown" levels by default. Those are probably anonymous/lambda functions or low level functions
+		{
+			if (_skipFunctions <= 0)
+			{
+				return stackInfo.func;
+			}
+			else
+			{
+				--_skipFunctions;	// We found a valid caller name but we are still tasked to skip those
+			}
+		}
+
+		++currentLevel;	// We didn't find a sufficient name on this stack level so we go to the next
+	}
+}
+
