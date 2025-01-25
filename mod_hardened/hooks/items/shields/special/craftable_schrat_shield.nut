@@ -12,4 +12,23 @@
 
 	// Hardened Adjustments
 	}
+
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original();
+
+		foreach (index, entry in ret)
+		{
+			if (entry.id == 10 && entry.icon == "ui/icons/special.png")
+			{
+				ret.remove(index);	// Remove tooltip line about spawning saplings
+				break;
+			}
+		}
+
+		return ret;
+	}
+
+	// Overwrite, because we remove the effect which spawns saplings
+	q.onShieldHit = @() function( _attacker, _skill ) {}
 });
