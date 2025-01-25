@@ -5,4 +5,13 @@
 		// If this function always returns false, then the game might freeze, when a goblin wolf rider dies while fleeing and spawning a wolf. Somehow that wolf will then not act anymore
 		return this.m.LastRemoveTime + 0.25 >= ::Time.getRealTimeF();
 	}
+
+	q.convertEntityToUIData = @(__original) function( _entity, isLastEntity = false )
+	{
+		local ret = __original(_entity, isLastEntity);
+
+		ret.moraleLabel = ret.morale;	// We remove any mention of offensive and defensive reach ignore
+
+		return ret;
+	}
 });
