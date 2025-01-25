@@ -148,3 +148,71 @@
 	}
 }
 
+/// Change the behavior of an existing function for a limited number of times
+/// _table must either be a table or an instance (delegation is allowed) containing the function _functionName somewhere in it
+/// _functionName is the name of the function we want to mock
+/// _mockedBehavior is a function with the same parameters (including defaults) as _functionName
+///   However it must return a table with these entries:
+///     "done" is a bool signalising if we can start cleaning up
+///     "value" (optional) is the return value we want the mocked function to instead return.
+///       If this is empty the original function is called to gain the return value. In this case we must make sure to not change the arguments that came by reference, unless that is our intention
+/// @return object with a cleanup() function, which can be used to manually trigger the cleanup
+
+::Hardened.mockFunction <- function( _table, _functionName, _mockedBehavior )
+{
+	local oldFunction = ::MSU.getMember(_table, _functionName);	// Store the original function
+
+	// Find the actual table where the function is defined (if inheritance is at play)
+    local currentTable = _table;
+	while (!::MSU.isIn(_functionName, currentTable))
+	{
+		if (currentTable instanceof ::WeakTableRef)	// weak table check must be first
+		{
+			currentTable = currentTable.get();
+		}
+		else if (typeof currentTable == "table")
+		{
+			currentTable = currentTable.getdelegate();
+		}
+		else if (typeof currentTable == "instance")
+		{
+			currentTable = currentTable.getclass();
+		}
+		else
+		{
+			throw ::MSU.Exception.InvalidType(currentTable);
+		}
+	}
+
+	local hasCleanupHappened = false;
+	local cleanupMockedFunction = function()
+	{
+		if (!hasCleanupHappened)
+		{
+			hasCleanupHappened = true;
+			currentTable[_functionName] = oldFunction;		// Restore the original function
+		}
+	}
+
+	currentTable[_functionName] = function (...)
+	{
+		vargv.insert(0, _table);
+		local mockResult = _mockedBehavior.acall(vargv);
+
+		if (mockResult.done)	// the mock function signals that it is done and we can begin the clean up process
+		{
+			cleanupMockedFunction();
+		}
+
+		if ("value" in mockResult)
+		{
+			return mockResult.value;
+		}
+		else
+		{
+			return oldFunction.acall(vargv);
+		}
+	};
+
+	return { cleanup = cleanupMockedFunction };
+}
