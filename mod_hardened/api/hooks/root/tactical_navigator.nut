@@ -7,13 +7,18 @@ local oldTeleport = ::TacticalNavigator.teleport;
 		return;	// We no longer allow two entities to teleport onto the same tile
 	}
 
+	if (_table == null) _table = {};	// In Vanilla its allowed to pass null here
+	_table.RootSkillCounter <- ::Hardened.Temp.RootSkillCounter;	// We preserve the root skill counter
+
 	local oldCallback = _onDone;
 	_onDone = function( _entity, _tag )
 	{
 		::Hardened.TileReservation.endReserveation(_targetTile.ID);		// We remove the Reservation for the destination of this teleport call
 		if (oldCallback != null)	// Some teleports pass null instead of the optional callback function
 		{
+			::Hardened.Temp.RootSkillCounter = _tag.RootSkillCounter;
 			oldCallback(_entity, _tag);
+			::Hardened.Temp.RootSkillCounter = null;
 		}
 	}
 

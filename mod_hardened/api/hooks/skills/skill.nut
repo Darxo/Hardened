@@ -196,10 +196,15 @@
 
 	q.onUse = @(__original) function( _user, _targetTile )
 	{
+		local isRootSkill = (::Hardened.Temp.RootSkillCounter == null);
+		if (isRootSkill) ::Hardened.Temp.RootSkillCounter = ::Const.SkillCounter;	// Our execution is the beginning of a new chain. It was not the result of another skills delayed execution
+
 		local container = this.getContainer();	// Some skills remove themselves during onUse, causing them to not being attached to their container anymore
 		container.onReallyBeforeSkillExecuted(this, _targetTile);
 		local ret = __original(_user, _targetTile);
 		container.onReallyAfterSkillExecuted(this, _targetTile, ret);
+
+		if (isRootSkill) ::Hardened.Temp.RootSkillCounter = null;	// Our initial execution has ended. But our RootSkillCounter might have been preserved in some scheduled delays
 		return ret;
 	}
 });
