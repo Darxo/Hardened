@@ -213,7 +213,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Axe Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
-						"[Round Swing|Skill+round_swing] gains " + ::MSU.Text.colorPositive("+5%") + " chance to hit",
+						"[Round Swing|Skill+round_swing] gains " + ::MSU.Text.colorPositive("+5%") + " [chance to hit|Concept.Hitchance]",
 						"[Split Shield|Skill+split_shield] applies [Dazed|Skill+dazed_effect] for " + ::MSU.Text.colorPositive(1) + " [turn|Concept.Turn]",
 						"The [Longaxe|Item+longaxe] no longer has a penalty for attacking targets directly adjacent",
 					],
@@ -279,7 +279,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Hammer Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue.|Concept.Fatigue]",
-						"[Shatter|Skill+shatter_skill] gains " + ::MSU.Text.colorPositive("+5%") + " chance to hit.",
+						"[Shatter|Skill+shatter_skill] gains " + ::MSU.Text.colorPositive("+5%") + " [chance to hit|Concept.Hitchance]",
 						"The [Polehammer|Item+polehammer] no longer has a penalty for attacking targets directly adjacent.",
 						::MSU.Text.colorPositive("50%") + " of the Armor Damage you deal to one body part is also dealt to the other body part",
 					],
@@ -297,7 +297,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Polearm Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
-					"[Hook|Skill+hook] and [Repel|Skill+repel] have " + ::MSU.Text.colorPositive("+15%") + " chance to hit",
+					"[Hook|Skill+hook] and [Repel|Skill+repel] have " + ::MSU.Text.colorPositive("+15%") + " [chance to hit|Concept.Hitchance]",
 					"Polearms no longer have a penalty for attacking targets directly adjacent",
 					"Gain the [Bolster|Perk+perk_rf_bolster] perk",
 				],
@@ -334,9 +334,9 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Sword Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
-						"[Riposte|Skill+riposte] no longer has a penalty to hitchance",
+						"[Riposte|Skill+riposte] no longer has a penalty to [hitchance|Concept.Hitchance]",
 						"[Gash|Skill+gash_skill] has a " + ::MSU.Text.colorPositive("50%") + " lower threshold to inflict injuries",
-						"[Split|Skill+split] and [Swing|Skill+swing] no longer have a penalty to hitchance",
+						"[Split|Skill+split] and [Swing|Skill+swing] no longer have a penalty to [hitchance|Concept.Hitchance]",
 					],
 				},
 				{
@@ -665,7 +665,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain a stacking " + ::MSU.Text.colorPositive("+10%") + " chance to hit whenever an opponent misses an attack against you",
+					"Gain a stacking " + ::MSU.Text.colorPositive("+10%") + " [chance to hit|Concept.Hitchance] whenever an opponent misses an attack against you",
 					"Bonus is reset upon landing a hit",
 				],
 			}],

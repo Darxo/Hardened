@@ -18,7 +18,7 @@
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has " + ::MSU.Text.colorNegative("-10%") + " chance to hit"
+				text = "Has " + ::MSU.Text.colorNegative("-10%") + " [chance to hit|Concept.Hitchance]"
 			});
 		}
 
