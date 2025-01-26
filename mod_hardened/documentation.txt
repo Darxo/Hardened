@@ -109,6 +109,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - remove fatigue-on-hit from most attacks, except specialized weapons (hammer, mace)
 - rework of the repair system?
 	- remove "repair for profit" system, e.g. by removing the fact that price is calcualted by condition
+	- Raise minimum sell price of condition gear to 50%? This would reduce the profit from tool repairs by half
 - Display Renown gained from Contracts in the reward screen of contracts alongside the money
 - switch footwork with combo, to break up the combination of pathfinder and footwork in the same group
 - move death dealer over to powerful strikes group. its more fitting there and that group could use a sixth perk
@@ -133,6 +134,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Make End Turn no longer waste all AP?
 	- Make Vigilant explicitely spend all your remaining AP when ending turn
 	- Make Command being able to target allies who ended their turns already (if that does not cause too many issues)
+- Introduce delay before you can click the event choice of the first page (like 1 second) to prevent you from accidentally clicking it when you walk the overworld and get suprised by one
+- Raise fatigue cost of high tier two-handed weapons beyond 15 again
 
 ## TODO:
 
@@ -170,6 +173,15 @@ This will unbrick your end-of-combat screen, if it doesnt show
 
 # Changes:
 
+0.22.1
+	- Fix(Reforged) **Cheap Trick** and **Retribution** not working with delayed executions (like Lunge or Aimed Shot)
+	- Fix two entities accidentally being pushed/teleported into the same tile
+	- Fix stunned characters sometimes being controllable
+	- Fix hyperlink in net effect
+	- Remove offensive and defensive reach ignore mention from reach bar of active entity
+	- Remove redundant reforged tooltip line from nimble
+	- Add new Hitchance concept and hyperlink various perk reworks with it
+	- Add new RootSkillCounter backend system for keeping track of delayed skill executions
 
 0.22.0
 	- Add new **Retreat** skill for player characters, which allows you to retreat individual brothers from a battle if they stand on a border tile

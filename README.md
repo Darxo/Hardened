@@ -455,7 +455,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Misc
 
-- Add new concepts for **Armor Penetration** and **Weight** and apply these concept to existing weapons and items
+- Add new Concepts for **Armor Penetration** and **Weight** and apply these Concepts to existing weapons and items
+- Add new Concept for **Hitchance** apply it to reworked perk- and skill descriptions
 - Supplies (Crowns, Tools, Medicine, Ammo) are now consumed instantly after buying, looting
 - Quiver and Weapons that contain Ammo now display the supply cost for replacing ammunition in them
 - Improve artwork for **Nimble** perk
@@ -487,6 +488,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ## For Modders
 
+- Add new `::Hardened.Temp.RootSkillCounter = null` variable, which will contain the SkillContainer of the root skill in a delayed skill chain, or `null` while not inside a skill execution
 - Entities which have `this.m.IsActingEachTurn = false` (e.g. Donkeys, Phylactery, Spider Eggs) will now trigger `onRoundEnd` after every other entity has triggered it and trigger `onRoundStart` before every other entity has triggered it
 - `IsSpecializedInShields` is no longer set to `true` by **Shield Expert**
 - Introduce new `setWeight` and `getWeight` function for `item.nut` to make code around itemweight more readable. They work on the same underlying StaminaModifier but in a reversed way
