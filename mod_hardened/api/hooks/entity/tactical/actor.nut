@@ -5,6 +5,12 @@
 	// Private
 	q.m.HD_recoveredHitpointsOverflow <- 0.0;	// float between 0.0 and 1.0. Is not deserialized, meaning that we lose a tiny bit hitpoint recovery when saving/loading often
 
+	q.isTurnDone = @(__original) function()
+	{
+		if (this.getCurrentProperties().IsStunned) return true;		// Stun no longer sets the Action Points to 0 so we now need to adjust this function to always return true for stunned characters
+		return __original();
+	}
+
 	q.onMovementStep = @(__original) function( _tile, _levelDifference )
 	{
 		// Switcheroo to prevent the vanilla implementation from calling updateVisibility
