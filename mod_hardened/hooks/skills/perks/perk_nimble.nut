@@ -3,12 +3,17 @@
 	{
 		local ret = __original()
 
-		foreach (index, entry in ret)
+		// Remove the existing tooltips
+		for (local index = (ret.len() - 1); index >= 0; index--)
 		{
+			local entry = ret[index];
 			if (entry.id == 12 && entry.icon == "ui/icons/rf_reach.png")
 			{
 				ret.remove(index);
-				break;
+			}
+			else if (entry.id == 13)	// Remove mention about effectiveness difference depending on weight
+			{
+				ret.remove(index);
 			}
 		}
 
