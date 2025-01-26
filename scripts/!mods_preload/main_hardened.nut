@@ -150,22 +150,23 @@
 	}
 }
 
-/// Change the behavior of an existing function for a limited number of times
+/// [[nodiscard]] Change the behavior of an existing function for a limited number of times
+/// @important You should always call the cleanup() of this functions return value once you know you are done
+///
 /// _table must either be a table or an instance (delegation is allowed) containing the function _functionName somewhere in it
 /// _functionName is the name of the function we want to mock
 /// _mockedBehavior is a function with the same parameters (including defaults) as _functionName
-///   However it must return a table with these entries:
-///     "done" is a bool signalising if we can start cleaning up
-///     "value" (optional) is the return value we want the mocked function to instead return.
+///   However it must return a table with these optionals entries:
+///     "done" (optional) is a bool signalising if we can start cleaning up
+///     "value" (optional) is the return value we want the mocked function to return instead
 ///       If this is empty the original function is called to gain the return value. In this case we must make sure to not change the arguments that came by reference, unless that is our intention
 /// @return object with a cleanup() function, which can be used to manually trigger the cleanup
-
 ::Hardened.mockFunction <- function( _table, _functionName, _mockedBehavior )
 {
 	local oldFunction = ::MSU.getMember(_table, _functionName);	// Store the original function
 
 	// Find the actual table where the function is defined (if inheritance is at play)
-    local currentTable = _table;
+	local currentTable = _table;
 	while (!::MSU.isIn(_functionName, currentTable))
 	{
 		if (currentTable instanceof ::WeakTableRef)	// weak table check must be first

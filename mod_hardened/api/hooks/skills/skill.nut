@@ -166,6 +166,7 @@
 	}
 
 	// This event is only called directly after a skills
+	/// _success is the return value of the vanilla onUse function
 	q.onReallyAfterSkillExecuted <- function( _skill, _targetTile, _success )
 	{
 	}
