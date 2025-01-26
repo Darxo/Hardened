@@ -29,7 +29,7 @@
 				}
 				else
 				{
-					entry.text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeMultWithText(this.m.RangedDefenseMult) + " [Ranged Defense|Concept.RangedDefense]");
+					entry.text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeMultWithText(this.m.RangedDefenseMult) + " [Ranged Defense|Concept.RangeDefense]");
 				}
 			}
 			else if (entry.id == 11 && entry.icon == "ui/icons/initiative.png")
