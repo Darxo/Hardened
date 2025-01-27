@@ -42,7 +42,7 @@
 				id = 100,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has " + ::MSU.Text.colorizeValue(this.m.DisplacementHitChanceModifier, {AddSign = true, AddPercent = true}) + " [chance to hit|Concept.Hitchance]",
+				text = "Has " + ::MSU.Text.colorizeValue(this.m.DisplacementHitChanceModifier, {AddSign = true, AddPercent = true}) + ::Reforged.Mod.Tooltips.parseString(" [chance to hit|Concept.Hitchance]"),
 			});
 		}
 	}
