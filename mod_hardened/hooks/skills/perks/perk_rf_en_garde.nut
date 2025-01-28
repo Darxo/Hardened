@@ -1,5 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_en_garde", function(q) {
-	q.m.MeleeSkillModifier <- 15;
+	q.m.MeleeSkillModifier <- 10;
+	q.m.ActionPointsRecovered <- 1;
 
 	q.onUpdate = @(__original) function( _properties )
 	{
@@ -8,6 +9,16 @@
 		if (this.isEnabled() && this.getContainer().getActor().isActiveEntity())
 		{
 			_properties.MeleeSkill += this.m.MeleeSkillModifier;
+		}
+	}
+
+	q.onMissed = @(__original) function( _attacker, _skill )
+	{
+		__original(_attacker, _skill);
+		local actor = this.getContainer().getActor();
+		if (this.isEnabled() && this.isSkillValid(_skill) && !_attacker.isAlliedWith(actor))
+		{
+			actor.recoverActionPoints(this.m.ActionPointsRecovered);
 		}
 	}
 
@@ -38,6 +49,12 @@
 		}
 
 		return true;
+	}
+
+	// Determines whether the Action Point recovery on a miss is active
+	q.isSkillValid <- function( _skill )
+	{
+		return _skill.isAttack() && !_skill.isRanged();
 	}
 });
 

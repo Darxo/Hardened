@@ -630,8 +630,9 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("+15") + " [Melee Skill|Concept.MeleeSkill] while it is not your [turn|Concept.Turn]",
+					"Gain " + ::MSU.Text.colorPositive("+10") + " [Melee Skill|Concept.MeleeSkill] while it is not your [turn|Concept.Turn]",
 					"[Riposte|Skill+riposte_effect] is no longer removed when you get hit or do a counter attack",
+					"Recover " + ::MSU.Text.colorPositive("1") + " [Action Point|Concept.ActionPoints] whenever an opponent misses a melee attack against you",
 				],
 			}],
 		}),
