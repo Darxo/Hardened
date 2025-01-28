@@ -84,24 +84,27 @@
 
 	q.onMovementStarted = @() function( _tile, _numTiles )
 	{
-		// Fix to prevent crahes when this perk is added to this character after "onTurnStart", e.g. via WeaponMaster swap
-		if (this.m.PrevTile == null) this.m.PrevTile = this.getContainer().getActor().getTile();
+		if (this.getContainer().getActor().isActiveEntity()) this.m.TilesMovedThisTurn += _numTiles;
+
+		if (_numTiles == 0)	// This is an indicator, that we were "teleported", instead of having moved naturally
+		{
+			this.m.PrevTile = _tile;
+		}
 	}
 
 	q.onMovementFinished <- function( _tile )
 	{
-		if (this.isEnabled())
+		if (this.m.PrevTile != null)
 		{
-			this.m.TilesMovedThisTurn += _tile.getDistanceTo(this.m.PrevTile);
-		}
+			if (this.getContainer().getActor().isActiveEntity()) this.m.TilesMovedThisTurn += _tile.getDistanceTo(this.m.PrevTile);
 
-		this.m.PrevTile = _tile;
+			this.m.PrevTile = null;
+		}
 	}
 
 	q.onTurnStart <- function()
 	{
 		this.m.TilesMovedThisTurn = 0;
-		this.m.PrevTile = this.getContainer().getActor().getTile();
 	}
 
 	q.onWaitTurn <- function()
