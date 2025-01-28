@@ -337,6 +337,7 @@ local adjustedDescriptions = [
 						"[Riposte|Skill+riposte] no longer has a penalty to [hitchance|Concept.Hitchance]",
 						"[Gash|Skill+gash_skill] has a " + ::MSU.Text.colorPositive("50%") + " lower threshold to inflict injuries",
 						"[Split|Skill+split] and [Swing|Skill+swing] no longer have a penalty to [hitchance|Concept.Hitchance]",
+						"Whenever you attack an enemy whose [turn|Concept.Turn] has already started, lower their [Initiative|Concept.Initiative] by a stacking " + ::MSU.Text.colorNegative("15%") + " (up to " + ::MSU.Text.colorNegative("90%") + ") until the start of their next [turn|Concept.Turn]",
 					],
 				},
 			],
