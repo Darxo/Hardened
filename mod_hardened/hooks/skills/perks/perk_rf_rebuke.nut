@@ -12,23 +12,6 @@
 		}
 	}
 
-	q.onQueryTooltip = @(__original) function( _skill, _tooltip )
-	{
-		local ret = __original(_skill, _tooltip);
-
-		if (_skill.getID() == "actives.aimed_shot")
-		{
-			ret.push({
-				id = 102,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Burns away any [rooted|Concept.Rooted] effects on the target"),
-			});
-		}
-
-		return ret;
-	}
-
 	q.onMissed <- function( _attacker, _skill )
 	{
 		if (this.canProc(_attacker, _skill) && !this.getContainer().hasSkill("effects.hd_rebuke"))
