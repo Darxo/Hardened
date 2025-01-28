@@ -39,8 +39,8 @@
 			ret.push({
 				id = 20,
 				type = "text",
-				icon = "ui/icons/action_points.png",
-				text = "Lasts until the start of your next turn",
+				icon = "ui/icons/special.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Lasts until the start of your [turn|Concept.Turn]."),
 			});
 		}
 
