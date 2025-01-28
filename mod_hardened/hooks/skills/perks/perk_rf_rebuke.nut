@@ -59,7 +59,7 @@
 	q.isEnabled <- function()
 	{
 		local actor = this.getContainer().getActor();
-		if (!actor.isActiveEntity()) return false;
+		if (actor.isActiveEntity()) return false;	// This perk only works while it is not our turn
 		if (actor.getMoraleState() == ::Const.MoraleState.Fleeing || actor.getCurrentProperties().IsStunned) return false;
 		if (actor.getCurrentProperties().IsRiposting) return false;
 		if (this.getContainer().getAttackOfOpportunity() == null) return false;
