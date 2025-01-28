@@ -339,12 +339,6 @@ local adjustedDescriptions = [
 						"[Split|Skill+split] and [Swing|Skill+swing] no longer have a penalty to [hitchance|Concept.Hitchance]",
 					],
 				},
-				{
-					Type = ::UPD.EffectType.Active,
-					Description = [
-						"Unlocks the [Kata Step|Skill+rf_kata_step_skill] skill which allows you to dance around your opponent after a successful attack",
-					],
-				},
 			],
 		}),
 	},
@@ -1046,6 +1040,26 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Your attacks are " + ::MSU.Text.colorPositive("50%") + " less likely to hit the cover, when you have no clear line of fire on your target",
+				],
+			}],
+		}),
+	},
+	{
+		ID = "perk.rf_tempo",
+		Key = "RF_Tempo",
+		Description = ::UPD.getDescription({
+			Fluff = "By keeping ahead of your opponent, you set the terms of engagement!",
+			Requirement = "Sword",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive("+15") + " [Initiative|Concept.Initiative] until the start of your next [turn|Concept.Turn] whenever you move a tile during your turn",
+				],
+			},
+			{
+				Type = ::UPD.EffectType.Active,
+				Description = [
+					"Unlocks the [Kata Step|Skill+rf_kata_step_skill] skill which allows you to dance around your opponent after a successful attack",
 				],
 			}],
 		}),
