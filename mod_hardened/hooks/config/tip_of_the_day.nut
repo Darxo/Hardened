@@ -5,6 +5,7 @@
 	"Hardened: A bandage can be used to treat any fresh injury during battle, unless too many rounds have passed.",
 	"Hardened: Wiederganger are not able to double grip their weapons",
 	"Hardened: Spider Poison reduces the hitpoint recovery of the target",
+	"Hardened: You can retreat individual brothers from a battle if they stand on a border tile",
 ]);
 
 ::Const.LoadingScreens.remove(0);	// Remove duplicate loading screen
