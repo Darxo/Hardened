@@ -82,6 +82,12 @@
 		}
 	}
 
+	q.onMovementStarted = @() function( _tile, _numTiles )
+	{
+		// Fix to prevent crahes when this perk is added to this character after "onTurnStart", e.g. via WeaponMaster swap
+		if (this.m.PrevTile == null) this.m.PrevTile = this.getContainer().getActor().getTile();
+	}
+
 	q.onMovementFinished <- function( _tile )
 	{
 		if (this.isEnabled())
