@@ -81,7 +81,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - Shooting Crossbows now costs -1 Action Point and has +10% chance to hit
 - Reloading Crossbows now costs +1 Action Point
 - Reloading Crossbows now applies **Reload Disorientation** to you until the start of your next turn.
-  - **Reload Disorientation** applies -10 Ranged Skill and -10 Ranged Defense
+  - **Reload Disorientation** applies -10 Ranged Skill and 35% less Ranged Defense
 
 ### Weight on Items
 
@@ -173,7 +173,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Double Strike** damage bonus is no longer lost when you swap weapons
 - **Duelist** is completely reworked. It now only works for one-handed weapons. It grants 30% Armor Penetration and +2 Reach while adjacent to 0 or 1 enemies and it grants 15% Armor Penetration and +1 Reach while adjacent to 2 enemies
 - **Dynamic Duo** no longer grants Melee Skill or Melee Defense
-- **En Garde** is completely reworked. It now grants +15 Melee Skill while it is not your turn. It also makes it so **Riposte** is no longer disabled when you get hit or deal a counter attack (so like in Vanilla)
+- **En Garde** is completely reworked. It now grants +10 Melee Skill while it is not your turn. It also makes it so **Riposte** is no longer disabled when you get hit or deal a counter attack (so like in Vanilla), and it recovers 1 Action Point whenever an opponent misses a melee attack against you
 - **Entrenched** has been completely reworked. It now grants +5 Resolve per adjacent ally, +5 Ranged Defense per adjacent obstacle and 15% more Ranged Skill if at least 3 adjacent tiles are allies or obstacles
 - **Exploit Opening** is completely reworked. It now grants a stacking +10% chance to hit whenever an opponent misses an attack against you. Bonus is reset upon landing a hit (just like Fast Adaptation)
 - **Fencer** no longer grants +10% chance to hit or 20% less fatigue cost. It now causes your fencing swords to lose 50% less durability
@@ -210,7 +210,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Student** no longer grants any experience. It now grants +1 Perk Point when you reach level 8 instead of level 11
 - **Sweeping Strikes** is completely reworked: It now grants +5 Melee Defense for every adjacent enemy until the start of your next turn the first time you use a melee attack skill on an adjacent enemy. It still requires a two-handed weapon
 - **Swift Stabs** has been completely reworked. It's now called **Hit and Run**. It makes it so all dagger attacks can be used at 2 tiles and will move the user one tile closer before the attack. When the attack hits the enemy, the user is moved back to the original tile
+- **Sword Mastery** no longer grants **Kata Step**. It now causes your attacks against enemies whose turn has already started to lower their Initaitive by a stacking 15% (up to a maximum of 90%) until the start of their next turn
 - **Target Practice** has been completely reworked. It now makes it 50% less likely for your arrows to hit the cover, when you have no clear line of fire (stronger than vanilla Bullseye)
+- **Tempo** is completely reworked. It grants +15 Initiative until the start of your next turn whenever you move a tile during your turn. It also grants **Kata Step**
 - **Through the Gaps** is now always active but. It now lowers your armor penetration by 10% (down from increasing it by 10%)
 - **Throwing Mastery** is mostly completely reworked. It now grants 30% more damage for your first throwing attack each turn, no matter the range. It now allows swapping a throwing weapon with an empty throwing weapon or empty slot for free, once per turn
 - **Trick Shooter** no longer causes your **Aimed Shot** to trigger a morale check on the main target hit
@@ -230,7 +232,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Dismantle** is now a Tier 6 perk (down from Tier 7)
 - **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
 - **Duelist** is no longer part of **Shield** group
-- **En Garde** is now Tier 3 (down from Tier 7)
 - **Ghostlike** is now Tier 5 (up from Tier 4)
 - **Inspiring Presence** is now also part of the **Noble** group at Tier 7
 - **Marksmanship** is no longer a special perk. It is now a T7 perk in the **Ranged** perk group
@@ -240,7 +241,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Polearm Mastery** and **Fortified Mind** are removed from the **Leadership** group
 - **Rally the Troops** from the **Leadership** group is now a Tier 3 perk (was Tier 2 before). It is now also part of the **Soldier Group** at Tier 3
 - **Student** is now available for everyone
-- **Tempo** is now Tier 5 (up from Tier 3)
 - **Tricksters Purses** is now Tier 3 (up from Tier 1)
 - **Vigorous Assault** is no longer part of **Swift Strikes** group
 - **Knave** no longer guarantees the **Dagger** perk group. Now it is just twice as likely. It also no longer guarantees the **Nimble** per group
@@ -489,13 +489,15 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Reforged
 
-- Fix **Cheap Trick** and **Retribution** not working with delayed skill executions (like Lunge or Aimed Shot)
+- **Calculated Strikes** now works against stunned enemies
+- **Cheap Trick** and **Retribution** now work with delayed skill executions (like Lunge or Aimed Shot)
 
 ## For Modders
 
 - Add new `::Hardened.Temp.RootSkillCounter = null` variable, which will contain the SkillContainer of the root skill in a delayed skill chain, or `null` while not inside a skill execution
 - Entities which have `this.m.IsActingEachTurn = false` (e.g. Donkeys, Phylactery, Spider Eggs) will now trigger `onRoundEnd` after every other entity has triggered it and trigger `onRoundStart` before every other entity has triggered it
 - `IsSpecializedInShields` is no longer set to `true` by **Shield Expert**
+- `IsTurnStarted` in `actor.nut` and `agent.nut` is no longer set to `false` when a character ends their turn. It is now only set to `false` at the start of a new round
 - Introduce new `setWeight` and `getWeight` function for `item.nut` to make code around itemweight more readable. They work on the same underlying StaminaModifier but in a reversed way
 - `onMovementStep` now calls `onUpdateVisibility` for the entity after the MSU events happen instead of before, allowing you to better implement effects, whose vision effects depend on positioning
 - Add new `AffectedBodyPart` member for `injury.nut` (temporary injuries) which specifies which bodypart that injury belongs to. It defaults to -1 and is adjusted depending on the vanilla injury lists

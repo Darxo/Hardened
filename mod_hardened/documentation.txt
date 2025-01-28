@@ -118,12 +118,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - implement cooldown framework for skills (including once-per-turn framework)
 	- this.m.Cooldown
 	- this.m.CooldownMode = ::CooldownMode.StartOfTurn;	(EndOfTurn, StartOfRound, EndOfRound)
-- Tempo
-	- Unlock Kata Step
-	- Whenever you move a tile, except involuntary, gain +10 Initiative until the start of your next turn
-- Sword Mastery
-	- When attacking someone with more Initiative, apply a stacking "From all Sides" debuff on them until the start of their next turn
-		- 20% less Initiative
 - Make Wiki Page specifically noting "Cheese" strategies from Vanilla that are patched out
 	- T3 nacho swallowing bro
 	- perma stunning enemies
@@ -153,6 +147,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Lower the urge for nachzehrers to kill themselves to ZOC just to seek out a corpse
 
 ## Fix:
+- Use RootSkillCounter tech to implement throwing mastery damage correctly
 - Improve ::Const.World.Common.generateName random name feature to also affect generateName from random enemy types (hookTree of actor.nut?)
 - Attached locations at game start never clear their name if you turn off the option
 - Make Rotate no longer cause resolve checks
@@ -176,6 +171,16 @@ This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
 # Changes:
+
+0.23.0
+	- Sword Mastery no longer grants **Kata Step**. It now causes your attacks against enemies whose turn has already started to lower their Initaitive by a stacking 15% (up to a maximum of 90%) until the start of their next turn
+	- **Tempo** is completely reworked. It grants +15 Initiative until the start of your next turn whenever you move a tile during your turn. It also grants **Kata Step**
+	- **En Garde** now grants +10 Melee Skill while it's not your turn (down from +15). It now recovers 1 Action Point whenever an opponent misses a melee attack against you
+	- **Tempo** is a T3 perk again and **En Garde** is a T7 perk again, just like in Reforged
+	- **Reload Disorientation** no longer reduces Ranged Defense by 10. It now lowers Ranged Defense by 35%
+	- `IsTurnStarted` is no longer set to false when a character ends their turn. It is now only set to false at the start of a new round
+	- Fix **Calculated Strikes** not working against stunned enemies
+	- Fix **Opportunist** tile counting when moving around obstacles
 
 0.22.2
 	- **Kata Step** can now also be used if you are not double gripping your one handed sword
