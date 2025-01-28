@@ -56,6 +56,15 @@
 		::Const.Combat.GlobalXPMult = oldGlobalXPMult;
 	}
 
+	q.onTurnEnd = @(__original) function()
+	{
+		__original();
+		this.m.IsTurnStarted = true;
+		// Vanilla sets this to false here, which is misleading and annyoing for modder and effect implementations
+		// Someone who ended their turn still has had their turn started this round
+		// Vanilla already resets this at the start of each round to false
+	}
+
 	q.setHitpoints = @(__original) function( _newHitpoints )
 	{
 		// We redirect any positive changes to the hitpoints to use recoverHitpoints and therefor be affected by the new 'HitpointRecoveryMult' property
