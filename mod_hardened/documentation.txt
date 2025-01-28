@@ -136,6 +136,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- Make Command being able to target allies who ended their turns already (if that does not cause too many issues)
 - Introduce delay before you can click the event choice of the first page (like 1 second) to prevent you from accidentally clicking it when you walk the overworld and get suprised by one
 - Raise fatigue cost of high tier two-handed weapons beyond 15 again
+- Show daily pay in brackets behind crowns (mod setting)
+- Chance Reload Disorientation defense into a multiplier? Someone with 0 rdef cant get much worse from the disorientation
 
 ## TODO:
 
@@ -151,6 +153,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Lower the urge for nachzehrers to kill themselves to ZOC just to seek out a corpse
 
 ## Fix:
+- Improve ::Const.World.Common.generateName random name feature to also affect generateName from random enemy types (hookTree of actor.nut?)
+- Attached locations at game start never clear their name if you turn off the option
 - Make Rotate no longer cause resolve checks
 - Look into throwing weapons not producing miss-projectiles correctly when missing, sometimes
 	- Need more evidence
@@ -172,6 +176,13 @@ This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
 # Changes:
+
+0.22.2
+	- **Kata Step** can now also be used if you are not double gripping your one handed sword
+	- Add tip of the day for the manual retreat feature
+	- Fix crash when gaining **Opportunist** perk mid turn via **Weapon Master**
+	- Fix **Rebuke** not working correctly
+	- Fix broken hitchance hyperlinks on some skills
 
 0.22.1
 	- Fix(Reforged) **Cheap Trick** and **Retribution** not working with delayed executions (like Lunge or Aimed Shot)

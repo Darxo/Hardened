@@ -118,6 +118,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
 - **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%)
+- **Kata Step** (granted by **Sword Mastery**) can now also be used if you are not double gripping your one handed sword
 - **Net Effect** no longer affects the Initiative of the target. It now applies 50% less Melee Defense (down from 45%) and 50% less Ranged Defense (down from 45%)
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
 - **Recover** now applies the same Initiative debuff as using **Wait**
@@ -485,6 +486,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - The id of the item `mouth_piece` is changed to `armor.head.mouth_piece` (it used to be `armor.head.witchhunter_hat`)
 - Prevent the same random name to be generated in succession
 - Remove a duplicate loading screen
+
+### Reforged
+
+- Fix **Cheap Trick** and **Retribution** not working with delayed skill executions (like Lunge or Aimed Shot)
 
 ## For Modders
 
