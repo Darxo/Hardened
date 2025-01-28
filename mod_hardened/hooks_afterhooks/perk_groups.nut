@@ -93,12 +93,6 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		pgSwiftPerkGroup.addPerk("perk.reach_advantage", 3);			// Add Reach Advantage (Parry) into the Tier 3
 	}
 
-	{	// Sword Group
-		local pgSwordArmorGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_sword");
-		changePerkTier(pgSwordArmorGroup, "perk.rf_en_garde", 3);			// Move En Garde into the position where Tempo was previously
-		changePerkTier(pgSwordArmorGroup, "perk.rf_tempo", 5);	// Move Tempo into the Tier 5
-	}
-
 	{	// Tactician Group
 		::DynamicPerks.PerkGroups.remove("pg.rf_tactician");
 		::DynamicPerks.PerkGroups.add(::new("scripts/mods/mod_hardened/perk_groups/special/pg_special_hd_tactician"));		// We introduce our own special Tactician Group
