@@ -8,6 +8,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.Description = "This character is skilled in the use of tools.";	// Remove any mentions of bucklers
 		this.m.Order = ::Const.SkillOrder.Perk;		// A order sooner than Any is mandatory in order to correctly influence DoubleGrips effect
 	}
 
