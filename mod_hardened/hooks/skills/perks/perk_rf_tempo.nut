@@ -101,14 +101,19 @@
 		}
 	}
 
-	q.onAdded <- function()
+	q.onEquip <- function( _item )
 	{
-		this.getContainer().add(::new("scripts/skills/actives/rf_kata_step_skill"));
+		__original(_item);
+		if (_item.isItemType(::Const.Items.ItemType.Weapon) && _item.isWeaponType(::Const.Items.WeaponType.Sword))
+		{
+			_item.addSkill(::new("scripts/skills/actives/rf_kata_step_skill"));
+		}
 	}
 
-	q.onRemoved <- function()
+	q.onAdded <- function()
 	{
-		this.getContainer().removeByID("actives.rf_kata_step");
+		local mainhandItem = this.getContainer().getActor().getMainhandItem();
+		if (mainhandItem != null) this.onEquip(mainhandItem);
 	}
 
 // New Functions
