@@ -35,6 +35,16 @@
 		return __original() && this.getCurrentProperties().CanExertZoneOfControl;
 	}
 
+	q.onDamageReceived = @(__original) function( _attacker, _skill, _hitInfo )
+	{
+		if (_hitInfo.BodyPart == ::Const.BodyPart.Head)
+		{
+			// Vanilla Fix: Revert hidden vanilla 1.25 threshold multiplier for headshots
+			_hitInfo.InjuryThresholdMult *= 0.8;
+		}
+		__original(_attacker, _skill, _hitInfo);
+	}
+
 	// For Vanilla you'd hook onActorKilled on player.nut. But Reforged moved the exp calculation over into the onDeath of actor.nut
 	q.onDeath = @(__original) function( _killer, _skill, _tile, _fatalityType )
 	{
