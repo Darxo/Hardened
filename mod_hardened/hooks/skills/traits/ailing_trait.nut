@@ -16,7 +16,7 @@
 			id = 11,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = ::Reforged.Mod.Tooltips.parseString("All [temporary injuries|Concept.InjuryTemporary] last " + ::MSU.Text.colorizeMult(this.m.InjuryDurationMult, {InvertColor = true}) + " longer"),
+			text = ::Reforged.Mod.Tooltips.parseString("[Temporary Injuries|Concept.InjuryTemporary] you receive during combat last " + ::MSU.Text.colorizeMult(this.m.InjuryDurationMult, {InvertColor = true}) + " longer"),
 		});
 
 		return ret;
@@ -25,7 +25,9 @@
 // Hardened Events
 	q.onOtherSkillAdded = @(__original) function( _skill )
 	{
-		if (_skill.isType(::Const.SkillType.TemporaryInjury))
+		// We can't allow this effect outside of combat because we manipulate member which are serialized
+		// Otherwise our changes would be applied on each load of a savegame
+		if (_skill.m.IsNew && _skill.isType(::Const.SkillType.TemporaryInjury))
 		{
 			_skill.m.HealingTimeMin *= this.m.InjuryDurationMult;
 			_skill.m.HealingTimeMax *= this.m.InjuryDurationMult;
