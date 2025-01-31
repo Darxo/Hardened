@@ -14,13 +14,13 @@
 	}
 
 	// QOL: Reduce perk bloat on NPCs by replacing static perks with roughly the same amount of baes stats
-	q.onCombatStarted = @(__original) function()
+	q.onSpawned = @(__original) function()
 	{
 		__original();
 		local actor = this.getContainer().getActor();
 		if (actor.getFaction() != ::Const.Faction.Player)
 		{
-			actor.m.BaseProperties.Bravery += this.m.ResolveModifier - 10;	// Abstraction for the average helmet that is expected
+			actor.m.BaseProperties.Bravery += this.getResolveModifier();	// Abstraction for the average helmet that is expected
 			this.removeSelf();
 		}
 	}
