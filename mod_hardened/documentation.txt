@@ -195,6 +195,9 @@ This will unbrick your end-of-combat screen, if it doesnt show
 
 # Changes:
 
+0.23.2
+	- Fix crash when loading a game with tempo perk on a brother
+
 0.23.1
 	- Remove tooltip in kata step about weapon requirement
 	- Hide kata step while an incorrect weapon is equipped
