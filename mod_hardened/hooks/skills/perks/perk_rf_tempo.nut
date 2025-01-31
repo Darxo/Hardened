@@ -103,7 +103,6 @@
 
 	q.onEquip <- function( _item )
 	{
-		__original(_item);
 		if (_item.isItemType(::Const.Items.ItemType.Weapon) && _item.isWeaponType(::Const.Items.WeaponType.Sword))
 		{
 			_item.addSkill(::new("scripts/skills/actives/rf_kata_step_skill"));
