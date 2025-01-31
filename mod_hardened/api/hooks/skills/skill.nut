@@ -157,6 +157,7 @@
 	}
 
 // New Events
+	/// _skill is the new skill that was just added to this skills skill_container
 	q.onOtherSkillAdded <- function( _skill )
 	{
 	}

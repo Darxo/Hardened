@@ -289,7 +289,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Traits
 
-- **Aisling** now also makes all temporary injuries last 50% longer
+- **Ailing** now also makes temporary injuries you receive during combat last 50% longer
 - **Lucky** no longer grants a chance to reroll incoming attacks. It now provides a 5% chance to avoid damage from any source.
 - **Weasel** now provides an additional 25 Melee Defense during that brothers turn while fleeing.
 - **Huge** no longer increases the Reach by 1
@@ -429,7 +429,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Improve visibility of Miasma and Burning Ground
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back
 - **Disarm** can no longer be used on enemies which are immune to disarm
-- **Brawny**, **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
+- **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
 - All Skills from the **Lorekeeper** now have skill descriptions
 - Corpses will now display the round, in which they were created
@@ -473,6 +473,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Vanilla Enemies that have no head no longer take bonus damage from headshots
 - Parties on the world map are no longer hidden after loading a game, while the game is still paused
 - Spiders will now give up when their team has given up even if there are still eggs on the battlefield
+- Remove the hidden "25% more injury threshold" for all characters when receiveing a head hit
 - You can no longer do two Arenas during the same day
 - Improve knock back logic for Spiked Impaler to behave like the Knock Back skill from shields
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
@@ -494,6 +495,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ## For Modders
 
+- Set `IsNew` to `false` when deserializing injuries
 - Add new `::Hardened.Temp.RootSkillCounter = null` variable, which will contain the SkillContainer of the root skill in a delayed skill chain, or `null` while not inside a skill execution
 - Entities which have `this.m.IsActingEachTurn = false` (e.g. Donkeys, Phylactery, Spider Eggs) will now trigger `onRoundEnd` after every other entity has triggered it and trigger `onRoundStart` before every other entity has triggered it
 - `IsSpecializedInShields` is no longer set to `true` by **Shield Expert**

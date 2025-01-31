@@ -111,7 +111,11 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- remove "repair for profit" system, e.g. by removing the fact that price is calcualted by condition
 	- Raise minimum sell price of condition gear to 50%? This would reduce the profit from tool repairs by half
 - Display Renown gained from Contracts in the reward screen of contracts alongside the money
-- switch footwork with combo, to break up the combination of pathfinder and footwork in the same group
+- FastAgileS Rework
+	- Revert Footwork to Vanilla and move it to T1 of Agile
+	- Move Pathfinder to T3 of Agile
+	- Add Sprint to T5 of Fast (from T5 of Agile)
+	- Move Combo to T5 of Agile (from T5 of Fast)
 - move death dealer over to powerful strikes group. its more fitting there and that group could use a sixth perk
 	- however then the agile tree is a bit lacking
 - change cover ally to debuff the targets melee skill and melee defense, to make it harder to use offensively
@@ -132,6 +136,23 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Raise fatigue cost of high tier two-handed weapons beyond 15 again
 - Show daily pay in brackets behind crowns (mod setting)
 - Chance Reload Disorientation defense into a multiplier? Someone with 0 rdef cant get much worse from the disorientation
+- Change Lookout to only work while on hills/mountains
+- Change Scout to only work while in swamps and forests
+- Disable chain-routing (disable morale checks from allies losing morale, or maybe allow it one layer deep, but not two)
+
+## Perks Review/Rework
+These Perks (top = higher prio) im still unhappy with and eventually want to adjust
+- Feral Rage
+- Trick Shooter
+- Sanguinary
+- Mauler
+- Vanquisher
+- Bone Breaker
+	- Attacking a body part that has armor remaining, has 50% less injury threshold. Attacking a body part with no armor remaining, inflicts an additional injury of the same type and threshold, if the attack inflicts one
+- Rush of Battle
+- Battle Fervor
+- Death Dealer
+- Power Shot
 
 ## TODO:
 
@@ -160,6 +181,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 		- When its the dogs turn its attack sfx is only played in one ear
 	- I can't reproduce this bug, need more evidence and reproducible steps
 	- In the Vanilla Code I couldn't find an obvious issue on first glance. Probably something todo with the engine
+	- hook `this.Sound.play` and print the getPos() from world camera and ingame camera. And print alongside the getPos of the sound origin. Maybe this is sometimes wrong
+		- hook the getPos of the cameras to see if the sound comes from right ear if I switcheroo it to be all the way on my left ear
 - Alps that teleport during first turn before revealing, might be shown as unknown, even though you can see them because they arrived on visible tiles
 - Bug with Library Cheese
 
@@ -171,6 +194,15 @@ This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
 # Changes:
+
+0.23.1
+	- Remove tooltip in kata step about weapon requirement
+	- Hide kata step while an incorrect weapon is equipped
+	- Remove mention of buckler in description of **Offhand Training**
+	- Improve accuracy of Resolve bonus that NPCs receive from **Fortified Mind**
+	- Fix **Ailing** adding injury time whenever you load a savegame
+	- Fix(Vanilla) Remove the hidden "25% more injury threshold" for all characters when receiveing a head hit
+	- Set `IsNew` to `false` when deserializing injuries
 
 0.23.0
 	- Sword Mastery no longer grants **Kata Step**. It now causes your attacks against enemies whose turn has already started to lower their Initaitive by a stacking 15% (up to a maximum of 90%) until the start of their next turn

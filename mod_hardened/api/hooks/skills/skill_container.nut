@@ -1,5 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/skill_container", function(q) {
 // New Events
+	/// _skill is the new skill that was just added to this skill_container
 	q.onOtherSkillAdded <- function( _skill )
 	{
 		this.callSkillsFunction("onOtherSkillAdded", [
