@@ -3,7 +3,7 @@
 	q.m.HitpointsMult <- 1.0;
 
 	// QOL: Reduce perk bloat on NPCs by replacing static perks with roughly the same amount of baes stats
-	q.onCombatStarted = @(__original) function()
+	q.onSpawned = @(__original) function()
 	{
 		__original();
 		local actor = this.getContainer().getActor();
