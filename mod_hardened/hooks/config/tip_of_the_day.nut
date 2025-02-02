@@ -6,6 +6,7 @@
 	"Hardened: Wiederganger are not able to double grip their weapons",
 	"Hardened: Spider Poison reduces the hitpoint recovery of the target",
 	"Hardened: You can retreat individual brothers from a battle if they stand on a border tile",
+	"Hardened: Camps do not show defender during night, unless you have the \'Lookout\' follower",
 ]);
 
 ::Const.LoadingScreens.remove(0);	// Remove duplicate loading screen
