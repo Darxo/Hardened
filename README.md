@@ -106,6 +106,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - You can now use **Bandages** to treat injuries during battle that were received at most 1 round ago
 - Add new **Retreat** skill for player characters, which allows you to retreat individual brothers from a battle if they stand on a border tile
 - Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
+- Hostile Locations now hide their Defender Line-Up during night
 
 ## Balance & Polishing
 
@@ -179,7 +180,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Fencer** no longer grants +10% chance to hit or 20% less fatigue cost. It now causes your fencing swords to lose 50% less durability
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy
 - **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you
-- **Fortified Mind** now grants +30 Resolve (instead of 25% more) and you lose Resolve equal to the Weight of your Helmetweight
+- **Fortified Mind** now grants +25 Resolve (instead of 25% more) and you lose Resolve equal to the Weight of your Helmetweight
 - **Fresh and Furious** now has a fatigue threshold of 50% (up from 30%). It now checks your fatige when you end your turn, instead of at the start of your turn
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
 - **Hammer Mastery** no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part.
@@ -263,6 +264,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Fighting Axe** now has a value of 2300 (down from 2800)
 - **Firelance** now also has the **Firearm** weapontype
 - **Flail** now deals 30-55 damage (up from 25-55)
+- **Halberd** now has 6 Reach (down from 7)
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
 - **Two Handed Wodden Hammer**, **Two Handed Hammer** and **Skull Hammer** now have 5 Reach (up from 4)
 - **Player Banner** now grants -5 to Ranged Defense
@@ -270,6 +272,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Tree Limb** now deals 30-50 damage (up from 25-40), has an armor penetration of 90% (up from 75%), a Reach of 5 (up from 3), a weight of 15 (down from 20), a value of 300 (up from 150). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
 - **Warfork** now deals 90% Armor Damage (down from 100%) and costs 550 Crowns (up from 400)
 - **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
+- **Zweihander** now has 6 Reach (down from 7)
 - **Throwing Spears** no longer inflict any fatigue when hitting a shield and have a value of 60 (down from 80)
 - Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and **Large Powder Bags** weigh 4.
 - Gun Powder now costs 2 Ammunition Supply each (up from 1)
@@ -309,6 +312,12 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Cut Artery** now applies 3 stack of bleed when inflicted
 - **Cut Throat** now applies 6 stack of bleed when inflicted
 
+### Retinue/Follower
+
+- **Bount Hunter Follower** now costs 2500 Crowns (down from 4000). It now grants +5% for enemies to become champtions (up from +3%). It no longer grants crowns when you kill champions
+- **Lookout Follower** no longer grants 25% more vision at all times. It now always provides a scouting report for enemies near you, just like "Band of Poachers" origin
+- **Scout Follower** no longer grants 15% more movement speed. It now grants 20% more movement speed while in Forests and Swamp. It also grants 25% Vision while on hills or mountains
+
 ### Enemies
 
 - Introduce a new **Headless** effect, which sets the headarmor to 0 and redirects any attack to hit the body and grants immunity to **Distracted**
@@ -319,7 +328,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Scoundrels** no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**. They now spawn with a **Knife** instead of **Dagger**/**Woodcutters Axe**
 - **Vandals** no longer spawn with **Kite Shields**. Instead they can now spawn with **Old Wooden Shields**
 - **Raider** no longer have **Shield Expert**. They no longer spawn with **Kite Shields**. Instead they can now spawn with **Worn Kite/Heater Shields**
-- **Highwaymen** can now also spawn with **Worn Kite/Heater Shields**
+- **Highwaymen** can now also spawn with **Worn Kite/Heater Shields**. They now also appear as the T1 Leader in earlier party compositions
 - **Thug** now spawn with **Tree Limb** instead of **Goedendag**
 - **Pillager** can now also spawn with **Cudgel**. **Pillager** no longer spawn with **Woodcutters Axe**, **Two Handed Mace** or **Two Handed Hammer**
 - **Outlaws** no longer spawn with **Two Handed Wooden Flail** or **Greatsword**
@@ -373,7 +382,13 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Donkeys** now grant 0 XP (down from 50 XP)
 - **Schrats** no longer take 70% reduced damage while their shield is up. They now have +200 Hitpoints and gain the **One with the Shield** perk
 
+### Dynamic Party Adjustments
+
+- Fast Brigands (**Robber** -> **Bandit** -> **Killer**) now upgrade slightly earlier
+- Add **Highwayman** as new T1 of the Banditleader Unitblock. Banditleader Unitblock now require a StartingResourceMin of 200 (down from 250)
+
 ### Enemy AI
+
 - Enemy archers are 66% less likely to target someone because of how many potential scatter targets are adjacent
 - Necrosavants are a bit more likely to stay on the same tile and attack twice, rather than teleport to a slightly better tile
 - Improve AI targeting for throwing nets: They value the targets melee defense twice as much and prefer isolated targets
@@ -446,6 +461,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Distance text in rumors and contracts now display the tile distance range in brackets
 - Display the current XP Multiplier of the viewed character when hovering over the Experience bar
 - World Parties with champions will display an orange skull on top of their socket
+- Hostile Locations now display a tooltip line if they hide defender
 - Display price multiplier from relation in factions & relations screen
 - Add 3 new settings for displaying exact relation, morale and renown values after the respective state term
 - Peasants and Caravans on the world map display a banner
@@ -475,6 +491,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Spiders will now give up when their team has given up even if there are still eggs on the battlefield
 - Remove the hidden "25% more injury threshold" for all characters when receiveing a head hit
 - You can no longer do two Arenas during the same day
+- Allow cut, copy and mark operations ininput fields that are full (e.g. Origin Seed or renaming brothers)
 - Improve knock back logic for Spiked Impaler to behave like the Knock Back skill from shields
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
 - Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
@@ -503,6 +520,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Introduce new `setWeight` and `getWeight` function for `item.nut` to make code around itemweight more readable. They work on the same underlying StaminaModifier but in a reversed way
 - `onMovementStep` now calls `onUpdateVisibility` for the entity after the MSU events happen instead of before, allowing you to better implement effects, whose vision effects depend on positioning
 - Add new `AffectedBodyPart` member for `injury.nut` (temporary injuries) which specifies which bodypart that injury belongs to. It defaults to -1 and is adjusted depending on the vanilla injury lists
+- Add new `IsAlwaysShowingScoutingReport = false` flag for asset_manager. When `true` you will always see defender line-up, even during night, similar to the "Band of Poachers" origin
+- Add new `TerrainTypeVisionMult = [1.0, ...]` arra for asset_manager. This can be adjusted similar to the existing `TerrainTypeSpeedMult` array to change vision depending on tile type
 - Add two new events `onReallyBeforeSkillExecuted` and `onReallyAfterSkillExecuted` for `skill.nut` which guarantee to only trigger when a skill is actually onUsed
 - Add two new events `onBeforeShieldDamageReceived` and `onAfterShieldDamageReceived` for `skill.nut`
 - Add new `getQueryTargetMultAsUser` and `getQueryTargetMultAsTarget` ai related getter for `skill.nut`

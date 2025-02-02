@@ -38,10 +38,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - include my more indirect numeral mod
 - fruits of labor ramping up until level 10
 - make throwing weapons into hybrid weapon types to profit from axe/spear/flail perks
-- mauler -> replace second effect with 15% more damage when hitting body parts that have no remaining armor
 - make disloyal have more of a downside
 - Dynamic Duo You deal 50% less damage to your partner
-
 - Display mood icon during events (Turn that sprite visible / rendertotexture to false/true?)
 - Prevent AI from shieldwalling when its the only one left (unless they have rebuke/riposte)
 - Add more exclusive groups to various Background
@@ -135,10 +133,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Introduce delay before you can click the event choice of the first page (like 1 second) to prevent you from accidentally clicking it when you walk the overworld and get suprised by one
 - Raise fatigue cost of high tier two-handed weapons beyond 15 again
 - Show daily pay in brackets behind crowns (mod setting)
-- Chance Reload Disorientation defense into a multiplier? Someone with 0 rdef cant get much worse from the disorientation
-- Change Lookout to only work while on hills/mountains
-- Change Scout to only work while in swamps and forests
 - Disable chain-routing (disable morale checks from allies losing morale, or maybe allow it one layer deep, but not two)
+- what does this.Time.setVirtualTime(0); do? Can I manipulate daytime with this?
+- Auto Focus the input boxes during campaign creation. Support Enter/Backspace to move forward and backwards during that screen. Both are a bit tricky because the js code is a huge block
 
 ## Perks Review/Rework
 These Perks (top = higher prio) im still unhappy with and eventually want to adjust
@@ -146,6 +143,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Trick Shooter
 - Sanguinary
 - Mauler
+	- replace second effect with 15% more damage when hitting body parts that have no remaining armor
 - Vanquisher
 - Bone Breaker
 	- Attacking a body part that has armor remaining, has 50% less injury threshold. Attacking a body part with no armor remaining, inflicts an additional injury of the same type and threshold, if the attack inflicts one
@@ -154,8 +152,13 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Death Dealer
 - Power Shot
 
+- remove rally the roops restriction when someone is already rallied
+- split hyena/nachzehrer troops in combat/world map
+- orc slayer / crusader events, make them cost 5k crowns each to hire those guys
+
 ## TODO:
 
+- Clean up Readme section "For Modder": add default values consitently; add new subsubsections "New Events", "General Decisions"
 - Test Vigorous Assault weapon swapping?
 
 ## AI
@@ -194,6 +197,24 @@ This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
 # Changes:
+
+0.24.0
+	- Zweihander now has 6 Reach (down from 7)
+	- Halberd now has 6 Reach (down from 7)
+	- Fortified Mind now grants 25 Resolve (down from 30) by default
+	- **Bount Hunter Follower** now costs 2500 Crowns (down from 4000). It now grants +5% for enemies to become champtions (up from +3%). It no longer grants crowns when you kill champions
+	- **Lookout Follower** no longer grants 25% more vision at all times. It now always provides a scouting report for enemies near you, just like "Band of Poachers" origin
+	- **Scout Follower** no longer grants 15% more movement speed. It now grants 20% more movement speed while in Forests and Swamp. It also grants 25% Vision while on hills or mountains
+	- Fast Brigands (Robber -> Bandit -> Killer) now upgrade slightly earlier
+	- Add **Highwayman** as new T1 of the Banditleader Unitblock. Banditleader Unitblock now require a StartingResourceMin of 200 (down from 250)
+	- Hostile Locations now hide their Defender Line-Up during night
+	- Hostile Locations now display a tooltip line if they hide defender
+	- Hostile Locations now display a tooltip line if they hide defender during night (currently all locations do that)
+	- Improve **Disrupted Flow** icons (Sword Mastery debuff)
+	- Fix(Vanilla): Allow cut, copy and marking operations on input fields when they are full
+	- Add new `IsAlwaysShowingScoutingReport = false` flag for asset_manager. When `true` you will always see defender line-up, even during night, similar to the "Band of Poachers" origin
+	- Add new `TerrainTypeVisionMult = [1.0, ...]` arra for asset_manager. This can be adjusted similar to the existing `TerrainTypeSpeedMult` array to change vision depending on tile type
+	- Improve `mockFunction` slightly
 
 0.23.2
 	- Fix crash when loading a game with tempo perk on a brother
