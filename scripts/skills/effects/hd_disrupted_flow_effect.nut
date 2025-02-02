@@ -14,7 +14,9 @@ this.hd_disrupted_flow_effect <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "effects.hd_disrupted_flow";
 		this.m.Name = "Disrupted Flow";
 		this.m.Description = "Your focus is broken, disrupting your timing and reactions.";
-		this.m.Icon = "ui/traits/trait_icon_25.png";	// Todo, custom effect?
+		this.m.Icon = "skills/status_effect_62.png";	// Same icon as used by hangover_effect and event-only trained_effect
+		this.m.IconMini = "hd_disrupted_flow_mini";
+		this.m.Overlay = "hd_disrupted_flow_effect";
 		this.m.Type = ::Const.SkillType.StatusEffect;
 		this.m.IsRemovedAfterBattle = true;
 		this.m.IsStacking = false;
