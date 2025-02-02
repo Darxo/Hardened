@@ -202,7 +202,7 @@
 		vargv.insert(0, _table);
 		local mockResult = _mockedBehavior.acall(vargv);
 
-		if (mockResult.done)	// the mock function signals that it is done and we can begin the clean up process
+		if ("done" in mockResult && mockResult.done)	// the mock function signals that it is done and we can begin the clean up process
 		{
 			cleanupMockedFunction();
 		}

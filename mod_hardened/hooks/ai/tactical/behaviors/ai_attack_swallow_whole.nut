@@ -7,10 +7,6 @@
 			{
 				return { done = true, value = [null, null] };		// The only important thing here is that the returned array has more than 1 element
 			}
-			else
-			{
-				return { done = false };
-			}
 		});
 
 		local ret = __original(_entity);
