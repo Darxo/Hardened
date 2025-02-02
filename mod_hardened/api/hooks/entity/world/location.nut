@@ -7,7 +7,7 @@
 		local oldIsShowingDefenders = this.m.IsShowingDefenders;
 		if (this.m.HideDefenderAtNight) this.m.IsShowingDefenders = this.m.IsShowingDefenders && ::World.getTime().IsDaytime;
 
-		local ret = __original();
+		local ret = __original() || ::World.Assets.m.IsAlwaysShowingScoutingReport;
 
 		this.m.IsShowingDefenders = oldIsShowingDefenders;
 
