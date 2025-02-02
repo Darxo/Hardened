@@ -1,5 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_fortified_mind", function(q) {
-	q.m.ResolveModifier <- 30;
+	q.m.ResolveModifier <- 25;
 	q.m.ResolveModifierPerWeight <- -1;
 
 	q.onUpdate = @(__original) function( _properties )
