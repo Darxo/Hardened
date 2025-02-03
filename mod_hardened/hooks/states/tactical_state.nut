@@ -9,6 +9,27 @@
 		__original();
 	}
 
+	q.onMouseInput = @(__original) function( _mouse )
+	{
+		// We overwrite only the mouse wheel events coming from vanilla to customize the zoom multiplier
+		if (_mouse.getID() == 7)
+		{
+			local mouseWheelZoomMultiplier = ::Hardened.Mod.ModSettings.getSetting("MouseWheelZoomMultiplier").getValue();
+			if (_mouse.getState() == 3)
+			{
+				::Tactical.getCamera().zoomBy(-::Time.getDelta() * ::Math.max(60, ::Time.getFPS()) * mouseWheelZoomMultiplier);
+				return true;
+			}
+			else if (_mouse.getState() == 4)
+			{
+				::Tactical.getCamera().zoomBy(::Time.getDelta() * ::Math.max(60, ::Time.getFPS()) * mouseWheelZoomMultiplier);
+				return true;
+			}
+		}
+
+		return __original(_mouse);
+	}
+
 	q.turnsequencebar_onNextRound = @(__original) function( _round )
 	{
 		// Our goal here is to call onRoundStart/End for otherwise left-out entities. Those all have in common that they have IsActingEachTurn set to false
