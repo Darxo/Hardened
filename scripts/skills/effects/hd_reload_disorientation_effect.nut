@@ -1,6 +1,6 @@
 this.hd_reload_disorientation_effect <- ::inherit("scripts/skills/skill", {
 	m = {
-		RangedSkillModifier = -10,
+		RangedSkillModifier = -15,
 		RangedDefenseMult = 0.65,
 	},
 	function create()
