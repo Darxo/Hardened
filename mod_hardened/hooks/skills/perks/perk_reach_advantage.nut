@@ -158,7 +158,9 @@
 		if (actor.isArmedWithShield()) return false;
 
 		local mainhandItem = actor.getMainhandItem();
-		if (mainhandItem == null || !mainhandItem.isItemType(::Const.Items.ItemType.MeleeWeapon)) return false;	// User needs a melee weapon equipped
+		if (mainhandItem == null) return false;
+		if (!mainhandItem.isItemType(::Const.Items.ItemType.MeleeWeapon)) return false;	// User needs a melee weapon equipped
+		if (!mainhandItem.isItemType(::Const.Items.ItemType.OneHanded)) return false;	// User needs a one-handed weapon
 
 		return true;
 	}
