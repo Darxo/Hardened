@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/effects/rf_worn_down_effect", function(q) {
+	q.m.MeleeDefenseMult <- 0.8;
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
@@ -12,8 +14,18 @@
 			}
 		}
 
+		if (this.m.MeleeDefenseMult != 1.0)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/melee_defense.png",
+				text = ::MSU.Text.colorizeMultWithText(this.m.MeleeDefenseMult) + ::Reforged.Mod.Tooltips.parseString(" [Melee Defense|Concept.MeleeDefense]"),
+			});
+		}
+
 		ret.push({
-			id = 10,
+			id = 11,
 			type = "text",
 			icon = "ui/icons/fatigue.png",
 			text = ::Reforged.Mod.Tooltips.parseString("[Recover|Skill+recover_skill] can no longer be used"),
@@ -38,6 +50,8 @@
 			recoverSkill.m.IsUsable = false;
 			this.getContainer().getActor().setDirty(true);	// Update the UI so that Recover is instantly shown as disabled
 		}
+
+		_properties.MeleeDefenseMult *= this.m.MeleeDefenseMult;
 	}
 
 	q.onRemoved = @(__original) function()
