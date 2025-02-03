@@ -1,4 +1,15 @@
 ::Hardened.HooksMod.hook("scripts/states/tactical_state", function(q) {
+	q.onFinish = @(__original) function()
+	{
+		__original();
+		foreach (bro in ::World.getPlayerRoster().getAll())
+		{
+			// In Vanilla there is no update() call, after entities lose their isPlacedOnMap() == true. So some positioning-related effects will be inaccurate
+			// Examples are Lone Wolf, Entrenched, Scout, Militia
+			bro.getSkills().update();
+		}
+	}
+
 	q.onBattleEnded = @(__original) function()
 	{
 		if (!this.m.IsExitingToMenu)	// In vanilla this function ends early so we don't apply our switcheroo
