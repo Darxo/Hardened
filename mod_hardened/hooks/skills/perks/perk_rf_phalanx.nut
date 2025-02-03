@@ -67,4 +67,19 @@
 		}
 		return count;
 	}
+
+// Hardened Functions
+	// If _user is evaluating our value, potentially targeting us with _usedSkill, how would that change our perceived value for them?
+	q.getQueryTargetMultAsTarget = @(__original) function( _user, _usedSkill = null )
+	{
+		local ret = __original(_user, _usedSkill);
+		if (_usedSkill == null) return ret;
+
+		if (_usedSkill.getID() == "actives.split_shield" || _usedSkill.getID() == "actives.throw_spear")
+		{
+			ret *= 1.2;	// _user wants to destroy this guys shield to prevent situations of perma-shieldwall
+		}
+
+		return ret;
+	}
 });
