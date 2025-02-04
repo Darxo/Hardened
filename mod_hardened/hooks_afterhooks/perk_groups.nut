@@ -61,6 +61,12 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		pgNobleGroup.addPerk("perk.inspiring_presence", 7);		// Add Inspiring Presence to Tier 7
 	}
 
+	{	// Polearm Combat
+		local pgPolearmGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_polearm");
+		changePerkTier(pgPolearmGroup, "perk.rf_long_reach", 3);	// Move "Long Reach" to Tier 3 (down from Tier 7)
+		changePerkTier(pgPolearmGroup, "perk.rf_leverage", 6);		// Move "Leverage" to Tier 6 (up from Tier 3)
+	}
+
 	{	// Ranged Combat
 		local pgRangedGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_ranged");
 		pgRangedGroup.addPerk("perk.rf_through_the_ranks", 1);	// Add Through the Ranks (Scout) into the Tier 1
