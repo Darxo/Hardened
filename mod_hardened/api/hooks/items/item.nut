@@ -22,4 +22,9 @@
 	{
 		this.m.StaminaModifier = -1 * _weight;
 	}
+
+	q.isNamed <- function()
+	{
+		return this.isItemType(::Const.Items.ItemType.Named);
+	}
 });
