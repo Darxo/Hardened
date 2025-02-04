@@ -22,6 +22,12 @@
 	qolWorldPage.addBooleanSetting("AlwaysDisplayRenownValue", true, "Always Display Renown Value", "Always display your exact renown value in brackets whenever displaying your current renown state.");
 	qolWorldPage.addBooleanSetting("DisplayRelationValue", true, "Display Relation Value", "Always display your exact relation value in brackets when displaying the current relationship state.");
 	qolWorldPage.addBooleanSetting("DisplayMoraleValue", true, "Display Morale Reputation Value", "Always display your exact morale value in brackets when displaying the current morale reputation state.");
+
+	qolWorldPage.addDivider("MiscDivider4");
+
+	qolWorldPage.addBooleanSetting("DisplayFoodDuration", true, "Display Food Duration", "Display next to your food supplies the amount of days that they will last for your company.");
+	qolWorldPage.addBooleanSetting("DisplayRepairDuration", true, "Display Repair Duration", "Display next to your tool supplies the amount of hours that it will take to fully repair all gear.");
+	qolWorldPage.addBooleanSetting("DisplayMinMedicineCost", true, "Display Min Medicine Cost", "Display next to your medicine supplies the minimum supplies that your currently injured brothers will require to fully recover.");
 }
 
 // QOL: Combat
