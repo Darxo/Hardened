@@ -1,0 +1,42 @@
+.world-campfire-screen > .l-hire-dialog-container .l-tab-container {
+	width: auto; /* Reset the hard-coded width of 88rem from this parent from vanilla */
+	/* right: auto; /* This would center the assets prooperly, but it does also cause a weird 20px animation shift after 1 second */
+
+	left: 50%; /* Start at the center horizontally */
+	transform: translateX(-50%); /* Adjust back by half its width for perfect centering */
+	display: flex; /* Enable flexbox layout */
+}
+
+.world-campfire-screen > .l-hire-dialog-container .l-tab-asset
+{
+	position: static; /* Use default positioning to work with flexbox */
+
+	width: auto;	/* In Vanilla this is hard-coded to 13.0rem, resulting in img to be squished */
+	flex-direction: row; /* Align image and text horizontally */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box; /* Ensure padding/margins are included in the size */
+}
+
+.world-campfire-screen > .l-hire-dialog-container .l-tab-asset.is-money,
+.world-campfire-screen > .l-hire-dialog-container .l-tab-asset.is-business-reputation {
+	left: auto; /* Reset the absolute positioning from vanilla */
+
+	margin: 0 3rem; /* Maintain spacing between business and moral containers */
+}
+
+.world-campfire-screen > .l-hire-dialog-container .l-tab-asset img {
+	position: static; /* Reset absolute positioning from vanilla */
+	width: auto; /* Maintain aspect ratio instead of squishing the image like in vanilla */
+
+	margin-right: 1rem; /* Add a gap between the image and label */
+	display: block; /* Ensure proper alignment in the flex container */
+}
+
+.world-campfire-screen > .l-hire-dialog-container .l-tab-asset .label {
+	position: static; /* Reset absolute positioning from vanilla */
+	width: auto; /* Allow the width to adjust dynamically depending on textsize, unlike vanilla */
+
+	white-space: nowrap; /* Prevent text wrapping */
+}
