@@ -40,7 +40,7 @@ this.hd_battle_song_skill <- ::inherit("scripts/skills/skill", {
 				id = 20,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Does not affect allies who are currently inspired by someone elses song.",
+				text = "Does not affect allies who are currently inspired by someone elses song",
 			},
 		]);
 

@@ -2,7 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Description = ::Reforged.Mod.Tooltips.parseString("Create mirror images of the Lorekeeper up to a maximum of " + ::MSU.Text.colorPositive(4) + ". They can cast [Lightning Strike|Skill+lightning_storm_skill], [Wither|Skill+wither_skill], and [Raise Undead|Skill+raise_undead].");
+		this.m.Description = ::Reforged.Mod.Tooltips.parseString("Create mirror images of the Lorekeeper up to a maximum of " + ::MSU.Text.colorPositive(4) + ". They can cast [Lightning Strike|Skill+lightning_storm_skill], [Wither|Skill+wither_skill], and [Raise Undead.|Skill+raise_undead]");
 	}
 
 	q.getTooltip = @() function()

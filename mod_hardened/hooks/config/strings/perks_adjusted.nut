@@ -459,7 +459,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Every hit to the head will [daze|Skill+dazed_effect] your target for " + ::MSU.Text.colorPositive(1) + " turn or increase the duration of an existing [daze|Skill+dazed_effect] by " + ::MSU.Text.colorPositive(1) + " turn",
+					"Every hit to the head will [daze|Skill+dazed_effect] your target for " + ::MSU.Text.colorPositive(1) + " [turn|Concept.Turn] or increase the duration of an existing [daze|Skill+dazed_effect] by " + ::MSU.Text.colorPositive(1) + " [turn|Concept.Turn]",
 				],
 			}],
 		}),
@@ -751,7 +751,7 @@ local adjustedDescriptions = [
 						"Gain " + ::MSU.Text.colorPositive("15%") + " of your Base [Ranged Skill|Concept.RangeSkill] as additional [Melee Skill|Concept.MeleeSkill]",
 						"Piercing type throwing attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body",
 						"Cutting type throwing attacks apply [Overwhelmed|Skill+overwhelmed_effect] on a hit",
-						"Headshots with blunt type throwing attacks apply [Staggered|Skill+staggered_effect]. All hits with blunt type throwing attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
+						"Headshots with blunt type throwing attacks apply [Staggered.|Skill+staggered_effect] All hits with blunt type throwing attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
 						"[Throwing Spears|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(1.5) + " damage to shields",
 					],
 				},
@@ -781,7 +781,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Attacks have an additional " + ::MSU.Text.colorPositive("25%") + " chance to hit the head.",
+					"Attacks have an additional " + ::MSU.Text.colorPositive("25%") + " chance to hit the head",
 					"Headshots from ranged attacks with firearms apply the [Shellshocked|Skill+shellshocked_effect] effect except on characters with " + ::Const.MoraleStateName[::Const.MoraleState.Ignore] + " [morale.|Concept.Morale]",
 				],
 			}],
@@ -1011,7 +1011,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per turn, if you use an attack on an adjacent enemy, gain " + ::MSU.Text.colorPositive("+5") + " [Melee Defense|Concept.MeleeDefense] for every adjacent enemy until the start of your next [turn|Concept.Turn]",
+					"Once per [turn|Concept.Turn], if you use an attack on an adjacent enemy, gain " + ::MSU.Text.colorPositive("+5") + " [Melee Defense|Concept.MeleeDefense] for every adjacent enemy until the start of your next [turn|Concept.Turn]",
 				],
 			}],
 		}),
@@ -1055,7 +1055,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("+15") + " [Initiative|Concept.Initiative] until the start of your next [turn|Concept.Turn] whenever you move a tile during your turn",
+					"Gain " + ::MSU.Text.colorPositive("+15") + " [Initiative|Concept.Initiative] until the start of your next [turn|Concept.Turn] whenever you move a tile during your [turn|Concept.Turn]",
 				],
 			},
 			{
@@ -1173,7 +1173,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Any hit builds up an additional " + ::MSU.Text.colorNegative("10") + " [Fatigue|Concept.Fatigue] on the target",
 					"Any miss builds up an additional " + ::MSU.Text.colorNegative("5") + " [Fatigue|Concept.Fatigue] on the target",
-					"After your attack, if your target is fully [fatigued|Concept.Fatigue], apply [Worn Down|Skill+rf_worn_down_effect] until the end of their turn",
+					"After your attack, if your target is fully [fatigued|Concept.Fatigue], apply [Worn Down|Skill+rf_worn_down_effect] until the end of their [turn|Concept.Turn]",
 				],
 			}],
 		}),
