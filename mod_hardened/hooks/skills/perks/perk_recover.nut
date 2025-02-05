@@ -43,7 +43,7 @@
 				id = 11,
 				type = "text",
 				icon = "ui/icons/damage_received.png",
-				text = "You have " + ::MSU.Text.colorizeMultWithText(headHitpointMult, {InvertColor = true}) + " Hitpoint Damage from Attacks to the Head",
+				text = "You take " + ::MSU.Text.colorizeMultWithText(headHitpointMult, {InvertColor = true}) + " Hitpoint Damage from Attacks to the Head",
 			});
 		}
 
@@ -54,7 +54,7 @@
 				id = 12,
 				type = "text",
 				icon = "ui/icons/damage_received.png",
-				text = "You have " + ::MSU.Text.colorizeMultWithText(bodyHitpointMult, {InvertColor = true}) + " Hitpoint Damage from Attacks to the Body",
+				text = "You take " + ::MSU.Text.colorizeMultWithText(bodyHitpointMult, {InvertColor = true}) + " Hitpoint Damage from Attacks to the Body",
 			});
 		}
 
