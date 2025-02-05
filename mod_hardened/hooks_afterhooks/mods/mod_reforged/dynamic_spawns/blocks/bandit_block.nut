@@ -22,7 +22,6 @@ local unitBlocks = [
 
 foreach (blockDef in unitBlocks)
 {
-	::logWarning("Hardened: foreach (blockDef in unitBlocks)");
 	::DynamicSpawns.Public.registerUnitBlock(blockDef);
 }
 
