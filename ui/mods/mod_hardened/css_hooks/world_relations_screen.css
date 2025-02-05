@@ -11,6 +11,7 @@
 {
 	position: static; /* Use default positioning to work with flexbox */
 
+	width: auto;	/* In Vanilla this is hard-coded to 13.0rem, resulting in img to be squished */
 	flex-direction: row; /* Align image and text horizontally */
 	display: flex;
 	align-items: center;
