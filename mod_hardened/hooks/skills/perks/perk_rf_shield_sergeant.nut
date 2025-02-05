@@ -1,11 +1,13 @@
-// hook a skill that can
-local hookKnockBack = function( _o )
+/// Hook knock_back so that it can be used on empty tiles
+/// Will do nothing, if _knockBackSkill was already adjusted before
+/// If shield_sergeant perk is removed, this adjustment will remain, until the skill is reset (reequipping shield or reloading save)
+local hookKnockBack = function( _knockBackSkill )
 {
-	if ("HD_IsShieldSergeantHooked" in _o.m) return;	// This skill is already hooked
-	_o.m.HD_IsShieldSergeantHooked <- true;
+	if ("HD_IsShieldSergeantHooked" in _knockBackSkill.m) return;	// This skill is already hooked
+	_knockBackSkill.m.HD_IsShieldSergeantHooked <- true;
 
-	local oldOnVerifyTarget = _o.onVerifyTarget;
-	_o.onVerifyTarget = function( _user, _targetTile )
+	local oldOnVerifyTarget = _knockBackSkill.onVerifyTarget;
+	_knockBackSkill.onVerifyTarget = function( _user, _targetTile )
 	{
 		if (!_targetTile.IsOccupiedByActor)
 		{
@@ -15,8 +17,8 @@ local hookKnockBack = function( _o )
 		return oldOnVerifyTarget(_user, _targetTile);
 	}
 
-	local oldOnuse = _o.onUse;
-	_o.onUse = function( _user, _targetTile )
+	local oldOnuse = _knockBackSkill.onUse;
+	_knockBackSkill.onUse = function( _user, _targetTile )
 	{
 		if (_targetTile.IsOccupiedByActor)
 		{
@@ -35,7 +37,11 @@ local hookKnockBack = function( _o )
 }
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_shield_sergeant", function(q) {
+	// Public
 	q.m.FreeUseTileDistance <- 3;
+
+	// Private
+	q.m.ExecutionDelay <- 150;	// Delay between every execution in milliseconds
 
 	q.getTooltip = @(__original) function()
 	{
@@ -57,20 +63,19 @@ local hookKnockBack = function( _o )
 	{
 		__original(_skill, _targetTile, _targetEntity, _forFree);
 
-		// In order to prevent loops, we secretly prevent a free use from triggering
-		local item = _skill.getItem();
-		if (!_forFree && !::MSU.isNull(item) && item.isItemType(::Const.Items.ItemType.Shield))
+		// In order to prevent loops with other shield sergeants, this user must be the active entity
+		local actor = this.getContainer().getActor();
+		if (actor.isActiveEntity() && this.isSkillValid(_skill))
 		{
 			local potentialAllies = [];
-			local actor = this.getContainer().getActor();
 			foreach (ally in ::Tactical.Entities.getFactionActors(actor.getFaction(), actor.getTile(), this.m.FreeUseTileDistance))
 			{
 				if (ally.getID() == actor.getID()) continue;
 				potentialAllies.push(ally);
 			}
-			::MSU.Array.shuffle(potentialAllies);
+			::MSU.Array.shuffle(potentialAllies);	// We want the execution order to be random
 
-			::Time.scheduleEvent(::TimeUnit.Virtual, 150, this.triggerCopycat, {
+			::Time.scheduleEvent(::TimeUnit.Virtual, this.m.ExecutionDelay, this.triggerCopycat, {
 				Self = this,
 				SkillID = _skill.getID(),
 				RemainingAllies = potentialAllies,
@@ -96,13 +101,18 @@ local hookKnockBack = function( _o )
 	}
 
 // New Functions
+	q.isSkillValid <- function( _skill )
+	{
+		local item = _skill.getItem();
+		return !::MSU.isNull(item) && item.isItemType(::Const.Items.ItemType.Shield);
+	}
+
 	// Look at one of the remaining allies and try to trigger _skillID for free for them.
 	// Then call itself recursively with one less remainingAlly
 	q.triggerCopycat <- function( _data )
 	{
 		if (_data.RemainingAllies.len() == 0) return;
 
-		local delay = 150;
 		local ally = ::MSU.Array.rand(_data.RemainingAllies);
 		::MSU.Array.removeByValue(_data.RemainingAllies, ally);
 #
@@ -149,7 +159,7 @@ local hookKnockBack = function( _o )
 
 		if (triggeredSkill)
 		{
-			::Time.scheduleEvent(::TimeUnit.Virtual, delay, _data.Self.triggerCopycat, _data);
+			::Time.scheduleEvent(::TimeUnit.Virtual, _data.Self.m.ExecutionDelay, _data.Self.triggerCopycat, _data);
 		}
 		else	// Nothing happened; No delay needed
 		{
