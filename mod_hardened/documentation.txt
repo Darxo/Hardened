@@ -221,11 +221,11 @@ This will unbrick your end-of-combat screen, if it doesnt show
 	- **Shield Sergeant** now requires the user to be the active entity for it to trigger but it triggers from free skill uses
 	- **Fresh and Furious** now only works during your turn and also discounts skills which cost 1 Action Point but it is now wasted if you use a skill that already costs 0 Action Points
 	- **Worn Down** (caused by **Wear them Down**) now also applies 20% less Melee Defense
-	- **Reload Disorientation** is now also applied when reloading a Handgonne. It now applies -15 Ranged Skill (up from -10)
+	- **Reload Disorientation** now applies -15 Ranged Skill (up from -10)
 	- **Long Reach** is now a Tier 3 perk (down from Tier 7)
 	- **Leverage** is now a Tier 6 perk (up from Tier 3)
-	- Spetum now has a Reach of 7 (up from 6) and costs 900 crowns (up from 750)
-	- Javelins now deal 70% Armor Damage (down from 75%)
+	- **Spetum** now has a Reach of 7 (up from 6) and costs 900 crowns (up from 750)
+	- **Javelins** now deal 70% Armor Damage (down from 75%)
 	- **Brigand Robber** now have 60 Ranged Skill (up from 55)
 	- **Brigand Bandit** now have 70 Ranged Skill (up from 60)
 	- **Brigand Killer** now have 80 Ranged Skill (up from 70)
