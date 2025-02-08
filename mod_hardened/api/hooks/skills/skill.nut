@@ -156,6 +156,32 @@
 		return 1.0;
 	}
 
+	/// Toggle the IsUsable flag of all skills on this character, which pass an check. If at least one skill has changed, update the entities UI
+	/// During an onUpdateProperties you should only ever call this with 'false' as otherwise multiple effect will conflict with each other
+	/// It is important that you call this with 'true' when combat ends or your effect is removed to prevent the character bring temporarily bricked
+	/// @param _enabled new value for the this.m.IsUsable flag
+	/// @param _condition function that takes a _skill as an argument and returns either true or false
+	q.setSkillsIsUsable <- function( _enabled, _condition )
+	{
+		local changeHappened = false;
+		foreach (skill in this.getContainer().m.Skills)
+		{
+			if (_condition(skill))
+			{
+				if (skill.m.IsUsable != _enabled)
+				{
+					changeHappened = true;
+					skill.m.IsUsable = _enabled;
+				}
+			}
+		}
+
+		if (changeHappened)	// Otherwise during the onUpdate loop we would constantly update the UI
+		{
+			this.getContainer().getActor().setDirty(true);	// Update the UI so that enable/disable status is visible instantly
+		}
+	}
+
 // New Events
 	/// _skill is the new skill that was just added to this skills skill_container
 	q.onOtherSkillAdded <- function( _skill )
