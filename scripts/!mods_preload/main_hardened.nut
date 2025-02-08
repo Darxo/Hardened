@@ -170,11 +170,7 @@
 	local currentTable = _table;
 	while (!::MSU.isIn(_functionName, currentTable))
 	{
-		if (currentTable instanceof ::WeakTableRef)	// weak table check must be first
-		{
-			currentTable = currentTable.get();
-		}
-		else if (typeof currentTable == "table")
+		if (typeof currentTable == "table")
 		{
 			currentTable = currentTable.getdelegate();
 		}
@@ -186,6 +182,11 @@
 		{
 			throw ::MSU.Exception.InvalidType(currentTable);
 		}
+	}
+
+	if (currentTable instanceof ::WeakTableRef)	// weak table check must be first
+	{
+		currentTable = currentTable.get();
 	}
 
 	local hasCleanupHappened = false;
