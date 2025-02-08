@@ -1,3 +1,6 @@
+// This hook also removes the natural hitchance bonus from impale but that is ok, because we want that removed anyways
+::Hardened.removeTooClosePenalty("scripts/skills/actives/impale");
+
 ::Hardened.HooksMod.hook("scripts/skills/actives/impale", function(q) {
 	q.getTooltip = @(__original) function()
 	{
@@ -13,16 +16,5 @@
 		}
 
 		return ret;
-	}
-
-	q.onAnySkillUsed = @(__original) function( _skill, _targetEntity, _properties )
-	{
-		__original(_skill, _targetEntity, _properties);
-
-		if (_skill == this)
-		{
-			_properties.MeleeSkill -= 10;	// This reverts the vanilla +10 Modifier
-			this.m.HitChanceBonus -= 10;
-		}
 	}
 });

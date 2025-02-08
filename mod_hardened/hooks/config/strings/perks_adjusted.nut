@@ -215,7 +215,6 @@ local adjustedDescriptions = [
 						"Axe Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 						"[Round Swing|Skill+round_swing] gains " + ::MSU.Text.colorPositive("+5%") + " [chance to hit|Concept.Hitchance]",
 						"[Split Shield|Skill+split_shield] applies [Dazed|Skill+dazed_effect] for " + ::MSU.Text.colorPositive(1) + " [turn|Concept.Turn]",
-						"The [Longaxe|Item+longaxe] no longer has a penalty for attacking targets directly adjacent",
 					],
 				},
 				{
@@ -269,6 +268,24 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.mastery.flail",
+		Key = "SpecFlail",
+		Description = ::UPD.getDescription({
+			Fluff = "Master flails and circumvent your opponent\'s shield.",
+			Requirement = "Flail",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Flail Skills build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+					"[Lash|Skill+lash_skill] and [Hail|Skill+hail_skill] ignore the defense bonus of shields",
+					"Gain the [From all Sides|Perk+perk_rf_from_all_sides] perk",
+					"[Pound|Skill+pound] ignores an additional " + ::MSU.Text.colorPositive("+10%") + " of armor on head hits",
+					"[Thresh|Skill+thresh] gains " + ::MSU.Text.colorPositive("+5%") + " chance to hit",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.mastery.hammer",
 		Key = "SpecHammer",
 		Description = ::UPD.getDescription({
@@ -280,7 +297,6 @@ local adjustedDescriptions = [
 					Description = [
 						"Hammer Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue.|Concept.Fatigue]",
 						"[Shatter|Skill+shatter_skill] gains " + ::MSU.Text.colorPositive("+5%") + " [chance to hit|Concept.Hitchance]",
-						"The [Polehammer|Item+polehammer] no longer has a penalty for attacking targets directly adjacent.",
 						::MSU.Text.colorPositive("50%") + " of the Armor Damage you deal to one body part is also dealt to the other body part",
 					],
 				},
@@ -298,7 +314,6 @@ local adjustedDescriptions = [
 				Description = [
 					"Polearm Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 					"[Hook|Skill+hook] and [Repel|Skill+repel] have " + ::MSU.Text.colorPositive("+15%") + " [chance to hit|Concept.Hitchance]",
-					"Polearms no longer have a penalty for attacking targets directly adjacent",
 					"Gain the [Bolster|Perk+perk_rf_bolster] perk",
 				],
 			}],
@@ -316,7 +331,6 @@ local adjustedDescriptions = [
 					Description = [
 						"Spear Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 						"[Spearwall|Skill+spearwall] can be used while engaged in melee and is no longer disabled when enemies overcome it",
-						"The [Spetum|Item+spetum] and [Warfork|Item+warfork] no longer have a penalty for attacking targets directly adjacent",
 						"[Reach Advantage|Concept.ReachAdvantage] grants an additional " + ::MSU.Text.colorizeMultWithText(::Reforged.Reach.ReachAdvantageMult) + " [Melee Skill|Concept.MeleeSkill]",
 					],
 				},

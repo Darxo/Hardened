@@ -1,3 +1,6 @@
+// This hook also removes the natural hitchance bonus from rupture but that is ok, because we want that removed anyways
+::Hardened.removeTooClosePenalty("scripts/skills/actives/rupture");
+
 ::Hardened.HooksMod.hook("scripts/skills/actives/rupture", function(q) {
 	q.getTooltip = @(__original) function()
 	{
@@ -13,16 +16,5 @@
 		}
 
 		return ret;
-	}
-
-	q.onAnySkillUsed = @(__original) function( _skill, _targetEntity, _properties )
-	{
-		__original(_skill, _targetEntity, _properties);
-
-		if (_skill == this)
-		{
-			_properties.MeleeSkill -= 5;	// This reverts the vanilla +5 Modifier
-			this.m.HitChanceBonus -= 5;
-		}
 	}
 });

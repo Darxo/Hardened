@@ -219,3 +219,45 @@
 
 	return { cleanup = cleanupMockedFunction };
 }
+
+/// Revert any changes to hitchance during onAnySkillUsed to revert effects like penalty from attacking close targets or generic hitchance differences
+/// Remove tooltip about penalty from attacking too close
+::Hardened.removeTooClosePenalty <- function( _script )
+{
+	::Hardened.HooksMod.hook(_script, function(q) {
+		q.create = @(__original) function()
+		{
+			__original();
+			this.m.HitChanceBonus = 0;
+		}
+
+		q.getTooltip = @(__original) function()
+		{
+			local ret = __original();
+
+			foreach (index, entry in ret)
+			{
+				if (entry.text.find("chance to hit targets directly adjacent") != null)
+				{
+					ret.remove(index);
+					break;
+				}
+			}
+
+			return ret;
+		}
+
+		// Revert any changes to hitchance in order to completely remove the penalty from attacking at distance of 1
+		// This will also revert skill-specific penalties, so beware of that
+		q.onAnySkillUsed = @(__original) function( _skill, _targetEntity, _properties )
+		{
+			local oldMeleeSkill = _properties.MeleeSkill;
+			local oldHitCHanceBonus = this.m.HitChanceBonus;
+
+			__original(_skill, _targetEntity, _properties);
+
+			_properties.MeleeSkill = oldMeleeSkill;
+			this.m.HitChanceBonus = oldHitCHanceBonus;
+		}
+	});
+}
