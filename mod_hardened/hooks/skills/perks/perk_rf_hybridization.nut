@@ -44,17 +44,6 @@
 		this.m.IsSpent = true;	// IsSpent now stays always stays on true to disable swapping and hide the effect icon
 	}
 
-// Reforged Functions
-	// Overwrite because reforge has a small bug. But fixing that buf in reforged introduces a bigger issue
-	q.isSkillValid = @() function( _skill )
-	{
-		if (!_skill.isRanged() || !_skill.isAttack())
-			return false;
-
-		local weapon = _skill.getItem();
-		return !::MSU.isNull(weapon) && weapon.isItemType(::Const.Items.ItemType.Weapon) && weapon.isWeaponType(::Const.Items.WeaponType.Throwing);
-	}
-
 // New Functions
 	// This implementation is mostly a copy of REforged mastery implementation
 	q.applyHitEffect <- function( _skill, _targetEntity, _bodyPart )
