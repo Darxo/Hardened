@@ -12,6 +12,9 @@
  * @param {*} _classes additional classes added to this input object
  * @param {*} _acceptCallback Callback that is fired, when Enter or Return are released
  * @returns constructed input object
+ *
+ * Todo (Doable): Add wiggle, when user pastes text, which would surpass the textbox
+ * Todo (Tricky): Remove wiggle, when the input field is full, user has marked all text, and replaces it (paste) with a smaller or equally sized text
  */
 $.fn.createInput = function(_text, _minLength, _maxLength, _tabIndex, _inputUpdatedCallback, _classes, _acceptCallback)
 {
@@ -38,11 +41,19 @@ $.fn.createInput = function(_text, _minLength, _maxLength, _tabIndex, _inputUpda
 		var eventMaxLength = self.data('input').maxLength;
 		var textLength = self.getInputTextLength();
 
+		var allowInput = !data.inputDenied;
+
 		if (_event.ctrlKey || _event.metaKey)
 		{
-			if (code === KeyConstants.V && textLength === eventMaxLength)	// paste is the only important ctrl command that can violate the boundary
+			if (code === KeyConstants.X) data.inputDenied = true;	// Prevent windows error sfx whenever a user cuts text from an input box
+
+			if (code === KeyConstants.V)
 			{
-				self.shakeLeftRight(3);
+				if (!data.inputDenied && code === KeyConstants.V && textLength === eventMaxLength)	// paste is the only important ctrl command that can violate the boundary
+				{
+					self.shakeLeftRight(3);
+				}
+				data.inputDenied = true;	// Prevent textbox being spammed with text
 			}
 		}
 		else
@@ -54,9 +65,12 @@ $.fn.createInput = function(_text, _minLength, _maxLength, _tabIndex, _inputUpda
 				case KeyConstants.ArrowRight:
 				case KeyConstants.ArrowUp:
 				case KeyConstants.ArrowDown:
+					data.inputDenied = true;	// Prevent Arrow keys from flying across the word. Instead you need to let go and press again to move one character at a time
 					break;	// These actions will never violate boundaries
-				case KeyConstants.Backspace:
 				case KeyConstants.Delete:
+					if (data.inputDenied) break;	// Prevent shakeLeftRight when holding this key on an empty text box
+					data.inputDenied = true;	// Prevent way too many Delete-actions from just one button press. Instead you need to let go and press again to delete one character at a time
+				case KeyConstants.Backspace:
 					if (textLength === 0) self.shakeLeftRight(3);	// Trying to delete in an empty text box
 					break;
 				// We assume that any other character down here is one that would increase the text length
@@ -70,13 +84,15 @@ $.fn.createInput = function(_text, _minLength, _maxLength, _tabIndex, _inputUpda
 			_inputUpdatedCallback($(this), textLength);
 		}
 
-		return true;
+		return allowInput;
 	});
 
 	result.on('keyup.input', null, result, function (_event)
 	{
 		var self = _event.data;
 		var code = _event.which || _event.keyCode;
+
+		self.data('input').inputDenied = false;		// Input is always denied until we let go of any key again
 
 		if(code === KeyConstants.Return || code === KeyConstants.Enter)
 		{
