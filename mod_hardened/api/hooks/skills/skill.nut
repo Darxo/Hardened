@@ -12,9 +12,11 @@
 
 ::Hardened.HooksMod.hook("scripts/skills/skill", function(q) {
 	// Public
+	q.m.HD_Cooldown <- 0;	// This skill can only be used if HD_RoundLastUsed is null or atleast this many rounds ago
 	q.m.IsHidingIconMini <- false;	// If set to true, then the IconMini will be treated as if it was an empty string and never display
 
 	// Private
+	q.m.HD_RoundLastUsed <- null;	// This is set to the current round whenever the skills onUse is called
 	q.m.HD_Temp_IsFree <- false;	// Ignore fatigue and action point cost during isAffordable check
 
 	q.isAffordable = @(__original) function()
@@ -142,6 +144,13 @@
 	}
 
 // New Getter
+	q.isOnCooldown <- function()
+	{
+		if (this.m.HD_RoundLastUsed == null) return false;
+
+		return ::Time.getRound() < this.m.HD_RoundLastUsed + this.m.HD_Cooldown;
+	}
+
 	// If we are evaluating _target, potentially targeting them with _usedSkill, how would that change the targets perceived value?
 	// @return a non-negative float value
 	q.getQueryTargetMultAsUser <- function( _target, _usedSkill = null )	// Const
@@ -216,6 +225,50 @@
 });
 
 ::Hardened.HooksMod.hookTree("scripts/skills/skill", function(q) {
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original();
+
+		if (this.isOnCooldown())
+		{
+			local remainingCooldown = this.m.HD_RoundLastUsed + this.m.HD_Cooldown - ::Time.getRound();
+			ret.push({
+				id = 42,
+				type = "text",
+				icon = "ui/tooltips/warning.png",
+				text = "Can be used again in " + ::MSU.Text.colorNegative(remainingCooldown) + ::Reforged.Mod.Tooltips.parseString(" [round(s)|Concept.Round]"),
+			});
+		}
+		else
+		{
+			if (this.m.HD_Cooldown == 1)
+			{
+				ret.push({
+					id = 42,
+					type = "text",
+					icon = "ui/icons/action_points.png",
+					text = ::Reforged.Mod.Tooltips.parseString("Can only be used once per [round(s)|Concept.Round]"),
+				});
+			}
+			else if (this.m.HD_Cooldown > 1)
+			{
+				ret.push({
+					id = 42,
+					type = "text",
+					icon = "ui/icons/action_points.png",
+					text = "Can only be used once every " + ::MSU.Text.colorNegative(this.m.HD_Cooldown) + ::Reforged.Mod.Tooltips.parseString(" [rounds|Concept.Round]"),
+				});
+			}
+		}
+
+		return ret;
+	}
+
+	q.isUsable = @(__original) function()
+	{
+		return !this.isOnCooldown() && __original();
+	}
+
 	q.onAdded = @(__original) function()
 	{
 		__original();
@@ -224,6 +277,8 @@
 
 	q.onUse = @(__original) function( _user, _targetTile )
 	{
+		this.m.HD_RoundLastUsed = ::Time.getRound();	// Imprint the last round in which this skill was used for the cooldown framework
+
 		local isRootSkill = (::Hardened.Temp.RootSkillCounter == null);
 		if (isRootSkill) ::Hardened.Temp.RootSkillCounter = ::Const.SkillCounter;	// Our execution is the beginning of a new chain. It was not the result of another skills delayed execution
 
