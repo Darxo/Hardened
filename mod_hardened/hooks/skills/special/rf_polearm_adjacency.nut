@@ -46,4 +46,18 @@
 
 		return ret;
 	}
+
+	// Overwrite, because we slighty shorten the text and adjust it to how crowded works under Hardened
+	q.onQueryTooltip = @() function( _skill, _tooltip )
+	{
+		if (this.isEnabled() && this.isEnabledForSkill(_skill))
+		{
+			_tooltip.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Reduced [chance to hit|Concept.Hitchance] when [crowded|Skill+rf_polearm_adjacency]"),
+			});
+		}
+	}
 });
