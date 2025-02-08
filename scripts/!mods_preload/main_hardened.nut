@@ -7,6 +7,7 @@
 		RootSkillCounter = null,	// This variable will have the SkillCounter of the root skills during the execution of any skill executions and delayed executions
 	},
 	Const = {},
+	Global = {},
 }
 
 ::Hardened.HooksMod <- ::Hooks.register(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
