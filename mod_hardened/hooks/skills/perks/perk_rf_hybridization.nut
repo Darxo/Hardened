@@ -1,10 +1,11 @@
-::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_hybridization", function(q) {
+::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_hybridization", function(q) {	// This has been renamed into "Toolbox"
 	q.m.ThrowingSpearShieldDamageMult <- 1.5;
 
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.RangedSkillToMeleeMult = 0.15;	// In Reforged this is 0.10
+		this.m.RangedSkillToMeleeMult = 0.0;	// In Reforged this is 0.1
+		this.m.MeleeSkillToRangedMult = 0.0;	// In Reforged this is 0.2
 	}
 
 	// Overwrite because we no longer grant melee defense
@@ -28,6 +29,15 @@
 		this.applyHitEffect(_skill, _targetEntity, _bodyPart)
 	}
 
+	q.onTargetMissed = @(__original) function( _skill, _targetEntity )
+	{
+		__original(_skill, _targetEntity);
+		if (_skill.getDamageType().contains(::Const.Damage.DamageType.Cutting))
+		{
+			_targetEntity.getSkills().add(::new("scripts/skills/effects/overwhelmed_effect"));
+		}
+	}
+
 	q.onTurnStart = @(__original) function()
 	{
 		__original();
@@ -35,11 +45,6 @@
 	}
 
 // Reforged Functions
-	q.getRangedBonus = @() function()
-	{
-		return 0;	// This skill no longer provides Ranged Skill
-	}
-
 	// Overwrite because reforge has a small bug. But fixing that buf in reforged introduces a bigger issue
 	q.isSkillValid = @() function( _skill )
 	{

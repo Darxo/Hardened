@@ -755,16 +755,16 @@ local adjustedDescriptions = [
 	},
 	{
 		ID = "perk.rf_hybridization",
-		Key = "RF_Hybridization",
+		Key = "RF_Hybridization",	// This is now called "Toolbox"
 		Description = ::UPD.getDescription({
-			Fluff = "\'Hatchet, throwing axe, spear, javelin... they all kill just the same!\'",
+			Fluff = "Every tool has its use.",
+			Requirement = "Throwing Weapon",
 			Effects = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Gain " + ::MSU.Text.colorPositive("15%") + " of your Base [Ranged Skill|Concept.RangeSkill] as additional [Melee Skill|Concept.MeleeSkill]",
 						"Piercing type throwing attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body",
-						"Cutting type throwing attacks apply [Overwhelmed|Skill+overwhelmed_effect] on a hit",
+						"Cutting type throwing attacks apply [Overwhelmed|Skill+overwhelmed_effect]",
 						"Headshots with blunt type throwing attacks apply [Staggered.|Skill+staggered_effect] All hits with blunt type throwing attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
 						"[Throwing Spears|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(1.5) + " damage to shields",
 					],
@@ -1234,6 +1234,9 @@ foreach (description in adjustedDescriptions)
 
 ::Const.Strings.PerkName.RF_DeepImpact = "Breakthrough";
 ::Const.Perks.findById("perk.rf_deep_impact").Name = ::Const.Strings.PerkName.RF_DeepImpact;
+
+::Const.Strings.PerkName.RF_Hybridization = "Toolbox";
+::Const.Perks.findById("perk.rf_hybridization").Name = ::Const.Strings.PerkName.RF_Hybridization;
 
 ::Const.Strings.PerkName.RF_Poise = "Flexible";
 ::Const.Perks.findById("perk.rf_poise").Name = ::Const.Strings.PerkName.RF_Poise;

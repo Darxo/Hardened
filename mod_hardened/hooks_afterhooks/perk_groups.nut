@@ -104,6 +104,11 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		::DynamicPerks.PerkGroups.add(::new("scripts/mods/mod_hardened/perk_groups/special/pg_special_hd_tactician"));		// We introduce our own special Tactician Group
 	}
 
+	{	// Throwing Group
+		local pgThrowingPerkGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_throwing");
+		changePerkTier(pgThrowingPerkGroup, "perk.rf_hybridization", 2);		// Move Hybridization (now Toolbox) to tier 2 (down from Tier 3)
+	}
+
 	{	// Trained Group
 		local pgTrainedGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_trained");
 		changePerkTier(pgTrainedGroup, "perk.quick_hands", 1);			// Move Quickhands down to the lowest tier
