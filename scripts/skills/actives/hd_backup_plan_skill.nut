@@ -5,7 +5,7 @@ this.hd_backup_plan_skill <- this.inherit("scripts/skills/skill", {
 
 		// Private
 		IsSpent = false,	// This skill can only be used once per combat
-		IsEffectActive = false,	// This skill will apply a debuff for the rest of this turn, controlled by flag
+		IsEffectActive = false,	// This skill will apply a debuff for the rest of this turn, controlled by this flag
 	},
 	function create()
 	{
@@ -76,7 +76,7 @@ this.hd_backup_plan_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.m.IsEffectActive && this.getContainer().getActor().isActiveEntity())
 		{
-			this.setAllAttacks(false);
+			this.setSkillsIsUsable(false, function(_skill) {return _skill.isAttack()});
 		}
 	}
 
@@ -100,7 +100,7 @@ this.hd_backup_plan_skill <- this.inherit("scripts/skills/skill", {
 		if (this.m.IsEffectActive)
 		{
 			this.m.IsEffectActive = false;
-			this.setAllAttacks(true);
+			this.setSkillsIsUsable(true, function(_skill) {return _skill.isAttack()});
 		}
 	}
 
@@ -109,7 +109,7 @@ this.hd_backup_plan_skill <- this.inherit("scripts/skills/skill", {
 		if (this.m.IsEffectActive)
 		{
 			this.m.IsEffectActive = false;
-			this.setAllAttacks(true);
+			this.setSkillsIsUsable(true, function(_skill) {return _skill.isAttack()});
 		}
 		this.m.IsSpent = false;
 	}
@@ -125,29 +125,6 @@ this.hd_backup_plan_skill <- this.inherit("scripts/skills/skill", {
 				icon = "ui/icons/warning.png",
 				text = ::Reforged.Mod.Tooltips.parseString("Cannot be used because of " + ::Reforged.NestedTooltips.getNestedSkillName(this)),
 			});
-		}
-	}
-
-// New Function
-	function setAllAttacks( _enabled )
-	{
-		local changeHappened = false;
-		// Reduce fatigue cost of all spear attacks
-		foreach (skill in this.getContainer().m.Skills)
-		{
-			if (skill.isAttack())
-			{
-				if (skill.m.IsUsable != _enabled)
-				{
-					changeHappened = true;
-					skill.m.IsUsable = _enabled;
-				}
-			}
-		}
-
-		if (changeHappened)	// Otherwise during the onUpdate loop we would constantly update the UI
-		{
-			this.getContainer().getActor().setDirty(true);	// Update the UI so that enable/disable status is visible instantly
 		}
 	}
 });
