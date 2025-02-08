@@ -8,6 +8,39 @@
 		this.getSkills().add(::new("scripts/skills/special/hd_direct_damage_limiter"));
 	}
 
+	// Vanilla Fix: We prevent a dying NPC from flipping the setLastCombatResult, unless they were the last enemy to die
+	// This prevents a bug in the Sunken Library, where the player wins if his last brother dies from a Flying Skull detonation
+	// The issue in Vanilla is that the Skull dies first, within its Kill function the player dies
+	// but the last thing happening is the skull registering its death for setLastCombatResult, making this a player win
+	q.kill = @(__original) function( _killer = null, _skill = null, _fatalityType = ::Const.FatalityType.None, _silent = false )
+	{
+		if (this.isPlayerControlled())	// We are only interested in non-player deaths
+		{
+			return __original(_killer, _skill, _fatalityType, _silent);
+		}
+
+		// We allow nachzehrer to consider swalling even if that is the last enemy they know of by tricking vanilla in always thinking there are 2 known enemies in this situation
+		local mockObject = ::Hardened.mockFunction(::Tactical.State, "isAutoRetreat", function() {
+			if (::Hardened.getFunctionCaller(1) == "kill")	// 1 as argument because within mockFunctions, there is an additional function inbetween us and our caller
+			{
+				return { value = true };		// The only important thing here is that the returned array has more than 1 element
+			}
+		});
+
+		__original(_killer, _skill, _fatalityType, _silent);
+		mockObject.cleanup();	// We clean up our mock function now
+
+		// If a kill happens within a kill (e.g. Flying Skull kills another Flying Skull), then multiple Mocks happen
+		//  and only the root kill caller, gets an honest read on "isAutoRetreat". Only he is able to actually setLastCombatResult correctly
+		if (!::Tactical.State.isAutoRetreat())
+		{
+			if (::Tactical.Entities.getHostilesNum() == 0)	// If not all enemies have died yet, we don't want to draw conclusions too early so we revert back to the previous state
+			{
+				::Tactical.Entities.setLastCombatResult(::Const.Tactical.CombatResult.EnemyDestroyed);
+			}
+		}
+	}
+
 	q.wait = @(__original) function()
 	{
 		__original();
