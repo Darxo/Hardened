@@ -7,23 +7,24 @@
 		local distanceCutoff = ::Hardened.Mod.ModSettings.getSetting("DistanceForLocationName").getValue();
 		if (distanceCutoff <= 0) return;	// Setting this to 0 will save a lot of performance if the player does not want this feature.
 
-		local allowedLocationTypes = 0;
-		if (::Hardened.Mod.ModSettings.getSetting("DisplayCampLocationsNames").getValue()) allowedLocationTypes += ::Const.World.LocationType.Lair;
-		if (::Hardened.Mod.ModSettings.getSetting("DisplayUniqueLocationsNames").getValue()) allowedLocationTypes += ::Const.World.LocationType.Unique;
-		if (::Hardened.Mod.ModSettings.getSetting("DisplayAttachedLocationNames").getValue()) allowedLocationTypes += ::Const.World.LocationType.AttachedLocation;
+		local allAdditionalType = ::Const.World.LocationType.Lair | ::Const.World.LocationType.Unique | ::Const.World.LocationType.AttachedLocation;
+		local locationTypesToDisplay = 0;
+		if (::Hardened.Mod.ModSettings.getSetting("DisplayCampLocationsNames").getValue()) locationTypesToDisplay += ::Const.World.LocationType.Lair;
+		if (::Hardened.Mod.ModSettings.getSetting("DisplayUniqueLocationsNames").getValue()) locationTypesToDisplay += ::Const.World.LocationType.Unique;
+		if (::Hardened.Mod.ModSettings.getSetting("DisplayAttachedLocationNames").getValue()) locationTypesToDisplay += ::Const.World.LocationType.AttachedLocation;
 
 		foreach (location in ::World.EntityManager.getLocations())
 		{
-			if (!location.isLocationType(allowedLocationTypes)) continue;
+			if (!location.isLocationType(allAdditionalType)) continue;
 
-			if (playerTile.getDistanceTo(location.getTile()) <= distanceCutoff)
+			if (location.isLocationType(locationTypesToDisplay) && playerTile.getDistanceTo(location.getTile()) <= distanceCutoff)
 			{
 				location.m.TemporarilyShowingName = true;
 				location.setShowName(true);
 			}
 			else
 			{
-				if (location.m.TemporarilyShowingName == true)
+				if (location.m.TemporarilyShowingName)
 				{
 					location.m.TemporarilyShowingName = false;
 					location.setShowName(false);
