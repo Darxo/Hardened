@@ -32,7 +32,7 @@
 	q.onTargetMissed = @(__original) function( _skill, _targetEntity )
 	{
 		__original(_skill, _targetEntity);
-		if (_skill.getDamageType().contains(::Const.Damage.DamageType.Cutting))
+		if (_targetEntity.isAlive() && this.isSkillValid(_skill) && _skill.getDamageType().contains(::Const.Damage.DamageType.Cutting))
 		{
 			_targetEntity.getSkills().add(::new("scripts/skills/effects/overwhelmed_effect"));
 		}
