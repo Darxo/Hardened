@@ -19,6 +19,9 @@
 		_properties.DamageTotalMult	*= this.m.DamageTotalMult;
 	}
 
+	// Overwrite to turn off Reforged onHit effects
+	q.onTargetHit = @() function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor ) {}
+
 	q.onTurnStart = @(__original) function()
 	{
 		__original();
