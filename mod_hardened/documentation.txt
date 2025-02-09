@@ -199,6 +199,10 @@ This will unbrick your end-of-combat screen, if it doesnt show
 - Give Bog Unhold split shield
 - Make Anticipation influence attacker with stuns to be more likely to attack
 
+0.26.2
+	- Fix freeze when fighting aganst nachzehrer
+	- Fix **Hybridization** applying overwhelmed on any slashing miss
+
 0.26.1
 	- Fix **Throwing Mastery** still applying reforged on hit effects
 	- Fix skills without cooldowns being affected by cooldowns in the next fight
