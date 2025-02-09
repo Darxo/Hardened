@@ -199,6 +199,11 @@ This will unbrick your end-of-combat screen, if it doesnt show
 - Give Bog Unhold split shield
 - Make Anticipation influence attacker with stuns to be more likely to attack
 
+0.26.1
+	- Fix **Throwing Mastery** still applying reforged on hit effects
+	- Fix skills without cooldowns being affected by cooldowns in the next fight
+	- Improve logic for isActiveEntity function
+
 0.26.0
 	- **Hybridization** is now called **Toolbox**. It is now Tier 2 (down from Tier 3). It now requires a Throwing Weapon and no longer grants 15% of Ranged Skill as extra Melee Skill. Throwing Axes now always overwhelm, even on a miss
 	- Being rallied no longer prevents a character from using **Rally the Troops** themselves
