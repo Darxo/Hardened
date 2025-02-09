@@ -275,6 +275,12 @@
 		this.getContainer().onOtherSkillAdded(this);
 	}
 
+	q.onCombatFinished = @(__original) function()
+	{
+		__original();
+		this.m.HD_RoundLastUsed = null;
+	}
+
 	q.onUse = @(__original) function( _user, _targetTile )
 	{
 		this.m.HD_RoundLastUsed = ::Time.getRound();	// Imprint the last round in which this skill was used for the cooldown framework
