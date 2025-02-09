@@ -102,7 +102,7 @@
 	/// @return false otherwise
 	q.isActiveEntity <- function()
 	{
-		return ::MSU.Utils.hasState("tactical_state") && ::Tactical.TurnSequenceBar.isActiveEntity(this);
+		return ::Tactical.isActive() && ::MSU.Utils.hasState("tactical_state") && ::Tactical.TurnSequenceBar.isActiveEntity(this);
 	}
 
 	/*
