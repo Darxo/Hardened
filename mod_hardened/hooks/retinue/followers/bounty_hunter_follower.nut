@@ -5,7 +5,7 @@
 	{
 		__original();
 		this.m.Cost = 2500;	// In Vanila this is 4000
-		this.m.Effects[0] = "Enemies have " + ::MSU.Text.colorizeValue(this.m.ChampionChanceAdditional, {AddSign = true, AddPercent = true}) + " Chance to become a Champion";
+		this.m.Effects[0] = "Enemies have +" + this.m.ChampionChanceAdditional + "% Chance to become a Champion";
 		this.m.Effects.remove(1);	// Remove mention of the money for champion kills effect
 	}
 

@@ -5,8 +5,8 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Effects[0] = "Travel " + ::MSU.Text.colorizeMult(this.m.TerrainTypeSpeedMult) + " faster through Forests and Swamps";
-		this.m.Effects.insert(1, ::MSU.Text.colorizeMultWithText(this.m.TerrainTypeVisionMult) + " Vision while on a Hill or Mountain");
+		this.m.Effects[0] = "Travel " + this.m.TerrainTypeSpeedMult + "% faster through Forests and Swamps";
+		this.m.Effects.insert(1, this.m.TerrainTypeVisionMult + "% more Vision while on a Hill or Mountain");
 	}
 
 	// Overwrite because we replace the original movement speed effect
