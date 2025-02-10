@@ -1,4 +1,31 @@
 ::Hardened.HooksMod.hook("scripts/states/world/asset_manager", function(q) {
+	q.addBusinessReputation = @(__original) function( _f )
+	{
+		__original(_f);
+
+		if (_f == 0) return;
+
+		local activeScreen = null;
+		if(::World.Contracts.getActiveContract() != null)
+		{
+			activeScreen = ::World.Contracts.getActiveContract().m.ActiveScreen;
+		}
+		else if(::World.Events.m.ActiveEvent != null)
+		{
+			activeScreen = ::World.Events.m.ActiveEvent.m.ActiveScreen;
+		}
+
+		if (activeScreen != null)
+		{
+			// We push a notification about the just gained renown into the current contract screen list, so the player has accurate information about it
+			activeScreen.List.push({
+				id = 30,
+				icon = "ui/icons/ambition_tooltip.png",
+				text = format("You %s %s Renown", _f > 0 ? "gain" : "lose", ::MSU.Text.colorizeValue(::Math.round(_f))),
+			});
+		}
+	}
+
 	q.checkDesertion = @(__original) function()
 	{
 		__original();
