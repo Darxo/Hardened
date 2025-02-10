@@ -2,12 +2,12 @@
 	q.createStates = @(__original) function()
 	{
 		__original();
-		foreach (screen in this.m.States)
+		foreach (state in this.m.States)
 		{
-			if (screen.ID == "Running")
+			if (state.ID == "Running")
 			{
-				local oldOnRetreatedFromCombat = screen.onRetreatedFromCombat;
-				screen.onRetreatedFromCombat = function( _combatID )
+				local oldOnRetreatedFromCombat = state.onRetreatedFromCombat;
+				state.onRetreatedFromCombat = function( _combatID )
 				{
 					// Pressing the cancel button in combat dialogs no longer stuns enemies in Hardened
 					// But that means fleeing from caravan contracts instantly allows the attacker to engage the player again
