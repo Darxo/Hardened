@@ -1,4 +1,3 @@
-// T1 Balanced Bandit
 ::Hardened.HooksMod.hook("scripts/entity/tactical/humans/barbarian_thrall", function(q) {
 	q.assignRandomEquipment = @(__original) function()
 	{
@@ -13,5 +12,15 @@
 			[1, "scripts/items/weapons/javelin"],
 		]).roll();
 		::Hardened.util.replaceBagItem(this, throwingWeapon, ["weapon.javelin"]);
+	}
+
+	q.onSpawned = @(__original) function()
+	{
+		__original();
+		// Replace Survival Instinct with Base Defense to reduce bloat
+		this.getSkills().removeByID("perk.rf_survival_instinct");
+		local b = this.m.BaseProperties;
+		b.MeleeDefense += 5;
+		b.RangedDefense += 5;
 	}
 });
