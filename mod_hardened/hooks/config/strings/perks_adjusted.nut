@@ -854,6 +854,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_long_reach",
+		Key = "RF_LongReach",
+		Description = ::UPD.getDescription({
+			Fluff = "\'If the target is watchin\' the head of yer pike, they\'re sure not watchin\' their back!\'",
+			Requirement = "Polearm",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"You also [surround|Concept.Surrounding] enemies at a distance of 2 tiles",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_king_of_all_weapons",
 		Key = "RF_KingOfAllWeapons",		// Current name is 'Spear Flurry'
 		Description = ::UPD.getDescription({
