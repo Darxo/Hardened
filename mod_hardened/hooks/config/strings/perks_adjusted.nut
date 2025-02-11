@@ -91,7 +91,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"For each empty adjacent tile, gain " + ::MSU.Text.colorPositive("4%") + " of your current [Initiative|Concept.Initiative] as a bonus to [Melee Defense|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense]",
+					"For each empty adjacent tile, gain " + ::MSU.Text.colorPositive("5%") + " of your current [Initiative|Concept.Initiative] as a bonus to [Melee Defense|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense]",
 				],
 			}],
 		}),

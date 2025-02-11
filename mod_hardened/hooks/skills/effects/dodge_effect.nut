@@ -1,6 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/effects/dodge_effect", function(q) {
 	q.m.BaseFraction <- 0.00;
-	q.m.FractionPerEmptyTile <- 0.04;
+	q.m.FractionPerEmptyTile <- 0.05;
 
 	q.create = @(__original) function()
 	{
