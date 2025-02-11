@@ -2,6 +2,12 @@
 	// Public
 	q.m.RangedDefenseModifier <- -5;
 
+	q.create = @(__original) function()
+	{
+		__original();
+		this.removeWeaponType(::Const.Items.WeaponType.Spear);
+	}
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
