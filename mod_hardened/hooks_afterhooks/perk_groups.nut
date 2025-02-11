@@ -73,6 +73,15 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		changePerkTier(pgPolearmGroup, "perk.rf_leverage", 6);		// Move "Leverage" to Tier 6 (up from Tier 3)
 	}
 
+	{	// Power (2H) Combat
+		local pgPowerGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_power");
+		// Revert the merger with Polearm Perks
+		pgPowerGroup.removePerk("perk.rf_leverage");
+		pgPowerGroup.removePerk("perk.mastery.polearm");
+		pgPowerGroup.removePerk("perk.rf_long_reach");
+		pgPowerGroup.addPerk("perk.rotation", 3);	// Add Rotation to Tier 3
+	}
+
 	{	// Ranged Combat
 		local pgRangedGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_ranged");
 		pgRangedGroup.addPerk("perk.rf_through_the_ranks", 1);	// Add Through the Ranks (Scout) into the Tier 1
