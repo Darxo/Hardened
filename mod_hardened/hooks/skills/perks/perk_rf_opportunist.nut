@@ -84,11 +84,14 @@
 
 	q.onMovementStarted = @() function( _tile, _numTiles )
 	{
-		if (this.getContainer().getActor().isActiveEntity()) this.m.TilesMovedThisTurn += _numTiles;
-
-		if (_numTiles == 0)	// This is an indicator, that we were "teleported", instead of having moved naturally
+		if (this.getContainer().getActor().isActiveEntity())
 		{
-			this.m.PrevTile = _tile;
+			this.m.TilesMovedThisTurn += _numTiles;
+
+			if (_numTiles == 0)	// This is an indicator, that we were "teleported", instead of having moved naturally
+			{
+				this.m.PrevTile = _tile;
+			}
 		}
 	}
 
@@ -96,8 +99,7 @@
 	{
 		if (this.m.PrevTile != null)
 		{
-			if (this.getContainer().getActor().isActiveEntity()) this.m.TilesMovedThisTurn += _tile.getDistanceTo(this.m.PrevTile);
-
+			this.m.TilesMovedThisTurn += _tile.getDistanceTo(this.m.PrevTile);
 			this.m.PrevTile = null;
 		}
 	}
