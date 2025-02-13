@@ -17,7 +17,12 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Is safe to remove from- and add to any existing savegames
 
 # Future Plans:
+- Skip the Defeat-Screen when retiring a run on day 1 (mostly relveant for rolling ironman seeds)
+- Improve documentation for Surround Concept
+- Use the overworld name-plate tech to display modifiers (hitpoints, armor) during camping?
 - Hide information about enemy composition on the battle field
+	- Might not be realistic because unknown enemies still show up in the turn Order
+		- Hiding them in the turnorder might not be 100% perfect. One could estimate by what little tid-bits happen during/after brother turns happen
 - certain unholds/high end orcs being able to throw their own allies behind their back in order to advance into tight spaces
 - change handgonne aoe pattern in some directions to a triangle
 - Rebalance SpiderEgg hunting? Give them Loot?
@@ -55,8 +60,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 		- This function will look at the targeted entities surrounding to evaluate this
 			- e.g. are they an axe wielder near shield users?
 			- are they a hammer user next to characters with no armor left?
-		- An archer who is in melee is not a huge amount of danger but might still have a lot of "worth" to us, if he is high level or the only enemy archer
-- understand MSU cost prediction and apply it for reworked Leverage
+		- An archer who is in melee is not a huge amount of danger but might still have a lot of "worth" to us, if he is high level or the only enemy arche
 - make it so multiple NPC bannerman dont stick together and spread out
 - improve visibility during night (overlay night color). Instead the A moon could be visible in the top middle
 - Custom Names on enemy Leader and Champions is cool and flavorful, but it gets increasingly confusing as it makes it much harder to identify them correctly. What their base troop is.
@@ -108,7 +112,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- Raise minimum sell price of condition gear to 50%? This would reduce the profit from tool repairs by half
 - move death dealer over to powerful strikes group. its more fitting there and that group could use a sixth perk
 	- however then the agile tree is a bit lacking
-- change cover ally to debuff the targets melee skill and melee defense, to make it harder to use offensively
 - Make Wiki Page specifically noting "Cheese" strategies from Vanilla that are patched out
 	- T3 nacho swallowing bro
 	- perma stunning enemies
@@ -126,10 +129,19 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Reduce enemies with Survival Instinct
 - Raise fatigue cost of high tier two-handed weapons beyond 15 again
 - Clean up Readme section "For Modder": add default values consitently; add new subsubsections "New Events", "General Decisions"
+- Scan map for situations where a hill would prevent clear view (2/3 level tile in front of 0 level tile). When enemy is hiding there, do some smart camera adjustment on turn start
+- Reload disorientation AI
+- add small delay after new round, before reanimation begines (100ms) so that new-round effects are more visible
+- Give Bog Unhold split shield
+- Make Anticipation influence attacker with stuns to be more likely to attack
 
 ## Perks Review/Rework
+- change cover ally to debuff the targets melee skill and melee defense, to make it harder to use offensively
+	- Make Cover Ally give +50 Initiative
+	- Look into the cover ally rework in the past (guardian perk)
+- Crossbow Mastery
+	- Swap Crossbow with Shield for free once per turn
 - Relentless: misses dont build up fatigue on you while waiting
-- switch leverage with long reach
 - change Rising Star to only gain exp until lvl 12 and grant the two perks always at level 12
 These Perks (top = higher prio) im still unhappy with and eventually want to adjust
 - Feral Rage
@@ -157,7 +169,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - orc slayer / crusader events, make them cost 5k crowns each to hire those guys
 
 ## Test:
-- Does reload disorientation apply to the currently fired bolt if used too quick?
 
 ## AI
 - make it so enemies are less likely to remove the net if it doesnt affect them (e.g. Orcs)
@@ -169,7 +180,9 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Make someone with **Crowded** less likely to be targeted by displacement skills (knock back/repel). That would only help those
 
 ## Fix:
-- Fix Vig assault over in Reforged (use same logic as Opportunist)
+- Change Fruits of Labor description to Stamina instead of Maximum Fatigue
+- ASset Supplies not being red anymore. Mabyie I can teach .js that anything that starts with 0 means red
+- Fix contract cheese, where saving/loading instantly reveals destination via event?
 - dog ai too fast, not realizing reanimating zombies and dying to ZOC hits
 - remove double ammo from towns, spawned by fletcher (as fletcher sells its own ammo)
 - Vanilly Pasting pasting way too many times. I could use a variable thats turned on on pressing and turned off on releasing the paste combination
@@ -191,13 +204,48 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
-# Current Todo:
+# Vanilla Bug report
+	/// How well are we seen by other entities?
+	/// This function is never actually used. Instead this.m.VisibilityMult is accessed directly. So this calculation here is redundant
+	function getVisibilityMult()
+	{
+		return this.World.Assets.isCamping() ? this.m.VisibilityMult * (this.World.getTime().IsDaytime ? 2.0 : 4.0) : this.m.VisibilityMult;
+	}
 
-- Display Renown gained from Contracts in the reward screen of contracts alongside the money
-- Reload disorientation AI
-- add small delay after new round, before reanimation begines (100ms) so that new-round effects are more visible
-- Give Bog Unhold split shield
-- Make Anticipation influence attacker with stuns to be more likely to attack
+# Report Vanilla bug
+
+Sometimes during zombie fights, when they reanimate while in fog of war, I get some error
+			else
+			{
+				this.Tactical.CameraDirector.pushIdleEvent(0, this.onResurrect.bindenv(this), _info, 200, this.Const.Tactical.Settings.CameraNextEventDelay);
+				this.Tactical.CameraDirector.addDelay(0.2);
+			}
+
+# WIP
+
+- Black Monolith only during night
+this.World.Events.fire("event.drunk_nobleman")
+
+0.27.0
+	- **Dodge** now grants 5% of Initiative as additional Defense per empty tiles (up from 4%)
+	- **Combo** is reworked. It now reduces the cost of all skills you haven't used yet this turn by 1 Action Point, except the first skill you use each turn
+	- **Bone Breaker** is completely reworked. It now causes Armor Damage you deal to be treated as additional Hitpoint damage for the purpose of inflicting injuries
+	- **Underdog** is rewritten. It now grants +5 Melee Defense for every character surrounding you, except the first one. Compared to the vanilla implementation this defense is now affected by defense multiplier and by the softcap for defense
+	- **Backstabber** is rewritten. It now grants +5% Hitchance per character surrounding your target, except the first one. It now also affects ranged attacks
+	- **Vigorous Assault** now counts tiles moved more accurately
+	- **Opportunist** now correctly predicts the discount when previewing movement
+	- **Leverage** now correctly predicts the discount when previewing movement
+	- **Bone Breaker** is now a Tier 5 perk (down from Tier 7)
+	- **Barbarian Thralls** no longer have **Survival Instinct**. They now have +5 Melee Defense and +5 Ranged Defense
+	- **Barbarian Drummer** no longer have **Survival Instinct**. They now have +10 Melee Defense and +10 Ranged Defense
+	- Wardogs and Warhounds now have 5 Vision (down from 7)
+	- List most changes to Relation and Renown during Events and Contracts
+	- List the effects of camping in the camping tooltip
+	- Fix Contract buttons not being pressable for 1 second after you opened them
+	- Fix **Reload Disorientation** not showing the tooltip correctly
+	- Headless **Fallen Heroes** now use **Zombie Punch** instead of **Bite**
+	- Remove unsupported color codes in bounty hunter and scout descriptions
+	- Remove redundant tooltip line in bounty hunter description
 
 0.26.2
 	- Fix freeze when fighting aganst nachzehrer

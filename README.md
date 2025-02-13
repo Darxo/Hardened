@@ -159,6 +159,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Angler** no longer increases the cost of **Break Free** on the target. It now increases the maximum range of **Throw Net** by 1 and it staggers every character that you net. **Net Pull** now has a Range of 3 (up from 2)
 - **Anticipation** now also proccs whenever your shield takes damage from an attack
 - **Axe Mastery** no longer grants **Hook Shield**. It now causes **Split Shield** to apply **Dazed** for 1 turn
+- **Backstabber** is rewritten. It now grants +5% Hitchance per character surrounding your target, except the first one. It now also affects ranged attacks
 - **Bags and Belts** now also includes two-handed weapons but no longer grants Initiative
 - **Battle Forged** no longer has any prerequisites. It no longer provide any Reach Ignore
 - **Bear Down** (granted by **Mace Mastery**) is completely reworked. It now causes every headshot to daze the target for 1 turn, or increase the duration of an existing daze by 1 turn
@@ -167,16 +168,18 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Blitzkrieg** now costs 9 Action Points (up from 7), 50 Fatigue (up from 30), no longer requires 10 usable fatigue on the targets. It no longer has a shared cooldown. It is now limited to being used once per battle instead of once per day
 - **Bloodlust** (granted by **Cleaver Mastery**) is completely reworked. It now grants 10% more damage against bleeding enemies and makes you receive 10% less damage from bleeding enemies
 - **Bolster** (granted by **Polearm Mastery**) now requires a Polearm equipped, instead of any weapon with a Reach of 6 or more
+- **Bone Breaker** is completely reworked. It now causes Armor Damage you deal to be treated as additional Hitpoint damage for the purpose of inflicting injuries
 - **Bullseye** no longer reduces the penalty for shooting behind cover. It also no longer works with **Take Aim**. It now provides 25% Armor Penetration (up from 20%)
 - **Brawny** no longer grants Initiative
 - **Colossus** now grants +15 Hitpoints, instead of 25% more Hitpoints
+- **Combo** is reworked. It now reduces the cost of all skills you haven't used yet this turn by 1 Action Point, except the first skill you use each turn
 - **Concussive strikes** is completely reworked. It is now called **Shockwave** and it makes it so your kills or stuns with maces will daze all enemies adjacent to your target for 1 turn
 - **Crossbow Mastery** now grants +1 Vision while you wear a Helmet with a Vision Penalty
 - **Dagger Mastery** no longer grant any reach ignore. It now reduces the action point cost of the first offhand skill each turn to 0, if your offhand item has a weight lower than 10
 - **Deep Impact** is now called **Breakthrough** and has been completely reworked. It grants the **Pummel** skill, which can now be used with any hammer. It also makes it so **Shatter** has a 100% chance to knock targets back on a hit
 - **Dismantle** has been completely reworked. It now grants +40% Armor Damage and 100% more Shield Damage against enemies who have full health.
 - **Dismemberment** no longer causes any morale checks. It now grants +20% chance to hit the body part with the most temporary injuries
-- **Dodge** now grants 4% of Initiative as extra Melee Defense and Ranged Defense for every empty adjacent tile (down from always 15%)
+- **Dodge** now grants 5% of Initiative as extra Melee Defense and Ranged Defense for every empty adjacent tile (down from always 15%)
 - **Double Strike** damage bonus is no longer lost when you swap weapons
 - **Duelist** is completely reworked. It now only works for one-handed weapons. It grants 30% Armor Penetration and +2 Reach while adjacent to 0 or 1 enemies and it grants 15% Armor Penetration and +1 Reach while adjacent to 2 enemies
 - **Dynamic Duo** no longer grants Melee Skill or Melee Defense
@@ -224,6 +227,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Through the Gaps** is now always active but. It now lowers your armor penetration by 10% (down from increasing it by 10%)
 - **Throwing Mastery** is mostly completely reworked. It now grants 30% more damage for your first throwing attack each turn, no matter the range. It now allows swapping a throwing weapon with an empty throwing weapon or empty slot for free, once per turn
 - **Trick Shooter** no longer causes your **Aimed Shot** to trigger a morale check on the main target hit
+- **Underdog** is rewritten. It now grants +5 Melee Defense for every character surrounding you, except the first one. Compared to the vanilla implementation this defense is now affected by defense multiplier and by the softcap for defense
 - **Unstoppable** no longer loses all Stacks when you use **Wait** if you spent at least half of your action points by that time
 - **Vigorous Assault** discount is no longer removed when switching items
 - **Weapon Master** no longer works with hybrid weapons. When you learn **Weapon Master** you now gain a new random weapon perk group
@@ -234,6 +238,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Perk Groups
 
 - **Bags and Belts** is now part of the **Light Armor** group instead of being available for everyone
+- **Bone Breaker** is now Tier 5 (down from Tier 7)
 - **Cheap Trick** is now Tier 1 (down from Tier 2)
 - **Colossus** is now also part of the **Wildling** perk group in Tier 1
 - **Deep Impact** (now **Breakthrough**) is now a T3 perk and **Rattle** (now **Full Force**) is now a T6 perk
@@ -338,6 +343,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Introduce a new **Headless** effect, which sets the headarmor to 0 and redirects any attack to hit the body and grants immunity to **Distracted**
 	- This effect is given to Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles
 	- Remove the now redundant perk **Steelbrow** from Ifrit, Sapling and Kraken Tentacle
+	- Wiederganger, which receive this effect, lose **Bite** and gain **Zombie Punch**, which is just a cosmetic change
 
 **Brigands:**
 - **Scoundrels** no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**. They now spawn with a **Knife** instead of **Dagger**/**Woodcutters Axe**
@@ -354,6 +360,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Killer** no longer spawn with **Scramasax**, **Pike**, **Spetum**, **Warbrand** or **Throwing Spear**. They now have 80 Ranged Skill (up from 70). They can no appear as Champions
 - **Brigand Leader** no longer have **Shield Expert**
 - **Hedge Knights** are now immune to **Disarm** as a result of them having **Savage Strength**
+- **Wargdogs** now have 5 Vision (down from 7)
 
 **Humans:**
 - Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop crowns, food or tools or a valueable ring.
@@ -380,9 +387,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Orc Warlords** now have **Savage Strength** which makes them immune to **Disarm**
 
 **Barbarian**
-- **Warhound** now has 100 Initiative (down from 110)
-- **Barbarian Thralls** now spawn twice as often with **Crude Javelins** and half as often with regular throwing weapons
-- **Barbarian Drummer** now have +1 Action Point and grant +150 Experience
+- **Warhounds** now have 100 Initiative (down from 110) and 5 Vision (down from 7)
+- **Barbarian Thralls**  no longer have **Survival Instinct** and now have +5 Melee Defense and +5 Ranged Defense. They now spawn twice as often with **Crude Javelins** and half as often with regular throwing weapons
+- **Barbarian Drummer** no longer have **Survival Instinct** and now have +10 Melee Defense and +10 Ranged Defense. They now have +1 Action Point and grant +150 Experience
 - **Barbarian Kings** now have **Savage Strength** which makes them immune to **Disarm**
 
 **Beasts:**
@@ -474,6 +481,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### World
 
+- List most changes to Relation and Renown during Events and Contracts
 - Settlements now display a tooltip showing how many days ago you last visited that location
 - The Tavern now displays to you how many rumors you received so far
 - Add new setting for displaying forbidden destination ports (even when they are hostile to you or the origin port)
@@ -487,6 +495,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Peasants and Caravans on the world map display a banner
 - Add new setting for displaying non-settlement location names of nearby locations (Lairs, Unique Locations, Attached Locations)
 - Brothers that "die" outside of combat (e.g. Events) will now always transfer their equipment into your stash
+- List the effects of camping in the camping tooltip
 - Add Setting for marking named/legendary helmets/armor or armor with attachements as to-be-repaired whenever it enters your inventory
 - Add settings to display food duration, repair duration and minimum medicine cost in brackets behind those supply values
 - Add 1 second delay, before you can click the buttons in event screens to prevent accidental missclicks
@@ -533,6 +542,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - **Calculated Strikes** now works against stunned enemies
 - **Cheap Trick** and **Retribution** now work with delayed skill executions (like Lunge or Aimed Shot)
+- **Vigorous Assault** now counts tiles moved more accurately
 
 ## For Modders
 
