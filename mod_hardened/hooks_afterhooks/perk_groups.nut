@@ -51,6 +51,11 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		::DynamicPerks.PerkGroups.add(::new("scripts/mods/mod_hardened/perk_groups/pg_hd_leadership"));		// We introduce our own non-special Leadership Group
 	}
 
+	{	// Mace Group
+		local pgMaceGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_mace");
+		changePerkTier(pgMaceGroup, "perk.rf_bone_breaker", 5);			// Move Bone Breaker from Tier 7 down to Tier 5
+	}
+
 	{	// Net Group
 		local pgNetGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_trapper");
 		changePerkTier(pgNetGroup, "perk.rf_angler", 2);			// Move Angler from Tier 3 down to Tier 2

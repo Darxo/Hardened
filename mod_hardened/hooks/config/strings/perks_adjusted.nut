@@ -536,6 +536,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_bone_breaker",
+		Key = "RF_BoneBreaker",
+		Description = ::UPD.getDescription({
+			Fluff = "Snap, crunch, crumble. Music to your ears!",
+			Requirement = "Mace Attack",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Armor Damage you deal is treated as additional Hitpoint damage for purpose of inflicting [injuries|Concept.InjuryTemporary]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_combo",
 		Key = "RF_Combo",
 		Description = ::UPD.getDescription({
