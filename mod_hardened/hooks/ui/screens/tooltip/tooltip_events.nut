@@ -77,6 +77,33 @@
 				break;
 			}
 
+			case "world-screen.topbar.options-module.CampButton":
+			{
+				ret.push({
+					id = 10,
+					type = "text",
+					icon = "ui/icons/vision.png",
+					text = ::MSU.Text.colorizeMultWithText(0.75) + " Vision",		// This is implemented in getVisionRadius() of player_party.nut
+				});
+				if (::World.Assets.m.CampingMult != 1.0)
+				{
+					ret.push({
+						id = 11,
+						type = "text",
+						icon = "ui/icons/asset_supplies.png",
+						text = ::MSU.Text.colorizeMultWithText(::World.Assets.m.CampingMult) + " Repair Speed",
+					});
+					ret.push({
+						id = 12,
+						type = "text",
+						icon = "ui/icons/health.png",
+						text = ::MSU.Text.colorizeMultWithText(::World.Assets.m.CampingMult) + " Hitpoint Recovery",
+					});
+				}
+
+				break;
+			}
+
 			case "assets.BusinessReputation":
 			{
 				if (::Hardened.Mod.ModSettings.getSetting("AlwaysDisplayRenownValue").getValue())
