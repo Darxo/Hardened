@@ -19,18 +19,25 @@
 
 	q.onAfterUpdate <- function( _properties )
 	{
-		if (this.m.IsSpent)
-			return;
+		if (this.m.IsSpent) return;
 
 		local actor = this.getContainer().getActor();
-		if (!actor.isPreviewing() || actor.getPreviewMovement() != null || !this.isSkillValid(actor.getPreviewSkill()))
+		// If we are previewing a skill, which would use up our Leverage charge, we stop applying this bonus
+		if (actor.isPreviewing() && actor.getPreviewSkill() != null && this.isSkillValid(actor.getPreviewSkill())) return;
+
+		local customOrigin = null;
+		if (actor.isPreviewing() && actor.getPreviewMovement() != null)
 		{
-			foreach (skill in this.getContainer().m.Skills)
+			// If we are previewing movement, we instead want the discount depending on the destination tile
+			customOrigin = actor.getPreviewMovement().End;
+		}
+		local actionPointModifier = this.getActionPointModifier(customOrigin);
+
+		foreach (skill in this.getContainer().m.Skills)
+		{
+			if (this.isSkillValid(skill))
 			{
-				if (this.isSkillValid(skill))
-				{
-					skill.m.ActionPointCost = ::Math.max(0, skill.m.ActionPointCost + this.getActionPointModifier());
-				}
+				skill.m.ActionPointCost = ::Math.max(0, skill.m.ActionPointCost + actionPointModifier);
 			}
 		}
 	}
@@ -62,15 +69,26 @@
 		return !::MSU.isNull(weapon) && weapon.isItemType(::Const.Items.ItemType.Weapon) && weapon.isWeaponType(::Const.Items.WeaponType.Polearm);
 	}
 
-	q.getActionPointModifier <- function()
+	/// @param _pointOfOrigin custom tile position for which we calculate the action point modifier for
+	/// 	If null, the position of this actor will be used instead
+	q.getActionPointModifier <- function( _pointOfOrigin = null )
 	{
 		local actor = this.getContainer().getActor();
-		if (!actor.isPlacedOnMap())
+		if (_pointOfOrigin == null)
 		{
-			return 0;
+			if (!actor.isPlacedOnMap()) return 0;
+			_pointOfOrigin = actor.getTile();
 		}
 
-		local adjacentAllies = ::Tactical.Entities.getAlliedActors(actor.getFaction(), actor.getTile(), 1, true).len();
-		return adjacentAllies * this.m.ActionPointModifierPerAlly;
+		local adjacentAllies = ::Tactical.Entities.getAlliedActors(actor.getFaction(), _pointOfOrigin, 1, true);
+		foreach (ally in adjacentAllies)
+		{
+			if (ally.getID() == actor.getID())	// During previewing we otherwise accidentally count ourselves
+			{
+				return (adjacentAllies.len() - 1) * this.m.ActionPointModifierPerAlly
+			}
+		}
+
+		return adjacentAllies.len() * this.m.ActionPointModifierPerAlly;
 	}
 });
