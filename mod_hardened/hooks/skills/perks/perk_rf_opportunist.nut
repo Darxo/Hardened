@@ -66,18 +66,23 @@
 
 	q.onAfterUpdate <- function( _properties )
 	{
-		if (this.isEnabled() && this.getActionPointModifier() != 0)
+		if (!this.isEnabled()) return;
+
+		local actor = this.getContainer().getActor();
+		// The effect of this skill expires upon using any skill, so we reflect that in the preview
+		if (actor.isPreviewing() && actor.getPreviewSkill() != null && this.isSkillValid(actor.getPreviewSkill())) return;
+
+		// QoL: If we preview movement, we pretend like the character actually moves those tiles for the purpose of calculating the new cost of all skills after the movement
+		local additionalPreviewDistance = actor.isPreviewing() && actor.getPreviewMovement() != null ? actor.getPreviewMovement().Tiles : 0;
+		local actionPointModifier = this.getActionPointModifier(this.m.TilesMovedThisTurn + additionalPreviewDistance);
+
+		if (actionPointModifier == 0) return;
+
+		foreach (skill in this.getContainer().m.Skills)
 		{
-			local actor = this.getContainer().getActor();
-			if (!actor.isPreviewing() || actor.getPreviewMovement() != null || !this.isSkillValid(actor.getPreviewSkill()))
+			if (this.isSkillValid(skill))
 			{
-				foreach (skill in this.getContainer().m.Skills)
-				{
-					if (this.isSkillValid(skill))
-					{
-						skill.m.ActionPointCost = ::Math.max(0, skill.m.ActionPointCost + this.getActionPointModifier());
-					}
-				}
+				skill.m.ActionPointCost = ::Math.max(0, skill.m.ActionPointCost + actionPointModifier);
 			}
 		}
 	}
@@ -147,8 +152,11 @@
 		return true;
 	}
 
-	q.getActionPointModifier <- function()
+	/// @param _tilesMoved custom amount of moves tiles for which we want to get the action point discount.
+	/// 	If null, this.m.TilesMovedThisTurn will be used instead
+	q.getActionPointModifier <- function( _tilesMoved = null )
 	{
-		return this.m.TilesMovedThisTurn * this.m.ActionPointModifierPerTile;
+		if (_tilesMoved == null) _tilesMoved = this.m.TilesMovedThisTurn;
+		return _tilesMoved * this.m.ActionPointModifierPerTile;
 	}
 });
