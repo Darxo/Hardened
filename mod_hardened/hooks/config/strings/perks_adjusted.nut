@@ -438,6 +438,19 @@ local adjustedDescriptions = [
 			Footer = ::MSU.Text.colorNegative("This perk cannot be refunded."),
 		}),
 	},
+	{
+		ID = "perk.underdog",
+		Key = "Underdog",
+		Description = ::UPD.getDescription({
+			Fluff = "I\'m used to it.",
+	 		Effects = [{
+ 				Type = ::UPD.EffectType.Passive,
+ 				Description = [
+					"Gain " + ::MSU.Text.colorPositive("+5") + " [Melee Defense|Concept.MeleeDefense] for every character [surrounding|Concept.Surrounding] you, except the first one",
+				],
+ 			}],
+	 	}),
+	},
 
 
 	// Reforged Perks
