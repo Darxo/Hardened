@@ -728,7 +728,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain a stacking " + ::MSU.Text.colorPositive("+10%") + " [chance to hit|Concept.Hitchance] whenever an opponent misses an attack against you",
+					"Gain a stacking " + ::MSU.Text.colorPositive("+10%") + " [Hitchance|Concept.Hitchance] whenever an opponent misses an attack against you",
 					"Bonus is reset upon landing a hit",
 				],
 			}],
