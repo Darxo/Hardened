@@ -17,6 +17,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.backstabber",
+		Key = "Backstabber",
+		Description = ::UPD.getDescription({
+			Fluff = "Honor doesn\'t win you fights, stabbing the enemy where it hurts does.",
+	 		Effects = [{
+ 				Type = ::UPD.EffectType.Passive,
+ 				Description = [
+					"Gain " + ::MSU.Text.colorPositive("+5%") + " [Hitchance|Concept.Hitchance] for every character [surrounding|Concept.Surrounding] your target, except the first one",
+				],
+ 			}],
+	 	}),
+	},
+	{
 		ID = "perk.bags_and_belts",
 		Key = "BagsAndBelts",
 		Description = ::UPD.getDescription({
