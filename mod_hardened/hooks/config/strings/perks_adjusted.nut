@@ -1175,7 +1175,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"For every 2 tiles moved, your next Attack costs " + ::MSU.Text.colorPositive(-1) + " [Action Point|Concept.ActionPoints] (to a minimum of " + ::MSU.Text.colorPositive(1) + ") and " + ::MSU.Text.colorPositive("10%") + " less [Fatigue|Concept.Fatigue]",
+					"For every 2 tiles moved during your [turn,|Concept.Turn] your next Attack costs " + ::MSU.Text.colorPositive(-1) + " [Action Point|Concept.ActionPoints] (to a minimum of " + ::MSU.Text.colorPositive(1) + ") and " + ::MSU.Text.colorPositive("10%") + " less [Fatigue|Concept.Fatigue]",
 					"The effect is lost when you use any skill, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
 				],
 			}],
