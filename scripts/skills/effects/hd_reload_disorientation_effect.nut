@@ -16,11 +16,11 @@ this.hd_reload_disorientation_effect <- ::inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local tooltip = this.skill.getTooltip();
+		local ret = this.skill.getTooltip();
 
 		if (this.m.RangedSkillModifier != 0)
 		{
-			tooltip.push({
+			ret.push({
 				id = 10,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
@@ -30,7 +30,7 @@ this.hd_reload_disorientation_effect <- ::inherit("scripts/skills/skill", {
 
 		if (this.m.RangedDefenseMult != 1.0)
 		{
-			tooltip.push({
+			ret.push({
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
@@ -45,7 +45,7 @@ this.hd_reload_disorientation_effect <- ::inherit("scripts/skills/skill", {
 			text = ::Reforged.Mod.Tooltips.parseString("Lasts until the start of your [turn|Concept.Turn]"),
 		});
 
-		return tooltip;
+		return ret;
 	}
 
 	function onUpdate( _properties )
