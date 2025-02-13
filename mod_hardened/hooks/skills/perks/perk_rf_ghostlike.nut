@@ -87,6 +87,7 @@
 		this.m.IsInEffect = false;
 	}
 
+// MSU Functions
 	q.onGetHitFactors <- function( _skill, _targetTile, _tooltip )
 	{
 		if (this.m.IsInEffect && !_targetTile.IsEmpty && _targetTile.IsOccupiedByActor && this.getContainer().getActor().getTile().getDistanceTo(_targetTile) <= 1)

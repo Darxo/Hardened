@@ -46,6 +46,8 @@
 	}
 
 	q.onAfterUpdate = @() function( _properties ) {}	// We no longer grant a discount to shieldwall
+
+// MSU Functions
 	// No longer display any hitfactor tooltips
 	q.onGetHitFactors = @() function(_skill, _targetTile, _tooltip) {}
 	q.onGetHitFactorsAsTarget = @() function(_skill, _targetTile, _tooltip) {}

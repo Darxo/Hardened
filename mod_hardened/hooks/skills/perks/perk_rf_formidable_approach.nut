@@ -85,6 +85,7 @@
 		}
 	}
 
+// MSU Functions
 	q.onGetHitFactors <- function( _skill, _targetTile, _tooltip )
 	{
 		if (this.requirementsMet() == false) return;

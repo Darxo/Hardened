@@ -12,5 +12,6 @@
 
 	// This perk no longer grants hitchance
 	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties ) {}
+// MSU Functions
 	q.onGetHitFactors = @() function( _skill, _targetTile, _tooltip ) {}
 });

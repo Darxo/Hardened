@@ -16,6 +16,7 @@
 		}
 	}
 
+// MSU Functions
 	// Overwrite because we are more restrictive
 	q.onGetHitFactors = @() function( _skill, _targetTile, _tooltip )
 	{
