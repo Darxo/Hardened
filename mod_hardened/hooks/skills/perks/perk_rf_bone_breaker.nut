@@ -34,6 +34,10 @@
 				{
 					return { done = true, value = null };
 				}
+				else
+				{
+					::logWarning("Hardened: onDamageReceived has been called by " + ::Hardened.getFunctionCaller(1) + " which will confuse Bone Breaker");
+				}
 			});
 		}
 	}
