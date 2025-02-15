@@ -1,0 +1,50 @@
+/*
+Increase the Width of all l-tab-asset label text boxes from 11.2 to 13.0
+This is required for Hardened feature of displaying maximum supplies and displaying time/resources required
+A string like 124 (56) / 150 would otherwise be split and take up two lines
+*/
+
+.world-town-screen > .l-barber-dialog-container .l-tab-asset .label
+{
+	width: 13.0rem;
+}
+
+.world-town-screen > .l-hire-dialog-container .l-tab-asset .label
+{
+	width: 13.0rem;
+}
+
+.world-town-screen > .l-main-dialog-container .l-tab-asset .label
+{
+	width: 13.0rem;
+}
+
+.world-town-screen > .l-shop-dialog-container .l-tab-asset .label
+{
+	width: 13.0rem;
+}
+
+.world-town-screen > .l-tavern-dialog-container .l-tab-asset .label
+{
+	width: 13.0rem;
+}
+
+.world-town-screen > .l-taxidermist-dialog-container .l-tab-asset .label
+{
+	width: 13.0rem;
+}
+
+.world-town-screen > .l-temple-dialog-container .l-tab-asset .label
+{
+	width: 13.0rem;
+}
+
+.world-town-screen > .l-training-dialog-container .l-tab-asset .label
+{
+	width: 13.0rem;
+}
+
+.world-town-screen > .l-travel-dialog-container .l-tab-asset .label
+{
+	width: 13.0rem;
+}
