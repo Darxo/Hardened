@@ -5,8 +5,8 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Effects[0] = "Travel " + this.m.TerrainTypeSpeedMult + "% faster through Forests and Swamps";
-		this.m.Effects.insert(1, this.m.TerrainTypeVisionMult + "% more Vision while on a Hill or Mountain");
+		this.m.Effects[0] = "Travel 20% faster through Forests and Swamps";
+		this.m.Effects.insert(1, "25% more Vision while on a Hill or Mountain");
 	}
 
 	// Overwrite because we replace the original movement speed effect
