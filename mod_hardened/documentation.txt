@@ -126,7 +126,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - selling quiver returns their ammo to the player pool?
 - highlight destination locations/entities, while the player is moving towards them explicitely
 - Make brothers dying in battle more punishing, mood wise (out of combat). To prevent you disposing unwanted brothers this way or discouraging using unwanted brothers as fodder
-- Reduce enemies with Survival Instinct
 - Raise fatigue cost of high tier two-handed weapons beyond 15 again
 - Clean up Readme section "For Modder": add default values consitently; add new subsubsections "New Events", "General Decisions"
 - Scan map for situations where a hill would prevent clear view (2/3 level tile in front of 0 level tile). When enemy is hiding there, do some smart camera adjustment on turn start
@@ -134,6 +133,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - add small delay after new round, before reanimation begines (100ms) so that new-round effects are more visible
 - Give Bog Unhold split shield
 - Make Anticipation influence attacker with stuns to be more likely to attack
+- Prevent Vanilla find location contracts from refreshing their direction for free when loading the game
 
 ## Perks Review/Rework
 - change cover ally to debuff the targets melee skill and melee defense, to make it harder to use offensively
@@ -164,13 +164,19 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Take Aim Perk (previously Power Shot)
 	- Whenever you wait or end your turn, gain a stacking +5% chance to hit. All bonus is lost, when you attack or move.
 	- Unlock **Take Aim** skill, which does the same thing as the mastery thingy stuff
+- Smarter height camera. If the turn starts for a bro on lvl 0 but no one is around him but hills, then put camera one level higher
 
 - split hyena/nachzehrer troops in combat/world map
 - orc slayer / crusader events, make them cost 5k crowns each to hire those guys
+- Poise System: Poise bar in immune enemies still at work?
+- Schrat can target enemies through objects?
+- Give barbarian Madman (icy cave) fast adaptation
+- Caravan Quests that expire, spawn a caravan to that contracts destination
 
 ## Test:
 
 ## AI
+- unholds should use throw more often to counter rebuke/flailing swingy stuff
 - make it so enemies are less likely to remove the net if it doesnt affect them (e.g. Orcs)
 - Change AI Rotation to not/rarely rotate your brothers into battle?
 - Make enemy archers prefer to use wait instead of blindly advancing, if their frontline hasn't advanced yet
@@ -180,14 +186,11 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Make someone with **Crowded** less likely to be targeted by displacement skills (knock back/repel). That would only help those
 
 ## Fix:
+- Exploit Opening not used on shield push?
 - Change Fruits of Labor description to Stamina instead of Maximum Fatigue
-- ASset Supplies not being red anymore. Mabyie I can teach .js that anything that starts with 0 means red
 - Fix contract cheese, where saving/loading instantly reveals destination via event?
 - dog ai too fast, not realizing reanimating zombies and dying to ZOC hits
 - remove double ammo from towns, spawned by fletcher (as fletcher sells its own ammo)
-- Vanilly Pasting pasting way too many times. I could use a variable thats turned on on pressing and turned off on releasing the paste combination
-- Improve ::Const.World.Common.generateName random name feature to also affect generateName from random enemy types (hookTree of actor.nut?)
-- Attached locations at game start never clear their name if you turn off the option
 - Make Rotate no longer cause resolve checks
 - Look into throwing weapons not producing miss-projectiles correctly when missing, sometimes
 	- Need more evidence
@@ -204,27 +207,19 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
-# Vanilla Bug report
-	/// How well are we seen by other entities?
-	/// This function is never actually used. Instead this.m.VisibilityMult is accessed directly. So this calculation here is redundant
-	function getVisibilityMult()
-	{
-		return this.World.Assets.isCamping() ? this.m.VisibilityMult * (this.World.getTime().IsDaytime ? 2.0 : 4.0) : this.m.VisibilityMult;
-	}
-
-# Report Vanilla bug
-
-Sometimes during zombie fights, when they reanimate while in fog of war, I get some error
-			else
-			{
-				this.Tactical.CameraDirector.pushIdleEvent(0, this.onResurrect.bindenv(this), _info, 200, this.Const.Tactical.Settings.CameraNextEventDelay);
-				this.Tactical.CameraDirector.addDelay(0.2);
-			}
-
 # WIP
 
 - Black Monolith only during night
 this.World.Events.fire("event.drunk_nobleman")
+
+0.27.1
+	- Improve **Between the Ribs** description to clarify that the first surrounding character is not counted
+	- Add debug-log, when Bone Breaker was not successful in preventing the vanilla injury
+	- Fix **Weapon Master** not applying its effect directly after loading a game
+	- Fix **Crossbow Mastery** not granting any fatigue reduction
+	- Fix Supply text boxes in town dialogs sometimes being too small for the text
+	- Fix Supply text boxes in town dialogs no longer being colored negatively when you have 0 of them
+	- Fix values in Scout Retinue description
 
 0.27.0
 	- **Dodge** now grants 5% of Initiative as additional Defense per empty tiles (up from 4%)
