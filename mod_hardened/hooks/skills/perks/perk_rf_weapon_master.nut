@@ -7,6 +7,7 @@
 
 	q.onAdded = @(__original) function()
 	{
+		__original();
 		if (this.m.IsNew)
 		{
 			local actor = this.getContainer().getActor();
