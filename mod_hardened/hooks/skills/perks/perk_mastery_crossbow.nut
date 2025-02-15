@@ -3,6 +3,7 @@
 
 	q.onUpdate = @(__original) function( _properties )
 	{
+		__original(_properties);
 		if (this.isEnabled())
 		{
 			local helmet = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Head);
@@ -13,6 +14,7 @@
 		}
 	}
 
+	// Overwrite because Reforgeds implementation targets reload with >4 AP cost
 	q.onAfterUpdate = @() function( _properties )
 	{
 		local reload = this.getContainer().getSkillByID("actives.reload_bolt");
