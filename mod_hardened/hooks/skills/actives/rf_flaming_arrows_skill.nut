@@ -1,8 +1,10 @@
-::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_flaming_arrows", function(q) {
+::Hardened.HooksMod.hook("scripts/skills/actives/rf_flaming_arrows_skill", function(q) {
 	// Overwrite Reforged function to remove the morale check on the main target
 	q.onTargetHit = @() function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (this.m.TargetTile == null) return;
+		this.aimed_shot.onTargetHit(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor);
+
+		if (this.m.TargetTile == null || _skill != this) return;
 
 		for (local i = 0; i < 6; ++i)
 		{
@@ -27,6 +29,7 @@
 		});
 	}
 
+// MSU Functions
 	q.onQueryTooltip = @(__original) function( _skill, _tooltip )
 	{
 		__original(_skill, _tooltip);
