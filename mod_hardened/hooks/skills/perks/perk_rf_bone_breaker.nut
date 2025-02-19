@@ -30,14 +30,7 @@
 			this.m.Temp_HitInfoReference = _hitInfo;
 
 			this.m.Temp_InjuryMockObject = ::Hardened.mockFunction(_targetEntity, "applyInjury", function(_skill, _hitInfo) {
-				if (::Hardened.getFunctionCaller(1) == "onDamageReceived")	// 1 as argument because within mockFunctions, there is an additional function inbetween us and our caller
-				{
-					return { done = true, value = null };
-				}
-				else
-				{
-					::logWarning("Hardened: onDamageReceived has been called by " + ::Hardened.getFunctionCaller(1) + " which will confuse Bone Breaker");
-				}
+				return { done = true, value = null };
 			});
 		}
 	}
@@ -48,7 +41,11 @@
 		if (!this.m.Temp_IsInEffect) return;
 
 		// We turn on the applyInjuries function on the target
-		if (this.m.Temp_InjuryMockObject != null) this.m.Temp_InjuryMockObject.cleanup();
+		if (this.m.Temp_InjuryMockObject != null)
+		{
+			this.m.Temp_InjuryMockObject.cleanup();
+			this.m.Temp_InjuryMockObject = null;
+		}
 
 		local oldDamageInflictedHitpoints = this.m.Temp_HitInfoReference.DamageInflictedHitpoints;
 
