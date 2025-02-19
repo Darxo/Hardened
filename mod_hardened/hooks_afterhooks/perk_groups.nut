@@ -90,6 +90,11 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		pgSoldierGroup.addPerk("perk.rally_the_troops", 3);		// Add Rally the Troops into the Tier 3
 	}
 
+	{	// Spear Group
+		local pgSpearGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_spear");
+		changePerkTier(pgSpearGroup, "perk.rf_king_of_all_weapons", 6);	// Move "Spear Flurry" to Tier 6 (down from Tier 7)
+	}
+
 	{	// Special Marksman Group
 		::DynamicPerks.PerkGroups.remove("pg.special.rf_marksmanship");	// This group does no longer exist in Hardened
 	}
