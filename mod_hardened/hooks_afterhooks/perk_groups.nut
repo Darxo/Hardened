@@ -23,6 +23,12 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		changePerkTier(pgAxeGroup, "perk.rf_dismantle", 6);			// Move Dismantle to Tier 6 (up from Tier 2)
 	}
 
+	{	// Fast Group
+		local pgFastGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_fast");
+		changePerkTier(pgFastGroup, "perk.rf_combo", 5);				// Move Combo to Tier 5 (down from Tier 7)
+		changePerkTier(pgFastGroup, "perk.rf_calculated_strikes", 7);	// Calculated Strikes to Tier 7 (up from Tier 5)
+	}
+
 	{	// Hammer Group
 		local pgHammerArmorGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_hammer");
 		changePerkTier(pgHammerArmorGroup, "perk.rf_rattle", 6);			// Move rattle (Full Force) into the position where Deep Impact was previously
