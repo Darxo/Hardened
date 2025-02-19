@@ -1,4 +1,5 @@
 // Prevent a tooltip about the now deleted skill "Hook Shield" from being added
+// Prevent onTurnStart logic related to shield sergeant perk
 ::Hardened.snipeHook("scripts/skills/effects/shieldwall_effect", "mod_reforged");
 
 // Remove reforged shield sergeant effects

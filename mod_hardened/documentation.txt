@@ -172,6 +172,16 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Schrat can target enemies through objects?
 - Give barbarian Madman (icy cave) fast adaptation
 - Caravan Quests that expire, spawn a caravan to that contracts destination
+- Use Reforged tech of appending child effects into a skill tooltip (see take aim)
+- Let relentless perk remove the tooltip about the wait debuff from recover skill
+- Check whether inspiring presence shows a tooltip
+
+## Revert Reforged:
+- Killer loot 50%
+- Gladiator Traits
+- Allow condition roll on named shields again
+- Revert dagger free swap
+- Remove/Reduce background bonuses
 
 ## Test:
 
@@ -211,6 +221,20 @@ This will unbrick your end-of-combat screen, if it doesnt show
 
 - Black Monolith only during night
 this.World.Events.fire("event.drunk_nobleman")
+
+0.28.0
+	- Make mod compatible with Reforged 0.6.15
+	- **Dismemberment** is now a Tier 2 perk (down from Tier 6)
+	- **Dismantle** is now a Tier 6 perk (down from Tier 2)
+	- **Fencer** perk no longer changes how **Kata Step** works
+	- **Dynamic Duo** no longer reduces hitchance and damage when attacking your partner
+	- **Take Aim** now costs 4 AP (down from 6) and 20 Fatigue (down from 25)
+	- **Combo** is now a Tier 5 perk (up from Tier 7)
+	- **Calculated Strikes** is now a Tier 7 perk (up from Tier 5)
+	- Fix **Recover** preventing you from using Wait Round
+	- Improve tooltip of **Puncture** regarding surrounding requirement
+	- You can no longer swap with a dagger in your bag for free
+	- Fix **Bone Breaker** sometimes applying two injuries during the same attack
 
 0.27.1
 	- Improve **Between the Ribs** description to clarify that the first surrounding character is not counted

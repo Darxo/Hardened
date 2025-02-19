@@ -21,5 +21,4 @@
 
 		_properties.ReachAdvantageMult += (::Reforged.Reach.ReachAdvantageMult - 1.0);
 	}
-
 });

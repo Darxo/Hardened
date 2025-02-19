@@ -112,6 +112,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - Add new **Retreat** skill for player characters, which allows you to retreat individual brothers from a battle if they stand on a border tile
 - Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
 - Hostile Locations now hide their Defender Line-Up during night
+- You can no longer swap your weapon with a dagger from your bag for free
 
 ## Balance & Polishing
 
@@ -123,9 +124,9 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
 - **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%)
-- **Kata Step** (granted by **Sword Mastery**) can now also be used if you are not double gripping your one handed sword
+- **Kata Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand
 - **Lunge** now hase -10% additional Hitchance (up from -20%)
-- **Net Effect** no longer affects the Initiative of the target. It now applies 50% less Melee Defense (down from 45%) and 50% less Ranged Defense (down from 45%)
+- **Net Effect** no longer affects the Initiative of the target. It now applies 50% less Melee Defense (up from 25%) and 50% less Ranged Defense (down from 45%)
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack
@@ -133,6 +134,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Sprint** (granted by **Footwork**) now costs 1 Action Point (up from 0) but no longer increases the fatigue cost per tile. It now disables all Attack-Skills until you wait or end your turn
 - **Stab** now costs 3 Action Points (down from 4) and has a 25% higher threshold to inflict injuries
 - **Sword Thrust** now has -10% additional Hitchance (up from -20%)
+- **Take Aim** (granted by **Crossbow and Firearm Mastery**) now costs 4 Action Points (down from 6) and 20 Fatigue (down from 25)
 - **Throw Axe** now has a 50% chance to decapitate (up from 0%) and 25% chance to disembowel (up from 0%)
 - Throw Pot/Flask skills are no longer considered an attack
 
@@ -169,12 +171,12 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bloodlust** (granted by **Cleaver Mastery**) is completely reworked. It now grants 10% more damage against bleeding enemies and makes you receive 10% less damage from bleeding enemies
 - **Bolster** (granted by **Polearm Mastery**) now requires a Polearm equipped, instead of any weapon with a Reach of 6 or more
 - **Bone Breaker** is completely reworked. It now causes Armor Damage you deal to be treated as additional Hitpoint damage for the purpose of inflicting injuries
-- **Bullseye** no longer reduces the penalty for shooting behind cover. It also no longer works with **Take Aim**. It now provides 25% Armor Penetration (up from 20%)
+- **Bullseye** no longer reduces the penalty for shooting behind cover. It also no longer works with **Take Aim**. It now provides 25% Armor Penetration (up from 10% and 20% resepctively)
 - **Brawny** no longer grants Initiative
 - **Colossus** now grants +15 Hitpoints, instead of 25% more Hitpoints
 - **Combo** is reworked. It now reduces the cost of all skills you haven't used yet this turn by 1 Action Point, except the first skill you use each turn
 - **Concussive strikes** is completely reworked. It is now called **Shockwave** and it makes it so your kills or stuns with maces will daze all enemies adjacent to your target for 1 turn
-- **Crossbow Mastery** now grants +1 Vision while you wear a Helmet with a Vision Penalty
+- **Crossbow and Firearm Mastery** now grants +1 Vision while you wear a Helmet with a Vision Penalty
 - **Dagger Mastery** no longer grant any reach ignore. It now reduces the action point cost of the first offhand skill each turn to 0, if your offhand item has a weight lower than 10
 - **Deep Impact** is now called **Breakthrough** and has been completely reworked. It grants the **Pummel** skill, which can now be used with any hammer. It also makes it so **Shatter** has a 100% chance to knock targets back on a hit
 - **Dismantle** has been completely reworked. It now grants +40% Armor Damage and 100% more Shield Damage against enemies who have full health.
@@ -182,11 +184,11 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Dodge** now grants 5% of Initiative as extra Melee Defense and Ranged Defense for every empty adjacent tile (down from always 15%)
 - **Double Strike** damage bonus is no longer lost when you swap weapons
 - **Duelist** is completely reworked. It now only works for one-handed weapons. It grants 30% Armor Penetration and +2 Reach while adjacent to 0 or 1 enemies and it grants 15% Armor Penetration and +1 Reach while adjacent to 2 enemies
-- **Dynamic Duo** no longer grants Melee Skill or Melee Defense
+- **Dynamic Duo** no longer grants Melee Skill or Melee Defense. It no longer reduces hitchance and damage when attacking your partner
 - **En Garde** is completely reworked. It now grants +10 Melee Skill while it is not your turn. It also makes it so **Riposte** is no longer disabled when you get hit or deal a counter attack (so like in Vanilla), and it recovers 1 Action Point whenever an opponent misses a melee attack against you
 - **Entrenched** has been completely reworked. It now grants +5 Resolve per adjacent ally, +5 Ranged Defense per adjacent obstacle and 15% more Ranged Skill if at least 3 adjacent tiles are allies or obstacles
 - **Exploit Opening** is completely reworked. It now grants a stacking +10% chance to hit whenever an opponent misses an attack against you. Bonus is reset upon landing a hit (just like Fast Adaptation)
-- **Fencer** no longer grants +10% chance to hit or 20% less fatigue cost. It now causes your fencing swords to lose 50% less durability
+- **Fencer** no longer grants +10% chance to hit or 20% less fatigue cost. It no longer removes the damage type requirement from **Kata Step**. It now causes your fencing swords to lose 50% less durability
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy
 - **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you
 - **Fortified Mind** now grants +25 Resolve (instead of 25% more) and you lose Resolve equal to the Weight of your Helmetweight
@@ -204,7 +206,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Offhand Training** is completely reworked. It now reduces the AP cost of tool skills by 1. Wielding a tool in your offhand no longer disables **Double Grip** and while wielding a tool in your offhand, the first successful attack each turn, will stagger your target
 - **Onslaught** no longer has a shared cooldown
 - **Opportunist** is completely reworked. It now grants throwing attacks -1 Action Point cost per tile moved, until you use a throwing attack, wait or end your turn. Moving on all terrain costs -2 Fatigue, just like the **Athletic** Trait
-- **Phalanx** is completely reworked. It grants +1 Reach for every adjacent ally with a shield. **Shieldwall** no longer ends, while an adjacent brother also has **Shieldwall** active.
+- **Phalanx** is completely reworked. It grants +1 Reach for every adjacent ally with a shield. **Shieldwall** no longer ends, while an adjacent brother also has **Shieldwall** active
 - **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. It also reduces your armor damage taken by a percentage equal to 40% of your current Initiative (up to a maximum of 40%)
 - **Polearm Mastery** no longer reduces the Action Point cost of 2 handed reach weapons by 1. It now grants +15% chance to hit for **Repel** and **Hook**.
 - **Professional** now reduces the experience gained by 5%
@@ -216,15 +218,15 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Shield Expert** no longer grants 25% increased shield defenses and no longer prevents fatigue build-up when you dodge attacks. It now grants 50% less shield damage taken and it makes it so enemies will never have Reach Advantage over the shield user
 - **Shield Sergeant** is mostly reworked. It still grants **Shieldwall** to all allies at the start of each combat. It now causes allies to imitate shield skills for free that you use during your turn. It also allows you to use **Knock Back** on empty tiles
 - **Skirmisher** now grants 50% of body armor weight as initiative (previously 30% of body/helmet armor weight) and no longer displays an effect icon
-- **Spear Mastery** no longer provides a free spear attack each turn. Instead of now grants 15% more Melee Skill while you have Reach Advantage
+- **Spear Mastery** no longer provides a free spear attack each turn. Instead it now grants 15% more Melee Skill while you have Reach Advantage
 - **Survival Instinct** is completely reworked. It now grants 1 stack, when you get hit by an attack, and you lose 1 stack when you dodge an attack. Every stack grants 10 Melee Defense and 10 Ranged Defense
 - **Student** no longer grants any experience. It now grants +1 Perk Point when you reach level 8 instead of level 11
-- **Sweeping Strikes** is completely reworked: It now grants +5 Melee Defense for every adjacent enemy until the start of your next turn the first time you use a melee attack skill on an adjacent enemy. It still requires a two-handed weapon
+- **Sweeping Strikes** is completely reworked. It now grants +5 Melee Defense for every adjacent enemy until the start of your next turn the first time you use a melee attack skill on an adjacent enemy. It still requires a two-handed weapon
 - **Swift Stabs** has been completely reworked. It's now called **Hit and Run**. It makes it so all dagger attacks can be used at 2 tiles and will move the user one tile closer before the attack. When the attack hits the enemy, the user is moved back to the original tile
 - **Sword Mastery** no longer grants **Kata Step**. It now causes your attacks against enemies whose turn has already started to lower their Initaitive by a stacking 15% (up to a maximum of 90%) until the start of their next turn
 - **Target Practice** has been completely reworked. It now makes it 50% less likely for your arrows to hit the cover, when you have no clear line of fire (stronger than vanilla Bullseye)
 - **Tempo** is completely reworked. It grants +15 Initiative until the start of your next turn whenever you move a tile during your turn. It also grants **Kata Step**
-- **Through the Gaps** is now always active but. It now lowers your armor penetration by 10% (down from increasing it by 10%)
+- **Through the Gaps** is completely reworked. It grants -10% Armor Penetration but causes your piercing spear attacks to always target the body part with the lowest total armor
 - **Throwing Mastery** is mostly completely reworked. It now grants 30% more damage for your first throwing attack each turn, no matter the range. It now allows swapping a throwing weapon with an empty throwing weapon or empty slot for free, once per turn
 - **Trick Shooter** no longer causes your **Aimed Shot** to trigger a morale check on the main target hit
 - **Underdog** is rewritten. It now grants +5 Melee Defense for every character surrounding you, except the first one. Compared to the vanilla implementation this defense is now affected by defense multiplier and by the softcap for defense
@@ -241,12 +243,16 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bone Breaker** is now Tier 5 (down from Tier 7)
 - **Cheap Trick** is now Tier 1 (down from Tier 2)
 - **Colossus** is now also part of the **Wildling** perk group in Tier 1
+- **Combo** is now a Tier 5 perk (down from Tier 7)
+- **Calculated Strikes** is now a Tier 7 perk (up from Tier 5)
 - **Deep Impact** (now **Breakthrough**) is now a T3 perk and **Rattle** (now **Full Force**) is now a T6 perk
-- **Dismantle** is now a Tier 6 perk (down from Tier 7)
+- **Dismantle** is now a Tier 6 perk (up from Tier 2)
+- **Dismemberment** is now a Tier 2 perk (down from Tier 6)
 - **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
 - **Duelist** is no longer part of **Shield** group
 - **Ghostlike** is now Tier 5 (up from Tier 4)
 - **Inspiring Presence** is now also part of the **Noble** group at Tier 7
+- **King of all Weapons** (now **Spear Flurry**) is now a Tier 6 perk (down from Tier 7)
 - **Leverage** is now a Tier 6 perk (up from Tier 3)
 - **Long Reach** is now a Tier 3 perk (down from Tier 7)
 - **Marksmanship** is no longer a special perk. It is now a T7 perk in the **Ranged** perk group
@@ -282,7 +288,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Flail** now deals 30-55 damage (up from 25-55)
 - **Halberd** now has 6 Reach (down from 7)
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
-- **Two Handed Wodden Hammer**, **Two Handed Hammer** and **Skull Hammer** now have 5 Reach (up from 4)
 - **Player Banner** now grants -5 to Ranged Defense
 - **Spetum** now has a Reach of 7 (up from 6) and costs 900 crowns (up from 750)
 - **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and a value of 600 (up from 400)
