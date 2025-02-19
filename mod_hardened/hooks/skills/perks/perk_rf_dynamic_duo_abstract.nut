@@ -6,5 +6,8 @@
 		this.m.MeleeSkillModifier = 0;
 		this.m.MeleeDefenseModifier = 0;
 	}
+
+	// Overwrite because we dont reduce chance to hit the partner or reduce damage when hitting the partner
+	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties ) {}
 });
 
