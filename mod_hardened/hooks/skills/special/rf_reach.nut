@@ -101,6 +101,9 @@
 		}
 	}
 
+	// We prevent reforged from adding a tooltip about reach debuff while rooted, because we remove that debuff
+	q.onQueryTooltip = @() function( _skill, _tooltip ) {}
+
 // New Functions
 	q.calculateBonus <- function( _properties )
 	{
