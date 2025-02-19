@@ -30,9 +30,9 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	}
 
 	{	// Hammer Group
-		local pgHammerArmorGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_hammer");
-		changePerkTier(pgHammerArmorGroup, "perk.rf_rattle", 6);			// Move rattle (Full Force) into the position where Deep Impact was previously
-		changePerkTier(pgHammerArmorGroup, "perk.rf_deep_impact", 3);	// Move Deep Impact into the position where Rattle (Full Force) was previously
+		local pgHammerGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_hammer");
+		changePerkTier(pgHammerGroup, "perk.rf_rattle", 6);			// Move rattle (Full Force) into the position where Deep Impact was previously
+		changePerkTier(pgHammerGroup, "perk.rf_deep_impact", 3);	// Move Deep Impact into the position where Rattle (Full Force) was previously
 	}
 
 	{	// Knave Group
