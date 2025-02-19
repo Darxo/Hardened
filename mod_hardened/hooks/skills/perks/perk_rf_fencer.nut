@@ -6,9 +6,9 @@
 		this.m.Bonus = 0;	// This perk no longer grants any hit chance bonus
 	}
 
-	q.onUpdate = @(__original) function( _properties )
+	// Overwrite because we don't change katastep in any way in our implementation
+	q.onUpdate = @() function( _properties )
 	{
-		__original(_properties);
 		if (!this.isEnabled()) return;
 		_properties.WeaponDurabilityLossMult *= 0.5;
 	}
