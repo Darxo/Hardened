@@ -1,22 +1,55 @@
-::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_phalanx", function(q) {
-	q.getTooltip = @(__original) function()
-	{
-		local ret = __original();
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_phalanx");
 
-		foreach (entry in ret)
+::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_phalanx", function(q) {
+	q.create <- function()
+	{
+		this.m.ID = "perk.rf_phalanx";
+		this.m.Name = ::Const.Strings.PerkName.RF_Phalanx;
+		this.m.Description = "This character is highly skilled in fighting in formation.";
+		this.m.Icon = "ui/perks/perk_rf_phalanx.png";
+		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
+		this.m.Order = ::Const.SkillOrder.BeforeLast;	// Important so we act after shieldwall effect and prevent its garbage removal
+	}
+
+	q.getTooltip <- function()
+	{
+		local ret = this.skill.getTooltip();
+
+		local reachModifier = this.getReachModifier();
+		if (reachModifier != 0)
 		{
-			if (entry.id == 11 && entry.icon == "ui/icons/special.png")
-			{
-				entry.text = ::Reforged.Mod.Tooltips.parseString("[Shieldwall|Skill+shieldwall_effect] will not expire at the start of your [turn|Concept.Turn] as you are next to an ally with [Shieldwall|Skill+shieldwall_effect]");
-				break;
-			}
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/rf_reach.png",
+				text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(reachModifier, {AddSign = true}) + " [Reach|Concept.Reach]"),
+			});
+		}
+
+		if (this.hasAdjacentShieldwall())
+		{
+			ret.push({
+				id = 11,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = ::Reforged.Mod.Tooltips.parseString("[Shieldwall|Skill+shieldwall_effect] will not expire at the start of your [turn|Concept.Turn] as you are next to an ally with [Shieldwall|Skill+shieldwall_effect]"),
+			});
 		}
 
 		return ret;
 	}
 
-	// Overwrite because we don't want to display the reforged specific tooltip
-	q.onQueryTooltip = @() function( _skill, _tooltip )
+	q.isHidden <- function()
+	{
+		return this.getReachModifier() == 0;
+	}
+
+	q.onUpdate <- function( _properties )
+	{
+		_properties.Reach += this.getReachModifier();
+	}
+
+	q.onQueryTooltip <- function( _skill, _tooltip )
 	{
 		if (_skill.getID() == "actives.shieldwall" && this.hasAdjacentShieldwall())
 		{
@@ -29,9 +62,8 @@
 		}
 	}
 
-	q.onTurnStart = @(__original) function()
+	q.onTurnStart <- function()
 	{
-		__original();
 		if (this.hasAdjacentShieldwall())
 		{
 			foreach (skill in this.getContainer().m.Skills)
@@ -43,31 +75,6 @@
 				}
 			}
 		}
-	}
-
-	q.onAfterUpdate = @() function( _properties ) {}	// We no longer grant a discount to shieldwall
-
-// MSU Functions
-	// No longer display any hitfactor tooltips
-	q.onGetHitFactors = @() function(_skill, _targetTile, _tooltip) {}
-	q.onGetHitFactorsAsTarget = @() function(_skill, _targetTile, _tooltip) {}
-
-// Reforged Functions
-	// Overwrite of Reforged: Buckler no longer set the count to 0 or are ignored when counting.
-	q.getCount = @() function()
-	{
-		local actor = this.getContainer().getActor();
-		if (!actor.isPlacedOnMap()) return 0;
-
-		local count = 0;
-		foreach (ally in ::Tactical.Entities.getAlliedActors(actor.getFaction(), actor.getTile(), 1))
-		{
-			if (ally.isArmedWithShield() && ally.getID() != actor.getID())
-			{
-				count += 1;
-			}
-		}
-		return count;
 	}
 
 // Hardened Functions
@@ -83,5 +90,43 @@
 		}
 
 		return ret;
+	}
+
+// New Functions
+	q.getReachModifier <- function()
+	{
+		local actor = this.getContainer().getActor();
+		if (!actor.isPlacedOnMap()) return 0;
+
+		local count = 0;
+		foreach (ally in ::Tactical.Entities.getAlliedActors(actor.getFaction(), actor.getTile(), 1))
+		{
+			if (ally.isArmedWithShield() && ally.getID() != actor.getID())
+			{
+				count += 1;
+			}
+		}
+		return count;
+	}
+
+	// @return true, if there is an adjacent ally who has the shieldwall effect, or false otherwise
+	q.hasAdjacentShieldwall <- function()
+	{
+		local actor = this.getContainer().getActor();
+		if (!actor.isPlacedOnMap()) return false;
+
+		local myTile = actor.getTile();
+		for (local i = 0; i < 6; i++)
+		{
+			if (!myTile.hasNextTile(i)) continue;
+
+			local nextTile = myTile.getNextTile(i);
+			if (nextTile.IsOccupiedByActor && nextTile.getEntity().isAlliedWith(actor) && nextTile.getEntity().getSkills().hasSkill("effects.shieldwall"))
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 });
