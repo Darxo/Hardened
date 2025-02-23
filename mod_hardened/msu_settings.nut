@@ -28,6 +28,22 @@
 	qolWorldPage.addBooleanSetting("DisplayFoodDuration", true, "Display Food Duration", "Display next to your food supplies the amount of days that they will last for your company.");
 	qolWorldPage.addBooleanSetting("DisplayRepairDuration", true, "Display Repair Duration", "Display next to your tool supplies the amount of hours that it will take to fully repair all gear.");
 	qolWorldPage.addBooleanSetting("DisplayMinMedicineCost", true, "Display Min Medicine Cost", "Display next to your medicine supplies the minimum supplies that your currently injured brothers will require to fully recover.");
+
+	qolWorldPage.addDivider("MiscDivider5");
+
+	// Callback Function to update the numeral strings for enemies after touching the world party option
+	local updateEntitiyStrengthCallback = function( _oldValue )
+	{
+		if (!::MSU.Utils.hasState("world_state")) return;	// otherwise the game crashes when changing settings in main menu
+		::Hardened.Numerals.updateAllParties();
+	}
+
+	local myEnumSetting = ::MSU.Class.EnumSetting("WorldPartyRepresentation", "Numeral", ["Numeral", "Range"], "World Party Size", "Define how the party size of entities on the world map are shown. 'Numeral' is a word/string while 'Range' is the range that is represented by that word");
+	myEnumSetting.addAfterChangeCallback(updateEntitiyStrengthCallback);
+	qolWorldPage.addElement(myEnumSetting);
+
+	myEnumSetting = ::MSU.Class.EnumSetting("CombatDialogRepresentation", "Numeral (Range)", ["Numeral", "Numeral (Range)", "Range"], "Combat Dialog Size", "Define how the size of entities in combat dialogs and tooltips are shown. 'Numeral' is a word/string while 'Range' is the range that is represented by that word");
+	qolWorldPage.addElement(myEnumSetting);
 }
 
 // QOL: Combat
