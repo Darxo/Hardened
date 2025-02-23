@@ -868,6 +868,22 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_kingfisher",
+		Key = "RF_Kingfisher",
+		Description = ::UPD.getDescription({
+			Fluff = "\'Teach a man to fish and he'll be worth his salt to the end of his days.\'",
+			Requirement = "Throwing Net",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive("+2") + " [Reach|Concept.Reach]",
+					"[Netting|Skill+throw_net] an adjacent target does not expend your net but prevents you from using or swapping it until that target breaks free or dies",
+					"If you move more than 1 tile away from that netted target, lose your equipped net",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_leverage",
 		Key = "RF_Leverage",
 		Description = ::UPD.getDescription({
