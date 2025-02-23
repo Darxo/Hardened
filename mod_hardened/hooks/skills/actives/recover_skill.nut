@@ -3,15 +3,12 @@
 	{
 		local ret = __original();
 
-		if (!this.getContainer().hasSkill("perk.relentless"))
-		{
-			ret.push({
-				id = 11,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Gain the [Waiting|Skill+hd_wait_effect] effect"),
-			});
-		}
+		ret.push({
+			id = 11,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Gain the [Waiting|Skill+hd_wait_effect] effect"),
+		});
 
 		return ret;
 	}
