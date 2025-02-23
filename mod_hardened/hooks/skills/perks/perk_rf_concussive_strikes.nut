@@ -1,18 +1,10 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_rf_concussive_strikes");
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_concussive_strikes", [
+	"create",
+]);
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_concussive_strikes", function(q) {
 	// Private
 	q.m.CanSkillCauseShockwave <- false;	// Will be set to true before skill execution, when no Stun is present on the target
-
-	q.create <- function()
-	{
-		this.m.ID = "perk.rf_concussive_strikes";
-		this.m.Name = ::Const.Strings.PerkName.RF_ConcussiveStrikes;
-		this.m.Description = ::Const.Strings.PerkDescription.RF_ConcussiveStrikes;
-		this.m.Icon = "ui/perks/perk_rf_concussive_strikes.png";
-		this.m.Type = ::Const.SkillType.Perk;
-		this.m.Order = ::Const.SkillOrder.Perk;
-	}
 
 	q.onTargetKilled <- function( _targetEntity, _skill )
 	{

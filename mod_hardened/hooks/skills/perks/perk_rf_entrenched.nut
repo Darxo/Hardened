@@ -1,4 +1,6 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_rf_entrenched");
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_entrenched", [
+	"create",
+]);
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_entrenched", function(q) {
 	// Public
@@ -7,15 +9,10 @@
 	q.m.RangedSkillMult <- 1.15;
 	q.m.RequiredAdjacentObjects <- 3;	// Atleast this many adjacent tiles must be allies/obstacles for the ranged skill bonus to activate
 
-	q.create <- function()
+	q.create = @(__original) function()
 	{
-		this.m.ID = "perk.rf_entrenched";
-		this.m.Name = ::Const.Strings.PerkName.RF_Entrenched;
+		__original();
 		this.m.Description = "This character\'s confidence in combat is increased due to support from adjacent allies and cover.";
-		this.m.Icon = "ui/perks/perk_rf_entrenched.png";
-		this.m.IconMini = "perk_rf_entrenched_mini";
-		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
-		this.m.Order = ::Const.SkillOrder.Perk;
 	}
 
 	q.getTooltip <- function()

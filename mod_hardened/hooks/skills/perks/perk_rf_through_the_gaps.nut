@@ -1,18 +1,10 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_rf_through_the_gaps");
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_through_the_gaps", [
+	"create",
+]);
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_through_the_gaps", function(q) {
 	// Public
 	q.m.DirectDamageModifier <- -0.1;
-
-	q.create <- function()
-	{
-		this.m.ID = "perk.rf_through_the_gaps";
-		this.m.Name = ::Const.Strings.PerkName.RF_ThroughTheGaps;
-		this.m.Description = ::Const.Strings.PerkDescription.RF_ThroughTheGaps;
-		this.m.Icon = "ui/perks/perk_rf_through_the_gaps.png";
-		this.m.Type = ::Const.SkillType.Perk;
-		this.m.Order = ::Const.SkillOrder.Perk;
-	}
 
 	// Copy of reforged old through the gaps implementation
 	q.onAnySkillUsed <- function( _skill, _targetEntity, _properties )

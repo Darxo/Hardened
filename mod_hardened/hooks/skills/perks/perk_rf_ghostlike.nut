@@ -1,4 +1,6 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_rf_ghostlike");
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_ghostlike", [
+	"create",
+]);
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_ghostlike", function(q) {
 	// Public
@@ -8,16 +10,6 @@
 
 	// Private
 	q.m.IsInEffect <- false;
-
-	q.create <- function()
-	{
-		this.m.ID = "perk.rf_ghostlike";
-		this.m.Name = ::Const.Strings.PerkName.RF_Ghostlike;
-		this.m.Description = "Blink and you\'ll miss me.";
-		this.m.Icon = "ui/perks/perk_rf_ghostlike.png";
-		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
-		this.m.Order = ::Const.SkillOrder.Perk;
-	}
 
 	q.getTooltip <- function()
 	{

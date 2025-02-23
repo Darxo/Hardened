@@ -1,18 +1,10 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_rf_bear_down");
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_bear_down", [
+	"create",
+]);
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_bear_down", function(q) {
 	// Public
 	q.m.DazedDuration <- 1;
-
-	q.create <- function()
-	{
-		this.m.ID = "perk.rf_bear_down";
-		this.m.Name = ::Const.Strings.PerkName.RF_BearDown;
-		this.m.Description = ::Const.Strings.PerkDescription.RF_BearDown;
-		this.m.Icon = "ui/perks/perk_rf_bear_down.png";
-		this.m.Type = ::Const.SkillType.Perk;
-		this.m.Order = ::Const.SkillOrder.Perk;
-	}
 
 	q.onTargetHit <- function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{

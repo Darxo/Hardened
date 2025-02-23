@@ -1,21 +1,16 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_rf_formidable_approach");
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_formidable_approach", [
+	"create",
+]);
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_formidable_approach", function(q) {
 	q.m.MeleeSkillBonus <- 15;
 
-	q.create <- function()
+	q.create = @(__original) function()
 	{
-		this.m.ID = "perk.rf_formidable_approach";
-		this.m.Name = ::Const.Strings.PerkName.RF_FormidableApproach;
-		this.m.Description = ::Const.Strings.PerkDescription.RF_FormidableApproach;
-		this.m.Icon = "ui/perks/rf_formidable_approach.png";
+		__original();
 		this.m.Overlay = "rf_formidable_approach";
 		// TODO: add IconMini
 		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
-		this.m.Order = ::Const.SkillOrder.Perk;
-		this.m.IsActive = false;
-		this.m.IsStacking = false;
-		this.m.IsHidden = true;
 	}
 
 	q.getTooltip <- function()

@@ -1,4 +1,6 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_rf_bloodlust");
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_bloodlust", [
+	"create",
+]);
 
 // Our Implementation is not perfect. It can't deal with any delayed skills like Ranged Attacks or Lunge/Charge like abilities
 // However we can deal with proxy-activations where one skill activates another one within it, if those happen instantly with no delay of course
@@ -11,12 +13,9 @@
 	q.m.IsAttackingBleedingEnemy <- false;
 	q.m.IsAttackedByBleedingENemy <- false;
 
-	q.create <- function()
+	q.create = @(__original) function()
 	{
-		this.m.ID = "perk.rf_bloodlust";
-		this.m.Name = ::Const.Strings.PerkName.RF_Bloodlust;
-		this.m.Icon = "ui/perks/perk_rf_bloodlust.png";
-		this.m.IconMini = "perk_rf_bloodlust_mini";
+		__original();
 		this.m.Type = ::Const.SkillType.Perk;
 		this.m.IsHidden = true;
 	}

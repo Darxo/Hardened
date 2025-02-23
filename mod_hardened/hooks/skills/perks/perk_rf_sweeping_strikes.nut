@@ -1,4 +1,6 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_rf_sweeping_strikes");
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_sweeping_strikes", [
+	"create",
+]);
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_sweeping_strikes", function(q) {
 	// Config
@@ -7,16 +9,6 @@
 
 	// Private
 	q.m.CurrentMeleeDefenseModifier <- 0;
-
-	q.create <- function()
-	{
-		this.m.ID = "perk.rf_sweeping_strikes";
-		this.m.Name = ::Const.Strings.PerkName.RF_SweepingStrikes;
-		this.m.Description = "This character is swinging his weapon in large sweeping motions, making it harder to approach him.";
-		this.m.Icon = "ui/perks/perk_rf_sweeping_strikes.png";
-		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
-		this.m.Order = ::Const.SkillOrder.Perk;
-	}
 
 	q.isHidden <- function()
 	{

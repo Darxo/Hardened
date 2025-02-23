@@ -1,4 +1,6 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_duelist");
+::Hardened.wipeClass("scripts/skills/perks/perk_duelist", [
+	"create",
+]);
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_duelist", function(q) {
 	// Private
@@ -6,16 +8,6 @@
 	q.m.ArmorPenetrationModifierHalf <- 0.15;	// This modifier is added to Armor Penetration while 2 enemies are adjacent
 	q.m.ReachModifierFull <- 2;					// This modifier is added to Reach while 0 or 1 enemies are adjacent
 	q.m.ReachModifierHalf <- 1;					// This modifier is added to Reach  while 2 enemies are adjacent
-
-	q.create <- function()
-	{
-		this.m.ID = "perk.duelist";
-		this.m.Name = ::Const.Strings.PerkName.Duelist;
-		this.m.Description = ::Const.Strings.PerkDescription.Duelist;
-		this.m.Icon = "skills/passive_03.png";
-		this.m.Type = ::Const.SkillType.Perk;
-		this.m.Order = ::Const.SkillOrder.Perk;
-	}
 
 	q.onUpdate <- function( _properties )	// This will maybe cause issues with Lunge.
 	{

@@ -1,4 +1,6 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_rf_vigorous_assault");
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_vigorous_assault", [
+	"create",
+]);
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_vigorous_assault", function(q) {
 	// Public
@@ -9,17 +11,6 @@
 	// Private
 	q.m.TilesMovedThisTurn <- 0;
 	q.m.PrevTile <- null;	// Previous tile, so that we can measure the distance after moving from it
-
-	q.create <- function()
-	{
-		this.m.ID = "perk.rf_vigorous_assault";
-		this.m.Name = ::Const.Strings.PerkName.RF_VigorousAssault;
-		this.m.Description = "The momentum of this character\'s movement lends to an easier and faster attack.";
-		this.m.Icon = "ui/perks/perk_rf_vigorous_assault.png";
-		this.m.IconMini = "perk_rf_vigorous_assault_mini";
-		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
-		this.m.Order = ::Const.SkillOrder.Last;
-	}
 
 	q.getTooltip <- function()
 	{

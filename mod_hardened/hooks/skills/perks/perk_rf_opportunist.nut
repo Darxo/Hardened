@@ -1,4 +1,6 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_rf_opportunist");
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_opportunist", [
+	"create",
+]);
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_opportunist", function(q) {
 	// Public
@@ -9,14 +11,10 @@
 	q.m.TilesMovedThisTurn <- 0;
 	q.m.PrevTile <- null;	// Previous tile, so that we can measure the distance after moving from it
 
-	q.create <- function()
+	q.create = @(__original) function()
 	{
-		this.m.ID = "perk.rf_opportunist";
-		this.m.Name = ::Const.Strings.PerkName.RF_Opportunist;
+		__original();
 		this.m.Description = "Glide over terrain and strike before your enemies even see you coming.";
-		this.m.Icon = "ui/perks/perk_rf_opportunist.png";
-		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
-		this.m.Order = ::Const.SkillOrder.Last;
 	}
 
 	q.getTooltip <- function()

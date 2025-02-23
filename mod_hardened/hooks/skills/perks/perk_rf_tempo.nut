@@ -1,4 +1,6 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_rf_tempo");
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_tempo", [
+	"create",
+]);
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_tempo", function(q) {
 	// Public
@@ -8,17 +10,6 @@
 	// Private
 	q.m.PrevTile <- null;	// Used to calculate distance when teleported
 	q.m.TilesMoved <- 0;
-
-	q.create <- function()
-	{
-		this.m.ID = "perk.rf_tempo";
-		this.m.Name = ::Const.Strings.PerkName.RF_Tempo;
-		this.m.Description = "This character is building upon the advantage of going first in the flow of battle.";
-		this.m.Icon = "ui/perks/perk_rf_tempo.png";
-		this.m.IconMini = "perk_rf_tempo_mini";
-		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
-		this.m.Order = ::Const.SkillOrder.Perk;
-	}
 
 	q.isHidden <- function()
 	{

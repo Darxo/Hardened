@@ -1,4 +1,6 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_rf_combo");
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_combo", [
+	"create",
+]);
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_combo", function(q) {
 	// Public
@@ -6,16 +8,6 @@
 
 	// Private
 	q.m.UsedSkills <- {};	// Table of skill IDs and their skill name, that have been used this turn
-
-	q.create <- function()
-	{
-		this.m.ID = "perk.rf_combo";
-		this.m.Name = ::Const.Strings.PerkName.RF_Combo;
-		this.m.Description = "The good old one-two!";
-		this.m.Icon = "ui/perks/perk_rf_combo.png";
-		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
-		this.m.Order = ::Const.SkillOrder.Any;
-	}
 
 	q.getTooltip <- function()
 	{

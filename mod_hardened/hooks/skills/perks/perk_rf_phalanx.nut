@@ -1,13 +1,11 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_rf_phalanx");
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_phalanx", [
+	"create",
+]);
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_phalanx", function(q) {
-	q.create <- function()
+	q.create = @(__original) function()
 	{
-		this.m.ID = "perk.rf_phalanx";
-		this.m.Name = ::Const.Strings.PerkName.RF_Phalanx;
-		this.m.Description = "This character is highly skilled in fighting in formation.";
-		this.m.Icon = "ui/perks/perk_rf_phalanx.png";
-		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
+		__original();
 		this.m.Order = ::Const.SkillOrder.BeforeLast;	// Important so we act after shieldwall effect and prevent its garbage removal
 	}
 

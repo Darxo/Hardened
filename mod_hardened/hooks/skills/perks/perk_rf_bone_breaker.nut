@@ -1,4 +1,6 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_rf_bone_breaker");
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_bone_breaker", [
+	"create",
+]);
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_bone_breaker", function(q) {
 	// Private
@@ -6,13 +8,9 @@
 	q.m.Temp_HitInfoReference <- null;		// Reference to the hitinfo of the current hit
 	q.m.Temp_InjuryMockObject <- null;		// Mockobject for the applyInjury function of actor.nut
 
-	q.create <- function()
+	q.create = @(__original) function()
 	{
-		this.m.ID = "perk.rf_bone_breaker";
-		this.m.Name = ::Const.Strings.PerkName.RF_BoneBreaker;
-		this.m.Description = ::Const.Strings.PerkDescription.RF_BoneBreaker;
-		this.m.Icon = "ui/perks/perk_rf_bone_breaker.png";
-		this.m.Type = ::Const.SkillType.Perk;
+		__original();
 		// We need to apply our effect before most other effect, because we re-implement the vanilla applyInjury logic during onTargetHit
 		// And some perks might expect the injury to be inflicted by that time
 		this.m.Order = ::Const.SkillOrder.Perk - 500;

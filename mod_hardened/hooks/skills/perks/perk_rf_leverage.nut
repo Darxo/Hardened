@@ -1,4 +1,6 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_rf_leverage");
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_leverage", [
+	"create",
+]);
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_leverage", function(q) {
 	// Public
@@ -6,16 +8,6 @@
 
 	// Private
 	q.m.IsSpent <- false;
-
-	q.create <- function()
-	{
-		this.m.ID = "perk.rf_leverage";
-		this.m.Name = ::Const.Strings.PerkName.RF_Leverage;
-		this.m.Description = ::Const.Strings.PerkDescription.RF_Leverage;
-		this.m.Icon = "ui/perks/perk_rf_leverage.png";
-		this.m.Type = ::Const.SkillType.Perk;
-		this.m.Order = ::Const.SkillOrder.Perk;
-	}
 
 	q.onAfterUpdate <- function( _properties )
 	{
