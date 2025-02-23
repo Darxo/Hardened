@@ -35,7 +35,8 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 ### Shield Revert/Rework
 
 - Fatigue no longer has any effect on the defenses granted by shields
-- All reforged changes to Condition, Melee Defense, Ranged Defense and Weight of vanilla shields have been reverted.
+- All reforged changes to Condition, Melee Defense, Ranged Defense and Weight of vanilla shields have been reverted
+- Named shields can roll condition as one of their two buffed properties (just like in Vanilla)
 - Additionally the following balance changes have been made compared to the vanilla stats:
 	- **Tower Shields** now have 30 Condition (up from 24) and no longer grant **Knock Back**
 	- **Heater Shields** now have 25 Melee Defense (up from 20) and no longer grant **Shieldwall**
@@ -74,19 +75,26 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Crowded** debuff for long distance melee attacks now also applies -5% chance to hit for every adjacent ally, ignoring the first two allies
 - As a consequence of the **Crowded** mechanic, 2-tile melee attacks no longer have a penalty to attack adjacent targets
 
-### Reworked Day-Night-Cycle
-
-- Each Day now consists of **Sunrise** (2 hours) followed by **Morning** (6 hours), **Midday** (2 hours), **Afternoon** (6 hours) and ending with **Sunset** (2 hours)
-- Each Night now consists of **Dusk** (2 hours), followed by **Midnight** (2 hours) and **Dawn** (2 hours)
-- Each new day now starts exactly the moment that night changes to day (Double Arena fix)
-- The Day-Night disk on the world map now aligns correctly with the current time
-
 ### Crossbows
 
 - Shooting Crossbows now costs -1 Action Point and has +10% chance to hit
 - Reloading Crossbows now costs +1 Action Point
 - Reloading Crossbows now applies **Reload Disorientation** to you until the start of your next turn.
   - **Reload Disorientation** applies -15 Ranged Skill and 35% less Ranged Defense
+
+### New Perks
+
+- Add new **Elusive** perk in Tier 2 of **Swift Group**. It reduces the AP cost for movement on all terrain by 1 to a minimum of 2. This does not stack with Pathfinder. After moving 2 tiles, become immune to rooted effects, until the start of your next turn.
+- Add new **One with the Shield** perk in Tier 7 of **Shield Group**. It requires a shield. It grants 25% more Injury Threshold. While you have Shieldwall effect you take 40% less Hitpoint damage from head attack. While you don't have Shieldwall effect you take 40% less Hitpoint damage from body attacks
+- Add new **Parry** perk in Tier 3 of **Swift Group**. It requires a one handed melee weapon. It grants Melee Defense equal to your base Ranged Defense against weapon attacks. While engage with someone wielding a melee weapon, you have 70% less Ranged Defense. Does not work with shields, while stunned, fleeing or disarmed.
+- Add new **Scout** perk in Tier 1 of **Ranged Group**. It grants +1 Vision for every 3 adjacent tiles that are either empty or at least 2 levels below your tile. It also removes the Action Point cost for changing height levels, just like **Pathfinder**.
+
+### Reworked Day-Night-Cycle
+
+- Each Day now consists of **Sunrise** (2 hours) followed by **Morning** (6 hours), **Midday** (2 hours), **Afternoon** (6 hours) and ending with **Sunset** (2 hours)
+- Each Night now consists of **Dusk** (2 hours), followed by **Midnight** (2 hours) and **Dawn** (2 hours)
+- Each new day now starts exactly the moment that night changes to day (Double Arena fix)
+- The Day-Night disk on the world map now aligns correctly with the current time
 
 ### Weight on Items
 
@@ -96,15 +104,23 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - You no longer gain Initiative, when you gain Stamina (e.g. from Strong Trait)
 - No Character can ever have less than 10 Stamina
 
-### New Perks
+### Numeral Rework
 
-- Add new **Elusive** perk in Tier 2 of **Swift Group**. It reduces the AP cost for movement on all terrain by 1 to a minimum of 2. This does not stack with Pathfinder. After moving 2 tiles, become immune to rooted effects, until the start of your next turn.
-- Add new **One with the Shield** perk in Tier 7 of **Shield Group**. It requires a shield. It grants 25% more Injury Threshold. While you have Shieldwall effect you take 40% less Hitpoint damage from head attack. While you don't have Shieldwall effect you take 40% less Hitpoint damage from body attacks
-- Add new **Parry** perk in Tier 3 of **Swift Group**. It requires a one handed melee weapon. It grants Melee Defense equal to your base Ranged Defense against weapon attacks. While engage with someone wielding a melee weapon, you have 70% less Ranged Defense. Does not work with shields, while stunned, fleeing or disarmed.
-- Add new **Scout** perk in Tier 1 of **Ranged Group**. It grants +1 Vision for every 3 adjacent tiles that are either empty or at least 2 levels below your tile. It also removes the Action Point cost for changing height levels, just like **Pathfinder**.
+- Add new numerals for enemy sizes and change the ranges of existing numerals
+	- 2-3: A Few
+	- 4-6: Some
+	- 7-10:	Several
+	- 11-15: Many
+	- 16-21: Lots
+	- 22-37: Dozens
+	- 38-69: A plethora
+	- 70+: An army
+- You can no longer see the exact number of enemy parties on the world map
+- Add settings to control, whether to display Numerals or their actual Ranges
 
 ### Other Major Changes
 
+- Loot Allocation is reworked: If your company dealt at leat 50% of the total damage received by the target, you receive their loot, no matter who killed it. Otherwise you receive no loot from it
 - **Night Effect** now grants -3 Vision (down from -2)
 - Disable **Veteran Perks**. Your brothers no longer gain perk points after Level 11
 - When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. No more than 5% of his maximum exp each
@@ -130,6 +146,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack
+- **Shuffle** (granted by **Dynamic Duo**) no longer puts your partner to the next position in the turn order
 - **Spider Poison** now also reduces the Hitpoints Recovery of the target by 50%
 - **Sprint** (granted by **Footwork**) now costs 1 Action Point (up from 0) but no longer increases the fatigue cost per tile. It now disables all Attack-Skills until you wait or end your turn
 - **Stab** now costs 3 Action Points (down from 4) and has a 25% higher threshold to inflict injuries
@@ -199,6 +216,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Inspiring Presence** no longer requires a banner. At the start of each round it grants adjacent allies of your faction +3 Action Points for this turn, if they are adjacent to an enemy and have less Resolve than you. The same target can't be inspired multiple times per turn.
 - **Iron Sights** headshot chance now also works with melee weapons
 - **King of all Weapons** is now called **Spear Flurry** and is completely reworked. It now prevents spear attacks from building up any fatigue
+- **Kingfisher** is reworked: It grants +2 Reach while you have a net equipped. Netting an adjacent target does not expend your net but prevents you from using or swapping it until that target breaks free or dies. If you move more than 1 tile away from that netted target, lose your equipped net
 - **Leverage** is completely reworked. It now reduces the Action Point cost of your first polearm attack each turn by 1 for each adjacent ally.
 - **Lone Wolf** is now only active is no ally from your company is within 2 tiles
 - **Marksmanship** is completely reworked. It now grants +10 minimum and maximum damage while there are no enemies within 2 tiles
@@ -522,6 +540,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - Vanilla Enemies that have no head are no longer decapitatable or smashable
 - Vanilla Enemies that have no head no longer take bonus damage from headshots
+- **Knock Back** now build up and uses up **Fast Adaptation** stacks and applies **Overwhelm**
 - Add setting to improve positional sound during combat
 - Parties on the world map are no longer hidden after loading a game, while the game is still paused
 - Spiders will now give up when their team has given up even if there are still eggs on the battlefield
@@ -548,6 +567,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Calculated Strikes** now works against stunned enemies
 - **Cheap Trick** and **Retribution** now work with delayed skill executions (like Lunge or Aimed Shot)
 - **Vigorous Assault** now counts tiles moved more accurately
+- **Knock Back** now staggers targets when the user has **Line Breaker** perk
 
 ## For Modders
 
@@ -579,6 +599,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Add new `::Hardened.mockFunction` global function allowing you to mod vanilla functions in a precise way
 - Supplies (Money, Tools, Medicine, Ammunition) are now droppable
 - Add new `isNamed` function for `item.nut`
+- `IsUsable` in `skill.nut` is now a softreset property. So you can turn it off during `onUpdate` without needing to worry about turning it on again
+- `knock_back` now calls `onTargetHit` or `onTargetMissed` on the user
 
 ### New Character Properties
 
@@ -599,7 +621,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 # Known Issues:
 
-- Using Recover will prevent you from using **Wait Round** for the rest of this round
 - **Student** will double-dip in the Manhunter Origin for Slaves
 - Vanilla Bug: Ifrit take far more armor damage than intended per hit
 

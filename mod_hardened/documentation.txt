@@ -8,9 +8,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Known Issues:
 
-- Using Recover will prevent you from using **Wait Round** for the rest of this round
 - Loading the game over an enemy allows them to instantly engage the player in battle
-- **Shield Sergeant** can push multiple enemies into the same tile when used with **Line Breaker**
 
 # Compatibility
 
@@ -40,7 +38,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- Often times ranged troops go before their melee army.
 		- In this case they should actively wait, realising that they first need to see how their melee troops behave
 		- Alternatively they should move only very slightly forward and/or only into cover
-- include my more indirect numeral mod
 - fruits of labor ramping up until level 10
 - make throwing weapons into hybrid weapon types to profit from axe/spear/flail perks
 - make disloyal have more of a downside
@@ -95,8 +92,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Display vision of currently active entity, by outlining border of view field on tiles
 	- Grey out the tiles not visible to the current entity
 - New enemy skill "Gravecall" for ancient undead
-- Kingfisher Rename -> Entangler?
-	- Close the distance, and snare your foe with a net in the heat of Battle
 - If a Brother dies for sure, a special ghost animation could be played. Maybe something like the Geist death or a spiritual soul leaving the body towards the sky
 - new hostility state with factions, where they dont give you contracts but are not yet hostile to you
 - New effect given to defender of camps, called "Defender's Advantage". It grants +1 Vision and +10 Resolve. Maybe some other buffs. It reads "You know this place in and out, you have a natural advantage defending it"
@@ -134,11 +129,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Give Bog Unhold split shield
 - Make Anticipation influence attacker with stuns to be more likely to attack
 - Prevent Vanilla find location contracts from refreshing their direction for free when loading the game
+- Automatically transform stamina-debuffs into fatigue-cost-increase for non-attacks
 
 ## Perks Review/Rework
-- change cover ally to debuff the targets melee skill and melee defense, to make it harder to use offensively
-	- Make Cover Ally give +50 Initiative
-	- Look into the cover ally rework in the past (guardian perk)
 - Crossbow Mastery
 	- Swap Crossbow with Shield for free once per turn
 - Relentless: misses dont build up fatigue on you while waiting
@@ -150,7 +143,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Mauler
 	- replace second effect with 15% more damage when hitting body parts that have no remaining armor
 - Vanquisher
-- Bone Breaker
+- Mace Perk
 	- Attacking a body part that has armor remaining, has 50% less injury threshold. Attacking a body part with no armor remaining, inflicts an additional injury of the same type and threshold, if the attack inflicts one
 - Rush of Battle
 - Battle Fervor
@@ -166,24 +159,23 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	- Unlock **Take Aim** skill, which does the same thing as the mastery thingy stuff
 - Smarter height camera. If the turn starts for a bro on lvl 0 but no one is around him but hills, then put camera one level higher
 
-- split hyena/nachzehrer troops in combat/world map
 - orc slayer / crusader events, make them cost 5k crowns each to hire those guys
 - Poise System: Poise bar in immune enemies still at work?
 - Schrat can target enemies through objects?
 - Give barbarian Madman (icy cave) fast adaptation
 - Caravan Quests that expire, spawn a caravan to that contracts destination
 - Use Reforged tech of appending child effects into a skill tooltip (see take aim)
-- Let relentless perk remove the tooltip about the wait debuff from recover skill
-- Check whether inspiring presence shows a tooltip
+- when you press the hotkey of a targetable skill, remove old tooltip and generate new one. This is to replace the generic enemy tooltip with one showing hitchance
+- Improve sell margin of food to make trading with those more interesting
+- split hyena/nachzehrer troops
+- Add ingame tooltip about dismissing brothers (Compensation tooltip) granting experience for others
 
 ## Revert Reforged:
-- Killer loot 50%
-- Gladiator Traits
-- Allow condition roll on named shields again
-- Revert dagger free swap
-- Remove/Reduce background bonuses
+- Gladiator Traits?
+- Remove/Reduce background bonuses?
 
 ## Test:
+- Test, whether my loot allocation now works with the mod "Fun Facts"
 
 ## AI
 - unholds should use throw more often to counter rebuke/flailing swingy stuff
@@ -194,9 +186,9 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Make root skills much more likely to target someone with Unstoppable stacks (because they cancel unstoppable)
 - Lower the urge for nachzehrers to kill themselves to ZOC just to seek out a corpse
 - Make someone with **Crowded** less likely to be targeted by displacement skills (knock back/repel). That would only help those
+- If thrower uses last throwing weapon, mak the mswitch to melee weapon immediately
 
 ## Fix:
-- Exploit Opening not used on shield push?
 - Change Fruits of Labor description to Stamina instead of Maximum Fatigue
 - Fix contract cheese, where saving/loading instantly reveals destination via event?
 - dog ai too fast, not realizing reanimating zombies and dying to ZOC hits
@@ -206,6 +198,9 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	- Need more evidence
 - Fix orcs sometimes using charge, even though they decided to give uple"
 - Alps that teleport during first turn before revealing, might be shown as unknown, even though you can see them because they arrived on visible tiles
+
+## Vanilla Fix (Report this)
+- Fast Adaptation and Exploit Opening are not used up, when you hit an enemy with shield push
 
 ## For modder:
 - Framework for tracking round number of a skill for an entity https://github.com/MSUTeam/MSU/issues/351
@@ -217,10 +212,50 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+## For Reforged
+- Anonymous Damage Sources (bleed, fire, poison), count as if the target dealt damage to themselves regarding the experience-sharing
+	-> Those anonymous damage sources steal experience from the player, even if the player applied them
+	- Count anonymous damage sources (when someone deals damage to themselves) as a new faction (Faction.None)
+
+## TODO
+
+- New Perk Framework (Add new perks save game compatibly)
+- Cover Ally Rework
+	- change cover ally to debuff the targets melee skill and melee defense, to make it harder to use offensively
+		- Make Cover Ally give +50 Initiative
+		- Look into the cover ally rework in the past (guardian perk)
+
 # WIP
 
 - Black Monolith only during night
 this.World.Events.fire("event.drunk_nobleman")
+
+0.29.0
+	- **Kingfisher** is reworked: It grants +2 Reach while you have a net equipped. Netting an adjacent target does not expend your net but prevents you from using or swapping it until that target breaks free or dies. If you move more than 1 tile away from that netted target, lose your equipped net
+	- **Shuffle** (from **Dynamic Duo**) no longer puts your partner to the next position in the turn order
+	- **Student** can now be learned at any level. Learning it at level 8 or above will refund the perk point you spent on it
+	- Named shields can roll condition as one of their two buffed properties (just like in Vanilla)
+	- Loot Allocation is reworked: If your company dealt at leat 50% of the total damage received by the target, you receive their loot, no matter who killed it. Otherwise you receive no loot from it
+	- Add new numerals for enemy sizes and change the ranges of existing numerals
+		- 2-3: A Few
+		- 4-6: Some
+		- 7-10:	Several
+		- 11-15: Many
+		- 16-21: Lots
+		- 22-37: Dozens
+		- 38-69: A plethora
+		- 70+: An army
+	- You can no longer see the exact number of enemy parties on the world map
+	- Add settings to control, whether to display Numerals or their actual Ranges
+	- **Knock Back** now displays accurate combat logs with chance and roll, whenever you use it
+	- **Knock Back** now calls onTargetHit and onTargetMissed on the user
+		- Fix **Fast Adaptation** and **Exploit Opening** not being used up when hitting with **Knock Back**
+		- Fix **Knock Back** not applying **Overwhelm** correctly
+		- Fix **Line Breaker** not applying **Staggered** correctly, when hitting with **Knock Back**
+	- Hide out of date effect icon for **Inspiring Presence** perk when a Banner is equipped
+	- Improve tooltip of **Teamplayer** trait
+	- Fix rare case of character glitching when getting shieldwall effect from **Shield Sergeant**
+	- `IsUsable` in `skill.nut` is now a softreset property. So you can turn it off during `onUpdate` without needing to worry about turning it on again
 
 0.28.0
 	- Make mod compatible with Reforged 0.6.15

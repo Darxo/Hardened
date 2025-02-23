@@ -56,6 +56,8 @@
 			local previousResult = null;
 			local prevMax = null;
 
+			// Todo. Implement this with mockFunction tech
+
 			// We will encounter ::Math.rand in this switcheroo operation exactly two times
 			::Math.rand = function( _min = null, _max = null )
 			{
