@@ -125,9 +125,10 @@
 /// _skipFunctions allows you to skip this many valid functions
 /// @return the name of the caller function, if it exists
 /// @return an empty string if the caller function does not exists
+/// @info when calling this from within a mockFunction, you must use 1 as argument because there is an additional function inbetween us and our caller there
 ::Hardened.getFunctionCaller <- function( _skipFunctions = 0 )
 {
-	// 0 = "getstackinfos"; 1 = "getParentFunctionName"; 2 = whatever function wanted to know its caller
+	// 0 = "getstackinfos"; 1 = "getFunctionCaller"; 2 = whatever function wanted to know its caller
 	local currentLevel = 3;
 
 	while (true)
@@ -161,7 +162,10 @@
 ///     "done" (optional) is a bool signalising if we can start cleaning up
 ///     "value" (optional) is the return value we want the mocked function to return instead
 ///       If this is empty the original function is called to gain the return value. In this case we must make sure to not change the arguments that came by reference, unless that is our intention
-/// @return object with a cleanup() function, which can be used to manually trigger the cleanup
+/// @return object with a
+/// 	cleanup() function, which can be used to manually trigger the cleanup
+///		original(...) function, which can be used to manually call the original to trigger its effect or get its return value
+///			You must declared the variable for the mockObject in the line before you initiative it with the mockFunction return value, if you want to use mockObject.original in the mockFunction function argument
 ::Hardened.mockFunction <- function( _table, _functionName, _mockedBehavior )
 {
 	local oldFunction = ::MSU.getMember(_table, _functionName);	// Store the original function
@@ -206,7 +210,7 @@
 	currentTable[_functionName] = function (...)
 	{
 		vargv.insert(0, _table);
-		local mockResult = _mockedBehavior.acall(vargv);
+		local mockResult = _mockedBehavior.acall(vargv);	// Todo: check, how many arguments _mockedBehavior expects/can handle. Only if it can handle exactly this many, call it, otherwise dont call it
 
 		if ("done" in mockResult && mockResult.done)	// the mock function signals that it is done and we can begin the clean up process
 		{
@@ -223,7 +227,13 @@
 		}
 	};
 
-	return { cleanup = cleanupMockedFunction };
+	return {
+		cleanup = cleanupMockedFunction,
+		original = function(...) {
+			vargv.insert(0, _table);
+			return oldFunction.acall(vargv);
+		},
+	};
 }
 
 /// Revert any changes to hitchance during onAnySkillUsed to revert effects like penalty from attacking close targets or generic hitchance differences
