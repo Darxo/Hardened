@@ -7,7 +7,8 @@
 	"Hardened: Spider Poison reduces the hitpoint recovery of the target",
 	"Hardened: You can retreat individual brothers from a battle if they stand on a border tile",
 	"Hardened: Camps do not show defender during night, unless you have the \'Lookout\' follower",
-	"Hardened: A lot of the UI changes can be turned off in the mod settings"
+	"Hardened: A lot of the UI changes can be turned off in the mod settings",
+	"Hardened: Enemies only drop loot for you, if your company has dealt 50% or more damage of the total damage they received",
 ]);
 
 ::Const.LoadingScreens.remove(0);	// Remove duplicate loading screen
