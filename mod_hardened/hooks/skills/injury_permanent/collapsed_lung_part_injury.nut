@@ -36,19 +36,6 @@
 		}
 	}
 
-	q.onRemoved = @(__original) function()
-	{
-		__original();
-
-		// Make sure that recover is usable again the moment that this injury is removed
-		local recoverSkill = this.getContainer().getSkillByID("actives.recover");
-		if (recoverSkill != null)
-		{
-			recoverSkill.m.IsUsable = true;
-			this.getContainer().getActor().setDirty(true);	// Update the UI so that Recover is instantly shown as enabled
-		}
-	}
-
 // MSU Events
 	q.onQueryTooltip <- function( _skill, _tooltip )
 	{
