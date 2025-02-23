@@ -1,3 +1,4 @@
+// Namespace for generic global utility functions
 ::Hardened.util <- {};
 
 // If the offhand item worn by _entity is equal to any of the IDs inside _existingShieldIDArray, then it is unEquipped and instead _newShieldPath is added

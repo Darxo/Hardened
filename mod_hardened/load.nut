@@ -1,11 +1,10 @@
 ::include("mod_hardened/msu_settings");		// generate all msu mod settings
 
-::include("mod_hardened/msu_settings");
+// Namespaces are not self-contained and usualy dont require other namespaces. They should load very early
+::includeFiles(::IO.enumerateFiles("mod_hardened/namespaces"));
 
 ::include("mod_hardened/reforged/reach");	// This file needs priority
 ::includeFiles(::IO.enumerateFiles("mod_hardened/reforged"));
-
-::include("mod_hardened/global_helper_functions");
 
 // API Hooks
 ::includeFiles(::IO.enumerateFiles("mod_hardened/api"));
