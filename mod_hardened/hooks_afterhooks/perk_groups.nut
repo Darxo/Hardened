@@ -21,6 +21,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		local pgAlwaysGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_always_1");
 		pgAlwaysGroup.addPerk("perk.student", 1);	// Add Student
 		pgAlwaysGroup.removePerk("perk.bags_and_belts");
+		pgAlwaysGroup.m.Icon = "ui/perks/perk_21.png";		// In Reforged this uses the icon of Bags and Belts
 	}
 
 	{	// Axe Group
