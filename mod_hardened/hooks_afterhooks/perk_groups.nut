@@ -1,5 +1,11 @@
-// Todo: explanation why this file has to be in afterhooks bucket
+/*
+Regular hooking of Perk Groups does not work because they are instantiated before any hooks run
+They are pushed into ::DynamicPerks.PerkGroups during the execution of scripts/mods/mod_reforged/load.nut
+THerefor the only way we can "hook"" them is by fetching and changing the instantiated objects from the Lookup Maps
+Same is true for perk_group_collections (::DynamicPerks.PerkGroupCategories)
+*/
 
+// Helper function to change the perk tier of a _perkID from _perkGroup to tier _newTier
 local changePerkTier = function( _perkGroup, _perkID, _newTier )
 {
 	if (_perkGroup.hasPerk(_perkID))
