@@ -46,6 +46,8 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		changePerkTier(pgKnaveGroup, "perk.rf_cheap_trick", 1);			// Move "Cheap Trick" to Tier 1 (down from Tier 2)
 		changePerkTier(pgKnaveGroup, "perk.rf_tricksters_purses", 3);		// Move "Tricksters Purses" to Tier 3 (up from Tier 1)
 		changePerkTier(pgKnaveGroup, "perk.rf_ghostlike", 5);				// Move "Ghostlike" to Tier 5 (up from Tier 4)
+		pgKnaveGroup.m.PerkTreeMultipliers["pg.rf_dagger"] = 2.0;	// // In Reforged this is -1
+		pgKnaveGroup.m.PerkTreeMultipliers["pg.rf_light_armor"] = 1.0;	// // In Reforged this is -1
 	}
 
 	{	// Laborer Group
@@ -142,6 +144,9 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		pgWildling.removePerk("perk.rf_bestial_vigor");	// Remove Bestial Vigor (now Backup Plan) from Wildling
 		pgWildling.removePerk("perk.pathfinder");
 		pgWildling.addPerk("perk.colossus", 1);
+		pgWildling.m.PerkTreeMultipliers["pg.rf_ranged"] = 0.5;	// // In Reforged this is 0
+		pgWildling.m.PerkTreeMultipliers["pg.special.rf_gifted"] = 1.0;	// // In Reforged this is 0
+		pgWildling.m.PerkTreeMultipliers["pg.special.rf_leadership"] = 0.5;	// // In Reforged this is 0
 	}
 }
 
