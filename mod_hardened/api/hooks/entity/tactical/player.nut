@@ -13,4 +13,17 @@
 
 		return xpDifference / 10000.0;
 	}
+
+	q.onSerialize = @(__original) function( _out )
+	{
+		::Hardened.FlaggedPerks.onSerialize(this);
+		__original(_out);
+		::Hardened.FlaggedPerks.onDeserialize(this);	// Now we have to return the perks to the player, as he will want to continue playing
+	}
+
+	q.onDeserialize = @(__original) function( _in )
+	{
+		__original(_in);
+		::Hardened.FlaggedPerks.onDeserialize(this);
+	}
 });
