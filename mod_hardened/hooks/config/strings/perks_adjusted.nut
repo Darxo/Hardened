@@ -750,6 +750,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_finesse",
+		Key = "RF_Finesse",
+		Description = ::UPD.getDescription({
+			Fluff = "Years of combat training have given you insight into the most efficient way of carrying yourself on the battlefield.",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"All skills cost " + ::MSU.Text.colorPositive("20%") + " less [Fatigue|Concept.Fatigue]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_flail_spinner",
 		Key = "RF_FlailSpinner",
 		Description = ::UPD.getDescription({
