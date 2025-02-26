@@ -30,11 +30,13 @@ this.hd_whirling_death_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local ret = this.skill.getDefaultUtilityTooltip();
 
+		local whirlingDeathEffect = ::new("scripts/skills/effects/hd_whirling_death_effect");
 		ret.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = ::Reforged.Mod.Tooltips.parseString("Gain the [Whirling Stance|Skill+hd_whirling_death_effect] effect"),
+			children = whirlingDeathEffect.getTooltip().slice(2),	// Remove name and description tooltip lines
 		});
 
 		ret.push({
