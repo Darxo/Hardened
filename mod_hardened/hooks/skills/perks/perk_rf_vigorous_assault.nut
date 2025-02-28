@@ -126,11 +126,12 @@
 	q.isSkillValid <- function( _skill )
 	{
 		if (!_skill.isAttack()) return false;
+		if (!_skill.isRanged()) return true;	// Covers unarmed melee attacks and other melee weapons
 
 		local weapon = _skill.getItem();
 		if (::MSU.isNull(weapon) || !weapon.isItemType(::Const.Items.ItemType.Weapon)) return false;
 
-		return weapon.isItemType(::Const.Items.ItemType.MeleeWeapon) || weapon.isWeaponType(::Const.Items.WeaponType.Throwing);
+		return weapon.isWeaponType(::Const.Items.WeaponType.Throwing);	// Covers any throwing weapon attack
 	}
 
 	/// @param _tilesMoved custom amount of moves tiles for which we want to get the action point discount.
