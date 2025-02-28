@@ -90,7 +90,11 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 
 	{	// Ranged Combat
 		local pgRangedGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_ranged");
+		pgRangedGroup.removePerk("perk.overwhelm");		// Remove Overwhelm from Ranged
+		changePerkTier(pgRangedGroup, "perk.bullseye", 6);		// Move "Bullseye" to Tier 6 (up from Tier 3)
+
 		pgRangedGroup.addPerk("perk.rf_through_the_ranks", 1);	// Add Through the Ranks (Scout) into the Tier 1
+		pgRangedGroup.addPerk("perk.hd_hybridization", 3);	// Add Hybridization (New Hardened Perk) into the Tier 3
 		pgRangedGroup.addPerk("perk.rf_marksmanship", 7);
 	}
 
