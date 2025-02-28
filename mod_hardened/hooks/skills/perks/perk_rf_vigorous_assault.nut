@@ -10,19 +10,19 @@
 
 	// Private
 	q.m.TilesMovedThisTurn <- 0;
-	q.m.PrevTile <- null;	// Previous tile, so that we can measure the distance after moving from it
+	q.m.PrevTile <- null;	// Previous tile, so that we can measure the distance after teleporting from it
 
 	q.getTooltip <- function()
 	{
 		local ret = this.skill.getTooltip();
 
-		if (this.getActionPointModifier() != 0)
+		if (this.getActionPointCostModifier() != 0)
 		{
 			ret.push({
 				id = 10,
 				type = "text",
 				icon = "ui/icons/action_points.png",
-				text = "Your next attack costs " + ::MSU.Text.colorizeValue(this.getActionPointModifier(), {InvertColor = true, AddSign = true}) + ::Reforged.Mod.Tooltips.parseString(" [Action Point(s)|Concept.ActionPoints]"),
+				text = "Your next attack costs " + ::MSU.Text.colorizeValue(this.getActionPointCostModifier(), {InvertColor = true, AddSign = true}) + ::Reforged.Mod.Tooltips.parseString(" [Action Point(s)|Concept.ActionPoints]"),
 			});
 		}
 
@@ -36,7 +36,6 @@
 			});
 		}
 
-		// TOdo: look over this after everything else
 		ret.push({
 			id = 20,
 			type = "text",
@@ -49,7 +48,7 @@
 
 	q.isHidden <- function()
 	{
-		return this.getActionPointModifier() == 0 && this.getFatigueCostMultiplier() == 1.0;
+		return this.getActionPointCostModifier() == 0 && this.getFatigueCostMultiplier() == 1.0;
 	}
 
 	// Overwrite because we rewrite the original effect so it works with TilesMovedThisTurn and improving modability
@@ -64,7 +63,7 @@
 		// QoL: If we preview movement, we pretend like the character actually moves those tiles for the purpose of calculating the new cost of all skills after the movement
 		local additionalPreviewDistance = actor.isPreviewing() && actor.getPreviewMovement() != null ? actor.getPreviewMovement().Tiles : 0;
 
-		local actionPointModifier = this.getActionPointModifier(this.m.TilesMovedThisTurn + additionalPreviewDistance);
+		local actionPointModifier = this.getActionPointCostModifier(this.m.TilesMovedThisTurn + additionalPreviewDistance);
 		local fatigueCostMult = this.getFatigueCostMultiplier(this.m.TilesMovedThisTurn + additionalPreviewDistance);
 
 		if (actionPointModifier != 0 || fatigueCostMult != 1.0)
@@ -84,11 +83,11 @@
 	{
 		if (this.getContainer().getActor().isActiveEntity())
 		{
-			this.m.TilesMovedThisTurn += _numTiles;
+			this.m.TilesMovedThisTurn += _numTiles;		// Regular natural movement
 
 			if (_numTiles == 0)	// This is an indicator, that we were "teleported", instead of having moved naturally
 			{
-				this.m.PrevTile = _tile;
+				this.m.PrevTile = _tile;	// In this case we need to keep track of the starting tile so we can estimate a tile distance later
 			}
 		}
 	}
@@ -136,7 +135,7 @@
 
 	/// @param _tilesMoved custom amount of moves tiles for which we want to get the action point discount.
 	/// 	If null, this.m.TilesMovedThisTurn will be used instead
-	q.getActionPointModifier <- function( _tilesMoved = null )
+	q.getActionPointCostModifier <- function( _tilesMoved = null )
 	{
 		if (_tilesMoved == null) _tilesMoved = this.m.TilesMovedThisTurn;
 		_tilesMoved += this.getNPCVirtualTilesMoved();
@@ -186,6 +185,7 @@
 				if (distance <= this.m.TilesPerSet + aoo.getMaxRange())
 				{
 					canReachSomeoneWithVigorousAssault = true;
+					break;
 				}
 			}
 
