@@ -41,7 +41,7 @@
 			id = 20,
 			type = "text",
 			icon = "ui/icons/warning.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Will expire upon using a throwing attack, [waiting|Concept.Wait] or ending the turn."),
+			text = ::Reforged.Mod.Tooltips.parseString("Will expire upon using any skill, [waiting|Concept.Wait] or ending your [turn,|Concept.Turn]"),
 		});
 
 		return ret;
