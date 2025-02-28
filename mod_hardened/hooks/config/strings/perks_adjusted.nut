@@ -1317,7 +1317,10 @@ foreach (description in adjustedDescriptions)
 ::Const.Perks.findById("perk.rf_deep_impact").Name = ::Const.Strings.PerkName.RF_DeepImpact;
 
 ::Const.Strings.PerkName.RF_Hybridization = "Toolbox";
-::Const.Perks.findById("perk.rf_hybridization").Name = ::Const.Strings.PerkName.RF_Hybridization;
+local hybridizationPerkDef = ::Const.Perks.findById("perk.rf_hybridization");
+hybridizationPerkDef.Name = ::Const.Strings.PerkName.RF_Hybridization;
+hybridizationPerkDef.Icon = "ui/perks/perk_hd_toolbox.png";	// Give Toolbox a new perk icon, so we can reuse the hybridization art
+hybridizationPerkDef.IconDisabled = "ui/perks/perk_hd_toolbox_sw.png";	// Give Toolbox a new perk icon, so we can reuse the hybridization art
 
 ::Const.Strings.PerkName.RF_Poise = "Flexible";
 ::Const.Perks.findById("perk.rf_poise").Name = ::Const.Strings.PerkName.RF_Poise;
