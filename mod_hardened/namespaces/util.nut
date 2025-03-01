@@ -105,3 +105,40 @@
 
 	return xpPerBrother;
 }
+
+::Hardened.util.migratePerk <- function( _player, _oldPerkId, _newPerkId )
+{
+	local perkTree = _player.getPerkTree();
+	if (perkTree.hasPerk(_oldPerkId))
+	{
+		local oldPerkInfo = perkTree.getPerk(_oldPerkId);
+		local newPerkDef = ::Const.Perks.findById(_newPerkId);
+
+		local perkTier = oldPerkInfo.Row + 1;
+		local perkRow = perkTier;
+		local perkPosition = 0;
+		foreach (rowIndex, row in perkTree.getTree())
+		{
+			foreach (perkIndex, perk in row)
+			{
+				if (perk.ID == _oldPerkId)
+				{
+					perkRow = rowIndex;
+					perkPosition = perkIndex;
+					break;
+				}
+			}
+		}
+
+		// Insert our standalone perk at the exact same position into the perk tree, as where the old perk was
+		::Hardened.FlaggedPerks.addPerk(perkTree, newPerkDef, perkTier, perkRow, perkPosition);
+		perkTree.removePerk(_oldPerkId);	// Remove the old perk from the Perk Tree
+
+		// Replace old perk with our standalone new perk, if the former was unlocked
+		if (_player.hasPerk(_oldPerkId))
+		{
+			_player.getSkills().removeByID(_oldPerkId);
+			_player.getSkills().add(::new(newPerkDef.Script));
+		}
+	}
+}
