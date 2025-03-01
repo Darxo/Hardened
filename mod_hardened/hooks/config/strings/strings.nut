@@ -53,6 +53,22 @@ local newPerks = [
 			],
 		}),
 	},
+	{
+		Key = "HD_Elusive",
+		Name = "Elusive",
+		Description = ::UPD.getDescription({
+			Fluff = "You are impossible to pin down!",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"[Action Point|Concept.ActionPoints] costs for movement on all terrain is reduced by 1 to a minimum of 2 [Action Points|Concept.ActionPoints] per tile. This does not stack with [Pathfinder|Perk+perk_pathfinder]",
+						"After moving 2 tiles, become immune to [rooted|Concept.Rooted] effects, until the start of your next [turn|Concept.Turn]",
+					],
+				},
+			],
+		}),
+	},
 ];
 
 // Add new Hardened Perks

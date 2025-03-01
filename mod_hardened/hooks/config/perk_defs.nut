@@ -17,6 +17,14 @@
 		Icon = "ui/perks/perk_hd_scout.png",
 		IconDisabled = "ui/perks/perk_hd_scout_sw.png",
 	},
+	{
+		ID = "perk.hd_elusive",
+		Script = "scripts/skills/perks/perk_hd_elusive",
+		Name = ::Const.Strings.PerkName.HD_Elusive,
+		Tooltip = ::Const.Strings.PerkDescription.HD_Elusive,
+		Icon = "ui/perks/perk_rf_trip_artist.png",
+		IconDisabled = "ui/perks/perk_rf_trip_artist_sw.png",
+	},
 ]);
 
 ::Const.Perks.findById("perk.rf_dismantle").Icon = "ui/perks/perk_13.png";
