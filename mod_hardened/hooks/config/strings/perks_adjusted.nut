@@ -819,6 +819,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_fresh_and_furious",
+		Key = "RF_FruitsOfLabor",
+		Description = ::UPD.getDescription({
+			Fluff = "You\'ve quickly realized that your years of hard labor give you an edge in mercenary work!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive("10%") + " more [Hitpoints|Concept.Hitpoints] and [Stamina|Concept.MaximumFatigue]"
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_hybridization",
 		Key = "RF_Hybridization",	// This is now called "Toolbox"
 		Description = ::UPD.getDescription({
