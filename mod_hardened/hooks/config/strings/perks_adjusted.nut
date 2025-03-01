@@ -180,24 +180,6 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
-		ID = "perk.reach_advantage",
-		Key = "ReachAdvantage",
-		Description = ::UPD.getDescription({
-			Fluff = "With your quick reflexes, you deflect weapon strikes with ease.",
-			Requirement = "One-Handed Melee Weapon",
-			Effects = [
-				{
-					Type = ::UPD.EffectType.Passive,
-					Description = [
-						"Gain [Melee Defense|Concept.MeleeDefense] equal to your [Base Ranged Defense|Concept.RangeDefense] against weapon attacks",
-						"You have " + ::MSU.Text.colorNegative("70%") + " less [Ranged Defense|Concept.RangeDefense] while engaged with someone wielding a melee weapon",
-						"Does not work with shields. Does not work while [disarmed,|Skill+disarmed_effect] [stunned|Skill+stunned_effect] or [fleeing|Concept.Morale]",
-					],
-				},
-			],
-		}),
-	},
-	{
 		ID = "perk.recover",
 		Key = "Recover",
 		Description = ::UPD.getDescription({
@@ -1320,12 +1302,6 @@ hybridizationPerkDef.IconDisabled = "ui/perks/perk_hd_toolbox_sw.png";	// Give T
 ::Const.Perks.findById("perk.rf_swift_stabs").Name = ::Const.Strings.PerkName.RF_SwiftStabs;
 
 
-// Hijack unused vanilla perk "Reach Advantage" into "Parry"
-::Const.Strings.PerkName.ReachAdvantage = "Parry";
-local reachAdvantagePerkDef = ::Const.Perks.findById("perk.reach_advantage");
-reachAdvantagePerkDef.Name = ::Const.Strings.PerkName.ReachAdvantage;
-reachAdvantagePerkDef.Icon = "ui/perks/perk_hd_parry.png";
-reachAdvantagePerkDef.IconDisabled = "ui/perks/perk_hd_parry_sw.png";
 
 // Hijack unused vanilla perk "Recover" into "One with the Shield"
 ::Const.Strings.PerkName.Recover = "One with the Shield";
