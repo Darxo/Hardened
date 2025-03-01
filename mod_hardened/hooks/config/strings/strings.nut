@@ -37,6 +37,22 @@ local newPerks = [
 			],
 		}),
 	},
+	{
+		Key = "HD_Scout",
+		Name = "Scout",
+		Description = ::UPD.getDescription({
+			Fluff = "High ground and a clear view are your greatest assets.",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"You have " + ::MSU.Text.colorPositive("+1") + " [Vision|Concept.SightDistance] for every 3 adjacent tiles that are either empty or at least 2 levels below your tile",
+						"Changing height levels has no additional [Action Point|Concept.ActionPoints] cost",
+					],
+				},
+			],
+		}),
+	},
 ];
 
 // Add new Hardened Perks
