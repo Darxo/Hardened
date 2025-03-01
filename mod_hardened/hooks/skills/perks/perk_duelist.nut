@@ -15,6 +15,7 @@
 		if (mainhandItem == null) return;
 		if (mainhandItem.isItemType(::Const.Items.ItemType.OneHanded) == false) return;
 
+		_properties.UpdateWhenTileOccupationChanges = true;	// Because this perk grants direct damage and reach depending on adjacent enemies
 		_properties.DamageDirectAdd += this.getArmorPenetrationModifier();
 		_properties.Reach += this.getReachModifier();
 	}

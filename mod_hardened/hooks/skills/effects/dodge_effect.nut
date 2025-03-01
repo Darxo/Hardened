@@ -8,6 +8,12 @@
 		this.m.Description = "Harness your agility to evade attacks, bolstering your defenses with quick reflexes. The more space you have to move, the harder you are to hit."
 	}
 
+	q.onUpdate = @(__original) function( _properties )
+	{
+		__original(_properties);
+		_properties.UpdateWhenTileOccupationChanges = true;	// Because this effect grants defense depending on adjacent empty tiles
+	}
+
 	// Overwrite of Vanilla function to stop its effects and apply our own
 	q.onAfterUpdate = @() function( _properties )
 	{

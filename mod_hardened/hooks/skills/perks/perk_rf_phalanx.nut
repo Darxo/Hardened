@@ -44,6 +44,7 @@
 
 	q.onUpdate <- function( _properties )
 	{
+		_properties.UpdateWhenTileOccupationChanges = true;	// Because this effect grants Reach depending on adjacent allies
 		_properties.Reach += this.getReachModifier();
 	}
 

@@ -1,6 +1,12 @@
 ::Hardened.HooksMod.hook("scripts/skills/effects/lone_wolf_effect", function(q) {
 	q.m.RequiredIsolationDistance <- 2;
 
+	q.onUpdate = @(__original) function( _properties )
+	{
+		_properties.UpdateWhenTileOccupationChanges = true;	// Because our bonus is applied depending on how many adjacent allies there are
+		__original(_properties);
+	}
+
 // Reforged Functions
 	// Overwrite of Reforged function because we change the condition for the long wolf effect
 	q.isInValidPosition = @() function()

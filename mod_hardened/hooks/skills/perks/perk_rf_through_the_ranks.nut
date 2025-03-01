@@ -43,6 +43,7 @@
 
 	q.onUpdate <- function( _properties )
 	{
+		_properties.UpdateWhenTileOccupationChanges = true;	// Because this perk grants vision depending on adjacent objects
 		this.getContainer().getActor().m.LevelActionPointCost = 0;
 		_properties.Vision += this.getVisionModifier(this.m.DestinationTile);
 	}

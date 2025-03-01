@@ -7,6 +7,12 @@
 		this.m.MeleeDefenseModifier = 0;
 	}
 
+	q.onUpdate = @(__original) function( _properties )
+	{
+		__original(_properties);
+		_properties.UpdateWhenTileOccupationChanges = true;	// Because our bonus is applied depending on how many adjacent allies there are
+	}
+
 	// Overwrite because we dont reduce chance to hit the partner or reduce damage when hitting the partner
 	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties ) {}
 });

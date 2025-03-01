@@ -36,6 +36,7 @@
 	// Overwrite, because we replace the vanilla effect with our own
 	q.onUpdate = @() function( _properties )
 	{
+		_properties.UpdateWhenTileOccupationChanges = true;	// Because this perk grants melee defense depending on adjacent enemies
 		_properties.MeleeDefense += this.getMeleeDefenseModifier();
 	}
 

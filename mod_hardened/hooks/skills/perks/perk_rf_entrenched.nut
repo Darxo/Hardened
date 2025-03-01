@@ -62,6 +62,7 @@
 
 	q.onUpdate <- function( _properties )
 	{
+		_properties.UpdateWhenTileOccupationChanges = true;	// Because this perk grants resolve, ranged defense and ranged skill depending on adjacent objects
 		_properties.Bravery += this.getResolveModifier();
 		_properties.RangedDefense += this.getRangedDefenseModifier();
 		_properties.RangedSkillMult *= this.getRangedSkillMult();
