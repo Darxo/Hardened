@@ -4,7 +4,7 @@
 		__original();
 
 		// Goblin Wolfrider gain Elusive because they inherit the regular Goblin, but we want them to keep Pathfinder, just like vanilla had
-		this.getSkills().removeByID("perk.rf_trip_artist");
+		this.getSkills().removeByID("perk.hd_elusive");
 		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
 	}
 });

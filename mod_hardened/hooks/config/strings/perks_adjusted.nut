@@ -1175,20 +1175,6 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
-		ID = "perk.rf_trip_artist",
-		Key = "RF_TripArtist",		// Current name is 'Elusive'
-		Description = ::UPD.getDescription({
-			Fluff = "You are impossible to pin down!",
-			Effects = [{
-				Type = ::UPD.EffectType.Passive,
-				Description = [
-					"[Action Point|Concept.ActionPoints] costs for movement on all terrain is reduced by 1 to a minimum of 2 [Action Points|Concept.ActionPoints] per tile. This does not stack with [Pathfinder|Perk+perk_pathfinder]",
-					"After moving 2 tiles, become immune to [rooted|Concept.Rooted] effects, until the start of your next [turn|Concept.Turn]",
-				],
-			}],
-		}),
-	},
-	{
 		ID = "perk.rf_through_the_gaps",
 		Key = "RF_ThroughTheGaps",
 		Description = ::UPD.getDescription({
@@ -1333,10 +1319,6 @@ hybridizationPerkDef.IconDisabled = "ui/perks/perk_hd_toolbox_sw.png";	// Give T
 ::Const.Strings.PerkName.RF_SwiftStabs = "Hit and Run";
 ::Const.Perks.findById("perk.rf_swift_stabs").Name = ::Const.Strings.PerkName.RF_SwiftStabs;
 
-// Hijack unused reforged perk "Trip Artist" into "Elusive"
-::Const.Strings.PerkName.RF_TripArtist = "Elusive";
-local tripArtistPerkDef = ::Const.Perks.findById("perk.rf_trip_artist");
-tripArtistPerkDef.Name = ::Const.Strings.PerkName.RF_TripArtist;
 
 // Hijack unused vanilla perk "Reach Advantage" into "Parry"
 ::Const.Strings.PerkName.ReachAdvantage = "Parry";

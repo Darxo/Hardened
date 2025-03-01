@@ -2,6 +2,6 @@
 	q.onInit = @(__original) function()
 	{
 		__original();
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_trip_artist"));	// Add 'Elusive' to this enemy
+		this.getSkills().add(::new("scripts/skills/perks/perk_hd_elusive"));	// Add 'Elusive' to this enemy
 	}
 });
