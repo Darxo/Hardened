@@ -180,24 +180,6 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
-		ID = "perk.recover",
-		Key = "Recover",
-		Description = ::UPD.getDescription({
-			Fluff = "Shift your shield to guard vital points; raised to protect your head, lowered to shield your body",
-			Requirement = "Shield",
-			Effects = [
-				{
-					Type = ::UPD.EffectType.Passive,
-					Description = [
-						"You have " + ::MSU.Text.colorPositive("25%") + " more [Injury Threshold|Concept.InjuryThreshold]",
-						"You take " + ::MSU.Text.colorPositive("40%") + " less Hitpoint damage from Attacks to the Head, while you have the [Shieldwall effect|Skill+shieldwall_effect]",
-						"You take " + ::MSU.Text.colorPositive("40%") + " less Hitpoint damage from Attacks to the Body, while you don\'t have the [Shieldwall effect|Skill+shieldwall_effect]",
-					],
-				},
-			],
-		}),
-	},
-	{
 		ID = "perk.mastery.axe",
 		Key = "SpecAxe",
 		Description = ::UPD.getDescription({
@@ -1303,9 +1285,3 @@ hybridizationPerkDef.IconDisabled = "ui/perks/perk_hd_toolbox_sw.png";	// Give T
 
 
 
-// Hijack unused vanilla perk "Recover" into "One with the Shield"
-::Const.Strings.PerkName.Recover = "One with the Shield";
-local recoverPerkDef = ::Const.Perks.findById("perk.recover");
-recoverPerkDef.Name = ::Const.Strings.PerkName.Recover;
-recoverPerkDef.Icon = "ui/perks/perk_02.png";
-recoverPerkDef.IconDisabled = "ui/perks/perk_02_sw.png";

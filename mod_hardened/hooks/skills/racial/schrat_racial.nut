@@ -25,6 +25,6 @@
 	q.onAdded = @(__original) function()
 	{
 		__original();
-		this.getContainer().add(::new("scripts/skills/perks/perk_recover"));	// "Recover" has been reworked into "One with the Shield"
+		this.getContainer().add(::new("scripts/skills/perks/perk_hd_one_with_the_shield"));	// The typical Schrat damage reduction now comes from this new perk
 	}
 });
