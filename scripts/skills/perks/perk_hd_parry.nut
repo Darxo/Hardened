@@ -96,7 +96,10 @@ this.perk_hd_parry <- ::inherit("scripts/skills/skill", {
 	{
 		this.skill.addResources();
 
-		::Tactical.addResource(SoundOnParry);	// Make it so these sfx will actually loaded and able to be played
+		foreach (resource in this.m.SoundOnParry)
+		{
+			::Tactical.addResource(resource);	// Make it so these sfx will actually loaded and able to be played
+		}
 	}
 
 // New Functions
