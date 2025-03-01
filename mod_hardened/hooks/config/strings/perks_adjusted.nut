@@ -1273,6 +1273,10 @@ hybridizationPerkDef.IconDisabled = "ui/perks/perk_hd_toolbox_sw.png";	// Give T
 
 ::Const.Strings.PerkName.RF_Poise = "Flexible";
 ::Const.Perks.findById("perk.rf_poise").Name = ::Const.Strings.PerkName.RF_Poise;
+::Const.Perks.findById("perk.rf_poise").verifyPrerequisites <- function( _player, _tooltip )
+{
+	return true;
+}
 
 ::Const.Strings.PerkName.RF_KingOfAllWeapons = "Spear Flurry";
 ::Const.Perks.findById("perk.rf_king_of_all_weapons").Name = ::Const.Strings.PerkName.RF_KingOfAllWeapons;
@@ -1283,5 +1287,15 @@ hybridizationPerkDef.IconDisabled = "ui/perks/perk_hd_toolbox_sw.png";	// Give T
 ::Const.Strings.PerkName.RF_SwiftStabs = "Hit and Run";
 ::Const.Perks.findById("perk.rf_swift_stabs").Name = ::Const.Strings.PerkName.RF_SwiftStabs;
 
+::Const.Perks.findById("perk.rf_dismantle").Icon = "ui/perks/perk_13.png";
+::Const.Perks.findById("perk.rf_dismantle").IconDisabled = "ui/perks/perk_13_sw.png";
 
+::Const.Perks.findById("perk.battle_forged").verifyPrerequisites <- function( _player, _tooltip )
+{
+	return true;
+}
 
+::Const.Perks.findById("perk.nimble").verifyPrerequisites <- function( _player, _tooltip )
+{
+	return true;
+}
