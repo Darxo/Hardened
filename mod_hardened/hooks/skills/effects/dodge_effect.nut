@@ -77,7 +77,7 @@
 		return ret;
 	}
 
-	// private
+// private
 	q.calculateBonus <- function( _emptyTilesOverwrite = null )
 	{
 		local combinedFraction = this.m.BaseFraction;

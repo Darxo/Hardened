@@ -1,3 +1,6 @@
+/// ::World.getTime() returns a class instance, which we can't just change the values of or even iterate over them and read them out automatically
+/// So in order to hook it properly, we create a new squirrel table and copy all values over manually
+/// In this new table we can now change values as we please
 local oldGetTime = ::World.getTime;
 ::World.getTime = function() {
 	local time = oldGetTime();
