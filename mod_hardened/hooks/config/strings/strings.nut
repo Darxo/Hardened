@@ -38,6 +38,24 @@ local newPerks = [
 		}),
 	},
 	{
+		Key = "HD_Parry",
+		Name = "Parry",
+		Description = ::UPD.getDescription({
+			Fluff = "With your quick reflexes, you deflect weapon strikes with ease.",
+			Requirement = "One-Handed Melee Weapon",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Gain [Melee Defense|Concept.MeleeDefense] equal to your [Base Ranged Defense|Concept.RangeDefense] against weapon attacks",
+						"You have " + ::MSU.Text.colorNegative("70%") + " less [Ranged Defense|Concept.RangeDefense] while engaged with someone wielding a melee weapon",
+						"Does not work with shields. Does not work while [disarmed,|Skill+disarmed_effect] [stunned|Skill+stunned_effect] or [fleeing|Concept.Morale]",
+						],
+				},
+			],
+		}),
+	},
+	{
 		Key = "HD_Scout",
 		Name = "Scout",
 		Description = ::UPD.getDescription({

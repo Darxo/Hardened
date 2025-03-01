@@ -10,6 +10,14 @@
 		IconDisabled = "ui/perks/perk_rf_hybridization_sw.png",
 	},
 	{
+		ID = "perk.hd_parry",
+		Script = "scripts/skills/perks/perk_hd_parry",
+		Name = ::Const.Strings.PerkName.HD_Parry,
+		Tooltip = ::Const.Strings.PerkDescription.HD_Parry,
+		Icon = "ui/perks/perk_hd_parry.png",
+		IconDisabled = "ui/perks/perk_hd_parry_sw.png",
+	},
+	{
 		ID = "perk.hd_scout",
 		Script = "scripts/skills/perks/perk_hd_scout",
 		Name = ::Const.Strings.PerkName.HD_Scout,
