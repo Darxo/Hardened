@@ -59,5 +59,6 @@
 		// So to improve backwards compatibility, we transform old instances of those perks into new instances including changes to the perk tree
 		// From the player pov nothing should change
 		::Hardened.util.migratePerk(this, "perk.rf_through_the_ranks", "perk.hd_scout");
+		::Hardened.util.migratePerk(this, "perk.rf_trip_artist", "perk.hd_elusive");
 	}
 });
