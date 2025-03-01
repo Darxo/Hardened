@@ -28,6 +28,7 @@
 	{
 		this.getSkills().update();	// This will allow skills to influence the vision of this entity, before updateVisibility with the destination tile is called
 		__original(_tile);
+		this.__possiblyChangedTileSituation();
 	}
 
 	q.hasZoneOfControl = @(__original) function()
@@ -165,7 +166,8 @@
 		return flooredRecoveredHitpoints;
 	}
 
-	// Private function only meant for converting instances of vanilla hitpoint recovery to utilize our new system
+// Private Functions
+	// only meant for converting instances of vanilla hitpoint recovery to utilize our new system
 	q.__recoverHitpointsSwitcheroo <- function( _hitpointsToRecover )
 	{
 		if (!::MSU.Utils.hasState("tactical_state"))	// Outside of battle we can't generate combat logs so there are no logs we need to prevent from showing
@@ -195,6 +197,19 @@
 			combatLog.log = oldLog;	// Revert the vanilla log function to what it was before
 		}
 	}
+
+	// This actor has possibly changed the tile situation on the battlefield, by spawning in or moving, so we check who we need to update because of this fact
+	q.__possiblyChangedTileSituation <- function()
+	{
+		foreach (actor in ::Tactical.Entities.getAllInstancesAsArray())
+		{
+			if (this.getID() == actor.getID()) continue;	// This update would be redundant so we skip it for performance reasons
+			if (actor.getCurrentProperties().UpdateWhenTileOccupationChanges)
+			{
+				actor.getSkills().update();	// This will allow certain skills to react to the movement of other characters on the battlefield
+			}
+		}
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/entity/tactical/actor", function(q) {
@@ -210,5 +225,11 @@
 		}
 
 		return ret;
+	}
+
+	q.onSpawned = @(__original) function()
+	{
+		__original();
+		this.__possiblyChangedTileSituation();
 	}
 });
