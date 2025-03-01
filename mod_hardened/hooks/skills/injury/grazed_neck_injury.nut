@@ -22,7 +22,7 @@
 	{
 		__original();
 
-		if (this.getContainer().getActor().isPlacedOnMap())		// Todo find more general condition to check for whether its combat
+		if (::Tactical.isActive())
 		{
 			local vanillaDamagePerRound = 1;
 			local bleed = ::new("scripts/skills/effects/bleeding_effect");

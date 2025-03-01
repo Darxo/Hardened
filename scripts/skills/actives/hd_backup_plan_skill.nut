@@ -12,9 +12,9 @@ this.hd_backup_plan_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.hd_backup_plan";
 		this.m.Name = "Backup Plan";
 		this.m.Description = "I\'ve got a Plan B!";
-		this.m.Icon = "skills/rf_bestial_vigor_skill.png";	// Todo, find new skill
-		this.m.IconDisabled = "skills/rf_bestial_vigor_skill_sw.png";	// Todo, find new skill
-		this.m.Overlay = "rf_bestial_vigor_skill";	// Todo, find new overlay
+		this.m.Icon = "skills/rf_bestial_vigor_skill.png";
+		this.m.IconDisabled = "skills/rf_bestial_vigor_skill_sw.png";
+		this.m.Overlay = "rf_bestial_vigor_skill";
 		this.m.SoundOnUse = [
 			"sounds/new_round_01.wav",
 			"sounds/new_round_02.wav",

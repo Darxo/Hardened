@@ -58,7 +58,6 @@
 		{
 			if (_targetEntity.isPlayerControlled() || !_targetEntity.isHiddenToPlayer())
 			{
-				// Todo: customized tooltip
 				::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(_targetEntity) + "\'s " + ::Const.Strings.BodyPartName[this.m.Temp_HitInfoReference.BodyPart] + " suffers " + boneBreakerInjury.getNameOnly() + " because of \'Bone Breaker\'!");
 			}
 		}
