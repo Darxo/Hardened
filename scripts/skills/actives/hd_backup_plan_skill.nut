@@ -106,6 +106,7 @@ this.hd_backup_plan_skill <- this.inherit("scripts/skills/skill", {
 
 	function onCombatFinished()
 	{
+		this.skill.onCombatFinished();
 		if (this.m.IsEffectActive)
 		{
 			this.m.IsEffectActive = false;
