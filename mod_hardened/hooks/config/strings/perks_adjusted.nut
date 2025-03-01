@@ -783,7 +783,7 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
-		ID = "perk.rf_fresh_and_furious",
+		ID = "perk.rf_fruits_of_labor",
 		Key = "RF_FruitsOfLabor",
 		Description = ::UPD.getDescription({
 			Fluff = "You\'ve quickly realized that your years of hard labor give you an edge in mercenary work!",
