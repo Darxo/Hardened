@@ -101,7 +101,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	{	// Shield Group
 		local pgShieldGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_shield");
 		pgShieldGroup.removePerk("perk.duelist");		// Remove Duelist fomr Shields
-		pgShieldGroup.addPerk("perk.recover", 7);		// Add Recover (One with the Shield) into the Tier 7
+		pgShieldGroup.addPerk("perk.hd_one_with_the_shield", 7);		// Add One with the Shield (New Hardened Perk) into the Tier 7
 	}
 
 	{	// Soldier Group

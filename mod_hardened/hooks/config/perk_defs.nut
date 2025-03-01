@@ -10,6 +10,14 @@
 		IconDisabled = "ui/perks/perk_rf_hybridization_sw.png",
 	},
 	{
+		ID = "perk.hd_one_with_the_shield",
+		Script = "scripts/skills/perks/perk_hd_one_with_the_shield",
+		Name = ::Const.Strings.PerkName.HD_OneWithTheShield,
+		Tooltip = ::Const.Strings.PerkDescription.HD_OneWithTheShield,
+		Icon = "ui/perks/perk_02.png",	// Unused vanilla art of a shield deflecting a flail attack
+		IconDisabled = "ui/perks/perk_02_sw.png",
+	},
+	{
 		ID = "perk.hd_parry",
 		Script = "scripts/skills/perks/perk_hd_parry",
 		Name = ::Const.Strings.PerkName.HD_Parry,

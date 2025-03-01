@@ -38,6 +38,24 @@ local newPerks = [
 		}),
 	},
 	{
+		Key = "HD_OneWithTheShield",
+		Name = "One with the Shield",
+		Description = ::UPD.getDescription({
+			Fluff = "Shift your shield to guard vital points; raised to protect your head, lowered to shield your body",
+			Requirement = "Shield",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"You have " + ::MSU.Text.colorPositive("25%") + " more [Injury Threshold|Concept.InjuryThreshold]",
+						"You take " + ::MSU.Text.colorPositive("40%") + " less Hitpoint damage from Attacks to the Head, while you have the [Shieldwall effect|Skill+shieldwall_effect]",
+						"You take " + ::MSU.Text.colorPositive("40%") + " less Hitpoint damage from Attacks to the Body, while you don\'t have the [Shieldwall effect|Skill+shieldwall_effect]",
+					],
+				},
+			],
+		}),
+	},
+	{
 		Key = "HD_Parry",
 		Name = "Parry",
 		Description = ::UPD.getDescription({
