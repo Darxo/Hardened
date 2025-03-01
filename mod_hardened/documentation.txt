@@ -169,6 +169,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Improve sell margin of food to make trading with those more interesting
 - split hyena/nachzehrer troops
 - Add ingame tooltip about dismissing brothers (Compensation tooltip) granting experience for others
+- Reduce bleeding effect noise from bleeding injuries
 
 ## Revert Reforged:
 - Gladiator Traits?
@@ -178,6 +179,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Test, whether my loot allocation now works with the mod "Fun Facts"
 
 ## AI
+- Player: Make fleeing player characters actually leave the battle when at the border
 - unholds should use throw more often to counter rebuke/flailing swingy stuff
 - make it so enemies are less likely to remove the net if it doesnt affect them (e.g. Orcs)
 - Change AI Rotation to not/rarely rotate your brothers into battle?
@@ -187,6 +189,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Lower the urge for nachzehrers to kill themselves to ZOC just to seek out a corpse
 - Make someone with **Crowded** less likely to be targeted by displacement skills (knock back/repel). That would only help those
 - If thrower uses last throwing weapon, mak the mswitch to melee weapon immediately
+- make NPCs with Formidable Approach more likely to move to tiles with adjacent enemies which they dont yet have in their list or which are confident with less max HP
 
 ## Fix:
 - Change Fruits of Labor description to Stamina instead of Maximum Fatigue
@@ -198,9 +201,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	- Need more evidence
 - Fix orcs sometimes using charge, even though they decided to give uple"
 - Alps that teleport during first turn before revealing, might be shown as unknown, even though you can see them because they arrived on visible tiles
-
-## Vanilla Fix (Report this)
-- Fast Adaptation and Exploit Opening are not used up, when you hit an enemy with shield push
 
 ## For modder:
 - Framework for tracking round number of a skill for an entity https://github.com/MSUTeam/MSU/issues/351
@@ -230,12 +230,28 @@ This will unbrick your end-of-combat screen, if it doesnt show
 - Black Monolith only during night
 this.World.Events.fire("event.drunk_nobleman")
 
+0.30.0
+	- Add new **Hybridization** perk in Tier 3 of **Ranged Group**. It allows swapping two weapons with no shared weapon types for free, once per turn. And whenever you swap two weapons, gain +5% hitchance for your next attack until you wait or end your turn
+	- **Bullseye** is now a Tier 6 perk (up from Tier 3)
+	- **Overwhelm** is no longer part of the **Ranged Tree**
+	- **Fruits of Labor** now grants multiplicative Hitpoints and Stamina instead of scaling off of base properties
+	- New perks introduced by Hardened (**Parry**, **Elusive**, **Scout**, **One with the Shield**, **Hybridization**) are now refunded and removed from your perk tree, when you remove Hardened mod and re-learned when you add Hardened back in (if you have the available perk points)
+	- Add new artwork for the **Toolbox** perk
+	- Improve **Whirling Death** tooltip by showing the effects of **Whirling Stance** directly
+	- The perks **Lone Wolf**, **Dodge**, **Duelist**, **Entrenched**, **Phalanx**, **Strengh in Numbers**, **Dynamic Duo**, **Underdog**, **Scout** and **Parry** now instantly update the actors stats, if another actor moves adjacent to or away from them
+	- Slightly improve perk description of **Finesse**
+	- Change Icon of General Perk Group to that of **Student**
+	- Fix Wildling and Knave group not having the perk tree multiplier as was advertised
+	- Allow **Vigorous Assault** to be used with unarmed attacks
+	- Fix **Vigorous Assault** tooltip saying that it expires on using a throwing attack
+	- Add new `UpdateWhenTileOccupationChanges` property for Character.nut, which causes the actor to fire an update() whenever any character on the battlefield moves or a new entity spawns in
+
 0.29.0
 	- **Kingfisher** is reworked: It grants +2 Reach while you have a net equipped. Netting an adjacent target does not expend your net but prevents you from using or swapping it until that target breaks free or dies. If you move more than 1 tile away from that netted target, lose your equipped net
 	- **Shuffle** (from **Dynamic Duo**) no longer puts your partner to the next position in the turn order
 	- **Student** can now be learned at any level. Learning it at level 8 or above will refund the perk point you spent on it
 	- Named shields can roll condition as one of their two buffed properties (just like in Vanilla)
-	- Loot Allocation is reworked: If your company dealt at leat 50% of the total damage received by the target, you receive their loot, no matter who killed it. Otherwise you receive no loot from it
+	- Loot Allocation is reworked: If your company dealt at least 50% of the total damage received by the target, you receive their loot, no matter who killed it. Otherwise you receive no loot from it
 	- Add new numerals for enemy sizes and change the ranges of existing numerals
 		- 2-3: A Few
 		- 4-6: Some

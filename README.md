@@ -10,12 +10,12 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 - Reach Mechanic has been simplified
 - Almost all shield changes have been reverted
-- ~60 perks are reworked or rebalanced
-- 4 new perks are introduced
+- ~70 perks are reworked or rebalanced
+- 5 new perks are introduced
 - ~25 skills are tweaked
 - ~20 enemies are tweaked
 - ~30 QoL features or changes
-- ~13 niche vanilla bugs are fixed
+- ~15 niche vanilla bugs/exploit fixes
 
 # List of all Changes
 
@@ -35,8 +35,8 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 ### Shield Revert/Rework
 
 - Fatigue no longer has any effect on the defenses granted by shields
-- All reforged changes to Condition, Melee Defense, Ranged Defense and Weight of vanilla shields have been reverted
 - Named shields can roll condition as one of their two buffed properties (just like in Vanilla)
+- All reforged changes to Condition, Melee Defense, Ranged Defense and Weight of vanilla shields have been reverted
 - Additionally the following balance changes have been made compared to the vanilla stats:
 	- **Tower Shields** now have 30 Condition (up from 24) and no longer grant **Knock Back**
 	- **Heater Shields** now have 25 Melee Defense (up from 20) and no longer grant **Shieldwall**
@@ -84,6 +84,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 ### New Perks
 
+- Add new **Hybridization** perk in Tier 3 of **Ranged Group**. It allows swapping two weapons with no shared weapon types for free, once per turn. And whenever you swap two weapons, gain +5% hitchance for your next attack until you wait or end your turn
 - Add new **Elusive** perk in Tier 2 of **Swift Group**. It reduces the AP cost for movement on all terrain by 1 to a minimum of 2. This does not stack with Pathfinder. After moving 2 tiles, become immune to rooted effects, until the start of your next turn.
 - Add new **One with the Shield** perk in Tier 7 of **Shield Group**. It requires a shield. It grants 25% more Injury Threshold. While you have Shieldwall effect you take 40% less Hitpoint damage from head attack. While you don't have Shieldwall effect you take 40% less Hitpoint damage from body attacks
 - Add new **Parry** perk in Tier 3 of **Swift Group**. It requires a one handed melee weapon. It grants Melee Defense equal to your base Ranged Defense against weapon attacks. While engage with someone wielding a melee weapon, you have 70% less Ranged Defense. Does not work with shields, while stunned, fleeing or disarmed.
@@ -120,7 +121,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 ### Other Major Changes
 
-- Loot Allocation is reworked: If your company dealt at leat 50% of the total damage received by the target, you receive their loot, no matter who killed it. Otherwise you receive no loot from it
+- Loot Allocation is reworked: If your company dealt at least 50% of the total damage received by the target, you receive their loot, no matter who killed it. Otherwise you receive no loot from it
 - **Night Effect** now grants -3 Vision (down from -2)
 - Disable **Veteran Perks**. Your brothers no longer gain perk points after Level 11
 - When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. No more than 5% of his maximum exp each
@@ -210,6 +211,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you
 - **Fortified Mind** now grants +25 Resolve (instead of 25% more) and you lose Resolve equal to the Weight of your Helmetweight
 - **Fresh and Furious** now has a fatigue threshold of 50% (up from 30%). It now checks your fatige when you end your turn, instead of at the start of your turn. It now also affects skills that cost 1 Action Point. It is now wasted when using a skill that costs 0 Action Points
+- **Fruits of Labor** now grants multiplicative Hitpoints and Stamina instead of additively
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
 - **Hammer Mastery** no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part.
 - **Hybridization** is completely reworked. It is now called **Toolbox** and requires a Throwing Weapon. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type attacks to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 50% more damage to shields
@@ -259,6 +261,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - **Bags and Belts** is now part of the **Light Armor** group instead of being available for everyone
 - **Bone Breaker** is now Tier 5 (down from Tier 7)
+- **Bullseye** is now Tier 6 (up from Tier 3)
 - **Cheap Trick** is now Tier 1 (down from Tier 2)
 - **Colossus** is now also part of the **Wildling** perk group in Tier 1
 - **Combo** is now a Tier 5 perk (down from Tier 7)
@@ -274,10 +277,11 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Leverage** is now a Tier 6 perk (up from Tier 3)
 - **Long Reach** is now a Tier 3 perk (down from Tier 7)
 - **Marksmanship** is no longer a special perk. It is now a T7 perk in the **Ranged** perk group
-- **Quickhands** from the perk group **Trained** is now a Tier 1 perk (was Tier 2 before)
+- **Overwhelm** is no longer part of the **Ranged** perk group
 - **Pathfinder** and **Decisive** are now part of **Leadership** group
 - **Pathfinder** is no longer part of the **Wildling** group
 - **Polearm Mastery** and **Fortified Mind** are removed from the **Leadership** group
+- **Quickhands** from the perk group **Trained** is now a Tier 1 perk (was Tier 2 before)
 - **Rally the Troops** from the **Leadership** group is now a Tier 3 perk (was Tier 2 before). It is now also part of the **Soldier Group** at Tier 3
 - **Student** is now available for everyone
 - **Tricksters Purses** is now Tier 3 (up from Tier 1)
@@ -546,6 +550,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Spiders will now give up when their team has given up even if there are still eggs on the battlefield
 - Remove the hidden "25% more injury threshold" for all characters when receiveing a head hit
 - You can no longer do two Arenas during the same day
+- Other Actors moving in or out of the range of someone with **Lone Wolf** now cause that effect to update instantly
 - Allow cut, copy and mark operations in input fields that are full. Limit Ctrl-Combinations, Delete and Arrow Key presses in input fields to one per press
 - Improve knock back logic for Spiked Impaler to behave like the Knock Back skill from shields
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
@@ -568,6 +573,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Cheap Trick** and **Retribution** now work with delayed skill executions (like Lunge or Aimed Shot)
 - **Vigorous Assault** now counts tiles moved more accurately
 - **Knock Back** now staggers targets when the user has **Line Breaker** perk
+- The perks **Strengh in Numbers** and **Dynamic Duo** now instantly update the actors stats, if another actor moves adjacent to or away from them
 
 ## For Modders
 
@@ -630,11 +636,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Removing or adding this mod will not update existing perk trees.
 	- Only after some days you will encounter brothers with the changed perk trees
 	- Perk Groups may not be identified correctly on old brothers after adding or removing this mod. This is just visual
-- Removing this mod will replace every newly introduced perk with some unused vanilla/reforged perk until you add this mod again. This will make those perks mostly useless
-	- **Elusive** becomes **Trip Artist**
-	- **One with the Shield** becomes **Recover**
-	- **Parry** becomes **Reach Advantage**
-	- **Scout** becomes **Through the Ranks**
+- New perks introduced by this mod are refunded and removed from your perk tree, when you remove Hardened mod and re-learned when you add Hardened back in (if you have the available perk points)
 
 ## Incompatible with
 - [**Cook and Blacksmith Fix**](https://www.nexusmods.com/battlebrothers/mods/668): Hardened ships its own fix for the cook. Though it does not fix the Blacksmith (yet?)
