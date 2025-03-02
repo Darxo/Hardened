@@ -244,6 +244,22 @@ local hookDaggerAttack = function( _o )
 		this.m.Order = ::Const.SkillOrder.Perk;
 	}
 
+	q.onUpdate = @(__original) function( _properties )
+	{
+		__original(_properties);
+
+		// Dagger attacks will now be affected by Crowded because they have a range of 2 tiles, so we need to turn off the crowded while this perk is active
+		if (this.isEnabled() && ::Tactical.isActive())
+		{
+			local crowded = this.getContainer().getSkillByID("special.rf_polearm_adjacency");
+			if (crowded != null)
+			{
+				crowded.m.NumEnemiesToIgnore = 99;
+				crowded.m.NumAlliesToIgnore = 99;
+			}
+		}
+	}
+
 	q.onAfterUpdate <- function( _properties )
 	{
 		foreach (_activeSkill in this.getContainer().getActor().getSkills().getAllSkillsOfType(::Const.SkillType.Active))
@@ -259,5 +275,17 @@ local hookDaggerAttack = function( _o )
 				}
 			}
 		}
+	}
+
+// New Functions
+	q.isEnabled <- function()
+	{
+		local actor = this.getContainer().getActor();
+		if (actor.isDisarmed()) return false;
+
+		local weapon = actor.getMainhandItem();
+		if (weapon == null || !weapon.isWeaponType(::Const.Items.WeaponType.Dagger)) return false;
+
+		return true;
 	}
 });
