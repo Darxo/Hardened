@@ -28,8 +28,6 @@
 			}
 			::__ping();		// Tell the backend that the game has not frozen up
 		}
-
-		::logInfo("Hardened: " + campsCreated + "/" + numberOfCamps + " additional bandit hideouts were placed after Simulation after " + currentCycle + "/" + maxCycles + " cycles.");
 	}
 
 	// Tries to find a location to spawn a bandit camp in for _maxTries times and then create the camp in it

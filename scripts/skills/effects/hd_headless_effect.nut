@@ -16,16 +16,8 @@ this.hd_headless_effect <- ::inherit("scripts/skills/skill", {
 		// Zombies, which lose their head, will now lose zombie_bite and have it replaced with a hand_to_hand skill
 		if (this.getContainer().hasSkill("actives.zombie_bite"))
 		{
-			::logWarning("remove zombie bite");
 			this.getContainer().removeByID("actives.zombie_bite");
-
-
-			::logWarning("try to add hd_zombie_punch_skill");
 			this.getContainer().add(::new("scripts/skills/actives/hd_zombie_punch_skill"));
-			if (this.getContainer().hasSkill("actives.hd_zombie_punch_skill"))
-			{
-				::logWarning("hd_zombie_punch_skill actually exists on the target");
-			}
 		}
 	}
 
