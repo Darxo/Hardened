@@ -1,4 +1,11 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/zombie_knight", function(q) {
+	q.onInit = @(__original) function()
+	{
+		__original();
+		this.m.ResurrectionChance = 100;	// In Vanilla this is 90
+		this.getBaseProperties().Hitpoints -= 10;
+	}
+
 	q.onSpawned = @(__original) function()
 	{
 		__original();

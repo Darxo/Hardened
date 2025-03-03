@@ -21,9 +21,15 @@
 });
 
 ::Hardened.HooksMod.hookTree("scripts/entity/tactical/enemies/zombie", function(q) {
-	q.create = @(__original) function()
+	q.onInit = @(__original) function()
 	{
 		__original();
 		this.m.XP *= 1.2;	// All zombies now grant 20% more experience. This balances out the fact that they no longer grant xp when ressurected
+		if (this.m.ResurrectionChance == 66)
+		{
+			// Most Zombies (except Zombie Knight, who has different ResurrectionChance) now have less hitpoints but reanimate more consistently
+			this.m.ResurrectionChance = 100;	// In Vanilla this is 66
+			this.getBaseProperties().Hitpoints -= 10;
+		}
 	}
 });
