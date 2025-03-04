@@ -124,7 +124,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - Loot Allocation is reworked: If your company dealt at least 50% of the total damage received by the target, you receive their loot, no matter who killed it. Otherwise you receive no loot from it
 - **Night Effect** now grants -3 Vision (down from -2)
 - Disable **Veteran Perks**. Your brothers no longer gain perk points after Level 11
-- When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. No more than 5% of his maximum exp each
+- When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. Each brother can only receive up to 10% of this shared experience.
 - You can now use **Bandages** to treat injuries during battle that were received at most 1 round ago
 - Add new **Retreat** skill for player characters, which allows you to retreat individual brothers from a battle if they stand on a border tile
 - Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
@@ -152,7 +152,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Sprint** (granted by **Footwork**) now costs 1 Action Point (up from 0) but no longer increases the fatigue cost per tile. It now disables all Attack-Skills until you wait or end your turn
 - **Stab** now costs 3 Action Points (down from 4) and has a 25% higher threshold to inflict injuries
 - **Sword Thrust** now has -10% additional Hitchance (up from -20%)
-- **Take Aim** (granted by **Crossbow and Firearm Mastery**) now costs 4 Action Points (down from 6) and 20 Fatigue (down from 25)
+- **Take Aim** (granted by **Crossbow and Firearm Mastery**) now costs 4 Action Points (up from 2) and 20 Fatigue (down from 25)
 - **Throw Axe** now has a 50% chance to decapitate (up from 0%) and 25% chance to disembowel (up from 0%)
 - Throw Pot/Flask skills are no longer considered an attack
 
@@ -200,7 +200,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Dismantle** has been completely reworked. It now grants +40% Armor Damage and 100% more Shield Damage against enemies who have full health.
 - **Dismemberment** no longer causes any morale checks. It now grants +20% chance to hit the body part with the most temporary injuries
 - **Dodge** now grants 5% of Initiative as extra Melee Defense and Ranged Defense for every empty adjacent tile (down from always 15%)
-- **Double Strike** damage bonus is no longer lost when you swap weapons
+- **Double Strike** now works with ranged attacks and the damage bonus is no longer lost when you swap weapons
 - **Duelist** is completely reworked. It now only works for one-handed weapons. It grants 30% Armor Penetration and +2 Reach while adjacent to 0 or 1 enemies and it grants 15% Armor Penetration and +1 Reach while adjacent to 2 enemies
 - **Dynamic Duo** no longer grants Melee Skill or Melee Defense. It no longer reduces hitchance and damage when attacking your partner
 - **En Garde** is completely reworked. It now grants +10 Melee Skill while it is not your turn. It also makes it so **Riposte** is no longer disabled when you get hit or deal a counter attack (so like in Vanilla), and it recovers 1 Action Point whenever an opponent misses a melee attack against you
@@ -395,10 +395,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Swordmaster** with **Blade Dancer** perk now only spawn with **Noble Swords**
 
 **Undead**
-- All **Wiederganger** types gain +5 Melee Skill and grant 20% more experience. They no longer have **Double Grip** and no longer grant experience after being ressurected
+- All **Wiederganger** types gain +5 Melee Skill and grant 20% more experience. They no longer have **Double Grip** and no longer grant experience after being ressurected. They now have a 100% resurrection chance (up from 66%) but -10 Hitpoints
 - Normal **Wiederganger** no longer have **Overwhelm**
 - All **Skeletons** grant 20% more experience. They no longer grant experience after being ressurected
-- **Fallen Heroes** no longer spawn with Morning Stars or Handaxes
+- **Fallen Heroes** no longer spawn with Morning Stars or Handaxes. They now have a 100% resurrection chance (up from 90%) but -10 Hitpoints
 - **Geists** no longer have **Fearsome**. They now have **Backstabber**
 - **Necromancer** no longer have 20 natural body armor or **Inspiring Presence**
 - **Ancient Auxiliary** no longer have **Battleforged**
@@ -482,6 +482,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Beginner combat difficulty now grants enemy parties 100% resources (up from 85%)
 - Beginner combat difficulty now causes player characters to receive 15% less damage from all sources
 - Expert combat difficulty now grants enemy parties 120% resources (up from 115%)
+- Caravan Contracts that are declined or which expire now sometimes spawn a caravan towards the destination
 - Characters which are not visible to the player will no longer produce idle or death sounds.
 - The combat map is no longer revealed at the end of a battle
 
@@ -493,6 +494,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Introduce a new **Unworthy** effect which prevents the character from granting experience on death. This is given to all non-player controlled characters who grant 0 XP on death or are allied to the player
 - Introduce a new cosmetic **Non-Combatant** effect, to non-combatant characters, which explains that they do not need to be killed in order to win
 - Add new setting to control the zoom speed during combat to allow for more granular zooming
+- Loot that is not equippable in battle no longer appears on the ground (e.g. Beast Trophies/Ingredients)
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
 - Improve visibility of Miasma and Burning Ground
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back
@@ -501,9 +503,11 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
 - All Skills from the **Lorekeeper** now have skill descriptions
 - Corpses will now display the round, in which they were created
+- The automatic camera level calculation is improved
 - Add new Setting for preventing tile/enemy tooltips from being generated while it is not your turn
 - **Armored Wiederganger** now display their complete name during battle, instead of just **Wiederganger**
 - Add Setting for making the hotkeys for **Wait** fire continuously, instead of only when released
+- Characters under berserker mushroom effect no longer yell when they use ranged attacks
 - Reduce the Attack sfx volume of Wardogs and Warhounds by 20%
 
 ### World
@@ -571,7 +575,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - **Calculated Strikes** now works against stunned enemies
 - **Cheap Trick** and **Retribution** now work with delayed skill executions (like Lunge or Aimed Shot)
-- **Vigorous Assault** now counts tiles moved more accurately
 - **Knock Back** now staggers targets when the user has **Line Breaker** perk
 - The perks **Strengh in Numbers** and **Dynamic Duo** now instantly update the actors stats, if another actor moves adjacent to or away from them
 

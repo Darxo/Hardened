@@ -16,8 +16,8 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 # Future Plans:
 - Skip the Defeat-Screen when retiring a run on day 1 (mostly relveant for rolling ironman seeds)
-- Improve documentation for Surround Concept
-- Use the overworld name-plate tech to display modifiers (hitpoints, armor) during camping?
+- Improve documentation for Surround Concept (What exactly? Dont remember what was wrong)
+- Use the overworld name-plate tech to display modifiers (hitpoints, armor) during camping? (Look at how Legends implements Text on world map?)
 - Hide information about enemy composition on the battle field
 	- Might not be realistic because unknown enemies still show up in the turn Order
 		- Hiding them in the turnorder might not be 100% perfect. One could estimate by what little tid-bits happen during/after brother turns happen
@@ -115,7 +115,6 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- Make Vigilant explicitely spend all your remaining AP when ending turn
 	- Make Command being able to target allies who ended their turns already (if that does not cause too many issues)
 - Disable chain-routing (disable morale checks from allies losing morale, or maybe allow it one layer deep, but not two)
-- what does this.Time.setVirtualTime(0); do? Can I manipulate daytime with this?
 - Auto Focus the input boxes during campaign creation. Support Enter/Backspace to move forward and backwards during that screen. Both are a bit tricky because the js code is a huge block
 - Display Reputation/Payment changes during payment negotiation
 - selling quiver returns their ammo to the player pool?
@@ -123,13 +122,18 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Make brothers dying in battle more punishing, mood wise (out of combat). To prevent you disposing unwanted brothers this way or discouraging using unwanted brothers as fodder
 - Raise fatigue cost of high tier two-handed weapons beyond 15 again
 - Clean up Readme section "For Modder": add default values consitently; add new subsubsections "New Events", "General Decisions"
-- Scan map for situations where a hill would prevent clear view (2/3 level tile in front of 0 level tile). When enemy is hiding there, do some smart camera adjustment on turn start
 - Reload disorientation AI
 - add small delay after new round, before reanimation begines (100ms) so that new-round effects are more visible
 - Give Bog Unhold split shield
 - Make Anticipation influence attacker with stuns to be more likely to attack
 - Prevent Vanilla find location contracts from refreshing their direction for free when loading the game
 - Automatically transform stamina-debuffs into fatigue-cost-increase for non-attacks
+- Make Schrat headless? Would help with one with the shield. And they dont seem to be decapitatable (check this)
+- **Spear Flurry**: 50% increased fatigue cost for non-attacks?
+- New noble military town contract: Escort Caravan to/from (currently only civilian factions offer this contract)
+- improve camera level
+	- Scan map for situations where a hill would prevent clear view (2/3 level tile in front of 0 level tile). When enemy is hiding there, do some smart camera adjustment on turn start
+		- This is the code to be touched: camera.Level = camera.getBestLevelForTile
 
 ## Perks Review/Rework
 - Crossbow Mastery
@@ -157,19 +161,13 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Take Aim Perk (previously Power Shot)
 	- Whenever you wait or end your turn, gain a stacking +5% chance to hit. All bonus is lost, when you attack or move.
 	- Unlock **Take Aim** skill, which does the same thing as the mastery thingy stuff
-- Smarter height camera. If the turn starts for a bro on lvl 0 but no one is around him but hills, then put camera one level higher
 
 - orc slayer / crusader events, make them cost 5k crowns each to hire those guys
 - Poise System: Poise bar in immune enemies still at work?
 - Schrat can target enemies through objects?
 - Give barbarian Madman (icy cave) fast adaptation
-- Caravan Quests that expire, spawn a caravan to that contracts destination
-- Use Reforged tech of appending child effects into a skill tooltip (see take aim)
 - when you press the hotkey of a targetable skill, remove old tooltip and generate new one. This is to replace the generic enemy tooltip with one showing hitchance
 - Improve sell margin of food to make trading with those more interesting
-- split hyena/nachzehrer troops
-- Add ingame tooltip about dismissing brothers (Compensation tooltip) granting experience for others
-- Reduce bleeding effect noise from bleeding injuries
 
 ## Revert Reforged:
 - Gladiator Traits?
@@ -192,7 +190,8 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - make NPCs with Formidable Approach more likely to move to tiles with adjacent enemies which they dont yet have in their list or which are confident with less max HP
 
 ## Fix:
-- Change Fruits of Labor description to Stamina instead of Maximum Fatigue
+- One of my bros lost the perk "One with the shield" during the saving process somehow. But the game was kinda bugged (end of combat bug)
+- Vigorous Assault on enemies seem to grant -1 AP permanently?	(Wait until this perk is reworked in Reforged)
 - Fix contract cheese, where saving/loading instantly reveals destination via event?
 - dog ai too fast, not realizing reanimating zombies and dying to ZOC hits
 - remove double ammo from towns, spawned by fletcher (as fletcher sells its own ammo)
@@ -201,6 +200,9 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	- Need more evidence
 - Fix orcs sometimes using charge, even though they decided to give uple"
 - Alps that teleport during first turn before revealing, might be shown as unknown, even though you can see them because they arrived on visible tiles
+- Look into Recover being blocked by worn down, but still showing as active, when previewing another skill
+- debug zombies
+	- No Idea, I ran out of ideas following the lead of updateVisibility calls. I assumed that Zombies pushing other zombies, after my turn starts, messes something up. But that didnt do it
 
 ## For modder:
 - Framework for tracking round number of a skill for an entity https://github.com/MSUTeam/MSU/issues/351
@@ -208,18 +210,19 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 ## Rework Training Hall
 - Once per battle if you start your turn fleeing and not adjacent to an enemy, recover your morale to steady
 
-## Debug:
-This will unbrick your end-of-combat screen, if it doesnt show
-::Tactical.State.m.TacticalCombatResultScreen.show();
-
 ## For Reforged
 - Anonymous Damage Sources (bleed, fire, poison), count as if the target dealt damage to themselves regarding the experience-sharing
 	-> Those anonymous damage sources steal experience from the player, even if the player applied them
 	- Count anonymous damage sources (when someone deals damage to themselves) as a new faction (Faction.None)
 
+## Backlog
+
+- Reduce bleeding noise
+	- Cant fix right now, because 'refresh' only supports increased stacks by 1. Reforged suffers the same problem when inflicting 3 bleed via Gouge for example
+
 ## TODO
 
-- New Perk Framework (Add new perks save game compatibly)
+- split hyena/nachzehrer troops
 - Cover Ally Rework
 	- change cover ally to debuff the targets melee skill and melee defense, to make it harder to use offensively
 		- Make Cover Ally give +50 Initiative
@@ -229,6 +232,21 @@ This will unbrick your end-of-combat screen, if it doesnt show
 
 - Black Monolith only during night
 this.World.Events.fire("event.drunk_nobleman")
+
+## Debug:
+This will unbrick your end-of-combat screen, if it doesnt show
+::Tactical.State.m.TacticalCombatResultScreen.show();
+
+0.31.0
+	- **Double Strike** is no longer limited to melee attacks
+	- Fallen Heroes now have a 100% resurrection chance (up from 90%) and -10 Hitpoints
+	- Regular Zombies now have a 100% resurrection chance (up from 66%) and -10 Hitpoints
+	- Loot that is not equippable in battle no longer appears on the ground (e.g. Beast Trophies/Ingredients)
+	- Caravan Contracts that are declined or which expire now sometimes spawn a caravan towards the destination
+	- Add explanation about compensation experience sharing in the compensation tooltip
+	- Fix **Hit and Run** causing dagger attacks to be affected by **Crowded**
+	- Fix (Vanilla) characters under berserker mushroom effect yelling when they use ranged skills
+	- Improve the calculation for the right camera height/level to show during combat
 
 0.30.1
 	- Fix battles with someone having **Parry** not loading correctly

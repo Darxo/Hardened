@@ -5,7 +5,7 @@
 /// - Between 0.8 and 3.5 units right of your camera is the real directional sound, with 1.5 being the center
 /// - But keep in mind that a 32 tile wide compat map is roughly 3600 units in width. The sweet spot for real directional sound is impossibly small to hit naturally
 /// This approach does not take the current camera zoom into account. You might expect the directions to strech further along the visible space as you zoom out
-/// You might still encounter corrupt/overly loud sound, if you move your camera while the sound is playing. I dont know an easy fix for that
+/// You might still encounter corrupt/overly loud sound, if you move your camera while the sound is playing (usually happens during NPC turns). I dont know an easy fix for that
 local oldPlay = ::Sound.play;
 ::Sound.play = function(_path, _volume = null, _pos = null, _pitch = null)
 {
