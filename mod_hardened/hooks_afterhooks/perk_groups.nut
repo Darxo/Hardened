@@ -15,6 +15,25 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	}
 }
 
+// Helper function to remove a perk group
+// This is a temporary addition, until the next 0.4.1 release of dynamic perks fixes that function there
+// Todo, remove this function and replace is with calls like this again: ::DynamicPerks.PerkGroups.remove("pg.special.rf_leadership");
+local removeFixed = function( _perkGroupId )
+{
+	local perkGroup = ::DynamicPerks.PerkGroups.findById(_perkGroupId);
+	if (perkGroup == null)
+		return;
+
+	delete ::DynamicPerks.PerkGroups.LookupMap[_perkGroupId];
+	foreach (row in perkGroup.getTree())
+	{
+		foreach (perkID in row)
+		{
+			::DynamicPerks.Perks.__removePerkGroupFromPerkDef(_perkGroupId, ::Const.Perks.findById(perkID));
+		}
+	}
+}
+
 // Adjust Reforged Perk Groups
 {
 	{	// Always Group
@@ -71,7 +90,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	}
 
 	{	// Leadership Group
-		::DynamicPerks.PerkGroups.remove("pg.special.rf_leadership");
+		removeFixed("pg.special.rf_leadership");
 		::DynamicPerks.PerkGroups.add(::new("scripts/mods/mod_hardened/perk_groups/pg_hd_leadership"));		// We introduce our own non-special Leadership Group
 	}
 
@@ -123,11 +142,11 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	}
 
 	{	// Special Marksman Group
-		::DynamicPerks.PerkGroups.remove("pg.special.rf_marksmanship");	// This group does no longer exist in Hardened
+		removeFixed("pg.special.rf_marksmanship");	// This group does no longer exist in Hardened
 	}
 
 	{	// Special Student Group
-		::DynamicPerks.PerkGroups.remove("pg.special.rf_student");	// This group does no longer exist in Hardened
+		removeFixed("pg.special.rf_student");	// This group does no longer exist in Hardened
 	}
 
 	{	// Swift Strikes Group
@@ -138,7 +157,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	}
 
 	{	// Tactician Group
-		::DynamicPerks.PerkGroups.remove("pg.rf_tactician");
+		removeFixed("pg.rf_tactician");
 		::DynamicPerks.PerkGroups.add(::new("scripts/mods/mod_hardened/perk_groups/special/pg_special_hd_tactician"));		// We introduce our own special Tactician Group
 	}
 
