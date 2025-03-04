@@ -17,6 +17,30 @@
 				}
 			}
 		}
+	}
 
+	q.onClear = @(__original) function()
+	{
+		if (!this.m.IsActive)
+		{
+			// Do spawn caravan
+			foreach (card in ::World.FactionManager.getFaction(this.getFaction()).m.Deck)
+			{
+				if (card.getID() != "send_caravan_action") continue;
+
+				// We only execute this action, if half of our cooldown has passed already
+				local remainingCooldown = card.getCooldownUntil() - ::Time.getVirtualTimeF();
+				if (remainingCooldown > (card.m.Cooldown / 2)) break;
+
+				// Do prepare action
+				card.m.Start = this.m.Origin;
+				card.m.Dest = this.m.Destination;
+
+				// We execute that action the usual way, which causes a new cooldown afterwards
+				card.execute();
+			}
+		}
+
+		__original();
 	}
 });
