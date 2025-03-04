@@ -42,7 +42,32 @@
 		if (isDropped && !this.isChangeableInBattle())
 		{
 			// Goal: Items which are not changeable during battle, are no longer dropped on the tile but instead directly pushed into the CombatResultLoot
+			// However if one of those items is stackable, then we try to merge it into an existing item first
 			// This improves visual clarity on the battlefield so lootbags only signal stuff you can actually pick up
+
+			// Right now this is hard-coded list
+			// We could check for the existance of this.m.Amount on them, but that includes food and we dont wanna allow stacking of food without enforcing a maximum
+			local stackableItems = [
+				"supplies.ammo",
+				"supplies.armor_parts",
+				"supplies.medicine",
+				"supplies.money",
+			];
+
+			// Now we take a look if our item is stackable and already present in the stash_container
+			if (stackableItems.find(this.getID()) != null)
+			{
+				foreach (lootItem in ::Tactical.CombatResultLoot.getItems())
+				{
+					if (lootItem.getID() == this.getID())
+					{
+						// We were able to add the amount of our item to an existing item in the loot pool. So we dont need to drop it manually
+						lootItem.setAmount(lootItem.getAmount() + this.getAmount());
+						return;
+					}
+				}
+			}
+
 			::Tactical.CombatResultLoot.add(this);
 		}
 		else
