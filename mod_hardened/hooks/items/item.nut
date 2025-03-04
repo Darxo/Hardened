@@ -32,5 +32,23 @@
 
 		return ret;
 	}
+
+	// This is often times not called, if no corpse was generated, but that is a vanilla issue and not our concern here
+	q.drop = @(__original) function( _tile )
+	{
+		// This is a replica of the vanilla function for deciding, whether this is allowed to be dropped at all
+		local isPlayer = this.m.LastEquippedByFaction == ::Const.Faction.Player || this.m.Container != null && this.m.Container.getActor() != null && !this.m.Container.getActor().isNull() && this.isKindOf(this.m.Container.getActor().get(), "player");
+		local isDropped = this.isDroppedAsLoot() && (::Tactical.State.getStrategicProperties() == null || !::Tactical.State.getStrategicProperties().IsArenaMode || isPlayer);
+		if (isDropped && !this.isChangeableInBattle())
+		{
+			// Goal: Items which are not changeable during battle, are no longer dropped on the tile but instead directly pushed into the CombatResultLoot
+			// This improves visual clarity on the battlefield so lootbags only signal stuff you can actually pick up
+			::Tactical.CombatResultLoot.add(this);
+		}
+		else
+		{
+			__original(_tile);
+		}
+	}
 });
 
