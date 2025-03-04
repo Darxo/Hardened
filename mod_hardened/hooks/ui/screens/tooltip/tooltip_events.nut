@@ -120,6 +120,20 @@
 				}
 				break;
 			}
+
+			case "character-screen.dismiss-popup-dialog.Compensation":
+			{
+				// Add an additional section explaining sharing of experience when paying compensation
+				foreach (entry in ret)
+				{
+					if ("id" in entry && entry.id == 2)
+					{
+						entry.text += "\n\nWhen you pay compensation to a brother, he will share " + ::MSU.Text.colorPositive("50%") + " of his experience with all other brothers in your company. Each brother can receive up to " + ::MSU.Text.colorPositive("10%") + " of this shared experience.";
+						break;
+					}
+				}
+				break;
+			}
 		}
 
 		return ret;
