@@ -455,6 +455,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_battle_fervor",
+		Key = "RF_BattleFervor",
+		Description = ::UPD.getDescription({
+			Fluff = "It is our destiny!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive("10%") + " more [Resolve|Concept.Bravery]",
+					"While at Steady [morale,|Concept.Morale] gain " + ::MSU.Text.colorPositive("10%") + " more [Melee Skill,|Concept.MeleeSkill] [Ranged Skill,|Concept.RangeSkill] [Melee Defense,|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_bear_down",
 		Key = "RF_BearDown",
 		Description = ::UPD.getDescription({
