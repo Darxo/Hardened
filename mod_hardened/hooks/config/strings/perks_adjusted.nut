@@ -57,6 +57,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.berserk",
+		Key = "Berserk",
+		Description = ::UPD.getDescription({
+			Fluff = "RAAARGH!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Once per turn, when you kill an enemy, recover " + ::MSU.Text.colorPositive("4") + " [Action Points|Concept.ActionPoints]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.bullseye",
 		Key = "Bullseye",
 		Description = ::UPD.getDescription({
