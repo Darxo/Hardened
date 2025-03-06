@@ -18,4 +18,11 @@
 			__original(_isPlayerInitiated, _isCombatantsVisible, _allowFormationPicking, _properties, _pos);
 		}
 	}
+
+	q.loadCampaign = @(__original) function( _campaignFileName )
+	{
+		::Hardened.Temp.IsLoading = true;
+		__original(_campaignFileName);
+		::Hardened.Temp.IsLoading = false;
+	}
 });
