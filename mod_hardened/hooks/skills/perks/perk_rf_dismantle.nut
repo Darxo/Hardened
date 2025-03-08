@@ -6,10 +6,13 @@
 	q.onAnySkillUsed = @(__original) function( _skill, _targetEntity, _properties )
 	{
 		__original(_skill, _targetEntity, _properties);
-		if (this.isSkillValid(_skill) && _targetEntity != null && _targetEntity.getHitpointsPct() >= this.m.TargetHealthThreshold)
+		if (this.isSkillValid(_skill))
 		{
-			_properties.DamageArmorMult += this.m.ArmorDamagePct;
 			_properties.ShieldDamageMult *= this.m.ShieldDamageMult;
+			if (_targetEntity != null && _targetEntity.getHitpointsPct() >= this.m.TargetHealthThreshold)
+			{
+				_properties.DamageArmorMult += this.m.ArmorDamagePct;
+			}
 		}
 	}
 
@@ -34,7 +37,7 @@
 // MSU Functions
 	q.onGetHitFactors = @(__original) function( _skill, _targetTile, _tooltip )
 	{
-		if (this.isSkillValid(_skill) && _targetTile.IsOccupiedByActor && _targetTile.getEntity().getHitpointsPct() >= this.m.TargetHealthThreshold)
+		if (_targetTile.IsOccupiedByActor && this.isSkillValid(_skill) && _targetTile.getEntity().getHitpointsPct() >= this.m.TargetHealthThreshold)
 		{
 			_tooltip.push({
 				icon = "ui/tooltips/positive.png",
