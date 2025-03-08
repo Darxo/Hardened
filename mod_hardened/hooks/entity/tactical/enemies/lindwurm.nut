@@ -34,4 +34,10 @@
 			}
 		}
 	}
+
+	q.onSpawned = @(__original) function()
+	{
+		__original();
+		this.getSkills().removeByID("perk.rf_survival_instinct");
+	}
 });

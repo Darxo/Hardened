@@ -2,3 +2,4 @@
 
 // Lindwurm
 ::Const.Tactical.Actor.Lindwurm.Hitpoints = 1000;	// In Vanilla this is 1100
+::Const.Tactical.Actor.Lindwurm.MeleeDefense += 10;	// In Vanilla this is 10
