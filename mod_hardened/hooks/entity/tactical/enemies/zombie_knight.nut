@@ -27,4 +27,10 @@
 		::Hardened.util.replaceMainhand(this, "scripts/items/weapons/winged_mace", ["weapon.morning_star"]);
 		::Hardened.util.replaceMainhand(this, "scripts/items/weapons/fighting_axe", ["weapon.hand_axe"]);
 	}
+
+	q.makeMiniboss = @(__original) function()
+	{
+		__original();
+		this.getSkills().removeByID("perk.nine_lives");
+	}
 });
