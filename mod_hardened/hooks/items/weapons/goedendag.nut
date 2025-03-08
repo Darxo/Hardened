@@ -19,7 +19,7 @@
 			o.m.IconDisabled = "skills/active_127_sw.png";
 			o.m.Overlay = "active_127";
 			o.m.ActionPointCost += 1;
-			q.m.StunChance = 100;	// In Vanilla this is 75
+			o.m.StunChance = 100;	// In Vanilla this is 75
 		}));
 	}
 });
