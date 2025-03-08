@@ -25,8 +25,6 @@
 // Hardened Events
 	q.onOtherSkillAdded = @(__original) function( _skill )
 	{
-		// We can't allow this effect outside of combat because we manipulate member which are serialized
-		// Otherwise our changes would be applied on each load of a savegame
 		if (_skill.m.IsNew && _skill.isType(::Const.SkillType.TemporaryInjury))
 		{
 			_skill.m.HealingTimeMin *= this.m.InjuryDurationMult;

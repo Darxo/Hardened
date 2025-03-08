@@ -66,6 +66,8 @@
 
 		if (activeScreen != null)
 		{
+			// Currently this does not include overview and negotiation screens
+
 			// We push a notification about the just gained renown into the current contract screen list, so the player has accurate information about it
 			activeScreen.List.push({
 				id = 30,

@@ -134,6 +134,10 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - improve camera level
 	- Scan map for situations where a hill would prevent clear view (2/3 level tile in front of 0 level tile). When enemy is hiding there, do some smart camera adjustment on turn start
 		- This is the code to be touched: camera.Level = camera.getBestLevelForTile
+- Display lost/gained items in events (e.g. food in campfire event)
+- Generate combat damage logs for attacks, which kill the target
+- Add Ghostlike to Ghouls?
+- Massively rework armor stats
 
 ## Perks Review/Rework
 - Crossbow Mastery
@@ -147,11 +151,12 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Mauler
 	- replace second effect with 15% more damage when hitting body parts that have no remaining armor
 - Vanquisher
-- Mace Perk
-	- Attacking a body part that has armor remaining, has 50% less injury threshold. Attacking a body part with no armor remaining, inflicts an additional injury of the same type and threshold, if the attack inflicts one
 - Rush of Battle
-- Battle Fervor
+	- Scale with the amount of nearby enemies? e.g. within 2/3 tiles
+	- Gain 10% more Initiative for each enemy within 2 tiles up to a maximum of 50%
+	- Skills cost 5% less fatigue for each enemy within 2 tiles up to a maximum of 25%
 - Death Dealer
+	- I dont mind this perk currently too much
 - FastAgileS Rework
 	- Revert Footwork to Vanilla and move it to T1 of Agile
 	- Move Pathfinder to T3 of Agile
@@ -176,6 +181,9 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 ## Test:
 - Test, whether my loot allocation now works with the mod "Fun Facts"
 
+## Enemies
+- Reduce Defense of Assassins, make it so they rely only on Dodge
+
 ## AI
 - Player: Make fleeing player characters actually leave the battle when at the border
 - unholds should use throw more often to counter rebuke/flailing swingy stuff
@@ -190,6 +198,8 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - make NPCs with Formidable Approach more likely to move to tiles with adjacent enemies which they dont yet have in their list or which are confident with less max HP
 
 ## Fix:
+- For the contract hook, implement a similar skipping behavior for "this.World.Contracts.startScriptedCombat"
+	- Currently afaik, vanilla no longer shows you the last contract/event page, if it leads to a startScriptedCombat
 - One of my bros lost the perk "One with the shield" during the saving process somehow. But the game was kinda bugged (end of combat bug)
 - Vigorous Assault on enemies seem to grant -1 AP permanently?	(Wait until this perk is reworked in Reforged)
 - Fix contract cheese, where saving/loading instantly reveals destination via event?
@@ -209,6 +219,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 
 ## Rework Training Hall
 - Once per battle if you start your turn fleeing and not adjacent to an enemy, recover your morale to steady
+- Attacks cost +1 AP and have +15% chance to hit
 
 ## For Reforged
 - Anonymous Damage Sources (bleed, fire, poison), count as if the target dealt damage to themselves regarding the experience-sharing
@@ -236,6 +247,21 @@ this.World.Events.fire("event.drunk_nobleman")
 ## Debug:
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
+
+0.32.0
+	- **Battle Fervor** is reworked. It still grants 10% more Resolve at all times. It now grants 10% more Melee Skill, Melee Defense, Ranged Skill and Ranged Defense while at Steady Morale
+	- **Dismantle** now always grants 100% more Shield Damage, instead of only against full health enemies
+	- **Bulwark** no longer grants additional Resolve against negative morale checks
+	- **Nachzehrer** no longer have **Deep Cuts**
+	- **Lindwurms** no longer have **Survival Instinct**. They now have 20 Melee Defense (up from 10)
+	- **Lindwurm Tails** now have 30 Melee Defense (up from 20)
+	- **Lute** now has a 100% chance to stun
+	- **Goedendag** now has a 100% chance to stun
+	- Resurrecting Corpses can no longer knock backn characters that are immune to Knock Back. Instead they delay their resurrection
+	- Simplify **Berserk** perk description
+	- Fix **Combo** saying "turn" in its description, when it should be "round"
+	- Fix failing a contract negotitation freezing the screen
+	- Fix crash when trying to load the game with an active barbarian king contract
 
 0.31.0
 	- **Double Strike** is no longer limited to melee attacks
