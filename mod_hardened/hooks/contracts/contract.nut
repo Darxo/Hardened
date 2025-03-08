@@ -11,8 +11,10 @@
 		foreach (screen in this.m.Screens)
 		{
 			// Usually the id is followed by a number. We assume that any success screen is ID'ed this way and just dont care about others
-			if (screen.Options.len() == 1)
+			if (screen.Options.len() == 1 && !("HD_screen_hooked" in screen))
 			{
+				screen.HD_screen_hooked <- true;	// Otherwise we accidentally hook negotiation and intro contract screens multiple times
+
 				// We hook every screen which only has 1 option, will have all actions, which would happen during the button press, moved forward
 				// That way changes to Renown and Morale Reputation will happen earlier and we can dynamically and globally showcase them in the List
 				// "finishActiveContract" is the only currently known function, that we are not allowed to call earlier/during start. So we mock it to prevent that
