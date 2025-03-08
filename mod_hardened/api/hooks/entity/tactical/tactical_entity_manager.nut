@@ -26,6 +26,6 @@
 			return null;
 		}
 
-		__original( _info, _force = false);
+		return __original( _info, _force);
 	}
 });
