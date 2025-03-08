@@ -566,6 +566,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_bulwark",
+		Key = "RF_Bulwark",
+		Description = ::UPD.getDescription({
+			Fluff = "\'Not much to be afraid of behind a suit of plate!\'",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive("5%") + " of your current combined head and body armor condition as [Resolve|Concept.Bravery]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_combo",
 		Key = "RF_Combo",
 		Description = ::UPD.getDescription({
