@@ -144,12 +144,19 @@ Goal:
 	// Add _perkDef into _perkTree with Tier _tier, at a specific _row and _position
 	function addPerk( _perkTree, _perkDef, _tier, _row, _position )
 	{
-		local perk = {
-			Row = _tier - 1,
-			Unlocks = _tier - 1,
-		}.setdelegate(_perkDef);
+		try {
+			local perk = {
+				Row = _tier - 1,
+				Unlocks = _tier - 1,
+			}.setdelegate(_perkDef);
 
-		_perkTree.getPerks()[_perkDef.ID] <- perk;
-		_perkTree.getTree()[_row].insert(_position, perk);
+			_perkTree.getPerks()[_perkDef.ID] <- perk;
+			_perkTree.getTree()[_row].insert(_position, perk);
+		}
+		catch ( _e )
+		{
+			::logWarning("Hardened: addPerk _tier " + _tier + " _row " + _row + " _position " + _position);
+			::MSU.Log.printData(_perkTree.getTree(), 2);
+		}
 	}
 }
