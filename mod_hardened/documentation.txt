@@ -134,10 +134,11 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - improve camera level
 	- Scan map for situations where a hill would prevent clear view (2/3 level tile in front of 0 level tile). When enemy is hiding there, do some smart camera adjustment on turn start
 		- This is the code to be touched: camera.Level = camera.getBestLevelForTile
-- Display lost/gained items in events (e.g. food in campfire event)
-- Generate combat damage logs for attacks, which kill the target
 - Add Ghostlike to Ghouls?
 - Massively rework armor stats
+- Bola Stun should remove stagger
+- The auto level generation seems to not yet be fixed (line of sight fix)
+- See into traits. Currently they only try 10 times to find a trait
 
 ## Perks Review/Rework
 - Crossbow Mastery
@@ -233,11 +234,14 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 
 ## TODO
 
+- remove attachements on NPCs
 - split hyena/nachzehrer troops
 - Cover Ally Rework
 	- change cover ally to debuff the targets melee skill and melee defense, to make it harder to use offensively
 		- Make Cover Ally give +50 Initiative
 		- Look into the cover ally rework in the past (guardian perk)
+- Display lost/gained items in events (e.g. food in campfire event)
+- Generate combat damage logs for attacks, which kill the target
 
 # WIP
 
@@ -247,6 +251,17 @@ this.World.Events.fire("event.drunk_nobleman")
 ## Debug:
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
+
+0.32.1
+	- Attachements no longer randomly spawn on NPCs
+	- **Toolbox** now grants 100% more shield damage with throwing spears (up from 50%)
+	- **Toolbox** now sets the duration of any remaining **Staggered** effect on the target to 1, when stunning it with blunt attacks
+	- Heavy throwing weapons now have 5 Maximum Ammo (up from 4)
+	- Champion Fallen Heroes lose **Nine Lives**
+	- NPCs are 10% + 1% per missing 1% hitpoints likely to target a Nachzehrer, that is standing on a consumable corpse
+	- Heavy Throwing weapons which spawn on NPCs start with randomly 3 or 4 ammo, instead of the full amount
+	- Fix **Bone Breaker** ignoring immunity to injuries
+	- Fix **Bulwark** still mentioning the negative morale check resolve bonus in its tooltip
 
 0.32.0
 	- **Battle Fervor** is reworked. It still grants 10% more Resolve at all times. It now grants 10% more Melee Skill, Melee Defense, Ranged Skill and Ranged Defense while at Steady Morale

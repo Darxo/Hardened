@@ -58,12 +58,13 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - Throwing **Heavy Throwing Weapons** now costs 5 Action Points (up from 4) and 18 Fatigue (up from 15)
 - Throwing **Crude Javelins** now costs 5 Action Points (up from 4)
 - **Heavy Javelin** now deal 40-50 Damage (up from 35-50), have 85% Armor Damage (up from 80%), have +0% Hitchance (up from -5%), 4 Maximum Ammo (down from 5), 0 Weight (down from 8), 3 Weight per Ammo, 4 Ammo Cost (up from 3) and a value of 500 (up from 300)
-- **Heavy Throwing Axes** now deal 45-60 Damage (up from 30-50), have 120% Armor Damage (up from 115%), have -10% Hitchance (down from -5%), +10% Headshot Chance (up from +5%), 4 Maximum Ammo (down from 5), 0 Weight (down from 8), 3 Weight per Ammo and a value of 600 (up from 300)
+- **Heavy Throwing Axes** now deal 45-60 Damage (up from 30-50), have 120% Armor Damage (up from 115%), have -10% Hitchance (down from -5%), +10% Headshot Chance (up from +5%), 0 Weight (down from 8), 3 Weight per Ammo and a value of 600 (up from 300)
 - **Bolas** now deal 25-40 Damage (up from 20-35), have 0 Weight (down from 3), 1.5 Weight per Ammo and a value of 300 (up from 150)
-- **Crude Javelins** now deal 35-45 Damage (up from 30-40), have 4 Maximum Ammo (down from 5), 0 Weight (down from 8) and 3 Weight per Ammo
+- **Crude Javelins** now deal 35-45 Damage (up from 30-40), 0 Weight (down from 8) and 3 Weight per Ammo
 - **Javelins** now deal 35-45 Damage (up from 30-45), deal 70% Armor Damage (down from 75%), have 0 Weight (down from 6), 2 Weight per Ammo and a value of 350 (up from 200)
 - **Throwing Axes** now deal 35-50 Damage (up from 30-50), have -10% Hitchance (down from +0%), +10% Headshot Chance (up from +5%), 0 Weight (down from 4), 2 Weight per Ammo and a value of 400 (up from 200)
 - Marketplaces now sell **Crude Javelins** instead of regular **Javelins**
+- Heavy Throwing Weapons on NPCs start with either 3 or 4 ammo
 
 ### Double Grip Rework
 
@@ -126,6 +127,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - Disable **Veteran Perks**. Your brothers no longer gain perk points after Level 11
 - When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. Each brother can only receive up to 10% of this shared experience.
 - You can now use **Bandages** to treat injuries during battle that were received at most 1 round ago
+- Attachements no longer randomly spawn on NPCs
 - Add new **Retreat** skill for player characters, which allows you to retreat individual brothers from a battle if they stand on a border tile
 - Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
 - Hostile Locations now hide their Defender Line-Up during night
@@ -216,7 +218,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Fruits of Labor** now grants multiplicative Hitpoints and Stamina instead of additively
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
 - **Hammer Mastery** no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part.
-- **Hybridization** is completely reworked. It is now called **Toolbox** and requires a Throwing Weapon. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type attacks to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 50% more damage to shields
+- **Hybridization** is completely reworked. It is now called **Toolbox** and requires a Throwing Weapon. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type attacks to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 100% more damage to shields
 - **Inspiring Presence** no longer requires a banner. At the start of each round it grants adjacent allies of your faction +3 Action Points for this turn, if they are adjacent to an enemy and have less Resolve than you. The same target can't be inspired multiple times per turn.
 - **Iron Sights** headshot chance now also works with melee weapons
 - **King of all Weapons** is now called **Spear Flurry** and is completely reworked. It now prevents spear attacks from building up any fatigue
@@ -401,7 +403,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - All **Wiederganger** types gain +5 Melee Skill and grant 20% more experience. They lose **Double Grip** and no longer grant experience after being ressurected. They now have a 100% resurrection chance (up from 66%) but -10 Hitpoints
 - Normal **Wiederganger** lose **Overwhelm**
 - All **Skeletons** grant 20% more experience. They no longer grant experience after being ressurected
-- **Fallen Heroes** no longer spawn with Morning Stars or Handaxes. They now have a 100% resurrection chance (up from 90%) but -10 Hitpoints
+- **Fallen Heroes** no longer spawn with Morning Stars or Handaxes. They now have a 100% resurrection chance (up from 90%) but -10 Hitpoints. Champion variants lose **Nine Lives**
 - **Geists** lose **Fearsome**. They now have **Backstabber**
 - **Necromancer** lose 20 natural body armor and **Inspiring Presence**
 - **Ancient Auxiliary** lose **Battleforged**
@@ -443,7 +445,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Enemy AI
 
-- Enemy archers are 66% less likely to target someone because of how many potential scatter targets are adjacent
+- NPC ranged troops are 66% less likely to target someone because of how many potential scatter targets are adjacent
 - Necrosavants are a bit more likely to stay on the same tile and attack twice, rather than teleport to a slightly better tile
 - Improve AI targeting for throwing nets: They value the targets melee defense twice as much and prefer isolated targets
 - NPCs are now twice as likely to throw a net or use a throwing pot/bomb while adjacent to an enemy
@@ -457,6 +459,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - NPCs are now less likely to use Break Free if they have almost no Melee Defense to begin with and more likely if they have a lot of Melee Defense
 - NPCs are 20% more likely to try to destroy shields of someone with **Phalanx** perk
 - NPCs are 50% more likely to try to destroy shields of someone with **One with the Shield** perk
+- NPCs are 1% more likely to focus Nachzehrer sitting on consumable corpses for every % of hitpoints missing on them
 
 ### World Map
 
