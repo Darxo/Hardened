@@ -849,7 +849,7 @@ local adjustedDescriptions = [
 						"Piercing type throwing attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body",
 						"Cutting type throwing attacks apply [Overwhelmed|Skill+overwhelmed_effect]",
 						"Headshots with blunt type throwing attacks apply [Staggered.|Skill+staggered_effect] All hits with blunt type throwing attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
-						"[Throwing Spears|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(1.5) + " damage to shields",
+						"[Throwing Spears|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(2.0) + " damage to shields",
 					],
 				},
 			],

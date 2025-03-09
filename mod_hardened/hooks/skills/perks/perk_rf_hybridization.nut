@@ -1,5 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_hybridization", function(q) {	// This has been renamed into "Toolbox"
-	q.m.ThrowingSpearShieldDamageMult <- 1.5;
+	q.m.ThrowingSpearShieldDamageMult <- 2.0;
 
 	q.create = @(__original) function()
 	{
