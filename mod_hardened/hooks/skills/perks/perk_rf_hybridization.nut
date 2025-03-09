@@ -56,6 +56,7 @@
 			{
 				if (_targetEntity.getCurrentProperties().IsImmuneToStun) return;
 
+				staggeredEffect.m.TurnsLeft = 1;	// Hidden effect, to prevent chain stuns
 				local effect = ::new("scripts/skills/effects/stunned_effect");
 				_targetEntity.getSkills().add(effect);
 				effect.m.TurnsLeft = 1;
