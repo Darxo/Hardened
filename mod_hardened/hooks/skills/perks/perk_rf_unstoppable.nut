@@ -12,6 +12,13 @@
 			}
 		}
 
+		ret.push({
+			id = 21,
+			type = "text",
+			icon = "ui/icons/warning.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Will expire when you [wait|Concept.Wait] or end your [turn|Concept.Turn] with more than " ::MSU.Text.colorPositive(this.getContainer().getActor().getActionPointsMax() / 2)) + " [Action Points|Concept.ActionPoints] remaining",
+		});
+
 		return ret;
 	}
 
