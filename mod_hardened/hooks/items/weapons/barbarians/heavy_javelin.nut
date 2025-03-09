@@ -4,7 +4,7 @@
 		__original();
 		this.m.Value = 500;				// In Vanilla this is 300
 		this.m.StaminaModifier = 0;	// In Vanilla this is -8
-		this.m.AmmoMax = 4;				// In Vanilla this is 5
+		this.m.AmmoMax = 5;				// In Vanilla this is 5
 		this.m.RegularDamage = 40;		// In Vanilla this is 35
 		this.m.RegularDamageMax = 50;	// In Vanilla this is 50
 		this.m.ArmorDamageMult = 0.85;	// In Vanilla this is 0.8
