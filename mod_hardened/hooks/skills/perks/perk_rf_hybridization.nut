@@ -17,7 +17,10 @@
 	q.onAnySkillUsed = @(__original) function( _skill, _targetEntity, _properties )
 	{
 		__original(_skill, _targetEntity, _properties);
-		_properties.ShieldDamageMult *= this.m.ThrowingSpearShieldDamageMult;
+		if (_skill.getID() == "actives.throw_spear")
+		{
+			_properties.ShieldDamageMult *= this.m.ThrowingSpearShieldDamageMult;
+		}
 	}
 
 	q.onTargetHit = @(__original) function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
