@@ -33,16 +33,24 @@
 		}
 	}
 
-	// _targetEntity may be dying or notAlive at this callgetBlockedTiles
-	q.onTargetHit = @(__original) function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
+	// Overwrite, because we completely wiped this class anyways
+	q.onTargetHit = @() function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		if (!this.m.Temp_IsInEffect) return;
 
-		// We turn on the applyInjuries function on the target
+		// We turn on the applyInjuries function on the target again
 		if (this.m.Temp_InjuryMockObject != null)
 		{
 			this.m.Temp_InjuryMockObject.cleanup();
 			this.m.Temp_InjuryMockObject = null;
+		}
+
+		if (!_targetEntity.isAlive() || _targetEntity.isDying()) return;
+
+		// First we hard-codedly check against the existance of Crippling Strikes, which allows injuries on undead in Reforged
+		if (_targetEntity.getFlags().has("undead") && !_targetEntity.getFlags().has("ghoul") && !_targetEntity.getFlags().has("ghost") && !this.getContainer().hasSkill("perk.crippling_strikes"))
+		{
+			return;
 		}
 
 		local oldDamageInflictedHitpoints = this.m.Temp_HitInfoReference.DamageInflictedHitpoints;
@@ -50,10 +58,14 @@
 		// We actually implement the Bonebreaker effect, by adding armor damage dealt on top of Hitpoint damage for the purpose of injuries
 		this.m.Temp_HitInfoReference.DamageInflictedHitpoints += this.m.Temp_HitInfoReference.DamageInflictedArmor;
 
-		// Now we run the modularVannilla function applyInjury to atually apply an injury on the target
-		local boneBreakerInjury = _targetEntity.applyInjury(_skill, this.m.Temp_HitInfoReference);
-		// In vanilla it checks for appliedInjury boolean here but we extracted the injury application into
-		// a separate function which returns the injury so we check for the returned injury being null
+		local boneBreakerInjury = null;
+		// We need to replicate any vanilla pre-condition for even considering to apply an injury
+		if (_targetEntity.getCurrentProperties().IsAffectedByInjuries && _targetEntity.m.IsAbleToDie && this.m.Temp_HitInfoReference.DamageInflictedHitpoints >= ::Const.Combat.InjuryMinDamage && _targetEntity.getCurrentProperties().ThresholdToReceiveInjuryMult != 0 && this.m.Temp_HitInfoReference.InjuryThresholdMult != 0 && this.m.Temp_HitInfoReference.Injuries != null)
+		{
+			// Now we run the modularVannilla function applyInjury to atually apply an injury on the target
+			boneBreakerInjury = _targetEntity.applyInjury(_skill, this.m.Temp_HitInfoReference);
+		}
+
 		if (boneBreakerInjury != null)
 		{
 			if (_targetEntity.isPlayerControlled() || !_targetEntity.isHiddenToPlayer())
@@ -64,8 +76,6 @@
 
 		// Revert our changes to DamageInflictedHitpoints
 		this.m.Temp_HitInfoReference.DamageInflictedHitpoints = oldDamageInflictedHitpoints;
-
-		__original(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor);
 	}
 
 // New Functions
