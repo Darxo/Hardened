@@ -142,9 +142,32 @@ Goal:
 	}
 
 	// Add _perkDef into _perkTree with Tier _tier, at a specific _row and _position
+	// We can't use the existing addPerk function from dynamic_perk's perk_tree, because that does not allow precise positioning
 	function addPerk( _perkTree, _perkDef, _tier, _row, _position )
 	{
 		try {
+			// This is needed to make the perk be recognized by the perk group
+			foreach (pgID in _perkDef.PerkGroupIDs)
+			{
+				if (!_perkTree.hasPerkGroup(pgID))
+				{
+					local has = true;
+					foreach (row in ::DynamicPerks.PerkGroups.findById(pgID).getTree())
+					{
+						foreach (perkID in row)
+						{
+							if (perkID != _perkDef.ID && !_perkTree.hasPerk(perkID))
+							{
+								has = false;
+								break;
+							}
+						}
+						if (!has) break;
+					}
+					if (has) _perkTree.m.PerkGroupIDs.push(pgID);
+				}
+			}
+
 			local perk = {
 				Row = _tier - 1,
 				Unlocks = _tier - 1,
