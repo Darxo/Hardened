@@ -14,4 +14,10 @@
 
 		return ret;
 	}
+
+	// Overwrite, because we no longer grant a bonus against negative morale checks
+	q.onUpdate = @() function( _properties )
+	{
+		_properties.Bravery += this.getBonus();
+	}
 });
