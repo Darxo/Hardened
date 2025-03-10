@@ -29,6 +29,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		pgAgileGroup.removePerk("perk.rf_death_dealer");
 		pgAgileGroup.addPerk("perk.rf_dynamic_duo", 4);			// Replace "Death Dealer" with "Dynamic Duo"
 		changePerkTier(pgAgileGroup, "perk.footwork", 1);		// Move Footwork to Tier 1 (up from Tier 5)
+		changePerkTier(pgAgileGroup, "perk.pathfinder", 3);		// Move Pathfinder to Tier 3 (up from Tier 1)
 	}
 
 	{	// Axe Group
