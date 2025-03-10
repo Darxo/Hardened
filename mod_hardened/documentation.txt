@@ -199,8 +199,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - make NPCs with Formidable Approach more likely to move to tiles with adjacent enemies which they dont yet have in their list or which are confident with less max HP
 
 ## Fix:
-- For the contract hook, implement a similar skipping behavior for "this.World.Contracts.startScriptedCombat"
-	- Currently afaik, vanilla no longer shows you the last contract/event page, if it leads to a startScriptedCombat
 - One of my bros lost the perk "One with the shield" during the saving process somehow. But the game was kinda bugged (end of combat bug)
 - Vigorous Assault on enemies seem to grant -1 AP permanently?	(Wait until this perk is reworked in Reforged)
 - Fix contract cheese, where saving/loading instantly reveals destination via event?
@@ -234,7 +232,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 
 ## TODO
 
-- remove attachements on NPCs
 - split hyena/nachzehrer troops
 - Cover Ally Rework
 	- change cover ally to debuff the targets melee skill and melee defense, to make it harder to use offensively
@@ -251,6 +248,11 @@ this.World.Events.fire("event.drunk_nobleman")
 ## Debug:
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
+
+0.32.2
+	- Improve tooltip of unstoppable effect
+	- Fix Barbarian King Contract fight not starting correctly
+	- Fix perk groups not being recognized correctly after loading
 
 0.32.1
 	- Attachements no longer randomly spawn on NPCs
