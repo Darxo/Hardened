@@ -166,6 +166,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.footwork",
+		Key = "Footwork",
+		Description = ::UPD.getDescription({
+			Fluff = "Slip right from an opponent\'s grasp!",
+			Effects = [{
+				Type = ::UPD.EffectType.Active,
+				Description = [
+					"Unlocks the [Footwork|Skill+footwork] skill which allows you to leave a [Zone of Control|Concept.ZoneOfControl] without triggering free attacks",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.inspiring_presence",
 		Key = "InspiringPresence",
 		Description = ::UPD.getDescription({

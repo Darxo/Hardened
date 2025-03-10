@@ -24,6 +24,11 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		pgAlwaysGroup.m.Icon = "ui/perks/perk_21.png";		// In Reforged this uses the icon of Bags and Belts
 	}
 
+	{	// Agile Group
+		local pgAgileGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_agile");
+		changePerkTier(pgAgileGroup, "perk.footwork", 1);		// Move Footwork to Tier 1 (up from Tier 5)
+	}
+
 	{	// Axe Group
 		local pgAxeGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_axe");
 		changePerkTier(pgAxeGroup, "perk.rf_dismemberment", 2);		// Move Dismantle to Tier 2 (up from Tier 6)

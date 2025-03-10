@@ -15,3 +15,6 @@
 
 // Completely Revert Reforged Hammer Mastery additions
 ::Hardened.snipeHook("scripts/skills/perks/perk_mastery_hammer", "mod_reforged");
+
+// Completely Revert Reforged Footwork additions (sprint skill)
+::Hardened.snipeHook("scripts/skills/perks/perk_footwork", "mod_reforged");
