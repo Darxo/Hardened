@@ -26,6 +26,8 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 
 	{	// Agile Group
 		local pgAgileGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_agile");
+		pgAgileGroup.removePerk("perk.rf_death_dealer");
+		pgAgileGroup.addPerk("perk.rf_dynamic_duo", 4);			// Replace "Death Dealer" with "Dynamic Duo"
 		changePerkTier(pgAgileGroup, "perk.footwork", 1);		// Move Footwork to Tier 1 (up from Tier 5)
 	}
 
@@ -37,6 +39,8 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 
 	{	// Fast Group
 		local pgFastGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_fast");
+		pgFastGroup.removePerk("perk.rf_dynamic_duo");					// Remove Dynamic Duo from Fast group as it moved to agile group
+		pgFastGroup.addPerk("perk.rf_wear_them_down", 3);				// Add Wear them Down to Tier 3
 		changePerkTier(pgFastGroup, "perk.rf_combo", 5);				// Move Combo to Tier 5 (down from Tier 7)
 		changePerkTier(pgFastGroup, "perk.rf_calculated_strikes", 7);	// Calculated Strikes to Tier 7 (up from Tier 5)
 	}
@@ -99,6 +103,11 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		local pgPolearmGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_polearm");
 		changePerkTier(pgPolearmGroup, "perk.rf_long_reach", 3);	// Move "Long Reach" to Tier 3 (down from Tier 7)
 		changePerkTier(pgPolearmGroup, "perk.rf_leverage", 6);		// Move "Leverage" to Tier 6 (up from Tier 3)
+	}
+
+	{	// Power Combat
+		local pgPowerGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_power");
+		pgPowerGroup.addPerk("perk.rf_death_dealer", 6);	// Add Death Dealer to Tier 6
 	}
 
 	{	// Ranged Combat
