@@ -1,5 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/effects/rf_worn_down_effect", function(q) {
 	q.m.MeleeDefenseMult <- 0.8;
+	q.m.RangedDefenseMult <- 0.8;
 
 	q.getTooltip = @(__original) function()
 	{
@@ -21,6 +22,16 @@
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
 				text = ::MSU.Text.colorizeMultWithText(this.m.MeleeDefenseMult) + ::Reforged.Mod.Tooltips.parseString(" [Melee Defense|Concept.MeleeDefense]"),
+			});
+		}
+
+		if (this.m.RangedDefenseMult != 1.0)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/ranged_defense.png",
+				text = ::MSU.Text.colorizeMultWithText(this.m.RangedDefenseMult) + ::Reforged.Mod.Tooltips.parseString(" [Ranged Defense|Concept.RangeDefense]"),
 			});
 		}
 
@@ -52,6 +63,7 @@
 		}
 
 		_properties.MeleeDefenseMult *= this.m.MeleeDefenseMult;
+		_properties.RangedDefenseMult *= this.m.RangedDefenseMult;
 	}
 
 // MSU Events
