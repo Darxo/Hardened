@@ -110,6 +110,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_death_dealer",
+		Key = "RF_DeathDealer",
+		Description = ::UPD.getDescription({
+			Fluff = "Like wheat before a scythe!",
+			Requirement = "AoE Attack",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Deal " + ::MSU.Text.colorPositive("5%") + " more damage for every enemy within 2 tiles of you",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.dodge",
 		Key = "Dodge",
 		Description = ::UPD.getDescription({
