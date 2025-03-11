@@ -31,7 +31,8 @@ local newPerks = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Swapping two weapons with no shared weapon types becomes a free action once per [turn|Concept.Turn]",
-						"Whenever you swap two weapons, gain " + ::MSU.Text.colorPositive("+5%") + " [Hitchance|Concept.Hitchance] for your next attack until you [wait|Concept.Wait] or end your [turn|Concept.Turn]",
+						"Gain " + ::MSU.Text.colorPositive("+5") + " [Melee Defense,|Concept.MeleeDefense] if you have at least " + ::MSU.Text.colorPositive("70") + " [Base Ranged Skill|Concept.RangeSkill]",
+						"Gain " + ::MSU.Text.colorPositive("+5") + " [Ranged Defense,|Concept.RangeDefense] if you have at least " + ::MSU.Text.colorPositive("70") + " [Base Melee Skill|Concept.MeleeSkill]",
 					],
 				},
 			],
