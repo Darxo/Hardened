@@ -244,6 +244,29 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.mastery.bow",
+		Key = "SpecBow",
+		Description = ::UPD.getDescription({
+			Fluff = "Master the art of archery and pelting your opponents with arrows from afar.",
+			Requirement = "Bow",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+						"Shooting range with bows is increased by " + ::MSU.Text.colorPositive("+1"),
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Active,
+					Description = [
+						"Unlocks the [Arrow to the Knee|Skill+rf_arrow_to_the_knee_skill] skill to debilitate your opponents\' capability to move around the battlefield.",
+					],
+				},
+			],
+		}),
+	},
+	{
 		ID = "perk.mastery.crossbow",
 		Key = "SpecCrossbow",
 		Description = ::UPD.getDescription({
