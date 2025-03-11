@@ -1,6 +1,7 @@
 this.perk_hd_scout <- ::inherit("scripts/skills/skill", {
 	m = {
 		// Public
+		VisionModifier = 0,	// This much vision is granted at all times
 		EmptyTilesRequiredPerVision = 3,	// This perk grants 1 Vision for every this many adjacent empty tiles
 
 		// Private
@@ -36,7 +37,7 @@ this.perk_hd_scout <- ::inherit("scripts/skills/skill", {
 
 	function isHidden()
 	{
-		return this.getVisionModifier(this.m.DestinationTile) == 0;
+		return this.getVisionModifier(this.m.DestinationTile) <= this.m.VisionModifier;	// We only display this perk if its conditional bonus is active, to reduce overall effect bloat
 	}
 
 	function onUpdate( _properties )
@@ -65,6 +66,8 @@ this.perk_hd_scout <- ::inherit("scripts/skills/skill", {
 	// _tile is an optional alternative tile of origin for the calculation. This is important for calculating vision during movement
 	function getVisionModifier( _tile = null )
 	{
+		local ret = this.m.VisionModifier;
+
 		local actor = this.getContainer().getActor();
 		if (_tile == null && actor.isPlacedOnMap())
 		{
@@ -73,7 +76,7 @@ this.perk_hd_scout <- ::inherit("scripts/skills/skill", {
 
 		if (this.m.EmptyTilesRequiredPerVision == 0 || _tile == null)
 		{
-			return 0;
+			return ret;
 		}
 
 		local emptyTiles = 0.0;
@@ -88,6 +91,8 @@ this.perk_hd_scout <- ::inherit("scripts/skills/skill", {
 			}
 		}
 
-		return ::Math.floor(emptyTiles / this.m.EmptyTilesRequiredPerVision);
+		ret += ::Math.floor(emptyTiles / this.m.EmptyTilesRequiredPerVision);
+
+		return ret;
 	}
 });
