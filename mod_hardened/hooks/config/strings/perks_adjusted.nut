@@ -1180,6 +1180,21 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_sanguinary",
+		Key = "RF_Sanguinary",
+		Description = ::UPD.getDescription({
+			Fluff = "Make it rain blood!",
+			Requirement = "Cleaver",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Once per turn during your turn, when you move next to an [injured|Concept.InjuryTemporary] enemy, recover " + ::MSU.Text.colorPositive(3) + " [Action Points|Concept.ActionPoints]",
+					"Once per turn during your turn, when you cause a [Fatality,|Concept.Fatality] recover " + ::MSU.Text.colorPositive(3) + " [Action Points|Concept.ActionPoints]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_savage_strength",
 		Key = "RF_SavageStrength",
 		Description = ::UPD.getDescription({
