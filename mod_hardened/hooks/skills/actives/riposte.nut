@@ -10,6 +10,15 @@
 	{
 		local ret = __original();
 
+		foreach (index, entry in ret)
+		{
+			if (entry.id == 4 && entry.icon == "ui/icons/hitchance.png")
+			{
+				ret.remove(index);	// Riposte no longer has a hitchance penalty
+				break;
+			}
+		}
+
 		ret.push({
 			id = 11,
 			type = "text",

@@ -52,6 +52,9 @@
 		_properties.MeleeDefense += this.m.MeleeDefenseModifier;
 	}
 
+	// Overwrite, because we disable the hitchance penalty from not having sword mastery
+	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties ) {}
+
 	q.onDamageReceived = @(__original) function( _attacker, _damageHitpoints, _damageArmor )
 	{
 		if (this.m.IsRemovedWhenHit)
