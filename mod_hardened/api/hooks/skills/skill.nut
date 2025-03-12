@@ -153,6 +153,15 @@
 		return ::Time.getRound() < this.m.HD_RoundLastUsed + this.m.HD_Cooldown;
 	}
 
+	// Return the expected shield damage multiplier incluencing this skill, when targeting the shield of _target
+	q.getExpectedShieldDamageMult <- function( _target )
+	{
+		local actor = this.getContainer().getActor();
+		local propAttacker = this.getContainer().buildPropertiesForUse(this, _target);
+		local propDefender = _target.getSkills().buildPropertiesForDefense(actor, this);
+		return propAttacker.ShieldDamageMult * defenderProps.ShieldDamageReceivedMult;
+	}
+
 	// If we are evaluating _target, potentially targeting them with _usedSkill, how would that change the targets perceived value?
 	// @return a non-negative float value
 	q.getQueryTargetMultAsUser <- function( _target, _usedSkill = null )	// Const
