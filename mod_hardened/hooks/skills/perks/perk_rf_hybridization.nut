@@ -47,6 +47,22 @@
 		this.m.IsSpent = true;	// IsSpent now stays always stays on true to disable swapping and hide the effect icon
 	}
 
+// Hardened Functions
+	q.getQueryTargetMultAsUser = @(__original) function( _target, _usedSkill = null )
+	{
+		local ret = __original(_target, _usedSkill);
+
+		if (_usedSkill == null) return ret;
+		if (!this.isSkillValid(_usedSkill)) return ret;
+
+		if (_skill.getDamageType().contains(::Const.Damage.DamageType.Blunt) && _target.getSkills().hasSkill("effects.staggered") && !_target.getSkills().hasSkill("effects.stunned"))
+		{
+			ret *= 1.5;		// We strongly prefer to target enemies that are staggered, but not yet stunned
+		}
+
+		return ret;
+	}
+
 // New Functions
 	// This implementation is mostly a copy of REforged mastery implementation
 	q.applyHitEffect <- function( _skill, _targetEntity, _bodyPart )
