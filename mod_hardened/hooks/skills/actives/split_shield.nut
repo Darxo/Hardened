@@ -83,4 +83,24 @@
 
 		return true;
 	}
+
+// Hardened Functions
+	q.getQueryTargetMultAsUser = @(__original) function( _target, _usedSkill = null )
+	{
+		local ret = __original(_target, _usedSkill);
+
+		local targetShield = _target.getOffhandItem();
+		if (targetShield == null) return ret;
+		if (!targetShield.isItemType(::Const.Items.ItemType.Shield)) return ret;
+
+		if (::MSU.isNull(this.getItem())) return ret;
+		local expectedShieldDamage = this.getItem().getShieldDamage() * this.getExpectedShieldDamageMult(_target);
+
+		if (expectedShieldDamage > targetShield.getCondition())
+		{
+			ret *= 1.5;		// We strongly prefer targetting shields, that will die instantly, over those, which survive the impact
+		}
+
+		return ret;
+	}
 });
