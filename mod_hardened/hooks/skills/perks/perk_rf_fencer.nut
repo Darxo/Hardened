@@ -6,7 +6,7 @@
 		this.m.Bonus = 0;	// This perk no longer grants any hit chance bonus
 	}
 
-	// Overwrite because we don't change katastep in any way in our implementation
+	// Overwrite because we don't change Passing Step in any way in our implementation
 	q.onUpdate = @() function( _properties )
 	{
 		if (!this.isEnabled()) return;

@@ -1,5 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_sword", function(q) {
-	// Overwrite because sword mastery no longer grants kata step
+	// Overwrite because sword mastery no longer grants Passing Step
 	q.onAdded = @() function() {}
 	q.onRemoved = @() function() {}
 
