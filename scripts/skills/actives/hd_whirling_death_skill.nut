@@ -75,7 +75,7 @@ this.hd_whirling_death_skill <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.IsSpent = true;
 
-			this.m.Container.add(::new("scripts/skills/effects/hd_whirling_death_effect"));
+			this.getContainer().add(::new("scripts/skills/effects/hd_whirling_death_effect"));
 
 			if (!_user.isHiddenToPlayer())
 			{
@@ -95,7 +95,7 @@ this.hd_whirling_death_skill <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("effects.hd_whirling_death");
+		this.getContainer().removeByID("effects.hd_whirling_death");
 	}
 });
 

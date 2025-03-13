@@ -27,8 +27,8 @@
 		}
 
 		local target = _targetTile.getEntity();
-		if (!this.m.Container.getActor().isAlliedWith(target)) return false;
-		if (_targetTile.hasZoneOfControlOtherThan(this.m.Container.getActor().getAlliedFactions())) return false;
+		if (!this.getContainer().getActor().isAlliedWith(target)) return false;
+		if (_targetTile.hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions())) return false;
 
 		foreach (skill in target.getSkills().m.Skills)
 		{

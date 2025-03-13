@@ -51,7 +51,7 @@ this.hd_ai_defend_stance <- this.inherit("scripts/ai/tactical/behavior", {
 		if (dotDamage >= _entity.getHitpoints()) return zero;
 
 		// Start calculating the score
-		local score = this.Const.AI.Behavior.Score.HD_Defend_Stance * this.getProperties().BehaviorMult[this.m.ID];
+		local score = ::Const.AI.Behavior.Score.HD_Defend_Stance * this.getProperties().BehaviorMult[this.m.ID];
 		score *= this.getFatigueScoreMult(this.m.Skill);
 
 		local adjacentTargets = this.queryTargetsInMeleeRange();

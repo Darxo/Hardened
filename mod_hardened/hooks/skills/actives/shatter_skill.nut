@@ -76,15 +76,15 @@
 
 		if (!_user.isHiddenToPlayer() && (_targetTile.IsVisibleForPlayer || knockToTile.IsVisibleForPlayer))
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has knocked back " + this.Const.UI.getColorizedEntityName(_target));
+			this.Tactical.EventLog.log(::Const.UI.getColorizedEntityName(_user) + " has knocked back " + ::Const.UI.getColorizedEntityName(_target));
 		}
 
 		local skills = _target.getSkills();
 		skills.removeByID("effects.shieldwall");
 		skills.removeByID("effects.spearwall");
 		skills.removeByID("effects.riposte");
-		_target.setCurrentMovementType(this.Const.Tactical.MovementType.Involuntary);
-		local damage = this.Math.max(0, this.Math.abs(knockToTile.Level - _targetTile.Level) - 1) * this.Const.Combat.FallingDamage;
+		_target.setCurrentMovementType(::Const.Tactical.MovementType.Involuntary);
+		local damage = this.Math.max(0, this.Math.abs(knockToTile.Level - _targetTile.Level) - 1) * ::Const.Combat.FallingDamage;
 
 		if (damage == 0)
 		{
@@ -96,11 +96,11 @@
 			local tag = {
 				Attacker = _user,
 				Skill = this,
-				HitInfo = clone this.Const.Tactical.HitInfo
+				HitInfo = clone ::Const.Tactical.HitInfo
 			};
 			tag.HitInfo.DamageRegular = damage;
 			tag.HitInfo.DamageDirect = 1.0;
-			tag.HitInfo.BodyPart = this.Const.BodyPart.Body;
+			tag.HitInfo.BodyPart = ::Const.BodyPart.Body;
 			tag.HitInfo.BodyDamageMult = 1.0;
 			tag.HitInfo.FatalityChanceMult = 1.0;
 			this.Tactical.getNavigator().teleport(_target, knockToTile, this.onKnockedDown, tag, true);

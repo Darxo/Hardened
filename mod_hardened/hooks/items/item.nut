@@ -37,7 +37,7 @@
 	q.drop = @(__original) function( _tile )
 	{
 		// This is a replica of the vanilla function for deciding, whether this is allowed to be dropped at all
-		local isPlayer = this.m.LastEquippedByFaction == ::Const.Faction.Player || this.m.Container != null && this.m.Container.getActor() != null && !this.m.Container.getActor().isNull() && this.isKindOf(this.m.Container.getActor().get(), "player");
+		local isPlayer = this.m.LastEquippedByFaction == ::Const.Faction.Player || this.getContainer() != null && this.getContainer().getActor() != null && !this.getContainer().getActor().isNull() && this.isKindOf(this.getContainer().getActor().get(), "player");
 		local isDropped = this.isDroppedAsLoot() && (::Tactical.State.getStrategicProperties() == null || !::Tactical.State.getStrategicProperties().IsArenaMode || isPlayer);
 		if (isDropped && !this.isChangeableInBattle())
 		{

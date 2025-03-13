@@ -10,11 +10,14 @@
 // Completely Revert Reforged Double Grip rework
 ::Hardened.snipeHook("scripts/skills/special/double_grip", "mod_reforged");
 
-// Completely Revert Reforged Quickhands nerf
-::Hardened.snipeHook("scripts/skills/perks/perk_quick_hands", "mod_reforged");
+// Perks
+{
+	// Completely Revert Reforged Quickhands nerf
+	::Hardened.snipeHook("scripts/skills/perks/perk_quick_hands", "mod_reforged");
 
-// Completely Revert Reforged Hammer Mastery additions
-::Hardened.snipeHook("scripts/skills/perks/perk_mastery_hammer", "mod_reforged");
+	// Completely Revert Reforged Hammer Mastery additions
+	::Hardened.snipeHook("scripts/skills/perks/perk_mastery_hammer", "mod_reforged");
 
-// Completely Revert Reforged Footwork additions (sprint skill)
-::Hardened.snipeHook("scripts/skills/perks/perk_footwork", "mod_reforged");
+	// Completely Revert Reforged Footwork additions (sprint skill)
+	::Hardened.snipeHook("scripts/skills/perks/perk_footwork", "mod_reforged");
+}

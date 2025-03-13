@@ -16,7 +16,7 @@
 		if (_targetTile.IsOccupiedByActor)
 		{
 			local target = _targetTile.getEntity();
-			local properties = this.m.Container.buildPropertiesForUse(this, target);
+			local properties = this.getContainer().buildPropertiesForUse(this, target);
 
 			// Headshot chance
 			if (this.isAttack())

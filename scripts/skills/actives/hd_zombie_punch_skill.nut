@@ -21,8 +21,8 @@ this.hd_zombie_punch_skill <- this.inherit("scripts/skills/actives/zombie_bite",
 			"sounds/combat/hand_hit_02.wav",
 			"sounds/combat/hand_hit_03.wav"
 		];
-		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
-		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
+		this.m.InjuriesOnBody = ::Const.Injury.BluntBody;
+		this.m.InjuriesOnHead = ::Const.Injury.BluntHead;
 	}
 
 	function onUpdate( _properties )

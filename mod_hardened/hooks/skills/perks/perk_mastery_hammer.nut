@@ -10,7 +10,7 @@
 			local newBodyPart = (_bodyPart == ::Const.BodyPart.Head) ? ::Const.BodyPart.Body : ::Const.BodyPart.Head;
 			local armorDamageSpread = ::Math.floor(_damageInflictedArmor * this.m.ArmorDamageSpreadPct);
 
-			local hitInfo = clone this.Const.Tactical.HitInfo;
+			local hitInfo = clone ::Const.Tactical.HitInfo;
 			hitInfo.DamageArmor = armorDamageSpread;
 			hitInfo.BodyPart = newBodyPart;
 

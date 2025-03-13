@@ -58,7 +58,7 @@
 		}
 	}
 
-	q.kill <- function( _killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false )
+	q.kill <- function( _killer = null, _skill = null, _fatalityType = ::Const.FatalityType.None, _silent = false )
 	{
 		this.actor.kill(_killer, _skill, _fatalityType, _silent);
 

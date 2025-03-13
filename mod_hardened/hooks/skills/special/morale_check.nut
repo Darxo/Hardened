@@ -7,7 +7,7 @@
 	{
 		local ret = __original();
 
-		switch (this.m.Container.getActor().getMoraleState())
+		switch (this.getContainer().getActor().getMoraleState())
 		{
 			case ::Const.MoraleState.Fleeing:
 				ret.push({
