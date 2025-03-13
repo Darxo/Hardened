@@ -1,6 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/actor", function(q) {
 	// Public
 	q.m.GrantsXPOnDeath <- true;	// After initialisation this should ideally only ever be set in one direction (to false)
+	q.m.StaminaMin <- 10;	// This actor can never have less than this amount of Stamina
 
 	// Private
 	q.m.HD_recoveredHitpointsOverflow <- 0.0;	// float between 0.0 and 1.0. Is not deserialized, meaning that we lose a tiny bit hitpoint recovery when saving/loading often
@@ -98,6 +99,47 @@
 	}
 
 // New Utility Functions:
+
+// New Getter
+	// Return the Stamina of this character utilizing the new Hardened formula
+	// @return Stamina (Maximum Fatigue) of this character
+	q.getStamina <- function()
+	{
+		local stamina = this.getCurrentProperties().getStamina();
+		stamina += this.getStaminaModifierFromWeight();	// Stamina modifiers from weight are now applied AFTER the StaminaMult from effects (injuries, perks) is applied
+		return ::Math.max(stamina, this.m.StaminaMin);	// New: We now introduce a minimum Stamina value. At worst a character should still be able to throw a fist or move one tile
+	}
+
+	// Calculate the total Stamina Modifier from the Weight of all equipped gear
+	q.getStaminaModifierFromWeight <- function()
+	{
+		local staminaModifier = 0;
+		foreach (index, _ in ::Const.ItemSlotSpaces) // index corresponds to a valid slot in ::Const.ItemSlot
+		{
+			local mult = this.m.CurrentProperties.WeightStaminaMult[index];
+			foreach (item in this.getItems().getAllItemsAtSlot(index))
+			{
+				staminaModifier -= item.getWeight() * mult;
+			}
+		}
+		return ::Math.round(staminaModifier);
+	}
+
+	// Calculate the total Initiative Modifier from the Weight of all equipped gear
+	q.getInitiativeModifierFromWeight <- function()
+	{
+		local initiativeModifier = 0;
+		foreach (itemSlot, _ in ::Const.ItemSlotSpaces)
+		{
+			local mult = this.m.CurrentProperties.WeightInitiativeMult[itemSlot];
+			foreach (item in this.getItems().getAllItemsAtSlot(itemSlot))
+			{
+				initiativeModifier -= item.getWeight() * mult;
+			}
+		}
+		return ::Math.round(initiativeModifier);
+	}
+
 	/// Utility function similar to the MSU function ::Tactical.TurnSequenceBar.isActiveEntity except that it first checks whether we are even in combat
 	/// @return true if it is currently this entities turn
 	/// @return false otherwise
