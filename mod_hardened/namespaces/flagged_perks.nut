@@ -174,12 +174,16 @@ Goal:
 			}.setdelegate(_perkDef);
 
 			_perkTree.getPerks()[_perkDef.ID] <- perk;
+
+			// When multiple perks from the same row were removed, then the position that they need to be added back to, might lie outside of the index
+			// In those cases we just push them to the end of the row
+			_position = ::Math.min(_position, _perkTree.getTree()[_row].len());
 			_perkTree.getTree()[_row].insert(_position, perk);
 		}
 		catch ( _e )
 		{
+			::logWarning("Exception: " + _e);
 			::logWarning("Hardened: addPerk _tier " + _tier + " _row " + _row + " _position " + _position);
-			::MSU.Log.printData(_perkTree.getTree(), 2);
 		}
 	}
 }
