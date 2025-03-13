@@ -68,6 +68,19 @@
 				}
 			}
 
+			// If the item was equipped, we detach it from that character
+			if (this.getContainer() != null)
+			{
+				if (this.m.CurrentSlotType == ::Const.ItemSlot.Bag)
+				{
+					this.getContainer().removeFromBag(this);
+				}
+				else
+				{
+					this.getContainer().unequip(this);
+				}
+			}
+
 			::Tactical.CombatResultLoot.add(this);
 		}
 		else
