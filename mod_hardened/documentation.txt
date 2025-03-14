@@ -136,12 +136,30 @@ This submod is a collection of changes to Reforged that I suggested internally t
 		- This is the code to be touched: camera.Level = camera.getBestLevelForTile
 - Add Ghostlike to Ghouls?
 - Massively rework armor stats
-- Bola Stun should remove stagger
-- The auto level generation seems to not yet be fixed (line of sight fix)
+- The auto level generation seems to not yet be fixed
 - See into traits. Currently they only try 10 times to find a trait
+- Background Bonuses vanish as you level up to 11
+- Make Oathtaker only have 2 armor perks (always Medium)
+- Make Caravans have more resources (protection), the more they dont arrive at their destination
+- Make it so you cant drop non-empty quivers to the ground?
+- Dislocated Shoulder: Only affect skill cost?
+- Give sergeants Fresh&Furious (to help with their command skills)
+- Debug Setting, for debugging AI decision made from getQueryTargetMultAsUser and getQueryTargetMultAsTarget functions
+- Give Fat Trait -10 Initiative (akin to how its effect is in vanilla)
+- Allow renaming of Dogs (its item name is already serialized, just need the UI)
+
+- Give Ijirok Second Wind and a Unhold Sweep Melee Attack for 4 AP and a Zone of Control Attack
+	- Chance its AI to only use the 4 AP after Second Wind for the sweep
+
+Injury Rework
+- Injuries take twice as much to heal
+- Injuries do not require medicine to heal
+- Injuries heal twice as much, if you have medicine
+- twice as much Medicine is used each day
 
 ## Perks Review/Rework
 - Crossbow Mastery
+	- Crossbow Mastery making them in your bag always loaded
 	- Swap Crossbow with Shield for free once per turn
 - Relentless: misses dont build up fatigue on you while waiting
 - change Rising Star to only gain exp until lvl 12 and grant the two perks always at level 12
@@ -156,13 +174,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	- Scale with the amount of nearby enemies? e.g. within 2/3 tiles
 	- Gain 10% more Initiative for each enemy within 2 tiles up to a maximum of 50%
 	- Skills cost 5% less fatigue for each enemy within 2 tiles up to a maximum of 25%
-- Death Dealer
-	- I dont mind this perk currently too much
-- FastAgileS Rework
-	- Revert Footwork to Vanilla and move it to T1 of Agile
-	- Move Pathfinder to T3 of Agile
-	- Add Sprint to T5 of Fast (from T5 of Agile)
-	- Move Combo to T5 of Agile (from T5 of Fast)
 - Power Shot
 - Take Aim Perk (previously Power Shot)
 	- Whenever you wait or end your turn, gain a stacking +5% chance to hit. All bonus is lost, when you attack or move.
@@ -185,6 +196,9 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 ## Enemies
 - Reduce Defense of Assassins, make it so they rely only on Dodge
 
+# Next Vanilla Patch
+- Make Through the Gaps disable your bonus damage on headshots, instead of granting -10% pen
+
 ## AI
 - Player: Make fleeing player characters actually leave the battle when at the border
 - unholds should use throw more often to counter rebuke/flailing swingy stuff
@@ -200,7 +214,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 
 ## Fix:
 - One of my bros lost the perk "One with the shield" during the saving process somehow. But the game was kinda bugged (end of combat bug)
-- Vigorous Assault on enemies seem to grant -1 AP permanently?	(Wait until this perk is reworked in Reforged)
 - Fix contract cheese, where saving/loading instantly reveals destination via event?
 - dog ai too fast, not realizing reanimating zombies and dying to ZOC hits
 - remove double ammo from towns, spawned by fletcher (as fletcher sells its own ammo)
@@ -248,6 +261,42 @@ this.World.Events.fire("event.drunk_nobleman")
 ## Debug:
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
+
+0.33.0
+	- Tryout now costs 100% more crowns
+	- You can now dismiss recruits in towns after trying them out to make space for new arrivals
+	- **Death Dealer** is completely reworked. It now grants 5% more damage with AoE-Attacks for every enemy within 2 tiles
+	- **Hybridization** no longer grants a HitChance bonus when switching weapons. It now grants +5 Melee Defense if you have at least 70 Base Ranged Skill. And it grants +5 Ranged Defense, if you have at least 70 Base Melee Skill
+	- **Command** can now be used on fleeing allies. In this case it triggers a positive morale check first. Then, if they are not fleeing, they are moved forward in the turn order, like before
+	- **Bow Mastery** no longer grants +1 Vision
+	- **Flail Mastery** no longer grants +5% HitChance with **Thresh** and it no longer grants the **From all Sides** perk. You now gain the **From all Sides** effect until the start of your next turn, after you use a Flail Skill. This effect makes you count twice for the purpose of surrounding adjacent enemies
+	- **From All Sides** (now enemy only perk) is completely reworked. You now gain the **From all Sides** effect until the start of your next turn, after you use a Attack Skill. This effect makes you count twice for the purpose of surrounding adjacent enemies
+	- **Worn Down** (applied by **Wear them Down** perk) now also applies 20% less Ranged Defense to the target
+	- **Sword Mastery** no longer removes the HitChance penalty for **Riposte**
+	- **Riposte** no longer has any penalty to HitChance
+	- **Footwork** perk no longer grants **Sprint**
+	- **Footwork** is now a Tier 1 perk (down from Tier 5)
+	- **Pathfinder** is now a Tier 3 perk (up from Tier 1)
+	- **Death Dealer** is removed from the **Agile** group and added to the **Power** group in Tier 6
+	- **Dynamic Duo** is removed from the **Fast** group and added to the **Agile** group in Tier 4
+	- **Wear them Down** is added to the **Fast** group in Tier 3
+	- **Quickhands** in **Trained** group moves back to Tier 2 (just like in Reforged)
+	- Brigand Highwayman appear slightly earlier as leader
+	- Small Nachzehrer have 0 Melee Defense (down from 10) and gain **Ghostlike**
+	- Revert Hitpoint and Armor changes to Ifrits so they are back to Reforged levels
+	- NPCs with **Toolbox** are now 50% more likely to target a staggered enemy with a blunt throwing attack
+	- NPCs are 50% more likely to use **Split Shield** when it would destroy a shield on use
+	- NPCs are 20% more likely to use a throwing spear against shield users and 50% more likely to target shields, that it would destroy on use
+	- **Player Banner** now also has the **Repel** skill
+	- **Crude Javelins** on NPCs now start with 3 ammo
+	- Add new setting to skip newlines in combat log during the execution of the same skill
+	- Add new ::Const.World.Assets.TryoutCostPct value for controlling how much tryout costs
+	- Add new ::Math.clamp(_integerValue, _min, _max) and ::Math.clampf(_floatValue, _min, _max) functions
+	- Adjust tooltip icon of several tooltip lines about how long the effect lasts
+	- Make getSurroundedCount function from actor.nut more moddable. The new `countsAsSurrounding` function from actor.nut controls, what counts as surrounding (ignoring distance). The new `__calculateSurroundedCount` returns the actual number of surrounding enemies, without any clamping or `StartSurroundCountAt`.
+	- Rename Kata Step to Passing Step in a few places, just like Reforged did
+	- Fix **Unstoppable** tooltip being broken
+	- Fix armor/helmets that you loot rarely becoming un-equippable
 
 0.32.2
 	- Improve tooltip of unstoppable effect

@@ -34,7 +34,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 
 	{	// Axe Group
 		local pgAxeGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_axe");
-		changePerkTier(pgAxeGroup, "perk.rf_dismemberment", 2);		// Move Dismantle to Tier 2 (up from Tier 6)
+		changePerkTier(pgAxeGroup, "perk.rf_dismemberment", 2);		// Move Dismemberment to Tier 2 (up from Tier 6)
 		changePerkTier(pgAxeGroup, "perk.rf_dismantle", 6);			// Move Dismantle to Tier 6 (up from Tier 2)
 	}
 

@@ -58,6 +58,7 @@
 		return _skill.isAttack();
 	}
 
+	// Is the enemy valid for our initiative debuff effect?
 	q.isEnemyValid <- function( _enemy )
 	{
 		if (::MSU.isNull(_enemy) || !_enemy.isAlive() || _enemy.isDying()) return false;

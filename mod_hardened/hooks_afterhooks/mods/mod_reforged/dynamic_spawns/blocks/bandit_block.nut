@@ -7,7 +7,7 @@ local unitBlocks = [
 			{ BaseID = "Unit.RF.RF_BanditBandit" },
 			{ BaseID = "Unit.RF.RF_BanditKiller" },
 		],
-		getUpgradeWeight = function() { return base.getUpgradeWeight() * 0.80 },	// This is new and used to roughly imitate the Hardened robber upgrading
+		getUpgradeWeight = function() { return base.getUpgradeWeight() * 0.80 },	// This is new and used to roughly imitate the Reforged robber upgrading
 	},
 	{
 		ID = "UnitBlock.RF.BanditBoss",

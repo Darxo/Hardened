@@ -64,7 +64,7 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Javelins** now deal 35-45 Damage (up from 30-45), deal 70% Armor Damage (down from 75%), have 0 Weight (down from 6), 2 Weight per Ammo and a value of 350 (up from 200)
 - **Throwing Axes** now deal 35-50 Damage (up from 30-50), have -10% Hitchance (down from +0%), +10% Headshot Chance (up from +5%), 0 Weight (down from 4), 2 Weight per Ammo and a value of 400 (up from 200)
 - Marketplaces now sell **Crude Javelins** instead of regular **Javelins**
-- Heavy Throwing Weapons on NPCs start with either 3 or 4 ammo
+- Crude Javelins on NPCs start with 3/4 ammo and Heavy Throwing Weapons on NPCs start with 4/5 ammo
 
 ### Double Grip Rework
 
@@ -85,11 +85,12 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 
 ### New Perks
 
-- Add new **Hybridization** perk in Tier 3 of **Ranged Group**. It allows swapping two weapons with no shared weapon types for free, once per turn. And whenever you swap two weapons, gain +5% hitchance for your next attack until you wait or end your turn
-- Add new **Elusive** perk in Tier 2 of **Swift Group**. It reduces the AP cost for movement on all terrain by 1 to a minimum of 2. This does not stack with Pathfinder. After moving 2 tiles, become immune to rooted effects, until the start of your next turn.
+- Add new **Hybridization** perk in Tier 3 of **Ranged Group**. It allows swapping two weapons with no shared weapon types for free, once per turn. It grants +5 Melee Defense if you have at least 70 Base Ranged Skill and it grants +5 Ranged Defense, if you have at least 70 Base Melee Skill
+- Add new **Elusive** perk in Tier 2 of **Swift Group**. It reduces the AP cost for movement on all terrain by 1 to a minimum of 2. This does not stack with Pathfinder. After moving 2 tiles, become immune to rooted effects, until the start of your next turn
 - Add new **One with the Shield** perk in Tier 7 of **Shield Group**. It requires a shield. It grants 25% more Injury Threshold. While you have Shieldwall effect you take 40% less Hitpoint damage from head attack. While you don't have Shieldwall effect you take 40% less Hitpoint damage from body attacks
-- Add new **Parry** perk in Tier 3 of **Swift Group**. It requires a one handed melee weapon. It grants Melee Defense equal to your base Ranged Defense against weapon attacks. While engage with someone wielding a melee weapon, you have 70% less Ranged Defense. Does not work with shields, while stunned, fleeing or disarmed.
-- Add new **Scout** perk in Tier 1 of **Ranged Group**. It grants +1 Vision for every 3 adjacent tiles that are either empty or at least 2 levels below your tile. It also removes the Action Point cost for changing height levels, just like **Pathfinder**.
+- Add new **Parry** perk in Tier 3 of **Swift Group**. It requires a one handed melee weapon. It grants Melee Defense equal to your base Ranged Defense against weapon attacks. While engage with someone wielding a melee weapon, you have 70% less Ranged Defense. Does not work with shields, while stunned, fleeing or disarmed
+- Add new **Scout** perk in Tier 1 of **Ranged Group**. It grants +1 Vision for every 3 adjacent tiles that are either empty or at least 2 levels below your tile. It also removes the Action Point cost for changing height levels, just like **Pathfinder**
+- Add the existing enemy-only perk **Wear them Down** in Tier 3 of **Fast Group**
 
 ### Reworked Day-Night-Cycle
 
@@ -143,20 +144,18 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
 - **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%)
-- **Kata Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand
-- **Lunge** now hase -10% additional Hitchance (up from -20%)
+- **Passing Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand
+- **Lunge** now has -10% additional Hitchance (up from -20%)
 - **Net Effect** no longer affects the Initiative of the target. It now applies 50% less Melee Defense (up from 25%) and 50% less Ranged Defense (down from 45%)
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
 - **Recover** now applies the same Initiative debuff as using **Wait**
-- **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack
+- **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack. Riposte no longer has a penalty to HitChance
 - **Shuffle** (granted by **Dynamic Duo**) no longer puts your partner to the next position in the turn order
 - **Spider Poison** now also reduces the Hitpoints Recovery of the target by 50%
-- **Sprint** (granted by **Footwork**) now costs 1 Action Point (up from 0) but no longer increases the fatigue cost per tile. It now disables all Attack-Skills until you wait or end your turn
 - **Stab** now costs 3 Action Points (down from 4) and has a 25% higher threshold to inflict injuries
 - **Sword Thrust** now has -10% additional Hitchance (up from -20%)
 - **Take Aim** (granted by **Crossbow and Firearm Mastery**) now costs 4 Action Points (up from 2) and 20 Fatigue (down from 25)
 - **Throw Axe** now has a 50% chance to decapitate (up from 0%) and 25% chance to disembowel (up from 0%)
-- Throw Pot/Flask skills are no longer considered an attack
 
 Skill nerfs as a result of the Reach system:
 - **Gash** now has 0% additional Hitchance (down from 5%)
@@ -192,14 +191,17 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bloodlust** (granted by **Cleaver Mastery**) is completely reworked. It now grants 10% more damage against bleeding enemies and makes you receive 10% less damage from bleeding enemies
 - **Bolster** (granted by **Polearm Mastery**) now requires a Polearm equipped, instead of any weapon with a Reach of 6 or more
 - **Bone Breaker** is completely reworked. It now causes Armor Damage you deal to be treated as additional Hitpoint damage for the purpose of inflicting injuries
+- **Bow Mastery** no longer grants +1 Vision
 - **Bullseye** no longer reduces the penalty for shooting behind cover. It also no longer works with **Take Aim**. It now provides 25% Armor Penetration (up from 10% and 20% resepctively)
 - **Bulwark** no longer grants additional Resolve against negative morale checks
 - **Brawny** no longer grants Initiative
 - **Colossus** now grants +15 Hitpoints, instead of 25% more Hitpoints
+- **Command** can now be used on fleeing allies. In this case it triggers a positive morale check first. Then, if they are not fleeing, they are moved forward in the turn order, like before
 - **Combo** is reworked. It now reduces the cost of all skills you haven't used yet this turn by 1 Action Point, except the first skill you use each turn
 - **Concussive strikes** is completely reworked. It is now called **Shockwave** and it makes it so your kills or stuns with maces will daze all enemies adjacent to your target for 1 turn
 - **Crossbow and Firearm Mastery** now grants +1 Vision while you wear a Helmet with a Vision Penalty
 - **Dagger Mastery** no longer grant any reach ignore. It now reduces the action point cost of the first offhand skill each turn to 0, if your offhand item has a weight lower than 10
+- **Death Dealer** is completely reworked. It now grants 5% more damage with AoE-Attacks for every enemy within 2 tiles
 - **Deep Impact** is now called **Breakthrough** and has been completely reworked. It grants the **Pummel** skill, which can now be used with any hammer. It also makes it so **Shatter** has a 100% chance to knock targets back on a hit
 - **Dismantle** has been completely reworked. It now grants 100% more Shield Damage. It also grants +40% Armor Damage against enemies who have full health
 - **Dismemberment** no longer causes any morale checks. It now grants +20% chance to hit the body part with the most temporary injuries
@@ -210,11 +212,14 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **En Garde** is completely reworked. It now grants +10 Melee Skill while it is not your turn. It also makes it so **Riposte** is no longer disabled when you get hit or deal a counter attack (so like in Vanilla), and it recovers 1 Action Point whenever an opponent misses a melee attack against you
 - **Entrenched** has been completely reworked. It now grants +5 Resolve per adjacent ally, +5 Ranged Defense per adjacent obstacle and 15% more Ranged Skill if at least 3 adjacent tiles are allies or obstacles
 - **Exploit Opening** is completely reworked. It now grants a stacking +10% chance to hit whenever an opponent misses an attack against you. Bonus is reset upon landing a hit (just like Fast Adaptation)
-- **Fencer** no longer grants +10% chance to hit or 20% less fatigue cost. It no longer removes the damage type requirement from **Kata Step**. It now causes your fencing swords to lose 50% less durability
+- **Fencer** no longer grants +10% chance to hit or 20% less fatigue cost. It no longer removes the damage type requirement from **Passing Step**. It now causes your fencing swords to lose 50% less durability
+- **Flail Mastery** no longer grants +5% HitChance with **Thresh** and it no longer grants the **From all Sides** perk. You now gain the **From all Sides** effect until the start of your next turn, after you use a Flail Skill. This effect makes you count twice for the purpose of surrounding adjacent enemies
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy
 - **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you
 - **Fortified Mind** now grants +25 Resolve (instead of 25% more) and you lose Resolve equal to the Weight of your Helmetweight
+- **Footwork** perk no longer grants **Sprint**
 - **Fresh and Furious** now has a fatigue threshold of 50% (up from 30%). It now checks your fatige when you end your turn, instead of at the start of your turn. It now also affects skills that cost 1 Action Point. It is now wasted when using a skill that costs 0 Action Points
+- **From All Sides** (enemy only perk) is completely reworked. You now gain the **From all Sides** effect until the start of your next turn, after you use a Attack Skill. This effect makes you count twice for the purpose of surrounding adjacent enemies
 - **Fruits of Labor** now grants multiplicative Hitpoints and Stamina instead of additively
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
 - **Hammer Mastery** no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part.
@@ -247,9 +252,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Student** no longer grants any experience. It now grants +1 Perk Point when you reach level 8 instead of level 11
 - **Sweeping Strikes** is completely reworked. It now grants +5 Melee Defense for every adjacent enemy until the start of your next turn the first time you use a melee attack skill on an adjacent enemy. It still requires a two-handed weapon
 - **Swift Stabs** has been completely reworked. It's now called **Hit and Run**. It makes it so all dagger attacks can be used at 2 tiles and will move the user one tile closer before the attack. When the attack hits the enemy, the user is moved back to the original tile
-- **Sword Mastery** no longer grants **Kata Step**. It now causes your attacks against enemies whose turn has already started to lower their Initaitive by a stacking 15% (up to a maximum of 90%) until the start of their next turn
+- **Sword Mastery** no longer grants **Passing Step** and it no longer increases the HitChance with **Riposte**. It now causes your attacks against enemies whose turn has already started to lower their Initaitive by a stacking 15% (up to a maximum of 90%) until the start of their next turn
 - **Target Practice** has been completely reworked. It now makes it 50% less likely for your arrows to hit the cover, when you have no clear line of fire (stronger than vanilla Bullseye)
-- **Tempo** is completely reworked. It grants +15 Initiative until the start of your next turn whenever you move a tile during your turn. It also grants **Kata Step**
+- **Tempo** is completely reworked. It grants +15 Initiative until the start of your next turn whenever you move a tile during your turn. It also grants **Passing Step**
 - **Through the Gaps** is completely reworked. It grants -10% Armor Penetration but causes your piercing spear attacks to always target the body part with the lowest total armor
 - **Throwing Mastery** is mostly completely reworked. It now grants 30% more damage for your first throwing attack each turn, no matter the range. It now allows swapping a throwing weapon with an empty throwing weapon or empty slot for free, once per turn
 - **Trick Shooter** no longer causes your **Aimed Shot** to trigger a morale check on the main target hit
@@ -258,38 +263,42 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Vigorous Assault** discount is no longer removed when switching items
 - **Weapon Master** no longer works with hybrid weapons. When you learn **Weapon Master** you now gain a new random weapon perk group
 - **Wears it well** now grants 50% of combined Mainhand and Offhand Weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest Weight)
-- **Wear them Down** (Enemy-Only) is completely reworked. It now causes your hits to apply an additional 10 Fatigue on the target and your misses to apply 5 Fatigue. After your attack, if your target is fully fatigued, apply **Worn Down** effect until the end of their turn, which prevents them from using **Recover** and applies 20% less Melee Defense
+- **Wear them Down** is completely reworked. It now causes your hits to apply an additional 10 Fatigue on the target and your misses to apply 5 Fatigue. After your attack, if your target is fully fatigued, apply **Worn Down** effect until the end of their turn, which prevents them from using **Recover** and applies 20% less Melee Defense and 20% less Ranged Defense
 - **Whirling Death** is completely reworked. It now grants a new active skill which creates a buff for two turns granting 30% more damage, 2 Reach and 10 Melee Defense to the user
 
 ### Perk Groups
 
-- **Bags and Belts** is now part of the **Light Armor** group instead of being available for everyone
-- **Bone Breaker** is now Tier 5 (down from Tier 7)
-- **Bullseye** is now Tier 6 (up from Tier 3)
-- **Cheap Trick** is now Tier 1 (down from Tier 2)
-- **Colossus** is now also part of the **Wildling** perk group in Tier 1
-- **Combo** is now a Tier 5 perk (down from Tier 7)
-- **Calculated Strikes** is now a Tier 7 perk (up from Tier 5)
-- **Deep Impact** (now **Breakthrough**) is now a T3 perk and **Rattle** (now **Full Force**) is now a T6 perk
-- **Dismantle** is now a Tier 6 perk (up from Tier 2)
-- **Dismemberment** is now a Tier 2 perk (down from Tier 6)
-- **Dodge** is removed from the **Light Armor** group. It is now only available in the **Medium Armor** group
-- **Duelist** is no longer part of **Shield** group
+- **Bags and Belts** is added to **Light Armor** group and removed from **General** group
+- **Bone Breaker** moved to Tier 5 (down from Tier 7)
+- **Bullseye** moved to Tier 6 (up from Tier 3)
+- **Cheap Trick** moved to Tier 1 (down from Tier 2)
+- **Colossus** is added to **Wildling** group
+- **Combo** moved to Tier 5 (down from Tier 7)
+- **Calculated Strikes** moved Tier 7 (up from Tier 5)
+- **Decisive** is added to **Leadership** group
+- **Death Dealer** is removed from **Agile** and added to **Powerful Strikes**. It moved to Tier 6 (up from Tier 4)
+- **Deep Impact** (now **Breakthrough**) moved to T3 perk (down from Tier 6)
+- **Dismantle** moved to Tier 6 perk (up from Tier 2)
+- **Dismemberment** moved to Tier 2 perk (down from Tier 6)
+- **Dodge** is removed from **Light Armor** group
+- **Duelist** is removed from **Shield** group
+- **Dynamic Duo** is removed from **Fast** group and added to **Agile** group
+- **Wear them Down** is added to **Fast** group in Tier 3
+- **Footwork** moved to Tier 1 (down from Tier 5)
 - **Ghostlike** is now Tier 5 (up from Tier 4)
-- **Inspiring Presence** is now also part of the **Noble** group at Tier 7
-- **King of all Weapons** (now **Spear Flurry**) is now a Tier 6 perk (down from Tier 7)
-- **Leverage** is now a Tier 6 perk (up from Tier 3)
-- **Long Reach** is now a Tier 3 perk (down from Tier 7)
-- **Marksmanship** is no longer a special perk. It is now a T7 perk in the **Ranged** perk group
-- **Overwhelm** is no longer part of the **Ranged** perk group
-- **Pathfinder** and **Decisive** are now part of **Leadership** group
-- **Pathfinder** is no longer part of the **Wildling** group
+- **Inspiring Presence** added to **Noble** group
+- **King of all Weapons** (now **Spear Flurry**) moved to Tier 6 perk (down from Tier 7)
+- **Leverage** moved to Tier 6 perk (up from Tier 3)
+- **Long Reach** moved to Tier 3 perk (down from Tier 7)
+- **Marksmanship** is added to **Ranged** group. It is no longer a special perk
+- **Overwhelm** is removed from **Ranged** group
+- **Pathfinder** moved to Tier 3 (up from Tier 1). It is removed from **Wildling** group and added to **Leadership** group
 - **Polearm Mastery** and **Fortified Mind** are removed from the **Leadership** group
-- **Quickhands** from the perk group **Trained** is now a Tier 1 perk (was Tier 2 before)
-- **Rally the Troops** from the **Leadership** group is now a Tier 3 perk (was Tier 2 before). It is now also part of the **Soldier Group** at Tier 3
-- **Student** is now available for everyone
-- **Tricksters Purses** is now Tier 3 (up from Tier 1)
-- **Vigorous Assault** is no longer part of **Swift Strikes** group
+- **Rally the Troops** moved to Tier 3 (up from Tier 2). It is added to **Soldier** group
+- **Rattle** (now **Full Force**) moved to Tier 6 (up from Tier 3)
+- **Student** is added to **General** group. It is no longer a special perk
+- **Tricksters Purses** moved to Tier 3 (up from Tier 1)
+- **Vigorous Assault** is removed from **Swift Strikes** group
 - **Knave** no longer guarantees the **Dagger** perk group. Now it is just twice as likely. It also no longer guarantees the **Nimble** per group
 - **Wildling** no longer prevents the perk groups **Ranged**, **Gifted** and **Leadership** from appearing
 - **Leadership** perk group is now part of the **Shared** perk group collection and will compete with shared perk groups
@@ -315,7 +324,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Halberd** now has 6 Reach (down from 7)
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
 - **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%)
-- **Player Banner** now grants -5 to Ranged Defense
+- **Player Banner** now grants -5 to Ranged Defense and it comes with **Repel**
 - **Spetum** now has a Reach of 7 (up from 6) and costs 900 crowns (up from 750)
 - **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and a value of 600 (up from 400)
 - **Throwing Spears** no longer inflict any fatigue when hitting a shield and have a value of 60 (down from 80)
@@ -432,8 +441,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
   - Lindwurm Heads now have 1000 Hitpoints (down from 1100), 20 Melee Defense (up from 10) and gain **Exude Confidence**. They lose **Survival Instinct**
   - The Lindwurm Tail still inherits most of the stats from the head but has 50% less Hitpoints and Resolve and 50% more Melee Defense. They lose **Fearsome**
   - The Lindwurm Tail can now be stunned and netted but those effects are removed whenever the Head moves away
-- All ifrits have 50% less Hitpoints and 50% more Armor
 - All **Nachzehrere** lose **Deep Cuts**
+- **Small Nachzehrer** lose 10 Melee Defense and gain **Ghostlike**
 - **Large Nachzehrer** can no longer swallow player characters while in a net. They can now also swallow the last player character who is alive
 - **Donkeys** now grant 0 XP (down from 50 XP)
 - **Schrats** no longer take 70% reduced damage while their shield is up. They now have +200 Hitpoints and gain the **One with the Shield** perk
@@ -460,6 +469,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - NPCs are 20% more likely to try to destroy shields of someone with **Phalanx** perk
 - NPCs are 50% more likely to try to destroy shields of someone with **One with the Shield** perk
 - NPCs are 1% more likely to focus Nachzehrer sitting on consumable corpses for every % of hitpoints missing on them
+- NPCs with **Toolbox** are 50% more likely to target a staggered enemy with a blunt throwing attack
+- NPCs are 50% more likely to use **Split Shield** when it would destroy a shield on use
+- NPCs are 20% more likely to use a throwing spear against shield users and 50% more likely to target shields, that it would destroy on use
 
 ### World Map
 
@@ -473,8 +485,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - The Event-Option to shoot down the bird who shat your brother now costs 5 Ammunition
 
 ### Other
+
 - All fleeing characters now have +1 Action Point
 - All player characters now have +1 Action Point during AutoRetreat
+- Try out now costs 100% more. You can now dismiss recruits after you tried them out to make room for new recruits
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
 - **Swamp** tiles no longer reduce Melee Skill by 25%. Instead they now reduce Initiative by 25%
 - The **Hidden** effect (granted by certain tiles) now also provides +10 Ranged Defense
@@ -501,7 +515,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Your headshot chance is now displayed in the combat tooltip when targeting enemies
 - Introduce a new **Unworthy** effect which prevents the character from granting experience on death. This is given to all non-player controlled characters who grant 0 XP on death or are allied to the player
 - Introduce a new cosmetic **Non-Combatant** effect, to non-combatant characters, which explains that they do not need to be killed in order to win
-- Add new setting to control the zoom speed during combat to allow for more granular zooming
+- Add Setting to control the zoom speed during combat to allow for more granular zooming
 - Loot that is not equippable in battle no longer appears on the ground (e.g. Beast Trophies/Ingredients)
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
 - Improve visibility of Miasma and Burning Ground
@@ -509,12 +523,13 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Disarm** can no longer be used on enemies which are immune to disarm
 - **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
-- All Skills from the **Lorekeeper** now have skill descriptions
+- Add skill descriptions for all skills from the **Lorekeeper**
 - Corpses will now display the round, in which they were created
 - The automatic camera level calculation is improved
-- Add new Setting for preventing tile/enemy tooltips from being generated while it is not your turn
+- Add Setting (on) to prevent combat logs, which are the result of the same skill execution, from producing empty newlines
+- Add Setting (on) for preventing tile/enemy tooltips from being generated while it is not your turn
 - **Armored Wiederganger** now display their complete name during battle, instead of just **Wiederganger**
-- Add Setting for making the hotkeys for **Wait** fire continuously, instead of only when released
+- Add Setting (off) for making the hotkeys for **Wait** fire continuously, instead of only when released
 - Reduce the Attack sfx volume of Wardogs and Warhounds by 20%
 
 ### World
@@ -522,20 +537,22 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - List most changes to Relation and Renown during Events and Contracts
 - Settlements now display a tooltip showing how many days ago you last visited that location
 - The Tavern now displays to you how many rumors you received so far
-- Add new setting for displaying forbidden destination ports (even when they are hostile to you or the origin port)
+- Add Setting (on) for displaying forbidden destination ports (even when they are hostile to you or the origin port)
 - Dismissing a freshly hired recruit (0 days with the company) will skip the confirmation dialog
 - Distance text in rumors and contracts now display the tile distance range in brackets
 - Display the current XP Multiplier of the viewed character when hovering over the Experience bar
 - World Parties with champions will display an orange skull on top of their socket
 - Hostile Locations now display a tooltip line if they hide defender
 - Display price multiplier from relation in factions & relations screen
-- Add 3 new settings for displaying exact relation, morale and renown values after the respective state term
+- Add Setting (on) for displaying the exact Relation whenever its indirect term appears anywhere
+- Add Setting (on) for displaying the exact Morale Reputation whenever its indirect term appears anywhere
+- Add Setting (on) for displaying the exact Renown whenever its indirect term appears anywhere
 - Peasants and Caravans on the world map display a banner
-- Add new setting for displaying non-settlement location names of nearby locations (Lairs, Unique Locations, Attached Locations)
+- Add Setting (on) for displaying non-settlement location names of nearby locations (Lairs, Unique Locations, Attached Locations)
 - Brothers that "die" outside of combat (e.g. Events) will now always transfer their equipment into your stash
 - List the effects of camping in the camping tooltip
-- Add Setting for marking named/legendary helmets/armor or armor with attachements as to-be-repaired whenever it enters your inventory
-- Add settings to display food duration, repair duration and minimum medicine cost in brackets behind those supply values
+- Add Setting (on) for marking named/legendary helmets/armor or armor with attachements as to-be-repaired whenever it enters your inventory
+- Add Setting (on) to display food duration, repair duration and minimum medicine cost in brackets behind those supply values
 - Add 1 second delay, before you can click the buttons in event screens to prevent accidental missclicks
 - Add Concept and Tooltip for Day-Night Cycle
 - Slightly Lower the volume of the annoying kid sfx in towns
@@ -577,6 +594,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Characters under berserker mushroom effect no longer yell when they use ranged attacks
 - The id of the item `mouth_piece` is changed to `armor.head.mouth_piece` (it used to be `armor.head.witchhunter_hat`)
 - Prevent the same random human name (e.g. Leader or Knight) to be generated in succession
+- Throw Pot/Flask skills are no longer considered an attack
 - Remove a duplicate loading screen
 
 ### Reforged
@@ -588,6 +606,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ## For Modders
 
+- Add new `::Math.clamp(_integerValue, _min, _max)` and `::Math.clampf(_floatValue, _min, _max)` functions
 - Add simple cooldown framework for skills. E.g. set `this.m.HD_Cooldown = 2` to only allow a skill to be used once every two rounds
 - Set `IsNew` to `false` when deserializing injuries
 - Add new `::Hardened.Temp.RootSkillCounter = null` variable, which will contain the SkillContainer of the root skill in a delayed skill chain, or `null` while not inside a skill execution
@@ -599,7 +618,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - `onMovementStep` now calls `onUpdateVisibility` for the entity after the MSU events happen instead of before, allowing you to better implement effects, whose vision effects depend on positioning
 - Add new `AffectedBodyPart` member for `injury.nut` (temporary injuries) which specifies which bodypart that injury belongs to. It defaults to -1 and is adjusted depending on the vanilla injury lists
 - Add new `IsAlwaysShowingScoutingReport = false` flag for asset_manager. When `true` you will always see defender line-up, even during night, similar to the "Band of Poachers" origin
+- Make `getSurroundedCount` function from `actor.nut` more moddable. The new `countsAsSurrounding` function from `actor.nut` controls, what counts as surrounding (ignoring distance). The new `__calculateSurroundedCount` returns the actual number of surrounding enemies, without any clamping or `StartSurroundCountAt`
 - Add new `TerrainTypeVisionMult = [1.0, ...]` arra for asset_manager. This can be adjusted similar to the existing `TerrainTypeSpeedMult` array to change vision depending on tile type
+- Add new `::Const.World.Assets.TryoutCostPct` value for controlling how much of the hire cost is translated into becoming the try out cost
 - Add two new events `onReallyBeforeSkillExecuted` and `onReallyAfterSkillExecuted` for `skill.nut` which guarantee to only trigger when a skill is actually onUsed
 - Add two new events `onBeforeShieldDamageReceived` and `onAfterShieldDamageReceived` for `skill.nut`
 - Add new `getQueryTargetMultAsUser` and `getQueryTargetMultAsTarget` ai related getter for `skill.nut`
@@ -637,9 +658,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Reforged
 
 # Known Issues:
-
-- **Student** will double-dip in the Manhunter Origin for Slaves
-- Vanilla Bug: Ifrit take far more armor damage than intended per hit
 
 # Compatibility
 
