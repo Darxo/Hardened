@@ -320,7 +320,6 @@ local adjustedDescriptions = [
 					"[Lash|Skill+lash_skill] and [Hail|Skill+hail_skill] ignore the defense bonus granted by shields but not by [Shieldwall|Skill+shieldwall_effect]",
 					"Gain the [From all Sides|Perk+perk_rf_from_all_sides] perk",
 					"[Pound|Skill+pound] ignores an additional " + ::MSU.Text.colorPositive("+10%") + " of armor on head hits",
-					"[Thresh|Skill+thresh] gains " + ::MSU.Text.colorPositive("+5%") + " chance to hit",
 				],
 			}],
 		}),
