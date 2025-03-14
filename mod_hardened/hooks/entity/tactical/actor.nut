@@ -125,9 +125,21 @@
 		if (!this.isPlacedOnMap()) return count;
 
 		local myTile = this.getTile();
-		foreach (enemy in ::Tactical.Entities.getHostileActors(this.getFaction(), myTile, 2, true))
+		foreach (enemy in ::Tactical.Entities.getHostileActors(this.getFaction(), myTile, 2))
 		{
 			if (!this.countsAsSurrounding(enemy)) continue;
+
+			// Todo: consider making this logic more modular (e.g. move it to skill_container/skill function)
+			local distance = myTile.getDistanceTo(enemy.getTile());
+			if (distance == 1)
+			{
+				local perk = enemy.getSkills().getSkillByID("effects.rf_from_all_sides");
+				if (perk != null)
+				{
+					count += perk.getSurroundedModifier(this);
+				}
+			}
+			else if (distance == 2)
 			{
 				local perk = enemy.getSkills().getSkillByID("perk.rf_long_reach");
 				if (perk != null)
