@@ -627,6 +627,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_command",
+		Key = "RF_Command",
+		Description = ::UPD.getDescription({
+			Fluff = "\'You shall do it!\'",
+			Effects = [{
+				Type = ::UPD.EffectType.Active,
+				Description = [
+					"Unlocks the [Command|Skill+rf_command_skill] skill which allows you to [rally|Concept.Morale] an ally and move them forward in the [turn|Concept.Turn] order",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_combo",
 		Key = "RF_Combo",
 		Description = ::UPD.getDescription({
