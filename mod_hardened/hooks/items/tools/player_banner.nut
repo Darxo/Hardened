@@ -16,6 +16,12 @@
 		return ret;
 	}
 
+	q.onEquip = @(__original) function()
+	{
+		__original();
+		this.addSkill(::new("scripts/skills/actives/repel"));
+	}
+
 	q.onUpdateProperties = @(__original) function(_properties)
 	{
 		__original(_properties);
