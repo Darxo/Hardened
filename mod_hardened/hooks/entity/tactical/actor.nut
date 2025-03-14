@@ -116,6 +116,29 @@
 		initiative += this.getInitiativeModifierFromWeight();
 		return ::Math.round(initiative);
 	}
+
+// Hardened Functions
+	q.__calculateSurroundedCount = @(__original) function()
+	{
+		local count = __original();
+
+		if (!this.isPlacedOnMap()) return count;
+
+		local myTile = this.getTile();
+		foreach (enemy in ::Tactical.Entities.getHostileActors(this.getFaction(), myTile, 2, true))
+		{
+			if (!this.countsAsSurrounding(enemy)) continue;
+			{
+				local perk = enemy.getSkills().getSkillByID("perk.rf_long_reach");
+				if (perk != null)
+				{
+					count += perk.getSurroundedModifier(this);
+				}
+			}
+		}
+
+		return count;
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/entity/tactical/actor", function(q) {

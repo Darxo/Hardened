@@ -6,6 +6,18 @@
 	// Private
 	q.m.HD_recoveredHitpointsOverflow <- 0.0;	// float between 0.0 and 1.0. Is not deserialized, meaning that we lose a tiny bit hitpoint recovery when saving/loading often
 
+	// Overwrite, because we re-implement the Reforged logic
+	q.getSurroundedCount = @() function()
+	{
+		local tile = this.getTile();
+		local count = -1;	// In Vanilla, the surrounded count always starts at -1, as in: we ignore the first adjacent enemy
+
+		count += this.__calculateSurroundedCount();
+		count -= this.getCurrentProperties().StartSurroundCountAt;
+
+		return ::Math.max(0, count);
+	}
+
 	q.isTurnDone = @(__original) function()
 	{
 		if (this.getCurrentProperties().IsStunned) return true;		// Stun no longer sets the Action Points to 0 so we now need to adjust this function to always return true for stunned characters
@@ -208,7 +220,46 @@
 		return flooredRecoveredHitpoints;
 	}
 
+	// Helper function for figuring out, whether an _entity counts as surrounding for us
+	// This does not check for the distance between both entities, so that needs to be checked beforehand
+	// @param _entity is the actor that is potentially surrounding us. That actor is expected to be placed on map
+	// Important: _entity as well as ourselves must be placed on map. Otherwise this function will throw an error
+	q.countsAsSurrounding <- function( _entity )
+	{
+		if (::Math.abs(this.getTile().Level - _entity.getTile().Level) > 1) return false;
+
+		if (_entity.isAlliedWith(this)) return false;
+		if (_entity.isNonCombatant()) return false;
+		if (_entity.getCurrentProperties().IsStunned) return false;
+		if (_entity.isArmedWithRangedWeapon()) return false;
+
+		return true;
+	}
+
 // Private Functions
+	// Helper function to calculate the amount of surrounding characters in a more moddable way
+	q.__calculateSurroundedCount <- function()
+	{
+		if (!this.isPlacedOnMap()) return 0;
+
+		local count = 0;
+		local myTile =  this.getTile();
+
+		// Copy of the Vanilla surround calculation
+		for (local i = 0; i <= 5; ++i)
+		{
+			if (!myTile.hasNextTile(i)) continue;
+
+			local nextTile = myTile.getNextTile(i)
+			if (nextTile.IsOccupiedByActor && this.countsAsSurrounding(nextTile.getEntity()))
+			{
+				++count;
+			}
+		}
+
+		return count;
+	}
+
 	// only meant for converting instances of vanilla hitpoint recovery to utilize our new system
 	q.__recoverHitpointsSwitcheroo <- function( _hitpointsToRecover )
 	{
