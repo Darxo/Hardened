@@ -1,15 +1,23 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_from_all_sides", function(q) {
-	q.onAdded = @(__original) function()
-	{
-		__original();
+	// We overwrite this because flail mastery no longer adds the perk_rf_from_all_sides no longer adds a debuff to the target
+	q.onBeforeTargetHit = @() function( _skill, _targetEntity, _hitInfo ) {}
 
-		// In Reforged this perk is granted by flail mastery but it is also serialized by default
-		// It will persist on anyone with flail mastery after loading a game
-		// Sow we remove it now on player characters only
-		if (::MSU.isKindOf(this.getContainer().getActor(), "player"))
+// Hardened Functions
+	q.onReallyAfterSkillExecuted = @(__original) function( _skill, _targetTile, _success )
+	{
+		__original(_skill, _targetTile, _success);
+
+		if (this.isSkillValid(_skill))
 		{
-			::logWarning("Hardened: Clean up From all Sides");
-			this.removeSelf();
+			this.getContainer().add(::new("scripts/skills/effects/rf_from_all_sides_effect"));
 		}
+	}
+
+// New Functions
+	q.isSkillValid <- function( _skill )
+	{
+		if (_skill == null) return false;
+
+		return _skill.isAttack() && !_skill.isRanged();
 	}
 });

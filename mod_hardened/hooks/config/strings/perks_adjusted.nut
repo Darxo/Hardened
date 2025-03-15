@@ -885,6 +885,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_from_all_sides",
+		Key = "RF_FromAllSides",
+		Description = ::UPD.getDescription({
+			Fluff = "You\'ve learned to use the unpredictable swings to keep your enemies guessing!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"After you use an Attack Skill, gain the [From all Sides|Skill+rf_from_all_sides_effect] effect until the start of your next [turn|Concept.Turn]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_fruits_of_labor",
 		Key = "RF_FruitsOfLabor",
 		Description = ::UPD.getDescription({
