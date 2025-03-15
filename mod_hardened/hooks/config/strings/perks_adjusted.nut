@@ -277,7 +277,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Crossbow and Firearm Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
-						"You have " + ::MSU.Text.colorPositive("+1") + " [Vision|Concept.SightDistance] if you wear a Helmet with a vision penalty.",
+						"Gain " + ::MSU.Text.colorPositive("+1") + " [Vision|Concept.SightDistance] if you wear a Helmet with a vision penalty.",
 						"[Reload|Skill+reload_bolt] with [Heavy Crossbows|Item+heavy_crossbow] costs " + ::MSU.Text.colorPositive("-1") + " [Action Point|Concept.ActionPoints]",
 						"[Reload|Skill+reload_handgonne_skill] with [Handgonnes|Item+handgonne] costs " + ::MSU.Text.colorPositive("-3") + " [Action Points|Concept.ActionPoints]",
 					],
@@ -387,7 +387,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Sword Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
-						"[Gash|Skill+gash_skill] has a " + ::MSU.Text.colorPositive("50%") + " lower threshold to inflict injuries",
+						"[Gash|Skill+gash_skill] has a " + ::MSU.Text.colorPositive("50%") + " lower threshold to inflict [injuries|Concept.InjuryTemporary]",
 						"[Split|Skill+split] and [Swing|Skill+swing] no longer have a penalty to [hitchance|Concept.Hitchance]",
 						"Whenever you attack an enemy whose [turn|Concept.Turn] has already started, lower their [Initiative|Concept.Initiative] by a stacking " + ::MSU.Text.colorNegative("15%") + " (up to " + ::MSU.Text.colorNegative("90%") + ") until the start of their next [turn|Concept.Turn]",
 					],
@@ -484,7 +484,7 @@ local adjustedDescriptions = [
 	 		Effects = [{
  				Type = ::UPD.EffectType.Passive,
  				Description = [
-					"Gain " + ::MSU.Text.colorPositive("+5") + " [Melee Defense|Concept.MeleeDefense] for every character [surrounding|Concept.Surrounding] you, except the first one",
+					"Gain " + ::MSU.Text.colorPositive("+5") + " [Melee Defense|Concept.MeleeDefense] for every enemy [surrounding|Concept.Surrounding] you, except the first one",
 				],
  			}],
 	 	}),
