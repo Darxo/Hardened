@@ -41,7 +41,7 @@ this.hd_reload_disorientation_effect <- ::inherit("scripts/skills/skill", {
 		ret.push({
 			id = 20,
 			type = "text",
-			icon = "ui/icons/special.png",
+			icon = "ui/icons/action_points.png",
 			text = ::Reforged.Mod.Tooltips.parseString("Lasts until the start of your [turn|Concept.Turn]"),
 		});
 
