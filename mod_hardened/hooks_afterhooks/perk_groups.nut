@@ -162,11 +162,6 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		changePerkTier(pgThrowingPerkGroup, "perk.rf_hybridization", 2);		// Move Hybridization (now Toolbox) to tier 2 (down from Tier 3)
 	}
 
-	{	// Trained Group
-		local pgTrainedGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_trained");
-		changePerkTier(pgTrainedGroup, "perk.quick_hands", 1);			// Move Quickhands down to the lowest tier
-	}
-
 	{	// Wildling Group
 		local pgWildling = ::DynamicPerks.PerkGroups.findById("pg.rf_wildling");
 		pgWildling.removePerk("perk.rf_bestial_vigor");	// Remove Bestial Vigor (now Backup Plan) from Wildling
