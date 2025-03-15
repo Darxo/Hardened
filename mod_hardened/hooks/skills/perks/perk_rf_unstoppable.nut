@@ -7,7 +7,7 @@
 		{
 			if (entry.id == 20)
 			{
-				entry.text = ::Reforged.Mod.Tooltips.parseString("Will expire upon [Recover|Skill+recover] or getting [stunned|Skill+stunned_effect], rooted, or [staggered|Skill+staggered_effect]");
+				entry.text = ::Reforged.Mod.Tooltips.parseString("Will expire upon using [Recover|Skill+recover] or getting [stunned|Skill+stunned_effect], rooted, or [staggered|Skill+staggered_effect]");
 				break;
 			}
 		}
