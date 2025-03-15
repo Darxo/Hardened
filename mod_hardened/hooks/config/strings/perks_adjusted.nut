@@ -277,7 +277,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Crossbow and Firearm Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
-						"Gain " + ::MSU.Text.colorPositive("+1") + " [Vision|Concept.SightDistance] if you wear a Helmet with a vision penalty.",
+						"Gain " + ::MSU.Text.colorPositive("+1") + " [Vision|Concept.SightDistance] if you wear a Helmet with a vision penalty",
 						"[Reload|Skill+reload_bolt] with [Heavy Crossbows|Item+heavy_crossbow] costs " + ::MSU.Text.colorPositive("-1") + " [Action Point|Concept.ActionPoints]",
 						"[Reload|Skill+reload_handgonne_skill] with [Handgonnes|Item+handgonne] costs " + ::MSU.Text.colorPositive("-3") + " [Action Points|Concept.ActionPoints]",
 					],
@@ -524,7 +524,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Gain " + ::MSU.Text.colorPositive("10%") + " more [Resolve|Concept.Bravery]",
-					"While at Steady [morale,|Concept.Morale] gain " + ::MSU.Text.colorPositive("10%") + " more [Melee Skill,|Concept.MeleeSkill] [Ranged Skill,|Concept.RangeSkill] [Melee Defense,|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense]",
+					"While at Steady [Morale,|Concept.Morale] gain " + ::MSU.Text.colorPositive("10%") + " more [Melee Skill,|Concept.MeleeSkill] [Ranged Skill,|Concept.RangeSkill] [Melee Defense,|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense]",
 				],
 			}],
 		}),
