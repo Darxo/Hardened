@@ -33,7 +33,7 @@
 		__original();
 		if (!this.getContainer().getActor().isPlayerControlled())
 		{
-			this.m.Ammo = ::Math.rand(3, 4);	// Otherwise NPCs are stuck too long with throwing
+			this.m.Ammo = 4;	// Otherwise NPCs are stuck too long with throwing
 		}
 	}
 });
