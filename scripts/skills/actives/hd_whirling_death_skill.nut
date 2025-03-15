@@ -42,7 +42,7 @@ this.hd_whirling_death_skill <- this.inherit("scripts/skills/skill", {
 		ret.push({
 			id = 11,
 			type = "text",
-			icon = "ui/icons/special.png",
+			icon = "ui/icons/action_points.png",
 			text = ::Reforged.Mod.Tooltips.parseString("Costs " + ::MSU.Text.colorizeValue(this.m.ActionPointModifierOnRepeat, {AddSign = true, InvertColor = true}) + " [Action Points|Concept.ActionPoints] while you have [Whirling Stance|Skill+hd_whirling_death_effect]"),
 		});
 
