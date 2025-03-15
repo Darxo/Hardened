@@ -147,6 +147,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Debug Setting, for debugging AI decision made from getQueryTargetMultAsUser and getQueryTargetMultAsTarget functions
 - Give Fat Trait -10 Initiative (akin to how its effect is in vanilla)
 - Allow renaming of Dogs (its item name is already serialized, just need the UI)
+- Give reanimating zombie corpses some kind of glow/animation
 
 - Give Ijirok Second Wind and a Unhold Sweep Melee Attack for 4 AP and a Zone of Control Attack
 	- Chance its AI to only use the 4 AP after Second Wind for the sweep
@@ -178,6 +179,8 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Take Aim Perk (previously Power Shot)
 	- Whenever you wait or end your turn, gain a stacking +5% chance to hit. All bonus is lost, when you attack or move.
 	- Unlock **Take Aim** skill, which does the same thing as the mastery thingy stuff
+- Fruits of Labor
+	- Gain 5% more Hitpoints, Stamina, Resolve and Initiative
 
 - orc slayer / crusader events, make them cost 5k crowns each to hire those guys
 - Poise System: Poise bar in immune enemies still at work?
@@ -261,6 +264,9 @@ this.World.Events.fire("event.drunk_nobleman")
 ## Debug:
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
+
+0.33.1
+	- Fix freeze during combat against enemies with shield destroying skills
 
 0.33.0
 	- Tryout now costs 100% more crowns
