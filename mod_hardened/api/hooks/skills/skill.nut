@@ -159,7 +159,7 @@
 		local actor = this.getContainer().getActor();
 		local propAttacker = this.getContainer().buildPropertiesForUse(this, _target);
 		local propDefender = _target.getSkills().buildPropertiesForDefense(actor, this);
-		return propAttacker.ShieldDamageMult * defenderProps.ShieldDamageReceivedMult;
+		return propAttacker.ShieldDamageMult * propDefender.ShieldDamageReceivedMult;
 	}
 
 	// If we are evaluating _target, potentially targeting them with _usedSkill, how would that change the targets perceived value?
