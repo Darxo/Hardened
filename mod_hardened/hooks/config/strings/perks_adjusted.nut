@@ -905,7 +905,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("10%") + " more [Hitpoints|Concept.Hitpoints] and [Stamina|Concept.MaximumFatigue]"
+					"Gain " + ::MSU.Text.colorPositive("5%") + " more [Hitpoints,|Concept.Hitpoints] [Stamina,|Concept.MaximumFatigue] [Resolve|Concept.Bravery] and [Initiative|Concept.Initiative]"
 				],
 			}],
 		}),
