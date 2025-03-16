@@ -3,6 +3,16 @@
 	{
 		__original();
 		this.m.Description = ::MSU.String.replace(this.m.Description, "attacks against you,", "attacks against you or your shield,");
+		this.m.Overlay = "perk_anticipation";
+	}
+
+	q.onDamageReceived = @(__original) function( _attacker, _damageHitpoints, _damageArmor )
+	{
+		if (this.m.IsAboutToConsumeUse)
+		{
+			this.spawnIcon(this.m.Overlay, this.getContainer().getActor().getTile());
+		}
+		__original(_attacker, _damageHitpoints, _damageArmor);
 	}
 
 // Hardened Events
@@ -27,14 +37,17 @@
 
 		this.m.UsesRemaining = ::Math.max(0, this.m.UsesRemaining - 1);
 
+		local actor = this.getContainer().getActor();
+		this.spawnIcon(this.m.Overlay, actor.getTile());
+
 		if (_attacker == null)	// This can for example happen when this character receives a mortar attack.
 		{
-			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " anticipated an attack on their shield, reducing incomding damage by " + ::MSU.Text.colorPositive(this.m.TempDamageReduction + "%"));
+			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(actor) + " anticipated an attack on their shield, reducing incomding damage by " + ::MSU.Text.colorPositive(this.m.TempDamageReduction + "%"));
 		}
 		else
 		{
-			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " anticipated the attack of " + ::Const.UI.getColorizedEntityName(_attacker) + " on their shield, reducing incomding damage by " + ::MSU.Text.colorPositive(this.m.TempDamageReduction + "%"));
+			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(actor) + " anticipated the attack of " + ::Const.UI.getColorizedEntityName(_attacker) + " on their shield, reducing incomding damage by " + ::MSU.Text.colorPositive(this.m.TempDamageReduction + "%"));
 		}
-		this.getContainer().getActor().setDirty(true);
+		actor.setDirty(true);
 	}
 });
