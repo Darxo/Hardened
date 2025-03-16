@@ -4,6 +4,21 @@
 ::Hardened.HooksMod.hook("scripts/skills/effects/rf_cheap_trick_effect", function(q) {
 	q.m.SkillCounter <- null;	// This is used to bind this cheap_trick effect to the root skill that it will empower and rediscover it even through delays
 
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original();
+
+		foreach (entry in ret)
+		{
+			if (entry.id == 10 || entry.id == 11)
+			{
+				entry.text = ::MSU.String.replace(entry.text, "attack", "attack skill");
+			}
+		}
+
+		return ret;
+	}
+
 	// Overwrite because we need to add additional condition
 	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties )
 	{

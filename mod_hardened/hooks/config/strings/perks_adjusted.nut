@@ -627,6 +627,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_cheap_trick",
+		Key = "RF_CheapTrick",
+		Description = ::UPD.getDescription({
+			Fluff = "Fighting dirty? We call that winning.",
+			Effects = [{
+				Type = ::UPD.EffectType.Active,
+				Description = [
+					"Unlocks the [Cheap Trick|NullEntitySkill+rf_cheap_trick_skill] skill which increases the [Hitchance|Concept.Hitchance] of your next attack skill but reduces its damage",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_command",
 		Key = "RF_Command",
 		Description = ::UPD.getDescription({
