@@ -195,11 +195,12 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bullseye** no longer reduces the penalty for shooting behind cover. It also no longer works with **Take Aim**. It now provides 25% Armor Penetration (up from 10% and 20% resepctively)
 - **Bulwark** no longer grants additional Resolve against negative morale checks
 - **Brawny** no longer grants Initiative
+- **Cheap Trick** now affects all attacks of a skill, when you use it with an AoE skill
 - **Colossus** now grants +15 Hitpoints, instead of 25% more Hitpoints
 - **Command** can now be used on fleeing allies. In this case it triggers a positive morale check first. Then, if they are not fleeing, they are moved forward in the turn order, like before
 - **Combo** is reworked. It now reduces the cost of all skills you haven't used yet this turn by 1 Action Point, except the first skill you use each turn
 - **Concussive strikes** is completely reworked. It is now called **Shockwave** and it makes it so your kills or stuns with maces will daze all enemies adjacent to your target for 1 turn
-- **Crossbow and Firearm Mastery** now grants +1 Vision while you wear a Helmet with a Vision Penalty
+- **Crossbow and Firearm Mastery** now grants +1 Vision while you wear a Helmet with a Vision Penalty. It no longer reduces the reload cost of **Heavy Crossbows** by 1
 - **Dagger Mastery** no longer grant any reach ignore. It now reduces the action point cost of the first offhand skill each turn to 0, if your offhand item has a weight lower than 10
 - **Death Dealer** is completely reworked. It now grants 5% more damage with AoE-Attacks for every enemy within 2 tiles
 - **Deep Impact** is now called **Breakthrough** and has been completely reworked. It grants the **Pummel** skill, which can now be used with any hammer. It also makes it so **Shatter** has a 100% chance to knock targets back on a hit
@@ -220,7 +221,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Footwork** perk no longer grants **Sprint**
 - **Fresh and Furious** now has a fatigue threshold of 50% (up from 30%). It now checks your fatige when you end your turn, instead of at the start of your turn. It now also affects skills that cost 1 Action Point. It is now wasted when using a skill that costs 0 Action Points
 - **From All Sides** (enemy only perk) is completely reworked. You now gain the **From all Sides** effect until the start of your next turn, after you use a Attack Skill. This effect makes you count twice for the purpose of surrounding adjacent enemies
-- **Fruits of Labor** now grants multiplicative Hitpoints and Stamina instead of additively
+- **Fruits of Labor** is reworked. It now grants 5% more Hitpoints, Stamina, Resolve and Initiative
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
 - **Hammer Mastery** no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part.
 - **Hybridization** is completely reworked. It is now called **Toolbox** and requires a Throwing Weapon. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type attacks to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 100% more damage to shields
@@ -301,18 +302,21 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Vigorous Assault** is removed from **Swift Strikes** group
 - **Knave** no longer guarantees the **Dagger** perk group. Now it is just twice as likely. It also no longer guarantees the **Nimble** per group
 - **Wildling** no longer prevents the perk groups **Ranged**, **Gifted** and **Leadership** from appearing
-- **Leadership** perk group is now part of the **Shared** perk group collection and will compete with shared perk groups
+- **Leadership** perk group is now part of the **Shared** perk group collection and will compete with shared perk groups#
+- **Soldier Group** no longer guarantees **Professional perk** or **Trained Group**. Instead it only applies a 2.5x multiplier for **Trained Group**
 - **Tactician** is now a **Special** perk group and no longer replaces a shared perk group, when it appears
 
 ### Backgrounds
 
 - **Assassin** now has +5 to minimum Ranged Skill (up from 0) and +10 to maximum Ranged Skill (up from 0)
+- **Indebted** no longer roll **Pauper Perk Group**. Instead they randomly roll any one of the other exclusive perk groups (except swordmaster)
 - **Pimp** now has 0 to minimum Melee Skill (up from -5) and +5 to maximum Melee Skill (up from -5)
 - **Swordmaster** no longer has **Sword Mastery** unlocked by default. This perk is now moved to Tier 3 (down from 4) for them. They now have a hiring cost of 400 Crowns (down from 2400), just like in Vanilla
 
 ### Weapons
 
 - **Ancient Pikes**, **Goblin Pikes** and **Pikes** are now also of the weapontype Spear
+- **Berserk Chain** now has 4 Reach (down from 5)
 - **Cruel Falchion** are now a Sword/Dagger hybrid. They now also grant **Stab**. **Slash** and **Rispote** lose any discount
 - **Cudgel** now deals 40-60 damage (up from 30-50), has an armor penetration of 110% (up from 90%), a Reach of 5 (up from 3), a value of 400 (up from 300). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
 - **Estoc** now has 6 Reach (up from 5)
@@ -320,21 +324,30 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Goedendag** no longer grants **Cudgel** skill. It now has a 100% chance to stun with **Knock Out** (up from 75%)
 - **Fighting Axe** now has a value of 2300 (down from 2800)
 - **Firelance** now also has the **Firearm** weapontype
-- **Flail** now deals 30-55 damage (up from 25-55)
+- **Flail** now deals 30-55 damage (up from 25-55) and has 3 Reach (down from 4)
 - **Halberd** now has 6 Reach (down from 7)
+- **Heavy Crossbow** now has +2 Fatigue Cost for its weapon skills
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
 - **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%)
 - **Player Banner** now grants -5 to Ranged Defense and it comes with **Repel**
+- **Poleflail** now has 5 Reach (down from 6)
+- **Reinforced Wooden Poleflail** now has 5 Reach (down from 6)
 - **Spetum** now has a Reach of 7 (up from 6) and costs 900 crowns (up from 750)
+- **Spiked Impaler** now has +2 Fatigue Cost for its weapon skills
 - **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and a value of 600 (up from 400)
+- **Three-Headed Flail** now has 3 Reach (down from 4)
 - **Throwing Spears** no longer inflict any fatigue when hitting a shield and have a value of 60 (down from 80)
 - **Tree Limb** now deals 30-50 damage (up from 25-40), has an armor penetration of 90% (up from 75%), a Reach of 5 (up from 3), a weight of 15 (down from 20), a value of 300 (up from 150). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
+- **Two-handed Flail** now has 4 Reach (down from 5)
+- **Two-handed Wooden Flail** now has 4 Reach (down from 5)
+- **Warbow** now has a Weight of 8 (up from 6) and +2 Fatigue Cost for its weapon skills
 - **Warfork** now deals 90% Armor Damage (down from 100%) and costs 550 Crowns (up from 400)
 - **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
 - **Zweihander** now has 6 Reach (down from 7)
 
 ### Other Items
 
+- **Adorned Mail Shirt** now has a Weight of 16 (up from 11), Condition of 150 (up from 130) and Value of 1050 (up from 800); just like in Vanilla
 - **Bandage** now costs 40 crowns (up from 25)
 - **Gun Powder** now costs 2 **Ammunition Supply** each (up from 1)
 - **Buckler** appear less common in big settlements

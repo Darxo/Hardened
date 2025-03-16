@@ -42,6 +42,7 @@
 			this.preponeFunction(screen, ::World.Contracts, "removeContract");
 			this.preponeFunction(screen, ::World.Contracts, "startScriptedCombat");
 			this.preponeFunction(screen, null, "setScreen");
+			// TODO: Maybe include "showActiveContract" too? For bandit robber contract twist
 			this.preponeFunction(screen, ::World.Contracts, "showActiveContract");
 		}
 	}
