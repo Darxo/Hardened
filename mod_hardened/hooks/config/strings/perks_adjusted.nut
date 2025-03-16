@@ -1302,6 +1302,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_the_rush_of_battle",
+		Key = "RF_TheRushOfBattle",
+		Description = ::UPD.getDescription({
+			Fluff = "\'It\'s not uncommon to make it to the end of the battle not remembering any details, just that you slew many men!\'",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"While adjacent to an ally and an enemy, gain " + ::MSU.Text.colorPositive("20%") + " more [Injury Threshold|Concept.InjuryThreshold] for each adjacent enemy and Skills cost " + ::MSU.Text.colorPositive("10%") + " less [Fatigue|Concept.Fatigue] for each adjacent ally",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_through_the_gaps",
 		Key = "RF_ThroughTheGaps",
 		Description = ::UPD.getDescription({
