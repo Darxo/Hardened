@@ -249,7 +249,7 @@
 
 					if (!ret.isItemType(::Const.Items.ItemType.Legendary))	// Legendary items by vanilla definition always drop, no matter what
 					{
-						item.drop <- @(...)null;
+						ret.drop <- @(...)null;
 					}
 
 					return { value = itemsToChange };
