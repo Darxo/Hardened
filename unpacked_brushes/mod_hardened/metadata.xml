@@ -3,7 +3,7 @@
 	<sprite id="hd_inspired_by_song_effect" ic = "FF23165B" img="..\..\gfx\skills\hd_inspired_by_song_effect.png" />
 	<sprite id="hd_whirling_death_skill" ic = "FF23165B" img="..\..\gfx\skills\hd_whirling_death_skill.png" />
 
-	<sprite id="rf_formidable_approach" ic = "FF23165B" img="..\..\gfx\ui\perks\rf_formidable_approach.png" />
+	<sprite id="perk_rf_formidable_approach" ic = "FF23165B" img="..\..\gfx\ui\perks\perk_rf_formidable_approach.png" />
 
 	<sprite id="perk_hd_elusive_mini" ic = "FF23165B" img="mini\perk_hd_elusive_mini.png" />
 	<sprite id="perk_hd_parry_mini" ic = "FF23165B" img="mini\perk_hd_parry_mini.png" />

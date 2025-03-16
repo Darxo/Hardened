@@ -8,7 +8,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Overlay = "rf_formidable_approach";
+		this.m.Overlay = "perk_rf_formidable_approach";
 		// TODO: add IconMini
 		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
 	}
