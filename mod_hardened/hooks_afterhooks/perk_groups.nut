@@ -130,6 +130,18 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	{	// Soldier Group
 		local pgSoldierGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_soldier");
 		pgSoldierGroup.addPerk("perk.rally_the_troops", 3);		// Add Rally the Troops into the Tier 3
+
+		// Overwrite, because we remove the guaranteed "Professional" and turn guaranteed "Trained" into a 3x multiplier
+		pgSoldierGroup.getPerkGroupMultiplier = function( _groupID, _perkTree )
+		{
+			switch (_groupID)
+			{
+				case "pg.rf_trained":
+					return 2.5;	// In Reforged this is guaranteed
+				case "pg.special.rf_back_to_basics":
+					return 2.5;	// Same as Reforged
+			}
+		}
 	}
 
 	{	// Spear Group
