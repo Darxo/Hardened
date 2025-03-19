@@ -13,8 +13,9 @@
 		}
 	}
 
-// New Functions
-	q.isSkillValid <- function( _skill )
+// Reforged Functions
+	// Overwrite, because we implement a new and simpler condition for this perk
+	q.isSkillValid = @() function( _skill )
 	{
 		if (_skill == null) return false;
 
