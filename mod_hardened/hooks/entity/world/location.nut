@@ -12,7 +12,7 @@
 					id = 30,
 					type = "hint",
 					icon = "ui/orientation/player_01_orientation.png",
-					text = "This location does not show defender",
+					text = "Hides defender",
 				});
 			}
 			else if (this.m.HideDefenderAtNight)
@@ -21,7 +21,7 @@
 					id = 30,
 					type = "hint",
 					icon = "skills/status_effect_35.png",
-					text = "This location does not show defender during night",
+					text = "Hides defender during night",
 				});
 			}
 		}
