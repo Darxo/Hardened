@@ -23,7 +23,7 @@
 				if (!potentialTile.IsEmpty) continue;
 				if (_userTile.getDistanceTo(potentialTile) <= distanceToTarget) continue;	// Knock Back destinations must further away than initial target
 
-				local levelDifference = potentialTile.Level - _userTile.Level
+				local levelDifference = potentialTile.Level - _targetTile.Level;
 				if (levelDifference > 1) continue;
 
 				potentialTargets.push(potentialTile);
