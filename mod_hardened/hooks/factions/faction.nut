@@ -2,9 +2,9 @@
 	// Private
 	q.m.LastSpawnedParty <- null;	// weakref to the last party, spawned by this factions spawnEntity function
 
-	q.spawnEntity = @(__original) function( _tile, _name, _uniqueName, _template, _resources )
+	q.spawnEntity = @(__original) function( _tile, _name, _uniqueName, _template, _resources, _minibossify = 0 )
 	{
-		local ret = __original(_tile, _name, _uniqueName, _template, _resources);
+		local ret = __original(_tile, _name, _uniqueName, _template, _resources, _minibossify);
 
 		// We spawn a very short wait order on any newly created party. Fixes Vanilla bug of teleporting any parties which will instantly engage player in battle
 		local waitOrder = ::new("scripts/ai/world/orders/wait_order");
