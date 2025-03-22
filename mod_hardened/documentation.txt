@@ -164,6 +164,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - Implement my restore-replace items mod
 	- Make it replace armor pieces with one from the inventory that is exactly the same but has more condition left
 - Remove hiring discount from recruiter
+- peasants shouldnt drop signet ring. thats too much rng
 
 - Give Ijirok Second Wind and a Unhold Sweep Melee Attack for 4 AP and a Zone of Control Attack
 	- Chance its AI to only use the 4 AP after Second Wind for the sweep
@@ -288,6 +289,58 @@ this.World.Events.fire("event.drunk_nobleman")
 ## Debug:
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
+
+# vanilla bug:
+- hyena_high sabertooth drop is unaffected by "getExtraLootChance"
+- direwolf_high sabertooth drop however IS affected by "getExtraLootChance"
+- hexe jade_broche_item drop IS affected too
+- ghoul growth_pearl is NOT affected by "getExtraLootChance"
+
+# Todo: 1.5.1.4
+- look into zombie_knight onDamageReceived stuff how it interacts with headless effect
+
+- incorporate loot tech into this:
+	function dropLoot( _tile, _loot, _flip = false )
+	{
+		if (_tile == null)
+		{
+			_tile = this.getTile();
+		}
+
+		foreach( item in _loot )
+		{
+			item.drop(_tile);
+		}
+
+		_tile.IsContainingItemsFlipped = _flip;
+	}
+
+### town_shop_dialog_module
+- Add new `onCanSwapItem(_data)` function, which checks, whether the items in _data[0] and _data[2] can be swapped with each other. It enforces `isSellable` (DoNotSwap), `isUnique` (ConfirmNoReplaceSwap) and `isPrecious` (ConfirmReplaceSwap)
+
+# Modern Hooks Feedback
+- Improve clarity of this warning (when overwriting an existing function in a hook)
+- It is not clear from that warning, whether this action actually failed, or whether it succeeded
+	function newSlot( _q, _key, _value )
+	{
+		if (typeof _value != "function")
+			::Hooks.errorAndThrow(format("Mod %s (%s) is trying to add key \'%s\' to %s. The key's value must be a function. Fields must instead be added to the class's \'m\' table.", _q.__Mod.getID(), _q.__Mod.getName(), _key, this.buildTargetString(_q)));
+		local p = _q.__Prototype;
+		if (_key in p)
+		{
+			::Hooks.warn(format("Mod %s (%s) is adding a new function %s to %s, but that function already exists in the bb class", _q.__Mod.getID(), _q.__Mod.getName(), _key, this.buildTargetString(_q)));
+		}
+		_q.__Prototype[_key] <- _value;
+	}
+
+### flying_skull
+- Fix sunken library exploit, by delaying the suicide portion, of the flying skull attack by 50 milliseconds
+  - This fixes the big for most cases, but probably breaks, when the skull kills two entities at the same time (player + other skull)
+
+0.35.0
+	- Now requires Reforged 0.7.0-alpha.0 or higher
+	- Fix various contracts not starting correctly
+	- Fix **Shoot Stake** rarely being able to knock target up 2 levels
 
 0.34.0
 	- **Fruits of Labor** is reworked. It now grants 5% more Hitpoints, Stamina, Resolve and Initiative

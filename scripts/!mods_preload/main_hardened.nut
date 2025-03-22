@@ -1,7 +1,7 @@
 ::Hardened <- {
 	ID = "mod_hardened",
 	Name = "Hardened",
-	Version = "0.34.0",
+	Version = "0.35.0-alpha.0",
 	GitHubURL = "https://github.com/Darxo/Hardened",
 	Temp = {	// Used to globally store variables between function calls to implement more advanced, albeit hacky behavior
 		RootSkillCounter = null,	// This variable will have the SkillCounter of the root skills during the execution of any skill executions and delayed executions
@@ -12,7 +12,7 @@
 }
 
 ::Hardened.HooksMod <- ::Hooks.register(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
-::Hardened.HooksMod.require(["mod_reforged"]);
+::Hardened.HooksMod.require(["mod_reforged >= 0.7.0-alpha.0"]);
 ::Hardened.HooksMod.conflictWith(
 	"mod_heal_repair_fix"	// We already fix the cook and camping recovery, so using both mods together is undefined behavior. Unfortunately we don't fix the blacksmith
 );
