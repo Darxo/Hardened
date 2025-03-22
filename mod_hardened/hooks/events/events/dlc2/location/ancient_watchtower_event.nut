@@ -10,12 +10,12 @@
 			::World.uncoverFogOfWar(::World.State.getPlayer().getPos(), revealRadius);
 
 			// Reveal all nearby locations to the player
-			local allNearbyEntitities = ::World.getAllEntitiesAtPos(::World.State.getPlayer().getPos(), revealRadius);
-			foreach (nearbyEntity in allNearbyEntitities)
+			foreach (location in ::World.EntityManager.getLocations())
 			{
-				if (nearbyEntity.isLocation() && nearbyEntity.m.VisibilityMult != 0.0)
+				if (location.m.VisibilityMult > 0.0 && ::World.State.getPlayer().getTile().getDistanceTo(location.getTile()) < 1900)
 				{
-					nearbyEntity.setDiscovered(true);
+					location.setDiscovered(true);
+					location.onDiscovered();
 				}
 			}
 
