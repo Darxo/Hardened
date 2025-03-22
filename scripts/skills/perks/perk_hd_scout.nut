@@ -80,11 +80,8 @@ this.perk_hd_scout <- ::inherit("scripts/skills/skill", {
 		}
 
 		local emptyTiles = 0.0;
-		for (local i = 0; i < 6; ++i)
+		foreach (adjacentTile in ::MSU.Tile.getNeighbors(_tile))
 		{
-			if (!_tile.hasNextTile(i)) continue;
-
-			local adjacentTile = _tile.getNextTile(i);
 			if (adjacentTile.IsEmpty || adjacentTile.Level + 2 <= _tile.Level || adjacentTile.getEntity().getID() == actor.getID())
 			{
 				++emptyTiles;

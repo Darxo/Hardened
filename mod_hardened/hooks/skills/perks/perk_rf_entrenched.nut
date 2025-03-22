@@ -105,13 +105,9 @@
 	{
 		if (this.getContainer().getActor().isPlacedOnMap())
 		{
-			local myTile = this.getContainer().getActor().getTile();
 			local adjacentObstacles = 0;
-			for (local i = 0; i < 6; ++i)
+			foreach (nextTile in ::MSU.Tile.getNeighbors(this.getContainer().getActor().getTile()))
 			{
-				if (!myTile.hasNextTile(i)) continue;
-
-				local nextTile = myTile.getNextTile(i);
 				if (!nextTile.IsEmpty && !nextTile.IsOccupiedByActor)
 				{
 					++adjacentObstacles;

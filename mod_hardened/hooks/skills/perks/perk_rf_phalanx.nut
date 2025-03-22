@@ -114,12 +114,8 @@
 		local actor = this.getContainer().getActor();
 		if (!actor.isPlacedOnMap()) return false;
 
-		local myTile = actor.getTile();
-		for (local i = 0; i < 6; i++)
+		foreach (nextTile in ::MSU.Tile.getNeighbors(actor.getTile()))
 		{
-			if (!myTile.hasNextTile(i)) continue;
-
-			local nextTile = myTile.getNextTile(i);
 			if (nextTile.IsOccupiedByActor && nextTile.getEntity().isAlliedWith(actor) && nextTile.getEntity().getSkills().hasSkill("effects.shieldwall"))
 			{
 				return true;

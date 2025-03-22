@@ -122,16 +122,11 @@ local hookDaggerAttack = function( _o )
 	// The first valid tile clockwise starting with above the _targetTile is returned
 	_o.getValidLungeTile <- function( _originTile, _targetTile )
 	{
-		for (local i = 0; i < 6; ++i)
+		foreach (tile in ::MSU.Tile.getNeighbors(_targetTile))
 		{
-			if (_targetTile.hasNextTile(i))
+			if (tile.IsEmpty && tile.getDistanceTo(_originTile) == 1 && ::Math.abs(_originTile.Level - tile.Level) <= 1 && ::Math.abs(_targetTile.Level - tile.Level) <= 1)
 			{
-				local tile = _targetTile.getNextTile(i);
-
-				if (tile.IsEmpty && tile.getDistanceTo(_originTile) == 1 && ::Math.abs(_originTile.Level - tile.Level) <= 1 && ::Math.abs(_targetTile.Level - tile.Level) <= 1)
-				{
-					return tile;
-				}
+				return tile;
 			}
 		}
 
@@ -167,18 +162,14 @@ local hookDaggerAttack = function( _o )
 		local ZOC = [];
 		this.getContainer().setBusy(false);
 
-		for (local i = 0; i != 6; ++i)
+		foreach (tile in ::MSU.Tile.getNeighbors(myTile))
 		{
-			if (myTile.hasNextTile(i))
+			if (tile.IsOccupiedByActor)
 			{
-				local tile = myTile.getNextTile(i);
-				if (tile.IsOccupiedByActor)
+				local actor = tile.getEntity();
+				if (!actor.isAlliedWith(_entity) && !actor.getCurrentProperties().IsStunned)
 				{
-					local actor = tile.getEntity();
-					if (!actor.isAlliedWith(_entity) && !actor.getCurrentProperties().IsStunned)
-					{
-						ZOC.push(actor);
-					}
+					ZOC.push(actor);
 				}
 			}
 		}

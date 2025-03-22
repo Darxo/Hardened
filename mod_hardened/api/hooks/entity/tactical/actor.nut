@@ -243,14 +243,10 @@
 		if (!this.isPlacedOnMap()) return 0;
 
 		local count = 0;
-		local myTile =  this.getTile();
 
 		// Copy of the Vanilla surround calculation
-		for (local i = 0; i <= 5; ++i)
+		foreach (nextTile in ::MSU.Tile.getNeighbors(this.getTile()))
 		{
-			if (!myTile.hasNextTile(i)) continue;
-
-			local nextTile = myTile.getNextTile(i)
 			if (nextTile.IsOccupiedByActor && this.countsAsSurrounding(nextTile.getEntity()))
 			{
 				++count;

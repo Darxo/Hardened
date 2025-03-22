@@ -6,19 +6,14 @@
 
 		if (this.m.TargetTile == null || _skill != this) return;
 
-		for (local i = 0; i < 6; ++i)
+		foreach (nextTile in ::MSU.Tile.getNeighbors(this.m.TargetTile))
 		{
-			if (this.m.TargetTile.hasNextTile(i))
+			if (!nextTile.IsOccupiedByActor) continue;
+
+			local adjacentEntity = nextTile.getEntity();
+			if (!adjacentEntity.isAlliedWith(this.getContainer().getActor()) && adjacentEntity.getMoraleState() != ::Const.MoraleState.Ignore)
 			{
-				local nextTile = this.m.TargetTile.getNextTile(i);
-				if (nextTile.IsOccupiedByActor)
-				{
-					local adjacentEntity = nextTile.getEntity();
-					if (!adjacentEntity.isAlliedWith(this.getContainer().getActor()) && adjacentEntity.getMoraleState() != ::Const.MoraleState.Ignore)
-					{
-						adjacentEntity.checkMorale(-1, ::Const.Morale.OnHitBaseDifficulty * (1.0 - adjacentEntity.getHitpoints() / adjacentEntity.getHitpointsMax()));
-					}
-				}
+				adjacentEntity.checkMorale(-1, ::Const.Morale.OnHitBaseDifficulty * (1.0 - adjacentEntity.getHitpoints() / adjacentEntity.getHitpointsMax()));
 			}
 		}
 

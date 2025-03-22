@@ -15,11 +15,8 @@
 		{
 			local potentialTargets = [];
 			local distanceToTarget = _userTile.getDistanceTo(_targetTile);
-			for (local i = 0; i < 6; ++i)
+			foreach (potentialTile in ::MSU.Tile.getNeighbors(_targetTile))
 			{
-				if (!_targetTile.hasNextTile(i)) continue;
-
-				local potentialTile = _targetTile.getNextTile(i);
 				if (!potentialTile.IsEmpty) continue;
 				if (_userTile.getDistanceTo(potentialTile) <= distanceToTarget) continue;	// Knock Back destinations must further away than initial target
 

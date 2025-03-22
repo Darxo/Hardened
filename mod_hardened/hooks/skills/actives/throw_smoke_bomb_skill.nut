@@ -29,14 +29,7 @@
 
 		local targets = [];
 		targets.push(_data.TargetTile);
-
-		for (local i = 0; i <= 5; ++i)
-		{
-			if (_data.TargetTile.hasNextTile(i))
-			{
-				targets.push(_data.TargetTile.getNextTile(i));
-			}
-		}
+		targets.extend(::MSU.Tile.getNeighbors(_data.TargetTile));
 
 		// We check all 7 tiles around the impact for smoke effects, presumably caused by the vanilla onApply function
 		// Then we raise the duration to at least the one defined in this file

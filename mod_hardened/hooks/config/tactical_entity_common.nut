@@ -33,16 +33,11 @@ local oldOnApplyFire = ::Const.Tactical.Common.onApplyFire;
 
 		if (ourTile.Properties.has("IsItemSpawned") || ourTile.IsCorpseSpawned)
 		{
-			for (local i = 0; i < ::Const.Direction.COUNT; ++i)
+			foreach (tile in ::MSU.Tile.getNeighbors(ourTile))
 			{
-				if (ourTile.hasNextTile(i))
+				if (tile.IsEmpty && !tile.Properties.has("IsItemSpawned") && !tile.IsCorpseSpawned && tile.Level <= ourTile.Level + 1)
 				{
-					local tile = ourTile.getNextTile(i);
-
-					if (tile.IsEmpty && !tile.Properties.has("IsItemSpawned") && !tile.IsCorpseSpawned && tile.Level <= ourTile.Level + 1)
-					{
-						candidates.push(tile);
-					}
+					candidates.push(tile);
 				}
 			}
 		}

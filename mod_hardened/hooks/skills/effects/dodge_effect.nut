@@ -87,11 +87,9 @@
 			if (this.getContainer().getActor().isPlacedOnMap())
 			{
 				local myTile = this.getContainer().getActor().getTile();
-				for (local i = 0; i < 6; ++i)
+				foreach (nextTile in ::MSU.Tile.getNeighbors(myTile))
 				{
-					if (!myTile.hasNextTile(i)) continue;
-
-					if (myTile.getNextTile(i).IsEmpty)
+					if (nextTile.IsEmpty)
 					{
 						combinedFraction += this.m.FractionPerEmptyTile;
 					}

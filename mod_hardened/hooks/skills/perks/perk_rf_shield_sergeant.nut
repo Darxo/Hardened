@@ -133,11 +133,8 @@ local hookKnockBack = function( _knockBackSkill )
 						{
 							validTargets.push(allyTile);	// Allows skills like shieldwall to be used
 						}
-						for (local i = 0; i <= 5; ++i)
+						foreach (nextTile in ::MSU.Tile.getNeighbors(allyTile))
 						{
-							if (!allyTile.hasNextTile(i)) continue;
-
-							local nextTile = allyTile.getNextTile(i);
 							if (activeSkill.isUsableOn(nextTile))
 							{
 								validTargets.push(nextTile);
