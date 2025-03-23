@@ -16,7 +16,7 @@
 			id = 10,
 			type = "text",
 			icon = "ui/icons/hitchance.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Has a " + ::MSU.Text.colorizeMult(this.m.ThresholdToInflictInjuryMult, {InvertColor = true}) + " higher threshold to inflict [injuries|Concept.Injury]"),
+			text = ::Reforged.Mod.Tooltips.parseString("Has " + ::MSU.Text.colorizeMultWithText(this.m.ThresholdToInflictInjuryMult, {InvertColor = true}) + " [Injury Threshold|Concept.Injury]"),
 		});
 
 		return ret;
