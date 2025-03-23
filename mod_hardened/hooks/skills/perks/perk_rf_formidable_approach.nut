@@ -9,7 +9,7 @@
 	{
 		__original();
 		this.m.Overlay = "perk_rf_formidable_approach";
-		// TODO: add IconMini
+		this.m.IconMini = "perk_rf_formidable_approach_mini";
 		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
 	}
 
