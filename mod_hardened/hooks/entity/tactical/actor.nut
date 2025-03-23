@@ -151,9 +151,53 @@
 
 		return count;
 	}
+
+	// Overwrite, because we don't like the vanilla way of determining loot
+	q.isLootAssignedToPlayer = @() function( _killer )
+	{
+		// Player controlled characters always drop loot, no matter who kills them
+		if (this.isPlayerControlled()) return true;
+
+		// Allies never drop loot for the player, even if the player did most of the damage to them
+		if (this.isAlliedWithPlayer()) return false;
+
+		local playerRelevantDamage = 0.0;
+		if (::Const.Faction.Player in this.m.RF_DamageReceived)
+			playerRelevantDamage += this.m.RF_DamageReceived[::Const.Faction.Player].Total;
+		if (::Const.Faction.PlayerAnimals in this.m.RF_DamageReceived)
+			playerRelevantDamage +=  this.m.RF_DamageReceived[::Const.Faction.PlayerAnimals].Total;
+
+		// If player + player animals did at least 50% of total damage to this actor, they gain the loot , we set the _killer to null to ensure that the loot properly drops from this actor.
+		// This is because vanilla drops loot if _killer is null or belongs to Player or PlayerAnimals faction.
+		return (playerRelevantDamage / this.m.RF_DamageReceived.Total >= 0.5)
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/entity/tactical/actor", function(q) {
+	q.getLootForTile = @(__original) function( _killer, _loot )
+	{
+		// Our Goal:
+		// - If the isLootAssignedToPlayer function deems this loot to be player-loot we adjust the _killer argument in a way to
+		// 		either fully pass or never pass the generic vanilla condition for dropping loot
+		if (this.isLootAssignedToPlayer(_killer))
+		{
+			return __original(null, _loot);	// We pass null, because that will always pass the generic vanilla conditions for dropping loot
+		}
+		else
+		{
+			local dummyNonPlayer = ::MSU.getDummyPlayer();
+			local dummyPlayerFaction = dummyNonPlayer.getFaction();
+			dummyNonPlayer.setFaction(::Const.Faction.None);	// We set the faction to none, so we fail all generic vanilla conditions for dropping loot
+
+			// Some loot will still be dropped, but that is then usually by design of that specific enemy/mod
+			local ret = __original(dummyNonPlayer, _loot);
+
+			dummyNonPlayer.setFaction(dummyPlayerFaction);	// Revert the dummy faction, because other mods might expect it to be of player faction
+
+			return ret;
+		}
+	}
+
 // Reforged Events
 	// This must happen as hookTree because there is no guarantee that someone overwriting it will call the child function
 	q.onSpawned = @(__original) function()
