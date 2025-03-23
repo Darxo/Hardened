@@ -5,7 +5,10 @@
 		local mockObject = ::Hardened.mockFunction(this.getAgent(), "getKnownOpponents", function() {
 			if (::Hardened.getFunctionCaller(1) == "onEvaluate")	// 1 as argument because within mockFunctions, there is an additional function inbetween us and our caller
 			{
-				return { done = true, value = [null, null] };		// The only important thing here is that the returned array has more than 1 element
+				local dummyPlayer = ::MSU.getDummyPlayer();	// The dummy player is by default from the player faction, so it is ideal for our use here
+
+				// The important thing here is that the returned array has 2 tables with an Array which is a weakref to a player controlled character
+				return { done = false, value = [{Actor = ::MSU.asWeakTableRef(dummyPlayer)}, {Actor = ::MSU.asWeakTableRef(dummyPlayer)}] };
 			}
 		});
 
