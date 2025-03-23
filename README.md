@@ -310,6 +310,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - **Assassin** now has +5 to minimum Ranged Skill (up from 0) and +10 to maximum Ranged Skill (up from 0)
 - **Indebted** no longer roll **Pauper Perk Group**. Instead they randomly roll any one of the other exclusive perk groups (except swordmaster)
+- **Oathtaker** now spawn with +1 Weapon Group (down from +2)
 - **Pimp** now has 0 to minimum Melee Skill (up from -5) and +5 to maximum Melee Skill (up from -5)
 - **Swordmaster** no longer has **Sword Mastery** unlocked by default. This perk is now moved to Tier 3 (down from 4) for them. They now have a hiring cost of 400 Crowns (down from 2400), just like in Vanilla
 
@@ -397,7 +398,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Introduce a new **Headless** effect, which sets the headarmor to 0 and redirects any attack to hit the body and grants immunity to **Distracted**
 	- This effect is given to Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles
 	- Remove the now redundant perk **Steelbrow** from Ifrit, Sapling and Kraken Tentacle
-	- Wiederganger, which receive this effect, lose **Bite** and gain **Zombie Punch**, which is just a cosmetic change
+	- Wiederganger, which receive this effect, lose **Bite** and gain **Zombie Punch**, which is mostly the same, except with no bonus headshot chance
 
 **Brigands:**
 - **Scoundrels** no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**. They now spawn with a **Knife** instead of **Dagger**/**Woodcutters Axe**
@@ -417,7 +418,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Wargdogs** now have 5 Vision (down from 7)
 
 **Humans:**
-- Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop crowns, food or tools or a valueable ring.
+- Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop crowns, food or tools or a valueable ring
 - **Noble Footmen** lose **Shield Expert**
 - **Swordmaster** with **Blade Dancer** perk now only spawn with **Noble Swords**
 
@@ -450,13 +451,17 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Alps** now have **Elusive**
 - Introduce new **Bite Reach** effect, which reduces headshot chance by 10% and increases chance to receive headshot by 10%
 	- This effect is given to all Dogs, Wolfs and Hyenas
+- All **Ifrits** gain **Man of Steel**
+  - **Small Ifrits** now have 55 Hitpoints (down from 110) and 165 Armor (up from 110)
+  - **Medium Ifrits** now have 110 Hitpoints (down from 220) and 220 Armor (up from 110). They lose 10 Damage and gain **Marksmanship**
+  - **Large Ifrits** now have 220 Hitpoints (down from 440) and 330 Armor (up from 110). They lose 10 Damage and gain **Marksmanship**
 - Lindwurms Head and Tail no longer share hitpoints and effects but killing the Tail will no longer kill the Head
   - Lindwurm Heads now have 1000 Hitpoints (down from 1100), 20 Melee Defense (up from 10) and gain **Exude Confidence**. They lose **Survival Instinct**
   - The Lindwurm Tail still inherits most of the stats from the head but has 50% less Hitpoints and Resolve and 50% more Melee Defense. They lose **Fearsome**
   - The Lindwurm Tail can now be stunned and netted but those effects are removed whenever the Head moves away
 - All **Nachzehrere** lose **Deep Cuts**
-- **Small Nachzehrer** lose 10 Melee Defense and gain **Ghostlike**
-- **Large Nachzehrer** can no longer swallow player characters while in a net. They can now also swallow the last player character who is alive
+  - **Small Nachzehrer** lose 10 Melee Defense and gain **Ghostlike**
+  - **Large Nachzehrer** can no longer swallow player characters while in a net. They can now also swallow the last player character who is alive
 - **Donkeys** now grant 0 XP (down from 50 XP)
 - **Schrats** no longer take 70% reduced damage while their shield is up. They now have +200 Hitpoints and gain the **One with the Shield** perk
 
@@ -467,7 +472,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Enemy AI
 
-- NPC ranged troops are 66% less likely to target someone because of how many potential scatter targets are adjacent
+- NPC ranged troops attribute a potential target 80% less score from adjacent potential scatter targets
 - Necrosavants are a bit more likely to stay on the same tile and attack twice, rather than teleport to a slightly better tile
 - Improve AI targeting for throwing nets: They value the targets melee defense twice as much and prefer isolated targets
 - NPCs are now twice as likely to throw a net or use a throwing pot/bomb while adjacent to an enemy
@@ -490,7 +495,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - At the start of each new campaign ~5 additional small bandit camps are spawned in the world
 - World Parties are no longer stunned, when you cancel the combat dialog with them
-- The legendary Location Ancient Spire now reveals an area of 3000 (up from 1900). It now also discovers every location in that radius for the player.
+- The legendary Location Ancient Spire now reveals an area of 3000 (up from 1900)
 
 ### Events
 
@@ -499,25 +504,27 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Other
 
+- You can now get up to 6 Tavern Rumors every cycle (up from 4)
+- Tavern Rumors now have a linearly scaling cost. Each paid rumor costs an amount based on the standard (vanilla) rumor price, multiplied by the number of the paid rumor you are about to buy
 - All fleeing characters now have +1 Action Point
 - All player characters now have +1 Action Point during AutoRetreat
 - Try out now costs 100% more. You can now dismiss recruits after you tried them out to make room for new recruits
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
 - **Swamp** tiles no longer reduce Melee Skill by 25%. Instead they now reduce Initiative by 25%
 - The **Hidden** effect (granted by certain tiles) now also provides +10 Ranged Defense
-- Resurrecting Corpses can no longer knock backn characters that are immune to Knock Back. Instead they delay their resurrection
-- Encumbrance no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level.
-- Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied.
+- Resurrecting Corpses can no longer knock back characters that are immune to knock back or rooted. Instead they delay their resurrection
+- Encumbrance no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level
+- Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied
 - Dying or Fleeing characters no longer trigger negative morale checks for their allies if the distance between them is greater than the vision of the receiving ally
-- Burning Damage (Fire Pot, Burning Arrow, Burning Ground) now remove all root-like effects from the targets.
-- Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken.
+- Burning Damage (Fire Pot, Burning Arrow, Burning Ground) now remove all root-like effects from the targets
+- Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken
 - The **Orc Slayer** and **Crusader** (temporary Crisis backgrounds) now share 100% of their experience with your remaining party, when they leave you after the Crisis ended
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 - The **Lone Wolf** and **Gladiator** origins now have a roster size of 13 (up from 12)
 - Beginner combat difficulty now grants enemy parties 100% resources (up from 85%)
 - Beginner combat difficulty now causes player characters to receive 15% less damage from all sources
 - Expert combat difficulty now grants enemy parties 120% resources (up from 115%)
-- Caravan Contracts that are declined or which expire now sometimes spawn a caravan towards the destination
+- Caravan Contracts that are declined or which expire now spawn a caravan towards the destination if they haven't spawned one in a while
 - Characters which are not visible to the player will no longer produce idle or death sounds.
 - The combat map is no longer revealed at the end of a battle
 
@@ -532,10 +539,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Loot that is not equippable in battle no longer appears on the ground (e.g. Beast Trophies/Ingredients)
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
 - Improve visibility of Miasma and Burning Ground
-- **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back
+- **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back or which are rooted
 - **Disarm** can no longer be used on enemies which are immune to disarm
 - **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
-- **Night Effect**, **Double Grip** and **Pattern Recognition** no longer display a Mini-Icon
+- **Night Effect**, **Double Grip**, **Pattern Recognition**, **Bulwark** and **Man of Steel** no longer display a Mini-Icon
 - Add skill descriptions for all skills from the **Lorekeeper**
 - Corpses will now display the round, in which they were created
 - The automatic camera level calculation is improved
@@ -584,8 +591,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Vanilla
 
 - Vanilla Enemies that have no head are no longer decapitatable or smashable
-- Vanilla Enemies that have no head no longer take bonus damage from headshots
-- **Knock Back** now build up and uses up **Fast Adaptation** stacks and applies **Overwhelm**
 - Add setting to improve positional sound during combat
 - Parties on the world map are no longer hidden after loading a game, while the game is still paused
 - Spiders will now give up when their team has given up even if there are still eggs on the battlefield
@@ -596,16 +601,14 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Improve knock back logic for Spiked Impaler to behave like the Knock Back skill from shields
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
 - Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
-- Hitpoints recovery on brothers is now more accurate (The Cook Follower now actually increases the hitpoint recovery)
+- Hitpoints recovery on brothers is now more accurate (camping recovery fix)
 - Fix some positional effects (e.g. Lone Wolf or Entrenched) visually persisting outside of combat
-- Bandaging allies now updates their overlay ui correctly
-- Dying enemies no longer set the LastCombatResult to `EnemyDestroyed`, unless they were the last one to die. This fixes a Sunken Library exploit
+- Dying enemies no longer set the LastCombatResult to `EnemyDestroyed`, unless they were the last one to die. This fixes a rare Sunken Library exploit
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
 - Every accessory now plays a default sound when moved around in the inventory
 - Change the inventory icon of the **Witchhunter's Hat** to look exactly like the sprite on the brother
 - Characters under berserker mushroom effect no longer yell when they use ranged attacks
-- The id of the item `mouth_piece` is changed to `armor.head.mouth_piece` (it used to be `armor.head.witchhunter_hat`)
 - Prevent the same random human name (e.g. Leader or Knight) to be generated in succession
 - Throw Pot/Flask skills are no longer considered an attack
 - Remove a duplicate loading screen
@@ -614,7 +617,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - **Calculated Strikes** now works against stunned enemies
 - **Cheap Trick** and **Retribution** now work with delayed skill executions (like Lunge or Aimed Shot)
-- **Knock Back** now staggers targets when the user has **Line Breaker** perk
 - The perks **Strengh in Numbers** and **Dynamic Duo** now instantly update the actors stats, if another actor moves adjacent to or away from them
 
 ## For Modders
@@ -641,7 +643,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Parties that are spawned without a banner will be assigned the banner of the faction who owns their faction (mostly relevant for civilian factions)
 - Add new `LastSpawnedParty` member for `faction.nut` which always contains the last party spawned by that faction
 - Add new `getOwner` function for factions, which returns the owner of this factions first settlement
-- Add new virtual `getDroppedLoot` function for `actor.nut` returning an array of created items, which will be dropped when that actor dies
+- Add new `isLootAssignedToPlayer` function for `actor.nut` which should be used, when deciding, whether to drop loot during custom implementations of `getLootForTile`
 - Add new `::Hardened.TileReservation` with `function isReserved( _tileID )` which can be used to check whether a targeted tile is about to be filled with an entity from a vanilla `teleport` call
 - Add new `IsHidingIconMini` flag for skills (`false` by default), that can be used by modder to force-hide the mini icon
 - Add new `onSpawned` event for skills that can be used in place of `onCombatStarted` to more consistently configure entities/skills even if they spawn mid battle
@@ -651,7 +653,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Supplies (Money, Tools, Medicine, Ammunition) are now droppable
 - Add new `isNamed` function for `item.nut`
 - `IsUsable` in `skill.nut` is now a softreset property. So you can turn it off during `onUpdate` without needing to worry about turning it on again
-- `knock_back` now calls `onTargetHit` or `onTargetMissed` on the user
+- Add new `MaximumRumors` member in `tavern_building.nut`, which can be used to change the maximum amount of rumors every cycle
+- Add new `isLootAssignedToPlayer(_killer)` function in `actor.nut`, which can be used during custom implementations or adjustments of `getLootForTile` function
+- The existing vanilla function `getRumorPrice()` from `tavern_building` is now fully supported and used everywhere
+- Add new `HD_IgnoreForCrowded = false` flag for skills. When true, then `Crowded` is never active for them
 
 ### New Character Properties
 
@@ -681,7 +686,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - New perks introduced by this mod are refunded and removed from your perk tree, when you remove Hardened mod and re-learned when you add Hardened back in (if you have the available perk points)
 
 ## Incompatible with
-- [**Cook and Blacksmith Fix**](https://www.nexusmods.com/battlebrothers/mods/668): Hardened ships its own fix for the cook. Though it does not fix the Blacksmith (yet?)
+- [**Cook and Blacksmith Fix**](https://www.nexusmods.com/battlebrothers/mods/668): Hardened ships its own fix for the hitpoint recovery float issue and the rest is fixed in vanilla 1.5.1.4+
 
 # License
 
