@@ -62,6 +62,6 @@
 	{
 		local ret = __original(_originTile, _targetTile);
 
-		return ret && !_targetTile.getEntity().getCurrentProperties().IsImmuneToKnockBackAndGrab;
+		return ret && !_targetTile.getEntity().getCurrentProperties().IsImmuneToKnockBackAndGrab && (this.findTileToKnockBackTo(_originTile, _targetTile) != null);
 	}
 });
