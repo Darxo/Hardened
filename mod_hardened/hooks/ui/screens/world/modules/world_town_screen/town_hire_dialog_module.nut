@@ -14,7 +14,7 @@
 
 		// "sounds/scribble.wav" is another noteworthy one (crossing out a name from list), but it goes on for a bit too long
 		// and overusing it here takes away from its charm on accepting contracts
-		::Sound.play("sounds/cloth_01.wav", ::Math.rand(70, 80) * 0.01, ::World.State.getPlayer().getPos(), ::Math.rand(90, 110) * 0.01);	// We add some variation in volume and pitch
+		::Sound.play("sounds/cloth_01.wav", ::Math.rand(80, 100) * 0.01, ::World.State.getPlayer().getPos(), ::Math.rand(90, 110) * 0.01);	// We add some variation in volume and pitch
 		::World.getRoster(this.m.RosterID).remove(entity);
 
 		// Not sure, why this is important, but Vanilla does it after hiring
