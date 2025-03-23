@@ -68,7 +68,6 @@
 				}
 			}
 		}
-		target.setDirty(true);	// Update the targets UI so that bleedings are removed immediately
 
 		if (!::MSU.isNull(this.getItem()))
 		{
