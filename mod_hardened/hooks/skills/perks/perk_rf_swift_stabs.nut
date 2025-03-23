@@ -13,6 +13,7 @@ local hookDaggerAttack = function( _o )
 
 	// Create
 	_o.setBaseValue("MaxRange", 2);
+	_o.m.HD_IgnoreForCrowded = true;	// Otherwise we get a tooltip about crowded and crowded would affect our attacks
 
 	local oldGetTooltip = _o.getTooltip;
 	_o.getTooltip = function()
@@ -233,22 +234,6 @@ local hookDaggerAttack = function( _o )
 		this.m.Icon = "ui/perks/perk_rf_swift_stabs.png";
 		this.m.Type = ::Const.SkillType.Perk;
 		this.m.Order = ::Const.SkillOrder.Perk;
-	}
-
-	q.onUpdate = @(__original) function( _properties )
-	{
-		__original(_properties);
-
-		// Dagger attacks will now be affected by Crowded because they have a range of 2 tiles, so we need to turn off the crowded while this perk is active
-		if (this.isEnabled() && ::Tactical.isActive())
-		{
-			local crowded = this.getContainer().getSkillByID("special.rf_polearm_adjacency");
-			if (crowded != null)
-			{
-				crowded.m.NumEnemiesToIgnore = 99;
-				crowded.m.NumAlliesToIgnore = 99;
-			}
-		}
 	}
 
 	q.onAfterUpdate <- function( _properties )
