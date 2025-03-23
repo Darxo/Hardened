@@ -20,10 +20,14 @@
 		// This allows blocking zombie revival with skills like Indomitable
 		// This also prevents silly/weird situations where unholds/orcs get pushed back by zombies or where a lindwurm is separated from their tail by a zombie
 		local targetTile = _info.Tile;
-		if (targetTile.IsOccupiedByActor && targetTile.getEntity().getCurrentProperties().IsImmuneToKnockBackAndGrab)
+		if (targetTile.IsOccupiedByActor)
 		{
-			::Time.scheduleEvent(::TimeUnit.Rounds, 1, ::Tactical.Entities.resurrect, _info);
-			return null;
+			local prop = targetTile.getEntity().getCurrentProperties();
+			if (prop.IsImmuneToKnockBackAndGrab || prop.IsRooted)
+			{
+				::Time.scheduleEvent(::TimeUnit.Rounds, 1, ::Tactical.Entities.resurrect, _info);
+				return null;
+			}
 		}
 
 		return __original( _info, _force);
