@@ -6,6 +6,7 @@
 	<sprite id="perk_anticipation" ic = "FF23165B" img="..\..\gfx\ui\perks\perk_anticipation.png" />
 	<sprite id="perk_rf_formidable_approach" ic = "FF23165B" img="..\..\gfx\ui\perks\perk_rf_formidable_approach.png" />
 
+	<sprite id="perk_rf_marksmanship_mini" ic = "FF23165B" img="mini\perk_rf_marksmanship_mini.png" />
 	<sprite id="perk_hd_elusive_mini" ic = "FF23165B" img="mini\perk_hd_elusive_mini.png" />
 	<sprite id="perk_hd_parry_mini" ic = "FF23165B" img="mini\perk_hd_parry_mini.png" />
 	<sprite id="hd_disrupted_flow_mini" ic = "FF23165B" img="mini\hd_disrupted_flow_mini.png" />

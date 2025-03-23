@@ -3,9 +3,37 @@
 	q.m.DamageModifier <- 10;
 	q.m.RequiredIsolationDistance <- 2;
 
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.Description = "Free of nearby threats, your awareness sharpens.";
+		this.m.IconMini = "perk_rf_marksmanship_mini";
+		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
+	}
+
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original();
+
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/damage_dealt.png",
+			text = ::MSU.Text.colorizeValue(this.m.DamageModifier, {AddSign = true}) + " Damage",
+		});
+
+		return ret;
+	}
+
+	q.isHidden = @() function()
+	{
+		return !this.isEnabled();
+	}
+
 	// Overwrite because we scale the damage differently
 	q.onUpdate = @() function(_properties)
 	{
+		_properties.UpdateWhenTileOccupationChanges = true;	// Because this perk grants damage depending on adjacent enemies
 		if (this.isEnabled())
 		{
 			_properties.TargetAttractionMult *= 1.10;
