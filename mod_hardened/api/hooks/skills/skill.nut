@@ -14,6 +14,7 @@
 	// Public
 	q.m.HD_Cooldown <- 0;	// This skill can only be used if HD_RoundLastUsed is null or atleast this many rounds ago
 	q.m.IsHidingIconMini <- false;	// If set to true, then the IconMini will be treated as if it was an empty string and never display
+	q.m.HD_IgnoreForCrowded <- false;	// When true, then this skill will not be affected by crowded, even if it passes all other conditions for that
 
 	// Private
 	q.m.HD_RoundLastUsed <- null;	// This is set to the current round whenever the skills onUse is called
