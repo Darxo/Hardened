@@ -47,16 +47,14 @@
 		mockObjectGetHitchance.cleanup();
 		mockObjectLog.cleanup();
 
-		// Vanilla Fix: Vanilla never calls the events for hitting or missing with knock back, so certain skills interact with it incorrectly (e.g. Fast Adaptation in Vanilla)
+		// Now we produce a standardized tooltip for whether this skill has hit or missed the target, including the roll and hitchance
 		if (wasTargetHit)
 		{
 			if (hitchance != null) ::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and hits " + ::Const.UI.getColorizedEntityName(target) + " (Chance: " + hitchance + ", Rolled: " + hitroll + ")");
-			this.getContainer().getActor().getSkills().onTargetHit(this, target, ::Const.BodyPart.Body, 0, 0);
 		}
 		else
 		{
 			if (hitchance != null) ::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and misses " + ::Const.UI.getColorizedEntityName(target) + " (Chance: " + hitchance + ", Rolled: " + hitroll + ")");
-			this.getContainer().getActor().getSkills().onTargetMissed(this, target);
 		}
 	}
 
