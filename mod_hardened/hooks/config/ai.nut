@@ -3,7 +3,7 @@
 // Adjusted Vanilla Values
 {
 	// Stop being baited into shooting into big blobs over better targets
-	::Const.AI.Behavior.AttackRangedHitBystandersMult = 0.25;	// In Vanilla this is 0.75
+	::Const.AI.Behavior.AttackRangedHitBystandersMult = 0.15;	// In Vanilla this is 0.75
 
 	// Make it more likely that necrosavants stay on the same tile to utilize 2 attack
 	::Const.AI.Behavior.DarkflightStayOnTileBonus = 4.0;	// In Vanilla this is 2.5
