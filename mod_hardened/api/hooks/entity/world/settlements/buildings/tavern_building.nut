@@ -7,6 +7,26 @@
 
 	q.getRumor = @(__original) function( _isPaidFor = false )
 	{
+		local mockGetMoney;
+		local mockAddMoney;
+		if (_isPaidFor)
+		{
+			if (!this.hasEnoughMoney()) return null;	// Same as vanilla
+
+			// We pay the money here, because the vanilla payment method is hard-coded and doesn't use their own getter function
+			::World.Assets.addMoney(-1 * this.getRumorPrice());
+
+			// We mock getMoney, to make vanilla believe we have enough money
+			mockGetMoney = ::Hardened.mockFunction(::World.Assets, "getMoney", function() {
+				return { done = true, value = 9999 };	// The only important thing is, that it seems like we have enough money to spend, for the next time this is called
+			});
+
+			// We mock setMoney, to prevent Vanilla from removing the wrong amount
+			mockAddMoney = ::Hardened.mockFunction(::World.Assets, "addMoney", function( _money ) {
+				return { done = true, value = null };	// Return value doesn't matter. We just dont want the original to be called
+			});
+		}
+
 		local actualRumorsGiven = this.m.RumorsGiven;
 
 		local dummyRumorsGiven = this.getAsVanillaRumorsGiven();
@@ -15,6 +35,12 @@
 		local paidRumorDifference = this.m.RumorsGiven - dummyRumorsGiven;
 
 		this.m.RumorsGiven = actualRumorsGiven + paidRumorDifference;
+
+		if (_isPaidFor)
+		{
+			mockGetMoney.cleanup();
+			mockAddMoney.cleanup();
+		}
 
 		return ret;
 	}
@@ -35,5 +61,10 @@
 		{
 			return ::Math.max(this.m.RumorsGiven, this.m.HD_VanillaMaximum);	// No need to lie anymore
 		}
+	}
+
+	q.hasEnoughMoney <- function()
+	{
+		return ::World.Assets.getMoney() >= this.getRumorPrice();
 	}
 });
