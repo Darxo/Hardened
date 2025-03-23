@@ -2,9 +2,20 @@
 	q.onUpdate = @(__original) function( _properties )
 	{
 		__original(_properties);
-		// Todo: reactive this feature, when ArmorMult with Natural Armor is fixed
-		// _properties.HitpointsMult *= 0.5;
-		// _properties.ArmorMult[0] *= 1.5;
-		// _properties.ArmorMult[1] *= 1.5;	// Not really needed because ifrits have no head
+		_properties.HitpointsMult *= 0.5;
+
+		local size = this.getContainer().getActor().getSize();
+		if (size == 2)
+		{
+			_properties.DamageRegularMin -= 10;
+			_properties.DamageRegularMax -= 10;
+			// Medium Golems now deal -10 damage but gain Marksmanship perk in return
+		}
+		else if (size == 3)
+		{
+			// Large Golems now deal -10 damage but gain Marksmanship perk in return
+			_properties.DamageRegularMin -= 10;
+			_properties.DamageRegularMax -= 10;
+		}
 	}
 });
