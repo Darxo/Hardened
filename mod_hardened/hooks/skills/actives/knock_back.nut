@@ -1,18 +1,10 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/knock_back", function(q) {
+	// We hook onUse to display the exact hitchances of knock_back in the log and even produce a log on a miss
 	q.onUse = @(__original) function( _user, _targetTile )
 	{
-		local target = _targetTile.getEntity();
-		local wasTargetHit = true;
-
-		local mockObjectOnMissed = ::Hardened.mockFunction(target, "onMissed", function( _attacker, _skill ) {
-			if (::Hardened.getFunctionCaller(1) == "onUse")	// 1 as argument because within mockFunctions, there is an additional function inbetween us and our caller
-			{
-				wasTargetHit = false;
-			}
-		});
-
 		local hitroll = null;	// We hook the ::Math.rand function to fetch the result of every every random 1-100 roll happening into this variable
 		local hitchance = null;	// We hook the getHitchance function to fetch its result into this variable
+
 		local mockObjectRand;
 		mockObjectRand = ::Hardened.mockFunction(::Math, "rand", function(...) {
 			if (hitchance == null && vargv.len() == 2 && vargv[0] == 1 && vargv[1] == 100)
@@ -41,13 +33,14 @@
 		});
 
 		__original(_user, _targetTile);
+		local wasTargetHit = (hitroll <= hitchance);
 
-		mockObjectOnMissed.cleanup();
 		mockObjectRand.cleanup();
 		mockObjectGetHitchance.cleanup();
 		mockObjectLog.cleanup();
 
 		// Now we produce a standardized tooltip for whether this skill has hit or missed the target, including the roll and hitchance
+		local target = _targetTile.getEntity();
 		if (wasTargetHit)
 		{
 			if (hitchance != null) ::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and hits " + ::Const.UI.getColorizedEntityName(target) + " (Chance: " + hitchance + ", Rolled: " + hitroll + ")");
