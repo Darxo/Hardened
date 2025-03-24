@@ -4,7 +4,10 @@
 		__original();
 		foreach (screen in this.m.Screens)
 		{
-			if (screen.Options.len() != 1 || "HD_screen_hooked" in screen) continue;
+			if (screen.Options.len() != 1) continue;
+			if (screen.ID.find("Success") != 0) continue;	// ID must start with "Success*". Those are the most important and safest screens to manipulate
+			if ("HD_screen_hooked" in screen) continue;
+
 			screen.HD_screen_hooked <- true;	// Otherwise we accidentally hook negotiation and intro contract screens multiple times
 
 			local returnValue = null;
