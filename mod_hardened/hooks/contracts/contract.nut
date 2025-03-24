@@ -69,7 +69,7 @@
 				preponedArguments.insert(0, this);
 				if (_table == null)
 				{
-					this.Contract.acall(preponedArguments);
+					this.Contract[_functionName].acall(preponedArguments);
 				}
 				else
 				{
