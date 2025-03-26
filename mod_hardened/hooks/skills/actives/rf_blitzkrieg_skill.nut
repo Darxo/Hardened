@@ -18,7 +18,7 @@
 		{
 			if (entry.id == 10)
 			{
-				entry.text = ::Reforged.Mod.Tooltips.parseString("You and allies of your faction within " + ::MSU.Text.colorPositive("4") + " tiles build up " + ::MSU.Text.colorNegative(this.m.FatigueBuildUp) + " [Fatigue|Concept.Fatigue] and gain the [Adrenaline|Skill+adrenaline_effect] effect until they start their turn in the next round");
+				entry.text = ::Reforged.Mod.Tooltips.parseString("You and allies of your faction within " + ::MSU.Text.colorPositive("4") + " tiles gain the [Adrenaline|Skill+adrenaline_effect] effect until they start their turn in the next round");
 			}
 			else if (entry.id == 21)
 			{
@@ -33,7 +33,7 @@
 		return ret;
 	}
 
-	// Overwrite because we change a few things: Remove one-per-company rule; Utilize MinRange/MaxRange member; Remove available fatigue requirement
+	// Overwrite because we change a few things: Remove one-per-company rule; Utilize MinRange/MaxRange member; Remove available fatigue requirement; Fatigue build-up
 	q.onUse = @() function( _user, _targetTile )
 	{
 		this.m.IsSpent = true;
