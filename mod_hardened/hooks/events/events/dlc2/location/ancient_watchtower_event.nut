@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/events/events/dlc2/location/ancient_watchtower_event", function(q) {
+	q.m.RevealRadius <- 3000.0;		// In vanilla this is 1900.0
+
 	q.create = @(__original) function()
 	{
 		__original();
@@ -6,16 +8,16 @@
 		// We overwrite the vanilla getResult
 		this.m.Screens[0].Options[0].getResult = function( _event )
 		{
-			local revealRadius = 3000.0;	// In vanilla this is 1900.0
-			::World.uncoverFogOfWar(::World.State.getPlayer().getPos(), revealRadius);
+			::World.uncoverFogOfWar(::World.State.getPlayer().getPos(), _event.m.RevealRadius);
 
 			// Reveal all nearby locations to the player
-			foreach (location in ::World.EntityManager.getLocations())
+			local allNearbyEntitities = ::World.getAllEntitiesAtPos(::World.State.getPlayer().getPos(), _event.m.RevealRadius);
+			foreach (nearbyEntity in allNearbyEntitities)
 			{
-				if (location.m.VisibilityMult > 0.0 && ::World.State.getPlayer().getTile().getDistanceTo(location.getTile()) < 1900)
+				if (nearbyEntity.isLocation() && nearbyEntity.m.VisibilityMult > 0.0)
 				{
-					location.setDiscovered(true);
-					location.onDiscovered();
+					nearbyEntity.setDiscovered(true);
+					nearbyEntity.onDiscovered();
 				}
 			}
 
