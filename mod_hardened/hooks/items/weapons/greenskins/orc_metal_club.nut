@@ -7,7 +7,7 @@
 		this.m.RegularDamageMax = 60;	// In Vanilla this is 50
 		this.m.ArmorDamageMult = 1.1;	// In Vanilla this is 0.9
 
-		this.m.Reach = 5;
+		this.m.Reach = 4;
 	}
 
 	q.onEquip = @() function()

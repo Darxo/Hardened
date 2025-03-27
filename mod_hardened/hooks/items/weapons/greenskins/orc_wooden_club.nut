@@ -9,7 +9,7 @@
 
 		this.setWeight(15);		// In Vanilla this is 20
 
-		this.m.Reach = 5;
+		this.m.Reach = 4;
 	}
 
 	q.onEquip = @() function()
