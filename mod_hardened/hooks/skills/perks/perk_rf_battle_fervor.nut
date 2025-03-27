@@ -7,6 +7,12 @@
 	q.m.BraveryMult <- 1.1;
 	q.m.CombatStatMult <- 1.1;
 
+	q.create = @(__original) function()
+	{
+		__original();
+		this.removeType(::Const.SkillType.StatusEffect);
+	}
+
 	q.onUpdate <- function( _properties )
 	{
 		_properties.BraveryMult *= this.m.BraveryMult;
