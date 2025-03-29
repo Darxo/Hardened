@@ -14,6 +14,16 @@
 		}
 	}
 
+	q.onEquip = @(__original) function( _item )
+	{
+		__original(_item);
+		if (::Tactical.isActive())
+		{
+			// visibility is usually not changes when switching gear, but with crossbow mastery this can happen now. So we need to manually re-calculate visibility
+			this.getContainer().getActor().updateVisibilityForFaction();
+		}
+	}
+
 // New Reforged Functions
 	q.isEnabled <- function()
 	{
