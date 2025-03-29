@@ -1,8 +1,13 @@
 ::Hardened.Global.lastGeneratedNames <- array(5, "");	// Array of the last 5 generated names from the generateName of a human
 
 ::Hardened.HooksMod.hookTree("scripts/entity/tactical/human", function(q) {
-	// We reroll generateName until it produces a name that has not been rolled by any generateName function the last 5 times
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.ResurrectionChance = 100;	// In Vanilla this is 33 (hard-coded)
+	}
 
+	// We reroll generateName until it produces a name that has not been rolled by any generateName function the last 5 times
 	q.generateName = @(__original) function()
 	{
 		local uniqueName = "";
