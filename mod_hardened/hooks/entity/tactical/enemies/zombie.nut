@@ -4,6 +4,8 @@
 		__original();
 		this.getSkills().removeByID("special.double_grip");
 		this.m.BaseProperties.MeleeSkill += 5;	// To offset the loss of double grip
+
+		this.m.MaxResurrectDelay = 3;	// In Vanilla this is 2
 	}
 
 	q.onSpawned = @(__original) function()
