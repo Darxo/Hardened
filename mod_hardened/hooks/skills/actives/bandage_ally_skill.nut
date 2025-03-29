@@ -69,6 +69,9 @@
 			}
 		}
 
+		// Unlike Vanilla (which calls removeById) we only set IsGarbage of the targeted bleed skills to true. The target still needs to be force-updated by someone so the changes take effect
+		target.getSkills().update();
+
 		if (!::MSU.isNull(this.getItem()))
 		{
 			this.getItem().removeSelf();
