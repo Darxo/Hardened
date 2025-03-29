@@ -5,6 +5,7 @@
 	{
 		__original();
 		this.m.ResurrectionChance = 100;	// In Vanilla this is 33 (hard-coded)
+		this.m.MinResurrectDelay = 1;	// In Vanilla this is 2 (hard-coded)
 	}
 
 	// We reroll generateName until it produces a name that has not been rolled by any generateName function the last 5 times
