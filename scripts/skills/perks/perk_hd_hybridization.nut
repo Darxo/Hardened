@@ -21,7 +21,7 @@ this.perk_hd_hybridization <- ::inherit("scripts/skills/skill", {
 
 	function isHidden()
 	{
-		return this.m.IsSpent;
+		return this.m.IsSpent || !::Tactical.isActive();
 	}
 
 	function getTooltip()
