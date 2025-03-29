@@ -61,7 +61,7 @@
 			{
 				if (this.isSkillValid(skill))
 				{
-					skill.m.ActionPointCost = ::Math.max(0, skill.m.ActionPointCost + this.m.ActionPointModifier);
+					skill.m.ActionPointCost += this.m.ActionPointModifier;
 				}
 			}
 		}
