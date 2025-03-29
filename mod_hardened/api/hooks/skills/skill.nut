@@ -283,6 +283,13 @@
 		return ret;
 	}
 
+	// Vanilla does not guarantee, that this skill is 0 or greater, so we enforce this here.
+	// Negative values can happen, when multiple skills offer a flat AP discount, or when designing skills with a negative base action point cost (passing step)
+	q.getActionPointCost = @(__original) function()
+	{
+		return ::Math.max(0, __original());
+	}
+
 	q.isUsable = @(__original) function()
 	{
 		return !this.isOnCooldown() && __original();
