@@ -18,6 +18,20 @@
 
 	q.onBeingAttacked = @() function( _attacker, _skill, _properties ) {}	// This perk no longer rerolls attacks
 
+// Hardened Functions
+q.getQueryTargetMultAsUser = @(__original) function( _target, _usedSkill = null )
+{
+	local ret = __original(_target, _usedSkill);
+
+	local remainingFatigue = _target.getFatigueMax() - _target.getFatigue();
+	if (remainingFatigue > 0 && remainingFatigue <= 15)
+	{
+		ret *= 1.2;	// An enemy with with some, but only very little remaining fatigue is a very good target considering our Wear them Down perk
+	}
+
+	return ret;
+}
+
 // New Functions
 	// Apply _fatigue to _targetEntity and add rf_worn_down_effect to it, if they are fully fatigued after that
 	q.applyFatigueToTarget <- function( _targetEntity, _fatigue )
