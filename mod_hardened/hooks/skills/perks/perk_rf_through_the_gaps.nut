@@ -4,7 +4,7 @@
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_through_the_gaps", function(q) {
 	// Public
-	q.m.DirectDamageModifier <- -0.1;
+	q.m.DirectDamageModifier <- 0.0;
 
 	// Copy of reforged old through the gaps implementation
 	q.onAnySkillUsed <- function( _skill, _targetEntity, _properties )
@@ -12,6 +12,9 @@
 		if (!this.isSkillValid(_skill)) return;
 
 		_properties.DamageDirectAdd += this.m.DirectDamageModifier;
+		// This is a very ugly way to turn off the damage bonus against enemies, without accidentally dealing less than 100% damage
+		// This method might breaks apart as soon as other mods try to implement effects that change this damage
+		_properties.DamageAgainstMult[::Const.BodyPart.Head] = 1.0;
 
 		if (_targetEntity != null)
 		{

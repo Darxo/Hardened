@@ -1289,7 +1289,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Your attacks against targets with armor will always target the body part with the lowest armor",
-					"Lose " + ::MSU.Text.colorNegative("10%") + " [Armor Penetration|Concept.ArmorPenetration]",
+					"You no longer deal [Critical Damage|Concept.CriticalDamage] on a hit to the head",
 				],
 			}],
 		}),
