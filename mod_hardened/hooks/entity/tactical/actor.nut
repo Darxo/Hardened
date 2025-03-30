@@ -64,6 +64,16 @@
 		__original(_type, _volume, _pitch = 1.0);
 	}
 
+	q.onMovementFinish = @(__original) function( _tile )
+	{
+		__original(_tile);
+		if (this.isPlayerControlled())
+		{
+			local camera = ::Tactical.getCamera();
+			camera.Level = camera.getBestLevelForTile(_tile);	// Todo: Setting for this?
+		}
+	}
+
 	q.onOtherActorDeath = @(__original) function( _killer, _victim, _skill )
 	{
 		if (!this.m.IsAlive || this.m.IsDying) return;
