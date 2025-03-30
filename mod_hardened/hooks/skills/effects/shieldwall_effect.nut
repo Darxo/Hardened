@@ -3,7 +3,31 @@
 	{
 		if (this.getContainer().getActor().getID() ==  ::MSU.getDummyPlayer().getID())
 		{
-			return this.skill.getTooltip();		// This tooltip is more resilient against a shield missing
+			// We generate a general tooltip for when the user is the dummy player and there usually is no shield available to make the vanilla one work
+			local ret = this.skill.getTooltip();
+
+			ret.extend([
+				{
+					id = 10,
+					type = "text",
+					icon = "ui/icons/melee_defense.png",
+					text = ::MSU.Text.colorizeMultWithText(2.0) + ::Reforged.Mod.Tooltips.parseString(" [Melee Defense|Concept.MeleeDefense] from equipped shield"),
+				},
+				{
+					id = 11,
+					type = "text",
+					icon = "ui/icons/ranged_defense.png",
+					text = ::MSU.Text.colorizeMultWithText(2.0) + ::Reforged.Mod.Tooltips.parseString(" [Ranged Defense|Concept.RangeDefense] from equipped shield"),
+				},
+				{
+					id = 12,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "Gain " + ::MSU.Text.colorPositive("+5")+ ::Reforged.Mod.Tooltips.parseString(" [Melee Defense|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense] for each adjacent ally from your faction with the [Shieldwall effect|Skill+shieldwall_effect]"),
+				},
+			]);
+
+			return ret;
 		}
 		else
 		{
