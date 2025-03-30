@@ -108,8 +108,8 @@
 			case "building.armorsmith_oriental":
 			{
 				_list.push({
-					R = 10,
-					P = 1.5,
+					R = 0,
+					P = 1.25,	// Note that these buildings have an inherent price multiplier of 1.25
 					S = "supplies/armor_parts_item",
 				});
 				break;
