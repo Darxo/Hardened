@@ -1015,6 +1015,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_long_reach",
+		Key = "RF_LongReach",
+		Description = ::UPD.getDescription({
+			Fluff = "\'If the target is watchin\' the head of yer pike, they\'re sure not watchin\' their back!\'",
+			Requirement = "Polearm",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Enemies at a distance of 2 tiles are [surrounded|Concept.Surrounding] by you",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_marksmanship",
 		Key = "RF_Marksmanship",
 		Description = ::UPD.getDescription({
