@@ -14,7 +14,7 @@ local unitBlocks = [
 		DeterminesFigure = true,
 		UnitDefs = [
 			{ BaseID = "Unit.RF.RF_BanditHighwayman" },	// Low level "Leader"-like. Allows more guaranteed mid-level gear a bit earlier
-			{ BaseID = "Unit.RF.BanditLeader" },
+			{ BaseID = "Unit.RF.BanditLeader", StartingResourceMin = 250 },	// Same as Reforged has defined for any
 			{ BaseID = "Unit.RF.RF_BanditBaron", HardMax = 1 },
 		],
 	},
