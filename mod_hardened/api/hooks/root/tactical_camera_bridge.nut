@@ -51,15 +51,20 @@ local proxyCamera = {
 		if (_bar == null) return oldCamera().moveToPos(_pos, _foo);
 		return oldCamera().moveToPos(_pos, _foo, _bar);
 	},
-	function moveTo( _entity, _foo = null )
+	function moveTo( _entity, _durationOfSomeKind = null )
 	{
-		if (_foo == null) return oldCamera().moveTo(_entity);
-		return oldCamera().moveTo(_entity, _foo);
+		local ret;
+		if (_foo == null) ret = oldCamera().moveTo(_entity);
+		else ret = oldCamera().moveTo(_entity, _durationOfSomeKind);
+		this.Level = this.getBestLevelForTile(_entity.getTile());	// Vanilla likely already does this during their implementation, but we need to do it again, so (our) hooks will work correctly
+		return ret;
 	},
 	function moveToTile( _tile, _foo = null )
 	{
 		if (_foo == null) return oldCamera().moveToTile(_tile);
-		return oldCamera().moveToTile(_tile, _foo);
+		local ret = oldCamera().moveToTile(_tile, _foo);
+		this.Level = this.getBestLevelForTile(_entity.getTile());	// Vanilla likely already does this during their implementation, but we need to do it again, so (our) hooks will work correctly
+		return ret;
 	},
 	function quake( _attacker, _target, _floatA, _floatB, _floatC = null )
 	{
