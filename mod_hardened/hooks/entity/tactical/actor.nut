@@ -112,6 +112,12 @@
 		curProp.IsAffectedByFleeingAllies = oldIsAffectedByFleeingAllies;
 	}
 
+	q.onTurnResumed = @(__original) function()
+	{
+		this.logDebug("Turn resumed for " + this.getName());	// Vanilla only prints this log for when the turn starts. But resuming a turn is just as interesting of a state
+		__original();
+	}
+
 	// Overwrite because we don't want the Vanilla way of calculating
 	q.getFatigueMax = @() function()
 	{
