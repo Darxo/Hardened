@@ -1311,6 +1311,27 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_vanquisher",
+		Key = "RF_Vanquisher",
+		Description = ::UPD.getDescription({
+			Fluff = "Who\'s next?",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Whenever you step on a corpse, that was created this [round,|Concept.Round] take " + ::MSU.Text.colorPositive("25%") + " less Damage and become immune to [Displacement|Concept.Displacement] until the start of your next [turn|Concept.Turn]",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Active,
+					Description = [
+						"Unlocks the [Gain Ground|Skill+rf_gain_ground_skill] skill which, immediately after killing an adjacent opponent, allows you to move into their tile for free, ignoring [Zone of Control|Concept.ZoneOfControl]"
+					],
+				},
+			],
+		}),
+	},
+	{
 		ID = "perk.rf_vigorous_assault",
 		Key = "RF_VigorousAssault",
 		Description = ::UPD.getDescription({
