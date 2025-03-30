@@ -88,18 +88,28 @@
 				}
 				break;
 			}
-			case "building.fletcher":
+			case "building.fletcher":		// Note that this building has an inherent price multiplier of 1.25
 			{
 				foreach (entry in _list)
 				{
 					if (entry.S == "weapons/throwing_spear")
 					{
-						// We reduce the rarity to make Throwing Spears and make it more expensive to make it on par with throwing nets that are also now sold here
-						entry.R = 30;	// In Vanilla this is 90
-						entry.P = 2.0;	// In Vanilla this is 1.0
-						break;
+						// We reduce the rarity and increase price to make Throwing Spears on par with throwing nets that are also now sold here
+						entry.R = 20;	// In Vanilla this is 90
+						entry.P = 1.5;	// In Vanilla this is 1.0
+					}
+					else if (entry.S == "tools/throwing_net")
+					{
+						entry.P = 2.0;	// In Reforged this is 3.0
 					}
 				}
+				// We add throwing spears a second time similar to how nets have two entries
+				_list.push({
+					R = 20,
+					P = 1.5,
+					S = "weapons/throwing_spear",
+				});
+
 				break;
 			}
 			case "building.weaponsmith":
