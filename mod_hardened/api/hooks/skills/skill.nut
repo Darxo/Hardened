@@ -139,6 +139,13 @@
 		}
 	}
 
+// MSU Functions
+	q.softReset = @(__original) function()
+	{
+		__original();
+		this.resetField("IsUsable");
+	}
+
 // Modular Vanilla Events
 	q.onAttackEntityMissed = @(__original) function( _attackInfo )
 	{
@@ -233,13 +240,6 @@
 	// Beware at this point, this shield might be "broken", aka unequipped
 	q.onAfterShieldDamageReceived <- function( _initialDamage, _damageReceived, _shield, _attacker = null, _skill = null )
 	{
-	}
-
-// MSU Functions
-	q.softReset = @(__original) function()
-	{
-		__original();
-		this.resetField("IsUsable");
 	}
 });
 
