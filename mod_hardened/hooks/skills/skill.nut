@@ -31,4 +31,52 @@
 
 		return ret;
 	}
+
+// New Functions
+	// Call several functions to make sure that other entities/factions know about the action this skill just did, if they see the action
+	// Important: this.getContainer().getActor() must be placed on a tile, so do make sure that is the case before caling this function
+	q.revealUser <- function( _targetedTile )
+	{
+		local user = this.getContainer().getActor();
+
+		if (_targetedTile.IsVisibleForPlayer)
+		{
+			// We always reveal the user-tile, when iit's targeting a tile already visible to the player, allowing the player
+			user.setDiscovered(true);
+			user.getTile().addVisibilityForFaction(::Const.Faction.Player);
+		}
+
+		if (!_targetedTile.IsOccupiedByActor) return;
+
+		local target = _targetedTile.getEntity();
+		if (target.getAttackers().find(user.getID()) == null)
+		{
+			target.getAttackers().push(user.getID());
+		}
+
+		if (!target.isPlayerControlled())
+		{
+			user.getTile().addVisibilityForFaction(target.getFaction());
+			target.onActorSighted(user);
+
+			foreach (targetAlly in ::Tactical.Entities.getInstancesOfFaction(target.getFaction()))
+			{
+				if (targetAlly.getID() != target.getID() && targetAlly.isAlive())
+				{
+					targetAlly.onActorSighted(user);
+					// Maybe also add user to getAttackers of any ally?
+				}
+			}
+		}
+	}
+});
+
+::Hardened.HooksMod.hookTree("scripts/skills/skill", function(q) {
+	q.onUse = @(__original) function( _user, _targetTile )
+	{
+		// We make sure everyone who needs to know, now knows about the action we just did onto _targetTile, no matter what kind of skill we used
+		this.revealUser(_targetTile);
+
+		return __original(_user, _targetTile);
+	}
 });
