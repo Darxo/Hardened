@@ -51,7 +51,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Armor Damage taken from Attacks is reduced by a percentage equal to " + ::MSU.Text.colorPositive("5%") + " of the current total armor value of both Body Armor and Helmet",
+					"Take " + ::MSU.Text.colorPositive("1%") + " less Armor Damage for every " + ::MSU.Text.colorPositive("20") + " current combined Body Armor and Helmet condition",
 				],
 			}],
 		}),
