@@ -44,6 +44,28 @@
 
 	myEnumSetting = ::MSU.Class.EnumSetting("CombatDialogRepresentation", "Numeral (Range)", ["Numeral", "Numeral (Range)", "Range"], "Combat Dialog Size", "Define how the size of entities in combat dialogs and tooltips are shown. 'Numeral' is a word/string while 'Range' is the range that is represented by that word");
 	qolWorldPage.addElement(myEnumSetting);
+
+	qolWorldPage.addDivider("MiscDivider6");
+
+	local waypointUpdateCallback = function( _oldValue )
+	{
+		if (!::MSU.Utils.hasState("world_state")) return;	// otherwise the game crashes when changing settings in main menu
+		if (::MSU.isNull(::World.State.m.HD_WaypointReference)) return;
+
+		if (!::Hardened.Mod.ModSettings.getSetting("DisplayWaypoint").getValue())
+		{
+			::World.State.m.HD_WaypointReference.die();
+		}
+		else
+		{
+			::World.State.m.HD_WaypointReference.getSprite("waypoint").Scale = ::Hardened.Mod.ModSettings.getSetting("WaypointSize").getValue();
+			if (::Hardened.Mod.ModSettings.getSetting("IsWaypointScaling").getValue()) ::World.State.m.HD_WaypointReference.getSprite("waypoint").Scale *= ::World.getCamera().Zoom;
+		}
+	}
+
+	qolWorldPage.addBooleanSetting("DisplayWaypoint", true, "Display a Waypoint when you move", "Spawn a copy of your banner on the destination to where your player character is moving to currently.").addAfterChangeCallback(waypointUpdateCallback);
+	qolWorldPage.addBooleanSetting("IsWaypointScaling", true, "Is Waypoint Scaling", "If \'true\', then the Waypoint sprite will take less screen space as you zoom out and more as you zoom in. If \'false\', then it will always take the same amount of space on your screen.").addAfterChangeCallback(waypointUpdateCallback);
+	qolWorldPage.addRangeSetting("WaypointSize", 0.8, 0.5, 1.5, 0.1, "Waypoint Banner Size", "This controls big the banner of your Waypoint is.").addAfterChangeCallback(waypointUpdateCallback);
 }
 
 // QOL: Combat

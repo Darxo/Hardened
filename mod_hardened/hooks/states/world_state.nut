@@ -1,4 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/states/world_state", function(q) {
+	// Private
+	q.m.HD_WaypointReference <- null;	// WeakReference to the waypoint, that displays our current destination
+
 	q.updateTopbarAssets = @(__original) function()		// In Vanilla this triggers once per hour
 	{
 		__original();
@@ -33,6 +36,13 @@
 		}
 	}
 
+	q.saveCampaign = @(__original) function( _campaignFileName, _campaignLabel = null )
+	{
+		if (!::MSU.isNull(this.m.HD_WaypointReference)) this.m.HD_WaypointReference.die();
+
+		__original(_campaignFileName, _campaignLabel);
+	}
+
 	q.loadCampaign = @(__original) function( _campaignFileName )
 	{
 		__original(_campaignFileName);
@@ -48,6 +58,12 @@
 		// These two lines in combination will force reveal all enemies that the player should be able to see. They fix the bug where you don't see enemies when loading a game
 		::World.setPlayerPos(this.getPlayer().getPos());
 		::World.setPlayerVisionRadius(this.getPlayer().getVisionRadius());
+	}
+
+	q.onUpdate = @(__original) function()
+	{
+		__original();
+		this.updateWaypoint();
 	}
 
 	// This Switcheroo Hook is tricky because Locations will spawn their entire defender lineup during this function if they haven't before.
@@ -89,5 +105,66 @@
 		}
 
 		__original(_isMinor);
+	}
+
+// New Functions
+	q.updateWaypoint <- function()
+	{
+		if (!::Hardened.Mod.ModSettings.getSetting("DisplayWaypoint").getValue()) return;
+
+		local playerPath = ::World.State.getPlayer().m.Path;
+		local playerDestination = ::World.State.getPlayer().m.Destination;
+
+		if (::MSU.isNull(this.m.HD_WaypointReference))
+		{
+			if (playerPath == null && playerDestination == null) return;
+
+			local waypoint = ::World.spawnEntity("scripts/entity/world/hd_waypoint", ::World.State.getPlayer().getTile().Coords);
+			waypoint.init(::World.Assets.getBanner());
+			this.m.HD_WaypointReference = ::MSU.asWeakTableRef(waypoint);
+
+			if (playerPath != null)	// The path is always the more accurate one of the two
+			{
+				waypoint.setPos(::World.tileToWorld(playerPath.getLast()));
+			}
+			else
+			{
+				waypoint.setPos(playerDestination);
+			}
+		}
+		else
+		{
+			local playerPath = this.getPlayer().m.Path;
+			local playerDestination = this.getPlayer().m.Destination;
+			if (playerPath == null && playerDestination == null)
+			{
+				this.m.HD_WaypointReference.die();
+				return;
+			}
+
+			if (!::MSU.isIn("getSprite", this.m.HD_WaypointReference, true))
+			{
+				::logWarning("Hardened: getSprite is not even in this.m.HD_WaypointReference. This should not happen. Further Update skipped");
+				return;
+			}
+			local waypointSprite = this.m.HD_WaypointReference.getSprite("waypoint");
+			if (waypointSprite == null)
+			{
+				::logWarning("Hardened: waypointSprite == null. This should not happen. Further Update skipped");
+				return;
+			}
+
+			waypointSprite.Scale = ::Hardened.Mod.ModSettings.getSetting("WaypointSize").getValue();
+			if (::Hardened.Mod.ModSettings.getSetting("IsWaypointScaling").getValue()) waypointSprite.Scale *= ::World.getCamera().Zoom;
+
+			if (playerPath != null)	// The path is always the more accurate one of the two
+			{
+				this.m.HD_WaypointReference.setPos(::World.tileToWorld(playerPath.getLast()));
+			}
+			else if (playerDestination != null)
+			{
+				this.m.HD_WaypointReference.setPos(playerDestination);
+			}
+		}
 	}
 });
