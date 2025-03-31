@@ -27,7 +27,7 @@ this.hd_wait_effect <- this.inherit("scripts/skills/skill", {
 			id = 20,
 			type = "text",
 			icon = "ui/icons/action_points.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Lasts until the start of your next [turn|Concept.turn]"),
+			text = ::Reforged.Mod.Tooltips.parseString("Lasts until the start of your next [turn|Concept.Turn]"),
 		});
 
 		return ret;
