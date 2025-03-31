@@ -175,6 +175,11 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		changePerkTier(pgThrowingPerkGroup, "perk.rf_hybridization", 2);		// Move Hybridization (now Toolbox) to tier 2 (down from Tier 3)
 	}
 
+	{	// Unstoppable Group
+		local pgUnstoppablePerkGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_unstoppable");
+		pgUnstoppablePerkGroup.addPerk("perk.hd_anchor", 3);	// Add Anchor (New Hardened Perk) into the Tier 3
+	}
+
 	{	// Wildling Group
 		local pgWildling = ::DynamicPerks.PerkGroups.findById("pg.rf_wildling");
 		pgWildling.removePerk("perk.rf_bestial_vigor");	// Remove Bestial Vigor (now Backup Plan) from Wildling

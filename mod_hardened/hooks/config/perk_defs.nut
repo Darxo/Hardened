@@ -1,6 +1,14 @@
 // New Hardened Perk Defs
 ::DynamicPerks.Perks.addPerks([
 	{
+		ID = "perk.hd_anchor",
+		Script = "scripts/skills/perks/perk_hd_anchor",
+		Name = ::Const.Strings.PerkName.HD_Anchor,
+		Tooltip = ::Const.Strings.PerkDescription.HD_Anchor,
+		Icon = "ui/perks/perk_hd_anchor.png",
+		IconDisabled = "ui/perks/perk_hd_anchor_sw.png",
+	},
+	{
 		ID = "perk.hd_hybridization",
 		Script = "scripts/skills/perks/perk_hd_hybridization",
 		Name = ::Const.Strings.PerkName.HD_Hybridization,
