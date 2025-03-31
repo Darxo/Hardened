@@ -10,7 +10,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Take reduced damage from the first " + ::MSU.Text.colorPositive(2) + " attacks you, or your shield receive each battle",
+					"Take less Damage from the first " + ::MSU.Text.colorPositive(2) + " attacks you, or your shield receive each battle",
 					"This reduction is a percentage equal to your current [Ranged Defense|Concept.RangeDefense] plus an additional " + ::MSU.Text.colorPositive("10%") + " for each tile between the attacker and you",
 				],
 			}],
@@ -118,7 +118,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Deal " + ::MSU.Text.colorPositive("5%") + " more damage for every enemy within 2 tiles of you",
+					"Deal " + ::MSU.Text.colorPositive("5%") + " more Damage for every enemy within 2 tiles of you",
 				],
 			}],
 		}),
@@ -213,7 +213,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Take " + ::MSU.Text.colorPositive("60%") + " less [Hitpoint|Concept.Hitpoints] damage from Attacks",
+					"Take " + ::MSU.Text.colorPositive("60%") + " less [Hitpoint|Concept.Hitpoints] Damage from Attacks",
 					"Take more Armor Damage equal to the combined [Weight|Concept.Weight] of your Body Armor and Helmet as a percentage",
 				],
 			}],
@@ -230,7 +230,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Axe Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
-						"[Round Swing|Skill+round_swing] gains " + ::MSU.Text.colorPositive("+5%") + " [chance to hit|Concept.Hitchance]",
+						"[Round Swing|Skill+round_swing] gains " + ::MSU.Text.colorPositive("+5%") + " [Hitchance|Concept.Hitchance]",
 						"[Split Shield|Skill+split_shield] applies [Dazed|Skill+dazed_effect] for " + ::MSU.Text.colorPositive(1) + " [turn|Concept.Turn]",
 					],
 				},
@@ -578,8 +578,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Deal " + ::MSU.Text.colorPositive("10%") + " more damage against [bleeding|Skill+bleeding_effect] characters",
-					"Receive " + ::MSU.Text.colorPositive("10%") + " less damage from [bleeding|Skill+bleeding_effect] characters",
+					"Deal " + ::MSU.Text.colorPositive("10%") + " more Damage against [bleeding|Skill+bleeding_effect] characters",
+					"Receive " + ::MSU.Text.colorPositive("10%") + " less Damage from [bleeding|Skill+bleeding_effect] characters",
 				],
 			}],
 		}),
@@ -607,7 +607,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Armor Damage you deal is treated as additional Hitpoint damage for purpose of inflicting [injuries|Concept.InjuryTemporary]",
+					"Armor Damage you deal is treated as additional Hitpoint Damage for purpose of inflicting [injuries|Concept.InjuryTemporary]",
 				],
 			}],
 		}),
@@ -739,7 +739,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"After a successful hit, deal " + ::MSU.Text.colorPositive("20%") + " more damage until you miss an attack, move, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
+					"After a successful hit, deal " + ::MSU.Text.colorPositive("20%") + " more Damage until you miss an attack, move, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
 				],
 			}],
 		}),
@@ -1036,7 +1036,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"While no enemy is within 2 tiles of you, gain " + ::MSU.Text.colorPositive("+10") + " to Minimum and Maximum Damage",
+					"While no enemy is within 2 tiles of you, deal " + ::MSU.Text.colorPositive("+10") + " Damage",
 				],
 			}],
 		}),
@@ -1122,7 +1122,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Take up to " + ::MSU.Text.colorPositive("60%") + " less [Armor Penetration|Concept.ArmorPenetration] damage from attacks. Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each [Weight|Concept.Weight] on your Body Armor and Helmet combined",
+					"Take up to " + ::MSU.Text.colorPositive("60%") + " less [Armor Penetration|Concept.ArmorPenetration] Damage from attacks. Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each [Weight|Concept.Weight] on your Body Armor and Helmet combined",
 					"Take up to " + ::MSU.Text.colorPositive("40%") + " less Armor Damage from attacks. This reduction is a percentage equal to " + ::MSU.Text.colorPositive("40%") + " of your current [Initiative|Concept.Initiative]",
 				],
 			}],
@@ -1137,7 +1137,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever you use an attack, spend all remaining [Action Points|Concept.ActionPoints] and deal " + ::MSU.Text.colorizeMultWithText(1.1) + " damage during this attack for every [Action Point|Concept.ActionPoints] spent this way",
+					"Whenever you use an attack, spend all remaining [Action Points|Concept.ActionPoints] and deal " + ::MSU.Text.colorizeMultWithText(1.1) + " Damage during this attack for every [Action Point|Concept.ActionPoints] spent this way",
 					"This bonus is doubled for one-handed weapons",
 				],
 			}],
