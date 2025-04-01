@@ -147,19 +147,33 @@
 - remove Brawny again from enemies?
 - After killing enemy with named gear in the arena, offer that piece for sale in the shop (maybe other gear too)
 - Show current bros with gladiator necklaces
-- Increase holy water duration to 5 turns and reduce damage accordingly so that it ends up dealing the same total damage, just slower (nerf)
+- Holy Water
+	- Increase holy water duration to 5 turns and reduce damage accordingly so that it ends up dealing the same total damage, just slower (nerf)
+	- Make it available more common
+	- prevent it from randomly spreading
 - Hidden ZoC skill for three headed flail that only hits once (to reduce effectiveness in keeping enemies in ZoC)
 - Glowing Eyes fx, when a character has killing frenzy, 3 stacks of decisive, ghostlike, double strike or vengeance active (aka any temporary/conditional damage buff)
 - Make hook usable on allies
 - Make many skills and attacks from within a bush reveal that character to all enemies
 - Trader Retinue: 10% more movement speed on roads
 - Make Ancient Spire enterable repeatidly. But each time you need to choose a brother, who then receives the exhausted debuff for a few days
+- Change drunkard to only target Weapon, Armor, Loot or Crafting Components, and never target named items
+- Display indirect numeral for locations (if defender visible)
+- World Location Icon for when it is a legendary location
+- Make **Gash** apply a bleed on the target for each injury on them?
+- look into whether to keep ::Const.Morale.RF_AllyFleeingBraveryModifierPerAlly from Reforged
+
+## Wishlist for REforged
+- Moddable Perk Descriptions (Currently you have to overwrite the perk descriptions)
+- Improve Weapon Preview (using dummy player) to also respect the removal of those via hooks (as a result currently you have overwrite the onAdded)
+- Serialize Perk Groups, so that they will still be found/shown, even if a mod removes or adds one perk to them
 
 ## New Content:
 	- bleed quiver weight
 	- give flesh golems "Wear them Down"
 	- Make Flesh Cradles destructable (e.g. 100 hp 100 armor). Make them much more attractive to NPCs (anti-dog tech)
 	- Make flesh pull cause a negative morale check
+	- Make greater flesh golem corpse explosions stronger
 
 ## Livelier World
 - New noble military town contract: Escort Caravan to/from (currently only civilian factions offer this contract)
@@ -214,19 +228,11 @@ Injury Rework
 - twice as much Medicine is used each day
 
 ## New Perks
-- Anchor
-	"Once you get in position you are hard to get rid off"
-	- If you end your turn on the same tile you started it on, become immune to knockback and grab unti lthe start of your next turn
-	- During your turn, gain +15 Melee Defense
-
 - Alchemist
 	"A steady hand and the right supplies can mean the difference between life and death."
 	"You don’t just fight—you mend, patch, and keep your allies standing."
 	- Skills from bag items cost -1 Action Point
 	- Once per battle, when you use a bag item on yourself or an adjacent ally, recover 20 Hitpoints on the target
-
-
-
 
 ## Perks Review/Rework
 - Crossbow Mastery
@@ -246,7 +252,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	- Lose 10% Armor Penetration (remove fatigue stuff)
 - Mauler
 	- replace second effect with 15% more damage when hitting body parts that have no remaining armor
-- Vanquisher
 - Rush of Battle
 	- You have 10% more Injury Threshold for each adjacent enemy
 	- While adjacent to an enemy, gain 10% more Resolve for each adjacent ally
@@ -271,8 +276,11 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 ## Enemies
 - Reduce Defense of Assassins, make it so they rely only on Dodge
 
-# Next Vanilla Patch
-- Make Through the Gaps disable your bonus damage on headshots, instead of granting -10% pen
+## Items
+- New Watchdog unleashable:
+	- has defensive AI with protect far
+	- is otherwise weaker than the other doggies (to be decided how)
+	- has **Supporter** perk and is able to encourage allies (sfx is replaced with dog barking)
 
 ## AI
 - add "PrefersHidingFromPlayer" flag, that makes enemies slightly prefer bushes that are not revealed to the player, over other tiles
@@ -292,7 +300,10 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - make NPCs with Formidable Approach more likely to move to tiles with adjacent enemies which they dont yet have in their list or which are confident with less max HP
 
 ## Fix:
+- Check whether Great Diviner can even attack at 2 range when fighting him at night (because of new night effect vision change)
+- fix between the eyes not working with headshot preview
 - prevent cheese where you can find out whether someone is hiding in a bush by trying to pathfind into that bush
+	- same thing is true for fog of war
 - footprints of barbarian kings dont seem to produce tooltip for lookout
 - keep track of non-spawning ifrits and the loot potentially lost by those an attach it to the remaining one
 - Sometimes on the WOrld map, a single mouse wheel roll zooms the camera completely. Probably has to do with some timer running too far
@@ -301,6 +312,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Make Rotate no longer cause resolve checks
 - Look into throwing weapons not producing miss-projectiles correctly when missing, sometimes
 	- Need more evidence
+	- just saw a stream where a throwing axe missed an ancient pike skeleton and visually flew past it but didnt produce a missile on the ground (maybe something to do with max range?)
 - Fix orcs sometimes using charge, even though they decided to give up
 - Alps that teleport during first turn before revealing, might be shown as unknown, even though you can see them because they arrived on visible tiles
 - Look into Recover being blocked by worn down, but still showing as active, when previewing another skill
@@ -352,19 +364,6 @@ this.World.Events.fire("event.drunk_nobleman")
 - Framework for tracking round number of a skill for an entity https://github.com/MSUTeam/MSU/issues/351
 
 ## TODO
-- hide hybridization outside of battle
-- Fix bandage ally updating their overlay correctly (it didnt remove bleed, when I tried it)
-- Throwing Spear used by AI does not reveal the thrower
-- improve camera level
-	- Scan map for situations where a hill would prevent clear view (2/3 level tile in front of 0 level tile). When enemy is hiding there, do some smart camera adjustment on turn start
-		- This is the code to be touched: camera.Level = camera.getBestLevelForTile
-- Reduce noise of arena chanting?
-- improve long reach description by removing the last 2 lines, as this surrounding affects all surround-based effects
-- make ai with Wear them down focus on enemies who are almost fully fatigued
-- improve tooltip of shieldwall (especially because of shield sergeant hyperlink)
-- Make it so you cant drop non-empty quivers to the ground?
-- remove double ammo from towns, spawned by fletcher (as fletcher sells its own ammo)
-- mark world entities, that you are currently following. e.g. by duplicating their sprite, coloring the duplicate red, making it slightly larger so that it appears as a red outline
 
 ### Fix
 - Generate combat damage logs for attacks, which kill the target
@@ -391,23 +390,3 @@ this.World.Events.fire("event.drunk_nobleman")
 - User-Faced Changelog (actual changes)
 - Modder Faced one (migrating mods)
 
-
-
-
-### Vanilla Bugs:
-
-These three are not explicitely loaded as resources, causing them to sometimes not play the first time they are requested
-ArenaNewRound = [
-	"sounds/combat/dlc6/arena/crowd_chant_01.wav",
-	"sounds/combat/dlc6/arena/crowd_chant_02.wav",
-	"sounds/combat/dlc6/arena/crowd_chant_03.wav",
-	"sounds/combat/dlc6/arena/crowd_chant_04.wav"
-],
-ArenaStart = [
-	"sounds/combat/dlc6/arena/announcer_start_match_01.wav",
-	"sounds/combat/dlc6/arena/announcer_start_match_02.wav"
-],
-ArenaEnd = [
-	"sounds/combat/dlc6/arena/announcer_end_match_01.wav",
-	"sounds/combat/dlc6/arena/announcer_end_match_02.wav"
-],

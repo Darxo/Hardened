@@ -106,6 +106,7 @@
 	return xpPerBrother;
 }
 
+// Todo: eventually either remove it or see if it can be used for something else
 ::Hardened.util.migratePerk <- function( _player, _oldPerkId, _newPerkId )
 {
 	local perkTree = _player.getPerkTree();

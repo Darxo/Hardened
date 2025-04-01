@@ -34,6 +34,56 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.36.0
+	- Injuries now require 2 Medicine Supplies per day (up from 1). Injuries now have a 50% chance to improve each day when you have no remaining Medicine Supplies.
+	- The **Infected Wound Event** is now twice as likely to trigger, if you have no Medicine left
+	- Add new **Anchor** perk in Tier 3 of **Unstoppable Group**. It grants Immunity against **Displacement** until the start of your next turn, if you end your turn on the same tile you started it on. It also grants +15 Melee Defense during your turn.
+	- **Vanquisher** is completely reworked. After you step on a corpse that has been created this round, you become Immune to **Displacement** and take 25% less Damage until the start of your next turn. **Gain Ground** (granted by **Vanquisher** perk) is now free
+	- **Through the Gaps** no longer reduces your Armor Penetration. Instead you no longer deal critical damage on a headshot. It is now Tier 2 (down from Tier 3)
+	- The **Brute Trait** now grants 15% more damage instead of 15% more hitpoint damage. It is no longer negated by **Steelbrow**r
+	- Equipped Ammo Items can no longer be dropped to the ground or into an empty inventory slot
+	- Head Splitter now has 4 Reach (up from 3)
+	- Head Chopper now has 4 Reach (up from 3)
+	- Cudgel now has 4 Reach (down from 5)
+	- Tree Limb now has 4 Reach (down from 5)
+	- Humans during the undead crisis now only turn into zombies when the killer is from the Zombie or Undead faction
+	- Humans now have a resurrect chance of 100 (up from 33) and have a resurrect delay of 1-3 turns (down from 2-3)
+	- Zombies now resurrect in 1-3 turns (up from 1-2)
+	- Necrosavants in the scripted Caravan Contract Ambush now idle during the first round
+	- Add custom titles for Champion Brigand Kille
+	- Improve camera level automatically when player characters move up or down terrain
+	- Make NPCs with **Wear them Down** 20% more likely to target someone who almost fully fatigued and 20% less likely to target someone who already is **Worn Down**
+	- Tools in Armor and Weapon Smiths now have a price multiplier of 1.25 (down from 1.5)
+	- Throwing Spears sold by the Fletcher now have a price multiplier of 1.5 (down from 2.0) and appear twice as often
+	- Nets sold by the Fletcher now have a price multiplier of 2.0 (down from 3.0)
+	- Add new Setting (on) for displaying and customizing a Waypoint that indicates, where your character on the world map is currently moving to
+	- Add new concepts for **Displacement** (immunity to knockback and grab) and **Critical Damage** (bonus damage on a headshot)
+	- List enemies that can see, and therefor shoot at you, despite you standing in a bush, when hovering over the `hidden_effect`
+	- Improve perk description for **Battleforged** and **Long Reach**
+	- Improve tooltip of **Shieldwall effect** when viewed as a hyperlink
+	- Improve description of **Chop** skill to clarify that it affects **Critical Damage**
+	- Add mini icon for inspired by song effect
+	- Hide Battle Fervor effect icon
+	- Remove "Reach" as a possible name from named Billhooks, Crossbows and Whips
+	- Remove fatigue build-up mention from Blitzkrieg skill description
+	- Fix some Contracts acting weird (bandit robber twist)
+	- Fix Bandit Leader spawning too early
+	- Fix **Combo** increasing the cost of Kata Step instead of reducing it
+	- Fix **Crossbow Mastery** Vision bonus not working correctly after swapping weapons
+	- Fix Acid Flask and Holy Water being throwable on allies
+	- Fix **Hybridization** showing up outside of battle
+	- Fix Bandage Ally not updating the targeted ally and its UI correctly
+	- Fix camera level adjustment during combat not working correctly
+	- Fix World Parties moving for a single tick after loading a game
+	- Fix broken Hyperlinks in **Discrupted Flow Effect** and **Wait Effect**
+	- Fix end of combat freeze caused by **Death Dealer** perk
+	- Fix Item Swaps sometimes requiring a different amount of Action Points than advertised at first
+	- Fix(Vanilla) user of skills/attacks sometimes not being revealed to their target (e.g. Throwing Spear)
+	- Fix(Vanilla) greatly reduce the chance that a projectile produces no decal, when it misses its target and hits an empty tile
+	- Fix(Vanilla) `getActionPointCost` for skills being able to return negative values
+	- Add `MinResurrectDelay` and `MaxResurrectDelay` for zombies
+	- Add `ResurrectionChance`, `MinResurrectDelay` and `MaxResurrectDelay` for humans
+	- Print debugLog when entities resume their turn
 
 0.35.0-alpha.1
 	- You can now get up to 6 Tavern Rumors every cycle (up from 4)
@@ -51,10 +101,8 @@ This will unbrick your end-of-combat screen, if it doesnt show
 	- Shorten injury threshold mentioning tooltip of stab skill
 	- Fix dagger skills showing mention of **Crowded** in then when **Hit and Run** is unlocked
 	- Fix peasants always dropping loot for the player, even if someone else kills them
-
 	- Fix **Knock Back** triggering hit and miss events twice
 	- Fix Swallow Whole not being used again a single opponent
-
 	- Add new `MaximumRumors` member in `tavern_building.nut`, which can be used to change the maximum amount of rumors every cycle
 	- The vanilla function `getRumorPrice` from `tavern_building` is now fully supported and used everywhere
 	- Add new `isLootAssignedToPlayer(_killer)` function in `actor.nut`, which can be used during custom implementations or adjustments of `getLootForTile` function
@@ -529,8 +577,6 @@ This will unbrick your end-of-combat screen, if it doesnt show
 		- NPCs are far less likely to attack into an active **Rebuke**
 	- Fix **Sweeping Strikes** being usable with any melee weapon
 	- Slings now have the sling weapontype again. This will fix them not being able to sling pots/flasks
-
-0.15.0
 
 0.14.0
 	- **Goedendag** no longer grants **Cudgel**
