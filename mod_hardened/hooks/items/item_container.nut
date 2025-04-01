@@ -16,6 +16,27 @@
 			return this.m.CachedSwapActionCost;
 		}
 		this.m.CachedSwapActionCost = __original(_items);
+
+		{	// You can no longer swap your equipped ammo-item with an empty slot
+			local isInAmmoSlot = false;
+			local ammoItemCount = 0;
+			foreach (item in _items)
+			{
+				if (item != null)
+				{
+					if (item.getCurrentSlotType() == ::Const.ItemSlot.Ammo)
+						isInAmmoSlot = true;
+					if (item.getSlotType() == ::Const.ItemSlot.Ammo)
+						ammoItemCount++;
+				}
+			}
+
+			if (isInAmmoSlot && ammoItemCount == 1)
+			{
+				this.m.CachedSwapActionCost = 99;
+			}
+		}
+
 		return this.m.CachedSwapActionCost;
 	}
 
