@@ -8,7 +8,7 @@
 
 	q.onMovementFinish = @(__original) function( _tile )
 	{
-		__original(_tile);
+		__original( _tile );
 
 		local tail = this.m.Tail;
 		if (!::MSU.isNull(tail) && tail.isAlive() && !tail.isDying())

@@ -82,11 +82,12 @@
 		}
 	}
 
-	q.onMovementFinished <- function( _tile )
+	q.onMovementFinished <- function()
 	{
 		if (this.m.PrevTile != null)
 		{
-			if (this.getContainer().getActor().isActiveEntity()) this.m.TilesMoved += _tile.getDistanceTo(this.m.PrevTile);
+			local actor = this.getContainer().getActor();
+			if (actor.isActiveEntity()) this.m.TilesMoved += actor.getTile().getDistanceTo(this.m.PrevTile);
 
 			this.m.PrevTile = null;
 		}

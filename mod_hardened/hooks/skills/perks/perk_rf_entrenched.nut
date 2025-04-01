@@ -70,9 +70,9 @@
 	}
 
 // MSU Events
-	q.onMovementFinished = @(__original) function( _tile )
+	q.onMovementFinished = @(__original) function()
 	{
-		__original(_tile);
+		__original();
 		this.updateMiniIcon();
 	}
 

@@ -98,11 +98,11 @@
 		}
 	}
 
-	q.onMovementFinished <- function( _tile )
+	q.onMovementFinished <- function()
 	{
 		if (this.m.PrevTile != null)
 		{
-			this.m.TilesMovedThisTurn += _tile.getDistanceTo(this.m.PrevTile);
+			this.m.TilesMovedThisTurn += this.getContainer().getActor().getTile().getDistanceTo(this.m.PrevTile);
 			this.m.PrevTile = null;
 		}
 	}

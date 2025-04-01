@@ -76,10 +76,11 @@ this.perk_hd_elusive <- ::inherit("scripts/skills/skill", {
 	}
 
 // MSU Functions
-	function onMovementFinished( _tile )
+	function onMovementFinished()
 	{
-		this.m.TilesMovedThisTurn += _tile.getDistanceTo(this.m.PrevTile);
-		this.m.PrevTile = _tile;
+		local tile = this.getContainer().getActor().getTile();
+		this.m.TilesMovedThisTurn += tile.getDistanceTo(this.m.PrevTile);
+		this.m.PrevTile = tile;
 
 		// Usually we'd want the tile calculation to be more sophisticated, but since we stop counting at 2 tiles, we dont have to deal with curves
 		if (this.m.TilesMovedThisTurn >= this.m.RequiredTileDistance)

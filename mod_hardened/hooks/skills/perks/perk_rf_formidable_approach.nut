@@ -41,7 +41,7 @@
 		return (this.m.Enemies.len() == 0);
 	}
 
-	q.onMovementFinished <- function( _tile )
+	q.onMovementFinished <- function()
 	{
 		if (this.requirementsMet() == false) return;
 

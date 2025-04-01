@@ -67,7 +67,7 @@
 		_properties.IsImmuneToKnockBackAndGrab = true;
 	}
 
-	q.onMovementFinished <- function( _tile )
+	q.onMovementFinished <- function()
 	{
 		local tile = this.getContainer().getActor().getTile();
 		if (!this.m.IsInEffect && this.isTileValid(tile))

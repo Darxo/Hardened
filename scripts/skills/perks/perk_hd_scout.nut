@@ -57,7 +57,7 @@ this.perk_hd_scout <- ::inherit("scripts/skills/skill", {
 		this.getContainer().update();
 	}
 
-	function onMovementFinished( _tile )
+	function onMovementFinished()
 	{
 		this.m.DestinationTile = null;
 	}
