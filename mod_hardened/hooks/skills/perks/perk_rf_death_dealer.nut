@@ -58,8 +58,8 @@
 
 	q.getDamageMult <- function()
 	{
-		if (!::Tactical.isActive()) return 1.0;
 		local actor = this.getContainer().getActor();
+		if (!actor.isPlacedOnMap()) return 1.0;
 		local numNearbyEnemies = ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), this.m.TileDistance, false).len();
 		return 1.0 + numNearbyEnemies * this.m.DamagePctPerEnemy;
 	}
