@@ -34,7 +34,7 @@
 		return ret;
 	}
 
-	// OVerwrite Reforged onUse until it gets more moddable
+	// Overwrite Reforged onUse until it gets more moddable
 	q.onUse = @() function( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity()
@@ -74,11 +74,7 @@
 				], 1.0);
 			}
 
-			local overwhelm = this.getContainer().getSkillByID("perk.overwhelm");
-			if (overwhelm != null)
-			{
-				overwhelm.onTargetHit(this, _targetTile.getEntity(), ::Const.BodyPart.Body, 0, 0);
-			}
+			_user.getSkills().onTargetHit(this, targetEntity, ::Const.BodyPart.Body, 0, 0);
 		}
 
 		return true;
