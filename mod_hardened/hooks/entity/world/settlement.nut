@@ -112,10 +112,50 @@
 
 				break;
 			}
+			case "building.armorsmith":
+			{
+				_list.push({
+					R = 0,
+					P = 1.25,	// Note that these buildings have an inherent price multiplier of 1.25
+					S = "supplies/armor_parts_item",
+				});
+				local shieldSpawnChance = 400 / ::Const.Items.NamedShields.len();	// We choose the chance so that 4 shields are chosen on average
+				foreach (namedShield in ::Const.Items.NamedShields)
+				{
+					if (::Math.rand(1, 100) <= shieldSpawnChance)
+					{
+						_list.push({
+							R = 99,		// Same rarity as other named gear
+							P = 3.0,	// Other named gear has 2.0 here, but shields have a much smaller base price
+							S = namedShield,
+						});
+					}
+				}
+				break;
+			}
+			case "building.armorsmith_oriental":
+			{
+				_list.push({
+					R = 0,
+					P = 1.25,	// Note that these buildings have an inherent price multiplier of 1.25
+					S = "supplies/armor_parts_item",
+				});
+				local shieldSpawnChance = 400 / ::Const.Items.NamedSouthernShields.len();	// We choose the chance so that 4 shields are chosen on average
+				foreach (namedShield in ::Const.Items.NamedSouthernShields)
+				{
+					if (::Math.rand(1, 100) <= shieldSpawnChance)
+					{
+						_list.push({
+							R = 99,		// Same rarity as other named gear
+							P = 3.0,	// Other named gear has 2.0 here, but shields have a much smaller base price
+							S = namedShield,
+						});
+					}
+				}
+				break;
+			}
 			case "building.weaponsmith":
 			case "building.weaponsmith_oriental":
-			case "building.armorsmith":
-			case "building.armorsmith_oriental":
 			{
 				_list.push({
 					R = 0,
