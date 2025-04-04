@@ -15,7 +15,7 @@ this.hd_inspired_by_song_effect <- ::inherit("scripts/skills/skill", {
 		this.m.Name = "Inspired by Song";
 		this.m.Description = "This character was inspired by one of their allies playing a song.";
 		this.m.Icon = "skills/hd_inspired_by_song_effect.png";
-		this.m.IconMini = "";	// Todo add mini icon
+		this.m.IconMini = "hd_inspired_by_song_effect_mini";
 		this.m.Overlay = "hd_inspired_by_song_effect";
 		this.m.Type = ::Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
