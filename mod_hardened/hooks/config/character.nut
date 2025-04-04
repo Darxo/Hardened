@@ -11,6 +11,7 @@ local oldGetHitChance = ::Const.CharacterProperties.getHitchance;
 	}
 	else
 	{
+		// SkillToBeHitWith is a WeakTableRef. In theory that should cause (skill == this) tests to fail, but somehow they don't. If they ever do then the solution would be to call `get()` here
 		return this.getHeadHitchance(_bodyPart, ::Hardened.Temp.UserWantingToHit, ::Hardened.Temp.SkillToBeHitWith, ::Hardened.Temp.TargetToBeHit);
 	}
 }
