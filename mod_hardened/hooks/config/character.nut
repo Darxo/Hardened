@@ -99,3 +99,6 @@ local oldGetClone = ::Const.CharacterProperties.getClone;
 	local staminaMult = (this.Stamina >= 0) ? this.StaminaMult : (1 / this.StaminaMult);
 	return ::Math.floor(this.Stamina * staminaMult);
 }
+
+// Const.Combat
+::Const.Combat.SpawnArrowDecalAttempts = 10;	// In Vanila this is 3; potentially causing several missiles producing now decal on impact. Not sure why though
