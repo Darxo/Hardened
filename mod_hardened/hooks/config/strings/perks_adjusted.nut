@@ -1274,7 +1274,7 @@ local adjustedDescriptions = [
 			{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlocks the [Passing Step|Skill+rf_kata_step_skill] skill which allows you to dance around your opponent after a successful attack",
+					"Unlocks the [Passing Step|Skill+rf_passing_step_skill] skill which allows you to dance around your opponent after a successful attack",
 				],
 			}],
 		}),

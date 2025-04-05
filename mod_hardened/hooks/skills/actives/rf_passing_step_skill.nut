@@ -1,4 +1,4 @@
-::Hardened.HooksMod.hook("scripts/skills/actives/rf_kata_step_skill", function(q) {
+::Hardened.HooksMod.hook("scripts/skills/actives/rf_passing_step_skill", function(q) {
 	q.create = @(__original) function()
 	{
 		__original();
