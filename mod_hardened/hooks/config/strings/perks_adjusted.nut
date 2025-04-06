@@ -1015,6 +1015,28 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_line_breaker",
+		Key = "RF_LineBreaker",
+		Description = ::UPD.getDescription({
+			Fluff = "\'Make way for the bad guy!\'",
+			Requirement = "Shield",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"The [Knock Back|Skill+knock_back] skill gains " + ::MSU.Text.colorPositive("+15%") + " [chance to hit|Concept.Hitchance] and [staggers|Skill+staggered_effect] the target on a hit",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Active,
+					Description = [
+						"Unlocks the [Line Breaker|Skill+rf_line_breaker_skill] skill which allows you to knock back an enemy and take their place, all in one action",
+					],
+				},
+			],
+		}),
+	},
+	{
 		ID = "perk.rf_long_reach",
 		Key = "RF_LongReach",
 		Description = ::UPD.getDescription({
