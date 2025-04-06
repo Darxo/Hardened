@@ -1,8 +1,49 @@
 ::Hardened.HooksMod.hook("scripts/ui/screens/tooltip/tooltip_events", function(q) {
 	q.general_queryUIElementTooltipData = @(__original) function( _entityId, _elementId, _elementOwner )
 	{
+		// Complete replacement of vanilla tooltips
+		switch (_elementId)
+		{
+			// We overwrite the vanilla tooltip because we change and improve several parts. We also mention the new injury mechanic change
+			case "assets.Medicine":
+			{
+				local desc = "Medical Supplies consist of bandages, herbs, salves and the like, and are used to heal the more severe injuries sustained by your men in battle.";	// Fluff
+				desc += "\n\nEvery Injury requires " + ::MSU.Text.colorPositive(::Const.World.Assets.MedicinePerInjuryDay) + " Medical Supplies each day to improve and ultimately heal."	// Vanilla Mechanic
+				desc += "\nIf you run out of medicine supplies, Injuries have only a " + ::MSU.Text.colorNegative("50%") + " chance to improve each day.";	// New Hardened mechanic
+				desc += "\nLost hitpoints heal on their own.";	// Vanilla info
+
+				local heal = ::World.Assets.getHealingRequired();
+				if (heal.MedicineMin > 0)
+				{
+					// We adjust the MedicineMin cost, if the player would run out of medicine in the meantime
+					// if (heal.MedicineMin > ::World.Assets.getMedicine()) heal.MedicineMin = ::World.Assets.getMedicine();
+					// if (heal.MedicineMax > ::World.Assets.getMedicine()) heal.MedicineMax = ::World.Assets.getMedicine();
+					desc += format("\n\nHealing up all your men will take between %s and %s days. Longer, if you run out of Medical Supplies.", ::MSU.Text.colorPositive(heal.DaysMin), ::MSU.Text.colorPositive(heal.DaysMax));
+					desc += format(
+						"\nThis will requires between %s and %s Medical Supplies.",
+						(heal.MedicineMin <= ::World.Assets.getMedicine()) ? ::MSU.Text.colorPositive(heal.MedicineMin) : ::MSU.Text.colorNegative(heal.MedicineMin),
+						(heal.MedicineMax <= ::World.Assets.getMedicine()) ? ::MSU.Text.colorPositive(heal.MedicineMax) : ::MSU.Text.colorNegative(heal.MedicineMax)
+					);
+				}
+
+				return [
+					{
+						id = 1,
+						type = "title",
+						text = "Medical Supplies",
+					},
+					{
+						id = 2,
+						type = "description",
+						text = desc,
+					},
+				];
+			}
+		}
+
 		local ret = __original(_entityId, _elementId, _elementOwner);
 
+		// Adjustments of vanilla tooltips
 		switch (_elementId)
 		{
 			case "menu-screen.new-campaign.EasyDifficulty":
