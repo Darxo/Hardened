@@ -162,6 +162,10 @@
 - World Location Icon for when it is a legendary location
 - Make **Gash** apply a bleed on the target for each injury on them?
 - look into whether to keep ::Const.Morale.RF_AllyFleeingBraveryModifierPerAlly from Reforged
+- Make some contracts pay in items instead of gold (part of the reward). And allow player to negotiate that away
+- Rework this whole Reforged System of any mastery being able to specialize you in skills, that another mastery would provide.
+	- Instead the weapon mastery should be rewritten to only grant effects, that can be applied from within the mastery
+- Stop contracts from revealing the direction/distance of the destination location BEFORE you accept them. Show name only
 
 ## Wishlist for REforged
 - Moddable Perk Descriptions (Currently you have to overwrite the perk descriptions)

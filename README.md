@@ -541,7 +541,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Events
 
 - The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event
-- The **Infected Wound** is now twice as likely to trigger, if you have no Medical Supplies left
+- The **Infected Wound Event** now has a cooldown of 14 days (down from 21 days) and is twice as likely to trigger, if you have no Medicine left
 - The Event-Option to shoot down the bird who shat your brother now costs 5 Ammunition
 - The **Orc Slayer** and **Crusader** (temporary Crisis backgrounds) now share 100% of their experience with your remaining party, when they leave you after the Crisis ended
 

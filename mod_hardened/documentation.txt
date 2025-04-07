@@ -34,6 +34,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.36.1
+	- Fix bandit parties and contracts not spawning correctly
+
 0.36.0
 	- Injuries now require 2 Medicine Supplies per day (up from 1). Injuries now have a 50% chance to improve each day when you have no remaining Medicine Supplies.
 	- The **Infected Wound Event** is now twice as likely to trigger, if you have no Medicine left
