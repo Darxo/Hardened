@@ -1,36 +1,30 @@
 # Introduction
-
-Hardened is a submod for Reforged, offering an alternate vision while staying fully savegame compatible: Players can freely switch between Reforged and Hardened.
+Hardened is a large overhaul mod for Reforged, offering an alternate vision that stays within the bounds of savegame compatibility.
 
 While Reforged focuses on realism and polished mechanics, Hardened embraces a simpler, more experimental approach. The submod takes more risks with innovative perk designs and mechanics, unlocking new possibilities for gameplay, though this can occasionally introduce more bugs or incompatibilities than Reforged. Hardened also walks back several of Reforged's more complex or restrictive design choices, opting for streamlined systems that prioritize fluidity and player freedom.
 
-Hardened reflects my personal vision of Battle Brothers — a balanced, varied, and challenging experience, with enough randomness to keep each playthrough fresh and unpredictable.
+Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varied, and challenging experience, with enough depth and randomness to keep each playthrough fresh and unpredictable.
 
 # Overview
-
-- Reach Mechanic has been simplified
-- Almost all shield changes have been reverted
-- ~70 perks are reworked or rebalanced
-- 5 new perks are introduced
-- ~25 skills are tweaked
-- ~20 enemies are tweaked
-- ~30 QoL features or changes
-- ~15 niche vanilla bugs/exploit fixes
+- Simplified Reach Mechanic and Double Grip effect
+- Shields are destructible again
+- 6 New Perks
+- ~90 Perks are tweaked or reworked
+- ~50 Weapons and Shields are tweaked
+- A few hundred other adjustments to enemies, ai, perk trees, skills and general mechanics
+- A plethora of Quality of Life improvements; several of them are optional
+- Dozens of minor Vanilla Fixes, including the removal of several cheese strategies
 
 # List of all Changes
 
 ## Major Changes
 
 ### Reach Rework
-
+*Forget everything you know about the Reforged Reach Mechanic*
+- Every Weapon has a Reach value. Some skills or perks may increase or reduce the Reach of a character
+- **Reach** is 0 while the character does not emit a zone of control (e.g. stunned, fleeing, wielding ranged weapon)
 - You have **Reach Advantage** during any melee attack if your Reach is greater than the Reach of the entity you are attacking
-- **Reach Advantage** always grants 15% more Melee Skill (it is unaffected by the difference in Reach)
-- **Reach Disadvantage** does nothing
-- Goblins, Humans and Orcs now have 0 Reach by default
-- **Reach** is 0 while the character does not emit a zone of control (e.g. stunned, fleeing)
-- Most attack skills have lost their innate hit chance bonus (see Skills section)
-- You can no longer overcome **Reach** temporarily
-- **Reach Ignore** stat is removed
+- **Reach Advantage** grants 15% more Melee Skill
 
 ### Shield Revert/Rework
 
@@ -38,17 +32,17 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - Named shields can roll condition as one of their two buffed properties (just like in Vanilla)
 - All reforged changes to Condition, Melee Defense, Ranged Defense and Weight of vanilla shields have been reverted
 - Additionally the following balance changes have been made compared to the vanilla stats:
-	- **Tower Shields** now have 30 Condition (up from 24) and no longer grant **Knock Back**
-	- **Heater Shields** now have 25 Melee Defense (up from 20) and no longer grant **Shieldwall**
-	- **Kite Shields** no longer grant **Knock Back**
-	- **Reinforced Skirmisher Shields** now have 15 Melee Defense (up from 10), 15 Ranged Defense (up from 10), no longer grants **Shieldwall** and now grants **Knock Back**
-	- **Wooden Skirmisher Shield** no longer grants **Shieldwall** and now grants **Knock Back**
+	- **Tower Shields** now have 30 Condition (up from 24) and lose **Knock Back**
+	- **Heater Shields** now have 25 Melee Defense (up from 20) and lose **Shieldwall**
+	- **Kite Shields** loses **Knock Back**
+	- **Reinforced Skirmisher Shields** now have 15 Melee Defense (up from 10), 15 Ranged Defense (up from 10), lose **Shieldwall** and now grant **Knock Back**
+	- **Wooden Skirmisher Shields** lose **Shieldwall** and now grant **Knock Back**
 	- **Heavy Metal Shields** now have 20 Melee Defense (up from 15) and 20 Ranged Defense (up from 15)
-	- **Feral Shields** now have 20 Melee Defense (up from 15), 25 Ranged Defense (up from 20), 20 Weight (up from 12), 24 Condition (up from 16), +5 Fatige on use (up from 0) and they no longer grant **Knock Back**
-	- **Adarga Shields** now have 8 Weight (down from 10) and no longer grant **Knock Back**
+	- **Feral Shields** now have 20 Melee Defense (up from 15), 25 Ranged Defense (up from 20), 20 Weight (up from 12), 24 Condition (up from 16), +5 Fatige on use (up from 0) and they lose **Knock Back**
+	- **Adarga Shields** now have 8 Weight (down from 10) and lose **Knock Back**
 	- **Old Wooden Shields** now have 13 Melee Defense (down from 15) and 13 Ranged Defense (down from 15)
-	- **Worn Heater Shields** now have 23 Melee Defense (up from 20), 13 Ranged Defense (down from 15) and no longer grant **Shieldwall**
-	- **Worn Kite Shields** now have 13 Melee Defense (down from 15), 23 Ranged Defense (down from 25) and no longer grant **Knock Back**
+	- **Worn Heater Shields** now have 23 Melee Defense (up from 20), 13 Ranged Defense (down from 15) and lose **Shieldwall**
+	- **Worn Kite Shields** now have 13 Melee Defense (down from 15), 23 Ranged Defense (down from 25) and lose **Knock Back**
 	- **Craftable Schrat Shield** no longer spawns saplings
 
 ### Throwing Weapon Rework
@@ -147,10 +141,10 @@ Hardened reflects my personal vision of Battle Brothers — a balanced, varied, 
 - **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%)
 - **Passing Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand
 - **Lunge** now has -10% additional Hitchance (up from -20%)
-- **Net Effect** no longer affects the Initiative of the target. It now applies 50% less Melee Defense (up from 25%) and 50% less Ranged Defense (down from 45%)
+- **Net Effect** no longer affects the Initiative of the target. It now applies 50% less Melee Defense (up from 25%) and 50% less Ranged Defense (up from 45%)
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
 - **Recover** now applies the same Initiative debuff as using **Wait**
-- **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack. Riposte no longer has a penalty to HitChance
+- **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack. Riposte no longer has a penalty to Hitchance
 - **Shuffle** (granted by **Dynamic Duo**) no longer puts your partner to the next position in the turn order
 - **Spider Poison** now also reduces the Hitpoints Recovery of the target by 50%
 - **Stab** now costs 3 Action Points (down from 4) and has a 25% higher threshold to inflict injuries
@@ -419,10 +413,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Pillager** can now also spawn with **Cudgel**. **Pillager** no longer spawn with **Woodcutters Axe**, **Two Handed Mace** or **Two Handed Hammer**
 - **Outlaws** no longer spawn with **Two Handed Wooden Flail** or **Greatsword**
 - **Marauder** no longer spawn with **Two Handed Wooden Flail** and are twice as likely to spawn with a **Greatsword**
-- Fast Brigands (Robber, Bandit, Killer) now always spawn with a net if they are one-handed, and with a throwing weapon if two-handed. They also have cosmetic face warpaint
+- Fast Brigands (**Robber, Bandit, Killer**) now always spawn with a net if they are one-handed, and with a throwing weapon if two-handed. They also have cosmetic face warpaint
 - **Robber** no longer spawn with a **Pike** or **Reinforced Wooden Poleflail**. They now have 60 Ranged Skill (up from 55)
 - **Bandits** no longer spawn with a **Poleflail**, **Warbrand** or **Throwing Spear**. The can now spawn with a **Reinforced Wooden Poleflail**. They now have 70 Ranged Skill (up from 60)
-- **Killer** no longer spawn with **Scramasax**, **Pike**, **Spetum**, **Warbrand** or **Throwing Spear**. They now have 80 Ranged Skill (up from 70). They can no appear as Champions
+- **Killer** no longer spawn with **Scramasax**, **Pike**, **Spetum**, **Warbrand** or **Throwing Spear**. They now have 80 Ranged Skill (up from 70). They can now appear as Champions
 - **Brigand Leader** lose **Shield Expert**
 - **Hedge Knights** are now immune to **Disarm** as a result of them having **Savage Strength**
 - **Wargdogs** now have 5 Vision (down from 7)
@@ -469,7 +463,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
   - Lindwurm Heads now have 1000 Hitpoints (down from 1100), 20 Melee Defense (up from 10) and gain **Exude Confidence**. They lose **Survival Instinct**
   - The Lindwurm Tail still inherits most of the stats from the head but has 50% less Hitpoints and Resolve and 50% more Melee Defense. They lose **Fearsome**
   - The Lindwurm Tail can now be stunned and netted but those effects are removed whenever the Head moves away
-- All **Nachzehrere** lose **Deep Cuts**
+- All **Nachzehrer** lose **Deep Cuts**
   - **Small Nachzehrer** lose 10 Melee Defense and gain **Ghostlike**
   - **Large Nachzehrer** can no longer swallow player characters while in a net. They can now also swallow the last player character who is alive
 - **Donkeys** now grant 0 XP (down from 50 XP)
@@ -478,7 +472,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Dynamic Party Adjustments
 
 - Fast Brigands (**Robber** -> **Bandit** -> **Killer**) now upgrade slightly earlier
-- Add **Highwayman** as new T1 of the Banditleader Unitblock. Banditleader Unitblock now require a StartingResourceMin of 200 (down from 250)
+- Add **Highwayman** as new T1 of the Banditleader Unitblock. Banditleader Unitblock now require a StartingResourceMin of 180 (down from 250)
 
 ### Enemy AI
 
@@ -507,12 +501,12 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
 - Equipped Ammo Items can no longer be dropped to the ground or into an empty inventory slot
 - **Swamp** tiles no longer reduce Melee Skill by 25%. Instead they now reduce Initiative by 25%
-- The **Hidden** effect (granted by certain tiles) now also provides +10 Ranged Defense and it lists enemies that can shoot you despite you hiding the the bush
+- The **Hidden** effect (granted by certain tiles) now also provides +10 Ranged Defense and it lists enemies that can shoot you despite you hiding the bush
 - All fleeing characters now have +1 Action Point
 - All player characters now have +1 Action Point during AutoRetreat
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied
 - Dying or Fleeing characters no longer trigger negative morale checks for their allies if the distance between them is greater than the vision of the receiving ally
-- Resurrecting Corpses can no longer knock back characters that are immune to knock back or rooted. Instead they delay their resurrection
+- Resurrecting Corpses can no longer knock back characters that are rooted or immune to Displacement. Instead they delay their resurrection
 - Burning Damage (Fire Pot, Burning Arrow, Burning Ground) now remove all root-like effects from the targets
 - Characters which are not visible to the player will no longer produce idle or death sounds.
 - The combat map is no longer revealed at the end of a battle
@@ -564,7 +558,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Loot that is not equippable in battle no longer appears on the ground (e.g. Beast Trophies/Ingredients)
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
 - Improve visibility of Miasma and Burning Ground
-- **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to knock back or which are rooted
+- **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to Displacement or which are rooted
 - **Disarm** can no longer be used on enemies which are immune to disarm
 - **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - **Night Effect**, **Double Grip**, **Pattern Recognition**, **Bulwark** and **Man of Steel** no longer display a Mini-Icon
@@ -616,9 +610,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Vanilla
 
 - Vanilla Enemies that have no head are no longer decapitatable or smashable
-- Add setting to improve positional sound during combat
-- Always reveal the skill user to the target of the skill
-- Always reveal the skill user to the player, if they target a tile that is visible to the player
+- Add setting (on) to improve positional sound during combat
+- Always reveal the user of a skill to the target of the skill
+- Always reveal the user of a skill to the player, if they target a tile that is visible to the player
 - Parties on the world map are no longer hidden after loading a game, while the game is still paused
 - Spiders will now give up when their team has given up even if there are still eggs on the battlefield
 - Remove the hidden "25% more injury threshold" for all characters when receiveing a head hit
