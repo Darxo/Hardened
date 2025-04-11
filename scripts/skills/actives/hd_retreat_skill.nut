@@ -16,7 +16,7 @@ this.hd_retreat_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.skill.getDefaultUtilityTooltip();
+		local ret = this.skill.getDefaultUtilityTooltip();	// Todo: maybe dont show a cost string, because this skill is meant to never cost anything?
 
 		ret.push({
 			id = 10,
@@ -46,7 +46,7 @@ this.hd_retreat_skill <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		if (actor.getTile().hasZoneOfControlOtherThan(actor.getAlliedFactions())) return false;		// We are not allowed to retreat if an adjacent enemy exerts zone of control onto us
 
-		return true;
+		return this.skill.isUsable();
 	}
 
 	function isHidden()

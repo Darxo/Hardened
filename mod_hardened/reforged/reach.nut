@@ -10,3 +10,7 @@
 ::Reforged.Reach.Default.BeastMedium = 3;
 ::Reforged.Reach.Default.BeastLarge = 5;
 ::Reforged.Reach.Default.BeastHuge = 6;
+// Todo: adjust newly introduced reforged beast reach values
+
+// ::Reforged.Reach.Default.BeastEnormous = 7;		// Ijirok
+// ::Reforged.Reach.Default.BeastGargantuan = 7;		// Lindwurm

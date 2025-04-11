@@ -17,7 +17,7 @@
 				id = 8,
 				type = "text",
 				icon = "ui/icons/warning.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Target must be [surrounded|Concept.Surrounding] by atleast " + ::MSU.Text.colorPositive(this.m.RequiredSurroundedCount) + " enemies"),
+				text = ::Reforged.Mod.Tooltips.parseString("Target must be [surrounded|Concept.Surrounding] by atleast " + ::MSU.Text.colorPositive(this.m.RequiredSurroundedCount) + " characters"),
 			});
 		}
 

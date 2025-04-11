@@ -27,7 +27,7 @@
 					type = "text",
 					icon = "ui/icons/damage_dealt.png",
 					text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(this.m.MeleeSkillBonus, {AddSign = true}) + " [Melee Skill|Concept.MeleeSkill] against " + ::Const.UI.getColorizedEntityName(enemy)),
-				})
+				});
 			}
 		}
 

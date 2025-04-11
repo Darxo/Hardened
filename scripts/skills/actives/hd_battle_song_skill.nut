@@ -6,7 +6,7 @@ this.hd_battle_song_skill <- ::inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.hd_battle_song";
 		this.m.Name = "Play Battle Song";
-		this.m.Description = "Play a song on your musicial instrument to raise the Resolve of nearby allies. This buff stacks but loses effectiveness over time and is removed when reaching a threshold. Can not be used while engaged in melee."
+		this.m.Description = "Play a song on your musicial instrument to raise the Resolve of nearby allies. This buff stacks but loses effectiveness over time and is removed when reaching a threshold. Cannot be used while engaged in melee."
 		this.m.Icon = "skills/hd_battle_song_skill.png";
 		this.m.IconDisabled = "skills/hd_battle_song_skill_bw.png";
 		this.m.Overlay = "hd_battle_song_skill";
@@ -51,7 +51,7 @@ this.hd_battle_song_skill <- ::inherit("scripts/skills/skill", {
 				id = 21,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = ::MSU.Text.colorNegative("Can not be used because this character is engaged in melee"),
+				text = ::Reforged.Mod.Tooltips.parseString("Cannot be used because this character is [engaged|Concept.ZoneOfControl] in melee"),
 			});
 		}
 

@@ -2,7 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Description = ::MSU.String.replace(this.m.Description, "turn and can not rally others when just being rallied himself", "round");
+		this.m.Description = ::MSU.String.replace(this.m.Description, "turn and cannot rally others when just being rallied himself", "round");
 	}
 
 	// Overwrite because this skill is no longer removed at the end of the turn

@@ -133,7 +133,6 @@
 - add onGetHit sfx for obstacles and trigger those, when they are hit by an aoe attack or an strayed shot
 - melon mugger event causing a downside, when you take him. For example losing some renown
 - Play start of turn animations + sfx (e.g. inspiring presence) slightly delayed, while keeping the actual effect instant
-- Interrupt player movement, when it reveals tiles with enemies on them
 - barbarian:
 	- 40% chance for roaming parties to have no unholds
 	- 20% chance for camps to have no unholds
@@ -143,31 +142,35 @@
 	- DurationInTurns = -1 (Goes down by 1 at start of every turn, is decremented on turn start)
 - Do a list of new mechanics
 - stackable arena fights?
-- improve orc berserker AI to use stun charge too
 - remove Brawny again from enemies?
-- After killing enemy with named gear in the arena, offer that piece for sale in the shop (maybe other gear too)
 - Show current bros with gladiator necklaces
 - Holy Water
 	- Increase holy water duration to 5 turns and reduce damage accordingly so that it ends up dealing the same total damage, just slower (nerf)
 	- Make it available more common
 	- prevent it from randomly spreading
 - Hidden ZoC skill for three headed flail that only hits once (to reduce effectiveness in keeping enemies in ZoC)
-- Glowing Eyes fx, when a character has killing frenzy, 3 stacks of decisive, ghostlike, double strike or vengeance active (aka any temporary/conditional damage buff)
 - Make hook usable on allies
 - Make many skills and attacks from within a bush reveal that character to all enemies
 - Trader Retinue: 10% more movement speed on roads
 - Make Ancient Spire enterable repeatidly. But each time you need to choose a brother, who then receives the exhausted debuff for a few days
 - Change drunkard to only target Weapon, Armor, Loot or Crafting Components, and never target named items
-- Display indirect numeral for locations (if defender visible)
+- After killing enemy with named gear in the arena, offer that piece for sale in the shop (maybe other gear too)
 - World Location Icon for when it is a legendary location
 - Make **Gash** apply a bleed on the target for each injury on them?
-- look into whether to keep ::Const.Morale.RF_AllyFleeingBraveryModifierPerAlly from Reforged
 - Make some contracts pay in items instead of gold (part of the reward). And allow player to negotiate that away
 - Rework this whole Reforged System of any mastery being able to specialize you in skills, that another mastery would provide.
 	- Instead the weapon mastery should be rewritten to only grant effects, that can be applied from within the mastery
-- Stop contracts from revealing the direction/distance of the destination location BEFORE you accept them. Show name only
+- Make Antidocte use directly on ally, instead of just putting it into their inventory
+- Allow Ironwill potion in the bagslot to be used during battle
+- Spawnposition Framework: several properties, that troops can use to define, where they like to be ideally positioned, within a formation
+	- e.g. Center, Flank, Front, Back, Farback
+- Highlight adjacent opponents, that exert zone of control onto the players tile, whenever a brothers turn starts (option), either forever, or until does does an action
+- Brothers that die during sunken library, when you fail/flee the fight, will be part of the enemy roster during the next time (probably needs savegame )
+- Make it so that characters who move to a certain tile are already considered to be at the tile during the movement (from the character and tile pov)
 
-## Wishlist for REforged
+
+
+## Wishlist for Reforged
 - Moddable Perk Descriptions (Currently you have to overwrite the perk descriptions)
 - Improve Weapon Preview (using dummy player) to also respect the removal of those via hooks (as a result currently you have overwrite the onAdded)
 - Serialize Perk Groups, so that they will still be found/shown, even if a mod removes or adds one perk to them
@@ -181,6 +184,7 @@
 
 ## Livelier World
 - New noble military town contract: Escort Caravan to/from (currently only civilian factions offer this contract)
+- New contract: find out what a certain mercenary company is doing (mix of barbarian king vs. find location contract). Target has low visibility multiplier and is constantly walking. You get tips once per day. A twist might make it so they attack you. But you only need to reveal them
 - Tavern Rumor guaranteed about a named item as an additional reward for a quest
 
 ## Contracts
@@ -287,6 +291,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	- has **Supporter** perk and is able to encourage allies (sfx is replaced with dog barking)
 
 ## AI
+- write AP prediction for new sanguinary effect for player and enemies (could be done by simulating a 3 AP discount on all 1-range skills targetting a certain enemy)
 - add "PrefersHidingFromPlayer" flag, that makes enemies slightly prefer bushes that are not revealed to the player, over other tiles
 - Reload disorientation AI. Make them less likely to shoot while they have this
 - Make AI use Roundswing less often
@@ -304,19 +309,16 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - make NPCs with Formidable Approach more likely to move to tiles with adjacent enemies which they dont yet have in their list or which are confident with less max HP
 
 ## Fix:
+- Add a hitchance tooltip line for the native 25% hitchance bonus that knock back has in vanilla
 - Check whether Great Diviner can even attack at 2 range when fighting him at night (because of new night effect vision change)
-- fix between the eyes not working with headshot preview
 - prevent cheese where you can find out whether someone is hiding in a bush by trying to pathfind into that bush
 	- same thing is true for fog of war
+- Fix contract cheese, where saving/loading instantly reveals destination via event?
 - footprints of barbarian kings dont seem to produce tooltip for lookout
 - keep track of non-spawning ifrits and the loot potentially lost by those an attach it to the remaining one
 - Sometimes on the WOrld map, a single mouse wheel roll zooms the camera completely. Probably has to do with some timer running too far
-- Fix contract cheese, where saving/loading instantly reveals destination via event?
 - dog ai too fast, not realizing reanimating zombies and dying to ZOC hits
 - Make Rotate no longer cause resolve checks
-- Look into throwing weapons not producing miss-projectiles correctly when missing, sometimes
-	- Need more evidence
-	- just saw a stream where a throwing axe missed an ancient pike skeleton and visually flew past it but didnt produce a missile on the ground (maybe something to do with max range?)
 - Fix orcs sometimes using charge, even though they decided to give up
 - Alps that teleport during first turn before revealing, might be shown as unknown, even though you can see them because they arrived on visible tiles
 - Look into Recover being blocked by worn down, but still showing as active, when previewing another skill
@@ -334,7 +336,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	- Count anonymous damage sources (when someone deals damage to themselves) as a new faction (Faction.None)
 
 ## Backlog
-
 - Reduce bleeding noise
 	- Cant fix right now, because 'refresh' only supports increased stacks by 1. Reforged suffers the same problem when inflicting 3 bleed via Gouge for example
 
@@ -349,28 +350,20 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Black Monolith only during night
 this.World.Events.fire("event.drunk_nobleman")
 
-# Modern Hooks Feedback
-- Improve clarity of this warning (when overwriting an existing function in a hook)
-- It is not clear from that warning, whether this action actually failed, or whether it succeeded
-	function newSlot( _q, _key, _value )
-	{
-		if (typeof _value != "function")
-			::Hooks.errorAndThrow(format("Mod %s (%s) is trying to add key \'%s\' to %s. The key's value must be a function. Fields must instead be added to the class's \'m\' table.", _q.__Mod.getID(), _q.__Mod.getName(), _key, this.buildTargetString(_q)));
-		local p = _q.__Prototype;
-		if (_key in p)
-		{
-			::Hooks.warn(format("Mod %s (%s) is adding a new function %s to %s, but that function already exists in the bb class", _q.__Mod.getID(), _q.__Mod.getName(), _key, this.buildTargetString(_q)));
-		}
-		_q.__Prototype[_key] <- _value;
-	}
-
 ## For modder:
 - Framework for tracking round number of a skill for an entity https://github.com/MSUTeam/MSU/issues/351
-
-## TODO
+- New world_state function called "hourly update", which is called once per hour (just like the update from asset manager)
+	- However this is also called, whenever certain notable actions happen. For example, when the player teleports around/uses the port, or onCombatFinished (fastTravelTo)
+		- Actually updateTopbarAssets is really convenient in that regard
+- improve orc berserker AI to use stun charge too
+	- their weird choice of setting EngageTargetMultipleOpponentsMult = -1.0,
+		- makes it so the resulting ScoreMult is negative with odd numbers of ZoC enemies and positive with equal numbers
+		- will add tilescores (which isnt even too bad). While a positive value there would remove tilescore
+	- ai_charge is mainly handled via `ai_engage_melee`
+	- in a simple 1v1 test the berserk uses his charge just fine
+	-> maybe a total rewrite of ai_engage_melee is in order
 
 ### Fix
-- Generate combat damage logs for attacks, which kill the target
 - Play other animations also slightly delayed (e.g. fleeing animation) to counter act the lag a bit
 - add debug logs for finding the end of battle bug
 
@@ -379,11 +372,8 @@ this.World.Events.fire("event.drunk_nobleman")
 - Investigate Repel/hook to add combat looks about hitchance, just like with kncok back
 
 ### Feature
-- Display lost/gained items in events (e.g. food in campfire event)
 - Contracts which change morale/renown/relation but are not yet covered, display those in the next screen
 - add system where equipped loot is only decided upon once, whether it drops. So if a dead character reanimates and dies again you dont have more chances to loot that gear
-- Implement my restore-replace items mod
-	- Make it replace armor pieces with one from the inventory that is exactly the same but has more condition left
 - First Aid (enemy-only for now)
 	"A steady hand and the right supplies can mean the difference between life and death."
 	"You don’t just fight—you mend, patch, and keep your allies standing."
@@ -394,3 +384,24 @@ this.World.Events.fire("event.drunk_nobleman")
 - User-Faced Changelog (actual changes)
 - Modder Faced one (migrating mods)
 
+- look into whether to keep ::Const.Morale.RF_AllyFleeingBraveryModifierPerAlly from Reforged
+- Glowing Eyes fx, when a character has killing frenzy, 3 stacks of decisive, ghostlike, double strike or vengeance active (aka any temporary/conditional damage buff)
+
+- Display lost/gained items in events (e.g. food in campfire event)
+	- Actually there are no events, that do that. I swear, traveler_north_event did that but I cant find a trace
+
+
+TODO
+- Generate combat damage logs for attacks, which kill the target
+- Revert Polearm adjacency that only counts enemies with higher reach
+- Remove border tile cheese (fighting on a border tile and retreating instantly, when shit hits the fan)
+- Reduce damage of weapons with 0 conditions, e.g. by 50% (happens when you pick up a broken weapon off the ground)
+- prevent serpent grab, while they are engaged in melee
+- check whether stagger on knock back works
+- Apply Battleforged Rewording to be used also in Flexible
+- Stop contracts from revealing the direction/distance of the destination location BEFORE you accept them. Show name only
+- Display indirect numeral for locations (if defender visible)
+- Interrupt player movement, when it reveals tiles with enemies on them
+- Implement my restore-replace items mod
+	- Make it replace armor pieces with one from the inventory that is exactly the same but has more condition left
+- Ai retreat bug, not seeking border tiles correctly

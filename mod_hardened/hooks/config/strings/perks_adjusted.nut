@@ -187,7 +187,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"At the start of each [round|Concept.Round] every adjacent ally from your company, with less [Resolve|Concept.Bravery] than you, gains " + ::MSU.Text.colorPositive("+3") + " [Action Points|Concept.ActionPoints] if they are adjacent to an enemy",
-					"Does not affect [stunned|Skill+stunned_effect] or [fleeing|Concept.Morale] allies. Every character can only be [inspired|Skill+hd_inspiring_presence_buff_effect] once per [turn|Concept.Turn]"
+					"Does not affect [stunned|Skill+stunned_effect] or [fleeing|Concept.Morale] allies. Every character can only be [inspired|Skill+hd_inspiring_presence_buff_effect] once per [round|Concept.Round]"
 				],
 			}],
 		}),
@@ -267,6 +267,26 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.mastery.cleaver",
+		Key = "SpecCleaver",
+		Description = ::UPD.getDescription({
+			Fluff = "Master cleavers and fight with a bloodlust.",
+			Requirement = "Cleaver",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+						"Gain the [Bloodlust|Perk+perk_rf_bloodlust] perk.",
+						"Attacks from cleavers apply an additional stack of [Bleeding.|Skill+bleeding_effect]",
+						"[Disarm|Skill+disarm_skill] gains " + ::MSU.Text.colorPositive("+10%") + " [Hitchance|Concept.Hitchance]",
+						"[Gouge|Skill+rf_gouge_skill] has a " + ::MSU.Text.colorNegative("50%") + " lower [threshold|Concept.InjuryThreshold] to inflict [injuries.|Concept.InjuryTemporary]",
+					],
+				},
+			],
+		}),
+	},
+	{
 		ID = "perk.mastery.crossbow",
 		Key = "SpecCrossbow",
 		Description = ::UPD.getDescription({
@@ -276,7 +296,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Crossbow and Firearm Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+						"Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 						"Gain " + ::MSU.Text.colorPositive("+1") + " [Vision|Concept.SightDistance] if you wear a Helmet with a vision penalty",
 						"[Reload|Skill+reload_handgonne_skill] with [Handgonnes|Item+handgonne] costs " + ::MSU.Text.colorPositive("-3") + " [Action Points|Concept.ActionPoints]",
 					],
@@ -334,7 +354,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Hammer Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue.|Concept.Fatigue]",
-						"[Shatter|Skill+shatter_skill] gains " + ::MSU.Text.colorPositive("+5%") + " [chance to hit|Concept.Hitchance]",
+						"[Shatter|Skill+shatter_skill] gains " + ::MSU.Text.colorPositive("+5%") + " [Hitchance|Concept.Hitchance]",
 						::MSU.Text.colorPositive("50%") + " of the Armor Damage you deal to one body part is also dealt to the other body part",
 					],
 				},
@@ -351,7 +371,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Polearm Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
-					"[Hook|Skill+hook] and [Repel|Skill+repel] have " + ::MSU.Text.colorPositive("+15%") + " [chance to hit|Concept.Hitchance]",
+					"[Hook|Skill+hook] and [Repel|Skill+repel] gain " + ::MSU.Text.colorPositive("+15%") + " [Hitchance|Concept.Hitchance]",
 					"Gain the [Bolster|Perk+perk_rf_bolster] perk",
 				],
 			}],
@@ -387,7 +407,7 @@ local adjustedDescriptions = [
 					Description = [
 						"Sword Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 						"[Gash|Skill+gash_skill] has a " + ::MSU.Text.colorPositive("50%") + " lower threshold to inflict [injuries|Concept.InjuryTemporary]",
-						"[Split|Skill+split] and [Swing|Skill+swing] no longer have a penalty to [hitchance|Concept.Hitchance]",
+						"[Split|Skill+split] and [Swing|Skill+swing] gain " + ::MSU.Text.colorPositive("+15%") + " [Hitchance|Concept.Hitchance]",
 						"Whenever you attack an enemy whose [turn|Concept.Turn] has already started, lower their [Initiative|Concept.Initiative] by a stacking " + ::MSU.Text.colorNegative("15%") + " (up to " + ::MSU.Text.colorNegative("90%") + ") until the start of their next [turn|Concept.Turn]",
 					],
 				},
@@ -979,7 +999,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your spear attacks no longer build up [Fatigue|Concept.Fatigue]",
+					"Your spear attacks cost no [Fatigue|Concept.Fatigue]",
 				],
 			}],
 		}),
@@ -1145,7 +1165,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Take up to " + ::MSU.Text.colorPositive("60%") + " less [Armor Penetration|Concept.ArmorPenetration] Damage from attacks. Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each [Weight|Concept.Weight] on your Body Armor and Helmet combined",
-					"Take up to " + ::MSU.Text.colorPositive("40%") + " less Armor Damage from attacks. This reduction is a percentage equal to " + ::MSU.Text.colorPositive("40%") + " of your current [Initiative|Concept.Initiative]",
+					"Take " + ::MSU.Text.colorPositive("2%") + " less Armor Damage from attacks for every " + ::MSU.Text.colorPositive("5") + " [Initiative|Concept.Initiative] you have, up to a maximum of " + ::MSU.Text.colorPositive("40%"),
 				],
 			}],
 		}),
