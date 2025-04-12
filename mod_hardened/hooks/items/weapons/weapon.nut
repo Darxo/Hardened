@@ -18,4 +18,30 @@
 
 		return ret;
 	}
+
+	q.lowerCondition = @(__original) function( _value = ::Const.Combat.WeaponDurabilityLossOnHit )
+	{
+		// We only drop the weapon when it has 0 condition BEFORE the condition loss
+		local actor = this.getContainer().getActor();
+		if (this.m.Condition == 0)
+		{
+			if (!actor.isHiddenToPlayer())
+			{
+				::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(actor) + "\'s " + this.getName() + " has broken!");
+				::Tactical.spawnIconEffect("status_effect_36", actor.getTile(), ::Const.Tactical.Settings.SkillIconOffsetX, ::Const.Tactical.Settings.SkillIconOffsetY, ::Const.Tactical.Settings.SkillIconScale, ::Const.Tactical.Settings.SkillIconFadeInDuration, ::Const.Tactical.Settings.SkillIconStayDuration,::Const.Tactical.Settings.SkillIconFadeOutDuration, ::Const.Tactical.Settings.SkillIconMovement);
+				::Sound.play(this.m.BreakingSound, 1.0, actor.getPos());
+			}
+
+			::Time.scheduleEvent(::TimeUnit.Virtual, 150, this.onDelayedRemoveSelf, null);	// In Vanilla this delay is 300. I find it a bit too long
+		}
+
+		// We mock the next isHiddenToPlayer call to return true, so that the vanilla weapon break/drop mechanic is skipped
+		local mockObject = ::Hardened.mockFunction(actor, "isHiddenToPlayer", function() {
+			return { done = true, value = true };
+		});
+
+		__original(_value);
+
+		mockObject.cleanup();
+	}
 });
