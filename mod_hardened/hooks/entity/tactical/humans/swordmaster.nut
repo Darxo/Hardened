@@ -14,7 +14,7 @@
 		__original();
 		if (this.m.MyVariant == this.m.SwordmasterVariants.BladeDancer)
 		{
-			local mainhandItem = actor.getMainhandItem();
+			local mainhandItem = this.getMainhandItem();
 			if (mainhandItem != null && mainhandItem.isNamed())
 			{
 				// BladeDancer no longer spawn with two-handed swords
