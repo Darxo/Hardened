@@ -1,38 +1,24 @@
 ::Hardened.HooksMod.hook("scripts/states/world_state", function(q) {
 	// Private
 	q.m.HD_WaypointReference <- null;	// WeakReference to the waypoint, that displays our current destination
+	q.m.HD_NearbyLocations <- [];	// Array of "nearby" locations for the purpose of calculating, whether to show their names. They are updated once per hour
+	q.m.HD_LocationTypesToDisplay <- 0;		// combined types of all locations, whose name and optionally numeral we wanna display when they are in range
 
 	q.updateTopbarAssets = @(__original) function()		// In Vanilla this triggers once per hour
 	{
 		__original();
 
-		local playerTile = this.getPlayer().getTile();
-		local distanceCutoff = ::Hardened.Mod.ModSettings.getSetting("DistanceForLocationName").getValue();
-		if (distanceCutoff <= 0) return;	// Setting this to 0 will save a lot of performance if the player does not want this feature.
+		// Every hour we delete the old NearbyLocation array and gather it again
+		this.m.HD_NearbyLocations = [];
 
-		local allAdditionalType = ::Const.World.LocationType.Lair | ::Const.World.LocationType.Unique | ::Const.World.LocationType.AttachedLocation;
-		local locationTypesToDisplay = 0;
-		if (::Hardened.Mod.ModSettings.getSetting("DisplayCampLocationsNames").getValue()) locationTypesToDisplay += ::Const.World.LocationType.Lair;
-		if (::Hardened.Mod.ModSettings.getSetting("DisplayUniqueLocationsNames").getValue()) locationTypesToDisplay += ::Const.World.LocationType.Unique;
-		if (::Hardened.Mod.ModSettings.getSetting("DisplayAttachedLocationNames").getValue()) locationTypesToDisplay += ::Const.World.LocationType.AttachedLocation;
-
+		local player = this.getPlayer();
+		local interestedTypes = ::Const.World.LocationType.Lair | ::Const.World.LocationType.Unique | ::Const.World.LocationType.AttachedLocation;
 		foreach (location in ::World.EntityManager.getLocations())
 		{
-			if (!location.isLocationType(allAdditionalType)) continue;
+			if (!location.isLocationType(interestedTypes)) continue;
+			if (!location.isVisibleToEntity(player, player.getVisionRadius() + 500)) continue;	// We add a
 
-			if (location.isLocationType(locationTypesToDisplay) && playerTile.getDistanceTo(location.getTile()) <= distanceCutoff)
-			{
-				location.m.TemporarilyShowingName = true;
-				location.setShowName(true);
-			}
-			else
-			{
-				if (location.m.TemporarilyShowingName)
-				{
-					location.m.TemporarilyShowingName = false;
-					location.setShowName(false);
-				}
-			}
+			this.m.HD_NearbyLocations.push(::MSU.asWeakTableRef(location));
 		}
 	}
 
@@ -62,10 +48,24 @@
 		::World.setPlayerVisionRadius(this.getPlayer().getVisionRadius());
 	}
 
+	q.onInit = @(__original) function()
+	{
+		__original();
+		this.m.HD_LocationTypesToDisplay = 0;
+		if (::Hardened.Mod.ModSettings.getSetting("DisplayCampLocationsNames").getValue()) this.m.HD_LocationTypesToDisplay += ::Const.World.LocationType.Lair;
+		if (::Hardened.Mod.ModSettings.getSetting("DisplayUniqueLocationsNames").getValue()) this.m.HD_LocationTypesToDisplay += ::Const.World.LocationType.Unique;
+		if (::Hardened.Mod.ModSettings.getSetting("DisplayAttachedLocationNames").getValue()) this.m.HD_LocationTypesToDisplay += ::Const.World.LocationType.AttachedLocation;
+	}
+
 	q.onUpdate = @(__original) function()
 	{
 		__original();
 		this.updateWaypoint();
+
+		if (!this.isPaused())
+		{
+			this.updateLocationNames();
+		}
 	}
 
 	// This Switcheroo Hook is tricky because Locations will spawn their entire defender lineup during this function if they haven't before.
@@ -110,6 +110,22 @@
 	}
 
 // New Functions
+	q.updateLocationNames <- function()
+	{
+		local player = this.getPlayer();
+		foreach (nearbyLocation in this.m.HD_NearbyLocations)
+		{
+			if (nearbyLocation.isLocationType(this.m.HD_LocationTypesToDisplay) && player.isAbleToSee(nearbyLocation))
+			{
+				nearbyLocation.setShowName(true);
+			}
+			else
+			{
+				nearbyLocation.setShowName(false);
+			}
+		}
+	}
+
 	q.updateWaypoint <- function()
 	{
 		if (!::Hardened.Mod.ModSettings.getSetting("DisplayWaypoint").getValue()) return;
