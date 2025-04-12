@@ -34,7 +34,7 @@
 	}
 
 	// This is often times not called, if no corpse was generated, but that is a vanilla issue and not our concern here
-	q.drop = @(__original) function( _tile )
+	q.drop = @(__original) function( _tile = null )
 	{
 		// This is a replica of the vanilla function for deciding, whether this is allowed to be dropped at all
 		local isPlayer = this.m.LastEquippedByFaction == ::Const.Faction.Player || this.getContainer() != null && this.getContainer().getActor() != null && !this.getContainer().getActor().isNull() && this.isKindOf(this.getContainer().getActor().get(), "player");
