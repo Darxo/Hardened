@@ -15,6 +15,7 @@
 
 	qolWorldPage.addBooleanSetting("DisplayUniqueLocationsNames", true, "Display Unique Location Names", "Unique display their name to you while you are near them.");
 	qolWorldPage.addBooleanSetting("DisplayCampLocationsNames", true, "Display Lair Location Names", "Lairs display their name to you while you are near them.");
+	qolWorldPage.addBooleanSetting("DisplayLocationNumerals", true, "Display Numerals for Location", "Locations display the Numerals for their Troops if they are known to you.");
 	qolWorldPage.addBooleanSetting("DisplayAttachedLocationNames", false, "Display Attached Location Names", "Attached Location display their name to you while you are near them.");
 
 	qolWorldPage.addDivider("MiscDivider3");
