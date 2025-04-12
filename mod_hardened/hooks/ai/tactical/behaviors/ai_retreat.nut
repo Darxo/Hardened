@@ -26,4 +26,15 @@
 
 		return ret;
 	}
+
+	q.isAtMapBorder = @(__original) function( _entity )
+	{
+		// We hijack the isAtMapBorder function to introduce a new condition
+		//	You can no longer retreat, while in zone of control of another character
+		if (_entity.getTile().hasZoneOfControlOtherThan(_entity.getAlliedFactions())) return false;
+
+		if (!__original(_entity)) return false;
+
+		return true;
+	}
 });
