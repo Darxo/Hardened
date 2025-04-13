@@ -16,16 +16,14 @@
 			return __original(_killer, _skill, _fatalityType, _silent);
 		}
 
-		// We allow nachzehrer to consider swalling even if that is the last enemy they know of by tricking vanilla in always thinking there are 2 known enemies in this situation
+		// We make sure that isAutoRetreat always returns true, so that the lastCombatResult is not set to EnemyDestroyed by vanilla during the kill function
 		local mockObject = ::Hardened.mockFunction(::Tactical.State, "isAutoRetreat", function() {
-			if (::Hardened.getFunctionCaller(1) == "kill")	// 1 as argument because within mockFunctions, there is an additional function inbetween us and our caller
-			{
-				return { value = true };		// The only important thing here is that the returned array has more than 1 element
-			}
+			return { value = true };
 		});
 
 		__original(_killer, _skill, _fatalityType, _silent);
-		mockObject.cleanup();	// We clean up our mock function now
+
+		mockObject.cleanup();
 
 		// If a kill happens within a kill (e.g. Flying Skull kills another Flying Skull), then multiple Mocks happen
 		//  and only the root kill caller, gets an honest read on "isAutoRetreat". Only he is able to actually setLastCombatResult correctly
