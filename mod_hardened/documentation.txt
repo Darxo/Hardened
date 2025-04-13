@@ -35,6 +35,10 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.37.1
+	- Fix hold movement setting not working correctly
+	- Fix humans not being killable via dev console command
+
 0.37.0
 	- Characters can no longer retreat from the battle when standing on a border tile, if they are engaged in melee
 	- **Rush of Battle** is completely reworked. While adjacent to an ally and an enemy, gain 20% more Injury Threshold per adjacent enemy and Skills cost 10% less Fatigue per adjacent ally
@@ -43,7 +47,7 @@ This will unbrick your end-of-combat screen, if it doesnt show
 	- **Serpent** can now hook even while rooted. They can no longer hook while engaged in melee
 	- The **Barbarian King** and **Find Location** contracts no longer spawn a hint directly after loading and display the direction information of your last hint in your bullet points
 	- Remove distance setting for location name and instead show their names only while the player can currently see them
-	- Add setting (on) for displaying numerals behind location names, similar to how
+	- Add setting (on) for displaying numerals behind location names, similar to world parties
 	- Print hitpoint damage log, when an attack kills the target and include the hitpoints of the target before the kill
 	- Add Settings to immediately stop the player movement halfway through, when it reveals an enemy (on) or an ally (off)
 	- Weapons now longer drop to the ground when their condition goes to 0. Instead they drop when the condition is lowered, while it was at 0 condition
