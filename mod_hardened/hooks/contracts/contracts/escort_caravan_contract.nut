@@ -86,7 +86,6 @@
 						if (oldAfterDeploymentCallback != null) oldAfterDeploymentCallback();
 						foreach (undeadEntity in ::Tactical.Entities.getInstancesOfFaction(::World.FactionManager.getFactionOfType(::Const.FactionType.Undead).getID()))
 						{
-							::logWarning("Hardened: add hd_lying_in_ambush_effect to " + undeadEntity.getName());
 							local lyingInAmbush = ::new("scripts/skills/effects/hd_lying_in_ambush_effect");
 							lyingInAmbush.m.DurationInRounds = 2;
 							lyingInAmbush.m.TileAlertRadius = 0;

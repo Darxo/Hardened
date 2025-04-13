@@ -26,6 +26,7 @@
 
 // New Functions
 	// Determines, whether this character will resurrect as a zombie
+	// _killer may be null
 	q.isTurningIntoZombie <- function( _killer, _corpse, _fatalityType )
 	{
 		if (::Tactical.State.isScenarioMode()) return false;

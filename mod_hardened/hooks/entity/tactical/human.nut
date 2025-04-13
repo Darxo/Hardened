@@ -35,7 +35,7 @@
 		// We now require the killer to be a zombie or undead for the resurrection to happen
 		if (!__original(_killer, _corpse, _fatalityType)) return false;
 
-		::logWarning("Hardened: _killer.getFaction() " + _killer.getFaction() + " ::World.FactionManager.getFaction(_killer.getFaction()) " + ::World.FactionManager.getFaction(_killer.getFaction()));
+		if (::MSU.isNull(_killer)) return false;
 		local killerFaction = ::World.FactionManager.getFaction(_killer.getFaction());
 		local killerFactionType = killerFaction == null ? null : killerFaction.getType();	// The first three factionIDs do not have a faction object behind them
 		return (killerFactionType == ::Const.FactionType.Zombies || killerFactionType == ::Const.FactionType.Undead);
