@@ -87,6 +87,18 @@
 	qolCombatPage.addBooleanSetting("HoldOnDiscoverHostile", true, "Hold on Hostile Discovery", "Whenever you discover a hostile entity during your movement in combat, any further movement will be cancelled.");
 	qolCombatPage.addBooleanSetting("HoldOnDiscoverAlly", false, "Hold on Ally Discovery", "Whenever you discover an ally entity during your movement in combat, any further movement will be cancelled.");
 
+	qolCombatPage.addBooleanSetting("HideTileTooltipsDuringNPCTurn", true, "Hide Tooltips during NPC Turn", "Tile and Character tooltips will not show up, while it is not your turn.");
+
+	qolCombatPage.addBooleanSetting("CombineCombatSkillLogs", true, "Combine Combat Logs of Skills", "Combat Logs, which are the result of the same skill execution no longer produce regular newlines.");
+
+	qolCombatPage.addRangeSetting("MouseWheelZoomMultiplier",0.1 ,0.05 , 0.4, 0.01, "Mouse Wheel Zoom Multiplier", "This controls how fast your mouse wheel will scroll. 0.3 is the vanilla default value.");
+
+	qolCombatPage.addDivider("MiscDivider1");
+
+	qolCombatPage.addBooleanSetting("UseSoundEngineFix", true, "Use Sound Engine Fix", "Rework directional sound during combat to be according to the real direction where the sound is coming from.");
+
+	qolCombatPage.addDivider("MiscDivider2");
+
 	local continuousWaitKeybindSetting = qolCombatPage.addBooleanSetting("ContinuousWaitKeybind", false , "Continuous Wait Keybind", "While active it is enough to hold down your 'wait' Keybind in order to wait so you can more easily wait with multiple brothers.");
 	local continuousWaitKeybindCallback = function( _oldValue )
 	{
@@ -101,15 +113,4 @@
 	};
 	continuousWaitKeybindSetting.addAfterChangeCallback(continuousWaitKeybindCallback);
 
-	qolCombatPage.addDivider("MiscDivider1");
-
-	qolCombatPage.addBooleanSetting("HideTileTooltipsDuringNPCTurn", true, "Hide Tooltips during NPC Turn", "Tile and Character tooltips will not show up, while it is not your turn.");
-
-	qolCombatPage.addBooleanSetting("CombineCombatSkillLogs", true, "Combine Combat Logs of Skills", "Combat Logs, which are the result of the same skill execution no longer produce regular newlines.");
-
-	qolCombatPage.addRangeSetting("MouseWheelZoomMultiplier",0.1 ,0.05 , 0.4, 0.01, "Mouse Wheel Zoom Multiplier", "This controls how fast your mouse wheel will scroll. 0.3 is the vanilla default value.");
-
-	qolCombatPage.addDivider("MiscDivider2");
-
-	qolCombatPage.addBooleanSetting("UseSoundEngineFix", true, "Use Sound Engine Fix", "Rework directional sound during combat to be according to the real direction where the sound is coming from.");
 }
