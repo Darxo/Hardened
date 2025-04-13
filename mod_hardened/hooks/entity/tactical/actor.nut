@@ -44,6 +44,20 @@
 		this.getSkills().add(::new("scripts/skills/effects/hd_wait_effect"));
 	}
 
+	q.onDamageReceived = @(__original) function( _attacker, _skill, _hitInfo )
+	{
+		local oldHitpoints = this.getHitpoints();
+		local mockObject = ::Hardened.mockFunction(this, "kill", function(_killer = null, _skill = null, _fatalityType = ::Const.FatalityType.None, _silent = false) {
+			// Vanilla Fix: Vanilla never prints a hitpoint damage combat log, when the attack kills the target, so we do that here now
+			::Tactical.EventLog.logEx(format("%s\'s %s (%i) is hit for %i damage", ::Const.UI.getColorizedEntityName(this), ::Const.Strings.BodyPartName[_hitInfo.BodyPart], oldHitpoints, ::Math.floor(_hitInfo.DamageInflictedHitpoints)));
+			return { done = true };
+		});
+
+		__original(_attacker, _skill, _hitInfo);
+
+		mockObject.cleanup();
+	}
+
 	q.playIdleSound = @(__original) function()
 	{
 		// Characters who are off-screen no longer produce idle sounds. However they will still be randomly selected as targets for making the idle sound.
