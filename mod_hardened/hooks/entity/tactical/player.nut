@@ -76,8 +76,13 @@
 		if (!this.isPlayerControlled()) return __original(_tile, _levelDifference);	// Some player character might briefly be autocontrolled or have switched factions
 
 		// Switcheroo to prevent the vanilla implementation from calling updateVisibility for the next tile, before we are actually there
+		local oldVision = 1;
+		local oldFaction = 1;
 		local oldUpdateVisibility = this.updateVisibility;
-		this.updateVisibility = function( _tile, _vision, _faction ) {};
+		this.updateVisibility = function( _tile, _vision, _faction ) {
+			oldVision = _vision;
+			oldFaction = _faction;
+		};
 
 		local ret = __original(_tile, _levelDifference);	// onMovementStep for skills will be triggered by this call
 
@@ -88,7 +93,7 @@
 			if (this.m.HD_LastSteppedTile != null)
 			{
 				this.m.HD_HasDiscoveredSomething = false;
-				this.updateVisibility(this.m.HD_LastSteppedTile, _vision, _faction);	// We update the visibility at the current virtual tile we are standing at
+				this.updateVisibility(this.m.HD_LastSteppedTile, oldVision, oldFaction);	// We update the visibility at the current virtual tile we are standing at
 				if (this.m.HD_HasDiscoveredSomething)	// we discovered someone: We revert the movement cost and stop our movement immediately
 				{
 					this.onMovementUndo( _tile, _levelDifference );
