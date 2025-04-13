@@ -1,4 +1,11 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/player", function(q) {
+	// Private
+	// Is set to true, when any hostile is discovered, while we have the "Cancel on Hostile Discovery" setting active
+	// Is set to true, when any ally is discovered, while we have the "Cancel on Ally Discovery" setting active
+	q.m.HD_HasDiscoveredSomething <- false;
+
+	q.m.HD_LastSteppedTile <- null;	// Reference to the last tile that we virtually (not really) stepped on in a chain of onMovementStep. Is set to null on onMOvementFinish
+
 	q.onInit = @(__original) function()
 	{
 		__original();
@@ -45,6 +52,51 @@
 				attributeValue + (::Const.AttributesLevelUp[attribute].Min + 1) * levelUpsRemaining,
 				attributeValue + (::Const.AttributesLevelUp[attribute].Max + 1) * levelUpsRemaining
 			];
+		}
+
+		return ret;
+	}
+
+	q.onMovementFinish = @(__original) function( _tile )
+	{
+		__original(_tile);
+		if (this.isPlayerControlled())
+		{
+			this.m.HD_LastSteppedTile = null;	// We finished the movement, so we now reset the value of this variable
+		}
+	}
+
+	// MSU hooks this function from actor.nut aswell, but our hook will trigger earlier than theirs
+	q.onMovementStep = @(__original) function( _tile, _levelDifference )
+	{
+		// Goal:
+		// 	1. We no longer reveal tiles at the destination of a Step, before we are actually there. Instead we reveal the tiles at the position we were virtually at
+		//	2. When we reveal something notable, we abort any further movement
+
+		if (!this.isPlayerControlled()) return __original(_tile, _levelDifference);	// Some player character might briefly be autocontrolled or have switched factions
+
+		// Switcheroo to prevent the vanilla implementation from calling updateVisibility for the next tile, before we are actually there
+		local oldUpdateVisibility = this.updateVisibility;
+		this.updateVisibility = function( _tile, _vision, _faction ) {};
+
+		local ret = __original(_tile, _levelDifference);	// onMovementStep for skills will be triggered by this call
+
+		this.updateVisibility = oldUpdateVisibility;
+
+		if (ret)
+		{
+			if (this.m.HD_LastSteppedTile != null)
+			{
+				this.m.HD_HasDiscoveredSomething = false;
+				this.updateVisibility(this.m.HD_LastSteppedTile, _vision, _faction);	// We update the visibility at the current virtual tile we are standing at
+				if (this.m.HD_HasDiscoveredSomething)	// we discovered someone: We revert the movement cost and stop our movement immediately
+				{
+					this.onMovementUndo( _tile, _levelDifference );
+					return false;
+				}
+			}
+
+			this.m.HD_LastSteppedTile = _tile;
 		}
 
 		return ret;

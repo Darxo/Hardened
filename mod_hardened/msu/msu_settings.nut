@@ -84,6 +84,9 @@
 {
 	local qolCombatPage = ::Hardened.Mod.ModSettings.addPage("Combat (QoL)");
 
+	qolCombatPage.addBooleanSetting("HoldOnDiscoverHostile", true, "Hold on Hostile Discovery", "Whenever you discover a hostile entity during your movement in combat, any further movement will be cancelled.");
+	qolCombatPage.addBooleanSetting("HoldOnDiscoverAlly", false, "Hold on Ally Discovery", "Whenever you discover an ally entity during your movement in combat, any further movement will be cancelled.");
+
 	local continuousWaitKeybindSetting = qolCombatPage.addBooleanSetting("ContinuousWaitKeybind", false , "Continuous Wait Keybind", "While active it is enough to hold down your 'wait' Keybind in order to wait so you can more easily wait with multiple brothers.");
 	local continuousWaitKeybindCallback = function( _oldValue )
 	{

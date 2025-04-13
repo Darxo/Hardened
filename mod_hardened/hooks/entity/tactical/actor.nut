@@ -1,8 +1,31 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/actor", function(q) {
+	// Private
+	q.m.HD_IsDiscovered <- false;	// Is true, when setDiscovered(true) has been called on us. Is set to false at the start of every round or when this actor steps into a tile not visible to the player
+
 	q.onInit = @(__original) function()
 	{
 		__original();
 		this.getSkills().add(::new("scripts/skills/special/hd_direct_damage_limiter"));
+
+		// This is one of the few function given to entities somewhere after create() but before onInit()
+		local oldSetDiscovered = this.setDiscovered;
+		this.setDiscovered = function( _b )
+		{
+			if (_b && !this.m.HD_IsDiscovered && ::Tactical.isActive())		// We must check for tactical to be active, because vanilla also calls setDiscovered(true) during initialization of a player object
+			{
+				this.m.HD_IsDiscovered = true;	// We use this variable, so that we don't trigger the following behavior repeatidly on already discovered entities
+				local activeEntity = ::Tactical.TurnSequenceBar.getActiveEntity();
+				if (::MSU.isKindOf(activeEntity, "player"))
+				{
+					if (this.isAlliedWithPlayer() && ::Hardened.Mod.ModSettings.getSetting("HoldOnDiscoverAlly").getValue())
+						activeEntity.m.HD_HasDiscoveredSomething = true;
+					if (!this.isAlliedWithPlayer() && ::Hardened.Mod.ModSettings.getSetting("HoldOnDiscoverHostile").getValue())
+						activeEntity.m.HD_HasDiscoveredSomething = true;
+				}
+			}
+
+			oldSetDiscovered(_b);
+		}
 	}
 
 	// Vanilla Fix: We prevent a dying NPC from flipping the setLastCombatResult, unless they were the last enemy to die
@@ -84,6 +107,8 @@
 			local camera = ::Tactical.getCamera();
 			camera.Level = camera.getBestLevelForTile(_tile);	// Todo: Setting for this?
 		}
+
+		if (!_tile.IsVisibleForPlayer) this.m.HD_IsDiscovered = false;
 	}
 
 	q.onOtherActorDeath = @(__original) function( _killer, _victim, _skill )
@@ -122,6 +147,12 @@
 		__original(_actor);
 
 		curProp.IsAffectedByFleeingAllies = oldIsAffectedByFleeingAllies;
+	}
+
+	q.onRoundStart = @(__original) function()
+	{
+		__original();
+		this.m.HD_IsDiscovered = false;
 	}
 
 	q.onTurnResumed = @(__original) function()
