@@ -55,4 +55,20 @@
 			this.getLabel("name").Text = this.getName();
 		}
 	}
+
+	q.onSpawned = @(__original) function()
+	{
+		// We interecept the (hopefully) only rand roll using 20 and 100 as its arguments, and make it instead become a roll from 1 to 100
+		// That will increase the chance for named weapons to be chosen to 40% and reduce the chance of any other type down to 20%
+		local mockObjectRand = ::Hardened.mockFunction(::Math, "rand", function(...) {
+			if (vargv.len() == 2 && vargv[0] == 20 && vargv[1] == 100)
+			{
+				return { done = true, value = ::Math.rand(1, 100) };
+			}
+		});
+
+		__original();
+
+		mockObjectRand.cleanup();
+	}
 });
