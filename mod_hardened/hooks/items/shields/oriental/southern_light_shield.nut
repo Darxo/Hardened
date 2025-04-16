@@ -2,6 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.Name = "Adarga Shield";	// In Refoged this is "Adarga"
 		recordReforgedCondition();
 
 	// Vanilla Stats
