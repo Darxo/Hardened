@@ -21,7 +21,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 
 ### Reach Rework
 *Forget everything you know about the Reforged Reach Mechanic*
-- Every Character has a Reach value. This is usually 0 for those who can wield Weapons
+- Every Character has a Reach value. This is usually 0 for those who can wield Weapons. All other characters have a value from 1-7 depending on their size
 - Every Weapon has a Reach value. This is usually 0 for ranged Weapons
 - Some skills or perks may increase or reduce the Reach of a character
 - **Reach** is 0 while the character does not emit a zone of control (e.g. stunned, fleeing, wielding ranged weapon)
@@ -69,6 +69,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 
 ### Crowded
 
+- Enemies with higher Reach now also count for this effect
 - **Crowded** debuff for long distance melee attacks now also applies -5% chance to hit for every adjacent ally, ignoring the first two allies
 - As a consequence of the **Crowded** mechanic, 2-tile melee attacks lose the penalty to attack adjacent targets
 
@@ -122,7 +123,6 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 
 ### Other Major Changes
 
-- Loot Allocation is reworked: If your company dealt at least 50% of the total damage received by the target, you receive their loot, no matter who killed it. Otherwise you receive no loot from it
 - **Night Effect** now grants -3 Vision (down from -2)
 - Disable **Veteran Perks**. Your brothers no longer gain perk points after Level 11
 - When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. Each brother can only receive up to 10% of this shared experience.
@@ -155,8 +155,9 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - **Sword Thrust** now has -10% additional Hitchance (up from -20%)
 - **Take Aim** (granted by **Crossbow and Firearm Mastery**) now costs 4 Action Points (up from 2) and 20 Fatigue (down from 25)
 - **Throw Axe** now has a 50% chance to decapitate (up from 0%) and 25% chance to disembowel (up from 0%)
+- **Throw Net** no longer requires the targets Base Reach to be below a certain value
 
-Skill nerfs as a result of the Reach system:
+Skill nerfs as a result of the Reach system:j
 - **Gash** now has 0% additional Hitchance (down from 5%)
 - **Hook** now has 0% additional Hitchance (down from 10%)
 - **Impale** now has 0% additional Hitchance (down from 10%)
@@ -237,7 +238,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Onslaught** no longer has a shared cooldown with other brothers who have this perk
 - **Opportunist** is completely reworked. It now grants throwing attacks -1 Action Point cost per tile moved, until you use a throwing attack, wait or end your turn. Moving on all terrain costs -2 Fatigue, just like the **Athletic** Trait
 - **Phalanx** is completely reworked. It grants +1 Reach for every adjacent ally with a shield. **Shieldwall** no longer ends, while an adjacent brother also has **Shieldwall** active
-- **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. It also reduces your armor damage taken by a percentage equal to 40% of your current Initiative (up to a maximum of 40%)
+- **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. You take 2% less Armor Damage from Attacks for every 5 Initiative you have, up to a maximum of 40%.
 - **Polearm Mastery** no longer reduces the Action Point cost of 2 handed reach weapons by 1. It now grants +15% chance to hit for **Repel** and **Hook**.
 - **Professional** now reduces the experience gained by 5%
 - **Quickhands** can now also swap two two-handed weapons
@@ -338,7 +339,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Player Banner** now grants -5 to Ranged Defense and it comes with **Repel**
 - **Poleflail** now has 5 Reach (down from 6)
 - **Reinforced Wooden Poleflail** now has 5 Reach (down from 6)
-- **Spetum** now has a Reach of 7 (up from 6) and costs 900 crowns (up from 750)
+- **Spetum** now has a Reach of 7 (up from 6) and value of 750 (down from 1050). The named variant now has a value of 2800 (down from 3500)
 - **Spiked Impaler** now has +2 Fatigue Cost for its weapon skills
 - **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and a value of 600 (up from 400)
 - **Three-Headed Flail** now has 3 Reach (down from 4)
@@ -347,13 +348,14 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Two-handed Flail** now has 4 Reach (down from 5)
 - **Two-handed Wooden Flail** now has 4 Reach (down from 5)
 - **Warbow** now has a Weight of 8 (up from 6) and +2 Fatigue Cost for its weapon skills
-- **Warfork** now deals 90% Armor Damage (down from 100%) and costs 550 Crowns (up from 400)
+- **Warfork** now has a value of 400 (down from 600)
 - **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
 - **Zweihander** now has 6 Reach (down from 7)
 
 ### Other Items
 
 - **Adorned Mail Shirt** now has a Weight of 16 (up from 11), Condition of 150 (up from 130) and Value of 1050 (up from 800); just like in Vanilla
+- **Adarga** is now called **Adarge Shield** (just like in Vanilla)
 - **Bandage** now costs 40 crowns (up from 25)
 - **Gun Powder** now costs 2 **Ammunition Supply** each (up from 1)
 - **Buckler** appear less common in big settlements
@@ -362,15 +364,11 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Fermented Unhold Heart** now has an expiry date of 40 days (up from 20)
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 1000 Value (up from 200) and grants 10 Resolve (up from 5)
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**
+- **Sipar** is now called **Sipar Shield** (just like in Vanilla)
 - **Smoke Bomb** now costs 400 Crowns (up from 275). Smoke now lasts 2 Rounds (up from 1)
 - **Wooden Shields** appear less common in marketplaces
 - Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and **Large Powder Bags** weigh 4.
 - The value of almost all other non-named shields is increased by 50%-100%
-- Small civilian settlements now sell **Old Wooden Shields**
-- Big non-southern settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
-- Weaponsmiths and Armorsmiths now sell **Armor Parts** with a price multiplier of 1.25
-- Fletcher now sell roughly 5 times as many **Throwing Spears** but with a price multiplier of 1.5 (up from 1.0)
-- Nets sold by Fletcher now have a price multiplier of 2.0 (down from 3.0)
 
 ### Traits
 
@@ -466,7 +464,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
   - **Medium Ifrits** now have 110 Hitpoints (down from 220) and 220 Armor (up from 110). They lose 10 Damage and gain **Marksmanship**
   - **Large Ifrits** now have 220 Hitpoints (down from 440) and 330 Armor (up from 110). They lose 10 Damage and gain **Marksmanship**
 - Lindwurms Head and Tail no longer share hitpoints and effects but killing the Tail will no longer kill the Head
-  - Lindwurm Heads now have 1000 Hitpoints (down from 1100), 20 Melee Defense (up from 10) and gain **Exude Confidence**. They lose **Survival Instinct**
+  - Lindwurm Heads now have 1000 Hitpoints (down from 1100), 20 Melee Defense (up from 10) and gain **Exude Confidence**. They lose **Formidable Approach**
   - The Lindwurm Tail still inherits most of the stats from the head but has 50% less Hitpoints and Resolve and 50% more Melee Defense. They lose **Fearsome**
   - The Lindwurm Tail can now be stunned and netted but those effects are removed whenever the Head moves away
 - All **Nachzehrer** lose **Deep Cuts**
@@ -532,10 +530,17 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Try out now costs 100% more. You can now dismiss recruits after you tried them out to make room for new recruits
 - You can now get up to 6 Tavern Rumors every cycle (up from 4)
 - Tavern Rumors now have a linearly scaling cost. Each paid rumor costs an amount based on the standard (vanilla) rumor price, multiplied by the number of the paid rumor you are about to buy
+- Named weapons now have a 40% chance to be the chosen item type for camps (up from 25,9%). Named shields, helmets and armor now have a 20% chance to be chosen (down from 24,7%)
 - World Parties are no longer stunned, when you cancel the combat dialog with them
 - At the start of each new campaign ~5 additional small bandit camps are spawned in the world
 - The legendary Location **Ancient Spire** now reveals an area of 3000 (up from 1900)
 - Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken
+- Armorsmiths will now sometimes sell Named Shields
+- Small civilian settlements now sell **Old Wooden Shields**
+- Big non-southern settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
+- Weaponsmiths and Armorsmiths now sell **Armor Parts** with a price multiplier of 1.25
+- Fletcher now sell roughly 5 times as many **Throwing Spears** but with a price multiplier of 1.5 (up from 1.0)
+- Nets sold by Fletcher now have a price multiplier of 2.0 (down from 3.0)
 
 ### Contracts
 

@@ -35,6 +35,20 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.38.0
+	- Make Hardened compatible with Reforged 0.7.3
+	- **Steady Brace** no longer appears on NPCs
+	- **Throw Net** no longer requires the targets Base Reach to be below a certain value
+	- Named weapons now have a 40% chance to be chosen item type for camps (up from 25,9%). Named shields, helmets and armor now have a 20% chance to be chosen (down from 24,7%)
+	- Armorsmiths will now sometimes sell Named shields
+	- Lindwurms lose **Formidable Approach**
+	- Named Spetums now have a value of 2800 (down from 3500), just like in Vanilla
+	- Spetums now have a value of 750 (down from 900), just like in Vanilla
+	- Warforks now have a value of 400 (down from 550), just like in Vanilla
+	- Warforks now have 100% Armor Penetration (up from 90%), just like in Reforged
+	- Revert names of southern shields to how they are in Vanilla, by including the term "Shield" again
+	- Remove hidden **Crossbow and Firearm Mastery** discount for crossbow reload
+
 0.37.1
 	- Fix hold movement setting not working correctly
 	- Fix humans not being killable via dev console command
