@@ -1,6 +1,9 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_crossbow", function(q) {
 	q.m.RequiredWeaponType <- ::Const.Items.WeaponType.Crossbow | ::Const.Items.WeaponType.Firearm;
 
+	// Overwrite, because we no longer grant an action point discount
+	q.onAfterUpdate = @() function( _properties ) { }
+
 	q.onUpdate = @(__original) function( _properties )
 	{
 		__original(_properties);
