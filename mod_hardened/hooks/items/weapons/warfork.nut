@@ -3,6 +3,5 @@
 	{
 		__original();
 		this.m.Value = 400;		// In Reforged this is 600, In Vanilla this is 400
-		this.m.ArmorDamageMult = 0.9;	// In Vanilla this is 1.0
 	}
 });
