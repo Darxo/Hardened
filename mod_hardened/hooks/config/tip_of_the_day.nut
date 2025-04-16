@@ -8,7 +8,6 @@
 	"Hardened: You can retreat individual brothers from a battle if they stand on a border tile",
 	"Hardened: Camps do not show defender during night, unless you have the \'Lookout\' follower",
 	"Hardened: A lot of the UI changes can be turned off in the mod settings",
-	"Hardened: Enemies only drop loot for you, if your company has dealt 50% or more damage of the total damage they received",
 	"Hardened: Corpses will delay their reanimation if the character on top of them is immune to knockback",
 ]);
 

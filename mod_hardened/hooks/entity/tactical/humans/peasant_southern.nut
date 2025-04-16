@@ -11,7 +11,7 @@
 	{
 		local ret = __original(_killer, _loot);
 
-		if (this.isLootAssignedToPlayer(_killer))
+		if (this.RF_canDropLootForPlayer(_killer))
 		{
 			local roll = ::Math.rand(1, 100);
 			if (roll == 1)	// Jackpot - one in a hundred for a big item

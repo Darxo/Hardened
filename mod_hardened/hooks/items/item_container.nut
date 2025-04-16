@@ -3,12 +3,6 @@
 	q.m.UseCachedActionCost <- false;
 	q.m.CachedSwapActionCost <- null;	// We cache the last fetched action point cost in this variable instead of recalculating it when paying the action cost
 
-	// Overwrite, because we implement our own condition for when loot may drops out of the item_container
-	q.canDropItems = @() function( _killer )
-	{
-		return this.getActor().isLootAssignedToPlayer(_killer);
-	}
-
 	q.getActionCost = @(__original) function( _items )
 	{
 		if (this.m.UseCachedActionCost && this.m.CachedSwapActionCost != null)

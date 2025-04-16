@@ -127,14 +127,6 @@
 		return ::Tactical.isActive() && ::MSU.Utils.hasState("tactical_state") && ::Tactical.TurnSequenceBar.isActiveEntity(this);
 	}
 
-	// Helper function to determine, whether the loot of a character belongs to the player
-	// Note that some loot will always drop, regardless of who did the kill (e.g. ItemType.Legendary which are changeable during battle)
-	q.isLootAssignedToPlayer <- function( _killer )
-	{
-		// This is the standard vanilla implementation
-		return (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals);
-	}
-
 // New generic functions
 	/*
 	Try to recover up to _amount Action Points
