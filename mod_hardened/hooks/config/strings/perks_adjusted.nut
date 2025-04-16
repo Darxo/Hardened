@@ -51,7 +51,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Take " + ::MSU.Text.colorPositive("1%") + " less Armor Damage for every " + ::MSU.Text.colorPositive("20") + " current combined Body Armor and Helmet condition",
+					"Take " + ::MSU.Text.colorPositive("1%") + " less Armor Damage from Attacks for every " + ::MSU.Text.colorPositive("20") + " current combined Body Armor and Helmet condition",
 				],
 			}],
 		}),
@@ -1044,7 +1044,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"The [Knock Back|Skill+knock_back] skill gains " + ::MSU.Text.colorPositive("+15%") + " [chance to hit|Concept.Hitchance] and [staggers|Skill+staggered_effect] the target on a hit",
+						"[Knock Back|Skill+knock_back] gains " + ::MSU.Text.colorPositive("+15%") + " [Hitchance|Concept.Hitchance] and [staggers|Skill+staggered_effect] the target on a hit",
 					],
 				},
 				{
@@ -1165,7 +1165,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Take up to " + ::MSU.Text.colorPositive("60%") + " less [Armor Penetration|Concept.ArmorPenetration] Damage from attacks. Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each [Weight|Concept.Weight] on your Body Armor and Helmet combined",
-					"Take " + ::MSU.Text.colorPositive("2%") + " less Armor Damage from attacks for every " + ::MSU.Text.colorPositive("5") + " [Initiative|Concept.Initiative] you have, up to a maximum of " + ::MSU.Text.colorPositive("40%"),
+					"Take " + ::MSU.Text.colorPositive("2%") + " less Armor Damage from Attacks for every " + ::MSU.Text.colorPositive("5") + " [Initiative|Concept.Initiative] you have, up to a maximum of " + ::MSU.Text.colorPositive("40%"),
 				],
 			}],
 		}),
