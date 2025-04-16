@@ -4,7 +4,7 @@
 		switch (_collection.getID())
 		{
 			case "pgc.rf_weapon":
-				return _collection.getMin() + 1;
+				return _collection.getMin() + 1;	// In Reforged this is getMin() + 2
 		}
 		return __original(_collection);
 	}

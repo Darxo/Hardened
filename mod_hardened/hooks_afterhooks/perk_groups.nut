@@ -131,7 +131,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		local pgSoldierGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_soldier");
 		pgSoldierGroup.addPerk("perk.rally_the_troops", 3);		// Add Rally the Troops into the Tier 3
 
-		// Overwrite, because we remove the guaranteed "Professional" and turn guaranteed "Trained" into a 3x multiplier
+		// Overwrite, because we remove the guaranteed "Professional" and turn guaranteed "Trained" into a 2.5x multiplier
 		pgSoldierGroup.getPerkGroupMultiplier = function( _groupID, _perkTree )
 		{
 			switch (_groupID)
