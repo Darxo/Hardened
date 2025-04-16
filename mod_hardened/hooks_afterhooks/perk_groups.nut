@@ -107,6 +107,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	{	// Militia Group
 		local pgMilitia = ::DynamicPerks.PerkGroups.findById("pg.rf_militia");
 		changePerkTier(pgMilitia, "perk.rf_phalanx", 3);			// Move "Phalanx" to Tier 3 (up from Tier 1)
+		pgMilitia.addPerk("perk.overwhelm", 6);		// Add Overwhelm into the Tier 6
 	}
 
 	{	// Net Group
