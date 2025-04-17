@@ -115,6 +115,8 @@
 		local player = this.getPlayer();
 		foreach (nearbyLocation in this.m.HD_NearbyLocations)
 		{
+			if (::MSU.isNull(nearbyLocation)) continue;	// Locations destroyed by the player would otherwise cause logerrors
+
 			if (nearbyLocation.isLocationType(this.m.HD_LocationTypesToDisplay) && player.isAbleToSee(nearbyLocation))
 			{
 				nearbyLocation.setShowName(true);
