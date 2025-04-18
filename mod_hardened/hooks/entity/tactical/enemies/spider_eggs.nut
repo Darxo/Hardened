@@ -11,6 +11,12 @@
 		this.getSkills().add(::new("scripts/skills/effects/hd_headless_effect"));
 	}
 
+	// Overwrite, because damage is now redirected/handled by hd_headless_effect
+	q.onDamageReceived = @() function( _attacker, _skill, _hitInfo )
+	{
+		return this.actor.onDamageReceived(_attacker, _skill, _hitInfo);
+	}
+
 	// Vanilla Fix: We spawn spiders at the start of the Round (after checkEnemyRetreating())
 	// instead of via Tine.scheduleEvent which does it who knows when - probably too early
 	q.onRoundStart = @(__original) function()

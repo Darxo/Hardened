@@ -22,6 +22,12 @@
 		this.onSizeChanged();
 	}
 
+	// Overwrite, because damage is now redirected/handled by hd_headless_effect
+	q.onDamageReceived = @() function( _attacker, _skill, _hitInfo )
+	{
+		return this.actor.onDamageReceived(_attacker, _skill, _hitInfo);
+	}
+
 // New Functions
 	// This is called once after and whenever this character grows or shrinks
 	q.onSizeChanged <- function()

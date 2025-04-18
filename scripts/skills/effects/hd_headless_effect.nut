@@ -36,8 +36,14 @@ this.hd_headless_effect <- ::inherit("scripts/skills/skill", {
 			_skill.m.ChanceSmash = 0;
 		}
 
-		// For safety we include this still. Some damage sources might want to force the head as the target
-		_hitInfo.BodyPart = ::Const.BodyPart.Body;
+		// Some damage sources might want to force the head as the target (e.g. split man)
+		if (_hitInfo.BodyPart == ::Const.BodyPart.Head)
+		{
+			// Ideally we'd void those damage sources but that is not possible this late
+			// Instead we try to make them do nothing, by turning the damage to 0
+			_hitInfo.DamageRegular = 0;
+			_hitInfo.DamageArmor = 0;
+		}
 	}
 
 	function getTooltip()
@@ -48,18 +54,25 @@ this.hd_headless_effect <- ::inherit("scripts/skills/skill", {
 			id = 10,
 			type = "text",
 			icon = "ui/icons/chance_to_hit_head.png",
-			text = "Incoming attack will never hit the head",
+			text = "Incoming attack will never target the head",
 		});
 
 		tooltip.push({
 			id = 11,
+			type = "text",
+			icon = "ui/icons/chance_to_hit_head.png",
+			text = "Lose no hitpoints from damage sources targeting the head",
+		});
+
+		tooltip.push({
+			id = 12,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = ::Reforged.Mod.Tooltips.parseString("Immunne to [Distracted|Skill+distracted_effect]"),
 		});
 
 		tooltip.push({
-			id = 12,
+			id = 13,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = ::Reforged.Mod.Tooltips.parseString("Immunne to [Sleeping|Skill+sleeping_effect]"),

@@ -6,6 +6,12 @@
 		this.getBaseProperties().Hitpoints -= 10;
 	}
 
+	// Overwrite, because damage is now redirected/handled by hd_headless_effect
+	q.onDamageReceived = @() function( _attacker, _skill, _hitInfo )
+	{
+		return this.actor.onDamageReceived(_attacker, _skill, _hitInfo);
+	}
+
 	q.onSpawned = @(__original) function()
 	{
 		__original();
