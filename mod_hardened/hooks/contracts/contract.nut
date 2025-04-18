@@ -35,7 +35,7 @@
 			local oldOption = screen.Options[0].getResult;
 			screen.Options[0].getResult = function()
 			{
-				if (::Hardened.Temp.IsLoading) return oldOption.acall([this]);
+				if (::MSU.Serialization.IsLoading) return oldOption.acall([this]);
 
 				return returnValue;
 			}
@@ -53,7 +53,7 @@
 
 				// While the game is still deserializing, we skip the early execution of the getResult function, because at this time its execution is unstable
 				// For example `this.Contract.getActiveState()` might not have a value yet and still returns `null`
-				if (::Hardened.Temp.IsLoading) return;
+				if (::MSU.Serialization.IsLoading) return;
 
 				returnValue = this.earlyGetResult();
 			}
@@ -81,7 +81,7 @@
 		_screen.Options[0].getResult = function()
 		{
 			local ret = oldGetResult();
-			if (::Hardened.Temp.IsLoading) return ret;
+			if (::MSU.Serialization.IsLoading) return ret;
 
 			if (preponedArguments != null)
 			{
