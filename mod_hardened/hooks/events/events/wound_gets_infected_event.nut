@@ -5,10 +5,14 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Cooldown = 14.0 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 14.0 * this.World.getTime().SecondsPerDay;	// In Vanilla this is 21 days
 	}
 
-	// Overwrite, because we calculate the score a bit differently
+	// Overwrite, because we calculate the score a bit differently:
+	// - This even needs at least 2 brothers in the player roster
+	// - Every injury, that is infectious and not treated, and exists on a brother, who does not already have an infection, will add 'ScorePerInjury' score
+	// - If you have no medicine left, then the score is multiplied with 'ScoreMultWithoutMedicine' add the end
+	// - The target of the infection is any random brother who had an infectious, non-treated injury and no previous infection
 	q.onUpdateScore = @() function()
 	{
 		this.m.Score = 0;	// Vanilla never does this explicitly

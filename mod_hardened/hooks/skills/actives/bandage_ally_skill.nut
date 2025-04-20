@@ -55,7 +55,7 @@
 		local target = _targetTile.getEntity();
 		foreach (skill in target.getSkills().m.Skills)
 		{
-			if (skill.getID() == "effects.bleeding")
+			if (skill.getID() == "effects.bleeding")	// We could also use removeAllByID for the bleed effects, but this is a bit more performant
 			{
 				skill.removeSelf();
 			}
