@@ -11,6 +11,7 @@
 	// Overwrite, because we calculate the score a bit differently
 	q.onUpdateScore = @() function()
 	{
+		this.m.Score = 0;	// Vanilla never does this explicitly
 		local brothers = ::World.getPlayerRoster().getAll();
 		if (brothers.len() < 2) return;		// Same condition as vanilla, because we need two brothers for this event
 
