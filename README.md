@@ -403,10 +403,11 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Enemies
 
-- Introduce a new **Headless** effect, which sets the headarmor to 0 and redirects any attack to hit the body and grants immunity to **Distracted**
+- Introduce a new **Headless** effect. Redirects any attack to hit the body, reduces all other damage targeting the head to 0 (e.g. secondary attack from Split Man), grants immunity to **Distracted** and **Sleep** and sets the headarmor to 0
 	- This effect is given to Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles
-	- Remove the now redundant perk **Steelbrow** from Ifrit, Sapling and Kraken Tentacle
-	- Wiederganger, which receive this effect, lose **Bite** and gain **Zombie Punch**, which is mostly the same, except with no bonus headshot chance
+	- Ifrit, Saplings and Kraken Tentacle lose the now redundant **Steelbrow** perk
+	- Wiederganger, which receive this effect, lose **Bite** and gain **Zombie Punch** (which is mostly the same, except without bonus headshot chance)
+- **Steady Brace** no longer appears on NPCs
 
 **Brigands:**
 - **Scoundrels** no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**. They now spawn with a **Knife** instead of **Dagger**/**Woodcutters Axe**
@@ -646,6 +647,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
 - Every accessory now plays a default sound when moved around in the inventory
+- Roads will no longer be generated directly on the map border
 - Change the inventory icon of the **Witchhunter's Hat** to look exactly like the sprite on the brother
 - Characters under berserker mushroom effect no longer yell when they use ranged attacks
 - Prevent the same random human name (e.g. Leader or Knight) to be generated in succession

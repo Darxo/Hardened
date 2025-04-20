@@ -35,6 +35,12 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.38.1
+	- Damage, which is forced to target the Head of a **Headless** character no longer deals any damage. E.g. the secondary damage portion of **Split Man**
+	- Fix(Vanilla) roads being generated directly on the map border
+	- Fix infected wound event triggering too often
+	- Fix log errors, when destroying a location on the world map
+
 0.38.0
 	- Make Hardened compatible with Reforged 0.7.3
 	- **Steady Brace** no longer appears on NPCs

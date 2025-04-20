@@ -160,15 +160,13 @@
 - Make some contracts pay in items instead of gold (part of the reward). And allow player to negotiate that away
 - Rework this whole Reforged System of any mastery being able to specialize you in skills, that another mastery would provide.
 	- Instead the weapon mastery should be rewritten to only grant effects, that can be applied from within the mastery
-- Make Antidocte use directly on ally, instead of just putting it into their inventory
 - Allow Ironwill potion in the bagslot to be used during battle
 - Spawnposition Framework: several properties, that troops can use to define, where they like to be ideally positioned, within a formation
 	- e.g. Center, Flank, Front, Back, Farback
 - Highlight adjacent opponents, that exert zone of control onto the players tile, whenever a brothers turn starts (option), either forever, or until does does an action
 - Brothers that die during sunken library, when you fail/flee the fight, will be part of the enemy roster during the next time (probably needs savegame )
 - Make it so that characters who move to a certain tile are already considered to be at the tile during the movement (from the character and tile pov)
-
-
+- Make sure, Lindwurms only move into tiles, where the tail can follow
 
 ## Wishlist for Reforged
 - Moddable Perk Descriptions (Currently you have to overwrite the perk descriptions)
@@ -220,7 +218,7 @@
 - Less resurrection but more resolve checks (e.g. around resurrecting zombie)
 	- e.g. resurrection chance = 50%, but them resurrecting causes morale check on adjacent characters?
 
-## GOblin Faction
+## Goblin Faction
 - Goblins have throwable Insect-Nests
 	- Offhand-Item One-Time-Use
 	- Range of 3 tiles
@@ -255,18 +253,10 @@ misses dont build up fatigue on you while waiting
 These Perks (top = higher prio) im still unhappy with and eventually want to adjust
 - Feral Rage
 - Trick Shooter
-- Sanguinary
 - Hip Shooter
 	- Lose 10% Armor Penetration (remove fatigue stuff)
 - Mauler
 	- replace second effect with 15% more damage when hitting body parts that have no remaining armor
-- Rush of Battle
-	- You have 10% more Injury Threshold for each adjacent enemy
-	- While adjacent to an enemy, gain 10% more Resolve for each adjacent ally
-	- While adjacent to an ally, gain 10% more Initiative for each adjacent enemy
-	- Scale with the amount of nearby enemies? e.g. within 2/3 tiles
-	- Gain 10% more Initiative for each enemy within 2 tiles up to a maximum of 50%
-	- Skills cost 5% less fatigue for each enemy within 2 tiles up to a maximum of 25%
 - Power Shot
 - Take Aim Perk (previously Power Shot)
 	- Whenever you wait or end your turn, gain a stacking +5% chance to hit. All bonus is lost, when you attack or move.
@@ -310,10 +300,8 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 
 ## Fix:
 - Add a hitchance tooltip line for the native 25% hitchance bonus that knock back has in vanilla
-- Check whether Great Diviner can even attack at 2 range when fighting him at night (because of new night effect vision change)
 - prevent cheese where you can find out whether someone is hiding in a bush by trying to pathfind into that bush
 	- same thing is true for fog of war
-- Fix contract cheese, where saving/loading instantly reveals destination via event?
 - footprints of barbarian kings dont seem to produce tooltip for lookout
 - keep track of non-spawning ifrits and the loot potentially lost by those an attach it to the remaining one
 - Sometimes on the WOrld map, a single mouse wheel roll zooms the camera completely. Probably has to do with some timer running too far
