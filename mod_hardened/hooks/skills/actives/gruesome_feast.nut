@@ -9,21 +9,19 @@
 		return true;
 	}
 
-// Hardened Functions
-	// If _user is evaluating our value, potentially targeting us with _usedSkill, how would that change our perceived value for them?
-	// This code was verified working with debug logs and a dog triggering it
-	q.getQueryTargetMultAsTarget = @(__original) function( _user, _usedSkill = null )
+// Modular Vanilla Functions
+	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
 	{
-		local ret = __original(_user, _usedSkill);
+		local ret = __original(_user, _target, _skill);
 
-		local actor = this.getContainer().getActor();
-		if (!actor.isPlacedOnMap()) return ret;
+		if (this.getContainer().getActor().getID() != _target.getID()) return ret;		// We must be the target
+		if (_target.getID() == _user.getID()) return ret;		// user and target must be different
 
-		if (this.onVerifyTarget(actor.getTile(), actor.getTile()))
+		if (_target.isPlacedOnMap() && this.onVerifyTarget(_target.getTile(), _target.getTile()))	// gruesome feast is currently usable
 		{
 			// _user should try to kill us, if we stand on a consumable corpse. Even more urgently so, if we are almost dead and will otherwise heal back up
 			// _user is always 10% more likely to target us in this case + 1% for each missing 1% hitpoints on us
-			ret *= (2.1 - this.getContainer().getActor().getHitpointsPct());
+			ret *= (2.1 - _target.getHitpointsPct());
 		}
 
 		return ret;

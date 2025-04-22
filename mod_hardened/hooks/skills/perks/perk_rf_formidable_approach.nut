@@ -105,16 +105,19 @@
 		this.m.Enemies.clear();
 	}
 
-// Hardened Functions
-	// If _user is evaluating our value, potentially targeting us with _usedSkill, how would that change our perceived value for them?
-	q.getQueryTargetMultAsTarget = @(__original) function( _user, _usedSkill = null )
+// Modular Vanilla Functions
+	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
 	{
-		local ret = __original(_user, _usedSkill);
-		if (_usedSkill == null) return ret;
+		local ret = __original(_user, _target, _skill);
 
-		if (_usedSkill.isAttack() && this.hasEnemy(_user))
+		if (_target.getID() == this.getContainer().getActor().getID())	// We must be the _target
 		{
-			ret *= 1.2;	// _user should try asap to remove themselves from the enemy list of FormidableApproach to remove the bonus hitchance
+			if (_user.getID() != _target.getID()) return ret;		// _user and _target must not be the same
+
+			if (_skill != null && _skill.isAttack() && this.hasEnemy(_user))
+			{
+				ret *= 1.2;	// _user should try asap to remove themselves from the enemy list of FormidableApproach to remove the bonus hitchance
+			}
 		}
 
 		return ret;

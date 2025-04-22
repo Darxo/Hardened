@@ -47,13 +47,15 @@
 		this.m.IsSpent = true;	// IsSpent now stays always stays on true to disable swapping and hide the effect icon
 	}
 
-// Hardened Functions
-	q.getQueryTargetMultAsUser = @(__original) function( _target, _usedSkill = null )
+// Modular Vanilla Functions
+	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
 	{
-		local ret = __original(_target, _usedSkill);
+		local ret = __original(_user, _target, _skill);
 
-		if (_usedSkill == null) return ret;
-		if (!this.isSkillValid(_usedSkill)) return ret;
+		if (this.getContainer().getActor().getID() != _user.getID()) return ret;		// We must be the _user
+		if (_user.getID() != _target.getID()) return ret;		// _user and _target must not be the same
+
+		if (_skill == null || this.isSkillValid(_skill)) return ret;
 
 		if (_skill.getDamageType().contains(::Const.Damage.DamageType.Blunt) && _target.getSkills().hasSkill("effects.staggered") && !_target.getSkills().hasSkill("effects.stunned"))
 		{

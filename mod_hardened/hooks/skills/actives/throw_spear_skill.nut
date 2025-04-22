@@ -9,20 +9,22 @@
 		this.m.FatigueDamage = 0;	// In Reforged this is 40
 	}
 
-// Hardened Functions
-	q.getQueryTargetMultAsUser = @(__original) function( _target, _usedSkill = null )
+// Modular Vanilla Functions
+	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
 	{
-		local ret = __original(_target, _usedSkill);
+		local ret = __original(_user, _target, _skill);
 
-		local targetShield = _target.getOffhandItem();
+		if (this.getContainer().getActor().getID() != _user.getID()) return ret;	// We must be the user
+
+		local targetShield = _target.getOffhandItem();	// The skill must be targeting a shield user
 		if (targetShield == null) return ret;
 		if (!targetShield.isItemType(::Const.Items.ItemType.Shield)) return ret;
 
 		if (::MSU.isNull(this.getItem())) return ret;
-		local expectedShieldDamage = this.getItem().getShieldDamage() * this.getExpectedShieldDamageMult(_target);
 
 		ret *= 1.2;		// We slightly prefer targetting enemies with shields over those without shield
 
+		local expectedShieldDamage = this.getItem().getShieldDamage() * this.getExpectedShieldDamageMult(_target);
 		if (expectedShieldDamage > targetShield.getCondition())
 		{
 			ret *= 1.5;		// We strongly prefer targetting shields, that will die instantly, over those, which survive the impact

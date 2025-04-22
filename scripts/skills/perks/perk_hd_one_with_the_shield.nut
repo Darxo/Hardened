@@ -82,16 +82,18 @@ this.perk_hd_one_with_the_shield <- ::inherit("scripts/skills/skill", {
 		}
 	}
 
-// Hardened Functions
-	// If _user is evaluating our value, potentially targeting us with _usedSkill, how would that change our perceived value for them?
-	function getQueryTargetMultAsTarget( _user, _usedSkill = null )
+// Modular Vanilla Functions
+	function getQueryTargetValueMult( _user, _target, _skill )
 	{
 		local ret = 1.0;
-		if (_usedSkill == null) return ret;
 
-		if (_usedSkill.getID() == "actives.split_shield" || _usedSkill.getID() == "actives.throw_spear")
+		if (_target.getID() == this.getContainer().getActor().getID() && _user.getID() != _target.getID())	// We must be the _target
 		{
-			ret *= 1.5;	// _user should try asap to destroy the shield against someone with "One with the Shield"
+			if (_skill == null) return ret;
+			if (_skill.getID() == "actives.split_shield" || _skill.getID() == "actives.throw_spear")
+			{
+				ret *= 1.5;	// _user should try asap to destroy the shield against someone with "One with the Shield"
+			}
 		}
 
 		return ret;

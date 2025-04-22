@@ -19,14 +19,15 @@
 	// Overwrite to remove the effect of Reforged
 	q.onTargetHit = @() function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor ) {}
 
-// Hardened Functions
-	// If we are evaluating _target, potentially targeting them with _usedSkill, how would that change the targets perceived value?
-	q.getQueryTargetMultAsUser = @(__original) function( _target, _usedSkill = null )	// Const
+// Modular Vanilla Functions
+	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
 	{
-		local ret = __original(_target, _usedSkill);
-		if (_usedSkill == null) return ret;
+		local ret = __original(_user, _target, _skill);
 
-		if (this.isSkillValid(_usedSkill) && _target.getHitpointsPct() >= this.m.TargetHealthThreshold)
+		if (this.getContainer().getActor().getID() != _user.getID()) return ret;		// We must be the _user
+		if (_user.getID() != _target.getID()) return ret;		// _user and _target must not be the same
+
+		if (_skill != null && this.isSkillValid(_skill) && _target.getHitpointsPct() >= this.m.TargetHealthThreshold)
 		{
 			ret *= 1.2;
 		}

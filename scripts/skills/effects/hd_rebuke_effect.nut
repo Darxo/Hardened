@@ -73,18 +73,22 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 		}
 	}
 
-// Hardened Functions
-	// If _user is evaluating our value, potentially targeting us with _usedSkill, how would that change our perceived value for them?
-	function getQueryTargetMultAsTarget( _user, _usedSkill = null )
+// Modular Vanilla Functions
+	function getQueryTargetValueMult( _user, _target, _skill )
 	{
-		if (_usedSkill == null) return 0.9;
+		local ret = 1.0;
 
-		if (!::MSU.isNull(this.m.ParentPerk) && this.m.ParentPerk.canProc(_user, _usedSkill))
+		if (_target.getID() == this.getContainer().getActor().getID() && _user.getID() != _target.getID())	// We must be the _target
 		{
-			return 0.5;		// Right now we don't check whether our weapon would outrange the target or whether they can even see us
+			if (_skill != null && !::MSU.isNull(this.m.ParentPerk) && this.m.ParentPerk.canProc(_user, _skill))
+			{
+				// It is not a good idea to attack into an active rebuke, it will turn off anyways, if we wait a turn
+				// Right now we don't check whether our weapon would outrange the target or whether they can even see us
+				ret *= 0.5;
+			}
 		}
 
-		return 1.0;
+		return ret;
 	}
 
 // New Functions

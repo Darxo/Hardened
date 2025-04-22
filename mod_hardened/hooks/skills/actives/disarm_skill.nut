@@ -6,13 +6,14 @@
 		return ret && !_targetTile.getEntity().getCurrentProperties().IsImmuneToDisarm;
 	}
 
-// Hardened Functions
-	q.getQueryTargetMultAsUser = @(__original) function( _target, _usedSkill = null )
+// Modular Vanilla Functions
+	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
 	{
-		local ret = __original(_target, _usedSkill);
-		if (_usedSkill == null) return ret;
+		local ret = __original(_user, _target, _skill);
 
-		if (_usedSkill.getID() == this.getID())
+		if (_skill == null || this.getID() != _skill.getID()) return ret;	// We only care about situations, where this skill is used
+
+		if (_user.getID() == this.getContainer().getActor().getID() && _user.getID() != _target.getID())	// We must be the _user
 		{
 			if (_target.getSkills().hasSkill("actives.spearwall") || _target.getSkills().hasSkill("actives.riposte"))
 			{

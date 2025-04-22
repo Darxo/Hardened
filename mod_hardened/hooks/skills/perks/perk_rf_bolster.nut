@@ -6,17 +6,16 @@
 		this.m.RequiredWeaponReach = 0;
 	}
 
-// Hardened Functions
-	// If we are evaluating _target, potentially targeting them with _usedSkill, how would that change the targets perceived value?
-	q.getQueryTargetMultAsUser = @(__original) function( _target, _usedSkill = null )	// Const
+// Modular Vanilla Functions
+	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
 	{
-		local ret = __original(_target, _usedSkill);
-		if (_usedSkill == null) return ret;
+		local ret = __original(_user, _target, _skill);
 
-		if (this.isSkillValid(_usedSkill))
+		if (this.getContainer().getActor().getID() != _user.getID()) return ret;		// We must be the _user
+
+		if (_skill != null && this.isSkillValid(_skill))
 		{
-			local actor = this.getContainer().getActor();
-			foreach (ally in ::Tactical.Entities.getFactionActors(actor.getFaction(), actor.getTile(), 1, true))
+			foreach (ally in ::Tactical.Entities.getFactionActors(_user.getFaction(), _user.getTile(), 1, true))
 			{
 				if (ally.getMoraleState() < ally.m.MaxMoraleState)
 				{

@@ -81,17 +81,19 @@
 	}
 
 // Hardened Functions
-	q.getQueryTargetMultAsUser = @(__original) function( _target, _usedSkill = null )
+	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
 	{
-		local ret = __original(_target, _usedSkill);
+		local ret = __original(_user, _target, _skill);
+
+		if (this.getContainer().getActor().getID() != _user.getID()) return ret;	// We must be the user
 
 		local targetShield = _target.getOffhandItem();
 		if (targetShield == null) return ret;
 		if (!targetShield.isItemType(::Const.Items.ItemType.Shield)) return ret;
 
 		if (::MSU.isNull(this.getItem())) return ret;
-		local expectedShieldDamage = this.getItem().getShieldDamage() * this.getExpectedShieldDamageMult(_target);
 
+		local expectedShieldDamage = this.getItem().getShieldDamage() * this.getExpectedShieldDamageMult(_target);
 		if (expectedShieldDamage > targetShield.getCondition())
 		{
 			ret *= 1.5;		// We strongly prefer targetting shields, that will die instantly, over those, which survive the impact

@@ -170,20 +170,6 @@
 		return propAttacker.ShieldDamageMult * propDefender.ShieldDamageReceivedMult;
 	}
 
-	// If we are evaluating _target, potentially targeting them with _usedSkill, how would that change the targets perceived value?
-	// @return a non-negative float value
-	q.getQueryTargetMultAsUser <- function( _target, _usedSkill = null )	// Const
-	{
-		return 1.0;
-	}
-
-	// If _user is evaluating our value, potentially targeting us with _usedSkill, how would that change our perceived value for them?
-	// @return a non-negative float value
-	q.getQueryTargetMultAsTarget <- function( _user, _usedSkill = null )	// Const
-	{
-		return 1.0;
-	}
-
 	/// Toggle the IsUsable flag of all skills on this character, which pass an check. If at least one skill has changed, update the entities UI
 	/// During an onUpdateProperties you should only ever call this with 'false' as otherwise multiple effect will conflict with each other
 	/// It is important that you call this with 'true' when combat ends or your effect is removed to prevent the character bring temporarily bricked
