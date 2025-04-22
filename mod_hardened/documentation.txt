@@ -35,6 +35,21 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.39.0
+	- **Unstoppable Perk** now grants 8% more Initiative per stack instead of +10 Initiative per stack
+	- Wooden Shields, Kite Shields and Heater Shields which are colored in any Mercenary Banner color (e.g. your own), grant +5 Resolve while equipped
+	- The **Pitchfork** skills **Impale** and **Repel** now cost 6 Action Points (up from 5)
+	- **Crude Javelins** now cost 2 Ammosupplies to refill (down from 3)
+	- **Unhold Fur Cloak** now grants 15 Condition (up from 10)
+	- **Antidote** now has a value of 100 (down from 150). Crafting it now costs 25 crowns (down from 50) and 1 Jagged Fang (down from 2)
+	- Using an **Antidote** on an ally now applies it directly on them, instead of just transfering it to their inventory
+	- Mercenaries that you fight now use shields in the color of their banner
+	- **Master Archer** now have 110 Initiative (down from 140)
+	- Fix Blitzkrieg still building up Fatigue on targets
+	- Fix movement sometimes being cancelled, when moving over allies and revealing enemies
+	- Fix **Shuffle** tooltip not being shown
+	- Fix movement sometimes being cancelled, on enemies that are already discovered
+
 0.38.1
 	- Damage, which is forced to target the Head of a **Headless** character no longer deals any damage. E.g. the secondary damage portion of **Split Man**
 	- Fix(Vanilla) roads being generated directly on the map border

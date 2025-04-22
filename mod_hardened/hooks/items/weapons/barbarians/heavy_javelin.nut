@@ -10,7 +10,7 @@
 		this.m.ArmorDamageMult = 0.85;	// In Vanilla this is 0.8
 		this.m.AdditionalAccuracy = 0;	// In Vanilla this is -5
 
-		this.m.AmmoCost = 4;			// In Vanilla this is 3 (the default)
+		this.m.AmmoCost = 4;			// In Vanilla this is 3
 
 		this.m.AmmoWeight = 3.0;
 	}

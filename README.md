@@ -36,7 +36,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - Additionally the following balance changes have been made compared to the vanilla stats:
 	- **Tower Shields** now have 30 Condition (up from 24) and lose **Knock Back**
 	- **Heater Shields** now have 25 Melee Defense (up from 20) and lose **Shieldwall**
-	- **Kite Shields** loses **Knock Back**
+	- **Kite Shields** lose **Knock Back**
 	- **Reinforced Skirmisher Shields** now have 15 Melee Defense (up from 10), 15 Ranged Defense (up from 10), lose **Shieldwall** and now grant **Knock Back**
 	- **Wooden Skirmisher Shields** lose **Shieldwall** and now grant **Knock Back**
 	- **Heavy Metal Shields** now have 20 Melee Defense (up from 15) and 20 Ranged Defense (up from 15)
@@ -46,6 +46,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 	- **Worn Heater Shields** now have 23 Melee Defense (up from 20), 13 Ranged Defense (down from 15) and lose **Shieldwall**
 	- **Worn Kite Shields** now have 13 Melee Defense (down from 15), 23 Ranged Defense (down from 25) and lose **Knock Back**
 	- **Craftable Schrat Shield** no longer spawns saplings
+- Wooden Shields, Kite Shields and Heater Shields which are colored in Mercenary Colors (e.g. your own) grant +5 Resolve while equipped
 
 ### Throwing Weapon Rework
 
@@ -56,7 +57,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - **Heavy Javelin** now deal 40-50 Damage (up from 35-50), have 85% Armor Damage (up from 80%), have +0% Hitchance (up from -5%), 4 Maximum Ammo (down from 5), 0 Weight (down from 8), 3 Weight per Ammo, 4 Ammo Cost (up from 3) and a value of 500 (up from 300)
 - **Heavy Throwing Axes** now deal 45-60 Damage (up from 30-50), have 120% Armor Damage (up from 115%), have -10% Hitchance (down from -5%), +10% Headshot Chance (up from +5%), 0 Weight (down from 8), 3 Weight per Ammo and a value of 600 (up from 300)
 - **Bolas** now deal 25-40 Damage (up from 20-35), have 0 Weight (down from 3), 1.5 Weight per Ammo and a value of 300 (up from 150)
-- **Crude Javelins** now deal 35-45 Damage (up from 30-40), 0 Weight (down from 8) and 3 Weight per Ammo
+- **Crude Javelins** now deal 35-45 Damage (up from 30-40), have 0 Weight (down from 8), 3 Weight per Ammo and 2 Ammo Cost (down from 3)
 - **Javelins** now deal 35-45 Damage (up from 30-45), deal 70% Armor Damage (down from 75%), have 0 Weight (down from 6), 2 Weight per Ammo and a value of 350 (up from 200)
 - **Throwing Axes** now deal 35-50 Damage (up from 30-50), have -10% Hitchance (down from +0%), +10% Headshot Chance (up from +5%), 0 Weight (down from 4), 2 Weight per Ammo and a value of 400 (up from 200)
 - Marketplaces now sell **Crude Javelins** instead of regular **Javelins**
@@ -157,7 +158,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - **Throw Axe** now has a 50% chance to decapitate (up from 0%) and 25% chance to disembowel (up from 0%)
 - **Throw Net** no longer requires the targets Base Reach to be below a certain value
 
-Skill nerfs as a result of the Reach system:j
+Skill nerfs as a result of the Reach system:
 - **Gash** now has 0% additional Hitchance (down from 5%)
 - **Hook** now has 0% additional Hitchance (down from 10%)
 - **Impale** now has 0% additional Hitchance (down from 10%)
@@ -187,7 +188,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bear Down** (granted by **Mace Mastery**) is completely reworked. It now causes every headshot to daze the target for 1 turn, or increase the duration of an existing daze by 1 turn
 - **Bestial Vigor** is completely reworked. It is now called **Backup Plan** and grants the skill **Backup Plan** which can be used once per battle to recover 7 Action Points and disable all Attack-Skills for the rest of this turn. It has been removed from the **Wildling** perk group and added to the **Tactician** perk group at Tier 2
 - **Between the Ribs** no longer requires the attack to be of piercing type. It now also lowers your chance to hit the head by 10% for each surrounding character
-- **Blitzkrieg** now costs 9 Action Points (up from 7), 50 Fatigue (up from 30), no longer requires 10 usable fatigue on the targets. It no longer has a shared cooldown with other brothers who have this perk. It is now limited to being used once per battle instead of once per day
+- **Blitzkrieg** now costs 9 Action Points (up from 7), 50 Fatigue (up from 30), no longer requires 10 usable fatigue on the targets. It no longer has a shared cooldown with other brothers who have this perk. It is now limited to being usable once per battle instead of once per day
 - **Bloodlust** (granted by **Cleaver Mastery**) is completely reworked. It now grants 10% more damage against bleeding enemies and makes you receive 10% less damage from bleeding enemies
 - **Bolster** (granted by **Polearm Mastery**) now requires a Polearm equipped, instead of any weapon with a Reach of 6 or more
 - **Bone Breaker** is completely reworked. It now causes Armor Damage you deal to be treated as additional Hitpoint damage for the purpose of inflicting injuries
@@ -263,7 +264,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Throwing Mastery** is mostly completely reworked. It now grants 30% more damage for your first throwing attack each turn, no matter the range. It now allows swapping a throwing weapon with an empty throwing weapon or empty slot for free, once per turn
 - **Trick Shooter** no longer causes your **Aimed Shot** to trigger a morale check on the main target hit
 - **Underdog** is rewritten. It now grants +5 Melee Defense for every character surrounding you, except the first one. Compared to the vanilla implementation this defense is now affected by defense multiplier and by the softcap for defense
-- **Unstoppable** no longer loses all Stacks when you use **Wait** if you spent at least half of your action points by that time
+- **Unstoppable** no longer loses all Stacks when you use **Wait** if you spent at least half of your action points by that time. It now grants 8% Initiative instead of +10 Initiative per stack
 - **Vanquisher** is completely reworked. After you step on a corpse that has been created this round, you become Immune to **Displacement** and take 25% less Damage until the start of your next turn. **Gain Ground** (granted by **Vanquisher** perk) is now free
 - **Vigorous Assault** discount is no longer removed when switching items
 - **Weapon Master** no longer works with hybrid weapons. When you learn **Weapon Master** you now gain a new random weapon perk group
@@ -336,6 +337,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Heavy Crossbow** now has +2 Fatigue Cost for its weapon skills
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
 - **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%)
+- The **Pitchfork** skills **Impale** and **Repel** now cost 6 Action Points (up from 5)
 - **Player Banner** now grants -5 to Ranged Defense and it comes with **Repel**
 - **Poleflail** now has 5 Reach (down from 6)
 - **Reinforced Wooden Poleflail** now has 5 Reach (down from 6)
@@ -356,6 +358,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - **Adorned Mail Shirt** now has a Weight of 16 (up from 11), Condition of 150 (up from 130) and Value of 1050 (up from 800); just like in Vanilla
 - **Adarga** is now called **Adarge Shield** (just like in Vanilla)
+- **Antidote** now has a value of 100 (down from 150). Crafting it now costs 25 crowns (down from 50) and 1 Jagged Fang (down from 2)
 - **Bandage** now costs 40 crowns (up from 25)
 - **Gun Powder** now costs 2 **Ammunition Supply** each (up from 1)
 - **Buckler** appear less common in big settlements
@@ -366,6 +369,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**
 - **Sipar** is now called **Sipar Shield** (just like in Vanilla)
 - **Smoke Bomb** now costs 400 Crowns (up from 275). Smoke now lasts 2 Rounds (up from 1)
+- **Unhold Fur Cloak** now grants 15 Condition (up from 10)
 - **Wooden Shields** appear less common in marketplaces
 - Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and **Large Powder Bags** weigh 4.
 - The value of almost all other non-named shields is increased by 50%-100%
@@ -424,11 +428,13 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Killer** no longer spawn with **Scramasax**, **Pike**, **Spetum**, **Warbrand** or **Throwing Spear**. They now have 80 Ranged Skill (up from 70). They can now appear as Champions
 - **Brigand Leader** lose **Shield Expert**
 - **Hedge Knights** are now immune to **Disarm** as a result of them having **Savage Strength**
+- **Master Archer** now have 110 Initiative (down from 140)
 - **Wargdogs** now have 5 Vision (down from 7)
 
 **Humans:**
 - Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop crowns, food or tools or a valueable ring
 - **Noble Footmen** lose **Shield Expert**
+- **Mercenaries** now use Shields that are colored in their respective Banner colors
 - **Swordmaster** with **Blade Dancer** perk now only spawn with **Noble Swords**
 
 **Undead**
@@ -582,7 +588,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Add skill descriptions for all skills from the **Lorekeeper**
 - Corpses will now display the round, in which they were created
 - Print combat log for hitpoint damage dealt, when an attack kills the target and include the hitpoints of the target before the kill
-- The automatic camera level calculation is improved, especially while in mountanious terrain. Your camera level is now automatically improved when moving up or down terrain
+- The automatic camera level calculation is improved, especially while in mountanious terrain. Your camera level is now automatically adjusted when moving up or down terrain
 - Add Settings to immediately stop the player movement halfway through, when it reveals an enemy (on) or an ally (off)
 - Add Setting (on) to prevent combat logs, which are the result of the same skill execution, from producing empty newlines
 - Add Setting (on) for preventing tile/enemy tooltips from being generated while it is not your turn
@@ -674,7 +680,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - `IsTurnStarted` in `actor.nut` and `agent.nut` is no longer set to `false` when a character ends their turn. It is now only set to `false` at the start of a new round
 - Introduce new `setWeight` and `getWeight` function for `item.nut` to make code around itemweight more readable. They work on the same underlying StaminaModifier but in a reversed way
 - Add `setSkillsIsUsable` for skill.nut, which toggles `IsUsable` of all skills on the actor matching a certain condition
-- `onMovementStep` now calls `onUpdateVisibility` for the entity after the `onMovementStep` skil event happened instead of before, allowing you to better implement effects, where vision depend on positioning
+- `onMovementStep` now calls `onUpdateVisibility` for the entity after the `onMovementStep` skill event happened instead of before, allowing you to better implement effects, where vision depend on positioning
 - Add new `AffectedBodyPart` member for `injury.nut` (temporary injuries) which specifies which bodypart that injury belongs to. It defaults to -1 and is adjusted depending on the vanilla injury lists
 - Add new `IsAlwaysShowingScoutingReport = false` flag for asset_manager. When `true` you will always see defender line-up, even during night, similar to the "Band of Poachers" origin
 - Make `getSurroundedCount` function from `actor.nut` more moddable. The new `countsAsSurrounding` function from `actor.nut` controls, what counts as surrounding (ignoring distance). The new `__calculateSurroundedCount` returns the actual number of surrounding enemies, without any clamping or `StartSurroundCountAt`
@@ -717,13 +723,15 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - `ShieldDamageReceivedMult` multiplies incoming shield damage up to a minimum of 1
 - `WeightStaminaMult` is an array of multipliers, mirroring `::Const.ItemSlotSpaces`, which control how much the Weight of each Itemslot affects this characters Stamina
 - `WeightInitiativeMult` is an array of multipliers, mirroring `::Const.ItemSlotSpaces`, which control how much the Weight of each Itemslot affects this characters Initiative
-- `HitpointRecoveryMult` multiplies to anything that would add a flat amount of hitpoints to the characters
+- `HitpointRecoveryMult` multiplies to anything that would add a flat amount of hitpoints to the character
 
 # Requirements
 
 - Reforged
 
 # Known Issues:
+
+- Loading a game after getting attacked allows you to turn around an ambush into a regular fight
 
 # Compatibility
 

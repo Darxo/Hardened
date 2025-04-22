@@ -1,7 +1,6 @@
 
 # Future Plans:
 - Skip the Defeat-Screen when retiring a run on day 1 (mostly relveant for rolling ironman seeds)
-- Improve documentation for Surround Concept (What exactly? Dont remember what was wrong)
 - Use the overworld name-plate tech to display modifiers (hitpoints, armor) during camping? (Look at how Legends implements Text on world map?)
 - Hide information about enemy composition on the battle field
 	- Might not be realistic because unknown enemies still show up in the turn Order
@@ -9,7 +8,6 @@
 - certain unholds/high end orcs being able to throw their own allies behind their back in order to advance into tight spaces
 - change handgonne aoe pattern in some directions to a triangle
 - Rebalance SpiderEgg hunting? Give them Loot?
-- gambeson coloring
 - nerf cover ally initiative bonus and give it additional defense
 - perk for civilians (e.g. caravan guys), called "First Aid", making: Injuries you treat during battle are removed instead
 - move weapon mastery effects into the weapon mastery itself, instead of being implemented by the skills
@@ -23,7 +21,6 @@
 	- Often times ranged troops go before their melee army.
 		- In this case they should actively wait, realising that they first need to see how their melee troops behave
 		- Alternatively they should move only very slightly forward and/or only into cover
-- fruits of labor ramping up until level 10
 - make throwing weapons into hybrid weapon types to profit from axe/spear/flail perks
 - make disloyal have more of a downside
 - Dynamic Duo You deal 50% less damage to your partner
@@ -119,8 +116,6 @@
 - Debug Setting, for debugging AI decision made from getQueryTargetMultAsUser and getQueryTargetMultAsTarget functions
 - Give Fat Trait -10 Initiative (akin to how its effect is in vanilla)
 - Allow renaming of Dogs (its item name is already serialized, just need the UI)
-- Give reanimating zombie corpses some kind of glow/animation
-	- e.g. the burning ground animation but half as big and in purple color
 - Cap the cost of moving over terrain to the maximum Stamina of the character
 - Make caravan contracts guaranteed to trigger "well supplied" (unless they already do)
 - make ctrl+mousewheel change the camera levels
@@ -167,6 +162,29 @@
 - Brothers that die during sunken library, when you fail/flee the fight, will be part of the enemy roster during the next time (probably needs savegame )
 - Make it so that characters who move to a certain tile are already considered to be at the tile during the movement (from the character and tile pov)
 - Make sure, Lindwurms only move into tiles, where the tail can follow
+- lightning damage to always hit the head
+- shieldwall animation bug at the start of the combat
+- Make it so that shields from mercenary companies spawn in the correct color of their banner
+- Second Ammunition Slot
+- Remove Encumbrance exception for 19 weight or less. And formulate it more generic (you carry more than you can hold ...)
+- Make terrain fixed for camps (prevent rerolling cheese)
+- New active skill for **Scout** perk called **Callout**
+	- **Callout** costs 4-5 AP and can target any enemy ranged troop
+		- That troop deals 20% less ranged damage against yourself and adjacent allies for one turn
+	- **Callout** targets 7 tiles
+		- You and all adjacent allies take 20% less damage from the targeted enemies
+		- You and adjacent allies take 10% more damage from any non-targeted enemies
+- API: New virtual getMarkTargets() function for skills,
+		- which returns a list of all targets,
+		- that should be marked (similar to when you highlight them in the turn sequence bar)
+		- while you hover over the tooltip of that effect
+	- This can be used for example to show all targets, that you currently have in your **Formidable Approach** list
+	- Or for a new **Callout** skill
+- New "wake up" skill for all humans, which removes 1 turn of 'stunned' from an adjacent character. Costs 6 AP and 20 fatigue. User must not be engaged in melee
+- Make sure, that caravans, which transport food, transport full stacks of them
+- unstoppable % based initiative
+- make footprints persist a little longer
+- Prevent chain-routing: Every actor will stop receiving negative morale checks from seeing an ally flee,
 
 ## Wishlist for Reforged
 - Moddable Perk Descriptions (Currently you have to overwrite the perk descriptions)
@@ -257,6 +275,9 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	- Lose 10% Armor Penetration (remove fatigue stuff)
 - Mauler
 	- replace second effect with 15% more damage when hitting body parts that have no remaining armor
+	- You deal 50% more critical damage on a hit to the body
+		- 50% seems a big too strong against something like an unhold with decapitate. But then again, thats exactly how much you'd deal on a headshot (unless they had steelbrow)
+		- Alternative: Deal +25% critical damage for every injury on the target (no matter which bodypart you target)
 - Power Shot
 - Take Aim Perk (previously Power Shot)
 	- Whenever you wait or end your turn, gain a stacking +5% chance to hit. All bonus is lost, when you attack or move.
@@ -336,7 +357,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 # WIP
 
 - Black Monolith only during night
-this.World.Events.fire("event.drunk_nobleman")
 
 ## For modder:
 - Framework for tracking round number of a skill for an entity https://github.com/MSUTeam/MSU/issues/351
@@ -352,7 +372,7 @@ this.World.Events.fire("event.drunk_nobleman")
 	-> maybe a total rewrite of ai_engage_melee is in order
 
 ### Fix
-- Play other animations also slightly delayed (e.g. fleeing animation) to counter act the lag a bit
+- Play other animations also slightly staggered (e.g. fleeing animation) to counter act the lag a bit
 - add debug logs for finding the end of battle bug
 
 ### Change
@@ -372,24 +392,16 @@ this.World.Events.fire("event.drunk_nobleman")
 - User-Faced Changelog (actual changes)
 - Modder Faced one (migrating mods)
 
-- look into whether to keep ::Const.Morale.RF_AllyFleeingBraveryModifierPerAlly from Reforged
-- Glowing Eyes fx, when a character has killing frenzy, 3 stacks of decisive, ghostlike, double strike or vengeance active (aka any temporary/conditional damage buff)
-
-- Display lost/gained items in events (e.g. food in campfire event)
-	- Actually there are no events, that do that. I swear, traveler_north_event did that but I cant find a trace
-
 
 TODO
-- Generate combat damage logs for attacks, which kill the target
-- Revert Polearm adjacency that only counts enemies with higher reach
-- Remove border tile cheese (fighting on a border tile and retreating instantly, when shit hits the fan)
-- Reduce damage of weapons with 0 conditions, e.g. by 50% (happens when you pick up a broken weapon off the ground)
-- prevent serpent grab, while they are engaged in melee
-- check whether stagger on knock back works
-- Apply Battleforged Rewording to be used also in Flexible
-- Stop contracts from revealing the direction/distance of the destination location BEFORE you accept them. Show name only
-- Display indirect numeral for locations (if defender visible)
-- Interrupt player movement, when it reveals tiles with enemies on them
 - Implement my restore-replace items mod
 	- Make it replace armor pieces with one from the inventory that is exactly the same but has more condition left
 - Ai retreat bug, not seeking border tiles correctly
+- Glowing Eyes fx, when a character has killing frenzy, 3 stacks of decisive, ghostlike, double strike or vengeance active (aka any temporary/conditional damage buff)
+- Give reanimating zombie corpses some kind of glow/animation
+	- e.g. the burning ground animation but half as big and in purple color
+- implement https://github.com/Battle-Modders/mod_modular_vanilla/pull/36
+
+
+Flail on Bandits:
+> A suggestion regarding bandits and Whirling Death.  RIght now over half the time they seem to kind of use it and sit there, often not attacking.  Bandits are already the easiest enemy.  Now when they have flails they're half incapacitated.  Remove this perk from them please.
