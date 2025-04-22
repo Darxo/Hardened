@@ -94,10 +94,10 @@
 			{
 				this.m.HD_HasDiscoveredSomething = false;
 				this.updateVisibility(this.m.HD_LastSteppedTile, oldVision, oldFaction);	// We update the visibility at the current virtual tile we are standing at
-				if (this.m.HD_HasDiscoveredSomething)	// we discovered someone: We revert the movement cost and stop our movement immediately
+				if (this.m.HD_HasDiscoveredSomething && this.m.HD_LastSteppedTile.IsEmpty)	// we discovered someone, while virtually standing on an empty tile
 				{
-					this.onMovementUndo( _tile, _levelDifference );
-					return false;
+					this.onMovementUndo( _tile, _levelDifference );	// We revert the movement cost
+					return false;	// and stop our movement immediately
 				}
 			}
 
