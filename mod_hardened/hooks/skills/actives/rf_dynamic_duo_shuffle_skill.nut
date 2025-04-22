@@ -7,7 +7,7 @@
 		{
 			if (entry.id == 11)
 			{
-				ret.text = "Swap places with your partner";
+				entry.text = "Swap places with your partner";
 				break;
 			}
 		}
