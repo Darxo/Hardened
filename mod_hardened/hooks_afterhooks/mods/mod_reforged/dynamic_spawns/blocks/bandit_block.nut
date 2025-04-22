@@ -1,31 +1,12 @@
-local unitBlocks = [
-	{
-		ID = "UnitBlock.RF.BanditFast",
-		DeterminesFigure = true,
-		DynamicDefs = {
-			Units = [
-				{ BaseID = "Unit.RF.RF_BanditRobber" },
-				{ BaseID = "Unit.RF.RF_BanditBandit" },
-				{ BaseID = "Unit.RF.RF_BanditKiller" },
-			]
-		},
-		getUpgradeWeight = function() { return base.getUpgradeWeight() * 0.80 },	// This is new and used to roughly imitate the Reforged robber upgrading
-	},
-	{
-		ID = "UnitBlock.RF.BanditBoss",
-		DeterminesFigure = true,
-		DynamicDefs = {
-			Units = [
-				{ BaseID = "Unit.RF.RF_BanditHighwayman" },	// Low level "Leader"-like. Allows more guaranteed mid-level gear a bit earlier
-				{ BaseID = "Unit.RF.BanditLeader", StartingResourceMin = 250 },	// Same as Reforged has defined for any
-				{ BaseID = "Unit.RF.RF_BanditBaron", HardMax = 1 },
-			]
-		}
-	},
-];
+{	// UnitBlock.RF.BanditFast
+	local banditFast = ::DynamicSpawns.Public.getUnitBlock("UnitBlock.RF.BanditFast");
+	banditFast.DynamicDefs.Units.remove(0);		// The first two entries are BanditRobber and we want one of them gone
+	banditFast.Class.getUpgradeWeight <- function() { return base.getUpgradeWeight() * 0.80 };	// This is new and used to roughly imitate the Reforged robber upgrading
+}
 
-foreach (blockDef in unitBlocks)
-{
-	::DynamicSpawns.Public.registerUnitBlock(blockDef);
+{	// UnitBlock.RF.BanditBoss
+	local banditBoss = ::DynamicSpawns.Public.getUnitBlock("UnitBlock.RF.BanditBoss");
+	banditBoss.DynamicDefs.Units.insert(0, { BaseID = "Unit.RF.RF_BanditHighwayman" });		// New lowest tier for bandit leader
+	banditBoss.DynamicDefs.Units[1].StartingResourceMin <- 250;		// Prevent too early upgrading into second tier
 }
 
