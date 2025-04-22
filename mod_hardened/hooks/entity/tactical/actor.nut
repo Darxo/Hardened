@@ -152,7 +152,7 @@
 	q.onRoundStart = @(__original) function()
 	{
 		__original();
-		this.m.HD_IsDiscovered = false;
+		this.m.HD_IsDiscovered = this.getTile().IsVisibleForPlayer;
 	}
 
 	q.onTurnResumed = @(__original) function()
