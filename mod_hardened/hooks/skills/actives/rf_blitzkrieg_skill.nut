@@ -1,7 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/rf_blitzkrieg_skill", function(q) {
 	// Public
-	q.m.FatigueBuildUp <- 10;
-
 	q.create = @(__original) function()
 	{
 		__original();
@@ -33,7 +31,7 @@
 		return ret;
 	}
 
-	// Overwrite because we change a few things: Remove one-per-company rule; Utilize MinRange/MaxRange member; Remove available fatigue requirement; Fatigue build-up
+	// Overwrite because we change a few things: Remove one-per-company rule; Utilize MinRange/MaxRange member; Remove available fatigue requirement; Remove Fatigue build-up
 	q.onUse = @() function( _user, _targetTile )
 	{
 		this.m.IsSpent = true;
@@ -46,7 +44,6 @@
 
 			if (ally.getTile().getDistanceTo(myTile) >= this.getMinRange() && ally.getTile().getDistanceTo(myTile) <= this.getMaxRange())
 			{
-				ally.setFatigue(::Math.min(ally.getFatigueMax(), ally.getFatigue() + this.m.FatigueBuildUp));
 				local effect = ::new("scripts/skills/effects/adrenaline_effect");
 				if (!ally.isTurnStarted() && !ally.isTurnDone())
 				{
