@@ -1,4 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_unstoppable", function(q) {
+	// Public
+	q.m.InitiativePctPerStack <- 0.08;
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original()
@@ -8,6 +11,18 @@
 			if (entry.id == 20)
 			{
 				entry.text = ::Reforged.Mod.Tooltips.parseString("Will expire upon using [Recover|Skill+recover] or getting [stunned|Skill+stunned_effect], rooted, or [staggered|Skill+staggered_effect]");
+
+				local initiativeMult = this.getInitiativeMult();
+				if (initiativeMult != 1.0)
+				{
+					ret.insert(index, {
+						id = 12,
+						type = "text",
+						icon = "ui/icons/initiative.png",
+						text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeMultWithText(initiativeMult) + " [Initiative|Concept.Initiative]"),
+					});
+				}
+
 				break;
 			}
 		}
@@ -22,6 +37,19 @@
 		return ret;
 	}
 
+	// Overwrite, because we no longer grant a flat initiative bonus
+	q.getInitiativeBonus = @() function()
+	{
+		return 0;
+	}
+
+	q.onUpdate = @(__original) function( _properties )
+	{
+		__original(_properties);
+		// We don't check for the same properties as Reforged, because Reforged sets the Stacks to 0 when any check fails, in which case getInitaitiveMult should return 1.0 anyways
+		_properties.InitiativeMult *= this.getInitiativeMult();
+	}
+
 	// Override because it no longer always sets the stacks to 0
 	q.onWaitTurn = @() function()
 	{
@@ -30,5 +58,11 @@
 		{
 			this.m.Stacks = 0;
 		}
+	}
+
+// New Functions
+	q.getInitiativeMult <- function()
+	{
+		return 1.0 + this.m.Stacks * this.m.InitiativePctPerStack;
 	}
 });
