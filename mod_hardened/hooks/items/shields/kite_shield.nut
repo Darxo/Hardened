@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/items/shields/kite_shield", function(q) {
+	q.m.HD_BraveryModifierInCompanyColors <- 5;		// This shield provides this much Resolve, while any company colors are used
+
 	q.create = @(__original) function()
 	{
 		__original();
@@ -22,7 +24,17 @@
 		// this.addSkill(::new("scripts/skills/actives/knock_back"));
 	}
 
-// Hardened Funnctions
+// Hardened Functions
+	q.getBraveryModifier = @(__original) function()
+	{
+		local braveryModifier = __original();
+		if (this.getVariant() > 11)	// This might stop working, if someone ever introduces more variants than 11 or uses strings
+		{
+			braveryModifier += this.m.HD_BraveryModifierInCompanyColors;
+		}
+		return braveryModifier;
+	}
+
 	q.paintInCompanyColors = @() function( _bannerID )
 	{
 		if (_bannerID >= 0)
