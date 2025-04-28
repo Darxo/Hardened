@@ -21,6 +21,16 @@
 		this.addSkill(::new("scripts/skills/actives/shieldwall"));
 		// this.addSkill(::new("scripts/skills/actives/knock_back"));
 	}
+
+// Hardened Funnctions
+	q.paintInCompanyColors = @() function( _bannerID )
+	{
+		if (_bannerID >= 0)
+		{
+			this.setVariant(_bannerID + 11);
+			this.updateAppearance();
+		}
+	}
 });
 
 /*

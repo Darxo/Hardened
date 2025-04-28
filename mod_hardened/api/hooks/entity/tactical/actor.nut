@@ -204,6 +204,63 @@
 		return true;
 	}
 
+	// We are an NPC that is deemed to belong to a certain player-possible banner (most likely because of mercenary company)
+	// This function will find that bannerID by all means necessary and if it can't it will return -1
+	q.findAppropriateBannerID <- function()
+	{
+		/*
+		1. this is part of a world party, which uses a mercenary banner -> we use that merc banner
+			-> we use that merc banner
+		2. this is part of a world party, which uses a non-mercenary banner
+			-> use random merc banner? If so, how do we make sure all of them use the same banner?
+			- do no coloring?
+		3. this is hostile to the player and at least one of the hostile banners from this combat is a mercenary one
+			-> we color our shield in a random hostile player banner from the combat properties
+		*/
+
+		// First we check, if this actor belongs to a world party
+		if (!::MSU.isNull(this.getWorldTroop()))	// We belong to a world party. If that world party does not have a usable banner, we give up
+		{
+			local bannerID = this.getWorldTroop().Party.getBannerID();
+			if (bannerID != -1)
+			{
+				return bannerID;
+			}
+		}
+
+		stratProps = ::Tactical.State.getStrategicProperties();
+		if (stratProps != null)
+		{
+			local bannerPool = this.isAlliedWithPlayer() ? stratProps.AllyBanners : stratProps.EnemyBanners;
+
+			foreach (banner in bannerPool)
+			{
+				if (banner == ::World.Assets.getBanner()) continue;	// The Banner used by the Player is reserved
+
+				local stringIndex = banner.find("banner_");
+				try {	// Non-player banner used here will throw errors
+					return banner.slice(stringIndex + 7).tointeger();	// +7 because "banner_" are 7 characters and we wanna point to the first character after this
+				}
+				catch (err) {}	// Do nothing
+			}
+		}
+
+		return -1;	// We didn't find a good candidate
+	}
+
+	// Try to paint each shield equipped to this actor in the colors of its appropriate banner
+	// The banner is fetched via the new findAppropriateBannerID function by "all means necessary"
+	q.paintShieldsInCompanyColors <- function()
+	{
+		foreach (offhandItem in this.getItems().getAllItemsAtSlot(::Const.ItemSlot.Offhand))
+		{
+			if (offhandItem.isItemType(::Const.Items.ItemType.Shield))
+			{
+				offhandItem.paintInCompanyColors(this.findAppropriateBannerID());
+			}
+		}
+	}
+
 // Private Functions
 	// Helper function to calculate the amount of surrounding characters in a more moddable way
 	q.__calculateSurroundedCount <- function()

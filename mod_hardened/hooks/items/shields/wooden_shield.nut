@@ -13,6 +13,16 @@
 	// Hardened Adjustments
 		this.m.Value = 150;		// In Vanilla this is 100
 	}
+
+// Hardened Funnctions
+	q.paintInCompanyColors = @() function( _bannerID )
+	{
+		if (_bannerID >= 0)
+		{
+			this.setVariant(_bannerID + 10);
+			this.updateAppearance();
+		}
+	}
 });
 
 /*
