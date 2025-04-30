@@ -1389,7 +1389,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Whenever you step on a corpse, that was created this [round,|Concept.Round] take " + ::MSU.Text.colorPositive("25%") + " less Damage and become immune to [Displacement|Concept.Displacement] until the start of your next [turn|Concept.Turn]",
+						"When you step on a corpse, that was created this [round,|Concept.Round] take " + ::MSU.Text.colorPositive("25%") + " less Damage and become immune to [Displacement|Concept.Displacement] until the start of your next [turn|Concept.Turn]",
 					],
 				},
 				{
