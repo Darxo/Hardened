@@ -80,6 +80,14 @@
 		}
 	}
 
+	q.onUpdate = @(__original) function( _properties )
+	{
+		__original(_properties);
+		_properties.UpdateWhenTileOccupationChanges = true;	// Because this effect removes targets from its list based on proximity
+
+		this.validateEnemies();
+	}
+
 // MSU Functions
 	q.onGetHitFactors <- function( _skill, _targetTile, _tooltip )
 	{
@@ -149,5 +157,20 @@
 	q.hasEnemy <- function( _actor )
 	{
 		return this.m.Enemies.find(_actor.getID()) != null;
+	}
+
+	// Check whether all enemy in this.m.Enemies are still valid and unregister anyone who isn't anymore
+	// A valid enemy must exist, be placed on the map and be adjacent to us
+	q.validateEnemies <- function()
+	{
+		local areRequirementsMet = this.requirementsMet();	// If we dont even wield a two-handed weapon, then we lose the whole effect
+		for (local index = this.m.Enemies.len() - 1; index >= 0; index--)
+		{
+			local enemy = ::Tactical.getEntityByID(this.m.Enemies[index]);
+			if (!areRequirementsMet || ::MSU.isNull(enemy) || !enemy.isPlacedOnMap() || this.getContainer().getActor().getTile().getDistanceTo(enemy.getTile()) > 1)
+			{
+				this.unregisterEnemy(enemy);
+			}
+		}
 	}
 });
