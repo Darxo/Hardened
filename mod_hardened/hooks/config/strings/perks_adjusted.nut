@@ -943,6 +943,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_hold_steady",
+		Key = "RF_HoldSteady",
+		Description = ::UPD.getDescription({
+			Fluff = "Direct your troops to stand their ground!",
+			Effects = [{
+				Type = ::UPD.EffectType.Active,
+				Description = [
+					"Unlocks the [Hold Steady|Skill+rf_hold_steady_skill] skill which can be used once per battle to grant nearby members of your company increased defenses, immunity against [Stuns|Skill+stunned_effect] and immunity against [Displacement|Concept.Displacement] for two [rounds|Concept.Round]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_hybridization",
 		Key = "RF_Hybridization",	// This is now called "Toolbox"
 		Description = ::UPD.getDescription({
