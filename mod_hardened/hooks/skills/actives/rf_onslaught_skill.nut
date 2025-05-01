@@ -11,7 +11,11 @@
 
 		foreach (entry in ret)
 		{
-			if (entry.id == 21)
+			if (entry.id == 10)
+			{
+				entry.text = ::Reforged.Mod.Tooltips.parseString("You and your allies within " + ::MSU.Text.colorPositive(this.m.MaxRange) + " tiles gain the [Onslaught|Skill+rf_onslaught_effect] effect for two [rounds|Concept.Round]");
+			}
+			else if (entry.id == 21)
 			{
 				entry.text = "Can only be used once per battle";
 			}
@@ -24,7 +28,10 @@
 		return ret;
 	}
 
-	// Overwrite because we change a few things: Remove one-per-company rule; Utilize MinRange/MaxRange member;
+	// Overwrite because we change a few things:
+	// 	- Remove one-per-company rule;
+	// 	- Utilize MinRange/MaxRange member;
+	// 	- Remove varying turn duration logic (instead they now always last 2 rounds on the target)
 	q.onUse = @() function( _user, _targetTile )
 	{
 		this.m.IsSpent = true;
@@ -37,14 +44,7 @@
 
 			if (ally.getTile().getDistanceTo(myTile) >= this.getMinRange() && ally.getTile().getDistanceTo(myTile) <= this.getMaxRange())
 			{
-				local effect = ::new("scripts/skills/effects/rf_onslaught_effect");
-				if (!ally.isTurnStarted() && !ally.isTurnDone())
-				{
-					// If the ally has not started their turn yet in this round, add one more turn
-					// so that the effect doesn't immediately expire upon the ally's turn starting
-					effect.m.TurnsLeft++;
-				}
-				ally.getSkills().add(effect);
+				ally.getSkills().add(::new("scripts/skills/effects/rf_onslaught_effect"));
 			}
 		}
 

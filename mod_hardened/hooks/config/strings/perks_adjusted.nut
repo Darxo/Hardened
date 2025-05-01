@@ -1142,6 +1142,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_onslaught",
+		Key = "RF_Onslaught",
+		Description = ::UPD.getDescription({
+			Fluff = "Break their ranks, break their backs, break them all!",
+			Effects = [{
+				Type = ::UPD.EffectType.Active,
+				Description = [
+					"Unlocks the [Onslaught|Skill+rf_onslaught_skill] skill which can be used once per battle to grant nearby members of your company [Initiative,|Concept.Initiative] [Melee Skill|Concept.MeleeSkill] and one use of the [Line Breaker|Skill+rf_line_breaker_skill] skill for two [rounds|Concept.Round]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_opportunist",
 		Key = "RF_Opportunist",
 		Description = ::UPD.getDescription({
