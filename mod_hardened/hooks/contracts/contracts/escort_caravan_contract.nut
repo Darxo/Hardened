@@ -87,7 +87,7 @@
 						foreach (undeadEntity in ::Tactical.Entities.getInstancesOfFaction(::World.FactionManager.getFactionOfType(::Const.FactionType.Undead).getID()))
 						{
 							local lyingInAmbush = ::new("scripts/skills/effects/hd_lying_in_ambush_effect");
-							lyingInAmbush.m.DurationInRounds = 2;
+							lyingInAmbush.m.HD_LastsForRounds = 2;
 							lyingInAmbush.m.TileAlertRadius = 0;
 							undeadEntity.getSkills().add(lyingInAmbush);
 						}
