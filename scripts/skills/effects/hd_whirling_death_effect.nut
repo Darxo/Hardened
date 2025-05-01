@@ -4,10 +4,6 @@ this.hd_whirling_death_effect <- this.inherit("scripts/skills/skill", {
 		DamageMult = 1.3,
 		ReachModifier = 2,
 		MeleeDefenseModifier = 10,
-		DurationInTurns = 2,
-
-		// Private
-		TurnsLeft = 2,	// so that nested tooltips has something to display
 	},
 
 	function create()
@@ -20,6 +16,8 @@ this.hd_whirling_death_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Type = ::Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
+
+		this.m.HD_LastsForTurns = 2;
 	}
 
 	function getTooltip()
@@ -56,24 +54,12 @@ this.hd_whirling_death_effect <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		ret.push({
-			id = 20,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Lasts for " + ::MSU.Text.colorPositive(this.m.TurnsLeft) + " [turn(s)|Concept.Turn]"),
-		});
-
 		return ret;
-	}
-
-	function onAdded()
-	{
-		this.m.TurnsLeft = this.m.DurationInTurns;
 	}
 
 	function onRefresh()
 	{
-		this.m.TurnsLeft = this.m.DurationInTurns;
+		this.m.HD_LastsForTurns = 2;
 	}
 
 	function onUpdate( _properties )
@@ -87,16 +73,6 @@ this.hd_whirling_death_effect <- this.inherit("scripts/skills/skill", {
 		_properties.DamageTotalMult *= this.m.DamageMult;
 		_properties.Reach += this.m.ReachModifier;
 		_properties.MeleeDefense += this.m.MeleeDefenseModifier;
-	}
-
-	function onTurnEnd()
-	{
-		--this.m.TurnsLeft;
-
-		if (this.m.TurnsLeft == 0)
-		{
-			this.removeSelf();
-		}
 	}
 
 // New Functions
