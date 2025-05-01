@@ -62,4 +62,109 @@
 
 		return ret;
 	}
+
+	// Overwrite, because we rewrite the original function a bit cleaner and with more recovery functionality
+	q.restoreEquipment = @() function()
+	{
+		local danglingItems = [];	// First we need to collect and unequip all dangling items, which were wrongly equipped
+		foreach (brotherSnapshot in this.m.RestoreEquipment)
+		{
+			local bro = ::Tactical.getEntityByID(brotherSnapshot.ID);
+			if (bro == null || !bro.isAlive()) continue;
+
+			danglingItems.extend(this.unEquipWrongItems(bro, brotherSnapshot));
+		}
+
+		foreach (brotherSnapshot in this.m.RestoreEquipment)	// For every snapshot (bro)
+		{
+			local bro = ::Tactical.getEntityByID(brotherSnapshot.ID);
+			if (bro == null || !bro.isAlive()) continue;
+
+			// We look through all entries of this brother and try to restore or replace them, if they are missing
+			foreach (entry in brotherSnapshot.Slots)
+			{
+				if (entry.Item.isEquipped()) continue;	// This item is already at its righteous place
+
+				local danglingIndex = danglingItems.find(entry.Item);
+				if (danglingIndex != null)	// The item is among the dangling items
+				{
+					bro.getItems().HD_equipToSlot(entry.Item, entry.Slot);
+					danglingItems.remove(danglingIndex);
+					continue;
+				}
+
+				local foundOriginal = false;
+				// Maybe it is in our stash after we dropped it during battle and looted it afterwards?
+				foreach (stashItem in this.getStash().getItems())
+				{
+					if(stashItem == null) continue;
+					if (!::MSU.isEqual(stashItem, entry.Item)) continue;
+
+					bro.getItems().HD_equipToSlot(entry.Item, entry.Slot);
+					this.getStash().remove(stashItem);
+					foundOriginal = true;
+					break;
+				}
+				if (foundOriginal) continue;
+
+				// If the original item was found nowhere, then entry.Item does not exist anymore and is only kept alive because of our reference to it
+				// Feat: We now try to find a replacement item for it from the player stash, which uses the same ID
+				foreach (stashItem in this.getStash().getItems())
+				{
+					if(stashItem == null) continue;
+					if(stashItem.getID() != entry.Item.getID()) continue;
+
+					bro.getItems().HD_equipToSlot(entry.Item, entry.Slot);
+					this.getStash().remove(stashItem);
+					break;
+				}
+			}
+		}
+
+		foreach (item in danglingItems)	// All dangling items are added to the player stash
+		{
+			this.getStash().makeEmptySlots(1);	// We always treat dangling items important enough to make room for them
+			this.getStash().add(item);
+		}
+
+		this.m.RestoreEquipment = [];	// We clear the vanilla array, just like vanilla does it
+	}
+
+// New Functions
+	// Unequip all items equipped to or in the bag of _bro, which are not mentioned in _restorePoint and return them
+	// @return array of item references of all "wrong" items unequipped this way
+	q.unEquipWrongItems <- function( _bro, _restorePoint )
+	{
+		local danglingItems = [];	// Array of dangling items, that didn't belong equipped to this character
+
+		foreach (itemSlot, _ in ::Const.ItemSlotSpaces)
+		{
+			foreach (item in _bro.getItems().getAllItemsAtSlot(itemSlot))
+			{
+				local isAllowedToStay = false;
+				foreach (slot in _restorePoint.Slots)
+				{
+					if (slot.Slot != itemSlot) continue;
+					if (!::MSU.isEqual(slot.Item, item)) continue;
+
+					isAllowedToStay = true;
+					break;
+				}
+
+				if (isAllowedToStay) break;
+
+				danglingItems.push(item);
+				if (itemSlot == ::Const.ItemSlot.Bag)
+				{
+					_bro.getItems().removeFromBag(item);
+				}
+				else
+				{
+					_bro.getItems().unequip(item);
+				}
+			}
+		}
+
+		return danglingItems;
+	}
 });
