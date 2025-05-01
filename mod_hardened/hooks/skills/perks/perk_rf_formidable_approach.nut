@@ -126,6 +126,8 @@
 // New Private Functions
 	q.requirementsMet <- function()
 	{
+		if (this.getContainer().getActor().isDisarmed()) return false;
+
 		local weapon = this.getContainer().getActor().getMainhandItem();
 
 		return (weapon != null && weapon.isItemType(::Const.Items.ItemType.TwoHanded));
