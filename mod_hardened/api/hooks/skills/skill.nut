@@ -15,6 +15,8 @@
 	q.m.HD_Cooldown <- 0;	// This skill can only be used if HD_RoundLastUsed is null or atleast this many rounds ago
 	q.m.IsHidingIconMini <- false;	// If set to true, then the IconMini will be treated as if it was an empty string and never display
 	q.m.HD_IgnoreForCrowded <- false;	// When true, then this skill will not be affected by crowded, even if it passes all other conditions for that
+	q.m.HD_LastsForTurns <- null;	// When not null, this will decrement at the end of each turn and remove this skill, when it reaches 0
+	q.m.HD_LastsForRounds <- null;	// When not null, this will decrement at the end of each round and remove this skill, when it reaches 0
 
 	// Private
 	q.m.HD_RoundLastUsed <- null;	// This is set to the current round whenever the skills onUse is called
@@ -266,6 +268,47 @@
 			}
 		}
 
+		if (this.m.HD_LastsForTurns == 1)
+		{
+			local entry = {
+				id = 42,	// we use the same ID as cooldown as both tooltips should never appear on the same skill
+				type = "text",
+				icon = "ui/icons/action_points.png",
+				text = "Lasts until the end of ",
+			};
+			entry.text += this.getContainer().getActor().isActiveEntity() ? "this": "your next";
+			entry.text += ::Reforged.Mod.Tooltips.parseString(" [turn|Concept.Turn]");
+			ret.push(entry);
+		}
+		else if (this.m.HD_LastsForTurns > 1)
+		{
+			ret.push({
+				id = 42,	// we use the same ID as cooldown as both tooltips should never appear on the same skill
+				type = "text",
+				icon = "ui/icons/action_points.png",
+				text = "Lasts for " + ::MSU.Text.colorPositive(this.m.HD_LastsForTurns) + ::Reforged.Mod.Tooltips.parseString(" [turns|Concept.Turn]"),
+			});
+		}
+
+		if (this.m.HD_LastsForRounds == 1)
+		{
+			ret.push({
+				id = 42,	// we use the same ID as cooldown as both tooltips should never appear on the same skill
+				type = "text",
+				icon = "ui/icons/action_points.png",
+				text = "Lasts until the end of this " + ::Reforged.Mod.Tooltips.parseString("[round|Concept.Round]"),
+			});
+		}
+		else if (this.m.HD_LastsForRounds > 1)
+		{
+			ret.push({
+				id = 42,	// we use the same ID as cooldown as both tooltips should never appear on the same skill
+				type = "text",
+				icon = "ui/icons/action_points.png",
+				text = "Lasts for " + ::MSU.Text.colorPositive(this.m.HD_LastsForRounds) + ::Reforged.Mod.Tooltips.parseString(" [rounds|Concept.Round]"),
+			});
+		}
+
 		return ret;
 	}
 
@@ -291,6 +334,26 @@
 	{
 		__original();
 		this.m.HD_RoundLastUsed = null;
+	}
+
+	q.onRoundEnd = @(__original) function()
+	{
+		__original();
+		if (this.m.HD_LastsForRounds != null)
+		{
+			--this.m.HD_LastsForRounds;
+			if (this.m.HD_LastsForRounds == 0) this.removeSelf();
+		}
+	}
+
+	q.onTurnEnd = @(__original) function()
+	{
+		__original();
+		if (this.m.HD_LastsForTurns != null)
+		{
+			--this.m.HD_LastsForTurns;
+			if (this.m.HD_LastsForTurns == 0) this.removeSelf();
+		}
 	}
 
 	q.onUse = @(__original) function( _user, _targetTile )
