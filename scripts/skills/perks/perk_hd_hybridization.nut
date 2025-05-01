@@ -3,8 +3,8 @@ this.perk_hd_hybridization <- ::inherit("scripts/skills/skill", {
 		// Public
 		MeleeSkillThreshold = 70,	// This much base melee skill is required to gain the ranged defense bonus
 		RangedSkillThreshold = 70,	// This much base ranged skill is required to gain the melee defense bonus
-		MeleeDefenseModifier = 5,
-		RangedDefenseModifier = 5,
+		MeleeDefenseModifier = 10,
+		RangedDefenseModifier = 10,
 
 		// Private
 		IsSpent = true,		// While this is false, this character can still swap two different weapontypes for free
