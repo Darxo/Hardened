@@ -39,7 +39,7 @@ this.hd_ai_defend_stance <- this.inherit("scripts/ai/tactical/behavior", {
 		this.m.Skill = this.selectSkill(this.m.PossibleSkills);
 		if (this.m.Skill == null) return zero;
 
-		if (_entity.getActionPointsMax() - this.m.Skill.getActionPointCost() < 4) return zero;	// We shouldn't even think about defensive stances if they leave barely any action points for movement (e.g. Zombies)
+		if (_entity.getActionPointsMax() < 9) return zero;	// We shouldn't even think about defensive stances if they leave barely any action points for movement (e.g. Zombies)
 
 		// Do I die this turn?
 		local dotDamage = 0;
@@ -54,49 +54,64 @@ this.hd_ai_defend_stance <- this.inherit("scripts/ai/tactical/behavior", {
 		local score = ::Const.AI.Behavior.Score.HD_Defend_Stance * this.getProperties().BehaviorMult[this.m.ID];
 		score *= this.getFatigueScoreMult(this.m.Skill);
 
+		score *= this.HD_getSkillScoreMult(_entity, this.m.Skill);
+
 		local adjacentTargets = this.queryTargetsInMeleeRange();
-		if (adjacentTargets.len() >= 2) return zero;
-		if (adjacentTargets.len() == 1) score *= 0.5;	// I don't want to outright prohibit this skill if there is only 1 enemy adjacent
+		if (adjacentTargets.len() >= 2) score *= 0.2;	// There is a small change, that we have some leftover Action Points and cant do anything else anyways, after we moved up
+		if (adjacentTargets.len() == 1) score *= 0.5;	// We don't want to outright prohibit this skill if there is only 1 enemy adjacent
 
-		// We are not engaged in battle
-		local opponentMeleeCount = 0;
-		local opponentRangedCount = 0;
-		foreach (opponent in this.getAgent().getKnownOpponents())
+		if (adjacentTargets.len() == 0)	// We are not engaged in battle
 		{
-			local actor = opponent.Actor;
+			local opponentRangedCount = 0;	// Ranged Enemies make it less likely, that we use a stance
+			local opponentsWeCouldHit = 0;	// Enemies, that we could hit right now make it less likely, that we use a stance instead
+			local opponentMeleeCount = 0;	// Remaining nearby enemies make it more likely, that we use a stance
 
-			if (actor.isNull()) continue;
-			if (actor.isNonCombatant()) continue;
-
-			if (actor.getMoraleState() == ::Const.MoraleState.Fleeing) continue;
-
-			local dist = actor.getTile().getDistanceTo(_entity.getTile());
-
-			// opponent is a ranged unit
-			if (actor.getTile().getZoneOfControlCountOtherThan(actor.getAlliedFactions()) == 0 && this.isRangedUnit(actor))
+			foreach (opponent in this.getAgent().getKnownOpponents())
 			{
-				local rangedInfo = actor.getRangedWeaponInfo();
-				if (dist <= rangedInfo.RangeWithLevel)
+				local actor = opponent.Actor;
+
+				if (actor.isNull()) continue;
+				if (actor.isNonCombatant()) continue;
+
+				if (actor.getMoraleState() == ::Const.MoraleState.Fleeing) continue;
+
+				local dist = actor.getTile().getDistanceTo(_entity.getTile());
+
+				// opponent is a ranged unit
+				if (this.isRangedUnit(actor))
 				{
-					++opponentRangedCount;
+					local rangedInfo = actor.getRangedWeaponInfo();
+					if (dist <= rangedInfo.RangeWithLevel)
+					{
+						++opponentRangedCount;
+					}
+				}
+				else if (dist <= 5)
+				{
+					local turnData = this.queryActorTurnsNearTarget(_entity, actor.getTile(), actor);
+					if (turnData.TurnsWithAttack <= 1.0)	// Can we attack opponent this turn? Then we should probably not use the stance
+					{
+						++opponentsWeCouldHit;
+					}
+					else
+					{
+						++opponentMeleeCount;
+					}
 				}
 			}
-			else if (dist <= 4)
-			{
-				++opponentMeleeCount;
-			}
-		}
-		if (opponentMeleeCount == 0) return zero;	// There seem to be no nearby melee targets to prepare for via a Stance
+			if (opponentMeleeCount == 0) return zero;	// There seem to be no nearby melee targets to prepare for via a Stance
 
-		score *= ::Math.pow(::Const.AI.Behavior.StanceMeleeTargetMult, opponentMeleeCount);
-		score *= ::Math.pow(::Const.AI.Behavior.StanceRangedTargetMult, opponentRangedCount);
+			score *= ::Math.pow(::Const.AI.Behavior.StanceRangedTargetMult, opponentRangedCount);
+			score *= ::Math.pow(::Const.AI.Behavior.StanceRangedTargetMult, opponentsWeCouldHit);	// We just use the ranged multiplier here as it's similar to what we wanna achieve
+			score *= ::Math.pow(::Const.AI.Behavior.StanceMeleeTargetMult, opponentMeleeCount);
+		}
 
 		score *= _entity.getHitpointsPct();	// If the actor is almost dead, he won't survive to make use of the stance anyways
 
 		// Intentions
 		local intentions = this.getAgent().getIntentions();
 		if (intentions.IsDefendingPosition) score *= 1.5;	// We have nothing better to do while defending anyways
-		if (intentions.IsEngaging) 			score *= 0.8;	// When we decided to engage, it's probably too late to sneak in a stance
+		if (intentions.IsEngaging) 			score *= 0.5;	// When we decided to engage, it's probably too late to sneak in a stance
 		if (intentions.IsHiding) 			score *= 1.5;	// We have nothing better to do while hiding anyways
 		if (intentions.IsKnockingBack) 		score *= 1.5;	// In preparation of that enemy engaging again, we probably wanna use a stance
 
@@ -119,5 +134,28 @@ this.hd_ai_defend_stance <- this.inherit("scripts/ai/tactical/behavior", {
 
 		this.m.Skill = null;
 		return true;
+	}
+
+// New Functions
+	// @param _skill is the chosen possible active skill, we consider to execute. It must not be null
+	function HD_getSkillScoreMult( _entity, _skill )
+	{
+		if (_skill.getID() == "hd_whirling_death_skill")
+		{
+			local whirlingDeathEffect = _entity.getSkills().getSkillByID("hd_whirling_death_effect");
+			if (whirlingDeathEffect != null)
+			{
+				if (whirlingDeathEffect.m.HD_LastsForTurns == 1)
+				{
+					return 1.2;	// The effect is almost gone! Better keep it alive, while it is cheap
+				}
+				else
+				{
+					return 0.5;	// The effect still lasts some time, we can just wait
+				}
+			}
+		}
+
+		return 1.0;
 	}
 });
