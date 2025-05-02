@@ -48,6 +48,15 @@
 		::World.setPlayerVisionRadius(this.getPlayer().getVisionRadius());
 	}
 
+	q.onCombatFinished = @(__original) function()
+	{
+		// Vanilla Fix: We prevent vaniiSwitcheroo, to prevent V
+		local oldRestoreEquipment = ::Settings.getGameplaySettings().RestoreEquipment;
+		::Settings.getGameplaySettings().RestoreEquipment = false;
+		__original();
+		::Settings.getGameplaySettings().RestoreEquipment = oldRestoreEquipment;
+	}
+
 	q.onInit = @(__original) function()
 	{
 		__original();
