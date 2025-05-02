@@ -4,7 +4,8 @@
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_tempo", function(q) {
 	// Public
-	q.m.InitiativeModifierPerTile <- 15;
+	q.m.InitiativeModifierPerTile <- 0;
+	q.m.InitiativePctPerTile <- 0.1;
 	q.m.IsForceEnabled <- false;
 
 	// Private
@@ -40,7 +41,17 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(this.getInitiativeModifier(), {AddSign = true}) + " [Initiative|Concept.Initiative]"),
+				text = ::MSU.Text.colorizeValue(this.getInitiativeModifier(), {AddSign = true}) + ::Reforged.Mod.Tooltips.parseString(" [Initiative|Concept.Initiative]"),
+			});
+		}
+
+		if (this.getInitiativeMult() != 1.0)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/initiative.png",
+				text = ::MSU.Text.colorizeMultWithText(this.getInitiativeMult()) + ::Reforged.Mod.Tooltips.parseString(" [Initiative|Concept.Initiative]"),
 			});
 		}
 
@@ -59,6 +70,7 @@
 		if (this.isEnabled())
 		{
 			_properties.Initiative += this.getInitiativeModifier();
+			_properties.InitiativeMult *= this.getInitiativeMult();
 		}
 	}
 
@@ -127,6 +139,11 @@
 	q.getInitiativeModifier <- function()
 	{
 		return this.m.TilesMoved * this.m.InitiativeModifierPerTile;
+	}
+
+	q.getInitiativeMult <- function()
+	{
+		return 1.0 + this.m.TilesMoved * this.m.InitiativePctPerTile;
 	}
 });
 
