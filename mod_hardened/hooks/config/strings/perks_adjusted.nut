@@ -110,20 +110,6 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
-		ID = "perk.rf_death_dealer",
-		Key = "RF_DeathDealer",
-		Description = ::UPD.getDescription({
-			Fluff = "Like wheat before a scythe!",
-			Requirement = "AoE Attack",
-			Effects = [{
-				Type = ::UPD.EffectType.Passive,
-				Description = [
-					"Deal " + ::MSU.Text.colorPositive("5%") + " more Damage for every enemy within 2 tiles of you",
-				],
-			}],
-		}),
-	},
-	{
 		ID = "perk.dodge",
 		Key = "Dodge",
 		Description = ::UPD.getDescription({
@@ -694,6 +680,20 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Whenever you stun or kill an enemy, apply [Dazed|Skill+dazed_effect] to all enemies adjacent to the target for " + ::MSU.Text.colorPositive(1) + " [turn|Concept.Turn]",
+				],
+			}],
+		}),
+	},
+	{
+		ID = "perk.rf_death_dealer",
+		Key = "RF_DeathDealer",
+		Description = ::UPD.getDescription({
+			Fluff = "Like wheat before a scythe!",
+			Requirement = "AoE Attack",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Deal " + ::MSU.Text.colorPositive("5%") + " more Damage for every enemy within 2 tiles of you",
 				],
 			}],
 		}),
