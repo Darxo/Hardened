@@ -12,9 +12,10 @@
 
 ::Hardened.HooksMod <- ::Hooks.register(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
 ::Hardened.HooksMod.require(["mod_reforged >= 0.7.3"]);
-::Hardened.HooksMod.conflictWith(
-	"mod_heal_repair_fix"	// We have our own fix for the camping recovery
-);
+::Hardened.HooksMod.conflictWith([
+	"mod_heal_repair_fix [Camping Hitpoint Recovery is fixed in Hardened]",	// We have our own fix for the camping recovery
+	"mod_RREI [This mod is integrated into Hardened]",	// We have our own fix for the camping recovery
+]);
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
 	::Hardened.Mod <- ::MSU.Class.Mod(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
