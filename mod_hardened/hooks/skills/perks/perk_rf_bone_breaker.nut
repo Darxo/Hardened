@@ -5,7 +5,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_bone_breaker", function(q) {
 	// Private
 	q.m.Temp_IsInEffect <- false;	// If true, then we are in a skill hit, from a valid skill
-	q.m.Temp_HitInfoReference <- null;		// Reference to the hitinfo of the current hit
 	q.m.Temp_InjuryMockObject <- null;		// Mockobject for the applyInjury function of actor.nut
 
 	q.create = @(__original) function()
@@ -24,8 +23,6 @@
 		if (this.isSkillValid(_skill) && _targetEntity.getArmor(_hitInfo.BodyPart) != 0)
 		{
 			this.m.Temp_IsInEffect = true;
-			// We save a reference to the current _hitInfo so that we still have access to it later during the onTargetHit
-			this.m.Temp_HitInfoReference = _hitInfo;
 
 			this.m.Temp_InjuryMockObject = ::Hardened.mockFunction(_targetEntity, "applyInjury", function(_skill, _hitInfo) {
 				return { done = true, value = null };
@@ -53,29 +50,30 @@
 			return;
 		}
 
-		local oldDamageInflictedHitpoints = this.m.Temp_HitInfoReference.DamageInflictedHitpoints;
+		local hitinfo = ::Const.Tactical.MV_CurrentHitInfo;		// We save the modular vanilla reference in a temporary shorter variable for readability
 
 		// We actually implement the Bonebreaker effect, by adding armor damage dealt on top of Hitpoint damage for the purpose of injuries
-		this.m.Temp_HitInfoReference.DamageInflictedHitpoints += this.m.Temp_HitInfoReference.DamageInflictedArmor;
+		local oldDamageInflictedHitpoints = hitinfo.DamageInflictedHitpoints;
+		hitinfo.DamageInflictedHitpoints += hitinfo.DamageInflictedArmor;
 
 		local boneBreakerInjury = null;
 		// We need to replicate any vanilla pre-condition for even considering to apply an injury
-		if (_targetEntity.getCurrentProperties().IsAffectedByInjuries && _targetEntity.m.IsAbleToDie && this.m.Temp_HitInfoReference.DamageInflictedHitpoints >= ::Const.Combat.InjuryMinDamage && _targetEntity.getCurrentProperties().ThresholdToReceiveInjuryMult != 0 && this.m.Temp_HitInfoReference.InjuryThresholdMult != 0 && this.m.Temp_HitInfoReference.Injuries != null)
+		if (_targetEntity.getCurrentProperties().IsAffectedByInjuries && _targetEntity.m.IsAbleToDie && hitinfo.DamageInflictedHitpoints >= ::Const.Combat.InjuryMinDamage && _targetEntity.getCurrentProperties().ThresholdToReceiveInjuryMult != 0 && hitinfo.InjuryThresholdMult != 0 && hitinfo.Injuries != null)
 		{
 			// Now we run the modularVannilla function applyInjury to atually apply an injury on the target
-			boneBreakerInjury = _targetEntity.applyInjury(_skill, this.m.Temp_HitInfoReference);
+			boneBreakerInjury = _targetEntity.applyInjury(_skill, hitinfo);
 		}
 
 		if (boneBreakerInjury != null)
 		{
 			if (_targetEntity.isPlayerControlled() || !_targetEntity.isHiddenToPlayer())
 			{
-				::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(_targetEntity) + "\'s " + ::Const.Strings.BodyPartName[this.m.Temp_HitInfoReference.BodyPart] + " suffers " + boneBreakerInjury.getNameOnly() + " because of \'Bone Breaker\'!");
+				::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(_targetEntity) + "\'s " + ::Const.Strings.BodyPartName[hitinfo.BodyPart] + " suffers " + boneBreakerInjury.getNameOnly() + " because of \'Bone Breaker\'!");
 			}
 		}
 
 		// Revert our changes to DamageInflictedHitpoints
-		this.m.Temp_HitInfoReference.DamageInflictedHitpoints = oldDamageInflictedHitpoints;
+		hitinfo.DamageInflictedHitpoints = oldDamageInflictedHitpoints;
 	}
 
 // New Functions
