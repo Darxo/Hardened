@@ -1,9 +1,10 @@
 this.hd_whirling_death_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		// Public
-		DamageMult = 1.3,
+		DamageMult = 1.25,
 		ReachModifier = 2,
 		MeleeDefenseModifier = 10,
+		DurationInTurns = 3,
 	},
 
 	function create()
@@ -17,7 +18,7 @@ this.hd_whirling_death_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
 
-		this.m.HD_LastsForTurns = 2;
+		this.m.HD_LastsForTurns = this.m.DurationInTurns;
 	}
 
 	function getTooltip()
@@ -59,7 +60,7 @@ this.hd_whirling_death_effect <- this.inherit("scripts/skills/skill", {
 
 	function onRefresh()
 	{
-		this.m.HD_LastsForTurns = 2;
+		this.m.HD_LastsForTurns = this.m.DurationInTurns;
 	}
 
 	function onUpdate( _properties )

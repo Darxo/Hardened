@@ -1,7 +1,7 @@
 this.hd_whirling_death_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		IsSpent = false,
-		ActionPointModifierOnRepeat = -2,
+		ActionPointModifierOnRepeat = -3,
 	},
 	function create()
 	{
@@ -21,7 +21,7 @@ this.hd_whirling_death_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsWeaponSkill = true;
-		this.m.ActionPointCost = 5;
+		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 10;
 		this.m.AIBehaviorID = ::Const.AI.Behavior.ID.HD_Defend_Stance;
 	}
