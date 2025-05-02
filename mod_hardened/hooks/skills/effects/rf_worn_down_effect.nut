@@ -1,6 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/effects/rf_worn_down_effect", function(q) {
-	q.m.MeleeDefenseMult <- 0.8;
-	q.m.RangedDefenseMult <- 0.8;
+	q.m.MeleeDefenseMult <- 0.7;
+	q.m.RangedDefenseMult <- 0.7;
 
 	q.getTooltip = @(__original) function()
 	{
