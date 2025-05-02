@@ -84,7 +84,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 ### New Perks
 
 - Add new **Anchor** perk in Tier 3 of **Unstoppable Group**. It grants immunity against **Displacement** until the start of your next turn, if you end your turn on the same tile you started it on. It also grants +15 Melee Defense during your turn.
-- Add new **Hybridization** perk in Tier 3 of **Ranged Group**. It allows swapping two weapons with no shared weapon types for free, once per turn. It grants +5 Melee Defense if you have at least 70 Base Ranged Skill and it grants +5 Ranged Defense, if you have at least 70 Base Melee Skill
+- Add new **Hybridization** perk in Tier 3 of **Ranged Group**. It allows swapping two weapons with no shared weapon types for free, once per turn. It grants +10 Melee Defense if you have at least 70 Base Ranged Skill and it grants +10 Ranged Defense, if you have at least 70 Base Melee Skill
 - Add new **Elusive** perk in Tier 2 of **Swift Group**. It reduces the AP cost for movement on all terrain by 1 to a minimum of 2. This does not stack with Pathfinder. After moving 2 tiles, become immune to rooted effects, until the start of your next turn
 - Add new **One with the Shield** perk in Tier 7 of **Shield Group**. It requires a shield. It grants 25% more Injury Threshold. While you have Shieldwall effect you take 40% less Hitpoint damage from head attack. While you don't have Shieldwall effect you take 40% less Hitpoint damage from body attacks
 - Add new **Parry** perk in Tier 3 of **Swift Group**. It requires a one handed melee weapon. It grants Melee Defense equal to your base Ranged Defense against weapon attacks. While engage with someone wielding a melee weapon, you have 70% less Ranged Defense. Does not work with shields, while stunned, fleeing or disarmed
@@ -203,6 +203,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Concussive strikes** is completely reworked. It is now called **Shockwave** and it makes it so your kills or stuns with maces will daze all enemies adjacent to your target for 1 turn
 - **Crossbow and Firearm Mastery** now grants +1 Vision while you wear a Helmet with a Vision Penalty. It no longer reduces the reload cost of **Heavy Crossbows** by 1
 - **Dagger Mastery** no longer grant any reach ignore. It now reduces the action point cost of the first offhand skill each turn to 0, if your offhand item has a weight lower than 10
+- **Decisive** no longer grants +15 Initiative
 - **Death Dealer** is completely reworked. It now grants 5% more damage with AoE-Attacks for every enemy within 2 tiles
 - **Deep Impact** is now called **Breakthrough** and has been completely reworked. It grants the **Pummel** skill, which can now be used with any hammer. It also makes it so **Shatter** has a 100% chance to knock targets back on a hit
 - **Dismantle** has been completely reworked. It now grants 100% more Shield Damage. It also grants +40% Armor Damage against enemies who have full health
@@ -217,7 +218,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Fencer** no longer grants +10% chance to hit or 20% less fatigue cost. It no longer removes the damage type requirement from **Passing Step**. It now causes your fencing swords to lose 50% less durability
 - **Flail Mastery** no longer grants +5% HitChance with **Thresh** and it no longer grants the **From all Sides** perk. You now gain the **From all Sides** effect until the start of your next turn, after you use a Flail Skill. This effect makes you count twice for the purpose of surrounding adjacent enemies
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy
-- **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you
+- **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you or you move away from each other
 - **Fortified Mind** now grants +25 Resolve (instead of 25% more) and you lose Resolve equal to the Weight of your Helmet
 - **Footwork** perk no longer grants **Sprint**
 - **Fresh and Furious** now has a fatigue threshold of 50% (up from 30%). It now checks your Fatigue when you end your turn, instead of at the start of your turn. It now also affects skills that cost 1 Action Point. It is now wasted when using a skill that costs 0 Action Points
@@ -225,6 +226,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Fruits of Labor** is reworked. It now grants 5% more Hitpoints, Stamina, Resolve and Initiative
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
 - **Hammer Mastery** no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part.
+- **Hold Steady** no longer has a shared cooldown with other brothers who have this perk. It now lasts for 2 rounds, instead of having a turn-based duration
 - **Hybridization** is completely reworked. It is now called **Toolbox** and requires a Throwing Weapon. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type attacks to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 100% more damage to shields
 - **Inspiring Presence** no longer requires a banner. At the start of each round it grants adjacent allies of your faction +3 Action Points for this turn, if they are adjacent to an enemy and have less Resolve than you. The same target can't be inspired multiple times per turn.
 - **Iron Sights** headshot chance now also works with melee weapons
@@ -236,7 +238,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Marksmanship** is completely reworked. It now grants +10 minimum and maximum damage while there are no enemies within 2 tiles
 - **Nimble** is completely reworked: It now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
 - **Offhand Training** is completely reworked. It now reduces the AP cost of tool skills by 1. Wielding a tool in your offhand no longer disables **Double Grip** and while wielding a tool in your offhand, the first successful attack each turn, will stagger your target
-- **Onslaught** no longer has a shared cooldown with other brothers who have this perk
+- **Onslaught** no longer has a shared cooldown with other brothers who have this perk. It now lasts for 2 rounds, instead of having a turn-based duration
 - **Opportunist** is completely reworked. It now grants throwing attacks -1 Action Point cost per tile moved, until you use a throwing attack, wait or end your turn. Moving on all terrain costs -2 Fatigue, just like the **Athletic** Trait
 - **Phalanx** is completely reworked. It grants +1 Reach for every adjacent ally with a shield. **Shieldwall** no longer ends, while an adjacent brother also has **Shieldwall** active
 - **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. You take 2% less Armor Damage from Attacks for every 5 Initiative you have, up to a maximum of 40%.
@@ -259,7 +261,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Swift Stabs** has been completely reworked. It's now called **Hit and Run**. It makes it so all dagger attacks can be used at 2 tiles and will move the user one tile closer before the attack. When the attack hits the enemy, the user is moved back to the original tile
 - **Sword Mastery** no longer grants **Passing Step** and it no longer increases the HitChance with **Riposte**. It now causes your attacks against enemies whose turn has already started to lower their Initaitive by a stacking 15% (up to a maximum of 90%) until the start of their next turn
 - **Target Practice** has been completely reworked. It now makes it 50% less likely for your arrows to hit the cover, when you have no clear line of fire (stronger than vanilla Bullseye)
-- **Tempo** is completely reworked. It grants +15 Initiative until the start of your next turn whenever you move a tile during your turn. It also grants **Passing Step**
+- **Tempo** is completely reworked. It grants 10% more Initiative until the start of your next turn whenever you move a tile during your turn. It also grants **Passing Step**
 - **Through the Gaps** is completely reworked. It causes your piercing spear attacks to always target the body part with the lowest total armor but no longer deal critical damage on a hit to the head
 - **Throwing Mastery** is mostly completely reworked. It now grants 30% more damage for your first throwing attack each turn, no matter the range. It now allows swapping a throwing weapon with an empty throwing weapon or empty slot for free, once per turn
 - **Trick Shooter** no longer causes your **Aimed Shot** to trigger a morale check on the main target hit
@@ -269,8 +271,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Vigorous Assault** discount is no longer removed when switching items
 - **Weapon Master** no longer works with hybrid weapons. When you learn **Weapon Master** you now gain a new random weapon perk group
 - **Wears it well** now grants 50% of combined Mainhand and Offhand Weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest Weight)
-- **Wear them Down** is completely reworked. It now causes your hits to apply an additional 10 Fatigue on the target and your misses to apply 5 Fatigue. After your attack, if your target is fully fatigued, apply **Worn Down** effect until the end of their turn, which prevents them from using **Recover** and applies 20% less Melee Defense and 20% less Ranged Defense
-- **Whirling Death** is completely reworked. It now grants a new active skill which creates a buff for two turns granting 30% more damage, 2 Reach and 10 Melee Defense to the user
+- **Wear them Down** is completely reworked. It now causes your hits to apply an additional 10 Fatigue on the target and your misses to apply 5 Fatigue. After your attack, if your target is fully fatigued, apply **Worn Down** effect until the end of their turn, which prevents them from using **Recover** and applies 30% less Melee Defense and 30% less Ranged Defense
+- **Whirling Death** is completely reworked. It now grants a new active skill which creates a buff for 3 turns granting 25% more damage, +2 Reach and 10 Melee Defense to the user
 
 ### Perk Groups
 
@@ -483,6 +485,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Dynamic Party Adjustments
 
+- Bandit Parties will now only field at most two of the following unit blocks at the same time: Fast, Tough, Ranged
 - Fast Brigands (**Robber** -> **Bandit** -> **Killer**) now upgrade slightly earlier
 - Add **Highwayman** as new T1 of the Banditleader Unitblock. Banditleader Unitblock now require a StartingResourceMin of 180 (down from 250)
 
@@ -495,6 +498,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - NPCs will no longer throw nets while their strategy is defending
 - NPCs with **Bolster** are more likely to attack with their polarm as they are surrounded by more allies
 - NPCs with **Dismantle** are more likely to target enemies with 100% hitpoints
+- NPCs with **Reload Disorientation** are slightly less likely to use a ranged attack
 - NPCs with **Sweeping Strikes** are more likely to use an appropriate attack as they are surrounded by more enemies
 - NPCs with **Wear them Down** 20% more likely to target someone who is almost fully fatigued
 - NPCs are more likely to target enemies with **Formidable Approach** if it has been procced against them
@@ -509,7 +513,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - NPCs are 20% more likely to use a throwing spear against shield users and 50% more likely to target shields, that it would destroy on use
 
 ### Combat General
-- **Encumbrance** no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level
+- **Encumbrance** no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level. It no longer requires a minimum armor weight of 20
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
 - Equipped Ammo Items can no longer be dropped to the ground or into an empty inventory slot
 - **Swamp** tiles no longer reduce Melee Skill by 25%. Instead they now reduce Initiative by 25%
@@ -518,7 +522,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - All fleeing characters now have +1 Action Point
 - All player characters now have +1 Action Point during AutoRetreat
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied
+- No characater can receive more than one negative morale check, caused by a fleeing ally, per turn
 - Dying or Fleeing characters no longer trigger negative morale checks for their allies if the distance between them is greater than the vision of the receiving ally
+- Characters no longer gain +1 additional Resolve against morale checks from fleeing allies, per ally in the battlefield
 - Resurrecting Corpses can no longer knock back characters that are rooted or immune to Displacement. Instead they delay their resurrection
 - Burning Damage (Fire Pot, Burning Arrow, Burning Ground) now remove all root-like effects from the targets
 - Characters which are not visible to the player will no longer produce idle or death sounds.
@@ -538,6 +544,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - You can now get up to 6 Tavern Rumors every cycle (up from 4)
 - Tavern Rumors now have a linearly scaling cost. Each paid rumor costs an amount based on the standard (vanilla) rumor price, multiplied by the number of the paid rumor you are about to buy
 - Named weapons now have a 40% chance to be the chosen item type for camps (up from 25,9%). Named shields, helmets and armor now have a 20% chance to be chosen (down from 24,7%)
+- Food Products transported by Caravans now always drop at full stacksize and freshness
 - World Parties are no longer stunned, when you cancel the combat dialog with them
 - At the start of each new campaign ~5 additional small bandit camps are spawned in the world
 - The legendary Location **Ancient Spire** now reveals an area of 3000 (up from 1900)
@@ -577,6 +584,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Your headshot chance is now displayed in the combat tooltip when targeting enemies
 - Introduce a new **Unworthy** effect which prevents the character from granting experience on death. This is given to all non-player controlled characters who grant 0 XP on death or are allied to the player
 - Introduce a new cosmetic **Non-Combatant** effect, given to non-combatant characters, which explains that they do not need to be killed in order to win
+- Automatically restore broken (shields) or used (nets) equipment after each battle, if you have replacements in your inventory
+- Add Setting (on) to display a glowing red eyes effect on any human-sized character, who is under the effect of **Killing Frenzy**, **Double Strike**, **Ghostlike**, **Retribution** or has 3 stacks of **Decisive**
+- Corpses of resurrecting Zombies and Humans now emit a slight purple particle effect
 - Add Setting to control the zoom speed during combat to allow for more granular zooming
 - Loot that is not equippable in battle no longer appears on the ground (e.g. Beast Trophies/Ingredients)
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
@@ -589,6 +599,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Corpses will now display the round, in which they were created
 - Print combat log for hitpoint damage dealt, when an attack kills the target and include the hitpoints of the target before the kill
 - The automatic camera level calculation is improved, especially while in mountanious terrain. Your camera level is now automatically adjusted when moving up or down terrain
+- Automatically re-equip the accessory that you had previously equiped after an arena fight
 - Add Settings to immediately stop the player movement halfway through, when it reveals an enemy (on) or an ally (off)
 - Add Setting (on) to prevent combat logs, which are the result of the same skill execution, from producing empty newlines
 - Add Setting (on) for preventing tile/enemy tooltips from being generated while it is not your turn
@@ -618,7 +629,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - List the effects of camping in the camping tooltip
 - Add Setting (on) for marking named/legendary helmets/armor or armor with attachements as to-be-repaired whenever it enters your inventory
 - Add Setting (on) to display food duration, repair duration and minimum medicine cost in brackets behind those supply values
-- Add 1 second delay, before you can click the buttons in event screens to prevent accidental missclicks
+- Add 0.8 second delay, before you can click the buttons in event screens to prevent accidental missclicks
 - Add Concept and Tooltip for Day-Night Cycle
 - Slightly Lower the volume of the annoying kid sfx in towns
 
@@ -644,6 +655,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - You can no longer do two Arenas during the same day
 - Other Actors moving in or out of the range of someone with **Lone Wolf** now cause that effect to update instantly
 - Allow cut, copy and mark operations in input fields that are full. Limit Ctrl-Combinations, Delete and Arrow Key presses in input fields to one per press
+- Items that you drop during battle are now correctly re-equipped afterwards
 - Improve knock back logic for Spiked Impaler to behave like the Knock Back skill from shields
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
 - Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
@@ -659,6 +671,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Prevent the same random human name (e.g. Leader or Knight) to be generated in succession
 - Throw Pot/Flask skills are no longer considered an attack
 - Improve tooltips of **Chop** skill
+- Rewrite `queryActorTurnsNearTarget` from `behavior.nut`, making it more accurately by considering current action points
 - Remove a duplicate loading screen
 
 ### Reforged
@@ -711,6 +724,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Add `ResurrectionChance`, `MinResurrectDelay` and `MaxResurrectDelay` for humans
 - `getActionPointCost` no longer returns negative values. Instead it returns 0 in those cases
 - Print debugLog when entities resume their turn
+- Add new `HD_LastsForTurns = null` member for `skill.nut` that can be assigned a number to give effects a turn-based duration
+- Add new `HD_LastsForRounds = null` member for `skill.nut` that can be assigned a number to give effects a round-based duration
+- Add new `HD_scheduleResurrection(_rounds, _corpse)` for `tactical_entity_manager`, which can be used to schedule a resurrection and spawn a corresponding purpose particle effect on the corpse
 
 ### New Character Properties
 
@@ -724,6 +740,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - `WeightStaminaMult` is an array of multipliers, mirroring `::Const.ItemSlotSpaces`, which control how much the Weight of each Itemslot affects this characters Stamina
 - `WeightInitiativeMult` is an array of multipliers, mirroring `::Const.ItemSlotSpaces`, which control how much the Weight of each Itemslot affects this characters Initiative
 - `HitpointRecoveryMult` multiplies to anything that would add a flat amount of hitpoints to the character
+- `ShowFrenzyEyes = false` displays red eyes on human-like characters
 
 # Requirements
 

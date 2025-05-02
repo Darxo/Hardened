@@ -1,5 +1,5 @@
 // Adjusting Vanilla Values
-::Const.CharacterProperties.InitiativeAfterWaitMult = 1.0;	// This debuff is now applied via a new effect
+::Const.CharacterProperties.InitiativeAfterWaitMult = 1.0;	// In Vanilla this is 0.75; This debuff is now applied via a new effect instead
 
 // Adjusted Reforged Values
 ::Const.Morale.RF_AllyFleeingBraveryModifierPerAlly = 0;	// In Reforged this is 1

@@ -30,10 +30,40 @@ This submod is a collection of changes to Reforged that I suggested internally t
 - allies or your own brothers no longer grant XP on death
 - bring and drop dozens of additional quiver
 - infinitely re-equip broken weapon to keep fighting (now you deal 50% less damage)
+- fighting on border tiles and auto-retreating when losing
+- repeatidly picking up broken weapon (e.g. with quickhands) for one hit at a time (now it deals 50% less damage)
+- save&reload to gain immediate tips and contract directions for find location/barb-king contracts
 
 ## Debug:
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
+
+0.40.0
+	- **Onslaught** now lasts for 2 rounds instead of being turn-based
+	- **Hold Steady** now lasts for 2 rounds instead of being turn-based
+	- **Whirling Death** now costs 6 Action Points (up from 5) and -3 Action Points while already active (up from -2). It now lasts 3 turns (up from 2) and grants 25% more damage (down from 30%)
+	- **Tempo** now grants 10% more Initiative instead of +15 Initiative per tile moved
+	- **Decisive** no longer grants any Initiative
+	- **Hybridization** now grants +10 Melee Defense (up from +5) and +10 Ranged Defense (up from +5) if the respective conditions are met
+	- **Worn Down** now causes 30% less defenses (up from 20% less)
+	- **Formidable Approach** now removes targets from your target-list if you move away from them. It also now stops working when the user is disarmed
+	- **Bloodletter's Reach** now also has a weight of 0.2 per ammo, similar to other quivers
+	- **Encumbrance** no longer requires a minimum armor weight of 20
+	- No characater can receive more than one negative morale check, caused by a fleeing ally, per turn
+	- Bandit Parties will now only field at most two of the following unit blocks at the same time: Fast, Tough, Ranged
+	- Characters no longer gain additional Resolve against negative morale checks from fleeing allies, per ally in the battlefield
+	- Food Products transported by Caravans now always drop at full stacksize and freshness
+	- NPCs now will use **Whirling Death** less likely, while there are nearby melee enemies, which they can hit this turn
+	- NPCs with **Reload Disorientation** are slightly less likely to continue shooting
+	- Automatically restore broken or used equipment after each battle, if you have replacements in your inventory
+	- Automatically re-equip the accessory that you had previously equiped after an arena fight
+	- Corpses of resurrecting Zombies and Humans now emit a slight purple particle effect
+	- Add Setting (on) to display a glowing red eyes effect on any human-sized character, who is under the effect of **Killing Frenzy**, **Double Strike**, **Ghostlike**, **Retribution** or has 3 stacks of **Decisive**
+	- Reduce delay until the initial event screen is clickable to 800ms (down from 1000ms)
+	- Fix(Vanilla) restoreEquipment option not restoring items correctly, that you dropped during fights
+	- Fix manual retreat being possible during the Icy Cave fight
+	- Add new `HD_LastsForTurns = null` member for `skill.nut` that can be assigned a number to give effects a turn-based duration
+	- Add new `HD_LastsForRounds = null` member for `skill.nut` that can be assigned a number to give effects a round-based duration
 
 0.39.0
 	- **Unstoppable Perk** now grants 8% more Initiative per stack instead of +10 Initiative per stack
