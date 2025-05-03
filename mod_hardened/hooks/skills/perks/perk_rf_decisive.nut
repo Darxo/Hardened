@@ -4,4 +4,10 @@
 		__original();
 		this.m.InitiativeModifier = 0;
 	}
+
+	q.onUpdate = @(__original) function( _properties )
+	{
+		__original(_properties);
+		if (this.getDamageMult() > 1.0) _properties.ShowFrenzyEyes = true;
+	}
 });

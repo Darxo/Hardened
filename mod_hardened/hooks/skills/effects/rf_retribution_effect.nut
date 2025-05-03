@@ -3,7 +3,10 @@
 	q.m.SkillCounterDamageTotalMult <- {};	// Keys are the SkillCounter value of the empowered skill and the Values are the damage multiplier
 
 	// Overwrite because we apply the damage bonus during onAnySkillUsed now so we have more control and can give it to delayed skills correctly
-	q.onUpdate = @() function( _properties ) {}
+	q.onUpdate = @() function( _properties )
+	{
+		if (this.m.Stacks > 0) _properties.ShowFrenzyEyes = true;
+	}
 
 	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties )
 	{
