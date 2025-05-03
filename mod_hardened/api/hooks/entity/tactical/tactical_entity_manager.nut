@@ -25,12 +25,24 @@
 			local prop = targetTile.getEntity().getCurrentProperties();
 			if (prop.IsImmuneToKnockBackAndGrab || prop.IsRooted)
 			{
-				::Time.scheduleEvent(::TimeUnit.Rounds, 1, ::Tactical.Entities.resurrect, _info);
+				::Tactical.Entities.HD_scheduleResurrection(1, _info);
 				return null;
 			}
 		}
 
-		return __original( _info, _force);
+		local mockObject = ::Hardened.mockFunction(::Time, "scheduleEvent", function( _timeUnit, _time, _function, _data ) {
+			if (_timeUnit == ::TimeUnit.Rounds && "HD_CorpseTouched" in _data && _data.HD_CorpseTouched != ::Time.getRound())	// We identify a corpse by the existance of the HD_CorpseTouched field
+			{
+				::Tactical.Entities.HD_scheduleResurrection(_time, _data);
+				return { done = true, value = null };
+			}
+		});
+
+		local ret = __original( _info, _force);
+
+		mockObject.cleanup();
+
+		return ret;
 	}
 
 	// Function for scheduling resurrections

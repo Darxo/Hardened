@@ -10,18 +10,18 @@
 		local mockIsUndeadScourge = ::Hardened.mockFunction(::World.FactionManager, "isUndeadScourge", function() {
 			return { done = true, value = false };
 		});
-		local ret = __original(_tile, _fatalityType, _killer);
+		local corpse = __original(_tile, _fatalityType, _killer);
 		mockIsUndeadScourge.cleanup();
 
-		if (this.isTurningIntoZombie(_killer, ret, _fatalityType))
+		if (this.isTurningIntoZombie(_killer, corpse, _fatalityType))
 		{
-			ret.Faction = ::World.FactionManager.getFactionOfType(::Const.FactionType.Zombies).getID();
-			ret.IsConsumable = false;
-			ret.IsResurrectable = false;
-			::Time.scheduleEvent(::TimeUnit.Rounds, this.getResurrectRounds(), ::Tactical.Entities.resurrect, ret);
+			corpse.Faction = ::World.FactionManager.getFactionOfType(::Const.FactionType.Zombies).getID();
+			corpse.IsConsumable = false;
+			corpse.IsResurrectable = false;
+			::Tactical.Entities.HD_scheduleResurrection(this.getResurrectRounds(), corpse);
 		}
 
-		return ret;
+		return corpse;
 	}
 
 // New Functions
