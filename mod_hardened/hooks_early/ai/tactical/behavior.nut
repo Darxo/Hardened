@@ -25,7 +25,8 @@
 		if (distance <= 1)
 		{
 			ret.Turns = 0.0;
-			local cheapestAttackAP = _actor.getSkills().getCheapestAttack().getActionPointCost();
+			local cheapestAttack = _actor.getSkills().getCheapestAttack();
+			local cheapestAttackAP = cheapestAttack == null ? 4 : cheapestAttack.getActionPointCost();
 			if (cheapestAttackAP <= _actor.getActionPoints())	// We can attack this turn
 			{
 				ret.TurnsWithAttack = cheapestAttackAP / _actor.getActionPoints();
@@ -64,7 +65,8 @@
 			ret.Turns = navigator.getTurnsRequiredForPath(_actor, settings, _actor.getActionPointsMax());
 			ret.Turns += missingAPPenalty;
 
-			local cheapestAttackAP = _actor.getSkills().getCheapestAttack().getActionPointCost();
+			local cheapestAttack = _actor.getSkills().getCheapestAttack();
+			local cheapestAttackAP = cheapestAttack == null ? 4 : cheapestAttack.getActionPointCost();
 			local attackPenalty = cheapestAttackAP / _actor.getActionPointsMax();
 			ret.TurnsWithAttack = ret.Turns + attackPenalty;
 		}
