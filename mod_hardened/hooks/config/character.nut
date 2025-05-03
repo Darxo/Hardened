@@ -1,6 +1,9 @@
 // Adjusting Vanilla Values
 ::Const.CharacterProperties.InitiativeAfterWaitMult = 1.0;	// This debuff is now applied via a new effect
 
+// Adjusted Reforged Values
+::Const.Morale.RF_AllyFleeingBraveryModifierPerAlly = 0;	// In Reforged this is 1
+
 // Overwrite vanilla function
 local oldGetHitChance = ::Const.CharacterProperties.getHitchance;
 ::Const.CharacterProperties.getHitchance = function( _bodyPart )
