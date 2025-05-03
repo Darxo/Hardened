@@ -7,8 +7,6 @@
 		__original(_faction);
 		this.m.Start.getProduce = oldGetProduce;
 
-		__original(_faction);
-
 		local lastSpawnedParty = ::MSU.isNull(this.m.Faction) ? null : this.m.Faction.m.LastSpawnedParty;
 		if (lastSpawnedParty != null)
 		{
