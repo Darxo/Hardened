@@ -1,5 +1,10 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/actor", function(q) {
+	// Public
+	q.m.HD_FleeingMoraleChecksPerTurn <- 1;	// This actor will becomes immune to morale checks from fleeing after receiving this many morale checks from that
+
 	// Private
+	q.m.HD_FleeingMoraleChecksLeft <- 0;
+	q.m.HD_FleeingMoraleTurnNumber <- -1;	// Set to the last turn number, that we had morale checks in, to keep track of when to reset the fleeing morale checks
 	q.m.HD_IsDiscovered <- false;	// Is true, when setDiscovered(true) has been called on us. Is set to false at the start of every round or when this actor steps into a tile not visible to the player
 
 	q.onInit = @(__original) function()
@@ -130,29 +135,53 @@
 	}
 
 	// This event is only fired for characters of the same faction as the one who started fleeing
+	// Feat: Fleeing allies dont trigger morale checks on us, if we can't see them
+	// 		or if we already had HD_FleeingMoraleChecksPerTurn morale checks triggered on us, this turn
 	q.onOtherActorFleeing = @(__original) function( _actor )
 	{
 		if (!this.m.IsAlive || this.m.IsDying) return;
 
-		// Morale Checks from allies fleeing are no longer triggered for you if you can't see them
-		local curProp = this.getCurrentProperties();
-		local oldIsAffectedByFleeingAllies = curProp.IsAffectedByFleeingAllies;
-
-		local distanceToVictim = this.getTile().getDistanceTo(_actor.getTile());
-		if (distanceToVictim > curProp.getVision())
+		if (this.m.HD_FleeingMoraleTurnNumber != ::Tactical.TurnSequenceBar.getTurnPosition())
 		{
-			curProp.IsAffectedByFleeingAllies = false;
+			this.m.HD_FleeingMoraleTurnNumber = ::Tactical.TurnSequenceBar.getTurnPosition();
+			this.m.HD_FleeingMoraleChecksLeft = this.m.HD_FleeingMoraleChecksPerTurn;
 		}
+
+		// Either we already had enough fleeing morale checks, or we can't see the _actor who's fleeing
+		// In Both situations, we become temporarily unaffected by fleeing allies
+		local curProp = this.getCurrentProperties();
+		if (this.m.HD_FleeingMoraleChecksLeft == 0 || this.getTile().getDistanceTo(_actor.getTile()) > curProp.getVision())
+		{
+			local oldIsAffectedByFleeingAllies = curProp.IsAffectedByFleeingAllies;
+			curProp.IsAffectedByFleeingAllies = false;
+			__original(_actor);
+			curProp.IsAffectedByFleeingAllies = oldIsAffectedByFleeingAllies;
+			return;
+		}
+
+		local fleeMoraleCheckHappened = false;
+		local mockObject = ::Hardened.mockFunction(this, "checkMorale", function( _change, _difficulty, _type = ::Const.MoraleCheckType.Default, _showIconBeforeMoraleIcon = "", _noNewLine = false ) {
+			if (_change == -1)
+			{
+				fleeMoraleCheckHappened = true;
+				return { done = true };
+			}
+		});
 
 		__original(_actor);
 
-		curProp.IsAffectedByFleeingAllies = oldIsAffectedByFleeingAllies;
+		mockObject.cleanup();
+		if (fleeMoraleCheckHappened)
+		{
+			--this.m.HD_FleeingMoraleChecksLeft;
+		}
 	}
 
 	q.onRoundStart = @(__original) function()
 	{
 		__original();
 		this.m.HD_IsDiscovered = this.getTile().IsVisibleForPlayer;
+		this.m.HD_FleeingMoraleTurnNumber = -1;
 	}
 
 	q.onTurnResumed = @(__original) function()
