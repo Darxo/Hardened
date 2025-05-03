@@ -102,7 +102,7 @@
 				// Maybe it is in our stash after we dropped it during battle and looted it afterwards?
 				foreach (stashItem in this.getStash().getItems())
 				{
-					if(stashItem == null) continue;
+					if (stashItem == null) continue;
 					if (!::MSU.isEqual(stashItem, entry.Item)) continue;
 
 					bro.getItems().HD_equipToSlot(entry.Item, entry.Slot);
@@ -147,7 +147,7 @@
 			foreach (item in _bro.getItems().getAllItemsAtSlot(itemSlot))
 			{
 				local isAllowedToStay = false;
-				foreach (slot in _restorePoint.Slots)
+				foreach (slot in _restorePoint.Slots)	// Is that item covered by any of our restorePoint slots?
 				{
 					if (slot.Slot != itemSlot) continue;
 					if (!::MSU.isEqual(slot.Item, item)) continue;
