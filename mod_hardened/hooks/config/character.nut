@@ -34,6 +34,7 @@ local oldGetClone = ::Const.CharacterProperties.getClone;
 ::Const.CharacterProperties.WeightInitiativeMult[::Const.ItemSlot.Bag] = 0.5;
 
 // New Values
+::Const.CharacterProperties.ShowFrenzyEyes <- false;
 ::Const.CharacterProperties.CanEnemiesHaveReachAdvantage <- true;
 ::Const.CharacterProperties.ReachAdvantageMult <- ::Reforged.Reach.ReachAdvantageMult;
 ::Const.CharacterProperties.getReachAdvantageMult <- function()

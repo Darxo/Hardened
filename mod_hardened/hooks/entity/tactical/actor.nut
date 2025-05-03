@@ -245,6 +245,26 @@
 });
 
 ::Hardened.HooksMod.hookTree("scripts/entity/tactical/actor", function(q) {
+	// If any character ever gets the sprite "dirt" added, we treat that as if they can handle glowy eyes
+	// So we add our new glowy eyes sprite to them and the effect, which controls glowy eyes
+	q.onInit = @(__original) function()
+	{
+		local mockObject;
+		mockObject = ::Hardened.mockFunction(this, "addSprite", function( _spriteName ) {
+			if (_spriteName == "dirt")
+			{
+				local ret = { done = true, value = mockObject.original(_spriteName) };
+
+				mockObject.original("HD_frenzy_eyes").setBrush("zombie_rage_eyes");		// We add the new sprite HD_frenzy_eyes directly after "dirt"
+				this.getSkills().add(::new("scripts/skills/special/hd_frenzy_eyes_manager"));	// We add the new frenzy eyes manager special skill, that spawns the effect
+				return ret;
+			}
+			return { done = false };
+		});
+		__original();
+		mockObject.cleanup();
+	}
+
 // Reforged Events
 	// This must happen as hookTree because there is no guarantee that someone overwriting it will call the child function
 	q.onSpawned = @(__original) function()
