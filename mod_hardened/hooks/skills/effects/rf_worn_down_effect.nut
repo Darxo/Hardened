@@ -39,7 +39,7 @@
 			id = 11,
 			type = "text",
 			icon = "ui/icons/fatigue.png",
-			text = ::Reforged.Mod.Tooltips.parseString("[Recover|Skill+recover_skill] can no longer be used"),
+			text = ::Reforged.Mod.Tooltips.parseString("[Recover|Skill+recover_skill] cannot be used"),
 		});
 
 		ret.push({

@@ -169,7 +169,8 @@
 - parry fx using little stars from ::Const.Tactical.DazeParticles
 - Holy Water use case:
 	- Destroy undead corpses
-
+- Prevent camps from spawning defenders, while player is nearby
+- Prevent camps from joining overworld fights or being attackable while other enemies are nearby
 
 
 
@@ -287,6 +288,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - debug zombies
 	- No Idea, I ran out of ideas following the lead of updateVisibility calls. I assumed that Zombies pushing other zombies, after my turn starts, messes something up. But that didnt do it
 	- found kinda a potential solution, see discord
+- Make Mercenaries, that you help in fights, sometimes giving you one of their painted shield as a thank-you to remember them by
 
 ## Rework Training Hall
 - Once per battle if you start your turn fleeing and not adjacent to an enemy, recover your morale to steady
