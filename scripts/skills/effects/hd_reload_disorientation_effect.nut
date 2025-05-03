@@ -64,7 +64,7 @@ this.hd_reload_disorientation_effect <- ::inherit("scripts/skills/skill", {
 	{
 		if (_user.getID() == this.getContainer().getActor().getID() && _user.getID() != _target.getID())	// We must be the _user
 		{
-			if (_skill == null) return ret;
+			if (_skill == null) return 1.0;
 			if (_skill.isAttack() && _skill.isRanged())
 			{
 				return 0.7;	// _user should wait out reload disorientation, instead of shooting right away
