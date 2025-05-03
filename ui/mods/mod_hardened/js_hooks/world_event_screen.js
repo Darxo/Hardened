@@ -10,8 +10,8 @@ WorldEventScreen.prototype.show = function (_data)
 			this.mBlockButtonInput = true;
 			var self = this
 			setTimeout(function() {
-				self.mBlockButtonInput = false;		// We prohibit event buttons to be pressed for 1 second to prevent player from accidentally clicking an event choice
-			}, 1000);
+				self.mBlockButtonInput = false;		// We prohibit event buttons to be pressed for 0.8 seconds to prevent player from accidentally clicking an event choice
+			}, 800);
 		}
 	}
 
