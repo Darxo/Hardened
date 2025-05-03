@@ -85,15 +85,20 @@
 			{
 				if (entry.Item.isEquipped()) continue;	// This item is already at its righteous place
 
-				local danglingIndex = danglingItems.find(entry.Item);
-				if (danglingIndex != null)	// The item is among the dangling items
-				{
-					bro.getItems().HD_equipToSlot(entry.Item, entry.Slot);
-					danglingItems.remove(danglingIndex);
-					continue;
-				}
-
 				local foundOriginal = false;
+
+				foreach (index, danglingItem in danglingItems)
+				{
+					if (!::MSU.isEqual(danglingItem, entry.Item)) continue;
+
+					// The item is among the dangling items
+					bro.getItems().HD_equipToSlot(entry.Item, entry.Slot);
+					danglingItems.remove(index);
+					foundOriginal = true;
+					break;
+				}
+				if (foundOriginal) continue;
+
 				// Maybe it is in our stash after we dropped it during battle and looted it afterwards?
 				foreach (stashItem in this.getStash().getItems())
 				{
