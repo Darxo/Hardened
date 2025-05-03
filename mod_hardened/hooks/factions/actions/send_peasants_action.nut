@@ -3,7 +3,7 @@
 	{
 		__original(_faction);
 
-		local lastSpawnedParty = this.m.Faction == null ? null : this.m.Faction.m.LastSpawnedParty;
+		local lastSpawnedParty = ::MSU.isNull(this.m.Faction) ? null : this.m.Faction.m.LastSpawnedParty;
 		if (!::MSU.isNull(lastSpawnedParty))
 		{
 			lastSpawnedParty.getSprite("banner").Visible = true;

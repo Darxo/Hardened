@@ -56,7 +56,36 @@
 		__original();
 	}
 
+	q.spawnCaravan = @(__original) function()
+	{
+		// We switcheroo getProduce, so that vanilla doesnt add its wares items to the caravan. Instead we want to have control over them being added
+		local home = (typeof this.m.Home == "instance" && this.m.Home instanceof ::WeakTableRef) ? this.m.Home.get() : this.m.Home;
+		local oldGetProduce = home.getProduce;
+		home.getProduce = function() { return [] };
+		__original();
+		home.getProduce = oldGetProduce;
+
+		// Now we add produces in our way to the party. But we first need to find it:
+		local lastSpawnedParty = ::World.FactionManager.getFaction(this.getFaction()).m.LastSpawnedParty;
+		if (!::MSU.isNull(lastSpawnedParty))
+		{
+			// We now allow a customizable amount of trade goods. And we mark those trade goods in a special way, so that they drop in mint condition alter on
+			if (home.getProduce().len() != 0)
+			{
+				for(local i = 0; i < this.HD_getProduceAmount(); ++i)
+				{
+					lastSpawnedParty.HD_addMintItemToInventory(::MSU.Array.rand(home.getProduce()));
+				}
+			}
+		}
+	}
+
 // New Functions
+	q.HD_getProduceAmount <- function()
+	{
+		return 3;
+	}
+
 	// When the player starts the fight against those vampires, they gain the "Lying in Ambush" effect, which causes them to not act during the first turn
 	// This will allow the player to have a chance to save the donkeys
 	q.hookVampireScreen <- function( _screen )
