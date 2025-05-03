@@ -155,8 +155,7 @@
 					isAllowedToStay = true;
 					break;
 				}
-
-				if (isAllowedToStay) break;
+				if (isAllowedToStay) continue;
 
 				danglingItems.push(item);
 				if (itemSlot == ::Const.ItemSlot.Bag)
