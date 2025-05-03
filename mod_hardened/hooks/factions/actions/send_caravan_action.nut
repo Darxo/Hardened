@@ -2,10 +2,11 @@
 	q.onExecute = @(__original) function( _faction )
 	{
 		// We switcheroo getProduce, so that vanilla doesnt add its wares items to the caravan. Instead we want to have control over them being added
-		local oldGetProduce = this.m.Start.getProduce;
-		this.m.Start.getProduce = function() { return [] };
+		local start = (typeof this.m.Start == "instance" && this.m.Start instanceof ::WeakTableRef) ? this.m.Start.get() : this.m.Start;
+		local oldGetProduce = start.getProduce;
+		start.getProduce = function() { return [] };
 		__original(_faction);
-		this.m.Start.getProduce = oldGetProduce;
+		start.getProduce = oldGetProduce;
 
 		local lastSpawnedParty = ::MSU.isNull(this.m.Faction) ? null : this.m.Faction.m.LastSpawnedParty;
 		if (lastSpawnedParty != null)
@@ -14,11 +15,11 @@
 			lastSpawnedParty.getSprite("banner").setOffset(::Hardened.Const.CaravanBannerOffset);
 
 			// We now allow a customizable amount of trade goods. And we mark those trade goods in a special way, so that they drop in mint condition alter on
-			if (this.m.Start.getProduce().len() != 0)
+			if (start.getProduce().len() != 0)
 			{
 				for(local i = 0; i < this.HD_getProduceAmount(); ++i)
 				{
-					lastSpawnedParty.HD_addMintItemToInventory(::MSU.Array.rand(this.m.Start.getProduce()));
+					lastSpawnedParty.HD_addMintItemToInventory(::MSU.Array.rand(start.getProduce()));
 				}
 			}
 		}
