@@ -95,9 +95,13 @@
 
 	qolCombatPage.addDivider("MiscDivider1");
 
-	qolCombatPage.addBooleanSetting("UseSoundEngineFix", true, "Use Sound Engine Fix", "Rework directional sound during combat to be according to the real direction where the sound is coming from.");
+	qolCombatPage.addBooleanSetting("ShowGlowingEyes", true, "Show Red Glowing Eyes", "Display red glowing eyes on a humans and human-like characters, who have certain temporary damage buffs active.");
 
 	qolCombatPage.addDivider("MiscDivider2");
+
+	qolCombatPage.addBooleanSetting("UseSoundEngineFix", true, "Use Sound Engine Fix", "Rework directional sound during combat to be according to the real direction where the sound is coming from.");
+
+	qolCombatPage.addDivider("MiscDivider3");
 
 	local continuousWaitKeybindSetting = qolCombatPage.addBooleanSetting("ContinuousWaitKeybind", false , "Continuous Wait Keybind", "While active it is enough to hold down your 'wait' Keybind in order to wait so you can more easily wait with multiple brothers.");
 	local continuousWaitKeybindCallback = function( _oldValue )
