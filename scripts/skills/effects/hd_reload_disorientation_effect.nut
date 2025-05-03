@@ -58,4 +58,19 @@ this.hd_reload_disorientation_effect <- ::inherit("scripts/skills/skill", {
 	{
 		this.removeSelf();
 	}
+
+// Modular Vanilla Functions
+	function getQueryTargetValueMult( _user, _target, _skill )
+	{
+		if (_user.getID() == this.getContainer().getActor().getID() && _user.getID() != _target.getID())	// We must be the _user
+		{
+			if (_skill == null) return ret;
+			if (_skill.isAttack() && _skill.isRanged())
+			{
+				return 0.7;	// _user should wait out reload disorientation, instead of shooting right away
+			}
+		}
+
+		return 1.0;
+	}
 });
