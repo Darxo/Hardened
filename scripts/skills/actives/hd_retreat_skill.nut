@@ -41,6 +41,8 @@ this.hd_retreat_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
+		if (::Tactical.State.getStrategicProperties().IsFleeingProhibited) return false;	// e.g. Icy Cave or Arena Fights
+
 		if (!this.isAtMapBorder()) return false;	// We assume (just like vanilla ai_retreat), that all border tiles are valid for retreating
 
 		local actor = this.getContainer().getActor();
