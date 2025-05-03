@@ -32,4 +32,25 @@
 
 		return __original( _info, _force);
 	}
+
+	// Function for scheduling resurrections
+	q.HD_scheduleResurrection <- function( _rounds, _corpse )
+	{
+		_corpse.HD_CorpseTouched = ::Time.getRound();	// We need to use round number, because the same corpse might persist over multiple turns; just adding a unique flag is not enough
+
+		// Generate reanimation effect on the tile
+		if (_corpse.Tile != null)
+		{
+			local proxyTileEffect = { Timeout = ::Time.getRound() + _rounds };
+			local particles = [];
+			foreach (def in ::Const.Tactical.Reanimation)
+			{
+				particles.push(::Tactical.spawnParticleEffect(true, def.Brushes, _corpse.Tile, def.Delay, def.Quantity, def.LifeTimeQuantity, def.SpawnRate, def.Stages));
+			}
+			::Tactical.Entities.addTileEffect(_corpse.Tile, proxyTileEffect, particles);
+		}
+
+		// Schedule the reanimation
+		::Time.scheduleEvent(::TimeUnit.Rounds, _rounds, ::Tactical.Entities.resurrect, _corpse);
+	}
 });
