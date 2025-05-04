@@ -20,6 +20,7 @@ this.hd_waypoint <- this.inherit("scripts/entity/world/party", {
 	{
 		local waypoint = this.getSprite("waypoint");
 		waypoint.setBrush(_waypointBrush);
+		waypoint.setOffset(this.createVec(0, 50));
 		this.setVisibleInFogOfWar(true);	// So that the waypoint is always displayed
 		this.m.CustomID = ::World.State.getPlayer().getID();
 	}
