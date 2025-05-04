@@ -84,6 +84,13 @@
 		mockObject.cleanup();
 	}
 
+	q.onFactionChanged = @(__original) function()
+	{
+		local flip = !this.isAlliedWithPlayer();
+		__original();
+		this.getSprite("HD_frenzy_eyes").setHorizontalFlipping(flip);
+	}
+
 	q.playIdleSound = @(__original) function()
 	{
 		// Characters who are off-screen no longer produce idle sounds. However they will still be randomly selected as targets for making the idle sound.
