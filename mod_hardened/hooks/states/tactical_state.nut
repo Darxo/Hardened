@@ -1,7 +1,15 @@
 ::Hardened.HooksMod.hook("scripts/states/tactical_state", function(q) {
 	q.onFinish = @(__original) function()
 	{
-		__original();
+		__original();	// During this time ::Tactical.State will be destroyed, turning off all combat-only checks
+
+		// Vanilla Fix: Vanilla calls this during `onCombatFinished()`, but that timing is too early.
+		// By that time none of the ground- or camp items have been looted. So dropped items will not be able to be restored correctly
+		if (::Settings.getGameplaySettings().RestoreEquipment)
+		{
+			::World.Assets.restoreEquipment();
+		}
+
 		foreach (bro in ::World.getPlayerRoster().getAll())
 		{
 			// In Vanilla there is no update() call, after entities lose their isPlacedOnMap() == true. So some positioning-related effects will be inaccurate
