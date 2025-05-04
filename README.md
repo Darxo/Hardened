@@ -586,8 +586,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Your headshot chance is now displayed in the combat tooltip when targeting enemies
 - Introduce a new **Unworthy** effect which prevents the character from granting experience on death. This is given to all non-player controlled characters who grant 0 XP on death or are allied to the player
 - Introduce a new cosmetic **Non-Combatant** effect, given to non-combatant characters, which explains that they do not need to be killed in order to win
-- Automatically restore broken (shields) or used (nets) equipment after each battle, if you have replacements in your inventory
-- Add Setting (on) to display a glowing red eyes effect on any human-sized character, who is under the effect of **Killing Frenzy**, **Double Strike**, **Ghostlike**, **Retribution** or has 3 stacks of **Decisive**
+- Improve restore item after battle logic, to also restore items, which were dropped to the ground or picked up by another brother during battle
+- Automatically replace broken (shields) or used (nets) equipment after each battle, if you have replacements in your inventory
+- Add Setting (on) to display a glowing red eyes effect on any human-sized character, who is under the effect of **Killing Frenzy**, **Retribution** or has 3 stacks of **Decisive**
 - Corpses of resurrecting Zombies and Humans now emit a slight purple particle effect
 - Add Setting to control the zoom speed during combat to allow for more granular zooming
 - Loot that is not equippable in battle no longer appears on the ground (e.g. Beast Trophies/Ingredients)

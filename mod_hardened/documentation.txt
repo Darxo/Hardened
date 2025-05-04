@@ -18,6 +18,14 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.40.7
+	- Remove red glowing eyes effect from **Double Strike** and **Ghostlike**
+	- Slightly reduce glow of the red glowing eyes effect
+	- Fix red glowing eyes effect not being flipped correctly, when it appears on enemies
+	- Fix **Offhand Training** stagger not being used up on a hit, that kills someone
+	- Re-enable the discount for **Line Breaker** when refreshing **Onslaught effect**
+	- Fix duplicate items sometimes being equipped in bag slots after battle
+
 0.40.6
 	- **Reinforced Throwing Net** now has a weight of 8 (up from 2)
 	- **Throwing Net** now has a weight of 4 (up from 2)
