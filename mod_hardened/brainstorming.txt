@@ -252,6 +252,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	- has **Supporter** perk and is able to encourage allies (sfx is replaced with dog barking)
 
 ## AI
+- Check whether lines have already collapsed, when considering Whirling Death
 - write AP prediction for new sanguinary effect for player and enemies (could be done by simulating a 3 AP discount on all 1-range skills targetting a certain enemy)
 - add "PrefersHidingFromPlayer" flag, that makes enemies slightly prefer bushes that are not revealed to the player, over other tiles
 - Make AI use Roundswing less often

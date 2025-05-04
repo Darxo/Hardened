@@ -440,7 +440,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Swordmaster** with **Blade Dancer** perk now only spawn with **Noble Swords**
 
 **Undead**
-- All **Wiederganger** types gain +5 Melee Skill and grant 20% more experience. They lose 10 Hitpoints, **Double Grip** and no longer grant experience after being ressurected. They now have a 100% resurrection chance (up from 66%) and resurrect in 1-3 turns (up from 1-2)
+- All **Wiederganger** types gain +5 Melee Skill and grant 20% more experience. They no longer grant experience after being ressurected. They lose 10 Hitpoints, **Double Grip** and no longer grant experience after being ressurected. They now have a 100% resurrection chance (up from 66%) and resurrect in 1-3 turns (up from 1-2)
 - Normal **Wiederganger** lose **Overwhelm**
 - All **Skeletons** grant 20% more experience. They no longer grant experience after being ressurected
 - **Fallen Heroes** no longer spawn with Morning Stars or Handaxes. They now have a 100% resurrection chance (up from 90%) but -10 Hitpoints. Champion variants lose **Nine Lives**
@@ -671,7 +671,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Prevent the same random human name (e.g. Leader or Knight) to be generated in succession
 - Throw Pot/Flask skills are no longer considered an attack
 - Improve tooltips of **Chop** skill
-- Rewrite `queryActorTurnsNearTarget` from `behavior.nut`, making it more accurately by considering current action points
+- Rewrite `queryActorTurnsNearTarget` from `behavior.nut`, making it more accurate by considering current action points
 - Remove a duplicate loading screen
 
 ### Reforged

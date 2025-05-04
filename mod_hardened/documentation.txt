@@ -38,6 +38,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.40.5
+	- Fix crash after battle caused by restoreEquipment
+
 0.40.4
 	- Fix equipped item sometimes vanishing after battle
 	- Fix noble caravans being generated twice
