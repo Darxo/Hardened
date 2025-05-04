@@ -16,6 +16,17 @@
 	}
 
 // New Getter/Setter
+	// Return true, if _item is equipped to _brother in the itemslot _slot
+	// Return false otherwise
+	q.HD_isEquippedIn <- function( _item, _slot )
+	{
+		foreach (equippedItem in this.getAllItemsAtSlot(_slot))
+		{
+			if (::MSU.isEqual(equippedItem, _item)) return true;
+		}
+		return false;
+	}
+
 	q.getWeight <- function( _slots = null )
 	{
 		local staminaModifier = this.getStaminaModifier(_slots);

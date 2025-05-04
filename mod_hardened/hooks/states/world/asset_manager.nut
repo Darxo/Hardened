@@ -77,75 +77,84 @@
 			}
 			else
 			{
+				// We unequip that brothers current items and push those into danglingItems array
 				danglingItems.extend(this.unEquipWrongItems(bro, brotherSnapshot));
 			}
 		}
 
-		local danglingSnapshots = [];
-
+		local orphanedSnapshots = [];
 		foreach (brotherSnapshot in this.m.RestoreEquipment)	// For every snapshot (bro)
 		{
 			local bro = ::Tactical.getEntityByID(brotherSnapshot.ID);
 
 			// We look through all entries of this brother and try to restore or replace them, if they are missing
-			foreach (entry in brotherSnapshot.Slots)
+			for (local i = brotherSnapshot.Slots.len() - 1; i >= 0; --i)
 			{
-				if (entry.Item.isEquipped()) continue;	// This item is already at its righteous place
+				local entry = brotherSnapshot.Slots[i];
+				if (bro.getItems().HD_isEquippedIn(entry.Item, entry.Slot)) continue;	// This item is already at its righteous place
 
+				// Now we first try to locate the original item:
 				local foundOriginal = false;
-
-				for (local i = danglingItems.len() - 1; i >= 0; --i)
+				for (local j = danglingItems.len() - 1; j >= 0; --j)	// Maybe it's in the unequipped itempool from our allies?
 				{
-					local danglingItem = danglingItems[i];
+					local danglingItem = danglingItems[j];
 					if (!::MSU.isEqual(danglingItem, entry.Item)) continue;
 
 					// The item is among the dangling items
 					bro.getItems().HD_equipToSlot(danglingItem, entry.Slot);
-					danglingItems.remove(i);
+					brotherSnapshot.Slots.remove(i);
+					danglingItems.remove(j);
 					foundOriginal = true;
 					break;
 				}
 				if (foundOriginal) continue;
 
-				// Maybe it is in our stash after we dropped it during battle and looted it afterwards?
-				foreach (stashItem in this.getStash().getItems())
+				local stashItems = this.getStash().getItems();
+				for (local j = stashItems.len() - 1; j >= 0; --j)	// Maybe it is in our stash after we dropped it during battle and looted it afterwards?
 				{
+					local stashItem = stashItems[j];
 					if (stashItem == null) continue;
 					if (!::MSU.isEqual(stashItem, entry.Item)) continue;
 
-					bro.getItems().HD_equipToSlot(entry.Item, entry.Slot);
-					this.getStash().remove(stashItem);
+					bro.getItems().HD_equipToSlot(stashItem, entry.Slot);
+					brotherSnapshot.Slots.remove(i);
+					this.getStash().removeByIndex(j);	// RemoveByIndex is much faster than by reference
 					foundOriginal = true;
 					break;
 				}
 				if (foundOriginal) continue;
 
-				// If the original item was found nowhere, then entry.Item does not exist anymore and is only kept alive because of our reference to it
+				// We couldn't locate the original
+				local foundReplacement = false;
 				// Feat: We now try to find a replacement item for it from the player stash, which uses the same ID
-				foreach (stashItem in this.getStash().getItems())
+				for (local j = stashItems.len() - 1; j >= 0; --j)
 				{
+					local stashItem = stashItems[j];
 					if(stashItem == null) continue;
 					if(stashItem.getID() != entry.Item.getID()) continue;
 
+					// We found a replacement item in the stash!
 					bro.getItems().HD_equipToSlot(stashItem, entry.Slot);
-					this.getStash().remove(stashItem);
+					brotherSnapshot.Slots.remove(i);
+					this.getStash().removeByIndex(j);	// RemoveByIndex is much faster than by reference
+					foundReplacement = true;
 					break;
 				}
+				if (foundReplacement) continue;
 
 				// We couldn't yet satisfy this snapshot
-				danglingSnapshots.push(brotherSnapshot);
+				orphanedSnapshots.push(brotherSnapshot);
 			}
 		}
 
-		// Last we try to find a replacement from the dangling items, before those are flushed into the stash
-		foreach (brotherSnapshot in danglingSnapshots)
+		// Last we try to find a replacement from the dangling items (ours and those of allies), before those are flushed into the stash
+		// orphanedSnapshots only contains brotherSnapshots for still missing items and only slot entries for those yet still missing items
+		foreach (brotherSnapshot in orphanedSnapshots)
 		{
 			local bro = ::Tactical.getEntityByID(brotherSnapshot.ID);
-			// We look through all entries of this brother and try to restore or replace them, if they are missing
+			// We look through all entries of this brother and try to find replacemants, if they are missing
 			foreach (entry in brotherSnapshot.Slots)
 			{
-				if (entry.Item.isEquipped()) continue;	// This item is already at its righteous place
-
 				for (local i = danglingItems.len() - 1; i >= 0; --i)
 				{
 					local danglingItem = danglingItems[i];
