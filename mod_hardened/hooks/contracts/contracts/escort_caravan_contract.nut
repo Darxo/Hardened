@@ -66,7 +66,7 @@
 		home.getProduce = oldGetProduce;
 
 		// Now we add produces in our way to the party. But we first need to find it:
-		local lastSpawnedParty = ::World.FactionManager.getFaction(this.getFaction()).m.LastSpawnedParty;
+		local lastSpawnedParty = ::World.FactionManager.getFaction(this.getFaction()).m.HD_LastSpawnedParty;
 		if (!::MSU.isNull(lastSpawnedParty))
 		{
 			// We now allow a customizable amount of trade goods. And we mark those trade goods in a special way, so that they drop in mint condition alter on

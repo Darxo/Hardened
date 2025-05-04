@@ -8,18 +8,19 @@
 		__original(_faction);
 		start.getProduce = oldGetProduce;
 
-		local lastSpawnedParty = ::MSU.isNull(this.m.Faction) ? null : this.m.Faction.m.LastSpawnedParty;
-		if (lastSpawnedParty != null)
-		{
-			lastSpawnedParty.getSprite("banner").setOffset(::Hardened.Const.CaravanBannerOffset);
+		if (::MSU.isNull(this.m.Faction)) return;
 
-			// We now allow a customizable amount of trade goods. And we mark those trade goods in a special way, so that they drop in mint condition alter on
-			if (start.getProduce().len() != 0)
+		local lastSpawnedParty = this.m.Faction.m.HD_LastSpawnedParty;
+		if (::MSU.isNull(lastSpawnedParty)) return;
+
+		lastSpawnedParty.getSprite("banner").setOffset(::Hardened.Const.CaravanBannerOffset);
+
+		// We now allow a customizable amount of trade goods. And we mark those trade goods in a special way, so that they drop in mint condition alter on
+		if (start.getProduce().len() != 0)
+		{
+			for(local i = 0; i < this.HD_getProduceAmount(); ++i)
 			{
-				for(local i = 0; i < this.HD_getProduceAmount(); ++i)
-				{
-					lastSpawnedParty.HD_addMintItemToInventory(::MSU.Array.rand(start.getProduce()));
-				}
+				lastSpawnedParty.HD_addMintItemToInventory(::MSU.Array.rand(start.getProduce()));
 			}
 		}
 	}

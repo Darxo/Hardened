@@ -1,6 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/factions/faction", function(q) {
 	// Private
-	q.m.LastSpawnedParty <- null;	// weakref to the last party, spawned by this factions spawnEntity function
+	q.m.HD_LastSpawnedParty <- null;	// weakref to the last party, spawned by this factions spawnEntity function
 
 	q.spawnEntity = @(__original) function( _tile, _name, _uniqueName, _template, _resources, _minibossify = 0 )
 	{
@@ -20,7 +20,7 @@
 			}
 		}
 
-		this.m.LastSpawnedParty <- ::MSU.asWeakTableRef(ret);
+		this.m.HD_LastSpawnedParty = ::MSU.asWeakTableRef(ret);
 
 		return ret;
 	}

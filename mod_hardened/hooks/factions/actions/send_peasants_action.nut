@@ -3,11 +3,12 @@
 	{
 		__original(_faction);
 
-		local lastSpawnedParty = ::MSU.isNull(this.m.Faction) ? null : this.m.Faction.m.LastSpawnedParty;
-		if (!::MSU.isNull(lastSpawnedParty))
-		{
-			lastSpawnedParty.getSprite("banner").Visible = true;
-			lastSpawnedParty.getLoot().Money = 0;	// Loot
-		}
+		if (::MSU.isNull(this.m.Faction)) return;
+
+		local lastSpawnedParty = this.m.Faction.m.HD_LastSpawnedParty;
+		if (::MSU.isNull(lastSpawnedParty)) return;
+
+		lastSpawnedParty.getSprite("banner").Visible = true;
+		lastSpawnedParty.getLoot().Money = 0;	// Loot
 	}
 });
