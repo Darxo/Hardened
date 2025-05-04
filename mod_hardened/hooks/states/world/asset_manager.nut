@@ -67,18 +67,25 @@
 	q.restoreEquipment = @() function()
 	{
 		local danglingItems = [];	// First we need to collect and unequip all dangling items, which were wrongly equipped
-		foreach (brotherSnapshot in this.m.RestoreEquipment)
+		for (local i = this.m.RestoreEquipment.len() - 1; i >= 0; --i)
 		{
+			local brotherSnapshot = this.m.RestoreEquipment[i];
 			local bro = ::Tactical.getEntityByID(brotherSnapshot.ID);
-			if (bro == null || !bro.isAlive()) continue;
-
-			danglingItems.extend(this.unEquipWrongItems(bro, brotherSnapshot));
+			if (bro == null || !bro.isAlive())
+			{
+				this.m.RestoreEquipment.remove(i);	// This snapshot belongs to a brother who died or is otherwise no longer existing, so there is nothing to restore
+			}
+			else
+			{
+				danglingItems.extend(this.unEquipWrongItems(bro, brotherSnapshot));
+			}
 		}
+
+		local danglingSnapshots = [];
 
 		foreach (brotherSnapshot in this.m.RestoreEquipment)	// For every snapshot (bro)
 		{
 			local bro = ::Tactical.getEntityByID(brotherSnapshot.ID);
-			if (bro == null || !bro.isAlive()) continue;
 
 			// We look through all entries of this brother and try to restore or replace them, if they are missing
 			foreach (entry in brotherSnapshot.Slots)
@@ -87,13 +94,14 @@
 
 				local foundOriginal = false;
 
-				foreach (index, danglingItem in danglingItems)
+				for (local i = danglingItems.len() - 1; i >= 0; --i)
 				{
+					local danglingItem = danglingItems[i];
 					if (!::MSU.isEqual(danglingItem, entry.Item)) continue;
 
 					// The item is among the dangling items
-					bro.getItems().HD_equipToSlot(entry.Item, entry.Slot);
-					danglingItems.remove(index);
+					bro.getItems().HD_equipToSlot(danglingItem, entry.Slot);
+					danglingItems.remove(i);
 					foundOriginal = true;
 					break;
 				}
@@ -119,20 +127,46 @@
 					if(stashItem == null) continue;
 					if(stashItem.getID() != entry.Item.getID()) continue;
 
-					bro.getItems().HD_equipToSlot(entry.Item, entry.Slot);
+					bro.getItems().HD_equipToSlot(stashItem, entry.Slot);
 					this.getStash().remove(stashItem);
+					break;
+				}
+
+				// We couldn't yet satisfy this snapshot
+				danglingSnapshots.push(brotherSnapshot);
+			}
+		}
+
+		// Last we try to find a replacement from the dangling items, before those are flushed into the stash
+		foreach (brotherSnapshot in danglingSnapshots)
+		{
+			local bro = ::Tactical.getEntityByID(brotherSnapshot.ID);
+			// We look through all entries of this brother and try to restore or replace them, if they are missing
+			foreach (entry in brotherSnapshot.Slots)
+			{
+				if (entry.Item.isEquipped()) continue;	// This item is already at its righteous place
+
+				for (local i = danglingItems.len() - 1; i >= 0; --i)
+				{
+					local danglingItem = danglingItems[i];
+					if(danglingItem.getID() != entry.Item.getID()) continue;
+
+					// The item is among the dangling items
+					bro.getItems().HD_equipToSlot(danglingItem, entry.Slot);
+					danglingItems.remove(i);
 					break;
 				}
 			}
 		}
 
-		foreach (item in danglingItems)	// All dangling items are added to the player stash
+		// All other dangling items (e.g. picked up from the ground) are added to the player stash
+		foreach (item in danglingItems)
 		{
 			this.getStash().makeEmptySlots(1);	// We always treat dangling items important enough to make room for them
 			this.getStash().add(item);
 		}
 
-		this.m.RestoreEquipment = [];	// We clear the vanilla array, just like vanilla does it
+		this.m.RestoreEquipment = [];	// We clear the array, just like vanilla does it
 	}
 
 // New Functions
