@@ -88,7 +88,7 @@
 	{
 		local flip = !this.isAlliedWithPlayer();
 		__original();
-		this.getSprite("HD_frenzy_eyes").setHorizontalFlipping(flip);
+		if (this.hasSprite("HD_frenzy_eyes")) this.getSprite("HD_frenzy_eyes").setHorizontalFlipping(flip);
 	}
 
 	q.playIdleSound = @(__original) function()
