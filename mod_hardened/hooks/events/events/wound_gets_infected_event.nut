@@ -1,6 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/events/events/wound_gets_infected_event", function(q) {
 	q.m.ScorePerInjury <- 5;	// In Vanilla this is 7 per injured brother (no matter how many injuries)
-	q.m.ScoreMultWithoutMedicine <- 2.0;
+	q.m.ScoreMultWithoutMedicine <- 3.0;
 
 	q.create = @(__original) function()
 	{
