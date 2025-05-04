@@ -10,6 +10,7 @@
 	q.onRefresh = @(__original) function()
 	{
 		__original();
+		this.m.IsSpent = false;		// Line Breaker Discount is active again
 		this.m.HD_LastsForRounds = 2;
 	}
 });
