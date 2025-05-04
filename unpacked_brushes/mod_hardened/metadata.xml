@@ -1,4 +1,6 @@
 <brush name="gfx/mod_hardened.png" version ="17" b1="2" b5="0">
+	<sprite id="hd_sparkleflare_small" ic = "FF23165B" img="effects\hd_sparkleflare_small.png" />
+
 	<sprite id="hd_battle_song_skill" ic = "FF23165B" img="..\..\gfx\skills\hd_battle_song_skill.png" />
 	<sprite id="hd_inspired_by_song_effect" ic = "FF23165B" img="..\..\gfx\skills\hd_inspired_by_song_effect.png" />
 	<sprite id="hd_whirling_death_skill" ic = "FF23165B" img="..\..\gfx\skills\hd_whirling_death_skill.png" />

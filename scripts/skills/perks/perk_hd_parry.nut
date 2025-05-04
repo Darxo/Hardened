@@ -85,8 +85,7 @@ this.perk_hd_parry <- ::inherit("scripts/skills/skill", {
 				// Our Parry perk was the deciding factor to make us dodge this attack
 				if (::Hardened.Temp.LastAttackInfo.Roll - parryChance <= ::Hardened.Temp.LastAttackInfo.ChanceToHit)
 				{
-					local actor = this.getContainer().getActor();
-					::Sound.play(::MSU.Array.rand(this.m.SoundOnParry), ::Const.Sound.Volume.Skill, actor.getPos());
+					this.onParry(_attacker);
 				}
 			}
 		}
@@ -162,5 +161,22 @@ this.perk_hd_parry <- ::inherit("scripts/skills/skill", {
 		if (!mainhandItem.isItemType(::Const.Items.ItemType.OneHanded)) return false;	// User needs a one-handed weapon
 
 		return true;
+	}
+
+	// Triggered, when it is determined, that our parry skill was the deciding factor for avoiding an attack
+	// This functions job is to visualize this fact to the player (e.g. log, overlay icon, sfx, fx)
+	function onParry( _attacker )
+	{
+		local actor = this.getContainer().getActor();
+
+		// Play sound
+		::Sound.play(::MSU.Array.rand(this.m.SoundOnParry), ::Const.Sound.Volume.Skill, actor.getPos());
+
+		// Generate particle effect
+		foreach (particles in ::Const.Tactical.HD_ParrySparkles)
+		{
+			if ("init" in particles) particles.init(actor.getTile(), _attacker.getTile());	// init adjusts the offset according to where the hit is coming from
+			::Tactical.spawnParticleEffect(false, particles.Brushes, actor.getTile(), particles.Delay, particles.Quantity, particles.LifeTimeQuantity, particles.SpawnRate, particles.Stages);
+		}
 	}
 });
