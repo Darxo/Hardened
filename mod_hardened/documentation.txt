@@ -14,29 +14,14 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
-## List of Exploits/Cheese fixed:
-- Make Wiki Page specifically noting "Cheese" strategies from Vanilla that are patched out
-	- T3 nacho swallowing bro
-	- perma stunning enemies
-	- listening for idle sounds to "scout" locations
-- Sunken Library suicide win
-- perma stun world parties
-- listen for enemy idle noises at start of battle
-- listen for enemy death noises during third party battles
-- reveal complete enemy line-up after fleeing the battle (when map is revealed)
-- infinitely farming XP from reanimating enemies
-- bait enemy archer fire by building scatter target clumps
-- two arenas during the same day
-- allies or your own brothers no longer grant XP on death
-- bring and drop dozens of additional quiver
-- infinitely re-equip broken weapon to keep fighting (now you deal 50% less damage)
-- fighting on border tiles and auto-retreating when losing
-- repeatidly picking up broken weapon (e.g. with quickhands) for one hit at a time (now it deals 50% less damage)
-- save&reload to gain immediate tips and contract directions for find location/barb-king contracts
-
 ## Debug:
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
+
+0.40.6
+	- Slightly increase vertical height of waypoint
+	- Improve restore equipment code
+	- Fix replacement net from **Kingfisher** ending up in inventory after battle
 
 0.40.5
 	- Fix crash after battle caused by restoreEquipment
