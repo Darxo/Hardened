@@ -95,11 +95,14 @@
 	{
 		__original(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor);
 
-		if (_targetEntity.isAlive() && !_targetEntity.isDying() && this.isEnabledForStagger() && _skill.isAttack())
+		if (this.isEnabledForStagger() && _skill.isAttack())
 		{
-			this.m.IsStaggerSpent = true;
-			_targetEntity.getSkills().add(::new("scripts/skills/effects/staggered_effect"));
-			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " has staggered " + ::Const.UI.getColorizedEntityName(_targetEntity));
+			this.m.IsStaggerSpent = true;	// Killing someone will also waste the stagger usage
+			if (_targetEntity.isAlive() && !_targetEntity.isDying())
+			{
+				_targetEntity.getSkills().add(::new("scripts/skills/effects/staggered_effect"));
+				::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " has staggered " + ::Const.UI.getColorizedEntityName(_targetEntity));
+			}
 		}
 	}
 
