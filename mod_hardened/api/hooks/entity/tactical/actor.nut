@@ -228,7 +228,7 @@
 			}
 		}
 
-		stratProps = ::Tactical.State.getStrategicProperties();
+		local stratProps = ::Tactical.State.getStrategicProperties();
 		if (stratProps != null)
 		{
 			local bannerPool = this.isAlliedWithPlayer() ? stratProps.AllyBanners : stratProps.EnemyBanners;
