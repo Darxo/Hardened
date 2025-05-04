@@ -40,11 +40,6 @@
 		return !this.m.IsInEffect;
 	}
 
-	q.onUpdate <- function( _properties )
-	{
-		if (this.m.IsInEffect) _properties.ShowFrenzyEyes = true;
-	}
-
 	q.onAfterUpdate <- function( _properties )
 	{
 		_properties.MeleeDefense += this.getMeleeDefenseModifier(_properties);
