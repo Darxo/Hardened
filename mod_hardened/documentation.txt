@@ -19,6 +19,8 @@ This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
 0.40.6
+	- **Reinforced Throwing Net** now has a weight of 8 (up from 2)
+	- **Throwing Net** now has a weight of 4 (up from 2)
 	- Slightly increase vertical height of waypoint
 	- Improve restore equipment code
 	- Fix replacement net from **Kingfisher** ending up in inventory after battle
