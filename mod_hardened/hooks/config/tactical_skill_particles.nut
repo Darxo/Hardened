@@ -10,6 +10,68 @@
 ::Const.Tactical.MiasmaParticles[0].Stages[1].ColorMin = this.createColor("7d821750");	// In Vanilla this is 9d82172d
 ::Const.Tactical.MiasmaParticles[0].Stages[1].ColorMax = this.createColor("f5e6aa50");	// In Vanilla this is f5e6aa2d
 
+::Const.Tactical.HD_ParrySparkles <- [
+	{
+		init = function( _myTile, _theirTile ) {
+			local divider = 2 * _myTile.getDistanceTo(_theirTile);	// We normalize the tile-distance by dividing by twice the tile distance. This way we arrive roughly at the border of our own tile
+			local x = _theirTile.Pos.X - _myTile.Pos.X;
+			local y = _theirTile.Pos.Y - _myTile.Pos.Y;
+			local vector = this.createVec(x / divider , y / divider + 40);	// +40 for picturing the height
+			this.Stages[0].SpawnOffsetMin = vector;
+			this.Stages[0].SpawnOffsetMax = vector;
+		},
+		Delay = 0,
+		Quantity = 10,
+		LifeTimeQuantity = 10,
+		SpawnRate = 100,
+		Brushes = [
+			"hd_sparkleflare_small",
+		],
+		Stages = [
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.1,
+				ColorMin = this.createColor("ffbb8800"),
+				ColorMax = this.createColor("ffffff00"),
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 80,
+				VelocityMax = 80,
+				DirectionMin = this.createVec(-0.5, -0.5),
+				DirectionMax = this.createVec(0.5, 0.5),
+				SpawnOffsetMin = this.createVec(500, 0),
+				SpawnOffsetMax = this.createVec(500, 0)
+			},
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.2,
+				ColorMin = this.createColor("ffbb88cc"),  // More orange, fiery
+				ColorMax = this.createColor("ffffffcc"),  // Lighter yellow/orange
+				// ColorMin = this.createColor("ffcc66ff"),
+				// ColorMax = this.createColor("ffffccff"),
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 80,
+				VelocityMax = 80,
+				ForceMin = this.createVec(-15, -30),
+				ForceMax = this.createVec(15, 30)
+			},
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.2,
+				ColorMin = this.createColor("ffbb8800"),
+				ColorMax = this.createColor("ffffff00"),
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 80,
+				VelocityMax = 80,
+				ForceMin = this.createVec(-15, -30),
+				ForceMax = this.createVec(15, 30)
+			}
+		]
+	}
+];
+
 ::Const.Tactical.HD_Reanimation <- [{
 	Delay = 0,
 	Quantity = 30,
