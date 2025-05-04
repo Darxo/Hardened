@@ -262,7 +262,9 @@
 			{
 				local ret = { done = true, value = mockObject.original(_spriteName) };
 
-				mockObject.original("HD_frenzy_eyes").setBrush("zombie_rage_eyes");		// We add the new sprite HD_frenzy_eyes directly after "dirt"
+				local frenzyEyes = mockObject.original("HD_frenzy_eyes");		// We add the new sprite HD_frenzy_eyes directly after "dirt"
+				frenzyEyes.setBrush("zombie_rage_eyes");
+				frenzyEyes.Alpha = 200;
 				this.getSkills().add(::new("scripts/skills/special/hd_frenzy_eyes_manager"));	// We add the new frenzy eyes manager special skill, that spawns the effect
 				return ret;
 			}
