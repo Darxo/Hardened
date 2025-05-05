@@ -55,7 +55,7 @@
 		{
 			local proxyTileEffect = { Timeout = ::Time.getRound() + _rounds };
 			local particles = [];
-			foreach (def in ::Const.Tactical.Reanimation)
+			foreach (def in ::Const.Tactical.HD_Reanimation)
 			{
 				particles.push(::Tactical.spawnParticleEffect(true, def.Brushes, _corpse.Tile, def.Delay, def.Quantity, def.LifeTimeQuantity, def.SpawnRate, def.Stages));
 			}

@@ -10,7 +10,7 @@
 ::Const.Tactical.MiasmaParticles[0].Stages[1].ColorMin = this.createColor("7d821750");	// In Vanilla this is 9d82172d
 ::Const.Tactical.MiasmaParticles[0].Stages[1].ColorMax = this.createColor("f5e6aa50");	// In Vanilla this is f5e6aa2d
 
-::Const.Tactical.Reanimation <- [{
+::Const.Tactical.HD_Reanimation <- [{
 	Delay = 0,
 	Quantity = 30,
 	LifeTimeQuantity = 0,	// Infinite duration
