@@ -207,6 +207,10 @@ Injury Rework
 	- Once per battle, when you use a bag item on yourself or an adjacent ally, recover 20 Hitpoints on the target
 
 ## Perks Review/Rework
+- Nailed it
+	- Ignore Cover when aiming at a distance of 2
+	- Your Shots cannot go astray when aiming at a distance of 3
+	- Gain +20% chance to hit the hit when your target is at most 4 tiles away
 - Crossbow Mastery
 	- Crossbow Mastery making them in your bag always loaded
 	- Swap Crossbow with Shield for free once per turn
@@ -227,8 +231,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 		- 50% seems a big too strong against something like an unhold with decapitate. But then again, thats exactly how much you'd deal on a headshot (unless they had steelbrow)
 		- Alternative: Deal +25% critical damage for every injury on the target (no matter which bodypart you target)
 - Power Shot
-- Spear Flurry
-	- 50% increased fatigue cost for non-attacks?
 - Take Aim Perk (previously Power Shot)
 	- Whenever you wait or end your turn, gain a stacking +5% chance to hit. All bonus is lost, when you attack or move.
 	- Unlock **Take Aim** skill, which does the same thing as the mastery thingy stuff
@@ -245,21 +247,17 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 ## Enemies
 - Reduce Defense of Assassins, make it so they rely only on Dodge
 
-## Items
-- New Watchdog unleashable:
-	- has defensive AI with protect far
-	- is otherwise weaker than the other doggies (to be decided how)
-	- has **Supporter** perk and is able to encourage allies (sfx is replaced with dog barking)
-
 ## AI
-- Check whether lines have already collapsed, when considering Whirling Death
-- write AP prediction for new sanguinary effect for player and enemies (could be done by simulating a 3 AP discount on all 1-range skills targetting a certain enemy)
-- add "PrefersHidingFromPlayer" flag, that makes enemies slightly prefer bushes that are not revealed to the player, over other tiles
+- make unholds value highground less
+- New Strategy of individual enemies, called "Stalling":
+	- They prefer defensive over offensive actions and try to stay alive as long as possible
+- Write AP prediction for new sanguinary effect for player and enemies (could be done by simulating a 3 AP discount on all 1-range skills targetting a certain enemy)
+- Utilize existing hiding-ai-behavior to improve some enemies (e.g. direwolves, ghouls or fast bandits)
 - Make AI use Roundswing less often
 - Fleeing enemies engaged in melee at the map border do not seek out the border. Instead they flee alongside it
 - Player: Make fleeing player characters actually leave the battle when at the border
-- unholds should use throw more often to counter rebuke/flailing swingy stuff
-- make it so enemies are less likely to remove the net if it doesnt affect them (e.g. Orcs)
+- Unholds should use throw more often to counter rebuke/flailing swingy stuff
+- Make it so enemies are less likely to remove the net if it doesnt affect them (e.g. Orcs)
 - Change AI Rotation to not/rarely rotate your brothers into battle?
 - Make enemy archers prefer to use wait instead of blindly advancing, if their frontline hasn't advanced yet
 	- Make make enemy archers prefer wait during the first turn in general, if they have no target?
@@ -270,9 +268,12 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - make NPCs with Formidable Approach more likely to move to tiles with adjacent enemies which they dont yet have in their list or which are confident with less max HP
 - ai retreat bug. Sometimes enemies dont seek the border correctly. Need more evidence
 - double strike effect is lost, when you kill someone
-	- same seems to happen with other effects. Probably related to morale changes on enemies and some skill event triggereing wrongly?
+	- same seems to happen with other effects. Probably related to morale changes on enemies and some skill event triggering wrongly?
 
 ## Fix:
+- Currently Swing and Hit sfx happen at the same time, which is unrealistic
+	- Make hit sfx come with a slight (e.g. 100ms) delay instead
+	- Problem: Vanilla allows a delay for hit sounds, but the receiving entity moan sounds have no adjustable delay
 - Enemies that gain shieldwall from shield sergeant while not visible to the player, wont lose the shieldwall animation, until some ui update happens on them (e.g. getting attacked)
 	- Can be reproduced by fighting nomads with a leader. No Idea, how exactly that is caused
 - Add a hitchance tooltip line for the native 25% hitchance bonus that knock back has in vanilla
@@ -280,7 +281,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	- same thing is true for fog of war
 - footprints of barbarian kings dont seem to produce tooltip for lookout
 - keep track of non-spawning ifrits and the loot potentially lost by those an attach it to the remaining one
-- Sometimes on the WOrld map, a single mouse wheel roll zooms the camera completely. Probably has to do with some timer running too far
+- Sometimes on the World map, a single mouse wheel roll zooms the camera completely. Probably has to do with some timer running too far
 - dog ai too fast, not realizing reanimating zombies and dying to ZOC hits
 - Make Rotate no longer cause resolve checks
 - Fix orcs sometimes using charge, even though they decided to give up
@@ -367,8 +368,18 @@ onCombatFinished onBattleEndedDelayed
 		- Alternatively they should move only very slightly forward and/or only into cover
 
 
-## TODO
-- Delay music until first enemy is discovered
+ !this.m.IsInDangerThisRound
+	selectBestTargetTile x1 <-
+	onEvaluate x1
+ this.getStrategy().getStats().EnemyRangedFiring
+	selectBestTargetTile x2 <-
+	onEvaluate x1
+ this.getStrategy().getStats().AllyRangedFiring
+	selectBestTargetTile x2 <-
+	onEvaluate x1
+
+
+
 
 
 apply
@@ -379,3 +390,17 @@ apply
 	MV_PropertiesForBeingHit = null // target skill_container.buildPropertiesForBeingHit
 });
 from Modular Vanilla
+
+
+- rework dropchance of items to make daggering later in the game more worth for farming money
+	- Make it more likely to drop while at full condition
+	- make it less likely to drop while at lower condition
+	- Make items drop much closer to the condition that they had
+
+- API: hook onQueryTargetTile to implement new ai function
+
+- Make Infected Wound not heal, while no medical supplies are left
+- Make Infected Wound stop healing of all present untreated injuries, until medical supplies are there
+
+- Tooltip for economic difficulty changes
+- color adjacent enemies, that exert ZOC onto you in a color, when previewing movement out of ZOC

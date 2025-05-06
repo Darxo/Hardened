@@ -1,4 +1,4 @@
-// T1 Tough Bandit
+// T3 Tough Bandit
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/rf_bandit_outlaw", function(q) {
 	q.create = @(__original) function()
 	{

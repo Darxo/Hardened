@@ -1,4 +1,4 @@
-// T1 Tough Bandit
+// T2 Tough Bandit
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/rf_bandit_pillager", function(q) {
 	q.create = @(__original) function()
 	{

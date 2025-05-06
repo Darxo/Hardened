@@ -34,6 +34,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - All reforged changes to Condition, Melee Defense, Ranged Defense and Weight of vanilla shields have been reverted
 - Named shields can roll condition as one of their two buffed properties (just like in Vanilla)
 - Additionally the following balance changes have been made compared to the vanilla stats:
+	- **Buckler** now have a Weight of 2 (down from 4)
 	- **Tower Shields** now have 30 Condition (up from 24) and lose **Knock Back**
 	- **Heater Shields** now have 25 Melee Defense (up from 20) and lose **Shieldwall**
 	- **Kite Shields** lose **Knock Back**
@@ -323,7 +324,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Weapons
 
-- **Ancient Pikes**, **Goblin Pikes** and **Pikes** are now also of the weapontype Spear
+- **Ancient Pikes** gains the **Spear** Weapontype
 - **Berserk Chain** now has 4 Reach (down from 5)
 - **Cruel Falchion** are now a Sword/Dagger hybrid. They now also grant **Stab**. **Slash** and **Rispote** lose any discount
 - **Cudgel** now deals 40-60 damage (up from 30-50), deals of 110% Armor Damage (up from 90%), has 4 Reach (up from 3), a value of 400 (up from 300). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
@@ -333,17 +334,19 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Fighting Axe** now has a value of 2300 (down from 2800)
 - **Firelance** now also has the **Firearm** weapontype
 - **Flail** now deals 30-55 damage (up from 25-55) and has 3 Reach (down from 4)
+- **Goblin Pike** now has a Reach of 6 (down from 7) and gains the **Spear** Weapontype
 - **Halberd** now has 6 Reach (down from 7)
 - **Head Chopper** now has 4 Reach (up from 3)
 - **Head Splitter** now has 4 Reach (up from 3)
 - **Heavy Crossbow** now has +2 Fatigue Cost for its weapon skills
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
 - **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%)
+- **Pike** and gains the **Spear** Weapontype
 - The **Pitchfork** skills **Impale** and **Repel** now cost 6 Action Points (up from 5)
 - **Player Banner** now grants -5 to Ranged Defense and it comes with **Repel**
-- **Poleflail** now has 5 Reach (down from 6)
-- **Reinforced Wooden Poleflail** now has 5 Reach (down from 6)
-- **Spetum** now has a Reach of 7 (up from 6) and value of 750 (down from 1050). The named variant now has a value of 2800 (down from 3500)
+- **Poleflail** now has 5 Reach (down from 6). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
+- **Reinforced Wooden Poleflail** now has 5 Reach (down from 6). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
+- **Spetum** now has a Reach of 7 (up from 6), a Weight of 12 (down from 14) and value of 900 (down from 1050). The named variant now has a value of 2800 (down from 3500)
 - **Spiked Impaler** now has +2 Fatigue Cost for its weapon skills
 - **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and a value of 600 (up from 400)
 - **Three-Headed Flail** now has 3 Reach (down from 4)
@@ -352,7 +355,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Two-handed Flail** now has 4 Reach (down from 5)
 - **Two-handed Wooden Flail** now has 4 Reach (down from 5)
 - **Warbow** now has a Weight of 8 (up from 6) and +2 Fatigue Cost for its weapon skills
-- **Warfork** now has a value of 400 (down from 600)
+- **Warfork** now has a Weight of 14 (up from 12) and a value of 400 (down from 600)
 - **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
 - **Zweihander** now has 6 Reach (down from 7)
 
@@ -362,6 +365,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Adarga** is now called **Adarge Shield** (just like in Vanilla)
 - **Antidote** now has a value of 100 (down from 150). Crafting it now costs 25 crowns (down from 50) and 1 Jagged Fang (down from 2)
 - **Bandage** now costs 40 crowns (up from 25)
+- **Decorated Full Helm** now has a Condition of 300 (down from 320), Weight of 23 (up from 21) and Value of 5000 (up from 4000). It now grants +10 Resolve while equipped
 - **Gun Powder** now costs 2 **Ammunition Supply** each (up from 1)
 - **Buckler** appear less common in big settlements
 - **Feral Shield** now has a value of 400 (up from 50)
@@ -424,8 +428,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Highwaymen** can now also spawn with **Worn Kite/Heater Shields**
 - **Thug** now spawn with **Tree Limb** instead of **Goedendag**
 - **Pillager** can now also spawn with **Cudgel**. **Pillager** no longer spawn with **Woodcutters Axe**, **Two Handed Mace** or **Two Handed Hammer**
-- **Outlaws** no longer spawn with **Two Handed Wooden Flail** or **Greatsword**
-- **Marauder** no longer spawn with **Two Handed Wooden Flail** and are twice as likely to spawn with a **Greatsword**
+- **Outlaws** now have **Vigorous Assault**. They no longer spawn with **Battle Axe**, **Two Handed Wooden Flail** or **Greatsword**
+- **Marauder** now have **Vigorous Assault**. They no longer spawn with **Two Handed Wooden Flail** and are twice as likely to spawn with a **Greatsword**
 - Fast Brigands (**Robber, Bandit, Killer**) now always spawn with a net if they are one-handed, and with a throwing weapon if two-handed. They also have cosmetic face warpaint
 - **Robber** no longer spawn with a **Pike** or **Reinforced Wooden Poleflail**. They now have 60 Ranged Skill (up from 55)
 - **Bandits** no longer spawn with a **Poleflail**, **Warbrand** or **Throwing Spear**. The can now spawn with a **Reinforced Wooden Poleflail**. They now have 70 Ranged Skill (up from 60)
@@ -433,7 +437,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Brigand Leader** lose **Shield Expert**
 - **Hedge Knights** are now immune to **Disarm** as a result of them having **Savage Strength**
 - **Master Archer** now have 110 Initiative (down from 140)
-- **Wargdogs** now have 5 Vision (down from 7)
+- **Wardogs** now have 50 Melee Skill (down from 55), 20 Melee Defense (down from 25), 25 Ranged Defense (down from 30) and 5 Vision (down from 7)
 
 **Humans:**
 - Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop crowns, food or tools or a valueable ring
@@ -513,6 +517,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - NPCs with **Toolbox** are 50% more likely to target a staggered enemy with a blunt throwing attack
 - NPCs are 50% more likely to use **Split Shield** when it would destroy a shield on use
 - NPCs are 20% more likely to use a throwing spear against shield users and 50% more likely to target shields, that it would destroy on use
+- NPCs are 20% more likely to use **Disarm** or **Knock out** on someone who has **Parry**
 
 ### Combat General
 - **Encumbrance** no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level. It no longer requires a minimum armor weight of 20
@@ -567,7 +572,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Events
 
 - The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event
-- The **Infected Wound Event** now has a cooldown of 14 days (down from 21 days) and is twice as likely to trigger, if you have no Medicine left
+- The **Infected Wound Event** now has a cooldown of 14 days (down from 21 days) and is thrice as likely to trigger, if you have no Medicine left
 - The Event-Option to shoot down the bird who shat your brother now costs 5 Ammunition
 - The **Orc Slayer** and **Crusader** (temporary Crisis backgrounds) now share 100% of their experience with your remaining party, when they leave you after the Crisis ended
 
@@ -609,6 +614,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Armored Wiederganger** now display their complete name during battle, instead of just **Wiederganger**
 - Add Setting (off) for making the hotkeys for **Wait** fire continuously, instead of only when released
 - Reduce the Attack sfx volume of Wardogs and Warhounds by 20%
+- All **Tough Brigands** now have the Fat body type, all **Balanced Brigands** and **Fast Brigands** now have the Skinny body type. The **Brigand Leader** has the Muscular body type
 
 ### World
 
@@ -630,6 +636,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Add Setting (on) for displaying non-settlement location names and numerals while they are within your vision (Lairs, Unique Locations, Attached Locations)
 - Brothers that "die" outside of combat (e.g. Events) will now always transfer their equipment into your stash
 - List the effects of camping in the camping tooltip
+- Destroyed attached locations now display their original name, instead of just being called "Ruins"
 - Add Setting (on) for marking named/legendary helmets/armor or armor with attachements as to-be-repaired whenever it enters your inventory
 - Add Setting (on) to display food duration, repair duration and minimum medicine cost in brackets behind those supply values
 - Add 0.8 second delay, before you can click the buttons in event screens to prevent accidental missclicks

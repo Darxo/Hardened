@@ -18,6 +18,23 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.41.0
+	- All Attacks with **Reinforced Wooden Poleflails** and **Poleflails** now cost 6 Action Points (up from 5)
+	- **Decorated Full Helm** now has a Condition of 300 (down from 320), Weight of 23 (up from 21) and Value of 5000 (up from 4000). It now grants +10 Resolve while equipped
+	- **Warfork** now has a weight of 14 (up from 10)
+	- **Spetum** now has a Weight of 12 (down from 14)
+	- **Goblin Pike** now has a Reach of 6 (down from 7)
+	- **Buckler** now has a Weight of 2 (down from 4)
+	- Wardogs now have 50 Melee Skill (down from 55), 20 Melee Defense (down from 25) and 25 Ranged Defense (down from 30), just like in Vanilla
+	- **Brigand Outlaws** and **Brigand Marauder** now have **Vigorous Assault**
+	- **Brigand Outlaws** no longer spawn with **Battle Axe**
+	- Wound Infection Event now is 3 times as likely to trigger while you have no medicine (up from 2 times)
+	- Add particle effect whenever you parry an attack
+	- NPCs are 33% less likely to use **Whirling Stance** while not defending
+	- NPCs are 20% more likely to use **disarm** or **knock out** on someone with **Parry**
+	- Destroyed attached locations now display their original name, instead of just being called "Ruins"
+	- All **Tough Brigands** now have the Fat body type, all **Balanced Brigands** and **Fast Brigands** now have the Skinny body type. The **Brigand Leader** has the Muscular body type
+
 0.40.10
 	- Fix equipped items after battle sometimes missing during ironman run
 

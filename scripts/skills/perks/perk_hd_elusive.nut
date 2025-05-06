@@ -64,18 +64,12 @@ this.perk_hd_elusive <- ::inherit("scripts/skills/skill", {
 		this.m.PrevTile = this.getContainer().getActor().getTile();
 	}
 
-	function onSpawned()
-	{
-		this.m.PrevTile = this.getContainer().getActor().getTile();
-	}
-
 	function onCombatFinished()
 	{
 		this.skill.onCombatFinished();
 		this.m.IsInEffect = false;
 	}
 
-// MSU Functions
 	function onMovementFinished()
 	{
 		local tile = this.getContainer().getActor().getTile();
@@ -87,5 +81,11 @@ this.perk_hd_elusive <- ::inherit("scripts/skills/skill", {
 		{
 			this.m.IsInEffect = true;
 		}
+	}
+
+// Hardened Functions
+	function onSpawned()
+	{
+		this.m.PrevTile = this.getContainer().getActor().getTile();
 	}
 });
