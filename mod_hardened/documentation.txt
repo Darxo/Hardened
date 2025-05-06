@@ -18,6 +18,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.40.10
+	- Fix equipped items after battle sometimes missing during ironman run
+
 0.40.9
 	- Fix battles against mercenaries sometimes not loading correctly
 	- Fix battles against non-humans not loading correctly (Wasn't included in last release by accident)
