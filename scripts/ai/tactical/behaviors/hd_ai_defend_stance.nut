@@ -54,6 +54,8 @@ this.hd_ai_defend_stance <- this.inherit("scripts/ai/tactical/behavior", {
 		local score = ::Const.AI.Behavior.Score.HD_Defend_Stance * this.getProperties().BehaviorMult[this.m.ID];
 		score *= this.getFatigueScoreMult(this.m.Skill);
 
+		if (!this.getStrategy().isDefending()) score *= 0.66;	// While on the offensive, we are less likely to consider this skill
+
 		score *= this.HD_getSkillScoreMult(_entity, this.m.Skill);
 
 		local adjacentTargets = this.queryTargetsInMeleeRange();
