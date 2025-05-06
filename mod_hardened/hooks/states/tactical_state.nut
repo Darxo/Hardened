@@ -1,7 +1,13 @@
 ::Hardened.HooksMod.hook("scripts/states/tactical_state", function(q) {
+	// We have to hook onFinish, because it is the last thing that happens, before tactical_state is deconstructed
+	// And it is happening right after the combat loot is added to the stash
 	q.onFinish = @(__original) function()
 	{
-		__original();	// During this time ::Tactical.State will be destroyed, turning off all combat-only checks
+		__original();	// During this time ::Tactical.State will be destroyed, turning off all most combat-only checks
+
+		// We remove tactical_state entry early, because most of it was already deconstructed anyways.
+		// Otherwise we potentially run into issues with the following restoreEquipment call, when something uses hasState to check for TacticalState presence
+		::MSU.Utils.States.rawdelete("tactical_state");
 
 		// Vanilla Fix: Vanilla calls this during `onCombatFinished()`, but that timing is too early.
 		// By that time none of the ground- or camp items have been looted. So dropped items will not be able to be restored correctly
