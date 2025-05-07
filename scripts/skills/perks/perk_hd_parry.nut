@@ -101,6 +101,25 @@ this.perk_hd_parry <- ::inherit("scripts/skills/skill", {
 		}
 	}
 
+// Modular Vanilla Functions
+	function getQueryTargetValueMult( _user, _target, _skill )
+	{
+		local ret = 1.0;
+
+		if (_target.getID() == this.getContainer().getActor().getID() && _user.getID() != _target.getID())	// We must be the _target
+		{
+			if (_skill == null) return ret;
+
+			if (_skill.getID() == "actives.disarm")
+				ret *= 1.2;	// _user is encouraged to disarm us to disable this perks bonus
+
+			if (_skill.getID() == "actives.knock_out" || _skill.getID() == "actives.knock_over_skill")
+				ret *= 1.2;	// _user is encouraged to stun us to disable this perks bonus
+		}
+
+		return ret;
+	}
+
 // New Functions
 	function getMeleeDefenseModifier()
 	{
