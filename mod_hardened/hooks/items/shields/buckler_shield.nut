@@ -11,6 +11,7 @@
 		this.m.ConditionMax = 16;
 
 	// Hardened Adjustments
+		this.m.StaminaModifier = -2;	// In Vanilla this is -4
 	}
 });
 
