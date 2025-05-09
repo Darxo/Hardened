@@ -14,4 +14,10 @@
 
 		::Hardened.util.replaceMainhand(this, weapon);
 	}
+
+	q.onInit = @(__original) function()
+	{
+		__original();
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vigorous_assault"));	// So that they can still move 2 tiles and attack, just like their lower variants
+	}
 });
