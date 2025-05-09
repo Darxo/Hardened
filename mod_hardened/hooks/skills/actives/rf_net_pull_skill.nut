@@ -2,6 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.IsAttack = false;	// In Vanilla this is true
 		this.m.MaxRange = 3;	// In Reforged this is 2
 	}
 
@@ -17,6 +18,16 @@
 				break;
 			}
 		}
+
+		return ret;
+	}
+
+	q.onVerifyTarget = @(__original) function( _originTile, _targetTile )
+	{
+		local ret = __original(_originTile, _targetTile);
+
+		// This skill is no longer an attack, so we need to manually make sure you can't use it on allies
+		if (ret && this.getContainer().getActor().isAlliedWith(_targetTile.getEntity())) ret = false;
 
 		return ret;
 	}
