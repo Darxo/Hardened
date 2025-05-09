@@ -4,9 +4,8 @@
 	{
 		__original();
 
-		// No longer spawn with two-handed wooden flail or greatsword
+		// No longer spawn with two-handed wooden flail, greatsword or battle axe
 		local weapon = ::MSU.Class.WeightedContainer([
-			[1, "scripts/items/weapons/rf_battle_axe"],
 			[1, "scripts/items/weapons/two_handed_mace"],
 			[1, "scripts/items/weapons/two_handed_wooden_hammer"],
 		]).roll();
