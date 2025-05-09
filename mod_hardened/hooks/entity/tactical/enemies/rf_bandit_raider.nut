@@ -1,5 +1,11 @@
 // T3 Balanced Bandit
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/bandit_raider", function(q) {
+	q.create = @(__original) function()
+	{
+		this.m.Bodies = ::Const.Bodies.Skinny;	// In Reforged this is ::Const.Bodies.AllMale
+		__original();
+	}
+
 	q.onSpawned = @(__original) function()
 	{
 		__original();

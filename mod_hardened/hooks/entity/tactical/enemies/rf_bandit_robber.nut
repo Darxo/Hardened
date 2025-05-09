@@ -14,6 +14,12 @@
 		"scripts/items/weapons/greenskins/orc_javelin",
 	]);
 
+	q.create = @(__original) function()
+	{
+		this.m.Bodies = ::Const.Bodies.Skinny;	// In Reforged this is ::Const.Bodies.AllMale
+		__original();
+	}
+
 	q.onInit = @(__original) function()
 	{
 		__original();

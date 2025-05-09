@@ -32,6 +32,12 @@
 		"scripts/items/weapons/named/named_throwing_axe",
 	]);
 
+	q.create = @(__original) function()
+	{
+		this.m.Bodies = ::Const.Bodies.Skinny;	// In Reforged this is ::Const.Bodies.AllMale
+		__original();
+	}
+
 	q.onInit = @(__original) function()
 	{
 		__original();
