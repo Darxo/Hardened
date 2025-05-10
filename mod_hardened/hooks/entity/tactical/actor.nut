@@ -72,6 +72,13 @@
 		mockObject.cleanup();
 	}
 
+	// Seems to be called from within the .exe and also doesnt seem related to setDiscovered
+	q.onDiscovered = @(__original) function()
+	{
+		this.HD_onDiscovered();
+		__original();
+	}
+
 	q.onFactionChanged = @(__original) function()
 	{
 		local flip = !this.isAlliedWithPlayer();
