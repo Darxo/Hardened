@@ -88,6 +88,20 @@
 		this.m.IsInEffect = false;
 	}
 
+// MSU Functions
+	q.onQueryTileTooltip <- function( _tile, _tooltip )
+	{
+		if (this.isTileValid(_tile))
+		{
+			_tooltip.push({
+				id = 90,
+				type = "text",
+				icon = this.getIcon(),
+				text = "Can be used for " + ::MSU.Text.colorPositive(this.getName()),
+			});
+		}
+	}
+
 // New Functions
 	q.isTileValid <- function( _tile )
 	{
