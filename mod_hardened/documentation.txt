@@ -18,6 +18,25 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.42.0
+	- **Cover Ally** (granted by **Shield Expert**) is completely reworked. It still costs 4 Action Points and 20 Fatigue and can only target adjacent allies. It now grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It still lasts until the start of your next turn or until you get stunned or move away from that target
+	- **Toolbox** now also grants +1 Bag Slot
+	- **Long Reach** now only works while it is not the actors turn. It is moved to Tier 2 (down from Tier 3)
+	- **Shield Sergeant** now also allows **Cover Ally** to be used on empty tiles
+	- **Shield Sergeant** now grants the **Shieldwall** effect even to shield users who don't have the **Shieldwall** skill
+	- The **Decayed Great Helm** is now called **Tarnished Full Helm**. It has 240 Condition (down from 255) and 23 Weight (up from 22). It now reduces the Resolve of adjacent enemies by 5 during morale checks (similar to Direwolf Pelt)
+	- **Throwing Spear** now has a Weight of 4 (down from 6)
+	- **Head Splitter** now deals 20 Shield Damage (up from 16)
+	- **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)
+	- **Drill Sergeant** now requires a brother with a permanent injury to be dismissed (just like in Vanilla)
+	- Food now only loses value linearly once half of its shelf life is over
+	- Add tooltip on tiles, that can be used for **Vanquisher**
+	- Show combat logs with hitchance and roll for **Repel** and **Hook**
+	- The Player Banner now also displays while camping
+	- Fix **Long Reach** not working correctly
+	- Fix **Anchor** and **Ghostlike** not applying their melee defense bonus immediately
+	- Fix knock back showing combat logs while the user or target is hidden
+
 0.41.1
 	- **Throw Net** and **Net Pull** are no longer considered an Attack
 	- Fix Pause-On-Discover feature not working correctly

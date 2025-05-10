@@ -48,6 +48,7 @@ local hookKnockBack = function( _knockBackSkill )
 	// Private
 	q.m.ExecutionDelay <- 150;	// Delay between every execution in milliseconds
 
+	// Overwrite, as Reforged hasn't implemented this anyways
 	q.onAnySkillExecuted = @(__original) function( _skill, _targetTile, _targetEntity, _forFree )
 	{
 		__original(_skill, _targetTile, _targetEntity, _forFree);
@@ -72,8 +73,11 @@ local hookKnockBack = function( _knockBackSkill )
 		}
 	}
 
-	q.onAfterUpdate <- function( _properties )
+	// Overwrite, as Reforged hasn't implemented this anyways
+	q.onAfterUpdate = @(__original) function( _properties )
 	{
+		__original(_properties);
+
 		local actor = this.getContainer().getActor();
 		if (actor.isPlacedOnMap())
 		{

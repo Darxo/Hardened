@@ -8,7 +8,6 @@
 - certain unholds/high end orcs being able to throw their own allies behind their back in order to advance into tight spaces
 - change handgonne aoe pattern in some directions to a triangle
 - Rebalance SpiderEgg hunting? Give them Loot?
-- nerf cover ally initiative bonus and give it additional defense
 - perk for civilians (e.g. caravan guys), called "First Aid", making: Injuries you treat during battle are removed instead
 - move weapon mastery effects into the weapon mastery itself, instead of being implemented by the skills
 - make alps more smart on overworld (stalk player during day)
@@ -148,7 +147,6 @@
 - Make it so that characters who move to a certain tile are already considered to be at the tile during the movement (from the character and tile pov)
 - Make sure, Lindwurms only move into tiles, where the tail can follow
 - Second Ammunition Slot
-- Make terrain fixed for camps (prevent rerolling cheese)
 - New active skill for **Scout** perk called **Callout**
 	- **Callout** costs 4-5 AP and can target any enemy ranged troop
 		- That troop deals 20% less ranged damage against yourself and adjacent allies for one turn
@@ -162,9 +160,7 @@
 	- This can be used for example to show all targets, that you currently have in your **Formidable Approach** list
 	- Or for a new **Callout** skill
 - New "wake up" skill for all humans, which removes 1 turn of 'stunned' from an adjacent character. Costs 6 AP and 20 fatigue. User must not be engaged in melee
-- make footprints persist a little longer
 - lightning damage to always hit the head
-- change pole flails to 6 AP attacks?
 - make punctured gear more likely to drop in the actual quality left
 - parry fx using little stars from ::Const.Tactical.DazeParticles
 - Holy Water use case:
@@ -172,16 +168,12 @@
 - Prevent camps from spawning defenders, while player is nearby
 - Prevent camps from joining overworld fights or being attackable while other enemies are nearby
 
-
-
-
 ## Wishlist for Reforged
 - Moddable Perk Descriptions (Currently you have to overwrite the perk descriptions)
 - Improve Weapon Preview (using dummy player) to also respect the removal of those via hooks (as a result currently you have overwrite the onAdded)
 - Serialize Perk Groups, so that they will still be found/shown, even if a mod removes or adds one perk to them
 
 ## New Content:
-	- give flesh golems "Wear them Down"
 	- Make Flesh Cradles destructable (e.g. 100 hp 100 armor). Make them much more attractive to NPCs (anti-dog tech)
 	- Make flesh pull cause a negative morale check
 	- Make greater flesh golem corpse explosions stronger
@@ -192,12 +184,6 @@
 
 - Give Ijirok Second Wind and a Unhold Sweep Melee Attack for 4 AP and a Zone of Control Attack
 	- Chance its AI to only use the 4 AP after Second Wind for the sweep
-
-Injury Rework
-- Injuries take twice as much to heal
-- Injuries do not require medicine to heal
-- Injuries heal twice as much, if you have medicine
-- twice as much Medicine is used each day
 
 ## New Perks
 - Alchemist
@@ -306,10 +292,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	- Cant fix right now, because 'refresh' only supports increased stacks by 1. Reforged suffers the same problem when inflicting 3 bleed via Gouge for example
 
 - split hyena/nachzehrer troops
-- Cover Ally Rework
-	- change cover ally to debuff the targets melee skill and melee defense, to make it harder to use offensively
-		- Make Cover Ally give +50 Initiative
-		- Look into the cover ally rework in the past (guardian perk)
 
 # WIP
 
@@ -333,10 +315,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Play other animations also slightly staggered (e.g. fleeing animation) to counter act the lag a bit
 - add debug logs for finding the end of battle bug
 
-### Change
-- CHange the icon for "Hidden" to that of an eye and the name to Hidden (Revealed), when one enemy/faction knows about that guy. check AI
-- Investigate Repel/hook to add combat looks about hitchance, just like with kncok back
-
 ### Feature
 - Contracts which change morale/renown/relation but are not yet covered, display those in the next screen
 - add system where equipped loot is only decided upon once, whether it drops. So if a dead character reanimates and dies again you dont have more chances to loot that gear
@@ -356,10 +334,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 
 - shieldwall animation bug at the start of the combat
 
-
 - look into the debug log vanilla recently removed from skill container printing. Maybe i dont need to skip that anymore in hardened
-
-onCombatFinished onBattleEndedDelayed
 
 
 - Make it so ranged troop AI is less likely to be dumb (leave perfectly fine positions)
@@ -404,6 +379,3 @@ from Modular Vanilla
 
 - Tooltip for economic difficulty changes
 - color adjacent enemies, that exert ZOC onto you in a color, when previewing movement out of ZOC
-
-- show banner while camping
-- investigate shields vanishing when they reach 0 condition but blacksmith is present

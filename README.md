@@ -140,6 +140,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 ### Skills
 
 - **Chop** now has a 50% chance to decapitate (up from 25%)
+- **Cover Ally** (granted by **Shield Expert**) is mostly reworked. It still costs 4 Action Points and 20 Fatigue and can only target adjacent allies. It now grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It still lasts until the start of your next turn or until you get stunned or move away from that target
 - **Dazed** no longer reduces the Stamina by 25%. It now increases the fatigue cost of all non-attacks by 25%
 - **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
@@ -228,7 +229,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
 - **Hammer Mastery** no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part.
 - **Hold Steady** no longer has a shared cooldown with other brothers who have this perk. It now lasts for 2 rounds, instead of having a turn-based duration
-- **Hybridization** is completely reworked. It is now called **Toolbox** and requires a Throwing Weapon. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type attacks to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 100% more damage to shields
+- **Hybridization** is completely reworked. It is now called **Toolbox** and requires a Throwing Weapon. It grants +1 Bag Slot. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type attacks to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 100% more damage to shields
 - **Inspiring Presence** no longer requires a banner. At the start of each round it grants adjacent allies of your faction +3 Action Points for this turn, if they are adjacent to an enemy and have less Resolve than you. The same target can't be inspired multiple times per turn.
 - **Iron Sights** headshot chance now also works with melee weapons
 - **King of all Weapons** is now called **Spear Flurry** and is completely reworked. It now prevents spear attacks from building up any fatigue
@@ -236,6 +237,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Leverage** is completely reworked. It now reduces the Action Point cost of your first polearm attack each turn by 1 for each adjacent ally.
 - **Line Breaker** no longer grants **Shield Bash**. It now causes **Knock Back** to stagger the target on a hit
 - **Lone Wolf** is now only active if no ally from your company is within 2 tiles
+- **Long Reach** now only works while it is NOT your turn
 - **Marksmanship** is completely reworked. It now grants +10 minimum and maximum damage while there are no enemies within 2 tiles
 - **Nimble** is completely reworked: It now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
 - **Offhand Training** is completely reworked. It now reduces the AP cost of tool skills by 1. Wielding a tool in your offhand no longer disables **Double Grip** and while wielding a tool in your offhand, the first successful attack each turn, will stagger your target
@@ -253,7 +255,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Sanguinary** can now only trigger once per turn from inflicting fatalities. Now you also recover 3 Action Points once per turn, when you move next to an injured enemy
 - **Savage Strength** now reduces fatigue cost of weapon skills by 20% (down from 25%). It now grants Immunity to Disarm
 - **Shield Expert** no longer grants 25% increased shield defenses and no longer prevents fatigue build-up when you dodge attacks. It now grants 50% less shield damage taken and it makes it so enemies will never have Reach Advantage over the shield user
-- **Shield Sergeant** is mostly reworked. It still grants **Shieldwall** to all allies at the start of each combat. It now causes allies to imitate shield skills for free that you use during your turn. It also allows you to use **Knock Back** on empty tiles
+- **Shield Sergeant** is completely reworked. It grants **Shieldwall** effect to all allies who have a shield equippe, at the start of combat. It now causes allies within 3 tiles to imitate shield skills for free that you use during your turn. It also allows you to use **Knock Back** and **Cover Ally** on empty tiles
 - **Skirmisher** now grants 50% of body armor weight as initiative (previously 30% of body/helmet armor weight) and no longer displays an effect icon
 - **Spear Mastery** no longer provides a free spear attack each turn. Instead it now grants 15% more Melee Skill while you have Reach Advantage
 - **Survival Instinct** is completely reworked. It now grants 1 stack, when you get hit by an attack, and you lose 1 stack when you dodge an attack. Every stack grants 10 Melee Defense and 10 Ranged Defense
@@ -297,8 +299,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Ghostlike** is now Tier 5 (up from Tier 4)
 - **Inspiring Presence** added to **Noble** group
 - **King of all Weapons** (now **Spear Flurry**) moved to Tier 6 perk (down from Tier 7)
-- **Leverage** moved to Tier 6 perk (up from Tier 3)
-- **Long Reach** moved to Tier 3 perk (down from Tier 7)
+- **Leverage** moved to Tier 6 (up from Tier 3)
+- **Long Reach** moved to Tier 2 (down from Tier 7)
 - **Marksmanship** is added to **Ranged** group. It is no longer a special perk
 - **Overwhelm** is removed from **Ranged** group
 - **Pathfinder** moved to Tier 3 (up from Tier 1). It is removed from **Wildling** group and added to **Leadership** group
@@ -337,7 +339,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Goblin Pike** now has a Reach of 6 (down from 7) and gains the **Spear** Weapontype
 - **Halberd** now has 6 Reach (down from 7)
 - **Head Chopper** now has 4 Reach (up from 3)
-- **Head Splitter** now has 4 Reach (up from 3)
+- **Head Splitter** now has 4 Reach (up from 3) and deals 20 Shield Damage (up from 16)
 - **Heavy Crossbow** now has +2 Fatigue Cost for its weapon skills
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
 - **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%)
@@ -350,7 +352,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Spiked Impaler** now has +2 Fatigue Cost for its weapon skills
 - **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and a value of 600 (up from 400)
 - **Three-Headed Flail** now has 3 Reach (down from 4)
-- **Throwing Spears** no longer inflict any fatigue when hitting a shield and have a value of 60 (down from 80)
+- **Throwing Spears** no longer inflict any fatigue when hitting a shield. They now have a Weight of 4 (down from 6) and a value of 60 (down from 80)
 - **Tree Limb** now deals 30-50 damage (up from 25-40), deals 90% Armor Damage (up from 75%), has 4 Reach (up from 3), a weight of 15 (down from 20), a value of 300 (up from 150). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
 - **Two-handed Flail** now has 4 Reach (down from 5)
 - **Two-handed Wooden Flail** now has 4 Reach (down from 5)
@@ -361,10 +363,12 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Other Items
 
+- Food now only loses value once half of its shelf life is over
 - **Adorned Mail Shirt** now has a Weight of 16 (up from 11), Condition of 150 (up from 130) and Value of 1050 (up from 800); just like in Vanilla
 - **Adarga** is now called **Adarge Shield** (just like in Vanilla)
 - **Antidote** now has a value of 100 (down from 150). Crafting it now costs 25 crowns (down from 50) and 1 Jagged Fang (down from 2)
 - **Bandage** now costs 40 crowns (up from 25)
+- **Decayed Great Helm** is now called **Tarnished Full Helm**. It has 240 Condition (down from 255) and 23 Weight (up from 22). It now reduces the Resolve of adjacent enemies by 5 during morale checks (similar to Direwolf Pelt). It now only appears in the Full Helm looking variants
 - **Decorated Full Helm** now has a Condition of 300 (down from 320), Weight of 23 (up from 21) and Value of 5000 (up from 4000). It now grants +10 Resolve while equipped
 - **Gun Powder** now costs 2 **Ammunition Supply** each (up from 1)
 - **Buckler** appear less common in big settlements
@@ -410,6 +414,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Retinue/Follower
 
 - **Bount Hunter Follower** now costs 2500 Crowns (down from 4000). It now grants +5% for enemies to become champtions (up from +3%). It no longer grants crowns when you kill champions
+- **Drill Sergeant** now requires a brother with a permanent injury to be dismissed (just like in Vanilla)
 - **Lookout Follower** no longer grants 25% more vision at all times. It now always provides a scouting report for enemies near you, just like "Band of Poachers" origin
 - **Scout Follower** no longer grants 15% more movement speed. It now grants 20% more movement speed while in Forests and Swamp. It also grants 25% Vision while on hills or mountains
 
@@ -451,7 +456,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - All **Skeletons** grant 20% more experience. They no longer grant experience after being ressurected
 - **Fallen Heroes** no longer spawn with Morning Stars or Handaxes. They now have a 100% resurrection chance (up from 90%) but -10 Hitpoints. Champion variants lose **Nine Lives**
 - **Geists** lose **Fearsome**. They now have **Backstabber**
-- **Necromancer** lose 20 natural body armor and **Inspiring Presence**
+- **Necromancer** lose 20 natural body armor and **Inspiring Presence**. **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)
 - **Ancient Auxiliary** lose **Battleforged**
 - **The Conqueror** now has **Savage Strength**. This has no gameplay impact and is only meant to visualize that he is immune to **Disarm**
 
@@ -599,7 +604,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Loot that is not equippable in battle no longer appears on the ground (e.g. Beast Trophies/Ingredients)
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
 - Improve visibility of Miasma and Burning Ground
-- **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to Displacement or which are rooted
+- **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to Displacement or which are Rooted. Using them will now print a combat log with the roll and hitchance of the attack
 - **Disarm** can no longer be used on enemies which are immune to disarm
 - **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - **Night Effect**, **Double Grip**, **Pattern Recognition**, **Bulwark** and **Man of Steel** no longer display a Mini-Icon
@@ -640,6 +645,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Add Setting (on) for marking named/legendary helmets/armor or armor with attachements as to-be-repaired whenever it enters your inventory
 - Add Setting (on) to display food duration, repair duration and minimum medicine cost in brackets behind those supply values
 - Add 0.8 second delay, before you can click the buttons in event screens to prevent accidental missclicks
+- The Player Banner is no longer hidden while camping
 - Add Concept and Tooltip for Day-Night Cycle
 - Slightly Lower the volume of the annoying kid sfx in towns
 
@@ -666,7 +672,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Other Actors moving in or out of the range of someone with **Lone Wolf** now cause that effect to update instantly
 - Allow cut, copy and mark operations in input fields that are full. Limit Ctrl-Combinations, Delete and Arrow Key presses in input fields to one per press
 - Items that you drop during battle are now correctly re-equipped afterwards
-- Improve knock back logic for Spiked Impaler to behave like the Knock Back skill from shields
+- Improve knock back logic for **Spiked Impaler** to behave like the Knock Back skill from shields
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
 - Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
 - Hitpoints recovery on brothers is now more accurate (camping recovery fix)
@@ -678,7 +684,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Roads will no longer be generated directly on the map border
 - Change the inventory icon of the **Witchhunter's Hat** to look exactly like the sprite on the brother
 - Characters under berserker mushroom effect no longer yell when they use ranged attacks
-- Prevent the same random human name (e.g. Leader or Knight) to be generated in succession
+- Prevent the same random human name (e.g. for Leader or Knight) to be generated in succession
 - Throw Pot/Flask skills are no longer considered an Attack
 - **Throw Net** and **Net Pull** are no longer considered an Attack
 - Improve tooltips of **Chop** skill
@@ -721,7 +727,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Add new `::Hardened.TileReservation` with `function isReserved( _tileID )` which can be used to check whether a targeted tile is about to be filled with an entity from a vanilla `teleport` call
 - Add new `IsHidingIconMini` flag for skills (`false` by default), that can be used by modder to force-hide the mini icon
 - Add new `onSpawned` event for skills that can be used in place of `onCombatStarted` to more consistently configure entities/skills even if they spawn mid battle
-- Add new `isActiveEntity` function for `actor.nut`, which is a shorter version of ::Tactical.TurnSequenceBar.isActiveEntity
+- Add new `isActiveEntity` function for `actor.nut`, which is a more accurate version of MSU's `::Tactical.TurnSequenceBar.isActiveEntity`, as it also returns `true` during the start of that actors turn
 - Add new `::Hardened.getFunctionCaller` global function which returns the name of the caller of the function you were in when you called getFunctionCaller
 - Add new `::Hardened.mockFunction` global function allowing you to mod vanilla functions in a precise way
 - Supplies (Money, Tools, Medicine, Ammunition) are now droppable
@@ -738,6 +744,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Add new `HD_LastsForTurns = null` member for `skill.nut` that can be assigned a number to give effects a turn-based duration
 - Add new `HD_LastsForRounds = null` member for `skill.nut` that can be assigned a number to give effects a round-based duration
 - Add new `HD_scheduleResurrection(_rounds, _corpse)` for `tactical_entity_manager`, which can be used to schedule a resurrection and spawn a corresponding purpose particle effect on the corpse
+- Add `HD_getShelfLifeMult()` function for `food_item.nut` which returns the price multiplier derived from this items shelf life
+- Add `HD_MaxAmount = 25` member for `food_item.nut` which defines the maximum amount of stacks this item can have. It is currently only supported within `randomizeAmount` and `getValue` from the same class
 
 ### New Character Properties
 
