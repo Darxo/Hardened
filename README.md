@@ -679,7 +679,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Change the inventory icon of the **Witchhunter's Hat** to look exactly like the sprite on the brother
 - Characters under berserker mushroom effect no longer yell when they use ranged attacks
 - Prevent the same random human name (e.g. Leader or Knight) to be generated in succession
-- Throw Pot/Flask skills are no longer considered an attack
+- Throw Pot/Flask skills are no longer considered an Attack
+- **Throw Net** and **Net Pull** are no longer considered an Attack
 - Improve tooltips of **Chop** skill
 - Rewrite `queryActorTurnsNearTarget` from `behavior.nut`, making it more accurate by considering current action points
 - Remove a duplicate loading screen

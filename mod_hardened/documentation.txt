@@ -18,6 +18,15 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.41.1
+	- **Throw Net** and **Net Pull** are no longer considered an Attack
+	- Fix Pause-On-Discover feature not working correctly
+	- Fix freeze during combat when an enemy with a 0 AP costing skill has 0 Action Points remaining
+	- Fix shields with 0 condition vanishing after battle, despite having **Blacksmith**
+	- Fix **Sword Mastery** perk description showing wrong hitchance bonus for AoE attack. It is meant to be just +10%
+	- Fix **Gruesome Feast** effect on Nachzehrer not mentioning the +10 Melee Defense they get in Hardened
+	- Fix **Bullseye** description requirement mentioning Ranged Weapon when it actually requires a Ranged Attack
+
 0.41.0
 	- All Attacks with **Reinforced Wooden Poleflails** and **Poleflails** now cost 6 Action Points (up from 5)
 	- **Decorated Full Helm** now has a Condition of 300 (down from 320), Weight of 23 (up from 21) and Value of 5000 (up from 4000). It now grants +10 Resolve while equipped

@@ -2,7 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.IsAttack = false;	// In Vanilla this is true
+		this.m.IsAttack = false;	// In Reforged this is true
 		this.m.MaxRange = 3;	// In Reforged this is 2
 	}
 

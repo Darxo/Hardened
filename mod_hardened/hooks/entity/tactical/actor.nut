@@ -211,6 +211,7 @@
 	}
 
 // Hardened Functions
+	// Our own interpretation of surroundedCount, that is not yet clamped
 	q.__calculateSurroundedCount = @(__original) function()
 	{
 		local count = __original();
