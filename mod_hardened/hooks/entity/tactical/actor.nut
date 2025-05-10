@@ -16,19 +16,7 @@
 		local oldSetDiscovered = this.setDiscovered;
 		this.setDiscovered = function( _b )
 		{
-			if (_b && !this.m.HD_IsDiscovered && ::Tactical.isActive())		// We must check for tactical to be active, because vanilla also calls setDiscovered(true) during initialization of a player object
-			{
-				this.m.HD_IsDiscovered = true;	// We use this variable, so that we don't trigger the following behavior repeatidly on already discovered entities
-				local activeEntity = ::Tactical.TurnSequenceBar.getActiveEntity();
-				if (::MSU.isKindOf(activeEntity, "player"))
-				{
-					if (this.isAlliedWithPlayer() && ::Hardened.Mod.ModSettings.getSetting("HoldOnDiscoverAlly").getValue())
-						activeEntity.m.HD_HasDiscoveredSomething = true;
-					if (!this.isAlliedWithPlayer() && ::Hardened.Mod.ModSettings.getSetting("HoldOnDiscoverHostile").getValue())
-						activeEntity.m.HD_HasDiscoveredSomething = true;
-				}
-			}
-
+			if (_b) this.HD_onDiscovered();
 			oldSetDiscovered(_b);
 		}
 	}
@@ -248,6 +236,25 @@
 		}
 
 		return count;
+	}
+
+	// This is called either when onDiscovered or when setDiscovered(true) on this actor are called
+	q.HD_onDiscovered <- function()
+	{
+		// Feat: stop player movement midway, when he discovers an enemy/ally
+		// This is related to the setDiscovered hook in this script and the onMovementStep hook in the player.nut
+		if (!this.m.HD_IsDiscovered && !this.isPlayerControlled() && ::Tactical.isActive())	// We must check for tactical to be active, because vanilla also calls setDiscovered(true) during initialization of a player object
+		{
+			this.m.HD_IsDiscovered = true;	// We use this variable, so that we don't trigger the following behavior repeatidly on already discovered entities
+			local activeEntity = ::Tactical.TurnSequenceBar.getActiveEntity();
+			if (::MSU.isKindOf(activeEntity, "player"))
+			{
+				if (this.isAlliedWithPlayer() && ::Hardened.Mod.ModSettings.getSetting("HoldOnDiscoverAlly").getValue())
+					activeEntity.m.HD_HasDiscoveredSomething = true;
+				if (!this.isAlliedWithPlayer() && ::Hardened.Mod.ModSettings.getSetting("HoldOnDiscoverHostile").getValue())
+					activeEntity.m.HD_HasDiscoveredSomething = true;
+			}
+		}
 	}
 });
 
