@@ -98,7 +98,7 @@
 				for (local j = danglingItems.len() - 1; j >= 0; --j)	// Maybe it's in the unequipped itempool from our allies?
 				{
 					local danglingItem = danglingItems[j];
-					if (!::MSU.isEqual(danglingItem, entry.Item)) continue;
+					if (!this.HD_isEqualAndEquippable(danglingItem, entry)) continue;
 
 					// The item is among the dangling items
 					bro.getItems().HD_equipToSlot(danglingItem, entry.Slot);
@@ -114,7 +114,7 @@
 				{
 					local stashItem = stashItems[j];
 					if (stashItem == null) continue;
-					if (!::MSU.isEqual(stashItem, entry.Item)) continue;
+					if (!this.HD_isEqualAndEquippable(stashItem, entry)) continue;
 
 					bro.getItems().HD_equipToSlot(stashItem, entry.Slot);
 					brotherSnapshot.Slots.remove(i);
@@ -131,7 +131,7 @@
 				{
 					local stashItem = stashItems[j];
 					if(stashItem == null) continue;
-					if(stashItem.getID() != entry.Item.getID()) continue;
+					if (!this.HD_isReplacement(stashItem, entry)) continue
 
 					// We found a replacement item in the stash!
 					bro.getItems().HD_equipToSlot(stashItem, entry.Slot);
@@ -158,7 +158,7 @@
 				for (local i = danglingItems.len() - 1; i >= 0; --i)
 				{
 					local danglingItem = danglingItems[i];
-					if(danglingItem.getID() != entry.Item.getID()) continue;
+					if (!this.HD_isReplacement(danglingItem, entry)) continue
 
 					// The item is among the dangling items
 					bro.getItems().HD_equipToSlot(danglingItem, entry.Slot);
@@ -213,5 +213,39 @@
 		}
 
 		return danglingItems;
+	}
+
+	// Check, if _item is "equal enough" to the information given in _slotSnapshot
+	// This is similar to ::MSU.isEqual of _item and _slotSnapshot.Item, except that we also make sure that the item is still equippable into that given slot
+	// Shields are an example of items that are no longer equippable, when their condition reaches 0
+	q.HD_isEqualAndEquippable <- function( _item, _slotSnapshot )
+	{
+		if (::MSU.isEqual(_item, _slotSnapshot.Item))
+		{
+			// If the item was in the bag before, then we can move it there again
+			if (_slotSnapshot.Slot == ::Const.ItemSlot.Bag) return true;
+
+			if (_item.getSlotType() == _slotSnapshot.Slot) return true;
+			// If the item default slot no longer matches the slot it was in before, then we dont consider it equal
+		}
+
+		return false;
+	}
+
+	// Check, if _item is "similar enough" to the information given in _slotSnapshot
+	// This is similar to comparing the ID of _item and _slotSnapshot.Item, except that we also make sure that the item is still equippable into that given slot
+	// Shields are an example of items that are no longer equippable, when their condition reaches 0
+	q.HD_isReplacement <- function( _item, _slotSnapshot )
+	{
+		if (_item.getID() == _slotSnapshot.Item.getID())
+		{
+			// If the item was in the bag before, then we can move it there again
+			if (_slotSnapshot.Slot == ::Const.ItemSlot.Bag) return true;
+
+			// If the item default slot doesnt matches the slot taht we seek, then we dont consider it a replacement
+			if (_item.getSlotType() == _slotSnapshot.Slot) return true;
+		}
+
+		return false;
 	}
 });
