@@ -27,7 +27,11 @@
 			ret.Turns = 0.0;
 			local cheapestAttack = _actor.getSkills().getCheapestAttack();
 			local cheapestAttackAP = cheapestAttack == null ? 4 : cheapestAttack.getActionPointCost();
-			if (cheapestAttackAP <= _actor.getActionPoints())	// We can attack this turn
+			if (cheapestAttackAP == 0)	// We check for this explicitely to prevent a division by 0 in the second check
+			{
+				ret.TurnsWithAttack = 0;	// We can attack this turn and it costs us nothing at all
+			}
+			else if (cheapestAttackAP <= _actor.getActionPoints())	// We can attack this turn
 			{
 				ret.TurnsWithAttack = cheapestAttackAP / _actor.getActionPoints();
 			}
