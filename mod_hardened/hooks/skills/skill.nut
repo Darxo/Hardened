@@ -39,10 +39,10 @@
 	{
 		local user = this.getContainer().getActor();
 
-		if (_targetedTile.IsVisibleForPlayer)
+		if (_targetedTile.IsVisibleForPlayer && !user.getTile().IsVisibleForPlayer)
 		{
-			// We always reveal the user-tile, when iit's targeting a tile already visible to the player, allowing the player
-			user.setDiscovered(true);
+			if (!user.HD_IsDiscovered()) user.setDiscovered(true);	// If the user was not discovered before by the player, they will be discovered now
+			// We always reveal the user-tile, when it's targeting a tile already visible to the player, allowing the player to see the entity on top of it
 			user.getTile().addVisibilityForFaction(::Const.Faction.Player);
 		}
 
