@@ -2,6 +2,9 @@
 	// We hook onUse to display the exact hitchances of knock_back in the log and even produce a log on a miss
 	q.onUse = @(__original) function( _user, _targetTile )
 	{
+		if (_user.isHiddenToPlayer() || !_targetTile.IsVisibleForPlayer)
+			return __original(_user, _targetTile);
+
 		local hitroll = null;	// We hook the ::Math.rand function to fetch the result of every every random 1-100 roll happening into this variable
 		local hitchance = null;	// We hook the getHitchance function to fetch its result into this variable
 
