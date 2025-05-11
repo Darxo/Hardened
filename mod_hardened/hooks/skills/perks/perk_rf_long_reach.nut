@@ -15,7 +15,7 @@
 
 		foreach (skill in this.getContainer().getAllSkillsOfType(::Const.SkillType.Active))
 		{
-			if (this.isSkillValid(skill) && skill.verifyTargetAndRange(this.getContainer().getActor().getTile(), _target.getTile()))
+			if (this.isSkillValid(skill) && skill.verifyTargetAndRange(_target.getTile()))
 			{
 				return 1;
 			}
