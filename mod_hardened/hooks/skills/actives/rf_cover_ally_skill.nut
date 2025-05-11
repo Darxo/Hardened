@@ -2,7 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Description = ::Reforged.Mod.Tooltips.parseString("Cover an adjacent ally, passing them the base defenses from your equipped shield until the start of your next turn. Cannot be used while rooted.");
+		this.m.Description = ::Reforged.Mod.Tooltips.parseString("Cover an adjacent ally with your equipped shield. Cannot be used while rooted or stunned.");
 
 		// MSU Member
 		this.m.AIBehaviorID = null;		// AI will no longer consider or use this skill
