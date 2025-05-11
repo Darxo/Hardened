@@ -43,22 +43,6 @@ local hookKnockBack = function( _knockBackSkill )
 	// Private
 	q.m.ExecutionDelay <- 150;	// Delay between every execution in milliseconds
 
-	q.getTooltip = @(__original) function()
-	{
-		local ret = __original()
-
-		foreach (index, entry in ret)
-		{
-			if (entry.id == 12)
-			{
-				entry.text = ::Reforged.Mod.Tooltips.parseString("Will expire upon [Recover|Skill+recover] or getting [stunned|Skill+stunned_effect], rooted, or [staggered|Skill+staggered_effect]");
-				break;
-			}
-		}
-
-		return ret;
-	}
-
 	q.onAnySkillExecuted = @(__original) function( _skill, _targetTile, _targetEntity, _forFree )
 	{
 		__original(_skill, _targetTile, _targetEntity, _forFree);
