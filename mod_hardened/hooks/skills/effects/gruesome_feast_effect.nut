@@ -17,7 +17,7 @@
 
 		foreach (entry in ret)
 		{
-			if (entry.id == 12 && icon == "ui/icons/melee_defense.png")
+			if (entry.id == 12 && entry.icon == "ui/icons/melee_defense.png")
 			{
 				local size = this.getContainer().getActor().getSize();
 				if (size == 2)
