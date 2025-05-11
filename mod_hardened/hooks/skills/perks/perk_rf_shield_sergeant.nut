@@ -1,4 +1,4 @@
-/// Hook knock_back so that it can be used on empty tiles
+/// Hook knock_back or cover ally so that they can be used on empty tiles
 /// Will do nothing, if _knockBackSkill was already adjusted before
 /// If shield_sergeant perk is removed, this adjustment will remain, until the skill is reset (reequipping shield or reloading save)
 local hookKnockBack = function( _knockBackSkill )
@@ -25,9 +25,14 @@ local hookKnockBack = function( _knockBackSkill )
 			return oldOnuse(_user, _targetTile);
 		}
 
-		// Fluff: We place a hit-sound when using it on environment
-		if (!_targetTile.IsEmpty || _targetTile.Level >= _user.getTile().Level + 2)		// Our knock back hits something solid
+		if (this.getID() == "actives.rf_cover_ally")
 		{
+			// We paly the same hit sound that cover ally would normally do
+			::Sound.play(::MSU.Array.rand(this.m.SoundOnHit), ::Const.Sound.Volume.Skill, _user.getPos());
+		}
+		else if (!_targetTile.IsEmpty || _targetTile.Level >= _user.getTile().Level + 2)		// Our knock back hits something solid
+		{
+			// Fluff: We play a hit-sound when using it on environment
 			::Sound.play(::MSU.Array.rand(this.m.SoundOnHit), ::Const.Sound.Volume.Skill, _user.getPos());
 		}
 		::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(_user) + " demonstrates how to use " + this.getName());
@@ -75,10 +80,9 @@ local hookKnockBack = function( _knockBackSkill )
 			foreach (activeSkill in actor.getSkills().getAllSkillsOfType(::Const.SkillType.Active))
 			{
 				// By checking for MaxRange we guarantee that the same skill is never hooked twice as the MaxRange is increased during the hooking
-				if (activeSkill.getID() == "actives.knock_back")
+				if (activeSkill.getID() == "actives.knock_back" || activeSkill.getID() == "actives.rf_cover_ally")
 				{
-					// use locally defined function
-					hookKnockBack(activeSkill);
+					hookKnockBack(activeSkill);		// use locally defined function
 				}
 			}
 		}

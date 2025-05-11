@@ -1282,7 +1282,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Allies with a shield will gain the [Shieldwall effect|Skill+shieldwall_effect] for free at the start of each battle",
 					"Whenever you use a shield skill during your [turn,|Concept.Turn] all allies within " + ::MSU.Text.colorPositive(3) + " tiles who also have that skill will use it for free on a random valid tile",
-					"[Knock Back|Skill+knock_back] can be used on empty tiles",
+					"[Knock Back|Skill+knock_back] and [Cover Ally|Skill+rf_cover_ally_skill] can be used on empty tiles",
 				],
 			}],
 		}),
