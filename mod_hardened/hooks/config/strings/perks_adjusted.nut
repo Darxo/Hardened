@@ -461,7 +461,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlocks the [Cover Ally|Skill+rf_cover_ally_skill] skill which allows you to target an ally to allow them to move 1 tile ignoring [Zone of Control|Concept.ZoneOfControl] on their [turn|Concept.Turn] while improving their position in the [turn|Concept.Turn] order in the next [round|Concept.Round]",
+						"Unlocks the [Cover Ally|Skill+rf_cover_ally_skill] skill which allows you to pass your own shield defenses to an adjacent ally until the start of your next turn",
 					],
 				},
 			],
