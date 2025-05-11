@@ -124,7 +124,14 @@
 	/// @return false otherwise
 	q.isActiveEntity <- function()
 	{
-		return ::Tactical.isActive() && ::MSU.Utils.hasState("tactical_state") && ::Tactical.TurnSequenceBar.isActiveEntity(this);
+		if (!::Tactical.isActive()) return false;
+
+		// This is a similar implementation to what MSU does, except that we ignore IsLocked, by accessing the active entity directly
+		// MSUs implementation has the issue, that it returns false during the start of the active entities turn,
+		//	causing buffs, which rely on it being the active entity, to not apply immediately
+		if (::Tactical.TurnSequenceBar.m.CurrentEntities.len() == 0) return false;
+
+		return (this.getID() == ::Tactical.TurnSequenceBar.m.CurrentEntities[0].getID());
 	}
 
 // New generic functions
