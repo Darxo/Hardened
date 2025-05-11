@@ -2,7 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.InitiativeModifier = 0;
+		this.m.BraveryMult = 1.0;
 	}
 
 	q.onUpdate = @(__original) function( _properties )

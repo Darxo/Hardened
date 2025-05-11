@@ -707,7 +707,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Gain a stack whenever you end your [turn|Concept.Turn] without having used [Wait,|Concept.Wait] up to a maximum of 3 stacks",
-					"Gain " + ::MSU.Text.colorPositive("+15") + " [Resolve|Concept.Bravery] while you have at least 1 stack",
+					"Gain " + ::MSU.Text.colorPositive("15%") + " more [Initiative|Concept.Initiative] while you have at least 1 stack",
 					"Skills build up " + ::MSU.Text.colorPositive("15%") + " less [Fatigue|Concept.Fatigue] while you have at least 2 stacks",
 					"Deal " + ::MSU.Text.colorPositive("15%") + " more damage while you have 3 stacks",
 					"You lose all stacks if you use [Wait|Concept.Wait]",
