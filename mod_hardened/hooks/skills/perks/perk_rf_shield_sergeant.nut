@@ -88,6 +88,20 @@ local hookKnockBack = function( _knockBackSkill )
 		}
 	}
 
+	// Overwrite, because we also grant shieldwall to allies whose shield doesn't have the shieldwall skill
+	q.onCombatStarted = @() function()
+	{
+		local actor = this.getContainer().getActor();
+		foreach (ally in ::Tactical.Entities.getInstancesOfFaction(actor.getFaction()))
+		{
+			if (ally.isArmedWithShield())
+			{
+				ally.getSkills().add(::new("scripts/skills/effects/shieldwall_effect"));
+				::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(ally) + " uses Shieldwall due to " + ::Const.UI.getColorizedEntityName(actor) + "\'s " + this.getName() + " perk");
+			}
+		}
+	}
+
 // New Functions
 	q.isSkillValid <- function( _skill )
 	{
