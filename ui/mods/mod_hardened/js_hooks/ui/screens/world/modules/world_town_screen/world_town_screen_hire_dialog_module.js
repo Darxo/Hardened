@@ -9,6 +9,7 @@ WorldTownScreenHireDialogModule.prototype.updateDetailsPanel = function(_element
 	var data = _element.data('entry');
 	if(data['IsTryoutDone'])
 	{
+		this.mDetailsPanel.TryoutButton.enableButton(true);
 		this.mDetailsPanel.TryoutButton.findButtonText().text("Dismiss");
 		this.mDetailsPanel.TryoutButton.addClass('display-block').removeClass('display-none');
 		this.mDetailsPanel.TryoutButton.unbindTooltip();
