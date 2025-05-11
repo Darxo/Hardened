@@ -102,7 +102,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 
 	{	// Polearm Combat
 		local pgPolearmGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_polearm");
-		changePerkTier(pgPolearmGroup, "perk.rf_long_reach", 3);	// Move "Long Reach" to Tier 3 (down from Tier 7)
+		changePerkTier(pgPolearmGroup, "perk.rf_long_reach", 2);	// Move "Long Reach" to Tier 2 (down from Tier 7)
 		changePerkTier(pgPolearmGroup, "perk.rf_leverage", 6);		// Move "Leverage" to Tier 6 (up from Tier 3)
 	}
 

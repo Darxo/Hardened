@@ -1096,7 +1096,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Enemies at a distance of 2 tiles are [surrounded|Concept.Surrounding] by you",
+					"Enemies at a distance of 2 tiles are [surrounded|Concept.Surrounding] by you while it is not your [turn|Concept.Turn]",
 				],
 			}],
 		}),
