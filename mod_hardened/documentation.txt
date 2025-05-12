@@ -18,6 +18,13 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.42.1
+	- Slightly improve cover ally skill description
+	- Fix retinue member not being hirable
+	- Fix dismiss button during hiring being disabled while low on money
+	- Fix gruesome feast (ghoul effect) tooltip not being viewable
+	- Fix enemies in fog of war not being revealed to the player correctly when they use skills
+
 0.42.0
 	- **Cover Ally** (granted by **Shield Expert**) is completely reworked. It still costs 4 Action Points and 20 Fatigue and can only target adjacent allies. It now grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It still lasts until the start of your next turn or until you get stunned or move away from that target
 	- **Toolbox** now also grants +1 Bag Slot

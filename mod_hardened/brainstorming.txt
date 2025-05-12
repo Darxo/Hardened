@@ -314,6 +314,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - local r = this.Math.rand(100, 200) * 0.01; in send_supplies_action gets overwritten later on, causing weird rewards
 - Play other animations also slightly staggered (e.g. fleeing animation) to counter act the lag a bit
 - add debug logs for finding the end of battle bug
+- repel push angle. Streamer pushed an diagonal enemy 80° to the left
 
 ### Feature
 - Contracts which change morale/renown/relation but are not yet covered, display those in the next screen
@@ -379,3 +380,5 @@ from Modular Vanilla
 
 - Tooltip for economic difficulty changes
 - color adjacent enemies, that exert ZOC onto you in a color, when previewing movement out of ZOC
+
+- Make world parties that are left with 1 troop after auto-battle disappear. Otherwise you get parties with a single necromancer or hexen or barbarian king
