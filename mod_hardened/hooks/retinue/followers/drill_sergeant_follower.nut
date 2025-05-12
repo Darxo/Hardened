@@ -15,7 +15,7 @@
 	{
 		if (::World.Statistics.getFlags().getAsInt("BrosWithPermanentInjuryDismissed") > 0)
 		{
-			::m.Requirements[0].IsSatisfied = true;
+			this.m.Requirements[0].IsSatisfied = true;
 		}
 	}
 });
