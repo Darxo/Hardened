@@ -87,3 +87,25 @@
 		}
 	}
 });
+
+::Hardened.HooksMod.hookTree("scripts/items/shields/shield", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		// We hook onPaintInCompanyColors here, because it is not present on all shields and we can't do the following check during regular hooking
+		if ("onPaintInCompanyColors" in this)
+		{
+			local oldOnPaintInCompanyColors = this.onPaintInCompanyColors;
+			this.onPaintInCompanyColors = function()
+			{
+				oldOnPaintInCompanyColors();
+				// We make sure this only happens for player as some mods might use onPaintInCompanyColors to color enemies shields
+				if (this.isEquipped() && ::MSU.isKindOf(this.getContainer().getActor(), "player"))
+				{
+					::World.Statistics.getFlags().increment("PaintUsedOnShields");
+				}
+			}
+		}
+	}
+});
