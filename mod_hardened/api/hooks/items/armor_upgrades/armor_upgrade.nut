@@ -5,3 +5,17 @@
 		return ::Math.max(0, staminaModifier);
 	}
 });
+
+::Hardened.HooksMod.hookTree("scripts/items/armor_upgrades/armor_upgrade", function(q) {
+	q.onUse = @(__original) function( _actor, _item = null )
+	{
+		local ret = __original(_actor, _item);
+
+		if (ret)
+		{
+			::World.Statistics.getFlags().increment("ArmorAttachementsApplied");
+		}
+
+		return ret;
+	}
+});
