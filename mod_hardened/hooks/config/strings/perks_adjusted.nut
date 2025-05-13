@@ -652,7 +652,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlocks the [Command|Skill+rf_command_skill] skill which allows you to [rally|Concept.Morale] an ally and move them forward in the [turn|Concept.Turn] order",
+					"Unlocks the [Command|Skill+rf_command_skill] skill which allows you to [Rally|Concept.Rally] an ally and move them forward in the [turn|Concept.Turn] order",
 				],
 			}],
 		}),

@@ -9,6 +9,11 @@
 	DayTime = ::MSU.Class.BasicTooltip("Day Time", ::Reforged.Mod.Tooltips.parseString("Each day in Battle Brothers follows a cycle of distinct phases, impacting visibility, combat effectiveness, and available town services.\n\nDaytime begins with 2 hours of Sunrise, followed by 6 hours of Morning, 2 hours of Midday, and 6 hours of Afternoon and ending after 2 hours of Sunset.\n\nNighttime starts with 2 hours of Dusk followed by 2 hours of Midnight and ending after 2 hours of Dawn.\nFighting during Night will apply the [Nighttime effect.|Skill+night_effect]")),
 	Displacement = ::MSU.Class.BasicTooltip("Displacement", ::Reforged.Mod.Tooltips.parseString("Displacement is the act of moving a character to a different tile involuntarily against their will.\n\nA character that is displaced into a tile with more adjacent enemies than before will receive a Negative [Morale Check.|Concept.Morale]")),
 	Hitchance = ::MSU.Class.BasicTooltip("Hitchance", ::Reforged.Mod.Tooltips.parseString("Hitchance is a unified term representing both [Melee Skill|Concept.MeleeSkill] and [Ranged Skill.|Concept.RangeSkill]\n\nAny modifier or multiplier to Hitchance apply equally to both Melee Skill and Ranged Skill, and are affected by their respective multipliers.")),
+	Rally = ::MSU.Class.BasicTooltip("Rally", ::Reforged.Mod.Tooltips.parseString(
+		"Rallying is a type of positive [Morale Check|Concept.Morale] that can only occur on a character currently in the [Fleeing|Concept.Morale] state.\n\n" +
+		"A successful rally immediately raises the character's morale to [Wavering|Concept.Morale], allowing them to act again.\n\n" +
+		"Characters will automatically attempt to rally at the start of their turn, as long as they are not engaged in melee combat."
+	)),
 	Weight = ::MSU.Class.BasicTooltip("Weight", ::Reforged.Mod.Tooltips.parseString("Each equippable item can have a weight value, which determines how much it impacts a character\'s performance.\n\nWhen equipped, an item\'s weight is subtracted from both [Stamina|Concept.MaximumFatigue] and [Initiative.|Concept.Initiative]\n\nIf an item is equipped in a [Bag slot,|Concept.BagSlots] only half of its weight (rounded up) is subtracted from [Stamina|Concept.MaximumFatigue] and [Initiative|Concept.Initiative].\n\nToo much weight may cause [Encumbrance.|Skill+rf_encumbrance_effect]")),
 });
 
