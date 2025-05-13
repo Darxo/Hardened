@@ -3,6 +3,7 @@
 	{
 		__original();
 		this.m.IsAttack = false;	// In Reforged this is true
+		this.m.FatigueCost = 30;	// In Reforges this is 25
 		this.m.MaxRange = 3;	// In Reforged this is 2
 	}
 
