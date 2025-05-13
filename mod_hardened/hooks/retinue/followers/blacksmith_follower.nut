@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/retinue/followers/blacksmith_follower", function(q) {
+	q.m.HD_RequiredArmorConsumables <- 5;
+
 	q.create = @(__original) function()
 	{
 		__original();
@@ -15,5 +17,20 @@
 		::World.Assets.m.ArmorPartsPerArmor = oldArmorPartsPerArmor;
 
 		::World.Assets.m.ArmorPartsMaxAdditional += 50;
+	}
+
+	// Overwrite, because we enforce a different condition
+	q.onEvaluate = @() function()
+	{
+		local armorConsumablesApplied = 0;
+		armorConsumablesApplied += ::World.Statistics.getFlags().getAsInt("ArmorAttachementsApplied");	// This flag is incremented in armor_upgrade.nut
+		armorConsumablesApplied += ::World.Statistics.getFlags().getAsInt("PaintUsedOnHelmets");	// This flag is incremented in helmet.nut
+		armorConsumablesApplied += ::World.Statistics.getFlags().getAsInt("PaintUsedOnShields");	// This flag is incremented in shield.nut
+
+		this.m.Requirements[0].Text = "Have " + ::Math.min(armorConsumablesApplied, this.m.HD_RequiredArmorConsumables) + "/" + this.m.HD_RequiredArmorConsumables + " paint or armor attachements used";
+		if (armorConsumablesApplied >= this.m.HD_RequiredArmorConsumables)
+		{
+			this.m.Requirements[0].IsSatisfied = true;
+		}
 	}
 });
