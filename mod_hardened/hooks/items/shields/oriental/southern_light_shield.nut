@@ -14,6 +14,7 @@
 	// Hardened Adjustments
 		this.m.Value = 150;		// In Vanilla this is 100
 		this.m.StaminaModifier = -8;
+		this.m.ConditionMax = 16;		// In Vanilla this is 18
 	}
 
 	// Overwrite because Reforged skill preview does not work with removing skills
