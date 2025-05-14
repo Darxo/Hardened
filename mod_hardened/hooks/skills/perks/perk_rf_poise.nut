@@ -22,7 +22,7 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/direct_damage.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Take " + ::MSU.Text.colorizeMultWithText(directDamageReceivedMult, {InvertColor = true}) + " [Armor Penetration|Concept.ArmorPenetration] damage from attacks"),
+				text = ::Reforged.Mod.Tooltips.parseString("Take " + ::MSU.Text.colorizeMultWithText(directDamageReceivedMult, {InvertColor = true}) + " [Armor Penetration|Concept.ArmorPenetration] damage from Attacks"),
 			});
 		}
 
@@ -33,7 +33,7 @@
 				id = 11,
 				type = "text",
 				icon = "ui/icons/armor_body.png",
-				text = "Take " + ::MSU.Text.colorizeMultWithText(armorDamageReceivedMult, {InvertColor = true}) + " Armor Damage from attacks",
+				text = "Take " + ::MSU.Text.colorizeMultWithText(armorDamageReceivedMult, {InvertColor = true}) + " Armor Damage from Attacks",
 			});
 		}
 
@@ -52,10 +52,7 @@
 
 	q.onBeforeDamageReceived = @() function( _attacker, _skill, _hitInfo, _properties )		// Overwrite: Poise no longer provides regular damage reduction
 	{
-		if (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID() || _skill == null || !_skill.isAttack() || !_skill.isUsingHitchance())
-		{
-			return;
-		}
+		if (_skill == null || !_skill.isAttack()) return;
 
 		_properties.DamageReceivedDirectMult *= this.getDirectDamageReceivedMult();
 		_properties.DamageReceivedArmorMult *= this.getArmorDamageReceivedMult();
