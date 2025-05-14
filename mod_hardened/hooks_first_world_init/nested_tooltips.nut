@@ -9,6 +9,21 @@
 	DayTime = ::MSU.Class.BasicTooltip("Day Time", ::Reforged.Mod.Tooltips.parseString("Each day in Battle Brothers follows a cycle of distinct phases, impacting visibility, combat effectiveness, and available town services.\n\nDaytime begins with 2 hours of Sunrise, followed by 6 hours of Morning, 2 hours of Midday, and 6 hours of Afternoon and ending after 2 hours of Sunset.\n\nNighttime starts with 2 hours of Dusk followed by 2 hours of Midnight and ending after 2 hours of Dawn.\nFighting during Night will apply the [Nighttime effect.|Skill+night_effect]")),
 	Displacement = ::MSU.Class.BasicTooltip("Displacement", ::Reforged.Mod.Tooltips.parseString("Displacement is the act of moving a character to a different tile involuntarily against their will.\n\nA character that is displaced into a tile with more adjacent enemies than before will receive a Negative [Morale Check.|Concept.Morale]")),
 	Hitchance = ::MSU.Class.BasicTooltip("Hitchance", ::Reforged.Mod.Tooltips.parseString("Hitchance is a unified term representing both [Melee Skill|Concept.MeleeSkill] and [Ranged Skill.|Concept.RangeSkill]\n\nAny modifier or multiplier to Hitchance apply equally to both Melee Skill and Ranged Skill, and are affected by their respective multipliers.")),
+	Morale = ::MSU.Class.BasicTooltip("Morale", ::Reforged.Mod.Tooltips.parseString(
+		"Morale represents the mental condition of characters and influences their effectiveness in battle. It exists in one of five states: Fleeing, Breaking, Wavering, Steady, or Confident.\n\n" +
+		"A positive morale check raises morale on success, a negative check lowers it, and a neutral check does not change morale but may trigger other effects.\n\n" +
+		"A Mental Attack is a special type of morale check triggered by supernatural effects such as fear or mind control.\n\n" +
+		"Typical positive checks:\n" +
+		"- Killing an enemy\n" +
+		"- Seeing an enemy killed by an ally\n" +
+		"- Beginning a turn while Fleeing triggers a [Rally|Concept.Rally]\n\n" +
+		"Typical negative checks:\n" +
+		"- Seeing an ally killed\n" +
+		"- Seeing an ally flee\n" +
+		"- Being hit for at least 15 damage to hitpoints\n" +
+		"- Being engaged by multiple opponents\n" +
+		"- Being [displaced|Concept.Displacement] into more opponents"
+	)),
 	Rally = ::MSU.Class.BasicTooltip("Rally", ::Reforged.Mod.Tooltips.parseString(
 		"Rallying is a type of positive [Morale Check|Concept.Morale] that can only occur on a character currently in the [Fleeing|Concept.Morale] state.\n\n" +
 		"A successful rally immediately raises the character's morale to [Wavering|Concept.Morale], allowing them to act again.\n\n" +
