@@ -26,6 +26,9 @@
 					);
 				}
 
+				local medicineMax = ::Const.Difficulty.MaxResources[::World.Assets.getEconomicDifficulty()].Medicine + ::World.Assets.m.MedicineMaxAdditional;
+				desc += ("\n\nYou can carry " + ::MSU.Text.colorPositive(medicineMax) + " supplies at most.");
+
 				return [
 					{
 						id = 1,
