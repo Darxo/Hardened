@@ -16,7 +16,6 @@
 
 		this.addSkill(::Reforged.new("scripts/skills/actives/bash", function(o) {
 			o.m.ActionPointCost += 1;
-			o.m.FatigueCost -= 3;	// So that we land on 15 when we factor in the 5 orc fatigue
 		}));
 
 		this.addSkill(::Reforged.new("scripts/skills/actives/knock_out", function(o) {
