@@ -60,9 +60,55 @@
 		}
 	}
 
+// Modular Vanilla Functions
+	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
+	{
+		local ret = __original(_user, _target, _skill);
+
+		if (_target.getID() == this.getContainer().getActor().getID())	// We must be the _target
+		{
+			if (_user.getID() != _target.getID()) return ret;		// _user and _target must not be the same
+
+			if (this.canSkillStagger(_skill))
+			{
+				ret *= 1.0 + (0.1 * this.m.Stacks);	// _user try to apply staggered on _target to neutralize all built-up stacks
+			}
+		}
+
+		return ret;
+	}
+
 // New Functions
 	q.getInitiativeMult <- function()
 	{
 		return 1.0 + this.m.Stacks * this.m.InitiativePctPerStack;
+	}
+
+	// Return true, if _skill will always or sometimes apply staggered on use or hit
+	// This list does not yet include perks, which make certain skills suddenly stagger, like offhand training, toolbox, breakthrough or line breaker
+	q.canSkillStagger <- function( _skill )
+	{
+		if (::MSU.isNull(_skill)) return false;
+
+		// These skills will always, or sometimes apply staggered on use or hit
+		local staggerableSkillIDs = [
+			"actives.smite",
+			"actives.repel",
+			"actives.hook",
+			"actives.serpent_hook",
+			"actives.flesh_pull",
+			"actives.gore",
+			"actives.shatter",
+			"actives.unstoppable_charge",
+			"actives.uproot",
+			"actives.uproot_small",
+			"actives.rf_pummel",
+			"actives.rf_swordmaster_charge",
+			"actives.rf_swordmaster_kick",
+			"actives.rf_swordmaster_push_through",
+			"actives.rf_net_pull",
+		];
+
+		return staggerableSkillIDs.find(_skill.getID()) != null;
 	}
 });
