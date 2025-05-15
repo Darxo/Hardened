@@ -42,7 +42,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 	- **Wooden Skirmisher Shields** lose **Shieldwall** and now grant **Knock Back**
 	- **Heavy Metal Shields** now have 20 Melee Defense (up from 15) and 20 Ranged Defense (up from 15)
 	- **Feral Shields** now have 20 Melee Defense (up from 15), 25 Ranged Defense (up from 20), 20 Weight (up from 12), 24 Condition (up from 16), +5 Fatige on use (up from 0) and they lose **Knock Back**
-	- **Adarga Shields** now have 8 Weight (down from 10) and lose **Knock Back**
+	- **Adarga Shields** now have 8 Weight (down from 10), 16 Condition (down from 18) and lose **Knock Back**
 	- **Old Wooden Shields** now have 13 Melee Defense (down from 15) and 13 Ranged Defense (down from 15)
 	- **Worn Heater Shields** now have 23 Melee Defense (up from 20), 13 Ranged Defense (down from 15) and lose **Shieldwall**
 	- **Worn Kite Shields** now have 13 Melee Defense (down from 15), 23 Ranged Defense (down from 25) and lose **Knock Back**
@@ -149,6 +149,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - **Passing Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand
 - **Lunge** now has -10% additional Hitchance (up from -20%)
 - **Net Effect** no longer affects the Initiative of the target. It now applies 50% less Melee Defense (up from 25%) and 50% less Ranged Defense (up from 45%)
+- **Net Pull** now costs 30 Fatigue (up from 25)
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack. Riposte no longer has a penalty to Hitchance
@@ -223,7 +224,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you or you move away from each other
 - **Fortified Mind** now grants +25 Resolve (instead of 25% more) and you lose Resolve equal to the Weight of your Helmet
 - **Footwork** perk no longer grants **Sprint**
-- **Fresh and Furious** now has a fatigue threshold of 50% (up from 30%). It now checks your Fatigue when you end your turn, instead of at the start of your turn. It now also affects skills that cost 1 Action Point. It is now wasted when using a skill that costs 0 Action Points
+- **Fresh and Furious** is completely reworked. It now makes all Skills cost -4 Action Points. After you use any Skill during your turn, this effect gets disabled until you use **Recover**
 - **From All Sides** (enemy only perk) is completely reworked. You now gain the **From all Sides** effect until the start of your next turn, after you use a Attack Skill. This effect makes you count twice for the purpose of surrounding adjacent enemies
 - **Fruits of Labor** is reworked. It now grants 5% more Hitpoints, Stamina, Resolve and Initiative
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
@@ -329,7 +330,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Ancient Pikes** gains the **Spear** Weapontype
 - **Berserk Chain** now has 4 Reach (down from 5)
 - **Cruel Falchion** are now a Sword/Dagger hybrid. They now also grant **Stab**. **Slash** and **Rispote** lose any discount
-- **Cudgel** now deals 40-60 damage (up from 30-50), deals of 110% Armor Damage (up from 90%), has 4 Reach (up from 3), a value of 400 (up from 300). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
+- **Cudgel** now deals 40-60 damage (up from 30-50), has 4 Reach (up from 3), a value of 400 (up from 300). **Bash** now costs 5 AP (up from 4). **Knock Out** now has a 100% chance to stun
 - **Estoc** now has 6 Reach (up from 5)
 - **Goblin Skewer** are now a Spear/Dagger hybrid. **Thrust** is replaced with **Stab**. **Spearwall** no longer has any discount. **Riposte** is removed
 - **Goedendag** no longer grants **Cudgel** skill. It now has a 100% chance to stun with **Knock Out** (up from 75%)
@@ -353,7 +354,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and a value of 600 (up from 400)
 - **Three-Headed Flail** now has 3 Reach (down from 4)
 - **Throwing Spears** no longer inflict any fatigue when hitting a shield. They now have a Weight of 4 (down from 6) and a value of 60 (down from 80)
-- **Tree Limb** now deals 30-50 damage (up from 25-40), deals 90% Armor Damage (up from 75%), has 4 Reach (up from 3), a weight of 15 (down from 20), a value of 300 (up from 150). **Bash** now costs 5 AP (up from 4) and 15 Fatigue (down from 18). **Knock Out** now has a 100% chance to stun
+- **Tree Limb** now deals 30-50 damage (up from 25-40), deals 90% Armor Damage (up from 75%), has 4 Reach (up from 3), a weight of 15 (down from 20), a value of 300 (up from 150). **Bash** now costs 5 AP (up from 4). **Knock Out** now has a 100% chance to stun
 - **Two-handed Flail** now has 4 Reach (down from 5)
 - **Two-handed Wooden Flail** now has 4 Reach (down from 5)
 - **Warbow** now has a Weight of 8 (up from 6) and +2 Fatigue Cost for its weapon skills
@@ -365,7 +366,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - Food now only loses value once half of its shelf life is over
 - **Adorned Mail Shirt** now has a Weight of 16 (up from 11), Condition of 150 (up from 130) and Value of 1050 (up from 800); just like in Vanilla
-- **Adarga** is now called **Adarge Shield** (just like in Vanilla)
+- **Adarga** is now called **Adarga Shield** (just like in Vanilla)
 - **Antidote** now has a value of 100 (down from 150). Crafting it now costs 25 crowns (down from 50) and 1 Jagged Fang (down from 2)
 - **Bandage** now costs 40 crowns (up from 25)
 - **Decayed Great Helm** is now called **Tarnished Full Helm**. It has 240 Condition (down from 255) and 23 Weight (up from 22). It now reduces the Resolve of adjacent enemies by 5 during morale checks (similar to Direwolf Pelt). It now only appears in the Full Helm looking variants
@@ -413,10 +414,12 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Retinue/Follower
 
-- **Bount Hunter Follower** now costs 2500 Crowns (down from 4000). It now grants +5% for enemies to become champtions (up from +3%). It no longer grants crowns when you kill champions
+- **Blacksmith** no longer requires you to repair 5 items in a town. It now requires you to use 5 paint or attachements. It no longer grants a tool consumption discount. It now grants +50 storage space for Tools
+- **Bount Hunter** now costs 2500 Crowns (down from 4000). It now grants +5% for enemies to become champtions (up from +3%). It no longer grants crowns when you kill champions
 - **Drill Sergeant** now requires a brother with a permanent injury to be dismissed (just like in Vanilla)
-- **Lookout Follower** no longer grants 25% more vision at all times. It now always provides a scouting report for enemies near you, just like "Band of Poachers" origin
-- **Scout Follower** no longer grants 15% more movement speed. It now grants 20% more movement speed while in Forests and Swamp. It also grants 25% Vision while on hills or mountains
+- **Lookout** no longer grants 25% more vision at all times. It now always provides a scouting report for enemies near you, just like "Band of Poachers" origin
+- **Quartermaster** now grants 150 Storage for Ammunition (up from 100) and 100 Storage for Tools and Medicine (up from 50)
+- **Scout** no longer grants 15% more movement speed. It now grants 20% more movement speed while in Forests and Swamp. It also grants 25% Vision while on hills or mountains
 
 ### Enemies
 
@@ -427,18 +430,19 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Steady Brace** no longer appears on NPCs
 
 **Brigands:**
-- **Scoundrels** no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**. They now spawn with a **Knife** instead of **Dagger**/**Woodcutters Axe**
+- **Scoundrels** no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**. They now spawn with a **Knife** instead of **Dagger**/**Woodcutters Axe**. They now have 40 Ranged Skill (down from 45)
 - **Vandals** no longer spawn with **Kite Shields**. Instead they can now spawn with **Old Wooden Shields**
 - **Raider** lose **Shield Expert**. They no longer spawn with **Kite Shields**. Instead they can now spawn with **Worn Kite/Heater Shields**
 - **Highwaymen** can now also spawn with **Worn Kite/Heater Shields**
-- **Thug** now spawn with **Tree Limb** instead of **Goedendag**
+- **Thug** now spawn with **Tree Limb** instead of **Goedendag**. They now have 40 Ranged Skill (down from 45) and 110 Stamina (up from 100)
 - **Pillager** can now also spawn with **Cudgel**. **Pillager** no longer spawn with **Woodcutters Axe**, **Two Handed Mace** or **Two Handed Hammer**
-- **Outlaws** now have **Vigorous Assault**. They no longer spawn with **Battle Axe**, **Two Handed Wooden Flail** or **Greatsword**
-- **Marauder** now have **Vigorous Assault**. They no longer spawn with **Two Handed Wooden Flail** and are twice as likely to spawn with a **Greatsword**
+- **Outlaws** now have **Vigorous Assault** and always have **Formidable Approach**. They no longer spawn with **Battle Axe**, **Two Handed Wooden Flail** or **Greatsword**
+- **Marauder** now have **Vigorous Assault** and **Formidable Approach**. They no longer spawn with **Two Handed Wooden Flail** and are twice as likely to spawn with a **Greatsword**
 - Fast Brigands (**Robber, Bandit, Killer**) now always spawn with a net if they are one-handed, and with a throwing weapon if two-handed. They also have cosmetic face warpaint
 - **Robber** no longer spawn with a **Pike** or **Reinforced Wooden Poleflail**. They now have 60 Ranged Skill (up from 55)
 - **Bandits** no longer spawn with a **Poleflail**, **Warbrand** or **Throwing Spear**. The can now spawn with a **Reinforced Wooden Poleflail**. They now have 70 Ranged Skill (up from 60)
 - **Killer** no longer spawn with **Scramasax**, **Pike**, **Spetum**, **Warbrand** or **Throwing Spear**. They now have 80 Ranged Skill (up from 70). They can now appear as Champions
+- **Brigand Poachers** now have 45 Melee Skill (down from 50)
 - **Brigand Leader** lose **Shield Expert**
 - **Hedge Knights** are now immune to **Disarm** as a result of them having **Savage Strength**
 - **Master Archer** now have 110 Initiative (down from 140)
@@ -453,7 +457,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 **Undead**
 - All **Wiederganger** types gain +5 Melee Skill and grant 20% more experience. They no longer grant experience after being ressurected. They lose 10 Hitpoints, **Double Grip** and no longer grant experience after being ressurected. They now have a 100% resurrection chance (up from 66%) and resurrect in 1-3 turns (up from 1-2)
 - Normal **Wiederganger** lose **Overwhelm**
-- All **Skeletons** grant 20% more experience. They no longer grant experience after being ressurected
+- All **Skeletons** no longer grant experience after being ressurected
 - **Fallen Heroes** no longer spawn with Morning Stars or Handaxes. They now have a 100% resurrection chance (up from 90%) but -10 Hitpoints. Champion variants lose **Nine Lives**
 - **Geists** lose **Fearsome**. They now have **Backstabber**
 - **Necromancer** lose 20 natural body armor and **Inspiring Presence**. **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)
@@ -500,7 +504,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Fast Brigands (**Robber** -> **Bandit** -> **Killer**) now upgrade slightly earlier
 - Add **Highwayman** as new T1 of the Banditleader Unitblock. Banditleader Unitblock now require a StartingResourceMin of 180 (down from 250)
 
-### Enemy AI
+### AI
 
 - NPC ranged troops attribute a potential target 80% less score from adjacent potential scatter targets
 - Necrosavants are a bit more likely to stay on the same tile and attack twice, rather than teleport to a slightly better tile
@@ -513,6 +517,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - NPCs with **Sweeping Strikes** are more likely to use an appropriate attack as they are surrounded by more enemies
 - NPCs with **Wear them Down** 20% more likely to target someone who is almost fully fatigued
 - NPCs are more likely to target enemies with **Formidable Approach** if it has been procced against them
+- NPCs are 20% more likely to target someone with **Kingfisher** who is currently netting them and 10% more likely to target them, if they are netting anyone
+- NPCs are 10% more likely per **Unstoppable** stack on the target, to use a skill which applies staggered on a hit
 - NPCs are far less likely to attack into an active **Rebuke**
 - NPCs are more likely use **Disarm** onto enemies with **Spearwall** or **Riposte**
 - NPCs are now less likely to use Break Free if they have almost no Melee Defense to begin with and more likely if they have a lot of Melee Defense
@@ -651,9 +657,11 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Misc
 
-- Add new Concepts for **Armor Penetration**, **Weight**, **Hitchance**, **Critical Damage** and **Displacement** and apply these Concepts to existing weapons, items, perks skills
 - Supplies (Crowns, Tools, Medicine, Ammo) are now consumed instantly after buying, looting
 - Quiver and Weapons that contain Ammo now display the supply cost for replacing ammunition in them
+- Add new Concepts for **Armor Penetration**, **Critical Damage**, **Displacement**, **Hitchance**, **Rally** and **Weight** and and apply these Concepts to existing weapons, items, perks skills
+- Improve tooltips of **Battleforged** perk and **Chop** skill
+- Improve Concept for **Morale**
 - Improve artwork for **Nimble** perk
 - All effects of the difficulty settings are now listed as tooltips during world generation
 
@@ -669,6 +677,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Spiders will now give up when their team has given up even if there are still eggs on the battlefield
 - Remove the hidden "25% more injury threshold" for all characters when receiveing a head hit
 - You can no longer do two Arenas during the same day
+- Retreating NPCs, that are fleeing and in Zone of Control will now seek the border correctly, if possible
 - Other Actors moving in or out of the range of someone with **Lone Wolf** now cause that effect to update instantly
 - Allow cut, copy and mark operations in input fields that are full. Limit Ctrl-Combinations, Delete and Arrow Key presses in input fields to one per press
 - Items that you drop during battle are now correctly re-equipped afterwards
@@ -687,7 +696,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Prevent the same random human name (e.g. for Leader or Knight) to be generated in succession
 - Throw Pot/Flask skills are no longer considered an Attack
 - **Throw Net** and **Net Pull** are no longer considered an Attack
-- Improve tooltips of **Chop** skill
 - Rewrite `queryActorTurnsNearTarget` from `behavior.nut`, making it more accurate by considering current action points
 - Remove a duplicate loading screen
 
@@ -746,6 +754,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Add new `HD_scheduleResurrection(_rounds, _corpse)` for `tactical_entity_manager`, which can be used to schedule a resurrection and spawn a corresponding purpose particle effect on the corpse
 - Add `HD_getShelfLifeMult()` function for `food_item.nut` which returns the price multiplier derived from this items shelf life
 - Add `HD_MaxAmount = 25` member for `food_item.nut` which defines the maximum amount of stacks this item can have. It is currently only supported within `randomizeAmount` and `getValue` from the same class
+- The amount of shield paint used by the player is now counted in the statistics flag `PaintUsedOnShields`
+- The amount of helmet paint used by the player is now counted in the statistics flag `PaintUsedOnHelmets`
+- The amount of armor attachements used by the player is now counted in the statistics flag `ArmorAttachementsApplie`
 
 ### New Character Properties
 

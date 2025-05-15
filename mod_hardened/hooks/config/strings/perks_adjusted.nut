@@ -557,7 +557,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"For every character [surrounding|Concept.Surrounding] your target, except the first one, gain " + ::MSU.Text.colorPositive("10%") + " more damage, " + ::MSU.Text.colorPositive("+10%") + " [Armor Penetration|Concept.ArmorPenetration] and " + ::MSU.Text.colorNegative("-10%") + " [chance to hit the head|Concept.ChanceToHitHead]"
+					"For every character [surrounding|Concept.Surrounding] your target, except the first one, deal " + ::MSU.Text.colorPositive("10%") + " more damage, gain " + ::MSU.Text.colorPositive("+10%") + " [Armor Penetration|Concept.ArmorPenetration] and " + ::MSU.Text.colorNegative("-10%") + " [chance to hit the head|Concept.ChanceToHitHead]"
 				],
 			}],
 		}),

@@ -234,6 +234,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Reduce Defense of Assassins, make it so they rely only on Dodge
 
 ## AI
+- Make AI less likely to use shieldwall while in a net
 - make unholds value highground less
 - New Strategy of individual enemies, called "Stalling":
 	- They prefer defensive over offensive actions and try to stay alive as long as possible
@@ -252,9 +253,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Make someone with **Crowded** less likely to be targeted by displacement skills (knock back/repel). That would only help those
 - If thrower uses last throwing weapon, mak them switch to melee weapon immediately
 - make NPCs with Formidable Approach more likely to move to tiles with adjacent enemies which they dont yet have in their list or which are confident with less max HP
-- ai retreat bug. Sometimes enemies dont seek the border correctly. Need more evidence
-- double strike effect is lost, when you kill someone
-	- same seems to happen with other effects. Probably related to morale changes on enemies and some skill event triggering wrongly?
 
 ## Fix:
 - Currently Swing and Hit sfx happen at the same time, which is unrealistic
@@ -367,7 +365,6 @@ apply
 });
 from Modular Vanilla
 
-
 - rework dropchance of items to make daggering later in the game more worth for farming money
 	- Make it more likely to drop while at full condition
 	- make it less likely to drop while at lower condition
@@ -382,3 +379,46 @@ from Modular Vanilla
 - color adjacent enemies, that exert ZOC onto you in a color, when previewing movement out of ZOC
 
 - Make world parties that are left with 1 troop after auto-battle disappear. Otherwise you get parties with a single necromancer or hexen or barbarian king
+
+- turn order predictions for next round
+
+- AI: more likely to push back kingfisher guys who are currently netting someone, if the push back tile would break the net
+- Remove whirling stance when stunned
+
+- Add Retribution to Tough Bandits (up from Pillager). Remove Survival Instinct from all low tier thug bandits
+	- Maybe add Resilint to all Tough Bandits?
+
+- sfx when the target of kingfisher dies (as if you reel in the net)
+- kingfisher gets dazed, when target frees itself from net
+- split shield does not update the shield correctly
+- ghost fights might have to do with alliances not being created correctly. Maybe the new southern settlements interfere with the placement for hard-coded alliances
+
+
+## Camp Rework
+- Camping requires 1-2 hours to set up
+- Effect:
+	- Protects you against ambushes
+	- Makes you immune to being attacked by Alps
+	- More repair specialized
+	- More Hitpoint Recovery (even more than Vanilla)
+- Requires 1-2 hours to de-construct and move on
+
+- Utilize this way of verifying the caller, from Reforged:
+::TacticalNavigator.teleport <- function( _user, _targetTile, _func, _data, _bool, _float = 1.0 )
+{
+	local caller = ::getstackinfos(2).locals["this"];
+	if (!::isKindOf(caller, "skill") || !(caller in ::Reforged.ScheduleSkills))
+	{
+		teleport(_user, _targetTile, _func, _data, _bool, _float);
+		return;
+	}
+
+
+Look into Reforged latest changes around footmen getting Exploit Opening
+- Remove Vigorous Assault from Pillagers?
+- Outlaws no longer need vig ass now that they get it in reforged?
+
+- make spider corpses a bit more transparent, less colored, so that they differ more from alive ones
+- remove variant 50 from decayed reinforced mail hauberk item
+- maybe create new decayed mail shirt variant
+- make surgeon also unlock from using bandages

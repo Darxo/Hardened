@@ -28,7 +28,7 @@
 		}
 	}
 
-	// New Functions
+// New Functions
 	q.__isUsableOn <- function( _skill, _userTile, _targetTile )	// custom implementation of this skill.nut function which assumes the skill will be used for free
 	{
 		if (_skill.m.IsVisibleTileNeeded && !_targetTile.IsVisibleForEntity)

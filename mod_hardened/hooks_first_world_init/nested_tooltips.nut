@@ -48,7 +48,7 @@
 	)),
 	Weight = ::MSU.Class.BasicTooltip("Weight", ::Reforged.Mod.Tooltips.parseString(
 		"Each equippable item can have a weight value, which determines how much it impacts a character\'s performance.\n\n" +
-		"When equipped, an item\'s weight is subtracted from both [Stamina|Concept.MaximumFatigue] and [Initiative.|Concept.Initiative]\n\n" +
+		"When equipped, an item\'s weight is subtracted from both [Stamina|Concept.MaximumFatigue] and [Initiative|Concept.Initiative] after multipliers.\n\n" +
 		"If an item is equipped in a [Bag slot,|Concept.BagSlots] only half of its weight (rounded up) is subtracted from [Stamina|Concept.MaximumFatigue] and [Initiative|Concept.Initiative].\n\n" +
 		"Too much weight may cause [Encumbrance.|Skill+rf_encumbrance_effect]"
 	)),

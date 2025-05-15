@@ -18,6 +18,32 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.43.0
+	- **Fresh and Furios** is completely reworked. It makes all skills cost -4 Action Points. After you use any skill during your turn it gets disabled until you use **Recover**
+	- **Blacksmith** Follower no longer requires you to repair 5 items in a town. It now requires you to use 5 paint or attachements. It no longer grants a tool consumption discount. It now grants +50 storage space for Tools
+	- **Quartermaster** Follower now grants 150 Storage for Ammunition (up from 100) and 100 Storage for Tools and Medicine (up from 50)
+	- **Adarga Shield** now has 16 Condition (down from 18)
+	- Using **Bash** with **Cudgel** or **Tree Limb** now costs 18 Fatigue (up from 15)
+	- **Cudgel** now has 90% Armor Damage (down from 110%)
+	- **Net Pull** now costs 30 Fatigue (up from 25)
+	- **Brigand Scoundrel** now have 40 Ranged Skill (down from 45)
+	- **Brigand Poachers** now have 45 Melee Skill (down from 50)
+	- **Brigand Thugs** now have 40 Ranged Skill (down from 45) and 110 Stamina (up from 100)
+	- **Brigand Outlaws** now always have **Formidable Approach**
+	- **Brigand Marauders** now have **Formidable Approach**
+	- Skeletons no longer grant 20% more experience
+	- **Kingfisher** now grants 10% AttractionMultiplier while netting someone
+	- NPCs are 20% more likely to target someone with **Kingfisher** if he is netting them at the moment
+	- NPCs are 10% more likely per **Unstoppable** stack to use a skill which applies staggered on a hit
+	- Improve wording of **Battleforged** effect tooltip to be in line with other effects
+	- Rewrite nested concept for **Morale**
+	- Introduce new **Rally** nested concept
+	- The amount of shield paint used by the player is now counted in the statistics flag `PaintUsedOnShields`
+	- The amount of helmet paint used by the player is now counted in the statistics flag `PaintUsedOnHelmets`
+	- The amount of armor attachements used by the player is now counted in the statistics flag `ArmorAttachementsApplied`
+	- Fix(Vanilla) retreating NPCs not seeking the border correctly, if they are also fleeing and within Zone of Control
+	- Fix Medicine tooltip not showing the maximum storage space for Medicine
+
 0.42.1
 	- Slightly improve cover ally skill description
 	- Fix retinue member not being hirable
