@@ -5,6 +5,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_kingfisher", function(q) {
 	// Public
 	q.m.ReachModifier <- 2;
+	q.m.TargetAttractionMult <- 1.1;	// We are this much more "attractive" as a target, while we are netting someone
 
 	// Private
 	q.m.SoundOnBreakFree <- [
@@ -27,6 +28,7 @@
 			net.m.IsChangeableInBattle = !isNetLocked;	// Prevent the user from switching away from the net if the net is currently locked
 			if (isNetLocked)
 			{
+				_properties.TargetAttractionMult *= this.m.TargetAttractionMult;
 				foreach (skill in net.m.SkillPtrs)
 				{
 					skill.m.IsUsable = false;	// The net can't be used, while it is locked
