@@ -1,11 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_fresh_and_furious", function(q) {
-	q.m.ActionPointMult <- 0.5;
-
-	q.create = @(__original) function()
-	{
-		__original();
-		this.m.FatigueThreshold = 0.5;	// In Reforged this is 0.3
-	}
+	q.m.ActionPointModifier <- -4;	// Skills Action Point Cost is modified by this, while this effect is active
 
 	q.getTooltip = @(__original) function()
 	{
@@ -15,19 +9,16 @@
 		{
 			if (entry.id == 11)
 			{
-				entry.text = "Your next skill costs " + ::MSU.Text.colorizeMultWithText(this.m.ActionPointMult, {InvertColor = true}) + ::Reforged.Mod.Tooltips.parseString(" [Action Points|Concept.ActionPoints] (rounded down)");
-			}
-			else if (entry.id == 12)
-			{
-				entry.text = ::MSU.String.replace(entry.text, "starting", "ending");
+				entry.text = "Your next Skill costs " + ::MSU.Text.colorizeValue(this.m.ActionPointModifier, {AddSign = true, InvertColor = true}) + ::Reforged.Mod.Tooltips.parseString(" [Action Points|Concept.ActionPoints]");
 			}
 		}
 
 		foreach (index, entry in ret)
 		{
-			if (entry.id == 11 && this.m.IsSpent)
+			if (entry.id == 12)
 			{
-				ret.remove(index);	// Remove mention about the free skill use, because it's already been used this turn
+				ret.remove(index);	// Remove mention about being disabled after using recover, as it currently is disabled. so that line is not relevant
+				break;
 			}
 		}
 
@@ -40,12 +31,12 @@
 		if (this.m.IsSpent || this.m.RequiresRecover) return;
 
 		local actor = this.getContainer().getActor();
-		if (!actor.isPreviewing() || actor.getPreviewMovement() != null || actor.getPreviewSkill().getActionPointCost() == 0)
+		if (!actor.isPreviewing() || actor.getPreviewMovement() != null)
 		{
 			foreach (skill in this.getContainer().getAllSkillsOfType(::Const.SkillType.Active))
 			{
-				// Compared to Reforged: We no longer check for Action Point cost of >1 and we explicitely floor the value as per description
-				skill.m.ActionPointCost = ::Math.floor(skill.m.ActionPointCost * this.m.ActionPointMult);
+				// Compared to Reforged: We no longer check for Action Point cost of >1 and we apply an additive discount instead of multiplicate one
+				skill.m.ActionPointCost = ::Math.max(0, skill.m.ActionPointCost + this.m.ActionPointModifier);
 			}
 		}
 	}
@@ -54,17 +45,15 @@
 	q.onAnySkillExecuted = @() function( _skill, _targetTile, _targetEntity, _forFree ) {}
 
 	// Overwrite because the fatigue check no longer happens at the start of the turn
-	q.onTurnStart = @() function()
-	{
-		this.m.IsSpent = false;	// Same as Reforged
-	}
-
-	q.onTurnEnd <- function()
-	{
-		this.checkFatigueThreshold();
-	}
+	q.onTurnStart = @() function() {}
 
 	q.onCombatFinished = @(__original) function()
+	{
+		__original();
+		this.turnEffectOff();
+	}
+
+	q.onCombatStarted = @(__original) function()
 	{
 		__original();
 		this.turnEffectOn();
@@ -73,7 +62,7 @@
 // Hardened Functions
 	q.onReallyBeforeSkillExecuted <- function( _skill, _targetTile )
 	{
-		if (this.isSkillValid(_skill) && this.getContainer().getActor().isActiveEntity()) this.m.IsSpent = true;
+		if (this.isSkillValid(_skill) && this.getContainer().getActor().isActiveEntity()) this.turnEffectOff();
 
 		if (_skill.getID() == "actives.recover") this.turnEffectOn();
 	}
@@ -97,6 +86,7 @@
 	q.turnEffectOn <- function()
 	{
 		this.m.RequiresRecover = false;
+		this.m.IsSpent = false;
 		this.m.Icon = ::Const.Perks.findById(this.getID()).Icon;
 		this.m.IsHidingIconMini = false;
 	}
@@ -104,6 +94,7 @@
 	q.turnEffectOff <- function()
 	{
 		this.m.RequiresRecover = true;
+		this.m.IsSpent = true;
 		this.m.Icon = ::Const.Perks.findById(this.getID()).IconDisabled;
 		this.m.IsHidingIconMini = true;
 	}

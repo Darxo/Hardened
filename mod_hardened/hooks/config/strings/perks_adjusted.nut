@@ -927,8 +927,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your first skill each [turn|Concept.Turn] during your [turn|Concept.Turn] costs " + ::MSU.Text.colorPositive("50%") + " less [Action Points|Concept.ActionPoints] (rounded down)",
-					"This effect becomes disabled if you end your [turn|Concept.Turn] with " + ::MSU.Text.colorNegative("50%") + " or more [Fatigue|Concept.Fatigue] and remains disabled until you use [Recover|Skill+recover_skill]",
+					"Your Skills cost " + ::MSU.Text.colorPositive("-4") + " [Action Points|Concept.ActionPoints]",
+					"This effect becomes disabled if you use any Skill during your [turn|Concept.Turn] and remains disabled until you use [Recover|Skill+recover_skill]",
 				],
 			}],
 		}),
