@@ -11,6 +11,7 @@
 
 // Tough Bandits
 ::Const.Tactical.Actor.BanditThug.RangedSkill = 40;	// In Reforged this is 45
+::Const.Tactical.Actor.BanditThug.Stamina = 110;	// In Reforged this is 100
 
 // Fast Bandits
 ::Const.Tactical.Actor.RF_BanditRobber.RangedSkill = 60;	// In Reforged this is 55
