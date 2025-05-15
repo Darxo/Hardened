@@ -117,6 +117,14 @@ q.onQueryTooltip <- function( _skill, _tooltip )
 		return _locked;
 	}
 
+	q.getConnectedActor <- function()
+	{
+		if (::MSU.isNull(this.m.ConnectedNetEffect)) return null;
+		if (::MSU.isNull(this.m.ConnectedNetEffect.getContainer())) return null;
+
+		return this.m.ConnectedNetEffect.getContainer().getActor();
+	}
+
 	/// Check whether the net would still be locked
 	/// If we realize that the net is no longer locked this function will clean it up correctly
 	/// @return true if the net is still locked or false if it is no longer locked
@@ -124,12 +132,7 @@ q.onQueryTooltip <- function( _skill, _tooltip )
 	{
 		if (this.m.IsNetLocked)
 		{
-			if (::MSU.isNull(this.m.ConnectedNetEffect) || ::MSU.isNull(this.m.ConnectedNetEffect.getContainer()))
-			{
-				return this.setNetLocked(false);
-			}
-
-			local connectedActor = this.m.ConnectedNetEffect.getContainer().getActor();
+			local connectedActor = this.getConnectedActor();
 			if (::MSU.isNull(connectedActor) || connectedActor.isDying() || !connectedActor.isAlive())
 			{
 				return this.setNetLocked(false);
@@ -164,5 +167,27 @@ q.onQueryTooltip <- function( _skill, _tooltip )
 		}
 
 		return false;
+	}
+
+// Modular Vanilla Functions
+	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
+	{
+		local ret = __original(_user, _target, _skill);
+
+		if (_target.getID() == this.getContainer().getActor().getID())	// We must be the _target
+		{
+			if (_user.getID() != _target.getID()) return ret;		// _user and _target must not be the same
+
+			local connectedActor = this.getConnectedActor();
+			if (::MSU.isNull(connectedActor) || connectedActor.getID() != _user.getID())	// we are only interested in adjusting the AI of someone who
+
+			if (_skill != null)
+			{
+				// We prefer to do anything, which targets the guy, who is perma-netting us currently
+				ret *= 1.2;
+			}
+		}
+
+		return ret;
 	}
 });
