@@ -5,7 +5,6 @@
 		this.m.Value = 400;		// In Vanilla this is 300
 		this.m.RegularDamage = 40;		// In Vanilla this is 30
 		this.m.RegularDamageMax = 60;	// In Vanilla this is 50
-		this.m.ArmorDamageMult = 1.1;	// In Vanilla this is 0.9
 
 		this.m.Reach = 4;
 	}
