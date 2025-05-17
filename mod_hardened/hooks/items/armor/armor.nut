@@ -1,4 +1,10 @@
 ::Hardened.HooksMod.hookTree("scripts/items/armor/armor", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.Condition = this.m.ConditionMax;		// We do this here so that it doesn't have to be done in the individual armor scripts anymore
+	}
+
 	q.onAddedToStash = @(__original) function( _stashID )
 	{
 		__original(_stashID);
