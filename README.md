@@ -224,7 +224,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you or you move away from each other
 - **Fortified Mind** now grants +25 Resolve (instead of 25% more) and you lose Resolve equal to the Weight of your Helmet
 - **Footwork** perk no longer grants **Sprint**
-- **Fresh and Furious** is completely reworked. It now makes all Skills cost -4 Action Points. After you use any Skill during your turn, this effect gets disabled until you use **Recover**
+- **Fresh and Furious** is completely reworked. It now makes all Attacks cost -4 Action Points. After you use any Attack during your turn, this effect gets disabled until you use **Recover**
 - **From All Sides** (enemy only perk) is completely reworked. You now gain the **From all Sides** effect until the start of your next turn, after you use a Attack Skill. This effect makes you count twice for the purpose of surrounding adjacent enemies
 - **Fruits of Labor** is reworked. It now grants 5% more Hitpoints, Stamina, Resolve and Initiative
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
@@ -320,9 +320,14 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Backgrounds
 
 - **Assassin** now has +5 to minimum Ranged Skill (up from 0) and +10 to maximum Ranged Skill (up from 0)
+- **Butcher** loses the Hitchance Bonus with **Butchers Cleaver**
+- **Farmhand** loses the Hitchance Bonus with **Pitchforks** and **Hooked Blades**
 - **Indebted** no longer roll **Pauper Perk Group**. Instead they randomly roll any one of the other exclusive perk groups (except swordmaster)
+- **Lumberjack** loses the Hitchance Bonus with **Woodcutter's Axe** and **Hatchet**
+- **Miner** loses the Hitchance Bonus with **Pickaxe**
 - **Oathtaker** now spawn with +1 Weapon Group (down from +2)
 - **Pimp** now has 0 to minimum Melee Skill (up from -5) and +5 to maximum Melee Skill (up from -5)
+- **Shepherd** loses the Hitchance Bonus with **Slings**
 - **Swordmaster** no longer has **Sword Mastery** unlocked by default. This perk is now moved to Tier 3 (down from 4) for them. They now have a hiring cost of 400 Crowns (down from 2400), just like in Vanilla
 
 ### Traits
@@ -389,14 +394,77 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
 - **Zweihander** now has 6 Reach (down from 7)
 
-### Other Items
+### Armor Condition/Weight/Value changes
+
+Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/Hardened/wiki/Vanilla-Hardened-Armor-Changes
+
+**Vanilla:**
+- **Adorned Mail Shirt** now has 150 Condition (up from 130), 16 Weight (up from 11) and costs 1050 Crowns (up from 800)
+- **Animal Hide Armor** now has 50 Condition (up from 45) and 8 Weight (up from 0)
+- **Apron** now has 50 Condition (up from 25), 9 Weight (up from 0) and costs 70 Crowns (up from 55)
+- **Assassins Robe** now has 80 Condition (down from 120) and 4 Weight (down from 9)
+- **Basic Mail Shirt** now has 130 Condition (up from 115), 15 Weight (up from 11) and costs 600 Crowns (up from 450)
+- **Blotched Gambeson** now has 10 Weight (up from 8) and costs 130 Crowns (down from 160)
+- **Butcher's Apron** now has 50 Condition (up from 25), 9 Weight (up from 0) and costs 70 Crowns (up from 55)
+- **Cloth Sash** now has 2 Weight (up from 0)
+- **Cultist Leather Robe** now has 90 Condition (down from 88), 10 Weight (up from 9) and costs 300 Crowns (up from 240)
+- **Dark Rugged Surcoat** now has 7 Weight (up from 4) and costs 120 Crowns (up from 100)
+- **Dark Thick Tunic** now has 40 Condition (up from 35), 5 Weight (up from 2) and costs 80 Crowns (up from 75)
+- **Gambeson** now has 70 Condition (up from 65) and 9 Weight (up from 6)
+- **Heavy Iron Armor** now costs 1000 Crowns (up from 700)
+- **Hide and Bone Armor** now has 100 Condition (up from 95), 15 Weight (up from 10) and costs 250 Crowns (up from 220)
+- **Leather Lamellar Armor** now has 90 Condition (down from 95), 11 Weight (up from 10) and costs 250 Crowns (down from 300)
+- **Leather Nomad Robe** now has 70 Condition (up from 65), 8 Weight (up from 7) and costs 150 Crowns (up from 140)
+- **Leather Scale Armor** now has 15 Weight (down from 16)
+- **Leather Tunic** now has 5 Weight (up from 0) and costs 50 Crowns (down from 65)
+- **Leather Wraps** now has 4 Weight (up from 0) and costs 30 Crowns (down from 40)
+- **Light Scale Armor** now has 19 Weight (down from 21)
+- **Linen Tunic** now has 3 Weight (up from 0)
+- **Linothorax** now has 80 Condition (up from 75), 9 Weight (up from 7) and costs 200 Crowns (up from 180)
+- **Mail Hauberk** now has 170 Condition (up from 150) and 21 Weight (up from 18)
+- **Mail Shirt** now has 150 Condition (up from 130), 18 Weight (up from 13) and costs 800 Crowns (up from 650)
+- **Mail with Lamellar Plating** now has 160 Condition (up from 135), 18 Weight (up from 15) and costs 850 Crowns (up from 750)
+- **Monk's Robe** now has 30 Condition (up from 20), 5 Weight (up from 0) and costs 50 Crowns (up from 45)
+- **Noble Tunic** now has 30 Condition (up from 20) and 2 Weight (up from 0)
+- **Nomad Robe** now has 4 Weight (up from 2)
+- **Occult Robes** now has 70 Condition (down from 75) and costs 300 Crowns (up from 190)
+- **Padded Leather** now has 10 Weight (up from 8) and costs 180 Crowns (down from 200)
+- **Padded Surcoat** now has 7 Weight (up from 4)
+- **Padded Vest** now has 7 Weight (up from 5) and costs 120 Crowns (down from 140)
+- **Patched Mail Shirt** now has 100 Condition (up from 90) and 15 Weight (up from 10)
+- **Plated Nomad Mail** now has 110 Condition (up from 105), 13 Weight (up from 11) and costs 400 Crowns (up from 350)
+- **Reinforced Animal Hide Armor** now has 70 Condition (up from 65) and 11 Weight (up from 7)
+- **Reinforced Leather Armor** now has 90 Condition (down from 100), 10 Weight (up from 9) and costs 300 Crowns (down from 500)
+- **Rugged Surcoat** now has 8 Weight (up from 6)
+- **Sackcloth** now has 20 Condition (up from 10), 4 Weight (up from 0) and costs 30 Crowns (up from 20)
+- **Scrap Metal Armor** now has 80 Condition (up from 75), 12 Weight (up from 8) and costs 150 Crowns (up from 130)
+- **Southern Mail Shirt** now has 13 Weight (up from 11)
+- **Stiched Nomad Armor** now has 9 Weight (up from 8)
+- **Tattered Sackcloth** now has 10 Condition (up from 5) and 4 Weight (up from 0)
+- **Thick Furs** now has 40 Condition (up from 30) and 7 Weight (up from 1)
+- **Thick Nomad Robe** now has 6 Weight (up from 5)
+- **Thick Tunic** now has 40 Condition (up from 35), 6 Weight (up from 3) and costs 70 Crowns (down from 75)
+- **Undertaker's Apron** now has 40 Condition (up from 30), 5 Weight (up from 0) and costs 80 Crowns (up from 65)
+- **Wanderer's Coat** now has 60 Condition (down from 65), 7 Weight (up from 5) and costs 120 Crowns (down from 180)
+- **BasicMailShirt** now has 130 Condition (up from 115), 15 Weight (up from 12) and costs 600 Crowns (up from 450)
+- **Wizard's Robe** now has 30 Condition (up from 20), 1 Weight (up from 0) and costs 150 Crowns (up from 60)
+- **Worn Mail Shirt** now has 110 Condition (up from 105) now has 14 Weight (up from 12) and costs 350 Crowns (down from 400)
+
+**Reforged:**
+- **Breastplate** now has 230 Condition (up from 210), 25 Weight (up from 24) and costs 4200 Crowns (up from 3600)
+- **Brigandine Armor** now has 150 Condition (down from 230), 14 Weight (down from 26) and costs 3000 Crowns (down from 4600)
+- **Brigandine Harness** now has 180 Condition (down from 270), 18 Weight (down from 28) and costs 4000 Crowns (down from 6000)
+- **Brigandine Shirt** now has 110 Condition (down from 190), 9 Weight (down from 21) and costs 2000 Crowns (down from 3000)
+- **Reinforced Footman Armor** now costs 3500 Crowns (down from 4000)
+
+### Other Item Changes
 
 - Food now only loses value once half of its shelf life is over
-- **Adorned Mail Shirt** now has a Weight of 16 (up from 11), Condition of 150 (up from 130) and Value of 1050 (up from 800); just like in Vanilla
 - **Adarga** is now called **Adarga Shield** (just like in Vanilla)
 - **Antidote** now costs 100 Crowns (down from 150). Crafting it now costs 40 Crowns (down from 50) and 1 Jagged Fang (down from 2)
 - **Bandage** costs 40 Crowns (up from 25)
 - **Decayed Great Helm** is now called **Tarnished Full Helm**. It has 240 Condition (down from 255) and 23 Weight (up from 22). It now reduces the Resolve of adjacent enemies by 5 during morale checks (similar to Direwolf Pelt). It now only appears in the Full Helm looking variants
+- **Decayed Reinforced Mail Hauberk** no longer appears with the Variant 50, which is a skin that looks too similar to **Worn Mail Shirt**
 - **Decorated Full Helm** now has a Condition of 300 (down from 320), Weight of 23 (up from 21) and Value of 5000 (up from 4000). It now grants +10 Resolve while equipped
 - **Gun Powder** now costs 2 **Ammunition Supply** each (up from 1)
 - **Buckler** appear less common in big settlements
@@ -411,6 +479,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Throwing Net** now has a weight of 4 (up from 2)
 - **Unhold Fur Cloak** now grants 15 Condition (up from 10)
 - **Wooden Shields** appear less common in marketplaces
+- **Worn Mail Shirt** can now appear in the Variant 50, which is a skin that previously was used by **Decayed Reinforced Mail Hauberk**
 - Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and **Large Powder Bags** weigh 4.
 - The value of almost all other non-named shields is increased by 50%-100%
 
@@ -423,7 +492,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Quartermaster** now grants 150 Storage for Ammunition (up from 100) and 100 Storage for Tools and Medicine (up from 50)
 - **Scout** no longer grants 15% more movement speed. It now grants 20% more movement speed while in Forests and Swamp. It also grants 25% Vision while on hills or mountains
 
-## NPCs
+## Enemies
 
 - Introduce a new **Headless** effect. Redirects any attack to hit the body, reduces all other damage targeting the head to 0 (e.g. secondary attack from Split Man), grants immunity to **Distracted** and **Sleep** and sets the headarmor to 0
 	- This effect is given to Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles
@@ -585,7 +654,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ## Events
 
 - The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event
-- The **Infected Wound Event** now has a cooldown of 14 days (down from 21 days) and is thrice as likely to trigger, if you have no Medicine left
+- The Event **Drunkard loses Item** now has an option where you order the Drunkard to search for the item. This recovers the item, but causes the same mood debuff on the drunkard as if he was flogged
+- The Event **Infected Wound** now has a cooldown of 14 days (down from 21 days) and is thrice as likely to trigger, if you have no Medicine left
 - The Event-Option to shoot down the bird who shat your brother now costs 5 Ammunition
 - The **Orc Slayer** and **Crusader** (temporary Crisis backgrounds) now share 100% of their experience with your remaining party, when they leave you after the Crisis ended
 
@@ -759,6 +829,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - The amount of shield paint used by the player is now counted in the statistics flag `PaintUsedOnShields`
 - The amount of helmet paint used by the player is now counted in the statistics flag `PaintUsedOnHelmets`
 - The amount of armor attachements used by the player is now counted in the statistics flag `ArmorAttachementsApplie`
+- Body Armor `Condition` is now always set to `ConditionMax` at the end of the `create` function
 
 ### New Character Properties
 

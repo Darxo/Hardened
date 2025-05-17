@@ -18,6 +18,21 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.44.0
+	- **Fresh and Furious** now only works with Attacks instead of with all Skill
+	- **Butcher**, **Farmhand**, **Lumberjack**, **Miner** and **Shepherd** no longer have bonus Hitchance with some early game weapons
+	- Almost all Vanilla Body Armors are rebalanced (see https://github.com/Darxo/Hardened/wiki/Vanilla-Hardened-Armor-Changes)
+		- Almost all early and mid-game Armors have more Weight
+		- Almost all Condition values are now multiples of 10
+	- **Brigandine Shirt** now has a Condition of 110 (down from 190), a Weight of 9 (down from 21) and a Value of 2000 (down from 3000)
+	- **Brigandine Armor** now has a Condition of 150 (down from 230), a Weight of 14 (down from 26) and a Value of 3000 (down from 4600)
+	- **Brigandine Harness** now has a Condition of 180 (down from 270), a Weight of 18 (down from 28) and a Value of 4000 (down from 6000)
+	- **Breastplate** now has a Condition of 230 (up from 210), a Weight of 25 (up from 24) and a Value of 4200 (up from 3600)
+	- **Reinforced Footman Armor** now has a Value of 3000 (down from 4000)
+	- The Event **Drunkard loses Item** now has an option where you order the Drunkard to search for the item. This recovers the item, but causes the same mood debuff on the drunkard as if he was flogged.
+	- Remove the Variant 50 from **Decayed Reinforced Mail Hauberk** as it was looking too similar to **Worn Mail Shirt** and add that Variant 50 to **Worn Mail Shirt**
+	- Body Armor Condition is now always set to ConditionMax at the end of the `create` function
+
 0.43.0
 	- **Fresh and Furios** is completely reworked. It makes all skills cost -4 Action Points. After you use any skill during your turn it gets disabled until you use **Recover**
 	- **Blacksmith** Follower no longer requires you to repair 5 items in a town. It now requires you to use 5 paint or attachements. It no longer grants a tool consumption discount. It now grants +50 storage space for Tools
