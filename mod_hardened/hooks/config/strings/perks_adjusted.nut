@@ -1123,11 +1123,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your attacks at a distance of 2 ignore the hitchance penalty from obstacles",
-					"Your Attacks at a distance of 3 or less tiles have " + ::MSU.Text.colorPositive("+15%") + " chance to hit the head per difference in morale between you and the target",
-					"Your Hits against enemies within 4 tiles trigger a positive Morale Check for you",
-
-					"Your attacks at a distance of 4 or less tiles have " + ::MSU.Text.colorPositive("+10%") + " chance to hit",
+					"Gain " + ::MSU.Text.colorPositive("30%") + " [chance to hit the head.|Concept.ChanceToHitHead] Lose " + ::MSU.Text.colorNegative("5%") + " of that bonus for every tile between you and your target",
+					"The penalty to hitchance from obstructed line of sight is reduced by " + ::MSU.Text.colorPositive("50%") + " at a distance of 2 tiles",
 				],
 			}],
 		}),
