@@ -1,4 +1,4 @@
-::Hardened.HooksMod.hook("scripts/items/armor/undertaker_apron", function(q) {
+::Hardened.HooksMod.hook("scripts/items/armor/leather_tunic", function(q) {
 	q.create = @(__original) function()
 	{
 		__original();
