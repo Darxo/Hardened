@@ -193,6 +193,10 @@
 	- Ignore Cover when aiming at a distance of 2
 	- Your Shots cannot go astray when aiming at a distance of 3
 	- Gain +20% chance to hit the hit when your target is at most 4 tiles away
+	"Your attacks at a distance of 2 ignore the hitchance penalty from obstacles",
+	"Your Attacks at a distance of 3 or less tiles have " + ::MSU.Text.colorPositive("+15%") + " chance to hit the head per difference in morale between you and the target",
+	"Your Hits against enemies within 4 tiles trigger a positive Morale Check for you",
+	"Your attacks at a distance of 4 or less tiles have " + ::MSU.Text.colorPositive("+10%") + " chance to hit",
 - Crossbow Mastery
 	- Crossbow Mastery making them in your bag always loaded
 	- Swap Crossbow with Shield for free once per turn
@@ -205,6 +209,7 @@ misses dont build up fatigue on you while waiting
 These Perks (top = higher prio) im still unhappy with and eventually want to adjust
 - Feral Rage
 - Trick Shooter
+	- Bow Skills cost -1 Action Points if you haven't used them this turn or last turn
 - Hip Shooter
 	- Lose 10% Armor Penetration (remove fatigue stuff)
 - Mauler
@@ -420,3 +425,7 @@ Look into Reforged latest changes around footmen getting Exploit Opening
 - Only use Paint and spawn sfx, if the Variant of the affected item is different, after calling onPaint on it
 
 - Improve Readme by writing out price changes to shields and weight changes to quivers
+
+- Hireable Sellswords that spawn with a shield have that in another mercenaries color scheme
+- Add mention in morale check concept about how there is a random roll happening against resolve and being influenced by adjacent allies/enemies
+

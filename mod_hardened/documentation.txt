@@ -18,6 +18,12 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.44.1
+	- Fix **Nailed It** perk description accidentally changing
+	- Fix **Tattered Sackcloth** not being changed as intended
+	- Fix **Leather Tunic** not being changed as intended
+	- Fix **Monk Robe** not being changed as intended
+
 0.44.0
 	- **Fresh and Furious** now only works with Attacks instead of with all Skill
 	- **Butcher**, **Farmhand**, **Lumberjack**, **Miner** and **Shepherd** no longer have bonus Hitchance with some early game weapons
