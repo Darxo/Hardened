@@ -927,8 +927,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your Skills cost " + ::MSU.Text.colorPositive("-4") + " [Action Points|Concept.ActionPoints]",
-					"This effect becomes disabled if you use any Skill during your [turn|Concept.Turn] and remains disabled until you use [Recover|Skill+recover_skill]",
+					"Your Attacks cost " + ::MSU.Text.colorPositive("-4") + " [Action Points|Concept.ActionPoints]",
+					"This effect becomes disabled if you use any Attack during your [turn|Concept.Turn] and remains disabled until you use [Recover|Skill+recover_skill]",
 				],
 			}],
 		}),

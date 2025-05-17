@@ -1,5 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_fresh_and_furious", function(q) {
-	q.m.ActionPointModifier <- -4;	// Skills Action Point Cost is modified by this, while this effect is active
+	q.m.ActionPointModifier <- -4;	// Attacks Action Point Cost is modified by this, while this effect is active
 
 	q.getTooltip = @(__original) function()
 	{
@@ -25,7 +25,7 @@
 		return ret;
 	}
 
-	// Overwrite because we extend this effect to also affect skills which cost 1 AP
+	// Overwrite because we change the discount, its condition and make it also affect skills which cost 1 AP
 	q.onAfterUpdate = @() function( _properties )
 	{
 		if (this.m.IsSpent || this.m.RequiresRecover) return;
@@ -35,8 +35,11 @@
 		{
 			foreach (skill in this.getContainer().getAllSkillsOfType(::Const.SkillType.Active))
 			{
-				// Compared to Reforged: We no longer check for Action Point cost of >1 and we apply an additive discount instead of multiplicate one
-				skill.m.ActionPointCost = ::Math.max(0, skill.m.ActionPointCost + this.m.ActionPointModifier);
+				if (this.isSkillValid(skill))
+				{
+					// Compared to Reforged: We no longer check for Action Point cost of >1 and we apply an additive discount instead of multiplicate one
+					skill.m.ActionPointCost = ::Math.max(0, skill.m.ActionPointCost + this.m.ActionPointModifier);
+				}
 			}
 		}
 	}
@@ -62,15 +65,17 @@
 // Hardened Functions
 	q.onReallyBeforeSkillExecuted <- function( _skill, _targetTile )
 	{
-		if (this.isSkillValid(_skill) && this.getContainer().getActor().isActiveEntity()) this.turnEffectOff();
+		if (this.isSkillValid(_skill) && this.getContainer().getActor().isActiveEntity())
+			this.turnEffectOff();
 
-		if (_skill.getID() == "actives.recover") this.turnEffectOn();
+		if (_skill.getID() == "actives.recover")
+			this.turnEffectOn();
 	}
 
 // New Functions
 	q.isSkillValid <- function( _skill )
 	{
-		return _skill.isType(::Const.SkillType.Active);
+		return _skill.isType(::Const.SkillType.Active) && _skill.isAttack();
 	}
 
 	// Check whether this character surpasses the fatigue threshold and turn this effect off if so
