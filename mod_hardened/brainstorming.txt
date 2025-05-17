@@ -419,6 +419,9 @@ Look into Reforged latest changes around footmen getting Exploit Opening
 - Outlaws no longer need vig ass now that they get it in reforged?
 
 - make spider corpses a bit more transparent, less colored, so that they differ more from alive ones
-- remove variant 50 from decayed reinforced mail hauberk item
-- maybe create new decayed mail shirt variant
 - make surgeon also unlock from using bandages
+
+- Make enemies blocked by 2 tiles twice as likely to divert attacks
+- Make necromancer able to retreat
+
+- Only use Paint and spawn sfx, if the Variant of the affected item is different, after calling onPaint on it
