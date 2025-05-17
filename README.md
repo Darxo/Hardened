@@ -55,12 +55,12 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - Throwing regular **Throwing Weapons** now cost 15 Fatigue (up from 10 for Axes, 14 for Javelins and 12 for Bolas), just like in Vanilla
 - Throwing **Heavy Throwing Weapons** now costs 5 Action Points (up from 4) and 18 Fatigue (up from 15)
 - Throwing **Crude Javelins** now costs 5 Action Points (up from 4)
-- **Heavy Javelin** now deal 40-50 Damage (up from 35-50), have 85% Armor Damage (up from 80%), have +0% Hitchance (up from -5%), 4 Maximum Ammo (down from 5), 0 Weight (down from 8), 3 Weight per Ammo, 4 Ammo Cost (up from 3) and a value of 500 (up from 300)
-- **Heavy Throwing Axes** now deal 45-60 Damage (up from 30-50), have 120% Armor Damage (up from 115%), have -10% Hitchance (down from -5%), +10% Headshot Chance (up from +5%), 0 Weight (down from 8), 3 Weight per Ammo and a value of 600 (up from 300)
-- **Bolas** now deal 25-40 Damage (up from 20-35), have 0 Weight (down from 3), 1.5 Weight per Ammo and a value of 300 (up from 150)
+- **Heavy Javelin** now deal 40-50 Damage (up from 35-50), have 85% Armor Damage (up from 80%), have +0% Hitchance (up from -5%), 4 Maximum Ammo (down from 5), 0 Weight (down from 8), 3 Weight per Ammo, 4 Ammo Cost (up from 3) and costs 500 Crowns (up from 300)
+- **Heavy Throwing Axes** now deal 45-60 Damage (up from 30-50), have 120% Armor Damage (up from 115%), have -10% Hitchance (down from -5%), +10% Headshot Chance (up from +5%), 0 Weight (down from 8), 3 Weight per Ammo and costs 600 Crowns (up from 300)
+- **Bolas** now deal 25-40 Damage (up from 20-35), have 0 Weight (down from 3), 1.5 Weight per Ammo and costs 300 Crowns (up from 150)
 - **Crude Javelins** now deal 35-45 Damage (up from 30-40), have 0 Weight (down from 8), 3 Weight per Ammo and 2 Ammo Cost (down from 3)
-- **Javelins** now deal 35-45 Damage (up from 30-45), deal 70% Armor Damage (down from 75%), have 0 Weight (down from 6), 2 Weight per Ammo and a value of 350 (up from 200)
-- **Throwing Axes** now deal 35-50 Damage (up from 30-50), have -10% Hitchance (down from +0%), +10% Headshot Chance (up from +5%), 0 Weight (down from 4), 2 Weight per Ammo and a value of 400 (up from 200)
+- **Javelins** now deal 35-45 Damage (up from 30-45), deal 70% Armor Damage (down from 75%), have 0 Weight (down from 6), 2 Weight per Ammo and costs 350 Crowns (up from 200)
+- **Throwing Axes** now deal 35-50 Damage (up from 30-50), have -10% Hitchance (down from +0%), +10% Headshot Chance (up from +5%), 0 Weight (down from 4), 2 Weight per Ammo and costs 400 Crowns (up from 200)
 - Marketplaces now sell **Crude Javelins** instead of regular **Javelins**
 - Crude Javelins on NPCs start with 3/4 ammo and Heavy Throwing Weapons on NPCs start with 4/5 ammo
 
@@ -357,11 +357,11 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Ancient Pikes** gains the **Spear** Weapontype
 - **Berserk Chain** now has 4 Reach (down from 5)
 - **Cruel Falchion** are now a Sword/Dagger hybrid. They now also grant **Stab**. **Slash** and **Rispote** lose any discount
-- **Cudgel** now deals 40-60 damage (up from 30-50), has 4 Reach (up from 3), a value of 400 (up from 300). **Bash** now costs 5 AP (up from 4). **Knock Out** now has a 100% chance to stun
+- **Cudgel** now deals 40-60 damage (up from 30-50), has 4 Reach (up from 3), costs 400 Crowns (up from 300). **Bash** now costs 5 AP (up from 4). **Knock Out** now has a 100% chance to stun
 - **Estoc** now has 6 Reach (up from 5)
 - **Goblin Skewer** are now a Spear/Dagger hybrid. **Thrust** is replaced with **Stab**. **Spearwall** no longer has any discount. **Riposte** is removed
 - **Goedendag** no longer grants **Cudgel** skill. It now has a 100% chance to stun with **Knock Out** (up from 75%)
-- **Fighting Axe** now has a value of 2300 (down from 2800)
+- **Fighting Axe** now costs 2300 (down from 2800)
 - **Firelance** now also has the **Firearm** weapontype
 - **Flail** now deals 30-55 damage (up from 25-55) and has 3 Reach (down from 4)
 - **Goblin Pike** now has a Reach of 6 (down from 7) and gains the **Spear** Weapontype
@@ -376,16 +376,16 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Player Banner** now grants -5 to Ranged Defense and it comes with **Repel**
 - **Poleflail** now has 5 Reach (down from 6). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
 - **Reinforced Wooden Poleflail** now has 5 Reach (down from 6). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
-- **Spetum** now has a Reach of 7 (up from 6), a Weight of 12 (down from 14) and value of 900 (down from 1050). The named variant now has a value of 2800 (down from 3500)
+- **Spetum** now has a Reach of 7 (up from 6), a Weight of 12 (down from 14) and value of 900 (down from 1050). The named variant now costs 2800 Crowns (down from 3500)
 - **Spiked Impaler** now has +2 Fatigue Cost for its weapon skills
-- **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and a value of 600 (up from 400)
+- **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and costs 600 Crowns (up from 400)
 - **Three-Headed Flail** now has 3 Reach (down from 4)
-- **Throwing Spears** no longer inflict any fatigue when hitting a shield. They now have a Weight of 4 (down from 6) and a value of 60 (down from 80)
-- **Tree Limb** now deals 30-50 damage (up from 25-40), deals 90% Armor Damage (up from 75%), has 4 Reach (up from 3), a weight of 15 (down from 20), a value of 300 (up from 150). **Bash** now costs 5 AP (up from 4). **Knock Out** now has a 100% chance to stun
+- **Throwing Spears** no longer inflict any fatigue when hitting a shield. They now have a Weight of 4 (down from 6) and costs 60 Crowns (down from 80)
+- **Tree Limb** now deals 30-50 damage (up from 25-40), deals 90% Armor Damage (up from 75%), has 4 Reach (up from 3), a weight of 15 (down from 20), costs 300 Crowns (up from 150). **Bash** now costs 5 AP (up from 4). **Knock Out** now has a 100% chance to stun
 - **Two-handed Flail** now has 4 Reach (down from 5)
 - **Two-handed Wooden Flail** now has 4 Reach (down from 5)
 - **Warbow** now has a Weight of 8 (up from 6) and +2 Fatigue Cost for its weapon skills
-- **Warfork** now has a Weight of 14 (up from 12) and a value of 400 (down from 600)
+- **Warfork** now has a Weight of 14 (up from 12) and costs 400 Crowns (down from 600)
 - **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
 - **Zweihander** now has 6 Reach (down from 7)
 
@@ -394,20 +394,20 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Food now only loses value once half of its shelf life is over
 - **Adorned Mail Shirt** now has a Weight of 16 (up from 11), Condition of 150 (up from 130) and Value of 1050 (up from 800); just like in Vanilla
 - **Adarga** is now called **Adarga Shield** (just like in Vanilla)
-- **Antidote** now has a value of 100 (down from 150). Crafting it now costs 25 crowns (down from 50) and 1 Jagged Fang (down from 2)
-- **Bandage** now costs 40 crowns (up from 25)
+- **Antidote** now costs 100 Crowns (down from 150). Crafting it now costs 40 Crowns (down from 50) and 1 Jagged Fang (down from 2)
+- **Bandage** costs 40 Crowns (up from 25)
 - **Decayed Great Helm** is now called **Tarnished Full Helm**. It has 240 Condition (down from 255) and 23 Weight (up from 22). It now reduces the Resolve of adjacent enemies by 5 during morale checks (similar to Direwolf Pelt). It now only appears in the Full Helm looking variants
 - **Decorated Full Helm** now has a Condition of 300 (down from 320), Weight of 23 (up from 21) and Value of 5000 (up from 4000). It now grants +10 Resolve while equipped
 - **Gun Powder** now costs 2 **Ammunition Supply** each (up from 1)
 - **Buckler** appear less common in big settlements
-- **Feral Shield** now has a value of 400 (up from 50)
+- **Feral Shield** now costs 400 Crowns (up from 50)
 - **Fangshire** will no longer spawn at the start of the game
 - **Fermented Unhold Heart** now has an expiry date of 40 days (up from 20)
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 1000 Value (up from 200) and grants 10 Resolve (up from 5)
 - **Reinforced Throwing Net** now has a weight of 8 (up from 2)
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**
 - **Sipar** is now called **Sipar Shield** (just like in Vanilla)
-- **Smoke Bomb** now costs 400 Crowns (up from 275). Smoke now lasts 2 Rounds (up from 1)
+- **Smoke Bomb** costs 400 Crowns (up from 275). Smoke now lasts 2 Rounds (up from 1)
 - **Throwing Net** now has a weight of 4 (up from 2)
 - **Unhold Fur Cloak** now grants 15 Condition (up from 10)
 - **Wooden Shields** appear less common in marketplaces
@@ -417,7 +417,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ## Retinue/Follower
 
 - **Blacksmith** no longer requires you to repair 5 items in a town. It now requires you to use 5 paint or attachements. It no longer grants a tool consumption discount. It now grants +50 storage space for Tools
-- **Bount Hunter** now costs 2500 Crowns (down from 4000). It now grants +5% for enemies to become champtions (up from +3%). It no longer grants crowns when you kill champions
+- **Bount Hunter** costs 2500 Crowns (down from 4000). It now grants +5% for enemies to become champtions (up from +3%). It no longer grants Crowns when you kill champions
 - **Drill Sergeant** now requires a brother with a permanent injury to be dismissed (just like in Vanilla)
 - **Lookout** no longer grants 25% more vision at all times. It now always provides a scouting report for enemies near you, just like "Band of Poachers" origin
 - **Quartermaster** now grants 150 Storage for Ammunition (up from 100) and 100 Storage for Tools and Medicine (up from 50)
@@ -451,7 +451,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Wardogs** now have 50 Melee Skill (down from 55), 20 Melee Defense (down from 25), 25 Ranged Defense (down from 30) and 5 Vision (down from 7)
 
 **Humans:**
-- Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop crowns, food or tools or a valueable ring
+- Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop Crowns, food or tools or a valueable ring
 - **Noble Footmen** lose **Shield Expert**
 - **Mercenaries** now use Shields that are colored in their respective Banner colors
 - **Swordmaster** with **Blade Dancer** perk now only spawn with **Noble Swords**
