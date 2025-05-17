@@ -135,9 +135,9 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - Hostile Locations now hide their Defender Line-Up during night
 - You can no longer swap your weapon with a dagger from your bag for free
 
-## Balance & Polishing
+## Skills
 
-### Skills
+### Active Skills
 
 - **Chop** now has a 50% chance to decapitate (up from 25%)
 - **Cover Ally** (granted by **Shield Expert**) is mostly reworked. It still costs 4 Action Points and 20 Fatigue and can only target adjacent allies. It now grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It still lasts until the start of your next turn or until you get stunned or move away from that target
@@ -325,6 +325,33 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Pimp** now has 0 to minimum Melee Skill (up from -5) and +5 to maximum Melee Skill (up from -5)
 - **Swordmaster** no longer has **Sword Mastery** unlocked by default. This perk is now moved to Tier 3 (down from 4) for them. They now have a hiring cost of 400 Crowns (down from 2400), just like in Vanilla
 
+### Traits
+
+- **Ailing** now also makes temporary injuries you receive during combat last 50% longer
+- **Brute Trait** now grants 15% more damage instead of 15% more hitpoint damage. It is no longer negated by **Steelbrow** or enemies who are immune to critical damage
+- **Lucky** no longer grants a chance to reroll incoming attacks. It now provides a 5% chance to avoid damage from any source.
+- **Weasel** now provides an additional 25 Melee Defense during that brothers turn while fleeing.
+- **Huge** no longer increases the Reach by 1
+- **Night Blind** now grants -2 Vision during night (down from -1)
+- **Night Owl** now grants +2 Vision during night (up from +1)
+- **Tiny** no longer reduces the Reach by 1
+- **Irrational** will no longer appear on recruits.
+
+### Injuries
+
+- Injuries now require 2 Medicine Supplies per day (up from 1)
+- Injuries now have a 50% chance to improve each day when you have no remaining Medicine Supplies (up from 0%)
+- **Collapsed Lung** no longer reduces the Stamina. Instead it now disables the use of **Recover**
+- **Crushed Windpipe** no longer reduces the Stamina. Instead it now disables the use of **Recover**
+- **Pierced Lung** now reduces Stamina by 30% (down from 60%) and disables the use of **Recover**
+- **Grazed Neck**, **Cut Artery** and **Cut Throat** are no longer removed, when bandaged
+- **Grazed Neck**, **Cut Artery** and **Cut Throat** no longer deals damage over time
+- **Grazed Neck** now applies 1 stack of bleed when inflicted
+- **Cut Artery** now applies 3 stack of bleed when inflicted
+- **Cut Throat** now applies 6 stack of bleed when inflicted
+
+## Items
+
 ### Weapons
 
 - **Ancient Pikes** gains the **Spear** Weapontype
@@ -387,32 +414,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and **Large Powder Bags** weigh 4.
 - The value of almost all other non-named shields is increased by 50%-100%
 
-### Traits
-
-- **Ailing** now also makes temporary injuries you receive during combat last 50% longer
-- **Brute Trait** now grants 15% more damage instead of 15% more hitpoint damage. It is no longer negated by **Steelbrow** or enemies who are immune to critical damage
-- **Lucky** no longer grants a chance to reroll incoming attacks. It now provides a 5% chance to avoid damage from any source.
-- **Weasel** now provides an additional 25 Melee Defense during that brothers turn while fleeing.
-- **Huge** no longer increases the Reach by 1
-- **Night Blind** now grants -2 Vision during night (down from -1)
-- **Night Owl** now grants +2 Vision during night (up from +1)
-- **Tiny** no longer reduces the Reach by 1
-- **Irrational** will no longer appear on recruits.
-
-### Injuries
-
-- Injuries now require 2 Medicine Supplies per day (up from 1)
-- Injuries now have a 50% chance to improve each day when you have no remaining Medicine Supplies (up from 0%)
-- **Collapsed Lung** no longer reduces the Stamina. Instead it now disables the use of **Recover**
-- **Crushed Windpipe** no longer reduces the Stamina. Instead it now disables the use of **Recover**
-- **Pierced Lung** now reduces Stamina by 30% (down from 60%) and disables the use of **Recover**
-- **Grazed Neck**, **Cut Artery** and **Cut Throat** are no longer removed, when bandaged
-- **Grazed Neck**, **Cut Artery** and **Cut Throat** no longer deals damage over time
-- **Grazed Neck** now applies 1 stack of bleed when inflicted
-- **Cut Artery** now applies 3 stack of bleed when inflicted
-- **Cut Throat** now applies 6 stack of bleed when inflicted
-
-### Retinue/Follower
+## Retinue/Follower
 
 - **Blacksmith** no longer requires you to repair 5 items in a town. It now requires you to use 5 paint or attachements. It no longer grants a tool consumption discount. It now grants +50 storage space for Tools
 - **Bount Hunter** now costs 2500 Crowns (down from 4000). It now grants +5% for enemies to become champtions (up from +3%). It no longer grants crowns when you kill champions
@@ -421,7 +423,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Quartermaster** now grants 150 Storage for Ammunition (up from 100) and 100 Storage for Tools and Medicine (up from 50)
 - **Scout** no longer grants 15% more movement speed. It now grants 20% more movement speed while in Forests and Swamp. It also grants 25% Vision while on hills or mountains
 
-### Enemies
+## NPCs
 
 - Introduce a new **Headless** effect. Redirects any attack to hit the body, reduces all other damage targeting the head to 0 (e.g. secondary attack from Split Man), grants immunity to **Distracted** and **Sleep** and sets the headarmor to 0
 	- This effect is given to Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles
@@ -530,7 +532,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - NPCs are 20% more likely to use a throwing spear against shield users and 50% more likely to target shields, that it would destroy on use
 - NPCs are 20% more likely to use **Disarm** or **Knock out** on someone who has **Parry**
 
-### Combat General
+## Combat General
 - **Encumbrance** no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level. It no longer requires a minimum armor weight of 20
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
 - Equipped Ammo Items can no longer be dropped to the ground or into an empty inventory slot
@@ -550,13 +552,13 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Weapons with 0 Condition now deal 50% less damage
 - The combat map is no longer revealed at the end of a battle
 
-### Crisis
+## Crisis
 
 **Undead:**
 - Humans now only turn into zombies when the killer is from the Zombie or Undead faction
 - Humans now have a resurrect chance of 100 (up from 33) and have a resurrect delay of 1-3 rounds (down from 2-3)
 
-### World Map
+## World Map
 
 - Try out now costs 100% more. You can now dismiss recruits after you tried them out to make room for new recruits
 - You can now get up to 6 Tavern Rumors every cycle (up from 4)
@@ -574,20 +576,20 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Fletcher now sell roughly 5 times as many **Throwing Spears** but with a price multiplier of 1.5 (up from 1.0)
 - Nets sold by Fletcher now have a price multiplier of 2.0 (down from 3.0)
 
-### Contracts
+## Contracts
 
 - Necrosavants in the scripted Caravan Contract Ambush now idle during the first round
 - **Caravan Contracts** that are declined or which expire now spawn a caravan towards the destination if the town hasn't spawned one in a while
 - The **Barbarian King** and **Find Location** contracts no longer spawn a hint directly after loading and display the direction information of your last hint in your bullet points
 
-### Events
+## Events
 
 - The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event
 - The **Infected Wound Event** now has a cooldown of 14 days (down from 21 days) and is thrice as likely to trigger, if you have no Medicine left
 - The Event-Option to shoot down the bird who shat your brother now costs 5 Ammunition
 - The **Orc Slayer** and **Crusader** (temporary Crisis backgrounds) now share 100% of their experience with your remaining party, when they leave you after the Crisis ended
 
-### Other
+## Other
 
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 - The **Lone Wolf** and **Gladiator** origins now have a roster size of 13 (up from 12)
