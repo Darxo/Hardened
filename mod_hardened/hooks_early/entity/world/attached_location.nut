@@ -4,4 +4,38 @@
 	{
 		return this.world_entity.getName() + (!this.isActive() ? " (Ruins)" : "");
 	}
+
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original();
+
+		local produceList = [];
+		this.onUpdateProduce(produceList);
+		local childrenElements = [];
+		local childrenId = 41;
+		foreach (produce in produceList)
+		{
+			local item = this.new("scripts/items/" + produce);
+			childrenElements.push({
+				id = childrenId,
+				type = "text",
+				icon = "ui/items/" + item.getIcon(),
+				text = item.getName(),
+			});
+			++childrenId;
+		}
+
+		if (childrenElements.len() != 0)
+		{
+			ret.push({
+				id = 40,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Produces:",
+				children = childrenElements,
+			});
+		}
+
+		return ret;
+	}
 });
