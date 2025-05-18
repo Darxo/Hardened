@@ -1,5 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_fresh_and_furious", function(q) {
-	q.m.ActionPointModifier <- -4;	// Attacks Action Point Cost is modified by this, while this effect is active
+	q.m.ActionPointModifier <- -5;	// Attacks Action Point Cost is modified by this, while this effect is active
 
 	q.getTooltip = @(__original) function()
 	{
