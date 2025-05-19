@@ -41,6 +41,11 @@
 		"- Being engaged by multiple opponents\n" +
 		"- Being [displaced|Concept.Displacement] into more opponents"
 	)),
+	Threat = ::MSU.Class.BasicTooltip("Threat", ::Reforged.Mod.Tooltips.parseString(
+		"Threat is a character property that represents how intimidating or dangerous a combatant appears on the battlefield.\n\n" +
+		"Each point of Threat increases the difficulty of [Morale Checks|Concept.Morale] made by adjacent enemies by 1. Only characters that are not [Fleeing|Concept.Fleeing] apply their Threat.\n\n" +
+		"By default, Threat is 0, but it can be increased through certain perks, effects, or items."
+	)),
 	Rally = ::MSU.Class.BasicTooltip("Rally", ::Reforged.Mod.Tooltips.parseString(
 		"Rallying is a type of positive [Morale Check|Concept.Morale] that can only occur on a character currently in the [Fleeing|Concept.Morale] state.\n\n" +
 		"A successful rally immediately raises the character's morale to [Wavering|Concept.Morale], allowing them to act again.\n\n" +
