@@ -181,12 +181,12 @@ Skill nerfs as a result of the Reach system:
 Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-changes-Side‐By‐Side
 
 - **Adrenaline** skill now costs 15 Fatigue (up from 10)
-- **Angler** no longer increases the cost of **Break Free** on the target. It now increases the maximum range of **Throw Net** by 1 and it staggers every character that you net. **Net Pull** now has a Range of 3 (up from 2)
+- **Angler** no longer increases the cost of **Break Free** on the target. It now staggers every character that you net. **Net Pull** now has a Range of 3 (up from 2)
 - **Anticipation** now also proccs whenever your shield takes damage from an attack
 - **Axe Mastery** no longer grants **Hook Shield**. It now causes **Split Shield** to apply **Dazed** for 1 turn
 - **Backstabber** is rewritten. It now grants +5% Hitchance per character surrounding your target, except the first one. It now also affects ranged attacks
 - **Bags and Belts** now also includes two-handed weapons but no longer grants Initiative
-- **Battle Fervor** is reworked. It still grants 10% more Resolve at all times. It now grants 10% more Melee Skill, Melee Defense, Ranged Skill and Ranged Defense while at Steady Morale
+- **Battle Fervor** is completely reworked. It grants 10% more Resolve. It also grants 10% more Melee Skill, Melee Defense, Ranged Skill and Ranged Defense while at Steady Morale
 - **Battle Forged** no longer has any prerequisites. It no longer provide any Reach Ignore
 - **Bear Down** (granted by **Mace Mastery**) is completely reworked. It now causes every headshot to daze the target for 1 turn, or increase the duration of an existing daze by 1 turn
 - **Bestial Vigor** is completely reworked. It is now called **Backup Plan** and grants the skill **Backup Plan** which can be used once per battle to recover 7 Action Points and disable all Attack-Skills for the rest of this turn. It has been removed from the **Wildling** perk group and added to the **Tactician** perk group at Tier 2
@@ -197,7 +197,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bone Breaker** is completely reworked. It now causes Armor Damage you deal to be treated as additional Hitpoint damage for the purpose of inflicting injuries
 - **Bow Mastery** no longer grants +1 Vision
 - **Bullseye** no longer reduces the penalty for shooting behind cover. It also no longer works with **Take Aim**. It now provides 25% Armor Penetration (up from 10% and 20% resepctively)
-- **Bulwark** no longer grants additional Resolve against negative morale checks
+- **Bulwark** is completely reworked. It now grants additional Resolve equal to 5% of your current combined Head and Body Armor condition
 - **Brawny** no longer grants Initiative
 - **Cheap Trick** now affects all attacks of a skill, when you use it with an AoE skill
 - **Colossus** now grants +15 Hitpoints, instead of 25% more Hitpoints
@@ -377,7 +377,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
 - **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%)
 - **Pike** and gains the **Spear** Weapontype
-- The **Pitchfork** skills **Impale** and **Repel** now cost 6 Action Points (up from 5)
 - **Player Banner** now grants -5 to Ranged Defense and it comes with **Repel**
 - **Poleflail** now has 5 Reach (down from 6). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
 - **Reinforced Wooden Poleflail** now has 5 Reach (down from 6). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
@@ -508,7 +507,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - **Thug** now spawn with **Tree Limb** instead of **Goedendag**. They now have 40 Ranged Skill (down from 45) and 110 Stamina (up from 100)
 - **Pillager** can now also spawn with **Cudgel**. **Pillager** no longer spawn with **Woodcutters Axe**, **Two Handed Mace** or **Two Handed Hammer**
 - **Outlaws** now have **Vigorous Assault** and always have **Formidable Approach**. They no longer spawn with **Battle Axe**, **Two Handed Wooden Flail** or **Greatsword**
-- **Marauder** now have **Vigorous Assault** and **Formidable Approach**. They no longer spawn with **Two Handed Wooden Flail** and are twice as likely to spawn with a **Greatsword**
+- **Marauder** no longer spawn with **Two Handed Wooden Flail** and are twice as likely to spawn with a **Greatsword**
 - Fast Brigands (**Robber, Bandit, Killer**) now always spawn with a net if they are one-handed, and with a throwing weapon if two-handed. They also have cosmetic face warpaint
 - **Robber** no longer spawn with a **Pike** or **Reinforced Wooden Poleflail**. They now have 60 Ranged Skill (up from 55)
 - **Bandits** no longer spawn with a **Poleflail**, **Warbrand** or **Throwing Spear**. The can now spawn with a **Reinforced Wooden Poleflail**. They now have 70 Ranged Skill (up from 60)
