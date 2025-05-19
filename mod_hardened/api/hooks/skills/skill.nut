@@ -149,7 +149,7 @@
 	}
 
 // Modular Vanilla Events
-	q.onAttackEntityMissed = @(__original) function( _attackInfo )
+	q.MV_onAttackEntityMissed = @(__original) function( _attackInfo )
 	{
 		::Hardened.Temp.LastAttackInfo = ::MSU.asWeakTableRef(_attackInfo);
 		__original(_attackInfo);
