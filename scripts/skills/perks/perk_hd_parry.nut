@@ -80,7 +80,7 @@ this.perk_hd_parry <- ::inherit("scripts/skills/skill", {
 			if (this.isSkillParryable(_skill))
 			{
 				// parryChance is an approximation of how much this perk contributed to us dodging. It's not accurate because vanilla halves the melee defense above 50
-				local parryChance = ::Math.round(this.getMeleeDefenseModifier() * ::Hardened.Temp.LastAttackInfo.TargetProperties.MeleeDefenseMult);
+				local parryChance = ::Math.round(this.getMeleeDefenseModifier() * ::Hardened.Temp.LastAttackInfo.PropertiesForDefense.MeleeDefenseMult);
 
 				// Our Parry perk was the deciding factor to make us dodge this attack
 				if (::Hardened.Temp.LastAttackInfo.Roll - parryChance <= ::Hardened.Temp.LastAttackInfo.ChanceToHit)
