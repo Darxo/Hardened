@@ -206,7 +206,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Concussive strikes** is completely reworked. It is now called **Shockwave** and it makes it so your kills or stuns with maces will daze all enemies adjacent to your target for 1 turn
 - **Crossbow and Firearm Mastery** now grants +1 Vision while you wear a Helmet with a Vision Penalty. It no longer reduces the reload cost of **Heavy Crossbows** by 1
 - **Dagger Mastery** no longer grant any reach ignore. It now reduces the action point cost of the first offhand skill each turn to 0, if your offhand item has a weight lower than 10
-- **Decisive** no longer grants +15 Initiative
+- **Decisive** no longer grants 15% more Resolve at 1 Stack
 - **Death Dealer** is completely reworked. It now grants 5% more damage with AoE-Attacks for every enemy within 2 tiles
 - **Deep Impact** is now called **Breakthrough** and has been completely reworked. It grants the **Pummel** skill, which can now be used with any hammer. It also makes it so **Shatter** has a 100% chance to knock targets back on a hit
 - **Dismantle** has been completely reworked. It now grants 100% more Shield Damage. It also grants +40% Armor Damage against enemies who have full health
@@ -214,7 +214,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Dodge** now grants 5% of Initiative as extra Melee Defense and Ranged Defense for every empty adjacent tile (down from always 15%)
 - **Double Strike** now works with ranged attacks and the damage bonus is no longer lost when you swap weapons
 - **Duelist** is completely reworked. It now only works for one-handed weapons. It grants 30% Armor Penetration and +2 Reach while adjacent to 0 or 1 enemies and it grants 15% Armor Penetration and +1 Reach while adjacent to 2 enemies
-- **Dynamic Duo** no longer grants Melee Skill or Melee Defense. It no longer reduces hitchance and damage when attacking your partner
+- **Dynamic Duo** no longer grants Melee Skill or Melee Defense. It no longer reduces hitchance and damage when attacking your partner. It now grants +20 Resolve and +20 Initaitive, while the only adjacent allies next to your and your partner are each other
 - **En Garde** is completely reworked. It now grants +10 Melee Skill while it is not your turn. It also makes it so **Riposte** is no longer disabled when you get hit or deal a counter attack (so like in Vanilla), and it recovers 1 Action Point whenever an opponent misses a melee attack against you
 - **Entrenched** has been completely reworked. It now grants +5 Resolve per adjacent ally, +5 Ranged Defense per adjacent obstacle and 15% more Ranged Skill if at least 3 adjacent tiles are allies or obstacles
 - **Exploit Opening** is completely reworked. It now grants a stacking +10% chance to hit whenever an opponent misses an attack against you. Bonus is reset upon landing a hit (just like Fast Adaptation)
@@ -224,7 +224,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you or you move away from each other
 - **Fortified Mind** now grants +25 Resolve (instead of 25% more) and you lose Resolve equal to the Weight of your Helmet
 - **Footwork** perk no longer grants **Sprint**
-- **Fresh and Furious** is completely reworked. It now makes all Attacks cost -4 Action Points. After you use any Attack during your turn, this effect gets disabled until you use **Recover**
+- **Fresh and Furious** is completely reworked. It now makes all Attacks cost -5 Action Points. After you use any Attack during your turn, this effect gets disabled until you use **Recover**
 - **From All Sides** (enemy only perk) is completely reworked. You now gain the **From all Sides** effect until the start of your next turn, after you use a Attack Skill. This effect makes you count twice for the purpose of surrounding adjacent enemies
 - **Fruits of Labor** is reworked. It now grants 5% more Hitpoints, Stamina, Resolve and Initiative
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
@@ -429,13 +429,13 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - **Nomad Robe** now has 4 Weight (up from 2)
 - **Occult Robes** now has 70 Condition (down from 75) and costs 300 Crowns (up from 190)
 - **Padded Leather** now has 10 Weight (up from 8) and costs 180 Crowns (down from 200)
-- **Padded Surcoat** now has 7 Weight (up from 4)
+- **Padded Surcoat** now has 60 Condition (up from 50), 8 Weight (up from 4) and costs 100 Crowns (up from 90)
 - **Padded Vest** now has 7 Weight (up from 5) and costs 120 Crowns (down from 140)
 - **Patched Mail Shirt** now has 100 Condition (up from 90) and 15 Weight (up from 10)
 - **Plated Nomad Mail** now has 110 Condition (up from 105), 13 Weight (up from 11) and costs 400 Crowns (up from 350)
 - **Reinforced Animal Hide Armor** now has 70 Condition (up from 65) and 11 Weight (up from 7)
 - **Reinforced Leather Armor** now has 90 Condition (down from 100), 10 Weight (up from 9) and costs 300 Crowns (down from 500)
-- **Rugged Surcoat** now has 8 Weight (up from 6)
+- **Rugged Surcoat** now has 50 Condition (down from 55), 7 Weight (up from 6) and costs 90 Crowns (down from 100)
 - **Sackcloth** now has 20 Condition (up from 10), 4 Weight (up from 0) and costs 30 Crowns (up from 20)
 - **Scrap Metal Armor** now has 80 Condition (up from 75), 12 Weight (up from 8) and costs 150 Crowns (up from 130)
 - **Southern Mail Shirt** now has 13 Weight (up from 11)
@@ -448,7 +448,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - **Wanderer's Coat** now has 60 Condition (down from 65), 7 Weight (up from 5) and costs 120 Crowns (down from 180)
 - **BasicMailShirt** now has 130 Condition (up from 115), 15 Weight (up from 12) and costs 600 Crowns (up from 450)
 - **Wizard's Robe** now has 30 Condition (up from 20), 1 Weight (up from 0) and costs 150 Crowns (up from 60)
-- **Worn Mail Shirt** now has 110 Condition (up from 105) now has 14 Weight (up from 12) and costs 350 Crowns (down from 400)
+- **Worn Mail Shirt** now has 110 Condition (up from 105), 14 Weight (up from 12) and costs 350 Crowns (down from 400)
 
 **Reforged:**
 - **Breastplate** now has 230 Condition (up from 210), 25 Weight (up from 24) and costs 4200 Crowns (up from 3600)
