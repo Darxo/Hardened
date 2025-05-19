@@ -18,6 +18,11 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.45.1
+	- **Footmen** and **Heavy Footman** lose **Exploit Opening**
+	- Fix script error during combat when someone parries
+	- Fix mercenary fight in deliver packege contrat not loading correctly
+
 0.45.0
 	- Make Hardened compatible with Reforged 0.7.7
 	- **Decisive** now grants 15% more **Initiative** instead of **Resolve** at 1 Stacks

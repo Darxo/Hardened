@@ -520,7 +520,8 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 
 **Humans:**
 - Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop Crowns, food or tools or a valueable ring
-- **Noble Footmen** lose **Shield Expert**
+- **Footmen** lose **Shield Expert** and **Exploit Opening**
+- **Heavy Footmen** lose **Exploit Opening**
 - **Mercenaries** now use Shields that are colored in their respective Banner colors
 - **Swordmaster** with **Blade Dancer** perk now only spawn with **Noble Swords**
 
