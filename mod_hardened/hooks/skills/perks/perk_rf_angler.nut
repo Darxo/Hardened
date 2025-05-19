@@ -32,18 +32,19 @@
 	}
 
 // MSU Events
-q.onQueryTooltip <- function( _skill, _tooltip )
-{
-	if (this.isSkillValid(_skill))
+	// Overwrite, because we replace Reforged queryTooltip with our own different one
+	q.onQueryTooltip = @() function( _skill, _tooltip )
 	{
-		_tooltip.push({
-			id = 100,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Will [stagger|Skill+staggered_effect] the target"),
-		});
+		if (this.isSkillValid(_skill))
+		{
+			_tooltip.push({
+				id = 100,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Will [stagger|Skill+staggered_effect] the target"),
+			});
+		}
 	}
-}
 
 // New Functions
 	q.isSkillValid <- function( _skill )
