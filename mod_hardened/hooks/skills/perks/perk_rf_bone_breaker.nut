@@ -5,12 +5,12 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_bone_breaker", function(q) {
 	// Private
 	q.m.Temp_IsInEffect <- false;	// If true, then we are in a skill hit, from a valid skill
-	q.m.Temp_InjuryMockObject <- null;		// Mockobject for the applyInjury function of actor.nut
+	q.m.Temp_InjuryMockObject <- null;		// Mockobject for the MV_applyInjury function of actor.nut
 
 	q.create = @(__original) function()
 	{
 		__original();
-		// We need to apply our effect before most other effect, because we re-implement the vanilla applyInjury logic during onTargetHit
+		// We need to apply our effect before most other effect, because we re-implement the vanilla MV_applyInjury logic during onTargetHit
 		// And some perks might expect the injury to be inflicted by that time
 		this.m.Order = ::Const.SkillOrder.Perk - 500;
 	}
@@ -24,7 +24,7 @@
 		{
 			this.m.Temp_IsInEffect = true;
 
-			this.m.Temp_InjuryMockObject = ::Hardened.mockFunction(_targetEntity, "applyInjury", function(_skill, _hitInfo) {
+			this.m.Temp_InjuryMockObject = ::Hardened.mockFunction(_targetEntity, "MV_applyInjury", function(_skill, _hitInfo) {
 				return { done = true, value = null };
 			});
 		}
@@ -60,8 +60,8 @@
 		// We need to replicate any vanilla pre-condition for even considering to apply an injury
 		if (_targetEntity.getCurrentProperties().IsAffectedByInjuries && _targetEntity.m.IsAbleToDie && hitinfo.DamageInflictedHitpoints >= ::Const.Combat.InjuryMinDamage && _targetEntity.getCurrentProperties().ThresholdToReceiveInjuryMult != 0 && hitinfo.InjuryThresholdMult != 0 && hitinfo.Injuries != null)
 		{
-			// Now we run the modularVannilla function applyInjury to atually apply an injury on the target
-			boneBreakerInjury = _targetEntity.applyInjury(_skill, hitinfo);
+			// Now we run the modularVannilla function MV_applyInjury to atually apply an injury on the target
+			boneBreakerInjury = _targetEntity.MV_applyInjury(_skill, hitinfo);
 		}
 
 		if (boneBreakerInjury != null)
