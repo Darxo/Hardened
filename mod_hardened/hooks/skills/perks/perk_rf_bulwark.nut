@@ -5,23 +5,22 @@
 		this.m.IsHidingIconMini = true;	// We hide the mini-icon to reduce bloat during battle as its existance conveys no situation-specific information
 	}
 
-	q.getTooltip = @(__original) function()
+	// Overwrite, because we have a completely different effect
+	q.getTooltip = @() function()
 	{
 		local ret = __original();
 
-		foreach (index, entry in ret)
-		{
-			if (entry.id == 11)
-			{
-				ret.remove(index);	// Remove entry about bonus against negative morale checks, as that part is removed from the perk
-				break;
-			}
-		}
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/bravery.png",
+			text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorPositive("+" + this.getBonus()) + " [Resolve|Concept.Bravery]"),
+		});
 
 		return ret;
 	}
 
-	// Overwrite, because we no longer grant a bonus against negative morale checks
+	// Overwrite, because we grant a flat bonus instead of a bonus that only works during morale checks
 	q.onUpdate = @() function( _properties )
 	{
 		_properties.Bravery += this.getBonus();
