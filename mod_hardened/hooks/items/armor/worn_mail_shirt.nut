@@ -8,7 +8,7 @@
 	{
 		__original();
 		this.m.Value = 350;				// In Vanilla this is 400
-		// this.m.ConditionMax = 110; 	// In Vanilla this is 110
+		this.m.ConditionMax = 110; 		// In Vanilla this is 110; In Reforged this is 105
 		this.m.StaminaModifier = -14; 	// In Vanilla this is -12
 
 		// If Variant is not 23, it means that another mod also adds custom variants for Worn Mail Shirts
