@@ -226,7 +226,7 @@
 		*/
 
 		// First we check, if this actor belongs to a world party
-		if (!::MSU.isNull(this.getWorldTroop()))	// We belong to a world party. If that world party does not have a usable banner, we give up
+		if (!::MSU.isNull(this.getWorldTroop()) && "Party" in this.getWorldTroop())	// We belong to a world party. If that world party does not have a usable banner, we give up
 		{
 			local bannerID = this.getWorldTroop().Party.getBannerID();
 			if (bannerID != -1)
