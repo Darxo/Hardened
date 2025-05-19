@@ -43,7 +43,7 @@
 		return 0;
 	}
 
-	q.onUpdate = @(__original) function( _properties )
+	q.onAfterUpdate = @(__original) function( _properties )
 	{
 		__original(_properties);
 		// We don't check for the same properties as Reforged, because Reforged sets the Stacks to 0 when any check fails, in which case getInitaitiveMult should return 1.0 anyways
