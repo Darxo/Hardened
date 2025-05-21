@@ -10,7 +10,7 @@
 		__original();
 		this.m.Name = "Tarnished Full Helm";	// In Vanilla this is "Decayed Great Helm"
 		this.m.Description = "A full helm dulled by age and wear, its once-proud ornamentation now twisted and corroded. It must have once belonged to a renowned knight.";
-		this.m.Condition = 240;		// In Vanilla this is 255
+		this.m.ConditionMax = 240;		// In Vanilla this is 255
 		this.m.StaminaModifier = -23; 	// In Vanilla this is -22
 
 		if (this.m.Variant == 11 || this.m.Variant == 14)	// We replace vanilla artwork, that does not actually resemble a full helm
