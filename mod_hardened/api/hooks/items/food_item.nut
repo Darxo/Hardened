@@ -6,7 +6,8 @@
 	{
 		local value = this.m.Value;
 		value *= this.HD_getShelfLifeMult();
-		return ::Math.floor(this.m.Amount / this.m.HD_MaxAmount * value);
+		value *= (this.m.Amount * 1.0 / this.m.HD_MaxAmount);
+		return ::Math.floor(value);
 	}
 
 	// Overwrite, because we make the randomization depending on new member variable
@@ -19,6 +20,6 @@
 	// Return a multiplier for this items value that is calculated from its shelf life
 	q.HD_getShelfLifeMult <- function()
 	{
-		return ::Math.minf(1.0, this.getSpoilInDays() / this.m.GoodForDays * 1.0);
+		return ::Math.minf(1.0, this.getSpoilInDays() * 1.0 / this.m.GoodForDays);
 	}
 });
