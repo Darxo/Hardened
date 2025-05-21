@@ -75,7 +75,7 @@ this.perk_hd_anchor <- ::inherit("scripts/skills/skill", {
 		{
 			this.m.IsInEffect = true;
 			this.spawnIcon("perk_hd_anchor", actor.getTile());
-			::Sound.play(::MSU.Array.rand(this.m.SoundOnHit), ::Const.Sound.Volume.Skill, actor.getPos());
+			::Sound.play(::MSU.Array.rand(this.m.SoundOnHit), ::Const.Sound.Volume.Skill * 0.7, actor.getPos(), 0.5);
 		}
 	}
 
