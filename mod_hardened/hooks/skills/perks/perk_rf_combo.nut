@@ -4,7 +4,7 @@
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_combo", function(q) {
 	// Public
-	q.m.ActionPointModifier <- -1;
+	q.m.ActionPointModifier <- -2;
 
 	// Private
 	q.m.UsedSkills <- {};	// Table of skill IDs and their skill name, that have been used this turn
