@@ -3,6 +3,8 @@
 	{
 		__original();
 
+		this.m.Condition = this.m.ConditionMax;		// We do this here so that it doesn't have to be done in the individual helmet scripts anymore
+
 		// We hook onPaint here, because it is not prevent on all helmets and we can't do the following check during regular hooking
 		if ("onPaint" in this)
 		{

@@ -5,7 +5,6 @@
 	{
 		__original();
 		this.m.Value = 5000;			// In Vanilla this is 4000
-		this.m.Condition = 300; 		// In Vanilla this is -320
 		this.m.ConditionMax = 300; 		// In Vanilla this is -320
 		this.m.StaminaModifier = -23; 	// In Vanilla this is -21
 	}
