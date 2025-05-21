@@ -24,14 +24,7 @@
 	{
 		__original(_properties);
 
-		local actor = this.getContainer().getActor();
-		switch(actor.getMoraleState())
-		{
-			case ::Const.MoraleState.Fleeing:
-				_properties.ActionPoints += this.m.FleeingActionPointModifier;
-				break;
-		}
-
+		// Give all actors additional Action Points while fleeing
 		_properties.ActionPoints += this.getFleeingActionPointModifier();
 
 		// Give player entities +1 maximum Action Point while autoretreat is on
