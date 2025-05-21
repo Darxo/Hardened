@@ -106,4 +106,19 @@
 
 		return ret;
 	}
+
+// Reforged Functions
+	q.getProjectedAttributes = @(__original) function()
+	{
+		// Fix Reforged Projection: Reforged uses actor.getStamina as basis for projected attributes, but that function always includes Weight
+		// As a solution we briefly switcheroo how that function works by redirecting it into the getStamina from currentProperties
+		local oldGetStamina = this.getStamina;
+		this.getStamina = function() { return this.getCurrentProperties().getStamina(); }
+
+		local ret =  __original();
+
+		this.getStamina = oldGetStamina;
+
+		return ret;
+	}
 });
