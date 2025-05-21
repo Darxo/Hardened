@@ -2,6 +2,8 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.ActionPointCost = 4; // Reforged: 5; Vanilla: 4
+		this.m.MaxRange = 3;		// Reforged: 2; Vanilla: 3
 		this.m.IsAttack = false;	// In Vanilla this is true
 	}
 
