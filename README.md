@@ -11,6 +11,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - 6 New Perks
 - ~90 Perks are tweaked or reworked
 - ~50 Weapons and Shields are tweaked
+- ~50 Body Armors are reworked
 - A few hundred other adjustments to enemies, ai, perk trees, skills and general mechanics
 - A plethora of Quality of Life improvements; several of them are optional
 - Dozens of minor Vanilla Fixes, including the removal of several cheese strategies
@@ -159,7 +160,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - **Sword Thrust** now has -10% additional Hitchance (up from -20%)
 - **Take Aim** (granted by **Crossbow and Firearm Mastery**) now costs 4 Action Points (up from 2) and 20 Fatigue (down from 25)
 - **Throw Axe** now has a 50% chance to decapitate (up from 0%) and 25% chance to disembowel (up from 0%)
-- **Throw Net** no longer requires the targets Base Reach to be below a certain value
+- **Throw Net** now costs 4 Action Points (down from 5), has a Range of 3 (up from 2) and no longer requires the targets Base Reach to be below a certain value
 
 Skill nerfs as a result of the Reach system:
 - **Gash** now has 0% additional Hitchance (down from 5%)
@@ -202,7 +203,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Cheap Trick** now affects all attacks of a skill, when you use it with an AoE skill
 - **Colossus** now grants +15 Hitpoints, instead of 25% more Hitpoints
 - **Command** can now be used on fleeing allies. In this case it triggers a positive morale check first. Then, if they are not fleeing, they are moved forward in the turn order, like before
-- **Combo** is reworked. It now reduces the cost of all skills you haven't used yet this turn by 1 Action Point, except the first skill you use each turn
+- **Combo** is reworked. It now reduces the cost of all skills you haven't used yet this turn by 2 Action Points, except the first skill you use each turn
 - **Concussive strikes** is completely reworked. It is now called **Shockwave** and it makes it so your kills or stuns with maces will daze all enemies adjacent to your target for 1 turn
 - **Crossbow and Firearm Mastery** now grants +1 Vision while you wear a Helmet with a Vision Penalty. It no longer reduces the reload cost of **Heavy Crossbows** by 1
 - **Dagger Mastery** no longer grant any reach ignore. It now reduces the action point cost of the first offhand skill each turn to 0, if your offhand item has a weight lower than 10
@@ -470,6 +471,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - **Feral Shield** now costs 400 Crowns (up from 50)
 - **Fangshire** will no longer spawn at the start of the game
 - **Fermented Unhold Heart** now has an expiry date of 40 days (up from 20)
+- **Goblin Poison** now has a value of 200 (up from 100)
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 1000 Value (up from 200) and grants 10 Resolve (up from 5)
 - **Reinforced Throwing Net** now has a weight of 8 (up from 2)
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**
@@ -829,7 +831,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - The amount of shield paint used by the player is now counted in the statistics flag `PaintUsedOnShields`
 - The amount of helmet paint used by the player is now counted in the statistics flag `PaintUsedOnHelmets`
 - The amount of armor attachements used by the player is now counted in the statistics flag `ArmorAttachementsApplie`
-- Body Armor `Condition` is now always set to `ConditionMax` at the end of the `create` function
+- Body Armor and Helmet `Condition` is now always set to `ConditionMax` at the end of the `create` function
 
 ### New Character Properties
 

@@ -22,7 +22,7 @@
 		__original(_item);
 		if (::Tactical.isActive() && ::Time.getRound() > 0)	// Round 0 is not interesting to us for this visibility calculation
 		{
-			// visibility is usually not changes when switching gear, but with crossbow mastery this can happen now. So we need to manually re-calculate visibility
+			// visibility is usually not changing when switching gear, but with crossbow mastery this can happen now. So we need to manually re-calculate visibility
 			this.getContainer().getActor().updateVisibilityForFaction();
 		}
 	}

@@ -18,6 +18,17 @@ This submod is a collection of changes to Reforged that I suggested internally t
 This will unbrick your end-of-combat screen, if it doesnt show
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+0.45.2
+	- **Combo** now reduces cost of unused skills by 2 Action Points (up from 1)
+	- **Throw Net** now has a Range of 3 (up from 2) and a Action Point cost of 4 (down from 5), just like in Vanilla
+	- **Goblin Poison** now has a value of 200 (up from 100)
+	- Lower pitch and volume of **Anchor** sfx
+	- Helmet Condition is now always set to `ConditionMax` at the end of the `create` function
+	- Fix food items sometimes having a sell value of 0
+	- Fix Stamina in Projected Attributes including effects from equipped Item Weight
+	- Fix fleeing actors gaining +2 Action Points instead of +1
+	- Fix **Tarnished Full Helm** not having 240 Condition
+
 0.45.1
 	- **Footmen** and **Heavy Footman** lose **Exploit Opening**
 	- Fix script error during combat when someone parries
