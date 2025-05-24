@@ -88,7 +88,7 @@ this.hd_ai_defend_stance <- this.inherit("scripts/ai/tactical/behavior", {
 						++opponentRangedCount;
 					}
 				}
-				else if (dist <= 5)
+				else if (dist <= 3 || (dist <= 6 && this.getStrategy().isDefending()))
 				{
 					local turnData = this.queryActorTurnsNearTarget(_entity, actor.getTile(), actor);
 					if (turnData.TurnsWithAttack <= 1.0)	// Can we attack opponent this turn? Then we should probably not use the stance
@@ -101,7 +101,7 @@ this.hd_ai_defend_stance <- this.inherit("scripts/ai/tactical/behavior", {
 					}
 				}
 			}
-			if (opponentMeleeCount == 0) return zero;	// There seem to be no nearby melee targets to prepare for via a Stance
+			if (opponentMeleeCount == 0 && opponentsWeCouldHit == 0) return zero;	// There seem to be no nearby melee targets to prepare for via a Stance
 
 			score *= ::Math.pow(::Const.AI.Behavior.StanceRangedTargetMult, opponentRangedCount);
 			score *= ::Math.pow(::Const.AI.Behavior.StanceRangedTargetMult, opponentsWeCouldHit);	// We just use the ranged multiplier here as it's similar to what we wanna achieve
