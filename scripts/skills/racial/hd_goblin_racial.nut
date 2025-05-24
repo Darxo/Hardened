@@ -6,8 +6,9 @@ this.hd_goblin_racial <- this.inherit("scripts/skills/skill", {
 
 	function create()
 	{
-		this.m.ID = "racial.goblin";
+		this.m.ID = "racial.HD_goblin";
 		this.m.Name = "Goblin";
+		this.m.Description = "This character is a goblin.";
 		this.m.Icon = "ui/orientation/goblin_01_orientation.png";
 		this.m.Type = ::Const.SkillType.Racial | ::Const.SkillType.StatusEffect;
 		this.m.Order = ::Const.SkillOrder.Last;
