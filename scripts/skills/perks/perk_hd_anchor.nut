@@ -1,7 +1,8 @@
 this.perk_hd_anchor <- ::inherit("scripts/skills/skill", {
 	m = {
 		// Public
-		MeleeDefenseModifier = 15,
+		MeleeDefenseModifier = 0,
+		DamageReceivedTotalMult = 0.50,		// This is the damage reduction against attacks during this actors turn
 
 		// Private
 		IsInEffect = false,		// While true, this perk will grant its immunity to Displacement
@@ -59,6 +60,16 @@ this.perk_hd_anchor <- ::inherit("scripts/skills/skill", {
 		if (this.m.IsInEffect)
 		{
 			_properties.IsImmuneToKnockBackAndGrab = true;
+		}
+	}
+
+	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	{
+		if (_skill == null || !_skill.isAttack()) return;
+
+		if (this.getContainer().getActor().isActiveEntity())
+		{
+			_properties.DamageReceivedTotalMult *= this.m.DamageReceivedTotalMult;
 		}
 	}
 
