@@ -1,0 +1,32 @@
+
+# Debugging
+
+## Unbrick End-of-combat Screen
+
+::Tactical.State.m.TacticalCombatResultScreen.show();
+
+## Check, who is fighting on the world map atm
+
+foreach (combat in ::World.Combat.m.Combats)
+{
+	::logWarning("Combat ID: " + combat.ID);
+	foreach (faction in combat.Factions)
+	{
+		if (::MSU.isNull(faction)) continue;
+
+		::MSU.Log.printData(combatant);
+	}
+}
+
+## Play Animation at the last hovered tile
+
+local tile = ::Tactical.State.m.LastTileHovered;
+if (tile != null)
+{
+	for( local i = 0; i < this.Const.Tactical.HD_PlayerDeath.len(); i = ++i )
+	{
+		local effect = this.Const.Tactical.HD_PlayerDeath[i];
+		this.Tactical.spawnParticleEffect(false, effect.Brushes, tile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 0));
+	}
+}
+

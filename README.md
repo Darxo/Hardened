@@ -85,7 +85,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 
 ### New Perks
 
-- Add new **Anchor** perk in Tier 3 of **Unstoppable Group**. It grants immunity against **Displacement** until the start of your next turn, if you end your turn on the same tile you started it on. It also grants +15 Melee Defense during your turn.
+- Add new **Anchor** perk in Tier 3 of **Unstoppable Group**. It grants immunity against **Displacement** until the start of your next turn, if you end your turn on the same tile you started it on. You also take 50% less Damage from Attacks during your turn.
 - Add new **Hybridization** perk in Tier 3 of **Ranged Group**. It allows swapping two weapons with no shared weapon types for free, once per turn. It grants +10 Melee Defense if you have at least 70 Base Ranged Skill and it grants +10 Ranged Defense, if you have at least 70 Base Melee Skill
 - Add new **Elusive** perk in Tier 2 of **Swift Group**. It reduces the AP cost for movement on all terrain by 1 to a minimum of 2. This does not stack with Pathfinder. After moving 2 tiles, become immune to rooted effects, until the start of your next turn
 - Add new **One with the Shield** perk in Tier 7 of **Shield Group**. It requires a shield. It grants 25% more Injury Threshold. While you have Shieldwall effect you take 40% less Hitpoint damage from head attack. While you don't have Shieldwall effect you take 40% less Hitpoint damage from body attacks
@@ -193,7 +193,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bestial Vigor** is completely reworked. It is now called **Backup Plan** and grants the skill **Backup Plan** which can be used once per battle to recover 7 Action Points and disable all Attack-Skills for the rest of this turn. It has been removed from the **Wildling** perk group and added to the **Tactician** perk group at Tier 2
 - **Between the Ribs** no longer requires the attack to be of piercing type. It now also lowers your chance to hit the head by 10% for each surrounding character
 - **Blitzkrieg** now costs 9 Action Points (up from 7), 50 Fatigue (up from 30), no longer requires 10 usable fatigue on the targets. It no longer has a shared cooldown with other brothers who have this perk. It is now limited to being usable once per battle instead of once per day
-- **Bloodlust** (granted by **Cleaver Mastery**) is completely reworked. It now grants 10% more damage against bleeding enemies and makes you receive 10% less damage from bleeding enemies
+- **Bloodlust** (no longer available) is completely reworked. It now grants 10% more damage against bleeding enemies and makes you receive 10% less damage from bleeding enemies
 - **Bolster** (granted by **Polearm Mastery**) now requires a Polearm equipped, instead of any weapon with a Reach of 6 or more
 - **Bone Breaker** is completely reworked. It now causes Armor Damage you deal to be treated as additional Hitpoint damage for the purpose of inflicting injuries
 - **Bow Mastery** no longer grants +1 Vision
@@ -201,6 +201,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bulwark** is completely reworked. It now grants additional Resolve equal to 5% of your current combined Head and Body Armor condition
 - **Brawny** no longer grants Initiative
 - **Cheap Trick** now affects all attacks of a skill, when you use it with an AoE skill
+- **Cleaver Mastery** is completely reworked. It still makes Cleaver Skills cost 25% less Fatigue and grants +10% Hitchance when using **Disarm**. You now deal +50% Critical Damage when hitting the Body of someone who is disarmed or who doesn't wield a Melee Weapon
 - **Colossus** now grants +15 Hitpoints, instead of 25% more Hitpoints
 - **Command** can now be used on fleeing allies. In this case it triggers a positive morale check first. Then, if they are not fleeing, they are moved forward in the turn order, like before
 - **Combo** is reworked. It now reduces the cost of all skills you haven't used yet this turn by 2 Action Points, except the first skill you use each turn
@@ -492,6 +493,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - **Lookout** no longer grants 25% more vision at all times. It now always provides a scouting report for enemies near you, just like "Band of Poachers" origin
 - **Quartermaster** now grants 150 Storage for Ammunition (up from 100) and 100 Storage for Tools and Medicine (up from 50)
 - **Scout** no longer grants 15% more movement speed. It now grants 20% more movement speed while in Forests and Swamp. It also grants 25% Vision while on hills or mountains
+- **Surgeon** now also counts Injuries treated by Bandages for its Requirement
 
 ## Enemies
 
@@ -524,7 +526,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop Crowns, food or tools or a valueable ring
 - **Footmen** lose **Shield Expert** and **Exploit Opening**
 - **Heavy Footmen** lose **Exploit Opening**
-- **Mercenaries** now use Shields that are colored in their respective Banner colors
+- **Mercenaries** now use Shields that are colored in their respective Banner colors. They now have a 30% chance to spawn with a Bandage in their bag
 - **Swordmaster** with **Blade Dancer** perk now only spawn with **Noble Swords**
 
 **Undead**
@@ -532,6 +534,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - Normal **Wiederganger** lose **Overwhelm**
 - All **Skeletons** no longer grant experience after being ressurected
 - **Fallen Heroes** no longer spawn with Morning Stars or Handaxes. They now have a 100% resurrection chance (up from 90%) but -10 Hitpoints. Champion variants lose **Nine Lives**
+- **Flesh Golems** lose **Full Force**
 - **Geists** lose **Fearsome**. They now have **Backstabber**
 - **Necromancer** lose 20 natural body armor and **Inspiring Presence**. **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)
 - **Ancient Auxiliary** lose **Battleforged**
@@ -554,20 +557,24 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 
 **Beasts:**
 - **Alps** now have **Elusive**
+- **Bog Unholds** now recover 20% of their Hitpoints per turn (up from 15%) and they can now use **Split Shield** costing 4 Action Points and dealing 50 Shield Damage
+- **Donkeys** now grant 0 XP (down from 50 XP)
+- **Frost Unholds** and **Armored Frost Unholds** now have 150 natural Body and Head Armor (up from 90). They lose **Dismantle** or **Full Force**
+- Add new **Hexen** racial effect that increases the duration of debuffs by 1 turn for the Hexe
 - Introduce new **Bite Reach** effect, which reduces headshot chance by 10% and increases chance to receive headshot by 10%
-	- This effect is given to all Dogs, Wolfs and Hyenas
+	- This effect is given to all **Dogs**, **Wolfs** and **Hyenas**
 - All **Ifrits** gain **Man of Steel**
   - **Small Ifrits** now have 55 Hitpoints (down from 110) and 165 Armor (up from 110)
   - **Medium Ifrits** now have 110 Hitpoints (down from 220) and 220 Armor (up from 110). They lose 10 Damage and gain **Marksmanship**
   - **Large Ifrits** now have 220 Hitpoints (down from 440) and 330 Armor (up from 110). They lose 10 Damage and gain **Marksmanship**
-- Lindwurms Head and Tail no longer share hitpoints and effects but killing the Tail will no longer kill the Head
-  - Lindwurm Heads now have 1000 Hitpoints (down from 1100), 20 Melee Defense (up from 10) and gain **Exude Confidence**. They lose **Formidable Approach**
-  - The Lindwurm Tail still inherits most of the stats from the head but has 50% less Hitpoints and Resolve and 50% more Melee Defense. They lose **Fearsome**
-  - The Lindwurm Tail can now be stunned and netted but those effects are removed whenever the Head moves away
+- **Lindwurms Head** and **Tail** no longer share hitpoints and effects but killing the Tail will no longer kill the Head
+  - **Lindwurm Heads** now have 1000 Hitpoints (down from 1100), 20 Melee Defense (up from 10) and gain **Exude Confidence**. They lose **Formidable Approach**
+  - The **Lindwurm Tail** still inherits most of the stats from the head but has 50% less Hitpoints and Resolve and 50% more Melee Defense. They lose **Fearsome**
+  - The **Lindwurm Tail** can now be stunned and netted but those effects are removed whenever the Head moves away
 - All **Nachzehrer** lose **Deep Cuts**
   - **Small Nachzehrer** lose 10 Melee Defense and gain **Ghostlike**
   - **Large Nachzehrer** can no longer swallow player characters while in a net. They can now also swallow the last player character who is alive
-- **Donkeys** now grant 0 XP (down from 50 XP)
+- **Unholds** and **Armored Unholds** now have 600 Hitpoints (up from 500) and recover 10% of their Hitpoints per turn (down from 15%)
 - **Schrats** no longer take 70% reduced damage while their shield is up. They now have +200 Hitpoints and gain the **One with the Shield** perk
 - **Serpent** can now hook even while rooted. They can no longer hook while engaged in melee
 
@@ -579,6 +586,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 
 ### AI
 
+- NPCs now know how to use Bandages
 - NPC ranged troops attribute a potential target 80% less score from adjacent potential scatter targets
 - Necrosavants are a bit more likely to stay on the same tile and attack twice, rather than teleport to a slightly better tile
 - Improve AI targeting for throwing nets: They value the targets melee defense twice as much and prefer isolated targets
@@ -680,6 +688,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - Automatically replace broken (shields) or used (nets) equipment after each battle, if you have replacements in your inventory
 - Add Setting (on) to display a glowing red eyes effect on any human-sized character, who is under the effect of **Killing Frenzy**, **Retribution** or has 3 stacks of **Decisive**
 - Corpses of resurrecting Zombies and Humans now emit a slight purple particle effect
+- When a Brother dies (without getting struck down), a black skull will raise from their corpse
 - Add Setting to control the zoom speed during combat to allow for more granular zooming
 - Loot that is not equippable in battle no longer appears on the ground (e.g. Beast Trophies/Ingredients)
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
@@ -688,6 +697,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - **Disarm** can no longer be used on enemies which are immune to disarm
 - **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - **Night Effect**, **Double Grip**, **Pattern Recognition**, **Bulwark** and **Man of Steel** no longer display a Mini-Icon
+- All Unhold variants now use their full name in Tooltips and the Combat Dialog
 - Add skill descriptions for all skills from the **Lorekeeper**
 - Corpses will now display the round, in which they were created
 - Print combat log for hitpoint damage dealt, when an attack kills the target and include the hitpoints of the target before the kill
@@ -727,13 +737,14 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - Add 0.8 second delay, before you can click the buttons in event screens to prevent accidental missclicks
 - The Player Banner is no longer hidden while camping
 - Add Concept and Tooltip for Day-Night Cycle
+
 - Slightly Lower the volume of the annoying kid sfx in towns
 
 ### Misc
 
 - Supplies (Crowns, Tools, Medicine, Ammo) are now consumed instantly after buying, looting
 - Quiver and Weapons that contain Ammo now display the supply cost for replacing ammunition in them
-- Add new Concepts for **Armor Penetration**, **Critical Damage**, **Displacement**, **Hitchance**, **Rally** and **Weight** and and apply these Concepts to existing weapons, items, perks skills
+- Add new Concepts for **Armor Penetration**, **Critical Damage**, **Displacement**, **Hitchance**, **Rally**, **Threat** and **Weight** and and apply these Concepts to existing weapons, items, perks skills
 - Improve tooltips of **Battleforged** perk and **Chop** skill
 - Improve Concept for **Morale**
 - Improve artwork for **Nimble** perk
@@ -752,12 +763,14 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - Remove the hidden "25% more injury threshold" for all characters when receiveing a head hit
 - You can no longer do two Arenas during the same day
 - Retreating NPCs, that are fleeing and in Zone of Control will now seek the border correctly, if possible
+- **Repel** can no longer push someone back in a 90° angle
 - Other Actors moving in or out of the range of someone with **Lone Wolf** now cause that effect to update instantly
 - Allow cut, copy and mark operations in input fields that are full. Limit Ctrl-Combinations, Delete and Arrow Key presses in input fields to one per press
 - Items that you drop during battle are now correctly re-equipped afterwards
 - Improve knock back logic for **Spiked Impaler** to behave like the Knock Back skill from shields
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
 - Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
+- IdleSounds on higher combat speed are now played less frequently than on lower combat speed
 - Hitpoints recovery on brothers is now more accurate (camping recovery fix)
 - Fix some positional effects (e.g. Lone Wolf or Entrenched) visually persisting outside of combat
 - Dying enemies no longer set the LastCombatResult to `EnemyDestroyed`, unless they were the last one to die. This fixes a rare Sunken Library exploit
@@ -830,8 +843,10 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - Add `HD_MaxAmount = 25` member for `food_item.nut` which defines the maximum amount of stacks this item can have. It is currently only supported within `randomizeAmount` and `getValue` from the same class
 - The amount of shield paint used by the player is now counted in the statistics flag `PaintUsedOnShields`
 - The amount of helmet paint used by the player is now counted in the statistics flag `PaintUsedOnHelmets`
+- The amount of Injuries Treated with Bandages is now counted under the statistics flag `InjuriesTreatedWithBandage`
 - The amount of armor attachements used by the player is now counted in the statistics flag `ArmorAttachementsApplie`
 - Body Armor and Helmet `Condition` is now always set to `ConditionMax` at the end of the `create` function
+- Add new `HD_RecoveredHitpointPct = 0.15` member for `unhold_racial` allowing you to set a variable pct of hitpoints recovered per turn
 
 ### New Character Properties
 

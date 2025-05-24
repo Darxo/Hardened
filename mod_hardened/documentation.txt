@@ -14,9 +14,31 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
-## Debug:
-This will unbrick your end-of-combat screen, if it doesnt show
-::Tactical.State.m.TacticalCombatResultScreen.show();
+0.46.0
+	- **Anchor** no longer grants +15 Melee Defense during your turn. It now makes the characters take 50% less Damage from Attacks during its turn
+	- **Cleaver Mastery** is completely reworked. It still makes Cleaver Skills cost 25% less Fatigue and grants +10% Hitchance when using **Disarm**. You now deal +50% Critical Damage when hitting the Body of someone who is disarmed or who doesn't wield a Melee Weapon
+	- **Unholds** and **Armored Unholds** now have 600 Hipoints (up from 500). They now regenerate 10% of Hitpoints each turn (down from 15%). They lose **Dismantle** or **Full Force**
+	- **Frost Unholds** and **Armored Frost Unholds** now have 150 Natural Head and Body Armor (up from 90). They lose **Dismantle** or **Full Force**
+	- **Bog Unholds** now have **Split Shield** which costs 4 Action Points and deals 50 Shield Damage. They now regenerate 20% of Hitpoints each turn (up from 15%). They lose **Dismantle** or **Full Force**
+	- Add new **Hexen Racial** effect, which makes debuff last 1 additional turn on them
+	- Mercenaries now have a 30% chance to spawn with a Bandage equipped
+	- **Flesh Golems** lose **Full Force**
+	- **Surgeon Follower** now also accepts injuries treated by Bandages for its Requirement
+	- NPCs now know how to use Bandages
+	- NPCs now need to be within 3 Tiles of someone to even consider using **Whirling Death** while not defending (down from 5 tiles)
+	- When a Brother dies (without getting struck down), a black skull will raise from their corpse
+	- Add new **Threat** Concept and utilize it in the descriptions of **Menacing**, **Tarnished Full Helm**, **Cursed Crystal Skull** and **Direwolf Pelt Mantle**
+	- All Unhold variants now use their full name in Tooltips and the Combat Dialog
+	- Spawn an Icon, when **Fresh and Furious** gets reset after using **Recover**
+	- Add simple flavor description to **Goblin Racial** effect
+	- The amount of Injuries Treated with Bandages is now counted under the statistics flag `InjuriesTreatedWithBandage`
+	- Slightly improve fatigue discount wording in some Mastery Perks
+	- Add new `HD_RecoveredHitpointPct = 0.15` member for `unhold_racial` allowing you to set a variable pct of hitpoints recovered
+	- Display the expected Shield Damage in the tooltip of **Split Shield** instead of its base shield damage
+	- IdleSounds on higher combat speed are now played less frequently than on lower combat speed
+	- Fix(Vanilla) **Repel** sometimes pushing targets back in a 90° angle
+	- Fix hostile world parties sometimes not having a red name directly after loading a game
+	- Fix rare combat freeze when ifrits combine while next to someone with **Formidable Approach** perk
 
 0.45.2
 	- **Combo** now reduces cost of unused skills by 2 Action Points (up from 1)

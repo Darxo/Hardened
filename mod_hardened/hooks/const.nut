@@ -1,5 +1,3 @@
-::Hardened.Const <- {}
-
 ::Hardened.Const.getAmmoType <- function( _ammoType )
 {
 	foreach (ammoType in ::Hardened.Const.AmmoType)

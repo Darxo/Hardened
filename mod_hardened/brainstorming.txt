@@ -70,7 +70,6 @@
 - Display vision of currently active entity, by outlining border of view field on tiles
 	- Grey out the tiles not visible to the current entity
 - New enemy skill "Gravecall" for ancient undead
-- If a Brother dies for sure, a special ghost animation could be played. Maybe something like the Geist death or a spiritual soul leaving the body towards the sky
 - new hostility state with factions, where they dont give you contracts but are not yet hostile to you
 - New effect given to defender of camps, called "Defender's Advantage". It grants +1 Vision and +10 Resolve. Maybe some other buffs. It reads "You know this place in and out, you have a natural advantage defending it"
 - new DayCreated member for locations
@@ -86,14 +85,11 @@
 	- Make Vigilant explicitely spend all your remaining AP when ending turn
 	- Make Command being able to target allies who ended their turns already (if that does not cause too many issues)
 - Auto Focus the input boxes during campaign creation. Support Enter/Backspace to move forward and backwards during that screen. Both are a bit tricky because the js code is a huge block
-- Display Reputation/Payment changes during payment negotiation
 - selling quiver returns their ammo to the player pool?
-- highlight destination locations/entities, while the player is moving towards them explicitely
 - Make brothers dying in battle more punishing, mood wise (out of combat). To prevent you disposing unwanted brothers this way or discouraging using unwanted brothers as fodder
 - Raise fatigue cost of high tier two-handed weapons beyond 15 again
 - Clean up Readme section "For Modder": add default values consitently; add new subsubsections "New Events", "General Decisions"
 - add small delay after new round, before reanimation begines (100ms) so that new-round effects are more visible
-- Give Bog Unhold split shield
 - Make Anticipation influence attacker with stuns to be more likely to attack
 - Automatically transform stamina-debuffs into fatigue-cost-increase for non-attacks
 - Make Schrat headless? Would help with one with the shield. And they dont seem to be decapitatable (check this)
@@ -112,9 +108,6 @@
 - add onGetHit sfx for obstacles and trigger those, when they are hit by an aoe attack or an strayed shot
 - melon mugger event causing a downside, when you take him. For example losing some renown
 - Play start of turn animations + sfx (e.g. inspiring presence) slightly delayed, while keeping the actual effect instant
-- barbarian:
-	- 40% chance for roaming parties to have no unholds
-	- 20% chance for camps to have no unholds
 - Add preview of affected tiles, or tiles that the target would be displaced to on success (the feature that SSU has)
 - Do a list of new mechanics
 - stackable arena fights?
@@ -125,8 +118,6 @@
 	- Make it available more common
 	- prevent it from randomly spreading
 - Hidden ZoC skill for three headed flail that only hits once (to reduce effectiveness in keeping enemies in ZoC)
-- Make hook usable on allies
-- Make many skills and attacks from within a bush reveal that character to all enemies, not just the immediate target
 - Trader Retinue: 10% more movement speed on roads
 - Make Ancient Spire enterable repeatidly. But each time you need to choose a brother, who then receives the exhausted debuff for a few days
 - After killing enemy with named gear in the arena, offer that piece for sale in the shop (maybe other gear too)
@@ -213,10 +204,14 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Hip Shooter
 	- Lose 10% Armor Penetration (remove fatigue stuff)
 - Mauler
+	- replace with "Bloodlust"
 	- replace second effect with 15% more damage when hitting body parts that have no remaining armor
 	- You deal 50% more critical damage on a hit to the body
 		- 50% seems a big too strong against something like an unhold with decapitate. But then again, thats exactly how much you'd deal on a headshot (unless they had steelbrow)
 		- Alternative: Deal +25% critical damage for every injury on the target (no matter which bodypart you target)
+- Bloodlust
+	- When you start your turn next to bleeding enemies (or maybe bleeding yourself) gain a temporary bonus depending on the amount of bleeding enemies
+		- Rewards Initiative/Adrenaline gameplay
 - Power Shot
 - Take Aim Perk (previously Power Shot)
 	- Whenever you wait or end your turn, gain a stacking +5% chance to hit. All bonus is lost, when you attack or move.
@@ -246,7 +241,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Change AI Rotation to not/rarely rotate your brothers into battle?
 - Make enemy archers prefer to use wait instead of blindly advancing, if their frontline hasn't advanced yet
 	- Make make enemy archers prefer wait during the first turn in general, if they have no target?
-- Make root skills much more likely to target someone with Unstoppable stacks (because they cancel unstoppable)
 - Lower the urge for nachzehrers to kill themselves to ZOC just to seek out a corpse
 - Make someone with **Crowded** less likely to be targeted by displacement skills (knock back/repel). That would only help those
 - If thrower uses last throwing weapon, mak them switch to melee weapon immediately
@@ -258,9 +252,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	- Problem: Vanilla allows a delay for hit sounds, but the receiving entity moan sounds have no adjustable delay
 - Enemies that gain shieldwall from shield sergeant while not visible to the player, wont lose the shieldwall animation, until some ui update happens on them (e.g. getting attacked)
 	- Can be reproduced by fighting nomads with a leader. No Idea, how exactly that is caused
-- Add a hitchance tooltip line for the native 25% hitchance bonus that knock back has in vanilla
-- prevent cheese where you can find out whether someone is hiding in a bush by trying to pathfind into that bush
-	- same thing is true for fog of war
 - footprints of barbarian kings dont seem to produce tooltip for lookout
 - keep track of non-spawning ifrits and the loot potentially lost by those an attach it to the remaining one
 - Sometimes on the World map, a single mouse wheel roll zooms the camera completely. Probably has to do with some timer running too far
@@ -272,6 +263,9 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - debug zombies
 	- No Idea, I ran out of ideas following the lead of updateVisibility calls. I assumed that Zombies pushing other zombies, after my turn starts, messes something up. But that didnt do it
 	- found kinda a potential solution, see discord
+
+
+
 - Make Mercenaries, that you help in fights, sometimes giving you one of their painted shield as a thank-you to remember them by
 
 ## Rework Training Hall
@@ -286,7 +280,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 ## Backlog
 - Reduce bleeding noise
 	- Cant fix right now, because 'refresh' only supports increased stacks by 1. Reforged suffers the same problem when inflicting 3 bleed via Gouge for example
-
 - split hyena/nachzehrer troops
 
 # WIP
@@ -309,8 +302,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 ### Fix
 - local r = this.Math.rand(100, 200) * 0.01; in send_supplies_action gets overwritten later on, causing weird rewards
 - Play other animations also slightly staggered (e.g. fleeing animation) to counter act the lag a bit
-- add debug logs for finding the end of battle bug
-- repel push angle. Streamer pushed an diagonal enemy 80° to the left
 
 ### Feature
 - Contracts which change morale/renown/relation but are not yet covered, display those in the next screen
@@ -330,6 +321,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 
 
 - shieldwall animation bug at the start of the combat
+	- Happens when you dont see them when they gain this effect
 
 - look into the debug log vanilla recently removed from skill container printing. Maybe i dont need to skip that anymore in hardened
 
@@ -350,10 +342,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	selectBestTargetTile x2 <-
 	onEvaluate x1
 
-
-
-
-
 apply
 ::MSU.Table.merge(::Const.Tactical.HitInfo, {
 	MV_ArmorRemaining = 0,
@@ -367,8 +355,6 @@ from Modular Vanilla
 	- Make it more likely to drop while at full condition
 	- make it less likely to drop while at lower condition
 	- Make items drop much closer to the condition that they had
-
-- API: hook onQueryTargetTile to implement new ai function
 
 - Make Infected Wound not heal, while no medical supplies are left
 - Make Infected Wound stop healing of all present untreated injuries, until medical supplies are there
@@ -391,7 +377,6 @@ from Modular Vanilla
 - split shield does not update the shield correctly
 - ghost fights might have to do with alliances not being created correctly. Maybe the new southern settlements interfere with the placement for hard-coded alliances
 
-
 ## Camp Rework
 - Camping requires 1-2 hours to set up
 - Effect:
@@ -411,13 +396,11 @@ from Modular Vanilla
 		return;
 	}
 
+- Mirro the reason of bad relation change for noble houses if it is because of actions against one of their settlements
 
-Look into Reforged latest changes around footmen getting Exploit Opening
-- Remove Vigorous Assault from Pillagers?
-- Outlaws no longer need vig ass now that they get it in reforged?
+- Footwork Goblin Overseer
 
-- make spider corpses a bit more transparent, less colored, so that they differ more from alive ones
-- make surgeon also unlock from using bandages
+- Remove "Throw" skill from Bog Unholds, as a result of them having split shield. Throw was one answer against shields
 
 - Make enemies blocked by 2 tiles twice as likely to divert attacks
 - Make necromancer able to retreat
@@ -428,4 +411,81 @@ Look into Reforged latest changes around footmen getting Exploit Opening
 
 - Hireable Sellswords that spawn with a shield have that in another mercenaries color scheme
 - Add mention in morale check concept about how there is a random roll happening against resolve and being influenced by adjacent allies/enemies
+
+### Poise System
+- utilize modular vanilla Ai score framework to make AI more capable of predicting stun outcomes
+- poise system log for stun breakdown: "Foo dealt X Poise Damage to Baz (Y) [, causing a Z turn stun]
+
+MOdular Vanilla:
+- also activate preview movement while AI is considering a path for (turns for attack)
+
+- make necromancer resurrect themselves and be able to cast spells then
+- make gladiator attachements a bit heavier
+
+- make camps ignore minimum distance to each other, if mountain is in between
+
+- make blunt and cutting attacks deal 2 damage to shields instead of 1
+
+- prevent paint being usable on items that already have this color (if the variant doesnt change after applying the paint, the paint is not used)
+
+- reduce brigand party loot; make individual brigands drop loot (fast = gold, ranged = ammo, tough = food, balanced = ???)
+
+- make killing frenzy/berserk AI prefer targets that they can one-shot/kill
+
+- fleeing enemies grant 100% of their xp?
+
+- turn order prediction
+	- Could be realised by slotting in a dummy/separator entity into the turn sequence bar at the very end?
+
+
+::World.Combat.m.Combats.len()
+
+foreach (combat in ::World.Combat.m.Combats)
+{
+	::logWarning("Combat ID: " + combat.ID);
+	::logWarning("combat.IsResolved: " + combat.IsResolved.tostring());
+	foreach (index, faction in combat.Factions)
+	{
+		if (faction.len() == 0) continue;
+
+		::logWarning("Faction.getName() " + ::World.FactionManager.getFaction(index).getName());
+
+		foreach (party in faction)
+		{
+			::logWarning("party.getName() " + party.getName());
+		}
+	}
+}
+
+- remove "requires throwing weapon" from toolbox?
+- give mercenaries bandage item in bag and teach them how to use it
+- Howler Monkey sfx for some kind of beast
+- Look into Marshals Armor (also armor from other types of enemies that use brigandine)
+
+- cross mod compatibility with crock pot? (vulture threat keyword)
+- anchor icon during users turn showcasing the damage reduction
+
+
+### Todo
+- attacking allies only makes them temporary enemies at first
+
+
+- Improve positioning of bag slots
+- look into swifter and how it also triples the amount of idle sounds produced by enemies
+- Feature: Manual Snapshot for brother-gear, that can be manually reset. Useful for when you swap out a lot of gear before a fight
+
+- make spider corpses a bit more transparent, less colored, so that they differ more from alive ones
+
+- API: hook onQueryTargetTile to implement new ai function
+- add debug logs for finding the end of battle bug
+
+- Add a hitchance tooltip line for the native 25% hitchance bonus that knock back has in vanilla
+- prevent cheese where you can find out whether someone is hiding in a bush by trying to pathfind into that bush
+	- same thing is true for fog of war
+- Make root skills much more likely to target someone with Unstoppable stacks (because they cancel unstoppable)
+- barbarian:
+	- 40% chance for roaming parties to have no unholds
+	- 20% chance for camps to have no unholds
+- Make many skills and attacks from within a bush reveal that character to all enemies, not just the immediate target
+- Display Reputation/Payment changes during payment negotiation
 

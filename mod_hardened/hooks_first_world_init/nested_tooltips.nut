@@ -11,7 +11,7 @@
 	)),
 	CriticalDamage = ::MSU.Class.BasicTooltip("Critical Damage", ::Reforged.Mod.Tooltips.parseString(
 		"Critical Damage refers to bonus Hitpoint Damage inflicted when striking specific body parts. This damage is applied after armor mitigation.\n\n" +
-		"By default, hits to the head deal " + ::MSU.Text.colorPositive("+50%") + " additional critical damage."
+		"By default, hits to the head deal " + ::MSU.Text.colorPositive("+50%") + " additional Critical Damage."
 	)),
 	DayTime = ::MSU.Class.BasicTooltip("Day Time", ::Reforged.Mod.Tooltips.parseString(
 		"Each day in Battle Brothers follows a cycle of distinct phases, impacting visibility, combat effectiveness, and available town services.\n\n" +
