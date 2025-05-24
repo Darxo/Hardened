@@ -169,7 +169,7 @@
 			local enemy = ::Tactical.getEntityByID(this.m.Enemies[index]);
 			if (!areRequirementsMet || ::MSU.isNull(enemy) || !enemy.isPlacedOnMap() || this.getContainer().getActor().getTile().getDistanceTo(enemy.getTile()) > 1)
 			{
-				this.unregisterEnemy(enemy);
+				this.m.Enemies.remove(index);	// We cant use unregisterEnemy here, because enemy might be null
 			}
 		}
 	}
