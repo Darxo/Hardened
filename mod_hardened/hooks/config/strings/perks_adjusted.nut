@@ -266,7 +266,6 @@ local adjustedDescriptions = [
 						"Gain the [Bloodlust|Perk+perk_rf_bloodlust] perk.",
 						"Attacks from cleavers apply an additional stack of [Bleeding.|Skill+bleeding_effect]",
 						"[Disarm|Skill+disarm_skill] gains " + ::MSU.Text.colorPositive("+10%") + " [Hitchance|Concept.Hitchance]",
-						"[Gouge|Skill+rf_gouge_skill] has a " + ::MSU.Text.colorNegative("50%") + " lower [threshold|Concept.InjuryThreshold] to inflict [injuries.|Concept.InjuryTemporary]",
 					],
 				},
 			],
