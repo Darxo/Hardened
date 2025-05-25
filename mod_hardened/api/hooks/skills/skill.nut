@@ -164,12 +164,17 @@
 	}
 
 	// Return the expected shield damage multiplier incluencing this skill, when targeting the shield of _target
-	q.getExpectedShieldDamageMult <- function( _target )
+	q.getExpectedShieldDamageMult <- function( _target = null )
 	{
 		local actor = this.getContainer().getActor();
 		local propAttacker = this.getContainer().buildPropertiesForUse(this, _target);
-		local propDefender = _target.getSkills().buildPropertiesForDefense(actor, this);
-		return propAttacker.ShieldDamageMult * propDefender.ShieldDamageReceivedMult;
+		local ret = propAttacker.ShieldDamageMult;
+		if (_target != null)
+		{
+			local propDefender = _target.getSkills().buildPropertiesForDefense(actor, this);
+			ret *= propDefender.ShieldDamageReceivedMult;
+		}
+		return ret;
 	}
 
 	/// Toggle the IsUsable flag of all skills on this character, which pass an check. If at least one skill has changed, update the entities UI
