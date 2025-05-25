@@ -1113,6 +1113,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_menacing",
+		Key = "RF_Menacing",
+		Description = ::UPD.getDescription({
+			Fluff = "Your appearance gives your enemies a bit of doubt!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive("+10") + " [Threat|Concept.Threat]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_nailed_it",
 		Key = "RF_NailedIt",
 		Description = ::UPD.getDescription({

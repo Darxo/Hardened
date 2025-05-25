@@ -31,7 +31,7 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/kills.png",
-				text = "Adjacent enemies have " + ::MSU.Text.colorizeValue(-1 * threatModifier, {AddSign = true}) + " Resolve during Morale Checks",
+				text = ::MSU.Text.colorizeValue(threatModifier, {AddSign = true}) + ::Reforged.Mod.Tooltips.parseString(" [Threat|Concept.Threat]"),
 			});
 		}
 
