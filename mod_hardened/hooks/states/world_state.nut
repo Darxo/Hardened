@@ -39,6 +39,7 @@
 		{
 			worldParty.stun(1);	// We briefly stun all surrounding characters so that they don't move during that one onUpdate call
 			worldParty.onUpdate();
+			worldParty.updatePlayerRelation();
 			worldParty.stun(0);
 		}
 		this.getPlayer().setAttackable(true);
