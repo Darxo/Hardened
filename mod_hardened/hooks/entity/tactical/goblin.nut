@@ -10,6 +10,7 @@
 		bp.MeleeDefense -= 5;
 	}
 
+// Reforged Functions
 	q.onSpawned = @(__original) function()
 	{
 		this.getSkills().add(::new("scripts/skills/racial/hd_goblin_racial"));

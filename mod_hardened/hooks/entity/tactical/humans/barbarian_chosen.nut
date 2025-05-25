@@ -1,4 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/humans/barbarian_chosen", function(q) {	// Barbarian King
+// Reforged Functions
 	q.onSpawned = @(__original) function()
 	{
 		__original();

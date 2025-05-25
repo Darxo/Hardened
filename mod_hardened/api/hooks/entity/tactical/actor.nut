@@ -334,6 +334,7 @@
 });
 
 ::Hardened.HooksMod.hookTree("scripts/entity/tactical/actor", function(q) {
+// Reforged Functions
 	q.onSpawned = @(__original) function()
 	{
 		__original();

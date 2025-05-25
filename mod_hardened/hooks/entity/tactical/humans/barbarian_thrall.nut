@@ -14,6 +14,7 @@
 		::Hardened.util.replaceBagItem(this, throwingWeapon, ["weapon.javelin"]);
 	}
 
+// Reforged Functions
 	q.onSpawned = @(__original) function()
 	{
 		__original();

@@ -6,6 +6,7 @@
 		__original();
 	}
 
+// Reforged Functions
 	q.onSpawned = @(__original) function()
 	{
 		__original();

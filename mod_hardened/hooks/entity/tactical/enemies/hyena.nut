@@ -1,4 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/hyena", function(q) {
+// Reforged Functions
 	q.onSpawned = @(__original) function()
 	{
 		__original();

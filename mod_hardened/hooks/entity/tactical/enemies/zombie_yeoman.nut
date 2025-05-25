@@ -5,6 +5,7 @@
 		this.m.Name = ::Const.Strings.EntityName[this.m.Type];	// Armored Zombies are now actually called this during combat instead of just "Zombie"
 	}
 
+// Reforged Functions
 	q.onSpawned = @(__original) function()
 	{
 		__original();

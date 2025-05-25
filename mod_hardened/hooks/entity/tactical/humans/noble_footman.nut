@@ -1,4 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/humans/noble_footman", function(q) {
+// Reforged Functions
 	q.onSpawned = @(__original) function()
 	{
 		__original();

@@ -8,6 +8,7 @@
 		this.m.MaxResurrectDelay = 3;	// In Vanilla this is 2
 	}
 
+// Reforged Functions
 	q.onSpawned = @(__original) function()
 	{
 		__original();

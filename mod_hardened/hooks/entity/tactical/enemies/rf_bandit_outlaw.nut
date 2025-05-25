@@ -25,6 +25,7 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vigorous_assault"));	// So that they can still move 2 tiles and attack, just like their lower variants
 	}
 
+// Reforged Functions
 	q.onSpawned = @(__original) function()
 	{
 		__original();

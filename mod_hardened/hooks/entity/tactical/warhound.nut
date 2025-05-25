@@ -5,6 +5,7 @@
 		this.m.SoundVolume[::Const.Sound.ActorEvent.Attack] = 0.8;
 	}
 
+// Reforged Functions
 	q.onSpawned = @(__original) function()
 	{
 		__original();

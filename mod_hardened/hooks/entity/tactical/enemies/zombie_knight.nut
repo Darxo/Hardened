@@ -12,6 +12,7 @@
 		return this.actor.onDamageReceived(_attacker, _skill, _hitInfo);
 	}
 
+// Reforged Functions
 	q.onSpawned = @(__original) function()
 	{
 		__original();
