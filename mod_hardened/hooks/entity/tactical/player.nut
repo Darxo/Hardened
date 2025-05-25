@@ -57,6 +57,24 @@
 		return ret;
 	}
 
+	q.isReallyKilled = @(__original) function( _fatalityType )
+	{
+		local ret = __original(_fatalityType);
+
+		// Feat: If any player character dies during combat, a simple death animation plays on their corpse
+		if (ret)
+		{
+			local tile = this.getTile();
+
+			foreach (effect in ::Const.Tactical.HD_PlayerDeath)
+			{
+				::Tactical.spawnParticleEffect(false, effect.Brushes, tile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 0));
+			}
+		}
+
+		return ret;
+	}
+
 	q.onMovementFinish = @(__original) function( _tile )
 	{
 		__original(_tile);
