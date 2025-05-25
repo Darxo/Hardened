@@ -22,14 +22,7 @@
 	q.onInit = @(__original) function()
 	{
 		__original();
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vigorous_assault"));	// So that they can still move 2 tiles and attack, just like their lower variants
-	}
-
-// Reforged Functions
-	q.onSpawned = @(__original) function()
-	{
-		__original();
-		// This is now always added, instead of only for certain weapon groups
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_formidable_approach"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vigorous_assault"));		// So that they can still move 2 tiles and attack, just like their lower variants
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_formidable_approach"));	// This is now always added, instead of only for certain weapon groups
 	}
 });
