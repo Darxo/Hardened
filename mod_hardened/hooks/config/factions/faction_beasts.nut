@@ -8,6 +8,7 @@
 ::Const.Tactical.Actor.Lindwurm.MeleeDefense += 15;	// In Reforged this is 5, In Vanilla this is 10
 
 // Unhold
+::Const.Tactical.Actor.Unhold.Hitpoints = 600;		// Vanilla: 500
 ::Const.Tactical.Actor.Unhold.MeleeDefense += 5;	// In Reforged this is 5, In Vanilla this is 10
 
 // UnholdBog

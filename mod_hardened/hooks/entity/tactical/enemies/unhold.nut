@@ -1,3 +1,17 @@
+::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/unhold", function(q) {
+// Reforged Functions
+	q.onSpawned = @(__original) function()
+	{
+		__original();
+
+		local racialSkill = this.getSkills().getSkillByID("racial.unhold");
+		if (racialSkill != null)
+		{
+			racialSkill.m.HD_RecoveredHitpointPct = 0.1;	// Reforged: 0.15;
+		}
+	}
+});
+
 // Since All types of unhold inherit from the base unhold script, the following will affect all unhold variants
 ::Hardened.HooksMod.hookTree("scripts/entity/tactical/enemies/unhold", function(q) {
 // Reforged Functions
