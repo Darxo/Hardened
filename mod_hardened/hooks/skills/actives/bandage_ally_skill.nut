@@ -65,6 +65,7 @@
 				if (roundsSinceAdded <= this.m.TreatableRoundWindow)
 				{
 					skill.setTreated(true);
+					::World.Statistics.getFlags().increment("InjuriesTreatedWithBandage");
 				}
 			}
 		}
