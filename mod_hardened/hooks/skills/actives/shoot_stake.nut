@@ -7,31 +7,26 @@
 	}
 
 	// Overwrite because we fix the vanilla effect sometimes not working (= only checking a single position)
-	q.findTileToKnockBackTo = @(__original) function( _userTile, _targetTile )
+	q.findTileToKnockBackTo = @() function( _userTile, _targetTile )
 	{
-		local ret = __original(_userTile, _targetTile);
-
-		if (ret == null)	// If the vanilla function was not able to find a valid position then we look again with a wider angle of valid tiles
+		local potentialTargets = [];
+		local distanceToTarget = _userTile.getDistanceTo(_targetTile);
+		foreach (potentialTile in ::MSU.Tile.getNeighbors(_targetTile))
 		{
-			local potentialTargets = [];
-			local distanceToTarget = _userTile.getDistanceTo(_targetTile);
-			foreach (potentialTile in ::MSU.Tile.getNeighbors(_targetTile))
-			{
-				if (!potentialTile.IsEmpty) continue;
-				if (_userTile.getDistanceTo(potentialTile) <= distanceToTarget) continue;	// Knock Back destinations must further away than initial target
+			if (!potentialTile.IsEmpty) continue;
+			if (_userTile.getDistanceTo(potentialTile) <= distanceToTarget) continue;	// Knock Back destinations must further away than initial target
 
-				local levelDifference = potentialTile.Level - _targetTile.Level;
-				if (levelDifference > 1) continue;
+			local levelDifference = potentialTile.Level - _targetTile.Level;
+			if (levelDifference > 1) continue;		// We can't knock back targets 2 levels upwards
 
-				potentialTargets.push(potentialTile);
-			}
-
-			if (potentialTargets.len() != 0)
-			{
-				return ::MSU.Array.rand(potentialTargets);
-			}
+			potentialTargets.push(potentialTile);
 		}
 
-		return ret;
+		if (potentialTargets.len() != 0)
+		{
+			return ::MSU.Array.rand(potentialTargets);
+		}
+
+		return null;
 	}
 });
