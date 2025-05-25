@@ -6,13 +6,6 @@
 		__original();
 	}
 
-// Reforged Functions
-	q.onSpawned = @(__original) function()
-	{
-		__original();
-		this.getSkills().removeByID("perk.shield_expert");
-	}
-
 	q.assignRandomEquipment = @(__original) function()
 	{
 		__original();
@@ -23,5 +16,12 @@
 			[1, "scripts/items/shields/worn_heater_shield"],
 		]).roll();
 		::Hardened.util.replaceOffhand(this, shield);
+	}
+
+// Reforged Functions
+	q.onSpawned = @(__original) function()
+	{
+		__original();
+		this.getSkills().removeByID("perk.shield_expert");
 	}
 });

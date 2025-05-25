@@ -1,4 +1,11 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/ghoul", function(q) {
+	q.grow = @(__original) function( _instant = false )
+	{
+		this.getSkills().removeByID("perk.rf_ghostlike");
+
+		__original(_instant);
+	}
+
 // Reforged Functions
 	q.onSpawned = @(__original) function()
 	{
@@ -10,12 +17,5 @@
 		{
 			this.getSkills().add(::new("scripts/skills/perks/perk_rf_ghostlike"));
 		}
-	}
-
-	q.grow = @(__original) function( _instant = false )
-	{
-		this.getSkills().removeByID("perk.rf_ghostlike");
-
-		__original(_instant);
 	}
 });

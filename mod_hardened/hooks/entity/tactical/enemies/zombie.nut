@@ -8,18 +8,18 @@
 		this.m.MaxResurrectDelay = 3;	// In Vanilla this is 2
 	}
 
-// Reforged Functions
-	q.onSpawned = @(__original) function()
-	{
-		__original();
-		this.getSkills().removeByID("perk.overwhelm");	// Their Worn Down perk was buffed a bit and overwhelm feels too oppressive this early on
-	}
-
 	q.onResurrected = @(__original) function( _info )
 	{
 		__original(_info);
 
 		this.getSkills().add(::new("scripts/skills/effects/hd_unworthy_effect"));	// Resurrected skeletons no longer grant any experience on death
+	}
+
+// Reforged Functions
+	q.onSpawned = @(__original) function()
+	{
+		__original();
+		this.getSkills().removeByID("perk.overwhelm");	// Their Worn Down perk was buffed a bit and overwhelm feels too oppressive this early on
 	}
 });
 
