@@ -1,3 +1,4 @@
+::MSU.AI.addBehavior("HD_Bandage_Ally", "HD.Bandage_Ally", 100, 100);
 ::MSU.AI.addBehavior("HD_Defend_Stance", "HD.Defend_Stance", ::Const.AI.Behavior.Order.Spearwall, ::Const.AI.Behavior.Score.Spearwall);
 
 // Adjusted Vanilla Values

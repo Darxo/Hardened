@@ -3,6 +3,19 @@
 	// 0 means, that an injury is only treatable during the same round
 	q.m.TreatableRoundWindow <- 1;
 
+	q.onAdded = @(__original) function()
+	{
+		__original();
+
+		local actor = this.getContainer().getActor();
+		if (actor.isPlayerControlled()) return;
+		if (actor.getAIAgent().findBehavior(::Const.AI.Behavior.ID.HD_Bandage_Ally) == null)
+		{
+			actor.getAIAgent().addBehavior(::new("scripts/ai/tactical/behaviors/hd_ai_bandage_ally"));
+			actor.getAIAgent().finalizeBehaviors();
+		}
+	}
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
