@@ -4,7 +4,6 @@
 		__original();
 
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_exude_confidence"));
-		this.getSkills().removeByID("perk.rf_formidable_approach");
 	}
 
 	q.onMovementFinish = @(__original) function( _tile )
@@ -40,6 +39,7 @@
 	q.onSpawned = @(__original) function()
 	{
 		__original();
+		this.getSkills().removeByID("perk.rf_formidable_approach");
 		this.getSkills().removeByID("perk.rf_survival_instinct");
 	}
 });
