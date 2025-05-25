@@ -12,13 +12,14 @@
 	// Replace Reforged tooltip until it gets more moddable
 	q.getTooltip = @() function()
 	{
+		// We overwrite the vanilla split_shield tooltip, because that one assumes a weapon to be equipped in the main hand
 		local ret = this.skill.getDefaultUtilityTooltip();
 
 		ret.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/shield_damage.png",
-			text = "Inflicts " + ::MSU.Text.colorDamage(this.getContainer().getActor().getMainhandItem().getShieldDamage()) + " damage to shields",
+			text = "Deal " + ::MSU.Text.colorDamage(this.getShieldDamage()) + " Shield Damage",
 		});
 
 		if (this.getMaxRange() > 1)
@@ -45,7 +46,7 @@
 			this.spawnAttackEffect(_targetTile, ::Const.Tactical.AttackEffectSplitShield);
 
 			local conditionBefore = shield.getCondition();
-			shield.applyShieldDamage(_user.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand).getShieldDamage());
+			shield.applyShieldDamage(this.getShieldDamage());
 
 			if (shield.getCondition() == 0)
 			{
@@ -93,12 +94,22 @@
 
 		if (::MSU.isNull(this.getItem())) return ret;
 
-		local expectedShieldDamage = this.getItem().getShieldDamage() * this.getExpectedShieldDamageMult(_target);
+		local expectedShieldDamage = this.getShieldDamage() * this.getExpectedShieldDamageMult(_target);
 		if (expectedShieldDamage > targetShield.getCondition())
 		{
 			ret *= 1.5;		// We strongly prefer targetting shields, that will die instantly, over those, which survive the impact
 		}
 
 		return ret;
+	}
+
+// New Functions
+	// Return the raw shield damage, that this skill in isolation would do
+	q.getShieldDamage <- function()
+	{
+		local skillItem = this.getItem();
+		if (::MSU.isNull(skillItem) || !skillItem.isItemType(::Const.Items.ItemType.Weapon)) return 0;
+
+		return skillItem.getShieldDamage();
 	}
 });
