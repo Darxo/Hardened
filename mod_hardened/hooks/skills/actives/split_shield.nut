@@ -15,11 +15,12 @@
 		// We overwrite the vanilla split_shield tooltip, because that one assumes a weapon to be equipped in the main hand
 		local ret = this.skill.getDefaultUtilityTooltip();
 
+		local expectedShieldDamage = this.getShieldDamage() * this.getExpectedShieldDamageMult();
 		ret.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/shield_damage.png",
-			text = "Deal " + ::MSU.Text.colorDamage(this.getShieldDamage()) + " Shield Damage",
+			text = "Deal " + ::MSU.Text.colorDamage(expectedShieldDamage) + " Shield Damage",
 		});
 
 		if (this.getMaxRange() > 1)
