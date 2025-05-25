@@ -13,6 +13,7 @@
 // Reforged Functions
 	q.onSpawned = @(__original) function()
 	{
+		__original();
 		this.getSkills().add(::new("scripts/skills/racial/hd_goblin_racial"));
 
 		this.getSkills().removeByID("perk.pathfinder");
