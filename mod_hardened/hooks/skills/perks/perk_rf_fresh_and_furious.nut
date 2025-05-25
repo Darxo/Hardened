@@ -68,8 +68,11 @@
 		if (this.isSkillValid(_skill) && this.getContainer().getActor().isActiveEntity())
 			this.turnEffectOff();
 
-		if (_skill.getID() == "actives.recover")
+		if (_skill.getID() == "actives.recover" && (this.m.IsSpent || this.m.RequiresRecover))
+		{
 			this.turnEffectOn();
+			this.spawnIcon("perk_rf_fresh_and_furious", _targetTile);
+		}
 	}
 
 // New Functions

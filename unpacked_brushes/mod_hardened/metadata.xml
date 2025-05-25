@@ -8,6 +8,7 @@
 	<sprite id="perk_anticipation" ic = "FF23165B" img="..\..\gfx\ui\perks\perk_anticipation.png" />
 	<sprite id="perk_hd_anchor" ic = "FF23165B" img="..\..\gfx\ui\perks\perk_hd_anchor.png" />
 	<sprite id="perk_rf_formidable_approach" ic = "FF23165B" img="..\..\gfx\ui\perks\perk_rf_formidable_approach.png" />
+	<sprite id="perk_rf_fresh_and_furious" ic = "FF23165B" img="..\..\gfx\ui\perks\perk_rf_fresh_and_furious.png" />
 
 	<sprite id="perk_hd_anchor_mini" ic = "FF23165B" img="mini\perk_hd_anchor_mini.png" />
 	<sprite id="perk_hd_elusive_mini" ic = "FF23165B" img="mini\perk_hd_elusive_mini.png" />
