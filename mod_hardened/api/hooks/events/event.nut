@@ -1,4 +1,4 @@
-::Hardened.HooksMod.hook("scripts/contracts/contract", function(q) {
+::Hardened.HooksMod.hook("scripts/events/event", function(q) {
 	// Private
 	q.m.BufferedListItems <- [];	// Array of Tables, defining changes that need to be displayed in the next possible screen as they happened in response to an option
 	q.m.IsProcessingInput <- false;		// Is true, while we are calling getResult from the chosen contract option
@@ -11,10 +11,10 @@
 		return ret;
 	}
 
-	q.setScreen = @(__original) function( _screen, _restartIfAlreadyActive = true )
+	q.setScreen = @(__original) function( _screen )
 	{
 		this.m.IsProcessingInput = false;	// since setScreen may be called during processInput and marks the end of the input-procession, we have to set it to false here too
-		__original(_screen, _restartIfAlreadyActive);
+		__original(_screen);
 	}
 
 // New Functions
@@ -27,7 +27,7 @@
 		}
 		else
 		{
-			this.getActiveScreen().List.push(_listItem);
+			this.m.ActiveScreen.List.push(_listItem);
 		}
 	}
 
@@ -37,28 +37,23 @@
 	}
 });
 
-::Hardened.HooksMod.hookTree("scripts/contracts/contract", function(q) {
+::Hardened.HooksMod.hookTree("scripts/events/event", function(q) {
 	// We make sure that all screens of all contracts contain at least an empty start() function
-	q.createScreens = @(__original) function()
+	q.create = @(__original) function()
 	{
 		__original();
 		foreach (screen in this.m.Screens)
 		{
-			if (!("start" in screen))
-			{
-				screen.start <- function() {};
-			}
-
-			local oldStart = screen.start;
-			screen.start = function() {
-				oldStart();
+			local oldStart = screen.start;	// Events are guaranteed to have at least an empty start() function
+			screen.start = function( _event ) {
+				oldStart(_event);
 
 				// We add bufferedListItems from the previous screen to this list
-				foreach (bufferedListItem in this.Contract.m.BufferedListItems)
+				foreach (bufferedListItem in _event.m.BufferedListItems)
 				{
 					this.List.push(bufferedListItem);
 				}
-				this.Contract.m.BufferedListItems = [];
+				_event.m.BufferedListItems = [];
 			}
 		}
 	}
