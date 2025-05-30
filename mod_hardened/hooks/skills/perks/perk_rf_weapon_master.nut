@@ -1,4 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_weapon_master", function(q) {
+	// Public
+	q.m.AdditionalBagSlots <- 1;
+
 	q.create = @(__original) function()
 	{
 		__original();
@@ -35,5 +38,11 @@
 		}
 
 		return __original(_item);
+	}
+
+	q.onUpdate = @(__original) function( _properties )
+	{
+		__original(_properties);
+		_properties.BagSlots += this.m.AdditionalBagSlots;
 	}
 });
