@@ -1,6 +1,37 @@
 ::Hardened.HooksMod.hook("scripts/factions/faction", function(q) {
+	// Public
+	q.m.RelationChangesMax <- 6;	// maximum amount of relation change strings allowed to exist at once
+
 	// Private
 	q.m.HD_LastSpawnedParty <- null;	// weakref to the last party, spawned by this factions spawnEntity function
+
+	// Vanilla Fix: Relationship changes are no longer rounded
+	// Overwrite, because we can't easily apply the fix
+	q.addPlayerRelationEx = @() function( _r, _reason = "" )
+	{
+		this.m.PlayerRelation = ::Math.clampf(this.m.PlayerRelation + _r, 0.0, 100.0);
+		this.updatePlayerRelation();
+
+		if (_reason == "") return;
+
+		if (this.m.PlayerRelationChanges.len() >= 1 && this.m.PlayerRelationChanges[0].Text == _reason)
+		{
+			this.m.PlayerRelationChanges[0].Time = ::Time.getVirtualTimeF();
+		}
+		else
+		{
+			if (this.m.PlayerRelationChanges.len() >= this.m.RelationChangesMax)
+			{
+				this.m.PlayerRelationChanges.remove(this.m.PlayerRelationChanges.len() - 1);
+			}
+
+			this.m.PlayerRelationChanges.insert(0, {
+				Positive = _r >= 0 ? true : false,
+				Text = _reason,
+				Time = ::Time.getVirtualTimeF()
+			});
+		}
+	}
 
 	q.spawnEntity = @(__original) function( _tile, _name, _uniqueName, _template, _resources, _minibossify = 0 )
 	{
