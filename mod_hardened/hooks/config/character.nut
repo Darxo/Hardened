@@ -34,6 +34,7 @@ local oldGetClone = ::Const.CharacterProperties.getClone;
 ::Const.CharacterProperties.WeightInitiativeMult[::Const.ItemSlot.Bag] = 0.5;
 
 // New Values
+::Const.CharacterProperties.BagSlots <- 2;	// In Vanilla this is 4 for NPCs, but we normalize it to 2 for every character
 ::Const.CharacterProperties.ShowFrenzyEyes <- false;
 ::Const.CharacterProperties.CanEnemiesHaveReachAdvantage <- true;
 ::Const.CharacterProperties.ReachAdvantageMult <- ::Reforged.Reach.ReachAdvantageMult;
