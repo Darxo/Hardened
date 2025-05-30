@@ -6,7 +6,7 @@
 	}
 
 	// Overwrite, because we have a completely different effect
-	q.getTooltip = @() function()
+	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
 
