@@ -250,6 +250,12 @@
 					});
 				}
 			}
+
+			// Feat: show hitchance tooltip when moving out of zone of control
+			if (::MSU.isKindOf(activeEntity, "player") && activeEntity.isPlayerControlled())
+			{
+				activeEntity.getZOCHitFactors(ret);
+			}
 		}
 
 		return ret;
