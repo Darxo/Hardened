@@ -13,7 +13,12 @@
 	// Overwrite because we no longer grant melee defense
 	q.onUpdate = @() function( _properties )
 	{
-		_properties.BagSlots += this.m.AdditionalBagSlots;
+		// This perk does not work, while the character has weapon master to prevent item slots changing during combat
+		if (!this.getContainer().hasSkill("perk.rf_weapon_master"))
+		{
+			_properties.BagSlots += this.m.AdditionalBagSlots;
+		}
+
 		_properties.MeleeSkill += this.getMeleeBonus();
 	}
 

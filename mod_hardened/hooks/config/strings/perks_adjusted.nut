@@ -975,12 +975,11 @@ local adjustedDescriptions = [
 		Key = "RF_Hybridization",	// This is now called "Toolbox"
 		Description = ::UPD.getDescription({
 			Fluff = "Every tool has its use.",
-			Requirement = "Throwing Weapon",
 			Effects = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Unlock one extra [bag slot|Concept.BagSlots]",
+						"Unlock one extra [bag slot.|Concept.BagSlots] This does not work if you have [Weapon Master|Perk+perk_rf_weapon_master]",
 						"Piercing type throwing attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body",
 						"Cutting type throwing attacks apply [Overwhelmed|Skill+overwhelmed_effect]",
 						"Headshots with blunt type throwing attacks apply [Staggered.|Skill+staggered_effect] All hits with blunt type throwing attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
