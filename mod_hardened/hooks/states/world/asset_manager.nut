@@ -6,11 +6,15 @@
 		if (_f == 0) return;
 
 		local activeScreen = null;
-		if(::World.Contracts.getActiveContract() != null)
+		if (::World.Contracts.m.IsEventVisible)
+		{
+			activeScreen = ::World.Contracts.getActiveContract().m.LastShown;
+		}
+		else if (::World.Contracts.getActiveContract() != null)
 		{
 			activeScreen = ::World.Contracts.getActiveContract().m.ActiveScreen;
 		}
-		else if(::World.Events.m.ActiveEvent != null)
+		else if (::World.Events.m.ActiveEvent != null)
 		{
 			activeScreen = ::World.Events.m.ActiveEvent.m.ActiveScreen;
 		}

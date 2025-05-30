@@ -55,7 +55,11 @@
 
 		// If the player gains Relation during an active Contract or Event, we locate the active screen so we can try to push a list entry into it showcasing the change
 		local activeScreen = null;
-		if(::World.Contracts.getActiveContract() != null)
+		if (::World.Contracts.m.IsEventVisible)
+		{
+			activeScreen = ::World.Contracts.getActiveContract().m.LastShown;
+		}
+		else if (::World.Contracts.getActiveContract() != null)
 		{
 			activeScreen = ::World.Contracts.getActiveContract().m.ActiveScreen;
 		}
