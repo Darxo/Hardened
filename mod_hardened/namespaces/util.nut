@@ -143,3 +143,10 @@
 		}
 	}
 }
+
+::Hardened.util.intToHex <- function( _unsignedInteger )
+{
+	local ret = format("%x", _unsignedInteger);
+	if (ret.len() == 1) ret = "0" + ret;
+	return ret;
+}
