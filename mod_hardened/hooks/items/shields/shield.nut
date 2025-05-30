@@ -47,6 +47,19 @@
 		return 1.0;	// Fatigue no longer affects the shield defense in any way
 	}
 
+// Hardened Functions
+	q.HD_getSilhouette = @(__original) function()
+	{
+		if (::Hardened.Mod.ModSettings.getSetting("ShowShieldSilhouettes").getValue())
+		{
+			return __original();
+		}
+		else
+		{
+			return null;
+		}
+	}
+
 // New Functions
 	// Save the reforged shield condition
 	// Calculate the multiplier on how well this named shields condiiton rolled

@@ -34,4 +34,12 @@
 	{
 		return null;
 	}
+
+	// @return the brush name of the silhouette that should be displayed for when this item is in a bag slot
+	// @return null if no brush exists to be displayed
+	// @return null if no silhouette should be displayed (e.g. due to mod settings)
+	q.HD_getSilhouette <- function()
+	{
+		return this.HD_getBrush();
+	}
 });

@@ -1,6 +1,8 @@
 ::Hardened.Global.lastGeneratedNames <- array(5, "");	// Array of the last 5 generated names from the generateName of a human
 
 ::Hardened.HooksMod.hookTree("scripts/entity/tactical/human", function(q) {
+	q.m.HD_BagSlotSpriteName <- "HD_BagSlotSprite_";
+
 	q.create = @(__original) function()
 	{
 		__original();

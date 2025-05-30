@@ -71,6 +71,14 @@
 		return ret;
 	}
 
+	q.HD_getSilhouette = @(__original) function()
+	{
+		if (this.m.ShowArmamentIcon)
+			return __original();
+		else
+			return null;
+	}
+
 // New Functions
 	q.isHybridWeapon <- function()
 	{

@@ -118,3 +118,36 @@
 	continuousWaitKeybindSetting.addAfterChangeCallback(continuousWaitKeybindCallback);
 
 }
+
+// QOL: Misc
+{
+	local qolMiscPage = ::Hardened.Mod.ModSettings.addPage("Misc (QoL)");
+
+	local silhouetteCallback = function( _oldValue )	// We need to update all characters so that these changes take effect
+	{
+		if (!::MSU.Utils.hasState("world_state") && !::MSU.Utils.hasState("tactical_state")) return;	// otherwise the game crashes when changing settings in main menu
+
+		if (::MSU.Utils.hasState("world_state"))
+		{
+			foreach (brother in ::World.getPlayerRoster().getAll())
+			{
+				brother.getSkills().update();
+				brother.setDirty(true);
+			}
+		}
+		else if (::MSU.Utils.hasState("tactical_state"))
+		{
+			foreach (actor in ::Tactical.Entities.getAllInstancesAsArray())
+			{
+				actor.getSkills().update();
+				brother.setDirty(true);
+			}
+		}
+	}
+
+	qolMiscPage.addRangeSetting("BagSilhouetteAlpha", 200, 0, 255, 5, "Bag Silhouette Alpha", "This controls the alpha value of the bag item silhouettes during combat only. In the character screen they always show up with an alpha of 255. A value of 0 makes them invisible everywhere and effectively turns off this feature.").addAfterChangeCallback(silhouetteCallback);
+	qolMiscPage.addRangeSetting("BagSilhouetteColor", 60, 0, 255, 5, "Bag Silhouette Color", "This controls the color value of the bag item silhouettes. A value of 0 makes item completely black while a value of 255 keeps its original color.").addAfterChangeCallback(silhouetteCallback);
+	qolMiscPage.addBooleanSetting("ShowShieldSilhouettes", false, "Show Shield Silhouettes", "Display silhouettes for shields in your bag slots. These sprites might look most out of place, so not everone might want them to show up").addAfterChangeCallback(silhouetteCallback);
+
+	qolMiscPage.addDivider("MiscDivider1");
+}

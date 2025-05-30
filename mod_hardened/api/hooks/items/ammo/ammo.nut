@@ -7,4 +7,12 @@
 		else
 			return this.m.Sprite;
 	}
+
+	q.HD_getSilhouette = @(__original) function()
+	{
+		if (this.m.ShowQuiver)
+			return __original();
+		else
+			return null;
+	}
 });

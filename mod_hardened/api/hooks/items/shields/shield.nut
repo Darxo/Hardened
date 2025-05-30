@@ -43,6 +43,18 @@
 			return sprite;
 	}
 
+	q.HD_getSilhouette = @(__original) function()
+	{
+		if (this.m.ShowOnCharacter)
+		{
+			return __original();
+		}
+		else
+		{
+			return null;
+		}
+	}
+
 // New Functions
 	q.getBraveryModifier <- function()
 	{
