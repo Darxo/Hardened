@@ -199,15 +199,16 @@
 	{
 		local ret = __original();
 
-		// Setting: No longer show the tooltips for tiles, while it is not the turn of the player
-		if (::Hardened.Mod.ModSettings.getSetting("HideTileTooltipsDuringNPCTurn").getValue())
-		{
-			local activeEntity = ::Tactical.TurnSequenceBar.getActiveEntity();
-			if (activeEntity == null || !activeEntity.isPlayerControlled()) return null;
-		}
-
 		if (ret != null)
 		{
+			local activeEntity = ::Tactical.TurnSequenceBar.getActiveEntity();
+			// Setting: No longer show the tooltips for tiles, while it is not the turn of the player
+			if (::Hardened.Mod.ModSettings.getSetting("HideTileTooltipsDuringNPCTurn").getValue())
+			{
+				if (activeEntity == null || !activeEntity.isPlayerControlled()) return null;
+			}
+
+			// Feat: show round number when the corpse on this tile was slain
 			local lastTileHovered = ::Tactical.State.getLastTileHovered();
 			if (lastTileHovered.IsCorpseSpawned)
 			{
@@ -221,6 +222,7 @@
 				}
 			}
 
+			// Feat: show duration of tile effect as a tooltip
 			// Straight up copy of vanilla condition. I didnt bother rewriting/inverting it yet
 			if (lastTileHovered.IsDiscovered && !lastTileHovered.IsEmpty && (!lastTileHovered.IsOccupiedByActor || lastTileHovered.IsVisibleForPlayer))
 			{
