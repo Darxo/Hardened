@@ -1,0 +1,9 @@
+.character-screen-container .paperdoll-module .l-backpack-row.has-slot-1
+{
+	left: 13.3rem;	/* calculation is hard-coded, like vanilla did it for slot-2 and slot-4 */
+}
+
+.character-screen-container .paperdoll-module .l-backpack-row.has-slot-3
+{
+	left: 5.9rem;	/* calculation is hard-coded, like vanilla did it for slot-2 and slot-4 */
+}
