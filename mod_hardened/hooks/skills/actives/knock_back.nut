@@ -1,4 +1,10 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/knock_back", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.HitChanceBonus = 25;	// This is a purely cosmetic change so that the hardcoded vanilla hitchance bonus shows up in the hitchance preview
+	}
+
 	// We hook onUse to display the exact hitchances of knock_back in the log and even produce a log on a miss
 	q.onUse = @(__original) function( _user, _targetTile )
 	{
