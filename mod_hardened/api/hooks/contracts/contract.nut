@@ -35,6 +35,17 @@
 	{
 		this.m.BufferedListItems.push(_listItem);
 	}
+
+	// This is triggered, just before the start() of a new screen is triggered
+	q.onBeforeStart <- function( _screen )
+	{
+		// We add bufferedListItems from the previous screen to this list
+		foreach (bufferedListItem in this.m.BufferedListItems)
+		{
+			_screen.List.push(bufferedListItem);
+		}
+		this.m.BufferedListItems = [];
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/contracts/contract", function(q) {
@@ -49,16 +60,14 @@
 				screen.start <- function() {};
 			}
 
-			local oldStart = screen.start;
-			screen.start = function() {
-				oldStart();
-
-				// We add bufferedListItems from the previous screen to this list
-				foreach (bufferedListItem in this.Contract.m.BufferedListItems)
-				{
-					this.List.push(bufferedListItem);
+			if (!("HD_hookedOnBeforeStart" in screen))
+			{
+				screen.HD_hookedOnBeforeStart <- true;
+				local oldStart = screen.start;
+				screen.start = function() {
+					this.Contract.onBeforeStart(this);
+					oldStart();
 				}
-				this.Contract.m.BufferedListItems = [];
 			}
 		}
 	}
