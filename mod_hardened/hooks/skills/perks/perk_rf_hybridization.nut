@@ -1,7 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_hybridization", function(q) {	// This has been renamed into "Toolbox"
 	// Public
+	q.m.AdditionalBagSlots <- 1;
 	q.m.ThrowingSpearShieldDamageMult <- 2.0;
-	q.m.HD_UnlockedBagSlots <- 3;
 
 	q.create = @(__original) function()
 	{
@@ -13,35 +13,8 @@
 	// Overwrite because we no longer grant melee defense
 	q.onUpdate = @() function( _properties )
 	{
+		_properties.BagSlots += this.m.AdditionalBagSlots;
 		_properties.MeleeSkill += this.getMeleeBonus();
-
-		local items = this.getContainer().getActor().getItems();
-		if (items.getUnlockedBagSlots() < this.m.HD_UnlockedBagSlots)	// We don't want to overwrite the effects of other bag effects
-		{
-			// Since currently the maximum bagslots is 4 and every other bagslot perk grants only +1 Bagslot, we don't have to do addition here
-			items.setUnlockedBagSlots(this.m.HD_UnlockedBagSlots)
-		}
-	}
-
-	q.onRemoved = @(__original) function()
-	{
-		__original();
-
-		local items = this.getContainer().getActor().getItems();
-		// If our bags size is higher than HD_UnlockedBagSlots, then that means another perk is still providing some and we can skip the remove logic
-		// If our bag size is lower than HD_UnlockedBagSlots, then nothing can be in slot 3. That case makes no sense currently though
-		if (items.getUnlockedBagSlots() == this.m.HD_UnlockedBagSlots)
-		{
-			// Recover items from the third bag slots when this perk is removed. This is a copy of how vanilla does it in bags_and_belts
-			local item = items.getItemAtBagSlot(2);
-			if (item != null)
-			{
-				items.removeFromBag(item);
-				::World.Assets.getStash().add(item);
-			}
-
-			items.setUnlockedBagSlots(2);
-		}
 	}
 
 	q.onAnySkillUsed = @(__original) function( _skill, _targetEntity, _properties )
