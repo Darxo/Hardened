@@ -56,6 +56,21 @@
 		this.m.Ammo = ::Math.min(this.m.Ammo, this.m.AmmoMax);	// Prevent Ammo from ever being larger than AmmoMax
 	}
 
+// Hardened Functions
+	q.HD_getBrush = @(__original) function()
+	{
+		if (this.m.ArmamentIcon == "") return __original();
+
+		local ret = this.m.ArmamentIcon;
+
+		if (this.m.IsBloodied && ::doesBrushExist(ret + "_bloodied"))
+		{
+			ret += "_bloodied";
+		}
+
+		return ret;
+	}
+
 // New Functions
 	q.isHybridWeapon <- function()
 	{

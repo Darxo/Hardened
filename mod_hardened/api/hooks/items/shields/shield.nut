@@ -25,6 +25,24 @@
 		_properties.Bravery += this.getBraveryModifier();
 	}
 
+// Hardened Functions
+	q.HD_getBrush = @(__original) function()
+	{
+		if (this.m.ConditionMax == 0) return __original();	// to prevent division by 0
+
+		local sprite = "";
+
+		if (this.m.Condition / (this.m.ConditionMax * 1.0) <= ::Const.Combat.ShowDamagedShieldThreshold)
+			sprite = this.m.SpriteDamaged;
+		else
+			sprite = this.m.Sprite;
+
+		if (sprite == "")
+			return __original();
+		else
+			return sprite;
+	}
+
 // New Functions
 	q.getBraveryModifier <- function()
 	{

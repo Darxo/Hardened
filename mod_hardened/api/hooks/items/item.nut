@@ -27,4 +27,11 @@
 	{
 		return this.isItemType(::Const.Items.ItemType.Named);
 	}
+
+	// @return the brush name of this item, if it exists
+	// @return null otherwise
+	q.HD_getBrush <- function()
+	{
+		return null;
+	}
 });
