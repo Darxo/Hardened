@@ -5,27 +5,23 @@
 
 		if (_f == 0) return;
 
-		local activeScreen = null;
+		local activeObject = null;
 		if (::World.Contracts.m.IsEventVisible)
 		{
-			activeScreen = ::World.Contracts.getActiveContract().m.LastShown;
-		}
-		else if (::World.Contracts.getActiveContract() != null)
-		{
-			activeScreen = ::World.Contracts.getActiveContract().m.ActiveScreen;
+			activeObject = ::World.Contracts.m.LastShown;
 		}
 		else if (::World.Events.m.ActiveEvent != null)
 		{
-			activeScreen = ::World.Events.m.ActiveEvent.m.ActiveScreen;
+			activeObject = ::World.Events.m.ActiveEvent;
 		}
 
-		if (activeScreen != null)
+		if (activeObject != null)
 		{
 			// We push a notification about the just gained renown into the current contract screen list, so the player has accurate information about it
-			activeScreen.List.push({
+			activeObject.addListItem({
 				id = 30,
 				icon = "ui/icons/ambition_tooltip.png",
-				text = format("You %s %s Renown", _f > 0 ? "gain" : "lose", ::MSU.Text.colorizeValue(::Math.round(_f))),
+				text = format("You %s %s Renown", _f > 0 ? "gain" : "lose", ::MSU.Text.colorizeValue(_f)),
 			});
 		}
 	}

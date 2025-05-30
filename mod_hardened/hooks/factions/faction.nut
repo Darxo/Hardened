@@ -79,35 +79,39 @@
 });
 
 ::Hardened.HooksMod.hookTree("scripts/factions/faction", function(q) {
-	q.addPlayerRelation = @(__original) function( _r, _reason = "" )
+	q.addPlayerRelationEx = @(__original) function( _r, _reason = "" )
 	{
 		__original(_r, _reason);
-		if (_r == 0) return;
+		this.tryListRelationChange(_r);
+	}
+
+// New Function
+	q.tryListRelationChange <- function( _change )
+	{
+		if (_change == 0) return;
 
 		// If the player gains Relation during an active Contract or Event, we locate the active screen so we can try to push a list entry into it showcasing the change
-		local activeScreen = null;
+		local activeObject = null;
 		if (::World.Contracts.m.IsEventVisible)
 		{
-			activeScreen = ::World.Contracts.getActiveContract().m.LastShown;
-		}
-		else if (::World.Contracts.getActiveContract() != null)
-		{
-			activeScreen = ::World.Contracts.getActiveContract().m.ActiveScreen;
+			activeObject = ::World.Contracts.m.LastShown;
 		}
 		else if (::World.Events.m.ActiveEvent != null)
 		{
-			activeScreen = ::World.Events.m.ActiveEvent.m.ActiveScreen;
+			activeObject = ::World.Events.m.ActiveEvent;
 		}
 
-		if (activeScreen != null)
+		if (activeObject != null)
 		{
-			// Currently this does not include overview and negotiation screens
+			::MSU.Text.colorizeValue(_change)
+
+			_change = ::Math.round(_change * 10.0) / 10.0;	// We round _change up to 1 decimal place
 
 			// We push a notification about the just gained renown into the current contract screen list, so the player has accurate information about it
-			activeScreen.List.push({
+			activeObject.addListItem({
 				id = 30,
 				icon = "ui/icons/relations.png",
-				text = format("You %s %s Relation with %s", _r > 0 ? "gain" : "lose", ::MSU.Text.colorizeValue(_r), this.getName()),
+				text = format("You %s %s Relation with %s", _change > 0 ? "gain" : "lose", ::MSU.Text.colorizeValue(_change), this.getName()),
 			});
 		}
 	}
