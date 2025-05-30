@@ -1,3 +1,67 @@
+::Hardened.HooksMod.hook("scripts/contracts/contract", function(q) {
+	// Private
+	// Contains the amount of crowns we were promised in the previous screen
+	q.m.HD_Advance <- null;
+	q.m.HD_Completion <- null;
+	q.m.HD_PerHead <- null;
+
+	q.clear = @(__original) function()
+	{
+		__original();
+		this.m.HD_Advance = null;
+		this.m.HD_Completion = null;
+		this.m.HD_PerHead = null;
+	}
+
+	q.onBeforeStart = @(__original) function( _screen )
+	{
+		__original(_screen);
+
+		// We don't show negotiation changes during the first screen as it had not yet had a chance to go collect the previous values
+		if (this.m.HD_Advance == null) return;	// If any of the three member is null, all are null
+
+		// Feat: display changes to negotiated payment
+		if (this.m.HD_Advance != this.m.Payment.getInAdvance())
+		{
+			local difference = this.m.Payment.getInAdvance() - this.m.HD_Advance;
+			_screen.List.push({
+				id = 20,
+				icon = "ui/icons/asset_money.png",
+				text = "You negotiated " + ::MSU.Text.colorizeValue(difference, {AddSign = true}) + " Crowns in Advance",
+			});
+		}
+
+		if (this.m.HD_Completion != this.m.Payment.getOnCompletion())
+		{
+			local difference = this.m.Payment.getOnCompletion() - this.m.HD_Completion;
+			_screen.List.push({
+				id = 21,
+				icon = "ui/icons/asset_money.png",
+				text = "You negotiated " + ::MSU.Text.colorizeValue(difference, {AddSign = true}) + " Crowns for Completion",
+			});
+		}
+
+		if (this.m.HD_PerHead != this.m.Payment.getPerCount())
+		{
+			local difference = this.m.Payment.getPerCount() - this.m.HD_PerHead;
+			_screen.List.push({
+				id = 22,
+				icon = "ui/icons/asset_money.png",
+				text = "You negotiated " + ::MSU.Text.colorizeValue(difference, {AddSign = true}) + " Crowns per Head",
+			});
+		}
+	}
+
+	q.processInput = @(__original) function( _option )
+	{
+		this.m.HD_Advance = this.m.Payment.getInAdvance();
+		this.m.HD_Completion = this.m.Payment.getOnCompletion();
+		this.m.HD_PerHead = this.m.Payment.getPerCount();
+
+		return __original(_option);
+	}
+});
+
 ::Hardened.HooksMod.hookTree("scripts/contracts/contract", function(q) {
 	/*
 	We have a feature, where Renown/Reputation/Relation changes will be pushed as list-items into the currently viewed Contract/Event screen
