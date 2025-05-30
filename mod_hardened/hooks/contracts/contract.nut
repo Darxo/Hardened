@@ -18,13 +18,28 @@
 		- For example the Bandit Camp twitch with the Robber Baron likes to bug out
 	*/
 
+	// Private
+	q.m.ScreensToPostpone <- [	// Screen IDs start with these phrases, will be postponed
+		"Success",
+		"Negotiation.Fail",
+	];
+
 	q.createScreens = @(__original) function()
 	{
 		__original();
 		foreach (screen in this.m.Screens)
 		{
 			if (screen.Options.len() != 1) continue;
-			if (screen.ID.find("Success") != 0) continue;	// ID must start with "Success*". Those are the most important and safest screens to manipulate
+
+			local skipScreen = true;
+			foreach (screenId in this.m.ScreensToPostpone)
+			{
+				if (screen.ID.find(screenId) != 0) continue;	// ID must start with one of our hand-picked phrases. Those are the most important and safest screens to manipulate
+				skipScreen = false;
+				break;
+			}
+			if (skipScreen) continue;
+
 			if ("HD_screen_hooked" in screen) continue;
 
 			screen.HD_screen_hooked <- true;	// Otherwise we accidentally hook negotiation and intro contract screens multiple times
