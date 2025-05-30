@@ -9,6 +9,7 @@
 		{
 			if (entry.id == 15 && entry.icon == "ui/icons/special.png")
 			{
+				entry.icon = "ui/icons/kills.png";
 				entry.text = ::MSU.Text.colorizeValue(this.m.ThreatModifier, {AddSign = true}) + ::Reforged.Mod.Tooltips.parseString(" [Threat|Concept.Threat]");
 				break;
 			}
