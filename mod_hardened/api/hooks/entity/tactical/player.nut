@@ -16,9 +16,20 @@
 		if (this.getCurrentProperties().IsImmuneToZoneOfControl) return;
 
 		if (!this.isPlacedOnMap()) return;
-		if (this.getTile().getZoneOfControlCountOtherThan(this.getAlliedFactions()) == 0) return;
 		if (this.getTile().Properties.Effect != null && this.getTile().Properties.Effect.Type == "smoke") return;	// onMovementInZoneOfControl does not check for this, so we do it here now
 		if (!this.isPreviewing() || this.getPreviewMovement() == null) return;	// We only show the ZOC hitfactors, if this actor is previewing movement
+
+		if (this.getTile().getZoneOfControlCountOtherThan(this.getAlliedFactions()) == 0)
+		{
+			_tooltip.push({
+				id = 10,
+				type = "headerText",
+				// icon = "ui/icons/hitchance.png",
+				text = ::Reforged.Mod.Tooltips.parseString("You are not in an enemy [Zone of Control|Concept.ZoneOfControl]"),
+			});
+
+			return;
+		}
 
 		local aooInformation = [];
 		local expectedChanceToBeHit = 0;
