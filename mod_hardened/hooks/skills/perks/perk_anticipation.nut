@@ -16,7 +16,7 @@
 	}
 
 // Hardened Events
-	q.onBeforeShieldDamageReceived = @() function( _damage, _shield, _defenderProps, _attacker, _attackerProps, _skill )
+	q.onBeforeShieldDamageReceived = @() function( _damage, _shield, _defenderProps, _attacker = null, _attackerProps = null, _skill = null )
 	{
 		if (!this.isEnabled() || _skill == null || !_skill.isAttack())		// This event does not guarantee that _skill is != null
 		{
@@ -30,7 +30,7 @@
 		this.m.IsAboutToConsumeUse = true;	// We use this variable to save some checks during onAfterShieldDamageReceived
 	}
 
-	q.onAfterShieldDamageReceived = @() function( _initialDamage, _damageReceived, _shield, _attacker, _skill )
+	q.onAfterShieldDamageReceived = @() function( _initialDamage, _damageReceived, _shield, _attacker = null, _skill = null )
 	{
 		if (this.m.IsAboutToConsumeUse == false) return;	// We only consume one use for each registered attack. But a single attack that deals damage multiple times will therefor have the damage of all instances reduced
 		this.m.IsAboutToConsumeUse = false;
