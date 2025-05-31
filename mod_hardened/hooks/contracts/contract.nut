@@ -148,6 +148,7 @@
 		}
 	}
 
+// New Functions
 	// Mock _functionName from _table, during the new earlyGetResult function of _screen so it does nothing there, and then execute it in getResult of _screen, if it was triggered during start
 	/// @param _screen the contrat screen, we want to hook
 	/// @param _table reference to the table in which the function resides, which we want to mock. If Null, it will be dynamically replaced with this.Contract during mocking

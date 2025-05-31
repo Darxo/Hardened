@@ -11,8 +11,8 @@
 		socketMinibossSprite.setBrush("bust_miniboss");		// tactical entities already have this
 		// socketMinibossSprite.Scale = 0.45;					// This sprite was initially made for tactical entities, not the smaller world ones. 0.45 is ideal for the smaller goblin base but a bit tight for the bigger orc ones
 		// socketMinibossSprite.setOffset(::createVec(4, 6));	// Move the sprite so it fits perfectly on the common sockets
-		socketMinibossSprite.Color = ::createColor("ffaa00ff");	// Move the sprite so it fits perfectly on the common sockets
-		socketMinibossSprite.Visible = false;	// Move the sprite so it fits perfectly on the common sockets
+		socketMinibossSprite.Color = ::createColor("ffaa00ff");	// Color the socket in an orange tone
+		socketMinibossSprite.Visible = false;	// By default this is not visible
 	}
 
 	q.onUpdate = @(__original) function()
