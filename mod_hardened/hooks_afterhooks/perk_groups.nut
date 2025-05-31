@@ -42,8 +42,6 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		local pgFastGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_fast");
 		pgFastGroup.removePerk("perk.rf_dynamic_duo");					// Remove Dynamic Duo from Fast group as it moved to agile group
 		pgFastGroup.addPerk("perk.rf_wear_them_down", 3);				// Add Wear them Down to Tier 3
-		changePerkTier(pgFastGroup, "perk.rf_combo", 5);				// Move Combo to Tier 5 (down from Tier 7)
-		changePerkTier(pgFastGroup, "perk.rf_calculated_strikes", 7);	// Calculated Strikes to Tier 7 (up from Tier 5)
 	}
 
 	{	// Hammer Group
