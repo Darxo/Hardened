@@ -1,6 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/skills/effects/distracted_effect", function(q) {
 	q.m.DamageTotalMult <- 0.80;
-	q.m.InitiativeMult <- 0.65;
 
 	q.getTooltip = @(__original) function()
 	{

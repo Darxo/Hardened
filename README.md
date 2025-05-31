@@ -43,7 +43,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 	- **Wooden Skirmisher Shields** lose **Shieldwall** and now grant **Knock Back**
 	- **Heavy Metal Shields** now have 20 Melee Defense (up from 15) and 20 Ranged Defense (up from 15)
 	- **Feral Shields** now have 20 Melee Defense (up from 15), 25 Ranged Defense (up from 20), 20 Weight (up from 12), 24 Condition (up from 16), +5 Fatige on use (up from 0) and they lose **Knock Back**
-	- **Adarga Shields** now have 8 Weight (down from 10), 16 Condition (down from 18) and lose **Knock Back**
+	- **Adarga Shields** now have 8 Weight (down from 10), 16 Condition (down from 18), 18 Ranged Defense (down from 20) and lose **Knock Back**
 	- **Old Wooden Shields** now have 13 Melee Defense (down from 15) and 13 Ranged Defense (down from 15)
 	- **Worn Heater Shields** now have 23 Melee Defense (up from 20), 13 Ranged Defense (down from 15) and lose **Shieldwall**
 	- **Worn Kite Shields** now have 13 Melee Defense (down from 15), 23 Ranged Defense (down from 25) and lose **Knock Back**
@@ -232,7 +232,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
 - **Hammer Mastery** no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part.
 - **Hold Steady** no longer has a shared cooldown with other brothers who have this perk. It now lasts for 2 rounds, instead of having a turn-based duration
-- **Hybridization** is completely reworked. It is now called **Toolbox** and requires a Throwing Weapon. It grants +1 Bag Slot. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type attacks to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 100% more damage to shields
+- **Hybridization** is completely reworked. It is now called **Toolbox** and requires a Throwing Weapon. It grants +1 Bag Slot if you dont have **Weapon Master**. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type attacks to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 100% more damage to shields
 - **Inspiring Presence** no longer requires a banner. At the start of each round it grants adjacent allies of your faction +3 Action Points for this turn, if they are adjacent to an enemy and have less Resolve than you. The same target can't be inspired multiple times per turn.
 - **Iron Sights** headshot chance now also works with melee weapons
 - **King of all Weapons** is now called **Spear Flurry** and is completely reworked. It now prevents spear attacks from building up any fatigue
@@ -272,10 +272,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Throwing Mastery** is mostly completely reworked. It now grants 30% more damage for your first throwing attack each turn, no matter the range. It now allows swapping a throwing weapon with an empty throwing weapon or empty slot for free, once per turn
 - **Trick Shooter** no longer causes your **Aimed Shot** to trigger a morale check on the main target hit
 - **Underdog** is rewritten. It now grants +5 Melee Defense for every character surrounding you, except the first one. Compared to the vanilla implementation this defense is now affected by defense multiplier and by the softcap for defense
-- **Unstoppable** no longer loses all Stacks when you use **Wait** if you spent at least half of your action points by that time. It now grants 8% Initiative instead of +10 Initiative per stack
+- **Unstoppable** is completely reworked. Once per round during your turn, if you hit an enemy with an attack, gain 1 stack up to a maximum of 3. Each stack grants +1 Action Points and 10% more Initiative. Lose 1 stack if you wait. Lose 1 stack if you end your turn with more than half of your action points remaining. Lose all stacks when you use recover, get stunned or staggered
 - **Vanquisher** is completely reworked. After you step on a corpse that has been created this round, you become Immune to **Displacement** and take 25% less Damage until the start of your next turn. **Gain Ground** (granted by **Vanquisher** perk) is now free
 - **Vigorous Assault** discount is no longer removed when switching items
-- **Weapon Master** no longer works with hybrid weapons. When you learn **Weapon Master** you now gain a new random weapon perk group
+- **Weapon Master** no longer grants weapon perks while wielding a hybrid weapons. It now grants +1 Bag Slot at all times. When you learn **Weapon Master** you now gain a new random weapon perk group
 - **Wears it well** now grants 50% of combined Mainhand and Offhand Weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest Weight)
 - **Wear them Down** is completely reworked. It now causes your hits to apply an additional 10 Fatigue on the target and your misses to apply 5 Fatigue. After your attack, if your target is fully fatigued, apply **Worn Down** effect until the end of their turn, which prevents them from using **Recover** and applies 30% less Melee Defense and 30% less Ranged Defense
 - **Whirling Death** is completely reworked. It now grants a new active skill which creates a buff for 3 turns granting 25% more damage, +2 Reach and 10 Melee Defense to the user
@@ -287,8 +287,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bullseye** moved to Tier 6 (up from Tier 3)
 - **Cheap Trick** moved to Tier 1 (down from Tier 2)
 - **Colossus** is added to **Wildling** group
-- **Combo** moved to Tier 5 (down from Tier 7)
-- **Calculated Strikes** moved Tier 7 (up from Tier 5)
 - **Decisive** is added to **Leadership** group
 - **Death Dealer** is removed from **Agile** and added to **Powerful Strikes**. It moved to Tier 6 (up from Tier 4)
 - **Deep Impact** (now **Breakthrough**) moved to T3 perk (down from Tier 6)
@@ -302,7 +300,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Ghostlike** is now Tier 5 (up from Tier 4)
 - **Inspiring Presence** added to **Noble** group
 - **King of all Weapons** (now **Spear Flurry**) moved to Tier 6 perk (down from Tier 7)
-- **Leverage** moved to Tier 6 (up from Tier 3)
+- **Leverage** moved to Tier 7 (up from Tier 3)
 - **Long Reach** moved to Tier 2 (down from Tier 7)
 - **Marksmanship** is added to **Ranged** group. It is no longer a special perk
 - **Overwhelm** is removed from **Ranged** group
@@ -474,6 +472,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - **Fermented Unhold Heart** now has an expiry date of 40 days (up from 20)
 - **Goblin Poison** now has a value of 200 (up from 100)
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 1000 Value (up from 200) and grants 10 Resolve (up from 5)
+- **Hyena Fur Mantle** now grants 10% more Initiative instead of +15 Initaitive
 - **Reinforced Throwing Net** now has a weight of 8 (up from 2)
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**
 - **Sipar** is now called **Sipar Shield** (just like in Vanilla)
@@ -497,11 +496,17 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 
 ## Enemies
 
+### Generic Changes
+
 - Introduce a new **Headless** effect. Redirects any attack to hit the body, reduces all other damage targeting the head to 0 (e.g. secondary attack from Split Man), grants immunity to **Distracted** and **Sleep** and sets the headarmor to 0
-	- This effect is given to Ifrits, Spider Eggs, Headless Zombies, Saplings and Kraken Tentacles
-	- Ifrit, Saplings and Kraken Tentacle lose the now redundant **Steelbrow** perk
-	- Wiederganger, which receive this effect, lose **Bite** and gain **Zombie Punch** (which is mostly the same, except without bonus headshot chance)
+	- This effect is given to **Ifrits**, **Spider Eggs**, **Headless Zombies**, **Saplings** and **Kraken Tentacles**
+	- **Ifrit**, **Saplings** and **Kraken Tentacle** lose the now redundant **Steelbrow** perk
+	- **Wiederganger**, which receive this effect, lose **Bite** and gain **Zombie Punch** (which is mostly the same, except without bonus headshot chance)
+- Introduce new **Bite Reach** effect, which reduces headshot chance by 10% and increases chance to receive headshot by 10%
+	- This effect is given to all **Dogs**, **Wolfs** and **Hyenas**
 - **Steady Brace** no longer appears on NPCs
+
+### Specific Changes
 
 **Brigands:**
 - **Scoundrels** no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**. They now spawn with a **Knife** instead of **Dagger**/**Woodcutters Axe**. They now have 40 Ranged Skill (down from 45)
@@ -557,12 +562,10 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 
 **Beasts:**
 - **Alps** now have **Elusive**
-- **Bog Unholds** now recover 20% of their Hitpoints per turn (up from 15%) and they can now use **Split Shield** costing 4 Action Points and dealing 50 Shield Damage
+- **Bog Unholds** now recover 20% of their Hitpoints per turn (up from 15%) and they can now use **Split Shield** costing 5 Action Points and dealing 50 Shield Damage. They lose **Dismantle** and **Full Force**
 - **Donkeys** now grant 0 XP (down from 50 XP)
-- **Frost Unholds** and **Armored Frost Unholds** now have 150 natural Body and Head Armor (up from 90). They lose **Dismantle** or **Full Force**
+- **Frost Unholds** and **Armored Frost Unholds** now have 150 natural Body and Head Armor (up from 90). They lose **Dismantle** and **Full Force**
 - Add new **Hexen** racial effect that increases the duration of debuffs by 1 turn for the Hexe
-- Introduce new **Bite Reach** effect, which reduces headshot chance by 10% and increases chance to receive headshot by 10%
-	- This effect is given to all **Dogs**, **Wolfs** and **Hyenas**
 - All **Ifrits** gain **Man of Steel**
   - **Small Ifrits** now have 55 Hitpoints (down from 110) and 165 Armor (up from 110)
   - **Medium Ifrits** now have 110 Hitpoints (down from 220) and 220 Armor (up from 110). They lose 10 Damage and gain **Marksmanship**
@@ -574,7 +577,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - All **Nachzehrer** lose **Deep Cuts**
   - **Small Nachzehrer** lose 10 Melee Defense and gain **Ghostlike**
   - **Large Nachzehrer** can no longer swallow player characters while in a net. They can now also swallow the last player character who is alive
-- **Unholds** and **Armored Unholds** now have 600 Hitpoints (up from 500) and recover 10% of their Hitpoints per turn (down from 15%)
+- **Unholds** and **Armored Unholds** now have 600 Hitpoints (up from 500) and recover 10% of their Hitpoints per turn (down from 15%). They lose **Dismantle** and **Full Force**
 - **Schrats** no longer take 70% reduced damage while their shield is up. They now have +200 Hitpoints and gain the **One with the Shield** perk
 - **Serpent** can now hook even while rooted. They can no longer hook while engaged in melee
 
@@ -682,6 +685,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 ### Combat
 
 - Your headshot chance is now displayed in the combat tooltip when targeting enemies
+- Show chances and calculations for getting hit by enemies while in zone of control, when you look at any tile tooltip while previewing movement
 - Introduce a new **Unworthy** effect which prevents the character from granting experience on death. This is given to all non-player controlled characters who grant 0 XP on death or are allied to the player
 - Introduce a new cosmetic **Non-Combatant** effect, given to non-combatant characters, which explains that they do not need to be killed in order to win
 - Improve restore item after battle logic, to also restore items, which were dropped to the ground or picked up by another brother during battle
@@ -701,6 +705,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - Add skill descriptions for all skills from the **Lorekeeper**
 - Corpses will now display the round, in which they were created
 - Print combat log for hitpoint damage dealt, when an attack kills the target and include the hitpoints of the target before the kill
+- **Fling Back** (used by Unholds) now has an animation delay of 250ms (down from 750ms)
 - The automatic camera level calculation is improved, especially while in mountanious terrain. Your camera level is now automatically adjusted when moving up or down terrain
 - Automatically re-equip the accessory that you had previously equiped after an arena fight
 - Add Settings to immediately stop the player movement halfway through, when it reveals an enemy (on) or an ally (off)
@@ -714,6 +719,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 ### World
 
 - List most changes to Relation and Renown during Events and Contracts
+- List changes to contract rewards during negotiation
 - Add Setting (on) for displaying and adjusting a Waypoint that indicates, where your character on the world map is currently moving to
 - Settlements now display a tooltip showing how many days ago you last visited that location
 - The Tavern now displays to you how many rumors you received so far
@@ -742,6 +748,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 
 ### Misc
 
+- Add setting (on) for displaying silhouettes of items from the bagslots on the character
 - Supplies (Crowns, Tools, Medicine, Ammo) are now consumed instantly after buying, looting
 - Quiver and Weapons that contain Ammo now display the supply cost for replacing ammunition in them
 - Add new Concepts for **Armor Penetration**, **Critical Damage**, **Displacement**, **Hitchance**, **Rally**, **Threat** and **Weight** and and apply these Concepts to existing weapons, items, perks skills
@@ -762,6 +769,8 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - Spiders will now give up when their team has given up even if there are still eggs on the battlefield
 - Remove the hidden "25% more injury threshold" for all characters when receiveing a head hit
 - You can no longer do two Arenas during the same day
+- Negative changes to faction relation are no longer rounded up and positive changes are no longer rounded down
+- The bagslots on the player paperdoll are now centred correctly on characters who have 1 or 3 bagslots
 - Retreating NPCs, that are fleeing and in Zone of Control will now seek the border correctly, if possible
 - **Repel** can no longer push someone back in a 90° angle
 - Other Actors moving in or out of the range of someone with **Lone Wolf** now cause that effect to update instantly
@@ -774,6 +783,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - Hitpoints recovery on brothers is now more accurate (camping recovery fix)
 - Fix some positional effects (e.g. Lone Wolf or Entrenched) visually persisting outside of combat
 - Dying enemies no longer set the LastCombatResult to `EnemyDestroyed`, unless they were the last one to die. This fixes a rare Sunken Library exploit
+- **Knock Back** now displays its hitchance bonus correctly in the preview
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
 - Every accessory now plays a default sound when moved around in the inventory
@@ -847,6 +857,10 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - The amount of armor attachements used by the player is now counted in the statistics flag `ArmorAttachementsApplie`
 - Body Armor and Helmet `Condition` is now always set to `ConditionMax` at the end of the `create` function
 - Add new `HD_RecoveredHitpointPct = 0.15` member for `unhold_racial` allowing you to set a variable pct of hitpoints recovered per turn
+- NPCs now have 2 bag slots by default (down from 4)
+- Add `HD_getBrush` function for `item.nut` which returns the brushname representing that item currently. Or `null`, if the item is not represented by a brush
+- Add `::Hardened.util.intToHex(_unsigned)`, which returns a hexstring representation of the passed number
+- Add `onBeforeStart(_screen)` function for `contract.nut` which is called directly before the `start()` function of any of its screen is called
 
 ### New Character Properties
 
@@ -855,12 +869,13 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - `HeadshotReceivedChanceMult` is a multiplier for the incoming headshot chance
 - `ReachAdvantageMult` is a multiplier for melee skill during reach advantage
 - `ReachAdvantageBonus` is a flat bonus for melee skill during reach advantage
-- `ShieldDamageMult` multiplies shield damage dealt via active skills
-- `ShieldDamageReceivedMult` multiplies incoming shield damage up to a minimum of 1
+- `ShieldDamageMult = 1.0` multiplies shield damage dealt via active skills
+- `ShieldDamageReceivedMult = 1.0` multiplies incoming shield damage up to a minimum of 1
 - `WeightStaminaMult` is an array of multipliers, mirroring `::Const.ItemSlotSpaces`, which control how much the Weight of each Itemslot affects this characters Stamina
 - `WeightInitiativeMult` is an array of multipliers, mirroring `::Const.ItemSlotSpaces`, which control how much the Weight of each Itemslot affects this characters Initiative
 - `HitpointRecoveryMult` multiplies to anything that would add a flat amount of hitpoints to the character
 - `ShowFrenzyEyes = false` displays red eyes on human-like characters
+- `BagSlots = 2`, can be changed by skills to add or remove bag slots in a compatible way. Existing sources of extra bag slots are changed accordingly
 
 # Requirements
 

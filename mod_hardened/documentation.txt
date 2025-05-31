@@ -14,6 +14,35 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+0.47.0
+	- Make Hardened compatible with Modern Hooks 0.6.0
+	- **Unstoppable** is completely reworked. Once per round during your turn, if you hit an enemy with an attack, gain 1 stack up to a maximum of 3. Each stack grants +1 Action Points and 10% more Initiative. Lose 1 stack if you wait. Lose 1 stack if you end your turn with more than half of your action points remaining. Lose all stacks when you use recover, get stunned or staggered.
+	- **Weapon Master** now also grants +1 Bag Slot
+	- **Toolbox** no longer grants +1 Bag Slots, while you have **Weapon Master**
+	- **Leverage** is now a Tier 7 perk (up from Tier 6)
+	- **Calculated Strikes** is now a Tier 5 perk (down from Tier 7)
+	- **Combo** is now a Tier 7 perk (up from Tier 5)
+	- **Split Shield** on **Bog Unholds** now costs 5 Action Points (up from 4)
+	- **Hyena Fur Mantle** now grants 10% more Initiative instead of +15 Initaitive
+	- **Adarga Shield** now grants 18 Ranged Defense (down from 20)
+	- Show chances and calculations for getting hit by enemies while in zone of control, when you look at any tile tooltip while previewing movement
+	- Add setting (on) for displaying silhouettes of items from the bagslots behind the character
+	- Display changes to **Renown** and **Relation** in the contract screens during Negotiation
+	- Display changes to contract rewards in the contract screens (most notably during Negotiation)
+	- Increase the amount of contract and event screens in which Relation, Renown and MoraleReputation changes will be displayed in
+	- **Fling Back** (from Unholds) now has an animation delay of 250ms (down from 750ms)
+	- Remove **Perk Requirement** from **Toolbox** to indicate, that it always provides the Bugslot, even if you dont have a throwing weapon equipped
+	- Add `::Const.CharacterProperties.BagSlots <- 2`, which can be changed by skills to add or remove bag slots in a compatible way. Existing sources of extra bag slots are changed accordingly
+	- NPCs now have 2 bag slots by default (down from 4)
+	- Add `HD_getBrush` function for `item.nut` which returns the brushname representing that item currently. Or `null`, if the item is not represented by a brush
+	- Add `::Hardened.util.intToHex(_unsigned)`, which returns a hexstring representation of the passed number
+	- Add `onBeforeStart(_screen)` function for `contract.nut` which is called directly before the `start()` function of any of its screen is called
+	- Fix **Bulwark** tooltip not showing up correctly
+	- Fix missing tooltip icon in **Cursed Crystal Skull** item
+	- Fix(Vanilla) relationship changes with factions being floored
+	- Fix(Vanilla) backpack on the paper doll with 1 or 3 bagslots not being centred correctly
+	- Fix(Vanilla) display hitchance bonus granted by **Knock Back** in the hitchance preview
+
 0.46.0
 	- **Anchor** no longer grants +15 Melee Defense during your turn. It now makes the characters take 50% less Damage from Attacks during its turn
 	- **Cleaver Mastery** is completely reworked. It still makes Cleaver Skills cost 25% less Fatigue and grants +10% Hitchance when using **Disarm**. You now deal +50% Critical Damage when hitting the Body of someone who is disarmed or who doesn't wield a Melee Weapon

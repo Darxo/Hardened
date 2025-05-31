@@ -30,3 +30,30 @@ if (tile != null)
 	}
 }
 
+## Print Stacktrace
+::MSU.Log.printStackTrace();
+
+## Fire Event
+
+::World.Events.fire("event.religious_peasants", true);
+
+## Show current combats on world map
+
+::World.Combat.m.Combats.len()
+
+foreach (combat in ::World.Combat.m.Combats)
+{
+	::logWarning("Combat ID: " + combat.ID);
+	::logWarning("combat.IsResolved: " + combat.IsResolved.tostring());
+	foreach (index, faction in combat.Factions)
+	{
+		if (faction.len() == 0) continue;
+
+		::logWarning("Faction.getName() " + ::World.FactionManager.getFaction(index).getName());
+
+		foreach (party in faction)
+		{
+			::logWarning("party.getName() " + party.getName());
+		}
+	}
+}

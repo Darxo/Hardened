@@ -437,26 +437,6 @@ MOdular Vanilla:
 - turn order prediction
 	- Could be realised by slotting in a dummy/separator entity into the turn sequence bar at the very end?
 
-
-::World.Combat.m.Combats.len()
-
-foreach (combat in ::World.Combat.m.Combats)
-{
-	::logWarning("Combat ID: " + combat.ID);
-	::logWarning("combat.IsResolved: " + combat.IsResolved.tostring());
-	foreach (index, faction in combat.Factions)
-	{
-		if (faction.len() == 0) continue;
-
-		::logWarning("Faction.getName() " + ::World.FactionManager.getFaction(index).getName());
-
-		foreach (party in faction)
-		{
-			::logWarning("party.getName() " + party.getName());
-		}
-	}
-}
-
 - remove "requires throwing weapon" from toolbox?
 - give mercenaries bandage item in bag and teach them how to use it
 - Howler Monkey sfx for some kind of beast
@@ -464,28 +444,25 @@ foreach (combat in ::World.Combat.m.Combats)
 
 - cross mod compatibility with crock pot? (vulture threat keyword)
 - anchor icon during users turn showcasing the damage reduction
+- draw combat steps red, while the active entity is in zone of control
+	- they are handled in the .exe (steps_bot_left, steps_top, etc.)
+
+- show total number of people in turn sequence bar somewhere (e.g. behind current number of viewed actor)
 
 
 ### Todo
-- attacking allies only makes them temporary enemies at first
-
-
-- Improve positioning of bag slots
-- look into swifter and how it also triples the amount of idle sounds produced by enemies
-- Feature: Manual Snapshot for brother-gear, that can be manually reset. Useful for when you swap out a lot of gear before a fight
-
-- make spider corpses a bit more transparent, less colored, so that they differ more from alive ones
-
-- API: hook onQueryTargetTile to implement new ai function
-- add debug logs for finding the end of battle bug
-
-- Add a hitchance tooltip line for the native 25% hitchance bonus that knock back has in vanilla
-- prevent cheese where you can find out whether someone is hiding in a bush by trying to pathfind into that bush
-	- same thing is true for fog of war
-- Make root skills much more likely to target someone with Unstoppable stacks (because they cancel unstoppable)
 - barbarian:
 	- 40% chance for roaming parties to have no unholds
 	- 20% chance for camps to have no unholds
 - Make many skills and attacks from within a bush reveal that character to all enemies, not just the immediate target
-- Display Reputation/Payment changes during payment negotiation
 
+- prevent cheese where you can find out whether someone is hiding in a bush by trying to pathfind into that bush
+	- same thing is true for fog of war
+- attacking allies only makes them temporary enemies at first
+- make spider corpses a bit more transparent, less colored, so that they differ more from alive ones
+
+- Feature: Manual Snapshot for brother-gear, that can be manually reset. Useful for when you swap out a lot of gear before a fight
+
+- API: hook onQueryTargetTile to implement new ai function
+- add debug logs for finding the end of battle bug
+- Make root skills much more likely to target someone with Unstoppable stacks (because they cancel unstoppable)
