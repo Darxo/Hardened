@@ -11,6 +11,7 @@
 	// Replace Reforged calculation
 	q.onUpdate = @() function( _properties )
 	{
+		_properties.FatigueToInitiativeRate *= 0.5;
 		_properties.WeightInitiativeMult[::Const.ItemSlot.Body] *= this.m.WeightInitiativeMult;
 	}
 });
