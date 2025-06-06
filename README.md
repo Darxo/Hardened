@@ -685,7 +685,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 ### Combat
 
 - Your headshot chance is now displayed in the combat tooltip when targeting enemies
-- Show chances and calculations for getting hit by enemies while in zone of control, when you look at any tile tooltip while previewing movement
+- While previewing movement, tile tooltips show chances and calculations for getting hit by enemies while in zone of control. If not in zone of control tile tooltips state that
 - Introduce a new **Unworthy** effect which prevents the character from granting experience on death. This is given to all non-player controlled characters who grant 0 XP on death or are allied to the player
 - Introduce a new cosmetic **Non-Combatant** effect, given to non-combatant characters, which explains that they do not need to be killed in order to win
 - Improve restore item after battle logic, to also restore items, which were dropped to the ground or picked up by another brother during battle
