@@ -87,6 +87,18 @@
 	}
 
 // New Getter
+	// Return the Party instance, that this entity belongs to
+	// @return world_party instance, if this entity belongs to one
+	// @return null if this entity does not belong to a world party or that party became null for whatever reason
+	q.getParty <- function()
+	{
+		if (::MSU.isNull(this.m.WorldTroop)) return null;
+		if (!("Party" in this.m.WorldTroop)) return null;
+		if (::MSU.isNull(this.m.WorldTroop.Party)) return null;;
+
+		return this.m.WorldTroop.Party;
+	}
+
 	// Return the Stamina of this character utilizing the new Hardened formula
 	// @return Stamina (Maximum Fatigue) of this character
 	q.getStamina <- function()
