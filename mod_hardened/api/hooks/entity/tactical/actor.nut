@@ -232,6 +232,8 @@
 
 	// We are an NPC that is deemed to belong to a certain player-possible banner (most likely because of mercenary company)
 	// This function will find that bannerID by all means necessary and if it can't it will return -1
+	// @return unsigned integer bannerID if a banner could be found
+	// @return -1 if no banner was found
 	q.findAppropriateBannerID <- function()
 	{
 		/*
@@ -245,10 +247,11 @@
 		*/
 
 		// First we check, if this actor belongs to a world party
-		if (!::MSU.isNull(this.getWorldTroop()) && "Party" in this.getWorldTroop())	// We belong to a world party. If that world party does not have a usable banner, we give up
+		local party = this.getParty();
+		if (party != null)	// We belong to a world party
 		{
 			local bannerID = this.getWorldTroop().Party.getBannerID();
-			if (bannerID != -1)
+			if (bannerID != -1)		// If that world party has a usable banner
 			{
 				return bannerID;
 			}
