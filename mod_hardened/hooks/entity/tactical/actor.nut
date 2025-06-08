@@ -288,6 +288,13 @@
 			this.getSkills().add(::new("scripts/skills/special/hd_non_combatant_effect"));	// Every NPC who is a non combatant now gains this effect to showcase that fact
 		}
 
+		// Every defender of a location gets a defenders advantage buff, if that location was fortified
+		local party = this.getParty();
+		if (party != null && party.isLocation() && party.getCombatLocation().Fortification != ::Const.Tactical.FortificationType.None)
+		{
+			this.getSkills().add(::new("scripts/skills/effects/hd_defenders_advantage"));
+		}
+
 		this.getSkills().onSpawned();
 	}
 });
