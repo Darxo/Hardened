@@ -6,6 +6,7 @@
 	{
 		__original();
 		this.m.Description = "Harness your agility to evade attacks, bolstering your defenses with quick reflexes. The more space you have to move, the harder you are to hit."
+		this.m.IconMini = "perk_01_mini";	// Reforged: ""; Vanilla: "perk_01_mini"
 	}
 
 	q.onUpdate = @(__original) function( _properties )
@@ -17,11 +18,16 @@
 	// Overwrite of Vanilla function to stop its effects and apply our own
 	q.onAfterUpdate = @() function( _properties )
 	{
+		this.m.IsHidingIconMini = true;
 		if (this.getContainer().getActor().isPlacedOnMap())
 		{
 			local defenseValue = this.calculateBonus();
-			_properties.MeleeDefense += defenseValue;
-			_properties.RangedDefense += defenseValue;
+			if (defenseValue > 0)
+			{
+				_properties.MeleeDefense += defenseValue;
+				_properties.RangedDefense += defenseValue;
+				this.m.IsHidingIconMini = false;	// The mini icon is hidden while fully surrounded or otherwise not gaining any bonus from dodge
+			}
 		}
 	}
 
