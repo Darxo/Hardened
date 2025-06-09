@@ -71,6 +71,17 @@
 
 			case "tactical-screen.topbar.options-bar-module.FleeButton":
 			{
+				local retreatDefenseBonus = ::Const.Difficulty.RetreatDefenseBonus[::World.Assets.getDifficulty()];
+				if (retreatDefenseBonus != 0)
+				{
+					ret.push({
+						id = 10,
+						type = "text",
+						icon = "ui/icons/melee_defense.png",
+						text = "Your characters have " + ::MSU.Text.colorizeValue(retreatDefenseBonus, {AddSign = true}) + ::Reforged.Mod.Tooltips.parseString(" [Melee Defense|Concept.MeleeDefense] during Auto-Retreat"),
+					});
+				}
+
 				ret.push({
 					id = 11,
 					type = "text",
