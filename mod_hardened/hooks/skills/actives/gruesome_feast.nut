@@ -17,11 +17,34 @@
 		if (this.getContainer().getActor().getID() != _target.getID()) return ret;		// We must be the target
 		if (_target.getID() == _user.getID()) return ret;		// user and target must be different
 
-		if (_target.isPlacedOnMap() && this.onVerifyTarget(_target.getTile(), _target.getTile()))	// gruesome feast is currently usable
+		if (!_target.isPlacedOnMap()) return ret;
+
+		local isAllied = _user.isAlliedWith(_target);
+		local standingOnAConsumableCorpse = this.onVerifyTarget(_target.getTile(), _target.getTile());	// gruesome feast is currently usable
+		if (standingOnAConsumableCorpse && !isAllied)
 		{
 			// _user should try to kill us, if we stand on a consumable corpse. Even more urgently so, if we are almost dead and will otherwise heal back up
 			// _user is always 10% more likely to target us in this case + 1% for each missing 1% hitpoints on us
 			ret *= (2.1 - _target.getHitpointsPct());
+		}
+
+		local skillsThatSwitchEntities = [
+			"actives.barbarian_fury",
+			"actives.rotation",
+			"actives.rf_dynamic_duo_shuffle",
+			"actives.rf_swordmaster_tackle",
+		];
+
+		if (_skill != null && _target.getMoraleState() != ::Const.MoraleState.Fleeing)
+		{
+			local userStandingOnConsumableCorpse = this.onVerifyTarget(_user.getTile(), _user.getTile());
+			if (standingOnAConsumableCorpse != userStandingOnConsumableCorpse) return ret;	// If neither tile or both tile have corpses, we don't care
+
+			if (skillsThatSwitchEntities.find(_skill.getID()) != null)
+			{
+				if (isAllied && userStandingOnConsumableCorpse) ret *= 2.0;
+				if (!isAllied && userStandingOnConsumableCorpse) ret *= 0.5;
+			}
 		}
 
 		return ret;
