@@ -14,6 +14,9 @@
 
 		if (_reason == "") return;
 
+		// Feat: Display the relation change in brackets behind the reason
+		_reason +=  format(" (%s)", ::MSU.Text.colorizeValue(_r, {AddSign = true}));
+
 		if (this.m.PlayerRelationChanges.len() >= 1 && this.m.PlayerRelationChanges[0].Text == _reason)
 		{
 			this.m.PlayerRelationChanges[0].Time = ::Time.getVirtualTimeF();
