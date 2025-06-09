@@ -28,26 +28,40 @@ this.perk_hd_anchor <- ::inherit("scripts/skills/skill", {
 	{
 		local ret = this.skill.getTooltip();
 
-		ret.push({
-			id = 10,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Immune to [Displacement|Concept.Displacement]"),
-		});
+		local damageReceivedTotalMult = this.getDamageReceivedTotalMult();
+		if (damageReceivedTotalMult != 1.0)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = format(::Reforged.Mod.Tooltips.parseString("Take %s Damage from Attacks during your [turn|Concept.Turn]"), ::MSU.Text.colorizeMultWithText(damageReceivedTotalMult, {InvertColor =true})),
+			});
+		}
 
-		ret.push({
-			id = 20,
-			type = "text",
-			icon = "ui/icons/action_points.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Lasts until the start of your next [turn|Concept.Turn]"),
-		});
+		if (this.m.IsInEffect)
+		{
+			ret.push({
+				id = 11,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Immune to [Displacement|Concept.Displacement]"),
+			});
+
+			ret.push({
+				id = 20,
+				type = "text",
+				icon = "ui/icons/action_points.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Lasts until the start of your next [turn|Concept.Turn]"),
+			});
+		}
 
 		return ret;
 	}
 
 	function isHidden()
 	{
-		return !this.m.IsInEffect;
+		return !this.m.IsInEffect && this.getDamageReceivedTotalMult() == 1.0;
 	}
 
 	function onUpdate( _properties )
@@ -67,10 +81,7 @@ this.perk_hd_anchor <- ::inherit("scripts/skills/skill", {
 	{
 		if (_skill == null || !_skill.isAttack()) return;
 
-		if (this.getContainer().getActor().isActiveEntity())
-		{
-			_properties.DamageReceivedTotalMult *= this.m.DamageReceivedTotalMult;
-		}
+		_properties.DamageReceivedTotalMult *= this.getDamageReceivedTotalMult();
 	}
 
 	function onTurnStart()
@@ -94,5 +105,16 @@ this.perk_hd_anchor <- ::inherit("scripts/skills/skill", {
 	{
 		this.skill.onCombatFinished();
 		this.m.IsInEffect = false;
+	}
+
+// New Functions
+	function getDamageReceivedTotalMult( _skill )
+	{
+		if (this.getContainer().getActor().isActiveEntity())
+		{
+			return this.m.DamageReceivedTotalMult;
+		}
+
+		return 0.0;
 	}
 });
