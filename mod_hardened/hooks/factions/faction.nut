@@ -105,6 +105,30 @@
 });
 
 ::Hardened.HooksMod.hookTree("scripts/factions/faction", function(q) {
+	q.addPlayerRelation = @(__original) function( _r, _reason = "" )
+	{
+		// Vanilla does a -PlayerRelation change with the reason "Attacked them" only ever, when the player attacks a friendly character on the world map
+		// Feat: When the player force attacks allies, they only become temporary enemies, instead of tanking the player relationship immediately and completely
+		if (-_r == this.getPlayerRelation() && _reason == "Attacked them")
+		{
+			local functionCaller = ::Hardened.getFunctionCaller();
+			if (functionCaller == "onMouseInput")
+			{
+				this.setIsTemporaryEnemy(true);
+				::World.Assets.m.MoralReputation += 3.0;	// Vanilla subtracts 3 MoralReputation, so we need to counteract that. We dont use the helper function to circumvent clamping
+				return;	// Do Nothing. We don't want the player relation to change in these cases
+			}
+			else if (functionCaller == "onUpdate")
+			{
+				this.setIsTemporaryEnemy(true);
+				::World.Assets.m.MoralReputation += 2.0;	// Vanilla subtracts 2 MoralReputation, so we need to counteract that. We dont use the helper function to circumvent clamping
+				return;	// Do Nothing. We don't want the player relation to change in these cases
+			}
+		}
+
+		__original(_r, _reason);
+	}
+
 	q.addPlayerRelationEx = @(__original) function( _r, _reason = "" )
 	{
 		__original(_r, _reason);

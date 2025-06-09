@@ -86,6 +86,26 @@
 		if (this.hasSprite("HD_frenzy_eyes")) this.getSprite("HD_frenzy_eyes").setHorizontalFlipping(flip);
 	}
 
+	q.kill = @(__original) function( _killer = null, _skill = null, _fatalityType = ::Const.FatalityType.None, _silent = false )
+	{
+		local wasAlive = this.isAlive();	// We have to save that state here, because it flips during the execution of __original
+
+		local oldRelationUnitKilled = ::Const.World.Assets.RelationUnitKilled;
+		::Const.World.Assets.RelationUnitKilled = 0;
+		__original(_killer, _skill, _fatalityType, _silent);
+		::Const.World.Assets.RelationUnitKilled = oldRelationUnitKilled;
+
+		if (!wasAlive) return;	// Same check as Vanilla
+		if (::Tactical.State.isScenarioMode()) return;	// Many global objects dont exist here, like FactionManager
+
+		// This code is mostly a copy of vanillas checks, except that we don't check for ::World.FactionManager.getFaction(this.getFaction()).isTemporaryEnemy()
+		local faction = ::World.FactionManager.getFaction(this.getFaction());
+		if (_killer != null && _killer.isPlayerControlled() && faction != null)
+		{
+			faction.addPlayerRelation(::Const.World.Assets.RelationUnitKilled, "Killed one of their units");
+		}
+	}
+
 	q.playIdleSound = @(__original) function()
 	{
 		// Characters who are off-screen no longer produce idle sounds. However they will still be randomly selected as targets for making the idle sound.
