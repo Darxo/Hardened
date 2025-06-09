@@ -41,6 +41,24 @@
 		}
 	}
 
+	q.setIsTemporaryEnemy = @(__original) function( _bool )
+	{
+		local hasChanged = (this.m.IsTemporaryEnemy != _bool);
+		__original(_bool);
+		if (hasChanged)
+		{
+			// We need to update all entities from that faction, because our temporary status with them just changed
+			foreach (settlement in this.getSettlements())
+			{
+				settlement.updatePlayerRelation();
+			}
+			foreach (worldParty in this.getUnits())
+			{
+				worldParty.updatePlayerRelation();
+			}
+		}
+	}
+
 	q.spawnEntity = @(__original) function( _tile, _name, _uniqueName, _template, _resources, _minibossify = 0 )
 	{
 		local ret = __original(_tile, _name, _uniqueName, _template, _resources, _minibossify);
