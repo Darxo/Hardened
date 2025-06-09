@@ -155,6 +155,13 @@
 		__original(_attackInfo);
 	}
 
+// New Functions
+	// New virtual function that is already used various times in different vanilla skills
+	q.findTileToKnockBackTo <- function( _userTile, _targetTile )
+	{
+		return null;
+	}
+
 // New Getter
 	q.isOnCooldown <- function()
 	{

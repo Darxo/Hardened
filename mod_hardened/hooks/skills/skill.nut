@@ -81,4 +81,12 @@
 
 		return __original(_user, _targetTile);
 	}
+
+// Hardened Functions
+	// Overwrite, because we use our new centralized function and support the HD_KnockBackDistance member
+	// Vanilla implements this for various skills. In order to overwrite those implementations, we require hookTree
+	q.findTileToKnockBackTo = @() function( _userTile, _targetTile )
+	{
+		return ::Hardened.util.findTileToKnockBackTo(_userTile, _targetTile, 1);
+	}
 });

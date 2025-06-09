@@ -69,28 +69,4 @@
 
 		return ret && !_targetTile.getEntity().getCurrentProperties().IsImmuneToKnockBackAndGrab && (this.findTileToKnockBackTo(_originTile, _targetTile) != null);
 	}
-
-	// Overwrite because we fix the vanilla effect sometimes considering unrealistic 90° angles as valid
-	q.findTileToKnockBackTo = @() function( _userTile, _targetTile )
-	{
-		local potentialTargets = [];
-		local distanceToTarget = _userTile.getDistanceTo(_targetTile);
-		foreach (potentialTile in ::MSU.Tile.getNeighbors(_targetTile))
-		{
-			if (!potentialTile.IsEmpty) continue;
-			if (_userTile.getDistanceTo(potentialTile) <= distanceToTarget) continue;	// Knock Back destinations must further away than initial target
-
-			local levelDifference = potentialTile.Level - _targetTile.Level;
-			if (levelDifference > 1) continue;	// We can't knock back targets 2 levels upwards
-
-			potentialTargets.push(potentialTile);
-		}
-
-		if (potentialTargets.len() != 0)
-		{
-			return ::MSU.Array.rand(potentialTargets);
-		}
-
-		return null;
-	}
 });
