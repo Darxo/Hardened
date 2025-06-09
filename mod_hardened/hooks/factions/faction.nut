@@ -5,10 +5,12 @@
 	// Private
 	q.m.HD_LastSpawnedParty <- null;	// weakref to the last party, spawned by this factions spawnEntity function
 
-	// Vanilla Fix: Relationship changes are no longer rounded
-	// Overwrite, because we can't easily apply the fix
+	// Overwrite, because we can't easily apply the changes
 	q.addPlayerRelationEx = @() function( _r, _reason = "" )
 	{
+		if (_r == 0.0) return;
+
+		// Vanilla Fix: Relationship changes are no longer rounded
 		this.m.PlayerRelation = ::Math.clampf(this.m.PlayerRelation + _r, 0.0, 100.0);
 		this.updatePlayerRelation();
 
@@ -17,6 +19,7 @@
 		// Feat: Display the relation change in brackets behind the reason
 		_reason +=  format(" (%s)", ::MSU.Text.colorizeValue(_r, {AddSign = true}));
 
+		// This rest is an mostly copy of the vanilla logic
 		if (this.m.PlayerRelationChanges.len() >= 1 && this.m.PlayerRelationChanges[0].Text == _reason)
 		{
 			this.m.PlayerRelationChanges[0].Time = ::Time.getVirtualTimeF();
@@ -25,7 +28,7 @@
 		}
 		else
 		{
-			if (this.m.PlayerRelationChanges.len() >= this.m.RelationChangesMax)
+			if (this.m.PlayerRelationChanges.len() >= this.m.RelationChangesMax)	// We make the maximum change entries moddable
 			{
 				this.m.PlayerRelationChanges.remove(this.m.PlayerRelationChanges.len() - 1);
 			}
