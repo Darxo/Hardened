@@ -86,7 +86,7 @@
 					id = 11,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = ::Reforged.Mod.Tooltips.parseString("Your characters have " + ::MSU.Text.colorizeValue(1, {AddSign = true}) + " [Action Point(s)|Concept.ActionPoints] during retreat"),
+					text = ::Reforged.Mod.Tooltips.parseString("Your characters have " + ::MSU.Text.colorizeValue(1, {AddSign = true}) + " [Action Point(s)|Concept.ActionPoints] during Auto-Retreat"),
 				});
 				return ret;
 			}
