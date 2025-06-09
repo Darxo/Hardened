@@ -150,3 +150,82 @@
 	if (ret.len() == 1) ret = "0" + ret;
 	return ret;
 }
+
+// Check, whether _startTile and _targetTile are on the same axis
+// @return true, if they are on the same axis, or false otherwise
+::Hardened.util.isOnSameAxis <- function( _startTile, _targetTile )
+{
+	if (_startTile.X == _targetTile.X) return true;
+	if (_startTile.Y == _targetTile.Y) return true;
+	if (_startTile.X + _startTile.Y == _targetTile.X + _targetTile.Y) return true;
+	return false;
+}
+
+// Look for an empty tile, to knock the target back to
+// Knocking back someone over multiple times must have a natural path of empty, non-hill tiles in between
+// Note: This function employs recursion. With a high _knockBackDistance or many potential targets, it might require some performance power
+// @param _userTile the tile of the user
+// @param _targetTile the tile of the target
+// @param _knockBackDistance the distance, we want to knock the target back to
+// @param _originalTargetTile is a reference to the original _targetTile. It must be kept at null. Its important to make sure we push the enemy away from the origin each time
+// @return refence to the tile, that was found for the knocking back
+// @return null, if no tile was found
+::Hardened.util.findTileToKnockBackTo <- function( _userTile, _targetTile, _knockBackDistance = 1, _originalTargetTile = null )
+{
+	if (_knockBackDistance <= 0) return null;
+	if (_originalTargetTile == null) _originalTargetTile = _targetTile;
+
+	local distanceToTarget = _userTile.getDistanceTo(_targetTile);
+	local potentialTargets = [];
+	foreach (potentialTile in ::MSU.Tile.getNeighbors(_targetTile))
+	{
+		if (!potentialTile.IsEmpty) continue;	// We can't push enemies into, or over object
+		if (_userTile.getDistanceTo(potentialTile) <= distanceToTarget) continue;	// Knock Back destinations must further away than initial target
+
+		local levelDifference = potentialTile.Level - _targetTile.Level;
+		if (levelDifference > 1) continue;		// We can't knock back targets 2 levels upwards or through heights that are more than 2 levels upwards
+
+		// Knock Backs on the same axis always have priority. That's why we potentially return early and disregard the neighbor options
+		if (::Hardened.util.isOnSameAxis(_userTile, potentialTile))
+		{
+			if (_knockBackDistance == 1)
+			{
+				return potentialTile;
+			}
+			else
+			{
+				local ret = this.findTileToKnockBackTo(_userTile, potentialTile, _knockBackDistance - 1, _originalTargetTile);
+				if (ret != null)
+				{
+					return ret;
+				}
+			}
+		}
+
+		potentialTargets.push(potentialTile);
+	}
+
+	::MSU.Array.shuffle(potentialTargets);
+	foreach (target in potentialTargets)
+	{
+		if (_knockBackDistance == 1)
+		{
+			return target;
+		}
+		else
+		{
+			local ret = this.findTileToKnockBackTo(_userTile, target, _knockBackDistance - 1, _originalTargetTile);
+			if (ret != null) return ret;
+		}
+	}
+
+	// We checked all our 2-3 options, but none of them were valid
+	if (_targetTile.isSameTileAs(_originalTargetTile))
+	{
+		return null;	// We couldn't push _targetTile away even a single time
+	}
+	else
+	{
+		return _targetTile;	// We couldn't push _targetTile any further, so _targetTile as the destination has to do
+	}
+}
