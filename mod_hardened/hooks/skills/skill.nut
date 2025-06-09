@@ -87,6 +87,6 @@
 	// Vanilla implements this for various skills. In order to overwrite those implementations, we require hookTree
 	q.findTileToKnockBackTo = @() function( _userTile, _targetTile )
 	{
-		return ::Hardened.util.findTileToKnockBackTo(_userTile, _targetTile, 1);
+		return ::Hardened.util.findTileToKnockBackTo(_userTile, _targetTile, this.m.HD_KnockBackDistance);
 	}
 });
