@@ -17,6 +17,8 @@
 		if (this.m.PlayerRelationChanges.len() >= 1 && this.m.PlayerRelationChanges[0].Text == _reason)
 		{
 			this.m.PlayerRelationChanges[0].Time = ::Time.getVirtualTimeF();
+			// Feat: Combine subsequent duplicate entries into one in a very simple way
+			this.m.PlayerRelationChanges[0].Text += " x2";	// We only combine two duplicates at most, as that is the most straightforward and easy way
 		}
 		else
 		{
