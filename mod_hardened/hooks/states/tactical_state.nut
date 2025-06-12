@@ -13,7 +13,10 @@
 		// By that time none of the ground- or camp items have been looted. So dropped items will not be able to be restored correctly
 		if (::Settings.getGameplaySettings().RestoreEquipment)
 		{
-			::World.Assets.restoreEquipment();
+			if (::World.Assets != null)		// When the player Quits out of Battle into main menu, onFinish is called too, but ::World.Asset is null by then
+			{
+				::World.Assets.restoreEquipment();
+			}
 		}
 
 		foreach (bro in ::World.getPlayerRoster().getAll())
