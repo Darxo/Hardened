@@ -1,13 +1,4 @@
 ::Hardened.HooksMod.hook("scripts/skills/skill", function(q) {
-	q.isDuelistValid = @() function()
-	{
-		local mainhandItem = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
-		if (::MSU.isNull(mainhandItem)) return false;
-		if (!mainhandItem.isItemType(::Const.Items.ItemType.OneHanded)) return false;
-
-		return true;
-	}
-
 	q.getHitFactors = @(__original) function( _targetTile )
 	{
 		local ret = __original(_targetTile);
@@ -30,6 +21,17 @@
 		}
 
 		return ret;
+	}
+
+// Reforged Functions
+	// Overwrite, because we have different conditions for duelistValid
+	q.isDuelistValid = @() function()
+	{
+		local mainhandItem = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
+		if (::MSU.isNull(mainhandItem)) return false;
+		if (!mainhandItem.isItemType(::Const.Items.ItemType.OneHanded)) return false;
+
+		return true;
 	}
 
 // New Functions
