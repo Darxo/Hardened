@@ -23,8 +23,8 @@
 		if (this.m.PlayerRelationChanges.len() >= 1 && this.m.PlayerRelationChanges[0].Text == _reason)
 		{
 			this.m.PlayerRelationChanges[0].Time = ::Time.getVirtualTimeF();
-			// Feat: Combine subsequent duplicate entries into one in a very simple way
-			this.m.PlayerRelationChanges[0].Text += " x2";	// We only combine two duplicates at most, as that is the most straightforward and easy way
+			// Feat: Combine subsequent duplicate entries into
+			this.m.PlayerRelationChanges[0].Combined += 1;
 		}
 		else
 		{
@@ -36,7 +36,8 @@
 			this.m.PlayerRelationChanges.insert(0, {
 				Positive = _r >= 0 ? true : false,
 				Text = _reason,
-				Time = ::Time.getVirtualTimeF()
+				Time = ::Time.getVirtualTimeF(),
+				Combined = 1,	// When multiple entries are Combined into one, this number will showcase that
 			});
 		}
 	}
@@ -92,6 +93,32 @@
 		}
 
 		return ret;
+	}
+
+	q.onSerialize = @(__original) function( _out )
+	{
+		// We serialize the information from the new Combined field, by adding it to the Text directly
+		foreach (relationChange in this.m.PlayerRelationChanges)
+		{
+			if (relationChange.Combined > 1)
+			{
+				relationChange.Text += " (x" + relationChange.Combined + ")";
+				relationChange.Combined = 1;
+			}
+		}
+
+		__original(_out);
+	}
+
+	q.onDeserialize = @(__original) function( _in )
+	{
+		__original(_in);
+
+		// We artificially add the Combined field, after deserilizing, to make sure it's always present
+		foreach (relationChange in this.m.PlayerRelationChanges)
+		{
+			relationChange.Combined <- 1;
+		}
 	}
 
 // New Functions

@@ -129,6 +129,29 @@
 					icon = "ui/icons/asset_money.png",
 					text = "Sellprice: " + ::MSU.Text.colorizePct(priceMultAdd, {AddSign = true}),
 				});
+
+				// Remove all vanilla relation entries, as we add them slightly differently
+				for (local i = ret.len() - 1; i >= 0; --i)
+				{
+					if (ret[i].id == 11 && (ret[i].icon == "ui/tooltips/positive.png" || ret[i].icon == "ui/tooltips/negative.png"))
+					{
+						ret.remove(i);
+					}
+				}
+
+				local changes = this.World.FactionManager.getFaction(_entityId).getPlayerRelationChanges();
+				foreach (change in changes)
+				{
+					local changeText = change.Text;
+					if (change.Combined > 1) changeText += " (x" + change.Combined + ")";	// We add the number of combined entries dynamically
+
+					ret.push({
+						id = 11,
+						type = "hint",
+						icon = change.Positive ? "ui/tooltips/positive.png" : "ui/tooltips/negative.png",
+						text = changeText,
+					});
+				}
 				break;
 			}
 
