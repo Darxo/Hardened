@@ -8,7 +8,7 @@ this.perk_hd_one_with_the_shield <- ::inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.hd_one_with_the_shield";
-		this.m.Name = ::Const.Strings.PerkName.Recover;
+		this.m.Name = ::Const.Strings.PerkName.HD_OneWithTheShield;
 		this.m.Description = "Shift your shield to guard vital points; raised to protect your head, lowered to shield your body";
 		this.m.Icon = "ui/perks/perk_02.png";
 		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
