@@ -117,14 +117,14 @@
 				priceMultAdd += ::Math.min(50, r) * 0.003 + r * 0.003;
 
 				ret.push({
-					id = 10,
+					id = 15,
 					type = "text",
 					icon = "ui/icons/asset_money.png",
 					text = "Buyprice: " + ::MSU.Text.colorizePct(-1 * priceMultAdd, {AddSign = true, InvertColor = true}),
 				});
 
 				ret.push({
-					id = 11,
+					id = 16,
 					type = "text",
 					icon = "ui/icons/asset_money.png",
 					text = "Sellprice: " + ::MSU.Text.colorizePct(priceMultAdd, {AddSign = true}),
