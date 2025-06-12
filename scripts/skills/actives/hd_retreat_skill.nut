@@ -63,7 +63,13 @@ this.hd_retreat_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		this.getContainer().getActor().retreat();
+		// Calling retreat, similarto calling kill, will remove this entity without resolving the scheduledSkill
+		// Just like with the vanilla exploding skulls, we therefor do the retreating with the tiniest delay
+		::Time.scheduleEvent(::TimeUnit.Real, 1, function ( _user )
+		{
+			_user.retreat();
+		}, _user);
+		return true;
 	}
 
 // New Functions
