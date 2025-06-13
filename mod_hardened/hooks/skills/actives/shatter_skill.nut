@@ -42,6 +42,13 @@
 		}
 	}
 
+// MSU Functions
+	q.softReset = @(__original) function()
+	{
+		__original();
+		this.resetField("KnockbackChance");
+	}
+
 // New Functions
 	q.applyStagger <- function(_user, _target, _targetTile)
 	{
