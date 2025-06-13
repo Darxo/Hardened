@@ -1419,6 +1419,28 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_trick_shooter",
+		Key = "RF_TrickShooter",
+		Description = ::UPD.getDescription({
+			Fluff = "Never repeat the same trick twice!",
+			Requirement = "Bow",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Active,
+					Description = [
+						"Unlock the [Flaming Arrows|Skill+rf_flaming_arrows_skill] skill",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"All Bow Skills that you have not used yet this battle, cost " + ::MSU.Text.colorPositive(-2) + " [Action Points|Concept.ActionPoints]",
+					],
+				},
+			],
+		}),
+	},
+	{
 		ID = "perk.rf_unstoppable",
 		Key = "RF_Unstoppable",
 		Description = ::UPD.getDescription({
