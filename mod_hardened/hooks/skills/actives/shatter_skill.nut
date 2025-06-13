@@ -83,7 +83,7 @@
 
 		if (!_user.isHiddenToPlayer() && (_targetTile.IsVisibleForPlayer || knockToTile.IsVisibleForPlayer))
 		{
-			this.Tactical.EventLog.log(::Const.UI.getColorizedEntityName(_user) + " has knocked back " + ::Const.UI.getColorizedEntityName(_target));
+			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(_user) + " has knocked back " + ::Const.UI.getColorizedEntityName(_target));
 		}
 
 		local skills = _target.getSkills();
@@ -91,11 +91,11 @@
 		skills.removeByID("effects.spearwall");
 		skills.removeByID("effects.riposte");
 		_target.setCurrentMovementType(::Const.Tactical.MovementType.Involuntary);
-		local damage = this.Math.max(0, this.Math.abs(knockToTile.Level - _targetTile.Level) - 1) * ::Const.Combat.FallingDamage;
+		local damage = ::Math.max(0, ::Math.abs(knockToTile.Level - _targetTile.Level) - 1) * ::Const.Combat.FallingDamage;
 
 		if (damage == 0)
 		{
-			this.Tactical.getNavigator().teleport(_target, knockToTile, null, null, true);
+			::Tactical.getNavigator().teleport(_target, knockToTile, null, null, true);
 		}
 		else
 		{
@@ -110,7 +110,7 @@
 			tag.HitInfo.BodyPart = ::Const.BodyPart.Body;
 			tag.HitInfo.BodyDamageMult = 1.0;
 			tag.HitInfo.FatalityChanceMult = 1.0;
-			this.Tactical.getNavigator().teleport(_target, knockToTile, this.onKnockedDown, tag, true);
+			::Tactical.getNavigator().teleport(_target, knockToTile, this.onKnockedDown, tag, true);
 		}
 	}
 
