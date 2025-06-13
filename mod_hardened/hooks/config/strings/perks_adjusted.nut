@@ -715,7 +715,7 @@ local adjustedDescriptions = [
 	},
 	{
 		ID = "perk.rf_deep_impact",
-		Key = "RF_DeepImpact",
+		Key = "RF_DeepImpact",		// Now called "Breakthrough"
 		Description = ::UPD.getDescription({
 			Fluff = "Clear a path with every strike, claiming the ground as your own.",
 			Requirement = "Hammer",
@@ -723,7 +723,8 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"[Shatter|Skill+shatter_skill] will always knock back enemies you hit"
+						"[Shatter|Skill+shatter_skill] always knock back enemies you hit",
+						"[Shatter|Skill+shatter_skill] knocks enemies back an additional tile",
 					],
 				},
 				{

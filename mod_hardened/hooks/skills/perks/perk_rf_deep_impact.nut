@@ -4,7 +4,7 @@
 
 // Our Implementation is not perfect. It can't deal with any delayed skills like Ranged Attacks or Lunge/Charge like abilities
 // However we can deal with proxy-activations where one skill activates another one within it, if those happen instantly with no delay of course
-::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_deep_impact", function(q) {
+::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_deep_impact", function(q) {		// Now called "Breakthrough"
 	// Public
 	q.m.DamagePctPerActionPoint <- 0.1;
 	q.m.OneHandedMultiplier <- 2.0;		// One Handed weapons gain this much more damage
@@ -34,7 +34,22 @@
 			if (skill.getID() == "actives.shatter")
 			{
 				skill.m.KnockbackChance = 100;
+				skill.m.HD_KnockBackDistance += 1;
 			}
+		}
+	}
+
+// MSU Events
+	q.onQueryTooltip <- function( _skill, _tooltip )
+	{
+		if (_skill.getID() == "actives.shatter")
+		{
+			_tooltip.push({
+				id = 100,
+				type = "text",
+				icon = this.getIconColored(),
+				text = "Knocks back enemies an additional tile",
+			});
 		}
 	}
 });
