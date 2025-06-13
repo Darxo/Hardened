@@ -122,7 +122,6 @@
 - Make Ancient Spire enterable repeatidly. But each time you need to choose a brother, who then receives the exhausted debuff for a few days
 - After killing enemy with named gear in the arena, offer that piece for sale in the shop (maybe other gear too)
 - World Location Icon for when it is a legendary location
-- Make **Gash** apply a bleed on the target for each injury on them?
 - Make some contracts pay in items instead of gold (part of the reward). And allow player to negotiate that away
 - Rework this whole Reforged System of any mastery being able to specialize you in skills, that another mastery would provide.
 	- Instead the weapon mastery should be rewritten to only grant effects, that can be applied from within the mastery
@@ -149,7 +148,6 @@
 - New "wake up" skill for all humans, which removes 1 turn of 'stunned' from an adjacent character. Costs 6 AP and 20 fatigue. User must not be engaged in melee
 - lightning damage to always hit the head
 - make punctured gear more likely to drop in the actual quality left
-- parry fx using little stars from ::Const.Tactical.DazeParticles
 - Holy Water use case:
 	- Destroy undead corpses
 - Prevent camps from spawning defenders, while player is nearby
@@ -204,10 +202,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Hip Shooter
 	- Lose 10% Armor Penetration (remove fatigue stuff)
 - Mauler
-	- replace with "Bloodlust"
 	- replace second effect with 15% more damage when hitting body parts that have no remaining armor
-	- You deal 50% more critical damage on a hit to the body
-		- 50% seems a big too strong against something like an unhold with decapitate. But then again, thats exactly how much you'd deal on a headshot (unless they had steelbrow)
 		- Alternative: Deal +25% critical damage for every injury on the target (no matter which bodypart you target)
 - Bloodlust
 	- When you start your turn next to bleeding enemies (or maybe bleeding yourself) gain a temporary bonus depending on the amount of bleeding enemies
@@ -280,7 +275,7 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 ## Backlog
 - Reduce bleeding noise
 	- Cant fix right now, because 'refresh' only supports increased stacks by 1. Reforged suffers the same problem when inflicting 3 bleed via Gouge for example
-- split hyena/nachzehrer troops
+
 
 # WIP
 
@@ -360,7 +355,6 @@ from Modular Vanilla
 - Make Infected Wound stop healing of all present untreated injuries, until medical supplies are there
 
 - Tooltip for economic difficulty changes
-- color adjacent enemies, that exert ZOC onto you in a color, when previewing movement out of ZOC
 
 - Make world parties that are left with 1 troop after auto-battle disappear. Otherwise you get parties with a single necromancer or hexen or barbarian king
 
@@ -419,7 +413,7 @@ from Modular Vanilla
 MOdular Vanilla:
 - also activate preview movement while AI is considering a path for (turns for attack)
 
-- make necromancer resurrect themselves and be able to cast spells then
+- make necromancer resurrect themselves and be able to cast spells then ???
 - make gladiator attachements a bit heavier
 
 - make camps ignore minimum distance to each other, if mountain is in between
@@ -437,13 +431,10 @@ MOdular Vanilla:
 - turn order prediction
 	- Could be realised by slotting in a dummy/separator entity into the turn sequence bar at the very end?
 
-- remove "requires throwing weapon" from toolbox?
-- give mercenaries bandage item in bag and teach them how to use it
 - Howler Monkey sfx for some kind of beast
 - Look into Marshals Armor (also armor from other types of enemies that use brigandine)
 
 - cross mod compatibility with crock pot? (vulture threat keyword)
-- anchor icon during users turn showcasing the damage reduction
 - draw combat steps red, while the active entity is in zone of control
 	- they are handled in the .exe (steps_bot_left, steps_top, etc.)
 
@@ -458,7 +449,6 @@ MOdular Vanilla:
 
 - prevent cheese where you can find out whether someone is hiding in a bush by trying to pathfind into that bush
 	- same thing is true for fog of war
-- attacking allies only makes them temporary enemies at first
 - make spider corpses a bit more transparent, less colored, so that they differ more from alive ones
 
 - Feature: Manual Snapshot for brother-gear, that can be manually reset. Useful for when you swap out a lot of gear before a fight
@@ -466,3 +456,74 @@ MOdular Vanilla:
 - API: hook onQueryTargetTile to implement new ai function
 - add debug logs for finding the end of battle bug
 - Make root skills much more likely to target someone with Unstoppable stacks (because they cancel unstoppable)
+
+- nerf ancient gladius
+- give bag slot weapons a offset to the top left so simulate depth and make them more visible with attachements on
+	- maybe increase their size slightly too?
+	- this does not work outside of combat
+
+- linebreaker (from onslaught) is not a once-per-turn (happens twice during snowman stream)
+
+- broken shield glitch (outside of combat the paperdoll shield looks healthy while the shield brush is damaged). all whn the shield is damaged
+	- probably just make it not look broken outside of battle (or maybe that is already the case and what is missing is just an update?)
+
+- reduce ranged damage dealt to enemies in cover
+- make dodge also grant 5% initiative as defense if at least one adjacent tile is empty
+- dodge: misses against you build no fatigue, while at least one adjacent tile is empty
+- dont display injuries in temple that are "healed by tomorrow" anyways
+- make disloyal make negative mood fade away slower
+
+- increase armor pen of crossbows to 60%
+- reduce armor damage of bows (to like 60%)
+
+- new type of tooltip that displays whenever the player previews movement
+	- am I in zone of control?
+		- if yes, whats all the hitchances?
+	- whats the total AP and Fatigeu cost of the movement?
+	- how much does each tile cost to move through?
+
+- Bloodlust:
+	- +10% Armor Penetration against enemies that are not currently bleeding
+	- When attacking someone with less Resolve, inflict an additional Bleeding stack
+	- When attacking someone with less Initiative, inflict an additional Bleeding stack
+	- When attacking someone whose turn has not started yet, inflict n additional bleeding stack
+
+- whenever you win a fight, all brothers in reserve get a non-stacking exp buff for the next fight
+	- **Eager for Battle**
+
+- make NPC ammo limited
+	- make NPC Defender have unlimited ammunition
+- Make **Gash** deal more damage for every bleed on the target?
+- look into sorting of enemy types in combat dialog
+	- most important once should be sorted to the top
+	- make it scrollable
+- Concept for Auto-Retreat
+
+## Todo
+- split hyena/nachzehrer troops
+- make formidable approach characters more likely to be targeted by rotation-like skills if that pots them next to new enemies or removes confident from enemies potentially
+- make NPC more likely to use throw sand against enemies who are adjacent to fleeing allies
+- color adjacent enemies, that exert ZOC onto you in a color, when previewing movement out of ZOC
+- when viewing tiles with dead player, show if struck down or dead for real
+- characters who rally lose X AP
+- improve line breaker skill to use
+- remove bandit leader unique names?
+	- alternatively: show their type name?
+
+- resilient nerf to -2 turn effect duration (from -5), so that certain poisons still apply
+- tooltip for mod setting about food duration should mention that the duration can never be higher than your food with the highest freshness
+- make camping reduce food consumption?
+- remove dodge from frenzied direwolfs
+- increase fatigue cost of whirling stance
+
+- armor types:
+worst
+- scale
+- lamellar
+- mail
+- plate
+best
+
+show uncapped hitchance
+- fix(vanilla) parties on world map that concluded fights, still counting as on-going battles
+- fix some ifrits being rootable but not knowing how to free themselves

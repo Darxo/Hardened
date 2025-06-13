@@ -250,7 +250,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. You take 2% less Armor Damage from Attacks for every 5 Initiative you have, up to a maximum of 40%.
 - **Polearm Mastery** no longer reduces the Action Point cost of 2 handed reach weapons by 1. It now grants +15% chance to hit for **Repel** and **Hook**.
 - **Professional** now reduces the experience gained by 5%
-- **Quickhands** can now also swap two two-handed weapons
+- **Quickhands** can now also swap two two-handed weapons, just like in Vanilla. It now stacks with other effects that grant free swaps
 - **Rally the Troops** can now also be used even the user was already rallied by someone else this round
 - **Rattle** is now called **Full Force** and has been completely reworked. It now causes you to spend all remaining Action Points whenever you attack and gain 10% more damage per Action Point spent. The effect is double for one-handed weapons
 - **Rebuke** is completely reworked. It now grants the **Rebuke Effect** whenever an opponent misses a melee attack against you while it's not your turn, until the start of your next turn. This effect reduces your damage by 25% but will make you retaliate every melee attack miss against you.
@@ -685,14 +685,14 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 ### Combat
 
 - Your headshot chance is now displayed in the combat tooltip when targeting enemies
-- While previewing movement, tile tooltips show chances and calculations for getting hit by enemies while in zone of control. If not in zone of control tile tooltips state that
+- While previewing movement, tile tooltips show chances and calculations for getting hit by enemies while in zone of control. If not in zone of control tile tooltip instead indicates that
 - Introduce a new **Unworthy** effect which prevents the character from granting experience on death. This is given to all non-player controlled characters who grant 0 XP on death or are allied to the player
 - Introduce a new cosmetic **Non-Combatant** effect, given to non-combatant characters, which explains that they do not need to be killed in order to win
 - Improve restore item after battle logic, to also restore items, which were dropped to the ground or picked up by another brother during battle
 - Automatically replace broken (shields) or used (nets) equipment after each battle, if you have replacements in your inventory
 - Add Setting (on) to display a glowing red eyes effect on any human-sized character, who is under the effect of **Killing Frenzy**, **Retribution** or has 3 stacks of **Decisive**
 - Corpses of resurrecting Zombies and Humans now emit a slight purple particle effect
-- When a Brother dies (without getting struck down), a black skull will raise from their corpse
+- When a Brother dies (without getting struck down), a black skull will raise from his corpse
 - Add Setting to control the zoom speed during combat to allow for more granular zooming
 - Loot that is not equippable in battle no longer appears on the ground (e.g. Beast Trophies/Ingredients)
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)

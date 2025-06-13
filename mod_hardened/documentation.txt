@@ -14,6 +14,37 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+0.48.0
+	- Force Attacking an ally on the world map no longer drops their Relation with you to 0 or causes a Morale Reputation hit. Instead it only makes them temporarily your enemy until you cancel the combat dialog or end the fight with them.
+	- Whenever start combat, lose 5 Relation with all hostile Factions that you fight against
+	- Whenever you start combat against a temporary enemy (e.g. when Force Attacking an ally), lose 2 Morale Reputation
+	- Killing any character now changes Relation with their faction by -1 (down from -0.5). This action will now print a relation change entry with a reason
+	- Knockback of all skills is reworked and standardized. It still always knocks someone back in a straight line, if user and target are on the same axis and there is space behind the target. In all other cases the destination is now random, instead of fixed and clock-wise
+	- **Trick Shooter** is completely reworked. It makes all Bow Skills that you have not used yet this battle, cost -2 Action Points. It also grants the **Flaming Arrow** skill (instead of the perk).
+	- **Breakthrough** now causes **Shatter** to knock enemies back an additional tile
+	- **Quickhands** now stacks with other effects that provide discount on swaps or free swaps
+	- **Poleflail** now has a Value of 1600 (up from 1400)
+	- **Longsword** now has a Value of 2000 (down from 2400)
+	- Every Defender of a Location which was fortified now gets a new **Defenders Advantage** effect for that fight, which grants +2 Vision and +15 Resolve
+	- **Sword Thrust** (granted by Fencing Swords) now has 0% additional hitchance (up from -10%)
+	- **Ifrits** now take no Burning Damage (up from 90% less). They now take full damage from blunt ranged attacks (down from 66% less). They now take 50% less damage from Piercing Damage, instead of taking 50% less melee piercing damage and 66% less ranged piercing damage. The damage reduction on Ifrits now also affects the armor damage they receive
+	- **Anchor** now displays a tooltip during the characters turn, showcasing the damage reduction
+	- **Dodge** now shows a Mini-Icon while it grants any defense bonus
+	- Subsequent relation changes with the same value and same reason will be combined into a single line
+	- Relation changes that come with a reason now also show the value in brackets, that you gained or lost from this action
+	- The Retreat tooltip during combat now also lists the Melee Defense bonus your characters receive during Auto-Retreat
+	- Make NPCs twice as likely to use rotating skills onto allied Nachzehrer if that would put them on top of a corpse; and half as likely if that would put them away a corpses. And vice versa with hostile nachzehrers
+	- Fix(Vanilla): calling `setIsTemporaryEnemy` on a faction will now update all their world parties so that their name labels are colored correctly
+	- Fix wrong tootlip title in **One with the Shield** effect
+	- Fix MSU warning Popup when retreating manually
+	- Fix log error when quitting out of a battle into the main menu
+	- Fix **Shatter** still having 100% knockback chance after unlearning **Breakthrough**
+	- Add `::Hardened.util.findTileToKnockBackTo(_userTile, _targetTile, _knockBackDistance = 1)`, which is a centralized implementation of the knock back logic that also allows to knock someone back multiple times
+	- Add `findTileToKnockBackTo(userTile, _targetTile)` to `skill.nut` which points towards `::Hardened.util.findTileToKnockBackTo`. This already exists for certain vanilla skills. Now every skill has access to it
+	- Add `::Hardened.util.isOnSameAxis(_startTile, _targetTile)`, which returns `true`, if both tiles are on the same hexagonal axis
+	- Add `actor::getParty()` which returns a reference to the world party that this entitiy belongs to, or `null`, if no world party could be found
+	- Add `HD_KnockBackDistance` = 1` for `skill.nut`, which determines how many tiles they would knock a target back
+
 0.47.1
 	- While previewing movement, tile tooltips show a tooltip line while not in zone of control
 	- Clarify in **Unstoppable** perk description, that **Wait** always reduces stacks by 1

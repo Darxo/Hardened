@@ -45,6 +45,7 @@
 		return ret;
 	}
 
+// New Functions
 	// Function for scheduling resurrections
 	q.HD_scheduleResurrection <- function( _rounds, _corpse )
 	{

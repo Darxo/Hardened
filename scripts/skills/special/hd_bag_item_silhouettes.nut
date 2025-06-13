@@ -37,6 +37,8 @@ this.hd_bag_item_silhouettes <- ::inherit("scripts/skills/skill", {
 			sprite.setBrush(silhouette);
 			sprite.Visible = true;
 			sprite.Color = ::createColor(this.getColor());
+			// A small offset for simulating depth is imaginable (using actor.setSpriteOffset)
+			// However that only affects actors on the battlefield. Actors in the character screen and on the turn sequence bar will be unaffected by those offsets
 		}
 	}
 
