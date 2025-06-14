@@ -115,6 +115,6 @@ this.perk_hd_anchor <- ::inherit("scripts/skills/skill", {
 			return this.m.DamageReceivedTotalMult;
 		}
 
-		return 0.0;
+		return 1.0;
 	}
 });
