@@ -108,7 +108,7 @@ this.perk_hd_anchor <- ::inherit("scripts/skills/skill", {
 	}
 
 // New Functions
-	function getDamageReceivedTotalMult( _skill )
+	function getDamageReceivedTotalMult()
 	{
 		if (this.getContainer().getActor().isActiveEntity())
 		{
