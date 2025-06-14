@@ -14,6 +14,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+0.48.1
+	- Fix crashes and errors when having someone with the **Anchor** perk
+
 0.48.0
 	- Force Attacking an ally on the world map no longer drops their Relation with you to 0 or causes a Morale Reputation hit. Instead it only makes them temporarily your enemy until you cancel the combat dialog or end the fight with them.
 	- Whenever start combat, lose 5 Relation with all hostile Factions that you fight against

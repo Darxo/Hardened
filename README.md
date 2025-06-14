@@ -83,6 +83,13 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - Reloading Crossbows now applies **Reload Disorientation** to you until the start of your next turn.
   - **Reload Disorientation** applies -15 Ranged Skill and 35% less Ranged Defense
 
+### Attacking Allies
+
+- Force Attacking an ally on the world map no longer drops their Relation with you to 0 or causes a Morale Reputation hit. Instead it only makes them temporarily your enemy until you cancel the combat dialog or end the fight with them
+- Whenever start combat, lose 5 Relation with all hostile Factions that you fight against
+- Whenever you start combat against a temporary enemy (e.g. when Force Attacking an ally), lose 2 Morale Reputation
+- Killing any character now changes Relation with their faction by -1 (down from -0.5). This action will now print a relation change entry with a reason
+
 ### New Perks
 
 - Add new **Anchor** perk in Tier 3 of **Unstoppable Group**. It grants immunity against **Displacement** until the start of your next turn, if you end your turn on the same tile you started it on. You also take 50% less Damage from Attacks during your turn.
@@ -147,6 +154,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
 - **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%)
+- **Flaming Arrow** (granted by **Trick Shooter**) now longer causes an extra morale check on the main target
 - **Passing Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand
 - **Lunge** now has -10% additional Hitchance (up from -20%)
 - **Net Effect** no longer affects the Initiative of the target. It now applies 50% less Melee Defense (up from 25%) and 50% less Ranged Defense (up from 45%)
@@ -157,7 +165,6 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - **Shuffle** (granted by **Dynamic Duo**) no longer puts your partner to the next position in the turn order
 - **Spider Poison** now also reduces the Hitpoints Recovery of the target by 50%
 - **Stab** now costs 3 Action Points (down from 4) and has a 25% higher threshold to inflict injuries
-- **Sword Thrust** now has -10% additional Hitchance (up from -20%)
 - **Take Aim** (granted by **Crossbow and Firearm Mastery**) now costs 4 Action Points (up from 2) and 20 Fatigue (down from 25)
 - **Throw Axe** now has a 50% chance to decapitate (up from 0%) and 25% chance to disembowel (up from 0%)
 - **Throw Net** now costs 4 Action Points (down from 5), has a Range of 3 (up from 2) and no longer requires the targets Base Reach to be below a certain value
@@ -175,6 +182,7 @@ Skill nerfs as a result of the Reach system:
 - **Slash** now has 0% additional Hitchance (down from 5%)
 - **Split** now has -10% additional Hitchance (down from -5%)
 - **Strike** now has 0% additional Hitchance (down from 5%)
+- **Sword Thrust** now has 0% additional Hitchance (up from -20%)
 - **Thrust** now has 0% additional Hitchance (down from 10%)
 
 ### Perks
@@ -210,7 +218,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Dagger Mastery** no longer grant any reach ignore. It now reduces the action point cost of the first offhand skill each turn to 0, if your offhand item has a weight lower than 10
 - **Decisive** no longer grants 15% more Resolve at 1 Stack
 - **Death Dealer** is completely reworked. It now grants 5% more damage with AoE-Attacks for every enemy within 2 tiles
-- **Deep Impact** is now called **Breakthrough** and has been completely reworked. It grants the **Pummel** skill, which can now be used with any hammer. It also makes it so **Shatter** has a 100% chance to knock targets back on a hit
+- **Deep Impact** is now called **Breakthrough** and has been completely reworked. It grants the **Pummel** skill, which can now be used with any hammer. It also makes it so **Shatter** has a 100% chance to knock targets back on a hit and it increases the knock back distance of **Shatter** by 1
 - **Dismantle** has been completely reworked. It now grants 100% more Shield Damage. It also grants +40% Armor Damage against enemies who have full health
 - **Dismemberment** no longer causes any morale checks. It now grants +20% chance to hit the body part with the most temporary injuries
 - **Dodge** now grants 5% of Initiative as extra Melee Defense and Ranged Defense for every empty adjacent tile (down from always 15%)
@@ -270,7 +278,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Tempo** is completely reworked. It grants 10% more Initiative until the start of your next turn whenever you move a tile during your turn. It also grants **Passing Step**
 - **Through the Gaps** is completely reworked. It causes your piercing spear attacks to always target the body part with the lowest total armor but no longer deal critical damage on a hit to the head
 - **Throwing Mastery** is mostly completely reworked. It now grants 30% more damage for your first throwing attack each turn, no matter the range. It now allows swapping a throwing weapon with an empty throwing weapon or empty slot for free, once per turn
-- **Trick Shooter** no longer causes your **Aimed Shot** to trigger a morale check on the main target hit
+- **Trick Shooter** is completely reworked. It makes all Bow Skills that you have not used yet this battle, cost -2 Action Points. It also grants the Flaming Arrow skill (instead of the perk)
 - **Underdog** is rewritten. It now grants +5 Melee Defense for every character surrounding you, except the first one. Compared to the vanilla implementation this defense is now affected by defense multiplier and by the softcap for defense
 - **Unstoppable** is completely reworked. Once per round during your turn, if you hit an enemy with an attack, gain 1 stack up to a maximum of 3. Each stack grants +1 Action Points and 10% more Initiative. Lose 1 stack if you wait. Lose 1 stack if you end your turn with more than half of your action points remaining. Lose all stacks when you use recover, get stunned or staggered
 - **Vanquisher** is completely reworked. After you step on a corpse that has been created this round, you become Immune to **Displacement** and take 25% less Damage until the start of your next turn. **Gain Ground** (granted by **Vanquisher** perk) is now free
@@ -355,6 +363,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Cut Artery** now applies 3 stack of bleed when inflicted
 - **Cut Throat** now applies 6 stack of bleed when inflicted
 
+### Misc
+
+- Knockback of all skills is reworked and standardized. It still always knocks someone back in a straight line, if user and target are on the same axis and there is space behind the target. In all other cases the destination is now random, instead of fixed and clock-wise
+
 ## Items
 
 ### Weapons
@@ -375,10 +387,11 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Head Splitter** now has 4 Reach (up from 3) and deals 20 Shield Damage (up from 16)
 - **Heavy Crossbow** now has +2 Fatigue Cost for its weapon skills
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
+- **Longsword** now costs 2000 Crowns (down from 2400)
 - **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%)
 - **Pike** and gains the **Spear** Weapontype
 - **Player Banner** now grants -5 to Ranged Defense and it comes with **Repel**
-- **Poleflail** now has 5 Reach (down from 6). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
+- **Poleflail** now has 5 Reach (down from 6) and costs 1600 Crowns (up from 1400). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
 - **Reinforced Wooden Poleflail** now has 5 Reach (down from 6). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
 - **Spetum** now has a Reach of 7 (up from 6), a Weight of 12 (down from 14) and value of 900 (down from 1050). The named variant now costs 2800 Crowns (down from 3500)
 - **Spiked Impaler** now has +2 Fatigue Cost for its weapon skills
@@ -566,7 +579,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - **Donkeys** now grant 0 XP (down from 50 XP)
 - **Frost Unholds** and **Armored Frost Unholds** now have 150 natural Body and Head Armor (up from 90). They lose **Dismantle** and **Full Force**
 - Add new **Hexen** racial effect that increases the duration of debuffs by 1 turn for the Hexe
-- All **Ifrits** gain **Man of Steel**
+- All **Ifrits** gain **Man of Steel**. They take no Burning Damage (up from 90% less), full damage from blunt ranged attacks (down from 66% less) and 50% less damage from Piercing Damage (down from 50% less against melee and 66% less against ranged). The damage reduction on Ifrits now also affects the armor damage they receive
   - **Small Ifrits** now have 55 Hitpoints (down from 110) and 165 Armor (up from 110)
   - **Medium Ifrits** now have 110 Hitpoints (down from 220) and 220 Armor (up from 110). They lose 10 Damage and gain **Marksmanship**
   - **Large Ifrits** now have 220 Hitpoints (down from 440) and 330 Armor (up from 110). They lose 10 Damage and gain **Marksmanship**
@@ -613,8 +626,10 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - NPCs are 50% more likely to use **Split Shield** when it would destroy a shield on use
 - NPCs are 20% more likely to use a throwing spear against shield users and 50% more likely to target shields, that it would destroy on use
 - NPCs are 20% more likely to use **Disarm** or **Knock out** on someone who has **Parry**
+- NPCs are 100% more likely to use rotating skills onto allied Nachzehrer if that would put them on top of a corpse; and 50% less likely if that would put them away a corpses. And vice versa with hostile nachzehrers
 
 ## Combat General
+- Every Defender of a Location which was fortified now gets a new **Defenders Advantage** effect for that fight, which grants +2 Vision and +15 Resolve
 - **Encumbrance** no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level. It no longer requires a minimum armor weight of 20
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
 - Equipped Ammo Items can no longer be dropped to the ground or into an empty inventory slot
@@ -679,6 +694,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - Beginner combat difficulty now grants enemy parties 100% resources (up from 85%)
 - Beginner combat difficulty now causes player characters to receive 15% less damage from all sources
 - Expert combat difficulty now grants enemy parties 120% resources (up from 115%)
+- The Retreat tooltip during combat now also lists the Melee Defense bonus your characters receive during Auto-Retreat
 
 ## Quality of Life
 
@@ -729,6 +745,8 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - Display the current XP Multiplier of the viewed character when hovering over the Experience bar
 - World Parties with champions will display an orange skull on top of their socket
 - Hostile Locations now display a tooltip line if they hide defender
+- Relation changes that come with a reason now also show the value in brackets, that you gained or lost from this action
+- Subsequent relation changes with the same value and same reason will be combined into a single line with a multiplier in brackets
 - Display price multiplier from relation in factions & relations screen
 - Add Setting (on) for displaying the exact Relation whenever its indirect term appears anywhere
 - Add Setting (on) for displaying the exact Morale Reputation whenever its indirect term appears anywhere
@@ -792,6 +810,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - Characters under berserker mushroom effect no longer yell when they use ranged attacks
 - Prevent the same random human name (e.g. for Leader or Knight) to be generated in succession
 - Throw Pot/Flask skills are no longer considered an Attack
+- Setting a faction as a temporary enemy now instantly updates the name labels of all their world parties accordingly
 - **Throw Net** and **Net Pull** are no longer considered an Attack
 - Rewrite `queryActorTurnsNearTarget` from `behavior.nut`, making it more accurate by considering current action points
 - Remove a duplicate loading screen
@@ -861,6 +880,11 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - Add `HD_getBrush` function for `item.nut` which returns the brushname representing that item currently. Or `null`, if the item is not represented by a brush
 - Add `::Hardened.util.intToHex(_unsigned)`, which returns a hexstring representation of the passed number
 - Add `onBeforeStart(_screen)` function for `contract.nut` which is called directly before the `start()` function of any of its screen is called
+- Add `::Hardened.util.findTileToKnockBackTo(_userTile, _targetTile, _knockBackDistance = 1)`, which is a centralized implementation of the knock back logic that also allows to knock someone back multiple times
+- Add `findTileToKnockBackTo(userTile, _targetTile)` to `skill.nut` which points towards `::Hardened.util.findTileToKnockBackTo`. This already exists for certain vanilla skills. Now every skill has access to that implemented function
+- Add `::Hardened.util.isOnSameAxis(_startTile, _targetTile)`, which returns `true`, if both tiles are on the same hexagonal axis
+- Add `actor::getParty()` which returns a reference to the world party that this entitiy belongs to, or `null`, if no world party could be found
+- Add `HD_KnockBackDistance` = 1` for `skill.nut`, which determines how many tiles they would knock a target back
 
 ### New Character Properties
 
