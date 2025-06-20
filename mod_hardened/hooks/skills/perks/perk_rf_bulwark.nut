@@ -6,9 +6,9 @@
 	}
 
 	// Overwrite, because we have a completely different effect
-	q.getTooltip = @(__original) function()
+	q.getTooltip = @() function()
 	{
-		local ret = __original();
+		local ret = this.skill.getTooltip();
 
 		ret.push({
 			id = 10,
