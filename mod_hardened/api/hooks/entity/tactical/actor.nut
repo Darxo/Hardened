@@ -105,7 +105,9 @@
 	{
 		local stamina = this.getCurrentProperties().getStamina();
 		stamina += this.getStaminaModifierFromWeight();	// Stamina modifiers from weight are now applied AFTER the StaminaMult from effects (injuries, perks) is applied
-		return ::Math.max(stamina, this.m.StaminaMin);	// New: We now introduce a minimum Stamina value. At worst a character should still be able to throw a fist or move one tile
+		// New: We now introduce a minimum Stamina value. At worst a character should still be able to throw a fist or move one tile
+		// We need to return a float value, because vanilla does not check against division by 0 in their getFatigueScoreMult function. The only way it doesnt crash is if the 0 is a float value
+		return ::Math.maxf(stamina, this.m.StaminaMin);
 	}
 
 	// Calculate the total Stamina Modifier from the Weight of all equipped gear
