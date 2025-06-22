@@ -555,6 +555,7 @@ Side-by-side comparison between Vanilla and Hardened: https://github.com/Darxo/H
 - **Flesh Golems** lose **Full Force**
 - **Geists** lose **Fearsome**. They now have **Backstabber**
 - **Necromancer** lose 20 natural body armor and **Inspiring Presence**. **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)
+- **Necrosavants** now require the target to have red blood in order to leech life from them, instead of being able to leech life from anyone
 - **Ancient Auxiliary** lose **Battleforged**
 - **The Conqueror** now has **Savage Strength**. This has no gameplay impact and is only meant to visualize that he is immune to **Disarm**
 
