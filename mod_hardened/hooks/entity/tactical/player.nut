@@ -38,7 +38,16 @@
 	q.getProjectedAttributes = @(__original) function()
 	{
 		local ret = __original();
-		local baseProperties = this.getBaseProperties();
+
+		local properties = this.getBaseProperties().getClone();
+		// Apply the effects from all traits and permanent injuries. Same as what Reforged does
+		local wasUpdating = this.getSkills().m.IsUpdating;
+		this.getSkills().m.IsUpdating = true;
+		foreach (s in this.getSkills().getSkillsByFunction(@( _skill ) _skill.isType(::Const.SkillType.Trait) || _skill.isType(::Const.SkillType.PermanentInjury)))
+		{
+			s.onUpdate(properties);
+		}
+		this.getSkills().m.IsUpdating = wasUpdating;
 
 		foreach (attributeName, attribute in ::Const.Attributes)
 		{
@@ -46,7 +55,7 @@
 			if (this.m.Talents[attribute] != 2) continue;	// We only adjust attributes that have 2 stars
 
 			local levelUpsRemaining = ::Math.max(::Const.XP.MaxLevelWithPerkpoints - this.getLevel() + this.getLevelUps(), 0);
-			local attributeValue = attributeName == "Fatigue" ? baseProperties["Stamina"] : baseProperties[attributeName]; // Thank you Overhype
+			local attributeValue = attributeName == "Fatigue" ? properties["Stamina"] : properties[attributeName]; // Thank you Overhype
 
 			ret[attribute] = [
 				attributeValue + (::Const.AttributesLevelUp[attribute].Min + 1) * levelUpsRemaining,
