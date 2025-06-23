@@ -4,9 +4,10 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Value = 5000;			// In Vanilla this is 4000
-		this.m.ConditionMax = 300; 		// In Vanilla this is -320
-		this.m.StaminaModifier = -23; 	// In Vanilla this is -21
+		this.m.Value = 5000;			// Vanilla: 4000
+		this.m.ConditionMax = 300;		// Vanilla: 320
+		this.m.StaminaModifier = -23;	// Vanilla: -21
+		this.m.Vision = -3;				// Vanilla: -3
 	}
 
 	q.getTooltip = @(__original) function()
