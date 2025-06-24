@@ -28,8 +28,8 @@
 - Prevent cheese where one puts their best bros on the bench in response to a hopeless ambush
 - Rework supply-system: If you max out a supply, all remaining ones stay in the inventory instead of being voided
 - Shield Skill/attack damage prediction (destruction prediction?)
-- AI Logic:
 	- Function for calculating the worth of any single entity
+- AI Logic:
 		- This already exists in Vanilla, just listing it here because it stay in contrast to the danger
 	- Function for calculating the danger of any single entity in isolation
 		- This function will look at the targeted entities surrounding to evaluate this
@@ -527,3 +527,16 @@ best
 show uncapped hitchance
 - fix(vanilla) parties on world map that concluded fights, still counting as on-going battles
 - fix some ifrits being rootable but not knowing how to free themselves
+
+- dont spawn decayed_closed_flat_top_with_sack anymore
+
+- use silent song at start of combat until first contact is made
+
+- give assassins scout and elusive?
+- give assassins a nightowl elixir?
+	- If you fight them at night, they will use it first turn
+	- If you fight them by day, they will drop it on death
+
+- when viewing ground items during battle, turn those items grey, which can't be equipped because
+	- not enough action points
+	- not equippable to the current character
