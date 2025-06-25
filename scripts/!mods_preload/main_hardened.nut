@@ -6,7 +6,9 @@
 	Temp = {	// Used to globally store variables between function calls to implement more advanced, albeit hacky behavior
 		RootSkillCounter = null,	// This variable will have the SkillCounter of the root skills during the execution of any skill executions and delayed executions
 	},
-	Const = {},
+	Const = {
+		ActionPointChangeOnRally = -3,	// Whenever this actor rallies (going from fleeing to wavering) its action points change by this amount
+	},
 	Global = {},
 }
 

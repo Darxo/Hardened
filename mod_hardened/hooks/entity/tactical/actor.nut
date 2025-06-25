@@ -7,6 +7,18 @@
 	q.m.HD_FleeingMoraleTurnNumber <- -1;	// Set to the last turn number, that we had morale checks in, to keep track of when to reset the fleeing morale checks
 	q.m.HD_IsDiscovered <- false;	// Is true, when setDiscovered(true) has been called on us. Is set to false at the start of every round or when this actor steps into a tile not visible to the player
 
+	q.checkMorale = @(__original) { function checkMorale( _change, _difficulty, _type = this.Const.MoraleCheckType.Default, _showIconBeforeMoraleIcon = "", _noNewLine = false )
+	{
+		local oldMoraleState = this.m.MoraleState;
+		__original(_change, _difficulty, _type, _showIconBeforeMoraleIcon, _noNewLine);
+
+		if (oldMoraleState == ::Const.MoraleState.Fleeing && this.m.MoraleState == ::Const.MoraleState.Wavering)	// This is our current definition of being rallied
+		{
+			// Feat: Any character that rallies, loses some action points
+			this.setActionPoints(this.getActionPoints() + ::Hardened.Const.ActionPointChangeOnRally);
+		}
+	}}.checkMorale;
+
 	q.onInit = @(__original) function()
 	{
 		__original();
