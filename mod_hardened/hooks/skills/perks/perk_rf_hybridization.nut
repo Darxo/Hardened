@@ -110,10 +110,11 @@
 			if (_bodyPart == ::Const.BodyPart.Body)	// This condition is different from reforged
 			{
 				local effect = ::new("scripts/skills/effects/rf_arrow_to_the_knee_debuff_effect");
+				effect.m.StartingTurnsLeft = 1;
 				_targetEntity.getSkills().add(effect);
 				if (!actor.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer)
 				{
-					::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(actor) + " has impaled " + ::Const.UI.getColorizedEntityName(_targetEntity) + " for " + effect.m.TurnsLeft + " turns");
+					::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(actor) + " has impaled " + ::Const.UI.getColorizedEntityName(_targetEntity) + " for " + effect.m.HD_LastsForTurns + " turns");
 				}
 			}
 		}
