@@ -111,3 +111,4 @@ local oldGetClone = ::Const.CharacterProperties.getClone;
 
 // Corpse
 ::Const.Corpse.HD_CorpseTouched <- 0;	// Used during resurrection to prevent recursions from usage of mockFunction
+::Const.Corpse.HD_FatalityType <- ::Const.FatalityType.None;	// Fatality type that caused the death of this character

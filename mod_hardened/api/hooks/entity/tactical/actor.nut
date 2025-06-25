@@ -358,6 +358,13 @@
 });
 
 ::Hardened.HooksMod.hookTree("scripts/entity/tactical/actor", function(q) {
+	q.generateCorpse = @(__original) function( _tile, _fatalityType, _killer )
+	{
+		local ret = __original(_tile, _fatalityType, _killer);
+		ret.HD_FatalityType = _fatalityType;
+		return ret;
+	}
+
 // Reforged Functions
 	q.onSpawned = @(__original) function()
 	{
