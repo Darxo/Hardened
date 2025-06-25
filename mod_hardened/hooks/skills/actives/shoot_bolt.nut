@@ -3,6 +3,5 @@
 	{
 		__original();
 		this.m.AdditionalAccuracy += 10;	// In Reforged this is 10
-		this.m.ActionPointCost -= 1;	// In Vanilla this is 3
 	}
 });

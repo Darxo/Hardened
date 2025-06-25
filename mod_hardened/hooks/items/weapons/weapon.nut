@@ -45,3 +45,16 @@
 		mockObject.cleanup();
 	}
 });
+
+::Hardened.HooksMod.hookTree("scripts/items/weapons/weapon", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		// All Crossbows now have +10% Armor Penetration as a result of the Crossbow Rework
+		if (this.isWeaponType(::Const.Items.WeaponType.Crossbow))
+		{
+			this.m.DirectDamageAdd += 0.1;
+		}
+	}
+});

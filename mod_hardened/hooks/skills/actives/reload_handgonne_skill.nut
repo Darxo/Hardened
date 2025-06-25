@@ -1,8 +1,8 @@
-::Hardened.HooksMod.hook("scripts/skills/actives/reload_bolt", function(q) {
+::Hardened.HooksMod.hook("scripts/skills/actives/reload_handgonne_skill", function(q) {
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.ActionPointCost = 5;		// Vanilla: 4
+		this.m.ActionPointCost = 7;		// Vanilla: 9
 	}
 
 	q.onUse = @(__original) function( _user, _targetTile )
