@@ -123,7 +123,7 @@
 			return;
 		}
 
-		__original(_type, _volume, _pitch = 1.0);
+		__original(_type, _volume, _pitch);
 	}
 
 	q.onMovementFinish = @(__original) function( _tile )
