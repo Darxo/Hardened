@@ -251,7 +251,15 @@
 				{
 					if ("id" in entry && entry.id == 3 && "RoundAdded" in corpse)
 					{
-						entry.text = corpse.CorpseName + " was slain here on round " + corpse.RoundAdded;
+						if (corpse.HD_FatalityType == ::Const.FatalityType.Unconscious)
+						{
+							entry.text = corpse.CorpseName + " was struck down here on round " + corpse.RoundAdded;
+						}
+						else
+						{
+							entry.text = corpse.CorpseName + " was slain here on round " + corpse.RoundAdded;
+						}
+						break;
 					}
 				}
 			}
