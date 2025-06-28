@@ -10,4 +10,20 @@
 		this.getContainer().add(::new("scripts/skills/effects/hd_reload_disorientation_effect"));
 		return __original(_user, _targetTile);
 	}
+
+	q.getTooltip = @(__original) function()
+	{
+		local ret = this.__original();
+
+		local reloadDisorientationEffect = ::new("scripts/skills/effects/hd_reload_disorientation_effect");
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Gain [Reload Orientation|Skill+hd_reload_disorientation_effect]"),
+			children = reloadDisorientationEffect.getTooltip().slice(2),	// Remove name and description tooltip lines
+		});
+
+		return ret;
+	}
 });
