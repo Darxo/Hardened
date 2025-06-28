@@ -14,8 +14,9 @@
 			local allNearbyEntitities = ::World.getAllEntitiesAtPos(::World.State.getPlayer().getPos(), _event.m.RevealRadius);
 			foreach (nearbyEntity in allNearbyEntitities)
 			{
-				if (nearbyEntity.isLocation() && nearbyEntity.m.VisibilityMult > 0.0)
+				if (nearbyEntity.isLocation() && !nearbyEntity.isDiscovered() && nearbyEntity.m.VisibilityMult > 0.0)
 				{
+					// This does not flip this.isHiddenToPlayer() of the location so the cartographer will not give money for newly discovered locations
 					nearbyEntity.setDiscovered(true);
 					nearbyEntity.onDiscovered();
 				}
