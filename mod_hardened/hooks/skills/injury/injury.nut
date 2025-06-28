@@ -4,19 +4,6 @@
 	// Private
 	q.m.RoundAdded <- 0;
 
-	q.onAdded = @(__original) function()
-	{
-		__original();
-		if (::Tactical.isActive())
-		{
-			this.m.RoundAdded = ::Tactical.TurnSequenceBar.getCurrentRound();
-		}
-		else
-		{
-			this.m.IsFresh = false;
-		}
-	}
-
 	q.getName = @(__original) function()
 	{
 		local ret = __original();
@@ -65,6 +52,20 @@
 		}
 
 		return ret;
+	}
+
+	// We need to implement this as hookTree, because some injuries might overwrite this without calling the base function
+	q.onAdded = @(__original) function()
+	{
+		__original();
+		if (::Tactical.isActive())
+		{
+			this.m.RoundAdded = ::Tactical.TurnSequenceBar.getCurrentRound();
+		}
+		else
+		{
+			this.m.IsFresh = false;
+		}
 	}
 
 	q.onNewDay = @(__original) function()
