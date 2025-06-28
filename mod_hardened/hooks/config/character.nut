@@ -108,6 +108,7 @@ local oldGetClone = ::Const.CharacterProperties.getClone;
 
 // Const.Combat
 ::Const.Combat.SpawnArrowDecalAttempts = 10;	// In Vanila this is 3; potentially causing several missiles producing now decal on impact. Not sure why though
+::Const.Combat.WeaponSpecFatigueMult = 1.0;		// We set this to 1.0 to deactivate the vanilla/modular-vanilla way of applying the fatigue discount
 
 // Corpse
 ::Const.Corpse.HD_CorpseTouched <- 0;	// Used during resurrection to prevent recursions from usage of mockFunction

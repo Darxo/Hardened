@@ -1,8 +1,23 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_crossbow", function(q) {
+	// Public
+	q.m.HD_FatigueCostMult <- 0.75;
 	q.m.RequiredWeaponType <- ::Const.Items.WeaponType.Crossbow | ::Const.Items.WeaponType.Firearm;
 
 	// Overwrite, because we no longer grant an action point discount
-	q.onAfterUpdate = @() function( _properties ) { }
+	q.onAfterUpdate = @() function( _properties )
+	{
+		// Feat: We now implement the fatigue cost discount of masteries within the mastery perk
+		if (this.m.HD_FatigueCostMult != 1.0)
+		{
+			foreach (skill in this.getContainer().m.Skills)
+			{
+				if (this.isSkillValid(skill))
+				{
+					skill.m.FatigueCostMult *= this.m.HD_FatigueCostMult;
+				}
+			}
+		}
+	}
 
 	q.onUpdate = @(__original) function( _properties )
 	{
@@ -33,10 +48,22 @@
 		if (this.m.RequiredWeaponType == null) return true;
 
 		local weapon = this.getContainer().getActor().getMainhandItem();
-		if (weapon == null || !weapon.isItemType(::Const.Items.ItemType.Weapon) || !weapon.isWeaponType(this.m.RequiredWeaponType))
-		{
-			return false;
-		}
+		if (::MSU.isNull(weapon)) return false;
+		if (!weapon.isItemType(::Const.Items.ItemType.Weapon)) return false;
+		if (!weapon.isWeaponType(this.m.RequiredWeaponType)) return false;
+
+		return true;
+	}
+
+	q.isSkillValid <- function( _skill )
+	{
+		if (_skill == null) return false;
+		if (!_skill.isActive()) return false;
+
+		local skillItem = _skill.getItem();
+		if (::MSU.isNull(skillItem)) return false;
+		if (!skillItem.isItemType(::Const.Items.ItemType.Weapon)) return false;
+		if (!skillItem.isWeaponType(this.m.RequiredWeaponType)) return false;
 
 		return true;
 	}

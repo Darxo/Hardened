@@ -2,10 +2,27 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_throwing", function(q) {
 	// Public
 	q.m.DamageTotalMult <- 1.3;	// Damage Multiplier for first throwing attack each turn
+	q.m.HD_FatigueCostMult <- 0.75;
 
 	// Private
 	q.m.IsQuickSwitchSpent <- false;		// Is quickswitching spent this turn?
 	q.m.SkillCounter <- null;	// This is used to bind this perk_mastery_throwing effect to the root skill that it will empower and rediscover it even through delays
+
+	q.onAfterUpdate = @(__original) function( _properties )
+	{
+		__original(_properties);
+		// Feat: We now implement the fatigue cost discount of masteries within the mastery perk
+		if (this.m.HD_FatigueCostMult != 1.0)
+		{
+			foreach (skill in this.getContainer().m.Skills)
+			{
+				if (this.isSkillValid(skill))
+				{
+					skill.m.FatigueCostMult *= this.m.HD_FatigueCostMult;
+				}
+			}
+		}
+	}
 
 	q.onAnySkillUsed = @(__original) function( _skill, _targetEntity, _properties )
 	{

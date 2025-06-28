@@ -2,6 +2,23 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_hammer", function(q) {
 	// Public
 	q.m.ArmorDamageSpreadPct <- 0.5;	// This much of the initial armor damage is spread towards the other bodypart
+	q.m.HD_FatigueCostMult <- 0.75;
+
+	q.onAfterUpdate = @(__original) function( _properties )
+	{
+		__original(_properties);
+		// Feat: We now implement the fatigue cost discount of masteries within the mastery perk
+		if (this.m.HD_FatigueCostMult != 1.0)
+		{
+			foreach (skill in this.getContainer().m.Skills)
+			{
+				if (this.isSkillValid(skill))
+				{
+					skill.m.FatigueCostMult *= this.m.HD_FatigueCostMult;
+				}
+			}
+		}
+	}
 
 	q.onTargetHit = @(__original) function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
@@ -27,7 +44,14 @@
 
 	q.isSkillValid <- function( _skill )
 	{
-		local weapon = _skill.getItem();
-		return !::MSU.isNull(weapon) && weapon.isItemType(::Const.Items.ItemType.Weapon) && weapon.isWeaponType(::Const.Items.WeaponType.Hammer);
+		if (_skill == null) return false;
+		if (!_skill.isActive()) return false;
+
+		local skillItem = _skill.getItem();
+		if (::MSU.isNull(skillItem)) return false;
+		if (!skillItem.isItemType(::Const.Items.ItemType.Weapon)) return false;
+		if (!skillItem.isWeaponType(::Const.Items.WeaponType.Hammer)) return false;
+
+		return true;
 	}
 });
