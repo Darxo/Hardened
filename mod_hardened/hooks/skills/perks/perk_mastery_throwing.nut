@@ -1,3 +1,4 @@
+// The reforged hook for this perk is being sniped
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_throwing", function(q) {
 	// Public
 	q.m.DamageTotalMult <- 1.3;	// Damage Multiplier for first throwing attack each turn
@@ -6,9 +7,10 @@
 	q.m.IsQuickSwitchSpent <- false;		// Is quickswitching spent this turn?
 	q.m.SkillCounter <- null;	// This is used to bind this perk_mastery_throwing effect to the root skill that it will empower and rediscover it even through delays
 
-	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties )
+	q.onAnySkillUsed = @(__original) function( _skill, _targetEntity, _properties )
 	{
-		if (!this.isSkillValid(_skill)) return;
+		__original( _skill, _targetEntity, _properties );
+		if (!this.isSkillValidForDamageBonus(_skill)) return;
 
 		// The following condition is a smart way to cover three states
 		// 1. both are null. This means perk_mastery_throwing is still available and we are not in the execution of a skill so this skill must provide its effect to adjust tooltips
@@ -81,9 +83,28 @@
 // Hardened Functions
 	q.onReallyBeforeSkillExecuted <- function( _skill, _targetTile )
 	{
-		if (this.isSkillValid(_skill) && this.m.SkillCounter == null && ::Const.SkillCounter == ::Hardened.Temp.RootSkillCounter)
+		if (this.isSkillValidForDamageBonus(_skill) && this.m.SkillCounter == null && ::Const.SkillCounter == ::Hardened.Temp.RootSkillCounter)
 		{
 			this.m.SkillCounter = ::Hardened.Temp.RootSkillCounter;	// We bind this effect to the root skill so that we affect all child executions of this chain
 		}
+	}
+
+// New Functions
+	q.isSkillValidForDamageBonus <- function( _skill )
+	{
+		return this.isSkillValid(_skill) && skill.isAttack();
+	}
+
+	q.isSkillValid <- function( _skill )
+	{
+		if (_skill == null) return false;
+		if (!_skill.isActive()) return false;
+
+		local skillItem = _skill.getItem();
+		if (::MSU.isNull(skillItem)) return false;
+		if (!skillItem.isItemType(::Const.Items.ItemType.Weapon)) return false;
+		if (!skillItem.isWeaponType(::Const.Items.WeaponType.Throwing)) return false;
+
+		return true;
 	}
 });

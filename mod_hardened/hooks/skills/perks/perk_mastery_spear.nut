@@ -1,15 +1,5 @@
+// The reforged hook for this perk is being sniped
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_spear", function(q) {
-	// Private
-
-	// Overwrite to remove the Spearwall Discount
-	q.onAfterUpdate = @() function( _properties ) {}
-
-	q.onTurnStart = @(__original) function()
-	{
-		__original();
-		this.m.IsSpent = true;	// Disable the free spear attack each turn
-	}
-
 	q.onUpdate = @(__original) function( _properties )
 	{
 		__original(_properties);
