@@ -12,12 +12,13 @@
 
 // Perks
 {
+	// Completely Revert Reforged Footwork additions (sprint skill)
+	::Hardened.snipeHook("scripts/skills/perks/perk_footwork", "mod_reforged");
+
 	// Completely Revert Reforged Quickhands nerf
 	::Hardened.snipeHook("scripts/skills/perks/perk_quick_hands", "mod_reforged");
 
-	// Completely Revert Reforged Hammer Mastery additions
+	// Completely Revert Reforged Hammer Mastery Hook: Remove dented armor effect, remove pummel skill
 	::Hardened.snipeHook("scripts/skills/perks/perk_mastery_hammer", "mod_reforged");
 
-	// Completely Revert Reforged Footwork additions (sprint skill)
-	::Hardened.snipeHook("scripts/skills/perks/perk_footwork", "mod_reforged");
 }

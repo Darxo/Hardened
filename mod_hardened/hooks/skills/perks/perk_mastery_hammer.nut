@@ -1,3 +1,4 @@
+// The reforged hook for this perk is being sniped
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_hammer", function(q) {
 	// Public
 	q.m.ArmorDamageSpreadPct <- 0.5;	// This much of the initial armor damage is spread towards the other bodypart
