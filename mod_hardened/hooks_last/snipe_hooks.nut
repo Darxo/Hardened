@@ -10,6 +10,9 @@
 // Completely Revert Reforged Double Grip rework
 ::Hardened.snipeHook("scripts/skills/special/double_grip", "mod_reforged");
 
+// Completely Revert Modular Vanilla Handgonne Reload Hook: Remove hard-coded AP discount as that is now moved into the crossbow perk
+::Hardened.snipeHook("scripts/skills/actives/reload_handgonne_skill", "mod_reforged");
+
 // Perks
 {
 	// Completely Revert Reforged Footwork additions (sprint skill)

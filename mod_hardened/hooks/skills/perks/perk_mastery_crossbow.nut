@@ -2,10 +2,13 @@
 	// Public
 	q.m.HD_FatigueCostMult <- 0.75;
 	q.m.RequiredWeaponType <- ::Const.Items.WeaponType.Crossbow | ::Const.Items.WeaponType.Firearm;
+	q.m.FirearmReloadAPModifier <- -1;	// AP cost of Reload with Handgonnes is modified by this value
 
 	// Overwrite, because we no longer grant an action point discount
 	q.onAfterUpdate = @() function( _properties )
 	{
+		if (!this.isEnabled()) return;
+
 		// Feat: We now implement the fatigue cost discount of masteries within the mastery perk
 		if (this.m.HD_FatigueCostMult != 1.0)
 		{
@@ -14,6 +17,18 @@
 				if (this.isSkillValid(skill))
 				{
 					skill.m.FatigueCostMult *= this.m.HD_FatigueCostMult;
+				}
+			}
+		}
+
+		if (this.m.FirearmReloadAPModifier != 0)
+		{
+			foreach (skill in this.getContainer().m.Skills)
+			{
+				if (skill.getID() == "actives.reload_handgonne")
+				{
+					skill.m.ActionPointCost += this.m.FirearmReloadAPModifier;	// Reload with Handgonnes is cheaper
+					break;
 				}
 			}
 		}

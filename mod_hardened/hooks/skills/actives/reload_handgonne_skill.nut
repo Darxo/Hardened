@@ -1,3 +1,4 @@
+// The modular vanilla hook for this perk is being sniped in
 ::Hardened.HooksMod.hook("scripts/skills/actives/reload_handgonne_skill", function(q) {
 	q.create = @(__original) function()
 	{
