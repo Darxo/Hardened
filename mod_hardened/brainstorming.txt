@@ -437,9 +437,7 @@ MOdular Vanilla:
 - cross mod compatibility with crock pot? (vulture threat keyword)
 - draw combat steps red, while the active entity is in zone of control
 	- they are handled in the .exe (steps_bot_left, steps_top, etc.)
-
 - show total number of people in turn sequence bar somewhere (e.g. behind current number of viewed actor)
-
 
 ### Todo
 - barbarian:
@@ -473,9 +471,6 @@ MOdular Vanilla:
 - dont display injuries in temple that are "healed by tomorrow" anyways
 - make disloyal make negative mood fade away slower
 
-- increase armor pen of crossbows to 60%
-- reduce armor damage of bows (to like 60%)
-
 - new type of tooltip that displays whenever the player previews movement
 	- am I in zone of control?
 		- if yes, whats all the hitchances?
@@ -505,13 +500,11 @@ MOdular Vanilla:
 - make NPC more likely to use throw sand against enemies who are adjacent to fleeing allies
 - color adjacent enemies, that exert ZOC onto you in a color, when previewing movement out of ZOC
 - when viewing tiles with dead player, show if struck down or dead for real
-- characters who rally lose X AP
-- improve line breaker skill to use
+- improve line breaker skill to use ??? dont remember what I meant by this
 - remove bandit leader unique names?
 	- alternatively: show their type name?
 
 - resilient nerf to -2 turn effect duration (from -5), so that certain poisons still apply
-- tooltip for mod setting about food duration should mention that the duration can never be higher than your food with the highest freshness
 - make camping reduce food consumption?
 - remove dodge from frenzied direwolfs
 - increase fatigue cost of whirling stance
@@ -527,16 +520,30 @@ best
 show uncapped hitchance
 - fix(vanilla) parties on world map that concluded fights, still counting as on-going battles
 - fix some ifrits being rootable but not knowing how to free themselves
-
-- dont spawn decayed_closed_flat_top_with_sack anymore
-
-- use silent song at start of combat until first contact is made
-
-- give assassins scout and elusive?
-- give assassins a nightowl elixir?
-	- If you fight them at night, they will use it first turn
-	- If you fight them by day, they will drop it on death
-
 - when viewing ground items during battle, turn those items grey, which can't be equipped because
 	- not enough action points
 	- not equippable to the current character
+- make antidote remove acid? Maybe a rename is in order then
+- make assassins drop night owl elixirs?
+- raider retinue:
+	- 15% more Movementspeed while chasing a non-location
+- alps take 33% more hitpoint changes to head
+- declare incompatible with okranes playground mod
+
+- new enemy only perk
+	- From the Shadows
+		- At the start of each round, if no enemy can see you, gain +3 Action Points during this round
+	- Is given to Assassins and higher tier Direwolfs
+		- They are also tought to stay hidden much more
+	- Will spawn a mini-icon while the condition is active
+
+- selling quiver/throwing weapons will grant ammunition depending on their remaining ammo and empty them out in the shop
+
+- brigands
+	- make their weapons always have low condition (25-50%)
+	- slightly reduce ranged spawnrate. You shouldnt get overwhelmed by their regular ranged troops. thats the job of goblins/nomads
+
+- make enemies that are unknown hidden in the turn sequence bar
+
+- work on a tech to highlight sprites (draw the same brush with the same properties, just behind and in a contrasting color)
+	- could be used to highlight adjacent enemies for a second on tunr start

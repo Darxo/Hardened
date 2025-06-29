@@ -76,12 +76,13 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - **Crowded** debuff for long distance melee attacks now also applies -5% chance to hit for every adjacent ally, ignoring the first two allies
 - As a consequence of the **Crowded** mechanic, 2-tile melee attacks lose the penalty to attack adjacent targets
 
-### Crossbows
+### Crossbows & Firearms
 
-- Shooting Crossbows now costs -1 Action Point and has +10% chance to hit
-- Reloading Crossbows now costs +1 Action Point
-- Reloading Crossbows now applies **Reload Disorientation** to you until the start of your next turn.
-  - **Reload Disorientation** applies -15 Ranged Skill and 35% less Ranged Defense
+- Reloading any Crossbow or Firearm now applies the **Reload Disorientation**  until the start of your next turn
+  - **Reload Disorientation** grantsd 50% less Ranged Defense
+- All Crossbows now have +10% chance to hit and +10% Armor Penetration
+- Reloading all Crossbows now costs 5 Action Points (up from 4)
+- Reloading all Firearms now costs 7 Action Points (down from 9)
 
 ### Attacking Allies
 
@@ -154,18 +155,19 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
 - **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%)
-- **Flaming Arrow** (granted by **Trick Shooter**) now longer causes an extra morale check on the main target
+- **Flaming Arrow** (granted by **Trick Shooter**) now longer causes an extra morale check on the main target. It now deals 100% Burning Damage (instead of 25% Burning and 75% Piercing Damage)
 - **Passing Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand
 - **Lunge** now has -10% additional Hitchance (up from -20%)
 - **Net Effect** no longer affects the Initiative of the target. It now applies 50% less Melee Defense (up from 25%) and 50% less Ranged Defense (up from 45%)
 - **Net Pull** now costs 30 Fatigue (up from 25)
+- **Quick Shot** now has -2 Shooting Range (down from -1)
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack. Riposte no longer has a penalty to Hitchance
 - **Shuffle** (granted by **Dynamic Duo**) no longer puts your partner to the next position in the turn order
 - **Spider Poison** now also reduces the Hitpoints Recovery of the target by 50%
 - **Stab** now costs 3 Action Points (down from 4) and has a 25% higher threshold to inflict injuries
-- **Take Aim** (granted by **Crossbow and Firearm Mastery**) now costs 4 Action Points (up from 2) and 20 Fatigue (down from 25)
+- **Take Aim** (granted by **Crossbow and Firearm Mastery**) now costs 3 Action Points (up from 2) and 20 Fatigue (down from 25)
 - **Throw Axe** now has a 50% chance to decapitate (up from 0%) and 25% chance to disembowel (up from 0%)
 - **Throw Net** now costs 4 Action Points (down from 5), has a Range of 3 (up from 2) and no longer requires the targets Base Reach to be below a certain value
 
@@ -240,7 +242,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
 - **Hammer Mastery** no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part.
 - **Hold Steady** no longer has a shared cooldown with other brothers who have this perk. It now lasts for 2 rounds, instead of having a turn-based duration
-- **Hybridization** is completely reworked. It is now called **Toolbox** and requires a Throwing Weapon. It grants +1 Bag Slot if you dont have **Weapon Master**. It now causes piercing type hits to the body to inclict **Arrow to the Knee**, cutting type attacks to inflict **Overwhelmed**, blunt type headshots to inflict stagger and any hit with them to stun a staggered opponent and throwing spears to deal 100% more damage to shields
+- **Hybridization** is completely reworked. It is now called **Toolbox** and requires a Throwing Weapon. It grants +1 Bag Slot if you dont have **Weapon Master**. It now causes piercing type hits to the body to inclict **Arrow to the Knee** for 1 turn, cutting type attacks to inflict **Overwhelmed**, blunt type headshots to inflict stagger for 1 turn and any hit with them to stun a staggered opponent and throwing spears to deal 100% more damage to shields
 - **Inspiring Presence** no longer requires a banner. At the start of each round it grants adjacent allies of your faction +3 Action Points for this turn, if they are adjacent to an enemy and have less Resolve than you. The same target can't be inspired multiple times per turn.
 - **Iron Sights** headshot chance now also works with melee weapons
 - **King of all Weapons** is now called **Spear Flurry** and is completely reworked. It now prevents spear attacks from building up any fatigue
@@ -478,21 +480,22 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Adorned Full Helm** now has 20 Weight (up from 18) and costs 3500 Crowns (down from 3700)
 - **Aketon Cap** now has 4 Weight (up from 1) and costs 80 Crowns (up from 70)
 - **Ancient Honor Guard Helmet** now has 15 Weight (up from 13) and costs 900 Crowns (up from 1000)
-- **Ancient Legionary Helmet** now has and costs 400 Crowns (down from 600)
+- **Ancient Household Helmet** now has 100 Condition (up from 95)
+- **Ancient Legionary Helmet** now costs 400 Crowns (down from 600)
 - **Assassin's Face Mask** now has 130 Condition (down from 140), 8 Weight (up from 6) and costs 500 Crowns (up from 1800)
 - **Assassin's Head Wrap** now has 60 Condition (up from 40), 1 Weight (up from 0), -2 Vision (down from 0) and costs 900 Crowns (up from 60)
 - **Barbute Helmet** now has 180 Condition (down from 190) and costs 2500 Crowns (down from 2600)
 - **Bascinet with Mail** now has 230 Condition (up from 210) and 16 Weight (up from 13)
 - **Bear Headpiece** now has 60 Condition (up from 50), 7 Weight (up from 3), -1 Vision (down from 0) and costs 80 Crowns (up from 100)
-- **Beastmaster's Headpiece** now has and costs 500 Crowns (up from 350)
+- **Beastmaster's Headpiece** now costs 500 Crowns (up from 350)
 - **Blade Dancer's Head Wrap** now has -2 Vision (down from 0) and costs 900 Crowns (up from 150)
 - **Closed Flat Top Helmet** now has 180 Condition (up from 170), 12 Weight (up from 10) and costs 1100 Crowns (up from 1000)
-- **Closed Flat Top with Mail** now has and costs 300 Crowns (down from 3000)
+- **Closed Flat Top with Mail** now costs 300 Crowns (down from 3000)
 - **Closed Mail Coif** now has 100 Condition (down from 90), 6 Weight (up from 4), -1 Vision (down from 0) and costs 450 Crowns (up from 250)
 - **Closed Scrap Metal Helmet** now has 200 Condition (up from 190), 17 Weight (down from 18) and -3 Vision (down from -2)
 - **Closed and Padded Flat Top** now has 12 Weight (up from 11)
 - **Conic Helmet with Closed Mail** now has 260 Condition (down from 265), 17 Weight (down from 18) and -3 Vision (down from -2)
-- **Covered Decayed Closed Flat Top with Mail** now has 220 Condition (down from 230), 18 Weight (down from 19) and costs 1200 Crowns (down from 1250)
+- **Covered Decayed Closed Flat Top with Mail** will no longer appear in the game. Any versions of it will instead change to look like **Decayed Closed Flat Top with Mail**
 - **Crude Faceguard Helmet** now has -3 Vision (down from -2)
 - **Crude Metal Helmet** now has 130 Condition (down from 145) and costs 400 Crowns (down from 550)
 - **Cultist Hood** now has 50 Condition (up from 30), 4 Weight (up from 0), -3 Vision (down from -1) and costs 50 Crowns (up from 20)
@@ -533,7 +536,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Nasal Helmet with Closed Mail** now has 250 Condition (up from 240), 18 Weight (up from 16) and costs 2200 Crowns (up from 2000)
 - **Nasal Helmet with Mail** now has 14 Weight (up from 12)
 - **Nomad Head Wrap** now has 3 Weight (up from 0), -1 Vision (down from 0) and costs 30 Crowns (down from 40)
-- **Nomad Leather Cap** now has 60 Condition (up from 50), 6 Weight (up from 2) and -1 Vision (down from 0)
+- **Nomad Leather Cap** now has 60 Condition (up from 50), 6 Weight (up from 2), -1 Vision (down from 0) and costs 100 Crowns (down from 110)
 - **Nomad Light Helmet** now has 60 Condition (down from 70), 5 Weight (up from 3), -1 Vision (down from 0) and costs 120 Crowns (down from 140)
 - **Nomad Reinforced Helmet** now has 130 Condition (up from 125) and costs 500 Crowns (up from 450)
 - **Nordic Helmet** now has 170 Condition (up from 125), 8 Weight (up from 7), -3 Vision (down from -1) and costs 1500 Crowns (down from 500)
@@ -548,7 +551,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Rusty Mail Coif** now has 80 Condition (up from 70), 9 Weight (up from 4) and costs 200 Crowns (up from 150)
 - **Sallet Helmet** now has 7 Weight (up from 5)
 - **Southern Head Wrap** now has 3 Weight (up from 0), -1 Vision (down from 0) and costs 30 Crowns (down from 50)
-- **Southern Helmet with Coif** now has 190 Condition (down from 200) and -1 Vision (up from -2)
+- **Southern Helmet with Coif** now has 180 Condition (down from 200) and -1 Vision (up from -2)
 - **Spiked Skull Cap with Mail** now has 130 Condition (up from 125) and 8 Weight (up from 7)
 - **Steppe Helmet with Mail** now has 14 Weight (up from 12)
 - **Straw Hat** now has 3 Weight (up from 0), -1 Vision (down from 0) and costs 30 Crowns (down from 60)
@@ -556,7 +559,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Undertaker's Hat** now has 50 Condition (up from 40), 3 Weight (up from 0) and -1 Vision (down from 0)
 - **Witchhunter's Hat** now has 50 Condition (up from 40), 3 Weight (up from 0), -1 Vision (down from 0) and costs 120 Crowns (up from 100)
 - **Wizard's Hat** now has 50 Condition (up from 30), 2 Weight (up from 0), -1 Vision (down from 0) and costs 300 Crowns (up from 30)
-- **Wrapped Southern Helmet** now has 100 Condition (down from 105) and 6 Weight (up from 5)
+- **Wrapped Southern Helmet** now has 100 Condition (down from 105), 6 Weight (up from 5) and costs 450 Crowns (up from 350)
 - **Zweihander's Helmet** now has 8 Weight (up from 7) and costs 1500 Crowns (up from 850)
 
 **Reforged:**
@@ -655,6 +658,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Wardogs** now have 50 Melee Skill (down from 55), 20 Melee Defense (down from 25), 25 Ranged Defense (down from 30) and 5 Vision (down from 7)
 
 **Humans:**
+- **Assassins** gain **Elusive** and **Scout** and they lose **Footwork**. They will now drink a non-droppable nightowl elixir during night fights
 - Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop Crowns, food or tools or a valueable ring
 - **Footmen** lose **Shield Expert** and **Exploit Opening**
 - **Heavy Footmen** lose **Exploit Opening**
@@ -691,10 +695,10 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 **Beasts:**
 - **Alps** now have **Elusive**
 - **Bog Unholds** now recover 20% of their Hitpoints per turn (up from 15%) and they can now use **Split Shield** costing 5 Action Points and dealing 50 Shield Damage. They lose **Dismantle** and **Full Force**
-- **Donkeys** now grant 0 XP (down from 50 XP)
+- **Donkeys** now grant 0 XP (down from 50 XP). They can now be rooted, injured, bled and poisoned. Since they are non-combatants this is mostly a cosmetic change
 - **Frost Unholds** and **Armored Frost Unholds** now have 150 natural Body and Head Armor (up from 90). They lose **Dismantle** and **Full Force**
 - Add new **Hexen** racial effect that increases the duration of debuffs by 1 turn for the Hexe
-- All **Ifrits** gain **Man of Steel**. They take no Burning Damage (up from 90% less), full damage from blunt ranged attacks (down from 66% less) and 50% less damage from Piercing Damage (down from 50% less against melee and 66% less against ranged). The damage reduction on Ifrits now also affects the armor damage they receive
+- All **Ifrits** gain **Man of Steel**. They can now free themselves from nets and roots. They take no Burning Damage (up from 90% less), full damage from blunt ranged attacks (down from 66% less) and 50% less damage from Piercing Damage (down from 50% less against melee and 66% less against ranged). The damage reduction on Ifrits now also affects the armor damage they receive
   - **Small Ifrits** now have 55 Hitpoints (down from 110) and 165 Armor (up from 110)
   - **Medium Ifrits** now have 110 Hitpoints (down from 220) and 220 Armor (up from 110). They lose 10 Damage and gain **Marksmanship**
   - **Large Ifrits** now have 220 Hitpoints (down from 440) and 330 Armor (up from 110). They lose 10 Damage and gain **Marksmanship**
@@ -751,6 +755,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Swamp** tiles no longer reduce Melee Skill by 25%. Instead they now reduce Initiative by 25%
 - The **Hidden** effect (granted by certain tiles) now also provides +10 Ranged Defense and it lists enemies that can shoot you despite you hiding the bush
 - Characters can no longer retreat from the battle when standing on a border tile, if they are engaged in melee
+- Any fleeing character who rallies, loses 3 Action Points
 - All fleeing characters now have +1 Action Point
 - All player characters now have +1 Action Point during AutoRetreat
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied
@@ -827,6 +832,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add Setting to control the zoom speed during combat to allow for more granular zooming
 - Loot that is not equippable in battle no longer appears on the ground (e.g. Beast Trophies/Ingredients)
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
+- Hovering over the tile of a any corpse will now differentiate whether they were *struck down* (= survived with a permanent injury) or *slain* (died permanently)
 - Improve visibility of Miasma and Burning Ground
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to Displacement or which are Rooted. Using them will now print a combat log with the roll and hitchance of the attack
 - **Disarm** can no longer be used on enemies which are immune to disarm
@@ -834,6 +840,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Night Effect**, **Double Grip**, **Pattern Recognition**, **Bulwark** and **Man of Steel** no longer display a Mini-Icon
 - All Unhold variants now use their full name in Tooltips and the Combat Dialog
 - Add skill descriptions for all skills from the **Lorekeeper**
+- **Fast Adaption** now shows the amount of stacks in brackets behind the effect name
+- Add tooltip about remaining duration of **Arrow to the Knee** effect
 - Corpses will now display the round, in which they were created
 - Print combat log for hitpoint damage dealt, when an attack kills the target and include the hitpoints of the target before the kill
 - **Fling Back** (used by Unholds) now has an animation delay of 250ms (down from 750ms)
@@ -919,6 +927,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Knock Back** now displays its hitchance bonus correctly in the preview
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
+- Cartographer will no longer pay for "discovering" the Ancient Watchtower a second time when you interact with it
 - Every accessory now plays a default sound when moved around in the inventory
 - Roads will no longer be generated directly on the map border
 - Change the inventory icon of the **Witchhunter's Hat** to look exactly like the sprite on the brother
@@ -1000,6 +1009,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add `::Hardened.util.isOnSameAxis(_startTile, _targetTile)`, which returns `true`, if both tiles are on the same hexagonal axis
 - Add `actor::getParty()` which returns a reference to the world party that this entitiy belongs to, or `null`, if no world party could be found
 - Add `HD_KnockBackDistance` = 1` for `skill.nut`, which determines how many tiles they would knock a target back
+- All corpses now have a new `HD_FatalityType` member, which contains the fatalityType that this corpse was created with
 
 ### New Character Properties
 

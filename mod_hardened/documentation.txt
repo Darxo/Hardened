@@ -14,6 +14,37 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+0.50.0
+	- **Reload Disorientation** no longer applies a penalty to Ranged Skill. It now grants 50% less Ranged Defense (down from 35% less)
+	- Shooting Crossbows now costs 3 Action Points (up from 2), just like in Vanilla and Reforged
+	- All Crossbows have +10% Armor Penetration
+	- **Take Aim** now costs 3 Action Points (down from 4)
+	- Reloading a Handgonne now applies **Reload Disorientation**, just like with Crossbows
+	- Reloading a Handgonne now costs 7 Action Points (down from 9)
+	- **Crossbow Mastery** now makes **Reload Handgonne** cost -1 Action Point (down from -3 Action Points)
+	- **Flaming Arrow** now deals 100% Burning Damage (instead of 25% Burning and 75% Piercing Damage)
+	- **Quick Shot** now has -2 Shooting Range (down from -1)
+	- The duration of **Arrow to the Knee** effect inflicted by **Toolbox** is now 1 turn (down from 2)
+	- Any character that rallies (by themselves or through the help of others) now loses 3 Action Points
+	- **Assassins** gain **Elusive**, **Scout** and lose **Footwork**. They will now drink a non-droppable nightowl elixir during night fights
+	- **Ifrits** can now break themselves free from nets and roots
+	- Donkey can now be rooted, injured, bled and poisoned. Since they are non-combatants this is mostly a cosmetic change
+	- **Southern Helmet with Coif** now has a Condition of 180 (down from 190)
+	- **Ancient Household Helmet** now has a Condition of 100 (up from 95)
+	- **Covered Decayed Closed Flat Top with Mail** will no longer appear in the game. Any versions of it will instead change to look like **Decayed Closed Flat Top with Mail**
+	- **Decayed Closed Flat Top with Mail** now has a cost of 1250 (up from 1200), just like in vanilla
+	- **Nomad Leather Cap** now costs 100 Crowns (down from 110) to be in line with other helmets with the same statline
+	- **Wrapped Southern Helmet** now costs 450 (up from 350) to be in line with other helmets with the same statline
+	- Hovering over the tile of a any corpse will now differentiate whether they were *struck down* (= survived with a permanent injury) or *slain* (died permanently)
+	- **Fast Adaption** now shows the amount of stacks in brackets behind the effect name
+	- Slightly improve the food duration setting description by clarifying that the duration shown is never greater than your best foods expiration date
+	- Add tooltip about remaining duration of **Arrow to the Knee** effect
+	- Fix(Vanilla) Cartographer paying for "discovering" the Ancient Watchtower a second time when you interact with it
+	- Fix **Closed Flat Top with Mail** cost being too low
+	- Fix **Missing Tail** injury on lindwurms always stating that they were inflicted on round 0
+	- Fix broken hyperlink in fleeing effect tooltip
+	- All corpses now have a new `HD_FatalityType` member, which contains the fatalityType that this corpse was created with
+
 0.49.0
 	- Almost all Helmets are rebalanced, see https://github.com/Darxo/Hardened/wiki/Hardened-Helmet-Changes
 		- All early-game Helmets have more Weight
