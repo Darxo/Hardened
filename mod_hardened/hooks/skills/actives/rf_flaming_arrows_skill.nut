@@ -1,4 +1,11 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/rf_flaming_arrows_skill", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.InjuriesOnBody = ::Const.Injury.BurningBody;		// Reforged: BurningAndPiercingBody
+		this.m.InjuriesOnHead = ::Const.Injury.BurningHead;		// Reforged: BurningAndPiercingHead
+	}
+
 	// Overwrite Reforged function to remove the morale check on the main target
 	q.onTargetHit = @() function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
