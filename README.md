@@ -142,6 +142,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - Add new **Retreat** skill for player characters, which allows you to retreat individual brothers from a battle if they stand on a border tile and are not engaged in melee
 - Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
 - Hostile Locations now hide their Defender Line-Up during night
+- The fatigue discount from having multiple weapon masteries now stacks when using hybrid weapons
 - You can no longer swap your weapon with a dagger from your bag for free
 
 ## Skills
@@ -1010,6 +1011,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add `actor::getParty()` which returns a reference to the world party that this entitiy belongs to, or `null`, if no world party could be found
 - Add `HD_KnockBackDistance` = 1` for `skill.nut`, which determines how many tiles they would knock a target back
 - All corpses now have a new `HD_FatalityType` member, which contains the fatalityType that this corpse was created with
+- `::Const.Combat.WeaponSpecFatigueMult` is now always `1.0`
 
 ### New Character Properties
 

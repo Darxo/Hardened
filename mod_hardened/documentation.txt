@@ -22,6 +22,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- Reloading a Handgonne now applies **Reload Disorientation**, just like with Crossbows
 	- Reloading a Handgonne now costs 7 Action Points (down from 9)
 	- **Crossbow Mastery** now makes **Reload Handgonne** cost -1 Action Point (down from -3 Action Points)
+	- The fatigue discount from having multiple weapon masteries now stacks when using hybrid weapons
 	- **Flaming Arrow** now deals 100% Burning Damage (instead of 25% Burning and 75% Piercing Damage)
 	- **Quick Shot** now has -2 Shooting Range (down from -1)
 	- The duration of **Arrow to the Knee** effect inflicted by **Toolbox** is now 1 turn (down from 2)
@@ -43,6 +44,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- Fix **Closed Flat Top with Mail** cost being too low
 	- Fix **Missing Tail** injury on lindwurms always stating that they were inflicted on round 0
 	- Fix broken hyperlink in fleeing effect tooltip
+	- `::Const.Combat.WeaponSpecFatigueMult` is now always `1.0`
 	- All corpses now have a new `HD_FatalityType` member, which contains the fatalityType that this corpse was created with
 
 0.49.0
