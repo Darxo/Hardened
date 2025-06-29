@@ -13,7 +13,7 @@
 				id = 16,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = ::MSU.Text.colorizeValue(this.getFleeingActionPointModifier(), {AddSign = true}) + " [Action Point(s)|Concept.ActionPoints]",
+				text = ::MSU.Text.colorizeValue(this.getFleeingActionPointModifier(), {AddSign = true}) + ::Reforged.Mod.Tooltips.parseString(" [Action Point(s)|Concept.ActionPoints]"),
 			});
 		}
 
