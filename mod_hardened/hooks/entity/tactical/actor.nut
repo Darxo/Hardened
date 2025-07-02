@@ -118,6 +118,18 @@
 		}
 	}
 
+	q.killSilently = @(__original) function()
+	{
+		// Anyone who is killed silently, will also cause a Relationship hit for the player. That mainly relates to Donkeys
+		local faction = ::World.FactionManager.getFaction(this.getFaction());
+		if (faction != null)
+		{
+			faction.addPlayerRelation(::Const.World.Assets.RelationUnitKilled, "Killed one of their units");
+		}
+
+		__original();
+	}
+
 	q.playIdleSound = @(__original) function()
 	{
 		// Characters who are off-screen no longer produce idle sounds. However they will still be randomly selected as targets for making the idle sound.
