@@ -112,7 +112,7 @@
 
 		// This code is mostly a copy of vanillas checks, except that we don't check for ::World.FactionManager.getFaction(this.getFaction()).isTemporaryEnemy()
 		local faction = ::World.FactionManager.getFaction(this.getFaction());
-		if (_killer != null && _killer.isPlayerControlled() && faction != null)
+		if (faction != null && _killer != null && (_killer.getFaction() == ::Const.Faction.Player || _killer.getFaction() == ::Const.Faction.PlayerAnimals))
 		{
 			faction.addPlayerRelation(::Const.World.Assets.RelationUnitKilled, "Killed one of their units");
 		}
