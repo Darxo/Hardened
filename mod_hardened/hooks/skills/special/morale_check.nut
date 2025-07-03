@@ -46,7 +46,7 @@
 	q.getAutoRetreatActionPointModifier <- function()
 	{
 		local actor = this.getContainer().getActor();
-		if (actor.isPlacedOnMap() && actor.getFaction() == ::Const.FactionType.Player && ::Tactical.State.isAutoRetreat())
+		if (actor.isPlacedOnMap() && actor.getFaction() == ::Const.Faction.Player && ::Tactical.State.isAutoRetreat())
 		{
 			return this.m.AutoRetreatActionPointModifier;
 		}
