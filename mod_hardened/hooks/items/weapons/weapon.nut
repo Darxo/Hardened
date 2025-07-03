@@ -14,6 +14,12 @@
 				// Vanilla does not show the maximum ammunition. We now also color the remaining ammunition in the negative color if it is 0
 				entry.text = "Remaining Ammo: " + ::MSU.Text.colorizeValue(this.getAmmo(), {CompareTo = 1}) + " / " + this.getAmmoMax();
 			}
+			else if (entry.id == 5 && entry.icon == "ui/icons/armor_damage.png")
+			{
+				// Improve wording for Armor Damage
+				// Vanilla Fix: Improve accuracy of shown values by removing rounding and flooring
+				entry.text = ::MSU.Text.colorizePct(this.m.ArmorDamageMult, {InvertColor = true}) + " Armor Damage";
+			}
 		}
 
 		return ret;
