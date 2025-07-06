@@ -46,6 +46,10 @@
 }, ::Hooks.QueueBucket.Early);
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
+	::includeFiles(::IO.enumerateFiles("mod_hardened/hooks_late"));
+}, ::Hooks.QueueBucket.Late);
+
+::Hardened.HooksMod.queue(">mod_reforged", function() {
 	::includeFiles(::IO.enumerateFiles("mod_hardened/hooks_last"));
 }, ::Hooks.QueueBucket.Last);
 
