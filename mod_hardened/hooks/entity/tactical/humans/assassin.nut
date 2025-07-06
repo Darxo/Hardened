@@ -11,5 +11,7 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_scout"));		// This allows them to see further which should help with their decision making during night
 
 		this.getSkills().removeByID("perk.footwork");	// The have Ghostlike afterall to escape from melee
+
+		this.getSkills().removeByID("perk.rf_double_strike");	// They already have executioner and between the ribs. They dont need even more damage perks
 	}
 });
