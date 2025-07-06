@@ -46,16 +46,16 @@
 }, ::Hooks.QueueBucket.Early);
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
+	::includeFiles(::IO.enumerateFiles("mod_hardened/hooks_last"));
+}, ::Hooks.QueueBucket.Last);
+
+::Hardened.HooksMod.queue(">mod_reforged", function() {
 	::includeFiles(::IO.enumerateFiles("mod_hardened/hooks_afterhooks"));
 }, ::Hooks.QueueBucket.AfterHooks);
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
 	::includeFiles(::IO.enumerateFiles("mod_hardened/hooks_first_world_init"));
 }, ::Hooks.QueueBucket.FirstWorldInit);
-
-::Hardened.HooksMod.queue(">mod_reforged", function() {
-	::includeFiles(::IO.enumerateFiles("mod_hardened/hooks_last"));
-}, ::Hooks.QueueBucket.Last);
 
 
 // Delete all functions in the passed class so that its shell can be repurposed without changing every instance that was pointing to the old script
