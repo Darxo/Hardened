@@ -3,6 +3,8 @@
 	{
 		__original();
 		this.m.IsDroppedAsLoot = true;
+
+		this.m.HD_IsMedical = true;
 	}
 
 	q.onAddedToStash = @(__original) function( _stashID )
