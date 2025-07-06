@@ -9,11 +9,9 @@
 	{
 		local ret = __original();
 
-		local produceList = [];
-		this.onUpdateProduce(produceList);
 		local childrenElements = [];
 		local childrenId = 41;
-		foreach (produce in produceList)
+		foreach (produce in this.getProduceList())
 		{
 			local item = this.new("scripts/items/" + produce);
 			childrenElements.push({
@@ -37,5 +35,13 @@
 		}
 
 		return ret;
+	}
+
+// New Function
+	q.getProduceList <- function()
+	{
+		local produceList = [];
+		this.onUpdateProduce(produceList);
+		return produceList;
 	}
 });
