@@ -101,6 +101,18 @@ this.perk_hd_parry <- ::inherit("scripts/skills/skill", {
 		}
 	}
 
+// MSU Functions
+	function onGetHitFactorsAsTarget( _skill, _targetTile, _tooltip )
+	{
+		if (this.isSkillParryable(_skill))
+		{
+			_tooltip.push({
+				icon = "ui/tooltips/negative.png",
+				text = ::MSU.Text.colorNegative((this.getMeleeDefenseModifier()) + "% ") + this.getName(),
+			});
+		};
+	}
+
 // Modular Vanilla Functions
 	function getQueryTargetValueMult( _user, _target, _skill )
 	{
