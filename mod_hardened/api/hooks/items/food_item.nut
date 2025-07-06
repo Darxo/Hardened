@@ -17,6 +17,30 @@
 	}
 
 // Hardened Functions
+	q.getBaseBuyPriceMult = @(__original) function()
+	{
+		if (this.isBuildingPresent(::World.State.getCurrentTown()))
+		{
+			return __original();
+		}
+		else
+		{
+			return ::Const.World.Assets.BuyPriceNotProducedHere;
+		}
+	}
+
+	q.getBaseSellPriceMult = @(__original) function()
+	{
+		if (this.isBuildingPresent(::World.State.getCurrentTown()))
+		{
+			return __original();
+		}
+		else
+		{
+			return ::Const.World.Assets.SellPriceNotProducedHere;
+		}
+	}
+
 	q.getRarityMult = @(__original) function( _settlement = null )
 	{
 		local ret = __original();
