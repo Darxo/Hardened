@@ -33,6 +33,25 @@
 		return ret;
 	}
 
+	q.getUIInformation = @(__original) function()
+	{
+		local ret = __original();
+
+		// We reset all situation UI information and recalculate them
+		// This fixes the vanilla issue where they purposefully hide duplicate situation
+		// But this information is very important in order to understand certain weird town prices or states
+		ret.Situations = [];
+		foreach (situation in this.getSituations())
+		{
+			ret.Situations.push({
+				ID = situation.getID(),
+				Icon = situation.getIcon(),
+			});
+		}
+
+		return ret;
+	}
+
 	q.onUpdateShopList = @(__original) function( _id, _list )
 	{
 		switch (_id)
