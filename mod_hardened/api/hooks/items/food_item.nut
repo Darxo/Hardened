@@ -16,6 +16,19 @@
 		this.m.Amount = ::Math.rand(1, this.m.HD_MaxAmount);
 	}
 
+// Hardened Functions
+	q.getRarityMult = @(__original) function( _settlement = null )
+	{
+		local ret = __original();
+
+		if (_settlement != null)
+		{
+			ret *= _settlement.getModifiers().FoodRarityMult;
+		}
+
+		return ret;
+	}
+
 // New Functions
 	// Return a multiplier for this items value that is calculated from its shelf life
 	q.HD_getShelfLifeMult <- function()

@@ -40,6 +40,12 @@
 
 ::Hardened.HooksMod.hook("scripts/items/item", function(q) {
 // New Getter/Setter
+	// Return the amount of items of this type that should be generated at most inside a shop, given enough rarity and luck
+	q.getShopAmountMax <- function()
+	{
+		return 3;	// This is the standard vanilla value
+	}
+
 	// Return the rarityMult of this item during shop generation, making it more or less likely to appear multiple times
 	// A higher RarityMult makes it more likely to pass additional RarityThreshold checks during shop generation
 	// Can be hooked or overwritten by various item subclasses to add additional multipliers
