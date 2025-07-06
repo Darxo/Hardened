@@ -3,6 +3,8 @@
 	{
 		__original();
 		this.m.IsDroppedAsLoot = true;
+
+		this.m.HD_IsBuildingSupply = true;
 	}
 
 	q.onAddedToStash = @(__original) function( _stashID )

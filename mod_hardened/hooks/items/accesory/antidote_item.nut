@@ -3,5 +3,7 @@
 	{
 		__original();
 		this.m.Value = 100;	// In Vanilla this is 150
+
+		this.m.HD_IsMedical = true;
 	}
 });
