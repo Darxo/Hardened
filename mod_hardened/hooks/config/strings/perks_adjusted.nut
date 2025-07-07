@@ -240,7 +240,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Bow Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
-						"Shooting range with bows is increased by " + ::MSU.Text.colorPositive("+1"),
+						"Shooting range with Bows is increased by " + ::MSU.Text.colorPositive("+1"),
 					],
 				},
 				{
@@ -723,7 +723,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"[Shatter|Skill+shatter_skill] always knock back enemies you hit",
+						"[Shatter|Skill+shatter_skill] always knocks back enemies you hit",
 						"[Shatter|Skill+shatter_skill] knocks enemies back an additional tile",
 					],
 				},
