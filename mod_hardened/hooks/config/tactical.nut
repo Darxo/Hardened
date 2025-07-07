@@ -23,7 +23,7 @@
 	1.0,	// Afternoon
 	0.9,	// Sunset
 	0.7,	// Dusk
-	0.5,	// Night
+	0.7,	// Night	// Vanilla: 0.5
 	0.7,	// Dawn
 	0.9,	// Sunrise
 ];
