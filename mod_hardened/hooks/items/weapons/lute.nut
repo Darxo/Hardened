@@ -1,4 +1,10 @@
 ::Hardened.HooksMod.hook("scripts/items/weapons/lute", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.ArmorDamageMult = 0.5;	// Vanilla: 0.1
+	}
+
 	// Overwrite, because we adjust that makes adjusting the stunchance a bit simpler
 	q.onEquip = @() function()
 	{
