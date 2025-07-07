@@ -5,7 +5,7 @@
 		this.m.ArmorDamageMult = 0.5;	// Vanilla: 0.1
 	}
 
-	// Overwrite, because we adjust that makes adjusting the stunchance a bit simpler
+	// Overwrite, because that makes adjusting the stunchance a bit simpler
 	q.onEquip = @() function()
 	{
 		this.weapon.onEquip();

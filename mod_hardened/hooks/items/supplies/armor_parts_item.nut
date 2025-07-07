@@ -7,6 +7,7 @@
 		this.m.HD_IsBuildingSupply = true;
 	}
 
+	// Feat: We merge bought tools immediately with the supplies
 	q.onAddedToStash = @(__original) function( _stashID )
 	{
 		__original(_stashID);

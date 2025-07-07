@@ -7,6 +7,7 @@
 		{
 			if (entry.id == 64 && entry.icon == "ui/icons/direct_damage.png")
 			{
+				// Improve wording and add Hyperlink for Armor Penetration
 				entry.text = ::MSU.String.replace(entry.text, "of damage ignores armor", ::Reforged.Mod.Tooltips.parseString("[Armor Penetration|Concept.ArmorPenetration]"));
 			}
 			else if (entry.id == 10 && entry.icon == "ui/icons/ammo.png")
