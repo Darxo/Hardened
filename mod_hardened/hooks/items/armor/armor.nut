@@ -28,4 +28,12 @@
 			}
 		}
 	}
+
+// Hardened Functions
+	q.getShopAmountMax = @() function()
+	{
+		// Almost never do you need to buy the third armor of the same type. Buying the first two should be sufficient
+		// By not generating the third this will prevent low tier and unneeded amounts of armor from spamming late-game shops
+		return 2;
+	}
 });
