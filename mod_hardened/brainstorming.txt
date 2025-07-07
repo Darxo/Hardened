@@ -176,6 +176,19 @@
 	"You don’t just fight—you mend, patch, and keep your allies standing."
 	- Skills from bag items cost -1 Action Point
 	- Once per battle, when you use a bag item on yourself or an adjacent ally, recover 20 Hitpoints on the target
+- Meditate
+	- Start each battle at confident morale, if permitted by mood
+	- Trigger two positive Morale Checks whenever you use Recover
+
+## New Skills
+- Rain of Arrows
+	- 6 AP, 30 Fatigue
+	- Target an area of 7 Tiles
+	- Shoot 3 arrows at 3 different tiles in that area, which cannot go astray
+	- If at least one of those arrows hits a target, apply **Eyes Up** to all enemies in the targeted area
+- Eyes Up
+	- -25 Ranged Skill
+	- +25 Ranged Defense
 
 ## Perks Review/Rework
 - Nailed it
@@ -198,12 +211,16 @@ misses dont build up fatigue on you while waiting
 These Perks (top = higher prio) im still unhappy with and eventually want to adjust
 - Feral Rage
 - Trick Shooter
-	- Bow Skills cost -1 Action Points if you haven't used them this turn or last turn
+	- Bow Skills you have not used yet this battle have +10% Hitchance
+	- Unlock Flaming Arrow
+	- Unlock Arrow to the Knee
 - Hip Shooter
 	- Lose 10% Armor Penetration (remove fatigue stuff)
 - Mauler
 	- replace second effect with 15% more damage when hitting body parts that have no remaining armor
 		- Alternative: Deal +25% critical damage for every injury on the target (no matter which bodypart you target)
+	- reduce injury threshold of your attacks by 10% per bleed in target
+		- keep bleed stack effect
 - Bloodlust
 	- When you start your turn next to bleeding enemies (or maybe bleeding yourself) gain a temporary bonus depending on the amount of bleeding enemies
 		- Rewards Initiative/Adrenaline gameplay
@@ -460,7 +477,6 @@ MOdular Vanilla:
 	- maybe increase their size slightly too?
 	- this does not work outside of combat
 
-- linebreaker (from onslaught) is not a once-per-turn (happens twice during snowman stream)
 
 - broken shield glitch (outside of combat the paperdoll shield looks healthy while the shield brush is damaged). all whn the shield is damaged
 	- probably just make it not look broken outside of battle (or maybe that is already the case and what is missing is just an update?)
@@ -483,21 +499,18 @@ MOdular Vanilla:
 	- When attacking someone with less Initiative, inflict an additional Bleeding stack
 	- When attacking someone whose turn has not started yet, inflict n additional bleeding stack
 
-- whenever you win a fight, all brothers in reserve get a non-stacking exp buff for the next fight
-	- **Eager for Battle**
 
 - make NPC ammo limited
 	- make NPC Defender have unlimited ammunition
 - Make **Gash** deal more damage for every bleed on the target?
 - look into sorting of enemy types in combat dialog
-	- most important once should be sorted to the top
+	- most important ones should be sorted to the top
 	- make it scrollable
 - Concept for Auto-Retreat
 
 ## Todo
 - split hyena/nachzehrer troops
 - make formidable approach characters more likely to be targeted by rotation-like skills if that pots them next to new enemies or removes confident from enemies potentially
-- make NPC more likely to use throw sand against enemies who are adjacent to fleeing allies
 - color adjacent enemies, that exert ZOC onto you in a color, when previewing movement out of ZOC
 - improve line breaker skill to use ??? dont remember what I meant by this
 - remove bandit leader unique names?
@@ -518,7 +531,6 @@ best
 
 show uncapped hitchance
 - fix(vanilla) parties on world map that concluded fights, still counting as on-going battles
-- fix some ifrits being rootable but not knowing how to free themselves
 - when viewing ground items during battle, turn those items grey, which can't be equipped because
 	- not enough action points
 	- not equippable to the current character
@@ -527,7 +539,6 @@ show uncapped hitchance
 - raider retinue:
 	- 15% more Movementspeed while chasing a non-location
 - alps take 33% more hitpoint changes to head
-- declare incompatible with okranes playground mod
 
 - new enemy only perk
 	- From the Shadows
@@ -543,6 +554,40 @@ show uncapped hitchance
 	- slightly reduce ranged spawnrate. You shouldnt get overwhelmed by their regular ranged troops. thats the job of goblins/nomads
 
 - make enemies that are unknown hidden in the turn sequence bar
+- make skills which increase skill cost temporarily, add tooltip entires in those skill tooltips
+	- need examples, which are those skills?
+
+- cloth sash is way too cheap or too strong
+
+- change escorting so that the escorting character adds its strength and numbers to the army it is escorting
+	- not very useful, while this only affects the player and what he is escorting. Once non-player parties can form groups, it will be useful
 
 - work on a tech to highlight sprites (draw the same brush with the same properties, just behind and in a contrasting color)
 	- could be used to highlight adjacent enemies for a second on tunr start
+
+- linebreaker (from onslaught) is not a once-per-turn (happens twice during snowman stream)
+
+- whenever you win a fight, all brothers in reserve get a non-stacking exp buff for the next fight
+	- **Eager for Battle**
+
+- brigand poacher only 8 action points?
+- colored rumors (extended for reforged rumors)
+- sort of marketplace to also sort for buy-price
+- give adarga shields 20 rdef again. Otherwise their def is too similar and switching too melee not impactful enough
+
+
+
+# Survival Guide
+
+These are noticable changes by Hardened, that might catch you off-guard
+
+## Noticable Differences coming from Vanilla
+
+- 2+ tile melee attacks get hitchance penalties for every adjacent enemy
+
+## Noticable Differences coming from Reforged
+
+- Nets dont reduce Initiative
+- Some enemies can't be disarmed (Orc Warlord, Barbarian King, Hedge Knight, Grand Diviner)
+
+- add renown penalty when entering fight with temporary enemies (= you practically backstab someone who trusted you)

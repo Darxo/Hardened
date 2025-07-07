@@ -1,7 +1,7 @@
 ::Hardened <- {
 	ID = "mod_hardened",
 	Name = "Hardened",
-	Version = "0.50.0",
+	Version = "0.51.0",
 	GitHubURL = "https://github.com/Darxo/Hardened",
 	Temp = {	// Used to globally store variables between function calls to implement more advanced, albeit hacky behavior
 		RootSkillCounter = null,	// This variable will have the SkillCounter of the root skills during the execution of any skill executions and delayed executions
@@ -15,8 +15,10 @@
 ::Hardened.HooksMod <- ::Hooks.register(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
 ::Hardened.HooksMod.require(["mod_reforged >= 0.7.7"]);
 ::Hardened.HooksMod.conflictWith([
-	"mod_heal_repair_fix [Camping Hitpoint Recovery is fixed in Hardened]",	// We have our own fix for the camping recovery
-	"mod_RREI [This mod is integrated into Hardened]",	// We have our own fix for the camping recovery
+	"mod_heal_repair_fix [Camping Hitpoint Recovery is fixed in Hardened]",
+	"mod_RREI [This mods featureset is integrated into Hardened]",
+	"EndsBuyback [This mods featureset is integrated into Hardened]",
+	"mod_settlement_situations_msu [This mods featureset is integrated into Hardened]",
 ]);
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {

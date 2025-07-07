@@ -33,7 +33,7 @@
 		"Typical positive checks:\n" +
 		"- Killing an enemy\n" +
 		"- Seeing an enemy killed by an ally\n" +
-		"- Beginning a turn while Fleeing triggers a [Rally|Concept.Rally]\n\n" +
+		"- Beginning a turn while Fleeing and not in a Zone of Control triggers a [Rally|Concept.Rally]\n\n" +
 		"Typical negative checks:\n" +
 		"- Seeing an ally killed\n" +
 		"- Seeing an ally flee\n" +

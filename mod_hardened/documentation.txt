@@ -6,6 +6,15 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Reforged
 
+# Documentation for Codebase
+
+## API:
+- Backend features that don't change anything by themselves
+- Re-writes of vanilla features/properties. This might sometimes slightly change how they behave
+- API stuff will usually not touch any leaf-scripts
+## Non-API:
+- Everything else
+
 # Known Issues:
 
 - Loading the game over an enemy allows them to instantly engage the player in battle
@@ -13,6 +22,47 @@ This submod is a collection of changes to Reforged that I suggested internally t
 # Compatibility
 
 - Is safe to remove from- and add to any existing savegames
+
+0.51.0
+	- Items that you bought or sold can now be sold or bought back for the exact same price as long as you didn't leave the town
+	- Display tooltips for the effects for all common settlement Situations
+	- Display duplicate Situations in towns
+	- **Two Handed Wooden Hammer** now costs 600 Crowns (up from 500)
+	- **Lute** now has 6 Condition (up from 2) and 50% Armor Damage (up from 10%). It is now rarely sold in villages
+	- **Strange Meat** now costs 35 Crowns (down from 50)
+	- The maximum amount of **Helmets** and **Body Armor** in markets is capped to 2, per shop list entry
+	- Loot items (like webbed valueables, ancient amber, etc.) are no longer affected by `BeastPartsPriceMult` (e.g. Collector Situation)
+	- All **Flesh Golems** take 50% more burning damage to hitpoints
+	- All **Zombies** take 50% more burning damage to hitpoints
+	- **Swordmaster** can no only appear in the variation **Versatile**, **Blade Dancer** or **Metzger**. They will now always spawn with a one-handed swords and never with a shield. Swordmasters gain **Parry** and **Calculated Strikes** and always spawn with **Duelist**. They lose **Dodge**, **Executioner** and **Formidable Approach**. They now have 40 Melee Defense (down from 60) and 40 Ranged Defense (up from 20)
+	- **Fencer** who spawn with an **Estoc** now have **Formidable Approach** instead of **Duelist**
+	- **Assassins** lose **Double Strike**
+	- Make NPCs 100% more likely to use **Throw Dirt** for every fleeing ally adjacent to the target
+	- Killing any character now inflicts -2 Relation with its faction (up from -1)
+	- **Trader Follower** now also makes Trading Goods 100% more common in shop
+	- **Bandages**, **Antidote** and **Apothecary's Miracle** are now marked as `IsMedical`, causing them to be affected by medical-related settlement situations
+	- **Tools and Supplies** are now marked as `IsBuildingSupply`, causing them to be affected by building-supply-related settlement situations
+	- Increase saturation of ambient light during midnight fights to 70% (up from 50%)
+	- Reduce the average lifetime of Miasma Clouds special effect. This is just a cosmetic change
+	- Add tooltip for underirable food explaining that their are eaten last
+	- Fix(Vanilla) **Copper Ingot** price not being affected by `BuildingRarityMult`
+	- Fix(Vanilla) Economic Difficulty only affecting the price of some items
+	- Fix(Vanilla) Armor Damage on Weapon tooltips sometimes being off by 1%
+	- Fix Unholds flinging back enemies forwards instead of backwards
+	- Fix Player Animal kills of enemies not causing a relationship loss with their faction
+	- Fix Donkeys auto-kills not causing a relationship loss with their faction
+	- Fix reload bolt and reload handgonne tooltips throwing errors
+	- Completely rewrite/overwrite `fillStash` from `building.nut`, making it more moddable:
+		- Add `getShopAmountMax()` function for `item.nut`, which can be used to define custom maximas for items being generated for shops
+		- Add `getRarityMult(_settlement=null)` for `item.nut`, which can be used a custom item-specific rarity multiplier for item generation for shops
+		- Add new `HD_IsBuildingSupply = false` for `item.nut` that can be used to mark items as "BuildingSupply". `isBuildingSupply()` can be used to check for this value
+		- Add new `HD_IsMedical = false` for `item.nut` that can be used to mark items as "Medicine". `isMedical()` can b used to check for this value
+		- Add new `HD_IsMineral = false` for `item.nut` that can be used to mark items as "Mineral". `isMineral()` can b used to check for this value
+	- Completely rewrite `getBuyPrice` and `getSellPrice` from `item.nut` making it much more compatible and reducing duplicate code
+		- Add `getBaseBuyPrice()` for `item.nut`, which returns `::Const.World.Assets.BaseBuyPrice` or any custom alternative value, depending on the item
+		- Add `getBaseSellPrice()` for `item.nut`, which returns `::Const.World.Assets.BaseSellPrice` or `::Const.World.Assets.BaseLootSellPrice` or any custom alternative value, depending on the item
+		- Add `isBuildingPresent(_settlement)` for `item.nut`, which returns `true`, if there is a building in this town present, that produces this item or makes it otherwise more common
+	- Add `getProduceList()` for `attached_location.nut` which returns an array of produces produced by this attached location
 
 0.50.0
 	- **Reload Disorientation** no longer applies a penalty to Ranged Skill. It now grants 50% less Ranged Defense (down from 35% less)
