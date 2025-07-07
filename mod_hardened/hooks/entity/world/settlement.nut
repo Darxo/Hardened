@@ -88,6 +88,12 @@
 						P = 1.0,
 						S = "shields/wooden_shield_old",
 					});
+
+					_list.push({
+						R = 90,
+						P = 1.0,
+						S = "weapons/lute",
+					});
 				}
 
 				// Add worn kite/heater shields to higher tier settlements which are not southern
