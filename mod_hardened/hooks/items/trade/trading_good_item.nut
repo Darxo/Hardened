@@ -38,4 +38,17 @@
 
 		return ret;
 	}
+
+// Hardened Functions
+	q.getRarityMult = @(__original) function( _settlement = null )
+	{
+		local ret = __original(_settlement);
+
+		if (::World.Retinue.hasFollower("follower.trader"))
+		{
+			ret *= 2.0;		// The Trader Retinue now makes trade goods 100% more likely to appear
+		}
+
+		return ret;
+	}
 });
