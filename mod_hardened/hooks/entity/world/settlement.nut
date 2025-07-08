@@ -194,6 +194,32 @@
 		__original(_id, _list);
 	}
 
+	q.onLeave = @(__original) function()
+	{
+		__original();
+
+		// We reset the HD_BuyBackPrice of all items in the player inventory
+		foreach (item in ::World.Assets.getStash().getItems())
+		{
+			if (item == null) continue;
+			item.m.HD_BuyBackPrice = null;
+		}
+
+		// We reset the HD_BuyBackPrice of all items in all buildings whenever the player leaves the town
+		foreach (building in this.m.Buildings)
+		{
+			if (building == null) continue;
+			if (building.getStash() == null) continue;
+
+			foreach (item in building.getStash().getItems())
+			{
+				if (item == null) continue;
+
+				item.m.HD_BuyBackPrice = null;
+			}
+		}
+	}
+
 // New Functions
 	q.getLastVisitedString <- function()
 	{

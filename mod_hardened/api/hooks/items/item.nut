@@ -5,6 +5,9 @@
 	q.m.HD_IsMedical <- false;
 	q.m.HD_IsMineral <- false;
 
+	// Private
+	q.m.HD_BuyBackPrice <- null;
+
 	q.create = @(__original) function()
 	{
 		__original();
@@ -17,6 +20,8 @@
 	// It determines which calculation to use, depending on whether we are in a town
 	q.getBuyPrice = @() function()
 	{
+		if (this.m.HD_BuyBackPrice != null) return this.m.HD_BuyBackPrice;
+
 		local buyPrice = this.getValue() * this.getPriceMult();
 
 		if (("State" in ::World) && ::World.State != null && ::World.State.getCurrentTown() != null)
@@ -33,6 +38,8 @@
 	// It determines which calculation to use, depending on whether we are in a town
 	q.getSellPrice = @() function()
 	{
+		if (this.m.HD_BuyBackPrice != null) return this.m.HD_BuyBackPrice;
+
 		local sellPrice = this.getValue();
 
 		if (("State" in ::World) && ::World.State != null && ::World.State.getCurrentTown() != null)
@@ -119,6 +126,40 @@
 		}
 
 		return ret;
+	}
+
+	// Defines whether this item should be treated as "Sold recently"
+	q.setSold = @(__original) function( _isSold )
+	{
+		__original(_isSold);
+
+		if (_isSold)	// This being true is an indicator, that the player just bought this item from a shop
+		{
+			// We don't count trade goods as "Sold", if they were bought by us just moments before
+			if (this.m.HD_BuyBackPrice != null && this.isItemType(::Const.Items.ItemType.TradeGood))
+			{
+				::World.Statistics.getFlags().increment("TradeGoodsSold", -1);
+			}
+
+			this.m.HD_BuyBackPrice = this.getSellPrice();
+		}
+	}
+
+	// Defines whether this item should be treated as "Bought recently"
+	q.setBought = @(__original) function( _isBought )
+	{
+		__original(_isBought);
+
+		if (_isBought)	// This being true is an indicator, that the player just sold this item to a shop
+		{
+			// We don't count trade goods as "Bought", if they were sold by us just moments before
+			if (this.m.HD_BuyBackPrice != null && this.isItemType(::Const.Items.ItemType.TradeGood))
+			{
+				::World.Statistics.getFlags().increment("TradeGoodsBought", -1);
+			}
+
+			this.m.HD_BuyBackPrice = this.getBuyPrice();
+		}
 	}
 
 // Hardened Functions
