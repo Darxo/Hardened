@@ -2,6 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.ConditionMax = 6.0;		// Vanilla: 2.0
 		this.m.ArmorDamageMult = 0.5;	// Vanilla: 0.1
 	}
 
