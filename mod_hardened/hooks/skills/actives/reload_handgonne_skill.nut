@@ -14,7 +14,7 @@
 
 	q.getTooltip = @(__original) function()
 	{
-		local ret = this.__original();
+		local ret = __original();
 
 		local reloadDisorientationEffect = ::new("scripts/skills/effects/hd_reload_disorientation_effect");
 		ret.push({
