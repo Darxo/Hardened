@@ -18,8 +18,11 @@
 			else if (entry.id == 5 && entry.icon == "ui/icons/armor_damage.png")
 			{
 				// Improve wording for Armor Damage
+				entry.text = ::MSU.String.replace(entry.text, "effective against armor", "Armor Damage");
+
 				// Vanilla Fix: Improve accuracy of shown values by removing rounding and flooring
-				entry.text = ::MSU.Text.colorizePct(this.m.ArmorDamageMult, {InvertColor = true}) + " Armor Damage";
+				entry.text = entry.text.slice(entry.text.find("%[/color]") + 9, entry.text.len());	// Remove the vanilla damage number representation at the start
+				entry.text = ::MSU.Text.colorizePct(this.m.ArmorDamageMult, {InvertColor = true}) + entry.text;
 			}
 		}
 
