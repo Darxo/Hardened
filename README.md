@@ -1088,8 +1088,3 @@ This mod is licensed under the **Zero-Money License**, which is a custom license
 ## Key Differences from CC BY-NC-SA 4.0:
 
 - **No Donations:** Explicitly prohibits soliciting or accepting any form of financial contributions related to the mod.
-
-
-# List of Unideal things in the mod
-- Ancient Gladius is a bit too strong with its native 3 AP attack on a whopping 38-43 daamge
-- The 25% more threshold on the stab skill is laughable and not enough to nerf its versatility
