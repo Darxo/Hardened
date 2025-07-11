@@ -89,6 +89,24 @@
 		return false;
 	}
 
+// Modular Vanilla Functions
+	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
+	{
+		local ret = __original(_user, _target, _skill);
+
+		if (_skill != this) return ret;
+
+		if (_user.getID() == this.getContainer().getActor().getID())	// We must be the _user
+		{
+			if (_target.getMoraleState() == ::Const.MoraleState.Fleeing)
+			{
+				ret *= 3.0;	// We strongly prefer to use Command on a fleeing ally
+			}
+		}
+
+		return ret;
+	}
+
 // New Functions
 	q.getCommandBonus <- function()
 	{
