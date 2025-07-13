@@ -23,8 +23,30 @@
 					text = "Hides defender during night",
 				});
 			}
+
+			if (!this.isAttackable() && this.isLocationType(::Const.World.LocationType.Unique) && this.hasCloseByHostileParty())
+			{
+				ret.push({
+					id = 40,
+					type = "hint",
+					icon = "ui/tooltips/warning.png",
+					text = "Cannot be attacked because there is another hostile party nearby",
+				});
+			}
 		}
 		return ret;
+	}
+
+	q.isAttackable = @(__original) function()
+	{
+		local ret = __original();
+		if (!ret) return false;
+
+		if (!this.isLocationType(::Const.World.LocationType.Unique)) return true;
+
+		// Feat: Unique Locations are only attackable, if there is no entity on top of them, which might otherwise drag them into a fight with the player
+		// This prevents third parties from forcing the player into a fight with the unique location
+		return !this.hasCloseByHostileParty();
 	}
 
 	q.setShowName = @(__original) function( _b )
@@ -69,5 +91,20 @@
 		__original();
 
 		mockObjectRand.cleanup();
+	}
+
+// New Functions
+	// Determines, whether there is another party in CombatPlayerDistance range, which is hostile to the player
+	q.hasCloseByHostileParty <- function()
+	{
+		local allNearbyEntitities = ::World.getAllEntitiesAtPos(this.getPos(), ::Const.World.CombatSettings.CombatPlayerDistance * 2.0);
+		foreach (nearbyEntity in allNearbyEntitities)
+		{
+			if (::MSU.isEqual(nearbyEntity, this)) continue;
+			if (nearbyEntity.isAlliedWith(::World.State.getPlayer())) continue;
+
+			return true;
+		}
+		return false;
 	}
 });
