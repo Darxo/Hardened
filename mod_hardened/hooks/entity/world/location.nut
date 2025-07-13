@@ -1,4 +1,9 @@
 ::Hardened.HooksMod.hook("scripts/entity/world/location", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.HD_MinPlayerDistanceForSpawn = 2;	// Hostile locations will no longer spawn parties, while the player is on top of them
+	}
 
 	q.getTooltip = @(__original) function()
 	{
