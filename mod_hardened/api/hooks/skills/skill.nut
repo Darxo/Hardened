@@ -37,63 +37,11 @@
 		return __original(_targetTile, _forFree);
 	}
 
-	/* This change will make it so both, armor and health damage use the exact same base damage roll
-	 * No longer is it possible to low-roll on armor damage and high-roll on the hightpoint damage part.
-	 * That issue is only confusing: when trying to understand the damage dealt in combat and can create additional frustration
-	 */
 	q.onScheduledTargetHit = @(__original) function( _info )
 	{
 		if (!_info.TargetEntity.isAlive())
 		{
 			return __original(_info);
-		}
-
-		local oldMathRand = ::Math.rand;
-
-		local endSwitcheroo = function()
-		{
-			::Math.rand = oldMathRand;
-		}
-
-		local startSwitcheroo = function()
-		{
-			local previousResult = null;
-			local prevMax = null;
-
-			// Todo. Implement this with mockFunction tech
-
-			// We will encounter ::Math.rand in this switcheroo operation exactly two times
-			::Math.rand = function( _min = null, _max = null )
-			{
-				if (_min == null && _max == null) return oldMathRand();
-
-				if (previousResult == null)	// First time we need to note result of the operation
-				{
-					previousResult = oldMathRand(_min, _max);
-				}
-
-				return previousResult;	// We now return the same result in both rolls
-			}
-
-			// Exit Plant
-			local oldMax = ::Math.max;
-			::Math.max = function( _a, _b )
-			{
-				endSwitcheroo();
-				local ret = oldMax(_a, _b);
-				::Math.max = oldMax;	// Revert Plant
-				return ret;
-			}
-		}
-
-		// Entry Plant
-		local oldGetHitChance = _info.Properties.getHitchance;
-		_info.Properties.getHitchance = function( _bodyPart )
-		{
-			startSwitcheroo();
-			local ret = oldGetHitChance(_bodyPart);
-			_info.Properties.getHitchance = oldGetHitChance;	// Revert Plant
-			return ret;
 		}
 
 		// We save the target skill and user of the last scheduled hit.

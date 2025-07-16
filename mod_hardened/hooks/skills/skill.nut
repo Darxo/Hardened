@@ -1,4 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/skill", function(q) {
+	// Private
+	q.m.HD_PreviousRandomResult <- 0;	// We save the previous damage roll here, so we can make sure that armor and hitpoint rolls are exactly the same
+
 	q.getHitFactors = @(__original) function( _targetTile )
 	{
 		local ret = __original(_targetTile);
@@ -22,6 +25,54 @@
 
 		return ret;
 	}
+
+// Modular Vanilla Functions
+	/* This change will make it so both, armor and health damage use the exact same base damage roll
+	 * No longer is it possible to low-roll on armor damage and high-roll on the hightpoint damage part.
+	 * That issue is only confusing: when trying to understand the damage dealt in combat and can create additional frustration
+	 */
+	 q.MV_getDamageRegular = @(__original) function( _properties, _targetEntity = null )
+	 {
+		 local damageRegularResult = null;
+
+		 local mockObjectRand;
+		 mockObjectRand = ::Hardened.mockFunction(::Math, "rand", function(...) {
+			 if (vargv.len() == 2 && vargv[0] == _properties.DamageRegularMin && vargv[1] == _properties.DamageRegularMax)
+			 {
+				 local ret = mockObjectRand.original(vargv[0], vargv[1]);
+				 damageRegularResult = ret;	// We save the result of the random hitpoint damage roll, so we can later apply it also to the random armor damage roll
+				 return { done = true, value = ret };
+			 }
+		 });
+
+		 local ret = __original(_properties, _targetEntity);
+
+		 this.m.HD_PreviousRandomResult = damageRegularResult;
+		 mockObjectRand.cleanup();
+
+		 return ret;
+	 }
+
+	 q.MV_getDamageArmor = @(__original) function( _properties, _targetEntity = null )
+	 {
+		 local damageArmorResult = this.m.HD_PreviousRandomResult;
+
+		 local mockObjectRand;
+		 mockObjectRand = ::Hardened.mockFunction(::Math, "rand", function(...) {
+			 if (vargv.len() == 2 && vargv[0] == _properties.DamageRegularMin && vargv[1] == _properties.DamageRegularMax)
+			 {
+				 return { done = true, value = damageArmorResult };	// We apply the previously saved result, so that the armor damage roll is now equal to the hp damage roll
+			 }
+		 });
+
+		 local ret = __original(_properties, _targetEntity);
+
+		 this.m.HD_PreviousRandomResult = 0;	// Setting this to null can cause battle crashes in rare compatibility cases. Setting it to 0 is less intrusive and should still cause bug-reports
+		 mockObjectRand.cleanup();
+
+		 return ret;
+	 }
+
 
 // Reforged Functions
 	// Overwrite, because we have different conditions for duelistValid
