@@ -1,6 +1,11 @@
 # Zero-Money License
 
-This mod is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License with additional terms outlined below.
+The source code of this mod is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License with additional terms outlined below.
+
+## Disclaimer on Game Assets
+
+This mod includes assets from Battle Brothers © 2019 Overhype Studios.
+These assets are not covered by this mod's license and remain the property of their original creators.
 
 ## Key Differences from CC BY-NC-SA 4.0:
 
