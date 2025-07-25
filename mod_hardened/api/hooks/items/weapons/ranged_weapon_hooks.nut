@@ -227,6 +227,26 @@ Features:
 			this.HD_convertVanillaLoadedWeapon();
 		}
 	}
+
+	// We do this as a hookTree because some weapon implementations of this function might not call the base functions
+	q.onCombatStarted = @(__original) function()
+	{
+		if (!("setLoaded" in this)) return __original();
+
+		// We switcheroo the setLoaded to prevent vanilla from always pre-loading loaded weapons at the start of every fight
+		local oldSetLoaded = this.setLoaded;
+		this.setLoaded = function (_b) {};
+		__original();
+		this.setLoaded = oldSetLoaded;
+
+		// If the weapon can be loaded (correct ammo equipped) and the flag allows it so, it will now get loaded at the start of the battle
+		if (!this.HD_canBeLoaded()) return;
+
+		if (this.m.HD_StartsBattleLoaded)
+		{
+			this.HD_tryReload();
+		}
+	}
 });
 
 // TODO
