@@ -195,6 +195,40 @@ Features:
 	}
 });
 
+::Hardened.HooksMod.hookTree("scripts/items/weapons/weapon", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		switch (this.getAmmoID())
+		{
+			case "ammo.arrows":
+			{
+				this.m.HD_RequiredAmmoType = ::Const.Items.AmmoType.Arrows;
+				break;
+			}
+			case "ammo.bolts":
+			{
+				this.m.HD_RequiredAmmoType = ::Const.Items.AmmoType.Bolts;
+				break;
+			}
+			case "ammo.powder":
+			{
+				this.m.HD_RequiredAmmoType = ::Const.Items.AmmoType.Powder;
+				break;
+			}
+			default:
+				return;		// If the ammotype could not be fetched corretly, then the default (None) is used
+		}
+
+		// We try to detect any vanilla/modded "loaded weapon" and classify them as such retroactively
+		if (this.HD_getLoadedShotsMax() == 0 && (this.getAmmoID() == "ammo.bolts" || this.getAmmoID() == "ammo.powder"))
+		{
+			this.HD_convertVanillaLoadedWeapon();
+		}
+	}
+});
+
 // TODO
 /*
 - replace hard-coded ammo check and ammo usage in shoot-skills so it uses this scripts new and superior functions
