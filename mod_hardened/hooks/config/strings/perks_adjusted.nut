@@ -1313,6 +1313,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_steady_brace",	// This is now called "Ready to go"
+		Key = "RF_SteadyBrace",
+		Description = ::UPD.getDescription({
+			Fluff = "Take the time to load before the fighting starts.",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Your Crossbows and Firearms start each battle loaded, including those carried in the bag, if you have the correct ammunition equipped",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_survival_instinct",
 		Key = "RF_SurvivalInstinct",
 		Description = ::UPD.getDescription({
@@ -1594,6 +1607,9 @@ hybridizationPerkDef.IconDisabled = "ui/perks/perk_hd_toolbox_sw.png";	// Give T
 
 ::Const.Strings.PerkName.RF_Rattle = "Full Force";
 ::Const.Perks.findById("perk.rf_rattle").Name = ::Const.Strings.PerkName.RF_Rattle;
+
+::Const.Strings.PerkName.RF_SteadyBrace = "Ready to go";
+::Const.Perks.findById("perk.rf_steady_brace").Name = ::Const.Strings.PerkName.RF_SteadyBrace;
 
 ::Const.Strings.PerkName.RF_SwiftStabs = "Hit and Run";
 ::Const.Perks.findById("perk.rf_swift_stabs").Name = ::Const.Strings.PerkName.RF_SwiftStabs;
