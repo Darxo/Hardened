@@ -10,13 +10,15 @@
 	q.checkMorale = @(__original) { function checkMorale( _change, _difficulty, _type = this.Const.MoraleCheckType.Default, _showIconBeforeMoraleIcon = "", _noNewLine = false )
 	{
 		local oldMoraleState = this.m.MoraleState;
-		__original(_change, _difficulty, _type, _showIconBeforeMoraleIcon, _noNewLine);
+		local ret = __original(_change, _difficulty, _type, _showIconBeforeMoraleIcon, _noNewLine);
 
 		if (oldMoraleState == ::Const.MoraleState.Fleeing && this.m.MoraleState == ::Const.MoraleState.Wavering)	// This is our current definition of being rallied
 		{
 			// Feat: Any character that rallies, loses some action points
 			this.setActionPoints(this.getActionPoints() + ::Hardened.Const.ActionPointChangeOnRally);
 		}
+
+		return ret;
 	}}.checkMorale;
 
 	q.onInit = @(__original) function()
