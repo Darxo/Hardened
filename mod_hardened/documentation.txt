@@ -23,6 +23,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+0.51.1
+	- Fix mental attacks always succeeding
+
 0.51.0
 	- Items that you bought or sold can now be sold or bought back for the exact same price as long as you didn't leave the town
 	- Display tooltips for the effects for all common settlement Situations
