@@ -6,6 +6,29 @@
 		this.m.InjuriesOnHead = ::Const.Injury.BurningHead;		// Reforged: BurningAndPiercingHead
 	}
 
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original();
+
+		foreach (entry in ret)
+		{
+			if (entry.id == 10)	// Replace the morale check tooltip
+			{
+				entry.text = ::Reforged.Mod.Tooltips.parseString("A hit will trigger a negative [morale check|Concept.MoraleCheck] for all adjacent enemies")
+				break;
+			}
+		}
+
+		ret.push({
+			id = 15,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Burns away any [rooted|Concept.Rooted] effects on the target"),
+		});
+
+		return ret;
+	}
+
 	// Overwrite Reforged function to remove the morale check on the main target
 	q.onTargetHit = @() function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
@@ -29,30 +52,5 @@
 			User = this.getContainer().getActor(),
 			TargetTile = this.m.TargetTile
 		});
-	}
-
-// MSU Functions
-	q.onQueryTooltip = @(__original) function( _skill, _tooltip )
-	{
-		__original(_skill, _tooltip);
-
-		if (_skill.getID() == "actives.aimed_shot")
-		{
-			_tooltip.push({
-				id = 102,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Burns away any [rooted|Concept.Rooted] effects on the target"),
-			});
-
-			foreach (entry in _tooltip)
-			{
-				if (entry.id == 100)
-				{
-					entry.text = ::Reforged.Mod.Tooltips.parseString("A hit will trigger a negative [morale check|Concept.MoraleCheck] for all adjacent enemies")
-					break;
-				}
-			}
-		}
 	}
 });
