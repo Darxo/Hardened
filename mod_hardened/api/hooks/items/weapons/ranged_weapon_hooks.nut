@@ -272,7 +272,7 @@ Features:
 	// Feat: empty out any looted crossbow or firearm and return their ammunition to the ammo supply pool
 	q.onAddedToStash = @(__original) function( _stashID )
 	{
-		__original()
+		__original(_stashID);
 		if (_stashID == "player") this.HD_unloadShotsToAmmoSupply();
 	}
 });
