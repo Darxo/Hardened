@@ -76,8 +76,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - Any Melee Attack Skill that has a Range of at least 2 tiles may have to deal with the new **Crowded** mechanic:
 - Every adjacent ally (except the first two) causes -5% Hitchance with such a skill
 - Every adjacent enemy causes -10% Hitchance with such a skill
-- Enemies with higher Reach now also count for this effect
-- As a consequence of the **Crowded** mechanic, 2-tile melee attacks lose the vanilla penalty to attack adjacent targets
+- As a consequence of the **Crowded** mechanic, 2-tile melee attacks lose the vanilla hitchance penalty to attack adjacent targets
 
 ### Crossbows & Firearms
 
@@ -90,7 +89,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 ### Attacking Allies
 
 - Force Attacking an ally on the world map no longer drops their Relation with you to 0 or causes a Morale Reputation hit. Instead it only makes them temporarily your enemy until you cancel the combat dialog or end the fight with them
-- Whenever start combat, lose 5 Relation with all hostile Factions that you fight against
+- Whenever you start combat, lose 5 Relation with all hostile Factions that you fight against
 - Whenever you start combat against a temporary enemy (e.g. when Force Attacking an ally), lose 2 Morale Reputation
 - Killing any character now changes Relation with their faction by -2 (down from -0.5). This action will now print a relation change entry with a reason
 
@@ -135,10 +134,14 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - You can no longer see the exact number of enemy parties on the world map
 - Add settings to control, whether to display Numerals or their actual Ranges
 
+### Other Major Changes from Reforged
+
+- Disable **Veteran Perks**. Your brothers no longer gain perk points after Level 11
+- You can no longer swap your weapon with a dagger from your bag for free
+
 ### Other Major Changes
 
 - **Night Effect** now causes -3 Vision (down from -2)
-- Disable **Veteran Perks**. Your brothers no longer gain perk points after Level 11
 - When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. Each brother can only receive up to 10% of this shared experience.
 - You can now use **Bandages** to treat injuries during battle that were received at most 1 round ago
 - Attachements no longer randomly spawn on NPCs
@@ -146,7 +149,6 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
 - Hostile Locations now hide their Defender Line-Up during night
 - The fatigue discount from having multiple weapon masteries now stacks when using hybrid weapons
-- You can no longer swap your weapon with a dagger from your bag for free
 
 ## Skills
 
@@ -159,7 +161,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
 - **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%)
-- **Flaming Arrow** (granted by **Trick Shooter**) now longer causes an extra morale check on the main target. It now deals 100% Burning Damage (instead of 25% Burning and 75% Piercing Damage)
+- **Flaming Arrow** (granted by **Trick Shooter**) no longer causes an extra morale check on the main target. It now deals 100% Burning Damage (instead of 25% Burning and 75% Piercing Damage)
 - **Passing Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand
 - **Lunge** now has -10% additional Hitchance (up from -20%)
 - **Net Effect** (caused by **Throw Net**) no longer affects the Initiative of the target. It now applies 50% less Melee Defense (up from 25%) and 50% less Ranged Defense (up from 45%)
@@ -778,7 +780,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Resurrecting Corpses can no longer knock back characters that are rooted or immune to Displacement. Instead they delay their resurrection
 - Burning Damage (Fire Pot, Burning Arrow, Burning Ground) now remove all root-like effects from the targets
 - Characters which are not visible to the player will no longer produce idle or death sounds
-- Weapons now longer drop to the ground when their condition goes to 0. Instead they drop when the condition is lowered, while it was at 0 condition. The weapon break warning is now only displayed while the weapon is at 0 condition
+- Weapons no longer drop to the ground when their condition goes to 0. Instead they drop when the condition is lowered, while it was at 0 condition. The weapon break warning is now only displayed while the weapon is at 0 condition
 - Weapons with 0 Condition now deal 50% less damage
 - The combat map is no longer revealed at the end of a battle
 
@@ -893,7 +895,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add Setting (on) for displaying the exact Morale Reputation whenever its indirect term appears anywhere
 - Add Setting (on) for displaying the exact Renown whenever its indirect term appears anywhere
 - Peasants and Caravans on the world map display a banner
-- Add tooltip for underirable food (e.g. Strange Meat) explaining that their are eaten last
+- Add tooltip for undesirable food (e.g. Strange Meat) explaining that their are eaten last
 - Add Setting (on) for displaying non-settlement location names and numerals while they are within your vision (Lairs, Unique Locations, Attached Locations)
 - Brothers that "die" outside of combat (e.g. Events) will now always transfer their equipment into your stash
 - List the effects of camping in the camping tooltip
@@ -975,7 +977,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 - Completely rewrite/overwrite `fillStash` from `building.nut`, making it more moddable:
 	- Add `getShopAmountMax()` function for `item.nut`, which can be used to define custom maximas for items being generated for shops
-	- Add `getRarityMult(_settlement=null)` for `item.nut`, which can be used a custom item-specific rarity multiplier for item generation for shops
+	- Add `getRarityMult(_settlement=null)` for `item.nut`, which can be used to define a custom item-specific rarity multiplier for item generation for shops
 	- Add new `HD_IsBuildingSupply = false` for `item.nut` that can be used to mark items as "BuildingSupply". `isBuildingSupply()` can be used to check for this value
 	- Add new `HD_IsMedical = false` for `item.nut` that can be used to mark items as "Medicine". `isMedical()` can b used to check for this value
 	- Add new `HD_IsMineral = false` for `item.nut` that can be used to mark items as "Mineral". `isMineral()` can b used to check for this value
