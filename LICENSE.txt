@@ -4,8 +4,8 @@ The source code of this mod is licensed under the Creative Commons Attribution-N
 
 ## Disclaimer on Game Assets
 
-This mod includes assets from Battle Brothers © 2019 Overhype Studios.
-These assets are not covered by this mod's license and remain the property of their original creators.
+This mod includes assets from the original game Battle Brothers.
+These assets are not covered by this mod's license and remain the property of Overhype Studios.
 
 ## Key Differences from CC BY-NC-SA 4.0:
 

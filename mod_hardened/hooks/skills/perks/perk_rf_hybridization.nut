@@ -1,4 +1,4 @@
-::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_hybridization", function(q) {	// This has been renamed into "Toolbox"
+::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_hybridization", function(q) {	// This is now called "Toolbox"
 	// Public
 	q.m.AdditionalBagSlots <- 1;
 	q.m.ThrowingSpearShieldDamageMult <- 2.0;

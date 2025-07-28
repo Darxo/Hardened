@@ -155,7 +155,7 @@
 		return (this.getID() == ::Tactical.TurnSequenceBar.m.CurrentEntities[0].getID());
 	}
 
-// New generic functions
+// New functions
 	/*
 	Try to recover up to _amount Action Points
 	@param _printLog if true, print a combat log entry stating how many Action Points were recovered

@@ -23,6 +23,39 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+0.52.0
+	- Crossbows and Firearms now start each battles unloaded
+	- Crossbows and Firearms are unloaded after battle and their shots are returned to your Ammunition Supplies
+	- **Steady Brace** is now called **Ready to Go** and has been completely reworked. It makes it so your Crossbows and Firearms start each battle loaded, including those carried in the bag, if you have the correct- and enough ammunition equipped
+	- **Trick Shooter** no longer grants an Action Point discount for unused bow skills. Instead it now grants +15% Hitchance for any Bow Skill that you haven't used yet in this battle
+	- **Withered** no longer reduces Stamina or Fatigue Recovery. It now causes Non-Attacks to cost 50% more Fatigue per remaining turn
+	- Fleeing surrounded hostile characters now take 100% more hitpoint damage, after the player has won but chooses to "Run them down"
+	- Hostile locations will no longer spawn roaming parties, while the player is within 2 tiles of them
+	- Tattered Sackcloth always visually appear in its damaged form
+	- The **Reload** skills are now always visible and no longer removed when used
+	- Add tooltip to **Flaming Arrow** about its effect of removing root effects on a hit
+	- Remove titles from Champion Bandit Killers name generation
+	- Characters with **Sergeant** perk are 50% more attractive for NPCs to target
+	- NPCs are 200% more likely to target a fleeing character with **Command**
+	- NPCs with **Supporter** are 100% more likely to use skills, which would recover Action Points
+	- Fix named throwing weapons on enemies sometimes not dropping correctly
+	- Fix named weapons having no name when generated into an NPCs bag
+	- Fix compatibility issue with weapon math mod
+	- Fix misleading tooltips on **Aimed Shot** after learning **Trick Shooter**
+	- Fix(Vanilla) Armor Penetration on **Reap** being 5% lower than shown on the weapon
+	- Fix(Vanilla) Quivers needing to re-use the same ID to be correctly identified as ammo
+	- Fix(Vanilla) exploit to skip the Goblin City quest by attacking a party on top of it
+	- Fix(Reforged) `onSpawned` event for player characters only firing for the first battle in each session
+	- Update License.txt to clarify that the custom license only covers the source code and not the artwork
+	- Add and update metadata on all original or edited vanilla art to clarify that their copyright belongs to overhyped
+	- The large quiver variants now use the following new unique ids: `ammo.powder_large`, `ammo.arrows_large` and `ammo.bolts_large`
+	- `getQueryTargetValueMult` is now also called on the score for non-Attacks, but only after their target is already chosen
+	- Add `HD_CanSpawnParties = true` for `location.nut`, which causes locations to be ignored for spawning regular roaming parties
+	- Add `HD_MinPlayerDistanceForSpawn = 0` for `location.nut`, which prevents hostile locations from spawning regular roaming parties if the player is within this many tiles of them
+	- Add various new helper functions for ranged ammo-using weapons to `weapon.nut`. See `ranged_weapon_hooks.nut` for the details
+	- Add `HD_RequiredAmmoType = ::Const.Items.AmmoType.None` for `weapon.nut` which determines, which type of ammo a weapon uses
+	- Add `HD_StartsBattleLoaded = false` for `weapon.nut` which determines, whether this weapon will be reloaded for free at the start of each battle (only works if the correct ammo is equipped)
+
 0.51.1
 	- Fix mental attacks always succeeding
 

@@ -170,6 +170,11 @@
 - Give Ijirok Second Wind and a Unhold Sweep Melee Attack for 4 AP and a Zone of Control Attack
 	- Chance its AI to only use the 4 AP after Second Wind for the sweep
 
+## New Effects
+- **Starving** (enemy only effect)
+	- Start every battle with 50% Hitpoints
+	- Recover 50% less Hitpoints
+
 ## New Perks
 - Alchemist
 	"A steady hand and the right supplies can mean the difference between life and death."
@@ -178,7 +183,22 @@
 	- Once per battle, when you use a bag item on yourself or an adjacent ally, recover 20 Hitpoints on the target
 - Meditate
 	- Start each battle at confident morale, if permitted by mood
-	- Trigger two positive Morale Checks whenever you use Recover
+	- V1 Trigger two positive Morale Checks whenever you use Recover
+	- V2 When you use Recover, trigger a positive Morale Check and gain **Meditating**
+		- **Meditating**
+			- +20 Resolve until the start of your next Turn
+			- At the start of your next turn, trigger a positive Morale Check (alternative: become confident)
+			- This is interruptable
+- "Entertainer",
+	*You know the right thing to do in any situation*
+	- Non-Attacks cost -2 Action Points but have +2 turns Cooldown
+- **Shield Mastery** (enemy only)
+	- Shield Skills cost 25% less Fatigue
+	- You can use **Knock Back** and **Shieldwall** with any shield
+- **TBD**
+	- Whenever you triger a positive morale check, trigger a positive morale check for all adjacent allies
+- Animalistic (enemy only)
+	- 50% more Resolve during Morale Checks from enemy kills
 
 ## New Skills
 - Rain of Arrows
@@ -580,14 +600,110 @@ show uncapped hitchance
 # Survival Guide
 
 These are noticable changes by Hardened, that might catch you off-guard
+- First read the cheese-section on the wiki, so you know what does not work anymore
 
 ## Noticable Differences coming from Vanilla
 
-- 2+ tile melee attacks get hitchance penalties for every adjacent enemy
+- Nets dont reduce Initiative
 
-## Noticable Differences coming from Reforged
+- Some enemies can't be disarmed (Orc Warlord, Barbarian King, Hedge Knight, Grand Diviner)
+- Some weapons have their AP cost reduced: The main attack from **2H Wooden Hammer**, **2H Wooden Flail** and **Goedendag** cost 5 AP (from 6 AP)
+- 2+ tile melee attacks get hitchance penalties for every adjacent enemy
+- add renown penalty when entering fight with temporary enemies (= you practically backstab someone who trusted you)
+- Your faction (+dogs) must have done the most damage on an enemy in order to get their loost. Kill stealing for loot no longer works
+
+## Noticable Differences coming from Reforged/Vanilla
 
 - Nets dont reduce Initiative
 - Some enemies can't be disarmed (Orc Warlord, Barbarian King, Hedge Knight, Grand Diviner)
+- You can't puncture someone unless 2+ characters are surrounding them (maybe)
+
+## Noticable Differences coming from Reforged
+
+- Some weapons have their AP cost reduced: **Stab** costs 3 AP (from 4 AP) on all daggers
+- Some weapons have their AP cost increased: All Poleflail attacks cost 6 AP (up from 5 AP)
+
+
+
+
+
+
+
+
+
+## Noticable Differences coming from Reforged
+
+- Some weapons have their AP cost reduced: **Stab** costs 3 AP (from 4 AP) on all daggers
+- Some weapons have their AP cost increased: All Poleflail attacks cost 6 AP (up from 5 AP)
+
+
+
+
+
+
 
 - add renown penalty when entering fight with temporary enemies (= you practically backstab someone who trusted you)
+- option for autosaving after battle
+
+- skeleton captains inspiring presence?
+- dazed pots and smoke pots as rewards from nomad camps
+	- smoke pots maybe as reward from ancient dead camps?
+
+
+# Artwork wanted:
+
+- T1 "Polemace": A long combat stick that doubles as a walking cane
+- Malnourished icon ()
+
+
+
+For: URUI
+- Dont show tile blocking square for tiles that are completely hidden by terrain (because of camera height)
+
+- make orc warlord never spawn with shields
+- make footwork rarely be used on the tile that the actor started its turn on (otherwise it too often results in weird dancing/decisions by goblins)
+- fix the vanilla bug of dogdodo news preventing regular events from appearing
+
+- mirrored items censor
+
+- rewrite the tooltip of additional fur padding clarifying that it only works on body hits
+- rewrite bone plating
+
+- improve terrain of camp locations by making the terrain in them less "natural"
+	- less grass in forest locations
+	- dry grass in flatlands
+	- less snow in snowy locations
+
+- prevent orc warlords from spawning with shields (part of enemy rework)
+
+- new type of caravan that transports only gold (because they came back from selling or are about to buy stuff)
+	- they look the same as normal caravans except that they move significant faster (like 80% instead of 50%)
+
+- make champions have 50% chance to spawn with weapon vs armor, instead of equal chance for any slot type
+
+- standardize weapon stats, by changing the hidden +20 damage modifer into the weapon itself
+
+- delay first turn of round ai until resurrections are finished
+
+- make drunkard able to target items equipped to brothers
+
+- adjust the armor pen damage shown on weapon skills so that the 0 instead show the actual minimum
+
+- make relationship with a town reduce the chance of receiving useless rumors (e.g. by switcherooing the follower to on, before the rumors are created)
+
+- add new skill to quickhands perk, which costs 4 AP and removes "Disarmed" effect
+
+- spearwall:
+	- gain +1 Reach
+	- attack each enemy who enters your zone of control
+	- ignore the penalties of "Crowded"
+	- lasts until the start of your next turn
+	- Differences from Vanilla:
+		- deal full damage (up from 50%)
+		- enemies are not pushed back
+	- Spear Mastery:
+		- receive no morale checks from enemies entering your zone of control
+
+- Make Obsidian Dagger instead cause Poison on it to never expire
+
+- make Withered be removed by Recover

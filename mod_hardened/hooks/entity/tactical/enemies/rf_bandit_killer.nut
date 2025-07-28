@@ -84,9 +84,9 @@
 		local r = ::Math.rand(1, 100);
 		if (r <= 40)	// 40% Chance for a named weapon
 		{
-			if (::Math.rand(1, 2) == 1)
+			if (::Math.rand(1, 2) == 1)		// Named 1H Weapon
 			{
-				this.getItems().equip(::new(this.m.AvailableNamedOneHandedWeapons.roll()));	// Named 2H Weapon
+				this.getItems().equip(::new(this.m.AvailableNamedOneHandedWeapons.roll()));
 				if (this.getItems().hasEmptySlot(::Const.ItemSlot.Offhand))
 				{
 					this.getItems().equip(::new("scripts/items/tools/reinforced_throwing_net"));	// A Miniboss always comes with a reinforced net
@@ -96,7 +96,7 @@
 			{
 				if (::Math.rand(1, 2) == 1)	// Two Handed rolled named
 				{
-					this.getItems().equip(::new(this.m.AvailableNamedTwoHandedWeapons.roll()));	// Named 2H Weapon
+					this.getItems().equip(::new(this.m.AvailableNamedTwoHandedWeapons.roll()));
 					if (this.getItems().hasEmptySlot(::Const.ItemSlot.Bag))
 					{
 						this.getItems().addToBag(::new(this.m.AvailableThrowingWeapons.roll()));

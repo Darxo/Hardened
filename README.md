@@ -80,6 +80,8 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 
 ### Crossbows & Firearms
 
+- Crossbows and Firearms now start each battles unloaded
+- Crossbows and Firearms are unloaded after battle and their shots are returned to your Ammunition Supplies
 - Reloading any Crossbow or Firearm now applies the **Reload Disorientation**  until the start of your next turn
   - **Reload Disorientation** grants 50% less Ranged Defense
 - All Crossbows now have +10% chance to hit and +10% Armor Penetration
@@ -177,6 +179,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - **Take Aim** (granted by **Crossbow and Firearm Mastery**) now costs 3 Action Points (up from 2) and 20 Fatigue (down from 25)
 - **Throw Axe** now has a 50% chance to decapitate (up from 0%) and 25% chance to disembowel (up from 0%)
 - **Throw Net** now costs 4 Action Points (down from 5), has a Range of 3 (up from 2) and no longer requires the targets Base Reach to be below a certain value
+- **Withered** no longer reduces Stamina or Fatigue Recovery. It now causes Non-Attacks to cost 50% more Fatigue per remaining turns on the effect duration
 
 Skill nerfs as a result of the Reach system:
 - **Gash** now has 0% additional Hitchance (down from 5%)
@@ -278,6 +281,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Skirmisher** now grants 50% of body armor weight as initiative (previously 30% of body/helmet armor weight) and no longer displays an effect icon
 - **Spear Mastery** no longer provides a free spear attack each turn. Instead it now grants 15% more Melee Skill while you have Reach Advantage
 - **Survival Instinct** is completely reworked. It now grants 1 stack, when you get hit by an attack, and you lose 1 stack when you dodge an attack. Every stack grants 10 Melee Defense and 10 Ranged Defense
+- **Steady Brace** is now called **Ready to Go** and has been completely reworked. It makes it so your Crossbows and Firearms start each battle loaded, including those carried in the bag, if you have the correct- and enough ammunition equipped
 - **Student** no longer grants any experience. It now grants +1 Perk Point when you reach level 8 instead of level 11
 - **Sweeping Strikes** is completely reworked. It now grants +5 Melee Defense for every adjacent enemy until the start of your next turn the first time you use a melee attack skill on an adjacent enemy. It still requires a two-handed weapon
 - **Swift Stabs** has been completely reworked. It's now called **Hit and Run**. It makes it so all dagger attacks can be used at 2 tiles and will move the user one tile closer before the attack. When the attack hits the enemy, the user is moved back to the original tile
@@ -286,7 +290,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Tempo** is completely reworked. It grants 10% more Initiative until the start of your next turn whenever you move a tile during your turn. It also grants **Passing Step**
 - **Through the Gaps** is completely reworked. It causes your piercing spear attacks to always target the body part with the lowest total armor but no longer deal critical damage on a hit to the head
 - **Throwing Mastery** is mostly completely reworked. It now grants 30% more damage for your first throwing attack each turn, no matter the range. It now allows swapping a throwing weapon with an empty throwing weapon or empty slot for free, once per turn
-- **Trick Shooter** is completely reworked. It makes all Bow Skills that you have not used yet this battle, cost -2 Action Points. It also grants the Flaming Arrow skill (instead of the perk)
+- **Trick Shooter** is completely reworked. It makes all Bow Skills that you have not used yet this battle, have +15% Hitchance. It also grants the Flaming Arrow skill (instead of the perk)
 - **Underdog** is rewritten. It now grants +5 Melee Defense for every character surrounding you, except the first one. Compared to the vanilla implementation this defense is now affected by defense multiplier and by the softcap for defense
 - **Unstoppable** is completely reworked. Once per round during your turn, if you hit an enemy with an attack, gain 1 stack up to a maximum of 3. Each stack grants +1 Action Points and 10% more Initiative. Lose 1 stack if you wait. Lose 1 stack if you end your turn with more than half of your action points remaining. Lose all stacks when you use recover, get stunned or staggered
 - **Vanquisher** is completely reworked. After you step on a corpse that has been created this round, you become Immune to **Displacement** and take 25% less Damage until the start of your next turn. **Gain Ground** (granted by **Vanquisher** perk) is now free
@@ -738,11 +742,13 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - NPC ranged troops attribute a target 80% less score from adjacent potential scatter targets
 - Necrosavants are a bit more likely to stay on the same tile and attack twice, rather than teleport to a slightly better tile
 - Improve AI targeting for throwing nets: They value the targets melee defense twice as much and prefer isolated targets
+- NPCs with **Sergeant** perk are 50% more attractive to other NPCs for target selection purposes
 - NPCs are now twice as likely to throw a net or use a throwing pot/bomb while adjacent to an enemy
 - NPCs will no longer throw nets while their strategy is defending
 - NPCs with **Bolster** are more likely to attack with their polarm as they are surrounded by more allies
 - NPCs with **Dismantle** are more likely to target enemies with 100% hitpoints
 - NPCs with **Reload Disorientation** are slightly less likely to use a ranged attack
+- NPCs with **Supporter** are 100% more likely to use skills, which would recover Action Points
 - NPCs with **Sweeping Strikes** are more likely to use an appropriate attack as they are surrounded by more enemies
 - NPCs with **Wear them Down** 20% more likely to target someone who is almost fully fatigued
 - NPCs are 100% more likely to use **Throw Dirt** for every fleeing ally adjacent to the target
@@ -755,6 +761,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - NPCs are 20% more likely to try to destroy shields of someone with **Phalanx** perk
 - NPCs are 50% more likely to try to destroy shields of someone with **One with the Shield** perk
 - NPCs are 1% more likely to focus Nachzehrer sitting on consumable corpses for every % of hitpoints missing on them
+- NPCs are 200% more likely to target a fleeing character with **Command**
 - NPCs with **Toolbox** are 50% more likely to target a staggered enemy with a blunt throwing attack
 - NPCs are 50% more likely to use **Split Shield** when it would destroy a shield on use
 - NPCs are 20% more likely to use a throwing spear against shield users and 50% more likely to target shields, that it would destroy on use
@@ -798,6 +805,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Named weapons now have a 40% chance to be the chosen item type for camps (up from 25,9%). Named shields, helmets and armor now have a 20% chance to be chosen (down from 24,7%)
 - Food Products transported by Caravans now always drop at full stacksize and freshness
 - World Parties are no longer stunned, when you cancel the combat dialog with them
+- Hostile Locations will no longer spawn roaming parties or defenders while you are within 2 tiles of it
 - At the start of each new campaign ~5 additional small bandit camps are spawned in the world
 - The legendary Location **Ancient Spire** now reveals an area of 3000 (up from 1900)
 - Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken
@@ -843,6 +851,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Automatically replace broken (shields) or used (nets) equipment after each battle, if you have replacements in your inventory
 - Add Setting (on) to display a glowing red eyes effect on any human-sized character, who is under the effect of **Killing Frenzy** or has 3 stacks of **Decisive**
 - Corpses of resurrecting Zombies and Humans now emit a slight purple particle effect
+- Fleeing surrounded hostile characters now take 100% more hitpoint damage, after the player has won but chooses to "Run them down"
 - When a Brother dies (without getting struck down), a black skull will raise from his corpse
 - Add Setting to control the zoom speed during combat to allow for more granular zooming
 - Loot that is not equippable in battle no longer appears on the ground (e.g. Beast Trophies/Ingredients)
@@ -854,6 +863,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Disarm** can no longer be used on enemies which are immune to disarm
 - **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - **Night Effect**, **Double Grip**, **Pattern Recognition**, **Bulwark** and **Man of Steel** no longer display a Mini-Icon
+- The **Reload** skill is now always visible, even if your weapon is fully loaded
 - All Unhold variants now use their full name in Tooltips and the Combat Dialog
 - Add skill descriptions for all skills from the **Lorekeeper**
 - **Fast Adaption** now shows the amount of stacks in brackets behind the effect name
@@ -906,7 +916,6 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add 0.8 second delay, before you can click the buttons in event screens to prevent accidental missclicks
 - The Player Banner is no longer hidden while camping
 - Add Concept and Tooltip for Day-Night Cycle
-
 - Slightly Lower the volume of the annoying kid sfx in towns
 
 ### Misc
@@ -918,6 +927,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Improve tooltips of **Battleforged** perk and **Chop** skill
 - Improve Concept for **Morale**
 - Improve artwork for **Nimble** perk
+- Improve artwork for **Tattered Sackcloth** item to make it stand out more from **Sackcloth**
 - All effects of the difficulty settings are now listed as tooltips during world generation
 
 ## Fixes
@@ -950,7 +960,10 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Fix Armor Damage on Weapon tooltips sometimes being off by 1%
 - Fix some positional effects (e.g. Lone Wolf or Entrenched) visually persisting outside of combat
 - Dying enemies no longer set the LastCombatResult to `EnemyDestroyed`, unless they were the last one to die. This fixes a rare Sunken Library exploit
+- Unique Locations are no longer attackable, if there is a party, hostile to the player, directly next to it (fixes exploit for skipping Goblin City quest)
 - **Knock Back** now displays its hitchance bonus correctly in the preview
+- Fix Armor Penetration on **Reap** being 5% lower than shown on the weapon
+- Fix Quivers needing to re-use the same ID to be correctly identified as ammo
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
 - Cartographer will no longer pay for "discovering" the Ancient Watchtower a second time when you interact with it
@@ -972,6 +985,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - The perks **Strengh in Numbers** and **Dynamic Duo** now instantly update the actors stats, if another actor moves adjacent to or away from them
 - Improve **Shieldwall effect** when viewed as a hyperlink
 - Fix Item Swaps sometimes requiring a different amount of Action Points than advertised at first
+- Fix `onSpawned` event for player characters only firing for the first battle in each session
 
 ## For Modders
 
@@ -1048,6 +1062,13 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add `HD_KnockBackDistance` = 1` for `skill.nut`, which determines how many tiles they would knock a target back
 - All corpses now have a new `HD_FatalityType` member, which contains the fatalityType that this corpse was created with
 - `::Const.Combat.WeaponSpecFatigueMult` is now always `1.0`
+- The large quiver variants now use the following new unique ids: `ammo.powder_large`, `ammo.arrows_large` and `ammo.bolts_large`
+- `getQueryTargetValueMult` is now also called on the score for non-Attacks, but only after their target is already chosen
+- Add `HD_CanSpawnParties = true` for `location.nut`, which causes locations to be ignored for spawning regular roaming parties
+- Add `HD_MinPlayerDistanceForSpawn = 0` for `location.nut`, which prevents hostile locations from spawning regular roaming parties if the player is within this many tiles of them
+- Add various new helper functions for ranged ammo-using weapons to `weapon.nut`. See `ranged_weapon_hooks.nut` for the details
+- Add `HD_RequiredAmmoType = ::Const.Items.AmmoType.None` for `weapon.nut` which determines, which type of ammo a weapon uses
+- Add `HD_StartsBattleLoaded = false` for `weapon.nut` which determines, whether this weapon will be reloaded for free at the start of each battle (only works if the correct ammo is equipped)
 
 ### New Character Properties
 
