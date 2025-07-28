@@ -1448,7 +1448,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"All Bow Skills that you have not used yet this battle, cost " + ::MSU.Text.colorPositive(-2) + " [Action Points|Concept.ActionPoints]",
+						"All Bow Skills that you have not used yet this battle, have " + ::MSU.Text.colorPositive("+15%") + " [Hitchance|Concept.Hitchance]",
 					],
 				},
 			],
