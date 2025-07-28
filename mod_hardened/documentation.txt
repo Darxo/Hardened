@@ -23,6 +23,10 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+0.52.1
+	- Fix crash when starting certain scenarios
+	- Fix glitch when interacting with crossbows in inventories
+
 0.52.0
 	- Crossbows and Firearms now start each battles unloaded
 	- Crossbows and Firearms are unloaded after battle and their shots are returned to your Ammunition Supplies
