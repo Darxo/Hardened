@@ -198,12 +198,15 @@ Features:
 	q.HD_unloadShotsToAmmoSupply <- function()
 	{
 		if (this.getAmmoMax() > 0) return;		// This is an indicator that this is a throwing weapon. For those we don't want to do this logic
-		if (::Tactical.State.isScenarioMode()) return;
+		if (this.HD_getLoadedShotsMax() == 0) return;		// This weapon doesnt load shots
 
 		local unloadedShots = this.HD_unloadWeapon();
 		if (unloadedShots == 0) return;
 
-		::World.Assets.addAmmo(unloadedShots * this.HD_getLoadedShotsCost());
+		if (("Assets" in ::World) && ::World.Assets != null)	// In Scenarios this might not be instantiated
+		{
+			::World.Assets.addAmmo(unloadedShots * this.HD_getLoadedShotsCost());
+		}
 	}
 });
 
