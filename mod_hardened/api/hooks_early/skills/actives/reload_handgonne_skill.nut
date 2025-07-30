@@ -9,6 +9,7 @@
 	q.isUsable = @() function()
 	{
 		if (!this.skill.isUsable()) return false;
+		if (::MSU.isNull(this.getItem())) return false;		// Ideally a reload skill should always be attached to its weapon, but Vanilla or a mod may add it disconnected too
 		if (!this.getItem().HD_canBeLoaded()) return false;		// We now use the new weapon utility function instead of checking the ammo count manually
 
 		local actor = this.getContainer().getActor();
