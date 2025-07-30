@@ -8,13 +8,13 @@
 		foreach (item in items)
 		{
 			if (!item.isItemType(::Const.Items.ItemType.Defensive)) continue;
-			if (!item.isItemType(::Const.Items.ItemType.Weapon)) return true;	//
+			if (!item.isItemType(::Const.Items.ItemType.Weapon)) return true;	// Non-Weapon defensive items work out of the box
+			if (!item.isItemType(::Const.Items.ItemType.RangedWeapon)) return true;	// Non-Ranged weapons always work ouf of the box
 
-			if (item.getAmmoMax() == 0 || item.getAmmo() > 0) return true;	// The weapon does not use ammo or has enough ammo to function
-
+			if (item.HD_canShoot()) return true;	// The weapon has enough ammo to function
 			foreach (ammo in items)
 			{
-				if (ammo.getAmmoType() == item.HD_getAmmoType() && ammo.getAmmo() > 0) return true;	// getAmmo > 0 is just an abstraction. Some weapons might need more than 1 ammo to reload
+				if (ammo.isItemType(::Const.Items.ItemType.Ammo) && ammo.getAmmoType() == item.HD_getAmmoType() && ammo.getAmmo() > 0) return true;	// getAmmo > 0 is just an abstraction. Some weapons might need more than 1 ammo to reload
 			}
 		}
 
