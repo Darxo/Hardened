@@ -650,7 +650,6 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 	- **Wiederganger**, which receive this effect, lose **Bite** and gain **Zombie Punch** (which is mostly the same, except without bonus headshot chance)
 - Introduce new **Bite Reach** effect, which reduces headshot chance by 10% and increases chance to receive headshot by 10%
 	- This effect is given to all **Dogs**, **Wolfs** and **Hyenas**
-- **Steady Brace** no longer appears on NPCs
 
 ### Specific Changes
 
