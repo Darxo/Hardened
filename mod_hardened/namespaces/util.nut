@@ -3,8 +3,11 @@
 
 // If the offhand item worn by _entity is equal to any of the IDs inside _existingShieldIDArray, then it is unEquipped and instead _newShieldPath is added
 // If _existingShieldIDArray is not given/null, the ID check is ignored and the offhand is always replaced
+/// @param _entity the entity, whose equipment we are replacing
+/// @param _newShieldPath full script path to the new item that we want to equip to the entity. If null, then the old item is only unequipped
+/// @param _existingShieldIDArray array of IDs that we want to replace. If null, then we replace anything at the slot
 // Returns true if the offhand item was replaced, return false otherwise
-::Hardened.util.replaceOffhand <- function( _entity, _newShieldPath, _existingShieldIDArray = null )
+::Hardened.util.replaceOffhand <- function( _entity, _newShieldPath = null, _existingShieldIDArray = null )
 {
 	local shield = _entity.getOffhandItem();
 	if (shield != null)
@@ -12,7 +15,7 @@
 		if (_existingShieldIDArray == null)
 		{
 			_entity.getItems().unequip(shield);
-			_entity.getItems().equip(::new(_newShieldPath));
+			if (_newShieldPath != null) _entity.getItems().equip(::new(_newShieldPath));
 			return true;
 		}
 		else
@@ -22,7 +25,7 @@
 				if (shield.getID() == existingShieldID)
 				{
 					_entity.getItems().unequip(shield);
-					_entity.getItems().equip(::new(_newShieldPath));
+					if (_newShieldPath != null) _entity.getItems().equip(::new(_newShieldPath));
 					return true;
 				}
 			}
