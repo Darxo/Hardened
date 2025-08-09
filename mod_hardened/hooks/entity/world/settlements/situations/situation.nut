@@ -8,7 +8,6 @@
 		{ index = "FoodPriceMult", type = "price", text = "Food" },
 		{ index = "MedicalPriceMult", type = "price", text = "Medicine" },
 		{ index = "BuildingPriceMult", type = "price", text = "Building Supplies" },
-		{ index = "MedicalPriceMult", type = "price", text = "Medicine" },
 		{ index = "IncensePriceMult", type = "price", text = "Incense" },
 		{ index = "BeastPartsPriceMult", type = "price", text = "Beast Parts" },
 		{ index = "RarityMult", type = "rarity", text = "Items" },
