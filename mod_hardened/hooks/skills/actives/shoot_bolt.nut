@@ -2,7 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.AdditionalAccuracy += 10;	// In Reforged this is 10
+		this.m.AdditionalAccuracy = 25;		// Reforged: 15
 	}
 
 	q.onAdded = @(__original) function()
