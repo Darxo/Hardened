@@ -3,6 +3,16 @@
 	{
 		__original();
 		this.m.AdditionalAccuracy += 10;	// In Reforged this is 15
-		this.m.ActionPointCost -= 1;	// In Vanilla this is 3
+	}
+
+	q.onAdded = @(__original) function()
+	{
+		__original();
+
+		// Copy of how vanilla adds the reload skill duing onUse
+		local skillToAdd = this.new("scripts/skills/actives/reload_bolt");
+		skillToAdd.setItem(this.getItem());
+		skillToAdd.setFatigueCost(::Math.max(0, skillToAdd.getFatigueCostRaw() + this.getItem().m.FatigueOnSkillUse));
+		this.getContainer().add(skillToAdd);
 	}
 });
