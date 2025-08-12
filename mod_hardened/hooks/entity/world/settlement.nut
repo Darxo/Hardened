@@ -78,6 +78,22 @@
 						entry.R = 25;	// In Vanilla this is 30
 						entry.S = "weapons/greenskins/orc_javelin";
 					}
+					else if (entry.S == "accessory/warhound_item")
+					{
+						entry.R = 95;	// Reforged: 70
+					}
+					else if (entry.S == "accessory/armored_warhound_item")
+					{
+						entry.R = 95;	// Reforged: 80
+					}
+					else if (entry.S == "accessory/wardog_item")
+					{
+						entry.R = 95;	// Reforged: 70
+					}
+					else if (entry.S == "accessory/armored_wardog_item")
+					{
+						entry.R = 95;	// Reforged: 80
+					}
 				}
 
 				// Add old wooden shields to lower tier settlements
