@@ -237,7 +237,7 @@ Features:
 		}
 
 		// We try to detect any vanilla/modded "loaded weapon" and classify them as such retroactively
-		if (this.HD_getLoadedShotsMax() == 0 && (this.getAmmoID() == "ammo.bolts" || this.getAmmoID() == "ammo.powder"))
+		if (this.HD_getLoadedShotsMax() == 0 && "isLoaded" in this && "setLoaded" in this)
 		{
 			this.HD_convertVanillaLoadedWeapon();
 		}
