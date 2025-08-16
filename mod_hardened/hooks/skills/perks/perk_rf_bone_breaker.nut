@@ -34,6 +34,7 @@
 	q.onTargetHit = @() function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		if (!this.m.Temp_IsInEffect) return;
+		this.m.Temp_IsInEffect = false;
 
 		// We turn on the applyInjuries function on the target again
 		if (this.m.Temp_InjuryMockObject != null)
