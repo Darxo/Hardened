@@ -1205,7 +1205,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Throwing Attacks cost " + ::MSU.Text.colorPositive(-1) + " [Action Point|Concept.ActionPoints] per tile moved during your [turn|Concept.Turn], until you use a throwing attack, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
+					"After moving 3 tiles during your [turn,|Concept.Turn] Throwing Attacks cost " + ::MSU.Text.colorPositive(-5) + " [Action Points,|Concept.ActionPoints] until you use a throwing attack, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
 					"Moving costs " + ::MSU.Text.colorPositive(-2) + " [Fatigue|Concept.Fatigue]",
 				],
 			}],

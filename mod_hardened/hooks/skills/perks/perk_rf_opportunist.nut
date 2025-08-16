@@ -4,7 +4,8 @@
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_opportunist", function(q) {
 	// Public
-	q.m.ActionPointModifierPerTile <- -1;
+	q.m.ActionPointModifierTile <- -5;
+	q.m.TilesNeededForDiscount <- 3;	// This character gets the AP discount after moving this many tiles during their turn
 	q.m.MovementFatigueCostAdditional <- -2;
 
 	// Private
@@ -150,11 +151,13 @@
 		return true;
 	}
 
-	/// @param _tilesMoved custom amount of moves tiles for which we want to get the action point discount.
+	/// @param _customTilesMoved custom amount of moves tiles for which we want to get the action point discount.
 	/// 	If null, this.m.TilesMovedThisTurn will be used instead
-	q.getActionPointModifier <- function( _tilesMoved = null )
+	q.getActionPointModifier <- function( _customTilesMoved = null )
 	{
-		if (_tilesMoved == null) _tilesMoved = this.m.TilesMovedThisTurn;
-		return _tilesMoved * this.m.ActionPointModifierPerTile;
+		if (_customTilesMoved != null && _customTilesMoved < this.m.TilesNeededForDiscount) return 0;
+		if (this.m.TilesMovedThisTurn < this.m.TilesNeededForDiscount) return 0;
+
+		return this.m.ActionPointModifierTile;
 	}
 });
