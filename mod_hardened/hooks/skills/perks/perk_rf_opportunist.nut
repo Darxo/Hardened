@@ -92,7 +92,7 @@
 	{
 		this.m.NoDiscountBeforeMovement = (this.getActionPointModifier() == 0);
 
-		if (this.getContainer().getActor().isActiveEntity())
+		if (this.isEnabled() && this.getContainer().getActor().isActiveEntity())
 		{
 			this.m.TilesMovedThisTurn += _numTiles;
 
@@ -105,7 +105,7 @@
 
 	q.onMovementFinished <- function()
 	{
-		if (this.m.PrevTile != null)
+		if (this.isEnabled() && this.m.PrevTile != null)
 		{
 			this.m.TilesMovedThisTurn += this.getContainer().getActor().getTile().getDistanceTo(this.m.PrevTile);
 			this.m.PrevTile = null;
