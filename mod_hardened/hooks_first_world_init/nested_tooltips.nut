@@ -27,7 +27,7 @@
 		"Any modifier or multiplier to Hitchance apply equally to both Melee Skill and Ranged Skill, and are affected by their respective multipliers."
 	)),
 	Morale = ::MSU.Class.BasicTooltip("Morale", ::Reforged.Mod.Tooltips.parseString(
-		"Morale represents the mental condition of characters and influences their effectiveness in battle. It exists in one of five states: Fleeing, Breaking, Wavering, Steady, or Confident.\n\n" +
+		"Morale represents the mental condition of characters and influences their effectiveness in battle. It exists in one of five states: [Fleeing,|Skill+hd_dummy_morale_state_fleeing] [Breaking,|Skill+hd_dummy_morale_state_breaking] [Wavering,|Skill+hd_dummy_morale_state_wavering] Steady, or [Confident.|Skill+hd_dummy_morale_state_confident]\n\n" +
 		"A positive morale check raises morale on success, a negative check lowers it, and a neutral check does not change morale but may trigger other effects.\n\n" +
 		"A Mental Attack is a special type of morale check triggered by supernatural effects such as fear or mind control.\n\n" +
 		"Typical positive checks:\n" +
@@ -43,12 +43,12 @@
 	)),
 	Threat = ::MSU.Class.BasicTooltip("Threat", ::Reforged.Mod.Tooltips.parseString(
 		"Threat is a character property that represents how intimidating or dangerous a combatant appears on the battlefield.\n\n" +
-		"Each point of Threat increases the difficulty of [Morale Checks|Concept.Morale] made by adjacent enemies by 1. Only characters that are not [Fleeing|Concept.Fleeing] apply their Threat.\n\n" +
+		"Each point of Threat increases the difficulty of [Morale Checks|Concept.Morale] made by adjacent enemies by 1. Only characters who are not [fleeing|Skill+hd_dummy_morale_state_fleeing] apply their Threat.\n\n" +
 		"By default, Threat is 0, but it can be increased through certain perks, effects, or items."
 	)),
 	Rally = ::MSU.Class.BasicTooltip("Rally", ::Reforged.Mod.Tooltips.parseString(
-		"Rallying is a type of positive [Morale Check|Concept.Morale] that can only occur on a character currently in the [Fleeing|Concept.Morale] state.\n\n" +
-		"A successful rally immediately raises the character's morale to [Wavering|Concept.Morale] but removes " + ::MSU.Text.colorNegative(::Math.abs(::Hardened.Const.ActionPointChangeOnRally)) + " [Action Points|Concept.ActionPoints] from them.\n\n" +
+		"Rallying is a type of positive [Morale Check|Concept.Morale] that can only occur on a character who is currently [fleeing|Skill+hd_dummy_morale_state_fleeing]\n\n" +
+		"A successful rally immediately raises the character's morale to [wavering|Skill+hd_dummy_morale_state_wavering] but removes " + ::MSU.Text.colorNegative(::Math.abs(::Hardened.Const.ActionPointChangeOnRally)) + " [Action Points|Concept.ActionPoints] from them.\n\n" +
 		"Characters will automatically attempt to rally at the start of their turn, as long as they are not engaged in melee combat."
 	)),
 	Weight = ::MSU.Class.BasicTooltip("Weight", ::Reforged.Mod.Tooltips.parseString(

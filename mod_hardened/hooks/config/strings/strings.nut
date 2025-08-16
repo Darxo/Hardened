@@ -84,7 +84,7 @@ local newPerks = [
 					Description = [
 						"Gain [Melee Defense|Concept.MeleeDefense] equal to your [Base Ranged Defense|Concept.RangeDefense] against weapon attacks",
 						"You have " + ::MSU.Text.colorNegative("70%") + " less [Ranged Defense|Concept.RangeDefense] while engaged with someone wielding a melee weapon",
-						"Does not work with shields. Does not work while [disarmed,|Skill+disarmed_effect] [stunned|Skill+stunned_effect] or [fleeing|Concept.Morale]",
+						"Does not work with shields. Does not work while [disarmed,|Skill+disarmed_effect] [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]",
 					],
 				},
 			],

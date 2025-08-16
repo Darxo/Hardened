@@ -173,7 +173,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"At the start of each [round|Concept.Round] every adjacent ally from your company, with less [Resolve|Concept.Bravery] than you, gains " + ::MSU.Text.colorPositive("+3") + " [Action Points|Concept.ActionPoints] if they are adjacent to an enemy",
-					"Does not affect [stunned|Skill+stunned_effect] or [fleeing|Concept.Morale] allies. Every character can only be [inspired|Skill+hd_inspiring_presence_buff_effect] once per [round|Concept.Round]"
+					"Does not affect [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing] allies. Every character can only be [inspired|Skill+hd_inspiring_presence_buff_effect] once per [round|Concept.Round]"
 				],
 			}],
 		}),
@@ -913,7 +913,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Moving next to an enemy grants " + ::MSU.Text.colorPositive("+15") + " [Melee Skill|Concept.MeleeSkill] against them until they damage you or you move away from each other",
-					"Moving next to an enemy that has less maximum [Hitpoints|Concept.Hitpoints] than you, removes [Confident|Concept.Morale] from them",
+					"Moving next to an enemy that has less maximum [Hitpoints|Concept.Hitpoints] than you, removes [Confident|Skill+hd_dummy_morale_state_confident] from them",
 				],
 			}],
 		}),
@@ -1248,7 +1248,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Whenever an opponent misses a melee attack against you while it is not your [turn,|Concept.Turn] gain the [Rebuke|Skill+hd_rebuke_effect] effect until the start of your next [turn|Concept.Turn]",
-					"Requires a usable [Attack of Opportunity.|Concept.ZoneOfControl] Does not work while [stunned|Skill+stunned_effect] or [fleeing|Concept.Morale]"
+					"Requires a usable [Attack of Opportunity.|Concept.ZoneOfControl] Does not work while [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]"
 				],
 			}],
 		}),
