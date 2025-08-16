@@ -37,18 +37,18 @@
 	// We overwrite this, because this effect no longer grants rf_move_under_cover_skill
 	q.onAdded = @() function() {}
 
-	q.onUpdate = @(__original) function( _properties )
+	// Overwrite, because we apply different conditions for when this effect gets removed: This effect is no longer removed when rooted or stunned
+	q.onUpdate = @() function( _properties )
 	{
-		// We revert any reforged changes to turn order initiative
-		local oldInitiativeForTurnOrder = _properties.InitiativeForTurnOrderAdditional;
-		__original(_properties);
-		_properties.InitiativeForTurnOrderAdditional = oldInitiativeForTurnOrder;
-
-		if (!this.isGarbage())
+		if (::MSU.isNull(this.m.CoverProvider))
 		{
-			_properties.MeleeDefense += this.getMeleeDefenseModifier();
-			_properties.RangedDefense += this.getRangedDefenseModifier();
+			this.onRemoved();
+			this.removeSelf();
+			return;
 		}
+
+		_properties.MeleeDefense += this.getMeleeDefenseModifier();
+		_properties.RangedDefense += this.getRangedDefenseModifier();
 	}
 
 // New Functions

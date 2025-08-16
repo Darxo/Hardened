@@ -43,12 +43,25 @@
 			text = ::Reforged.Mod.Tooltips.parseString("Lasts until the start of your next [turn|Concept.Turn]"),
 		});
 
+		ret.push({
+			id = 21,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Is removed when you get stunned or start [fleeing|Skill+hd_dummy_morale_state_fleeing]"),
+		});
+
 		return ret;
 	}
 
-	q.onUpdate = @(__original) function( _properties )
+	// Overwrite, because we apply different conditions for when this effect gets removed: This effect is no longer removed when the user gets rooted
+	q.onUpdate = @() function( _properties )
 	{
-		__original(_properties);
+		if (::MSU.isNull(this.m.Ally) || !this.m.Ally.isPlacedOnMap() || _properties.IsStunned || this.getContainer().getActor().getMoraleState() == ::Const.MoraleState.Fleeing)
+		{
+			this.removeSelf();
+			this.onRemoved();
+			return;
+		}
 
 		if (!this.isGarbage())
 		{
