@@ -9,18 +9,30 @@
 		this.m.Effects.insert(1, "25% more Vision while on a Hill or Mountain");
 	}
 
-	// Overwrite because we replace the original movement speed effect
+	// Overwrite because we replace the original effect
 	q.onUpdate = @() function()
 	{
-		// More Speed in Forests and Swamps
-		::World.Assets.m.TerrainTypeSpeedMult[::Const.World.TerrainType.Forest] *= this.m.TerrainTypeSpeedMult;
-		::World.Assets.m.TerrainTypeSpeedMult[::Const.World.TerrainType.SnowyForest] *= this.m.TerrainTypeSpeedMult;
-		::World.Assets.m.TerrainTypeSpeedMult[::Const.World.TerrainType.LeaveForest] *= this.m.TerrainTypeSpeedMult;
-		::World.Assets.m.TerrainTypeSpeedMult[::Const.World.TerrainType.AutumnForest] *= this.m.TerrainTypeSpeedMult;
-		::World.Assets.m.TerrainTypeSpeedMult[::Const.World.TerrainType.Swamp] *= this.m.TerrainTypeSpeedMult;
-
 		// More Vision in Mountains and Hills
 		::World.Assets.m.TerrainTypeVisionMult[::Const.World.TerrainType.Hills] *= this.m.TerrainTypeVisionMult;
 		::World.Assets.m.TerrainTypeVisionMult[::Const.World.TerrainType.Mountains] *= this.m.TerrainTypeVisionMult;
+	}
+
+// MSU Functions
+	// Overwrite because we replace the original movement speed effect
+	q.getMovementSpeedMult = @() function()
+	{
+		switch (::World.State.getPlayer().getTile().Type)
+		{
+			case ::Const.World.TerrainType.Forest:
+			case ::Const.World.TerrainType.SnowyForest:
+			case ::Const.World.TerrainType.LeaveForest:
+			case ::Const.World.TerrainType.AutumnForest:
+			case ::Const.World.TerrainType.Swamp:
+			{
+				return this.m.TerrainTypeSpeedMult;
+			}
+		}
+
+		return 1.0;
 	}
 });
