@@ -11,13 +11,7 @@
 		this.weapon.onEquip();
 
 		this.addSkill(::new("scripts/skills/actives/stab"));	// In Vanilla/Reforged this is Thrust
-
-		// Same as Reforged
-		this.addSkill(::Reforged.new("scripts/skills/actives/spearwall", function(o) {
-			o.m.ActionPointCost -= 1;
-			// In Reforged this also costs -12 Fatigue
-		}));
-
+		this.addSkill(::new("scripts/skills/actives/spearwall"));	// Reforged: -1 AP, -12 Fatigue
 		// We no longer add Riposte
 	}
 });
