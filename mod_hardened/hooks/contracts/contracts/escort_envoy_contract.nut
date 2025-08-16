@@ -1,9 +1,17 @@
 // Adjustments
 // 1. Player Party moves 20% slower while escorting the Envoy
+// 2. The Contract pays out 50% more
 
 ::Hardened.HooksMod.hook("scripts/contracts/contracts/escort_envoy_contract", function(q) {
 	// Public
 	q.m.MovementSpeedMult <- 0.8;	// While the Envoy is in your party, your movement speed is multiplied with this value
+
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.PaymentMult *= 1.5;	// This contract now grants 50% more crowns as a reward
+	}
 
 	q.createStates = @(__original) function()
 	{
