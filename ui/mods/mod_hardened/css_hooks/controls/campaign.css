@@ -1,0 +1,44 @@
+.ui-control.campaign.variant-minor
+{
+	height: 9.0rem;
+}
+
+.ui-control.campaign.variant-minor .inner-container
+{
+	background-size: 72.9rem 9.0rem;
+}
+
+.ui-control.campaign.variant-minor .inner-container > .column.is-right .label.is-campaign-name
+{
+	top: 1.0rem;
+	right: 3.5rem;
+	height: 3.0rem;
+
+	text-align: right;
+}
+
+.ui-control.campaign.variant-minor .inner-container > .column.is-right .label.is-group-name
+{
+	top: 1.0rem;
+	height: 3.0rem;
+}
+
+.ui-control.campaign.variant-minor .inner-container > .column.is-right .label.is-day-name
+{
+	top: 4.0rem;
+	height: 3.0rem;
+}
+
+.ui-control.campaign.variant-minor .inner-container > .column.is-right .label.is-date-time
+{
+	right: 3.5rem;
+	bottom: 1.3rem;
+	height: 1.6rem;
+
+	text-align: right;
+}
+
+.ui-control.campaign.variant-minor .inner-container > .column.is-left img
+{
+    height: 8.0rem;
+}
