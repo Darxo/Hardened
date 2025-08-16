@@ -26,6 +26,26 @@
 		return ret;
 	}
 
+	// Fix: display the actual minimum armor penetration (ignoring remaining armor reduction) as the minimum value for weapon skills instead of hard-coded 0
+	q.getDefaultTooltip = @(__original) function()
+	{
+		local ret = __original();
+
+		foreach (entry in ret)
+		{
+			if (entry.id == 4 && entry.type == "text" && entry.icon == "ui/icons/regular_damage.png")
+			{
+				local p = this.getContainer().buildPropertiesForUse(this, null);
+				local damage_regular_min = this.Math.floor(p.DamageRegularMin * p.DamageRegularMult * p.DamageTotalMult * (this.m.IsRanged ? p.RangedDamageMult : p.MeleeDamageMult) * p.DamageTooltipMinMult);
+				local damage_direct_min = ::Math.floor(damage_regular_min * ::Math.minf(1.0, p.DamageDirectMult * (this.m.DirectDamageMult + p.DamageDirectAdd + (this.m.IsRanged ? p.DamageDirectRangedAdd : p.DamageDirectMeleeAdd))));
+				entry.text = ::MSU.String.replace(entry.text, "of which [color=" + ::Const.UI.Color.DamageValue + "]0[/color]", "of which " + ::MSU.Text.colorDamage(damage_direct_min));
+				break;
+			}
+		}
+
+		return ret;
+	}
+
 // Modular Vanilla Functions
 	/* This change will make it so both, armor and health damage use the exact same base damage roll
 	 * No longer is it possible to low-roll on armor damage and high-roll on the hightpoint damage part.
