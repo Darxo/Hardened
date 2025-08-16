@@ -5,6 +5,11 @@
 ::Hardened.HooksMod.hook("scripts/contracts/contracts/escort_envoy_contract", function(q) {
 	// Public
 	q.m.MovementSpeedMult <- 0.8;	// While the Envoy is in your party, your movement speed is multiplied with this value
+	q.m.WaitTimeMin <- 70;		// Vanilla: 20 BB Seconds
+	q.m.WaitTimeMax <- 70;		// Vanilla: 60 BB Seconds
+
+	// Private
+	q.m.PreviousHoursText <- "";		// Temporary variable so that the contract UI is only updated when changes happen
 
 	q.create = @(__original) function()
 	{
@@ -41,6 +46,28 @@
 					oldEnd();
 				}
 			}
+			else if (state.ID == "Waiting")
+			{
+				local oldStart = "start" in state ? state.start : function() {};
+				state.start <- function()
+				{
+					oldStart();
+
+					// We set the waiting period once again, but a specialized function so it becomes moddable
+					this.Contract.m.Flags.set("WaitUntil", ::Time.getVirtualTimeF() + this.Contract.calculateWaitingTime());
+
+					this.Contract.updateWaitingState();
+					this.Contract.m.Destination.getSprite("selection").Visible = false;
+				}
+
+				local oldUpdate = "update" in state ? state.update : function() {};
+				state.update <- function()
+				{
+					// This has to happen first, because Vanilla might switch states during the update call, which then sets "selection" visibility
+					this.Contract.updateWaitingState();
+					oldUpdate();
+				}
+			}
 			else if (state.ID == "Return")
 			{
 				local oldStart = "start" in state ? state.start : function() {};
@@ -64,5 +91,43 @@
 				}
 			}
 		}
+	}
+
+// New Functions
+	q.updateWaitingState <- function()
+	{
+		local hoursText = this.getWaitUntilHours();
+
+		if (hoursText == "")
+		{
+			this.m.BulletpointsObjectives = [
+				"Return to " + this.m.Destination.getName() + " to meet up with %envoy% %envoy_title%",
+			];
+			this.m.Destination.getSprite("selection").Visible = true;
+		}
+		else
+		{
+			this.m.BulletpointsObjectives = [
+				"Wait around " + this.m.Destination.getName() + " for " + hoursText + " until %envoy% %envoy_title% is done",
+			];
+		}
+
+		if (hoursText != this.m.PreviousHoursText)
+		{
+			this.m.PreviousHoursText = hoursText;
+			::World.Contracts.updateActiveContract();	// So that our bullet point change gets updated
+		}
+	}
+
+	q.getWaitUntilHours <- function()
+	{
+		local bbSeconds = ::Math.max(0, this.m.Flags.get("WaitUntil") - ::Time.getVirtualTimeF());
+		if (bbSeconds == 0) return "";
+		return ::Reforged.Text.getDayHourString(bbSeconds);
+	}
+
+	q.calculateWaitingTime <- function()
+	{
+		return ::Math.rand(this.m.WaitTimeMin, this.m.WaitTimeMax) * 1.0;
 	}
 });
