@@ -11,11 +11,13 @@
 	// Private
 	q.m.TilesMovedThisTurn <- 0;
 	q.m.PrevTile <- null;	// Previous tile, so that we can measure the distance after moving from it
+	q.m.NoDiscountBeforeMovement <- true;	// Used to determine, whether a certain movement flipped over the effect from NoDiscount -> Discount
 
 	q.create = @(__original) function()
 	{
 		__original();
 		this.m.Description = "Glide over terrain and strike before your enemies even see you coming.";
+		this.m.Overlay = "perk_rf_opportunist";
 	}
 
 	q.getTooltip <- function()
@@ -88,6 +90,8 @@
 
 	q.onMovementStarted = @() function( _tile, _numTiles )
 	{
+		this.m.NoDiscountBeforeMovement = (this.getActionPointModifier() == 0);
+
 		if (this.getContainer().getActor().isActiveEntity())
 		{
 			this.m.TilesMovedThisTurn += _numTiles;
@@ -106,6 +110,8 @@
 			this.m.TilesMovedThisTurn += this.getContainer().getActor().getTile().getDistanceTo(this.m.PrevTile);
 			this.m.PrevTile = null;
 		}
+
+		if (this.m.NoDiscountBeforeMovement && this.getActionPointModifier() != 0) this.spawnIcon(this.m.Overlay, this.getContainer().getActor().getTile());
 	}
 
 	q.onTurnStart <- function()
