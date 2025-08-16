@@ -133,20 +133,20 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 	- 22-37: Dozens
 	- 38-69: A plethora
 	- 70+: An army
-- You can no longer see the exact number of enemy parties on the world map
+- You can no longer see the exact size of enemy parties on the world map
 - Add settings to control, whether to display Numerals or their actual Ranges
 
 ### Other Major Changes from Reforged
 
 - Disable **Veteran Perks**. Your brothers no longer gain perk points after Level 11
 - You can no longer swap your weapon with a dagger from your bag for free
+- Attachements no longer randomly spawn on NPCs
 
 ### Other Major Changes
 
 - **Night Effect** now causes -3 Vision (down from -2)
 - When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. Each brother can only receive up to 10% of this shared experience.
 - You can now use **Bandages** to treat injuries during battle that were received at most 1 round ago
-- Attachements no longer randomly spawn on NPCs
 - Add new **Retreat** skill for player characters, which allows you to retreat individual brothers from a battle if they stand on a border tile and are not engaged in melee
 - Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
 - Hostile Locations now hide their Defender Line-Up during night
@@ -333,7 +333,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Vigorous Assault** is removed from **Swift Strikes** group
 - **Knave** no longer guarantees the **Dagger** perk group. Now it is just twice as likely. It also no longer guarantees the **Nimble** per group
 - **Wildling** no longer prevents the perk groups **Ranged**, **Gifted** and **Leadership** from appearing
-- **Leadership** perk group is now part of the **Shared** perk group collection and will compete with shared perk groups#
+- **Leadership** perk group is now part of the **Shared** perk group collection and will compete with shared perk groups
 - **Soldier Group** no longer guarantees **Professional perk** or **Trained Group**. Instead it only applies a 2.5x multiplier for **Trained Group**
 - **Tactician** is now a **Special** perk group and no longer replaces a shared perk group, when it appears
 
@@ -355,7 +355,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Ailing** now also makes temporary injuries you receive during combat last 50% longer
 - **Brute Trait** now grants 15% more damage instead of 15% more hitpoint damage. It is no longer negated by **Steelbrow** or enemies who are immune to critical damage
 - **Huge** no longer increases the Reach by 1
-- **Irrational** will no longer appear on recruits.
+- **Irrational** will no longer appear on recruits
 - **Night Blind** now causes -2 Vision during night (down from -1)
 - **Night Owl** now grants +2 Vision during night (up from +1)
 - **Lucky** no longer grants a chance to reroll incoming attacks. It now provides a 5% chance to avoid damage from any source
@@ -377,7 +377,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Misc
 
-- Knockback of all skills is reworked and standardized. It still always knocks someone back in a straight line, if user and target are on the same axis and there is space behind the target. In all other cases the destination is now random, instead of fixed and clock-wise
+- Knockback of all skills is reworked and standardized. It still always knocks someone back in a straight line, if user and target are on the same axis and there is space behind the target. In all other cases the destination is now random, instead of fixed/clock-wise
 
 ## Items
 
@@ -401,7 +401,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
 - **Longsword** now costs 2000 Crowns (down from 2400)
 - **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%), 6 Condition (up from 2) and 50% Armor Damage (up from 10%)
-- **Pike** and gains the **Spear** Weapontype
+- **Pike** gains the **Spear** Weapontype
 - **Player Banner** now causes -5 to Ranged Defense and it grants **Repel**
 - **Poleflail** now has 5 Reach (down from 6) and costs 1600 Crowns (up from 1400). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
 - **Reinforced Wooden Poleflail** now has 5 Reach (down from 6). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
@@ -497,7 +497,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Assassin's Head Wrap** now has 60 Condition (up from 40), 1 Weight (up from 0), -2 Vision (down from 0) and costs 900 Crowns (up from 60)
 - **Barbute Helmet** now has 180 Condition (down from 190) and costs 2500 Crowns (down from 2600)
 - **Bascinet with Mail** now has 230 Condition (up from 210) and 16 Weight (up from 13)
-- **Bear Headpiece** now has 60 Condition (up from 50), 7 Weight (up from 3), -1 Vision (down from 0) and costs 80 Crowns (up from 100)
+- **Bear Headpiece** now has 60 Condition (up from 50), 7 Weight (up from 3), -1 Vision (down from 0) and costs 80 Crowns (down from 100)
 - **Beastmaster's Headpiece** now costs 500 Crowns (up from 350)
 - **Blade Dancer's Head Wrap** now has -2 Vision (down from 0) and costs 900 Crowns (up from 150)
 - **Closed Flat Top Helmet** now has 180 Condition (up from 170), 12 Weight (up from 10) and costs 1100 Crowns (up from 1000)
@@ -513,7 +513,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Cultist Leather Hood** now has 80 Condition (up from 60), 7 Weight (up from 3), -3 Vision (down from -1) and costs 90 Crowns (up from 140)
 - **Dark Cowl** now has 30 Condition (down from 40), 3 Weight (up from 0), -1 Vision (down from 0) and costs 30 Crowns (up from 100)
 - **Decayed Closed Flat Top with Mail** now has 220 Condition (down from 230), 18 Weight (down from 19) and costs 1200 Crowns (down from 1250)
-- **Decayed Great Helm** now has 240 Condition (down from 255) and 23 Weight (up from 22)
+- **Decayed Great Helm** is now called **Tarnished Full Helm**, has 240 Condition (down from 255) and 23 Weight (up from 22)
 - **Decorated Full Helm** now has 300 Condition (down from 320), 23 Weight (up from 21) and costs 5000 Crowns (up from 4000)
 - **Desert Stalker's Head Wrap** now has 40 Condition (down from 45), 1 Weight (up from 0) and costs 900 Crowns (up from 120)
 - **Duelist's Hat** now has 50 Condition (down from 70), 1 Weight (down from 3), -1 Vision (down from 0) and costs 900 Crowns (up from 200)
@@ -663,9 +663,9 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Outlaws** now have **Vigorous Assault** and always have **Formidable Approach**. They no longer spawn with **Battle Axe**, **Two Handed Wooden Flail** or **Greatsword**
 - **Marauder** no longer spawn with **Two Handed Wooden Flail** and are twice as likely to spawn with a **Greatsword**
 - Fast Brigands (**Robber, Bandit, Killer**) now always spawn with a net if they are one-handed, and with a throwing weapon if two-handed. They also have cosmetic face warpaint
-- **Robber** no longer spawn with a **Pike** or **Reinforced Wooden Poleflail**. They now have 60 Ranged Skill (up from 55)
-- **Bandits** no longer spawn with a **Poleflail**, **Warbrand** or **Throwing Spear**. The can now spawn with a **Reinforced Wooden Poleflail**. They now have 70 Ranged Skill (up from 60)
-- **Killer** no longer spawn with **Scramasax**, **Pike**, **Spetum**, **Warbrand** or **Throwing Spear**. They now have 80 Ranged Skill (up from 70). They can now appear as Champions
+  - **Robber** no longer spawn with a **Pike** or **Reinforced Wooden Poleflail**. They now have 60 Ranged Skill (up from 55)
+  - **Bandits** no longer spawn with a **Poleflail**, **Warbrand** or **Throwing Spear**. The can now spawn with a **Reinforced Wooden Poleflail**. They now have 70 Ranged Skill (up from 60)
+  - **Killer** no longer spawn with **Scramasax**, **Pike**, **Spetum**, **Warbrand** or **Throwing Spear**. They now have 80 Ranged Skill (up from 70). They can now appear as Champions
 - **Brigand Poachers** now have 45 Melee Skill (down from 50)
 - **Brigand Leader** lose **Shield Expert**
 - **Hedge Knights** are now immune to **Disarm** as a result of them having **Savage Strength**
@@ -679,10 +679,10 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Footmen** lose **Shield Expert** and **Exploit Opening**
 - **Heavy Footmen** lose **Exploit Opening**
 - **Mercenaries** now use Shields that are colored in their respective Banner colors. They now have a 30% chance to spawn with a Bandage in their bag
-- **Swordmaster** now only appear in the variation **Versatile**, **Blade Dancer** or **Metzger**. They will now always spawn with a one-handed swords and never with a shield. Swordmasters gain **Parry** and **Calculated Strikes** and always spawn with **Duelist**. They lose **Dodge**, **Executioner** and **Formidable Approach**. They now have 40 Melee Defense (down from 60) and 40 Ranged Defense (up from 20)
+- **Swordmaster** now only appear in the variation **Versatile**, **Blade Dancer** or **Metzger**. They will now always spawn with a one-handed sword and never with a shield. Swordmasters gain **Parry** and **Calculated Strikes** and always spawn with **Duelist**. They lose **Dodge**, **Executioner** and **Formidable Approach**. They now have 40 Melee Defense (down from 60) and 40 Ranged Defense (up from 20)
 
 **Undead**
-- All **Wiederganger** types gain +5 Melee Skill and take 50% more burning damage to hitpoints. They grant 20% more experience but no longer grant experience after being ressurected. They lose 10 Hitpoints, **Double Grip** and no longer grant experience after being ressurected. They now have a 100% resurrection chance (up from 66%) and resurrect in 1-3 turns (up from 1-2)
+- All **Wiederganger** types gain +5 Melee Skill and take 50% more burning damage to hitpoints. They grant 20% more experience but no longer grant experience after being ressurected. They lose 10 Hitpoints and **Double Grip**. They now have a 100% resurrection chance (up from 66%) and resurrect in 1-3 turns (up from 1-2)
 - Normal **Wiederganger** lose **Overwhelm**
 - All **Skeletons** no longer grant experience after being ressurected
 - **Fallen Heroes** no longer spawn with Morning Stars or Handaxes. They now have a 100% resurrection chance (up from 90%) but -10 Hitpoints. Champion variants lose **Nine Lives**
@@ -774,13 +774,13 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Wait** now debuffs the actual Initiative until the start of that brothers next turn
 - Equipped Ammo Items can no longer be dropped to the ground or into an empty inventory slot
 - **Swamp** tiles no longer reduce Melee Skill by 25%. Instead they now reduce Initiative by 25%
-- The **Hidden** effect (granted by certain tiles) now also provides +10 Ranged Defense and it lists enemies that can shoot you despite you are currently revealed to
+- The **Hidden** effect (granted by certain tiles) now also provides +10 Ranged Defense and it lists enemies that you are currently revealed to
 - Characters can no longer retreat from the battle when standing on a border tile, if they are engaged in melee
 - Any fleeing character who rallies, loses 3 Action Points
 - All fleeing characters now have +1 Action Point
 - All player characters now have +1 Action Point during AutoRetreat
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied
-- No characater can receive more than one negative morale check, caused by a fleeing ally, per turn
+- No character can receive more than one negative morale check, caused by a fleeing ally, per turn
 - Dying or Fleeing characters no longer trigger negative morale checks for their allies if the distance between them is greater than the vision of the receiving ally
 - Characters no longer gain +1 additional Resolve against morale checks from fleeing allies, per ally in the battlefield
 - Resurrecting Corpses can no longer knock back characters that are rooted or immune to Displacement. Instead they delay their resurrection
@@ -810,7 +810,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken
 - Armorsmiths will now sometimes sell Named Shields
 - Small civilian settlements now sell **Old Wooden Shields** and **Lute**
-- Big northen settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
+- Big northern settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
 - Weaponsmiths and Armorsmiths now sell **Armor Parts** with a price multiplier of 1.25
 - Fletcher now sell roughly 5 times as many **Throwing Spears** but with a price multiplier of 1.5 (up from 1.0)
 - Nets sold by Fletcher now have a price multiplier of 2.0 (down from 3.0)
