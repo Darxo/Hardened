@@ -1254,6 +1254,28 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_rising_star",
+		Key = "RF_RisingStar",
+		Description = ::UPD.getDescription({
+			Fluff = "Captain said take it slow and steady and I could become a legend someday!",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Gain " + ::MSU.Text.colorPositive("20%") + " more [Experience|Concept.Experience] while you are below [Level|Concept.Level] 12",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.OneTimeEffect,
+					Description = [
+						"When you reach [Level|Concept.Level] 12, gain " + ::MSU.Text.colorPositive(2) + " perk points",
+					],
+				},
+			],
+			Footer = ::MSU.Text.colorNegative("This perk cannot be refunded."),
+		}),
+	},
+	{
 		ID = "perk.rf_sanguinary",
 		Key = "RF_Sanguinary",
 		Description = ::UPD.getDescription({

@@ -152,6 +152,11 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		::DynamicPerks.PerkGroups.remove("pg.special.rf_marksmanship");	// This group does no longer exist in Hardened
 	}
 
+	{	// Special Rising Star Group
+		local pgRisingStarGroup = ::DynamicPerks.PerkGroups.findById("pg.special.rf_rising_star");
+		changePerkTier(pgRisingStarGroup, "perk.rf_rising_star", 6);		// Move Rising Star  to tier 6 (down from Tier 7)
+	}
+
 	{	// Special Student Group
 		::DynamicPerks.PerkGroups.remove("pg.special.rf_student");	// This group does no longer exist in Hardened
 	}
