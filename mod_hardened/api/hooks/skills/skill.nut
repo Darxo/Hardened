@@ -15,6 +15,7 @@
 	q.m.HD_Cooldown <- 0;	// This skill can only be used if HD_RoundLastUsed is null or atleast this many rounds ago
 	q.m.IsHidingIconMini <- false;	// If set to true, then the IconMini will be treated as if it was an empty string and never display
 	q.m.HD_IgnoreForCrowded <- false;	// When true, then this skill will not be affected by crowded, even if it passes all other conditions for that
+	q.m.HD_IsSortedBeforeMainhand <- false;	// If true, then this active is sorted even before mainhand actives in the UI. Useful for skills like hand-to-hand or bite
 	q.m.HD_LastsForTurns <- null;	// When not null, this will decrement at the end of each turn and remove this skill, when it reaches 0
 	q.m.HD_LastsForRounds <- null;	// When not null, this will decrement at the end of each round and remove this skill, when it reaches 0
 	q.m.HD_KnockBackDistance <- 1;	// [SoftReset] Might be used by certain active skills to determine, how far they knock back a target

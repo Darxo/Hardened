@@ -1,4 +1,45 @@
 ::Hardened.HooksMod.hook("scripts/skills/skill_container", function(q) {
+	// Overwrite, because we change some behavior of this function
+	q.querySortedByItems = @() function( _filter, _notFilter = 0 )
+	{
+		local ret = [];
+		for (local i = 0; i < ::Const.ItemSlot.COUNT; ++i)
+		{
+			ret.push([]);
+		}
+
+		local omnipresentSkills = [];	// active skills, which are marked to be sorted in front of mainhand skills
+
+		foreach (skill in this.m.Skills)
+		{
+			if (!skill.isGarbage() && skill.isType(_filter) && !skill.isType(_notFilter) && !skill.isHidden())
+			{
+				if (skill.m.HD_IsSortedBeforeMainhand)
+				{
+					omnipresentSkills.push(this.WeakTableRef(skill));
+				}
+				else if (!::MSU.isNull(skill.getItem()))
+				{
+					ret[skill.getItem().getCurrentSlotType()].push(this.WeakTableRef(skill));
+				}
+				else
+				{
+					// We push this into ItemSlot.Bag (just like Vanilla), so non-item skills will compete with bag-skills with their SkillOrder
+					ret[::Const.ItemSlot.Bag].push(this.WeakTableRef(skill));
+				}
+			}
+		}
+
+		// We want omnipresent skills to come first, before regular mainhand weapons
+		local mainhandSkills = ret[::Const.ItemSlot.Mainhand];
+		ret[::Const.ItemSlot.Mainhand] = omnipresentSkills;
+		ret[::Const.ItemSlot.Mainhand].extend(mainhandSkills);
+
+		// Vanilla sorts ::Const.ItemSlot.Free entry here but we need no sorting, because this.m.Skills was sorted by default
+
+		return ret;
+	}
+
 // New Events
 	/// _skill is the new skill that was just added to this skill_container
 	q.onOtherSkillAdded <- function( _skill )
