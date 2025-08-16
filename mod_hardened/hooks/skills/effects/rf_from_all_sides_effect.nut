@@ -7,7 +7,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Description = "This character is dishing out attacks which seem to come from all sides - very confusing!"
+		this.m.Description = "This character is dishing out attacks which seem to come from all sides. Very confusing!"
 	}
 
 	q.getTooltip <- function()
