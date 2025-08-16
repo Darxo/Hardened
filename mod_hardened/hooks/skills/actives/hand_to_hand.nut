@@ -1,4 +1,11 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/hand_to_hand", function(q) {
+	q.create = @(__original) function()
+	{
+		__original()
+
+		this.m.HD_IsSortedBeforeMainhand = true;
+	}
+
 	q.isUsable = @(__original) function()
 	{
 		return __original() || this.__usesEmptyThrowingWeapon();
