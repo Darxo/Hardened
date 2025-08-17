@@ -49,8 +49,6 @@
 	- weakened_heart_injury 30%
 - Infrit new skill "Armor as a Weapon": Deal more damage equal to your total remaining armor as a percentage
 - expirable potions (so you are forced to use them and so they can be sold/given out more frequently)
-- Make it so wait can not be used if you have less than half of your AP remaining?
-- Make certain items unsellable
 - Scrapper-Retinue member making it so armor damage above a certain threshold (e.g. at least 50 per hit) produces tools fx effect
 - Make "Obtain" quests harder. E.g. by starting in an ambush or by making the location hidden by default
 - nerf ports (to make good maps less reliable on them)
@@ -171,9 +169,6 @@
 	- Chance its AI to only use the 4 AP after Second Wind for the sweep
 
 ## New Effects
-- **Starving** (enemy only effect)
-	- Start every battle with 50% Hitpoints
-	- Recover 50% less Hitpoints
 
 ## New Perks
 - Alchemist
@@ -199,6 +194,8 @@
 	- Whenever you triger a positive morale check, trigger a positive morale check for all adjacent allies
 - Animalistic (enemy only)
 	- 50% more Resolve during Morale Checks from enemy kills
+- Animal Handler (enemy only)
+	- +20% chance to hit, when attacking characters who are disarmed or who don't wield a melee weapon
 
 ## New Skills
 - Rain of Arrows
@@ -227,15 +224,8 @@
 	- You can wait an additional time each turn
 	- Misses against you while waiting does not build up fatigue
 misses dont build up fatigue on you while waiting
-- change Rising Star to only gain exp until lvl 12 and grant the two perks always at level 12
 These Perks (top = higher prio) im still unhappy with and eventually want to adjust
 - Feral Rage
-- Trick Shooter
-	- Bow Skills you have not used yet this battle have +10% Hitchance
-	- Unlock Flaming Arrow
-	- Unlock Arrow to the Knee
-- Hip Shooter
-	- Lose 10% Armor Penetration (remove fatigue stuff)
 - Mauler
 	- replace second effect with 15% more damage when hitting body parts that have no remaining armor
 		- Alternative: Deal +25% critical damage for every injury on the target (no matter which bodypart you target)
@@ -343,6 +333,8 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 	"You don’t just fight—you mend, patch, and keep your allies standing."
 	- Skills from bag items cost -1 Action Point
 	- Once per battle, when you use a bag item on yourself or an adjacent ally, recover 20 Hitpoints on the target
+- Vanish (enemy-only for now)
+	- After taking damage, teleport to a random adjacent tile that is not in zone of control
 
 ### Misc
 - User-Faced Changelog (actual changes)
@@ -436,8 +428,6 @@ from Modular Vanilla
 - Make enemies blocked by 2 tiles twice as likely to divert attacks
 - Make necromancer able to retreat
 
-- Only use Paint and spawn sfx, if the Variant of the affected item is different, after calling onPaint on it
-
 - Improve Readme by writing out price changes to shields and weight changes to quivers
 
 - Hireable Sellswords that spawn with a shield have that in another mercenaries color scheme
@@ -458,6 +448,7 @@ MOdular Vanilla:
 - make blunt and cutting attacks deal 2 damage to shields instead of 1
 
 - prevent paint being usable on items that already have this color (if the variant doesnt change after applying the paint, the paint is not used)
+- Only use Paint and spawn sfx, if the Variant of the affected item is different, after calling onPaint on it
 
 - reduce brigand party loot; make individual brigands drop loot (fast = gold, ranged = ammo, tough = food, balanced = ???)
 
@@ -485,6 +476,7 @@ MOdular Vanilla:
 - prevent cheese where you can find out whether someone is hiding in a bush by trying to pathfind into that bush
 	- same thing is true for fog of war
 - make spider corpses a bit more transparent, less colored, so that they differ more from alive ones
+	- or make alive ones in a more vibrant color
 
 - Feature: Manual Snapshot for brother-gear, that can be manually reset. Useful for when you swap out a lot of gear before a fight
 
@@ -532,7 +524,6 @@ MOdular Vanilla:
 - split hyena/nachzehrer troops
 - make formidable approach characters more likely to be targeted by rotation-like skills if that pots them next to new enemies or removes confident from enemies potentially
 - color adjacent enemies, that exert ZOC onto you in a color, when previewing movement out of ZOC
-- improve line breaker skill to use ??? dont remember what I meant by this
 - remove bandit leader unique names?
 	- alternatively: show their type name?
 
@@ -577,7 +568,6 @@ show uncapped hitchance
 - make skills which increase skill cost temporarily, add tooltip entires in those skill tooltips
 	- need examples, which are those skills?
 
-- cloth sash is way too cheap or too strong
 
 - change escorting so that the escorting character adds its strength and numbers to the army it is escorting
 	- not very useful, while this only affects the player and what he is escorting. Once non-player parties can form groups, it will be useful
@@ -594,6 +584,7 @@ show uncapped hitchance
 - colored rumors (extended for reforged rumors)
 - sort of marketplace to also sort for buy-price
 - give adarga shields 20 rdef again. Otherwise their def is too similar and switching too melee not impactful enough
+
 
 
 
@@ -623,14 +614,6 @@ These are noticable changes by Hardened, that might catch you off-guard
 - Some weapons have their AP cost reduced: **Stab** costs 3 AP (from 4 AP) on all daggers
 - Some weapons have their AP cost increased: All Poleflail attacks cost 6 AP (up from 5 AP)
 
-
-
-
-
-
-
-
-
 ## Noticable Differences coming from Reforged
 
 - Some weapons have their AP cost reduced: **Stab** costs 3 AP (from 4 AP) on all daggers
@@ -640,15 +623,10 @@ These are noticable changes by Hardened, that might catch you off-guard
 
 
 
-
-
 - add renown penalty when entering fight with temporary enemies (= you practically backstab someone who trusted you)
 - option for autosaving after battle
 
 - skeleton captains inspiring presence?
-- dazed pots and smoke pots as rewards from nomad camps
-	- smoke pots maybe as reward from ancient dead camps?
-
 
 # Artwork wanted:
 
@@ -656,25 +634,18 @@ These are noticable changes by Hardened, that might catch you off-guard
 - Malnourished icon ()
 
 
-
 For: URUI
 - Dont show tile blocking square for tiles that are completely hidden by terrain (because of camera height)
 
 - make orc warlord never spawn with shields
 - make footwork rarely be used on the tile that the actor started its turn on (otherwise it too often results in weird dancing/decisions by goblins)
-- fix the vanilla bug of dogdodo news preventing regular events from appearing
 
 - mirrored items censor
-
-- rewrite the tooltip of additional fur padding clarifying that it only works on body hits
-- rewrite bone plating
 
 - improve terrain of camp locations by making the terrain in them less "natural"
 	- less grass in forest locations
 	- dry grass in flatlands
 	- less snow in snowy locations
-
-- prevent orc warlords from spawning with shields (part of enemy rework)
 
 - new type of caravan that transports only gold (because they came back from selling or are about to buy stuff)
 	- they look the same as normal caravans except that they move significant faster (like 80% instead of 50%)
@@ -686,8 +657,6 @@ For: URUI
 - delay first turn of round ai until resurrections are finished
 
 - make drunkard able to target items equipped to brothers
-
-- adjust the armor pen damage shown on weapon skills so that the 0 instead show the actual minimum
 
 - make relationship with a town reduce the chance of receiving useless rumors (e.g. by switcherooing the follower to on, before the rumors are created)
 
@@ -707,3 +676,46 @@ For: URUI
 - Make Obsidian Dagger instead cause Poison on it to never expire
 
 - make Withered be removed by Recover
+
+- make bodyguards choose their target to protect once per turn
+	- and only switch if the old target is dead
+	- and only pick targets that need bodyguards
+
+- "Fix" the fat-ping-pong via events on a gluttonous bro
+- conqueror armor effect replacement: +15 Ranged Defense during day (enemy are blinded by light reflecting)
+
+- when comparing distances for spawning locations, instead of direct air distance, use the amount of tiles travelled on the shortest path. That way mountains, rivers and swamp will sometimes increase locations possible
+
+- "unknown-faction" flag (literally) for locations, who don't show their defender, or where different factions could be inside
+- improve spawn location for holy war POI's to be more central and not spawn at the right/left border
+
+- add new UISkillOrder member for skill.nut, which is only used for the order in the UI (mainly character screen)
+	- change moodcheck skill order to be directly after background
+
+- nerf rotation to be in line with vanilla? (25 fatigue)
+
+- bug: projectiles dont seem to be renders all too often
+- rumors around position of nearby mercenary companies on the world map
+- rumors around nearby undiscovered locations
+
+- nerf riposte to 15 Fatigue
+
+- weapon master requirement is not accurate, it should be moved to the bullet point where it is needed
+
+- miniicon for exploit opening?
+
+- balance between barb mace and spiked mace? latter is more expensive but overall weaker
+- Bug: crossbows are not unloaded correctly after battle
+	- need more evidence
+
+- Make contracts aligned with either positive or negative morale reputation
+	- rebuild/caravan/envoy/packet/great battle are positive aligned (they trust you with something)
+	- find thiefs/destroy location are negative aligned (this mission is potentially dangerous, just for you)
+	- not aligned: find location, defend against raiding parties
+
+- fix description of swordmaster perks (consussive strikes e.g.)
+- icons on top of NPC world parties signaling, whether they can see you and whether they are currently "hunting" you
+- make contract payments 10% more random in both directions? (lucky random)
+	- this.m.PaymentMult = this.Math.rand(90, 110) * 0.01;
+
+- raise weight of almost all early game armors by an additional 1?

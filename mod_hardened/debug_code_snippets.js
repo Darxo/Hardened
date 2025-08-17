@@ -57,3 +57,17 @@ foreach (combat in ::World.Combat.m.Combats)
 		}
 	}
 }
+
+## Calculate a path on the world map between player/town
+
+local navSettings = this.World.getNavigator().createSettings();
+navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost;
+navSettings.RoadMult = 1.0;
+// local firstTown = ::getTown("Horum");
+local firstTown = ::World.State.getPlayer();
+local secondTown = ::getTown("Kahlenberg");
+local path = ::World.getNavigator().findPath(firstTown.getTile(), secondTown.getTile(), navSettings, 0);
+::logWarning("path.getSize() " + path.getSize());
+::MSU.Log.printData(path, 2);
+::MSU.Log.printData(path.getNext(), 2);
+

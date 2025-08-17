@@ -23,6 +23,39 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+0.53.0
+	- The default amount of Weapon Perk Groups appearing on any Background is now 4 (up from 3)
+	- **Iron Sights** is completely reworked. It now grants +1% chance to hit the head with Crossbows and Firearms for every 3 Initiative you have
+	- **Opportunist** no longer grants -1 AP cost for the next throwing attack per tile moved. It now grants a -5 Action Point discount for the next throwing attack after moving 3 tiles
+	- **Rising Star** is now a Tier 6 perk (down from Tier 7). It now only grants 20% experience until you are level 12. It now always grants +2 Perk Points at Level 12, instead of 5 levels after picking the perk
+	- **Spearwall** with Goblin Spears now costs 30 Fatigue (up from 18)
+	- **Cover Ally** can now be used while rooted and it can be used on allies who are stunned or rooted
+	- **Cloth Sash** now has 3 Weight (up from 2)
+	- Named Helmets now have a minumum possible weight of 3 (down from 4)
+	- The Named **Wolf Helmet** now has 120 Condition (down from 140), 6 Weight (down from 8) and -1 Vision (down from 0) and costs 3000 Crowns (up from 2000)
+	- The Named **Norse Helmet** now has 170 Condition (up from 125), 8 Weight (up from 6) and -3 Vision (down from -1) and costs 3000 Crowns (up from 2000)
+	- Named **Wolf Helmet** and **Norse Helmet** are now twice as likely to appear as rewards or in shops
+	- Wardogs now cost 250 Crowns (up from 200)
+	- Warhounds now cost 400 Crowns (up from 300)
+	- Reduce chance of regular markets selling wardogs and warhounds by ~75%
+	- Orc Warlords no longer spawn with shields
+	- The Kraken Location now always requires 3 Hides and 3 Dust, no matter how much you already had in your inventory
+	- **Buried Castle** Locations now also drop either a Flash Pot, Fire Pot or Smoke Pot
+	- During the **Escort Envoy** Contract: You move 20% slower, while the Envoy is in your party. The Envoy has 6 Action Points (down from 9) and the contract grants 50% more Crowns. The envoy now always takes 16 hours at the destination and that number is displayed and counted down in the contract description
+	- **Hand to Hand** and **Zombie Bite** skills will now always be sorted to the front in the UI
+	- Reduce the height of "autosave" and "quicksave" savegame entries in the main menu by around 25%
+	- Add nested tooltips for all morale states (except Steady)
+	- Mention the rally on turn start in tooltip of fleeing effect
+	- Display the actual minimum armor penetration damage in attack skills, instead of always showing a 0 there
+	- Improve description of **Additional Fur Padding** and **Bone Plating** and clarify that they only protect against body attacks
+	- Fix bug in identification of loaded weapons (improves compatibiity with Fantasy Brothers)
+	- Fix Sackcloth inventory art not having hole as intended
+	- Fix potential bug with enemies who have **Bone Breaker**
+	- Fix **Opportunist** counting tiles while no throwing weapon was equipped
+	- Fix **Scout Follower** still granting the Vanilla bonus instead of the reworked one
+	- Remove the requirement for the player to be on a road in order to receive crisis news events. This prevents Events from stop appearing when you are away from a road for a longer time
+	- Add new `HD_IsSortedBeforeMainhand = false` member for `skill.nut`. If `true`, then active skills will be sorted in front of mainhand skills
+
 0.52.3
 	- Fix goblin crossbows not being able to reload
 	- Fix medical price tooltip showing up twice in situations
