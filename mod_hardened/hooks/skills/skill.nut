@@ -18,7 +18,7 @@
 				local headshotChance = properties.getHeadHitchance(::Const.BodyPart.Head, this.getContainer().getActor(), this, target);
 				ret.insert(0, {
 					icon = "ui/icons/chance_to_hit_head.png",
-					text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(headshotChance, {AddPercent = true}) + " headshot chance"),
+					text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(headshotChance, {AddPercent = true}) + " Headshot chance"),
 				});
 			}
 		}
