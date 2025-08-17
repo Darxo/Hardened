@@ -190,6 +190,15 @@
 });
 
 ::Hardened.HooksMod.hook("scripts/items/item", function(q) {
+// Reintroduced Vanilla Functions
+	// Returns the type of ammo, that this item represents.
+	// In Vanilla this only exists in the base class ammo.nut, but not every item with the itemtype "ammo" inherits from that class.
+	// In order to safely call getAmmoType on a supposed ammo item, we need to enable it for all types of items
+	q.getAmmoType <- function()
+	{
+		return ::Const.Items.AmmoType.None;
+	}
+
 // New Getter/Setter
 	// This is guaranteed to only be called, if ::World.State.getCurrentTown() can be called and doesnt return null
 	q.getBaseBuyPriceMult <- function()

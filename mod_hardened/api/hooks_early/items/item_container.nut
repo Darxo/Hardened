@@ -14,7 +14,11 @@
 			if (item.HD_canShoot()) return true;	// The weapon has enough ammo to function
 			foreach (ammo in items)
 			{
-				if (ammo.isItemType(::Const.Items.ItemType.Ammo) && ammo.getAmmoType() == item.HD_getAmmoType() && ammo.getAmmo() > 0) return true;	// getAmmo > 0 is just an abstraction. Some weapons might need more than 1 ammo to reload
+				if (ammo.getAmmoType() == ::Const.Items.AmmoType.None) continue;
+				if (ammo.getAmmoType() != item.HD_getAmmoType()) continue;
+				if (ammo.getAmmo() == 0) continue;	// getAmmo() == 0 is just an abstraction. Some weapons might need more than 1 ammo to reload
+
+				return true;
 			}
 		}
 
