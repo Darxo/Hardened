@@ -1,6 +1,8 @@
 // Adjustments
 // 1. Player Party moves 20% slower while escorting the Envoy
 // 2. The Contract pays out 50% more
+// Maybe: Increase visibility mult of player party
+// Maybe: Reduce strength of player party
 
 ::Hardened.HooksMod.hook("scripts/contracts/contracts/escort_envoy_contract", function(q) {
 	// Public
