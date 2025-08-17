@@ -16,6 +16,18 @@
 		this.m.Amount = ::Math.rand(1, this.m.HD_MaxAmount);
 	}
 
+	// Re-Implement the food price multipliers. Vanilla applies them in getBuyPrice function, but we overwrite that in Hardened
+	q.getBuyPriceMult = @(__original) function()
+	{
+		return __original() * ::World.State.getCurrentTown().getFoodPriceMult();
+	}
+
+	// Re-Implement the food price multipliers. Vanilla applies them in getSellPrice function, but we overwrite that in Hardened
+	q.getSellPriceMult = @(__original) function()
+	{
+		return __original() * ::World.State.getCurrentTown().getFoodPriceMult();
+	}
+
 // Hardened Functions
 	q.getBaseBuyPriceMult = @(__original) function()
 	{
