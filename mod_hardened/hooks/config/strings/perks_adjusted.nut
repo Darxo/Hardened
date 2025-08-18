@@ -64,7 +64,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per turn, when you kill an enemy, recover " + ::MSU.Text.colorPositive("4") + " [Action Points|Concept.ActionPoints]",
+					"Once per [round,|Concept.Round] when you kill an enemy, recover " + ::MSU.Text.colorPositive("4") + " [Action Points|Concept.ActionPoints]",
 				],
 			}],
 		}),
@@ -305,7 +305,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Dagger Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 					"The [Action Point|Concept.ActionPoints] cost of [Puncture|Skill+puncture] and [Deathblow|Skill+deathblow_skill] is reduced to " + ::MSU.Text.colorPositive("3"),
-					"Once per [turn,|Concept.Turn] the first use of your offhand item [weighing|Concept.Weight] less than " + ::MSU.Text.colorPositive(10) + " costs no [Action Points|Concept.ActionPoints]",
+					"Once per [round,|Concept.Round] the first use of your offhand item [weighing|Concept.Weight] less than " + ::MSU.Text.colorPositive(10) + " costs no [Action Points|Concept.ActionPoints]",
 				],
 			}],
 		}),
@@ -409,7 +409,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Throwing Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 					"Your first throwing attack each [turn|Concept.Turn] deals " + ::MSU.Text.colorizeMultWithText(1.3) + " damage",
-					"Swapping a throwing weapon with an empty throwing weapon or an empty slot becomes a free action once per [turn|Concept.Turn]",
+					"Once per [round,|Concept.Round] swapping a throwing weapon with an empty throwing weapon or an empty slot becomes a free action",
 				],
 			}],
 		}),
@@ -422,7 +422,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Swapping items, except shields, becomes a free action once per [turn|Concept.Turn]",
+					"Once per [round,|Concept.Round] swapping items, except shields, becomes a free action",
 				]
 			}]
 		})
@@ -789,7 +789,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"You and your Partner gain the [Shuffle|Skill+rf_dynamic_duo_shuffle_skill] skill that allows you to swap places with each other once per [turn|Concept.Turn]",
+						"You and your Partner gain the [Shuffle|Skill+rf_dynamic_duo_shuffle_skill] skill that allows you to swap places with each other once per [round|Concept.Round]",
 						"You and your Partner gain " + ::MSU.Text.colorPositive("+20") + " [Resolve|Concept.Bravery] and [Initiative|Concept.Initiative] while you are adjacent to each other and there are no other member of your company adjacent to you or your partner",
 					],
 				},
@@ -1284,8 +1284,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per turn during your turn, when you move next to an [injured|Concept.InjuryTemporary] enemy, recover " + ::MSU.Text.colorPositive(3) + " [Action Points|Concept.ActionPoints]",
-					"Once per turn during your turn, when you cause a [Fatality,|Concept.Fatality] recover " + ::MSU.Text.colorPositive(3) + " [Action Points|Concept.ActionPoints]",
+					"Once per [round|Concept.Round] during your [turn,|Concept.Turn] when you move next to an [injured|Concept.InjuryTemporary] enemy, recover " + ::MSU.Text.colorPositive(3) + " [Action Points|Concept.ActionPoints]",
+					"Once per [round|Concept.Round] during your [turn,|Concept.Turn] when you cause a [Fatality,|Concept.Fatality] recover " + ::MSU.Text.colorPositive(3) + " [Action Points|Concept.ActionPoints]",
 				],
 			}],
 		}),
@@ -1370,7 +1370,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per [turn|Concept.Turn], if you use an attack on an adjacent enemy, gain " + ::MSU.Text.colorPositive("+5") + " [Melee Defense|Concept.MeleeDefense] for every adjacent enemy until the start of your next [turn|Concept.Turn]",
+					"Once per [round,|Concept.Round] if you use an attack on an adjacent enemy, gain " + ::MSU.Text.colorPositive("+5") + " [Melee Defense|Concept.MeleeDefense] for every adjacent enemy until the start of your next [turn|Concept.Turn]",
 				],
 			}],
 		}),
