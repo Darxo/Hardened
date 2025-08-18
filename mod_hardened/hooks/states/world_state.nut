@@ -67,6 +67,31 @@
 		if (::Hardened.Mod.ModSettings.getSetting("DisplayAttachedLocationNames").getValue()) this.m.HD_LocationTypesToDisplay += ::Const.World.LocationType.AttachedLocation;
 	}
 
+	q.onMouseInput = @(__original) function( _mouse )
+	{
+		if (this.isInLoadingScreen()) return __original(_mouse);
+
+		if (_mouse.getID() == 6) ::Cursor.setPosition(_mouse.getX(), _mouse.getY());
+
+		if (this.m.MenuStack.hasBacksteps()) return __original(_mouse);
+
+		if (_mouse.getID() == 7)
+		{
+			if (_mouse.getState() == 3)	// Zoom Out
+			{
+				::World.getCamera().zoomBy(-1.0 * 0.3);
+				return true;
+			}
+			else if (_mouse.getState() == 4)	// Zoom In
+			{
+				::World.getCamera().zoomBy(0.3);
+				return true;
+			}
+		}
+
+		return __original(_mouse);
+	}
+
 	q.onUpdate = @(__original) function()
 	{
 		__original();
