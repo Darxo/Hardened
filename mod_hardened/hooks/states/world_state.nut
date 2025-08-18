@@ -77,14 +77,15 @@
 
 		if (_mouse.getID() == 7)
 		{
+			local mouseWheelZoomMultiplier = ::Hardened.Mod.ModSettings.getSetting("WorldMouseWheelZoomMultiplier").getValue();
 			if (_mouse.getState() == 3)	// Zoom Out
 			{
-				::World.getCamera().zoomBy(-1.0 * 0.3);
+				::World.getCamera().zoomBy(-1.0 * mouseWheelZoomMultiplier);
 				return true;
 			}
 			else if (_mouse.getState() == 4)	// Zoom In
 			{
-				::World.getCamera().zoomBy(0.3);
+				::World.getCamera().zoomBy(mouseWheelZoomMultiplier);
 				return true;
 			}
 		}
