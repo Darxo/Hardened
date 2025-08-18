@@ -44,6 +44,7 @@
 });	// QueueBucket.Normal
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
+	::includeFiles(::IO.enumerateFiles("mod_hardened/api/hooks_early"));
 	::includeFiles(::IO.enumerateFiles("mod_hardened/hooks_early"));
 }, ::Hooks.QueueBucket.Early);
 
