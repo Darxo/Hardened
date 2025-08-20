@@ -7,7 +7,7 @@
 		this.m.RegularDamage = 35;		// In Vanilla this is 30
 		this.m.RegularDamageMax = 45;	// In Vanilla this is 40
 
-		this.m.AmmoCost = 2;			// In Vanilla this is 3
+		this.m.AmmoCost = 1;			// In Vanilla this is 3
 
 		this.m.AmmoWeight = 3.0;
 	}

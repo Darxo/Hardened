@@ -13,7 +13,7 @@
 		this.m.ChanceToHitHead = 10;	// In Vanilla this is 5
 		this.m.AdditionalAccuracy = -10;	// In Vanilla this is -5
 
-		this.m.AmmoCost = 4;			// In Vanilla this is 3
+		this.m.AmmoCost = 2;			// In Vanilla this is 3
 
 		this.m.AmmoWeight = 3.0;
 	}

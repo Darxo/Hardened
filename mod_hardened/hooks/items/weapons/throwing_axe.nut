@@ -11,6 +11,7 @@
 		this.m.ChanceToHitHead = 10;	// In Vanilla this is 5
 		this.m.AdditionalAccuracy -= 10;	// In Vanilla this is 0
 
+		this.m.AmmoCost = 2;			// Vanilla: 3
 		this.m.AmmoWeight = 2.0;
 	}
 });

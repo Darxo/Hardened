@@ -8,6 +8,7 @@
 		// RegularDamageMax = 45 in Vanilla
 		this.m.ArmorDamageMult = 0.7;	// In Vanilla this is 0.75
 
+		this.m.AmmoCost = 2;			// Vanilla: 3
 		this.m.AmmoWeight = 2.0;
 	}
 });
