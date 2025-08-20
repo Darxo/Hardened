@@ -56,12 +56,12 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - Throwing regular **Throwing Weapons** now cost 15 Fatigue (up from 10 for Axes, 14 for Javelins and 12 for Bolas), just like in Vanilla
 - Throwing **Heavy Throwing Weapons** now costs 5 Action Points (up from 4) and 18 Fatigue (up from 15)
 - Throwing **Crude Javelins** now costs 5 Action Points (up from 4)
-- **Heavy Javelin** now deal 40-50 Damage (up from 35-50), have 85% Armor Damage (up from 80%), have +0% Hitchance (up from -5%), 4 Maximum Ammo (down from 5), 0 Weight (down from 8), 3 Weight per Ammo, 4 Ammo Cost (up from 3) and costs 500 Crowns (up from 300)
-- **Heavy Throwing Axes** now deal 45-60 Damage (up from 30-50), have 120% Armor Damage (up from 115%), have -10% Hitchance (down from -5%), +10% Headshot Chance (up from +5%), 0 Weight (down from 8), 3 Weight per Ammo and costs 600 Crowns (up from 300)
-- **Bolas** now deal 25-40 Damage (up from 20-35), have 0 Weight (down from 3), 1.5 Weight per Ammo and costs 300 Crowns (up from 150)
-- **Crude Javelins** now deal 35-45 Damage (up from 30-40), have 0 Weight (down from 8), 3 Weight per Ammo and 2 Ammo Cost (down from 3)
-- **Javelins** now deal 35-45 Damage (up from 30-45), deal 70% Armor Damage (down from 75%), have 0 Weight (down from 6), 2 Weight per Ammo and costs 350 Crowns (up from 200)
-- **Throwing Axes** now deal 35-50 Damage (up from 30-50), have -10% Hitchance (down from +0%), +10% Headshot Chance (up from +5%), 0 Weight (down from 4), 2 Weight per Ammo and costs 400 Crowns (up from 200)
+- **Heavy Javelins** now deal 40-50 Damage (up from 35-50), have 85% Armor Damage (up from 80%), have +0% Hitchance (up from -5%), 4 Maximum Ammo (down from 5), 0 Weight (down from 8), 3 Weight per Ammo, 2 Ammo Cost (down from 3) and cost 500 Crowns (up from 300)
+- **Heavy Throwing Axes** now deal 45-60 Damage (up from 30-50), have 120% Armor Damage (up from 115%), have -10% Hitchance (down from -5%), +10% Headshot Chance (up from +5%), 0 Weight (down from 8), 3 Weight per Ammo, 2 Ammo Cost (down from 3) and cost 600 Crowns (up from 300)
+- **Bolas** now deal 25-40 Damage (up from 20-35), have 0 Weight (down from 3), 1.5 Weight per Ammo, 2 Ammo Cost (down from 3) and cost 300 Crowns (up from 150)
+- **Crude Javelins** now deal 35-45 Damage (up from 30-40), have 0 Weight (down from 8), 3 Weight per Ammo and 1 Ammo Cost (down from 3)
+- **Javelins** now deal 35-45 Damage (up from 30-45), deal 70% Armor Damage (down from 75%), have 0 Weight (down from 6), 2 Weight per Ammo, 2 Ammo Cost (down from 3) and costs 350 Crown (up from 200)
+- **Throwing Axes** now deal 35-50 Damage (up from 30-50), have -10% Hitchance (down from +0%), +10% Headshot Chance (up from +5%), 0 Weight (down from 4), 2 Weight per Ammo, 2 Ammo Cost (down from 3) and cost 400 Crowns (up from 200)
 - Marketplaces now sell **Crude Javelins** instead of regular **Javelins**
 - Crude Javelins on NPCs start with 3/4 ammo and Heavy Throwing Weapons on NPCs start with 4/5 ammo
 
@@ -865,7 +865,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Corpses of resurrecting Zombies and Humans now emit a slight purple particle effect
 - Fleeing surrounded hostile characters now take 100% more hitpoint damage, after the player has won but chooses to "Run them down"
 - When a Brother dies (without getting struck down), a black skull will raise from his corpse
-- Add Setting to control the zoom speed during combat to allow for more granular zooming
+- Change mouse wheel zoom speed during combat to 0.1 (down from 0.3)
+- Add Setting to control the mouse wheel zoom speed during combat
 - Loot that is not equippable in battle no longer appears on the ground (e.g. Beast Trophies/Ingredients)
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
 - Hovering over the tile of a any corpse will now differentiate whether they were *struck down* (= survived with a permanent injury) or *slain* (died permanently)
@@ -916,6 +917,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Relation changes that come with a reason now also show the value in brackets, that you gained or lost from this action
 - Subsequent relation changes with the same value and same reason will be combined into a single line with a multiplier in brackets
 - Display price multiplier from relation in factions & relations screen
+- Change mouse wheel zoom speed on the world map to 0.4 (up from 0.3)
+- Add Setting to control the mouse wheel zoom speed on the world map
 - Add Setting (on) for displaying the exact Relation whenever its indirect term appears anywhere
 - Add Setting (on) for displaying the exact Morale Reputation whenever its indirect term appears anywhere
 - Add Setting (on) for displaying the exact Renown whenever its indirect term appears anywhere
@@ -979,6 +982,9 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Dying enemies no longer set the LastCombatResult to `EnemyDestroyed`, unless they were the last one to die. This fixes a rare Sunken Library exploit
 - Unique Locations are no longer attackable, if there is a party, hostile to the player, directly next to it (fixes exploit for skipping Goblin City quest)
 - **Knock Back** now displays its hitchance bonus correctly in the preview
+- Fix Event manager crash while on the snow during the undead crisis
+- Fix world map zoom sometimes zooming too far during lag
+- Fix tactical map zoom sometimes zooming too far during lag
 - Fix Armor Penetration on **Reap** being 5% lower than shown on the weapon
 - Fix Quivers needing to re-use the same ID to be correctly identified as ammo
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn

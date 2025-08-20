@@ -23,6 +23,23 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+0.53.2
+	- Heavy Javelins and Throwing Axes now require 2 ammo to refill each shot (down from 4)
+	- Javeling, Throwing Axe and Bolas now require 2 ammo to refill each shot (down from 3)
+	- Crude Javelins 1 ammo to refill each shot (down from 2)
+	- Replace many instances of "Once per turn" in perk descriptions with the more accurate term "Once per round"
+	- Increase zoom distance on world map by 33%
+	- Add hint on items that can be bought/sold back at full price
+	- Add setting to control the zoom speed on the world map
+	- Fix **Sanguinary** AP recovery from injuries triggering even when no Cleaver was equipped
+	- Fix Hitchance preview for Zone of Control movements sometimes including invalid enemies
+	- Fix Hitpoints recovery from **Nine Lives** printing a value that is too large
+	- Fix compatibility issue with Player Hideout mod
+	- Fix **Golden Goose** sell price being much too low
+	- Fix(Vanilla) Event manager crash while on the snow during the undead crisis
+	- Fix(Vanilla) world map zoom sometimes zooming too far during lag
+	- Fix(Vanilla) tactical map zoom sometimes zooming too far during lag
+
 0.53.1
 	- Fix food item prices not being affected by situations
 	- Fix rare combat freeze when wielding a ranged weapon and having a throwing weapon in the bag

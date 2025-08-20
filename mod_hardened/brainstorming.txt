@@ -663,6 +663,7 @@ For: URUI
 - add new skill to quickhands perk, which costs 4 AP and removes "Disarmed" effect
 
 - spearwall:
+	- only affects 3 tiles
 	- gain +1 Reach
 	- attack each enemy who enters your zone of control
 	- ignore the penalties of "Crowded"
@@ -719,3 +720,33 @@ For: URUI
 	- this.m.PaymentMult = this.Math.rand(90, 110) * 0.01;
 
 - raise weight of almost all early game armors by an additional 1?
+
+- change automatic camera panning so that it doesnt move the camera for small distances, only when bigger distances are happening
+
+- praetorian need more mdef
+
+- when buying supplies, play animation for the supply values
+
+- New Event: drunken guy thrown out of tavern/town
+	- Condition:
+		- While near a town (doesnt have to be friendly)
+		- Has to be night
+		- You have to pay something to the guy
+	- You gain a random background with the drunkard trait
+
+- make knock back function return a weighted container with all possible end locations and a chance
+	- this can then be used to visualize that
+
+- ancient double layer armor is a bit too good for an ancient variant armor
+
+- make death skull more prominent (I never see it if I dont look for it)
+
+- show tooltip in items which can be bought/sold back at full price
+
+- (crock pot) change birds to not be an attack
+
+- strange meat seems to be treated as valueable food and has much higher sell price
+
+- new perk that grants adjacent allies resolve
+
+- levelup animation
