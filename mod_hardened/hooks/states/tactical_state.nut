@@ -45,12 +45,12 @@
 			local mouseWheelZoomMultiplier = ::Hardened.Mod.ModSettings.getSetting("MouseWheelZoomMultiplier").getValue();
 			if (_mouse.getState() == 3)
 			{
-				::Tactical.getCamera().zoomBy(-::Time.getDelta() * ::Math.max(60, ::Time.getFPS()) * mouseWheelZoomMultiplier);
+				::Tactical.getCamera().zoomBy(-mouseWheelZoomMultiplier);
 				return true;
 			}
 			else if (_mouse.getState() == 4)
 			{
-				::Tactical.getCamera().zoomBy(::Time.getDelta() * ::Math.max(60, ::Time.getFPS()) * mouseWheelZoomMultiplier);
+				::Tactical.getCamera().zoomBy(mouseWheelZoomMultiplier);
 				return true;
 			}
 		}
