@@ -41,6 +41,7 @@
 			if (!tile.getEntity().onMovementInZoneOfControl(this, false)) continue;		// The entity in that tile does not exert zone of control onto us
 
 			local aooSkill = tile.getEntity().getSkills().getAttackOfOpportunity();
+			if (!aooSkill.onVerifyTarget(tile, this.getTile())) continue;	// The aooSkill found can actually hit us (this will cover cases of tile height difference being too large)
 
 			local chanceToBeHit = aooSkill.getHitchance(this);
 			if (expectedChanceToBeHit == 0)
