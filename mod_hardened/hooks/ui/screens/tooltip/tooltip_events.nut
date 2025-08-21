@@ -217,6 +217,43 @@
 		return ret;
 	}
 
+	q.tactical_helper_addHintsToTooltip = @(__original) function( _activeEntity, _entity, _item, _itemOwner, _ignoreStashLocked = false )
+	{
+		local ret = __original(_activeEntity, _entity, _item, _itemOwner, _ignoreStashLocked);
+
+		switch(_itemOwner)
+		{
+			case "world-town-screen-shop-dialog-module.stash":
+			{
+				if (_item.m.HD_BuyBackPrice != null)
+				{
+					ret.push({
+						id = 2,
+						type = "hint",
+						icon = "ui/icons/special.png",
+						text = "Can be sold again for its buy price",
+					});
+				}
+				break;
+			}
+			case "world-town-screen-shop-dialog-module.shop":
+			{
+				if (_item.m.HD_BuyBackPrice != null && this.Stash.hasEmptySlot())
+				{
+					ret.push({
+						id = 2,
+						type = "hint",
+						icon = "ui/icons/special.png",
+						text = "Can be bought back for its sell price",
+					});
+				}
+				break;
+			}
+		}
+
+		return ret;
+	}
+
 	// Setting: No longer show the tooltips for characters, while it is not the turn of the player
 	q.tactical_queryEntityTooltipData = @(__original) function( _entityId, _isTileEntity )
 	{
