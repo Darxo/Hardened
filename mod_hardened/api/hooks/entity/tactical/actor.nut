@@ -78,7 +78,10 @@
 		// We redirect any positive changes to the hitpoints to use recoverHitpoints and therefor be affected by the new 'HitpointRecoveryMult' property
 		if (_newHitpoints > this.getHitpoints())
 		{
-			this.__recoverHitpointsSwitcheroo(_newHitpoints - this.getHitpoints());
+			// Negative hitpoints will happen during a "Nine Lives" trigger; therefor we must first set the Hitpoints to 0, before we recover actual hitpoints
+			__original(0);
+			local currentHitpoints = ::Math.max(0, this.getHitpoints());
+			this.__recoverHitpointsSwitcheroo(_newHitpoints - currentHitpoints);
 		}
 		else
 		{
