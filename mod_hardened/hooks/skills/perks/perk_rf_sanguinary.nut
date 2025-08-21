@@ -25,6 +25,16 @@
 			});
 		}
 
+		if (!this.isEnabled())
+		{
+			ret.push({
+				id = 20,
+				type = "text",
+				icon = "ui/tooltips/warning.png",
+				text = "Requires a Cleaver in your Mainhand",
+			});
+		}
+
 		return ret;
 	}
 
@@ -36,6 +46,8 @@
 	q.onMovementFinished = @(__original) function()
 	{
 		__original();
+
+		if (!this.isEnabled()) return;
 
 		local actor = this.getContainer().getActor();
 		if (!this.m.HD_IsMovementBonusGained && this.getInjuredEnemyAmount(actor.getTile()) > 0)
@@ -53,6 +65,17 @@
 	}
 
 // New Private Functions
+	q.isEnabled <- function()
+	{
+		local actor = this.getContainer().getActor();
+		if (actor.isDisarmed()) return false;
+
+		local weapon = actor.getMainhandItem();
+		if (weapon == null || !weapon.isWeaponType(::Const.Items.WeaponType.Cleaver)) return false;
+
+		return true;
+	}
+
 	q.getInjuredEnemyAmount <- function( _tile )
 	{
 		local adjacentEnemies = ::Tactical.Entities.getHostileActors(this.getContainer().getActor().getFaction(), _tile, 1, true);
