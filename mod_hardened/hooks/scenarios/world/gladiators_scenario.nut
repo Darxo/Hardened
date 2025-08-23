@@ -9,6 +9,6 @@
 	{
 		__original();
 		// We raise the maximum brothers for gladiator so that you can have a much easier time refining the 12th core slot
-		::World.Assets.m.BrothersMax = 13;	// In Vanilla this is 12
+		if (::World.Assets.m.BrothersMax == 12) ::World.Assets.m.BrothersMax = 13;	// Vanilla: 12
 	}
 });
