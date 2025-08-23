@@ -13,6 +13,7 @@
 		local lastSpawnedParty = this.m.Faction.m.HD_LastSpawnedParty;
 		if (::MSU.isNull(lastSpawnedParty)) return;
 
+		// Feat: Display the banner of the noble house for civilians caravans
 		lastSpawnedParty.getSprite("banner").Visible = true;
 		lastSpawnedParty.getSprite("banner").setOffset(::Hardened.Const.CaravanBannerOffset);
 

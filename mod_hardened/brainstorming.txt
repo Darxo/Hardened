@@ -640,19 +640,12 @@ For: URUI
 - make orc warlord never spawn with shields
 - make footwork rarely be used on the tile that the actor started its turn on (otherwise it too often results in weird dancing/decisions by goblins)
 
-- mirrored items censor
-
-- improve terrain of camp locations by making the terrain in them less "natural"
-	- less grass in forest locations
-	- dry grass in flatlands
-	- less snow in snowy locations
-
 - new type of caravan that transports only gold (because they came back from selling or are about to buy stuff)
 	- they look the same as normal caravans except that they move significant faster (like 80% instead of 50%)
 
 - make champions have 50% chance to spawn with weapon vs armor, instead of equal chance for any slot type
 
-- standardize weapon stats, by changing the hidden +20 damage modifer into the weapon itself
+- standardize weapon stats, by changing the hidden +20 damage modifer into the weapon itself?
 
 - delay first turn of round ai until resurrections are finished
 
@@ -703,8 +696,6 @@ For: URUI
 
 - weapon master requirement is not accurate, it should be moved to the bullet point where it is needed
 
-- miniicon for exploit opening?
-
 - balance between barb mace and spiked mace? latter is more expensive but overall weaker
 - Bug: crossbows are not unloaded correctly after battle
 	- need more evidence
@@ -727,26 +718,21 @@ For: URUI
 
 - when buying supplies, play animation for the supply values
 
-- New Event: drunken guy thrown out of tavern/town
-	- Condition:
-		- While near a town (doesnt have to be friendly)
-		- Has to be night
-		- You have to pay something to the guy
-	- You gain a random background with the drunkard trait
-
 - make knock back function return a weighted container with all possible end locations and a chance
 	- this can then be used to visualize that
-
-- ancient double layer armor is a bit too good for an ancient variant armor
-
 - make death skull more prominent (I never see it if I dont look for it)
-
-- show tooltip in items which can be bought/sold back at full price
-
-- (crock pot) change birds to not be an attack
-
 - strange meat seems to be treated as valueable food and has much higher sell price
-
 - new perk that grants adjacent allies resolve
-
 - levelup animation
+- add setting to highlight the world tile that the player is currently on (very light highlighting)
+- rebalance food so that cheap/fresh and looted food comes in smaller stack sizes, so that more of your inventory slots are filled with that
+- hand to hand down to 3 AP?
+- slight buff to anatomist armor to make that background even more of a lategame one
+- make it so hedgeknights dont spawn with fullhelms but rather the version below them?
+	- closed flat top helmet with face mask 280 / 19
+- remove gladiator/lone wolf party increase?
+- flail sfx delayed
+- bug: show numerals on nearby locations instantly after loading a new game
+- shuffle preview
+- remove stun covering ally instantly when skill is added, which is stun
+- playerhideout move sfx double

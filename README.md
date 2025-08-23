@@ -696,7 +696,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Normal **Wiederganger** lose **Overwhelm**
 - All **Skeletons** no longer grant experience after being ressurected
 - **Fallen Heroes** no longer spawn with Morning Stars or Handaxes. They now have a 100% resurrection chance (up from 90%) but -10 Hitpoints. Champion variants lose **Nine Lives**
-- **Flesh Golems** lose **Full Force** and take 50% more burning damage to hitpoints
+- **Flesh Golems** lose **Full Force**, gain **Savage Strength** and take 50% more burning damage to hitpoints
 - **Geists** lose **Fearsome**. They now have **Backstabber**
 - **Necromancer** lose 20 natural body armor and **Inspiring Presence**. **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)
 - **Necrosavants** now require the target to have red blood in order to leech life from them, instead of being able to leech life from anyone
@@ -781,14 +781,14 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 - Every Defender of a Location which was fortified now gets a new **Defenders Advantage** effect for that fight, which grants +2 Vision and +15 Resolve
 - **Encumbrance** no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level. It no longer requires a minimum armor weight of 20
-- **Wait** now debuffs the actual Initiative until the start of that brothers next turn
+- **Wait** now debuffs the actual Initiative by 25% until the start of that brothers next turn
 - Equipped Ammo Items can no longer be dropped to the ground or into an empty inventory slot
 - **Swamp** tiles no longer reduce Melee Skill by 25%. Instead they now reduce Initiative by 25%
 - The **Hidden** effect (granted by certain tiles) now also provides +10 Ranged Defense and it lists enemies that you are currently revealed to
 - Characters can no longer retreat from the battle when standing on a border tile, if they are engaged in melee
-- Any fleeing character who rallies, loses 3 Action Points
-- All fleeing characters now have +1 Action Point
-- All player characters now have +1 Action Point during AutoRetreat
+- Fleeing characters who rallies, lose 3 Action Points
+- Fleeing characters now have +1 Action Point
+- Player characters now have +1 Action Point during AutoRetreat
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied
 - No character can receive more than one negative morale check, caused by a fleeing ally, per turn
 - Dying or Fleeing characters no longer trigger negative morale checks for their allies if the distance between them is greater than the vision of the receiving ally
@@ -906,13 +906,12 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add Setting (on) for displaying and adjusting a Waypoint that indicates, where your character on the world map is currently moving to
 - Settlements now display a tooltip showing how many days ago you last visited that location
 - The Tavern now displays to you how many rumors you received so far
-- Add Setting (on) for displaying forbidden destination ports (even when they are hostile to you or the origin port)
+- Add Setting (on) for displaying forbidden destination ports (e.g. when they are hostile to you or the origin port)
 - Dismissing a freshly hired recruit (0 days with the company) will skip the confirmation dialog
 - Distance text in rumors and contracts now display the tile distance range in brackets
 - Display the current XP Multiplier of the viewed character when hovering over the Experience bar
 - World Parties with champions will display an orange skull on top of their socket
 - Hostile Locations now display a tooltip line if they hide defender
-- Display tooltips for the effects for all common settlement Situations
 - Display duplicate Situations in towns
 - Relation changes that come with a reason now also show the value in brackets, that you gained or lost from this action
 - Subsequent relation changes with the same value and same reason will be combined into a single line with a multiplier in brackets
@@ -966,11 +965,10 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Retreating NPCs, that are fleeing and in Zone of Control will now seek the border correctly, if possible
 - Remove the requirement for the player to be on a road in order to receive crisis news events. This prevents Events from stop appearing when you are away from a road for a longer time
 - **Repel** can no longer push someone back in a 90° angle
-- **Copper Ingot** price is now affected by `BuildingRarityMult`
+- **Copper Ingot** price is now affected by `BuildingPriceMult`, which causes them to be affected by **Rebuilding Efforts**
 - Economic Difficulty now affects all prices instead of just some of them
 - Other Actors moving in or out of the range of someone with **Lone Wolf** now cause that effect to update instantly
 - Allow cut, copy and mark operations in input fields that are full. Limit Ctrl-Combinations, Delete and Arrow Key presses in input fields to one per press
-- The price of **Copper Ingots** is not correctly affected by **Rebuilding Efforts**
 - Items that you drop during battle are now correctly re-equipped afterwards
 - Improve knock back logic for **Spiked Impaler** to behave like the Knock Back skill from shields
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
@@ -997,7 +995,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Prevent the same random human name (e.g. for Leader or Knight) to be generated in succession
 - Throw Pot/Flask skills are no longer considered an Attack
 - Setting a faction as a temporary enemy now instantly updates the name labels of all their world parties accordingly
-- **Throw Net** and **Net Pull** are no longer considered an Attack
+- **Throw Net** is no longer considered an Attack
 - Rewrite `queryActorTurnsNearTarget` from `behavior.nut`, making it more accurate by considering current action points
 - Remove a duplicate loading screen
 
@@ -1009,6 +1007,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Improve **Shieldwall effect** when viewed as a hyperlink
 - Fix Item Swaps sometimes requiring a different amount of Action Points than advertised at first
 - Fix `onSpawned` event for player characters only firing for the first battle in each session
+- **Net Pull** is no longer considered an Attack
 
 ## For Modders
 
