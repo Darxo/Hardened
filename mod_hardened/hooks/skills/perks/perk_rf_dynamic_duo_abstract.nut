@@ -12,7 +12,7 @@
 
 	q.getTooltip = @(__original) function()
 	{
-		ret = __original();
+		local ret = __original();
 
 		if (this.m.BraveryModifier != 0)
 		{
