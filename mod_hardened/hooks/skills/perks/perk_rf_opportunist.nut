@@ -161,8 +161,10 @@
 	/// 	If null, this.m.TilesMovedThisTurn will be used instead
 	q.getActionPointModifier <- function( _customTilesMoved = null )
 	{
-		if (_customTilesMoved != null && _customTilesMoved < this.m.TilesNeededForDiscount) return 0;
-		if (this.m.TilesMovedThisTurn < this.m.TilesNeededForDiscount) return 0;
+		local tilesMoved = this.m.TilesMovedThisTurn;
+		if (_customTilesMoved != null) tilesMoved = _customTilesMoved;
+
+		if (tilesMoved < this.m.TilesNeededForDiscount) return 0;
 
 		return this.m.ActionPointModifierTile;
 	}
