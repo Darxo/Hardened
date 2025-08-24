@@ -22,6 +22,8 @@
 	{
 		local ret = __original();
 
+		local oldLen = ret.len();
+
 		local situationModifiers = this.getModifiers();
 		foreach (supportedEffect in this.m.SupportedSituationEffects)
 		{
@@ -34,6 +36,16 @@
 		}
 
 		this.addRecruitTooltipEntries(ret);
+
+		if (ret.len() == oldLen)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "This situation has no effect",
+			});
+		}
 
 		return ret;
 	}
