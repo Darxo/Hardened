@@ -29,7 +29,7 @@
 				});
 			}
 
-			if (!this.isAttackable() && this.isLocationType(::Const.World.LocationType.Unique) && this.hasCloseByHostileParty())
+			if (::World.State.getPlayer().isAbleToSee(this) && !this.isAttackable() && this.isLocationType(::Const.World.LocationType.Unique) && this.hasCloseByHostileParty())
 			{
 				ret.push({
 					id = 40,
