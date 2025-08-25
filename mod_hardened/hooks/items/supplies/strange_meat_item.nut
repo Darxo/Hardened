@@ -3,5 +3,7 @@
 	{
 		__original();
 		this.m.Value = 35;		// Vanilla: 50
+
+		this.m.HD_MaxAmount = 20;	// Vanilla: 25
 	}
 });
