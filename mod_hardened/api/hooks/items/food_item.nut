@@ -10,6 +10,19 @@
 		return ::Math.floor(value);
 	}
 
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original();
+
+		ret.push({
+			id = 68,
+			type = "text",
+			text = format("Contains %i/%i servings", this.m.Amount, this.m.HD_MaxAmount),
+		});
+
+		return ret;
+	}
+
 	// Overwrite, because we make the randomization depending on new member variable
 	q.randomizeAmount = @() function()
 	{
