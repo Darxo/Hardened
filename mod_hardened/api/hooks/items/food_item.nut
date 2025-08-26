@@ -72,3 +72,11 @@
 		return ::Math.minf(1.0, this.getSpoilInDays() * 1.0 / this.m.GoodForDays);
 	}
 });
+
+::Hardened.HooksMod.hookTree("scripts/items/supplies/food_item", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.Amount = this.m.HD_MaxAmount;
+	}
+});
