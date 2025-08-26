@@ -76,9 +76,9 @@
 		}
 	}
 
-	q.onBeforeAnySkillExecuted = @(__original) function( _skill, _targetTile, _targetEntity, _forFree )
+	q.onReallyBeforeSkillExecuted = @(__original) function( _skill, _targetTile )
 	{
-		__original(_skill, _targetTile, _targetEntity, _forFree);
+		__original(_skill, _targetTile);
 		if (_skill.getID() == "actives.recover")
 		{
 			this.setStacks(0);
