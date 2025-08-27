@@ -223,7 +223,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlocks the [Bearded Blade|Skill+rf_bearded_blade_skill] skill which allows you to disarm your opponents during an attack or when they miss attacks against you",
+						"Unlocks the [Bearded Blade|Skill+hd_bearded_blade_skill] skill which allows you to disarm your opponents",
 					],
 				},
 			],

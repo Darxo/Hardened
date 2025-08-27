@@ -34,6 +34,17 @@
 		}
 	}
 
+	// Overwrite, because we dont want to add the Reforged skills and instead add our own new skill
+	q.onEquip = @() function( _item )
+	{
+		if (_item.isItemType(::Const.Items.ItemType.Weapon) && _item.isWeaponType(::Const.Items.WeaponType.Axe))
+		{
+			_item.addSkill(::Reforged.new("scripts/skills/actives/hd_bearded_blade_skill", function(o) {
+				o.m.MaxRange = _item.getRangeMax();
+			}));
+		}
+	}
+
 // New Functions
 	q.isSkillValid <- function( _skill )
 	{
