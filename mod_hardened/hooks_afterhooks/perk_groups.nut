@@ -38,6 +38,12 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		changePerkTier(pgAxeGroup, "perk.rf_dismantle", 6);			// Move Dismantle to Tier 6 (up from Tier 2)
 	}
 
+	{	// Cleaver Group
+		local pgCleaverGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_cleaver");
+		changePerkTier(pgCleaverGroup, "perk.rf_mauler", 2);		// Move Mauler to Tier 2 (down from Tier 6)
+		changePerkTier(pgCleaverGroup, "perk.rf_sanguinary", 6);	// Move Sanguinary to Tier 6 (up from Tier 2)
+	}
+
 	{	// Fast Group
 		local pgFastGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_fast");
 		pgFastGroup.removePerk("perk.rf_dynamic_duo");					// Remove Dynamic Duo from Fast group as it moved to agile group
