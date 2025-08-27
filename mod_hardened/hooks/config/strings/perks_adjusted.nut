@@ -1279,12 +1279,11 @@ local adjustedDescriptions = [
 		Key = "RF_Sanguinary",
 		Description = ::UPD.getDescription({
 			Fluff = "Make it rain blood!",
-			Requirement = "Cleaver",
+			Requirement = "Non-AoE Cleaver Attack",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per [round|Concept.Round] during your [turn,|Concept.Turn] when you move next to an [injured|Concept.InjuryTemporary] enemy, recover " + ::MSU.Text.colorPositive(3) + " [Action Points|Concept.ActionPoints]",
-					"Once per [round|Concept.Round] during your [turn,|Concept.Turn] when you cause a [Fatality,|Concept.Fatality] recover " + ::MSU.Text.colorPositive(3) + " [Action Points|Concept.ActionPoints]",
+					"Your attacks that inflict [bleeding|Skill+bleeding_effect] inflict 5 additional stacks of [bleeding|Skill+bleeding_effect]",
 				],
 			}],
 		}),
@@ -1636,6 +1635,9 @@ hybridizationPerkDef.IconDisabled = "ui/perks/perk_hd_toolbox_sw.png";	// Give T
 
 ::Const.Perks.findById("perk.rf_dismantle").Icon = "ui/perks/perk_13.png";
 ::Const.Perks.findById("perk.rf_dismantle").IconDisabled = "ui/perks/perk_13_sw.png";
+
+::Const.Perks.findById("perk.rf_sanguinary").Icon = "ui/perks/perk_rf_mauler.png";
+::Const.Perks.findById("perk.rf_sanguinary").IconDisabled = "ui/perks/perk_rf_mauler_sw.png";
 
 ::Const.Perks.findById("perk.battle_forged").verifyPrerequisites <- function( _player, _tooltip )
 {

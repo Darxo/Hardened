@@ -1,92 +1,68 @@
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_sanguinary", [
+	"create",
+]);
+
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_sanguinary", function(q) {
 	// Public
-	q.m.RecoveredActionPointsMovement <- 3;
+	q.m.AdditionalBleedStacks <- 5;		// This many additional bleed stacks are applied by this perk on an non-AoE attack
 
 	// Private
-	q.m.HD_IsMovementBonusGained <- false;
+	q.m.PreviousBleedStackSize <- null;		// Saves the amount of bleed stacks that were on the target before our attack hits them; If null, then there was no onBeforTargetHit event
 
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.MaxUses = 1;
+		this.m.Icon = "ui/perks/perk_rf_mauler.png";	// The art for Mauler fits better for this rework
+		this.removeType(::Const.SkillType.StatusEffect);	// We no longer want to disaply a effect tooltip for this perk
 	}
 
-	q.getTooltip = @(__original) function()
+	q.onBeforeTargetHit = @(__original) function( _skill, _targetEntity, _hitInfo )
 	{
-		local ret = __original();
+		__original(_skill, _targetEntity, _hitInfo);
+		this.m.PreviousBleedStackSize = this.getBleedStacks(_targetEntity);
+	}
 
-		if (!this.m.HD_IsMovementBonusGained)
+	q.onReallyAfterSkillExecuted = @(__original) function( _skill, _targetTile, _success )
+	{
+		__original(_skill, _targetTile, _success);
+
+		if (!_success) return;
+		if (!this.isSkillValid(_skill)) return;
+
+		if (!_targetTile.IsOccupiedByActor) return;
+		local targetEntity = _targetTile.getEntity();
+		if (!targetEntity.isAlive()) return;
+
+		if (this.m.PreviousBleedStackSize == null) return;
+		if (this.getBleedStacks(targetEntity) <= this.m.PreviousBleedStackSize) return;
+
+		this.m.PreviousBleedStackSize = null;
+		for (local i = 1; i <= this.m.AdditionalBleedStacks; ++i)
 		{
-			ret.push({
-				id = 11,
-				type = "text",
-				icon = "ui/icons/action_points.png",
-				text = ::Reforged.Mod.Tooltips.parseString(format("Recover %s [Action Points|Concept.ActionPoints] the next time you move next to an injured enemy during your [turn|Concept.Turn]", ::MSU.Text.colorizeValue(this.m.RecoveredActionPointsMovement))),
-			});
+			targetEntity.getSkills().add(::new("scripts/skills/effects/bleeding_effect"));
 		}
-
-		if (!this.isEnabled())
-		{
-			ret.push({
-				id = 20,
-				type = "text",
-				icon = "ui/tooltips/warning.png",
-				text = "Requires a Cleaver in your Mainhand",
-			});
-		}
-
-		return ret;
-	}
-
-	q.isHidden = @(__original) function()
-	{
-		return __original() && this.m.HD_IsMovementBonusGained;
-	}
-
-	q.onMovementFinished = @(__original) function()
-	{
-		__original();
-
-		if (!this.isEnabled()) return;
-
-		local actor = this.getContainer().getActor();
-		if (!this.m.HD_IsMovementBonusGained && this.getInjuredEnemyAmount(actor.getTile()) > 0)
-		{
-			this.m.HD_IsMovementBonusGained = true;
-			actor.recoverActionPoints(this.m.RecoveredActionPointsMovement);
-			this.spawnIcon("perk_rf_sanguinary", actor.getTile());
-		}
-	}
-
-	q.onTurnStart = @(__original) function()
-	{
-		__original();
-		this.m.HD_IsMovementBonusGained = false;
 	}
 
 // New Private Functions
-	q.isEnabled <- function()
+	q.isSkillValid <- function( _skill )
 	{
-		local actor = this.getContainer().getActor();
-		if (actor.isDisarmed()) return false;
+		if (_skill == null) return false;
+		if (!_skill.isAttack()) return false;
+		if (_skill.isAOE()) return false;
 
-		local weapon = actor.getMainhandItem();
-		if (weapon == null || !weapon.isWeaponType(::Const.Items.WeaponType.Cleaver)) return false;
+		local skillItem = _skill.getItem();
+		if (::MSU.isNull(skillItem)) return false;
+		if (!skillItem.isItemType(::Const.Items.ItemType.Weapon)) return false;
+		if (!skillItem.isWeaponType(::Const.Items.WeaponType.Cleaver)) return false;
 
 		return true;
 	}
 
-	q.getInjuredEnemyAmount <- function( _tile )
+	q.getBleedStacks <- function( _actor )
 	{
-		local adjacentEnemies = ::Tactical.Entities.getHostileActors(this.getContainer().getActor().getFaction(), _tile, 1, true);
-		local injuredEnemies = 0;
-		foreach (enemy in adjacentEnemies)
-		{
-			if (enemy.getSkills().hasSkillOfType(::Const.SkillType.TemporaryInjury))
-			{
-				injuredEnemies++;
-			}
-		}
-		return injuredEnemies;
+		local bleedSkill = _actor.getSkills().getSkillByID("effects.bleeding");
+		if (bleedSkill == null) return 0;
+
+		return bleedSkill.m.Stacks;
 	}
 });
