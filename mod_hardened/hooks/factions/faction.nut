@@ -169,7 +169,7 @@
 
 		// If the player gains Relation during an active Contract or Event, we locate the active screen so we can try to push a list entry into it showcasing the change
 		local activeObject = null;
-		if (!::MSU.isNull(::World.Contracts.m.LastShown) && !::MSU.isNull(::World.Contracts.m.LastShown.getActiveScreen()))		// Contracts and Negotiations
+		if (::World.Contracts.m.IsEventVisible && !::MSU.isNull(::World.Contracts.m.LastShown) && !::MSU.isNull(::World.Contracts.m.LastShown.getActiveScreen()))		// Contracts and Negotiations
 		{
 			activeObject = ::World.Contracts.m.LastShown;
 		}
