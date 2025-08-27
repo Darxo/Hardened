@@ -40,12 +40,15 @@
 			}
 		}
 
-		ret.push({
-			id = 20,
-			type = "text",
-			icon = "ui/icons/bravery.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Try to [Rally|Concept.Rally] at the start of your [turn,|Concept.Turn] if you are not engaged in melee"),
-		});
+		if (this.getContainer().getActor().getMoraleState() == ::Const.MoraleState.Fleeing)
+		{
+			ret.push({
+				id = 20,
+				type = "text",
+				icon = "ui/icons/bravery.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Try to [Rally|Concept.Rally] at the start of your [turn,|Concept.Turn] if you are not engaged in melee"),
+			});
+		}
 
 		return ret;
 	}
