@@ -145,6 +145,12 @@
 		__original(_isMinor);
 	}
 
+	q.onDeserialize = @(__original) function( _in )
+	{
+		__original(_in);
+		this.updateLocationNames();		// Vanilla already this.updateTopbarAssets() at the end of onDeserialize, so that HD_NearbyLocations is up to date
+	}
+
 // New Functions
 	q.updateLocationNames <- function()
 	{
