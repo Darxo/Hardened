@@ -1112,6 +1112,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_mauler",
+		Key = "RF_Mauler",
+		Description = ::UPD.getDescription({
+			Fluff = "The wounded are weakest!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Once per [round|Concept.Round] during your [turn,|Concept.Turn] when you move next to an [injured|Concept.InjuryTemporary] enemy, recover " + ::MSU.Text.colorPositive(3) + " [Action Points|Concept.ActionPoints]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_menacing",
 		Key = "RF_Menacing",
 		Description = ::UPD.getDescription({
@@ -1638,6 +1651,8 @@ hybridizationPerkDef.IconDisabled = "ui/perks/perk_hd_toolbox_sw.png";	// Give T
 
 ::Const.Perks.findById("perk.rf_sanguinary").Icon = "ui/perks/perk_rf_mauler.png";
 ::Const.Perks.findById("perk.rf_sanguinary").IconDisabled = "ui/perks/perk_rf_mauler_sw.png";
+::Const.Perks.findById("perk.rf_mauler").Icon = "ui/perks/perk_rf_sanguinary.png";
+::Const.Perks.findById("perk.rf_mauler").IconDisabled = "ui/perks/perk_rf_sanguinary_sw.png";
 
 ::Const.Perks.findById("perk.battle_forged").verifyPrerequisites <- function( _player, _tooltip )
 {
