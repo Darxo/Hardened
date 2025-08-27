@@ -11,6 +11,22 @@
 		return true;
 	}
 
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original();
+
+		foreach (entry in ret)
+		{
+			if (entry.id == 7 && entry.icon == "ui/icons/special.png")
+			{
+				entry.text = ::Reforged.Mod.Tooltips.parseString("Apply [disarmed|Skill+disarmed_effect] on a hit");	// We improve vanillas tooltip by making it shorter and featuring a nested tooltip
+				break;
+			}
+		}
+
+		return ret;
+	}
+
 // Modular Vanilla Functions
 	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
 	{
