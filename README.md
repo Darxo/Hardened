@@ -889,6 +889,9 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Display the actual minimum armor penetration damage in attack skills, instead of always showing a 0 there
 - Improve description of **Additional Fur Padding** and **Bone Plating** and clarify that they only protect against body attacks
 - Automatically re-equip the accessory that you had previously equiped after an arena fight
+- Improve tooltip of **Disarmed effect**
+- Prevent disarmed or stunned entities to be targeted by **Disarm**
+- Improve tooltip of **Whip Disarm** using a nested tooltip for the **Disarmed effect**
 - Add Settings to immediately stop the player movement halfway through, when it reveals an enemy (on) or an ally (off)
 - Add Setting (on) to prevent combat logs, which are the result of the same skill execution, from producing empty newlines
 - Add Setting (on) for preventing tile/enemy tooltips from being generated while it is not your turn
@@ -940,6 +943,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Reduce the height of "autosave" and "quicksave" savegame entries in the main menu by around 25%
 - Add setting (on) for displaying silhouettes of items from the bagslots on the character
 - Supplies (Crowns, Tools, Medicine, Ammo) are now consumed instantly after buying, looting
+- Display current and maximum amount of servings in tooltips of food items
 - Quiver and Weapons that contain Ammo now display the supply cost for replacing ammunition in them
 - Add new Concepts for **Armor Penetration**, **Critical Damage**, **Displacement**, **Hitchance**, **Rally**, **Threat** and **Weight** and and apply these Concepts to existing weapons, items, perks skills
 - Improve tooltips of **Battleforged** perk and **Chop** skill

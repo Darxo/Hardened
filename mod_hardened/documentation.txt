@@ -23,6 +23,18 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+0.53.4
+	- Display current and maximum amount of servings in tooltips of food items
+	- Improve tooltip of **Disarmed effect**
+	- Prevent disarmed or stunned entities to be targeted by **Disarm**
+	- Improve tooltip of **Whip Disarm** by using a nested tooltip for the disarmed effect
+	- Fix **Dynamic Duo** effect not displaying any tooltip
+	- Fix **Unstoppable** reset when **Recover** fails to execute
+	- Fix **Unhold Fur Upgrade** tooltip still showing old condition bonus
+	- Fix rare relation tooltip spam in contract page when revisiting already negotiated contracts
+	- Fix tooltip about Rally on turn start displaying for all morale states instead of just for fleeing
+	- Fix numerals on nearby locations not displaying correctly directly after loading a save
+
 0.53.3
 	- Add **Savage Strength** to **Flesh Golems** to indicate that they are immune to Disarm
 	- Improve compatibility of Gladiator and Loen Wolf Origins with mods that change the amount of maximum brothers
