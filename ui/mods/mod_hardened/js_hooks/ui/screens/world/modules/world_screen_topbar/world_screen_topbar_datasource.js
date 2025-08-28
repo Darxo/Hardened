@@ -1,4 +1,4 @@
-Hardened.Hooks.CharacterScreenStatsModule_loadTimeInformation = WorldScreenTopbarDatasource.prototype.loadTimeInformation;
+Hardened.Hooks.WorldScreenTopbarDatasource_loadTimeInformation = WorldScreenTopbarDatasource.prototype.loadTimeInformation;
 WorldScreenTopbarDatasource.prototype.loadTimeInformation = function (_data, _withoutNotify)
 {
 	var degree = _data[WorldScreenTopbarIdentifier.TimeInformation.Degree];
@@ -6,5 +6,5 @@ WorldScreenTopbarDatasource.prototype.loadTimeInformation = function (_data, _wi
 	if (degree > 360) degree -= 360;
 	_data[WorldScreenTopbarIdentifier.TimeInformation.Degree] = degree;
 
-	Hardened.Hooks.CharacterScreenStatsModule_loadTimeInformation.call(this, _data, _withoutNotify);
+	Hardened.Hooks.WorldScreenTopbarDatasource_loadTimeInformation.call(this, _data, _withoutNotify);
 }
