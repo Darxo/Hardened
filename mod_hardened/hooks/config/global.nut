@@ -25,7 +25,7 @@
 	}
 }
 
-::Const.Difficulty.generateTooltipInfo <- function( _tooltip, _difficulty )
+::Const.Difficulty.generateCombatDifficultyTooltip <- function( _tooltip, _difficulty )
 {
 	if (::Const.Difficulty.XPMult[_difficulty] != 1.0)
 	{

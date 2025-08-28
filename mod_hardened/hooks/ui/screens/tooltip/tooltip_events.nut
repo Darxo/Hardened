@@ -58,15 +58,15 @@
 						break;
 					}
 				}
-				::Const.Difficulty.generateTooltipInfo(ret, ::Const.Difficulty.Easy);
+				::Const.Difficulty.generateCombatDifficultyTooltip(ret, ::Const.Difficulty.Easy);
 				return ret;
 
 			case "menu-screen.new-campaign.NormalDifficulty":
-				::Const.Difficulty.generateTooltipInfo(ret, ::Const.Difficulty.Normal);
+				::Const.Difficulty.generateCombatDifficultyTooltip(ret, ::Const.Difficulty.Normal);
 				return ret;
 
 			case "menu-screen.new-campaign.HardDifficulty":
-				::Const.Difficulty.generateTooltipInfo(ret, ::Const.Difficulty.Hard);
+				::Const.Difficulty.generateCombatDifficultyTooltip(ret, ::Const.Difficulty.Hard);
 				return ret;
 
 			case "tactical-screen.topbar.options-bar-module.FleeButton":
