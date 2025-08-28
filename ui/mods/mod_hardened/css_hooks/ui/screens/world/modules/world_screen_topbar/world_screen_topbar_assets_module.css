@@ -1,0 +1,7 @@
+.world-screen .topbar-assets-module .l-assets-container .label.assets-secondary-value {
+    position: absolute;
+    left: 5.5rem; /* adjust to sit after main text */
+    top: 0.3rem;  /* align to top like superscript */
+    font-size: 12px;	/* 80% of parent font size */
+    line-height: normal;
+}

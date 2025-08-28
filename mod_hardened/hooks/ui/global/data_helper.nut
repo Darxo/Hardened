@@ -22,7 +22,7 @@
 
 			local dailyFood = ::Math.ceil(::World.Assets.getDailyFoodCost() * ::Const.World.TerrainFoodConsumption[::World.State.getPlayer().getTile().Type]);
 			local time = ::Math.floor(::World.Assets.getFood() / dailyFood);
-			ret.Food += " (" + ::Math.min(time, maximumFoodTime) + ")";
+			ret.FoodDaysLeft <- ::Math.min(time, maximumFoodTime);
 		}
 
 		if (::Hardened.Mod.ModSettings.getSetting("DisplayRepairDuration").getValue())
@@ -30,7 +30,7 @@
 			local armorParts = ::World.Assets.getRepairRequired();	// .ArmorParts .Hours
 			if (armorParts.Hours > 0)
 			{
-				ret.Supplies += " (" + armorParts.Hours + ")";
+				ret.RepairHoursLeft <- armorParts.Hours;
 			}
 		}
 
@@ -39,7 +39,7 @@
 			local heal = ::World.Assets.getHealingRequired();
 			if (heal.MedicineMin > 0)
 			{
-				ret.Medicine += " (" + heal.MedicineMin + ")";
+				ret.MedicineRequiredMin <- heal.MedicineMin;
 			}
 		}
 
