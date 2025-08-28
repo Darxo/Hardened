@@ -1,9 +1,9 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/disarm_skill", function(q) {
 	q.onVerifyTarget = @(__original) function( _originTile, _targetTile )
 	{
-		if (!this.__original(_originTile, _targetTile)) return false;
+		if (!__original(_originTile, _targetTile)) return false;
 
-		local target = _targetTile.getActor();
+		local target = _targetTile.getEntity();
 		if (target.getCurrentProperties().IsImmuneToDisarm) return false;
 		if (target.getCurrentProperties().IsStunned) return false;			// Stun already skips the turn which would also wait out the disarm, so we prevent this
 		if (target.getSkills().hasSkill("effects.disarmed")) return false;	// Disarm does not stack so we prevent the player from making a mistake
