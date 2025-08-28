@@ -950,7 +950,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Improve Concept for **Morale** and add nested tooltip for all morale states (except **Steady**)
 - Improve artwork for **Nimble** perk
 - Improve artwork for **Tattered Sackcloth** item to make it stand out more from **Sackcloth**
-- All effects of the difficulty settings are now listed as tooltips during world generation
+- All effects of the combat and economic difficulty settings are now listed as tooltips before world generation
 
 ## Fixes
 
@@ -1118,6 +1118,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 # Known Issues:
 
+- Map Seeds for Vanilla or Reforged are unlikely to work the same under Hardened
 - Loading a game after getting attacked allows you to turn around an ambush into a regular fight
 
 # Compatibility

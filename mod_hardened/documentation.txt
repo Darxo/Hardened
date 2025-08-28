@@ -23,6 +23,11 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+0.53.5
+	- Add tooltips describing economic difficulty setting effects
+	- Show **Fresh and Furious** effect greyed out, even while dormant
+	- Fix error in combat with character who have a whip equipped
+
 0.53.4
 	- Display current and maximum amount of servings in tooltips of food items
 	- Improve tooltip of **Disarmed effect**
