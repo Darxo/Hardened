@@ -85,3 +85,57 @@
 		});
 	}
 }
+
+::Const.Difficulty.generateEconomicDifficultyTooltip <- function( _tooltip, _difficulty )
+{
+	if (::Const.Difficulty.BuyPriceMult[_difficulty] != 1.0)
+	{
+		_tooltip.push({		// Buy Price
+			id = 10,
+			type = "text",
+			icon = "ui/icons/asset_money.png",
+			text = "Buying Items costs " + ::MSU.Text.colorizeMultWithText(::Const.Difficulty.BuyPriceMult[_difficulty], {InvertColor = true}),
+		});
+	}
+
+	if (::Const.Difficulty.SellPriceMult[_difficulty] != 1.0)
+	{
+		_tooltip.push({		// Sell Price
+			id = 12,
+			type = "text",
+			icon = "ui/icons/asset_money.png",
+			text = "Selling Items yields " + ::MSU.Text.colorizeMultWithText(::Const.Difficulty.SellPriceMult[_difficulty]),
+		});
+	}
+
+	if (::Const.Difficulty.PaymentMult[_difficulty] != 1.0)
+	{
+		_tooltip.push({		// Contracts
+			id = 13,
+			type = "text",
+			icon = "ui/icons/contract_scroll.png",
+			text = "Contracts pay " + ::MSU.Text.colorizeMultWithText(::Const.Difficulty.PaymentMult[_difficulty]) + " Crowns",
+		});
+	}
+
+	_tooltip.push({
+		id = 20,
+		type = "text",
+		icon = "ui/icons/asset_supplies.png",
+		text = "Maximum Tools: " + ::MSU.Text.colorPositive(::Const.Difficulty.MaxResources[_difficulty].ArmorParts),
+	});
+
+	_tooltip.push({
+		id = 21,
+		type = "text",
+		icon = "ui/icons/asset_ammo.png",
+		text = "Maximum Ammo: " + ::MSU.Text.colorPositive(::Const.Difficulty.MaxResources[_difficulty].Ammo),
+	});
+
+	_tooltip.push({
+		id = 22,
+		type = "text",
+		icon = "ui/icons/asset_medicine.png",
+		text = "Maximum Medicine: " + ::MSU.Text.colorPositive(::Const.Difficulty.MaxResources[_difficulty].Medicine),
+	});
+}
