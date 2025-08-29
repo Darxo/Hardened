@@ -43,18 +43,10 @@
 		{
 			if (ally.getMoraleState() == ::Const.MoraleState.Fleeing) continue;
 			if (ally.getCurrentProperties().IsStunned) continue;
+			if (ally.getTile().getDistanceTo(myTile) < this.getMinRange()) continue;
+			if (ally.getTile().getDistanceTo(myTile) > this.getMaxRange()) continue;
 
-			if (ally.getTile().getDistanceTo(myTile) >= this.getMinRange() && ally.getTile().getDistanceTo(myTile) <= this.getMaxRange())
-			{
-				local effect = ::new("scripts/skills/effects/rf_hold_steady_effect");
-				if (!ally.isTurnStarted() && !ally.isTurnDone())
-				{
-					// If the ally has not started their turn yet in this round, add one more turn
-					// so that the effect doesn't immediately expire upon the ally's turn starting
-					effect.m.TurnsLeft++;
-				}
-				ally.getSkills().add(effect);
-			}
+			ally.getSkills().add(::new("scripts/skills/effects/rf_hold_steady_effect"));
 		}
 
 		return true;
