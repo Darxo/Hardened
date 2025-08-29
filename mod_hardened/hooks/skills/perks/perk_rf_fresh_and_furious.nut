@@ -9,7 +9,7 @@
 		{
 			if (entry.id == 11)
 			{
-				entry.text = "Your next Skill costs " + ::MSU.Text.colorizeValue(this.m.ActionPointModifier, {AddSign = true, InvertColor = true}) + ::Reforged.Mod.Tooltips.parseString(" [Action Points|Concept.ActionPoints]");
+				entry.text = "Your next Attack costs " + ::MSU.Text.colorizeValue(this.m.ActionPointModifier, {AddSign = true, InvertColor = true}) + ::Reforged.Mod.Tooltips.parseString(" [Action Points|Concept.ActionPoints]");
 			}
 		}
 
