@@ -2,8 +2,8 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		// this.m.Value = 800;			// In Vanilla this is 800
+		this.m.Value = 650;				// In Vanilla this is 800
 		// this.m.ConditionMax = 140; 	// In Vanilla this is 140
-		this.m.StaminaModifier = -15; 	// In Vanilla this is -16
+		this.m.StaminaModifier = -17; 	// In Vanilla this is -16
 	}
 });
