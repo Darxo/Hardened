@@ -27,7 +27,7 @@
 
 	q.isHidden = @(__original) function()
 	{
-		this.skill.isHidden();
+		return !::Tactical.isActive();
 	}
 
 	// Overwrite because we change the discount, its condition and make it also affect skills which cost 1 AP
