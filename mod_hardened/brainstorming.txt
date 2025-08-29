@@ -93,8 +93,6 @@
 - Make Schrat headless? Would help with one with the shield. And they dont seem to be decapitatable (check this)
 - Make Oathtaker only have 2 armor perks (always Medium)
 - Make Caravans have more resources (protection), the more they dont arrive at their destination
-- Dislocated Shoulder: Only affect skill cost?
-- Give sergeants Fresh&Furious (to help with their command skills)
 - Debug Setting, for debugging AI decision made from getQueryTargetMultAsUser and getQueryTargetMultAsTarget functions
 - Allow renaming of Dogs (its item name is already serialized, just need the UI)
 - Cap the cost of moving over terrain to the maximum Stamina of the character
@@ -192,10 +190,9 @@
 	- You can use **Knock Back** and **Shieldwall** with any shield
 - **TBD**
 	- Whenever you triger a positive morale check, trigger a positive morale check for all adjacent allies
-- Animalistic (enemy only)
+- Predator (enemy only)
 	- 50% more Resolve during Morale Checks from enemy kills
-- Animal Handler (enemy only)
-	- +20% chance to hit, when attacking characters who are disarmed or who don't wield a melee weapon
+	- +10% chance to hit, when attacking characters who are disarmed or who don't wield a melee weapon
 
 ## New Skills
 - Rain of Arrows
@@ -208,36 +205,13 @@
 	- +25 Ranged Defense
 
 ## Perks Review/Rework
-- Nailed it
-	- Ignore Cover when aiming at a distance of 2
-	- Your Shots cannot go astray when aiming at a distance of 3
-	- Gain +20% chance to hit the hit when your target is at most 4 tiles away
-	"Your attacks at a distance of 2 ignore the hitchance penalty from obstacles",
-	"Your Attacks at a distance of 3 or less tiles have " + ::MSU.Text.colorPositive("+15%") + " chance to hit the head per difference in morale between you and the target",
-	"Your Hits against enemies within 4 tiles trigger a positive Morale Check for you",
-	"Your attacks at a distance of 4 or less tiles have " + ::MSU.Text.colorPositive("+10%") + " chance to hit",
 - Crossbow Mastery
-	- Crossbow Mastery making them in your bag always loaded
 	- Swap Crossbow with Shield for free once per turn
 - Relentless:
 	- Using wait or recover does not inflict initiative penalty
 	- You can wait an additional time each turn
 	- Misses against you while waiting does not build up fatigue
 misses dont build up fatigue on you while waiting
-These Perks (top = higher prio) im still unhappy with and eventually want to adjust
-- Feral Rage
-- Mauler
-	- replace second effect with 15% more damage when hitting body parts that have no remaining armor
-		- Alternative: Deal +25% critical damage for every injury on the target (no matter which bodypart you target)
-	- reduce injury threshold of your attacks by 10% per bleed in target
-		- keep bleed stack effect
-- Bloodlust
-	- When you start your turn next to bleeding enemies (or maybe bleeding yourself) gain a temporary bonus depending on the amount of bleeding enemies
-		- Rewards Initiative/Adrenaline gameplay
-- Power Shot
-- Take Aim Perk (previously Power Shot)
-	- Whenever you wait or end your turn, gain a stacking +5% chance to hit. All bonus is lost, when you attack or move.
-	- Unlock **Take Aim** skill, which does the same thing as the mastery thingy stuff
 
 - orc slayer / crusader events, make them cost 5k crowns each to hire those guys
 - Schrat can target enemies through objects?
@@ -326,7 +300,6 @@ These Perks (top = higher prio) im still unhappy with and eventually want to adj
 - Play other animations also slightly staggered (e.g. fleeing animation) to counter act the lag a bit
 
 ### Feature
-- Contracts which change morale/renown/relation but are not yet covered, display those in the next screen
 - add system where equipped loot is only decided upon once, whether it drops. So if a dead character reanimates and dies again you dont have more chances to loot that gear
 - First Aid (enemy-only for now)
 	"A steady hand and the right supplies can mean the difference between life and death."
@@ -382,8 +355,6 @@ from Modular Vanilla
 
 - Make Infected Wound not heal, while no medical supplies are left
 - Make Infected Wound stop healing of all present untreated injuries, until medical supplies are there
-
-- Tooltip for economic difficulty changes
 
 - Make world parties that are left with 1 troop after auto-battle disappear. Otherwise you get parties with a single necromancer or hexen or barbarian king
 
@@ -505,13 +476,6 @@ MOdular Vanilla:
 	- whats the total AP and Fatigeu cost of the movement?
 	- how much does each tile cost to move through?
 
-- Bloodlust:
-	- +10% Armor Penetration against enemies that are not currently bleeding
-	- When attacking someone with less Resolve, inflict an additional Bleeding stack
-	- When attacking someone with less Initiative, inflict an additional Bleeding stack
-	- When attacking someone whose turn has not started yet, inflict n additional bleeding stack
-
-
 - make NPC ammo limited
 	- make NPC Defender have unlimited ammunition
 - Make **Gash** deal more damage for every bleed on the target?
@@ -531,14 +495,6 @@ MOdular Vanilla:
 - make camping reduce food consumption?
 - remove dodge from frenzied direwolfs
 - increase fatigue cost of whirling stance
-
-- armor types:
-worst
-- scale
-- lamellar
-- mail
-- plate
-best
 
 show uncapped hitchance
 - fix(vanilla) parties on world map that concluded fights, still counting as on-going battles
@@ -733,6 +689,40 @@ For: URUI
 - remove gladiator/lone wolf party increase?
 - flail sfx delayed
 - bug: show numerals on nearby locations instantly after loading a new game
-- shuffle preview
 - remove stun covering ally instantly when skill is added, which is stun
 - playerhideout move sfx double
+
+- ai: fast bandits wastefully use spinning flail and swap to ranged weapon (probably just remove that perk from them)
+
+- update resolve from banner instantly when switching to it
+- make sunken library always a night fight?
+
+- new item: torch
+	- Offhand Item
+	- Grant +3 Vision
+	- Can be thrown on an empty tile to illuminate the area around it in a radius of 5 tiles
+
+- swordmaster ai -> likes to wait?
+
+- make hunting grounds visible even before the ritual armor?
+
+- Event: dealer of stolen goods sells faction armor
+	- You are offered to buy some armor of a faction whose town you are in, for cheap
+	- The armor in question is Mail Hauberk (170 / 19)
+	- If you accept, you potentially lose some relation to that faction (someone saw you do the deal)
+	- Alternatively a background (peddler) can make it cheaper or thief can make it less likely top raise suspicion
+
+- Horse Fucker Event: give him a body (back) injury he sustained from the whipping
+	- Make you lose 10 Renown when accepting the guy (you go "against the law")
+
+- add special effect/highlighting for legendary locations? Some of them are hard to spot if discovered accidentally
+
+- ghostlike fix
+
+- fix some enemies being disembowable (e.g. ifrits) and therefor triggering sanguinary
+
+- double lindwurm loot, reduce price
+
+- change bloodlust to deal 20% more damage, but no longer grant damage mitigation
+
+- Lunge: 1% more damage per initiative above 100; -1% Armor Penetration per Initiative below 100

@@ -1,7 +1,7 @@
 ::Hardened <- {
 	ID = "mod_hardened",
 	Name = "Hardened",
-	Version = "0.53.5",
+	Version = "0.54.0",
 	GitHubURL = "https://github.com/Darxo/Hardened",
 	Temp = {	// Used to globally store variables between function calls to implement more advanced, albeit hacky behavior
 		RootSkillCounter = null,	// This variable will have the SkillCounter of the root skills during the execution of any skill executions and delayed executions

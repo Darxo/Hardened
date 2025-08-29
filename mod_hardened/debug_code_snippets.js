@@ -71,3 +71,15 @@ local path = ::World.getNavigator().findPath(firstTown.getTile(), secondTown.get
 ::MSU.Log.printData(path, 2);
 ::MSU.Log.printData(path.getNext(), 2);
 
+## See stats of nearby units
+
+foreach (factionID, faction in ::World.FactionManager.m.Factions)
+{
+	if (faction == null) continue;
+	foreach (unit in faction.m.Units)
+	{
+		if (unit.getTile().getDistanceTo(::World.State.getPlayer().getTile()) > 6) continue;
+		// ::logWarning("Hardened: factionID " + factionID + " faction " + faction.getType());
+		::logWarning("Hardened: unit.getName() " + unit.getName() + " unit.getBaseMovementSpeed() " + unit.getBaseMovementSpeed());
+	}
+}

@@ -156,6 +156,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 
 ### Active Skills
 
+- **Bearded Blade** (granted by **Axe Mastery**) is completely reworked. It now costs 4 Action Points and 20 Fatigue and it is an attack, that will disarm your opponent for 1 turn on a hit, very similar to the **Disarm Skill** from the whip
 - **Chop** now has a 50% chance to decapitate (up from 25%)
 - **Cover Ally** (granted by **Shield Expert**) is completely reworked. It costs 4 Action Points and 20 Fatigue and can be used on adjacent allies. It grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It still lasts until the start of the users next turn or until the user gets stunned or flees
 - **Cover Ally** (granted by **Shield Expert**) is mostly reworked. It still costs 4 Action Points and 20 Fatigue and can only target adjacent allies. It now grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It still lasts until the start of your next turn or until you get stunned or move away from that target
@@ -262,6 +263,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Lone Wolf** is now only active if no ally from your company is within 2 tiles
 - **Long Reach** now only works while it is NOT your turn
 - **Marksmanship** is completely reworked. It now grants +10 minimum and maximum damage while there are no enemies within 2 tiles
+- **Mauler** is completely reworked. Once per round, during your turn, if you move next to an injured enemy, you recover 3 Action Points
+- **Nailed It** is completely reworked. It now works with all attacks and grants 25% chance to hit the head at a distance of 2 tiles. It also makes it so your attacks at a distance of 2 tiles will never hit the cover
 - **Nimble** is completely reworked: It now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
 - **Offhand Training** is completely reworked. It now reduces the AP cost of tool skills by 1. Wielding a tool in your offhand no longer disables **Double Grip** and while wielding a tool in your offhand, the first successful attack each turn, will stagger your target
 - **Onslaught** no longer has a shared cooldown with other brothers who have this perk. It now lasts for 2 rounds, instead of having a turn-based duration
@@ -276,7 +279,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Rebuke** is completely reworked. It now grants the **Rebuke Effect** whenever an opponent misses a melee attack against you while it's not your turn, until the start of your next turn. This effect reduces your damage by 25% but will make you retaliate every melee attack miss against you.
 - **Rising Star** now only grants 20% experience until you are level 12. It now grants +2 Perk Points at Level 12, instead of 5 levels after picking the perk
 - **Rush of Battle** is completely reworked. While adjacent to an ally and an enemy, gain 20% more Injury Threshold per adjacent enemy and Skills cost 10% less Fatigue per adjacent ally
-- **Sanguinary** can now only trigger once per turn from inflicting fatalities. Now you also recover 3 Action Points once per turn, when you move next to an injured enemy
+- **Sanguinary** is completely reworked. It now causes your non-AoE Cleaver Attacks to apply 5 additional bleed stacks, if the attack applied at least one bleed stack
 - **Savage Strength** now reduces fatigue cost of weapon skills by 20% (down from 25%). It now grants Immunity to Disarm
 - **Shield Expert** no longer grants 25% increased shield defenses and no longer prevents fatigue build-up when you dodge attacks. It now grants 50% less shield damage taken and it makes it so enemies will never have Reach Advantage over the shield user
 - **Shield Sergeant** is completely reworked. It grants **Shieldwall** effect to all allies who have a shield equippe, at the start of combat. It now causes allies within 3 tiles to imitate shield skills for free that you use during your turn. It also allows you to use **Knock Back** and **Cover Ally** on empty tiles
@@ -312,8 +315,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Decisive** is added to **Leadership** group
 - **Death Dealer** is removed from **Agile** and added to **Powerful Strikes**. It moved to Tier 6 (up from Tier 4)
 - **Deep Impact** (now **Breakthrough**) moved to T3 perk (down from Tier 6)
-- **Dismantle** moved to Tier 6 perk (up from Tier 2)
-- **Dismemberment** moved to Tier 2 perk (down from Tier 6)
+- **Dismantle** moved to Tier 6 (up from Tier 2)
+- **Dismemberment** moved to Tier 2 (down from Tier 6)
 - **Dodge** is removed from **Light Armor** group
 - **Duelist** is removed from **Shield** group
 - **Dynamic Duo** is removed from **Fast** group and added to **Agile** group
@@ -325,12 +328,14 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Leverage** moved to Tier 7 (up from Tier 3)
 - **Long Reach** moved to Tier 2 (down from Tier 7)
 - **Marksmanship** is added to **Ranged** group. It is no longer a special perk
+- **Mauler** moved to Tier 2 (down from Tier 6)
 - **Overwhelm** is removed from **Ranged** group
 - **Pathfinder** moved to Tier 3 (up from Tier 1). It is removed from **Wildling** group and added to **Leadership** group
 - **Polearm Mastery** and **Fortified Mind** are removed from the **Leadership** group
 - **Rally the Troops** moved to Tier 3 (up from Tier 2). It is added to **Soldier** group
 - **Rattle** (now **Full Force**) moved to Tier 6 (up from Tier 3)
 - **Rising Star** moved to Tier 6 (down from Tier 7)
+- **Sanguinary** moved to Tier 6 (up from Tier 2)
 - **Student** is added to **General** group. It is no longer a special perk
 - **Tricksters Purses** moved to Tier 3 (up from Tier 1)
 - **Vigorous Assault** is removed from **Swift Strikes** group
@@ -372,6 +377,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Injuries now have a 50% chance to improve each day when you have no remaining Medicine Supplies (up from 0%)
 - **Collapsed Lung** no longer reduces the Stamina. Instead it now disables the use of **Recover**
 - **Crushed Windpipe** no longer reduces the Stamina. Instead it now disables the use of **Recover**
+- **Dislocated Shoulder** no longer reduces the maximum available Action Points by 3. Instead it now increases the Action Point cost of all skills by 3
 - **Pierced Lung** now reduces Stamina by 30% (down from 60%) and disables the use of **Recover**
 - **Grazed Neck**, **Cut Artery** and **Cut Throat** are no longer removed, when bandaged
 - **Grazed Neck**, **Cut Artery** and **Cut Throat** no longer deals damage over time
@@ -381,6 +387,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Misc
 
+- Add sound effect for **Hold Steady** skill
 - Knockback of all skills is reworked and standardized. It still always knocks someone back in a straight line, if user and target are on the same axis and there is space behind the target. In all other cases the destination is now random, instead of fixed/clock-wise
 
 ## Items
@@ -444,19 +451,19 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Hide and Bone Armor** now has 100 Condition (up from 95), 15 Weight (up from 10) and costs 250 Crowns (up from 220)
 - **Leather Lamellar Armor** now has 90 Condition (down from 95), 11 Weight (up from 10) and costs 250 Crowns (down from 300)
 - **Leather Nomad Robe** now has 70 Condition (up from 65), 8 Weight (up from 7) and costs 150 Crowns (up from 140)
-- **Leather Scale Armor** now has 15 Weight (down from 16)
+- **Leather Scale Armor** now has 17 Weight (down from 16) and costs 650 Crowns (down from 800)
 - **Leather Tunic** now has 5 Weight (up from 0) and costs 50 Crowns (down from 65)
 - **Leather Wraps** now has 4 Weight (up from 0) and costs 30 Crowns (down from 40)
-- **Light Scale Armor** now has 19 Weight (down from 21)
+- **Light Scale Armor** now costs 1000 Crowns (down from 1300)
 - **Linen Tunic** now has 3 Weight (up from 0)
 - **Linothorax** now has 80 Condition (up from 75), 9 Weight (up from 7) and costs 200 Crowns (up from 180)
-- **Mail Hauberk** now has 170 Condition (up from 150) and 21 Weight (up from 18)
+- **Mail Hauberk** now has 170 Condition (up from 150), 19 Weight (up from 18) and costs 1300 Crowns (up from 1000)
 - **Mail Shirt** now has 150 Condition (up from 130), 18 Weight (up from 13) and costs 800 Crowns (up from 650)
 - **Mail with Lamellar Plating** now has 160 Condition (up from 135), 18 Weight (up from 15) and costs 850 Crowns (up from 750)
 - **Monk's Robe** now has 30 Condition (up from 20), 5 Weight (up from 0) and costs 50 Crowns (up from 45)
 - **Noble Tunic** now has 30 Condition (up from 20) and 2 Weight (up from 0)
 - **Nomad Robe** now has 4 Weight (up from 2)
-- **Occult Robes** now has 70 Condition (down from 75) and costs 300 Crowns (up from 190)
+- **Occult Robes** now has 80 Condition (up from 75) and costs 300 Crowns (up from 190)
 - **Padded Leather** now has 10 Weight (up from 8) and costs 180 Crowns (down from 200)
 - **Padded Surcoat** now has 60 Condition (up from 50), 8 Weight (up from 4) and costs 100 Crowns (up from 90)
 - **Padded Vest** now has 7 Weight (up from 5) and costs 120 Crowns (down from 140)
@@ -610,9 +617,10 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Antidote** now costs 100 Crowns (down from 150). Crafting it now costs 40 Crowns (down from 50) and 1 Jagged Fang (down from 2). It is now considered `IsMedical` causing it to be affected by medical-related settlement situations
 - **Bandage** costs 40 Crowns (up from 25). It is now considered `IsMedical` causing it to be affected by medical-related settlement situations
 - **Buckler** appear less common in big settlements
-- **Tarnished Full Helm** now grants +5 Threat (similar to Direwolf Pelt). It now only appears in the Full Helm looking variants
+- **Cured Venison** now has a Stacksize of 30 (up from 25) and cost 115 Crowns (up from 95)
 - **Decayed Reinforced Mail Hauberk** no longer appears with the Variant 50, which is a skin that looks too similar to **Worn Mail Shirt**
 - **Decorated Full Helm** now grants +10 Resolve
+- **Dried Lamb** now has a Stacksize of 30 (up from 25) and cost 125 Crowns (up from 105)
 - **Gun Powder** now costs 2 **Ammunition Supply** each (up from 1)
 - **Fangshire** will no longer spawn at the start of the game
 - **Feral Shield** now costs 400 Crowns (up from 50)
@@ -620,6 +628,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Goblin Poison** now has a value of 200 (up from 100)
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 1000 Value (up from 200) and grants 10 Resolve (up from 5)
 - **Hyena Fur Mantle** now grants 10% more Initiative instead of +15 Initaitive
+- **Masterfully Cured Ration** now has a Stacksize of 50 (up from 25) and costs 300 Crowns (up from 150)
 - Named Helmets now have a minumum possible weight of 3 (down from 4)
 - The Named **Wolf Helmet** now has 120 Condition (down from 140), 6 Weight (down from 8) and -1 Vision (down from 0) and costs 3000 Crowns (up from 2000)
 - The Named **Norse Helmet** now has 170 Condition (up from 125), 8 Weight (up from 6) and -3 Vision (down from -1) and costs 3000 Crowns (up from 2000)
@@ -627,8 +636,10 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Reinforced Throwing Net** now has a weight of 8 (up from 2)
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**
 - **Sipar** is now called **Sipar Shield** (just like in Vanilla)
-- **Strange Meat** now costs 35 Crowns (down from 50)
+- **Smoked Ham** now has a Stacksize of 30 (up from 25) and cost 115 Crowns (up from 995)
+- **Strange Meat** now has a Stacksize of 20 (down from 25) and costs 35 Crowns (down from 50)
 - **Smoke Bomb** costs 400 Crowns (up from 275). Smoke now lasts 2 Rounds (up from 1)
+- **Tarnished Full Helm** now grants +5 Threat (similar to Direwolf Pelt). It now only appears in the Full Helm looking variants
 - **Throwing Net** now has a weight of 4 (up from 2)
 - **Tools and Supplies** are now marked as `IsBuildingSupply`, causing them to be affected by building-supply-related settlement situations
 - **Unhold Fur Cloak** now grants 15 Condition (up from 10)
@@ -816,6 +827,9 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - World Parties are no longer stunned, when you cancel the combat dialog with them
 - Hostile Locations will no longer spawn roaming parties or defenders while you are within 2 tiles of it
 - At the start of each new campaign ~5 additional small bandit camps are spawned in the world
+- Restrict the allowed Y coordinates for many unique locations to where their allowed tiles usually spawn to speed up map generation
+- Most Unique Locations have a `DistanceToOthers` of 10 tiles (down from 15), allowing them to be placed closer to settlements and other locations during map generation. This will improve map generation speed and prevent cases of missing unique locations when too many settlements are generated
+- Restrict the Y-position of the **Oracle** unique location to be between 10% and 35% (previously unrestricted)
 - The legendary Location **Ancient Spire** now reveals an area of 3000 (up from 1900)
 - Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken
 - **Buried Castle** Locations now also drop either a Flash Pot, Fire Pot or Smoke Pot
@@ -838,6 +852,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 - The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event
 - The Event **Drunkard loses Item** now has an option where you order the Drunkard to search for the item. This recovers the item, but causes the same mood debuff on the drunkard as if he was flogged
+- The Event **Player plays dice** now has 50% less score
 - The Event **Infected Wound** now has a cooldown of 14 days (down from 21 days) and is thrice as likely to trigger, if you have no Medicine left
 - The Event-Option to shoot down the bird who shat your brother now costs 5 Ammunition
 - The **Orc Slayer** and **Crusader** (temporary Crisis backgrounds) now share 100% of their experience with your remaining party, when they leave you after the Crisis ended
@@ -1096,6 +1111,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add `HD_RequiredAmmoType = ::Const.Items.AmmoType.None` for `weapon.nut` which determines, which type of ammo a weapon uses
 - Add `HD_StartsBattleLoaded = false` for `weapon.nut` which determines, whether this weapon will be reloaded for free at the start of each battle (only works if the correct ammo is equipped)
 - Add new `HD_IsSortedBeforeMainhand = false` member for `skill.nut`. If `true`, then active skills will be sorted in front of mainhand skills
+- Rewrite the `onExecute` of `build_unique_locations_action` with a moddable `DistanceToOthers` aswell as `minY` and `maxY` values.
 
 ### New Character Properties
 

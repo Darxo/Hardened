@@ -23,6 +23,32 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+0.54.0
+	- **Bearded Blade** (granted by Axe Mastery) is completely reworked. It now costs 4 AP and 20 Fatigue and it is an attack, that will disarm your opponent for 1 turn on a hit, very similar to the **Disarm Skill** from the whip
+	- **Mauler** is completely reworked. It is now a Tier 2 Perk. Once per round, during your turn, if you move next to an injured enemy, you recover 3 Action Points
+	- **Nailed It** is completely reworked. It now works with all attacks and grants 25% chance to hit the head at a distance of 2 tiles. It also makes it so your attacks at a distance of 2 tiles will never hit the cover
+	- **Sanguinary** is completely reworked. It is now a Tier 6 Perk. It now causes your non-AoE Cleaver Attacks to apply 5 additional bleed stacks, if the attack applied at least one bleed stack
+	- **Dislocated Shoulder** no longer reduces the maximum available Action Points. Instead it now increases the Action Point cost of all skills by 3
+	- **Leather Scale Armor** now has a Weight of 17 (up from 15) and costs 650 Crowns (down from 800)
+	- **Light Scale Armor** now has a Weight of 21 (up from 19) and costs 1000 Crowns (down from 1300)
+	- **Maul Hauberk** now has a Weight of 19 (down from 21) and costs 1300 Crowns (up from 1000)
+	- **Occult Robes** now has 80 Condition (up from 70) and costs 400 Crowns (up from 300)
+	- **Cured Venison** now has a Stacksize of 30 (up from 25) and cost 115 Crowns (up from 95)
+	- **Dried Lamb** now has a Stacksize of 30 (up from 25) and cost 125 Crowns (up from 105)
+	- **Masterfully Cured Rations** now have a Stacksize of 50 (up from 25) and cost 300 Crowns (up from 150)
+	- **Smoked Ham** now has a Stacksize of 30 (up from 25) and cost 115 Crowns (up from 995)
+	- **Strange Meat** now has a Stacksize of 20 (down from 25)
+	- Add sound effect for **Hold Steady** skill
+	- The **Gambler Dice Event** score is reduced by 50%
+	- Improve ui layout of the usage numbers in brackets for the top bar assets, food, medicine and tools
+	- Reduce the minimum tile distance between unique locations and other locations during generation of unique locations to 10 (down from 15). This will improve map generation speed and cases of missing unique locations when too many settlements exist
+	- Restrict the Y-position of the **Oracle** unique location to be between 10% and 35% (previously unrestricted)
+	- Hide **Fresh and Furious** effect outside of combat
+	- Fix Topbar assets not being colored red, when empty
+	- Fix Topbar assets missing animation when gaining or losing some
+	- Rewrite the `onExecute` of `build_unique_locations_action` with a moddable `DistanceToOthers` aswell as `minY` and `maxY` values.
+	- Clamp the Y coordinates for spawning unique locations to where their allowed tiles usually spawn to vastly improve their generation
+
 0.53.5
 	- Add tooltips describing economic difficulty setting effects
 	- Show **Fresh and Furious** effect greyed out, even while dormant
