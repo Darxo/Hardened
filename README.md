@@ -636,7 +636,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Reinforced Throwing Net** now has a weight of 8 (up from 2)
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**
 - **Sipar** is now called **Sipar Shield** (just like in Vanilla)
-- **Smoked Ham** now has a Stacksize of 30 (up from 25) and cost 115 Crowns (up from 995)
+- **Smoked Ham** now has a Stacksize of 30 (up from 25) and cost 115 Crowns (up from 95)
 - **Strange Meat** now has a Stacksize of 20 (down from 25) and costs 35 Crowns (down from 50)
 - **Smoke Bomb** costs 400 Crowns (up from 275). Smoke now lasts 2 Rounds (up from 1)
 - **Tarnished Full Helm** now grants +5 Threat (similar to Direwolf Pelt). It now only appears in the Full Helm looking variants

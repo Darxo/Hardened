@@ -36,7 +36,7 @@ This submod is a collection of changes to Reforged that I suggested internally t
 	- **Cured Venison** now has a Stacksize of 30 (up from 25) and cost 115 Crowns (up from 95)
 	- **Dried Lamb** now has a Stacksize of 30 (up from 25) and cost 125 Crowns (up from 105)
 	- **Masterfully Cured Rations** now have a Stacksize of 50 (up from 25) and cost 300 Crowns (up from 150)
-	- **Smoked Ham** now has a Stacksize of 30 (up from 25) and cost 115 Crowns (up from 995)
+	- **Smoked Ham** now has a Stacksize of 30 (up from 25) and cost 115 Crowns (up from 95)
 	- **Strange Meat** now has a Stacksize of 20 (down from 25)
 	- Add sound effect for **Hold Steady** skill
 	- The **Gambler Dice Event** score is reduced by 50%
