@@ -156,7 +156,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 
 ### Active Skills
 
-- **Bearded Blade** (granted by **Axe Mastery**) is completely reworked. It now costs 4 Action Points and 20 Fatigue and it is an attack, that will disarm your opponent for 1 turn on a hit, very similar to the **Disarm Skill** from the whip
+- **Bearded Blade** (granted by **Axe Mastery**) is completely reworked. It now costs 4 Action Points and 20 Fatigue and it is an attack, that deals no damage and will disarm your opponent for 1 turn on a hit
 - **Chop** now has a 50% chance to decapitate (up from 25%)
 - **Cover Ally** (granted by **Shield Expert**) is completely reworked. It costs 4 Action Points and 20 Fatigue and can be used on adjacent allies. It grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It still lasts until the start of the users next turn or until the user gets stunned or flees
 - **Cover Ally** (granted by **Shield Expert**) is mostly reworked. It still costs 4 Action Points and 20 Fatigue and can only target adjacent allies. It now grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It still lasts until the start of your next turn or until you get stunned or move away from that target
