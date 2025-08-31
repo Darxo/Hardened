@@ -246,8 +246,6 @@ misses dont build up fatigue on you while waiting
 - Currently Swing and Hit sfx happen at the same time, which is unrealistic
 	- Make hit sfx come with a slight (e.g. 100ms) delay instead
 	- Problem: Vanilla allows a delay for hit sounds, but the receiving entity moan sounds have no adjustable delay
-- Enemies that gain shieldwall from shield sergeant while not visible to the player, wont lose the shieldwall animation, until some ui update happens on them (e.g. getting attacked)
-	- Can be reproduced by fighting nomads with a leader. No Idea, how exactly that is caused
 - footprints of barbarian kings dont seem to produce tooltip for lookout
 - keep track of non-spawning ifrits and the loot potentially lost by those an attach it to the remaining one
 - Sometimes on the World map, a single mouse wheel roll zooms the camera completely. Probably has to do with some timer running too far
@@ -276,11 +274,6 @@ misses dont build up fatigue on you while waiting
 ## Backlog
 - Reduce bleeding noise
 	- Cant fix right now, because 'refresh' only supports increased stacks by 1. Reforged suffers the same problem when inflicting 3 bleed via Gouge for example
-
-
-# WIP
-
-- Black Monolith only during night
 
 ## For modder:
 - Framework for tracking round number of a skill for an entity https://github.com/MSUTeam/MSU/issues/351
@@ -315,10 +308,6 @@ misses dont build up fatigue on you while waiting
 
 ## MV
 - Tests (logs printing) whether ai multiplier for skills are even working
-
-
-- shieldwall animation bug at the start of the combat
-	- Happens when you dont see them when they gain this effect
 
 - look into the debug log vanilla recently removed from skill container printing. Maybe i dont need to skip that anymore in hardened
 
@@ -536,7 +525,6 @@ show uncapped hitchance
 - whenever you win a fight, all brothers in reserve get a non-stacking exp buff for the next fight
 	- **Eager for Battle**
 
-- brigand poacher only 8 action points?
 - colored rumors (extended for reforged rumors)
 - sort of marketplace to also sort for buy-price
 - give adarga shields 20 rdef again. Otherwise their def is too similar and switching too melee not impactful enough
@@ -576,21 +564,14 @@ These are noticable changes by Hardened, that might catch you off-guard
 - Some weapons have their AP cost increased: All Poleflail attacks cost 6 AP (up from 5 AP)
 
 
-
-
-
 - add renown penalty when entering fight with temporary enemies (= you practically backstab someone who trusted you)
 - option for autosaving after battle
 
-- skeleton captains inspiring presence?
-
 # Artwork wanted:
-
 - T1 "Polemace": A long combat stick that doubles as a walking cane
-- Malnourished icon ()
+- Malnourished icon
 
-
-For: URUI
+For: Line of Sight fix
 - Dont show tile blocking square for tiles that are completely hidden by terrain (because of camera height)
 
 - make orc warlord never spawn with shields
@@ -653,8 +634,6 @@ For: URUI
 - weapon master requirement is not accurate, it should be moved to the bullet point where it is needed
 
 - balance between barb mace and spiked mace? latter is more expensive but overall weaker
-- Bug: crossbows are not unloaded correctly after battle
-	- need more evidence
 
 - Make contracts aligned with either positive or negative morale reputation
 	- rebuild/caravan/envoy/packet/great battle are positive aligned (they trust you with something)
@@ -665,14 +644,6 @@ For: URUI
 - icons on top of NPC world parties signaling, whether they can see you and whether they are currently "hunting" you
 - make contract payments 10% more random in both directions? (lucky random)
 	- this.m.PaymentMult = this.Math.rand(90, 110) * 0.01;
-
-- raise weight of almost all early game armors by an additional 1?
-
-- change automatic camera panning so that it doesnt move the camera for small distances, only when bigger distances are happening
-
-- praetorian need more mdef
-
-- when buying supplies, play animation for the supply values
 
 - make knock back function return a weighted container with all possible end locations and a chance
 	- this can then be used to visualize that
@@ -687,12 +658,6 @@ For: URUI
 - make it so hedgeknights dont spawn with fullhelms but rather the version below them?
 	- closed flat top helmet with face mask 280 / 19
 - remove gladiator/lone wolf party increase?
-- flail sfx delayed
-- bug: show numerals on nearby locations instantly after loading a new game
-- remove stun covering ally instantly when skill is added, which is stun
-- playerhideout move sfx double
-
-- ai: fast bandits wastefully use spinning flail and swap to ranged weapon (probably just remove that perk from them)
 
 - update resolve from banner instantly when switching to it
 - make sunken library always a night fight?
@@ -702,27 +667,111 @@ For: URUI
 	- Grant +3 Vision
 	- Can be thrown on an empty tile to illuminate the area around it in a radius of 5 tiles
 
-- swordmaster ai -> likes to wait?
-
-- make hunting grounds visible even before the ritual armor?
-
 - Event: dealer of stolen goods sells faction armor
 	- You are offered to buy some armor of a faction whose town you are in, for cheap
 	- The armor in question is Mail Hauberk (170 / 19)
 	- If you accept, you potentially lose some relation to that faction (someone saw you do the deal)
 	- Alternatively a background (peddler) can make it cheaper or thief can make it less likely top raise suspicion
-
 - Horse Fucker Event: give him a body (back) injury he sustained from the whipping
 	- Make you lose 10 Renown when accepting the guy (you go "against the law")
 
-- add special effect/highlighting for legendary locations? Some of them are hard to spot if discovered accidentally
+# Animation
+- continuous bleed animation if a certain amount of bleed stacks are accumulated on an enemy
+- smoke bomb on snow is hard to spot
+- parry fx that spawns towards north, might need to be rendered behind the parry guy (e.g. for the tile on top of him instead of his tile)
+- turn any corpse that is not reanimating and that cant be reanimated (beats or headless corpses) into a pale/grey/low saturation tone, to make it stand further apart from alive ones
+- bleed animation/effect when inflicting bleed with **Sanguinary**?
+- trigger smoke effect whenever a brother with **Ghostlike** dodges an attack during their turn
+- mortar impact animation, when shockwave or full force trigger
 
-- ghostlike fix
+# Artwork
+- different bleed icons depending on severity of bleed
 
+# Sound
+- special sfx when discovering a legendary location
+- sfx when bone breaker causes an injury
+- write a custom BB sound engine, by playing sound at the same time in right and left ear but with tiny delay to simulate depth/direction
+
+- increase movement fatigue cost in order to make moving more tactical
+- cover ally making ally immune to displacement?
+- make schrat damage sounds, whenever arrows divert into trees.
+	- or rather allow obstacles to have a hit-sfx, which is played when they get hit by a projectile
+- play multiple flail sfx, for each three headed hit
+
+# Fix
+- fix world zooming when entering/leaving main menu
+- Vanilla Bug: Chosens never get their ranged weapons added correctly
+- prevent owl use on someone who is already fleeing
 - fix some enemies being disembowable (e.g. ifrits) and therefor triggering sanguinary
+- fix camp situations, where a random tree fills the main entrance
+- when buying supplies, play animation for the supply values
+- make sure that calculated strikes works against non-combatants (phylactery/donkey/egg)
+- higher tier golems spawn with more Reach. However when they are created from merging, they dont have that reach
+- playerhideout move sfx double
+- remove stun covering ally instantly when skill is added, which is stun
+- Bug: crossbows are not unloaded correctly after battle
+	- need more evidence
 
-- double lindwurm loot, reduce price
+# Balance
+- reduce sell price of masterfully cured rations to prevent missuse as pseudo-trade-good
+- resolve or defense nerf to hold steady?
 
-- change bloodlust to deal 20% more damage, but no longer grant damage mitigation
-
+# Design
+- make orc loot consist of a lot of food (because they eat a lot)
+- make armor and weapons still sell for half value at 0 condition. This will reduce need to repair them
+- change ::Const.Combat.GlobalXPMult = 1.0 (vanilla: 0.85), as enemies now give less XP
+- make unholds immune to root effects?
+- redesign the releasable wolf to have lone wolf and like 75 hitchance
+- remove initiativeForTurnOrder from Golems. Replace with initiative effect or remove fully
+- replace the reach/def on whirling death with initiative bonus?
+- goblin bows -> 3 AP attack?
+- Goblins -> 8 AP?
+- hexen parties need to lose normal unholds. They should only have bog unholds
+- unhold heart stew -> stacksize increase
+- gladiator harness standalone version viable
 - Lunge: 1% more damage per initiative above 100; -1% Armor Penetration per Initiative below 100
+- change bloodlust to deal 20% more damage, but no longer grant damage mitigation
+- double lindwurm loot, reduce price
+- champion bandit killer: offhand trianing?
+- dont spoil the distance and direction of the location in "find location contract" before accepting
+- code into gruesome_feast_effect, so that higher tier ghouls reward more experience on death, even if they were fed this battle
+- make sure that ifrits reward varying XP reward depending on size
+- low level zombie reanimation can be cancelled by:
+	- stepping on their corpse
+	- preventing their auto-reanimation once (e.g. immune to displacement or no space to be pushed)
+	- reduce their reanimation time to a consistent value? e.g. 1 turn? that way vanquisher can be used deterministacally to kill them
+- new "frenzy" effect for frenzied hyena/wolf, which grants the vanilla damage bonus permant? akin killing frenzy procc
+- give vampires a bite attack for when they are disarmed
+- change scrap boy retinue to only generated tools from unlootable/tossed away armor?
+	- daggering down goblins/orcs would preserve their armor and generate tools from it
+	- not-looting
+- new enemy-only perk for direwolves:
+	- gain a buff when attacking an enemy who is only surrounded by 1 enemy (which is the direwolf in this case)
+	- name/flavor would be something as "the early bird catches the worm", or "alpha strike"; basically the wolf having the first bite
+- prevent animations from playing on tiles that are not visible to the player (e.g. ifrit merging)
+	- possible to translate the getPos passed into the animation back to getting a tile on the tactical map
+- new regular "Executioner" entity, that belongs to Southern/Northern houses. They only spawn with an axe (either bardiche or greataxe)
+- swordmaster ai -> likes to wait?
+- make hunting grounds visible even before the ritual armor?
+- ai: fast bandits wastefully use spinning flail and swap to ranged weapon (probably just remove that perk from them)
+
+# QOL
+- Prevent ending the turn for 1 second after gaining action points (e.g. Mauler)
+- Prevent ending the turn for 1 second after movement got aborted from discovering enemies
+	- when the movement in combat is aborted because of enemy reveal play a small animation?
+- add tooltip for donkey cart
+- in the contract money/renown/relation tech, check the existing list for an entry with same icon and number and skip if that exists
+- new enemy-only **Restless** effect for Fallen Heroes, that specifies, that they can reanimate even without a head
+- add special effect/highlighting for legendary locations? Some of them are hard to spot if discovered accidentally
+- move "this.m.MaxTraversibleLevels = 3;" into spider racial and add tooltip there
+- disable reforged FatigueDealtPerHitMult, set in zombie racial
+- add option whether a user even wants preponing of single options, as that can sometimes cause issues
+- when viewing a character in character screen, display also all items equipped to all brothers who are in reserve in the same screen
+	- First third = regular inventory
+	- Second third = equipped items of frontline
+	- Third third = equipped items of reserve
+	- those items can only be equipped, not swapped. equipped puts the currently equipped one into the inventory
+	- each group of equipped items can have the brother icon on them
+- change automatic camera panning so that it doesnt move the camera for small distances, only when bigger distances are happening
+
+- make more value in the vanilla character::setValues() function optional? e.g. armor

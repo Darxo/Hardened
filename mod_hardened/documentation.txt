@@ -23,6 +23,19 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+0.55.0
+	- **Vigorous Assault** now works with all attacks. It no longer grants any fatigue discount. It is no longer disabled when using non-attacks
+	- **Hyena Bite** now costs 10 Fatigue (up from 6)
+	- **Werewolf Bite** now costs 10 Fatigue (up from 6)
+	- **Rusty Warblade** loses **Decapitate** and gains **Split**
+	- **Assassins Head Wrap** now has 70 Condition (up from 60)
+	- **Blade Dancers Head Wrap** now has 70 Condition (up from 60)
+	- **Desert Stalkers Head Wrap** now has 50 Condition (up from 40)
+	- **Duelists Hat** now has 60 Condition (up from 50)
+	- Any location that you discover now removes fog of war from the tile it is sitting on
+	- Remove any mentions about Veteran Perks from the Level-Tooltip
+	- Fix last screen in contract negotiation sometimes containing broken text
+
 0.54.1
 	- Shorten double strike effect tooltip description
 	- Trigger an overlay icon when refreshing the effects of **Hold Steady** on allies

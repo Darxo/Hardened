@@ -299,7 +299,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Underdog** is rewritten. It now grants +5 Melee Defense for every character surrounding you, except the first one. Compared to the vanilla implementation this defense is now affected by defense multiplier and by the softcap for defense
 - **Unstoppable** is completely reworked. Once per round during your turn, if you hit an enemy with an attack, gain 1 stack up to a maximum of 3. Each stack grants +1 Action Points and 10% more Initiative. Lose 1 stack if you wait. Lose 1 stack if you end your turn with more than half of your action points remaining. Lose all stacks when you use recover, get stunned or staggered
 - **Vanquisher** is completely reworked. After you step on a corpse that has been created this round, you become Immune to **Displacement** and take 25% less Damage until the start of your next turn. **Gain Ground** (granted by **Vanquisher** perk) is now free
-- **Vigorous Assault** discount is no longer removed when switching items
+- **Vigorous Assault** is mostly reworked. It now works with all attacks. It no longer provides a fatigue discount. The discount is no longer lost when swapping weapons or using non-attack skills.
 - **Weapon Master** no longer grants weapon perks while wielding a hybrid weapons. It now grants +1 Bag Slot at all times. When you learn **Weapon Master** you now gain a new random weapon perk group
 - **Wears it well** now grants 50% of combined Mainhand and Offhand Weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest Weight)
 - **Wear them Down** is completely reworked. It now causes your hits to apply an additional 10 Fatigue on the target and your misses to apply 5 Fatigue. After your attack, if your target is fully fatigued, apply **Worn Down** effect until the end of their turn, which prevents them from using **Recover** and applies 30% less Melee Defense and 30% less Ranged Defense
@@ -416,6 +416,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Player Banner** now causes -5 to Ranged Defense and it grants **Repel**
 - **Poleflail** now has 5 Reach (down from 6) and costs 1600 Crowns (up from 1400). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
 - **Reinforced Wooden Poleflail** now has 5 Reach (down from 6). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
+- **Rusty Warblade** loses **Decapitate** and gains **Split**
 - **Spetum** now has a Reach of 7 (up from 6), a Weight of 12 (down from 14) and costs 900 Crowns (down from 1050). The named variant now costs 2800 Crowns (down from 3500)
 - **Spiked Impaler** now has +2 Fatigue Cost for its weapon skills
 - **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and costs 600 Crowns (up from 400)
@@ -505,12 +506,12 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Ancient Household Helmet** now has 100 Condition (up from 95)
 - **Ancient Legionary Helmet** now costs 400 Crowns (down from 600)
 - **Assassin's Face Mask** now has 130 Condition (down from 140), 8 Weight (up from 6) and costs 500 Crowns (up from 1800)
-- **Assassin's Head Wrap** now has 60 Condition (up from 40), 1 Weight (up from 0), -2 Vision (down from 0) and costs 900 Crowns (up from 60)
+- **Assassin's Head Wrap** now has 70 Condition (up from 40), 1 Weight (up from 0), -2 Vision (down from 0) and costs 900 Crowns (up from 60)
 - **Barbute Helmet** now has 180 Condition (down from 190) and costs 2500 Crowns (down from 2600)
 - **Bascinet with Mail** now has 230 Condition (up from 210) and 16 Weight (up from 13)
 - **Bear Headpiece** now has 60 Condition (up from 50), 7 Weight (up from 3), -1 Vision (down from 0) and costs 80 Crowns (down from 100)
 - **Beastmaster's Headpiece** now costs 500 Crowns (up from 350)
-- **Blade Dancer's Head Wrap** now has -2 Vision (down from 0) and costs 900 Crowns (up from 150)
+- **Blade Dancer's Head Wrap** now has 70 Condition (up from 60), -2 Vision (down from 0) and costs 900 Crowns (up from 150)
 - **Closed Flat Top Helmet** now has 180 Condition (up from 170), 12 Weight (up from 10) and costs 1100 Crowns (up from 1000)
 - **Closed Flat Top with Mail** now costs 300 Crowns (down from 3000)
 - **Closed Mail Coif** now has 100 Condition (down from 90), 6 Weight (up from 4), -1 Vision (down from 0) and costs 450 Crowns (up from 250)
@@ -526,8 +527,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Decayed Closed Flat Top with Mail** now has 220 Condition (down from 230), 18 Weight (down from 19) and costs 1200 Crowns (down from 1250)
 - **Decayed Great Helm** is now called **Tarnished Full Helm**, has 240 Condition (down from 255) and 23 Weight (up from 22)
 - **Decorated Full Helm** now has 300 Condition (down from 320), 23 Weight (up from 21) and costs 5000 Crowns (up from 4000)
-- **Desert Stalker's Head Wrap** now has 40 Condition (down from 45), 1 Weight (up from 0) and costs 900 Crowns (up from 120)
-- **Duelist's Hat** now has 50 Condition (down from 70), 1 Weight (down from 3), -1 Vision (down from 0) and costs 900 Crowns (up from 200)
+- **Desert Stalker's Head Wrap** now has 50 Condition (up from 45), 1 Weight (up from 0) and costs 900 Crowns (up from 120)
+- **Duelist's Hat** now has 60 Condition (down from 70), 1 Weight (down from 3), -1 Vision (down from 0) and costs 900 Crowns (up from 200)
 - **Engineer's Hat** now has 60 Condition (up from 30), 4 Weight (up from 0) and costs 500 Crowns (up from 50)
 - **Feathered Hat** now has 40 Condition (up from 30), 5 Weight (up from 0) and costs 50 Crowns (down from 80)
 - **Flat Top Helmet** now has 160 Condition (up from 125), 10 Weight (down from 7), -2 Vision (down from -1) and costs 800 Crowns (up from 500)
@@ -735,6 +736,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Donkeys** now grant 0 XP (down from 50 XP). They can now be rooted, injured, bled and poisoned. Since they are non-combatants this is mostly a cosmetic change
 - **Frost Unholds** and **Armored Frost Unholds** now have 150 natural Body and Head Armor (up from 90). They lose **Dismantle** and **Full Force**
 - Add new **Hexen** racial effect that increases the duration of debuffs by 1 turn for the Hexe
+- **Hyena Bite** costs 10 Fatigue (up from 6)
+- **Direwolf Bite** costs 10 Fatigue (up from 6)
 - All **Ifrits** gain **Man of Steel**. They can now free themselves from nets and roots. They take no Burning Damage (up from 90% less), full damage from blunt ranged attacks (down from 66% less) and 50% less damage from Piercing Damage (down from 50% less against melee and 66% less against ranged). The damage reduction on Ifrits now also affects the armor damage they receive
   - **Small Ifrits** now have 55 Hitpoints (down from 110) and 165 Armor (up from 110)
   - **Medium Ifrits** now have 110 Hitpoints (down from 220) and 220 Armor (up from 110). They lose 10 Damage and gain **Marksmanship**

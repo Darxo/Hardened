@@ -144,7 +144,6 @@
 			this.preponeFunction(screen, ::World.State.m.Contracts, "removeContract");
 			this.preponeFunction(screen, ::World.State.m.Contracts, "startScriptedCombat");
 			this.preponeFunction(screen, null, "setScreen");
-			// TODO: Maybe include "showActiveContract" too? For bandit robber contract twist
 			this.preponeFunction(screen, ::World.State.m.Contracts, "showActiveContract");
 		}
 	}
@@ -185,6 +184,7 @@
 			return ret;
 		}
 
+		// We hook the earlyGetResult to intercept the _functionName call and capture all of its arguments, so that we can use those for the actual getResult call later on
 		local oldEarlyGetResult = _screen.earlyGetResult;
 		_screen.earlyGetResult = function()
 		{

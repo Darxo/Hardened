@@ -1,6 +1,8 @@
 
 # Debugging
 
+::MSU.Log.printData(_table, 2);
+
 ## Unbrick End-of-combat Screen
 
 ::Tactical.State.m.TacticalCombatResultScreen.show();
