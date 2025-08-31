@@ -368,6 +368,20 @@
 		return ret;
 	}
 
+	q.onInit = @(__original) function()
+	{
+		__original();
+
+		// Feat: we fully fill Action Points and Hitpoints after everything has been initialized. That way we can save two lines in every NPC implementation
+		if (!::MSU.isKindOf(this, "player"))	// The player gets these stat adjustments applied in a different way
+		{
+			local b = this.getBaseProperties();
+			this.m.ActionPoints = b.ActionPoints;
+			this.m.Hitpoints = b.Hitpoints;
+			this.m.CurrentProperties = clone b;	// Feat: we initialize the CurrentProperties once. That way we can save one line in every NPC implementation
+		}
+	}
+
 // Reforged Functions
 	q.onSpawned = @(__original) function()
 	{
