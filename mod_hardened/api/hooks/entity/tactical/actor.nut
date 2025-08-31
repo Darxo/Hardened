@@ -3,6 +3,15 @@
 	q.m.GrantsXPOnDeath <- true;	// After initialisation this should ideally only ever be set in one direction (to false)
 	q.m.StaminaMin <- 10;	// This actor can never have less than this amount of Stamina
 
+	q.m.ChanceForNoChest <- 0;		// Value between 1 and 100 determining the chance for this actor to get no Body Armor assigned from ChestWeightedContainer
+	q.m.ChestWeightedContainer <- null;		// If defined, the Body Armor worn by this actor will by assigned by this weighted container
+	q.m.ChanceForNoHelmet <- 0;		// Value between 1 and 100 determining the chance for this actor to get no Helmet assigned from ChestWeightedContainer
+	q.m.HelmetWeightedContainer <- null;	// If defined, the Helmet worn by this actor will by assigned by this weighted container
+	q.m.ChanceForNoWeapon <- 0;		// Value between 1 and 100 determining the chance for this actor to get no Weapon assigned from WeaponWeightContainer
+	q.m.WeaponWeightContainer <- null;		// If defined, the Weapon worn by this actor will by assigned by this weighted container
+	q.m.ChanceForNoOffhand <- 0;		// Value between 1 and 100 determining the chance for this actor to get no Offhand assigned from OffhandWeightContainer
+	q.m.OffhandWeightContainer <- null;		// If defined, the Offhand worn by this actor will by assigned by this weighted container
+
 	// Private
 	q.m.HD_recoveredHitpointsOverflow <- 0.0;	// float between 0.0 and 1.0. Is not deserialized, meaning that we lose a tiny bit hitpoint recovery when saving/loading often
 
@@ -380,6 +389,46 @@
 			this.m.Hitpoints = b.Hitpoints;
 			this.m.CurrentProperties = clone b;	// Feat: we initialize the CurrentProperties once. That way we can save one line in every NPC implementation
 		}
+	}
+
+	// Assign all regular Equipment that this character brings into battle BEFORE any other assign equipment logic runs
+	//	That way custom-gear code can react to these basic assignments
+	q.assignRandomEquipment = @(__original) function()
+	{
+		if (this.m.ChestWeightedContainer != null && this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
+		{
+			if (::Math.rand(1, 100) > this.m.ChanceForNoChest)
+			{
+				this.getItems().equip(::new(this.m.ChestWeightedContainer.roll()));
+			}
+		}
+
+		if (this.m.HelmetWeightedContainer != null && this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
+		{
+			if (::Math.rand(1, 100) > this.m.ChanceForNoHelmet)
+			{
+				this.getItems().equip(::new(this.m.HelmetWeightedContainer.roll()));
+			}
+		}
+
+		// We assume that the offhand is always empty if the mainhand is empty
+		if (this.m.WeaponWeightContainer != null && this.getItems().hasEmptySlot(::Const.ItemSlot.Mainhand))
+		{
+			if (::Math.rand(1, 100) > this.m.ChanceForNoWeapon)
+			{
+				this.getItems().equip(::new(this.m.WeaponWeightContainer.roll()));
+			}
+		}
+
+		if (this.m.OffhandWeightContainer != null && this.getItems().hasEmptySlot(::Const.ItemSlot.Offhand))
+		{
+			if (::Math.rand(1, 100) > this.m.ChanceForNoOffhand)
+			{
+				this.getItems().equip(::new(this.m.OffhandWeightContainer.roll()));
+			}
+		}
+
+		__original();
 	}
 
 // Reforged Functions
