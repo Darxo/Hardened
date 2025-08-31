@@ -77,3 +77,13 @@
 		return ::Math.rand(this.m.MinResurrectDelay, this.m.MaxResurrectDelay);
 	}
 });
+
+::Hardened.HooksMod.hookTree("scripts/entity/tactical/human", function(q) {
+	q.onInit = @(__original) function()
+	{
+		__original();
+
+		// Feat: we automatically call setAppearance on every human after initialization. That way we can save one lines in every human implementation
+		this.setAppearance();
+	}
+})
