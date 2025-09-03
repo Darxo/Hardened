@@ -17,6 +17,9 @@
 		return ret;
 	}
 
+	// Overwrite, because we want to disable the vanilla AP effect, as we replace it with our own
+	q.onUpdate = @() function( _properties ) {}
+
 	q.onAfterUpdate = @(__original) function( _properties )
 	{
 		__original(_properties);
