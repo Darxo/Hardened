@@ -33,6 +33,20 @@
 			if (_b) this.HD_onDiscovered();
 			oldSetDiscovered(_b);
 		}
+
+		// This is one of the few function given to entities somewhere after create() but before onInit()
+		local oldSetRenderCallbackEnabled = this.setRenderCallbackEnabled;
+		this.setRenderCallbackEnabled = function( _bool )
+		{
+			// Vanilla Fix: We prevent Vanilla from disabling the RenderCallBack after raising the shield if it is still supposed to lower it afterwards
+			// This is related to the Vanilla Fix about Shieldwall Animation not being removed correctly; See onAppearendeChanged Vanilla Fix
+			if (_bool == false && this.m.IsLoweringShield)
+			{
+				return oldSetRenderCallbackEnabled(true);
+			}
+
+			oldSetRenderCallbackEnabled(_bool);
+		}
 	}
 
 	// Vanilla Fix: We prevent a dying NPC from flipping the setLastCombatResult, unless they were the last enemy to die
@@ -150,6 +164,28 @@
 		}
 
 		__original(_type, _volume, _pitch);
+	}
+
+	q.onAppearanceChanged = @(__original) function( _appearance, _setDirty = true )
+	{
+		__original(_appearance, _setDirty);
+		if (!this.m.IsAlive || this.m.IsDying) return;	// Same early return as in Vanilla
+
+		// Vanilla Fix: In Vanilla a shield can not be visually lowered, if it has not been visually raised yet (offset.Y != 0)
+		// A shield can only be visually raised/lowered, while an entity is rendering (= visible to the player)
+		// So if an NPC gets shieldwall but is not visible; and then a little later loses shieldwall, it will not get this.m.IsLoweringShield set to true;
+		// Its shield will appear raised up until any other onAppearanceChanged call happens on them
+		// We fix that bug here by also allowing this.m.IsLoweringShield to be set to true, when this.m.IsRaisingShield == true
+		if (this.hasSprite("shield_icon") && _appearance.Shield.len() != 0)
+		{
+			local offset = this.getSpriteOffset("shield_icon");
+			if (!this.m.IsLoweringShield && !_appearance.RaiseShield && (offset.Y != 0 || this.m.IsRaisingShield))	// This is the only different line to vanilla logic
+			{
+				this.m.IsLoweringShield = true;
+				this.setRenderCallbackEnabled(true);
+				this.m.RenderAnimationStartTime = this.Time.getVirtualTimeF();
+			}
+		}
 	}
 
 	q.onMovementFinish = @(__original) function( _tile )
