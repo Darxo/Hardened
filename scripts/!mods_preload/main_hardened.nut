@@ -22,6 +22,9 @@
 ]);
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
+	::Reforged.Mod.Debug.setFlag("onAnySkillExecutedFully", false);
+	::Reforged.Mod.Debug.setFlag("AIAgentFixes", false);
+
 	::Hardened.Mod <- ::MSU.Class.Mod(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
 
 	::Hardened.Mod.Registry.addModSource(::MSU.System.Registry.ModSourceDomain.GitHub, ::Hardened.GitHubURL);
