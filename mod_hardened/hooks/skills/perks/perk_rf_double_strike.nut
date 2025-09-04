@@ -1,4 +1,10 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_double_strike", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.Description = "Having just landed a hit, this character is ready to perform a powerful followup strike!";	// We just remove the second sentence added by reforged as it is redundant
+	}
+
 	// Double Strike no longer turns off if you switch weapons
 	q.onPayForItemAction = @() function( _skill, _items ) {}
 
