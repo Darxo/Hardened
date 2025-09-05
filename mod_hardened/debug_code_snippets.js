@@ -5,6 +5,8 @@
 
 ::Tactical.State.m.TacticalCombatResultScreen.show();
 
+::Tactical.State.tactical_retreat_screen_onYesPressed();
+
 ## Check, who is fighting on the world map atm
 
 foreach (combat in ::World.Combat.m.Combats)
@@ -82,4 +84,13 @@ foreach (factionID, faction in ::World.FactionManager.m.Factions)
 		// ::logWarning("Hardened: factionID " + factionID + " faction " + faction.getType());
 		::logWarning("Hardened: unit.getName() " + unit.getName() + " unit.getBaseMovementSpeed() " + unit.getBaseMovementSpeed());
 	}
+}
+
+## Check states of neighbors on battle field
+
+foreach (tile in ::MSU.Tile.getNeighbors(::getBro("Thorben").getTile()))
+{
+	if (!tile.IsOccupiedByActor) continue;
+	local neighbor = tile.getEntity();
+	::logWarning("Hardened: Neighbor: " + neighbor.getName());
 }

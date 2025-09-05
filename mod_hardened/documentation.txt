@@ -23,6 +23,15 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+0.54.1
+	- Shorten double strike effect tooltip description
+	- Trigger an overlay icon when refreshing the effects of **Hold Steady** on allies
+	- Fix **Dislocated Shoulder** still reducing available action points
+	- Fix ghostlike melee defense sometimes persisting after the character ended their turn
+	- Fix(vanilla): shieldwall animation showing up on NPCs who lost the shieldwall effect offscreen
+	- Fix Double Strike effect description still mentioning old reforged conditions
+	- Force Trigger a Skillcontainer Update whenever any actor waits or ends their turn after all other skill turn-end events have happend
+
 0.54.0
 	- **Bearded Blade** (granted by **Axe Mastery**) is completely reworked. It now costs 4 Action Points and 20 Fatigue and it is an attack, that deals no damage and will disarm your opponent for 1 turn on a hit	- **Mauler** is completely reworked. It is now a Tier 2 Perk. Once per round, during your turn, if you move next to an injured enemy, you recover 3 Action Points
 	- **Nailed It** is completely reworked. It now works with all attacks and grants 25% chance to hit the head at a distance of 2 tiles. It also makes it so your attacks at a distance of 2 tiles will never hit the cover

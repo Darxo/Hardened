@@ -1004,6 +1004,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Fix tactical map zoom sometimes zooming too far during lag
 - Fix Armor Penetration on **Reap** being 5% lower than shown on the weapon
 - Fix Quivers needing to re-use the same ID to be correctly identified as ammo
+- Fix shieldwall animation still showing up on NPCs who lost the shieldwall effect offscreen
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
 - Cartographer will no longer pay for "discovering" the Ancient Watchtower a second time when you interact with it
@@ -1112,6 +1113,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add `HD_StartsBattleLoaded = false` for `weapon.nut` which determines, whether this weapon will be reloaded for free at the start of each battle (only works if the correct ammo is equipped)
 - Add new `HD_IsSortedBeforeMainhand = false` member for `skill.nut`. If `true`, then active skills will be sorted in front of mainhand skills
 - Rewrite the `onExecute` of `build_unique_locations_action` with a moddable `DistanceToOthers` aswell as `minY` and `maxY` values.
+- Force Trigger a skill_container::update() whenever any actor waits or ends their turn after all their other skill turn-end events have happend
 
 ### New Character Properties
 
