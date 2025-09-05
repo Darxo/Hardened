@@ -45,6 +45,12 @@
 		return __original() && this.getCurrentProperties().CanExertZoneOfControl;
 	}
 
+	q.makeMiniboss = @(__original) function()
+	{
+		this.getSprite("miniboss").setBrush("bust_miniboss");	// Feat: we assign generic bust_miniboss here. That way we can save one line in every miniboss implementation
+		return __original();
+	}
+
 	q.onDamageReceived = @(__original) function( _attacker, _skill, _hitInfo )
 	{
 		if (_hitInfo.BodyPart == ::Const.BodyPart.Head)
