@@ -10,6 +10,7 @@
 	q.onRefresh = @(__original) function()
 	{
 		__original();
+		this.spawnIcon(this.m.Overlay, this.getContainer().getActor().getTile());
 		this.m.HD_LastsForRounds = 2;
 	}
 });
