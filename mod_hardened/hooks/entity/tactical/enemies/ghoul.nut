@@ -5,17 +5,4 @@
 
 		__original(_instant);
 	}
-
-// Reforged Functions
-	q.onSpawned = @(__original) function()
-	{
-		__original();
-
-		this.getSkills().removeByID("perk.rf_deep_cuts");
-
-		if (this.getSize() == 1)
-		{
-			this.getSkills().add(::new("scripts/skills/perks/perk_rf_ghostlike"));
-		}
-	}
 });

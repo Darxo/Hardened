@@ -1,11 +1,4 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/lindwurm", function(q) {
-	q.onInit = @(__original) function()
-	{
-		__original();
-
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_exude_confidence"));
-	}
-
 	q.onMovementFinish = @(__original) function( _tile )
 	{
 		__original( _tile );
@@ -33,13 +26,5 @@
 				}
 			}
 		}
-	}
-
-// Reforged Functions
-	q.onSpawned = @(__original) function()
-	{
-		__original();
-		this.getSkills().removeByID("perk.rf_formidable_approach");
-		this.getSkills().removeByID("perk.rf_survival_instinct");
 	}
 });
