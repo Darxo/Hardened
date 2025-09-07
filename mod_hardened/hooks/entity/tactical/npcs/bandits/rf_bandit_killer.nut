@@ -35,6 +35,32 @@
 		this.HD_assignOtherGear();
 	}}.assignRandomEquipment;
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+		local weapon = this.getMainhandItem();
+		if (weapon != null)
+		{
+			if (weapon.isWeaponType(::Const.Items.WeaponType.Polearm))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_long_reach"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_leverage"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Flail))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_flail"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_flail_spinner"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Dagger))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_between_the_ribs"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_dagger"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_swift_stabs"));
+			}
+		}
+	}
+
 // New Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()
