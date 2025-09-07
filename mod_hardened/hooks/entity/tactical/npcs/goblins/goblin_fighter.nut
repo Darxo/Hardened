@@ -25,6 +25,24 @@
 		this.goblin.onInit();
 	}}.onInit;
 
+	// Overwrite, because we completely replace Reforged miniboss adjustments with our own
+	q.makeMiniboss = @() { function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss()) return false;
+
+		local weapon = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/named/named_goblin_falchion"],
+			[12, "scripts/items/weapons/named/named_goblin_pike"],
+			[12, "scripts/items/weapons/named/named_goblin_spear"],
+		]).roll();
+		this.getItems().equip(::new(weapon));
+
+		this.getSkills().add(::new("scripts/skills/perks/perk_nimble"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_unstoppable"));
+
+		return true;
+	}}.makeMiniboss;
+
 	// Overwrite, because we completely replace Reforged item adjustments with our own
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{

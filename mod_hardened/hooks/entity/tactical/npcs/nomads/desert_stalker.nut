@@ -20,6 +20,28 @@
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
 
+	// Overwrite, because we completely replace Reforged miniboss adjustments with our own
+	q.makeMiniboss = @() { function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss()) return false;
+
+		local r = ::Math.rand(1, 3);
+		if (r <= 2)
+		{
+			local weapon = ::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/named/named_warbow"],
+			]).roll();
+			this.getItems().equip(::new(weapon));
+		}
+		else if (r == 3)
+		{
+			this.getItems().equip(::new("scripts/items/armor/named/black_leather_armor"));
+		}
+
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_unstoppable"));
+		return true;
+	}}.makeMiniboss;
+
 	// Overwrite, because we completely replace Reforged item adjustments with our own
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{

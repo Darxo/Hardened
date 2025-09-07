@@ -26,6 +26,24 @@
 		this.zombie.onInit();
 	}}.onInit;
 
+	// Overwrite, because we completely replace Reforged miniboss adjustments with our own
+	q.makeMiniboss = @() { function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss()) return false;
+
+		local namedMeleeWeapon = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/named/named_greataxe"],
+			[12, "scripts/items/weapons/named/named_two_handed_flail"],
+			[12, "scripts/items/weapons/named/named_two_handed_hammer"],
+			[12, "scripts/items/weapons/named/named_two_handed_mace"],
+		]).roll();
+		this.getItems().equip(::new(namedMeleeWeapon));
+
+		this.getSkills().add(::new("scripts/skills/perks/perk_battle_forged"));
+
+		return true;
+	}}.makeMiniboss;
+
 	// Overwrite, because we completely replace Reforged item adjustments with our own
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{

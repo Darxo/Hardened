@@ -20,6 +20,49 @@
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
 
+	// Overwrite, because we completely replace Reforged miniboss adjustments with our own
+	q.makeMiniboss = @() { function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss()) return false;
+
+		local r = ::Math.rand(1, 100);
+		if (r <= 50)
+		{
+			local weapon = ::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/named/named_sword"],
+			]).roll();
+			this.getItems().equip(::new(weapon));
+		}
+		else if (r <= 75)	// named armor
+		{
+			local armor = ::Reforged.ItemTable.NamedArmorNorthern.roll({
+				Apply = function ( _script, _weight )
+				{
+					local stam = ::ItemTables.ItemInfoByScript[_script].StaminaModifier;
+					if (stam < -16) return 0.0;
+					return _weight;
+				}
+			});
+			if (armor != null) this.getItems().equip(::new(armor));
+		}
+		else	// named helmet
+		{
+			local helmet = ::Reforged.ItemTable.NamedHelmetNorthern.roll({
+				Apply = function ( _script, _weight )
+				{
+					local stam = ::ItemTables.ItemInfoByScript[_script].StaminaModifier;
+					if (stam < -8) return 0.0;
+					return _weight;
+				}
+			});
+			if (helmet != null) this.getItems().equip(::new(helmet));
+		}
+
+		this.getBaseProperties().ActionPoints += 1;
+
+		return true;
+	}}.makeMiniboss;
+
 	// Overwrite, because we completely replace Reforged item adjustments with our own
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{

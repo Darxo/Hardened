@@ -439,6 +439,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.ZombieKnight.Cost = 30;
 	::Const.World.Spawn.Troops.ZombieKnight.Strength = 30;
+	::Const.World.Spawn.Troops.ZombieKnight.Variant = 0;	// Vanilla: 1
 }
 
 // scripts/entity/tactical/enemies/zombie_knight_bodyguard
@@ -675,6 +676,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.RF_SkeletonMediumElitePolearm.Cost = 45;
 	::Const.World.Spawn.Troops.RF_SkeletonMediumElitePolearm.Strength = 45;
+	::Const.World.Spawn.Troops.RF_SkeletonMediumElitePolearm.Variant = 1;
 }
 
 // scripts/entity/tactical/enemies/necromancer
@@ -752,6 +754,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.ZombieBetrayer.Cost = 50;
 	::Const.World.Spawn.Troops.ZombieBetrayer.Strength = 50;
+	::Const.World.Spawn.Troops.ZombieBetrayer.Variant = 2;	// Vanilla: 0
 }
 
 // scripts/entity/tactical/enemies/unhold_armored

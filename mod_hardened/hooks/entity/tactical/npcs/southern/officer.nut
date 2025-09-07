@@ -25,6 +25,38 @@
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
 
+	// Overwrite, because we completely replace Reforged miniboss adjustments with our own
+	q.makeMiniboss = @() { function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss()) return false;
+
+		local r = ::Math.rand(1, 4);
+		if (r == 1)
+		{
+			local namedMeleeWeapon = ::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/named/named_shamshir"],
+				[12, "scripts/items/weapons/named/named_mace"],
+			]).roll();
+			this.getItems().equip(::new(namedMeleeWeapon));
+		}
+		else if (r == 2)
+		{
+			this.getItems().equip(::new("scripts/items/" + ::MSU.Array.rand(::Const.Items.NamedSouthernShields)));
+		}
+		else if (r == 3)
+		{
+			this.getItems().equip(::new("scripts/items/" + ::MSU.Array.rand(::Const.Items.NamedSouthernArmors)));
+		}
+		else
+		{
+			this.getItems().equip(::new("scripts/items/" + ::MSU.Array.rand(::Const.Items.NamedSouthernHelmets)));
+		}
+
+		this.getSkills().add(::new("scripts/skills/perks/perk_battle_forged"));
+
+		return true;
+	}}.makeMiniboss;
+
 // Reforged Functions
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
 	q.onSpawned = @() function()
