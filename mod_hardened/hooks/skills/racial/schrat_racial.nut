@@ -21,10 +21,4 @@
 		__original(_properties);
 		_properties.DamageReceivedTotalMult = oldDamageReceivedTotalMult;
 	}
-
-	q.onAdded = @(__original) function()
-	{
-		__original();
-		this.getContainer().add(::new("scripts/skills/perks/perk_hd_one_with_the_shield"));	// The typical Schrat damage reduction now comes from this new perk
-	}
 });

@@ -32,24 +32,6 @@
 		"scripts/items/weapons/named/named_throwing_axe",
 	]);
 
-	q.create = @(__original) function()
-	{
-		this.m.Bodies = ::Const.Bodies.Skinny;	// In Reforged this is ::Const.Bodies.AllMale
-		__original();
-	}
-
-	q.onInit = @(__original) function()
-	{
-		__original();
-		local tattoo_head = this.getSprite("tattoo_head");
-		tattoo_head.setBrush("warpaint_0" + ::Math.rand(2, 3) + "_head");
-		tattoo_head.Visible = true;
-
-		this.m.HasNet = false;
-		this.m.IsRegularThrower = false;
-		this.m.IsSpearThrower = false;	// Killer never spawn with throwing spears (down from 12,5% chance in Reforged)
-	}
-
 	q.assignRandomEquipment = @(__original) function()
 	{
 		__original();

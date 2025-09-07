@@ -1,27 +1,4 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/humans/swordmaster", function(q) {
-	q.onInit = @(__original) { function onInit()
-	{
-		__original();
-
-		this.m.MyVariant = ::MSU.Array.rand([
-			this.m.SwordmasterVariants.Versatile,
-			this.m.SwordmasterVariants.BladeDancer,
-			this.m.SwordmasterVariants.Metzger,
-		]);
-		this.m.MyArmorVariant = ::Math.rand(0, 1); // 0 = Light Armor, 1 = Medium Armor
-
-		// Swordmaster is now always a pure 1-handed character, so he has Duelist at all times
-		this.getSkills().add(::new("scripts/skills/perks/perk_duelist"));
-
-		// Parry replaces Dodge as THE defensive perk
-		this.getSkills().add(::new("scripts/skills/perks/perk_hd_parry"));
-		this.getSkills().removeByID("perk.dodge");
-
-		// Calcualted Strieks replaces Executioner as THE damage perk
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_calculated_strikes"));
-		this.getSkills().removeByID("perk.coup_de_grace");
-	}}.onInit;
-
 	q.assignRandomEquipment = @(__original) function()
 	{
 		// We need to check for empty slots because we dont want to overwrite named weapons, as makeMiniboss happens first
@@ -62,12 +39,5 @@
 				::Hardened.util.replaceMainhand(this, "scripts/items/weapons/named/named_sword");
 			}
 		}
-	}
-
-	q.onSpawned = @(__original) function()
-	{
-		__original();
-
-		this.getSkills().removeByID("perk.rf_formidable_approach");		// Swordmaster no longer use 2H weapons so
 	}
 });

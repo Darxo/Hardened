@@ -1,11 +1,4 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/zombie_knight", function(q) {
-	q.onInit = @(__original) function()
-	{
-		__original();
-		this.m.ResurrectionChance = 100;	// In Vanilla this is 90
-		this.getBaseProperties().Hitpoints -= 10;
-	}
-
 	// Overwrite, because damage is now redirected/handled by hd_headless_effect
 	q.onDamageReceived = @() function( _attacker, _skill, _hitInfo )
 	{
@@ -32,12 +25,5 @@
 	{
 		__original();
 		this.getSkills().removeByID("perk.nine_lives");
-	}
-
-// Reforged Functions
-	q.onSpawned = @(__original) function()
-	{
-		__original();
-		this.getSkills().add(::new("scripts/skills/perks/perk_overwhelm"));	// Re-Add Overwhelm because it was removed from base zombie class
 	}
 });
