@@ -24,6 +24,28 @@
 		this.HD_assignArmor();
 	}}.assignRandomEquipment;
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+		::Reforged.Skills.addMasteryOfEquippedWeapon(this);
+
+		local weapon = this.getMainhandItem();
+		if (weapon != null)
+		{
+			if (weapon.isWeaponType(::Const.Items.WeaponType.Cleaver))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_mauler"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_sanguinary"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Sword))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_tempo"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_death_dealer"));
+			}
+		}
+	}
+
 // Hardened Functions
 	// Assign Stats and Unconditional Immunities, Perks and Actives
 	q.HD_onInitStatsAndSkills = @(__original) function()
