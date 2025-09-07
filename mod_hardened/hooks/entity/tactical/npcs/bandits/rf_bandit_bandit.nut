@@ -35,6 +35,24 @@
 		this.HD_assignOtherGear();
 	}}.assignRandomEquipment;
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+		local weapon = this.getMainhandItem();
+		if (weapon != null)
+		{
+			if (weapon.isWeaponType(::Const.Items.WeaponType.Spear))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_through_the_gaps"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Dagger))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_between_the_ribs"));
+			}
+		}
+	}
+
 // New Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()

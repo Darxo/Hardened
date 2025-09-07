@@ -11,6 +11,34 @@
 		this.HD_onInitStatsAndSkills();
 	}
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+		::Reforged.Skills.addMasteryOfEquippedWeapon(this);
+
+		local weapon = this.getMainhandItem();
+		if (weapon != null)
+		{
+			if (weapon.isWeaponType(::Const.Items.WeaponType.Axe))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_death_dealer"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Cleaver))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_sanguinary"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Mace))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_bone_breaker"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Hammer))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_deep_impact"));		// Breakthrough
+			}
+		}
+	}
+
 // New Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()

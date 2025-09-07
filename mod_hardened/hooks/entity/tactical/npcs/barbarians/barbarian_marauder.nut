@@ -29,6 +29,22 @@
 		this.HD_onInitStatsAndSkills();
 	}
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+		::Reforged.Skills.addMasteryOfEquippedWeapon(this);
+
+		local weapon = this.getMainhandItem();
+		if (weapon != null)
+		{
+			if (weapon.isItemType(::Const.Items.ItemType.OneHanded))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_double_strike"));	// Because the one-handed barb weapons are on the weaker side
+			}
+		}
+	}
+
 	// Overwrite, because we completely replace Reforged item adjustments with our own
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{

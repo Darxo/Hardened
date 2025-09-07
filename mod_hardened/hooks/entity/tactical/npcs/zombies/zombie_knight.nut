@@ -39,6 +39,32 @@
 		this.HD_assignOtherGear();
 	}}.assignRandomEquipment;
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+		local weapon = this.getMainhandItem();
+		if (weapon != null)
+		{
+			if (weapon.isWeaponType(::Const.Items.WeaponType.Flail))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_flail"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Hammer))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_hammer"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Mace))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_bone_breaker"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Sword))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_sword"));
+			}
+		}
+	}
+
 // Hardened Functions
 	// Assign Stats and Unconditional Immunities, Perks and Actives
 	q.HD_onInitStatsAndSkills = @(__original) function()

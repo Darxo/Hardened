@@ -17,4 +17,10 @@
 			[12, "scripts/items/shields/oriental/southern_light_shield"],
 		]);
 	}
+
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+	}
 });

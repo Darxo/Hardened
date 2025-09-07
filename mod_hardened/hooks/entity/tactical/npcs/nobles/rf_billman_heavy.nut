@@ -29,6 +29,34 @@
 		this.HD_assignOtherGear();
 	}}.assignRandomEquipment;
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+		local weapon = this.getMainhandItem();
+		if (weapon != null)
+		{
+			if (weapon.isWeaponType(::Const.Items.WeaponType.Polearm))	// We need to check for polearm first to filter Halberd out here, as that would otherwise be categorized as Hammer
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_polearm"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_long_reach"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_leverage"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Cleaver))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_cleaver"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_crippling_strikes"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_sanguinary"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Hammer))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_hammer"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_crippling_strikes"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_deep_impact"));	// Breakthrough
+			}
+		}
+	}
+
 // New Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()

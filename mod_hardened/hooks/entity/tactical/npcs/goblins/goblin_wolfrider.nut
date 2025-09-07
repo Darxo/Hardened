@@ -18,6 +18,12 @@
 		this.goblin.onInit();
 	}}.onInit;
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+	}
+
 // Hardened Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites = @(__original) function()

@@ -28,6 +28,30 @@
 		this.HD_assignArmor();
 	}}.assignRandomEquipment;
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+		::Reforged.Skills.addMasteryOfEquippedWeapon(this);
+
+		local weapon = this.getMainhandItem();
+		if (weapon != null)
+		{
+			if (weapon.isWeaponType(::Const.Items.WeaponType.Flail))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_flail_spinner"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Hammer))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_deep_impact"));	// Breakthrough
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Mace))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_concussive_strikes"));		// Shockwave
+			}
+		}
+	}
+
 // New Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()

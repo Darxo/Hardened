@@ -31,6 +31,24 @@
 		this.HD_assignArmor();
 	}}.assignRandomEquipment;
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+		local weapon = this.getMainhandItem();
+		if (weapon != null)
+		{
+			if (weapon.isWeaponType(::Const.Items.WeaponType.Axe))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_dismemberment"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Cleaver))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_mauler"));
+			}
+		}
+	}
+
 // New Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()

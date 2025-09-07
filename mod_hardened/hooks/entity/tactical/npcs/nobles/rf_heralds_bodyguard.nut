@@ -41,6 +41,12 @@
 		this.HD_assignOtherGear();
 	}}.assignRandomEquipment;
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+	}
+
 // New Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()
@@ -65,6 +71,7 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vigilant"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_pattern_recognition"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_combo"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_swordmaster_grappler"));
 	}
 
 	// Assign Head and Body armor to this character
