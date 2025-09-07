@@ -15,14 +15,6 @@
 		return ret;
 	}
 
-	// Overwrite, because we completely change the damage reductions chosen by Reforged
-	q.onAdded = @(__original) { function onAdded()
-	{
-		__original();
-
-		this.getContainer().add(::new("scripts/skills/effects/hd_life_leech_effect"));
-	}}.onAdded;
-
 	// Overwrite, because we now handle the life leech within the new hd_life_leech_effect effect
 	q.onTargetHit = @() function(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor) {}
 });
