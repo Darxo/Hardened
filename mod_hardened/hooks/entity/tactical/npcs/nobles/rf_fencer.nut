@@ -28,6 +28,24 @@
 		this.HD_assignOtherGear();
 	}}.assignRandomEquipment;
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+		local weapon = this.getMainhandItem();
+		if (weapon != null)
+		{
+			if (weapon.isItemType(::Const.Items.ItemType.OneHanded))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_duelist"));
+			}
+			else
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_formidable_approach"));
+			}
+		}
+	}
+
 // New Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()

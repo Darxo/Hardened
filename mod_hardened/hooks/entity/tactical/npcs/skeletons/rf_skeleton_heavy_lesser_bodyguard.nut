@@ -21,6 +21,12 @@
 		this.skeleton.onInit();
 	}}.onInit;
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+	}
+
 // Hardened Functions
 	// Assign Stats and Unconditional Immunities, Perks and Actives
 	q.HD_onInitStatsAndSkills = @(__original) function()

@@ -35,6 +35,12 @@
 		this.HD_assignOtherGear();
 	}}.assignRandomEquipment;
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+	}
+
 // New Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()
@@ -101,7 +107,6 @@
 	// Assign all other gear to this character
 	q.HD_assignOtherGear <- function()
 	{
-		// Assign Perks depending on mainhand weapon
 		local offhand = this.getOffhandItem();
 		if (offhand != null)
 		{

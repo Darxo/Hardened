@@ -36,6 +36,12 @@
 		this.HD_assignOtherGear();
 	}}.assignRandomEquipment;
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+	}
+
 // New Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()
@@ -62,17 +68,6 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_bully"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_quick_hands"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
-	}
-
-	// Assign all other gear to this character
-	q.HD_assignOtherGear <- function()
-	{
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Offhand))
-		{
-			local throwingWeapon = ::new("scripts/items/weapons/greenskins/orc_javelin");
-			throwingWeapon.m.Ammo = 1;
-			this.getItems().addToBag(throwingWeapon);
-		}
 	}
 
 	// Assign Head and Body armor to this character
@@ -103,6 +98,17 @@
 				}
 			})
 			if (helmet != null) this.m.Items.equip(::new(helmet));
+		}
+	}
+
+	// Assign all other gear to this character
+	q.HD_assignOtherGear <- function()
+	{
+		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Offhand))
+		{
+			local throwingWeapon = ::new("scripts/items/weapons/greenskins/orc_javelin");
+			throwingWeapon.m.Ammo = 1;
+			this.getItems().addToBag(throwingWeapon);
 		}
 	}
 });

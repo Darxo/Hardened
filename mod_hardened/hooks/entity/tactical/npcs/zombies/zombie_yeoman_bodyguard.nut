@@ -10,4 +10,10 @@
 			[12, "scripts/items/shields/wooden_shield_old"],
 		]);
 	}
+
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+	}
 });
