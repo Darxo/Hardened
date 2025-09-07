@@ -11,6 +11,13 @@
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
 
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+		this.HD_assignOtherGear();
+	}}.assignRandomEquipment;
+
 // New Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()
@@ -140,5 +147,58 @@
 
 		// Generic Actives
 		this.getSkills().add(::new("scripts/skills/actives/zombie_bite"));
+	}
+
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+		local armor = ::new(::MSU.Class.WeightedContainer([
+			[1, "scripts/items/armor/leather_tunic"],
+			[2, "scripts/items/armor/linen_tunic"],
+			[1, "scripts/items/armor/sackcloth"],
+			[1, "scripts/items/armor/tattered_sackcloth"],
+			[1, "scripts/items/armor/leather_wraps"],
+			[1, "scripts/items/armor/apron"],
+			[1, "scripts/items/armor/butcher_apron"],
+			[1, "scripts/items/armor/monk_robe"],
+		]).roll());
+		if (this.Math.rand(1, 100) <= 50)
+		{
+			armor.setArmor(this.Math.round(armor.getArmorMax() / 2 - 1) / 1.0);
+		}
+		this.m.Items.equip(armor);
+
+		if (this.Math.rand(1, 100) <= 33)
+		{
+			local helmet = ::new(::MSU.Class.WeightedContainer([
+				[1, "scripts/items/helmets/hood"],
+				[1, "scripts/items/helmets/aketon_cap"],
+				[1, "scripts/items/helmets/full_aketon_cap"],
+				[1, "scripts/items/helmets/open_leather_cap"],
+				[1, "scripts/items/helmets/full_leather_cap"],
+			]).roll());
+			if (this.Math.rand(1, 100) <= 50)
+			{
+				helmet.setArmor(this.Math.round(helmet.getArmorMax() / 2 - 1) / 1.0);
+			}
+			this.m.Items.equip(helmet);
+		}
+	}
+
+	// Assign all other gear to this character
+	q.HD_assignOtherGear <- function()
+	{
+		// We have to assign the weapon here, instead of using WeaponWeightContainer, because the alternative would force default zombie weapons on anything inheriting from zombie.nut
+		// Anything inheriting this would otherwise need to reming themselves to set the chance for no-weapon to 0. And modded enemies dont know about this
+		if (::Math.rand(1, 2) == 1)
+		{
+			this.m.Items.equip(::new(::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/pickaxe"],
+				[12, "scripts/items/weapons/pitchfork"],
+				[12, "scripts/items/weapons/militia_spear"],
+				[12, "scripts/items/weapons/butchers_cleaver"],
+				[12, "scripts/items/weapons/hatchet"],
+			]).roll()));
+		}
 	}
 });

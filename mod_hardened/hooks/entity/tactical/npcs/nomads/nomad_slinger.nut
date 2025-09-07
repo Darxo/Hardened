@@ -2,6 +2,15 @@
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
 ::Hardened.HooksMod.hook("scripts/entity/tactical/humans/nomad_slinger", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/oriental/nomad_sling"],
+		]);
+	}
+
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
 	q.onInit = @() { function onInit()
 	{
@@ -10,6 +19,13 @@
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+		this.HD_assignOtherGear();
+	}}.assignRandomEquipment;
 
 // New Functions
 	// Assign Socket and adjust Sprites
@@ -42,5 +58,31 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_dodge"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_tricksters_purses"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_fast_adaption"));
+	}
+
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+		// This is currently mostly a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
+		local armor = [
+			"armor/oriental/nomad_robe",
+			"armor/oriental/thick_nomad_robe",
+			"armor/oriental/cloth_sash",
+		];
+		this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+		local helmet = [
+			"helmets/oriental/nomad_head_wrap",
+		];
+		this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+	}
+
+	// Assign all other gear to this character
+	q.HD_assignOtherGear <- function()
+	{
+		local sidearm = ::new(::MSU.Class.WeightedContainer([
+			[1, "scripts/items/weapons/knife"],
+			[1, "scripts/items/weapons/wooden_stick"],
+		]).roll());
+		this.getItems().addToBag(sidearm);
 	}
 });

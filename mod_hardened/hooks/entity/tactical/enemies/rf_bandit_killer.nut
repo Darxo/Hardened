@@ -32,31 +32,6 @@
 		"scripts/items/weapons/named/named_throwing_axe",
 	]);
 
-	q.assignRandomEquipment = @(__original) function()
-	{
-		__original();
-
-		if (!this.m.IsMiniboss)
-		{
-			if (::Math.rand(1, 2) == 1)
-			{
-				::Hardened.util.replaceMainhand(this, this.m.AvailableOneHandedWeapons.roll());
-				if (this.getItems().hasEmptySlot(::Const.ItemSlot.Offhand))
-				{
-					this.getItems().equip(::new("scripts/items/tools/throwing_net"));	// A one-handed killer now always has a net
-				}
-			}
-			else
-			{
-				::Hardened.util.replaceMainhand(this, this.m.AvailableTwoHandedWeapons.roll());
-				if (this.getItems().hasEmptySlot(::Const.ItemSlot.Bag))
-				{
-					this.getItems().addToBag(::new(this.m.AvailableThrowingWeapons.roll()));	// A two-handed killer now always has throwing weapons
-				}
-			}
-		}
-	}
-
 	q.makeMiniboss = @(__original) function()
 	{
 		__original();
