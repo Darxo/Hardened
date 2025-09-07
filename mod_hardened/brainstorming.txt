@@ -726,3 +726,39 @@ For: URUI
 - change bloodlust to deal 20% more damage, but no longer grant damage mitigation
 
 - Lunge: 1% more damage per initiative above 100; -1% Armor Penetration per Initiative below 100
+
+- make more value in the vanilla character::setValues() function optional? e.g. armor
+
+- change ::Const.Combat.GlobalXPMult = 1.0 (vanilla: 0.85), as enemies now give less XP
+
+
+- code into gruesome_feast_effect, so that higher tier ghouls reward more experience on death, even if they were fed this battle
+- make sure that ifrits reward varying XP reward depending on size
+
+- low level zombie reanimation can be cancelled by:
+	- stepping on their corpse
+	- preventing their auto-reanimation once (e.g. immune to displacement or no space to be pushed)
+	- reduce their reanimation time to a consistent value? e.g. 1 turn? that way vanquisher can be used deterministacally to kill them
+
+
+- higher tier golems spawn with more Reach. However when they are created from merging, they dont have that reach
+
+- move "this.m.MaxTraversibleLevels = 3;" into spider racial and add tooltip there
+
+
+- new "frenzy" effect for frenzied hyena/wolf, which grants the vanilla damage bonus permant? akin killing frenzy procc
+
+
+- disable reforged FatigueDealtPerHitMult, set in zombie racial
+
+- maybe write a custom BB sound engine, by playing sound at the same time in right and left ear but with tiny delay to simulate depth/direction
+
+
+
+
+- Vanilla Bug: Chosens never get their ranged weapons added correctly
+
+
+- Vanilla Bug: 		Exeuctioner champ never spawns with a named helmet
+		local armor = this.Const.Items.NamedSouthernArmors;
+		local helmets = this.Const.Items.NamedSouthernHelmets;

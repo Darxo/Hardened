@@ -85,13 +85,13 @@
 		local weapon = this.getMainhandItem();
 		if (weapon != null)
 		{
-			if (_weapon.isWeaponType(::Const.Items.WeaponType.Axe))
+			if (weapon.isWeaponType(::Const.Items.WeaponType.Axe))
 			{
-
+				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_axe"));
 			}
-			else if (_weapon.isWeaponType(::Const.Items.WeaponType.Bow))
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Bow))
 			{
-
+				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_bow"));
 			}
 		}
 	}
