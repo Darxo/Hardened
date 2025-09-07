@@ -22,6 +22,50 @@
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
 
+	// Overwrite, because we completely replace Reforged miniboss adjustments with our own
+	q.makeMiniboss = @() { function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss()) return false;
+
+		local r = ::Math.rand(1, 3);
+		if (r == 1)
+		{
+			local weapon = ::MSU.Class.WeightedContainer([
+				[1, "scripts/items/weapons/named/named_two_handed_flail"],
+				[1, "scripts/items/weapons/named/named_two_handed_mace"],
+				[1, "scripts/items/weapons/named/named_two_handed_hammer"],
+			]).roll();
+			this.m.Items.equip(::new(weapon));
+		}
+		else if (r == 2)
+		{
+			local armor = ::Reforged.ItemTable.NamedArmorNorthern.roll({
+				Apply = function ( _script, _weight )
+				{
+					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
+					if (conditionMax < 280) return 0.0;
+					return _weight;
+				}
+			})
+			if (armor != null) this.m.Items.equip(::new(armor));
+		}
+		else
+		{
+			local helmet = ::Reforged.ItemTable.NamedHelmetNorthern.roll({
+				Apply = function ( _script, _weight )
+				{
+					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
+					if (conditionMax < 280) return 0.0;
+					return _weight;
+				}
+			})
+			if (helmet != null) this.m.Items.equip(::new(helmet));
+		}
+
+		this.m.Skills.add(::new("scripts/skills/perks/perk_rf_man_of_steel"));
+		return true;
+	}}.makeMiniboss;
+
 	// Overwrite, because we completely replace Reforged item adjustments with our own
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{

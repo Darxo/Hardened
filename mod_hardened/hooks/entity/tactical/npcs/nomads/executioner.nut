@@ -22,6 +22,35 @@
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
 
+	// Overwrite, because we completely replace Reforged miniboss adjustments with our own
+	q.makeMiniboss = @() { function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss()) return false;
+
+		local r = ::Math.rand(1, 3);
+		if (r == 1)
+		{
+			local weapon = ::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/named/named_two_handed_flail"],
+				[12, "scripts/items/weapons/named/named_two_handed_mace"],
+				[12, "scripts/items/weapons/named/named_two_handed_hammer"],
+			]).roll();
+			this.m.Items.equip(::new(weapon));
+		}
+		else if (r == 2)
+		{
+			this.m.Items.equip(::new("scripts/items/" + ::MSU.Array.rand(::Const.Items.NamedSouthernArmors)));
+		}
+		else if (r == 3)
+		{
+			this.m.Items.equip(::new("scripts/items/" + ::MSU.Array.rand(::Const.Items.NamedSouthernHelmets)));
+		}
+
+		this.m.Skills.add(::new("scripts/skills/perks/perk_rf_vanquisher"));
+
+		return true;
+	}}.makeMiniboss;
+
 	// Overwrite, because we completely replace Reforged item adjustments with our own
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{
