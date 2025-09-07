@@ -2,6 +2,16 @@
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
 ::Hardened.HooksMod.hook("scripts/entity/tactical/humans/engineer", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/knife"],
+			[12, "scripts/items/weapons/wooden_stick"],
+		]);
+	}
+
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
 	q.onInit = @() { function onInit()
 	{
@@ -10,6 +20,12 @@
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+	}}.assignRandomEquipment;
 
 // New Functions
 	// Assign Socket and adjust Sprites
@@ -32,5 +48,12 @@
 
 		// Generic Actives
 		this.getSkills().add(::new("scripts/skills/actives/load_mortar_skill"));
+	}
+
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+		this.m.Items.equip(this.new("scripts/items/armor/oriental/padded_vest"));
+		this.m.Items.equip(this.new("scripts/items/helmets/oriental/engineer_hat"));
 	}
 });
