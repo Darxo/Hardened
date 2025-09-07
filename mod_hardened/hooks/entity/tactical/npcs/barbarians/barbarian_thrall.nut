@@ -2,6 +2,17 @@
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
 ::Hardened.HooksMod.hook("scripts/entity/tactical/humans/barbarian_thrall", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/barbarians/antler_cleaver"],
+			[12, "scripts/items/weapons/barbarians/claw_club"],
+			[12, "scripts/items/weapons/militia_spear"],
+		]);
+	}
+
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
 	q.onInit = @() function()
 	{
@@ -10,6 +21,13 @@
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
 	}
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+		this.HD_assignOtherGear();
+	}}.assignRandomEquipment;
 
 // New Functions
 	// Assign Socket and adjust Sprites
@@ -47,5 +65,47 @@
 
 		// Generic Actives
 		this.getSkills().add(::new("scripts/skills/actives/barbarian_fury_skill"));
+	}
+
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+		// This is currently a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
+		if (this.Math.rand(1, 100) <= 60)
+		{
+			local r = this.Math.rand(1, 2);
+
+			if (r == 1)
+			{
+				this.getItems().equip(::new("scripts/items/armor/barbarians/thick_furs_armor"));
+			}
+			else if (r == 2)
+			{
+				this.getItems().equip(::new("scripts/items/armor/barbarians/animal_hide_armor"));
+			}
+		}
+
+		local r = this.Math.rand(1, 4);
+		if (r == 1)
+		{
+			this.getItems().equip(::new("scripts/items/helmets/barbarians/leather_headband"));
+		}
+		else if (r == 2)
+		{
+			this.getItems().equip(::new("scripts/items/helmets/barbarians/bear_headpiece"));
+		}
+	}
+
+	// Assign all other gear to this character
+	q.HD_assignOtherGear <- function()
+	{
+		if (::Math.rand(1, 100) <= 40)
+		{
+			local throwingWeapon = ::new(::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/greenskins/orc_javelin"],
+			]).roll());
+			throwingWeapon.m.Ammo = 3;
+			this.getItems().addToBag(throwingWeapon);
+		}
 	}
 });

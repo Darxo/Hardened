@@ -7,25 +7,18 @@
 		this.m.Bodies = ::Const.Bodies.Skinny;	// Reforged ::Const.Bodies.AllMale
 		__original();
 
-		this.m.ChanceForNoChest = 50;
-		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/armor/tattered_sackcloth"],
-			[12, "scripts/items/armor/leather_tunic"],
-		]);
-		this.m.ChanceForNoHelmet = 50;
-		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/armor/basic_mail_shirt"],
-			[12, "scripts/items/armor/mail_shirt"],
-		]);
-		this.m.ChanceForNoWeapon = 50;
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/bludgeon"],
 			[12, "scripts/items/weapons/hatchet"],
 			[12, "scripts/items/weapons/militia_spear"],
+			[12, "scripts/items/weapons/pickaxe"],
+			[12, "scripts/items/weapons/knife"],
 		]);
-		this.m.ChanceForOffhand = 50;
+
+		this.m.ChanceForNoOffhand = 67;
 		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/shields/wooden_shield"],
-			[12, "scripts/items/shields/kite_shield"],
+			[12, "scripts/items/shields/buckler_shield"],
+			[12, "scripts/items/shields/wooden_shield_old"],
 		]);
 	}
 
@@ -38,11 +31,10 @@
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
 
-	// Overwrite, because we completely replace Reforged/Vanilla gear assignments with our own
+	// Overwrite, because we completely replace Reforged item adjustments with our own
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{
-		// this.HD_assignArmor();
-		// this.HD_assignOtherGear();
+		this.HD_assignArmor();
 	}}.assignRandomEquipment;
 
 // New Functions
@@ -94,7 +86,8 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		if (this.m.Items.hasEmptySlot(::Const.ItemSlot.Body))
+		// This is currently a 1:1 copy of Reforged code, as there is no easier way to apply our changes via hooking
+		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
 		{
 			local armor = ::Reforged.ItemTable.BanditArmorBalanced.roll({
 				Apply = function ( _script, _weight )
@@ -107,10 +100,10 @@
 					[1, "scripts/items/armor/monk_robe"]
 				]
 			})
-			this.m.Items.equip(::new(armor));
+			this.getItems().equip(::new(armor));
 		}
 
-		if (this.m.Items.hasEmptySlot(::Const.ItemSlot.Head) && ::Math.rand(1, 100) > 50)
+		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head) && ::Math.rand(1, 100) > 50)
 		{
 			local helmet = ::Reforged.ItemTable.BanditHelmetBalanced.roll({
 				Apply = function ( _script, _weight )
@@ -120,45 +113,7 @@
 					return _weight;
 				}
 			})
-			if (helmet != null) this.m.Items.equip(::new(helmet));
-		}
-	}
-
-	// Assign Head and Body armor to this character
-	q.HD_assignOtherGear <- function()
-	{
-		if (this.m.Items.hasEmptySlot(::Const.ItemSlot.Mainhand))
-		{
-			local weapon = ::MSU.Class.WeightedContainer([
-				[1, "scripts/items/weapons/bludgeon"],
-				[1, "scripts/items/weapons/butchers_cleaver"],
-				[1, "scripts/items/weapons/dagger"],
-				[1, "scripts/items/weapons/hatchet"],
-				[1, "scripts/items/weapons/militia_spear"],
-				[1, "scripts/items/weapons/pickaxe"],
-				[1, "scripts/items/weapons/reinforced_wooden_flail"],
-				[1, "scripts/items/weapons/shortsword"],
-				[1, "scripts/items/weapons/wooden_flail"],
-				[1, "scripts/items/weapons/wooden_stick"],
-
-				[1, "scripts/items/weapons/pitchfork"],
-				[1, "scripts/items/weapons/woodcutters_axe"]
-			]).roll();
-
-			this.m.Items.equip(::new(weapon));
-		}
-
-		if (this.m.Items.hasEmptySlot(::Const.ItemSlot.Offhand))
-		{
-			local shield = ::MSU.Class.WeightedContainer([
-				[1, "scripts/items/shields/buckler_shield"],
-				[1, "scripts/items/shields/wooden_shield"]
-			]).rollChance(33);
-
-			if (shield != null) this.m.Items.equip(::new(shield));
+			if (helmet != null) this.getItems().equip(::new(helmet));
 		}
 	}
 });
-
-
-

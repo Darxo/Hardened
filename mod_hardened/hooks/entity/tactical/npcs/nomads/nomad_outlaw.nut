@@ -2,6 +2,26 @@
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
 ::Hardened.HooksMod.hook("scripts/entity/tactical/humans/nomad_outlaw", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[4, "scripts/items/weapons/battle_whip"],	// Todo: find a better enemy for this type of weapon
+			[12, "scripts/items/weapons/scimitar"],
+			[12, "scripts/items/weapons/three_headed_flail"],
+			[12, "scripts/items/weapons/two_handed_wooden_hammer"],
+			[12, "scripts/items/weapons/oriental/polemace"],
+			[12, "scripts/items/weapons/oriental/two_handed_saif"],
+		]);
+
+		this.m.ChanceForNoOffhand = 33;
+		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/shields/oriental/southern_light_shield"],
+			[12, "scripts/items/shields/oriental/metal_round_shield"],
+		]);
+	}
+
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
 	q.onInit = @() { function onInit()
 	{
@@ -10,6 +30,13 @@
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+		this.HD_assignOtherGear();
+	}}.assignRandomEquipment;
 
 // New Functions
 	// Assign Socket and adjust Sprites
@@ -47,5 +74,37 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_hybridization"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_hybridization"));
+	}
+
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+		// This is currently mostly a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
+		local armor = [
+			"scripts/items/armor/oriental/stitched_nomad_armor",
+			"scripts/items/armor/oriental/plated_nomad_mail",
+			"scripts/items/armor/oriental/leather_nomad_robe",
+		];
+		this.getItems().equip(::new(armor[this.Math.rand(0, armor.len() - 1)]));
+		local helmet = [
+			"scripts/items/helmets/oriental/nomad_leather_cap",
+			"scripts/items/helmets/oriental/nomad_light_helmet",
+			"scripts/items/helmets/oriental/nomad_reinforced_helmet",
+			"scripts/items/helmets/oriental/leather_head_wrap",
+		];
+		this.getItems().equip(::new(helmet[this.Math.rand(0, helmet.len() - 1)]));
+	}
+
+	// Assign all other gear to this character
+	q.HD_assignOtherGear <- function()
+	{
+		if (::Math.rand(1, 100) <= 40)
+		{
+			local sidearm = ::new(::MSU.Class.WeightedContainer([
+				[1, "scripts/items/weapons/javelin"],
+			]).roll());
+			sidearm.m.Ammo = 1;
+			this.getItems().addToBag(sidearm);
+		}
 	}
 });

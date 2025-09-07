@@ -2,6 +2,16 @@
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
 ::Hardened.HooksMod.hook("scripts/entity/tactical/humans/rf_fencer", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/fencing_sword"],
+			[12, "scripts/items/weapons/rf_estoc"],
+		]);
+	}
+
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
 	q.onInit = @() { function onInit()
 	{
@@ -10,6 +20,13 @@
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+		this.HD_assignOtherGear();
+	}}.assignRandomEquipment;
 
 // New Functions
 	// Assign Socket and adjust Sprites
@@ -34,5 +51,55 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_the_rush_of_battle"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_fencer"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_tempo"));
+	}
+
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+		// This is currently mostly a 1:1 copy of Reforged code, as there is no easier way to apply our changes via hooking
+		if (this.m.IsMiniboss)
+		{
+			if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
+			{
+				this.getItems().equip(::new("scripts/items/armor/noble_mail_armor"));
+			}
+
+			if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
+			{
+				this.getItems().equip(::new("scripts/items/helmets/greatsword_hat"));
+			}
+		}
+		else
+		{
+			if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
+			{
+				this.getItems().equip(::new(::MSU.Class.WeightedContainer([
+					[1, "scripts/items/armor/basic_mail_shirt"],
+					[1, "scripts/items/armor/mail_shirt"],
+					[1, "scripts/items/armor/leather_scale_armor"],
+				]).roll()));
+			}
+
+			if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head) && ::Math.rand(1, 100) > 20)
+			{
+				this.getItems().equip(::new(::MSU.Class.WeightedContainer([
+					[1, "scripts/items/helmets/headscarf"],
+					[1, "scripts/items/helmets/aketon_cap"],
+					[1, "scripts/items/helmets/full_aketon_cap"],
+					[1, "scripts/items/helmets/greatsword_hat"],
+				]).roll()));
+			}
+		}
+	}
+
+	// Assign all other gear to this character
+	q.HD_assignOtherGear <- function()
+	{
+		local banner = ::Tactical.State.isScenarioMode() ? this.getFaction() : ::World.FactionManager.getFaction(this.getFaction()).getBanner();
+		this.m.Surcoat = banner;
+		if (::Math.rand(1, 100) <= this.m.SurcoatChance)
+		{
+			this.getSprite("surcoat").setBrush("surcoat_" + (banner < 10 ? "0" + banner : banner));
+		}
 	}
 });

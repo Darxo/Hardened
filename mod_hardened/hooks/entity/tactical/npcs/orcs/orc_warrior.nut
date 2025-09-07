@@ -2,6 +2,20 @@
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/orc_warrior", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/greenskins/orc_axe"],
+			[12, "scripts/items/weapons/greenskins/orc_cleaver"],
+		]);
+
+		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/shields/greenskins/orc_heavy_shield"],
+		]);
+	}
+
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
 	q.onInit = @() { function onInit()
 	{
@@ -10,6 +24,12 @@
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+	}}.assignRandomEquipment;
 
 // New Functions
 	// Assign Socket and adjust Sprites
@@ -65,5 +85,31 @@
 		this.getSkills().add(::new("scripts/skills/actives/hand_to_hand_orc"));
 		this.getSkills().add(::new("scripts/skills/actives/wake_ally_skill"));
 		this.getSkills().add(::new("scripts/skills/actives/line_breaker"));
+	}
+
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+		// This is currently a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
+		if (this.getItems().getItemAtSlot(::Const.ItemSlot.Body) == null)
+		{
+			local armor = [
+				"armor/greenskins/orc_warrior_light_armor",
+				"armor/greenskins/orc_warrior_medium_armor",
+				"armor/greenskins/orc_warrior_heavy_armor",
+				"armor/greenskins/orc_warrior_heavy_armor"
+			];
+			this.getItems().equip(::new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+		}
+
+		if (this.getItems().getItemAtSlot(::Const.ItemSlot.Head) == null)
+		{
+			local helmet = [
+				"helmets/greenskins/orc_warrior_light_helmet",
+				"helmets/greenskins/orc_warrior_medium_helmet",
+				"helmets/greenskins/orc_warrior_heavy_helmet"
+			];
+			this.getItems().equip(::new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+		}
 	}
 });

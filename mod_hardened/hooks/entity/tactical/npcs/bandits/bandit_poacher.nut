@@ -2,6 +2,17 @@
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/bandit_poacher", function(q) {
+	q.create = @(__original) function()
+	{
+		this.m.Bodies = ::Const.Bodies.Skinny;	// Reforged ::Const.Bodies.AllMale
+		__original();
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/wonky_bow"],
+			[12, "scripts/items/weapons/staff_sling"],
+		]);
+	}
+
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
 	q.onInit = @() function()
 	{
@@ -10,6 +21,14 @@
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
 	}
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+		this.HD_assignOtherGear();
+	}}.assignRandomEquipment;
+
 
 // New Functions
 	// Assign Socket and adjust Sprites
@@ -46,5 +65,52 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_bully"));
+	}
+
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+		// This is currently a 1:1 copy of Reforged code, as there is no easier way to apply our changes via hooking
+		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
+		{
+			local armor = ::Reforged.ItemTable.BanditArmorRanged.roll({
+				Apply = function ( _script, _weight )
+				{
+					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
+					if (conditionMax > 35) return 0.0;
+					return _weight;
+				}
+			})
+			if (armor != null) this.getItems().equip(::new(armor));
+		}
+
+		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head) && ::Math.rand(1, 100) > 50)
+		{
+			local helmet = ::Reforged.ItemTable.BanditHelmetRanged.roll({
+				Apply = function ( _script, _weight )
+				{
+					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
+					if (conditionMax > 20) return 0.0;
+					return _weight;
+				}
+			})
+			if (helmet != null) this.getItems().equip(::new(helmet));
+		}
+	}
+
+	// Assign all other gear to this character
+	q.HD_assignOtherGear <- function()
+	{
+		local weapon = this.getMainhandItem();
+		if (weapon != null && weapon.isWeaponType(::Const.Items.WeaponType.Bow))
+		{
+			this.getItems().equip(::new("scripts/items/ammo/quiver_of_arrows"));
+		}
+
+		local sidearm = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/wooden_flail"],
+			[12, "scripts/items/weapons/wooden_stick"],
+		]).roll();
+		this.getItems().addToBag(::new(sidearm));
 	}
 });

@@ -6,6 +6,17 @@
 	{
 		this.m.Bodies = ::Const.Bodies.Muscular;	// Reforged: ::Const.Bodies.AllMale
 		__original();
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/greataxe"],
+			[12, "scripts/items/weapons/bardiche"],
+			[12, "scripts/items/weapons/winged_mace"],
+			[12, "scripts/items/weapons/warhammer"],
+		]);
+
+		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/shields/heater_shield"],
+		]);
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
@@ -16,6 +27,12 @@
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
 	}
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+	}}.assignRandomEquipment;
 
 // New Functions
 	// Assign Socket and adjust Sprites
@@ -50,5 +67,36 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_captain"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
+	}
+
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+		// This is currently a 1:1 copy of Reforged code, as there is no easier way to apply our changes via hooking
+		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
+		{
+			local armor = ::Reforged.ItemTable.BanditArmorLeader.roll({
+				Apply = function ( _script, _weight )
+				{
+					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
+					if (conditionMax < 210 || conditionMax > 240) return 0.0;
+					return _weight;
+				}
+			})
+			if (armor != null) this.getItems().equip(::new(armor))
+		}
+
+		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
+		{
+			local helmet = ::Reforged.ItemTable.BanditHelmetLeader.roll({
+				Apply = function ( _script, _weight )
+				{
+					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
+					if (conditionMax < 180 || conditionMax > 230) return 0.0;
+					return _weight;
+				}
+			})
+			if (helmet != null) this.getItems().equip(::new(helmet));
+		}
 	}
 });

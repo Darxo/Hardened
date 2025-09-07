@@ -6,6 +6,17 @@
 	{
 		this.m.Bodies = ::Const.Bodies.Skinny;	// Reforged: ::Const.Bodies.AllMale
 		__original();
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/pike"],
+			[12, "scripts/items/weapons/spetum"],
+			[24, "scripts/items/weapons/dagger"],
+		]);
+
+		// If the offhand is empty (spawned with dagger), we also equip a net
+		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/tools/reinforced_throwing_net"],
+		]);
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
@@ -16,6 +27,13 @@
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
 	}
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+		this.HD_assignOtherGear();
+	}}.assignRandomEquipment;
 
 // New Functions
 	// Assign Socket and adjust Sprites
@@ -57,5 +75,46 @@
 		{
 			this.m.IsSpearThrower = ::Math.rand(1, 4) == 4; // 25% chance. only rolled if not regular thrower.
 		}
+	}
+
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+		// This is currently a 1:1 copy of Reforged code, as there is no easier way to apply our changes via hooking
+		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
+		{
+			local armor = ::Reforged.ItemTable.BanditArmorFast.roll({
+				Apply = function ( _script, _weight )
+				{
+					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
+					if (conditionMax <= 70 || conditionMax > 100) return 0.0;
+					return _weight;
+				}
+			})
+
+			if (armor != null) this.getItems().equip(::new(armor));
+		}
+
+		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
+		{
+			local helmet = ::Reforged.ItemTable.BanditHelmetFast.roll({
+				Apply = function ( _script, _weight )
+				{
+					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
+					if (conditionMax < 40 || conditionMax > 90) return 0.0;
+					if (conditionMax > 70) return _weight * 0.5;
+					return _weight;
+				}
+			})
+			this.getItems().equip(::new(helmet));
+		}
+	}
+
+	// Assign all other gear to this character
+	q.HD_assignOtherGear <- function()
+	{
+		local throwingWeapon = ::new("scripts/items/weapons/throwing_axe");
+		throwingWeapon.m.Ammo = 2;
+		this.getItems().addToBag(throwingWeapon);
 	}
 });

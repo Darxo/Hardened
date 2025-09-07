@@ -2,6 +2,15 @@
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
 ::Hardened.HooksMod.hook("scripts/entity/tactical/humans/noble_arbalester", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/crossbow"],
+		]);
+	}
+
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
 	q.onInit = @() { function onInit()
 	{
@@ -10,6 +19,13 @@
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+		this.HD_assignOtherGear();
+	}}.assignRandomEquipment;
 
 // New Functions
 	// Assign Socket and adjust Sprites
@@ -30,5 +46,51 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_mastery_crossbow"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_through_the_ranks"));
+	}
+
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+		// This is currently mostly a 1:1 copy of Reforged code, as there is no easier way to apply our changes via hooking
+		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
+		{
+			local armor = ::MSU.Class.WeightedContainer([
+				[1, "scripts/items/armor/gambeson"],
+				[1, "scripts/items/armor/padded_leather"],
+				[1, "scripts/items/armor/leather_lamellar"],
+			]).roll();
+
+			this.getItems().equip(::new(armor));
+		}
+
+		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
+		{
+			local script = ::MSU.Class.WeightedContainer([
+				[1, "scripts/items/helmets/aketon_cap"],
+				[1, "scripts/items/helmets/full_aketon_cap"],
+				[1, "scripts/items/helmets/mail_coif"],
+			]).roll();
+
+			if (script != "")
+			{
+				local helmet = ::new(script);
+				helmet.setPlainVariant();
+				this.getItems().equip(helmet);
+			}
+		}
+	}
+
+	// Assign all other gear to this character
+	q.HD_assignOtherGear <- function()
+	{
+		local banner = ::Tactical.State.isScenarioMode() ? this.getFaction() : ::World.FactionManager.getFaction(this.getFaction()).getBanner();
+		this.m.Surcoat = banner;
+		if (::Math.rand(1, 100) <= this.m.SurcoatChance)
+		{
+			this.getSprite("surcoat").setBrush("surcoat_" + (banner < 10 ? "0" + banner : banner));
+		}
+
+		this.getItems().equip(::new("scripts/items/ammo/quiver_of_bolts"));
+		this.getItems().addToBag(::new("scripts/items/weapons/knife"));
 	}
 });

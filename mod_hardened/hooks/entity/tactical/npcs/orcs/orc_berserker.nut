@@ -2,6 +2,16 @@
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/orc_berserker", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/greenskins/orc_flail_2h"],
+			[12, "scripts/items/weapons/greenskins/orc_axe_2h"],
+		]);
+	}
+
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
 	q.onInit = @() { function onInit()
 	{
@@ -10,6 +20,12 @@
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+	}}.assignRandomEquipment;
 
 // New Functions
 	// Assign Socket and adjust Sprites
@@ -83,5 +99,26 @@
 		this.getSkills().add(::new("scripts/skills/actives/hand_to_hand_orc"));
 		this.getSkills().add(::new("scripts/skills/actives/wake_ally_skill"));
 		this.getSkills().add(::new("scripts/skills/actives/charge"));
+	}
+
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+		// This is currently mostly a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
+		local r = this.Math.rand(1, 5);
+		if (r == 1)
+		{
+			this.getItems().equip(::new("scripts/items/armor/greenskins/orc_berserker_light_armor"));
+		}
+		else if (r == 2)
+		{
+			this.getItems().equip(::new("scripts/items/armor/greenskins/orc_berserker_medium_armor"));
+		}
+
+		r = this.Math.rand(1, 3);
+		if (r == 1)
+		{
+			this.getItems().equip(::new("scripts/items/helmets/greenskins/orc_berserker_helmet"));
+		}
 	}
 });

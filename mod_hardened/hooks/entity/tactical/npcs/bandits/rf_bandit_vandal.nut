@@ -6,6 +6,18 @@
 	{
 		this.m.Bodies = ::Const.Bodies.Skinny;	// Reforged ::Const.Bodies.AllMale
 		__original();
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/reinforced_wooden_flail"],
+			[12, "scripts/items/weapons/shortsword"],
+			[12, "scripts/items/weapons/scramasax"],
+		]);
+
+		this.m.ChanceForNoOffhand = 25;
+		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/shields/wooden_shield_old"],
+			[12, "scripts/items/shields/wooden_shield"],
+		]);
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
@@ -16,6 +28,13 @@
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
 	}
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+		this.HD_assignOtherGear();
+	}}.assignRandomEquipment;
 
 // New Functions
 	// Assign Socket and adjust Sprites
@@ -41,7 +60,49 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_bully"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_brperk_quick_handsawny"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_quick_hands"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
+	}
+
+	// Assign all other gear to this character
+	q.HD_assignOtherGear <- function()
+	{
+		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Offhand))
+		{
+			local throwingWeapon = ::new("scripts/items/weapons/greenskins/orc_javelin");
+			throwingWeapon.m.Ammo = 1;
+			this.getItems().addToBag(throwingWeapon);
+		}
+	}
+
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+		// This is currently a 1:1 copy of Reforged code, as there is no easier way to apply our changes via hooking
+		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
+		{
+			local armor = ::Reforged.ItemTable.BanditArmorBalanced.roll({
+				Apply = function ( _script, _weight )
+				{
+					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
+					if (conditionMax < 65 || conditionMax > 95) return 0.0;
+					return _weight;
+				}
+			})
+			if (armor != null) this.getItems().equip(::new(armor));
+		}
+
+		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head) && ::Math.rand(1, 100) >= 20)
+		{
+			local helmet = ::Reforged.ItemTable.BanditHelmetBalanced.roll({
+				Apply = function ( _script, _weight )
+				{
+					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
+					if (conditionMax < 40 || conditionMax > 90) return 0.0;
+					return _weight;
+				}
+			})
+			if (helmet != null) this.getItems().equip(::new(helmet));
+		}
 	}
 });
