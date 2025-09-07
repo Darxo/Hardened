@@ -26,6 +26,43 @@
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
 
+	// Overwrite, because we completely replace Reforged miniboss adjustments with our own
+	q.makeMiniboss = @() { function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss()) return false;
+
+		local r = ::Math.rand(1, 4);
+		if (r == 1)
+		{
+			local namedMeleeWeapon = ::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/named/named_spear"],
+				[12, "scripts/items/weapons/named/named_mace"],
+				[12, "scripts/items/weapons/named/named_two_handed_scimitar"],
+			]).roll();
+			this.getItems().equip(::new(namedMeleeWeapon));
+		}
+		else if (r == 2)
+		{
+			this.m.Items.equip(::new("scripts/items/" + ::MSU.Array.rand(::Const.Items.NamedSouthernShields)));
+			this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/fighting_spear"],
+				[12, "scripts/items/weapons/oriental/heavy_southern_mace"],
+			]);
+		}
+		else if (r == 3)
+		{
+			this.m.Items.equip(::new("scripts/items/" + ::MSU.Array.rand(::Const.Items.NamedSouthernArmors)));
+		}
+		else
+		{
+			this.m.Items.equip(::new("scripts/items/" + ::MSU.Array.rand(::Const.Items.NamedSouthernHelmets)));
+		}
+
+		this.m.Skills.add(::new("scripts/skills/perks/perk_battle_forged"));
+
+		return true;
+	}}.makeMiniboss;
+
 	// Overwrite, because we completely replace Reforged item adjustments with our own
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{

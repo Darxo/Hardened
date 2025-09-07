@@ -27,6 +27,54 @@
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
 
+	// Overwrite, because we completely replace Reforged miniboss adjustments with our own
+	q.makeMiniboss = @() { function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss()) return false;
+
+		local r = ::Math.rand(1, 4);
+		if (r == 1)
+		{
+			local weapon = ::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/named/named_sword"],
+				[12, "scripts/items/weapons/named/named_mace"],
+				[12, "scripts/items/weapons/named/named_warhammer"],
+			]).roll();
+			this.m.Items.equip(::new(weapon));
+		}
+		else if (r == 2)
+		{
+			this.m.Items.equip(::new("scripts/items/" + ::Const.Items.NamedShields[::Math.rand(0, ::Const.Items.NamedShields.len() - 1)]));
+		}
+		else if (r == 3)
+		{
+			local armor = ::Reforged.ItemTable.NamedArmorNorthern.roll({
+				Apply = function ( _script, _weight )
+				{
+					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
+					if (conditionMax < 260) return 0.0;
+					return _weight;
+				}
+			})
+			if (armor != null) this.m.Items.equip(::new(armor));
+		}
+		else
+		{
+			local helmet = ::Reforged.ItemTable.NamedHelmetNorthern.roll({
+				Apply = function ( _script, _weight )
+				{
+					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
+					if (conditionMax < 265) return 0.0;
+					return _weight;
+				}
+			})
+			if (helmet != null) this.m.Items.equip(::new(helmet));
+		}
+
+		this.m.Skills.add(::new("scripts/skills/perks/perk_rf_rebuke"));
+		return true;
+	}}.makeMiniboss;
+
 	// Overwrite, because we completely replace Reforged item adjustments with our own
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{

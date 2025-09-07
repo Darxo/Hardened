@@ -21,6 +21,29 @@
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
 
+	// Overwrite, because we completely replace Reforged miniboss adjustments with our own
+	q.makeMiniboss = @() { function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss()) return false;
+
+		local r = ::Math.rand(1, 3);
+		if (r <= 2)
+		{
+			local weapon = ::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/named/named_shamshir"],
+				[12, "scripts/items/weapons/named/named_swordlance"],
+			]).roll();
+			this.m.Items.equip(::new(weapon));
+		}
+		else if (r == 3)
+		{
+			this.m.Items.equip(::new("scripts/items/armor/named/black_leather_armor"));
+		}
+
+		this.getSkills().add(::new("scripts/skills/perks/perk_coup_de_grace"));
+		return true;
+	}}.makeMiniboss;
+
 	// Overwrite, because we completely replace Reforged item adjustments with our own
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{

@@ -19,6 +19,21 @@
 		this.skeleton.onInit();
 	}}.onInit;
 
+	// Overwrite, because we completely replace Reforged miniboss adjustments with our own
+	q.makeMiniboss = @() { function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss()) return false;
+
+		local weapon = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/named/named_warscythe"],
+			[12, "scripts/items/weapons/named/named_bladed_pike"],
+		]).roll();
+		this.m.Items.equip(::new(weapon));
+
+		this.m.Skills.add(::new("scripts/skills/perks/perk_rf_unstoppable"));
+		return true;
+	}}.makeMiniboss;
+
 // Reforged Functions
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
 	q.onSpawned = @() function()

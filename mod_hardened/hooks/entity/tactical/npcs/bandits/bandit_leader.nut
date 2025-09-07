@@ -28,6 +28,66 @@
 		this.HD_onInitStatsAndSkills();
 	}
 
+	// Overwrite, because we completely replace Reforged miniboss adjustments with our own
+	q.makeMiniboss = @() { function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss()) return false;
+
+		local r = ::Math.rand(1, 4);
+		if (r == 1)
+		{
+			local namedMeleeWeapon = ::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/named/named_greataxe"],
+				[12, "scripts/items/weapons/named/named_bardiche"],
+				[12, "scripts/items/weapons/named/named_mace"],
+				[12, "scripts/items/weapons/named/named_warhammer"],
+			]).roll();
+			this.getItems().equip(::new(namedMeleeWeapon));
+		}
+		else if (r == 2)
+		{
+			local namedShield = ::MSU.Class.WeightedContainer([
+				[12, "scripts/items/shields/named/named_bandit_heater_shield"],
+				[12, "scripts/items/shields/named/named_full_metal_heater_shield"],
+				[12, "scripts/items/shields/named/named_rider_on_horse_shield"],
+				[12, "scripts/items/shields/named/named_wing_shield"],
+			]).roll();
+			this.getItems().equip(::new(namedShield));
+
+			this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/winged_mace"],
+				[12, "scripts/items/weapons/warhammer"],
+			]);
+		}
+		else if (r == 3)
+		{
+			local armor = ::Reforged.ItemTable.NamedArmorNorthern.roll({
+				Apply = function ( _script, _weight )
+				{
+					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
+					if (conditionMax < 210 || conditionMax > 260) return 0.0;
+					return _weight;
+				}
+			})
+			if (armor != null) this.m.Items.equip(::new(armor));
+		}
+		else
+		{
+			local helmet = ::Reforged.ItemTable.NamedHelmetNorthern.roll({
+				Apply = function ( _script, _weight )
+				{
+					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
+					if (conditionMax < 210 || conditionMax > 265) return 0.0;
+					return _weight;
+				}
+			})
+			if (helmet != null) this.m.Items.equip(::new(helmet));
+		}
+
+		this.m.Skills.add(::new("scripts/skills/perks/perk_battle_forged"));
+		return true;
+	}}.makeMiniboss;
+
 	// Overwrite, because we completely replace Reforged item adjustments with our own
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{
