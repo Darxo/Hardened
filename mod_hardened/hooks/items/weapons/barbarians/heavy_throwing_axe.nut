@@ -27,13 +27,4 @@
 		});
 		this.addSkill(throwAxeSkill);
 	}
-
-	q.onCombatStarted = @(__original) function()
-	{
-		__original();
-		if (!this.getContainer().getActor().isPlayerControlled())
-		{
-			this.m.Ammo = 4;	// Otherwise NPCs are stuck too long with throwing
-		}
-	}
 });
