@@ -33,6 +33,36 @@
 		this.HD_assignOtherGear();
 	}}.assignRandomEquipment;
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+		local weapon = this.getMainhandItem();
+		if (weapon != null)
+		{
+			if (weapon.isWeaponType(::Const.Items.WeaponType.Axe))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_dismemberment"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_death_dealer"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Flail))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_flail"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_flail_spinner"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Hammer))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_hammer"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_rattle"));			// Full Force
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Mace))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_bone_breaker"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_concussive_strikes"));		// Shockwave
+			}
+		}
+	}
+
 // Hardened Functions
 	// Assign Stats and Unconditional Immunities, Perks and Actives
 	q.HD_onInitStatsAndSkills = @(__original) function()
