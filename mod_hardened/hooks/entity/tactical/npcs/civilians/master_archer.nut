@@ -28,6 +28,26 @@
 		this.HD_assignOtherGear();
 	}}.assignRandomEquipment;
 
+// Reforged Functions
+	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
+	q.onSpawned = @() function()
+	{
+		::Reforged.Skills.addMasteryOfEquippedWeapon(this);
+
+		local weapon = this.getMainhandItem();
+		if (weapon != null)
+		{
+			if (weapon.isWeaponType(::Const.Items.WeaponType.Bow))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_trick_shooter"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Crossbow))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_iron_sights"));
+			}
+		}
+	}
+
 // New Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()
