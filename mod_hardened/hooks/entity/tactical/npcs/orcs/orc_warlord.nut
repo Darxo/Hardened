@@ -2,6 +2,15 @@
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/orc_warlord", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/greenskins/orc_axe_2h"],
+		]);
+	}
+
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
 	q.onInit = @() { function onInit()
 	{
@@ -10,6 +19,12 @@
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+	}}.assignRandomEquipment;
 
 // New Functions
 	// Assign Socket and adjust Sprites
@@ -77,5 +92,20 @@
 		this.getSkills().add(::new("scripts/skills/actives/hand_to_hand_orc"));
 		this.m.Skills.add(this.new("scripts/skills/actives/line_breaker"));
 		this.m.Skills.add(this.new("scripts/skills/actives/warcry"));
+	}
+
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+		// This is currently a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
+		{
+			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_warlord_armor"));
+		}
+
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
+		{
+			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/orc_warlord_helmet"));
+		}
 	}
 });
