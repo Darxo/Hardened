@@ -6,6 +6,17 @@
 	{
 		this.m.Bodies = ::Const.Bodies.Skinny;	// Reforged: ::Const.Bodies.AllMale
 		__original();
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/hooked_blade"],
+			[12, "scripts/items/weapons/warfork"],
+			[24, "scripts/items/weapons/dagger"],
+		]);
+
+		// If the offhand is empty (spawned with dagger), we also equip a net
+		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/tools/throwing_net"],
+		]);
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
@@ -16,6 +27,13 @@
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
 	}
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+		this.HD_assignOtherGear();
+	}}.assignRandomEquipment;
 
 // New Functions
 	// Assign Socket and adjust Sprites
@@ -47,8 +65,49 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_bully"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_dodge"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_backstabber"));
+	}
 
-		this.m.HasNet = ::Math.rand(1, 5) == 5; // 20% chance
-		this.m.IsThrower = ::Math.rand(1, 2) == 2; // 50% chance
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+		// This is currently a 1:1 copy of Reforged code, as there is no easier way to apply our changes via hooking
+		if (this.m.Items.hasEmptySlot(::Const.ItemSlot.Body))
+		{
+			local armor = ::Reforged.ItemTable.BanditArmorFast.roll({
+				Apply = function ( _script, _weight )
+				{
+					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
+					if (conditionMax > 70) return 0.0;
+					return _weight;
+				}
+			})
+			if (armor != null) this.m.Items.equip(::new(armor));
+		}
+
+		if (this.m.Items.hasEmptySlot(::Const.ItemSlot.Head))
+		{
+			local helmet = ::Reforged.ItemTable.BanditHelmetFast.roll({
+				Apply = function ( _script, _weight )
+				{
+					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
+					if (conditionMax > 50) return 0.0;
+					return _weight;
+				}
+			})
+			if (helmet != null) this.m.Items.equip(::new(helmet));
+		}
+	}
+
+	// Assign all other gear to this character
+	q.HD_assignOtherGear <- function()
+	{
+		// Assign Perks depending on mainhand weapon
+		local offhand = this.getOffhandItem();
+		if (offhand != null)
+		{
+			local throwingWeapon = ::new("scripts/items/weapons/greenskins/orc_javelin");
+			throwingWeapon.m.Ammo = 2;
+			this.getItems().addToBag(throwingWeapon);
+		}
 	}
 });
