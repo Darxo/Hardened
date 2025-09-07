@@ -65,4 +65,9 @@
 	q.paintInCompanyColors <- function( _bannerID )		// virtual
 	{
 	}
+
+	// Change the variant of this shield into one based on the passed faction id
+	q.setFaction <- function( _bannerID )		// virtual
+	{
+	}
 });
