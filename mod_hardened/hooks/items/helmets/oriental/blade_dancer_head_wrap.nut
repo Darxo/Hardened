@@ -3,7 +3,7 @@
 	{
 		__original();
 		this.m.Value = 900;				// Vanilla: 150
-		this.m.ConditionMax = 60; 		// Vanilla: 60
+		this.m.ConditionMax = 70; 		// Vanilla: 60
 		this.m.StaminaModifier = -1; 	// Vanilla: -1
 		this.m.Vision = -2;				// Vanilla: 0
 	}
