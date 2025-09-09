@@ -120,6 +120,22 @@
 				return ret;
 			}
 
+			case "character-screen.left-panel-header-module.Level":
+			{
+				return [
+					{
+						id = 1,
+						type = "title",
+						text = "Level",
+					},
+					{
+						id = 2,
+						type = "description",
+						text = ::Reforged.Mod.Tooltips.parseString("The character\'s level measures [experience|Concept.Experience] in battle. Characters rise in levels as they gain experience and are able to increase their [attributes|Concept.CharacterAttribute] and gain [perks|Concept.Perk] that make them better at the mercenary profession.\n\nBeyond the " + ::Const.XP.MaxLevelWithPerkpoints + "th character level, characters are veterans will no longer gain perk points. They can still improve their attributes but the attribute gain per level is small."),
+					},
+				];
+			}
+
 			case "world-relations-screen.Relations":
 			{
 				// This is a recreation of the vanilla algorithm for deciding how much relation influences price
