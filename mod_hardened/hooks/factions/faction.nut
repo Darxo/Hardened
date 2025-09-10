@@ -188,7 +188,7 @@
 			activeObject.addListItem({
 				id = 30,
 				icon = "ui/icons/relations.png",
-				text = format("You %s %s Relation with %s", _change > 0 ? "gain" : "lose", ::MSU.Text.colorizeValue(_change), this.getName()),
+				text = format("You %s %s Relation with %s", _change > 0 ? "gain" : "lose", ::MSU.Text.colorizeValue(_change, {HD_UseEventColors = true}), this.getName()),
 			});
 		}
 	}

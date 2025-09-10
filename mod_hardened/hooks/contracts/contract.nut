@@ -27,7 +27,7 @@
 			_screen.List.push({
 				id = 20,
 				icon = "ui/icons/asset_money.png",
-				text = "You negotiated " + ::MSU.Text.colorizeValue(difference, {AddSign = true}) + " Crowns in Advance",
+				text = "You negotiated " + ::MSU.Text.colorizeValue(difference, {AddSign = true, HD_UseEventColors = true}) + " Crowns in Advance",
 			});
 		}
 
@@ -37,7 +37,7 @@
 			_screen.List.push({
 				id = 21,
 				icon = "ui/icons/asset_money.png",
-				text = "You negotiated " + ::MSU.Text.colorizeValue(difference, {AddSign = true}) + " Crowns for Completion",
+				text = "You negotiated " + ::MSU.Text.colorizeValue(difference, {AddSign = true, HD_UseEventColors = true}) + " Crowns for Completion",
 			});
 		}
 
@@ -47,7 +47,7 @@
 			_screen.List.push({
 				id = 22,
 				icon = "ui/icons/asset_money.png",
-				text = "You negotiated " + ::MSU.Text.colorizeValue(difference, {AddSign = true}) + " Crowns per Head",
+				text = "You negotiated " + ::MSU.Text.colorizeValue(difference, {AddSign = true, HD_UseEventColors = true}) + " Crowns per Head",
 			});
 		}
 	}

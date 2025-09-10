@@ -21,7 +21,7 @@
 			activeObject.addListItem({
 				id = 30,
 				icon = "ui/icons/ambition_tooltip.png",
-				text = format("You %s %s Renown", _f > 0 ? "gain" : "lose", ::MSU.Text.colorizeValue(_f)),
+				text = format("You %s %s Renown", _f > 0 ? "gain" : "lose", ::MSU.Text.colorizeValue(_f, {HD_UseEventColors = true})),
 			});
 		}
 	}
