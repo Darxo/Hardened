@@ -165,13 +165,18 @@
 
 			if (preponedArguments != null)
 			{
-				preponedArguments.insert(0, this);
+				// We need to use acall, because every function may have different amount of arguments
+				// Because we use acall, we need to insert the execution context of the call, but that will always be equal to the table the function is in
 				if (_table == null)
 				{
+					preponedArguments.insert(0, this.Contract);
 					this.Contract[_functionName].acall(preponedArguments);
 				}
 				else
 				{
+					preponedArguments.insert(0, _table);
+					::logWarning("Hardened: Options[0].getResult _functionName " + _functionName);
+					::MSU.Log.printData(_table, 2);
 					_table[_functionName].acall(preponedArguments);
 				}
 			}
