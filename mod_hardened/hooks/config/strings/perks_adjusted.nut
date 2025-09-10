@@ -1529,12 +1529,11 @@ local adjustedDescriptions = [
 		Key = "RF_VigorousAssault",
 		Description = ::UPD.getDescription({
 			Fluff = "You\'ve learned to use the very momentum of your movement as a weapon unto itself!",
-			Requirement = "Melee or Throwing Attack",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"For every 2 tiles moved during your [turn,|Concept.Turn] your next Attack costs " + ::MSU.Text.colorPositive(-1) + " [Action Point|Concept.ActionPoints] (to a minimum of " + ::MSU.Text.colorPositive(1) + ") and " + ::MSU.Text.colorPositive("10%") + " less [Fatigue|Concept.Fatigue]",
-					"The effect is lost when you use any skill, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
+					"For every 2 tiles moved during your [turn,|Concept.Turn] your next Attack costs " + ::MSU.Text.colorPositive(-1) + " [Action Point|Concept.ActionPoints]",
+					"The effect is lost when you use an attack, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
 				],
 			}],
 		}),
