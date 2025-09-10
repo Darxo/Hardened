@@ -178,6 +178,19 @@
 ///			You must declared the variable for the mockObject in the line before you initiative it with the mockFunction return value, if you want to use mockObject.original in the mockFunction function argument
 ::Hardened.mockFunction <- function( _table, _functionName, _mockedBehavior )
 {
+	if (_table == null)
+	{
+		::logError("Hardened: mockFunction cannot mock '" + _functionName + "' because the passed _table is null");
+		::MSU.Log.printStackTrace();
+		throw ::MSU.Exception.InvalidType(_table);
+	}
+	else if (::MSU.isNull(_table))
+	{
+		::logError("Hardened: mockFunction cannot mock '" + _functionName + "' because the passed _table is a weakRef which is no longer valid");
+		::MSU.Log.printStackTrace();
+		throw ::MSU.Exception.InvalidType(_table);
+	}
+
 	local oldFunction = ::MSU.getMember(_table, _functionName);	// Store the original function
 
 	// Find the actual table where the function is defined (if inheritance is at play)
