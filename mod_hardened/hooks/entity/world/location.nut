@@ -82,6 +82,17 @@
 		}
 	}
 
+	q.onDiscovered = @(__original) function()
+	{
+		__original();
+
+		if (::World.State.getPlayer().isAbleToSee(this))
+		{
+			// Feat: discovering any location now fully uncovers fog of war from its tile to make discovered locations halfway in fog of war more noticable
+			::World.uncoverFogOfWar(this.getTile().Pos, 100.0);
+		}
+	}
+
 	q.onSpawned = @(__original) function()
 	{
 		// We interecept the (hopefully) only rand roll using 20 and 100 as its arguments, and make it instead become a roll from 1 to 100
