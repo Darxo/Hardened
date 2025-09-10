@@ -139,12 +139,13 @@
 
 			local self = this;
 			// These are vanilla functions which all screw with our preponing action, so we need to mock them during that
-			this.preponeFunction(screen, ::World.Contracts, "finishActiveContract");
-			this.preponeFunction(screen, ::World.Contracts, "removeContract");
-			this.preponeFunction(screen, ::World.Contracts, "startScriptedCombat");
+			// We need to pass a strongref to the Contracts object as the weakref sometimes become null during the mockFunction calls. No idea why that is happening though
+			this.preponeFunction(screen, ::World.State.m.Contracts, "finishActiveContract");
+			this.preponeFunction(screen, ::World.State.m.Contracts, "removeContract");
+			this.preponeFunction(screen, ::World.State.m.Contracts, "startScriptedCombat");
 			this.preponeFunction(screen, null, "setScreen");
 			// TODO: Maybe include "showActiveContract" too? For bandit robber contract twist
-			this.preponeFunction(screen, ::World.Contracts, "showActiveContract");
+			this.preponeFunction(screen, ::World.State.m.Contracts, "showActiveContract");
 		}
 	}
 
