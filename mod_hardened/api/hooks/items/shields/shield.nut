@@ -71,3 +71,11 @@
 	{
 	}
 });
+
+::Hardened.HooksMod.hookTree("scripts/items/shields/shield", function(q) {
+	q.setFaction = @(__original) function( _bannerID )
+	{
+		__original(_bannerID);
+		this.updateAppearance();	// We update the appearance of this item automatically, so that setFaction can also be called on items already equipped to someone
+	}
+});
