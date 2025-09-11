@@ -175,7 +175,6 @@
 				else
 				{
 					preponedArguments.insert(0, _table);
-					::logWarning("Hardened: Options[0].getResult _functionName " + _functionName);
 					::MSU.Log.printData(_table, 2);
 					_table[_functionName].acall(preponedArguments);
 				}

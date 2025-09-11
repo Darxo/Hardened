@@ -12,6 +12,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - ~90 Perks are tweaked or reworked
 - ~50 Weapons and Shields are tweaked
 - ~50 Body Armors are reworked
+- ~150 (almost all) enemies are reworked
 - A few hundred other adjustments to enemies, ai, perk trees, skills and general mechanics
 - A plethora of Quality of Life improvements; several of them are optional
 - Dozens of minor Vanilla Fixes, including the removal of several cheese strategies
@@ -666,6 +667,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ### Generic Changes
 
+- Completely rework the costs, stats, perks and weapons of most NPCs
 - Introduce a new **Headless** effect. It redirects any attack to hit the body, reduces all other damage targeting the head to 0 (e.g. secondary attack from Split Man), grants immunity to **Distracted** and **Sleep** and sets the headarmor to 0
 	- This effect is given to **Ifrits**, **Spider Eggs**, **Headless Zombies**, **Saplings**, **Lindwurm Tails** and **Kraken Tentacles**
 	- **Ifrit**, **Saplings** and **Kraken Tentacle** lose the now redundant **Steelbrow** perk
@@ -675,70 +677,29 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ### Specific Changes
 
-**Brigands:**
-- **Scoundrels** no longer spawn with **Wooden Shields**. Instead they can now spawn with **Old Wooden Shields**. They now spawn with a **Knife** instead of **Dagger**/**Woodcutters Axe**. They now have 40 Ranged Skill (down from 45)
-- **Vandals** no longer spawn with **Kite Shields**. Instead they can now spawn with **Old Wooden Shields**
-- **Raider** lose **Shield Expert**. They no longer spawn with **Kite Shields**. Instead they can now spawn with **Worn Kite/Heater Shields**
-- **Highwaymen** can now also spawn with **Worn Kite/Heater Shields**
-- **Thug** now spawn with **Tree Limb** instead of **Goedendag**. They now have 40 Ranged Skill (down from 45) and 110 Stamina (up from 100)
-- **Pillager** can now also spawn with **Cudgel**. **Pillager** no longer spawn with **Woodcutters Axe**, **Two Handed Mace** or **Two Handed Hammer**
-- **Outlaws** now have **Vigorous Assault** and always have **Formidable Approach**. They no longer spawn with **Battle Axe**, **Two Handed Wooden Flail** or **Greatsword**
-- **Marauder** no longer spawn with **Two Handed Wooden Flail** and are twice as likely to spawn with a **Greatsword**
-- Fast Brigands (**Robber, Bandit, Killer**) now always spawn with a net if they are one-handed, and with a throwing weapon if two-handed. They also have cosmetic face warpaint
-  - **Robber** no longer spawn with a **Pike** or **Reinforced Wooden Poleflail**. They now have 60 Ranged Skill (up from 55)
-  - **Bandits** no longer spawn with a **Poleflail**, **Warbrand** or **Throwing Spear**. The can now spawn with a **Reinforced Wooden Poleflail**. They now have 70 Ranged Skill (up from 60)
-  - **Killer** no longer spawn with **Scramasax**, **Pike**, **Spetum**, **Warbrand** or **Throwing Spear**. They now have 80 Ranged Skill (up from 70). They can now appear as Champions
-- **Brigand Poachers** now have 45 Melee Skill (down from 50)
-- **Brigand Leader** lose **Shield Expert**
-- **Hedge Knights** are now immune to **Disarm** as a result of them having **Savage Strength**
-- **Master Archer** now have 110 Initiative (down from 140)
-- **Wardogs** now have 50 Melee Skill (down from 55), 20 Melee Defense (down from 25), 25 Ranged Defense (down from 30) and 5 Vision (down from 7)
+- Work in Progress
 
-**Humans:**
-- **Assassins** gain **Elusive** and **Scout** and they lose **Footwork** and **Double Strike**. They will now drink a non-droppable nightowl elixir during night fights
-- Peasant Parties now drop 0 Crowns (down from 0-50). Peasants killed in battle now randomly drop Crowns, food or tools or a valueable ring
-- **Fencer** who spawn with an **Estoc** now have **Formidable Approach** instead of **Duelist**
-- **Footmen** lose **Shield Expert** and **Exploit Opening**
-- **Heavy Footmen** lose **Exploit Opening**
-- **Mercenaries** now use Shields that are colored in their respective Banner colors. They now have a 30% chance to spawn with a Bandage in their bag
-- **Swordmaster** now only appear in the variation **Versatile**, **Blade Dancer** or **Metzger**. They will now always spawn with a one-handed sword and never with a shield. Swordmasters gain **Parry** and **Calculated Strikes** and always spawn with **Duelist**. They lose **Dodge**, **Executioner** and **Formidable Approach**. They now have 40 Melee Defense (down from 60) and 40 Ranged Defense (up from 20)
+- **Mercenaries** now use Shields that are colored in their respective Banner colors.
 
 **Undead**
-- All **Wiederganger** types gain +5 Melee Skill and take 50% more burning damage to hitpoints. They grant 20% more experience but no longer grant experience after being ressurected. They lose 10 Hitpoints and **Double Grip**. They now have a 100% resurrection chance (up from 66%) and resurrect in 1-3 turns (up from 1-2)
-- Normal **Wiederganger** lose **Overwhelm**
+- All **Wiederganger** types take 50% more burning damage to hitpoints. They no longer grant experience after being ressurected. They lose **Double Grip**. They now have a 100% resurrection chance (up from 66%) and resurrect in 1-3 turns (up from 1-2)
+- **Fallen Heroes** are now called **Fallen Soldiers** and can no longer resurrect, if decapitated
+- **Fallen Betrayers** are now called **Fallen Heroes** and can spawn in regular world parties
 - All **Skeletons** no longer grant experience after being ressurected
-- **Fallen Heroes** no longer spawn with Morning Stars or Handaxes. They now have a 100% resurrection chance (up from 90%) but -10 Hitpoints. Champion variants lose **Nine Lives**
 - **Flesh Golems** lose **Full Force**, gain **Savage Strength** and take 50% more burning damage to hitpoints
-- **Geists** lose **Fearsome**. They now have **Backstabber**
-- **Necromancer** lose 20 natural body armor and **Inspiring Presence**. **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)
+- **Necromancer** lose 20 natural body armor. **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)
 - **Necrosavants** now require the target to have red blood in order to leech life from them, instead of being able to leech life from anyone
-- **Ancient Auxiliary** lose **Battleforged**
 - **The Conqueror** now has **Savage Strength**. This has no gameplay impact and is only meant to visualize that he is immune to **Disarm**
 
 **Greenskins:**
-- All **Goblins** have -5 Melee Skill and -5 Melee Defense
-- All **Goblins** (except **Wolfrider** while riding a wolf) lose **Pathfinder** and gain **Elusive**
-- All **Goblins** (except **Goblin Overseer** and **Champion Goblin Ambusher**) lose **Bullseye**
 - Add new **Goblin** racial effect that grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
 - **Champion Goblin Ambusher** lose **Target Practice**
-- **Goblin Ambusher** now always spawn with the **Reinforced Boondock Bow** variant
-- **Orc Warlords** now have **Savage Strength** which makes them immune to **Disarm**. They no longer spawn with shields
-
-**Barbarian**
-- **Warhounds** now have 100 Initiative (down from 110) and 5 Vision (down from 7)
-- **Barbarian Thralls**  lose **Survival Instinct** and now have +5 Melee Defense and +5 Ranged Defense. They now spawn twice as often with **Crude Javelins** and half as often with regular throwing weapons
-- **Barbarian Drummer** lose **Survival Instinct** and now have +10 Melee Defense and +10 Ranged Defense. They now have +1 Action Point and grant +150 Experience
-- **Barbarian Kings** now have **Savage Strength** which makes them immune to **Disarm**
 
 **Beasts:**
-- **Alps** now have **Elusive**
-- **Bog Unholds** now recover 20% of their Hitpoints per turn (up from 15%) and they can now use **Split Shield** costing 5 Action Points and dealing 50 Shield Damage. They lose **Dismantle** and **Full Force**
 - **Donkeys** now grant 0 XP (down from 50 XP). They can now be rooted, injured, bled and poisoned. Since they are non-combatants this is mostly a cosmetic change
-- **Frost Unholds** and **Armored Frost Unholds** now have 150 natural Body and Head Armor (up from 90). They lose **Dismantle** and **Full Force**
-- Add new **Hexen** racial effect that increases the duration of debuffs by 1 turn for the Hexe
 - **Hyena Bite** costs 10 Fatigue (up from 6)
 - **Direwolf Bite** costs 10 Fatigue (up from 6)
-- All **Ifrits** gain **Man of Steel**. They can now free themselves from nets and roots. They take no Burning Damage (up from 90% less), full damage from blunt ranged attacks (down from 66% less) and 50% less damage from Piercing Damage (down from 50% less against melee and 66% less against ranged). The damage reduction on Ifrits now also affects the armor damage they receive
+- All **Ifrits** can now free themselves from nets and roots. They take no Burning Damage (up from 90% less), full damage from blunt ranged attacks (down from 66% less) and 50% less damage from Piercing Damage (down from 50% less against melee and 66% less against ranged). The damage reduction on Ifrits now also affects the armor damage they receive
   - **Small Ifrits** now have 55 Hitpoints (down from 110) and 165 Armor (up from 110)
   - **Medium Ifrits** now have 110 Hitpoints (down from 220) and 220 Armor (up from 110). They lose 10 Damage and gain **Marksmanship**
   - **Large Ifrits** now have 220 Hitpoints (down from 440) and 330 Armor (up from 110). They lose 10 Damage and gain **Marksmanship**
@@ -746,18 +707,16 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
   - **Lindwurm Heads** now have 1000 Hitpoints (down from 1100), 20 Melee Defense (up from 10) and gain **Exude Confidence**. They lose **Formidable Approach**
   - The **Lindwurm Tail** still inherits most of the stats from the head but has 50% less Hitpoints and Resolve and 50% more Melee Defense. They lose **Fearsome**
   - The **Lindwurm Tail** can now be stunned and netted but those effects are removed whenever the Head moves away
-- All **Nachzehrer** lose **Deep Cuts**
-  - **Small Nachzehrer** lose 10 Melee Defense and gain **Ghostlike**
-  - **Large Nachzehrer** can no longer swallow player characters while in a net. They can now also swallow the last player character who is alive
-- **Unholds** and **Armored Unholds** now have 600 Hitpoints (up from 500) and recover 10% of their Hitpoints per turn (down from 15%). They lose **Dismantle** and **Full Force**
 - **Schrats** no longer take 70% reduced damage while their shield is up. They now have +200 Hitpoints and gain the **One with the Shield** perk
-- **Serpent** can now hook even while rooted. They can no longer hook while engaged in melee
 
 ### Dynamic Party Adjustments
 
 - Bandit Parties will now only field at most two of the following unit blocks at the same time: Fast, Tough, Ranged
 - Fast Brigands (**Robber** -> **Bandit** -> **Killer**) now upgrade slightly earlier
 - Add **Highwayman** as new T1 of the Banditleader Unitblock. Banditleader Unitblock now require a StartingResourceMin of 180 (down from 250)
+- Mercenaries will now more gradually appear in caravan parties, instead of suddenly and in great numbers
+- Noble Armies will have fewer types of different troops on the battlefield at the same time
+- Adorned Knights now only bring 1 Squire (down from 2)
 
 ### AI
 
@@ -790,6 +749,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - NPCs are 20% more likely to use a throwing spear against shield users and 50% more likely to target shields, that it would destroy on use
 - NPCs are 20% more likely to use **Disarm** or **Knock out** on someone who has **Parry**
 - NPCs are 100% more likely to use rotating skills onto allied Nachzehrer if that would put them on top of a corpse; and 50% less likely if that would put them away a corpses. And vice versa with hostile nachzehrers
+- NPCs now take into account all swap-discount perks when considering whether to swap to a (better) melee weapon
 
 ## Combat General
 
@@ -837,6 +797,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken
 - **Buried Castle** Locations now also drop either a Flash Pot, Fire Pot or Smoke Pot
 - The Kraken Location now always requires 3 Hides and 3 Dust, no matter how much you already had in your inventory
+- Any location that you discover now removes fog of war from the tile it is sitting on
 - Armorsmiths will now sometimes sell Named Shields
 - Small civilian settlements now sell **Old Wooden Shields** and **Lute**
 - Big northern settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
@@ -901,6 +862,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Fast Adaption** now shows the amount of stacks in brackets behind the effect name
 - Add tooltip about remaining duration of **Arrow to the Knee** effect
 - Corpses will now display the round, in which they were created
+- Play equip sfx, when NPCs swap weapons during combat
 - Print combat log for hitpoint damage dealt, when an attack kills the target and include the hitpoints of the target before the kill
 - **Fling Back** (used by Unholds) now has an animation delay of 250ms (down from 750ms)
 - The automatic camera level calculation is improved, especially while in mountanious terrain. Your camera level is now automatically adjusted when moving up or down terrain

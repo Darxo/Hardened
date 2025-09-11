@@ -26,8 +26,6 @@
 		return ret;
 	}
 
-	// ::getBro("Sabti").m.Skills.add(this.new("scripts/skills/actives/wither_skill"));
-
 	q.onUpdate = @(__original) function( _properties )
 	{
 		local oldStaminaMult = _properties.StaminaMult;

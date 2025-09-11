@@ -775,3 +775,16 @@ For: Line of Sight fix
 - change automatic camera panning so that it doesnt move the camera for small distances, only when bigger distances are happening
 
 - make more value in the vanilla character::setValues() function optional? e.g. armor
+
+
+- remove reforged goblin racial or adopt it?
+
+- captain perk has no tooltip
+02:32:14SQ
+Nested Tooltips Framework: perk filename not recognized. Make sure the perk def exists in ::Const.Perks.LookupMap: perk_captain
+02:32:14Script Error
+Key 'perk_captain' not found
+
+- bone breaker:
+	- 50% of armor damage dealt is treated as hitpoint damage (down from 100%)
+	- 20% less threshold to inflict injuries

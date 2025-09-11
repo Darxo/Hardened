@@ -23,6 +23,20 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+1.0.0-alpha-1
+	- Completely rework the costs, stats, perks and weapons of most NPCs
+	- **Fallen Hero** is now called **Fallen Soldier**
+	- **Fallen Betrayer** is now called **Fallen Hero**
+	- Reduce amount of different types of noble troops in noble parties
+	- Heavy Throwing Weapons and Crude Javelins no longer start with a fixed number of ammo when spawning on NPCs
+	- Improve switch-to-melee AI behavior to account for all types of swap-discount perks
+	- Play equip sfx, when NPCs swap weapons during combat
+	- Turn off debug logging of AIAgentFixes and onAnySkillExecutedFully
+	- `::Const.CharacterProperties.setValues` now supports `Reach`
+	- Add `shield::setFaction(_factionID)`, which can be called for coloring a shield in the passed bannerID colors, or do nothing, if the shield can't be colored
+	- Add `item::playInventorySoundWithPosition`, which can be used to play a certain inventory sound with a position and optional volume and pitch values
+	- Add various new members for `actor.nut` to assign generic random equipped gear to them
+
 0.55.0
 	- **Vigorous Assault** now works with all attacks. It no longer grants any fatigue discount. It is no longer disabled when using non-attacks
 	- **Hyena Bite** now costs 10 Fatigue (up from 6)

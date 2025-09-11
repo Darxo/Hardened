@@ -55,8 +55,6 @@
 		}
 	}
 
-	// ::getBro("Hadebrand").getMainhandItem().setCondition(3);
-
 	// New Functions
 	q.getMainhandWeapon <- function()
 	{
