@@ -160,4 +160,20 @@
 	{
 		return this.HD_getBrush();
 	}
+
+// New Functions
+	// Play the InventorySound of an item but as directional sound with a position value
+	// This can be used to player inventory sounds on NPCs during combat
+	q.playInventorySoundWithPosition <- function( _eventType, _position, _volumeMult = 1.0, _pitchMult = 1.0 )
+	{
+		local mockObject;
+		mockObject = ::Hardened.mockFunction(::Sound, "play", function( _soundFile, _volume = 1.0, _pos = null, _pitch = 1.0 ) {
+			mockObject.original(_soundFile, _volume * _volumeMult, _position, _pitch * _pitchMult);
+			return { done = true, value = null };
+		});
+
+		this.playInventorySound(_eventType);
+
+		mockObject.cleanup();
+	}
 });
