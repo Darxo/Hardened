@@ -232,3 +232,36 @@
 		return _targetTile;	// We couldn't push _targetTile any further, so _targetTile as the destination has to do
 	}
 }
+
+// Look for a ranged weapon in the bag and if found, swap it with the equipped melee weapon
+// This can be used before the fight to make sure the enemy does not waste quickhands on their first turn to swap to the ranged weapon
+// @param _actor instance of actor whose weapons we want to swap
+// @return true if a swap happened or false, if not
+::Hardened.util.preSwapRangedWeapon <- function( _actor )
+{
+	local mainhandItem = _actor.getMainhandItem();
+	if (mainhandItem != null && mainhandItem.isItemType(::Const.Items.ItemType.RangedWeapon)) return false;	// We already have a ranged weapon equipped
+
+	local rangedBagItem = null;
+	foreach (bagItem in _actor.getItems().getAllItemsAtSlot(::Const.ItemSlot.Bag))
+	{
+		if (bagItem.isItemType(::Const.Items.ItemType.RangedWeapon))
+		{
+			rangedBagItem = bagItem;
+			break;
+		}
+	}
+	if (rangedBagItem == null) return false;	// There is no ranged weapon to swap to
+
+	if (mainhandItem == null)
+	{
+		_actor.getItems().removeFromBag(rangedBagItem);
+		_actor.getItems().equip(rangedBagItem);
+	}
+	else
+	{
+		_actor.getItems().swap(mainhandItem, rangedBagItem);
+	}
+
+	return true;
+}
