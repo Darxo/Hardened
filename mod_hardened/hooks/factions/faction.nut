@@ -65,7 +65,7 @@
 		local ret = __original(_tile, _name, _uniqueName, _template, _resources, _minibossify);
 
 		// We spawn a very short sleep_prder (similar to how noble houses do it) on any newly created party. Fixes Vanilla bug of teleporting any parties which will instantly engage player in battle
-		local sleepOrder = this.new("scripts/ai/world/orders/sleep_order");
+		local sleepOrder = ::new("scripts/ai/world/orders/sleep_order");
 		sleepOrder.setTime(1.0);	// About 14 ingame minutes
 		ret.getController().addOrder(sleepOrder);
 

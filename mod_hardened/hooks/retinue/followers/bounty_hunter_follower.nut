@@ -13,7 +13,7 @@
 	q.onUpdate = @(__original) function()
 	{
 		// Revert Vanilla change, because we apply the change additively now instead of overwriting the value
-		local oldChampionChanceAdditional = this.World.Assets.m.ChampionChanceAdditional;
+		local oldChampionChanceAdditional = ::World.Assets.m.ChampionChanceAdditional;
 		__original();
 		::World.Assets.m.ChampionChanceAdditional = oldChampionChanceAdditional;
 

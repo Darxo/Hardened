@@ -5,7 +5,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Cooldown = 14.0 * this.World.getTime().SecondsPerDay;	// In Vanilla this is 21 days
+		this.m.Cooldown = 14.0 * ::World.getTime().SecondsPerDay;	// In Vanilla this is 21 days
 	}
 
 	// Overwrite, because we calculate the score a bit differently:

@@ -2,6 +2,6 @@
 	q.onAddBehaviors = @(__original) { function onAddBehaviors()
 	{
 		__original();
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_break_free"));
+		this.addBehavior(::new("scripts/ai/tactical/behaviors/ai_break_free"));
 	}}.onAddBehaviors;
 });

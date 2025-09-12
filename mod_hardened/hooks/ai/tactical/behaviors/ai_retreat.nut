@@ -18,7 +18,7 @@
 		// Fix: We need to slightly adjust the vanilla ai_retreat behavior, because it looks in a hard coded way for the lindwurm tail
 		// 		And in Hardened, the Tail can actually be missing/null, while the head still exists
 
-		if (_entity.getTile().hasZoneOfControlOtherThan(_entity.getAlliedFactions()) && _entity.getFaction() != this.Const.Faction.Player)
+		if (_entity.getTile().hasZoneOfControlOtherThan(_entity.getAlliedFactions()) && _entity.getFaction() != ::Const.Faction.Player)
 		{
 			// This condition is new, we now use a similar attemts counter as ai_flee
 			if (this.m.HD_AttemptsThisTurn < ::Const.AI.Agent.MaxFleeAttemptsPerTurn)

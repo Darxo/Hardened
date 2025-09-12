@@ -76,7 +76,7 @@
 	{
 		__original();
 
-		this.m.Skills.add(this.new("scripts/skills/special/hd_bag_item_manager"));
+		this.getSkills().add(::new("scripts/skills/special/hd_bag_item_manager"));
 	}
 
 	q.onTurnEnd = @(__original) function()

@@ -31,7 +31,7 @@
 		// If we have no restore flags, we do no restoration
 		if (!this.getFlags().has(this.m.HD_RestoreItemIDFlag)) return;
 
-		local stash = this.World.Assets.getStash();
+		local stash = ::World.Assets.getStash();
 
 		local targetUID = this.getFlags().get(this.m.HD_RestoreBrotherUIDFlag);
 		foreach (bro in ::World.getPlayerRoster().getAll())

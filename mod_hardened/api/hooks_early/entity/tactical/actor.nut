@@ -5,10 +5,10 @@
 	{
 		local items = [];
 
-		local mainhand = this.m.Items.getItemAtSlot(::Const.ItemSlot.Mainhand);
+		local mainhand = this.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
 		if (mainhand != null) items.push(mainhand);
 
-		local bags = this.m.Items.getAllItemsAtSlot(::Const.ItemSlot.Bag);
+		local bags = this.getItems().getAllItemsAtSlot(::Const.ItemSlot.Bag);
 		if (bags.len() != 0) items.extend(bags);
 
 		local result = {
@@ -41,10 +41,10 @@
 	{
 		local items = [];
 
-		local mainhand = this.m.Items.getItemAtSlot(::Const.ItemSlot.Mainhand);
+		local mainhand = this.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
 		if (mainhand != null) items.push(mainhand);
 
-		local bags = this.m.Items.getAllItemsAtSlot(::Const.ItemSlot.Bag);
+		local bags = this.getItems().getAllItemsAtSlot(::Const.ItemSlot.Bag);
 		if (bags.len() != 0) items.extend(bags);
 
 		if (items.len() == 0) return false;

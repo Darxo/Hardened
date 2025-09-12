@@ -13,7 +13,7 @@
 		local childrenId = 41;
 		foreach (produce in this.getProduceList())
 		{
-			local item = this.new("scripts/items/" + produce);
+			local item = ::new("scripts/items/" + produce);
 			childrenElements.push({
 				id = childrenId,
 				type = "text",

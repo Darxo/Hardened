@@ -67,13 +67,13 @@
 
 		local myTile = this.getTile();
 		local spawnTile;
-		if (myTile.hasNextTile(this.Const.Direction.NE) && myTile.getNextTile(this.Const.Direction.NE).IsEmpty)
+		if (myTile.hasNextTile(::Const.Direction.NE) && myTile.getNextTile(::Const.Direction.NE).IsEmpty)
 		{
-			spawnTile = myTile.getNextTile(this.Const.Direction.NE);
+			spawnTile = myTile.getNextTile(::Const.Direction.NE);
 		}
-		else if (myTile.hasNextTile(this.Const.Direction.SE) && myTile.getNextTile(this.Const.Direction.SE).IsEmpty)
+		else if (myTile.hasNextTile(::Const.Direction.SE) && myTile.getNextTile(::Const.Direction.SE).IsEmpty)
 		{
-			spawnTile = myTile.getNextTile(this.Const.Direction.SE);
+			spawnTile = myTile.getNextTile(::Const.Direction.SE);
 		}
 		else
 		{

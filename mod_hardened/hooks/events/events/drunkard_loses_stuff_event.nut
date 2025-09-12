@@ -49,8 +49,8 @@
 				_event.m.Drunkard.worsenMood(2.5, "Had to search for " + _event.m.Item.getName() + " all day");
 				this.List.push({
 					id = 10,
-					icon = this.Const.MoodStateIcon[_event.m.Drunkard.getMoodState()],
-					text = _event.m.Drunkard.getName() + this.Const.MoodStateEvent[_event.m.Drunkard.getMoodState()]
+					icon = ::Const.MoodStateIcon[_event.m.Drunkard.getMoodState()],
+					text = _event.m.Drunkard.getName() + ::Const.MoodStateEvent[_event.m.Drunkard.getMoodState()]
 				});
 				::World.Assets.getStash().add(_event.m.Item);
 			}

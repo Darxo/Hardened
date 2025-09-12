@@ -7,7 +7,7 @@
 	q.m.HD_FleeingMoraleTurnNumber <- -1;	// Set to the last turn number, that we had morale checks in, to keep track of when to reset the fleeing morale checks
 	q.m.HD_IsDiscovered <- false;	// Is true, when setDiscovered(true) has been called on us. Is set to false at the start of every round or when this actor steps into a tile not visible to the player
 
-	q.checkMorale = @(__original) { function checkMorale( _change, _difficulty, _type = this.Const.MoraleCheckType.Default, _showIconBeforeMoraleIcon = "", _noNewLine = false )
+	q.checkMorale = @(__original) { function checkMorale( _change, _difficulty, _type = ::Const.MoraleCheckType.Default, _showIconBeforeMoraleIcon = "", _noNewLine = false )
 	{
 		local oldMoraleState = this.m.MoraleState;
 		local ret = __original(_change, _difficulty, _type, _showIconBeforeMoraleIcon, _noNewLine);
@@ -183,7 +183,7 @@
 			{
 				this.m.IsLoweringShield = true;
 				this.setRenderCallbackEnabled(true);
-				this.m.RenderAnimationStartTime = this.Time.getVirtualTimeF();
+				this.m.RenderAnimationStartTime = ::Time.getVirtualTimeF();
 			}
 		}
 	}

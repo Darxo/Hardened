@@ -35,7 +35,7 @@
 
 		// Fix(Reforged): remove weapon type restriction as lindwurm tails wield no weapon
 		this.getSkills().removeByID("perk.rf_sweeping_strikes");
-		this.m.Skills.add(::Reforged.new("scripts/skills/perks/perk_rf_sweeping_strikes", function(o) {
+		this.getSkills().add(::Reforged.new("scripts/skills/perks/perk_rf_sweeping_strikes", function(o) {
 			o.m.RequiredItemType = null;
 		}));
 

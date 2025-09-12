@@ -3,7 +3,7 @@
 	// Vanilla Fix: this function from crashing when the player party has no broher with Initiative of 130 or higher
 	q.onUpdateScore = @() function()
 	{
-		if (!this.World.FactionManager.isUndeadScourge()) return;
+		if (!::World.FactionManager.isUndeadScourge()) return;
 
 		local currentTile = ::World.State.getPlayer().getTile();
 		if (currentTile.Type != ::Const.World.TerrainType.Snow) return;

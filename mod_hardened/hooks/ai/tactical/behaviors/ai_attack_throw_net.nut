@@ -48,7 +48,7 @@
 			if (this.isAllottedTimeReached(time))
 			{
 				yield null;
-				time = this.Time.getExactTime();
+				time = ::Time.getExactTime();
 			}
 
 			currentScore = this.evaluateTargetScore(target, knownAllies, knownOpponents);

@@ -167,7 +167,7 @@
 					}
 				}
 
-				local changes = this.World.FactionManager.getFaction(_entityId).getPlayerRelationChanges();
+				local changes = ::World.FactionManager.getFaction(_entityId).getPlayerRelationChanges();
 				foreach (change in changes)
 				{
 					local changeText = change.Text;
