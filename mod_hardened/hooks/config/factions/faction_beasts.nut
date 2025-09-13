@@ -261,3 +261,26 @@
 	// Optional Stats
 	::Const.Tactical.Actor.Lindwurm.Reach <- 7;
 }
+
+// New Beast Stats
+{
+	// scripts/entity/tactical/enemies/lindwurm_tail
+	{
+		// Mandatory stats
+		::Const.Tactical.Actor.HD_LindwurmTail <- {
+			XP = 0,				// Vanilla: 800
+			ActionPoints = 7,
+			Hitpoints = 500,	// Vanilla: 1100 (Shared with Head)
+			Bravery = 90,		// Vanilla: 180
+			Stamina = 400,
+			MeleeSkill = 75,
+			RangedSkill = 0,
+			MeleeDefense = 30,	// Vanilla: 20
+			RangedDefense = 10,
+			Initiative = 80,
+			Armor = [300, 0],	// Vanilla: 400, 200
+
+			Reach = 6,
+		}
+	}
+}
