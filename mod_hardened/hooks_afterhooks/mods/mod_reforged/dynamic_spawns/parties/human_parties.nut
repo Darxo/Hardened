@@ -1,3 +1,18 @@
+// Hooking
+{
+	local mercParty = ::DynamicSpawns.Public.getParty("Mercenaries");
+	mercParty.HardMin = 6;	// Reforged: 8
+	foreach (unitBlock in mercParty.DynamicDefs.UnitBlocks)
+	{
+		if (unitBlock.BaseID == "UnitBlock.RF.Wardog")
+		{
+			unitBlock.ExclusionChance <- 0.4;	// Reforged: 0.0
+			unitBlock.HardMax <- 4;		// Reforged: unlimited
+			break;
+		}
+	}
+}
+
 // Overwriting
 {
 	local parties = [
