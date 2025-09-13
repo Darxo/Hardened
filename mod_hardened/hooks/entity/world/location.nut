@@ -86,7 +86,8 @@
 	{
 		__original();
 
-		if (::World.State.getPlayer().isAbleToSee(this))
+		local player = ::World.State.getPlayer();
+		if (player != null && player.isAbleToSee(this))
 		{
 			// Feat: discovering any location now fully uncovers fog of war from its tile to make discovered locations halfway in fog of war more noticable
 			::World.uncoverFogOfWar(this.getTile().Pos, 100.0);
