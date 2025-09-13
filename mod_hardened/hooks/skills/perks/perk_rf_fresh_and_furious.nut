@@ -33,7 +33,7 @@
 	// Overwrite because we change the discount, its condition and make it also affect skills which cost 1 AP
 	q.onAfterUpdate = @() function( _properties )
 	{
-		if (this.m.IsSpent || this.m.RequiresRecover) return;
+		if (this.m.IsSpent) return;
 
 		local actor = this.getContainer().getActor();
 		if (!actor.isPreviewing() || actor.getPreviewMovement() != null)
@@ -67,13 +67,24 @@
 		this.turnEffectOn();
 	}
 
+	q.onAdded = @(__original) function()
+	{
+		__original();
+
+		// Receiving this perk mid-battle (e.g. on Large Ghouls), should always set it to active
+		if (this.getContainer().getActor().isPlacedOnMap())
+		{
+			this.turnEffectOn();
+		}
+	}
+
 // Hardened Functions
 	q.onReallyBeforeSkillExecuted <- function( _skill, _targetTile )
 	{
 		if (this.isSkillValid(_skill) && this.getContainer().getActor().isActiveEntity())
 			this.turnEffectOff();
 
-		if (_skill.getID() == "actives.recover" && (this.m.IsSpent || this.m.RequiresRecover))
+		if (_skill.getID() == "actives.recover" && this.m.IsSpent)
 		{
 			this.turnEffectOn();
 			this.spawnIcon("perk_rf_fresh_and_furious", _targetTile);
