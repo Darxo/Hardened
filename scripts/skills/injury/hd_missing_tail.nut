@@ -15,7 +15,14 @@ this.hd_missing_tail <- ::inherit("scripts/skills/injury/injury", {
 	function onAdded()
 	{
 		local actor = this.getContainer().getActor();
-		actor.setMoraleState(::Math.max(::Const.MoraleState.Fleeing, actor.getMoraleState() + this.m.MoraleChangeOnAdd));
+
+		local oldMoraleState = actor.getMoraleState();
+		actor.setMoraleState(::Math.max(::Const.MoraleState.Fleeing, oldMoraleState + this.m.MoraleChangeOnAdd));
+		if (oldMoraleState != actor.getMoraleState())
+		{
+			// We manually produce a log for the change of the morale state, as that does not happen automatically when calling setMoraleState
+			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(actor) + ::Const.MoraleStateEvent[actor.getMoraleState()]);
+		}
 	}
 
 	function getTooltip()
