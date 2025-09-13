@@ -23,6 +23,33 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+1.0.0-alpha-2
+	- Completely rework global difficulty scaling. Every dynamic party/location now gets 1% more Resources per day in the campaign, up to a maximum of 300% more at day 300.
+	- Completely rework contract scaling. For every 20 Renown you have, contracts will reward you with 1% more crowns and enemies spawned by it will have 1% more resources available, up to a maximum of 1000% more at a Renown value of 20000. You can view the current contract multipler when looking at the renown tooltip
+	- finalize Lindwurms, Schrats, Ghouls and Ifrit implementations
+		- Lindwurm Tail now has 300 Armor (down from 400) and it no longer grants any XP
+		- Schrats now spawn Saplings after taking 7% damage in one hit (down from 10%) and they gain **Steel Brow**. They now take 50% less piercing damage from all sources instead of varying reduction depending of type of attack
+		- Implement stat changes of Ifrits and Ghouls by changing base-stats instead of applying temporary buffs
+	- **Ancient Spear** now deals 30-40 damage (up from 20-35), has a Weight of 10 (up from 6) and costs 750 Crowns (up from 150)
+	- **Short Bow** now deals 35-50 damage (up from 30-50), has a Range of 6 (down from 7) and costs 250 Crowns (up from 200)
+	- **Wonky Bow** now deals 30-45 damage (down from 30-50) a Range of 6 (down from 7), 0% Hitchance bonus (up from -10%) and costs 150 Crowns (up from 100)
+	- **Swallow Whole** is no longer considered an attack
+	- **Peasants** now cost 8 Resources (up from 6), have 50 Melee Skill (up from 40) and 55 Hitpints (up from 50)
+	- **Mercenary Parties** and **Southern Caravans will** now spawn in lower sizes during the early game
+	- **Easy Combat Difficulty** no longer provides a hidden hitchance/dodge bonus
+	- print morale change combat log when lindwurm receives **Missing Tail** injury
+	- fix Lindwurms spawning with 1 Hitpoint
+	- fix **Unworthy** effect not preventing XP gain correctly
+	- fix Lindwurm fully resetting morale state of its tail
+	- fix log error spam during new map generation
+	- fix Ifrits not changing their reach value when transforming
+	- Add ::Hardened.Global.getWorldContractMult() which returns a multiplier representing the quality (risk + reward) of contracts you receive
+		- Add `::Hardened.Const.ContractScalingPerReputation = 0.0005` which defines how much harder/more lucrative contracts become for each of your Renown points
+		- Add `::Hardened.Const.ContractScalingMax = 10.00` which defines the maximum possible contract quality multiplier
+	- Add ::Hardened.Global.getWorldDifficultyMult() which returns a multiplier representing how difficult the world has become
+		- Add `::Hardened.Const.WorldScalingPerDay = 0.01` which defines how much harder any passed day will make the that difficulty
+		- Add `::Hardened.Const.WorldScalingMax = 4.00` which defines the maximum possible difficulty multiplier
+
 1.0.0-alpha-1
 	- Completely rework the costs, stats, perks and weapons of most NPCs
 	- **Fallen Hero** is now called **Fallen Soldier**

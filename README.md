@@ -51,6 +51,15 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 	- **Worn Kite Shields** now have 13 Melee Defense (down from 15), 23 Ranged Defense (down from 25) and lose **Knock Back**
 - Wooden Shields, Kite Shields and Heater Shields which are colored in Mercenary Colors (e.g. your own) grant +5 Resolve while equipped
 
+### Normalized Difficulty Scaling
+
+- Most vanilla difficulty scaling methods (day/player strength/renown scaling) are disabled
+- Instead the following normalized system is added:
+	- Contracts are 1% more difficulty for every 20 Renown, up to a maximum of 1000%
+	- Contracts grant 1% more Crowns for every 20 Renown, up to a maximum of 1000%
+	- Every non-contract encounter in the world becomes 1% more difficult for every day that has passed, up to a maximum of 300% at day 300
+- You can view the current contract difficulty when looking at the renown tooltip
+
 ### Throwing Weapon Rework
 
 - Throwing Weapons now have a minimum attack range of 1, just like all other ranged attacks
@@ -64,7 +73,6 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - **Javelins** now deal 35-45 Damage (up from 30-45), deal 70% Armor Damage (down from 75%), have 0 Weight (down from 6), 2 Weight per Ammo, 2 Ammo Cost (down from 3) and costs 350 Crown (up from 200)
 - **Throwing Axes** now deal 35-50 Damage (up from 30-50), have -10% Hitchance (down from +0%), +10% Headshot Chance (up from +5%), 0 Weight (down from 4), 2 Weight per Ammo, 2 Ammo Cost (down from 3) and cost 400 Crowns (up from 200)
 - Marketplaces now sell **Crude Javelins** instead of regular **Javelins**
-- Crude Javelins on NPCs start with 3/4 ammo and Heavy Throwing Weapons on NPCs start with 4/5 ammo
 
 ### Double Grip Rework
 
@@ -396,6 +404,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Weapons
 
 - **Ancient Pikes** gains the **Spear** Weapontype
+- **Ancient Spear** now deals 30-40 damage (up from 20-35), has a Weight of 10 (up from 6) and costs 750 Crowns (up from 150)
 - **Berserk Chain** now has 4 Reach (down from 5)
 - **Cruel Falchion** are now a Sword/Dagger hybrid. They now also grant **Stab**. **Slash** and **Rispote** lose any discount
 - **Cudgel** now deals 40-60 damage (up from 30-50), has 4 Reach (up from 3), costs 400 Crowns (up from 300). **Bash** now costs 5 AP (up from 4). **Knock Out** now has a 100% chance to stun
@@ -418,6 +427,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Poleflail** now has 5 Reach (down from 6) and costs 1600 Crowns (up from 1400). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
 - **Reinforced Wooden Poleflail** now has 5 Reach (down from 6). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
 - **Rusty Warblade** loses **Decapitate** and gains **Split**
+- **Short Bow** now deals 35-50 damage (up from 30-50), has a Range of 6 (down from 7) and costs 250 Crowns (up from 200)
 - **Spetum** now has a Reach of 7 (up from 6), a Weight of 12 (down from 14) and costs 900 Crowns (down from 1050). The named variant now costs 2800 Crowns (down from 3500)
 - **Spiked Impaler** now has +2 Fatigue Cost for its weapon skills
 - **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and costs 600 Crowns (up from 400)
@@ -429,6 +439,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Two-handed Wooden Hammer** now costs 600 Crowns (up from 500)
 - **Warbow** now has a Weight of 8 (up from 6) and +2 Fatigue Cost for its weapon skills
 - **Warfork** now has a Weight of 14 (up from 12) and costs 400 Crowns (down from 600)
+- **Wonky Bow** now deals 30-45 damage (down from 30-50) a Range of 6 (down from 7), 0% Hitchance bonus (up from -10%) and costs 150 Crowns (up from 100)
 - **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
 - **Zweihander** now has 6 Reach (down from 7)
 
@@ -1079,6 +1090,12 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add new `HD_IsSortedBeforeMainhand = false` member for `skill.nut`. If `true`, then active skills will be sorted in front of mainhand skills
 - Rewrite the `onExecute` of `build_unique_locations_action` with a moddable `DistanceToOthers` aswell as `minY` and `maxY` values.
 - Force Trigger a skill_container::update() whenever any actor waits or ends their turn after all their other skill turn-end events have happend
+- Add ::Hardened.Global.getWorldContractMult() which returns a multiplier representing the quality (risk + reward) of contracts you receive
+	- Add `::Hardened.Const.ContractScalingPerReputation = 0.0005` which defines how much harder/more lucrative contracts become for each of your Renown points
+	- Add `::Hardened.Const.ContractScalingMax = 10.00` which defines the maximum possible contract quality multiplier
+- Add ::Hardened.Global.getWorldDifficultyMult() which returns a multiplier representing how difficult the world has become
+	- Add `::Hardened.Const.WorldScalingPerDay = 0.01` which defines how much harder any passed day will make the that difficulty
+	- Add `::Hardened.Const.WorldScalingMax = 4.00` which defines the maximum possible difficulty multiplier
 
 ### New Character Properties
 

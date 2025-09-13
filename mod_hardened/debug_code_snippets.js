@@ -96,3 +96,12 @@ foreach (tile in ::MSU.Tile.getNeighbors(::getBro("Thorben").getTile()))
 	local neighbor = tile.getEntity();
 	::logWarning("Hardened: Neighbor: " + neighbor.getName());
 }
+
+## Check current contract/world difficulties
+
+::logWarning("World Difficulty: " + ::Hardened.Global.getWorldDifficultyMult());
+::logWarning("Contract Difficulty: " + ::Hardened.Global.getWorldContractMult());
+
+
+::DynamicSpawns.Const.Logging = true;
+::DynamicSpawns.Const.DetailedLogging = false;

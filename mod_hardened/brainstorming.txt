@@ -683,6 +683,7 @@ For: Line of Sight fix
 - bleed animation/effect when inflicting bleed with **Sanguinary**?
 - trigger smoke effect whenever a brother with **Ghostlike** dodges an attack during their turn
 - mortar impact animation, when shockwave or full force trigger
+- use schrat damage leaf-animation for when an arrow hits a tree
 
 # Artwork
 - different bleed icons depending on severity of bleed
@@ -691,12 +692,13 @@ For: Line of Sight fix
 - special sfx when discovering a legendary location
 - sfx when bone breaker causes an injury
 - write a custom BB sound engine, by playing sound at the same time in right and left ear but with tiny delay to simulate depth/direction
-
 - increase movement fatigue cost in order to make moving more tactical
 - cover ally making ally immune to displacement?
 - make schrat damage sounds, whenever arrows divert into trees.
 	- or rather allow obstacles to have a hit-sfx, which is played when they get hit by a projectile
 - play multiple flail sfx, for each three headed hit
+- make ifirts not play soudns when growing (sand_golem::grow)
+- Any actor moving will produce step-sounds, even if not visible to player. But then with lower volume: "_tile.IsVisibleForPlayer ? 1.0 : 0.5"
 
 # Fix
 - fix world zooming when entering/leaving main menu
@@ -711,6 +713,7 @@ For: Line of Sight fix
 - remove stun covering ally instantly when skill is added, which is stun
 - Bug: crossbows are not unloaded correctly after battle
 	- need more evidence
+- day time tooltip on world map barely displaying. The javascript parts there (WorldScreenTopbarDayTimeModule) is horribly at producing it
 
 # Balance
 - reduce sell price of masterfully cured rations to prevent missuse as pseudo-trade-good
@@ -754,6 +757,12 @@ For: Line of Sight fix
 - swordmaster ai -> likes to wait?
 - make hunting grounds visible even before the ritual armor?
 - ai: fast bandits wastefully use spinning flail and swap to ranged weapon (probably just remove that perk from them)
+- reduce damage range of small crossbows. min and max hit almost double
+- ghouls who swallowed something, have less defenses (or other debuff)
+- new sandgolem-high attack "Collapse" (replacement melee attack?). Attacks multiple enemies (either in a row or swing, or both) + split into 3 smaller golems around the impact
+- bone breaker:
+	- 50% of armor damage dealt is treated as hitpoint damage (down from 100%)
+	- 20% less threshold to inflict injuries
 
 # QOL
 - Prevent ending the turn for 1 second after gaining action points (e.g. Mauler)
@@ -773,9 +782,13 @@ For: Line of Sight fix
 	- those items can only be equipped, not swapped. equipped puts the currently equipped one into the inventory
 	- each group of equipped items can have the brother icon on them
 - change automatic camera panning so that it doesnt move the camera for small distances, only when bigger distances are happening
+- point out that "throw living sand", used by ifrits, has no accuracy drop off with distance
+- display tooltip for world scaling (currently as DayTime tooltip perhaps)
+
+# Debug
+- print base damage roll of any attack in combat log
 
 - make more value in the vanilla character::setValues() function optional? e.g. armor
-
 
 - remove reforged goblin racial or adopt it?
 
@@ -785,6 +798,3 @@ Nested Tooltips Framework: perk filename not recognized. Make sure the perk def 
 02:32:14Script Error
 Key 'perk_captain' not found
 
-- bone breaker:
-	- 50% of armor damage dealt is treated as hitpoint damage (down from 100%)
-	- 20% less threshold to inflict injuries
