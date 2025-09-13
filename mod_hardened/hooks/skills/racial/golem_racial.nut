@@ -1,6 +1,8 @@
 ::Hardened.HooksMod.hook("scripts/skills/racial/golem_racial", function(q) {
+	// Public
 	q.m.PiercingDamageMult <- 0.50;
 	q.m.FireDamageMult <- 0.0;		// Since this character is immune to burning
+	q.m.InitiativeBonusPerAdjacentAlly <- 5;	// Gain this much Initiative per adjacent ally
 
 	q.getTooltip = @(__original) function()
 	{
@@ -27,6 +29,17 @@
 			{
 				entry.text = "Take " + ::MSU.Text.colorizeMultWithText(this.m.PiercingDamageMult, {InvertColor = true}) + " Piercing Damage";
 			}
+		}
+
+		local initiativeModifier = this.getInitiativeBonus();
+		if (initiativeModifier != 0)
+		{
+			ret.push({
+				id = 13,
+				type = "text",
+				icon = "ui/icons/initiative.png",
+				text = ::MSU.Text.colorizeValue(initiativeModifier, {AddSign = true}) + ::Reforged.Mod.Tooltips.parseString(" [Initiative|Concept.Initiative] (" + ::MSU.Text.colorizeValue(this.m.InitiativeBonusPerAdjacentAlly, {AddSign = true}) + " for each adjacent ally)"),
+			});
 		}
 
 		return ret;
@@ -58,23 +71,16 @@
 		}
 	}}.onBeforeDamageReceived;
 
-	q.onUpdate = @(__original) function( _properties )
+	// Overwrite, because so many vanilla effects are removed as they are now handled via setting base stats during transformations
+	q.onUpdate = @() function( _properties )
 	{
-		__original(_properties);
-		_properties.HitpointsMult *= 0.5;
+		_properties.Initiative += this.getInitiativeBonus();
+	}
 
-		local size = this.getContainer().getActor().getSize();
-		if (size == 2)
-		{
-			_properties.DamageRegularMin -= 10;
-			_properties.DamageRegularMax -= 10;
-			// Medium Golems now deal -10 damage but gain Marksmanship perk in return
-		}
-		else if (size == 3)
-		{
-			// Large Golems now deal -10 damage but gain Marksmanship perk in return
-			_properties.DamageRegularMin -= 10;
-			_properties.DamageRegularMax -= 10;
-		}
+// New Functions
+	q.getInitiativeBonus <- function()
+	{
+		local actor = this.getContainer().getActor();
+		return this.m.InitiativeBonusPerAdjacentAlly * ::Tactical.Entities.getAlliedActors(actor.getFaction(), actor.getTile(), 1, true).len();
 	}
 });

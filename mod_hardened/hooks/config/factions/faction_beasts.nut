@@ -54,8 +54,6 @@
 }
 
 // scripts/entity/tactical/enemies/sand_golem
-// scripts/entity/tactical/enemies/sand_golem_medium
-// scripts/entity/tactical/enemies/sand_golem_high
 {
 	// Mandatory stats
 	::Const.Tactical.Actor.SandGolem.XP = 180;				// Vanilla: 150
@@ -65,11 +63,14 @@
 	::Const.Tactical.Actor.SandGolem.Stamina = 400;
 	::Const.Tactical.Actor.SandGolem.MeleeSkill = 65;
 	::Const.Tactical.Actor.SandGolem.RangedSkill = 60;
-	::Const.Tactical.Actor.SandGolem.MeleeDefense = -5;
-	::Const.Tactical.Actor.SandGolem.RangedDefense = -5;
+	::Const.Tactical.Actor.SandGolem.MeleeDefense = 0;		// Vanilla: -5
+	::Const.Tactical.Actor.SandGolem.RangedDefense = 0;		// Vanilla: -5
 	::Const.Tactical.Actor.SandGolem.Initiative = 60;
+	::Const.Tactical.Actor.SandGolem.Armor = [165, 0],		// Vanilla: 110/110
 
 	// Optional Stats
+	::Const.Tactical.Actor.SandGolem.DamageRegularMin <- 35;
+	::Const.Tactical.Actor.SandGolem.DamageRegularMax <- 45;
 	::Const.Tactical.Actor.SandGolem.Reach <- 2;
 }
 
@@ -338,6 +339,52 @@
 
 			DamageRegularMin = 30,
 			DamageRegularMax = 40,
+			Reach = 6,
+		}
+	}
+
+	// scripts/entity/tactical/enemies/sand_golem_medium
+	{
+		// Mandatory stats
+		::Const.Tactical.Actor.HD_SandGolemMedium <- {
+			XP = 180,			// Vanilla: 150
+			ActionPoints = 8,
+			Hitpoints = 110,	// Vanilla: 220
+			Bravery = 100,		// Vanilla: 999
+			Stamina = 400,
+			MeleeSkill = 75,
+			RangedSkill = 75,	// Vanilla: 70
+			MeleeDefense = 5,	// Vanilla: 0
+			RangedDefense = -5,	// Vanilla: -10
+			Initiative = 50,
+			Armor = [220, 0],	// Vanilla: 110/110
+
+			// Optional Values
+			DamageRegularMin = 60,	// Vanilla: 70
+			DamageRegularMax = 80,	// Vanilla: 90
+			Reach = 4,
+		}
+	}
+
+	// scripts/entity/tactical/enemies/sand_golem_high
+	{
+		// Mandatory stats
+		::Const.Tactical.Actor.HD_SandGolemHigh <- {
+			XP = 180,				// Vanilla: 150
+			ActionPoints = 8,
+			Hitpoints = 220,		// Vanilla: 440
+			Bravery = 100,			// Vanilla: 999
+			Stamina = 400,
+			MeleeSkill = 90,		// Vanilla: 80
+			RangedSkill = 90,		// Vanilla: 80
+			MeleeDefense = 10,		// Vanilla: 5
+			RangedDefense = -10,	// Vanilla: -15
+			Initiative = 40,
+			Armor = [330, 0],		// Vanilla: 110/110
+
+			// Optional Values
+			DamageRegularMin = 80,	// Vanilla: 105
+			DamageRegularMax = 100,	// Vanilla: 135
 			Reach = 6,
 		}
 	}
