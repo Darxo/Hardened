@@ -37,24 +37,6 @@
 		});
 	}
 
-	// Hard coded entry for Easy Difficulty, describing a very hard-coded effect by vanilla
-	if (_difficulty == ::Const.Difficulty.Easy)
-	{
-		_tooltip.push({
-			id = 4,
-			type = "text",
-			icon = "ui/icons/melee_skill.png",
-			text = "Your characters have " + ::MSU.Text.colorPositive("+5%") + " chance to hit (hidden)",
-		});
-
-		_tooltip.push({
-			id = 5,
-			type = "text",
-			icon = "ui/icons/melee_defense.png",
-			text = "Attacks against your characters have " + ::MSU.Text.colorNegative("-5%") + " chance to hit (hidden)",
-		});
-	}
-
 	if (::Const.Difficulty.PlayerDamageReceivedMult[_difficulty] != 1.0)
 	{
 		_tooltip.push({

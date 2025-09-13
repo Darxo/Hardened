@@ -73,6 +73,15 @@
 		 return ret;
 	 }
 
+	 q.MV_onAttackRolled = @(__original) { function MV_onAttackRolled( _attackInfo )
+	 {
+		// We switcheroo CombatDifficulty to be any value other than 0 in order to disable the vanilla hidden hitchance/defense bonus granted by playing on easy
+		local oldCombatDifficulty = ::World.Assets.m.CombatDifficulty;
+		::World.Assets.m.CombatDifficulty = 1;
+		__original(_attackInfo);
+		::World.Assets.m.CombatDifficulty = oldCombatDifficulty;
+	 }}.MV_onAttackRolled;
+
 	 q.MV_getDamageArmor = @(__original) function( _properties, _targetEntity = null )
 	 {
 		 local damageArmorResult = this.m.HD_PreviousRandomResult;
