@@ -30,6 +30,25 @@
 		return ret;
 	}
 
+	// We disable the vanilla defender day scaling and instead apply it via ::Hardened.Global.getWorldDifficultyMult()
+	q.createDefenders = @(__original) function()
+	{
+		if (!this.m.IsScalingDefenders) return __original();
+
+		// Switcheroo of this.m.Resources to apply our new global difficulty multiplier in a dynamic way
+		local oldResources = this.m.Resources;
+		this.m.Resources *= ::Hardened.Global.getWorldDifficultyMult();
+
+		// We turn off IsScalingDefenders to disable the vanilla day-scaling
+		this.m.IsScalingDefenders = false;
+		local ret =  __original();
+		this.m.IsScalingDefenders = true;
+
+		this.m.Resources = oldResources;
+
+		return ret;
+	}
+
 // New Functions
 	// Determines, whether this location is allowed to spawn parties
 	q.HD_canSpawnParties <- function()

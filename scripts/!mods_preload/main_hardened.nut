@@ -8,8 +8,16 @@
 	},
 	Const = {
 		ActionPointChangeOnRally = -3,	// Whenever this actor rallies (going from fleeing to wavering) its action points change by this amount
+		WorldScalingMax = 4.0,		// The world will never scale beyond this value
+		WorldScalingPerDay = 0.01,	// Each passed day causes the world to be this much more dangerous
 	},
-	Global = {},
+	Global = {
+		// Anything that uses spawntables to spawn/add troops, will its available resources adjusted by this value
+		getWorldDifficultyMult = function() {
+			local ret = 1.0 + ::World.getTime().Days * ::Hardened.Const.WorldScalingPerDay;
+			return ::Math.clampf(ret, 1.0, ::Hardened.Const.WorldScalingMax);
+		},
+	},
 }
 
 ::Hardened.HooksMod <- ::Hooks.register(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);

@@ -17,6 +17,12 @@
 		__original(_screen, _restartIfAlreadyActive);
 	}
 
+	q.addUnitsToEntity = @(__original) function( _worldParty, _party, _resources )
+	{
+		_resources *= ::Hardened.Global.getWorldDifficultyMult();
+		return __original(_worldParty, _party, _resources);
+	}
+
 // New Functions
 	// Add a list item either to the active screen or the next screen over
 	q.addListItem <- function( _listItem )
