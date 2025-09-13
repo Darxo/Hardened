@@ -96,6 +96,8 @@
 		{
 			this.m.Tail = this.WeakTableRef(this.Tactical.spawnEntity("scripts/entity/tactical/enemies/lindwurm_tail", spawnTile.Coords.X, spawnTile.Coords.Y, this.getID()));
 			this.m.Tail.m.Body = this.WeakTableRef(this);
+
+			local body = this.getSprite("body");
 			this.m.Tail.getSprite("body").Color = body.Color;
 			this.m.Tail.getSprite("body").Saturation = body.Saturation;
 		}
