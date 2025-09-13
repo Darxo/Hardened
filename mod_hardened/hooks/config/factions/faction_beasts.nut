@@ -1,5 +1,3 @@
-::Const.Tactical.Actor.Schrat.Hitpoints += 200;	// Schrats lost ~half of their damage mitigation with shields. Therefor their Hitpoints get buffed a bit
-
 // scripts/entity/tactical/enemies/ghoul
 // scripts/entity/tactical/enemies/ghoul_medium
 // scripts/entity/tactical/enemies/ghoul_high
@@ -18,6 +16,24 @@
 
 	// Optional Stats
 	::Const.Tactical.Actor.Ghoul.Reach <- 2;
+}
+
+// scripts/entity/tactical/enemies/schrat
+{
+	// Mandatory stats
+	::Const.Tactical.Actor.Schrat.XP = 1200;			// Vanilla: 600
+	::Const.Tactical.Actor.Schrat.ActionPoints = 7;
+	::Const.Tactical.Actor.Schrat.Hitpoints = 800;		// Vanilla: 600
+	::Const.Tactical.Actor.Schrat.Bravery = 200;
+	::Const.Tactical.Actor.Schrat.Stamina = 400;
+	::Const.Tactical.Actor.Schrat.MeleeSkill = 70;
+	::Const.Tactical.Actor.Schrat.RangedSkill = 0;
+	::Const.Tactical.Actor.Schrat.MeleeDefense = -5;
+	::Const.Tactical.Actor.Schrat.RangedDefense = -5;
+	::Const.Tactical.Actor.Schrat.Initiative = 60;
+
+	// Optional Stats
+	::Const.Tactical.Actor.Schrat.Reach <- 7;
 }
 
 // scripts/entity/tactical/enemies/spider

@@ -49,6 +49,7 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_steel_brow"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_one_with_the_shield"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_crippling_strikes"));
 
