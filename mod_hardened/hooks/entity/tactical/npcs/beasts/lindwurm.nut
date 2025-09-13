@@ -12,6 +12,12 @@
 		this.setupTail();
 	}}.onInit;
 
+	// We overwrite and wipe the lindwurm logic during moralechecks because it no longer resets its tail morale to that of its during checks
+	q.checkMorale = @() function( _change, _difficulty, _type = ::Const.MoraleCheckType.Default, _showIconBeforeMoraleIcon = "", _noNewLine = false )
+	{
+		return this.actor.checkMorale(_change, _difficulty, _type, _showIconBeforeMoraleIcon, _noNewLine);
+	}
+
 // New Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()
