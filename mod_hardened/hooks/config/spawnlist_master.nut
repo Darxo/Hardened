@@ -17,22 +17,22 @@
 // scripts/entity/tactical/humans/peasant
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.Peasant.Cost = 6;
-	::Const.World.Spawn.Troops.Peasant.Strength = 6;
+	::Const.World.Spawn.Troops.Peasant.Cost = 8;
+	::Const.World.Spawn.Troops.Peasant.Strength = 8;
 }
 
 // scripts/entity/tactical/humans/peasant_southern
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.SouthernPeasant.Cost = 6;
-	::Const.World.Spawn.Troops.SouthernPeasant.Strength = 6;
+	::Const.World.Spawn.Troops.SouthernPeasant.Cost = 8;
+	::Const.World.Spawn.Troops.SouthernPeasant.Strength = 8;
 }
 
 // scripts/entity/tactical/humans/peasant_armed
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.PeasantArmed.Cost = 6;
-	::Const.World.Spawn.Troops.PeasantArmed.Strength = 6;
+	::Const.World.Spawn.Troops.PeasantArmed.Cost = 10;
+	::Const.World.Spawn.Troops.PeasantArmed.Strength = 10;
 }
 
 // scripts/entity/tactical/wardog

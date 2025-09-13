@@ -9,10 +9,10 @@
 	// Mandatory stats
 	::Const.Tactical.Actor.Peasant.XP = 30;
 	::Const.Tactical.Actor.Peasant.ActionPoints = 9;
-	::Const.Tactical.Actor.Peasant.Hitpoints = 50;
+	::Const.Tactical.Actor.Peasant.Hitpoints = 55;
 	::Const.Tactical.Actor.Peasant.Bravery = 30;
 	::Const.Tactical.Actor.Peasant.Stamina = 100;
-	::Const.Tactical.Actor.Peasant.MeleeSkill = 40;
+	::Const.Tactical.Actor.Peasant.MeleeSkill = 50;
 	::Const.Tactical.Actor.Peasant.RangedSkill = 30;
 	::Const.Tactical.Actor.Peasant.MeleeDefense = 5;
 	::Const.Tactical.Actor.Peasant.RangedDefense = 5;
