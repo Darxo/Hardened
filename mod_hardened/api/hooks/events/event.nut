@@ -17,6 +17,24 @@
 		__original(_screen);
 	}
 
+	// Overwrite, to remove the reputation/playerstrength/day scaling
+	//	because event scaling is now done by ::Hardened.Global.getWorldDifficultyMult() globally
+	q.getScaledDifficultyMult = @() function()
+	{
+		local ret = 1.0;
+		ret *= ::Const.Difficulty.EnemyMult[::World.Assets.getCombatDifficulty()];
+		return ret;
+	}
+
+	// Overwrite, to remove the day scaling
+	//	because event scaling is now done by ::Hardened.Global.getWorldDifficultyMult() globally
+	q.getReputationToDifficultyLightMult = @() function()
+	{
+		local ret = 1.0;
+		ret *= ::Const.Difficulty.EnemyMult[::World.Assets.getCombatDifficulty()];
+		return ret;
+	}
+
 // New Functions
 	// Add a list item either to the active screen or the next screen over
 	q.addListItem <- function( _listItem )
