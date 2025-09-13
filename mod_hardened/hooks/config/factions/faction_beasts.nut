@@ -1,6 +1,4 @@
 // scripts/entity/tactical/enemies/ghoul
-// scripts/entity/tactical/enemies/ghoul_medium
-// scripts/entity/tactical/enemies/ghoul_high
 {
 	// Mandatory stats
 	::Const.Tactical.Actor.Ghoul.XP = 180;				// Vanilla: 125
@@ -296,6 +294,50 @@
 			Initiative = 80,
 			Armor = [300, 0],	// Vanilla: 400, 200
 
+			Reach = 6,
+		}
+	}
+
+	// scripts/entity/tactical/enemies/ghoul_medium
+	{
+		// Mandatory stats
+		::Const.Tactical.Actor.HD_GhoulMedium <- {
+			XP = 375,			// Vanilla: 250
+			ActionPoints = 9,
+			Hitpoints = 240,	// Vanilla: 200
+			Bravery = 80,
+			Stamina = 130,
+			MeleeSkill = 70,
+			RangedSkill = 0,
+			MeleeDefense = 15,	// Vanilla: 15
+			RangedDefense = 15,	// Vanilla: 10
+			Initiative = 100,	// Vanilla: 110
+			Armor = [0, 0],
+
+			DamageRegularMin = 15,
+			DamageRegularMax = 20,
+			Reach = 4,
+		}
+	}
+
+	// scripts/entity/tactical/enemies/ghoul_high
+	{
+		// Mandatory stats
+		::Const.Tactical.Actor.HD_GhoulHigh <- {
+			XP = 600,			// Vanilla: 375
+			ActionPoints = 9,
+			Hitpoints = 420,	// Vanilla: 380
+			Bravery = 110,
+			Stamina = 130,
+			MeleeSkill = 80,
+			RangedSkill = 0,
+			MeleeDefense = 20,	// Vanilla: 20
+			RangedDefense = 10,	// Vanilla: 5
+			Initiative = 80,	// Vanilla: 95
+			Armor = [0, 0],
+
+			DamageRegularMin = 30,
+			DamageRegularMax = 40,
 			Reach = 6,
 		}
 	}
