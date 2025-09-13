@@ -8,6 +8,8 @@
 	},
 	Const = {
 		ActionPointChangeOnRally = -3,	// Whenever this actor rallies (going from fleeing to wavering) its action points change by this amount
+		ContractScalingMax = 10.0,	// Contracts never scale beyond this value
+		ContractScalingPerReputation = 0.0005,	// Each Reputation point causes contracts to be this much more lucrative and dangerous
 		WorldScalingMax = 4.0,		// The world will never scale beyond this value
 		WorldScalingPerDay = 0.01,	// Each passed day causes the world to be this much more dangerous
 	},
@@ -16,6 +18,11 @@
 		getWorldDifficultyMult = function() {
 			local ret = 1.0 + ::World.getTime().Days * ::Hardened.Const.WorldScalingPerDay;
 			return ::Math.clampf(ret, 1.0, ::Hardened.Const.WorldScalingMax);
+		},
+		// All contracts will be this much harder and also yield this much more rewards
+		getWorldContractMult = function() {
+			local ret = 1.0 + ::World.Assets.getBusinessReputation() * ::Hardened.Const.ContractScalingPerReputation;
+			return ::Math.clampf(ret, 1.0, ::Hardened.Const.ContractScalingMax);
 		},
 	},
 }

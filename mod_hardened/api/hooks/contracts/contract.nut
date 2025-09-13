@@ -17,6 +17,26 @@
 		__original(_screen, _restartIfAlreadyActive);
 	}
 
+	// Overwrite, because we remove the vanilla strength-scaling in it, as contract spawns are now affected by our WorldDiffultyMult instead
+	q.getScaledDifficultyMult = @() function()
+	{
+		local ret = 0.75;	// Vanillas lowest value is this, so we use it as a baseline, to downscale our own multiplier
+		ret /= ::Hardened.Global.getWorldDifficultyMult();	// We preemtively counter this multiplier, as Contract encounters should be unaffected by world scaling
+		ret *= ::Hardened.Global.getWorldContractMult();
+		ret *= ::Const.Difficulty.EnemyMult[::World.Assets.getCombatDifficulty()];
+		return ret;
+	}
+
+	// Overwrite, because we scale the payment of all contracts linearly with their global difficulty
+	// We don't do the smae treatment to getReputationToPaymentLightMult, because that one is no guaranteed to encounter enemies
+	q.getReputationToPaymentMult = @() function()
+	{
+		local ret = 1.35;	// Vanillas lowest value is this, so we use it as a baseline, to upscale our own multiplier
+		ret *= ::Hardened.Global.getWorldContractMult();
+		ret *= ::Const.Difficulty.PaymentMult[::World.Assets.getEconomicDifficulty()];
+		return ret;
+	}
+
 	q.addUnitsToEntity = @(__original) function( _worldParty, _party, _resources )
 	{
 		_resources *= ::Hardened.Global.getWorldDifficultyMult();

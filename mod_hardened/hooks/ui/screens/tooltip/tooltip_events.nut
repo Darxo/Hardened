@@ -224,6 +224,20 @@
 						}
 					}
 				}
+
+				ret.push({
+					id = 13,
+					type = "text",
+					icon = "ui/icons/contract_scroll.png",
+					text = "Contracts pay " + ::MSU.Text.colorizeMultWithText(::Hardened.Global.getWorldContractMult()) + " Crowns",
+				});
+
+				ret.push({
+					id = 14,
+					type = "text",
+					icon = "ui/icons/miniboss.png",
+					text = "Contracts are " + ::MSU.Text.colorizeMultWithText(::Hardened.Global.getWorldContractMult(), {InvertColor = true}) + " more difficult",
+				});
 				break;
 			}
 
