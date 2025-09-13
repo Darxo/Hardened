@@ -61,17 +61,6 @@
 		__original(_attacker, _skill, _hitInfo);
 	}
 
-	// For Vanilla you'd hook onActorKilled on player.nut. But Reforged moved the exp calculation over into the onDeath of actor.nut
-	q.onDeath = @(__original) function( _killer, _skill, _tile, _fatalityType )
-	{
-		local oldGlobalXPMult = ::Const.Combat.GlobalXPMult;
-		if (!this.m.GrantsXPOnDeath) ::Const.Combat.GlobalXPMult = 0;
-
-		__original(_killer, _skill, _tile, _fatalityType);
-
-		::Const.Combat.GlobalXPMult = oldGlobalXPMult;
-	}
-
 	q.onInit = @(__original) function()
 	{
 		__original();
@@ -395,6 +384,18 @@
 			this.m.Hitpoints = b.Hitpoints;
 			this.m.CurrentProperties = clone b;	// Feat: we initialize the CurrentProperties once. That way we can save one line in every NPC implementation
 		}
+	}
+
+	// For Vanilla you'd hook onActorKilled on player.nut. But Reforged moved the exp calculation over into the onDeath of actor.nut
+	// Reforged adds its XP at the start of onDeath via hookTree, so in order to still be earlier, we need to do the same
+	q.onDeath = @(__original) function( _killer, _skill, _tile, _fatalityType )
+	{
+		local oldGlobalXPMult = ::Const.Combat.GlobalXPMult;
+		if (!this.m.GrantsXPOnDeath) ::Const.Combat.GlobalXPMult = 0;
+
+		__original(_killer, _skill, _tile, _fatalityType);
+
+		::Const.Combat.GlobalXPMult = oldGlobalXPMult;
 	}
 
 	// Assign all regular Equipment that this character brings into battle BEFORE any other assign equipment logic runs
