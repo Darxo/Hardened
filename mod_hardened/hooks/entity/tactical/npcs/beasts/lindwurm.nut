@@ -49,9 +49,6 @@
 		// Tweak Base Properties
 		local b = this.getBaseProperties();
 		b.setValues(::Const.Tactical.Actor.Lindwurm);
-		b.TargetAttractionMult = 0.1;
-		b.IsAffectedByInjuries = false;
-		b.IsImmuneToDisarm = true;
 
 		// Generic Effects
 		this.getSkills().add(::new("scripts/skills/racial/lindwurm_racial"));

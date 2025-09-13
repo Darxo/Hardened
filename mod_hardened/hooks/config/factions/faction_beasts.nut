@@ -1,9 +1,5 @@
 ::Const.Tactical.Actor.Schrat.Hitpoints += 200;	// Schrats lost ~half of their damage mitigation with shields. Therefor their Hitpoints get buffed a bit
 
-// Lindwurm
-::Const.Tactical.Actor.Lindwurm.Hitpoints = 1000;	// In Vanilla this is 1100
-::Const.Tactical.Actor.Lindwurm.MeleeDefense += 15;	// In Reforged this is 5, In Vanilla this is 10
-
 // scripts/entity/tactical/enemies/ghoul
 // scripts/entity/tactical/enemies/ghoul_medium
 // scripts/entity/tactical/enemies/ghoul_high
@@ -246,4 +242,22 @@
 
 	// Optional Stats
 	::Const.Tactical.Actor.UnholdFrost.Reach <- 7;
+}
+
+// scripts/entity/tactical/enemies/lindwurm
+{
+	// Mandatory stats
+	::Const.Tactical.Actor.Lindwurm.XP = 1800;				// Vanilla: 800
+	::Const.Tactical.Actor.Lindwurm.ActionPoints = 7;
+	::Const.Tactical.Actor.Lindwurm.Hitpoints = 1000;		// Vanilla: 1100 (Shared with Tail)
+	::Const.Tactical.Actor.Lindwurm.Bravery = 180;
+	::Const.Tactical.Actor.Lindwurm.Stamina = 400;
+	::Const.Tactical.Actor.Lindwurm.MeleeSkill = 75;
+	::Const.Tactical.Actor.Lindwurm.RangedSkill = 0;
+	::Const.Tactical.Actor.Lindwurm.MeleeDefense = 20;		// Vanilla: 10; Reforged: 5
+	::Const.Tactical.Actor.Lindwurm.RangedDefense = 10;
+	::Const.Tactical.Actor.Lindwurm.Initiative = 80;
+
+	// Optional Stats
+	::Const.Tactical.Actor.Lindwurm.Reach <- 7;
 }
