@@ -5,7 +5,7 @@ local oldAssignTroops = ::Const.World.Common.assignTroops;
 	return oldAssignTroops(_worldParty, _partyList, _resources, _minibossify, _weightMode);
 }
 
-local oldAddUnitsToCombat = ::Const.World.Common.assignTroops;
+local oldAddUnitsToCombat = ::Const.World.Common.addUnitsToCombat;
 ::Const.World.Common.addUnitsToCombat = function( _into, _partyList, _resources, _faction, _minibossify = 0 )
 {
 	_resources *= ::Hardened.Global.getWorldDifficultyMult();
