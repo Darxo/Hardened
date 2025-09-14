@@ -23,6 +23,10 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+1.0.0-alpha-3
+	- Disable Crock Pots day scaling for roaming parties
+	- Fix several contracts throwing errors when trying to generating additional troops into an encounter
+
 1.0.0-alpha-2
 	- Completely rework global difficulty scaling. Every dynamic party/location now gets 1% more Resources per day in the campaign, up to a maximum of 300% more at day 300.
 	- Completely rework contract scaling. For every 20 Renown you have, contracts will reward you with 1% more crowns and enemies spawned by it will have 1% more resources available, up to a maximum of 1000% more at a Renown value of 20000. You can view the current contract multipler when looking at the renown tooltip
