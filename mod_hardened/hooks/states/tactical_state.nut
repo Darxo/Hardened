@@ -58,6 +58,59 @@
 		return __original(_mouse);
 	}
 
+	q.helper_handleContextualKeyInput = @(__original) function( _key )
+	{
+		if (this.isInLoadingScreen()) return __original(_key);
+		if (this.helper_handleDeveloperKeyInput(_key)) return __original(_key);
+		if (this.isBattleEnded()) return __original(_key);
+		if (_key.getModifier() == KeyModifier.Control) return __original(_key);
+		if (_key.getState() == 1)
+		{
+			if (this.isInputLocked() || this.isInCharacterScreen() || this.m.IsDeveloperModeEnabled || this.m.MenuStack.hasBacksteps()) return false;
+
+			// Vanilla Fix: We prevent Lag Spikes during battle from causing the camera position to jump from pressing WASD keys
+			// This is caused because (I assume) helper_handleContextualKeyInput is called once every frame
+			// Therefor we need to scale the distance, that we move by the time since the last frame (::Time.getDelta())
+			// A lag causes the time since the last frame to skyrocket, which would then catapult your camera in one direction if you happened to have held a WASD key down
+			// Our solution is to limit the speed-up of the camera panning to at most that of a 20 FPS (delta of 0.05 seconds since last frame) game
+			// As a consequence, if you happen to have less than 20 FPS consistently, your camera movement will slow down
+			local dt = ::Math.minf(::Time.getDelta(), 0.05);
+			switch(_key.getKey())
+			{
+				case Key.A:
+				case Key.Q:		// Probably supported because of french keyboards
+				case Key.ArrowLeft:
+				{
+					::Tactical.getCamera().move(-1500.0 * dt, 0);
+					return true;
+				}
+
+				case Key.D:
+				case Key.ArrowRight:
+				{
+					::Tactical.getCamera().move(1500.0 * dt, 0);
+					return true;
+				}
+
+				case Key.W:
+				case Key.Z:		// Probably supported because of french keyboards
+				case Key.ArrowUp:
+				{
+					::Tactical.getCamera().move(0, 1500.0 * dt);
+					return true;
+				}
+
+				case Key.S:
+				case Key.ArrowDown:
+				{
+					::Tactical.getCamera().move(0, -1500.0 * dt);
+					return true;
+				}
+			}
+		}
+		return __original(_key);
+	}
+
 	q.turnsequencebar_onNextRound = @(__original) function( _round )
 	{
 		// Our goal here is to call onRoundStart/End for otherwise left-out entities. Those all have in common that they have IsActingEachTurn set to false
