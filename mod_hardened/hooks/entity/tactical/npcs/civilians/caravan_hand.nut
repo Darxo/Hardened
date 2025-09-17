@@ -25,6 +25,7 @@
 			[12, "scripts/items/weapons/knife"],
 		]);
 
+		this.m.ChanceForNoOffhand = 30;
 		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/shields/wooden_shield_old"],
 		]);
