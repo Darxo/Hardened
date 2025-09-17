@@ -6,6 +6,21 @@
 	{
 		__original();
 
+		this.m.ChanceForNoChest = 25;
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/greenskins/orc_young_very_light_armor"],
+			[12, "scripts/items/armor/greenskins/orc_young_light_armor"],
+			[12, "scripts/items/armor/greenskins/orc_young_medium_armor"],
+			[12, "scripts/items/armor/greenskins/orc_young_heavy_armor"],
+		]);
+
+		this.m.ChanceForNoHelmet = 25;
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/greenskins/orc_young_light_helmet"],
+			[12, "scripts/items/helmets/greenskins/orc_young_medium_helmet"],
+			[12, "scripts/items/helmets/greenskins/orc_young_heavy_helmet"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/morning_star"],
 			[12, "scripts/items/weapons/greenskins/orc_metal_club"],
@@ -96,38 +111,6 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
-		local r = this.Math.rand(1, 5);
-		if (r == 1)
-		{
-			this.getItems().equip(::new("scripts/items/armor/greenskins/orc_young_very_light_armor"));
-		}
-		else if (r == 2)
-		{
-			this.getItems().equip(::new("scripts/items/armor/greenskins/orc_young_light_armor"));
-		}
-		else if (r == 3)
-		{
-			this.getItems().equip(::new("scripts/items/armor/greenskins/orc_young_medium_armor"));
-		}
-		else if (r == 4)
-		{
-			this.getItems().equip(::new("scripts/items/armor/greenskins/orc_young_heavy_armor"));
-		}
-
-		r = this.Math.rand(1, 4);
-		if (r == 1)
-		{
-			this.getItems().equip(::new("scripts/items/helmets/greenskins/orc_young_light_helmet"));
-		}
-		else if (r == 2)
-		{
-			this.getItems().equip(::new("scripts/items/helmets/greenskins/orc_young_medium_helmet"));
-		}
-		else if (r == 3)
-		{
-			this.getItems().equip(::new("scripts/items/helmets/greenskins/orc_young_heavy_helmet"));
-		}
 	}
 
 	// Assign all other gear to this character

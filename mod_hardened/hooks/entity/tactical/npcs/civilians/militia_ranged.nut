@@ -6,6 +6,18 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[4, "scripts/items/armor/leather_tunic"],
+			[12, "scripts/items/armor/linen_tunic"],
+		]);
+
+		this.m.ChanceForNoHelmet = 50;
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/hood"],
+			[12, "scripts/items/helmets/aketon_cap"],
+			[12, "scripts/items/helmets/open_leather_cap"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/short_bow"],
 		]);
@@ -57,46 +69,6 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
-		local r = this.Math.rand(1, 4);
-		if (r == 1)
-		{
-			this.getItems().equip(::new("scripts/items/armor/leather_tunic"));
-		}
-		else if (r == 2)
-		{
-			this.getItems().equip(::new("scripts/items/armor/linen_tunic"));
-		}
-		else if (r == 3)
-		{
-			this.getItems().equip(::new("scripts/items/armor/tattered_sackcloth"));
-		}
-		else if (r == 4)
-		{
-			this.getItems().equip(::new("scripts/items/armor/sackcloth"));
-		}
-
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			local r = this.Math.rand(1, 4);
-
-			if (r == 1)
-			{
-				this.getItems().equip(::new("scripts/items/helmets/hood"));
-			}
-			else if (r == 2)
-			{
-				this.getItems().equip(::new("scripts/items/helmets/aketon_cap"));
-			}
-			else if (r == 3)
-			{
-				this.getItems().equip(::new("scripts/items/helmets/open_leather_cap"));
-			}
-			else if (r == 4)
-			{
-				this.getItems().equip(::new("scripts/items/helmets/full_leather_cap"));
-			}
-		}
 	}
 
 	// Assign all other gear to this character

@@ -6,6 +6,11 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/padded_leather"],
+			[12, "scripts/items/armor/leather_lamellar"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/billhook"],
 			[12, "scripts/items/weapons/pike"],
@@ -58,17 +63,6 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently mostly a 1:1 copy of Reforged code, as there is no easier way to apply our changes via hooking
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
-		{
-			local armor = ::MSU.Class.WeightedContainer([
-				[1, "scripts/items/armor/gambeson"],
-				[1, "scripts/items/armor/basic_mail_shirt"],
-				[1, "scripts/items/armor/mail_shirt"],
-			]).roll();
-			this.getItems().equip(::new(armor));
-		}
-
 		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
 		{
 			local banner = ::Tactical.State.isScenarioMode() ? this.getFaction() : ::World.FactionManager.getFaction(this.getFaction()).getBanner();
@@ -101,8 +95,6 @@
 			{
 				helmet = ::new(::MSU.Class.WeightedContainer([
 					[1, "scripts/items/helmets/mail_coif"],
-					[1, "scripts/items/helmets/aketon_cap"],
-					[1, "scripts/items/helmets/full_aketon_cap"],
 				]).roll());
 			}
 

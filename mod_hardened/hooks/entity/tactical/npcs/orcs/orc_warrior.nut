@@ -6,6 +6,19 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[6, "scripts/items/armor/greenskins/orc_berserker_light_armor"],
+			[6, "scripts/items/armor/greenskins/orc_warrior_medium_armor"],
+			[12, "scripts/items/armor/greenskins/orc_warrior_heavy_armor"],
+			[12, "scripts/items/armor/greenskins/orc_warrior_heavy_armor"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/greenskins/orc_warrior_light_helmet"],
+			[12, "scripts/items/helmets/greenskins/orc_warrior_medium_helmet"],
+			[12, "scripts/items/helmets/greenskins/orc_warrior_heavy_helmet"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/greenskins/orc_axe"],
 			[12, "scripts/items/weapons/greenskins/orc_cleaver"],
@@ -108,26 +121,5 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
-		if (this.getItems().getItemAtSlot(::Const.ItemSlot.Body) == null)
-		{
-			local armor = [
-				"armor/greenskins/orc_warrior_light_armor",
-				"armor/greenskins/orc_warrior_medium_armor",
-				"armor/greenskins/orc_warrior_heavy_armor",
-				"armor/greenskins/orc_warrior_heavy_armor"
-			];
-			this.getItems().equip(::new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
-		}
-
-		if (this.getItems().getItemAtSlot(::Const.ItemSlot.Head) == null)
-		{
-			local helmet = [
-				"helmets/greenskins/orc_warrior_light_helmet",
-				"helmets/greenskins/orc_warrior_medium_helmet",
-				"helmets/greenskins/orc_warrior_heavy_helmet"
-			];
-			this.getItems().equip(::new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
-		}
 	}
 });

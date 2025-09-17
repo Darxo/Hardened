@@ -6,6 +6,14 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/greenskins/orc_warlord_armor"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/greenskins/orc_warlord_helmet"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/greenskins/orc_axe_2h"],
 		]);
@@ -120,15 +128,5 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
-		if (this.getItems().getItemAtSlot(::Const.ItemSlot.Body) == null)
-		{
-			this.getItems().equip(::new("scripts/items/armor/greenskins/orc_warlord_armor"));
-		}
-
-		if (this.getItems().getItemAtSlot(::Const.ItemSlot.Head) == null)
-		{
-			this.getItems().equip(::new("scripts/items/helmets/greenskins/orc_warlord_helmet"));
-		}
 	}
 });

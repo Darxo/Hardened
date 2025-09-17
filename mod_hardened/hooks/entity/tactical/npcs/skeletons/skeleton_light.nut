@@ -6,6 +6,16 @@
 	{
 		__original();
 
+		this.m.ChanceForNoChest = 25;
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/ancient/ancient_ripped_cloth"],
+		]);
+
+		this.m.ChanceForNoHelmet = 25;
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/ancient/ancient_household_helmet"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/ancient/broken_ancient_sword"],
 			[12, "scripts/items/weapons/ancient/falx"],
@@ -51,15 +61,5 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently mostly a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
-		if (this.Math.rand(1, 100) < 75)
-		{
-			this.getItems().equip(::new("scripts/items/armor/ancient/ancient_ripped_cloth"));
-		}
-
-		if (this.Math.rand(1, 100) < 75)
-		{
-			this.getItems().equip(::new("scripts/items/helmets/ancient/ancient_household_helmet"));
-		}
 	}
 });

@@ -9,6 +9,25 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 130 - 190
+			[12, "scripts/items/armor/basic_mail_shirt"],
+			[12, "scripts/items/armor/mail_shirt"],
+			[12, "scripts/items/armor/mail_hauberk"],
+			[12, "scripts/items/armor/footman_armor"],
+			[12, "scripts/items/armor/light_scale_armor"],
+			[12, "scripts/items/armor/leather_scale_armor"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 120 - 180
+			[12, "scripts/items/helmets/nasal_helmet"],
+			[12, "scripts/items/helmets/nasal_helmet_with_mail"],
+			[12, "scripts/items/helmets/reinforced_mail_coif"],
+			[12, "scripts/items/helmets/kettle_hat"],
+			[12, "scripts/items/helmets/flat_top_helmet"],
+			[12, "scripts/items/helmets/nordic_helmet"],
+			[12, "scripts/items/helmets/closed_flat_top_helmet"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/arming_sword"],
 			[12, "scripts/items/weapons/flail"],
@@ -77,73 +96,6 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently mostly a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
-		local r = ::Math.rand(1, 11);
-		if (r == 1)
-		{
-			this.getItems().equip(::new("scripts/items/armor/sellsword_armor"));
-		}
-		else if (r == 2)
-		{
-			this.getItems().equip(::new("scripts/items/armor/padded_leather"));
-		}
-		else if (r == 3)
-		{
-			this.getItems().equip(::new("scripts/items/armor/patched_mail_shirt"));
-		}
-		else if (r == 4)
-		{
-			this.getItems().equip(::new("scripts/items/armor/basic_mail_shirt"));
-		}
-		else if (r == 5)
-		{
-			this.getItems().equip(::new("scripts/items/armor/mail_shirt"));
-		}
-		else if (r == 6)
-		{
-			this.getItems().equip(::new("scripts/items/armor/reinforced_mail_hauberk"));
-		}
-		else if (r == 7)
-		{
-			this.getItems().equip(::new("scripts/items/armor/mail_hauberk"));
-		}
-		else if (r == 8)
-		{
-			this.getItems().equip(::new("scripts/items/armor/lamellar_harness"));
-		}
-		else if (r == 9)
-		{
-			this.getItems().equip(::new("scripts/items/armor/footman_armor"));
-		}
-		else if (r == 10)
-		{
-			this.getItems().equip(::new("scripts/items/armor/light_scale_armor"));
-		}
-		else if (r == 11)
-		{
-			this.getItems().equip(::new("scripts/items/armor/leather_scale_armor"));
-		}
-
-		if (::Math.rand(1, 100) <= 90)
-		{
-			local helmets = [
-				"scripts/items/helmets/nasal_helmet",
-				"scripts/items/helmets/nasal_helmet_with_mail",
-				"scripts/items/helmets/mail_coif",
-				"scripts/items/helmets/reinforced_mail_coif",
-				"scripts/items/helmets/headscarf",
-				"scripts/items/helmets/kettle_hat",
-				"scripts/items/helmets/kettle_hat_with_mail",
-				"scripts/items/helmets/flat_top_helmet",
-				"scripts/items/helmets/flat_top_with_mail",
-				"scripts/items/helmets/closed_flat_top_helmet",
-				"scripts/items/helmets/closed_mail_coif",
-				"scripts/items/helmets/bascinet_with_mail",
-				"scripts/items/helmets/nordic_helmet",
-				"scripts/items/helmets/steppe_helmet_with_mail",
-			];
-			this.getItems().equip(::new(::MSU.Array.rand(helmets)));
-		}
 	}
 
 	// Assign all other gear to this character

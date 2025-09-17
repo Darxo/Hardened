@@ -6,6 +6,16 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/gambeson"],
+			[12, "scripts/items/armor/padded_leather"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/aketon_cap"],
+			[12, "scripts/items/helmets/full_aketon_cap"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/crossbow"],
 		]);
@@ -57,33 +67,6 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently mostly a 1:1 copy of Reforged code, as there is no easier way to apply our changes via hooking
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
-		{
-			local armor = ::MSU.Class.WeightedContainer([
-				[1, "scripts/items/armor/gambeson"],
-				[1, "scripts/items/armor/padded_leather"],
-				[1, "scripts/items/armor/leather_lamellar"],
-			]).roll();
-
-			this.getItems().equip(::new(armor));
-		}
-
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
-		{
-			local script = ::MSU.Class.WeightedContainer([
-				[1, "scripts/items/helmets/aketon_cap"],
-				[1, "scripts/items/helmets/full_aketon_cap"],
-				[1, "scripts/items/helmets/mail_coif"],
-			]).roll();
-
-			if (script != "")
-			{
-				local helmet = ::new(script);
-				helmet.setPlainVariant();
-				this.getItems().equip(helmet);
-			}
-		}
 	}
 
 	// Assign all other gear to this character

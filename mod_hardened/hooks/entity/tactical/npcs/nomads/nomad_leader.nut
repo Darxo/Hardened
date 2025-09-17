@@ -6,6 +6,17 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/light_scale_armor"],
+			[12, "scripts/items/armor/oriental/southern_long_mail_with_padding"],
+			[12, "scripts/items/armor/lamellar_harness"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/oriental/southern_helmet_with_coif"],
+			[12, "scripts/items/helmets/steppe_helmet_with_mail"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/fighting_spear"],
 			[12, "scripts/items/weapons/oriental/heavy_southern_mace"],
@@ -126,25 +137,6 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently mostly a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
-		{
-			local armor = ::MSU.Class.WeightedContainer([
-				[1, "scripts/items/armor/light_scale_armor"],
-				[1, "scripts/items/armor/oriental/southern_long_mail_with_padding"],
-				[1, "scripts/items/armor/lamellar_harness"],
-			]).roll();
-			this.getItems().equip(::new(armor));
-		}
-
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
-		{
-			local helmet = ::MSU.Class.WeightedContainer([
-				[1, "scripts/items/helmets/oriental/southern_helmet_with_coif"],
-				[1, "scripts/items/helmets/steppe_helmet_with_mail"],
-			]).roll();
-			this.getItems().equip(::new(helmet));
-		}
 	}
 
 	// Assign all other gear to this character

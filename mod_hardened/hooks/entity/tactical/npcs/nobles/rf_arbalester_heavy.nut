@@ -6,6 +6,16 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/basic_mail_shirt"],
+			[12, "scripts/items/armor/mail_shirt"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/mail_coif"],
+			[12, "scripts/items/helmets/closed_mail_coif"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/heavy_crossbow"],
 		]);
@@ -60,29 +70,6 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently mostly a 1:1 copy of Reforged code, as there is no easier way to apply our changes via hooking
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
-		{
-			local armor = ::MSU.Class.WeightedContainer([
-				[1, "scripts/items/armor/leather_lamellar"],
-				[1, "scripts/items/armor/basic_mail_shirt"],
-				[1, "scripts/items/armor/mail_shirt"],
-			]).roll();
-
-			if (armor != null) this.getItems().equip(::new(armor));
-		}
-
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
-		{
-			local helmet = ::new(::MSU.Class.WeightedContainer([	// Todo: use helmets with -1 vision penalty
-				[1, "scripts/items/helmets/full_aketon_cap"],
-				[1, "scripts/items/helmets/mail_coif"],
-				[1, "scripts/items/helmets/closed_mail_coif"],
-			]).roll());
-
-			helmet.setPlainVariant();
-			this.getItems().equip(helmet);
-		}
 	}
 
 	// Assign all other gear to this character
@@ -93,6 +80,12 @@
 		if (::Math.rand(1, 100) <= this.m.SurcoatChance)
 		{
 			this.getSprite("surcoat").setBrush("surcoat_" + (banner < 10 ? "0" + banner : banner));
+		}
+
+		local helmet = this.getHeadItem();
+		if (helmet != null)
+		{
+			helmet.setPlainVariant();
 		}
 
 		this.getItems().equip(::new("scripts/items/ammo/quiver_of_bolts"));

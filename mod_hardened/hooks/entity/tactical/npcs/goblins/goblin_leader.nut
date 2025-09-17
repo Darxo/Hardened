@@ -6,6 +6,14 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/greenskins/goblin_leader_armor"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/greenskins/goblin_leader_helmet"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/greenskins/goblin_crossbow"],
 		]);
@@ -62,9 +70,6 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
-		this.getItems().equip(::new("scripts/items/armor/greenskins/goblin_leader_armor"));
-		this.getItems().equip(::new("scripts/items/helmets/greenskins/goblin_leader_helmet"));
 	}
 
 	// Assign all other gear to this character

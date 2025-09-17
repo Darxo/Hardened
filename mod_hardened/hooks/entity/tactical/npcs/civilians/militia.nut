@@ -6,6 +6,21 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([	// 20 - 50
+			[12, "scripts/items/armor/leather_tunic"],
+			[12, "scripts/items/armor/linen_tunic"],
+			[12, "scripts/items/armor/thick_tunic"],
+			[4, "scripts/items/armor/apron"],
+			[4, "scripts/items/armor/butcher_apron"],
+		]);
+
+		this.m.ChanceForNoHelmet = 50;
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 20 - 40
+			[12, "scripts/items/helmets/hood"],
+			[12, "scripts/items/helmets/aketon_cap"],
+			[12, "scripts/items/helmets/headscarf"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/bludgeon"],
 			[12, "scripts/items/weapons/hatchet"],
@@ -65,66 +80,6 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently mostly a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
-		local r = this.Math.rand(1, 8);
-		if (r == 1)
-		{
-			this.getItems().equip(::new("scripts/items/armor/leather_tunic"));
-		}
-		else if (r == 2)
-		{
-			this.getItems().equip(::new("scripts/items/armor/linen_tunic"));
-		}
-		else if (r == 3)
-		{
-			this.getItems().equip(::new("scripts/items/armor/tattered_sackcloth"));
-		}
-		else if (r == 4)
-		{
-			this.getItems().equip(::new("scripts/items/armor/sackcloth"));
-		}
-		else if (r == 5)
-		{
-			this.getItems().equip(::new("scripts/items/armor/padded_surcoat"));
-		}
-		else if (r == 6)
-		{
-			this.getItems().equip(::new("scripts/items/armor/thick_tunic"));
-		}
-		else if (r == 7)
-		{
-			this.getItems().equip(::new("scripts/items/armor/apron"));
-		}
-		else if (r == 8)
-		{
-			this.getItems().equip(::new("scripts/items/armor/butcher_apron"));
-		}
-
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			local r = this.Math.rand(1, 5);
-
-			if (r == 1)
-			{
-				this.getItems().equip(::new("scripts/items/helmets/hood"));
-			}
-			else if (r == 2)
-			{
-				this.getItems().equip(::new("scripts/items/helmets/aketon_cap"));
-			}
-			else if (r == 3)
-			{
-				this.getItems().equip(::new("scripts/items/helmets/open_leather_cap"));
-			}
-			else if (r == 4)
-			{
-				this.getItems().equip(::new("scripts/items/helmets/full_leather_cap"));
-			}
-			else if (r == 5)
-			{
-				this.getItems().equip(::new("scripts/items/helmets/headscarf"));
-			}
-		}
 	}
 });
 

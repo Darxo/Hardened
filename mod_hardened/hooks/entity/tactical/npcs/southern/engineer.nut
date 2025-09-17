@@ -6,6 +6,14 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/oriental/padded_vest"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/oriental/engineer_hat"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/knife"],
 			[12, "scripts/items/weapons/wooden_stick"],
@@ -59,7 +67,5 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		this.getItems().equip(::new("scripts/items/armor/oriental/padded_vest"));
-		this.getItems().equip(::new("scripts/items/helmets/oriental/engineer_hat"));
 	}
 });

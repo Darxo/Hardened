@@ -6,6 +6,16 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/lamellar_harness"],
+			[12, "scripts/items/armor/heavy_lamellar_armor"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/oriental/southern_helmet_with_coif"],
+			[12, "scripts/items/helmets/oriental/turban_helmet"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/two_handed_flail"],
 			[12, "scripts/items/weapons/two_handed_flanged_mace"],
@@ -107,24 +117,5 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently mostly a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
-		{
-			local armor = [
-				"scripts/items/armor/lamellar_harness",
-				"scripts/items/armor/heavy_lamellar_armor",
-			];
-			this.getItems().equip(::new(armor[this.Math.rand(0, armor.len() - 1)]));
-		}
-
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
-		{
-			local helmet = [
-				"scripts/items/helmets/oriental/nomad_reinforced_helmet",
-				"scripts/items/helmets/oriental/southern_helmet_with_coif",
-				"scripts/items/helmets/oriental/turban_helmet",
-			];
-			this.getItems().equip(::new(helmet[this.Math.rand(0, helmet.len() - 1)]));
-		}
 	}
 });

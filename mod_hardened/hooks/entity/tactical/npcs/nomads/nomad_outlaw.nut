@@ -6,6 +6,18 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/oriental/stitched_nomad_armor"],
+			[12, "scripts/items/armor/oriental/plated_nomad_mail"],
+			[12, "scripts/items/armor/oriental/leather_nomad_robe"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/oriental/nomad_leather_cap"],
+			[12, "scripts/items/helmets/oriental/nomad_light_helmet"],
+			[12, "scripts/items/helmets/oriental/nomad_reinforced_helmet"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[4, "scripts/items/weapons/battle_whip"],	// Todo: find a better enemy for this type of weapon
 			[12, "scripts/items/weapons/scimitar"],
@@ -87,20 +99,6 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently mostly a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
-		local armor = [
-			"scripts/items/armor/oriental/stitched_nomad_armor",
-			"scripts/items/armor/oriental/plated_nomad_mail",
-			"scripts/items/armor/oriental/leather_nomad_robe",
-		];
-		this.getItems().equip(::new(armor[this.Math.rand(0, armor.len() - 1)]));
-		local helmet = [
-			"scripts/items/helmets/oriental/nomad_leather_cap",
-			"scripts/items/helmets/oriental/nomad_light_helmet",
-			"scripts/items/helmets/oriental/nomad_reinforced_helmet",
-			"scripts/items/helmets/oriental/leather_head_wrap",
-		];
-		this.getItems().equip(::new(helmet[this.Math.rand(0, helmet.len() - 1)]));
 	}
 
 	// Assign all other gear to this character

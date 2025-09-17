@@ -6,6 +6,10 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/rf_brigandine_shirt"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/war_bow"],
 			[12, "scripts/items/weapons/heavy_crossbow"],
@@ -105,32 +109,6 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently a 1:1 copy of Reforged code, as there is no easier way to apply our changes via hooking
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
-		{
-			this.getItems().equip(::new(::MSU.Class.WeightedContainer([
-				[1, "scripts/items/armor/thick_tunic"],
-				[1, "scripts/items/armor/padded_surcoat"],
-				[1, "scripts/items/armor/gambeson"]
-			]).roll()));
-		}
-
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
-		{
-			if (this.m.IsMiniboss)
-			{
-				this.getItems().equip(::new("scripts/items/helmets/greatsword_hat"));
-			}
-			else
-			{
-				local helmet = ::MSU.Class.WeightedContainer([
-					[1, "scripts/items/helmets/hood"],
-					[1, "scripts/items/helmets/hunters_hat"]
-				]).rollChance(33);
-
-				if (helmet != null) this.getItems().equip(::new(helmet));
-			}
-		}
 	}
 
 	// Assign all other gear to this character

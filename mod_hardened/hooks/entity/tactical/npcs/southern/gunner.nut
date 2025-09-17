@@ -6,6 +6,10 @@
 	{
 		__original();
 
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/oriental/gunner_hat"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/oriental/handgonne"],
 		]);
@@ -73,9 +77,6 @@
 		else if (banner == 13) armor.setVariant(10);
 		else if (banner == 14) armor.setVariant(8);
 		this.getItems().equip(armor);
-
-		local helmet = ::new("scripts/items/helmets/oriental/gunner_hat");
-		this.getItems().equip(helmet);
 	}
 
 	// Assign all other gear to this character

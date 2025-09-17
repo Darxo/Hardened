@@ -6,6 +6,18 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/oriental/nomad_robe"],
+			[12, "scripts/items/armor/oriental/thick_nomad_robe"],
+			[12, "scripts/items/armor/oriental/cloth_sash"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[24, "scripts/items/helmets/oriental/nomad_head_wrap"],
+			[12, "scripts/items/helmets/oriental/leather_head_wrap"],
+			[12, "scripts/items/helmets/oriental/nomad_leather_cap"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/oriental/saif"],
 			[12, "scripts/items/weapons/oriental/nomad_mace"],
@@ -76,19 +88,5 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently mostly a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
-		local armor = [
-			"armor/oriental/nomad_robe",
-			"armor/oriental/thick_nomad_robe",
-			"armor/oriental/cloth_sash",
-		];
-		this.getItems().equip(::new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
-		local helmet = [
-			"helmets/oriental/nomad_head_wrap",
-			"helmets/oriental/nomad_head_wrap",
-			"helmets/oriental/leather_head_wrap",
-			"helmets/oriental/nomad_leather_cap",
-		];
-		this.getItems().equip(::new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
 	}
 });

@@ -6,6 +6,18 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/oriental/padded_mail_and_lamellar_hauberk"],
+			[12, "scripts/items/armor/oriental/southern_long_mail_with_padding"],
+			[12, "scripts/items/armor/oriental/mail_and_lamellar_plating"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/oriental/turban_helmet"],
+			[12, "scripts/items/helmets/oriental/heavy_lamellar_helmet"],
+			[12, "scripts/items/helmets/oriental/southern_helmet_with_coif"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/shamshir"],
 			[12, "scripts/items/weapons/oriental/heavy_southern_mace"],
@@ -93,41 +105,5 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
-		{
-			local r = this.Math.rand(1, 3);
-
-			if (r == 1)
-			{
-				this.getItems().equip(::new("scripts/items/armor/oriental/padded_mail_and_lamellar_hauberk"));
-			}
-			else if (r == 2)
-			{
-				this.getItems().equip(::new("scripts/items/armor/oriental/southern_long_mail_with_padding"));
-			}
-			else if (r == 3)
-			{
-				this.getItems().equip(::new("scripts/items/armor/oriental/mail_and_lamellar_plating"));
-			}
-		}
-
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
-		{
-			local r = this.Math.rand(1, 3);
-
-			if (r == 1)
-			{
-				this.getItems().equip(::new("scripts/items/helmets/oriental/turban_helmet"));
-			}
-			else if (r == 2)
-			{
-				this.getItems().equip(::new("scripts/items/helmets/oriental/heavy_lamellar_helmet"));
-			}
-			else if (r == 3)
-			{
-				this.getItems().equip(::new("scripts/items/helmets/oriental/southern_helmet_with_coif"));
-			}
-		}
 	}
 });

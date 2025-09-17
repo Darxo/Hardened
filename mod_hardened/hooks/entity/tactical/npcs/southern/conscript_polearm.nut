@@ -14,15 +14,6 @@
 		this.m.OffhandWeightContainer = null;
 	}
 
-	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
-	q.onInit = @() { function onInit()
-	{
-		this.human.onInit();
-
-		this.HD_onInitSprites();
-		this.HD_onInitStatsAndSkills();
-	}}.onInit;
-
 // Reforged Functions
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
 	q.onSpawned = @() function()
@@ -30,15 +21,9 @@
 		::Reforged.Skills.addMasteryOfEquippedWeapon(this);
 	}
 
-// New Functions
-	// Assign Socket and adjust Sprites
-	q.HD_onInitSprites <- function()
-	{
-		this.getSprite("socket").setBrush("bust_base_southern");
-	}
-
+// Hardened Functions
 	// Assign Stats and Unconditional Immunities, Perks and Actives
-	q.HD_onInitStatsAndSkills <- function()
+	q.HD_onInitStatsAndSkills = @() function()
 	{
 		// Tweak Base Properties
 		local b = this.getBaseProperties();
@@ -48,24 +33,5 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_poise"));
 
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_strength_in_numbers"));
-	}
-
-	// Assign Head and Body armor to this character
-	q.HD_assignArmor <- function()
-	{
-		// This is currently mostly a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
-		{
-			this.getItems().equip(::new("scripts/items/armor/oriental/assassin_robe"));
-		}
-
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
-		{
-			local helmet = ::MSU.Class.WeightedContainer([
-				[1, "scripts/items/helmets/oriental/assassin_head_wrap"],
-				[1, "scripts/items/helmets/oriental/assassin_face_mask"],
-			]).roll();
-			this.getItems().equip(::new(helmet));
-		}
 	}
 });
