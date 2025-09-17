@@ -1,4 +1,4 @@
-::Hardened.wipeClass("scripts/skills/perks/perk_rf_entrenched", [
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_mauler", [
 	"create",
 ]);
 
