@@ -11,6 +11,18 @@
 			break;
 		}
 	}
+
+	local militiaParty = ::DynamicSpawns.Public.getParty("Militia");
+	foreach (unitBlock in militiaParty.DynamicDefs.UnitBlocks)
+	{
+		if (unitBlock.BaseID == "UnitBlock.RF.MilitiaCaptain")
+		{
+			unitBlock.RatioMin = 0.0;		// Reforged: 0.09
+			unitBlock.RatioMax = 1.0;		// Reforged: 0.09
+			unitBlock.HardMax <- 1;		// Reforged: unlimited
+			break;
+		}
+	}
 }
 
 // Overwriting
