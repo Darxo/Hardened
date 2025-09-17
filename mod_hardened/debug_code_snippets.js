@@ -9,19 +9,6 @@
 
 ::Tactical.State.tactical_retreat_screen_onYesPressed();
 
-## Check, who is fighting on the world map atm
-
-foreach (combat in ::World.Combat.m.Combats)
-{
-	::logWarning("Combat ID: " + combat.ID);
-	foreach (faction in combat.Factions)
-	{
-		if (::MSU.isNull(faction)) continue;
-
-		::MSU.Log.printData(combatant);
-	}
-}
-
 ## Play Animation at the last hovered tile
 
 local tile = ::Tactical.State.m.LastTileHovered;
@@ -49,6 +36,7 @@ foreach (combat in ::World.Combat.m.Combats)
 {
 	::logWarning("Combat ID: " + combat.ID);
 	::logWarning("combat.IsResolved: " + combat.IsResolved.tostring());
+	local firstParty = null;
 	foreach (index, faction in combat.Factions)
 	{
 		if (faction.len() == 0) continue;
@@ -57,7 +45,23 @@ foreach (combat in ::World.Combat.m.Combats)
 
 		foreach (party in faction)
 		{
+			if (firstParty == null)
+			{
+				firstParty = party;
+			}
+			else
+			{
+				::logWarning("IsAllied: " + firstParty.getName() + " " + party.getName() + " isAllied: " + firstParty.isAlliedWith(party));
+			}
+
 			::logWarning("party.getName() " + party.getName());
+
+			foreach (knownOpponent in party.getController().getKnownOpponents())
+			{
+				::logWarning("Hardened: Known Opponents:");
+				::MSU.Log.printData(knownOpponent, 2);
+			}
+
 		}
 	}
 }

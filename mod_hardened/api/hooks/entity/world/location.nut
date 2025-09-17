@@ -42,7 +42,7 @@
 		// We turn off IsScalingDefenders to disable the vanilla day-scaling
 		this.m.IsScalingDefenders = false;
 		local ret =  __original();
-		this.m.IsScalingDefenders = true;
+		this.m.IsScalingDefenders = true;	// We know that IsScalingDefender was not false before, so we can always set it to true
 
 		this.m.Resources = oldResources;
 

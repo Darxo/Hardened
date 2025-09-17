@@ -205,8 +205,6 @@
 	- +25 Ranged Defense
 
 ## Perks Review/Rework
-- Crossbow Mastery
-	- Swap Crossbow with Shield for free once per turn
 - Relentless:
 	- Using wait or recover does not inflict initiative penalty
 	- You can wait an additional time each turn
@@ -257,6 +255,13 @@ misses dont build up fatigue on you while waiting
 - debug zombies
 	- No Idea, I ran out of ideas following the lead of updateVisibility calls. I assumed that Zombies pushing other zombies, after my turn starts, messes something up. But that didnt do it
 	- found kinda a potential solution, see discord
+- world NPC combat ghost bug battlesite:
+	- This is probably caused by them engaging with themselves or an ally in combat
+		-> they never kill anyone in that combat because there are no real enemies
+		-> combat does not progress immediately
+	- This might happen, if their allies, or themselves get pushed into their "KnownOpponents" list, from which they then fetch targets to attack
+	- Perhaps, they get shared wrong information?
+- (Vanilla): Split has 30% armor penetration even though every weapon who grants it in vanilla has less pen
 
 
 
@@ -347,7 +352,8 @@ from Modular Vanilla
 
 - Make world parties that are left with 1 troop after auto-battle disappear. Otherwise you get parties with a single necromancer or hexen or barbarian king
 
-- turn order predictions for next round
+- turn sequence bar order predictions for next round
+	- can display a second smaller version of the bar blow the original one, where the prediction changes in real time
 
 - AI: more likely to push back kingfisher guys who are currently netting someone, if the push back tile would break the net
 - Remove whirling stance when stunned
@@ -763,6 +769,12 @@ For: Line of Sight fix
 - bone breaker:
 	- 50% of armor damage dealt is treated as hitpoint damage (down from 100%)
 	- 20% less threshold to inflict injuries
+- improve damage overflow mechanic:
+	- split overflow damage and pen damage by
+- make bully damage mult working for all skills
+	- give bully to geists and alps
+- make qatal dagger a cleaver/dagger hybrid?
+- make early game 2H swords have 4AP main attack + a 6AP Swing AoE
 
 # QOL
 - Prevent ending the turn for 1 second after gaining action points (e.g. Mauler)
@@ -784,6 +796,13 @@ For: Line of Sight fix
 - change automatic camera panning so that it doesnt move the camera for small distances, only when bigger distances are happening
 - point out that "throw living sand", used by ifrits, has no accuracy drop off with distance
 - display tooltip for world scaling (currently as DayTime tooltip perhaps)
+- improve highlighting of fleeing enemies; which blinking animation behind them?
+- disable automatic camera movement following AI during battle
+	- investigate, why this is even happening and what the vanilla option for "disabling it" even does
+- add new sickness chance modifier character property
+	- Connect many traits with that properties
+	- add new **Lightheaded** effect, granted by consuming drugs
+		- +50% sickness chance
 
 # Debug
 - print base damage roll of any attack in combat log
@@ -798,3 +817,18 @@ Nested Tooltips Framework: perk filename not recognized. Make sure the perk def 
 02:32:14Script Error
 Key 'perk_captain' not found
 
+
+- fix some towns spawning with ports which are not visible: You can still travel to them, but not from them
+	- caused by ports being force-built in fishing towns
+	- but fishing towns are not guaranteed to be considered "IsCoastal"
+
+- "main character" ai behavior, where certain champs decide that they are the stronged unit in their team and therefor need to carry it by actively taking fights
+	- instead of trying to optimize good encounters by flanking/holding back
+
+- change stylish nomad robe to be better
+
+## Perks Im unhappy with
+- Breakthrough
+- Professional
+
+- adjust mercenaries to also use new global difficulty

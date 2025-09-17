@@ -23,6 +23,29 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+1.0.0-alpha-4
+	- Rewrite the assigned armor and helmets of most enemies
+	- Tough Bandits lose **Survival Instinct** and gain **Steel Brow**. They also gain +5 Melee Defense per tier
+	- Prevent caravans and peasants from scaling with world difficulty
+	- Limit Militia Captain to 1 per party
+	- Increase chance of nomad elite troops appearing in lategame nomad parties
+	- Raise base vision of most ranged NPCs to 8
+	- **Broken Ritual Armor** now costs 5000 Crowns (up from 1000)
+	- **Leather Helmet** now has -2 Vision (down from -1)
+	- **Wanderers Coat** now has 70 Condition (up from 60), 8 Weight (up from 7) and costs 150 Crowns (up from 120)
+	- Contracts now become 1% more difficulty/lucrative for every 10 Renown you have (up from 1% for every 20 Renown)
+	- Make headless characters immune to **Insect Swarm**
+	- Display participating brothers in arena contract dialog
+	- Add option in arena contract dialog to "think it over", if too few, or the wrong brothers were selected for the fight
+	- Play additional hit-sounds when three headed flail hits multiple times
+	- Reduce pan speed of tactical camera by 20%
+	- Remove rogue code in **Mauler** perk causing weird behaviors
+	- Fix **Entrenched** perk having no effect whatsoever
+	- Fix Beastmasters not whipping their unholds
+	- Fix ranged NPCs charging into melee during night fights
+	- Fix(Vanilla): camera in combat jumping when panning while the game lags
+	- Add additional scaling constants in `main_hardened.nut` for adjusting the global scaling
+
 1.0.0-alpha-3
 	- Disable Crock Pots day scaling for roaming parties
 	- Fix several contracts throwing errors when trying to generating additional troops into an encounter

@@ -55,8 +55,8 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 
 - Most vanilla difficulty scaling methods (day/player strength/renown scaling) are disabled
 - Instead the following normalized system is added:
-	- Contracts are 1% more difficulty for every 20 Renown, up to a maximum of 1000%
-	- Contracts grant 1% more Crowns for every 20 Renown, up to a maximum of 1000%
+	- Contracts are 1% more difficul for every 10 Renown, up to a maximum of 1000%
+	- Contracts pay 1% more Crowns for every 10 Renown, up to a maximum of 1000%
 	- Every non-contract encounter in the world becomes 1% more difficult for every day that has passed, up to a maximum of 300% at day 300
 - You can view the current contract difficulty when looking at the renown tooltip
 
@@ -494,7 +494,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Thick Nomad Robe** now has 6 Weight (up from 5)
 - **Thick Tunic** now has 40 Condition (up from 35), 6 Weight (up from 3) and costs 70 Crowns (down from 75)
 - **Undertaker's Apron** now has 40 Condition (up from 30), 5 Weight (up from 0) and costs 80 Crowns (up from 65)
-- **Wanderer's Coat** now has 60 Condition (down from 65), 7 Weight (up from 5) and costs 120 Crowns (down from 180)
+- **Wanderer's Coat** now has 70 Condition (up from 65), 8 Weight (up from 5) and costs 150 Crowns (down from 180)
 - **BasicMailShirt** now has 130 Condition (up from 115), 15 Weight (up from 12) and costs 600 Crowns (up from 450)
 - **Wizard's Robe** now has 30 Condition (up from 20), 1 Weight (up from 0) and costs 150 Crowns (up from 60)
 - **Worn Mail Shirt** now has 110 Condition (up from 105), 14 Weight (up from 12) and costs 350 Crowns (down from 400)
@@ -562,7 +562,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Kettle hat** now has 130 Condition (up from 115), 8 Weight (up from 6) and costs 500 Crowns (up from 450)
 - **Leather Head Wrap** now has 50 Condition (up from 40), 5 Weight (up from 2), -1 Vision (down from 0) and costs 80 Crowns (up from 60)
 - **Leather Headband** now has 20 Condition (down from 30), 2 Weight (up from 0) and costs 20 Crowns (down from 30)
-- **Leather Helmet** now has 100 Condition (down from 105), 7 Weight (up from 6) and costs 200 Crowns (down from 320)
+- **Leather Helmet** now has 100 Condition (down from 105), 7 Weight (up from 6), -2 Vision (down from -1) and costs 200 Crowns (down from 320)
 - **Mail Coif** now has 6 Weight (up from 4) and costs 350 Crowns (up from 200)
 - **Masked Kettle Helmet** now has 140 Condition (up from 120), 8 Weight (up from 6), -3 Vision (down from -2) and costs 500 Crowns (down from 550)
 - **Mouth Piece** now has 20 Condition (up from 10), 2 Weight (up from 0) and costs 20 Crowns (up from 15)
@@ -630,6 +630,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Antidote** now costs 100 Crowns (down from 150). Crafting it now costs 40 Crowns (down from 50) and 1 Jagged Fang (down from 2). It is now considered `IsMedical` causing it to be affected by medical-related settlement situations
 - **Bandage** costs 40 Crowns (up from 25). It is now considered `IsMedical` causing it to be affected by medical-related settlement situations
 - **Buckler** appear less common in big settlements
+- **Broken Ritual Armor** now costs 5000 Crowns (up from 1000)
 - **Cured Venison** now has a Stacksize of 30 (up from 25) and cost 115 Crowns (up from 95)
 - **Decayed Reinforced Mail Hauberk** no longer appears with the Variant 50, which is a skin that looks too similar to **Worn Mail Shirt**
 - **Decorated Full Helm** now grants +10 Resolve
@@ -679,7 +680,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 ### Generic Changes
 
 - Completely rework the costs, stats, perks and weapons of most NPCs
-- Introduce a new **Headless** effect. It redirects any attack to hit the body, reduces all other damage targeting the head to 0 (e.g. secondary attack from Split Man), grants immunity to **Distracted** and **Sleep** and sets the headarmor to 0
+- Introduce a new **Headless** effect. It redirects any attack to hit the body, reduces all other damage targeting the head to 0 (e.g. secondary attack from Split Man), grants immunity to **Distracted**, **Sleep**, **Insect Swarm** and sets the headarmor to 0
 	- This effect is given to **Ifrits**, **Spider Eggs**, **Headless Zombies**, **Saplings**, **Lindwurm Tails** and **Kraken Tentacles**
 	- **Ifrit**, **Saplings** and **Kraken Tentacle** lose the now redundant **Steelbrow** perk
 	- **Wiederganger**, which receive this effect, lose **Bite** and gain **Zombie Punch** (which is mostly the same, except without bonus headshot chance)
@@ -877,9 +878,11 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Print combat log for hitpoint damage dealt, when an attack kills the target and include the hitpoints of the target before the kill
 - **Fling Back** (used by Unholds) now has an animation delay of 250ms (down from 750ms)
 - The automatic camera level calculation is improved, especially while in mountanious terrain. Your camera level is now automatically adjusted when moving up or down terrain
+- Play additional hit-sounds when three headed flail hits multiple times
 - Display the actual minimum armor penetration damage in attack skills, instead of always showing a 0 there
 - Improve description of **Additional Fur Padding** and **Bone Plating** and clarify that they only protect against body attacks
 - Automatically re-equip the accessory that you had previously equiped after an arena fight
+- Reduce pan speed of tactical camera by 20%
 - Improve tooltip of **Disarmed effect**
 - Prevent disarmed or stunned entities to be targeted by **Disarm**
 - Improve tooltip of **Whip Disarm** using a nested tooltip for the **Disarmed effect**
@@ -907,6 +910,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - World Parties with champions will display an orange skull on top of their socket
 - Hostile Locations now display a tooltip line if they hide defender
 - Display duplicate Situations in towns
+- Display participating brothers in arena contract dialog
+- Add option in arena contract dialog to "think it over", if too few, or the wrong brothers were selected for the fight
 - Relation changes that come with a reason now also show the value in brackets, that you gained or lost from this action
 - Subsequent relation changes with the same value and same reason will be combined into a single line with a multiplier in brackets
 - Display price multiplier from relation in factions & relations screen
@@ -977,7 +982,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Knock Back** now displays its hitchance bonus correctly in the preview
 - Fix Event manager crash while on the snow during the undead crisis
 - Fix world map zoom sometimes zooming too far during lag
-- Fix tactical map zoom sometimes zooming too far during lag
+- Fix tactical map zoom/pan sometimes zooming/panning too far during lag
 - Fix Armor Penetration on **Reap** being 5% lower than shown on the weapon
 - Fix Quivers needing to re-use the same ID to be correctly identified as ammo
 - Fix shieldwall animation still showing up on NPCs who lost the shieldwall effect offscreen
