@@ -8,21 +8,27 @@
 	},
 	Const = {
 		ActionPointChangeOnRally = -3,	// Whenever this actor rallies (going from fleeing to wavering) its action points change by this amount
-		ContractScalingMax = 10.0,	// Contracts never scale beyond this value
+		ContractScalingBase = 1.0,	// This contract scaling is happening from day one. This scales additively with PerRep scaling
 		ContractScalingPerReputation = 0.0005,	// Each Reputation point causes contracts to be this much more lucrative and dangerous
+		ContractScalingMin = 0.5,	// Contracts never scale below this value
+		ContractScalingMax = 10.0,	// Contracts never scale beyond this value
+		WorldScalingBase = 1.0,		// This world scaling is happening from day one. This scales additively with PerDay scaling
+		WorldScalingMin = 0.5,		// The world will never scale below this value
 		WorldScalingMax = 4.0,		// The world will never scale beyond this value
 		WorldScalingPerDay = 0.01,	// Each passed day causes the world to be this much more dangerous
 	},
 	Global = {
 		// Anything that uses spawntables to spawn/add troops, will its available resources adjusted by this value
+		// Minimum Scaling is 0.5
 		getWorldDifficultyMult = function() {
-			local ret = 1.0 + ::World.getTime().Days * ::Hardened.Const.WorldScalingPerDay;
-			return ::Math.clampf(ret, 1.0, ::Hardened.Const.WorldScalingMax);
+			local ret = ::Hardened.Const.WorldScalingBase + ::World.getTime().Days * ::Hardened.Const.WorldScalingPerDay;
+			return ::Math.clampf(ret, ::Hardened.Const.WorldScalingMin, ::Hardened.Const.WorldScalingMax);
 		},
 		// All contracts will be this much harder and also yield this much more rewards
+		// Minimum Scaling is 0.5
 		getWorldContractMult = function() {
-			local ret = 1.0 + ::World.Assets.getBusinessReputation() * ::Hardened.Const.ContractScalingPerReputation;
-			return ::Math.clampf(ret, 1.0, ::Hardened.Const.ContractScalingMax);
+			local ret = ::Hardened.Const.ContractScalingBase + ::World.Assets.getBusinessReputation() * ::Hardened.Const.ContractScalingPerReputation;
+			return ::Math.clampf(ret, ::Hardened.Const.WorldScalingMin, ::Hardened.Const.ContractScalingMax);
 		},
 	},
 }
@@ -187,10 +193,10 @@
 /// _functionName is the name of the function we want to mock
 /// _mockedBehavior is a function with the same parameters (including defaults) as _functionName
 ///   However it must return a table with these optionals entries:
-///     "done" (optional) is a bool signalising if we can start cleaning up
+///     "done == false" (optional) is a bool signalising if we can start cleaning up
 ///     "value" (optional) is the return value we want the mocked function to return instead
 ///       If this is empty the original function is called to gain the return value. In this case we must make sure to not change the arguments that came by reference, unless that is our intention
-/// @return object with a
+/// @return object with a:
 /// 	cleanup() function, which can be used to manually trigger the cleanup
 ///		original(...) function, which can be used to manually call the original to trigger its effect or get its return value
 ///			You must declared the variable for the mockObject in the line before you initiative it with the mockFunction return value, if you want to use mockObject.original in the mockFunction function argument
