@@ -14,6 +14,3 @@
 
 // Regular Hooks
 ::includeFiles(::IO.enumerateFiles("mod_hardened/hooks"));
-
-// Optional Hooks
-::include("mod_hardened/optional_mods/load");

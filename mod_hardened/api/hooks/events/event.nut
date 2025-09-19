@@ -17,20 +17,20 @@
 		__original(_screen);
 	}
 
-	// Overwrite, to remove the reputation/playerstrength/day scaling
-	//	because event scaling is now done by ::Hardened.Global.getWorldDifficultyMult() globally
+	// Overwrite, to replace the reputation/playerstrength/day scaling with ::Hardened.Global.getWorldDifficultyMult()
 	q.getScaledDifficultyMult = @() function()
 	{
 		local ret = 1.0;
+		ret *= ::Hardened.Global.getWorldDifficultyMult();
 		ret *= ::Const.Difficulty.EnemyMult[::World.Assets.getCombatDifficulty()];
 		return ret;
 	}
 
-	// Overwrite, to remove the day scaling
-	//	because event scaling is now done by ::Hardened.Global.getWorldDifficultyMult() globally
+	// Overwrite, to replace the day scaling with ::Hardened.Global.getWorldDifficultyMult()
 	q.getReputationToDifficultyLightMult = @() function()
 	{
 		local ret = 1.0;
+		ret *= ::Hardened.Global.getWorldDifficultyMult();
 		ret *= ::Const.Difficulty.EnemyMult[::World.Assets.getCombatDifficulty()];
 		return ret;
 	}

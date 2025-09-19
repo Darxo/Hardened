@@ -21,7 +21,6 @@
 	q.getScaledDifficultyMult = @() function()
 	{
 		local ret = 1.0;	// Vanillas lowest value is 0.75, but we start at 1.0 directly and hope that early game contracts are still doable
-		ret /= ::Hardened.Global.getWorldDifficultyMult();	// We preemtively counter this multiplier, as Contract encounters should be unaffected by world scaling
 		ret *= ::Hardened.Global.getWorldContractMult();
 		ret *= ::Const.Difficulty.EnemyMult[::World.Assets.getCombatDifficulty()];
 		return ret;
@@ -35,12 +34,6 @@
 		ret *= ::Hardened.Global.getWorldContractMult();
 		ret *= ::Const.Difficulty.PaymentMult[::World.Assets.getEconomicDifficulty()];
 		return ret;
-	}
-
-	q.addUnitsToEntity = @(__original) function( _worldParty, _party, _resources )
-	{
-		_resources *= ::Hardened.Global.getWorldDifficultyMult();
-		return __original(_worldParty, _party, _resources);
 	}
 
 // New Functions
