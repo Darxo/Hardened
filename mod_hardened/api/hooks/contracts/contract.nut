@@ -20,7 +20,7 @@
 	// Overwrite, because we remove the vanilla strength-scaling in it, as contract spawns are now affected by our WorldDiffultyMult instead
 	q.getScaledDifficultyMult = @() function()
 	{
-		local ret = 0.75;	// Vanillas lowest value is this, so we use it as a baseline, to downscale our own multiplier
+		local ret = 1.0;	// Vanillas lowest value is 0.75, but we start at 1.0 directly and hope that early game contracts are still doable
 		ret /= ::Hardened.Global.getWorldDifficultyMult();	// We preemtively counter this multiplier, as Contract encounters should be unaffected by world scaling
 		ret *= ::Hardened.Global.getWorldContractMult();
 		ret *= ::Const.Difficulty.EnemyMult[::World.Assets.getCombatDifficulty()];
