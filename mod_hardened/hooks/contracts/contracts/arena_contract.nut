@@ -15,6 +15,25 @@
 						return 0;
 					},
 				});
+
+				if (!("start" in screen)) screen.start <- function() {};
+
+				// Feat: We display the names of all participants to the player so that he has a chance to spot any mistakes made
+				local oldStart = screen.start;
+				screen.start = function ()
+				{
+					oldStart();
+					local participantId = 50;
+					foreach (participant in this.Contract.getBros())
+					{
+						this.List.push({
+							id = participantId,
+							icon = "ui/icons/asset_brothers.png",
+							text = participant.getName(),
+						});
+						participantId++;
+					}
+				}
 			}
 		}
 	}
