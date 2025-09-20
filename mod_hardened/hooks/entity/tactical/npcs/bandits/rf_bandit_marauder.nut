@@ -81,7 +81,7 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_bully"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_survival_instinct"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_steel_brow"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hold_out"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vigorous_assault"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_formidable_approach"));

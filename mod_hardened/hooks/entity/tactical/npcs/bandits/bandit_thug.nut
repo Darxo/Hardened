@@ -83,7 +83,7 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_bully"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_survival_instinct"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_steel_brow"));
 	}
 
 	// Assign Head and Body armor to this character

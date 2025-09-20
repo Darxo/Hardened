@@ -81,7 +81,7 @@
 	::Const.Tactical.Actor.BanditThug.Stamina = 110;
 	::Const.Tactical.Actor.BanditThug.MeleeSkill = 55;
 	::Const.Tactical.Actor.BanditThug.RangedSkill = 25;
-	::Const.Tactical.Actor.BanditThug.MeleeDefense = 0;
+	::Const.Tactical.Actor.BanditThug.MeleeDefense = 0;		// Reforged: -5
 	::Const.Tactical.Actor.BanditThug.RangedDefense = 0;
 	::Const.Tactical.Actor.BanditThug.Initiative = 60;
 }
@@ -129,7 +129,7 @@
 	::Const.Tactical.Actor.RF_BanditPillager.Stamina = 120;
 	::Const.Tactical.Actor.RF_BanditPillager.MeleeSkill = 65;
 	::Const.Tactical.Actor.RF_BanditPillager.RangedSkill = 25;
-	::Const.Tactical.Actor.RF_BanditPillager.MeleeDefense = 0;
+	::Const.Tactical.Actor.RF_BanditPillager.MeleeDefense = 5;		// Reforged: 0
 	::Const.Tactical.Actor.RF_BanditPillager.RangedDefense = 0;
 	::Const.Tactical.Actor.RF_BanditPillager.Initiative = 60;
 }
@@ -213,7 +213,7 @@
 	::Const.Tactical.Actor.RF_BanditOutlaw.Stamina = 130;
 	::Const.Tactical.Actor.RF_BanditOutlaw.MeleeSkill = 75;
 	::Const.Tactical.Actor.RF_BanditOutlaw.RangedSkill = 27;
-	::Const.Tactical.Actor.RF_BanditOutlaw.MeleeDefense = 0;
+	::Const.Tactical.Actor.RF_BanditOutlaw.MeleeDefense = 10;		// Reforged: 5
 	::Const.Tactical.Actor.RF_BanditOutlaw.RangedDefense = 0;
 	::Const.Tactical.Actor.RF_BanditOutlaw.Initiative = 70;
 }
@@ -279,7 +279,7 @@
 	::Const.Tactical.Actor.RF_BanditMarauder.Stamina = 140;
 	::Const.Tactical.Actor.RF_BanditMarauder.MeleeSkill = 85;
 	::Const.Tactical.Actor.RF_BanditMarauder.RangedSkill = 25;
-	::Const.Tactical.Actor.RF_BanditMarauder.MeleeDefense = 0;
+	::Const.Tactical.Actor.RF_BanditMarauder.MeleeDefense = 15;		// Reforged: 10
 	::Const.Tactical.Actor.RF_BanditMarauder.RangedDefense = 0;
 	::Const.Tactical.Actor.RF_BanditMarauder.Initiative = 70;
 }
