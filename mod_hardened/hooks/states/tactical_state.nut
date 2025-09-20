@@ -1,4 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/states/tactical_state", function(q) {
+	// Public
+	q.m.HD_CameraPanSpeed <- 1200.0;		// Vanilla: 1500.0
+
 	// We have to hook onFinish, because it is the last thing that happens, before tactical_state is deconstructed
 	// And it is happening right after the combat loot is added to the stash
 	q.onFinish = @(__original) function()
@@ -81,14 +84,14 @@
 				case Key.Q:		// Probably supported because of french keyboards
 				case Key.ArrowLeft:
 				{
-					::Tactical.getCamera().move(-1500.0 * dt, 0);
+					::Tactical.getCamera().move(-this.m.HD_CameraPanSpeed * dt, 0);
 					return true;
 				}
 
 				case Key.D:
 				case Key.ArrowRight:
 				{
-					::Tactical.getCamera().move(1500.0 * dt, 0);
+					::Tactical.getCamera().move(this.m.HD_CameraPanSpeed * dt, 0);
 					return true;
 				}
 
@@ -96,14 +99,14 @@
 				case Key.Z:		// Probably supported because of french keyboards
 				case Key.ArrowUp:
 				{
-					::Tactical.getCamera().move(0, 1500.0 * dt);
+					::Tactical.getCamera().move(0, this.m.HD_CameraPanSpeed * dt);
 					return true;
 				}
 
 				case Key.S:
 				case Key.ArrowDown:
 				{
-					::Tactical.getCamera().move(0, -1500.0 * dt);
+					::Tactical.getCamera().move(0, -this.m.HD_CameraPanSpeed * dt);
 					return true;
 				}
 			}
