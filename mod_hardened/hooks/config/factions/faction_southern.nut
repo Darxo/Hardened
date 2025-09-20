@@ -11,6 +11,9 @@
 	::Const.Tactical.Actor.NomadCutthroat.MeleeDefense = 0;
 	::Const.Tactical.Actor.NomadCutthroat.RangedDefense = 0;
 	::Const.Tactical.Actor.NomadCutthroat.Initiative = 130;
+
+	// Optional Stats
+	::Const.Tactical.Actor.NomadCutthroat.Vision <- 8;			// Vanilla: 7
 }
 
 // scripts/entity/tactical/humans/nomad_slinger
@@ -26,6 +29,9 @@
 	::Const.Tactical.Actor.NomadSlinger.MeleeDefense = 0;
 	::Const.Tactical.Actor.NomadSlinger.RangedDefense = 0;
 	::Const.Tactical.Actor.NomadSlinger.Initiative = 110;
+
+	// Optional Stats
+	::Const.Tactical.Actor.NomadSlinger.Vision <- 8;			// Vanilla: 7
 }
 
 // scripts/entity/tactical/humans/nomad_archer
@@ -59,6 +65,9 @@
 	::Const.Tactical.Actor.NomadOutlaw.MeleeDefense = 15;
 	::Const.Tactical.Actor.NomadOutlaw.RangedDefense = 0;
 	::Const.Tactical.Actor.NomadOutlaw.Initiative = 140;
+
+	// Optional Stats
+	::Const.Tactical.Actor.NomadOutlaw.Vision <- 8;			// Vanilla: 7
 }
 
 // scripts/entity/tactical/humans/executioner
@@ -74,6 +83,9 @@
 	::Const.Tactical.Actor.Executioner.MeleeDefense = 25;
 	::Const.Tactical.Actor.Executioner.RangedDefense = 0;
 	::Const.Tactical.Actor.Executioner.Initiative = 115;
+
+	// Optional Stats
+	::Const.Tactical.Actor.Executioner.Vision <- 8;			// Vanilla: 7
 }
 
 // scripts/entity/tactical/humans/nomad_leader
@@ -89,6 +101,9 @@
 	::Const.Tactical.Actor.NomadLeader.MeleeDefense = 15;
 	::Const.Tactical.Actor.NomadLeader.RangedDefense = 0;
 	::Const.Tactical.Actor.NomadLeader.Initiative = 125;
+
+	// Optional Stats
+	::Const.Tactical.Actor.NomadLeader.Vision <- 8;			// Vanilla: 7
 }
 
 // scripts/entity/tactical/humans/desert_devil
@@ -104,6 +119,9 @@
 	::Const.Tactical.Actor.DesertDevil.MeleeDefense = 50;
 	::Const.Tactical.Actor.DesertDevil.RangedDefense = 15;
 	::Const.Tactical.Actor.DesertDevil.Initiative = 125;
+
+	// Optional Stats
+	::Const.Tactical.Actor.DesertDevil.Vision <- 8;			// Vanilla: 7
 }
 
 // scripts/entity/tactical/humans/desert_stalker

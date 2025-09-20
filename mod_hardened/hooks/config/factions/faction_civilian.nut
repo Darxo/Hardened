@@ -62,6 +62,9 @@
 	::Const.Tactical.Actor.MilitiaRanged.MeleeDefense = 5;
 	::Const.Tactical.Actor.MilitiaRanged.RangedDefense = 0;
 	::Const.Tactical.Actor.MilitiaRanged.Initiative = 100;
+
+	// Optional Stats
+	::Const.Tactical.Actor.MilitiaRanged.Vision <- 8;			// Vanilla: 7
 }
 
 // scripts/entity/tactical/humans/caravan_guard
@@ -137,6 +140,9 @@
 	::Const.Tactical.Actor.MercenaryRanged.MeleeDefense = 10;
 	::Const.Tactical.Actor.MercenaryRanged.RangedDefense = 20;
 	::Const.Tactical.Actor.MercenaryRanged.Initiative = 130;
+
+	// Optional Stats
+	::Const.Tactical.Actor.MercenaryRanged.Vision <- 8;
 }
 
 // scripts/entity/tactical/humans/hedge_knight

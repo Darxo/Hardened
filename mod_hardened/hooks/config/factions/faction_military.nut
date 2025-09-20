@@ -28,7 +28,7 @@
 	::Const.Tactical.Actor.Arbalester.Initiative = 110;
 
 	// Optional Stats
-	::Const.Tactical.Actor.Arbalester.Vision <- 8;
+	::Const.Tactical.Actor.Arbalester.Vision <- 8;			// Vanilla: 7
 }
 
 // scripts/entity/tactical/humans/noble_footman

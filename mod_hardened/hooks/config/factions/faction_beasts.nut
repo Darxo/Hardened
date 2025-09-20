@@ -198,7 +198,7 @@
 	::Const.Tactical.Actor.Hexe.Initiative = 100;
 
 	// Optional Stats
-	::Const.Tactical.Actor.Hexe.Vision <- 8;
+	::Const.Tactical.Actor.Hexe.Vision <- 8;					// Vanilla: 7
 }
 
 // scripts/entity/tactical/enemies/unhold

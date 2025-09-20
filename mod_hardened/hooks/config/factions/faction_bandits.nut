@@ -66,6 +66,9 @@
 	::Const.Tactical.Actor.BanditPoacher.MeleeDefense = 0;
 	::Const.Tactical.Actor.BanditPoacher.RangedDefense = 5;
 	::Const.Tactical.Actor.BanditPoacher.Initiative = 80;
+
+	// Optional Stats
+	::Const.Tactical.Actor.BanditPoacher.Vision <- 8;			// Vanilla: 7
 }
 
 // scripts/entity/tactical/enemies/bandit_thug
@@ -95,7 +98,10 @@
 	::Const.Tactical.Actor.RF_BanditHunter.RangedSkill = 60;
 	::Const.Tactical.Actor.RF_BanditHunter.MeleeDefense = 0;
 	::Const.Tactical.Actor.RF_BanditHunter.RangedDefense = 10;
-	::Const.Tactical.Actor.RF_BanditHunter.Initiative = 90
+	::Const.Tactical.Actor.RF_BanditHunter.Initiative = 90;
+
+	// Optional Stats
+	::Const.Tactical.Actor.RF_BanditHunter.Vision <- 8;
 }
 
 // scripts/entity/tactical/enemies/rf_bandit_vandal
@@ -141,6 +147,9 @@
 	::Const.Tactical.Actor.RF_BanditRobber.MeleeDefense = 0;
 	::Const.Tactical.Actor.RF_BanditRobber.RangedDefense = 0;
 	::Const.Tactical.Actor.RF_BanditRobber.Initiative = 120;
+
+	// Optional Stats
+	::Const.Tactical.Actor.RF_BanditRobber.Vision <- 8;
 }
 
 // scripts/entity/tactical/enemies/bandit_marksman
@@ -189,6 +198,9 @@
 	::Const.Tactical.Actor.RF_BanditBandit.MeleeDefense = 0;
 	::Const.Tactical.Actor.RF_BanditBandit.RangedDefense = 0;
 	::Const.Tactical.Actor.RF_BanditBandit.Initiative = 100;
+
+	// Optional Stats
+	::Const.Tactical.Actor.RF_BanditBandit.Vision <- 8;
 }
 
 // scripts/entity/tactical/enemies/rf_bandit_outlaw
@@ -252,6 +264,9 @@
 	::Const.Tactical.Actor.RF_BanditKiller.MeleeDefense = 10;
 	::Const.Tactical.Actor.RF_BanditKiller.RangedDefense = 10;
 	::Const.Tactical.Actor.RF_BanditKiller.Initiative = 120;
+
+	// Optional Stats
+	::Const.Tactical.Actor.RF_BanditKiller.Vision <- 8;
 }
 
 // scripts/entity/tactical/enemies/rf_bandit_marauder

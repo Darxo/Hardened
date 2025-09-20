@@ -59,6 +59,9 @@
 	::Const.Tactical.Actor.GoblinLeader.MeleeDefense = 15;
 	::Const.Tactical.Actor.GoblinLeader.RangedDefense = 35;
 	::Const.Tactical.Actor.GoblinLeader.Initiative = 120;
+
+	// Optional Stats
+	::Const.Tactical.Actor.GoblinLeader.Vision <- 8;		// Vanilla: 7
 }
 
 // scripts/entity/tactical/enemies/goblin_shaman
