@@ -7,6 +7,19 @@
 		this.m.Bodies = ::Const.Bodies.Muscular;	// Reforged: ::Const.Bodies.AllMale
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 190 - 230
+			[12, "scripts/items/armor/footman_armor"],
+			[12, "scripts/items/armor/lamellar_harness"],
+			[12, "scripts/items/armor/reinforced_mail_hauberk"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 180 - 230
+			[12, "scripts/items/helmets/closed_flat_top_helmet"],
+			[12, "scripts/items/helmets/closed_flat_top_with_neckguard"],
+			[12, "scripts/items/helmets/nasal_helmet_with_mail"],
+			[12, "scripts/items/helmets/bascinet_with_mail"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/greataxe"],
 			[12, "scripts/items/weapons/bardiche"],
@@ -159,31 +172,5 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently a 1:1 copy of Reforged code, as there is no easier way to apply our changes via hooking
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
-		{
-			local armor = ::Reforged.ItemTable.BanditArmorLeader.roll({
-				Apply = function ( _script, _weight )
-				{
-					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
-					if (conditionMax < 210 || conditionMax > 240) return 0.0;
-					return _weight;
-				}
-			})
-			if (armor != null) this.getItems().equip(::new(armor))
-		}
-
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
-		{
-			local helmet = ::Reforged.ItemTable.BanditHelmetLeader.roll({
-				Apply = function ( _script, _weight )
-				{
-					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
-					if (conditionMax < 180 || conditionMax > 230) return 0.0;
-					return _weight;
-				}
-			})
-			if (helmet != null) this.getItems().equip(::new(helmet));
-		}
 	}
 });
