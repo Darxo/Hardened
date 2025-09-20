@@ -55,5 +55,6 @@
 
 		// Generic Actives
 		this.getSkills().add(::new("scripts/skills/actives/barbarian_fury_skill"));
+		this.getSkills().add(::new("scripts/skills/actives/crack_the_whip_skill"));
 	}
 });
