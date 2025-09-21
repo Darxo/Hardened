@@ -6,7 +6,7 @@
 		local mockObject = ::Hardened.mockFunction(::Math, "min", function( _a, _b ) {
 			if (_a == 350 && _b == 150 + ::World.getTime().Days)
 			{
-				return { done = true, value = 150 };
+				return { done = true, value = 150 * ::Hardened.Global.getWorldDifficultyMult() };
 			}
 		});
 
