@@ -42,6 +42,10 @@
 
 	q.onMouseInput = @(__original) function( _mouse )
 	{
+		if (this.isInLoadingScreen()) return __original(_mouse);
+		if (this.m.IsBattleEnded) return __original(_mouse);
+		if (this.isInputLocked()) return __original(_mouse);
+
 		// We overwrite only the mouse wheel events coming from vanilla to customize the zoom multiplier
 		if (_mouse.getID() == 7)
 		{
