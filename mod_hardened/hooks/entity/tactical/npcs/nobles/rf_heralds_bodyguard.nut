@@ -7,7 +7,7 @@
 		__original();
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/weapons/longsword"],
+			[12, "scripts/items/weapons/warbrand"],
 			[12, "scripts/items/weapons/rf_swordstaff"],
 		]);
 	}
