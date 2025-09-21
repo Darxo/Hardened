@@ -265,3 +265,11 @@
 
 	return true;
 }
+
+// Return the number of player characters and clamp that value between 6 and the maximum amount of brothers that the player can field at once
+// This function is meant as a baseline for custom generateIdealSize implementations in dynamic parties
+::Hardened.util.genericGenerateIdealSize <- function()
+{
+	if (!("Assets" in ::World) || ::World.Assets == null) return ::DynamicSpawns.Const.MainMenuIdealSize;	// fix for when we test a party in the main menu
+	return ::Math.max(6, ::Math.min(::World.getPlayerRoster().getSize(), ::World.Assets.getBrothersMaxInCombat()));
+}

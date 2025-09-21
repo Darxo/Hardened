@@ -10,3 +10,8 @@
 	banditBoss.DynamicDefs.Units[1].StartingResourceMin <- 250;		// Prevent too early upgrading into second tier
 }
 
+{	// UnitBlock.RF.BanditDisguisedDirewolf
+	local banditDirewolfs = ::DynamicSpawns.Public.getUnitBlock("UnitBlock.RF.BanditDisguisedDirewolf");
+	banditDirewolfs.DynamicDefs.Units.insert(1, { BaseID = "Unit.RF.RF_BanditKiller", HardMax = 3 });		// Bandit Killer are new highest tier for disguised bandits
+}
+
