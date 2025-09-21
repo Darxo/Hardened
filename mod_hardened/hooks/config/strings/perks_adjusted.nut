@@ -630,6 +630,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_bully",
+		Key = "RF_Bully",
+		Description = ::UPD.getDescription({
+			Fluff = "Did you say stop?",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Deal " + ::MSU.Text.colorPositive("10%") + " more damage against characters with a lower [morale|Concept.Morale] than you",
+					::MSU.Text.colorPositive("+5") + " [Melee Defense|Concept.MeleeDefense] against characters with less maximum [Hitpoints|Concept.Hitpoints] than you",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_bulwark",
 		Key = "RF_Bulwark",
 		Description = ::UPD.getDescription({
