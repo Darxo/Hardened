@@ -7,7 +7,7 @@
 // scripts/entity/tactical/humans/peasant_armed
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Peasant.XP = 30;
+	::Const.Tactical.Actor.Peasant.XP = 40;
 	::Const.Tactical.Actor.Peasant.ActionPoints = 9;
 	::Const.Tactical.Actor.Peasant.Hitpoints = 55;
 	::Const.Tactical.Actor.Peasant.Bravery = 30;
@@ -97,6 +97,39 @@
 	::Const.Tactical.Actor.MilitiaVeteran.Initiative = 120;
 }
 
+// scripts/entity/tactical/humans/bounty_hunter
+{
+	// Mandatory stats
+	::Const.Tactical.Actor.BountyHunter.XP = 300;				// Vanilla: 300
+	::Const.Tactical.Actor.BountyHunter.ActionPoints = 9;
+	::Const.Tactical.Actor.BountyHunter.Hitpoints = 80;			// Vanilla: 80
+	::Const.Tactical.Actor.BountyHunter.Bravery = 70;			// Vanilla: 65
+	::Const.Tactical.Actor.BountyHunter.Stamina = 120;			// Vanilla: 125
+	::Const.Tactical.Actor.BountyHunter.MeleeSkill = 75;		// Vanilla: 75
+	::Const.Tactical.Actor.BountyHunter.RangedSkill = 75;		// Vanilla: 60
+	::Const.Tactical.Actor.BountyHunter.MeleeDefense = 0;		// Vanilla: 15
+	::Const.Tactical.Actor.BountyHunter.RangedDefense = 30;		// Vanilla: 8
+	::Const.Tactical.Actor.BountyHunter.Initiative = 120;		// Vanilla: 120
+}
+
+// scripts/entity/tactical/humans/bounty_hunter_ranged
+{
+	// Mandatory stats
+	::Const.Tactical.Actor.BountyHunterRanged.XP = 300;				// Vanilla: 250
+	::Const.Tactical.Actor.BountyHunterRanged.ActionPoints = 9;
+	::Const.Tactical.Actor.BountyHunterRanged.Hitpoints = 70;		// Vanilla: 60
+	::Const.Tactical.Actor.BountyHunterRanged.Bravery = 65;			// Vanilla: 65
+	::Const.Tactical.Actor.BountyHunterRanged.Stamina = 120;		// Vanilla: 115
+	::Const.Tactical.Actor.BountyHunterRanged.MeleeSkill = 75;		// Vanilla: 50
+	::Const.Tactical.Actor.BountyHunterRanged.RangedSkill = 75;		// Vanilla: 70
+	::Const.Tactical.Actor.BountyHunterRanged.MeleeDefense = 0;		// Vanilla: 10
+	::Const.Tactical.Actor.BountyHunterRanged.RangedDefense = 30;	// Vanilla: 10
+	::Const.Tactical.Actor.BountyHunterRanged.Initiative = 100;		// Vanilla: 125
+
+	// Optional Stats
+	::Const.Tactical.Actor.BountyHunterRanged.Vision <- 8;
+}
+
 // scripts/entity/tactical/humans/militia_captain
 {
 	// Mandatory stats
@@ -132,7 +165,7 @@
 	// Mandatory stats
 	::Const.Tactical.Actor.MercenaryRanged.XP = 350;
 	::Const.Tactical.Actor.MercenaryRanged.ActionPoints = 9;
-	::Const.Tactical.Actor.MercenaryRanged.Hitpoints = 65;
+	::Const.Tactical.Actor.MercenaryRanged.Hitpoints = 75;
 	::Const.Tactical.Actor.MercenaryRanged.Bravery = 70;
 	::Const.Tactical.Actor.MercenaryRanged.Stamina = 135;
 	::Const.Tactical.Actor.MercenaryRanged.MeleeSkill = 65;

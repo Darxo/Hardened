@@ -88,6 +88,21 @@
 	::Const.Tactical.Actor.Executioner.Vision <- 8;			// Vanilla: 7
 }
 
+// scripts/entity/tactical/humans/gladiator
+{
+	// Mandatory stats
+	::Const.Tactical.Actor.Gladiator.XP = 450;				// Vanilla: 350
+	::Const.Tactical.Actor.Gladiator.ActionPoints = 9;
+	::Const.Tactical.Actor.Gladiator.Hitpoints = 110;		// Vanilla: 110
+	::Const.Tactical.Actor.Gladiator.Bravery = 100;			// Vanilla: 90
+	::Const.Tactical.Actor.Gladiator.Stamina = 150;			// Vanilla: 135
+	::Const.Tactical.Actor.Gladiator.MeleeSkill = 85;		// Vanilla: 75
+	::Const.Tactical.Actor.Gladiator.RangedSkill = 75;		// Vanilla: 65
+	::Const.Tactical.Actor.Gladiator.MeleeDefense = 20;		// Vanilla: 20
+	::Const.Tactical.Actor.Gladiator.RangedDefense = 0;		// Vanilla: 10
+	::Const.Tactical.Actor.Gladiator.Initiative = 130;		// Vanilla: 125
+}
+
 // scripts/entity/tactical/humans/nomad_leader
 {
 	// Mandatory stats
@@ -145,16 +160,16 @@
 // scripts/entity/tactical/humans/slave
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Slave.XP = 30;
+	::Const.Tactical.Actor.Slave.XP = 30;				// Vanilla: 50
 	::Const.Tactical.Actor.Slave.ActionPoints = 9;
-	::Const.Tactical.Actor.Slave.Hitpoints = 45;
-	::Const.Tactical.Actor.Slave.Bravery = 20;
-	::Const.Tactical.Actor.Slave.Stamina = 100;
-	::Const.Tactical.Actor.Slave.MeleeSkill = 40;
-	::Const.Tactical.Actor.Slave.RangedSkill = 35;
-	::Const.Tactical.Actor.Slave.MeleeDefense = 0;
-	::Const.Tactical.Actor.Slave.RangedDefense = 0;
-	::Const.Tactical.Actor.Slave.Initiative = 90;
+	::Const.Tactical.Actor.Slave.Hitpoints = 45;		// Vanilla: 55
+	::Const.Tactical.Actor.Slave.Bravery = 20;			// Vanilla: 40
+	::Const.Tactical.Actor.Slave.Stamina = 100;			// Vanilla: 100
+	::Const.Tactical.Actor.Slave.MeleeSkill = 40;		// Vanilla: 40
+	::Const.Tactical.Actor.Slave.RangedSkill = 35;		// Vanilla: 35
+	::Const.Tactical.Actor.Slave.MeleeDefense = 0;		// Vanilla: 5
+	::Const.Tactical.Actor.Slave.RangedDefense = 0;		// Vanilla: 5
+	::Const.Tactical.Actor.Slave.Initiative = 90;		// Vanilla: 90
 }
 
 // scripts/entity/tactical/humans/engineer

@@ -294,6 +294,13 @@
 	::Const.World.Spawn.Troops.BanditRaider.Strength = 24;
 }
 
+// scripts/entity/tactical/enemies/bandit_raider_wolf
+{
+	// Mandatory Entries
+	::Const.World.Spawn.Troops.BanditRaiderWolf.Cost = 25;
+	::Const.World.Spawn.Troops.BanditRaiderWolf.Strength = 25;
+}
+
 // scripts/entity/tactical/humans/noble_billman
 {
 	// Mandatory Entries
@@ -369,6 +376,20 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.RF_BanditOutlaw.Cost = 27;
 	::Const.World.Spawn.Troops.RF_BanditOutlaw.Strength = 27;
+}
+
+// scripts/entity/tactical/humans/bounty_hunter
+{
+	// Mandatory Entries
+	::Const.World.Spawn.Troops.BountyHunter.Cost = 30;
+	::Const.World.Spawn.Troops.BountyHunter.Strength = 30;
+}
+
+// scripts/entity/tactical/humans/bounty_hunter_ranged
+{
+	// Mandatory Entries
+	::Const.World.Spawn.Troops.BountyHunterRanged.Cost = 30;
+	::Const.World.Spawn.Troops.BountyHunterRanged.Strength = 30;
 }
 
 // scripts/entity/tactical/humans/barbarian_drummer
@@ -627,6 +648,13 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.BarbarianChampion.Cost = 45;
 	::Const.World.Spawn.Troops.BarbarianChampion.Strength = 45;
+}
+
+// scripts/entity/tactical/humans/gladiator
+{
+	// Mandatory Entries
+	::Const.World.Spawn.Troops.Gladiator.Cost = 45;
+	::Const.World.Spawn.Troops.Gladiator.Strength = 45;
 }
 
 // scripts/entity/tactical/humans/noble_greatsword
