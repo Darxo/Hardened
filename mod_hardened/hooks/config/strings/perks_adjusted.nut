@@ -110,6 +110,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.coup_de_grace",
+		Key = "CoupDeGrace",
+		Description = ::UPD.getDescription({
+			Fluff = "\'Off with their heads!\'",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Deal " + ::MSU.Text.colorPositive("20%") + " more damage against [injured|Concept.InjuryTemporary] or [rooted|Concept.Rooted] characters",
+				]
+			}]
+		})
+	},
+	{
 		ID = "perk.dodge",
 		Key = "Dodge",
 		Description = ::UPD.getDescription({
