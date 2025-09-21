@@ -2,6 +2,7 @@
 	q.create = @(__original) function ()
 	{
 		__original();
+		this.m.Effects[0] = "Makes your men gain 20% more experience at level 1, with 2% less at each further level"
 		this.m.Requirements = [		// Just like in Vanilla. In Reforged this is empty
 			{
 				IsSatisfied = false,

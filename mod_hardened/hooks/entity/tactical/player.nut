@@ -16,6 +16,20 @@
 		this.getSkills().add(::new("scripts/skills/actives/hd_retreat_skill"));
 	}
 
+	q.addXP = @(__original) { function addXP( _xp, _scale = true )
+	{
+		if (::Reforged.Config.XPOverride) return;
+
+		// Temporary buff to vanilla drill sergeant until our Retinue Rework
+		if (("State" in ::World) && ::World.State != null && _scale && ::World.Retinue.hasFollower("follower.drill_sergeant"))
+		{
+			local reforgedXPMult = ::Math.maxf(1.0, 1.1666 - 0.0166 * (this.m.Level - 1));	// 1.166666 is the exact multiplier to make a 1.2 multiplier into 1.4
+			_xp /= reforgedXPMult;	// So if we divide _xp by it, we land by at the 1.2 mult from vanilla
+		}
+
+		return __original(_xp, _scale);
+	}}.addXP;
+
 	// Reforged Fix: Player characters partake in multiple battles but only ever trigger onAfterInit once per session,
 	// 		so we need to reset RF_HasOnSpawnBeenCalled onCombatFinished
 	q.onCombatFinished = @(__original) { function onAfterInit()
