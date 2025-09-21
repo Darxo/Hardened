@@ -6,6 +6,18 @@
 	{
 		__original();
 
+		this.m.ChanceForNoChest = 40;
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 40 - 50
+			[12, "scripts/items/armor/barbarians/thick_furs_armor"],
+			[12, "scripts/items/armor/barbarians/animal_hide_armor"],
+		]);
+
+		this.m.ChanceForNoHelmet = 50;
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 20 - 60
+			[12, "scripts/items/helmets/barbarians/leather_headband"],
+			[6, "scripts/items/helmets/barbarians/bear_headpiece"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/barbarians/antler_cleaver"],
 			[12, "scripts/items/weapons/barbarians/claw_club"],
@@ -76,30 +88,6 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
-		if (this.Math.rand(1, 100) <= 60)
-		{
-			local r = this.Math.rand(1, 2);
-
-			if (r == 1)
-			{
-				this.getItems().equip(::new("scripts/items/armor/barbarians/thick_furs_armor"));
-			}
-			else if (r == 2)
-			{
-				this.getItems().equip(::new("scripts/items/armor/barbarians/animal_hide_armor"));
-			}
-		}
-
-		local r = this.Math.rand(1, 4);
-		if (r == 1)
-		{
-			this.getItems().equip(::new("scripts/items/helmets/barbarians/leather_headband"));
-		}
-		else if (r == 2)
-		{
-			this.getItems().equip(::new("scripts/items/helmets/barbarians/bear_headpiece"));
-		}
 	}
 
 	// Assign all other gear to this character

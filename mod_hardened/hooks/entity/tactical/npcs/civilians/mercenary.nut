@@ -11,21 +11,21 @@
 
 		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 130 - 190
 			[12, "scripts/items/armor/basic_mail_shirt"],
+			[12, "scripts/items/armor/leather_scale_armor"],
 			[12, "scripts/items/armor/mail_shirt"],
+			[12, "scripts/items/armor/light_scale_armor"],
 			[12, "scripts/items/armor/mail_hauberk"],
 			[12, "scripts/items/armor/footman_armor"],
-			[12, "scripts/items/armor/light_scale_armor"],
-			[12, "scripts/items/armor/leather_scale_armor"],
 		]);
 
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 120 - 180
 			[12, "scripts/items/helmets/nasal_helmet"],
-			[12, "scripts/items/helmets/nasal_helmet_with_mail"],
-			[12, "scripts/items/helmets/reinforced_mail_coif"],
+			[12, "scripts/items/helmets/padded_nasal_helmet"],
 			[12, "scripts/items/helmets/kettle_hat"],
 			[12, "scripts/items/helmets/flat_top_helmet"],
-			[12, "scripts/items/helmets/nordic_helmet"],
+			[12, "scripts/items/helmets/padded_flat_top_helmet"],
 			[12, "scripts/items/helmets/closed_flat_top_helmet"],
+			[12, "scripts/items/helmets/closed_flat_top_with_neckguard"],
 		]);
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([

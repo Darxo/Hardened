@@ -9,6 +9,19 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 110 - 140
+			[12, "scripts/items/armor/worn_mail_shirt"],
+			[12, "scripts/items/armor/basic_mail_shirt"],
+			[12, "scripts/items/armor/leather_scale_armor"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 110 - 130
+			[12, "scripts/items/helmets/rf_scale_helmet"],
+			[12, "scripts/items/helmets/rf_padded_scale_helmet"],
+			[12, "scripts/items/helmets/kettle_hat"],
+			[12, "scripts/items/helmets/padded_kettle_hat"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/hunting_bow"],
 			[12, "scripts/items/weapons/crossbow"],
@@ -68,28 +81,6 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
-		local r = this.Math.rand(1, 6);
-		if (r == 1) this.getItems().equip(::new("scripts/items/armor/thick_tunic"));
-		else if (r == 2) this.getItems().equip(::new("scripts/items/armor/padded_surcoat"));
-		else if (r == 3) this.getItems().equip(::new("scripts/items/armor/basic_mail_shirt"));
-		else if (r == 4) this.getItems().equip(::new("scripts/items/armor/mail_shirt"));
-		else if (r == 5) this.getItems().equip(::new("scripts/items/armor/ragged_surcoat"));
-		else if (r == 6) this.getItems().equip(::new("scripts/items/armor/padded_leather"));
-
-		if (::Math.rand(1, 100) <= 75)
-		{
-			local helmets = [
-				"scripts/items/helmets/hood",
-				"scripts/items/helmets/aketon_cap",
-				"scripts/items/helmets/full_leather_cap",
-				"scripts/items/helmets/headscarf",
-				"scripts/items/helmets/full_aketon_cap",
-				"scripts/items/helmets/kettle_hat",
-				"scripts/items/helmets/mail_coif",
-			];
-			this.getItems().equip(::new(::MSU.Array.rand(helmets)));
-		}
 	}
 
 	// Assign all other gear to this character

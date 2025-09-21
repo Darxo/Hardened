@@ -2,6 +2,23 @@
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
 ::Hardened.HooksMod.hook("scripts/entity/tactical/humans/barbarian_beastmaster", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 100
+			[12, "scripts/items/armor/barbarians/hide_and_bone_armor"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 130
+			[12, "scripts/items/helmets/barbarians/beastmasters_headpiece"],
+		]);
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/barbarians/thorned_whip"],
+		]);
+	}
+
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
 	q.onInit = @() function()
 	{
@@ -10,6 +27,13 @@
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
 	}
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+		this.HD_assignOtherGear();
+	}}.assignRandomEquipment;
 
 // Reforged Functions
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
@@ -56,5 +80,15 @@
 		// Generic Actives
 		this.getSkills().add(::new("scripts/skills/actives/barbarian_fury_skill"));
 		this.getSkills().add(::new("scripts/skills/actives/crack_the_whip_skill"));
+	}
+
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+	}
+
+	// Assign all other gear to this character
+	q.HD_assignOtherGear <- function()
+	{
 	}
 });

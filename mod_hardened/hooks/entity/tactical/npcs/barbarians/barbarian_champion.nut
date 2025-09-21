@@ -1,7 +1,31 @@
 // Hardened completely redesign most NPCs
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
-::Hardened.HooksMod.hook("scripts/entity/tactical/humans/barbarian_champion", function(q) {
+::Hardened.HooksMod.hook("scripts/entity/tactical/humans/barbarian_champion", function(q) {		// Barbarian Chosen
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 140 - 230
+			[12, "scripts/items/armor/barbarians/rugged_scale_armor"],
+			[12, "scripts/items/armor/barbarians/heavy_iron_armor"],
+			[12, "scripts/items/armor/barbarians/thick_plated_barbarian_armor"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 130 - 200
+			[12, "scripts/items/helmets/barbarians/crude_metal_helmet"],
+			[12, "scripts/items/helmets/barbarians/crude_faceguard_helmet"],
+			[12, "scripts/items/helmets/barbarians/closed_scrap_metal_helmet"],
+		]);
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/barbarians/skull_hammer"],
+			[12, "scripts/items/weapons/barbarians/two_handed_spiked_mace"],
+			[12, "scripts/items/weapons/barbarians/heavy_rusty_axe"],
+			[12, "scripts/items/weapons/barbarians/rusty_warblade"],
+		]);
+	}
+
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
 	q.onInit = @() function()
 	{
@@ -10,6 +34,13 @@
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
 	}
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.assignRandomEquipment = @() { function assignRandomEquipment()
+	{
+		this.HD_assignArmor();
+		this.HD_assignOtherGear();
+	}}.assignRandomEquipment;
 
 // Reforged Functions
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
@@ -80,5 +111,15 @@
 
 		// Generic Actives
 		this.getSkills().add(::new("scripts/skills/actives/barbarian_fury_skill"));
+	}
+
+	// Assign Head and Body armor to this character
+	q.HD_assignArmor <- function()
+	{
+	}
+
+	// Assign all other gear to this character
+	q.HD_assignOtherGear <- function()
+	{
 	}
 });
