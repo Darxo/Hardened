@@ -115,6 +115,12 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		pgPowerGroup.addPerk("perk.rf_death_dealer", 6);	// Add Death Dealer to Tier 6
 	}
 
+	{	// Raider Group
+		local pgRaiderGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_raider");
+		changePerkTier(pgRaiderGroup, "perk.rf_bully", 1);		// Move "Billy" to Tier 1 (down from Tier 2)
+		changePerkTier(pgRaiderGroup, "perk.rf_menacing", 3);		// Move "Menacing" to Tier 3 (up from Tier 1)
+	}
+
 	{	// Ranged Combat
 		local pgRangedGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_ranged");
 		pgRangedGroup.removePerk("perk.overwhelm");		// Remove Overwhelm from Ranged
