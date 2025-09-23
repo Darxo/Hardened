@@ -68,7 +68,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 				case "pg.rf_dagger":
 					return 2.0;		// In Reforged this is -1
 				case "pg.rf_light_armor":
-					return -1.0;	// In Reforged this is -1
+					return 1.0;		// In Reforged this is -1
 			}
 		}
 	}
