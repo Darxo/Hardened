@@ -11,7 +11,7 @@
 		__original();
 
 		// Apply difficulty-specific damage multiplier
-		this.m.BaseProperties.DamageReceivedRegularMult *= ::Const.Difficulty.getPlayerDamageReceivedMult();
+		this.m.BaseProperties.DamageReceivedTotalMult *= ::Const.Difficulty.getPlayerDamageReceivedMult();
 
 		this.getSkills().add(::new("scripts/skills/actives/hd_retreat_skill"));
 	}
