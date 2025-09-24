@@ -106,6 +106,30 @@ foreach (tile in ::MSU.Tile.getNeighbors(::getBro("Thorben").getTile()))
 ::logWarning("World Difficulty: " + ::Hardened.Global.getWorldDifficultyMult());
 ::logWarning("Contract Difficulty: " + ::Hardened.Global.getWorldContractMult());
 
-
 ::DynamicSpawns.Const.Logging = true;
 ::DynamicSpawns.Const.DetailedLogging = false;
+
+## Check states of dynamic unit blocks
+
+:MSU.Log.printData(::DynamicSpawns.Public.getUnitBlock("UnitBlock.RF.BarbarianBeastmaster").DynamicDefs.Units, 2)
+foreach (unitBlock in ::DynamicSpawns.Public.getUnitBlock("UnitBlock.RF.NecromancerWithBodyguards").DynamicDefs.Units)
+{
+	// ::logWarning("unitBlock " + unitBlock.BaseID + " getCost " + unitBlock.Class.getPredictedWorth());
+	local unit = ::DynamicSpawns.Public.getUnit(unitBlock.BaseID);
+	::MSU.Log.printData(unit);
+}
+
+## Test Dynamic Spawn Framework parties
+
+// first true is fixedResources; second true is detailedLogging
+::DynamicSpawns.Tests.printSpawn("HexenAndMore", 900, true, true);
+::DynamicSpawns.Tests.printSpawn("Necromancer", 200, true, true);
+
+foreach (unitBlock in ::DynamicSpawns.Public.getUnitBlock("UnitBlock.RF.NecromancerWithBodyguards").DynamicDefs.Units)
+{
+	// ::logWarning("unitBlock " + unitBlock.BaseID + " getCost " + unitBlock.Class.getPredictedWorth());
+	local unit = clone ::DynamicSpawns.Public.getUnit(unitBlock.BaseID);
+	unit.init();
+	::logWarning("Hardened: " + unit.getID() + " minCost " + unit.getMinCost());
+	// ::MSU.Log.printData(unit);
+}

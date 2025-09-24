@@ -221,6 +221,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Battle Forged** no longer has any prerequisites. It no longer provide any Reach Ignore
 - **Bear Down** (granted by **Mace Mastery**) is completely reworked. It now causes every headshot to daze the target for 1 turn, or increase the duration of an existing daze by 1 turn
 - **Bestial Vigor** is completely reworked. It is now called **Backup Plan** and grants the skill **Backup Plan** which can be used once per battle to recover 7 Action Points and disable all Attack-Skills for the rest of this turn. It has been removed from the **Wildling** perk group and added to the **Tactician** perk group at Tier 2
+- **Bully** is completely reworked. It now grants 10% more damage against anyone with a lower morale than you. It also grants +5 Melee Defense against anyone with less maximum Hitpoints than you
 - **Between the Ribs** no longer requires the attack to be of piercing type. It now also lowers your chance to hit the head by 10% for each surrounding character
 - **Blitzkrieg** now costs 9 Action Points (up from 7), 50 Fatigue (up from 30), no longer requires 10 usable fatigue on the targets. It no longer has a shared cooldown with other brothers who have this perk. It is now limited to being usable once per battle instead of once per day
 - **Bloodlust** (no longer available) is completely reworked. It now grants 10% more damage against bleeding enemies and makes you receive 10% less damage from bleeding enemies
@@ -249,6 +250,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Dynamic Duo** no longer grants Melee Skill or Melee Defense. It no longer reduces hitchance and damage when attacking your partner. It now grants +20 Resolve and +20 Initaitive, while the only adjacent allies next to your and your partner are each other
 - **En Garde** is completely reworked. It now grants +10 Melee Skill while it is not your turn. It also makes it so **Riposte** is no longer disabled when you get hit or deal a counter attack (so like in Vanilla), and it recovers 1 Action Point whenever an opponent misses a melee attack against you
 - **Entrenched** has been completely reworked. It now grants +5 Resolve per adjacent ally, +5 Ranged Defense per adjacent obstacle and 15% more Ranged Skill if at least 3 adjacent tiles are allies or obstacles
+- **Executioner** no longer works against stunned or sleeping targets. It now works against all rooted targets incase of just a select subset of those effects
 - **Exploit Opening** is completely reworked. It now grants a stacking +10% chance to hit whenever an opponent misses an attack against you. Bonus is reset upon landing a hit (just like Fast Adaptation)
 - **Fencer** no longer grants +10% chance to hit or 20% less fatigue cost. It no longer removes the damage type requirement from **Passing Step**. It now causes your fencing swords to lose 50% less durability
 - **Flail Mastery** no longer grants +5% HitChance with **Thresh** and it no longer grants the **From all Sides** perk. You now gain the **From all Sides** effect until the start of your next turn, after you use a Flail Skill. This effect makes you count twice for the purpose of surrounding adjacent enemies
@@ -348,7 +350,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Student** is added to **General** group. It is no longer a special perk
 - **Tricksters Purses** moved to Tier 3 (up from Tier 1)
 - **Vigorous Assault** is removed from **Swift Strikes** group
-- **Knave** no longer guarantees the **Dagger** perk group. Now it is just twice as likely. It also no longer guarantees the **Nimble** per group
+- **Knave** no longer guarantees the **Dagger** perk group. Now it is just twice as likely. It also no longer guarantees the **Nimble** perk group
 - **Wildling** no longer prevents the perk groups **Ranged**, **Gifted** and **Leadership** from appearing
 - **Leadership** perk group is now part of the **Shared** perk group collection and will compete with shared perk groups
 - **Soldier Group** no longer guarantees **Professional perk** or **Trained Group**. Instead it only applies a 2.5x multiplier for **Trained Group**
@@ -420,7 +422,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Head Splitter** now has 4 Reach (up from 3) and deals 20 Shield Damage (up from 16)
 - **Heavy Crossbow** now has +2 Fatigue Cost for its weapon skills
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
-- **Longsword** now costs 2000 Crowns (down from 2400)
+- **Longsword** now deals 45-55 damage (down from 65-85) has Armor Penetration of 30% (up from 25%), 75% Armor Damage (down from 100%), +0% Headshot Chance (down from +5%), 6 Reach (up from 5) and costs 1200 Crowns (down from 2400). It loses **Split** and gains **Riposte**. Its skills no longer have any discount. It can no longer appear as a named weapon
 - **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%), 6 Condition (up from 2) and 50% Armor Damage (up from 10%)
 - **Pike** gains the **Spear** Weapontype
 - **Player Banner** now causes -5 to Ranged Defense and it grants **Repel**
@@ -438,10 +440,11 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Two-handed Wooden Flail** now has 4 Reach (down from 5)
 - **Two-handed Wooden Hammer** now costs 600 Crowns (up from 500)
 - **Warbow** now has a Weight of 8 (up from 6) and +2 Fatigue Cost for its weapon skills
+- **Warbrand** now deals 65-75 damage (up from 50-75), has a Armor Penetration of 30% (up from 20%), a Weight of 12 (up from 10), +0% Headshot Chance (down from +5%) and costs 2600 Crowns (up from 1600). It loses **Split** and gains **Riposte**. Its skills no longer have a custom cost
 - **Warfork** now has a Weight of 14 (up from 12) and costs 400 Crowns (down from 600)
 - **Wonky Bow** now deals 30-45 damage (down from 30-50) a Range of 6 (down from 7), 0% Hitchance bonus (up from -10%) and costs 150 Crowns (up from 100)
 - **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
-- **Zweihander** now has 6 Reach (down from 7)
+- **Zweihander** now has 6 Reach (down from 7) and +10% Headshot Chance (up from +5%)
 
 ### Armor Condition/Weight/Value changes
 
@@ -668,7 +671,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 - **Blacksmith** no longer requires you to repair 5 items in a town. It now requires you to use 5 paint or attachements. It no longer grants a tool consumption discount. It now grants +50 storage space for Tools
 - **Bount Hunter** costs 2500 Crowns (down from 4000). It now grants +5% for enemies to become champions (up from +3%). It no longer grants Crowns when you kill champions
-- **Drill Sergeant** now requires a brother with a permanent injury to be dismissed (just like in Vanilla)
+- **Drill Sergeant** now provides 2% Experience per level below 11 (down from 4%), just like in Vanilla. It now requires a brother with a permanent injury to be dismissed, just like in Vanilla
 - **Lookout** no longer grants 25% more vision at all times. It now always provides a scouting report for enemies near you, just like "Band of Poachers" origin
 - **Quartermaster** now grants 150 Storage for Ammunition (up from 100) and 100 Storage for Tools and Medicine (up from 50)
 - **Scout** no longer grants 15% more movement speed. It now grants 20% more movement speed while in Forests and Swamp. It also grants 25% Vision while on hills or mountains
@@ -762,6 +765,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - NPCs are 20% more likely to use **Disarm** or **Knock out** on someone who has **Parry**
 - NPCs are 100% more likely to use rotating skills onto allied Nachzehrer if that would put them on top of a corpse; and 50% less likely if that would put them away a corpses. And vice versa with hostile nachzehrers
 - NPCs now take into account all swap-discount perks when considering whether to swap to a (better) melee weapon
+- Skeleton Commander now prefer to use wait
 
 ## Combat General
 
@@ -838,7 +842,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 - The **Lone Wolf** and **Gladiator** origins now have a roster size of 13 (up from 12)
 - Beginner combat difficulty now grants enemy parties 100% resources (up from 85%)
-- Beginner combat difficulty now causes player characters to receive 15% less damage from all sources
+- Beginner combat difficulty now causes player characters to receive 15% less hitpoint and armor damage from all sources
 - Expert combat difficulty now grants enemy parties 120% resources (up from 115%)
 - The Retreat tooltip during combat now also lists the Melee Defense bonus your characters receive during Auto-Retreat
 
@@ -1009,6 +1013,11 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Fix Item Swaps sometimes requiring a different amount of Action Points than advertised at first
 - Fix `onSpawned` event for player characters only firing for the first battle in each session
 - **Net Pull** is no longer considered an Attack
+
+### Dynamic Spawns
+
+- Fix HardMin in UnitBlocks not forcing them to spawn first
+- Fix Cost of Units with Bodyguards not being predicted correctly
 
 ## For Modders
 

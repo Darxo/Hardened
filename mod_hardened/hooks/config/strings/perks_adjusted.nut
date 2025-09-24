@@ -624,7 +624,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Armor Damage you deal is treated as additional Hitpoint Damage for purpose of inflicting [injuries|Concept.InjuryTemporary]",
+					"Armor Damage you deal is treated as additional [Hitpoints|Concept.Hitpoints] Damage for purpose of inflicting [injuries|Concept.InjuryTemporary]",
 				],
 			}],
 		}),

@@ -23,6 +23,32 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+1.0.0-alpha-5
+	- **Bully** is completely reworked. It now grants 10% more damage against anyone with a lower morale than you. It also grants +5 Melee Defense against anyone with less maximum Hitpoints than you
+	- **Executioner** no longer works against stunned or sleeping targets. It now works against all rooted targets incase of just a select subset of those effects
+	- **Bully** is now a Tier 1 perk (down from Tier 2)
+	- **Menacing** is now a Tier 3 perk (up from Tier 1)
+	- **Longsword** now deals 45-55 damage (down from 65-85) has Armor Penetration of 30% (up from 25%), 75% Armor Damage (down from 100%), +0% Headshot Chance (down from +5%), 6 Reach (up from 5) and costs 1200 Crowns (down from 2000). It loses **Split** and gains **Riposte**. Its skills no longer have a custom cost. It can no longer appear as a named weapon
+	- **Warbrand** now deals 65-75 damage (up from 50-75), has a Armor Penetration of 30% (up from 20%), a Weight of 12 (up from 10), +0% Headshot Chance (down from +5%) and costs 2600 Crowns (up from 1600). It loses **Split** and gains **Riposte**. Its skills no longer have a custom cost
+	- **Zweihander** now has +10% Headshot Chance (up from +5%)
+	- **Drill Sergeant** now provides 2% Experience per level below 11 (down from 4%), just like in Vanilla
+	- Improve various dynamic party definitions for zombies, beasts, barbarians and brigands
+	- Rework the following NPCs: Gladiator, Bounty Hunter, Slaves, Disguised Brigand Raider
+	- Improve armor selection of Barbarians and Mercenaries
+	- **Heralds Bodyguards** now spawn with **Warbrands** instead of **Longswords**
+	- **Mercenaries** now spawn with **Longswords** instead of **Warbrands** and **Two Handed Falchions** instead of **Kriegsmesser**
+	- Allow **Brigand Killer** to appear in the **Disguised Brigands** contract twist
+	- Allow up to 40% of Nachzehrer frontline to consist of Large Nachzehrer (up from 20%)
+	- Change AI of Skeleton Commanders to prefer using wait
+	- Apply world difficulty scaling for roaming Mercenry Parties
+	- Make the Damage Mititgation on Beginner Combat Difficulty also affect Armor Damage you take instead of just Hitpoint damage taken
+	- Improve skill description of NPC-only **Move Tail** skill
+	- Fix zooming being possible during combat, while input is locked
+	- Fix **Direwolves** not being able to use **Rotation**
+	- Fix **Knave** perk group guaranteeing **Nimble**
+	- Fix(Dynamic Spawns): HardMin in UnitBlocks not forcing them to spawn first
+	- Fix(Dynamic Spawns): Cost of Units with Bodyguards not being predicted correctly
+
 1.0.0-alpha-4
 	- Rewrite the assigned armor and helmets of most enemies
 	- Tough Bandits lose **Survival Instinct** and gain **Steel Brow**. They also gain +5 Melee Defense per tier

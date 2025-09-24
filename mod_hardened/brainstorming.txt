@@ -599,6 +599,8 @@ For: Line of Sight fix
 - add new skill to quickhands perk, which costs 4 AP and removes "Disarmed" effect
 
 - spearwall:
+	- does no/reduced damage?
+		- only deal damage once, when they break through?
 	- only affects 3 tiles
 	- gain +1 Reach
 	- attack each enemy who enters your zone of control
@@ -775,6 +777,7 @@ For: Line of Sight fix
 	- give bully to geists and alps
 - make qatal dagger a cleaver/dagger hybrid?
 - make early game 2H swords have 4AP main attack + a 6AP Swing AoE
+- make Between the Eyes instead scale off of ranged skill?
 
 # QOL
 - Prevent ending the turn for 1 second after gaining action points (e.g. Mauler)
@@ -831,4 +834,87 @@ Key 'perk_captain' not found
 - Breakthrough
 - Professional
 
+# Todo:
 - adjust mercenaries to also use new global difficulty
+- rebalance animal drops (ifrits dropped way too much loot last time I fought them)
+
+- make feral shields bigger in size
+- make arrows hitting trees/rocks also produce decals
+
+- make riposte melee defense bonus based on current initiative at point where you use it?
+
+
+onResurrect
+
+	// Force the currently active entity to throw away his picked behavior and reevalute if anyone moved
+	q.onMovementFinish = @(__original) { function onMovementFinish( _tile )
+	{
+		__original(_tile);
+
+		local activeEntity = ::Tactical.TurnSequenceBar.getActiveEntity();
+		if (activeEntity != null)
+		{
+			activeEntity.getAIAgent().m.RF_AgentState.invalidate(format("%s (%i).onMovementFinish", this.getName(), this.getID()));
+		}
+		else
+		{
+			::logError(format("onMovementFinish activeEntity null. %s (%i) ", this.getName(), this.getID()));
+		}
+
+		// Call the switchEntities callbacks from last to first as expected.
+		while (this.m.RF_switchEntitiesCallbacks.len() != 0)
+		{
+			local entry = this.m.RF_switchEntitiesCallbacks.pop();
+			entry[0](this, entry[1]);
+		}
+	}}.onMovementFinish;
+
+- reenable more high tier nachos in nacho parties (was disabled by reforged)
+
+- ai merc rework and bounty hunter system
+
+- beastmaster crack whip disarm
+
+- Add Setting to disable automove of camera during NPC turns completely (and then allow zooming/panning)
+
+- rework militia spawning system (use time based "resource" system, where militias which return replenish resources. new ones can only spawn if resources are recovered)
+
+
+- fix the non-moddable cost for necromancers, either here or in reforged code!
+
+- lower the minimum weight that named body armors can roll
+
+- remove resolve penalty from morale (bag game design as that makes downwards spiral more likely)
+
+- rework map generation to first place T3 civilian towns in the center of the map
+
+- reduce chance of non-named shields dropping from characters (otherwise too many appear eventually)
+	- chance to drop could be % of remaining condition
+
+- make it so item tooltips in inventory never overlap with the paperdoll stat page
+
+- make holy water extinguish fire
+
+- add new getReallyAllItems function for the player party, which returns an array with all inventory items but also all equipped items
+	- can be used so the player cant hide away items to prevent/force certain events to trigger
+	- can be used to make dunk event target equipped items aswell
+
+- make tryout cost depending on economic difficulty
+
+- make weapon attacks against flesh also use 1 condition? This would help against spearwalling indefinitely against zombies
+
+## Todo
+- test out the class overwrites of dynamic spawns
+- re-implement several of the reforged units using bodyguards, by implementing bodyguards as static units instead of static parties
+
+
+- make someone with bully perk play a taunt laughing sfx every now and then, when they dodge a melee attack by just a tiny smitch (what bully gave them)
+
+- look at how overlay icons are renderen
+	-> then, render overlay icons directly on top of a tile, if there is an enemy on top of that tile, but the tile is currently black, because the camera level is too low
+
+- add world overlay arrows around the player party pointing towards any visible location/party, that is market as a contract target
+	- can probably scan for anyone asking for that specific sprite when they turn it on
+
+- add UI feedback, when quicksaving
+- reduce time for smoke effect to start
