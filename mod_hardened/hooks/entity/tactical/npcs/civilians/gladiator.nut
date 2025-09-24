@@ -7,12 +7,12 @@
 		__original();
 
 		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 40
-			[12, "scripts/items/oriental/gladiator_harness"],
+			[12, "scripts/items/armor/oriental/gladiator_harness"],
 		]);
 
 		this.m.ChanceForNoHelmet = 50;
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 230
-			[12, "scripts/items/oriental/gladiator_helmet"],
+			[12, "scripts/items/helmets/oriental/gladiator_helmet"],
 		]);
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
