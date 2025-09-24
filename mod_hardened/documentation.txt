@@ -23,6 +23,10 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+1.0.0-alpha-6
+	- Fix fights against Gladiators not loading correctly
+	- Fix **Mauler** perk triggering while it is not the characters turn
+
 1.0.0-alpha-5
 	- **Bully** is completely reworked. It now grants 10% more damage against anyone with a lower morale than you. It also grants +5 Melee Defense against anyone with less maximum Hitpoints than you
 	- **Executioner** no longer works against stunned or sleeping targets. It now works against all rooted targets incase of just a select subset of those effects
