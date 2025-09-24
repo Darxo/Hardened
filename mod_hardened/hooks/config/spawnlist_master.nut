@@ -35,6 +35,27 @@
 	::Const.World.Spawn.Troops.Wardog.Strength = 8;
 }
 
+// scripts/entity/tactical/objective/donkey
+{
+	// Mandatory Entries
+	::Const.World.Spawn.Troops.CaravanDonkey.Cost = 10;			// Vanilla: 0
+	::Const.World.Spawn.Troops.CaravanDonkey.Strength = 10;		// Vanilla: 10
+}
+
+// scripts/entity/tactical/objective/donkey_military
+{
+	// Mandatory Entries
+	::Const.World.Spawn.Troops.MilitaryDonkey.Cost = 10;		// Vanilla: 0
+	::Const.World.Spawn.Troops.MilitaryDonkey.Strength = 10;	// Vanilla: 10
+}
+
+// scripts/entity/tactical/objective/donkey_southern
+{
+	// Mandatory Entries
+	::Const.World.Spawn.Troops.SouthernDonkey.Cost = 10;		// Vanilla: 0
+	::Const.World.Spawn.Troops.SouthernDonkey.Strength = 10;	// Vanilla: 10
+}
+
 // scripts/entity/tactical/humans/peasant_armed
 {
 	// Mandatory Entries
