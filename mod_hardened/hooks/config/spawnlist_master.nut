@@ -28,18 +28,18 @@
 	::Const.World.Spawn.Troops.SouthernPeasant.Strength = 8;
 }
 
-// scripts/entity/tactical/humans/peasant_armed
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.PeasantArmed.Cost = 10;
-	::Const.World.Spawn.Troops.PeasantArmed.Strength = 10;
-}
-
 // scripts/entity/tactical/wardog
 {
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.Wardog.Cost = 8;
 	::Const.World.Spawn.Troops.Wardog.Strength = 8;
+}
+
+// scripts/entity/tactical/humans/peasant_armed
+{
+	// Mandatory Entries
+	::Const.World.Spawn.Troops.PeasantArmed.Cost = 10;
+	::Const.World.Spawn.Troops.PeasantArmed.Strength = 10;
 }
 
 // scripts/entity/tactical/enemies/rf_bandit_scoundrel

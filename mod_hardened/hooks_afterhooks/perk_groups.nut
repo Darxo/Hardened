@@ -104,13 +104,13 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		pgNobleGroup.addPerk("perk.inspiring_presence", 7);		// Add Inspiring Presence to Tier 7
 	}
 
-	{	// Polearm Combat
+	{	// Polearm Group
 		local pgPolearmGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_polearm");
 		changePerkTier(pgPolearmGroup, "perk.rf_long_reach", 2);	// Move "Long Reach" to Tier 2 (down from Tier 7)
 		changePerkTier(pgPolearmGroup, "perk.rf_leverage", 7);		// Move "Leverage" to Tier 7 (up from Tier 3)
 	}
 
-	{	// Power Combat
+	{	// Power Group
 		local pgPowerGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_power");
 		pgPowerGroup.addPerk("perk.rf_death_dealer", 6);	// Add Death Dealer to Tier 6
 	}
@@ -121,7 +121,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		changePerkTier(pgRaiderGroup, "perk.rf_menacing", 3);		// Move "Menacing" to Tier 3 (up from Tier 1)
 	}
 
-	{	// Ranged Combat
+	{	// Ranged Group
 		local pgRangedGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_ranged");
 		pgRangedGroup.removePerk("perk.overwhelm");		// Remove Overwhelm from Ranged
 		changePerkTier(pgRangedGroup, "perk.bullseye", 6);		// Move "Bullseye" to Tier 6 (up from Tier 3)
