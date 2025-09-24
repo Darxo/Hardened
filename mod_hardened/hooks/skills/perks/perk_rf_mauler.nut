@@ -21,32 +21,19 @@
 	{
 		local ret = __original();
 
-		if (!this.m.HD_IsMovementBonusGained)
-		{
-			ret.push({
-				id = 11,
-				type = "text",
-				icon = "ui/icons/action_points.png",
-				text = ::Reforged.Mod.Tooltips.parseString(format("Recover %s [Action Points|Concept.ActionPoints] the next time you move next to an injured enemy during your [turn|Concept.Turn]", ::MSU.Text.colorizeValue(this.m.RecoveredActionPointsMovement))),
-			});
-		}
-
-		if (!this.isEnabled())
-		{
-			ret.push({
-				id = 20,
-				type = "text",
-				icon = "ui/tooltips/warning.png",
-				text = "Requires a Cleaver in your Mainhand",
-			});
-		}
+		ret.push({
+			id = 11,
+			type = "text",
+			icon = "ui/icons/action_points.png",
+			text = ::Reforged.Mod.Tooltips.parseString(format("Recover %s [Action Points|Concept.ActionPoints] the next time you move next to an [injured|Concept.InjuryTemporary] enemy", ::MSU.Text.colorizeValue(this.m.RecoveredActionPointsMovement))),
+		});
 
 		return ret;
 	}
 
 	q.isHidden = @(__original) function()
 	{
-		return this.m.HD_IsMovementBonusGained;
+		return !this.isEnabled();
 	}
 
 	q.onMovementFinished = @(__original) function()
@@ -56,7 +43,7 @@
 		if (!this.isEnabled()) return;
 
 		local actor = this.getContainer().getActor();
-		if (!this.m.HD_IsMovementBonusGained && this.getInjuredEnemyAmount(actor.getTile()) > 0)
+		if (this.getInjuredEnemyAmount(actor.getTile()) > 0)
 		{
 			this.m.HD_IsMovementBonusGained = true;
 			actor.recoverActionPoints(this.m.RecoveredActionPointsMovement);
@@ -73,7 +60,10 @@
 // New Private Functions
 	q.isEnabled <- function()
 	{
+		if (this.m.HD_IsMovementBonusGained) return false;
+
 		local actor = this.getContainer().getActor();
+		if (!actor.isActiveEntity()) return false;
 		if (actor.isDisarmed()) return false;
 
 		local weapon = actor.getMainhandItem();
