@@ -8,6 +8,15 @@
 	{
 		local ret = __original();
 
+		foreach (index, entry in ret)
+		{
+			if (entry.id == 11 && entry.icon == "ui/icons/bravery.png")
+			{
+				ret.remove(index);	// We remove any mention about the bravery debuff applied on lower morale levels
+				break;
+			}
+		}
+
 		if (this.getFleeingActionPointModifier() != 0)
 		{
 			ret.push({
@@ -63,7 +72,9 @@
 
 	q.onUpdate = @(__original) function( _properties )
 	{
+		local oldBraveryMult = _properties.BraveryMult
 		__original(_properties);
+		_properties.BraveryMult = oldBraveryMult;	// We revert the Resolve Multiplier because low morale no longer reduces the resolve of the character
 
 		// Give all actors additional Action Points while fleeing
 		_properties.ActionPoints += this.getFleeingActionPointModifier();
