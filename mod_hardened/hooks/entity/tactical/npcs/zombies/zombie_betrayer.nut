@@ -10,8 +10,6 @@
 	{
 		__original();
 
-		this.m.IsResurrectingOnFatality = true;		// We turned off this value in zombie_knight, so we need to revert that again here
-
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/greataxe"],
 			[12, "scripts/items/weapons/two_handed_flail"],
@@ -89,6 +87,9 @@
 		// Tweak Base Properties
 		local b = this.getBaseProperties();
 		b.setValues(::Const.Tactical.Actor.ZombieBetrayer);
+
+		// Generic Effects
+		this.getSkills().add(::new("scripts/skills/effects/hd_cursed_effect"));
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_anchor"));
