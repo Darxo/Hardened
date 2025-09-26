@@ -365,3 +365,21 @@
 	::Const.Tactical.Actor.ZombieBetrayer.RangedDefense = 5;
 	::Const.Tactical.Actor.ZombieBetrayer.Initiative = 70;
 }
+
+// scripts/entity/tactical/enemies/zombie_boss
+{
+	// Mandatory stats
+	::Const.Tactical.Actor.ZombieBoss.XP = 1620;			// Vanilla: 500
+	::Const.Tactical.Actor.ZombieBoss.ActionPoints = 7;		// Vanilla: 7
+	::Const.Tactical.Actor.ZombieBoss.Hitpoints = 300;		// Vanilla: 500
+	::Const.Tactical.Actor.ZombieBoss.Bravery = 110;		// Vanilla: 110
+	::Const.Tactical.Actor.ZombieBoss.Stamina = 100;		// Vanilla: 100
+	::Const.Tactical.Actor.ZombieBoss.MeleeSkill = 95;		// Vanilla: 95
+	::Const.Tactical.Actor.ZombieBoss.RangedSkill = 0;		// Vanilla: 0
+	::Const.Tactical.Actor.ZombieBoss.MeleeDefense = 25;	// Vanilla: 25
+	::Const.Tactical.Actor.ZombieBoss.RangedDefense = 0;	// Vanilla: 0
+	::Const.Tactical.Actor.ZombieBoss.Initiative = 80;		// Vanilla: 75
+
+	::Const.Tactical.Actor.ZombieBoss.Armor[0] = 400;		// Vanilla: 400
+	::Const.Tactical.Actor.ZombieBoss.Armor[1] = 250;		// Vanilla: 250
+}

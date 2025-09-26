@@ -40,4 +40,13 @@
 			}
 		}
 	}
+
+// Hardened Functions
+	q.HD_onInitStatsAndSkills = @(__original) function()
+	{
+		__original();
+
+		// This skill is only relevant for the Waterwheel legendary location, where it causes these bodyguards to follow the Rachegeist
+		this.getSkills().add(::new("scripts/skills/effects/rf_mentors_presence_effect"));
+	}
 });
