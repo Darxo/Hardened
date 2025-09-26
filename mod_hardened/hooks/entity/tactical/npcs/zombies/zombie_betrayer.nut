@@ -95,7 +95,6 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_anchor"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hold_out"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_formidable_approach"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_battle_forged"));
 	}
 
 	// Assign Head and Body armor to this character
