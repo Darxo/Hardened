@@ -54,14 +54,15 @@
 	// Overwrite, because even if Reforged had hitfactors, we display them under different conditions
 	q.onGetHitFactorsAsTarget = @() function( _skill, _targetTile, _tooltip )
 	{
-		if (!_targetTile.IsOccupiedByActor) return;
-		if (this.getMeleeDefenseModifier(_skill.getContainer().getActor()) != 0)
-		{
-			_tooltip.push({
-				icon = this.getIconColored(),
-				text = this.getName(),
-			});
-		};
+		if (!_skill.isAttack() || !_skill.isUsingHitchance() || _skill.isRanged()) return;	// This is just an approximation. In reality the perk grants +5 MDef against anything
+
+		local meleeDefenseModifier = this.getMeleeDefenseModifier(_skill.getContainer().getActor());
+		if (meleeDefenseModifier == 0) return;
+
+		_tooltip.push({
+			icon = "ui/tooltips/negative.png",
+			text = ::MSU.Text.colorNegative(meleeDefenseModifier + "% ") + this.getName(),
+		});
 	}
 
 // New Functions
