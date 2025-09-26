@@ -1,6 +1,12 @@
 ::Hardened.HooksMod.hook("scripts/skills/racial/rf_zombie_racial", function(q) {
 	q.m.FireDamageMult <- 1.5;
 
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.FatigueDealtPerHitMultModifier = 0;	// Reforged: 1.0
+	}
+
 	q.getTooltip = @(__original) { function getTooltip()
 	{
 		local ret = __original();
