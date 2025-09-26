@@ -18,6 +18,8 @@
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/noble_sword"],
 		]);
+
+		this.getAgent().m.EngageTargetMultipleOpponentsMult = 1.0;	// Vanilla: 1.25
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
