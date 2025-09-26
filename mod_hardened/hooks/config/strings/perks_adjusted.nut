@@ -1143,6 +1143,7 @@ local adjustedDescriptions = [
 		Key = "RF_Mauler",
 		Description = ::UPD.getDescription({
 			Fluff = "The wounded are weakest!",
+			Requirement = "Cleaver",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
