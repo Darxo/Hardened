@@ -273,3 +273,12 @@
 	if (!("Assets" in ::World) || ::World.Assets == null) return ::DynamicSpawns.Const.MainMenuIdealSize;	// fix for when we test a party in the main menu
 	return ::Math.max(6, ::Math.min(::World.getPlayerRoster().getSize(), ::World.Assets.getBrothersMaxInCombat()));
 }
+
+// Return the corpse name of _corpse in a color, depending on whether it was a player corpse or a non-player one
+// This function works similar to
+::Hardened.util.getColorizedCorpseName <- function( _corpse )
+{
+	local color = _corpse.IsPlayer ? "#1e468f" : "#8f1e1e";		// Same color scheme as the vanilla ::Const.UI.getColorizedEntityName function
+
+	return ::MSU.Text.color(color, _corpse.CorpseName);
+}
