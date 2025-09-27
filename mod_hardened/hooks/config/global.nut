@@ -2,6 +2,9 @@
 ::Const.Difficulty.EnemyMult[0] = ::Const.Difficulty.EnemyMult[1];	// Beginner now has the same resources for enemies as Veteran (both 100%)
 ::Const.Difficulty.EnemyMult[2] += 0.05;	// Expert now grants enemies 120% resources (up from 115%)
 
+::Const.Difficulty.PaymentMult[0] = 1.2;	// Vanilla: 1.1
+::Const.Difficulty.PaymentMult[2] = 0.8;	// Vanilla: 0.9
+
 ::Const.Difficulty.PlayerDamageReceivedMult <- [
 	0.85,	// Player characters receive 15% less damage in beginner difficulty
 	1.0,
