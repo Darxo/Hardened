@@ -254,6 +254,20 @@
 				}
 				break;
 			}
+
+			case "character-stats.MeleeDefense":
+			{
+				foreach (entry in ret)
+				{
+					if ("id" in entry && entry.id == 2)
+					{
+						// We add an explanation about the softcap and emphasize that this stat also helps against animals and two-tile attacks
+						entry.text = "Melee Defense reduces the probability of being hit by melee attacks, such as the bite of a wolf or the thrust of a pike. It can be increased by equipping a shield.\n\nMelee Defense has a soft cap at " + ::MSU.Text.colorPositive("50") + ". Any value above this (after multipliers) is reduced by half before Hitchance is calculated.";
+						break;
+					}
+				}
+				break;
+			}
 		}
 
 		return ret;
