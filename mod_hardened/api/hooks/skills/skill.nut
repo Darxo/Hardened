@@ -113,6 +113,21 @@
 		return null;
 	}
 
+	// Returns this.getTooltip but strips away all children member from all tooltip entries
+	// Should be used, when fetching a tooltip that is to be displayed as children already, as nested children break tooltips break the tooltip box
+	q.getTooltipWithoutChildren <- function()
+	{
+		local ret = this.getTooltip();
+
+		foreach (entry in ret)
+		{
+			if (!("children" in entry)) continue;
+			delete entry["children"];
+		}
+
+		return ret;
+	}
+
 // New Getter
 	q.isOnCooldown <- function()
 	{
