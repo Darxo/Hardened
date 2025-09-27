@@ -1,3 +1,9 @@
+// We wipe many vanilla functions with the goal to de-couple the tail from the head
+::Hardened.wipeClass("scripts/skills/special/rf_reach", [
+	"create",
+	"getTooltip",
+]);
+
 ::Hardened.HooksMod.hook("scripts/skills/special/rf_reach", function(q) {
 	q.create = @(__original) function()
 	{
@@ -13,17 +19,7 @@
 
 		if (properties.IsAffectedByReach)
 		{
-			if (properties.getReachAdvantageBonus() != 0)
-			{
-				ret.push({
-					id = 10,
-					type = "text",
-					icon = "ui/icons/melee_skill.png",
-					text = ::Reforged.Mod.Tooltips.parseString("Reach Advantage grants " + ::MSU.Text.colorizeValue(properties.getReachAdvantageBonus(), {AddSign = true}) + " [Melee Skill|Concept.MeleeSkill]"),
-				});
-			}
-
-			if (properties.getReachAdvantageMult() > 1.0)
+			if (properties.getReachAdvantageMult() != 1.0)
 			{
 				ret.push({
 					id = 11,
@@ -57,7 +53,7 @@
 	}
 
 // Overwrites
-	q.onUpdate = @() function( _properties )	// we overwrite reforged functions
+	q.onUpdate = @() function( _properties )
 	{
 		local actor = this.getContainer().getActor();
 		// We could normally also just ask actor.hasZoneOfControl(). However in Hardened the ZOC can also be disabled by an additional character property, so this check is not correct anymore
@@ -69,54 +65,51 @@
 
 	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties )
 	{
-		this.m.CurrBonus = 0;
-
-		if (_skill.isRanged()) return;
-		if (!_properties.IsAffectedByReach) return;
-		if (_targetEntity == null) return;
-		if (!_targetEntity.getCurrentProperties().CanEnemiesHaveReachAdvantage || !_targetEntity.getCurrentProperties().IsAffectedByReach) return;
-
-		local targetReach = 0;
-		if (_targetEntity.getMoraleState() != ::Const.MoraleState.Fleeing && _targetEntity.getSkills().getAttackOfOpportunity() != null)
+		if (this.hasReachAdvantage(_skill, _targetEntity, _properties))
 		{
-			targetReach = _targetEntity.getSkills().buildPropertiesForDefense(this.getContainer().getActor(), _skill).getReach();
-		}
-		local diff = _properties.getReach() - targetReach;
-
-		if (diff > 0)
-		{
-			_properties.MeleeSkill += this.calculateBonus(_properties);
+			_properties.MeleeSkillMult *= _properties.getReachAdvantageMult();
 		}
 	}
 
 // MSU Functions
 	q.onGetHitFactors = @() function( _skill, _targetTile, _tooltip )
 	{
-		if (this.m.CurrBonus > 0)
+		local targetEntity = _targetTile.getEntity();
+		local properties = this.getContainer().buildPropertiesForUse(_skill, targetEntity);
+		local approximateBonus = this.getApproximateBonus(properties);
+		if (approximateBonus != 0 && this.hasReachAdvantage(_skill, targetEntity, properties))
 		{
 			_tooltip.push({
-				icon = this.m.CurrBonus > 0 ? "ui/tooltips/positive.png" : "ui/tooltips/negative.png",
-				text = ::MSU.Text.colorizeValue(this.m.CurrBonus, {AddPercent = true}) + " Reach Advantage"
+				icon = approximateBonus > 0 ? "ui/tooltips/positive.png" : "ui/tooltips/negative.png",
+				text = ::MSU.Text.colorizeValue(approximateBonus, {AddPercent = true}) + " Reach Advantage"
 			});
 		}
 	}
 
-	// We prevent reforged from adding a tooltip about reach debuff while rooted, because we remove that debuff
-	q.onQueryTooltip = @() function( _skill, _tooltip ) {}
-
 // New Functions
-	q.calculateBonus <- function( _properties )
+	// Do we have Reachadvantage over _targetEntity using _skillUsed?
+	q.hasReachAdvantage <- function( _skillUsed, _targetEntity, _properties )
 	{
-		local bonus = _properties.getReachAdvantageBonus() + ::Math.floor(_properties.MeleeSkill * (_properties.getReachAdvantageMult() - 1.0));
-		this.m.CurrBonus = bonus;
-		return bonus;
+		if (::MSU.isNull(_targetEntity)) return true;
+
+		if (!_properties.IsAffectedByReach) return false;
+		if (!_targetEntity.getCurrentProperties().IsAffectedByReach) return false;
+		if (!_targetEntity.getCurrentProperties().CanEnemiesHaveReachAdvantage) return false;
+
+		local targetReach = 0;
+		if (_targetEntity.getMoraleState() != ::Const.MoraleState.Fleeing && _targetEntity.getSkills().getAttackOfOpportunity() != null)
+		{
+			targetReach = _targetEntity.getSkills().buildPropertiesForDefense(this.getContainer().getActor(), _skillUsed).getReach();
+		}
+		local diff = _properties.getReach() - targetReach;
+
+		return diff > 0;
 	}
 
-	// Delete Functions
-	if (q.contains("onTargetMissed")) delete q.onTargetMissed;
-	if (q.contains("onTurnStart")) delete q.onTurnStart;
-	if (q.contains("onTurnEnd")) delete q.onTurnEnd;
-	if (q.contains("onWaitTurn")) delete q.onWaitTurn;
-	if (q.contains("onPayForItemAction")) delete q.onPayForItemAction;
-	if (q.contains("onCombatFinished")) delete q.onCombatFinished;
+	// Return an approximate melee skill modifier, granted by Reachadvantage
+	// This is only meant for displaying it in the Hitfactor Tooltip as Reachadvantage is the most relevant multiplier to learn about here
+	q.getApproximateBonus <- function( _properties )
+	{
+		return ::Math.floor(_properties.MeleeSkill * (_properties.getReachAdvantageMult() - 1.0));
+	}
 });

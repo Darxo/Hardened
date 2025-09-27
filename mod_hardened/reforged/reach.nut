@@ -1,5 +1,4 @@
 // New Entries
-::Reforged.Reach.ReachAdvantageBonus <- 0;
 ::Reforged.Reach.ReachAdvantageMult <- 1.15;
 
 // Adjustment of existing Entries

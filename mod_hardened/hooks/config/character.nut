@@ -43,12 +43,6 @@ local oldGetClone = ::Const.CharacterProperties.getClone;
 	return this.ReachAdvantageMult;
 }
 
-::Const.CharacterProperties.ReachAdvantageBonus <- ::Reforged.Reach.ReachAdvantageBonus;
-::Const.CharacterProperties.getReachAdvantageBonus <- function()
-{
-	return this.ReachAdvantageBonus;
-}
-
 // If set to "false", then this prevents this actor from ever having a zone of control
 // Is set to "true", nothing happens
 ::Const.CharacterProperties.CanExertZoneOfControl <- true;
