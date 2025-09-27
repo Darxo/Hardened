@@ -257,32 +257,32 @@
 // scripts/entity/tactical/enemies/zombie_bodyguard
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Zombie.XP = 180;
-	::Const.Tactical.Actor.Zombie.ActionPoints = 6;
-	::Const.Tactical.Actor.Zombie.Hitpoints = 90;
-	::Const.Tactical.Actor.Zombie.Bravery = 100;
-	::Const.Tactical.Actor.Zombie.Stamina = 100;
-	::Const.Tactical.Actor.Zombie.MeleeSkill = 50;
-	::Const.Tactical.Actor.Zombie.RangedSkill = 0;
-	::Const.Tactical.Actor.Zombie.MeleeDefense = -10;
-	::Const.Tactical.Actor.Zombie.RangedDefense = -10;
-	::Const.Tactical.Actor.Zombie.Initiative = 50;
+	::Const.Tactical.Actor.Zombie.XP = 180;				// Vanilla: 100
+	::Const.Tactical.Actor.Zombie.ActionPoints = 6;		// Vanilla 6
+	::Const.Tactical.Actor.Zombie.Hitpoints = 90;		// Vanilla: 100
+	::Const.Tactical.Actor.Zombie.Bravery = 100;		// Vanilla: 100
+	::Const.Tactical.Actor.Zombie.Stamina = 100;		// Vanilla: 100
+	::Const.Tactical.Actor.Zombie.MeleeSkill = 50;		// Vanilla: 45
+	::Const.Tactical.Actor.Zombie.RangedSkill = 0;		// Vanilla: 5
+	::Const.Tactical.Actor.Zombie.MeleeDefense = -10;	// Vanilla: -5
+	::Const.Tactical.Actor.Zombie.RangedDefense = -10;	// Vanilla: -5
+	::Const.Tactical.Actor.Zombie.Initiative = 50;		// Vanilla: 45
 }
 
 // scripts/entity/tactical/enemies/zombie_yeoman
 // scripts/entity/tactical/enemies/zombie_yeoman_bodyguard
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.ZombieYeoman.XP = 324;
-	::Const.Tactical.Actor.ZombieYeoman.ActionPoints = 6;
-	::Const.Tactical.Actor.ZombieYeoman.Hitpoints = 120;
-	::Const.Tactical.Actor.ZombieYeoman.Bravery = 100;
-	::Const.Tactical.Actor.ZombieYeoman.Stamina = 100;
-	::Const.Tactical.Actor.ZombieYeoman.MeleeSkill = 60;
-	::Const.Tactical.Actor.ZombieYeoman.RangedSkill = 0;
-	::Const.Tactical.Actor.ZombieYeoman.MeleeDefense = -5;
-	::Const.Tactical.Actor.ZombieYeoman.RangedDefense = -5;
-	::Const.Tactical.Actor.ZombieYeoman.Initiative = 50;
+	::Const.Tactical.Actor.ZombieYeoman.XP = 324;				// Vanilla: 150
+	::Const.Tactical.Actor.ZombieYeoman.ActionPoints = 6;		// Vanilla: 6
+	::Const.Tactical.Actor.ZombieYeoman.Hitpoints = 120;		// Vanilla: 130
+	::Const.Tactical.Actor.ZombieYeoman.Bravery = 100;			// Vanilla: 100
+	::Const.Tactical.Actor.ZombieYeoman.Stamina = 100;			// Vanilla: 100
+	::Const.Tactical.Actor.ZombieYeoman.MeleeSkill = 60;		// Vanilla: 50
+	::Const.Tactical.Actor.ZombieYeoman.RangedSkill = 0;		// Vanilla: 0
+	::Const.Tactical.Actor.ZombieYeoman.MeleeDefense = -5;		// Vanilla: -5
+	::Const.Tactical.Actor.ZombieYeoman.RangedDefense = -5;		// Vanilla: -5
+	::Const.Tactical.Actor.ZombieYeoman.Initiative = 50;		// Vanilla: 45
 }
 
 // scripts/entity/tactical/enemies/zombie_nomad
@@ -320,16 +320,16 @@
 // scripts/entity/tactical/enemies/zombie_knight_bodyguard
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.ZombieKnight.XP = 540;
-	::Const.Tactical.Actor.ZombieKnight.ActionPoints = 7;
-	::Const.Tactical.Actor.ZombieKnight.Hitpoints = 150;
-	::Const.Tactical.Actor.ZombieKnight.Bravery = 100;
-	::Const.Tactical.Actor.ZombieKnight.Stamina = 100;
-	::Const.Tactical.Actor.ZombieKnight.MeleeSkill = 70;
-	::Const.Tactical.Actor.ZombieKnight.RangedSkill = 0;
-	::Const.Tactical.Actor.ZombieKnight.MeleeDefense = 0;
-	::Const.Tactical.Actor.ZombieKnight.RangedDefense = 0;
-	::Const.Tactical.Actor.ZombieKnight.Initiative = 60;
+	::Const.Tactical.Actor.ZombieKnight.XP = 540;				// Vanilla: 250
+	::Const.Tactical.Actor.ZombieKnight.ActionPoints = 7;		// Vanilla: 7
+	::Const.Tactical.Actor.ZombieKnight.Hitpoints = 150;		// Vanilla: 180
+	::Const.Tactical.Actor.ZombieKnight.Bravery = 100;			// Vanilla: 130
+	::Const.Tactical.Actor.ZombieKnight.Stamina = 150;			// Vanilla: 100
+	::Const.Tactical.Actor.ZombieKnight.MeleeSkill = 70;		// Vanilla: 60
+	::Const.Tactical.Actor.ZombieKnight.RangedSkill = 0;		// Vanilla: 0
+	::Const.Tactical.Actor.ZombieKnight.MeleeDefense = 0;		// Vanilla: 5
+	::Const.Tactical.Actor.ZombieKnight.RangedDefense = 0;		// Vanilla: 0
+	::Const.Tactical.Actor.ZombieKnight.Initiative = 60;		// Vanilla: 60
 }
 
 // scripts/entity/tactical/enemies/necromancer
@@ -354,16 +354,16 @@
 // scripts/entity/tactical/enemies/zombie_betrayer
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.ZombieBetrayer.XP = 900;
-	::Const.Tactical.Actor.ZombieBetrayer.ActionPoints = 8;
-	::Const.Tactical.Actor.ZombieBetrayer.Hitpoints = 200;
-	::Const.Tactical.Actor.ZombieBetrayer.Bravery = 100;
-	::Const.Tactical.Actor.ZombieBetrayer.Stamina = 100;
-	::Const.Tactical.Actor.ZombieBetrayer.MeleeSkill = 80;
-	::Const.Tactical.Actor.ZombieBetrayer.RangedSkill = 0;
-	::Const.Tactical.Actor.ZombieBetrayer.MeleeDefense = 5;
-	::Const.Tactical.Actor.ZombieBetrayer.RangedDefense = 5;
-	::Const.Tactical.Actor.ZombieBetrayer.Initiative = 70;
+	::Const.Tactical.Actor.ZombieBetrayer.XP = 900;				// Vanilla: 350
+	::Const.Tactical.Actor.ZombieBetrayer.ActionPoints = 8;		// Vanilla: 8
+	::Const.Tactical.Actor.ZombieBetrayer.Hitpoints = 200;		// Vanilla: 200
+	::Const.Tactical.Actor.ZombieBetrayer.Bravery = 100;		// Vanilla: 110
+	::Const.Tactical.Actor.ZombieBetrayer.Stamina = 200;		// Vanilla: 100
+	::Const.Tactical.Actor.ZombieBetrayer.MeleeSkill = 80;		// Vanilla: 80
+	::Const.Tactical.Actor.ZombieBetrayer.RangedSkill = 0;		// Vanilla: 0
+	::Const.Tactical.Actor.ZombieBetrayer.MeleeDefense = 5;		// Vanilla: 5
+	::Const.Tactical.Actor.ZombieBetrayer.RangedDefense = 5;	// Vanilla: 0
+	::Const.Tactical.Actor.ZombieBetrayer.Initiative = 70;		// Vanilla: 60
 }
 
 // scripts/entity/tactical/enemies/zombie_boss
@@ -373,7 +373,7 @@
 	::Const.Tactical.Actor.ZombieBoss.ActionPoints = 7;		// Vanilla: 7
 	::Const.Tactical.Actor.ZombieBoss.Hitpoints = 300;		// Vanilla: 500
 	::Const.Tactical.Actor.ZombieBoss.Bravery = 110;		// Vanilla: 110
-	::Const.Tactical.Actor.ZombieBoss.Stamina = 100;		// Vanilla: 100
+	::Const.Tactical.Actor.ZombieBoss.Stamina = 200;		// Vanilla: 100
 	::Const.Tactical.Actor.ZombieBoss.MeleeSkill = 95;		// Vanilla: 95
 	::Const.Tactical.Actor.ZombieBoss.RangedSkill = 0;		// Vanilla: 0
 	::Const.Tactical.Actor.ZombieBoss.MeleeDefense = 25;	// Vanilla: 25
