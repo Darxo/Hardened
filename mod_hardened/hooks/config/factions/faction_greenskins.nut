@@ -85,22 +85,22 @@
 // scripts/entity/tactical/enemies/orc_young
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.OrcYoung.XP = 360;
-	::Const.Tactical.Actor.OrcYoung.ActionPoints = 9;
-	::Const.Tactical.Actor.OrcYoung.Hitpoints = 125;
-	::Const.Tactical.Actor.OrcYoung.Bravery = 65;
-	::Const.Tactical.Actor.OrcYoung.Stamina = 150;
-	::Const.Tactical.Actor.OrcYoung.MeleeSkill = 60;
-	::Const.Tactical.Actor.OrcYoung.RangedSkill = 50;
-	::Const.Tactical.Actor.OrcYoung.MeleeDefense = -5;
-	::Const.Tactical.Actor.OrcYoung.RangedDefense = -5;
-	::Const.Tactical.Actor.OrcYoung.Initiative = 120;
+	::Const.Tactical.Actor.OrcYoung.XP = 450;				// Vanilla: 250
+	::Const.Tactical.Actor.OrcYoung.ActionPoints = 9;		// Vanilla: 9
+	::Const.Tactical.Actor.OrcYoung.Hitpoints = 130;		// Vanilla: 125
+	::Const.Tactical.Actor.OrcYoung.Bravery = 65;			// Vanilla: 65
+	::Const.Tactical.Actor.OrcYoung.Stamina = 150;			// Vanilla: 150
+	::Const.Tactical.Actor.OrcYoung.MeleeSkill = 60;		// Vanilla: 60
+	::Const.Tactical.Actor.OrcYoung.RangedSkill = 50;		// Vanilla: 50
+	::Const.Tactical.Actor.OrcYoung.MeleeDefense = -5;		// Vanilla: -5
+	::Const.Tactical.Actor.OrcYoung.RangedDefense = -5;		// Vanilla: -5
+	::Const.Tactical.Actor.OrcYoung.Initiative = 120;		// Vanilla: 120
 }
 
 // scripts/entity/tactical/enemies/orc_berserker
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.OrcBerserker.XP = 720;
+	::Const.Tactical.Actor.OrcBerserker.XP = 810;
 	::Const.Tactical.Actor.OrcBerserker.ActionPoints = 9;
 	::Const.Tactical.Actor.OrcBerserker.Hitpoints = 250;
 	::Const.Tactical.Actor.OrcBerserker.Bravery = 90;
@@ -115,7 +115,7 @@
 // scripts/entity/tactical/enemies/orc_warrior
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.OrcWarrior.XP = 900;
+	::Const.Tactical.Actor.OrcWarrior.XP = 990;
 	::Const.Tactical.Actor.OrcWarrior.ActionPoints = 8;
 	::Const.Tactical.Actor.OrcWarrior.Hitpoints = 200;
 	::Const.Tactical.Actor.OrcWarrior.Bravery = 80;
@@ -130,7 +130,7 @@
 // scripts/entity/tactical/enemies/orc_warlord
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.OrcWarlord.XP = 1440;
+	::Const.Tactical.Actor.OrcWarlord.XP = 1620;
 	::Const.Tactical.Actor.OrcWarlord.ActionPoints = 9;
 	::Const.Tactical.Actor.OrcWarlord.Hitpoints = 300;
 	::Const.Tactical.Actor.OrcWarlord.Bravery = 80;

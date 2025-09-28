@@ -266,13 +266,6 @@
 	::Const.World.Spawn.Troops.GoblinAmbusher.Strength = 20;
 }
 
-// scripts/entity/tactical/enemies/orc_young
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.OrcYoung.Cost = 20;
-	::Const.World.Spawn.Troops.OrcYoung.Strength = 20;
-}
-
 // scripts/entity/tactical/humans/engineer
 {
 	// Mandatory Entries
@@ -362,6 +355,13 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.NomadArcher.Cost = 24;
 	::Const.World.Spawn.Troops.NomadArcher.Strength = 24;
+}
+
+// scripts/entity/tactical/enemies/orc_young
+{
+	// Mandatory Entries
+	::Const.World.Spawn.Troops.OrcYoung.Cost = 25;
+	::Const.World.Spawn.Troops.OrcYoung.Strength = 25;
 }
 
 // scripts/entity/tactical/enemies/ghoul_medium
@@ -629,13 +629,6 @@
 	::Const.World.Spawn.Troops.RF_FootmanHeavy.Strength = 40;
 }
 
-// scripts/entity/tactical/enemies/orc_berserker
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.OrcBerserker.Cost = 40;
-	::Const.World.Spawn.Troops.OrcBerserker.Strength = 40;
-}
-
 // scripts/entity/tactical/humans/executioner
 {
 	// Mandatory Entries
@@ -676,6 +669,13 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.Vampire.Cost = 40;
 	::Const.World.Spawn.Troops.Vampire.Strength = 40;
+}
+
+// scripts/entity/tactical/enemies/orc_berserker
+{
+	// Mandatory Entries
+	::Const.World.Spawn.Troops.OrcBerserker.Cost = 45;
+	::Const.World.Spawn.Troops.OrcBerserker.Strength = 45;
 }
 
 // scripts/entity/tactical/humans/barbarian_champion
@@ -770,13 +770,6 @@
 	::Const.World.Spawn.Troops.GoblinShaman.Strength = 50;
 }
 
-// scripts/entity/tactical/enemies/orc_warrior
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.OrcWarrior.Cost = 50;
-	::Const.World.Spawn.Troops.OrcWarrior.Strength = 50;
-}
-
 // scripts/entity/tactical/humans/nomad_leader
 {
 	// Mandatory Entries
@@ -818,6 +811,13 @@
 	::Const.World.Spawn.Troops.ZombieBetrayer.Cost = 50;
 	::Const.World.Spawn.Troops.ZombieBetrayer.Strength = 50;
 	::Const.World.Spawn.Troops.ZombieBetrayer.Variant = 2;	// Vanilla: 0
+}
+
+// scripts/entity/tactical/enemies/orc_warrior
+{
+	// Mandatory Entries
+	::Const.World.Spawn.Troops.OrcWarrior.Cost = 55;
+	::Const.World.Spawn.Troops.OrcWarrior.Strength = 55;
 }
 
 // scripts/entity/tactical/enemies/unhold_armored
@@ -939,18 +939,18 @@
 	::Const.World.Spawn.Troops.RF_KnightAnointed.Strength = 80;
 }
 
-// scripts/entity/tactical/enemies/orc_warlord
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.OrcWarlord.Cost = 80;
-	::Const.World.Spawn.Troops.OrcWarlord.Strength = 80;
-}
-
 // scripts/entity/tactical/enemies/rf_skeleton_legatus
 {
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.RF_SkeletonLegatus.Cost = 80;
 	::Const.World.Spawn.Troops.RF_SkeletonLegatus.Strength = 80;
+}
+
+// scripts/entity/tactical/enemies/orc_warlord
+{
+	// Mandatory Entries
+	::Const.World.Spawn.Troops.OrcWarlord.Cost = 90;
+	::Const.World.Spawn.Troops.OrcWarlord.Strength = 90;
 }
 
 // scripts/entity/tactical/enemies/rf_vampire_lord
