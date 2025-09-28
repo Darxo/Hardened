@@ -82,6 +82,21 @@
 	::Const.Tactical.Actor.CaravanGuard.Initiative = 110;
 }
 
+// scripts/entity/tactical/humans/cultist
+{
+	// Mandatory stats
+	::Const.Tactical.Actor.Cultist.XP = 200;			// Vanilla: 150
+	::Const.Tactical.Actor.Cultist.ActionPoints = 9;	// Vanilla: 150
+	::Const.Tactical.Actor.Cultist.Hitpoints = 90;		// Vanilla: 60
+	::Const.Tactical.Actor.Cultist.Bravery = 60;		// Vanilla: 80
+	::Const.Tactical.Actor.Cultist.Stamina = 110;		// Vanilla: 110
+	::Const.Tactical.Actor.Cultist.MeleeSkill = 70;		// Vanilla: 60
+	::Const.Tactical.Actor.Cultist.RangedSkill = 40;	// Vanilla: 40
+	::Const.Tactical.Actor.Cultist.MeleeDefense = 10;	// Vanilla: 10
+	::Const.Tactical.Actor.Cultist.RangedDefense = 10;	// Vanilla: 10
+	::Const.Tactical.Actor.Cultist.Initiative = 110;	// Vanilla: 110
+}
+
 // scripts/entity/tactical/humans/militia_veteran
 {
 	// Mandatory stats

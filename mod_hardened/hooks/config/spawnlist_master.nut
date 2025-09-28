@@ -224,6 +224,20 @@
 	::Const.World.Spawn.Troops.BarbarianBeastmaster.Strength = 20;
 }
 
+// scripts/entity/tactical/humans/cultist
+{
+	// Mandatory Entries
+	::Const.World.Spawn.Troops.Cultist.Cost = 20;
+	::Const.World.Spawn.Troops.Cultist.Strength = 20;
+}
+
+// scripts/entity/tactical/humans/cultist
+{
+	// Mandatory Entries
+	::Const.World.Spawn.Troops.CultistAmbush.Cost = 20;
+	::Const.World.Spawn.Troops.CultistAmbush.Strength = 20;
+}
+
 // scripts/entity/tactical/enemies/direwolf
 {
 	// Mandatory Entries
