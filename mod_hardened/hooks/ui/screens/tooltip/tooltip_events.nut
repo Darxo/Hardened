@@ -81,6 +81,18 @@
 				::Const.Difficulty.generateEconomicDifficultyTooltip(ret, ::Const.Difficulty.Hard);
 				return ret;
 
+			case "menu-screen.new-campaign.EasyDifficultyBudget":
+				::Const.Difficulty.generateStartingDifficultyTooltip(ret, ::Const.Difficulty.Easy);
+				return ret;
+
+			case "menu-screen.new-campaign.NormalDifficultyBudget":
+				::Const.Difficulty.generateStartingDifficultyTooltip(ret, ::Const.Difficulty.Normal);
+				return ret;
+
+			case "menu-screen.new-campaign.HardDifficultyBudget":
+				::Const.Difficulty.generateStartingDifficultyTooltip(ret, ::Const.Difficulty.Hard);
+				return ret;
+
 			case "tactical-screen.topbar.options-bar-module.FleeButton":
 			{
 				local retreatDefenseBonus = ::Const.Difficulty.RetreatDefenseBonus[::World.Assets.getDifficulty()];

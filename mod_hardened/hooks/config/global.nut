@@ -124,3 +124,57 @@
 		text = "Maximum Medicine: " + ::MSU.Text.colorPositive(::Const.Difficulty.MaxResources[_difficulty].Medicine),
 	});
 }
+
+// Vanilla uses magic numbers in-code, so we just re-define those in a simple data-structure, until some mod globalizes them
+local startingResources = [
+	{
+		Money = 2500,
+		Ammo = 80,
+		Tools = 40,
+		Medicine = 30,
+	},
+	{
+		Money = 2000,
+		Ammo = 40,
+		Tools = 20,
+		Medicine = 20,
+	},
+	{
+		Money = 1500,
+		Ammo = 20,
+		Tools = 10,
+		Medicine = 10,
+	},
+];
+
+::Const.Difficulty.generateStartingDifficultyTooltip <- function( _tooltip, _difficulty )
+{
+	_tooltip.push({		// Starting Money
+		id = 10,
+		type = "text",
+		icon = "ui/icons/asset_money.png",
+		text = "Starting Crowns: " + ::MSU.Text.colorizeValue(startingResources[_difficulty].Money),
+	});
+
+	_tooltip.push({		// Ammunition
+		id = 11,
+		type = "text",
+		icon = "ui/icons/asset_ammo.png",
+		text = "Starting Ammunition: " + ::MSU.Text.colorizeValue(startingResources[_difficulty].Ammo),
+	});
+
+	_tooltip.push({		// Tools and Supplies
+		id = 12,
+		type = "text",
+		icon = "ui/icons/asset_supplies.png",
+		text = "Starting Tools: " + ::MSU.Text.colorizeValue(startingResources[_difficulty].Tools),
+	});
+
+	_tooltip.push({		// Medicine
+		id = 13,
+		type = "text",
+		icon = "ui/icons/asset_medicine.png",
+		text = "Starting Medicine: " + ::MSU.Text.colorizeValue(startingResources[_difficulty].Medicine),
+	});
+}
+
