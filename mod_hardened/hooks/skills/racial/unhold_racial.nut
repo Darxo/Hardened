@@ -1,5 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/racial/unhold_racial", function(q) {
+	// Public
 	q.m.HD_RecoveredHitpointPct <- 0.15;	// This percentage of maximum Hitpoints is recovered at the start of each turn
+	q.m.HD_NegativeStatusEffectDurationModifier <- -1;
 
 	q.getTooltip = @(__original) function()
 	{
@@ -14,7 +16,23 @@
 			}
 		}
 
+		if (this.m.HD_NegativeStatusEffectDurationModifier != 0)
+		{
+			ret.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Negative [status effects|Concept.StatusEffect] last " + ::MSU.Text.colorizeValue(this.m.HD_NegativeStatusEffectDurationModifier, {InvertColor = true, AddSign = true}) + " [turn(s)|Concept.Turn]"),
+			});
+		}
+
 		return ret;
+	}
+
+	q.onUpdate = @(__original) function( _properties )
+	{
+		__original(_properties);
+		_properties.NegativeStatusEffectDuration += this.m.HD_NegativeStatusEffectDurationModifier;
 	}
 
 	// Overwrite, because we re-implement the hard-coded vanilla hitpoint recovery.
