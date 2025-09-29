@@ -45,7 +45,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 	- **Wooden Skirmisher Shields** lose **Shieldwall** and now grant **Knock Back**
 	- **Heavy Metal Shields** now have 20 Melee Defense (up from 15) and 20 Ranged Defense (up from 15)
 	- **Feral Shields** now have 20 Melee Defense (up from 15), 25 Ranged Defense (up from 20), 20 Weight (up from 12), 24 Condition (up from 16), +5 Fatige on use (up from 0) and they lose **Knock Back**
-	- **Adarga Shields** now have 8 Weight (down from 10), 16 Condition (down from 18), 18 Ranged Defense (down from 20) and lose **Knock Back**
+	- **Adarga Shields** now have 8 Weight (down from 10), 16 Condition (down from 18) and lose **Knock Back**
 	- **Old Wooden Shields** now have 13 Melee Defense (down from 15) and 13 Ranged Defense (down from 15)
 	- **Worn Heater Shields** now have 23 Melee Defense (up from 20), 13 Ranged Defense (down from 15) and lose **Shieldwall**
 	- **Worn Kite Shields** now have 13 Melee Defense (down from 15), 23 Ranged Defense (down from 25) and lose **Knock Back**
@@ -232,7 +232,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bulwark** is completely reworked. It now grants additional Resolve equal to 5% of your current combined Head and Body Armor condition
 - **Brawny** no longer grants Initiative
 - **Cheap Trick** now affects all attacks of a skill, when you use it with an AoE skill
-- **Cleaver Mastery** is completely reworked. It still makes Cleaver Skills cost 25% less Fatigue and grants +10% Hitchance when using **Disarm**. You now deal +50% Critical Damage when hitting the Body of someone who is disarmed or who doesn't wield a Melee Weapon
+- **Cleaver Mastery** is completely reworked. It still makes Cleaver Skills cost 25% less Fatigue and grants +10% Hitchance when using **Disarm**. You now deal +50% Critical Damage when hitting the Body of someone who is disarmed or who doesn't wield a Weapon
 - **Colossus** now grants +15 Hitpoints, instead of 25% more Hitpoints
 - **Command** can now be used on fleeing allies. In this case it triggers a positive morale check first. Then, if they are not fleeing, they are moved forward in the turn order, like before
 - **Combo** is reworked. It now reduces the cost of all skills you haven't used yet this turn by 2 Action Points, except the first skill you use each turn
@@ -422,7 +422,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Head Splitter** now has 4 Reach (up from 3) and deals 20 Shield Damage (up from 16)
 - **Heavy Crossbow** now has +2 Fatigue Cost for its weapon skills
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
-- **Longsword** now deals 45-55 damage (down from 65-85) has Armor Penetration of 30% (up from 25%), 75% Armor Damage (down from 100%), +0% Headshot Chance (down from +5%), 6 Reach (up from 5) and costs 1200 Crowns (down from 2400). It loses **Split** and gains **Riposte**. Its skills no longer have any discount. It can no longer appear as a named weapon
+- **Longsword** now deals 45-55 damage (down from 65-85) has Armor Penetration of 30% (up from 25%), 75% Armor Damage (down from 100%), +0% Headshot Chance (down from +5%), 6 Reach (up from 5) and costs 1200 Crowns (down from 2400). It loses **Overhead Strike** and gains **Swing**. Its skills no longer have any discount. It can no longer appear as a named weapon
 - **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%), 6 Condition (up from 2) and 50% Armor Damage (up from 10%)
 - **Pike** gains the **Spear** Weapontype
 - **Player Banner** now causes -5 to Ranged Defense and it grants **Repel**
@@ -626,6 +626,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ### Other Item Changes
 
+- Items with Condition now have 50% of their value at 0 Condition (up from 0% value), which increases linearly to 100% value as the item gains condition
 - Loot from beasts (like webbed valueables, ancient amber, etc.) are no longer affected by situations like **Collector**
 - Food now only loses value once half of its shelf life is over
 - **Adarga** is now called **Adarga Shield** (just like in Vanilla)
@@ -638,11 +639,11 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Decayed Reinforced Mail Hauberk** no longer appears with the Variant 50, which is a skin that looks too similar to **Worn Mail Shirt**
 - **Decorated Full Helm** now grants +10 Resolve
 - **Dried Lamb** now has a Stacksize of 30 (up from 25) and cost 125 Crowns (up from 105)
-- **Gun Powder** now costs 2 **Ammunition Supply** each (up from 1)
 - **Fangshire** will no longer spawn at the start of the game
 - **Feral Shield** now costs 400 Crowns (up from 50)
 - **Fermented Unhold Heart** now has an expiry date of 40 days (up from 20)
-- **Goblin Poison** now has a value of 200 (up from 100)
+- **Goblin Poison** now costs 200 Crowns (up from 100)
+- **Gun Powder** now costs 2 **Ammunition Supply** each (up from 1)
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 1000 Value (up from 200) and grants 10 Resolve (up from 5)
 - **Hyena Fur Mantle** now grants 10% more Initiative instead of +15 Initaitive
 - **Masterfully Cured Ration** now has a Stacksize of 50 (up from 25) and costs 300 Crowns (up from 150)
@@ -653,8 +654,10 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Reinforced Throwing Net** now has a weight of 8 (up from 2)
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**
 - **Sipar** is now called **Sipar Shield** (just like in Vanilla)
+- **Poisoned Oil** now costs 200 Crowns (up from 150)
 - **Smoked Ham** now has a Stacksize of 30 (up from 25) and cost 115 Crowns (up from 95)
 - **Strange Meat** now has a Stacksize of 20 (down from 25) and costs 35 Crowns (down from 50)
+- **Strange Mushrooms** now cost 200 Crowns (up from 100)
 - **Smoke Bomb** costs 400 Crowns (up from 275). Smoke now lasts 2 Rounds (up from 1)
 - **Tarnished Full Helm** now grants +5 Threat (similar to Direwolf Pelt). It now only appears in the Full Helm looking variants
 - **Throwing Net** now has a weight of 4 (up from 2)
@@ -687,6 +690,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 	- This effect is given to **Ifrits**, **Spider Eggs**, **Headless Zombies**, **Saplings**, **Lindwurm Tails** and **Kraken Tentacles**
 	- **Ifrit**, **Saplings** and **Kraken Tentacle** lose the now redundant **Steelbrow** perk
 	- **Wiederganger**, which receive this effect, lose **Bite** and gain **Zombie Punch** (which is mostly the same, except without bonus headshot chance)
+- Introduce new **Cursed** effect. It allows the character to resurrect even after receiving a fatality. It is given to **Fallen Heroes** to show that they have this ability
 - Introduce new **Bite Reach** effect, which reduces headshot chance by 10% and increases chance to receive headshot by 10%
 	- This effect is given to all **Dogs**, **Wolfs** and **Hyenas**
 
@@ -737,6 +741,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 - NPCs now know how to use Bandages
 - NPC ranged troops attribute a target 80% less score from adjacent potential scatter targets
+- Ranged NPC are 25% less likely to change positions
+- NPCs are 40% more likely to use Reload Actions
 - Necrosavants are a bit more likely to stay on the same tile and attack twice, rather than teleport to a slightly better tile
 - Improve AI targeting for throwing nets: They value the targets melee defense twice as much and prefer isolated targets
 - NPCs with **Sergeant** perk are 50% more attractive to other NPCs for target selection purposes
@@ -769,6 +775,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ## Combat General
 
+- Low Morale no longer reduces the Resolve of the character
 - Every Defender of a Location which was fortified now gets a new **Defenders Advantage** effect for that fight, which grants +2 Vision and +15 Resolve
 - **Encumbrance** no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level. It no longer requires a minimum armor weight of 20
 - **Wait** now debuffs the actual Initiative by 25% until the start of that brothers next turn
@@ -837,13 +844,18 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - The Event-Option to shoot down the bird who shat your brother now costs 5 Ammunition
 - The **Orc Slayer** and **Crusader** (temporary Crisis backgrounds) now share 100% of their experience with your remaining party, when they leave you after the Crisis ended
 
+## Difficulty
+
+- Beginner Combat Difficulty now grants enemy parties 100% resources (up from 85%)
+- Beginner Combat Difficulty now causes player characters to receive 15% less hitpoint and armor damage from all sources. It no longer grants a hidden +5% chance to hit and -5% chance to be hit
+- Expert Combat Difficulty now grants enemy parties 120% resources (up from 115%)
+- Beginner Economic Difficulty now makes Contracts pay 20% more (up from 10% more)
+- Expert Economic Difficulty now makes Contracts pay 20% less (down from 10% less)
+
 ## Other
 
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 - The **Lone Wolf** and **Gladiator** origins now have a roster size of 13 (up from 12)
-- Beginner combat difficulty now grants enemy parties 100% resources (up from 85%)
-- Beginner combat difficulty now causes player characters to receive 15% less hitpoint and armor damage from all sources
-- Expert combat difficulty now grants enemy parties 120% resources (up from 115%)
 - The Retreat tooltip during combat now also lists the Melee Defense bonus your characters receive during Auto-Retreat
 
 ## Quality of Life
@@ -866,6 +878,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
 - Hovering over the tile of a any corpse will now differentiate whether they were *struck down* (= survived with a permanent injury) or *slain* (died permanently)
 - Increase saturation of ambient light during midnight fights to 70% (up from 50%)
+- Colorize corpse name in tile tooltips
 - Improve visibility of Miasma and Burning Ground
 - **Hand to Hand** and **Zombie Bite** skills will now always be sorted to the front in the UI
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to Displacement or which are Rooted. Using them will now print a combat log with the roll and hitchance of the attack
@@ -892,11 +905,10 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Improve tooltip of **Whip Disarm** using a nested tooltip for the **Disarmed effect**
 - Add Settings to immediately stop the player movement halfway through, when it reveals an enemy (on) or an ally (off)
 - Add Setting (on) to prevent combat logs, which are the result of the same skill execution, from producing empty newlines
-- Add Setting (on) for preventing tile/enemy tooltips from being generated while it is not your turn
+- Add Setting (off) for preventing tile/enemy tooltips from being generated while it is not your turn
 - **Armored Wiederganger** now display their complete name during battle, instead of just **Wiederganger**
 - Add Setting (off) for making the hotkeys for **Wait** fire continuously, instead of only when released
 - Reduce the Attack sfx volume of Wardogs and Warhounds by 20%
-- All **Tough Brigands** now have the Fat body type, all **Balanced Brigands** and **Fast Brigands** now have the Skinny body type. The **Brigand Leader** has the Muscular body type
 
 ### World
 
@@ -908,7 +920,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Settlements now display a tooltip showing how many days ago you last visited that location
 - The Tavern now displays to you how many rumors you received so far
 - Add Setting (on) for displaying forbidden destination ports (e.g. when they are hostile to you or the origin port)
-- Dismissing a freshly hired recruit (0 days with the company) will skip the confirmation dialog
+- Add setting (off) for skipping the confirmation dialog when dismissing a freshly hired recruit (0 days with the company)
 - Distance text in rumors and contracts now display the tile distance range in brackets
 - Display the current XP Multiplier of the viewed character when hovering over the Experience bar
 - World Parties with champions will display an orange skull on top of their socket
@@ -946,11 +958,14 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Display current and maximum amount of servings in tooltips of food items
 - Quiver and Weapons that contain Ammo now display the supply cost for replacing ammunition in them
 - Add new Concepts for **Armor Penetration**, **Critical Damage**, **Displacement**, **Hitchance**, **Rally**, **Threat** and **Weight** and and apply these Concepts to existing weapons, items, perks skills
+- Improve spider poison item, skill and effect tooltips
+- Explain the melee defense softcap in the melee defense tooltip
+- Display item type names for Ammunition, Accessories, Food and Quest Items in the item tooltips
 - Improve tooltips of **Battleforged** perk and **Chop** skill
 - Improve Concept for **Morale** and add nested tooltip for all morale states (except **Steady**)
 - Improve artwork for **Nimble** perk
 - Improve artwork for **Tattered Sackcloth** item to make it stand out more from **Sackcloth**
-- All effects of the combat and economic difficulty settings are now listed as tooltips before world generation
+- All effects of the difficulty settings are now listed as tooltips before world generation
 
 ## Fixes
 
@@ -968,6 +983,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - The bagslots on the player paperdoll are now centred correctly on characters who have 1 or 3 bagslots
 - Retreating NPCs, that are fleeing and in Zone of Control will now seek the border correctly, if possible
 - Remove the requirement for the player to be on a road in order to receive crisis news events. This prevents Events from stop appearing when you are away from a road for a longer time
+- Fix **Bardiche** only dealing 30% armor penetration with its split skill
+- Fix **Battle Standard** resolve effect not updating on allies when equipping or unequipping it
 - **Repel** can no longer push someone back in a 90° angle
 - **Copper Ingot** price is now affected by `BuildingPriceMult`, which causes them to be affected by **Rebuilding Efforts**
 - Economic Difficulty now affects all prices instead of just some of them
@@ -1013,6 +1030,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Fix Item Swaps sometimes requiring a different amount of Action Points than advertised at first
 - Fix `onSpawned` event for player characters only firing for the first battle in each session
 - **Net Pull** is no longer considered an Attack
+- Fix crash when trying to sling the same type of pot multiple times with the same character
+- Fix crash when trying to sling an acid flask or holy water
 
 ### Dynamic Spawns
 
@@ -1021,6 +1040,10 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ## For Modders
 
+- Add `getTooltipWithoutChildren()` for `item.nut`, which `getTooltip()` of it but removes all children entries from it
+- Add `HD_onAfterUnEquip()` for `item.nut` which is always triggered following the `onUnequip()` event after the item connection has been severed
+- Add `HD_ConditionValueThreshold = 0.0` for `item.nut`, which can be adjusted to define a minimum value of the item disregarding current condition
+- Add `HD_DamagedConditionChance = 50` and `HD_DamagedConditionMin = 0.4` in `building.nut` which can adjust the chance and condition of damaged market items
 - Completely rewrite/overwrite `fillStash` from `building.nut`, making it more moddable:
 	- Add `getShopAmountMax()` function for `item.nut`, which can be used to define custom maximas for items being generated for shops
 	- Add `getRarityMult(_settlement=null)` for `item.nut`, which can be used to define a custom item-specific rarity multiplier for item generation for shops

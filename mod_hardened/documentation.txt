@@ -23,6 +23,48 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+1.0.0-alpha-7
+	- **Cleaver Mastery** no longer grants bonus damage against enemies equipped with a ranged weapon
+	- Low Morale no longer reduces the Resolve of the character
+	- Condition on items now linearly scale its price between 50% (at 0% condition) to 100% (at 100% condition)
+	- Add new **Cursed** effect for **Fallen Heroes**, which allows them to resurrect even after receiving a fatality
+	- Redesign stats, skills and gear of Rachegeist and Cultists
+	- Zombies no longer inflict 5 additional fatigue on a hit
+	- Remove **Battle Forged** from **Fallen Heroes**
+	- The **Unhold Racial** effect now causes Debuffs on Unholds to last -1 Turn
+	- Slightly increase resource cost of all orc units and that of bog unholds
+	- Beginner Economic Difficulty now makes Contracts pay 20% more (up from 10% more)
+	- Expert Economic Difficulty now makes Contracts pay 20% less (down from 10% less)
+	- Items in Marketplaces now have a 70% chance to be damaged (up from 50%) and their minimum Condition can be as low as 30% (down from 40%)
+	- Reduce sell price of **Masterfully Cured Rations** to 15% (down from 100%)
+	- Adarga Shield now has 20 Ranged Defense (up from 18), just like Vanilla
+	- **Strange Mushrooms** now cost 200 Crowns (up from 100)
+	- **Poisoned Oil** now costs 200 Crowns (up from 150)
+	- Make Ranged NPCs 25% less likely to change positions
+	- Make Ranged NPCs 40% more likely to use Reload Actions
+	- Make Swordmaster NPCs more likely to engage single enemies
+	- Add tooltips for effects of starting funds difficulties
+	- Improve spider poison item, skill and effect tooltips
+	- Display item type names for Ammunition, Accessories, Food and Quest Items
+	- Explain the melee defense softcap in the melee defense tooltip
+	- Colorize corpse name in tile tooltips
+	- Improve hitfactor tooltip of bully perk
+	- Set default value of **Hide Tooltips during NPC Turn** setting to `false`
+	- Add new setting (false) to control whether to skip the confirmation dialog when dismissing new recruits
+	- Increase Stamina of higher tier zombies to prevent edge cases of them not being able to act when receiving injuries
+	- Improve calculation of Reach Hitchance bonus to behave like a real multiplier
+	- Fix missing Cleaver requirement on perk tooltip of **Mauler**
+	- Fix duplicate **Goblin Racial** effect on goblins
+	- Fix minimum armor penetration damage on **Split Man** and **Decapitate** still showing up as 0
+	- Fix (Vanilla) **Bardiche** only dealing 30% armor penetration with its split skill
+	- Fix (Vanilla) **Battle Standard** resolve effect not updating on allies when equipping or unequipping it
+	- Fix (Reforged) crash when trying to sling the same type of pot multiple times with the same character
+	- Fix (Reforged) crash when trying to sling an acid flask or holy water
+	- Add `getTooltipWithoutChildren()` for `item.nut`, which `getTooltip()` of it but removes all children entries from it
+	- Add `HD_onAfterUnEquip()` for `item.nut` which is always triggered following the `onUnequip()` event after the item connection has been severed
+	- Add `HD_ConditionValueThreshold = 0.0` for `item.nut`, which can be adjusted to define a minimum value of the item disregarding current condition
+	- Add `HD_DamagedConditionChance = 50` and `HD_DamagedConditionMin = 0.4` in `building.nut` which can adjust the chance and condition of damaged market items
+
 1.0.0-alpha-6
 	- Fix fights against Gladiators not loading correctly
 	- Fix **Mauler** perk triggering while it is not the characters turn

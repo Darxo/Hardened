@@ -1,7 +1,7 @@
 ::Hardened <- {
 	ID = "mod_hardened",
 	Name = "Hardened",
-	Version = "1.0.0-alpha-6",
+	Version = "1.0.0-alpha-7",
 	GitHubURL = "https://github.com/Darxo/Hardened",
 	Temp = {	// Used to globally store variables between function calls to implement more advanced, albeit hacky behavior
 		RootSkillCounter = null,	// This variable will have the SkillCounter of the root skills during the execution of any skill executions and delayed executions
@@ -40,6 +40,7 @@
 	"mod_RREI [This mods featureset is integrated into Hardened]",
 	"EndsBuyback [This mods featureset is integrated into Hardened]",
 	"mod_settlement_situations_msu [This mods featureset is integrated into Hardened]",
+	"mod_consume [This mods featureset is integrated into Hardened]",
 ]);
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {

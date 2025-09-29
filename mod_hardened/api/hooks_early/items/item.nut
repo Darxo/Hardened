@@ -62,12 +62,14 @@
 
 // New Getter/Setter
 	// This is guaranteed to only be called, if ::World.State.getCurrentTown() can be called and doesnt return null
+	// This is meant as a rather static price multiplier for this item, that is one part of the getBuyPriceMult function
 	q.getBaseBuyPriceMult <- function()
 	{
 		return ::Const.World.Assets.BaseBuyPrice;
 	}
 
 	// This is guaranteed to only be called, if ::World.State.getCurrentTown() can be called and doesnt return null
+	// This is meant as a rather static price multiplier for this item, that is one part of the getBuyPriceMult function
 	q.getBaseSellPriceMult <- function()
 	{
 		if (this.isItemType(::Const.Items.ItemType.Loot))

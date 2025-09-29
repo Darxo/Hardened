@@ -179,592 +179,484 @@
 	- 50% more Resolve during Morale Checks from enemy kills
 	- +10% chance to hit, when attacking characters who are disarmed or who don't wield a melee weapon
 
-## New Skills
-- Rain of Arrows
-	- 6 AP, 30 Fatigue
-	- Target an area of 7 Tiles
-	- Shoot 3 arrows at 3 different tiles in that area, which cannot go astray
-	- If at least one of those arrows hits a target, apply **Eyes Up** to all enemies in the targeted area
-	- Eyes Up
-		- -25 Ranged Skill
-		- +25 Ranged Defense
 
-## Perks Review/Rework
-- Relentless:
-	- Using wait or recover does not inflict initiative penalty
-	- You can wait an additional time each turn
-	- Misses against you while waiting does not build up fatigue
-misses dont build up fatigue on you while waiting
-
-- orc slayer / crusader events, make them cost 5k crowns each to hire those guys
-- Schrat can target enemies through objects?
-- Give barbarian Madman (icy cave) fast adaptation
-- when you press the hotkey of a targetable skill, remove old tooltip and generate new one. This is to replace the generic enemy tooltip with one showing hitchance
-- Improve sell margin of food to make trading with those more interesting
-
-## AI
-- Make AI less likely to use shieldwall while in a net
-- make unholds value highground less
-- New Strategy of individual enemies, called "Stalling":
-	- They prefer defensive over offensive actions and try to stay alive as long as possible
-- Write AP prediction for new sanguinary effect for player and enemies (could be done by simulating a 3 AP discount on all 1-range skills targetting a certain enemy)
-- Utilize existing hiding-ai-behavior to improve some enemies (e.g. direwolves, ghouls or fast bandits)
-- Make AI use Roundswing less often
-- Fleeing enemies engaged in melee at the map border do not seek out the border. Instead they flee alongside it
-- Player: Make fleeing player characters actually leave the battle when at the border
-- Unholds should use throw more often to counter rebuke/flailing swingy stuff
-- Make it so enemies are less likely to remove the net if it doesnt affect them (e.g. Orcs)
-- Change AI Rotation to not/rarely rotate your brothers into battle?
-- Make enemy archers prefer to use wait instead of blindly advancing, if their frontline hasn't advanced yet
-	- Make make enemy archers prefer wait during the first turn in general, if they have no target?
-- Lower the urge for nachzehrers to kill themselves to ZOC just to seek out a corpse
-- Make someone with **Crowded** less likely to be targeted by displacement skills (knock back/repel). That would only help those
-- If thrower uses last throwing weapon, mak them switch to melee weapon immediately
-- make NPCs with Formidable Approach more likely to move to tiles with adjacent enemies which they dont yet have in their list or which are confident with less max HP
-
-## Fix:
-- Currently Swing and Hit sfx happen at the same time, which is unrealistic
-	- Make hit sfx come with a slight (e.g. 100ms) delay instead
-	- Problem: Vanilla allows a delay for hit sounds, but the receiving entity moan sounds have no adjustable delay
-- footprints of barbarian kings dont seem to produce tooltip for lookout
-- keep track of non-spawning ifrits and the loot potentially lost by those an attach it to the remaining one
-- Sometimes on the World map, a single mouse wheel roll zooms the camera completely. Probably has to do with some timer running too far
-- dog ai too fast, not realizing reanimating zombies and dying to ZOC hits
-- Make Rotate no longer cause resolve checks
-- Fix orcs sometimes using charge, even though they decided to give up
-- Alps that teleport during first turn before revealing, might be shown as unknown, even though you can see them because they arrived on visible tiles
-- Look into Recover being blocked by worn down, but still showing as active, when previewing another skill
-- debug zombies
-	- No Idea, I ran out of ideas following the lead of updateVisibility calls. I assumed that Zombies pushing other zombies, after my turn starts, messes something up. But that didnt do it
-	- found kinda a potential solution, see discord
-- world NPC combat ghost bug battlesite:
-	- This is probably caused by them engaging with themselves or an ally in combat
-		-> they never kill anyone in that combat because there are no real enemies
-		-> combat does not progress immediately
-	- This might happen, if their allies, or themselves get pushed into their "KnownOpponents" list, from which they then fetch targets to attack
-	- Perhaps, they get shared wrong information?
-- (Vanilla): Split has 30% armor penetration even though every weapon who grants it in vanilla has less pen
-
-- Make Mercenaries, that you help in fights, sometimes giving you one of their painted shield as a thank-you to remember them by
-
-## Rework Training Hall
-- Once per battle if you start your turn fleeing and not adjacent to an enemy, recover your morale to steady
-- Attacks cost +1 AP and have +15% chance to hit
-
-## For Reforged
+### For Reforged
 - Anonymous Damage Sources (bleed, fire, poison), count as if the target dealt damage to themselves regarding the experience-sharing
 	-> Those anonymous damage sources steal experience from the player, even if the player applied them
 	- Count anonymous damage sources (when someone deals damage to themselves) as a new faction (Faction.None)
-
-## Backlog
-- Reduce bleeding noise
-	- Cant fix right now, because 'refresh' only supports increased stacks by 1. Reforged suffers the same problem when inflicting 3 bleed via Gouge for example
-
-## For modder:
-- Framework for tracking round number of a skill for an entity https://github.com/MSUTeam/MSU/issues/351
-- New world_state function called "hourly update", which is called once per hour (just like the update from asset manager)
-	- However this is also called, whenever certain notable actions happen. For example, when the player teleports around/uses the port, or onCombatFinished (fastTravelTo)
-		- Actually updateTopbarAssets is really convenient in that regard
-- improve orc berserker AI to use stun charge too
-	- their weird choice of setting EngageTargetMultipleOpponentsMult = -1.0,
-		- makes it so the resulting ScoreMult is negative with odd numbers of ZoC enemies and positive with equal numbers
-		- will add tilescores (which isnt even too bad). While a positive value there would remove tilescore
-	- ai_charge is mainly handled via `ai_engage_melee`
-	- in a simple 1v1 test the berserk uses his charge just fine
-	-> maybe a total rewrite of ai_engage_melee is in order
-
-### Fix
-- local r = this.Math.rand(100, 200) * 0.01; in send_supplies_action gets overwritten later on, causing weird rewards
-- Play other animations also slightly staggered (e.g. fleeing animation) to counter act the lag a bit
-
-### Feature
-- add system where equipped loot is only decided upon once, whether it drops. So if a dead character reanimates and dies again you dont have more chances to loot that gear
-- First Aid (enemy-only for now)
-	"A steady hand and the right supplies can mean the difference between life and death."
-	"You don’t just fight—you mend, patch, and keep your allies standing."
-	- Skills from bag items cost -1 Action Point
-	- Once per battle, when you use a bag item on yourself or an adjacent ally, recover 20 Hitpoints on the target
-- Vanish (enemy-only for now)
-	- After taking damage, teleport to a random adjacent tile that is not in zone of control
-
-### Misc
-- User-Faced Changelog (actual changes)
-- Modder Faced one (migrating mods)
-
-## MV
-- Tests (logs printing) whether ai multiplier for skills are even working
-
-- look into the debug log vanilla recently removed from skill container printing. Maybe i dont need to skip that anymore in hardened
-
-- rework dropchance of items to make daggering later in the game more worth for farming money
-	- Make it more likely to drop while at full condition
-	- make it less likely to drop while at lower condition
-	- Make items drop much closer to the condition that they had
-
-- Make Infected Wound not heal, while no medical supplies are left
-- Make Infected Wound stop healing of all present untreated injuries, until medical supplies are there
-
-- Make world parties that are left with 1 troop after auto-battle disappear. Otherwise you get parties with a single necromancer or hexen or barbarian king
-
-- turn sequence bar order predictions for next round
-	- can display a second smaller version of the bar blow the original one, where the prediction changes in real time
-
-- AI: more likely to push back kingfisher guys who are currently netting someone, if the push back tile would break the net
-- Remove whirling stance when stunned
-
-- sfx when the target of kingfisher dies (as if you reel in the net)
-- kingfisher gets dazed, when target frees itself from net
-- split shield does not update the shield correctly
-- ghost fights might have to do with alliances not being created correctly. Maybe the new southern settlements interfere with the placement for hard-coded alliances
-
-## Camp Rework
-- Camping requires 1-2 hours to set up
-- Effect:
-	- Protects you against ambushes
-	- Makes you immune to being attacked by Alps
-	- More repair specialized
-	- More Hitpoint Recovery (even more than Vanilla)
-- Requires 1-2 hours to de-construct and move on
-
-- Utilize this way of verifying the caller, from Reforged:
-::TacticalNavigator.teleport <- function( _user, _targetTile, _func, _data, _bool, _float = 1.0 )
-{
-	local caller = ::getstackinfos(2).locals["this"];
-	if (!::isKindOf(caller, "skill") || !(caller in ::Reforged.ScheduleSkills))
-	{
-		teleport(_user, _targetTile, _func, _data, _bool, _float);
-		return;
-	}
-
-- Mirror the reason of bad relation change for noble houses if it is because of actions against one of their settlements
-
-- Remove "Throw" skill from Bog Unholds, as a result of them having split shield. Throw was one answer against shields
-
-- Make targets blocked by 2 tiles twice as likely to divert attacks
-- Make necromancer able to retreat
-
-- Improve Readme by writing out price changes to shields and weight changes to quivers
-
-- Hireable Sellswords that spawn with a shield have that in another mercenaries color scheme
-- Add mention in morale check concept about how there is a random roll happening against resolve and being influenced by adjacent allies/enemies
-
+### Line of Sight fix
+- Dont show tile blocking square for tiles that are completely hidden by terrain (because of camera height)
 ### Poise System
 - utilize modular vanilla Ai score framework to make AI more capable of predicting stun outcomes
 - poise system log for stun breakdown: "Foo dealt X Poise Damage to Baz (Y) [, causing a Z turn stun]
 
-MOdular Vanilla:
-- also activate preview movement while AI is considering a path for (turns for attack)
-
-- make necromancer resurrect themselves and be able to cast spells then ???
-- make gladiator attachements a bit heavier
-
-- make camps ignore minimum distance to each other, if mountain is in between
-
-- make blunt and cutting attacks deal 2 damage to shields instead of 1
-
-- prevent paint being usable on items that already have this color (if the variant doesnt change after applying the paint, the paint is not used)
-- Only use Paint and spawn sfx, if the Variant of the affected item is different, after calling onPaint on it
-
-- reduce brigand party loot; make individual brigands drop loot (fast = gold, ranged = ammo, tough = food, balanced = ???)
-- make killing frenzy/berserk AI prefer targets that they can one-shot/kill
-- fleeing enemies grant 100% of their xp?
-- turn order prediction
-	- Could be realised by slotting in a dummy/separator entity into the turn sequence bar at the very end?
-- Howler Monkey sfx for some kind of beast
-
-- cross mod compatibility with crock pot? (vulture threat keyword)
-- draw combat steps red, while the active entity is in zone of control
-	- they are handled in the .exe (steps_bot_left, steps_top, etc.)
-	- or make the respective characters blink red, when you consider moving while in ZoC
-- show total number of people in turn sequence bar somewhere (e.g. behind current number of viewed actor)
-
-- Make many skills and attacks from within a bush reveal that character to all enemies, not just the immediate target
-- prevent cheese where you can find out whether someone is hiding in a bush by trying to pathfind into that bush
-	- same thing is true for fog of war
-- make spider corpses a bit more transparent, less colored, so that they differ more from alive ones
-	- or make alive ones in a more vibrant color
-- Feature: Manual Snapshot for brother-gear, that can be manually reset. Useful for when you swap out a lot of gear before a fight
-
-- API: hook onQueryTargetTile to implement new ai function
-- add debug logs for finding the end of battle bug
-- Make root skills much more likely to target someone with Unstoppable stacks (because they cancel unstoppable)
-
-- give bag slot weapons a offset to the top left so simulate depth and make them more visible with attachements on
-	- maybe increase their size slightly too?
-	- this does not work outside of combat
 
 
-- broken shield glitch (outside of combat the paperdoll shield looks healthy while the shield brush is damaged). all whn the shield is damaged
+{	// Animation
+	- continuous bleed animation if a certain amount of bleed stacks are accumulated on an enemy
+	- smoke bomb on snow is hard to spot
+	- parry fx that spawns towards north, might need to be rendered behind the parry guy (e.g. for the tile on top of him instead of his tile)
+	- turn any corpse that is not reanimating and that cant be reanimated (beats or headless corpses) into a pale/grey/low saturation tone, to make it stand further apart from alive ones
+	- bleed animation/effect when inflicting bleed with **Sanguinary**?
+	- trigger smoke effect whenever a brother with **Ghostlike** dodges an attack during their turn
+	- mortar impact animation, when shockwave or full force trigger
+	- use schrat damage leaf-animation for when an arrow hits a tree
+}
+
+{	// AI
+	- Make AI less likely to use shieldwall while in a net
+	- make unholds value highground less
+	- New Strategy of individual enemies, called "Stalling":
+		- They prefer defensive over offensive actions and try to stay alive as long as possible
+	- Utilize existing hiding-ai-behavior to improve some enemies (e.g. direwolves, ghouls or fast bandits)
+	- Make AI use Roundswing less often
+	- Fleeing enemies engaged in melee at the map border do not seek out the border. Instead they flee alongside it
+	- Unholds should use throw more often to counter rebuke/flailing swingy stuff
+	- Change AI Rotation to not/rarely rotate your brothers into battle?
+	- Make enemy archers prefer to use wait instead of blindly advancing, if their frontline hasn't advanced yet
+		- Make make enemy archers prefer wait during the first turn in general, if they have no target?
+	- Lower the urge for nachzehrers to kill themselves to ZOC just to seek out a corpse
+	- Make someone with **Crowded** less likely to be targeted by displacement skills (knock back/repel). That would only help those
+	- If thrower uses last throwing weapon, mak them switch to melee weapon immediately
+	- make NPCs with Formidable Approach more likely to move to tiles with adjacent enemies which they dont yet have in their list or which are confident with less max HP
+	- Fix orcs sometimes using charge, even though they decided to give up
+	- improve orc berserker AI to use stun charge too
+		- their weird choice of setting EngageTargetMultipleOpponentsMult = -1.0,
+			- makes it so the resulting ScoreMult is negative with odd numbers of ZoC enemies and positive with equal numbers
+			- will add tilescores (which isnt even too bad). While a positive value there would remove tilescore
+		- ai_charge is mainly handled via `ai_engage_melee`
+		- in a simple 1v1 test the berserk uses his charge just fine
+		-> maybe a total rewrite of ai_engage_melee is in order
+	- Tests (logs printing) whether ai multiplier for skills are even working
+	- AI: more likely to push back kingfisher guys who are currently netting someone, if the push back tile would break the net
+	- make killing frenzy/berserk AI prefer targets that they can one-shot/kill
+	- Make many skills and attacks from within a bush reveal that character to all enemies, not just the immediate target
+	- Make root skills much more likely to target someone with Unstoppable stacks (because they cancel unstoppable)
+	- make formidable approach characters more likely to be targeted by rotation-like skills if that puts them next to new enemies or removes confident from enemies potentially
+	- change escorting so that the escorting character adds its strength and numbers to the army it is escorting
+		- not very useful, while this only affects the player and what he is escorting. Once non-player parties can form groups, it will be useful
+	- make footwork rarely be used on the tile that the actor started its turn on (otherwise it too often results in weird dancing/decisions by goblins)
+	- build upon reforged squire mentor ai system to glue certain NPCs together much more consistently (e.g. mortar + engineer)
+}
+
+{	// Artwork
+	- make spider corpses a bit more transparent, less colored, so that they differ more from alive ones
+		- or make alive ones in a more vibrant color
+	- give bag slot weapons a offset to the top left so simulate depth and make them more visible with attachements on
+		- maybe increase their size slightly too?
+		- this does not work outside of combat
+	- T1 "Polemace": A long combat stick that doubles as a walking cane
+	- Malnourished icon
+	- different bleed icons depending on severity of bleed
+	- make feral shields bigger in size
+	- "unknown-faction" flag (literally) for locations, who don't show their defender, or where different factions could be inside
+}
+
+{	// Balance
+	- Look into Recover being blocked by worn down, but still showing as active, when previewing another skill
+	- net price in southern non-coast cities
+}
+
+{	// Documentation
+	- User-Faced Changelog (actual changes)
+	- Modder Faced one (migrating mods)
+	- Improve Readme by writing out price changes to shields and weight changes to quivers
+}
+
+{	// Fix
+	- while its not an allies turn, they regularly have +1 max AP. might be connected with waiting
+	- Currently Swing and Hit sfx happen at the same time, which is unrealistic
+		- Make hit sfx come with a slight (e.g. 100ms) delay instead
+		- Problem: Vanilla allows a delay for hit sounds, but the receiving entity moan sounds have no adjustable delay
+	- keep track of non-spawning ifrits and the loot potentially lost by those an attach it to the remaining one
+	- dog ai too fast, not realizing reanimating zombies and dying to ZOC hits (I have a possible solution as PR)
+	- Make Rotate no longer cause resolve checks
+	- debug zombies
+		- No Idea, I ran out of ideas following the lead of updateVisibility calls. I assumed that Zombies pushing other zombies, after my turn starts, messes something up. But that didnt do it
+			- found kinda a potential solution, see discord
+	- world NPC combat ghost bug battlesite:
+		- This is probably caused by them engaging with themselves or an ally in combat
+			-> they never kill anyone in that combat because there are no real enemies
+			-> combat does not progress immediately
+		- This might happen, if their allies, or themselves get pushed into their "KnownOpponents" list, from which they then fetch targets to attack
+			- Perhaps, they get shared wrong information?
+		- fix ghost fights: might have to do with alliances not being created correctly. Maybe the new southern settlements interfere with the placement for hard-coded alliances
+	- (Vanilla): Split has 30% armor penetration even though every weapon who grants it in vanilla has less pen
+	- local r = this.Math.rand(100, 200) * 0.01; in send_supplies_action gets overwritten later on, causing weird rewards
+	- fix/prevent cheese where you can find out whether someone is hiding in a bush by trying to pathfind into that bush
+		- same thing is true for fog of war
+	- add debug logs for finding the end of battle bug
+	- broken shield glitch (outside of combat the paperdoll shield looks healthy while the shield brush is damaged). all whn the shield is damaged
 	- probably just make it not look broken outside of battle (or maybe that is already the case and what is missing is just an update?)
+	- fix(vanilla) parties on world map that concluded fights, still counting as on-going battles. You still spawn at the corner of the battle shortly after
+	- linebreaker (from onslaught) is not a once-per-turn (happens twice during snowman stream)
+	- when buying supplies, play animation for the supply values
+	- fix world zooming when entering/leaving main menu
+	- fix camp fights situations, where a random tree fills the main entrance
+	- day time tooltip on world map barely displaying. The javascript parts there (WorldScreenTopbarDayTimeModule) is horribly at producing it
+	- fix some towns spawning with ports which are not visible: You can still travel to them, but not from them
+		- caused by ports being force-built in fishing towns
+		- but fishing towns are not guaranteed to be considered "IsCoastal"
+	- fix description of swordmaster perks (consussive strikes e.g.)
+	- make sure fresh and furious enemies use the free attack despite being at 0 AP
+	- weapon master requirement is not accurate, it should be moved to the bullet point where it is needed
+	- bug: projectiles dont seem to be renders all too often
+}
 
-- reduce ranged damage dealt to enemies in cover
-- make dodge also grant 5% initiative as defense if at least one adjacent tile is empty
-- dodge: misses against you build no fatigue, while at least one adjacent tile is empty
-- dont display injuries in temple that are "healed by tomorrow" anyways
-- make disloyal make negative mood fade away slower
+{	// New Content
+	- Rework Training Hall
+		- Once per battle if you start your turn fleeing and not adjacent to an enemy, recover your morale to steady
+		- Attacks cost +1 AP and have +15% chance to hit
+	- new type of caravan that transports only gold (because they came back from selling or are about to buy stuff)
+		- they look the same as normal caravans except that they move significant faster (like 80% instead of 50%)
+	- Make contracts aligned with either positive or negative morale reputation
+		- rebuild/caravan/envoy/packet/great battle are positive aligned (they trust you with something)
+		- find thiefs/destroy location are negative aligned (this mission is potentially dangerous, just for you)
+		- not aligned: find location, defend against raiding parties
+	- rumors around position of nearby mercenary companies on the world map
+	- rumors around nearby undiscovered locations
+	- new item: torch
+		- Offhand Item
+		- Grant +3 Vision
+		- Can be thrown on an empty tile to illuminate the area around it in a radius of 5 tiles
+	- Event: dealer of stolen goods sells faction armor
+		- You are offered to buy some armor of a faction whose town you are in, for cheap
+		- The armor in question is Mail Hauberk (170 / 19)
+		- If you accept, you potentially lose some relation to that faction (someone saw you do the deal)
+		- Alternatively a background (peddler) can make it cheaper or thief can make it less likely top raise suspicion
+	- Horse Fucker Event: give him a body (back) injury he sustained from the whipping
+		- Make you lose 10 Renown when accepting the guy (you go "against the law")
+}
 
-- new type of tooltip that displays whenever the player previews movement
-	- am I in zone of control?
-		- if yes, whats all the hitchances?
-	- whats the total AP and Fatigeu cost of the movement?
-	- how much does each tile cost to move through?
+{	// Sound
+	- sfx when the target of kingfisher dies (as if you reel in the net)
+	- Howler Monkey sfx for some kind of beast
+	- special sfx when discovering a legendary location
+	- sfx when bone breaker causes an injury
+	- write a custom BB sound engine, by playing sound at the same time in right and left ear but with tiny delay to simulate depth/direction
+	- increase movement fatigue cost in order to make moving more tactical
+	- cover ally making ally immune to displacement?
+	- make schrat damage sounds, whenever arrows divert into trees.
+		- or rather allow obstacles to have a hit-sfx, which is played when they get hit by a projectile
+	- play multiple flail sfx, for each three headed hit
+	- make ifirts not play soudns when growing (sand_golem::grow)
+	- Any actor moving will produce step-sounds, even if not visible to player. But then with lower volume: "_tile.IsVisibleForPlayer ? 1.0 : 0.5"
+}
 
-- make NPC ammo limited
-	- make NPC Defender have unlimited ammunition
-- Make **Gash** deal more damage for every bleed on the target?
-- look into sorting of enemy types in combat dialog
-	- most important ones should be sorted to the top
-	- make it scrollable
-- Concept for Auto-Retreat
+{	// Design
+	- Rain of Arrows
+		- 6 AP, 30 Fatigue
+		- Target an area of 7 Tiles
+		- Shoot 3 arrows at 3 different tiles in that area, which cannot go astray
+		- If at least one of those arrows hits a target, apply **Eyes Up** to all enemies in the targeted area
+		- Eyes Up
+			- -25 Ranged Skill
+			- +25 Ranged Defense
+	- Relentless:
+		- Using wait or recover does not inflict initiative penalty
+		- You can wait an additional time each turn
+		- Misses against you while waiting does not build up fatigue
+		- misses dont build up fatigue on you while waiting
+	- orc slayer / crusader events, make them cost 5k crowns each to hire those guys
+	- Player: Make fleeing player characters actually leave the battle when at the border
+	- Make Mercenaries, that you help in fights, sometimes giving you one of their painted shield as a thank-you to remember them by
+	- First Aid (enemy-only for now)
+		"A steady hand and the right supplies can mean the difference between life and death."
+		"You don’t just fight—you mend, patch, and keep your allies standing."
+		- Skills from bag items cost -1 Action Point
+		- Once per battle, when you use a bag item on yourself or an adjacent ally, recover 20 Hitpoints on the target
+	- Vanish (enemy-only for now)
+		- After taking damage, teleport to a random adjacent tile that is not in zone of control
+	- add system where equipped loot is only decided upon once, whether it drops. So if a dead character reanimates and dies again you dont have more chances to loot that gear
+	- rework dropchance of items to make daggering later in the game more worth for farming money
+		- Make it more likely to drop while at full condition
+		- make it less likely to drop while at lower condition
+		- Make items drop much closer to the condition that they had
+	- Make world parties that are left with 1 troop after auto-battle disappear. Otherwise you get parties with a single necromancer or hexen or barbarian king
+	- Make Infected Wound not heal, while no medical supplies are left
+	- Make Infected Wound stop healing of all present untreated injuries, until medical supplies are there
+	- Remove whirling stance when stunned
+	- kingfisher gets dazed, when target frees itself from net
+	- Make necromancer able to retreat
+	- Make targets blocked by 2 tiles twice as likely to divert attacks
+	- Hireable Sellswords that spawn with a shield have that in another mercenaries color scheme
+	- make gladiator base armor competetive (so that it can be spawned standalone on NPCs)
+	- make camps ignore minimum distance to each other, if mountain is in between
+	- make blunt and cutting attacks deal 2 damage to shields instead of 1
+	- reduce brigand party loot; make individual brigands drop loot (fast = gold, ranged = ammo, tough = food, balanced = ???)
+	- fleeing enemies grant 100% of their xp?
+	- cover mechanic rework
+		- reduce ranged damage dealt to enemies in cover
+	- dodge: misses against you build no fatigue, while at least one adjacent tile is empty
+	- make disloyal make negative mood fade away slower
+	- Make **Gash** deal more damage for every bleed on the target?
+	- make NPC ammo limited
+		- make NPC Defender have unlimited ammunition
+	- remove bandit leader unique names?
+		- alternatively: show their type name?
 
-## Todo
-- split hyena/nachzehrer troops
-- make formidable approach characters more likely to be targeted by rotation-like skills if that puts them next to new enemies or removes confident from enemies potentially
-- color adjacent enemies, that exert ZOC onto you in a color, when previewing movement out of ZOC
-- remove bandit leader unique names?
-	- alternatively: show their type name?
+	- camping rework
+		- camp needs time to start and time to end, where none of its bonusses are active
+		- Camping requires 1-2 hours to set up and 1-2 hours to de-construct and move on
+		- Effect:
+			- Protects you against ambushes
+			- Makes you immune to being attacked by Alps
+			- More repair specialized
+			- More Hitpoint Recovery (even more than Vanilla)
+		- make camping reduce food consumption?
+	- make assassins drop night owl elixirs?
+	- raider retinue:
+		- 15% more Movementspeed while chasing a non-location
+	- alps take 33% more hitpoint changes to head
+	- new enemy only perk
+		- From the Shadows
+			- At the start of each round, if no enemy can see you, gain +3 Action Points during this round
+		- Is given to Assassins and higher tier Direwolfs
+			- They are also tought to stay hidden much more
+		- Will spawn a mini-icon while the condition is active
+	- selling quiver/throwing weapons will grant ammunition depending on their remaining ammo and empty them out in the shop
+	- brigands: make their weapons always have low condition (25-50%)
+	- make enemies that are unknown hidden in the turn sequence bar
+	- whenever you win a fight, all brothers in reserve get a non-stacking exp buff for the next fight
+		- **Eager for Battle**
+	- colored rumors (extended for reforged rumors)
+	- add new sorting methods (other than type) for marketplace (e.g. buy-price)
+	- spearwall:
+		- does no/reduced damage?
+			- only deal damage once, when they break through?
+		- only affects 3 tiles
+		- gain +1 Reach
+		- attack each enemy who enters your zone of control
+		- ignore the penalties of "Crowded"
+		- lasts until the start of your next turn
+		- Differences from Vanilla:
+			- deal full damage (up from 50%)
+			- enemies are not pushed back
+		- Spear Mastery:
+			- receive no morale checks from enemies entering your zone of control
+	- Make Obsidian Dagger instead cause Poison on it to never expire
+	- add new UISkillOrder member for skill.nut, which is only used for the order in the UI (mainly character screen)
+		- change moodcheck skill order to be directly after background
+	- make Withered be removed by Recover
+	- make contract payments 10% more random in both directions? (lucky random)
+		- this.m.PaymentMult = this.Math.rand(90, 110) * 0.01;
+	- "Fix" the fat-ping-pong via events on a gluttonous bro
+	- make knock back function return a weighted container with all possible end locations and a chance
+		- this can then be used to visualize that
+	- new perk that grants adjacent allies resolve
+	- rebalance food so that cheap/fresh and looted food comes in smaller stack sizes, so that more of your inventory slots are filled with that
+	- hand to hand down to 3 AP?
+	- remove gladiator/lone wolf party increase?
+	- when comparing distances for spawning locations, instead of direct air distance, use the amount of tiles travelled on the shortest path. That way mountains, rivers and swamp will sometimes increase locations possible
+	- standardize weapon stats, by changing the hidden +20 damage modifer into the weapon itself?
+	- make drunkard able to target items equipped to brothers
+	- make relationship with a town reduce the chance of receiving useless rumors (e.g. by switcherooing the follower to on, before the rumors are created)
+	- add new skill to quickhands perk, which costs 4 AP and removes "Disarmed" effect
+	- improve spawn location for holy war POI's to be more central and not spawn at the right/left border
+	- make orc loot consist of a lot of food (because they eat a lot)
+	- make armor and weapons still sell for half value at 0 condition. This will reduce need to repair them
+	- change ::Const.Combat.GlobalXPMult = 1.0 (vanilla: 0.85), as enemies now give less XP
+	- make unholds immune to root effects?
+	- redesign the releasable wolf to have lone wolf and like 75 hitchance
+	- remove initiativeForTurnOrder from Golems. Replace with initiative effect or remove fully
+	- replace the reach/def on whirling death with initiative bonus?
+	- goblin bows -> 3 AP attack?
+	- Goblins -> 8 AP?
+	- hexen parties need to lose normal unholds. They should only have bog unholds
+	- unhold heart stew -> stacksize increase
+	- gladiator harness standalone version viable
+	- Lunge: 1% more damage per initiative above 100; -1% Armor Penetration per Initiative below 100
+	- change bloodlust to deal 20% more damage, but no longer grant damage mitigation
+	- double lindwurm loot, reduce price
+	- champion bandit killer: offhand trianing?
+	- dont spoil the distance and direction of the location in "find location contract" before accepting
+	- code into gruesome_feast_effect, so that higher tier ghouls reward more experience on death, even if they were fed this battle
+	- make sure that ifrits reward varying XP reward depending on size
+	- low level zombie reanimation can be cancelled by:
+		- stepping on their corpse
+		- preventing their auto-reanimation once (e.g. immune to displacement or no space to be pushed)
+		- reduce their reanimation time to a consistent value? e.g. 1 turn? that way vanquisher can be used deterministacally to kill them
+	- new "frenzy" effect for frenzied hyena/wolf, which grants the vanilla damage bonus permant? akin killing frenzy procc
+	- give vampires a bite attack for when they are disarmed
+	- change scrap boy retinue to only generated tools from unlootable/tossed away armor?
+		- daggering down goblins/orcs would preserve their armor and generate tools from it
+		- not-looting
+	- new enemy-only perk for direwolves:
+		- gain a buff when attacking an enemy who is only surrounded by 1 enemy (which is the direwolf in this case)
+		- name/flavor would be something as "the early bird catches the worm", or "alpha strike"; basically the wolf having the first bite
+	- prevent animations from playing on tiles that are not visible to the player (e.g. ifrit merging)
+		- possible to translate the getPos passed into the animation back to getting a tile on the tactical map
+	- new regular "Executioner" entity, that belongs to Southern/Northern houses. They only spawn with an axe (either bardiche or greataxe)
+	- swordmaster ai -> likes to wait?
+	- make hunting grounds visible even before the ritual armor?
+	- ai: fast bandits wastefully use spinning flail and swap to ranged weapon (probably just remove that perk from them)
+	- reduce damage range of small crossbows. min and max hit almost double
+	- ghouls who swallowed something, have less defenses (or other debuff)
+	- new sandgolem-high attack "Collapse" (replacement melee attack?). Attacks multiple enemies (either in a row or swing, or both) + split into 3 smaller golems around the impact
+	- bone breaker:
+		- 50% of armor damage dealt is treated as hitpoint damage (down from 100%)
+		- 20% less threshold to inflict injuries
+	- improve damage overflow mechanic:
+		- split overflow damage and pen damage by
+	- make bully damage mult working for all skills
+		- give bully to geists and alps
+	- make qatal dagger a cleaver/dagger hybrid?
+	- make early game 2H swords have 4AP main attack + a 6AP Swing AoE
+	- make Between the Eyes instead scale off of ranged skill?
+	- ai merc rework and bounty hunter system
+	- beastmaster crack whip disarm
+	- rework militia spawning system (use time based "resource" system, where militias which return replenish resources. new ones can only spawn if resources are recovered)
+	- lower the minimum weight that named body armors can roll
+	- remove resolve penalty from morale (bag game design as that makes downwards spiral more likely)
+	- rework map generation to first place T3 civilian towns in the center of the map
+	- reduce chance of non-named shields dropping from characters (otherwise too many appear eventually)
+		- chance to drop could be % of remaining condition
+	- make holy water extinguish fire
+	- make tryout cost depending on economic difficulty
+	- make weapon attacks against flesh also use 1 condition? This would help against spearwalling indefinitely against zombies
+	- add new getReallyAllItems function for the player party, which returns an array with all inventory items but also all equipped items
+		- can be used so the player cant hide away items to prevent/force certain events to trigger
+		- can be used to make dunk event target equipped items aswell
+	- "main character" ai behavior, where certain champs decide that they are the stronged unit in their team and therefor need to carry it by actively taking fights
+		- instead of trying to optimize good encounters by flanking/holding back
+	- make riposte melee defense bonus based on current initiative at point where you use it?
+	- remove reforged goblin racial or adopt it?
+	- make certain traits/backgrounds not care about retreating from battle
+	- make some consumable potions last multiple fights (e.g. iron will)
+	- goblin wolfrider body hits dont cause injuries? (2H flail pound did 90% htpoint damage + stun)
+	- make spider parties rarely spawn with a hexe
+	- make ammo items sold return the ammo supply in them to player count
+}
 
-- resilient nerf to -2 turn effect duration (from -5), so that certain poisons still apply
-- make camping reduce food consumption?
-- increase fatigue cost of whirling stance
+{	// Tech / API
+	- rewrite player banner (AoE) effects to be less of a performance nightmare
+	- Framework for tracking round number of a skill for an entity https://github.com/MSUTeam/MSU/issues/351
+	- New world_state function called "hourly update", which is called once per hour (just like the update from asset manager)
+		- However this is also called, whenever certain notable actions happen. For example, when the player teleports around/uses the port, or onCombatFinished (fastTravelTo)
+			- Actually updateTopbarAssets is really convenient in that regard
+	- mercenary banner management (to find and claim unused merc banners for world parties or temporary encounters)
+	- API: hook onQueryTargetTile to implement new ai function
+	- Implement safe way of adding entity types mid-save (crock pot)
+		- Implement safe way of splitting entities with removable mod (hardened), so they are unsplit whenever saving
+}
 
-- show uncapped hitchance
-- fix(vanilla) parties on world map that concluded fights, still counting as on-going battles
-- when viewing ground items during battle, turn those items grey, which can't be equipped because
-	- not enough action points
-	- not equippable to the current character
-- make antidote remove acid? Maybe a rename is in order then
-- make assassins drop night owl elixirs?
-- raider retinue:
-	- 15% more Movementspeed while chasing a non-location
-- alps take 33% more hitpoint changes to head
+{	// QoL
+	- Write AP prediction for new mauler effect for player and enemies (could be done by simulating a 3 AP discount on all 1-range skills targetting a certain enemy)
+	- turn sequence bar order predictions for next round
+		- can display a second smaller version of the bar blow the original one, where the prediction changes in real time
+	- Reduce bleeding noise
+		- Cant fix right now, because 'refresh' only supports increased stacks by 1. Reforged suffers the same problem when inflicting 3 bleed via Gouge for example
+	- Mirror the reason of bad relation change for noble houses if it is because of actions against one of their settlements
+	- Add mention in morale check concept about how there is a random roll happening against resolve and being influenced by adjacent allies/enemies
+	- prevent paint being usable on items that already have this color (if the variant doesnt change after applying the paint, the paint is not used)
+	- Only use Paint and spawn sfx, if the Variant of the affected item is different, after calling onPaint on it
+	- turn order prediction
+		- Could be realised by slotting in a dummy/separator entity into the turn sequence bar at the very end?
+	- cross mod compatibility with crock pot? (vulture threat keyword)
+	- draw combat steps red, while the active entity is in zone of control
+		- they are handled in the .exe (steps_bot_left, steps_top, etc.)
+		- or make the respective characters blink red, when you consider moving while in ZoC
+	- show total number of people in turn sequence bar somewhere (e.g. behind current number of viewed actor)
+	- Feature: Manual Snapshot for brother-gear, that can be manually reset. Useful for when you swap out a lot of gear before a fight
+	- dont display injuries in temple that are "healed by tomorrow" anyways (setting?)
+	- new type of tooltip (not tile tooltip) that displays whenever the player previews movement
+		- am I in zone of control?
+			- if yes, whats all the hitchances?
+		- whats the total AP and Fatigeu cost of the movement?
+		- how much does each tile cost to move through?
+	- color adjacent enemies, that exert ZOC onto you in a color, when previewing movement out of ZOC
+	- look into sorting of enemy types in combat dialog
+		- most important ones should be sorted to the top
+		- make it scrollable
+	- show uncapped hitchance
+	- make skills which change skill cost temporarily, add tooltip entries in the affected skill tooltips
+		- e.g. dazed, double grip
+	- option for autosaving after battle
+	- when viewing ground items during battle, turn those items grey, which can't be equipped because
+		- not enough action points
+		- not equippable to the current character
+	- Prevent ending the turn for 1 second after gaining action points (e.g. Mauler)
+	- Prevent ending the turn for 1 second after movement got aborted from discovering enemies
+		- when the movement in combat is aborted because of enemy reveal play a small animation?
+	- add tooltip for donkey cart
+	- in the contract money/renown/relation tech, check the existing list for an entry with same icon and number and skip if that exists
+	- new enemy-only **Restless** effect for Fallen Heroes, that specifies, that they can reanimate even without a head
+	- add special effect/highlighting for legendary locations? Some of them are hard to spot if discovered accidentally
+	- move "this.m.MaxTraversibleLevels = 3;" into spider racial and add tooltip there
+	- disable reforged FatigueDealtPerHitMult, set in zombie racial
+	- add option whether a user even wants preponing of single options, as that can sometimes cause issues
+	- when viewing a character in character screen, display also all items equipped to all brothers who are in reserve in the same screen
+		- First third = regular inventory
+		- Second third = equipped items of frontline
+		- Third third = equipped items of reserve
+		- those items can only be equipped, not swapped. equipped puts the currently equipped one into the inventory
+		- each group of equipped items can have the brother icon on them
+	- change automatic camera panning so that it doesnt move the camera for small distances, only when bigger distances are happening
+	- point out that "throw living sand", used by ifrits, has no accuracy drop off with distance
+	- display tooltip for world scaling (currently as DayTime tooltip perhaps)
+	- improve highlighting of fleeing enemies; which blinking animation behind them?
+	- disable automatic camera movement following AI during battle
+		- investigate, why this is even happening and what the vanilla option for "disabling it" even does
+	- add new sickness chance modifier character property
+		- Connect many traits with that properties
+		- add new **Lightheaded** effect, granted by consuming drugs
+			- +50% sickness chance
+	- add UI feedback, when quicksaving
+	- reduce time for smoke effect to start
+	- color "struck down" in combat log in green and "killed" in red
+	- in the tooltip of wait concept, mention the wait debuff
+	- make it so the yellow arrow, pointing onto characters when hovering on the turn sequence bar, is rendered in front of the status mini effects (instead of after them)
+	- make arrows hitting trees/rocks also produce decals
+	- Add Setting to disable automove of camera during NPC turns completely (and then allow zooming/panning)
+	- make it so item tooltips in inventory never overlap with the paperdoll stat page
+	- look at how overlay icons are rendered
+		-> then, render overlay icons directly on top of a tile, if there is an enemy on top of that tile, but the tile is currently black, because the camera level is too low
+	- add world overlay arrows around the player party pointing towards any visible location/party, that is market as a contract target
+		- can probably scan for anyone asking for that specific sprite when they turn it on
+	- icons on top of NPC world parties signaling, whether they can see you and whether they are currently "hunting" you
+	- make death skull more prominent (I never see it if I dont look for it)
+	- levelup animation
+	- add setting to highlight the world tile that the player is currently on (very light highlighting)
+	- make ancient spire discovering locations play delayed location sounds for those. or just one loud one
+	- improve visibility of which corpse can be resurrected vs. which can't (Fallen Heroes vs. Fallen Soldiers)
+	- make **Rally** trigger an animation on anyone it wakes up. And play sfx for those waking up
+	- add sentence in cured ration tooltip explaining why no one wants to buy it (unlike many normal food)
+	- Concept for Auto-Retreat
+	- In dismiss confirmation, list the XP that would be shared and how much each brother would get (maybe also how much is lost if too few bros are present)
+}
 
-- new enemy only perk
-	- From the Shadows
-		- At the start of each round, if no enemy can see you, gain +3 Action Points during this round
-	- Is given to Assassins and higher tier Direwolfs
-		- They are also tought to stay hidden much more
-	- Will spawn a mini-icon while the condition is active
+{	// Wiki
+	# Survival Guide
 
-- selling quiver/throwing weapons will grant ammunition depending on their remaining ammo and empty them out in the shop
+	These are noticable changes by Hardened, that might catch you off-guard
+	- First read the cheese-section on the wiki, so you know what does not work anymore
 
-- brigands
-	- make their weapons always have low condition (25-50%)
+	## Noticable Differences coming from Vanilla
 
-- make enemies that are unknown hidden in the turn sequence bar
-- make skills which increase skill cost temporarily, add tooltip entires in those skill tooltips
-	- need examples, which are those skills?
+	- Nets dont reduce Initiative
 
-- change escorting so that the escorting character adds its strength and numbers to the army it is escorting
-	- not very useful, while this only affects the player and what he is escorting. Once non-player parties can form groups, it will be useful
+	- Some enemies can't be disarmed (Orc Warlord, Barbarian King, Hedge Knight, Grand Diviner)
+	- Some weapons have their AP cost reduced: The main attack from **2H Wooden Hammer**, **2H Wooden Flail** and **Goedendag** cost 5 AP (from 6 AP)
+	- 2+ tile melee attacks get hitchance penalties for every adjacent enemy
+	- add renown penalty when entering fight with temporary enemies (= you practically backstab someone who trusted you)
+	- Your faction (+dogs) must have done the most damage on an enemy in order to get their loost. Kill stealing for loot no longer works
 
-- work on a tech to highlight sprites (draw the same brush with the same properties, just behind and in a contrasting color)
-	- could be used to highlight adjacent enemies for a second on tunr start
+	## Noticable Differences coming from Reforged/Vanilla
 
-- linebreaker (from onslaught) is not a once-per-turn (happens twice during snowman stream)
+	- Nets dont reduce Initiative
+	- Some enemies can't be disarmed (Orc Warlord, Barbarian King, Hedge Knight, Grand Diviner)
+	- You can't puncture someone unless 2+ characters are surrounding them (maybe)
 
-- whenever you win a fight, all brothers in reserve get a non-stacking exp buff for the next fight
-	- **Eager for Battle**
+	## Noticable Differences coming from Reforged
 
-- colored rumors (extended for reforged rumors)
-- sort of marketplace to also sort for buy-price
-- give adarga shields 20 rdef again. Otherwise their def is too similar and switching too melee not impactful enough
+	- Some weapons have their AP cost reduced: **Stab** costs 3 AP (from 4 AP) on all daggers
+	- Some weapons have their AP cost increased: All Poleflail attacks cost 6 AP (up from 5 AP)
 
-# Survival Guide
+	## Noticable Differences coming from Reforged
 
-These are noticable changes by Hardened, that might catch you off-guard
-- First read the cheese-section on the wiki, so you know what does not work anymore
-
-## Noticable Differences coming from Vanilla
-
-- Nets dont reduce Initiative
-
-- Some enemies can't be disarmed (Orc Warlord, Barbarian King, Hedge Knight, Grand Diviner)
-- Some weapons have their AP cost reduced: The main attack from **2H Wooden Hammer**, **2H Wooden Flail** and **Goedendag** cost 5 AP (from 6 AP)
-- 2+ tile melee attacks get hitchance penalties for every adjacent enemy
-- add renown penalty when entering fight with temporary enemies (= you practically backstab someone who trusted you)
-- Your faction (+dogs) must have done the most damage on an enemy in order to get their loost. Kill stealing for loot no longer works
-
-## Noticable Differences coming from Reforged/Vanilla
-
-- Nets dont reduce Initiative
-- Some enemies can't be disarmed (Orc Warlord, Barbarian King, Hedge Knight, Grand Diviner)
-- You can't puncture someone unless 2+ characters are surrounding them (maybe)
-
-## Noticable Differences coming from Reforged
-
-- Some weapons have their AP cost reduced: **Stab** costs 3 AP (from 4 AP) on all daggers
-- Some weapons have their AP cost increased: All Poleflail attacks cost 6 AP (up from 5 AP)
-
-## Noticable Differences coming from Reforged
-
-- Some weapons have their AP cost reduced: **Stab** costs 3 AP (from 4 AP) on all daggers
-- Some weapons have their AP cost increased: All Poleflail attacks cost 6 AP (up from 5 AP)
-
-- add renown penalty when entering fight with temporary enemies (= you practically backstab someone who trusted you)
-- option for autosaving after battle
-
-# Artwork wanted:
-- T1 "Polemace": A long combat stick that doubles as a walking cane
-- Malnourished icon
-
-For: Line of Sight fix
-- Dont show tile blocking square for tiles that are completely hidden by terrain (because of camera height)
-
-- make footwork rarely be used on the tile that the actor started its turn on (otherwise it too often results in weird dancing/decisions by goblins)
-
-- new type of caravan that transports only gold (because they came back from selling or are about to buy stuff)
-	- they look the same as normal caravans except that they move significant faster (like 80% instead of 50%)
-
-- standardize weapon stats, by changing the hidden +20 damage modifer into the weapon itself?
-
-- make drunkard able to target items equipped to brothers
-
-- make relationship with a town reduce the chance of receiving useless rumors (e.g. by switcherooing the follower to on, before the rumors are created)
-
-- add new skill to quickhands perk, which costs 4 AP and removes "Disarmed" effect
-
-- spearwall:
-	- does no/reduced damage?
-		- only deal damage once, when they break through?
-	- only affects 3 tiles
-	- gain +1 Reach
-	- attack each enemy who enters your zone of control
-	- ignore the penalties of "Crowded"
-	- lasts until the start of your next turn
-	- Differences from Vanilla:
-		- deal full damage (up from 50%)
-		- enemies are not pushed back
-	- Spear Mastery:
-		- receive no morale checks from enemies entering your zone of control
-
-- Make Obsidian Dagger instead cause Poison on it to never expire
-
-- make Withered be removed by Recover
-
-- make bodyguards choose their target to protect once per turn
-	- and only switch if the old target is dead
-	- and only pick targets that need bodyguards
-
-- "Fix" the fat-ping-pong via events on a gluttonous bro
-- conqueror armor effect replacement: +15 Ranged Defense during day (enemy are blinded by light reflecting)
-
-- when comparing distances for spawning locations, instead of direct air distance, use the amount of tiles travelled on the shortest path. That way mountains, rivers and swamp will sometimes increase locations possible
-
-- "unknown-faction" flag (literally) for locations, who don't show their defender, or where different factions could be inside
-- improve spawn location for holy war POI's to be more central and not spawn at the right/left border
-
-- add new UISkillOrder member for skill.nut, which is only used for the order in the UI (mainly character screen)
-	- change moodcheck skill order to be directly after background
-
-- nerf rotation to be in line with vanilla? (25 fatigue)
-
-- bug: projectiles dont seem to be renders all too often
-- rumors around position of nearby mercenary companies on the world map
-- rumors around nearby undiscovered locations
-
-- nerf riposte to 15 Fatigue
-
-- weapon master requirement is not accurate, it should be moved to the bullet point where it is needed
-
-- Make contracts aligned with either positive or negative morale reputation
-	- rebuild/caravan/envoy/packet/great battle are positive aligned (they trust you with something)
-	- find thiefs/destroy location are negative aligned (this mission is potentially dangerous, just for you)
-	- not aligned: find location, defend against raiding parties
-
-- make contract payments 10% more random in both directions? (lucky random)
-	- this.m.PaymentMult = this.Math.rand(90, 110) * 0.01;
-
-- make knock back function return a weighted container with all possible end locations and a chance
-	- this can then be used to visualize that
-- strange meat seems to be treated as valueable food and has much higher sell price
-- new perk that grants adjacent allies resolve
-- rebalance food so that cheap/fresh and looted food comes in smaller stack sizes, so that more of your inventory slots are filled with that
-- hand to hand down to 3 AP?
-- remove gladiator/lone wolf party increase?
-
-- update resolve from banner instantly when switching to it
-- make sunken library always a night fight?
-
-- new item: torch
-	- Offhand Item
-	- Grant +3 Vision
-	- Can be thrown on an empty tile to illuminate the area around it in a radius of 5 tiles
-
-- Event: dealer of stolen goods sells faction armor
-	- You are offered to buy some armor of a faction whose town you are in, for cheap
-	- The armor in question is Mail Hauberk (170 / 19)
-	- If you accept, you potentially lose some relation to that faction (someone saw you do the deal)
-	- Alternatively a background (peddler) can make it cheaper or thief can make it less likely top raise suspicion
-- Horse Fucker Event: give him a body (back) injury he sustained from the whipping
-	- Make you lose 10 Renown when accepting the guy (you go "against the law")
-
-# Animation
-- continuous bleed animation if a certain amount of bleed stacks are accumulated on an enemy
-- smoke bomb on snow is hard to spot
-- parry fx that spawns towards north, might need to be rendered behind the parry guy (e.g. for the tile on top of him instead of his tile)
-- turn any corpse that is not reanimating and that cant be reanimated (beats or headless corpses) into a pale/grey/low saturation tone, to make it stand further apart from alive ones
-- bleed animation/effect when inflicting bleed with **Sanguinary**?
-- trigger smoke effect whenever a brother with **Ghostlike** dodges an attack during their turn
-- mortar impact animation, when shockwave or full force trigger
-- use schrat damage leaf-animation for when an arrow hits a tree
-
-# Artwork
-- different bleed icons depending on severity of bleed
-- make feral shields bigger in size
-
-# Sound
-- special sfx when discovering a legendary location
-- sfx when bone breaker causes an injury
-- write a custom BB sound engine, by playing sound at the same time in right and left ear but with tiny delay to simulate depth/direction
-- increase movement fatigue cost in order to make moving more tactical
-- cover ally making ally immune to displacement?
-- make schrat damage sounds, whenever arrows divert into trees.
-	- or rather allow obstacles to have a hit-sfx, which is played when they get hit by a projectile
-- play multiple flail sfx, for each three headed hit
-- make ifirts not play soudns when growing (sand_golem::grow)
-- Any actor moving will produce step-sounds, even if not visible to player. But then with lower volume: "_tile.IsVisibleForPlayer ? 1.0 : 0.5"
-
-# Fix
-- fix world zooming when entering/leaving main menu
-- Vanilla Bug: Chosens never get their ranged weapons added correctly
-- prevent owl use on someone who is already fleeing
-- fix some enemies being disembowable (e.g. ifrits) and therefor triggering sanguinary
-- fix camp situations, where a random tree fills the main entrance
-- when buying supplies, play animation for the supply values
-- make sure that calculated strikes works against non-combatants (phylactery/donkey/egg)
-- higher tier golems spawn with more Reach. However when they are created from merging, they dont have that reach
-- playerhideout move sfx double
-- remove stun covering ally instantly when skill is added, which is stun
-- Bug: crossbows are not unloaded correctly after battle
-	- need more evidence
-- day time tooltip on world map barely displaying. The javascript parts there (WorldScreenTopbarDayTimeModule) is horribly at producing it
-- fix some towns spawning with ports which are not visible: You can still travel to them, but not from them
-	- caused by ports being force-built in fishing towns
-	- but fishing towns are not guaranteed to be considered "IsCoastal"
-- fix description of swordmaster perks (consussive strikes e.g.)
-- make sure fresh and furious enemies use the free attack despite being at 0 AP
-
-# Balance
-- reduce sell price of masterfully cured rations to prevent missuse as pseudo-trade-good
-- resolve or defense nerf to hold steady?
-
-# Design
-- make orc loot consist of a lot of food (because they eat a lot)
-- make armor and weapons still sell for half value at 0 condition. This will reduce need to repair them
-- change ::Const.Combat.GlobalXPMult = 1.0 (vanilla: 0.85), as enemies now give less XP
-- make unholds immune to root effects?
-- redesign the releasable wolf to have lone wolf and like 75 hitchance
-- remove initiativeForTurnOrder from Golems. Replace with initiative effect or remove fully
-- replace the reach/def on whirling death with initiative bonus?
-- goblin bows -> 3 AP attack?
-- Goblins -> 8 AP?
-- hexen parties need to lose normal unholds. They should only have bog unholds
-- unhold heart stew -> stacksize increase
-- gladiator harness standalone version viable
-- Lunge: 1% more damage per initiative above 100; -1% Armor Penetration per Initiative below 100
-- change bloodlust to deal 20% more damage, but no longer grant damage mitigation
-- double lindwurm loot, reduce price
-- champion bandit killer: offhand trianing?
-- dont spoil the distance and direction of the location in "find location contract" before accepting
-- code into gruesome_feast_effect, so that higher tier ghouls reward more experience on death, even if they were fed this battle
-- make sure that ifrits reward varying XP reward depending on size
-- low level zombie reanimation can be cancelled by:
-	- stepping on their corpse
-	- preventing their auto-reanimation once (e.g. immune to displacement or no space to be pushed)
-	- reduce their reanimation time to a consistent value? e.g. 1 turn? that way vanquisher can be used deterministacally to kill them
-- new "frenzy" effect for frenzied hyena/wolf, which grants the vanilla damage bonus permant? akin killing frenzy procc
-- give vampires a bite attack for when they are disarmed
-- change scrap boy retinue to only generated tools from unlootable/tossed away armor?
-	- daggering down goblins/orcs would preserve their armor and generate tools from it
-	- not-looting
-- new enemy-only perk for direwolves:
-	- gain a buff when attacking an enemy who is only surrounded by 1 enemy (which is the direwolf in this case)
-	- name/flavor would be something as "the early bird catches the worm", or "alpha strike"; basically the wolf having the first bite
-- prevent animations from playing on tiles that are not visible to the player (e.g. ifrit merging)
-	- possible to translate the getPos passed into the animation back to getting a tile on the tactical map
-- new regular "Executioner" entity, that belongs to Southern/Northern houses. They only spawn with an axe (either bardiche or greataxe)
-- swordmaster ai -> likes to wait?
-- make hunting grounds visible even before the ritual armor?
-- ai: fast bandits wastefully use spinning flail and swap to ranged weapon (probably just remove that perk from them)
-- reduce damage range of small crossbows. min and max hit almost double
-- ghouls who swallowed something, have less defenses (or other debuff)
-- new sandgolem-high attack "Collapse" (replacement melee attack?). Attacks multiple enemies (either in a row or swing, or both) + split into 3 smaller golems around the impact
-- bone breaker:
-	- 50% of armor damage dealt is treated as hitpoint damage (down from 100%)
-	- 20% less threshold to inflict injuries
-- improve damage overflow mechanic:
-	- split overflow damage and pen damage by
-- make bully damage mult working for all skills
-	- give bully to geists and alps
-- make qatal dagger a cleaver/dagger hybrid?
-- make early game 2H swords have 4AP main attack + a 6AP Swing AoE
-- make Between the Eyes instead scale off of ranged skill?
-- ai merc rework and bounty hunter system
-- beastmaster crack whip disarm
-- rework militia spawning system (use time based "resource" system, where militias which return replenish resources. new ones can only spawn if resources are recovered)
-- lower the minimum weight that named body armors can roll
-- remove resolve penalty from morale (bag game design as that makes downwards spiral more likely)
-- rework map generation to first place T3 civilian towns in the center of the map
-- reduce chance of non-named shields dropping from characters (otherwise too many appear eventually)
-	- chance to drop could be % of remaining condition
-- make holy water extinguish fire
-- make tryout cost depending on economic difficulty
-- make weapon attacks against flesh also use 1 condition? This would help against spearwalling indefinitely against zombies
-- add new getReallyAllItems function for the player party, which returns an array with all inventory items but also all equipped items
-	- can be used so the player cant hide away items to prevent/force certain events to trigger
-	- can be used to make dunk event target equipped items aswell
-- "main character" ai behavior, where certain champs decide that they are the stronged unit in their team and therefor need to carry it by actively taking fights
-	- instead of trying to optimize good encounters by flanking/holding back
-- make riposte melee defense bonus based on current initiative at point where you use it?
-- remove reforged goblin racial or adopt it?
-- make certain traits/backgrounds not care about retreating from battle
-- make some consumable potions last multiple fights (e.g. iron will)
-
-# QOL
-- Prevent ending the turn for 1 second after gaining action points (e.g. Mauler)
-- Prevent ending the turn for 1 second after movement got aborted from discovering enemies
-	- when the movement in combat is aborted because of enemy reveal play a small animation?
-- add tooltip for donkey cart
-- in the contract money/renown/relation tech, check the existing list for an entry with same icon and number and skip if that exists
-- new enemy-only **Restless** effect for Fallen Heroes, that specifies, that they can reanimate even without a head
-- add special effect/highlighting for legendary locations? Some of them are hard to spot if discovered accidentally
-- move "this.m.MaxTraversibleLevels = 3;" into spider racial and add tooltip there
-- disable reforged FatigueDealtPerHitMult, set in zombie racial
-- add option whether a user even wants preponing of single options, as that can sometimes cause issues
-- when viewing a character in character screen, display also all items equipped to all brothers who are in reserve in the same screen
-	- First third = regular inventory
-	- Second third = equipped items of frontline
-	- Third third = equipped items of reserve
-	- those items can only be equipped, not swapped. equipped puts the currently equipped one into the inventory
-	- each group of equipped items can have the brother icon on them
-- change automatic camera panning so that it doesnt move the camera for small distances, only when bigger distances are happening
-- point out that "throw living sand", used by ifrits, has no accuracy drop off with distance
-- display tooltip for world scaling (currently as DayTime tooltip perhaps)
-- improve highlighting of fleeing enemies; which blinking animation behind them?
-- disable automatic camera movement following AI during battle
-	- investigate, why this is even happening and what the vanilla option for "disabling it" even does
-- add new sickness chance modifier character property
-	- Connect many traits with that properties
-	- add new **Lightheaded** effect, granted by consuming drugs
-		- +50% sickness chance
-- add UI feedback, when quicksaving
-- reduce time for smoke effect to start
-- color "struck down" in combat log in green and "killed" in red
-- in the tooltip of wait concept, mention the wait debuff
-- make it so the yellow arrow, pointing onto characters when hovering on the turn sequence bar, is rendered in front of the status mini effects (instead of after them)
-- make arrows hitting trees/rocks also produce decals
-- Add Setting to disable automove of camera during NPC turns completely (and then allow zooming/panning)
-- make it so item tooltips in inventory never overlap with the paperdoll stat page
-- look at how overlay icons are rendered
-	-> then, render overlay icons directly on top of a tile, if there is an enemy on top of that tile, but the tile is currently black, because the camera level is too low
-- add world overlay arrows around the player party pointing towards any visible location/party, that is market as a contract target
-	- can probably scan for anyone asking for that specific sprite when they turn it on
-- icons on top of NPC world parties signaling, whether they can see you and whether they are currently "hunting" you
-- make death skull more prominent (I never see it if I dont look for it)
-- levelup animation
-- add setting to highlight the world tile that the player is currently on (very light highlighting)
-- make ancient spire discovering locations play delayed location sounds for those. or just one loud one
+	- Some weapons have their AP cost reduced: **Stab** costs 3 AP (from 4 AP) on all daggers
+	- Some weapons have their AP cost increased: All Poleflail attacks cost 6 AP (up from 5 AP)
+}
 
 # Debug
 - print base damage roll of any attack in combat log
@@ -777,3 +669,18 @@ For: Line of Sight fix
 - Promised Potential
 - Between the Eyes
 - Weapon Master
+
+
+- resolve or defense nerf to hold steady?
+
+
+
+
+
+- look into the debug log vanilla recently removed from skill container printing. Maybe i dont need to skip that anymore in hardened
+- fix split man pen dmg
+
+
+
+
+- vanilla bug: decapitate max armor pen damage not multiplied by *2

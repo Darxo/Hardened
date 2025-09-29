@@ -62,6 +62,7 @@
 		}
 		else
 		{
+			// Generic Food Items are like trade goods except that they can go bad
 			return ::Const.World.Assets.SellPriceNotProducedHere;
 		}
 	}
