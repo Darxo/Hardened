@@ -23,6 +23,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+1.0.0-alpha-8
+	- Fix armor with attachements selling for way too much money
+
 1.0.0-alpha-7
 	- **Cleaver Mastery** no longer grants bonus damage against enemies equipped with a ranged weapon
 	- Low Morale no longer reduces the Resolve of the character
