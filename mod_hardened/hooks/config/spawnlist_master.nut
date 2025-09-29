@@ -893,8 +893,8 @@
 // scripts/entity/tactical/enemies/unhold_bog
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.UnholdBog.Cost = 65;
-	::Const.World.Spawn.Troops.UnholdBog.Strength = 65;
+	::Const.World.Spawn.Troops.UnholdBog.Cost = 70;
+	::Const.World.Spawn.Troops.UnholdBog.Strength = 70;
 }
 
 // scripts/entity/tactical/enemies/rf_bandit_baron

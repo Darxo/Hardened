@@ -223,7 +223,7 @@
 // scripts/entity/tactical/enemies/unhold_bog
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.UnholdBog.XP = 975;					// Vanilla: 400
+	::Const.Tactical.Actor.UnholdBog.XP = 1050;					// Vanilla: 400
 	::Const.Tactical.Actor.UnholdBog.ActionPoints = 9;
 	::Const.Tactical.Actor.UnholdBog.Hitpoints = 500;
 	::Const.Tactical.Actor.UnholdBog.Bravery = 130;
