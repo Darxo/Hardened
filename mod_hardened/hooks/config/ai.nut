@@ -8,6 +8,9 @@
 
 	// Make it more likely that necrosavants stay on the same tile to utilize 2 attack
 	::Const.AI.Behavior.DarkflightStayOnTileBonus = 4.0;	// In Vanilla this is 2.5
+
+	// We flip EngageRanged and Reload around because the AI is currently moving around too frequently from perfectly fine positions
+	::Const.AI.Behavior.Score.EngageRanged = 90;	// Vanilla: 120
 }
 
 // New Hardened Values
