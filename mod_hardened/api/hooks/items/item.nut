@@ -140,4 +140,11 @@
 
 		return ret;
 	}
+
+// New Events
+	// Triggers directly after unEquipping this item, after all connections to the item container have been severed
+	// This can be used by items which trigger updates on other entities, whose effects might rely on the equip-state of this item
+	q.HD_onAfterUnEquip <- function()
+	{
+	}
 });

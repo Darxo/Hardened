@@ -33,3 +33,15 @@
 		return ::Math.max(0, -1 * staminaModifier);
 	}
 });
+
+::Hardened.HooksMod.hookTree("scripts/items/item_container", function(q) {
+	q.unequip = @(__original) function( _item )
+	{
+		local ret = __original(_item);
+
+		// If the unequip was successful and all connections have been severed, we trigger our after event
+		if (ret) _item.HD_onAfterUnEquip();
+
+		return ret;
+	}
+});
