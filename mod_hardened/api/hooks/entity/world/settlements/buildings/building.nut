@@ -1,4 +1,8 @@
 ::Hardened.HooksMod.hook("scripts/entity/world/settlements/buildings/building", function(q) {
+	// Public
+	q.m.HD_DamagedConditionChance <- 50;
+	q.m.HD_DamagedConditionMin <- 0.4;
+
 	// Overwrite, because we completely re-implement this function, making it much more moddable in the process
 	q.fillStash = @() function( _list, _stash, _priceMult, _allowDamagedEquipment = false )
 	{
@@ -47,17 +51,21 @@
 				rarityThreshold += roll;		// In Vanilla there are exceptions, sometimes the roll is not made harder (when Rarity is 0 to begin with and there are no bad rarityMults at play)
 
 				// Damagable equipment might arrive damaged
-				if (_allowDamagedEquipment && item.getConditionMax() > 1)
-				{
-					if (::Math.rand(1, 100) <= 50)
-					{
-						item.setCondition(::Math.rand(item.getConditionMax() * 0.4, item.getConditionMax()) * 1.0);
-					}
-				}
+				if (_allowDamagedEquipment) this.HD_randomizeItemCondition(item);
 			}
 		}
 
 		_stash.sort();
 	}
 
+// New Functions
+	q.HD_randomizeItemCondition <- function( _item )
+	{
+		if (_item.getConditionMax() <= 1) return;
+
+		if (::Math.rand(1, 100) <= this.m.HD_DamagedConditionChance)
+		{
+			_item.setCondition(::Math.rand(_item.getConditionMax() * this.m.HD_DamagedConditionMin, _item.getConditionMax()) * 1.0);
+		}
+	}
 });
