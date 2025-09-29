@@ -11,6 +11,9 @@
 
 	// We flip EngageRanged and Reload around because the AI is currently moving around too frequently from perfectly fine positions
 	::Const.AI.Behavior.Score.EngageRanged = 90;	// Vanilla: 120
+
+	// Reloading is a very essential and decent action in all situations. Its safe to push the AI to use it much more often before considering alternatives
+	::Const.AI.Behavior.Score.Reload = 140;			// Vanilla: 100
 }
 
 // New Hardened Values
