@@ -70,7 +70,9 @@
 	{
 		if (::MSU.isNull(_target)) return false;
 
+		if (_target.isDisarmed()) return true;
+
 		local item = _target.getMainhandItem();
-		return (::MSU.isNull(item) || !item.isItemType(::Const.Items.ItemType.MeleeWeapon) || _target.isDisarmed())
+		return (::MSU.isNull(item) || !item.isItemType(::Const.Items.ItemType.Weapon));
 	}
 });

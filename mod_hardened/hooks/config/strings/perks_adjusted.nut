@@ -277,7 +277,7 @@ local adjustedDescriptions = [
 					Description = [
 						"Cleaver Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 						"[Disarm|Skill+disarm_skill] gains " + ::MSU.Text.colorPositive("+10%") + " [Hitchance|Concept.Hitchance]",
-						"Deal " + ::MSU.Text.colorPositive("+50%") + " [Critical Damage|Concept.CriticalDamage] when hitting the Body of someone who is disarmed or who doesn\'t wield a Melee Weapon",
+						"Deal " + ::MSU.Text.colorPositive("+50%") + " [Critical Damage|Concept.CriticalDamage] when hitting the Body of someone who is disarmed or who doesn\'t wield a Weapon",
 					],
 				},
 			],
