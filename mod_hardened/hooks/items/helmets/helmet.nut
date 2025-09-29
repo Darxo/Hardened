@@ -5,6 +5,9 @@
 
 		this.m.Condition = this.m.ConditionMax;		// We do this here so that it doesn't have to be done in the individual helmet scripts anymore
 
+		// Hardened values
+		this.m.HD_ConditionValueThreshold = 0.5;	// Condition now only scales the price of this down to 50% of its normal value
+
 		// We hook onPaint here, because it is not prevent on all helmets and we can't do the following check during regular hooking
 		if ("onPaint" in this)
 		{

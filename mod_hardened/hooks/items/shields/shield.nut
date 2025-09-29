@@ -3,6 +3,14 @@
 	q.m.ReforgedShieldConditionMax <- null;	// Condition this item would have in reforged
 	q.m.ShieldConditionMult <- 1.0;	// Bonus Condition rolled by named items
 
+	q.create = @(__original) function()
+	{
+		__original();
+
+		// Hardened values
+		this.m.HD_ConditionValueThreshold = 0.5;	// Condition now only scales the price of this down to 50% of its normal value
+	}
+
 	// Hook, in order to implement the new character properties ShieldDamageMult and ShieldDamageReceivedMult
 	// The information to calculate those are fetched at the start of `function use` of `skill.nut` and saved in a global variable
 	// Known Issues:

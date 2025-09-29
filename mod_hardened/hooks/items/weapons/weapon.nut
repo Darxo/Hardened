@@ -1,4 +1,12 @@
 ::Hardened.HooksMod.hook("scripts/items/weapons/weapon", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		// Hardened values
+		this.m.HD_ConditionValueThreshold = 0.5;	// Condition now only scales the price of this down to 50% of its normal value
+	}
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();

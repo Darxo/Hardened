@@ -3,6 +3,9 @@
 	{
 		__original();
 		this.m.Condition = this.m.ConditionMax;		// We do this here so that it doesn't have to be done in the individual armor scripts anymore
+
+		// Hardened values
+		this.m.HD_ConditionValueThreshold = 0.5;	// Condition now only scales the price of this down to 50% of its normal value
 	}
 
 	q.onAddedToStash = @(__original) function( _stashID )
