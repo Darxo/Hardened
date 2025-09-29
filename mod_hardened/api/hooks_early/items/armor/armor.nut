@@ -3,7 +3,7 @@
 	q.getValue = @() function()
 	{
 		local value = this.item.getValue() * this.HD_getConditionMult();
-		if (this.getUpgrade() != null) value *= this.getUpgrade().getValue();
+		if (this.getUpgrade() != null) value += this.getUpgrade().getValue();
 		return ::Math.floor(value);
 	}
 });
