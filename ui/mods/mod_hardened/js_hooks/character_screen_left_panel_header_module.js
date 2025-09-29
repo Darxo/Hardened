@@ -15,7 +15,8 @@ CharacterScreenLeftPanelHeaderModule.prototype.createDIV = function (_parentDiv)
 		if (CharacterScreenIdentifier.Entity.Character.Key in data)
 		{
 			var brother = data[CharacterScreenIdentifier.Entity.Character.Key];
-			if (brother['daysWithCompany'] === 0)
+
+			if (MSU.getSettingValue("mod_hardened", "SkipConfirmationNewRecruits") === true && brother['daysWithCompany'] === 0)
 			{
 				// Instantly dismiss brothers, who have been just hired today
 				self.mDataSource.notifyBackendDismissCharacter(brother['level'] > 1);	// fresh recruits higher than level 1, will grant cheap xp, when compesating them

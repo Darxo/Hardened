@@ -154,4 +154,6 @@
 	qolMiscPage.addBooleanSetting("ShowShieldSilhouettes", false, "Show Shield Silhouettes", "Display silhouettes for shields in your bag slots. These sprites might look most out of place, so not everone might want them to show up").addAfterChangeCallback(silhouetteCallback);
 
 	qolMiscPage.addDivider("MiscDivider1");
+
+	qolMiscPage.addBooleanSetting("SkipConfirmationNewRecruits", false, "Skip Confirmation for new Recruits", "Skip the confirmation dialog when trying to dismiss a brother if they were just hired (0 days with the company). Characters with a Level 2 or higher are automatically paid compensation to not miss out on XP.");
 }
