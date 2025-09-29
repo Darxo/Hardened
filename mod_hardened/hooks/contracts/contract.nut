@@ -175,7 +175,6 @@
 				else
 				{
 					preponedArguments.insert(0, _table);
-					::MSU.Log.printData(_table, 2);
 					_table[_functionName].acall(preponedArguments);
 				}
 			}

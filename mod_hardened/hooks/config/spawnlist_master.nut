@@ -322,13 +322,6 @@
 	::Const.World.Spawn.Troops.BanditRaider.Strength = 24;
 }
 
-// scripts/entity/tactical/enemies/bandit_raider_wolf
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.BanditRaiderWolf.Cost = 25;
-	::Const.World.Spawn.Troops.BanditRaiderWolf.Strength = 25;
-}
-
 // scripts/entity/tactical/humans/noble_billman
 {
 	// Mandatory Entries
@@ -355,6 +348,13 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.NomadArcher.Cost = 24;
 	::Const.World.Spawn.Troops.NomadArcher.Strength = 24;
+}
+
+// scripts/entity/tactical/enemies/bandit_raider_wolf
+{
+	// Mandatory Entries
+	::Const.World.Spawn.Troops.BanditRaiderWolf.Cost = 25;
+	::Const.World.Spawn.Troops.BanditRaiderWolf.Strength = 25;
 }
 
 // scripts/entity/tactical/enemies/orc_young
