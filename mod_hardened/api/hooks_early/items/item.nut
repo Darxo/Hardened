@@ -46,6 +46,7 @@
 	q.m.HD_IsBuildingSupply <- false;
 	q.m.HD_IsMedical <- false;
 	q.m.HD_IsMineral <- false;
+	q.m.HD_ConditionValueThreshold <- 0.0;	// The value of an item depending on condition will only scale down to this value linearly as condition decreases
 
 	// Private
 	q.m.HD_BuyBackPrice <- null;
@@ -175,5 +176,19 @@
 		this.playInventorySound(_eventType);
 
 		mockObject.cleanup();
+	}
+
+	// Calculate how much the current condition of this items influences its value
+	// In Vanilla this is only used for weapons, shields and armor
+	// In Vanilla the price changes linearly between 0% and 100% as the condition changes
+	q.HD_getConditionMult <- function()
+	{
+		if (this.getConditionMax() == 0) return 1.0;
+
+		local guaranteedPct = this.m.HD_ConditionValueThreshold;
+		local scaledPct = 1.0 - this.m.HD_ConditionValueThreshold;
+		scaledPct *= (this.getCondition() / (this.getConditionMax() * 1.0));
+
+		return guaranteedPct + scaledPct;
 	}
 });
