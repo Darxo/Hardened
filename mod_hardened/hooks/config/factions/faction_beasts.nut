@@ -1,7 +1,7 @@
 // scripts/entity/tactical/enemies/ghoul
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Ghoul.XP = 180;				// Vanilla: 125
+	::Const.Tactical.Actor.Ghoul.XP = 225;				// Vanilla: 125
 	::Const.Tactical.Actor.Ghoul.ActionPoints = 9;
 	::Const.Tactical.Actor.Ghoul.Hitpoints = 120;		// Vanilla: 80
 	::Const.Tactical.Actor.Ghoul.Bravery = 50;

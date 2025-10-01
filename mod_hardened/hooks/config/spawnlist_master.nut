@@ -115,8 +115,8 @@
 // scripts/entity/tactical/enemies/ghoul
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.GhoulLOW.Cost = 12;
-	::Const.World.Spawn.Troops.GhoulLOW.Strength = 12;
+	::Const.World.Spawn.Troops.GhoulLOW.Cost = 15;
+	::Const.World.Spawn.Troops.GhoulLOW.Strength = 15;
 }
 
 // scripts/entity/tactical/enemies/spider
