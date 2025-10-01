@@ -30,14 +30,6 @@
 		return __original(_xp, _scale);
 	}}.addXP;
 
-	// Reforged Fix: Player characters partake in multiple battles but only ever trigger onAfterInit once per session,
-	// 		so we need to reset RF_HasOnSpawnBeenCalled onCombatFinished
-	q.onCombatFinished = @(__original) { function onAfterInit()
-	{
-		__original();
-		this.m.RF_HasOnSpawnBeenCalled = false;
-	}}.onAfterInit;
-
 	q.fillAttributeLevelUpValues = @(__original) function( _amount, _maxOnly = false, _minOnly = false )
 	{
 		__original(_amount, _maxOnly, _minOnly);
