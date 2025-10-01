@@ -8,6 +8,9 @@
 	// Double Strike no longer turns off if you switch weapons
 	q.onPayForItemAction = @() function( _skill, _items ) {}
 
+	// Double Strike no longer turns off if you switch weapons
+	q.onAnySkillExecuted = @() function( _skill, _targetTile, _targetEntity, _forFree ) {}
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
