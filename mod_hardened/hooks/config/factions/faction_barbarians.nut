@@ -54,7 +54,7 @@
 	::Const.Tactical.Actor.BarbarianMarauder.MeleeSkill = 75;
 	::Const.Tactical.Actor.BarbarianMarauder.RangedSkill = 60;
 	::Const.Tactical.Actor.BarbarianMarauder.MeleeDefense = 10;
-	::Const.Tactical.Actor.BarbarianMarauder.RangedDefense = 10;
+	::Const.Tactical.Actor.BarbarianMarauder.RangedDefense = 0;
 	::Const.Tactical.Actor.BarbarianMarauder.Initiative = 115;
 }
 

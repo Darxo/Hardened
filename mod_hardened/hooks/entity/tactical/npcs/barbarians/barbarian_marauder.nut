@@ -100,6 +100,7 @@
 
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_survival_instinct"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vigorous_assault"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_hd_hybridization"));
 
 		// Generic Actives
 		this.getSkills().add(::new("scripts/skills/actives/barbarian_fury_skill"));
