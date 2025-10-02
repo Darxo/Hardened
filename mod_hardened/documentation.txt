@@ -23,6 +23,20 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+
+1.0.0-alpha-9
+	- **Hold Steady** no longer grants Resolve
+	- **Small Nachzehrer** now cost 15 Resources (up from 12)
+	- **Bearded Blade** now costs 25 Fatigue (up from 20)
+	- Reduce chance of **Thralls** spawning with Javelins to 30% (down from 40%)
+	- **Barbarian Marauder** gain **Hybridization** and lose 10 Ranged Defense
+	- Tiles of Battlesites are no longer revealed when discovered by the player
+	- Add combat log, when **Formidable Approach** removes Confident from a character
+	- Fix **Split** with **Rusty Warblade** not inflicting bleed
+	- Fix negotiated contracts rarely displaying weird renown tooltip lines when revisiting them
+	- Fix secondary asset values sometimes not being cleared correctly
+	- Fix contract renown and relation feedback not showing correctly in several turn-in situations
+
 1.0.0-alpha-8
 	- Fix armor with attachements selling for way too much money
 

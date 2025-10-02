@@ -165,7 +165,7 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 
 ### Active Skills
 
-- **Bearded Blade** (granted by **Axe Mastery**) is completely reworked. It now costs 4 Action Points and 20 Fatigue and it is an attack, that deals no damage and will disarm your opponent for 1 turn on a hit
+- **Bearded Blade** (granted by **Axe Mastery**) is completely reworked. It now costs 4 Action Points and 25 Fatigue and it is an attack, that deals no damage and will disarm your opponent for 1 turn on a hit
 - **Chop** now has a 50% chance to decapitate (up from 25%)
 - **Cover Ally** (granted by **Shield Expert**) is completely reworked. It costs 4 Action Points and 20 Fatigue and can be used on adjacent allies. It grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It still lasts until the start of the users next turn or until the user gets stunned or flees
 - **Cover Ally** (granted by **Shield Expert**) is mostly reworked. It still costs 4 Action Points and 20 Fatigue and can only target adjacent allies. It now grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It still lasts until the start of your next turn or until you get stunned or move away from that target
@@ -263,7 +263,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Fruits of Labor** is reworked. It now grants 5% more Hitpoints, Stamina, Resolve and Initiative
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
 - **Hammer Mastery** no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part.
-- **Hold Steady** no longer has a shared cooldown with other brothers who have this perk. It now lasts for 2 rounds, instead of having a turn-based duration
+- **Hold Steady** no longer has a shared cooldown with other brothers who have this perk. It now lasts for 2 rounds, instead of having a turn-based duration. It no longer grants Resolve
 - **Hybridization** is completely reworked. It is now called **Toolbox** and requires a Throwing Weapon. It grants +1 Bag Slot if you dont have **Weapon Master**. It now causes piercing type hits to the body to inclict **Arrow to the Knee** for 1 turn, cutting type attacks to inflict **Overwhelmed**, blunt type headshots to inflict stagger for 1 turn and any hit with them to stun a staggered opponent and throwing spears to deal 100% more damage to shields
 - **Inspiring Presence** no longer requires a banner. At the start of each round it grants adjacent allies of your faction +3 Action Points for this turn, if they are adjacent to an enemy and have less Resolve than you. The same target can't be inspired multiple times per turn.
 - **Iron Sights** is completely reworked. It now grants +1% chance to hit the head with Crossbows and Firearms for every 3 Initiative you have
@@ -1028,10 +1028,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - The perks **Strengh in Numbers** and **Dynamic Duo** now instantly update the actors stats, if another actor moves adjacent to or away from them
 - Improve **Shieldwall effect** when viewed as a hyperlink
 - Fix Item Swaps sometimes requiring a different amount of Action Points than advertised at first
-- Fix `onSpawned` event for player characters only firing for the first battle in each session
 - **Net Pull** is no longer considered an Attack
 - Fix crash when trying to sling the same type of pot multiple times with the same character
-- Fix crash when trying to sling an acid flask or holy water
 
 ### Dynamic Spawns
 

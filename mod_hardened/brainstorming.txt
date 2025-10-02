@@ -264,6 +264,7 @@
 }
 
 {	// Fix
+	- vanilla bug: decapitate max armor pen damage not multiplied by *2
 	- while its not an allies turn, they regularly have +1 max AP. might be connected with waiting
 	- Currently Swing and Hit sfx happen at the same time, which is unrealistic
 		- Make hit sfx come with a slight (e.g. 100ms) delay instead
@@ -526,6 +527,7 @@
 	- goblin wolfrider body hits dont cause injuries? (2H flail pound did 90% htpoint damage + stun)
 	- make spider parties rarely spawn with a hexe
 	- make ammo items sold return the ammo supply in them to player count
+	- give necrosavants a bite skill. Currently they have no non-weapon attack
 }
 
 {	// Tech / API
@@ -669,18 +671,3 @@
 - Promised Potential
 - Between the Eyes
 - Weapon Master
-
-
-- resolve or defense nerf to hold steady?
-
-
-
-
-
-- look into the debug log vanilla recently removed from skill container printing. Maybe i dont need to skip that anymore in hardened
-- fix split man pen dmg
-
-
-
-
-- vanilla bug: decapitate max armor pen damage not multiplied by *2
