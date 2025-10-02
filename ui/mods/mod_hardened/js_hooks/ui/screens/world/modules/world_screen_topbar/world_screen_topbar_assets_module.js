@@ -6,6 +6,7 @@ WorldScreenTopbarAssetsModule.prototype.updateAssetValue = function (_data, _val
 	var currentAssetInformation = _data.current;
 
 	var label = _button.find('.assets-secondary-value');
+	label.html("");
 	if (_valueKey === "Food" && "FoodDaysLeft" in currentAssetInformation)
 	{
 		var value = currentAssetInformation["FoodDaysLeft"];
