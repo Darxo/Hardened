@@ -51,6 +51,10 @@
 		{
 			this.addBufferedListItem(_listItem);
 		}
+		else if (::MSU.isNull(this.getActiveScreen()))
+		{
+			// Do nothing, as we are currently debugging this
+		}
 		else
 		{
 			this.getActiveScreen().List.push(_listItem);
