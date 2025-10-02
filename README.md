@@ -785,7 +785,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Swamp** tiles no longer reduce Melee Skill by 25%. Instead they now reduce Initiative by 25%
 - The **Hidden** effect (granted by certain tiles) now also provides +10 Ranged Defense and it lists enemies that you are currently revealed to
 - Characters can no longer retreat from the battle when standing on a border tile, if they are engaged in melee
-- Fleeing characters who rallies, lose 3 Action Points
+- Fleeing characters who rally, lose 3 Action Points
 - Fleeing characters now have +1 Action Point
 - Player characters now have +1 Action Point during AutoRetreat
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied
@@ -885,7 +885,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Improve visibility of Miasma and Burning Ground
 - **Hand to Hand** and **Zombie Bite** skills will now always be sorted to the front in the UI
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to Displacement or which are Rooted. Using them will now print a combat log with the roll and hitchance of the attack
-- **Disarm** can no longer be used on enemies which are immune to disarm
+- **Disarm** can no longer be used on enemies which are immune to disarm or which are stunned
 - **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - **Night Effect**, **Double Grip**, **Pattern Recognition**, **Bulwark** and **Man of Steel** no longer display a Mini-Icon
 - The **Reload** skill is now always visible, even if your weapon is fully loaded
@@ -904,7 +904,6 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Automatically re-equip the accessory that you had previously equiped after an arena fight
 - Reduce pan speed of tactical camera by 20%
 - Improve tooltip of **Disarmed effect**
-- Prevent disarmed or stunned entities to be targeted by **Disarm**
 - Improve tooltip of **Whip Disarm** using a nested tooltip for the **Disarmed effect**
 - Add Settings to immediately stop the player movement halfway through, when it reveals an enemy (on) or an ally (off)
 - Add Setting (on) to prevent combat logs, which are the result of the same skill execution, from producing empty newlines

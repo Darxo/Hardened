@@ -23,6 +23,9 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+1.0.1
+	- Fix game sometimes randomly freezing while doing contracts
+
 1.0.0
 	- Completely rework global difficulty scaling. Every scaling dynamic party/location now gets 1% more Resources per day in the campaign, up to a maximum of 300% more at day 300
 	- Completely rework contract scaling. For every 10 Renown you have, contracts will become 1% more dangerous and 1% more profitable

@@ -671,3 +671,6 @@
 - Promised Potential
 - Between the Eyes
 - Weapon Master
+
+
+- greatsword cost -> 2000
