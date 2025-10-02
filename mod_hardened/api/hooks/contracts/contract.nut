@@ -2,6 +2,7 @@
 	// Private
 	q.m.BufferedListItems <- [];	// Array of Tables, defining changes that need to be displayed in the next possible screen as they happened in response to an option
 	q.m.IsProcessingInput <- false;		// Is true, while we are calling getResult from the chosen contract option
+	q.m.HD_CalledPrematureSetScreen <- false;	// If true, then we have called a setScreen, before this contract was even shown to the player
 
 	q.processInput = @(__original) function( _option )
 	{
@@ -14,6 +15,12 @@
 	q.setScreen = @(__original) function( _screen, _restartIfAlreadyActive = true )
 	{
 		this.m.IsProcessingInput = false;	// since setScreen may be called during processInput and marks the end of the input-procession, we have to set it to false here too
+
+		if (!::World.Contracts.m.IsEventVisible)
+		{
+			this.m.HD_CalledPrematureSetScreen = true;
+		}
+
 		__original(_screen, _restartIfAlreadyActive);
 	}
 

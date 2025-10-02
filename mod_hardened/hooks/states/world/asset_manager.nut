@@ -14,6 +14,11 @@
 		{
 			activeObject = ::World.Events.m.ActiveEvent;
 		}
+		else if (!::MSU.isNull(::World.Contracts.getActiveContract()) && ::World.Contracts.getActiveContract().m.HD_CalledPrematureSetScreen)
+		{
+			// We gained Renown while a screen was set but the contract wasnt yet shown to the player
+			activeObject = ::World.Contracts.getActiveContract();
+		}
 
 		if (activeObject != null)
 		{
