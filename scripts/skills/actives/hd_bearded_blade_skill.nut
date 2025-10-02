@@ -29,7 +29,7 @@ this.hd_bearded_blade_skill <- this.inherit("scripts/skills/skill", {
 
 		this.m.DirectDamageMult = 0.0;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 20;
+		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 
