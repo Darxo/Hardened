@@ -6,7 +6,7 @@
 		if (_f == 0) return;
 
 		local activeObject = null;
-		if (!::MSU.isNull(::World.Contracts.m.LastShown) && !::MSU.isNull(::World.Contracts.m.LastShown.getActiveScreen()))		// Contracts and Negotiations
+		if (::World.Contracts.m.IsEventVisible && !::MSU.isNull(::World.Contracts.m.LastShown) && !::MSU.isNull(::World.Contracts.m.LastShown.getActiveScreen()))		// Contracts and Negotiations
 		{
 			activeObject = ::World.Contracts.m.LastShown;
 		}
