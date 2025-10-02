@@ -1,7 +1,7 @@
 ::Hardened <- {
 	ID = "mod_hardened",
 	Name = "Hardened",
-	Version = "1.0.0-alpha-9",
+	Version = "1.0.0",
 	GitHubURL = "https://github.com/Darxo/Hardened",
 	Temp = {	// Used to globally store variables between function calls to implement more advanced, albeit hacky behavior
 		RootSkillCounter = null,	// This variable will have the SkillCounter of the root skills during the execution of any skill executions and delayed executions
@@ -19,13 +19,11 @@
 	},
 	Global = {
 		// Anything that uses spawntables to spawn/add troops, will its available resources adjusted by this value
-		// Minimum Scaling is 0.5
 		getWorldDifficultyMult = function() {
 			local ret = ::Hardened.Const.WorldScalingBase + ::World.getTime().Days * ::Hardened.Const.WorldScalingPerDay;
 			return ::Math.clampf(ret, ::Hardened.Const.WorldScalingMin, ::Hardened.Const.WorldScalingMax);
 		},
 		// All contracts will be this much harder and also yield this much more rewards
-		// Minimum Scaling is 0.5
 		getWorldContractMult = function() {
 			local ret = ::Hardened.Const.ContractScalingBase + ::World.Assets.getBusinessReputation() * ::Hardened.Const.ContractScalingPerReputation;
 			return ::Math.clampf(ret, ::Hardened.Const.WorldScalingMin, ::Hardened.Const.ContractScalingMax);

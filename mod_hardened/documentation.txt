@@ -23,6 +23,108 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+1.0.0
+	- Completely rework global difficulty scaling. Every scaling dynamic party/location now gets 1% more Resources per day in the campaign, up to a maximum of 300% more at day 300
+	- Completely rework contract scaling. For every 10 Renown you have, contracts will become 1% more dangerous and 1% more profitable
+	- **Bully** is completely reworked. It now grants 10% more damage against anyone with a lower morale than you. It also grants +5 Melee Defense against anyone with less maximum Hitpoints than you
+	- **Executioner** no longer works against stunned or sleeping targets. It now works against all rooted targets instead of just a select subset of those effects
+	- **Cleaver Mastery** no longer grants bonus damage against enemies equipped with a ranged weapon
+	- **Bearded Blade** now costs 25 Fatigue (up from 20)
+	- **Hold Steady** no longer grants Resolve
+	- **Bully** is now a Tier 1 perk (down from Tier 2)
+	- **Menacing** is now a Tier 3 perk (up from Tier 1)
+	- Low Morale no longer reduces the Resolve of the character
+	- Improve calculation of Reach Hitchance bonus to behave like a real multiplier
+	- **Drill Sergeant** now provides 2% Experience per level below 11 (down from 4%), just like in Vanilla
+	- **Easy Combat Difficulty** no longer provides a hidden hitchance/dodge bonus
+ 	- Make the Damage Mititgation on Beginner Combat Difficulty also affect Armor Damage you take instead of just Hitpoint damage taken
+	- Beginner Economic Difficulty now makes Contracts pay 20% more (up from 10% more)
+	- Expert Economic Difficulty now makes Contracts pay 20% less (down from 10% less)
+	- Completely rework the costs, stats, perks, weapons and armor of almost all NPCs with the goal of
+		- redesigning them with all the Hardened perk changes in mind
+		- directly linking their resource cost to their estimated power; even cross-faction
+		- making them more distinct and identifiable on the battlefield
+	- Tweak the party compositions of many factions
+		- reducing on average the amount of different entity types in that party
+		- increasing the amount of higher tier units allowed at the same time
+	- Introduce new **Fallen Soldier** as a Tier 3 zombie frontliner, which wears heavy armor but cannot resurrect when decapitated
+	- Move **Fallen Hero** to the Tier 4 of Zombie frontline
+	- Raise base vision of most ranged NPCs to 8
+	- **Swallow Whole** is no longer considered an attack
+	- **Headless** characters are now immune to **Insect Swarm**
+	- The **Unhold Racial** effect now causes Debuffs on Unholds to last -1 Turn
+	- Zombies no longer inflict 5 additional fatigue on a hit
+	- Add new **Cursed** effect for **Fallen Heroes**, which allows them to resurrect even after receiving a fatality
+	- Condition on items now linearly scales its price between 50% (at 0% condition) to 100% (at 100% condition)
+	- Items in Marketplaces now have a 70% chance to be damaged (up from 50%) and their minimum Condition can be as low as 30% (down from 40%)
+	- Reduce sell price of **Masterfully Cured Rations** to 15% (down from 100%)
+	- Adarga Shield now has 20 Ranged Defense (up from 18), just like Reforged
+	- **Broken Ritual Armor** now costs 5000 Crowns (up from 1000)
+	- **Leather Helmet** now has -2 Vision (down from -1)
+	- **Longsword** now deals 45-55 damage (down from 65-85) has Armor Penetration of 30% (up from 25%), 75% Armor Damage (down from 100%), +0% Headshot Chance (down from +5%), 6 Reach (up from 5) and costs 1200 Crowns (down from 2000). It loses **Split** and gains **Riposte**. Its skills no longer have a custom cost. It can no longer appear as a named weapon
+	- **Poisoned Oil** now costs 200 Crowns (up from 150)
+	- **Strange Mushrooms** now cost 200 Crowns (up from 100)
+	- **Wanderers Coat** now has 70 Condition (up from 60), 8 Weight (up from 7) and costs 150 Crowns (up from 120)
+	- **Warbrand** now deals 65-75 damage (up from 50-75), has a Armor Penetration of 30% (up from 20%), a Weight of 12 (up from 10), +0% Headshot Chance (down from +5%) and costs 2600 Crowns (up from 1600). It loses **Split** and gains **Riposte**. Its skills no longer have a custom cost
+	- **Zweihander** now has +10% Headshot Chance (up from +5%)
+	- Improve switch-to-melee AI behavior to account for all types of swap-discount perks
+	- Change AI of Skeleton Commanders to prefer using wait
+	- Make Ranged NPCs 25% less likely to change positions
+	- Make Ranged NPCs 40% more likely to use Reload Actions
+	- Display participating brothers in arena contract dialog
+	- Add option in arena contract dialog to "think it over", if too few, or the wrong brothers were selected for the fight
+	- Play equip sfx, when NPCs swap weapons during combat
+	- Add new setting (false) to control whether to skip the confirmation dialog when dismissing new recruits
+	- Set default value of **Hide Tooltips during NPC Turn** setting to `false`
+	- Colorize corpse name in tile tooltips
+	- Display item type names for Ammunition, Accessories, Food and Quest Items
+	- Improve spider poison item, skill and effect tooltips
+	- Add tooltips for effects of starting funds difficulties
+	- Turn off debug logging of AIAgentFixes and onAnySkillExecutedFully
+	- Explain the melee defense softcap in the melee defense tooltip
+	- print morale change combat log when lindwurm receives **Missing Tail** injury
+	- Play additional hit-sounds when three headed flail hits multiple times
+	- Reduce pan speed of tactical camera by 20%
+	- Improve skill description of NPC-only **Move Tail** skill
+	- Add combat log, when **Formidable Approach** removes Confident from a character
+	- Fix ranged NPCs charging into melee during night fights
+	- Fix **Entrenched** perk having no effect whatsoever
+	- Fix **Unworthy** effect not preventing XP gain correctly
+	- Fix Lindwurm fully resetting morale state of its tail
+	- Fix Ifrits not changing their reach value when transforming
+	- Remove rogue code in **Mauler** perk causing weird behaviors
+	- Fix **Knave** perk group guaranteeing **Nimble**
+	- Fix zooming being possible during combat, while input is locked
+	- Fix **Mauler** perk triggering while it is not the characters turn
+	- Fix duplicate **Goblin Racial** effect on goblins
+	- Fix missing Cleaver requirement on perk tooltip of **Mauler**
+	- Fix **Split** with **Rusty Warblade** not inflicting bleed
+	- Fix minimum armor penetration damage on **Split Man** and **Decapitate** still showing up as 0
+	- Fix negotiated contracts rarely displaying weird renown tooltip lines when revisiting them
+	- Discovering Battlesites no longer clears fog of war from them
+	- Fix secondary asset values sometimes not being cleared correctly
+	- Fix contract renown and relation feedback not showing correctly in several turn-in situations
+	- Fix(Vanilla): camera in combat jumping when panning while the game lags
+	- Fix (Vanilla) **Bardiche** only dealing 30% armor penetration with its split skill
+	- Fix (Vanilla) **Battle Standard** resolve effect not updating on allies when equipping or unequipping it
+	- Fix(Dynamic Spawns): HardMin in UnitBlocks not forcing them to spawn first
+	- Fix(Dynamic Spawns): Cost of Units with Bodyguards not being predicted correctly
+	- Fix (Reforged) crash when trying to sling the same type of pot multiple times with the same character
+	- Add additional scaling constants in `main_hardened.nut` for adjusting the global scaling
+	- `::Const.CharacterProperties.setValues` now supports `Reach`
+	- Add `shield::setFaction(_factionID)`, which can be called for coloring a shield in the passed bannerID colors, or do nothing, if the shield can't be colored
+	- Add `item::playInventorySoundWithPosition`, which can be used to play a certain inventory sound with a position and optional volume and pitch values
+	- Add various new members for `actor.nut` to assign generic random equipped gear to them
+	- Add ::Hardened.Global.getWorldContractMult() which returns a multiplier representing the quality (risk + reward) of contracts you receive
+		- Add `::Hardened.Const.ContractScalingPerReputation = 0.0005` which defines how much harder/more lucrative contracts become for each of your Renown points
+		- Add `::Hardened.Const.ContractScalingMax = 10.00` which defines the maximum possible contract quality multiplier
+	- Add ::Hardened.Global.getWorldDifficultyMult() which returns a multiplier representing how difficult the world has become
+		- Add `::Hardened.Const.WorldScalingPerDay = 0.01` which defines how much harder any passed day will make the that difficulty
+		- Add `::Hardened.Const.WorldScalingMax = 4.00` which defines the maximum possible difficulty multiplier
+	- Add `getTooltipWithoutChildren()` for `item.nut`, which `getTooltip()` of it but removes all children entries from it
+	- Add `HD_onAfterUnEquip()` for `item.nut` which is always triggered following the `onUnequip()` event after the item connection has been severed
+	- Add `HD_ConditionValueThreshold = 0.0` for `item.nut`, which can be adjusted to define a minimum value of the item disregarding current condition
+	- Add `HD_DamagedConditionChance = 50` and `HD_DamagedConditionMin = 0.4` in `building.nut` which can adjust the chance and condition of damaged market items
 
 1.0.0-alpha-9
 	- **Hold Steady** no longer grants Resolve

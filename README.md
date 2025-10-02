@@ -1,21 +1,24 @@
 # Introduction
+
 Hardened is a large overhaul mod for Reforged, offering an alternate vision that stays within the bounds of savegame compatibility.
 
-While Reforged focuses on realism and polished mechanics, Hardened embraces a simpler, more experimental approach. The submod takes more risks with innovative perk designs and mechanics, unlocking new possibilities for gameplay, though this can occasionally introduce more bugs or incompatibilities than Reforged. Hardened also walks back several of Reforged's more complex or restrictive design choices, opting for streamlined systems that prioritize fluidity and player freedom.
+While Reforged focuses on realism and polished mechanics, Hardened embraces a simpler, more experimental approach. This submod walks back several of Reforged's complex or restrictive design choices, opting for streamlined systems that prioritize fluidity and player freedom. Hardened also takes more risks with creative design choices, innovative quality of life features and fixes for obscure vanilla bugs or cheese strategies, which can occasionally introduce more bugs or incompatibilities than Reforged.
 
-Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varied, and challenging experience, with enough depth and randomness to keep each playthrough fresh and unpredictable.
+Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced, varied, and challenging experience, with enough randomness to keep each playthrough fresh and unpredictable.
 
 # Overview
 - Simplified Reach Mechanic and Double Grip effect
 - Shields are destructible again
-- 6 New Perks
-- ~90 Perks are tweaked or reworked
-- ~50 Weapons and Shields are tweaked
-- ~50 Body Armors are reworked
-- ~150 (almost all) enemies are reworked
+- Streamlined world and contract scaling
+- [6 New Perks](https://github.com/Darxo/Hardened/wiki/New-Perks)
+- [~100 Perks are tweaked or reworked](https://github.com/Darxo/Hardened/wiki/Perk-changes-Side%E2%80%90By%E2%80%90Side)
+- ~55 Weapons and Shields are tweaked
+- [~50 Body Armors are reworked](https://github.com/Darxo/Hardened/wiki/Vanilla-Hardened-Armor-Changes)
+- [~100 Helmets are rebalanced](https://github.com/Darxo/Hardened/wiki/Hardened-Helmet-Changes)
+- [~150 NPCs are tweaked or fully redesigned](https://docs.google.com/spreadsheets/d/1fOc6TcgiVm9P_iOyVoqwYNoXETsnuc9I_4YbblBHV18/edit?gid=1891685024#gid=1891685024) with all other Hardened changes in mind
 - A few hundred other adjustments to enemies, ai, perk trees, skills and general mechanics
-- A plethora of Quality of Life improvements; several of them are optional
-- Dozens of minor Vanilla Fixes, including the removal of several cheese strategies
+- An army of Quality of Life improvements; lots of them are optional
+- Dozens of minor Vanilla Fixes, including the removal of [many cheese strategies](https://github.com/Darxo/Hardened/wiki/Patched-Vanilla-Cheese-&-Exploits)
 
 # List of all Changes
 
@@ -51,13 +54,13 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 	- **Worn Kite Shields** now have 13 Melee Defense (down from 15), 23 Ranged Defense (down from 25) and lose **Knock Back**
 - Wooden Shields, Kite Shields and Heater Shields which are colored in Mercenary Colors (e.g. your own) grant +5 Resolve while equipped
 
-### Normalized Difficulty Scaling
+### Streamlined Difficulty Scaling
 
 - Most vanilla difficulty scaling methods (day/player strength/renown scaling) are disabled
-- Instead the following normalized system is added:
-	- Contracts are 1% more difficul for every 10 Renown, up to a maximum of 1000%
-	- Contracts pay 1% more Crowns for every 10 Renown, up to a maximum of 1000%
-	- Every non-contract encounter in the world becomes 1% more difficult for every day that has passed, up to a maximum of 300% at day 300
+- Instead the following streamlined system is added:
+	- Contracts are 1% more difficult for every 10 Renown, up to a maximum of 1000% more
+	- Contracts pay 1% more Crowns for every 10 Renown, up to a maximum of 1000% more
+	- Every other scaling encounter in the world becomes 1% more difficult for every day that has passed, up to a maximum of 300% at day 300
 - You can view the current contract difficulty when looking at the renown tooltip
 
 ### Throwing Weapon Rework
@@ -145,20 +148,19 @@ Hardened reflects my personal vision of a Vanilla Overhaul — a balanced, varie
 - You can no longer see the exact size of enemy parties on the world map
 - Add settings to control, whether to display Numerals or their actual Ranges
 
-### Other Major Changes from Reforged
+### Notable Changes when coming from Reforged
 
 - Disable **Veteran Perks**. Your brothers no longer gain perk points after Level 11
 - You can no longer swap your weapon with a dagger from your bag for free
 - Attachements no longer randomly spawn on NPCs
 
-### Other Major Changes
+### Other Notable Changes
 
 - **Night Effect** now causes -3 Vision (down from -2)
 - When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. Each brother can only receive up to 10% of this shared experience.
 - You can now use **Bandages** to treat injuries during battle that were received at most 1 round ago
 - Add new **Retreat** skill for player characters, which allows you to retreat individual brothers from a battle if they stand on a border tile and are not engaged in melee
 - Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
-- Hostile Locations now hide their Defender Line-Up during night
 - The fatigue discount from having multiple weapon masteries now stacks when using hybrid weapons
 
 ## Skills
@@ -250,7 +252,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Dynamic Duo** no longer grants Melee Skill or Melee Defense. It no longer reduces hitchance and damage when attacking your partner. It now grants +20 Resolve and +20 Initaitive, while the only adjacent allies next to your and your partner are each other
 - **En Garde** is completely reworked. It now grants +10 Melee Skill while it is not your turn. It also makes it so **Riposte** is no longer disabled when you get hit or deal a counter attack (so like in Vanilla), and it recovers 1 Action Point whenever an opponent misses a melee attack against you
 - **Entrenched** has been completely reworked. It now grants +5 Resolve per adjacent ally, +5 Ranged Defense per adjacent obstacle and 15% more Ranged Skill if at least 3 adjacent tiles are allies or obstacles
-- **Executioner** no longer works against stunned or sleeping targets. It now works against all rooted targets incase of just a select subset of those effects
+- **Executioner** no longer works against stunned or sleeping targets. It now works against all rooted targets instead of just a select subset of those effects
 - **Exploit Opening** is completely reworked. It now grants a stacking +10% chance to hit whenever an opponent misses an attack against you. Bonus is reset upon landing a hit (just like Fast Adaptation)
 - **Fencer** no longer grants +10% chance to hit or 20% less fatigue cost. It no longer removes the damage type requirement from **Passing Step**. It now causes your fencing swords to lose 50% less durability
 - **Flail Mastery** no longer grants +5% HitChance with **Thresh** and it no longer grants the **From all Sides** perk. You now gain the **From all Sides** effect until the start of your next turn, after you use a Flail Skill. This effect makes you count twice for the purpose of surrounding adjacent enemies
@@ -321,6 +323,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bags and Belts** is added to **Light Armor** group and removed from **General** group
 - **Bone Breaker** moved to Tier 5 (down from Tier 7)
 - **Bullseye** moved to Tier 6 (up from Tier 3)
+- **Bully** moves to Tier 1 (down from Tier 2)
 - **Cheap Trick** moved to Tier 1 (down from Tier 2)
 - **Colossus** is added to **Wildling** group
 - **Decisive** is added to **Leadership** group
@@ -340,6 +343,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Long Reach** moved to Tier 2 (down from Tier 7)
 - **Marksmanship** is added to **Ranged** group. It is no longer a special perk
 - **Mauler** moved to Tier 2 (down from Tier 6)
+- **Menacing** moves to Tier 3 (up from Tier 1)
 - **Overwhelm** is removed from **Ranged** group
 - **Pathfinder** moved to Tier 3 (up from Tier 1). It is removed from **Wildling** group and added to **Leadership** group
 - **Polearm Mastery** and **Fortified Mind** are removed from the **Leadership** group
@@ -683,27 +687,26 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ## Enemies
 
-### Generic Changes
+- [Completely rework the costs, stats, perks, weapons and armor of almost all NPCs](https://docs.google.com/spreadsheets/d/1fOc6TcgiVm9P_iOyVoqwYNoXETsnuc9I_4YbblBHV18/edit?gid=1891685024#gid=1891685024) with the goal of
+	- redesigning them with all the Hardened perk changes in mind
+	- directly linking their resource cost to their estimated power; even cross-faction
+	- making them more distinct and identifiable on the battlefield
 
-- Completely rework the costs, stats, perks and weapons of most NPCs
+### General Changes
+
+- **Fallen Heroes** are now called **Fallen Soldiers** and can no longer resurrect, if decapitated
+- **Fallen Betrayers** are now called **Fallen Heroes** and can spawn in regular world parties
 - Introduce a new **Headless** effect. It redirects any attack to hit the body, reduces all other damage targeting the head to 0 (e.g. secondary attack from Split Man), grants immunity to **Distracted**, **Sleep**, **Insect Swarm** and sets the headarmor to 0
 	- This effect is given to **Ifrits**, **Spider Eggs**, **Headless Zombies**, **Saplings**, **Lindwurm Tails** and **Kraken Tentacles**
-	- **Ifrit**, **Saplings** and **Kraken Tentacle** lose the now redundant **Steelbrow** perk
 	- **Wiederganger**, which receive this effect, lose **Bite** and gain **Zombie Punch** (which is mostly the same, except without bonus headshot chance)
-- Introduce new **Cursed** effect. It allows the character to resurrect even after receiving a fatality. It is given to **Fallen Heroes** to show that they have this ability
+- Introduce new **Cursed** effect. It allows the character to resurrect even after receiving a fatality. It is given to **Fallen Heroes**
 - Introduce new **Bite Reach** effect, which reduces headshot chance by 10% and increases chance to receive headshot by 10%
 	- This effect is given to all **Dogs**, **Wolfs** and **Hyenas**
 
 ### Specific Changes
 
-- Work in Progress
-
-- **Mercenaries** now use Shields that are colored in their respective Banner colors.
-
 **Undead**
-- All **Wiederganger** types take 50% more burning damage to hitpoints. They no longer grant experience after being ressurected. They lose **Double Grip**. They now have a 100% resurrection chance (up from 66%) and resurrect in 1-3 turns (up from 1-2)
-- **Fallen Heroes** are now called **Fallen Soldiers** and can no longer resurrect, if decapitated
-- **Fallen Betrayers** are now called **Fallen Heroes** and can spawn in regular world parties
+- All **Wiederganger** types take 50% more burning damage to hitpoints. They no longer grant experience after being ressurected. They lose **Double Grip** and no longer inflict +5 Fatigue on a hit. They now have a 100% resurrection chance (up from 66%) and resurrect in 1-3 turns (up from 1-2)
 - All **Skeletons** no longer grant experience after being ressurected
 - **Flesh Golems** lose **Full Force**, gain **Savage Strength** and take 50% more burning damage to hitpoints
 - **Necromancer** lose 20 natural body armor. **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)
@@ -711,30 +714,29 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **The Conqueror** now has **Savage Strength**. This has no gameplay impact and is only meant to visualize that he is immune to **Disarm**
 
 **Greenskins:**
-- Add new **Goblin** racial effect that grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
-- **Champion Goblin Ambusher** lose **Target Practice**
+- **Goblin Racial** now grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
+
+**Humans:**
+- **Mercenaries** now use Shields that are colored in their respective Banner colors
 
 **Beasts:**
 - **Donkeys** now grant 0 XP (down from 50 XP). They can now be rooted, injured, bled and poisoned. Since they are non-combatants this is mostly a cosmetic change
 - **Hyena Bite** costs 10 Fatigue (up from 6)
 - **Direwolf Bite** costs 10 Fatigue (up from 6)
 - All **Ifrits** can now free themselves from nets and roots. They take no Burning Damage (up from 90% less), full damage from blunt ranged attacks (down from 66% less) and 50% less damage from Piercing Damage (down from 50% less against melee and 66% less against ranged). The damage reduction on Ifrits now also affects the armor damage they receive
-  - **Small Ifrits** now have 55 Hitpoints (down from 110) and 165 Armor (up from 110)
-  - **Medium Ifrits** now have 110 Hitpoints (down from 220) and 220 Armor (up from 110). They lose 10 Damage and gain **Marksmanship**
-  - **Large Ifrits** now have 220 Hitpoints (down from 440) and 330 Armor (up from 110). They lose 10 Damage and gain **Marksmanship**
 - **Lindwurms Head** and **Tail** no longer share hitpoints and effects but killing the Tail will no longer kill the Head
-  - **Lindwurm Heads** now have 1000 Hitpoints (down from 1100), 20 Melee Defense (up from 10) and gain **Exude Confidence**. They lose **Formidable Approach**
-  - The **Lindwurm Tail** still inherits most of the stats from the head but has 50% less Hitpoints and Resolve and 50% more Melee Defense. They lose **Fearsome**
+  - The **Lindwurm Tail** still inherits most of the stats from the head but has 50% less Hitpoints and Resolve and 50% more Melee Defense
   - The **Lindwurm Tail** can now be stunned and netted but those effects are removed whenever the Head moves away
-- **Schrats** no longer take 70% reduced damage while their shield is up. They now have +200 Hitpoints and gain the **One with the Shield** perk
+- The **Unhold Racial** effect now causes Debuffs on Unholds to last -1 Turns
 
 ### Dynamic Party Adjustments
 
-- Bandit Parties will now only field at most two of the following unit blocks at the same time: Fast, Tough, Ranged
-- Fast Brigands (**Robber** -> **Bandit** -> **Killer**) now upgrade slightly earlier
-- Add **Highwayman** as new T1 of the Banditleader Unitblock. Banditleader Unitblock now require a StartingResourceMin of 180 (down from 250)
-- Mercenaries will now more gradually appear in caravan parties, instead of suddenly and in great numbers
-- Noble Armies will have fewer types of different troops on the battlefield at the same time
+- Tweak the party compositions of many factions
+	- reducing on average the amount of different entity types in that party
+	- increasing the amount of higher tier units allowed at the same time
+- Add **Highwayman** as new T1 of the Banditleader Unitblock
+- Mercenaries will more gradually appear in caravan parties, instead of suddenly and in great numbers
+- **Brigand Killer** can now appear in the Disguised Direwolf contract twist
 - Adorned Knights now only bring 1 Squire (down from 2)
 
 ### AI
@@ -811,6 +813,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Named weapons now have a 40% chance to be the chosen item type for camps (up from 25,9%). Named shields, helmets and armor now have a 20% chance to be chosen (down from 24,7%)
 - Food Products transported by Caravans now always drop at full stacksize and freshness
 - World Parties are no longer stunned, when you cancel the combat dialog with them
+- Hostile Locations now hide their Defender Line-Up during night
 - Hostile Locations will no longer spawn roaming parties or defenders while you are within 2 tiles of it
 - At the start of each new campaign ~5 additional small bandit camps are spawned in the world
 - Restrict the allowed Y coordinates for many unique locations to where their allowed tiles usually spawn to speed up map generation
@@ -1038,6 +1041,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ## For Modders
 
+This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
+
 - Add `getTooltipWithoutChildren()` for `item.nut`, which `getTooltip()` of it but removes all children entries from it
 - Add `HD_onAfterUnEquip()` for `item.nut` which is always triggered following the `onUnequip()` event after the item connection has been severed
 - Add `HD_ConditionValueThreshold = 0.0` for `item.nut`, which can be adjusted to define a minimum value of the item disregarding current condition
@@ -1163,9 +1168,6 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 	- Only after some days you will encounter brothers with the changed perk trees
 	- Perk Groups may not be identified correctly on old brothers after adding or removing this mod. This is just visual
 - New perks introduced by this mod are refunded and removed from your perk tree, when you remove Hardened mod and re-learned when you add Hardened back in (if you have the available perk points)
-
-## Incompatible with
-- [**Cook and Blacksmith Fix**](https://www.nexusmods.com/battlebrothers/mods/668): Hardened ships its own fix for the hitpoint recovery float issue and the rest is fixed in vanilla 1.5.1.4+
 
 # License
 
