@@ -57,6 +57,9 @@
 			{
 				this.spawnIcon(this.m.Overlay, enemy.getTile());
 				enemy.setMoraleState(::Const.MoraleState.Steady);
+				if (enemy.getMoraleState() == ::Const.MoraleState.Confident) continue;	// Some effect might prevent the morale from changing
+
+				::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + ::Const.MoraleStateEvent[enemy.getMoraleState()]);
 			}
 		}
 	}
