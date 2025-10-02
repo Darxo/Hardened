@@ -93,7 +93,7 @@
 	// Assign all other gear to this character
 	q.HD_assignOtherGear <- function()
 	{
-		if (::Math.rand(1, 100) <= 40)
+		if (::Math.rand(1, 100) <= 30)
 		{
 			local throwingWeapon = ::new(::MSU.Class.WeightedContainer([
 				[12, "scripts/items/weapons/greenskins/orc_javelin"],
