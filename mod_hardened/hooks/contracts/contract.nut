@@ -84,6 +84,7 @@
 
 	// Private
 	q.m.ScreensToPostpone <- [	// Screen IDs start with these phrases, will be postponed
+		"CounterOffer",		// Only used for Return Item Contract in vanilla
 		"Success",
 		"Negotiation.Fail",
 	];
