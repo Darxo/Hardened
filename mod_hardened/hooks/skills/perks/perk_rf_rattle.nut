@@ -21,7 +21,7 @@
 		if (this.isSkillValid(_skill) && ::MSU.isNull(this.m.FullForcedInitiatorSkill))	// New Full Force was just newly initiated
 		{
 			local actor = this.getContainer().getActor();
-			if (!actor.isDisarmed() && this.isSkillValid(_skill))
+			if (actor.isActiveEntity() && !actor.isDisarmed() && this.isSkillValid(_skill))
 			{
 				local spendableActionPoints = actor.getActionPoints();
 				if (spendableActionPoints > 0)	// Full Force requires at least 1 AP to even trigger

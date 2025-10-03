@@ -1273,7 +1273,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever you use an attack, spend all remaining [Action Points|Concept.ActionPoints] and deal " + ::MSU.Text.colorizeMultWithText(1.1) + " Damage during this attack for every [Action Point|Concept.ActionPoints] spent this way",
+					"Whenever you use an attack during your [turn,|Concept.Turn] spend all remaining [Action Points|Concept.ActionPoints] and deal " + ::MSU.Text.colorizeMultWithText(1.1) + " Damage during this attack for every [Action Point|Concept.ActionPoints] spent this way",
 					"This bonus is doubled for one-handed weapons",
 				],
 			}],
