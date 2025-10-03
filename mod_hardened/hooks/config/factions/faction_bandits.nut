@@ -190,14 +190,14 @@
 	// Mandatory stats
 	::Const.Tactical.Actor.RF_BanditBandit.XP = 270;
 	::Const.Tactical.Actor.RF_BanditBandit.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_BanditBandit.Hitpoints = 50;
+	::Const.Tactical.Actor.RF_BanditBandit.Hitpoints = 70;
 	::Const.Tactical.Actor.RF_BanditBandit.Bravery = 50;
-	::Const.Tactical.Actor.RF_BanditBandit.Stamina = 100;
-	::Const.Tactical.Actor.RF_BanditBandit.MeleeSkill = 50;
-	::Const.Tactical.Actor.RF_BanditBandit.RangedSkill = 50;
+	::Const.Tactical.Actor.RF_BanditBandit.Stamina = 110;
+	::Const.Tactical.Actor.RF_BanditBandit.MeleeSkill = 75;
+	::Const.Tactical.Actor.RF_BanditBandit.RangedSkill = 70;
 	::Const.Tactical.Actor.RF_BanditBandit.MeleeDefense = 0;
 	::Const.Tactical.Actor.RF_BanditBandit.RangedDefense = 0;
-	::Const.Tactical.Actor.RF_BanditBandit.Initiative = 100;
+	::Const.Tactical.Actor.RF_BanditBandit.Initiative = 130;
 
 	// Optional Stats
 	::Const.Tactical.Actor.RF_BanditBandit.Vision <- 8;
