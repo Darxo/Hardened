@@ -28,4 +28,16 @@
 
 		return ret;
 	}
+
+	q.isUsable = @(__original) function()
+	{
+		return __original() && !this.getContainer().hasSkill("effects.riposte");
+	}
+
+	q.onUse = @(__original) function( _user, _targetTile )
+	{
+		__original(_user, _targetTile);
+
+		this.m.IsSpent = false;		// We set this back to false to completely disable the vanilla once-per-turn rule
+	}
 });
