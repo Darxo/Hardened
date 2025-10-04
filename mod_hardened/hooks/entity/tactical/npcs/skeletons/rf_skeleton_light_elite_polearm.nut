@@ -27,9 +27,11 @@
 
 // Hardened Functions
 	// Assign Stats and Unconditional Immunities, Perks and Actives
-	q.HD_onInitStatsAndSkills = @(__original) function()
+	// Overwrite, because we inherit from rf_skeleton_light_elite but dont want to reuse their skills and perks
+	q.HD_onInitStatsAndSkills = @() function()
 	{
-		__original();
+		this.skeleton.HD_onInitStatsAndSkills();
+
 		// Tweak Base Properties
 		local b = this.getBaseProperties();
 		b.setValues(::Const.Tactical.Actor.HD_SkeletonLightElitePolearm);
