@@ -47,7 +47,7 @@
 
 		if (_skill == this.m.FullForcedInitiatorSkill)
 		{
-			this.m.FullForcedInitiatorSkill = null;		// We end the execution window of our skill. There might still be
+			this.m.FullForcedInitiatorSkill = null;		// We end the execution window of our skill. There might still be a delayed execution happening but we dont currently deal with that
 		}
 	}
 

@@ -23,6 +23,37 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+1.1.0
+	- Barbarian Camps now have 200 Resources (up from 180)
+	- Barbarian Shelter now have 80 Resources (up from 75)
+	- Goblin Camps now have 150 Resources (up fro m120)
+	- Goblin Hideouts now have 80 Resources (up from 70)
+	- Orc Camps now have 225 Resources (up from 140). They are now guaranteed to drop 1 loot item (up from 50% chance)
+	- Orc Caves now have 150 Resources (up from 100)
+	- Orc Hideouts now have 120 Resources (up from 70)
+	- Undead Graveyards now have 120 Resources (down from 130). They drop 1 loot item (up from 0-1), 10-80 Crowns (down from 1-200) and 2-8 Tools
+	- Undead Ruins now have 150 Resources (down from 180). They drop 1 Loot item (down from 2-3), 20-100 Crowns (down from 0-200) and 2-10 Tools
+	- **Crowded** now ignores characters whose tile is more than 2 levels above or below
+	- **Full Force** now only triggers during the character turn
+	- Allow **Riposte** to be used multiple times per round
+	- **Greatsword** loses **Split Shield** and its remaining skills no longer have a actionpoint or fatigue cost. It now costs 2000 Crowns (down from 2400)
+	- **Zweihander** loses **Split Shield**
+	- **Bowyer Backgrounds** lose 5 minimum Hitpoints and gain 5 minimum and maximum Ranged Skill
+	- **Drums of War** now costs 30 Fatigue (up from 15)
+	- **Trade Ambition** now counts both transaction (buying or selling) instead of just the higher number of the two
+	- Projectiles which fly into obstacles now play a sound effect and shake the object a bit
+	- Add Setting (on) for displaying skill tags in the descriptions of active skills
+	- Display renown and relation changes in the CounterOffer twist of the **Return Item** contract
+	- Change the name of all tactical objects called "Brush" into "Bush"
+	- Fix bug when **Formidable Approach** tries to remove confident from someone, potentially glitching out the user
+	- Fix Brigand Bandit having way too low base stats
+	- Fix **Overhead Strike** not displaying the correct minimum armor penetration damage
+	- Fix triple hit sfx with Three Headed Flails overlapping with each other
+	- Fix some skeleton polearm units inheriting perks from their frontline troops
+	- Fix **Crowded** effect being affected by Reach
+	- Fix barbarian **Drum** being double grippable despite being a two-handed weapon
+	- Fix(Vanilla) the impact delay of most throwable utility items not lining up with their projectiles, especially on higher game speed
+
 1.0.1
 	- Fix game sometimes randomly freezing while doing contracts
 

@@ -83,7 +83,7 @@
 	*/
 
 	// Private
-	q.m.ScreensToPostpone <- [	// Screen IDs start with these phrases, will be postponed
+	q.m.ScreensToPostpone <- [	// Screen IDs start with these phrases, will be postponed, if they contain only one option
 		"CounterOffer",		// Only used for Return Item Contract in vanilla
 		"Success",
 		"Negotiation.Fail",

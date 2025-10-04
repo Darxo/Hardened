@@ -19,7 +19,6 @@
 
 - make throwing weapons into hybrid weapon types to profit from axe/spear/flail perks
 - make disloyal have more of a downside
-- Dynamic Duo You deal 50% less damage to your partner
 - Display mood icon during events (Turn that sprite visible / rendertotexture to false/true?)
 - Prevent AI from shieldwalling when its the only one left (unless they have rebuke/riposte)
 - Add more exclusive groups to various Background
@@ -200,10 +199,12 @@
 	- bleed animation/effect when inflicting bleed with **Sanguinary**?
 	- trigger smoke effect whenever a brother with **Ghostlike** dodges an attack during their turn
 	- mortar impact animation, when shockwave or full force trigger
-	- use schrat damage leaf-animation for when an arrow hits a tree
+	- animate fireplace object
+	- projectile for throw net
 }
 
 {	// AI
+	- Make rooted characters les likely to use riposte
 	- Make AI less likely to use shieldwall while in a net
 	- make unholds value highground less
 	- New Strategy of individual enemies, called "Stalling":
@@ -302,6 +303,8 @@
 	- make sure fresh and furious enemies use the free attack despite being at 0 AP
 	- weapon master requirement is not accurate, it should be moved to the bullet point where it is needed
 	- bug: projectiles dont seem to be renders all too often
+	- fix(vanilla) medium_snow_fort attached locations not being placable on snow
+	- remove trade goods from shop when leaving town (fixes trade ambition exploit)
 }
 
 {	// New Content
@@ -340,11 +343,13 @@
 	- make schrat damage sounds, whenever arrows divert into trees.
 		- or rather allow obstacles to have a hit-sfx, which is played when they get hit by a projectile
 	- play multiple flail sfx, for each three headed hit
-	- make ifirts not play soudns when growing (sand_golem::grow)
+	- make ifirts not play sounds when growing (sand_golem::grow)
 	- Any actor moving will produce step-sounds, even if not visible to player. But then with lower volume: "_tile.IsVisibleForPlayer ? 1.0 : 0.5"
 }
 
 {	// Design
+	- after spawning a party, delete singular units of the lowest type of each unitblock (if there are any higher tier units of that block present)
+	- more debuff when negotiating (0.5 is barely noticable)
 	- Rain of Arrows
 		- 6 AP, 30 Fatigue
 		- Target an area of 7 Tiles
@@ -671,6 +676,3 @@
 - Promised Potential
 - Between the Eyes
 - Weapon Master
-
-
-- greatsword cost -> 2000

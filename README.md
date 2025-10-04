@@ -88,6 +88,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - Any Melee Attack Skill that has a Range of at least 2 tiles may have to deal with the new **Crowded** mechanic:
 - Every adjacent ally (except the first two) causes -5% Hitchance with such a skill
 - Every adjacent enemy causes -10% Hitchance with such a skill
+- This effect does not count adjacent characters who are 2 or more levels above or below
 - As a consequence of the **Crowded** mechanic, 2-tile melee attacks lose the vanilla hitchance penalty to attack adjacent targets
 
 ### Crossbows & Firearms
@@ -173,6 +174,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Cover Ally** (granted by **Shield Expert**) is mostly reworked. It still costs 4 Action Points and 20 Fatigue and can only target adjacent allies. It now grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It still lasts until the start of your next turn or until you get stunned or move away from that target
 - **Dazed** no longer reduces the Stamina by 25%. It now increases the fatigue cost of all non-attacks by 25%
 - **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
+- **Drums of War** now costs 30 Fatigue (up from 15)
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
 - **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%)
@@ -184,7 +186,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Quick Shot** now has -2 Shooting Range (down from -1)
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
 - **Recover** now applies the same Initiative debuff as using **Wait**
-- **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack. Riposte no longer has a penalty to Hitchance
+- **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack. Riposte no longer has a penalty to Hitchance. It can now be used multiple times per round
 - **Shuffle** (granted by **Dynamic Duo**) no longer puts your partner to the next position in the turn order
 - **Spider Poison** now also reduces the Hitpoints Recovery of the target by 50%
 - **Stab** now costs 3 Action Points (down from 4) and has a 25% higher threshold to inflict injuries
@@ -288,7 +290,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Professional** now reduces the experience gained by 5%
 - **Quickhands** can now also swap two two-handed weapons, just like in Vanilla. It now stacks with other effects that grant free swaps
 - **Rally the Troops** can now also be used even the user was already rallied by someone else this round
-- **Rattle** is now called **Full Force** and has been completely reworked. It now causes you to spend all remaining Action Points whenever you attack and gain 10% more damage per Action Point spent. The effect is double for one-handed weapons
+- **Rattle** is now called **Full Force** and has been completely reworked. It now causes you to spend all remaining Action Points whenever you attack during your turn and gain 10% more damage per Action Point spent. The effect is double for one-handed weapons
 - **Rebuke** is completely reworked. It now grants the **Rebuke Effect** whenever an opponent misses a melee attack against you while it's not your turn, until the start of your next turn. This effect reduces your damage by 25% but will make you retaliate every melee attack miss against you.
 - **Rising Star** now only grants 20% experience until you are level 12. It now grants +2 Perk Points at Level 12, instead of 5 levels after picking the perk
 - **Rush of Battle** is completely reworked. While adjacent to an ally and an enemy, gain 20% more Injury Threshold per adjacent enemy and Skills cost 10% less Fatigue per adjacent ally
@@ -364,6 +366,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - The default amount of Weapon Perk Groups appearing on any Background is now 4 (up from 3)
 - **Assassin** now has +5 to minimum Ranged Skill (up from 0) and +10 to maximum Ranged Skill (up from 0)
+- **Bowyer** now has -5 minimum Hitpoints (down from 0), +15 minimum Ranged Skill (up from +10) and +15 maximum Ranged Skill (up from +10)
 - **Butcher** loses the Hitchance Bonus with **Butchers Cleaver**
 - **Farmhand** loses the Hitchance Bonus with **Pitchforks** and **Hooked Blades**
 - **Indebted** no longer roll **Pauper Perk Group**. Instead they randomly roll any one of the other exclusive perk groups (except swordmaster)
@@ -421,6 +424,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Firelance** now also has the **Firearm** weapontype
 - **Flail** now deals 30-55 damage (up from 25-55) and has 3 Reach (down from 4)
 - **Goblin Pike** now has a Reach of 6 (down from 7) and gains the **Spear** Weapontype
+- **Greatsword** loses **Split Shield** and its remaining skills no longer have any discount. It now costs 2000 Crowns (down from 2400)
 - **Halberd** now has 6 Reach (down from 7)
 - **Head Chopper** now has 4 Reach (up from 3)
 - **Head Splitter** now has 4 Reach (up from 3) and deals 20 Shield Damage (up from 16)
@@ -448,7 +452,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Warfork** now has a Weight of 14 (up from 12) and costs 400 Crowns (down from 600)
 - **Wonky Bow** now deals 30-45 damage (down from 30-50) a Range of 6 (down from 7), 0% Hitchance bonus (up from -10%) and costs 150 Crowns (up from 100)
 - **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
-- **Zweihander** now has 6 Reach (down from 7) and +10% Headshot Chance (up from +5%)
+- **Zweihander** lose **Split Shield**. It now has 6 Reach (down from 7) and +10% Headshot Chance (up from +5%)
 
 ### Armor Condition/Weight/Value changes
 
@@ -835,6 +839,15 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Restrict the Y-position of the **Oracle** unique location to be between 10% and 35% (previously unrestricted)
 - **Buried Castle** Locations now also drop either a Flash Pot, Fire Pot or Smoke Pot
 - Named weapons now have a 40% chance to be the chosen item type for camps (up from 25,9%). Named shields, helmets and armor now have a 20% chance to be chosen (down from 24,7%)
+- **Barbarian Camps** now have 200 Resources (up from 180)
+- **Barbarian Shelter** now have 80 Resources (up from 75)
+- **Goblin Camps** now have 150 Resources (up fro m120)
+- **Goblin Hideouts** now have 80 Resources (up from 70)
+- **Orc Camps** now have 225 Resources (up from 140). They are now guaranteed to drop 1 loot item (up from 50% chance)
+- **Orc Caves** now have 150 Resources (up from 100)
+- **Orc Hideouts** now have 120 Resources (up from 70)
+- **Undead Graveyards** now have 120 Resources (down from 130). They drop 1 loot item (up from 0-1), 10-80 Crowns (down from 1-200) and 2-8 Tools
+- **Undead Ruins** now have 150 Resources (down from 180). They drop 1 Loot item (down from 2-3), 20-100 Crowns (down from 0-200) and 2-10 Tools
 
 ### Other
 
@@ -870,6 +883,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 - The **Lone Wolf** and **Gladiator** origins now have a roster size of 13 (up from 12)
 - The Retreat tooltip during combat now also lists the Melee Defense bonus your characters receive during Auto-Retreat
+- **Trade Ambition** now counts the sum of both transaction (buying and selling) instead of just the higher number of the two
 
 ## Quality of Life
 
@@ -877,6 +891,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 - Your headshot chance is now displayed in the combat tooltip when targeting enemies
 - While previewing movement, tile tooltips show chances and calculations for getting hit by enemies while in zone of control. If not in zone of control tile tooltip instead indicates that
+- Projectiles which fly into obstacles now play a sounf effect and shake the targeted object a bit
 - Introduce a new **Unworthy** effect which prevents the character from granting experience on death. This is given to all non-player controlled characters who grant 0 XP on death or are allied to the player
 - Introduce a new cosmetic **Non-Combatant** effect, given to non-combatant characters, which explains that they do not need to be killed in order to win
 - Improve restore item after battle logic, to also restore items, which were dropped to the ground or picked up by another brother during battle
@@ -892,6 +907,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Hovering over the tile of a any corpse will now differentiate whether they were *struck down* (= survived with a permanent injury) or *slain* (died permanently)
 - Increase saturation of ambient light during midnight fights to 70% (up from 50%)
 - Colorize corpse name in tile tooltips
+- Add Setting (on) for displaying skill tags in the descriptions of active skills
 - Improve visibility of Miasma and Burning Ground
 - **Hand to Hand** and **Zombie Bite** skills will now always be sorted to the front in the UI
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to Displacement or which are Rooted. Using them will now print a combat log with the roll and hitchance of the attack
@@ -921,6 +937,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Armored Wiederganger** now display their complete name during battle, instead of just **Wiederganger**
 - Add Setting (off) for making the hotkeys for **Wait** fire continuously, instead of only when released
 - Reduce the Attack sfx volume of Wardogs and Warhounds by 20%
+- Change the name of all tactical objects called "Brush" into "Bush"
 
 ### World
 
@@ -1020,6 +1037,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Fix Armor Penetration on **Reap** being 5% lower than shown on the weapon
 - Fix Quivers needing to re-use the same ID to be correctly identified as ammo
 - Fix shieldwall animation still showing up on NPCs who lost the shieldwall effect offscreen
+- Fix barbarian **Drum** being double grippable despite being a two-handed weapon
+- Fix the impact delay of most throwable utility items not lining up with their projectiles, especially on higher game speed
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
 - Cartographer will no longer pay for "discovering" the Ancient Watchtower a second time when you interact with it

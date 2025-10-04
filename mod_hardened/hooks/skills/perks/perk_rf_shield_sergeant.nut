@@ -27,7 +27,7 @@ local hookKnockBack = function( _knockBackSkill )
 
 		if (this.getID() == "actives.rf_cover_ally")
 		{
-			// We paly the same hit sound that cover ally would normally do
+			// We play the same hit sound that cover ally would normally do
 			::Sound.play(::MSU.Array.rand(this.m.SoundOnHit), ::Const.Sound.Volume.Skill, _user.getPos());
 		}
 		else if (!_targetTile.IsEmpty || _targetTile.Level >= _user.getTile().Level + 2)		// Our knock back hits something solid

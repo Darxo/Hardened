@@ -133,3 +133,18 @@ foreach (unitBlock in ::DynamicSpawns.Public.getUnitBlock("UnitBlock.RF.Necroman
 	::logWarning("Hardened: " + unit.getID() + " minCost " + unit.getMinCost());
 	// ::MSU.Log.printData(unit);
 }
+
+## Focus on an entity, given an ID
+
+::World.getCamera().moveTo(::World.getEntityByID(6577174));
+
+## Inspect neighboring tiles and do something to them
+
+local bro = ::getBro("Gernot");
+foreach (nextTile in ::MSU.Tile.getNeighbors(bro.getTile()))
+{
+	if (nextTile.IsEmpty) continue;
+	if (nextTile.IsOccupiedByActor) continue;
+
+	::Tactical.getShaker().shake(nextTile.getEntity(), bro.getTile(), 3);
+}
