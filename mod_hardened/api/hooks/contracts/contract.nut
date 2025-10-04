@@ -16,7 +16,7 @@
 	{
 		this.m.IsProcessingInput = false;	// since setScreen may be called during processInput and marks the end of the input-procession, we have to set it to false here too
 
-		if (!::World.Contracts.m.IsEventVisible)
+		if (_screen != null && !::World.Contracts.m.IsEventVisible)
 		{
 			this.m.HD_CalledPrematureSetScreen = true;
 		}
