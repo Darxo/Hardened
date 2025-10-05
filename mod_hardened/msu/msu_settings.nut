@@ -121,6 +121,9 @@
 	};
 	continuousWaitKeybindSetting.addAfterChangeCallback(continuousWaitKeybindCallback);
 
+	qolCombatPage.addDivider("MiscDivider4");
+
+	qolCombatPage.addBooleanSetting("DisplaySkillTags", true, "Display Skill Tags", "List common tags and the damage types at the top of the descriptions of active skill.");
 }
 
 // QOL: Misc

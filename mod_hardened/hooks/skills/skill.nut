@@ -151,6 +151,69 @@
 			}
 		}
 	}
+
+	// Generate an array of tags which describe this skill
+	q.HD_getSkillTags <- function()
+	{
+		local itemTags = "";
+		if (this.isAttack())
+		{
+			itemTags += "Attack, ";
+			if (this.isRanged())
+			{
+				itemTags += "Ranged, ";
+			}
+			else
+			{
+				itemTags += "Melee, ";
+			}
+		}
+		else itemTags += "Non-Attack, ";
+
+		if (this.isAOE()) itemTags += "AoE, ";
+
+		local item = this.getItem();
+		if (!::MSU.isNull(item))
+		{
+			if (item.isItemType(::Const.Items.ItemType.Weapon))
+			{
+				itemTags += "Weapon (";
+
+				foreach (weaponType in ::Const.Items.WeaponType)
+				{
+					if (item.isWeaponType(weaponType))
+					{
+						itemTags += ::Const.Items.getWeaponTypeName(weaponType) + "/";
+					}
+				}
+				itemTags = itemTags.slice(0, -1);
+				itemTags += "), ";
+			}
+
+			if (item.isItemType(::Const.Items.ItemType.Shield)) itemTags += "Shield, ";
+			if (item.isItemType(::Const.Items.ItemType.Tool)) itemTags += "Tool, ";
+			if (item.isItemType(::Const.Items.ItemType.OneHanded)) itemTags += "One-Handed, ";
+			if (item.isItemType(::Const.Items.ItemType.TwoHanded)) itemTags += "Two-Handed, ";
+		}
+
+		if (this.m.DamageType.len() != 0 && !this.m.DamageType.contains(::Const.Damage.DamageType.None))
+		{
+			foreach (d in this.m.DamageType.toArray())
+			{
+				local probability = ::Math.round(this.m.DamageType.getProbability(d) * 100);
+				if (probability < 100)
+				{
+					itemTags += probability + "% ";
+				}
+
+				itemTags += ::Const.Damage.getDamageTypeName(d) + " Damage, ";
+			}
+		}
+
+		if (itemTags != "") itemTags = itemTags.slice(0, -2);
+
+		return ::MSU.Text.color("#1e468f", "Tags: ") + itemTags;
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/skills/skill", function(q) {
@@ -160,6 +223,26 @@
 		this.revealUser(_targetTile);
 
 		return __original(_user, _targetTile);
+	}
+
+	// We need to do hookTree, because some skills (mostly vanilla) overwrite the getDescription function to deliver dynamic descriptions
+	q.getDescription = @(__original) function()
+	{
+		// Feat: Active Skills may now display a selection of skill tags, if the respective setting has been turned on
+		if (this.isActive() && ::Hardened.Mod.ModSettings.getSetting("DisplaySkillTags").getValue())
+		{
+			// We switcheroo ExpandedSkillTooltips to false, so that MSU does not add their damage types, because we add those now within our tag system
+			local oldExpandedSkillTooltipsSetting = ::MSU.Mod.ModSettings.getSetting("ExpandedSkillTooltips").getValue();
+			::MSU.Mod.ModSettings.getSetting("ExpandedSkillTooltips").Value = false;
+			local ret = this.HD_getSkillTags() + "\n\n" + __original();
+			::MSU.Mod.ModSettings.getSetting("ExpandedSkillTooltips").Value = oldExpandedSkillTooltipsSetting;
+
+			return ret
+		}
+		else
+		{
+			return __original();
+		}
 	}
 
 // Hardened Functions
