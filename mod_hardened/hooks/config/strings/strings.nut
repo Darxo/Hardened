@@ -13,6 +13,8 @@
 	"Sunrise",
 ];
 
+::Const.Strings.Tactical.EntityName.Brush = "Bush";	// Vanilla: Brush
+
 ::Const.Strings.Distance[0] += " (0 - 5 tiles)";
 ::Const.Strings.Distance[1] += " (6 - 11 tiles)";
 ::Const.Strings.Distance[2] += " (12 - 17 tiles)";
