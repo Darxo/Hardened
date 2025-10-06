@@ -807,29 +807,39 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ## World Map
 
+### Settlements
+
 - Try out now costs 100% more. You can now dismiss recruits after you tried them out to make room for new recruits
 - You can now get up to 6 Tavern Rumors every cycle (up from 4)
 - Tavern Rumors now have a linearly scaling cost. Each paid rumor costs an amount based on the standard (vanilla) rumor price, multiplied by the number of the paid rumor you are about to buy
-- Named weapons now have a 40% chance to be the chosen item type for camps (up from 25,9%). Named shields, helmets and armor now have a 20% chance to be chosen (down from 24,7%)
-- Food Products transported by Caravans now always drop at full stacksize and freshness
-- World Parties are no longer stunned, when you cancel the combat dialog with them
-- Hostile Locations now hide their Defender Line-Up during night
-- Hostile Locations will no longer spawn roaming parties or defenders while you are within 2 tiles of it
-- At the start of each new campaign ~5 additional small bandit camps are spawned in the world
-- Restrict the allowed Y coordinates for many unique locations to where their allowed tiles usually spawn to speed up map generation
-- Most Unique Locations have a `DistanceToOthers` of 10 tiles (down from 15), allowing them to be placed closer to settlements and other locations during map generation. This will improve map generation speed and prevent cases of missing unique locations when too many settlements are generated
-- Restrict the Y-position of the **Oracle** unique location to be between 10% and 35% (previously unrestricted)
-- The legendary Location **Ancient Spire** now reveals an area of 3000 (up from 1900)
-- Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken
-- **Buried Castle** Locations now also drop either a Flash Pot, Fire Pot or Smoke Pot
-- The Kraken Location now always requires 3 Hides and 3 Dust, no matter how much you already had in your inventory
-- Any location that you discover now removes fog of war from the tile it is sitting on
 - Armorsmiths will now sometimes sell Named Shields
 - Small civilian settlements now sell **Old Wooden Shields** and **Lute**
 - Big northern settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
 - Weaponsmiths and Armorsmiths now sell **Armor Parts** with a price multiplier of 1.25
 - Fletcher now sell roughly 5 times as many **Throwing Spears** but with a price multiplier of 1.5 (up from 1.0)
 - Nets sold by Fletcher now have a price multiplier of 2.0 (down from 3.0)
+
+### Unique Locations
+
+- Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken
+- The **Ancient Spire** now reveals an area of 3000 (up from 1900)
+- The **Stone Pillars** (Kraken) now always requires 3 Hides and 3 Dust, no matter how much you already had in your inventory
+- Restrict the allowed Y coordinates for many unique locations to where their allowed tiles usually spawn to speed up map generation
+- Most Unique Locations have a `DistanceToOthers` of 10 tiles (down from 15), allowing them to be placed closer to settlements and other locations during map generation. This will improve map generation speed and prevent cases of missing unique locations when too many settlements are generated
+
+### Other Locations
+
+- At the start of each new campaign ~5 additional small bandit camps are spawned in the world
+- Hostile Locations now hide their Defender Line-Up during night
+- Hostile Locations will no longer spawn roaming parties or defenders while you are within 2 tiles of it
+- Restrict the Y-position of the **Oracle** unique location to be between 10% and 35% (previously unrestricted)
+- **Buried Castle** Locations now also drop either a Flash Pot, Fire Pot or Smoke Pot
+- Named weapons now have a 40% chance to be the chosen item type for camps (up from 25,9%). Named shields, helmets and armor now have a 20% chance to be chosen (down from 24,7%)
+
+### Other
+
+- World Parties are no longer stunned, when you cancel the combat dialog with them
+- Food Products transported by Caravans now always drop at full stacksize and freshness
 
 ## Contracts
 
@@ -929,6 +939,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Hostile Locations now display a tooltip line if they hide defender
 - Display duplicate Situations in towns
 - Display participating brothers in arena contract dialog
+- Any location that you discover now removes fog of war from the tile it is sitting on
 - Add option in arena contract dialog to "think it over", if too few, or the wrong brothers were selected for the fight
 - Relation changes that come with a reason now also show the value in brackets, that you gained or lost from this action
 - Subsequent relation changes with the same value and same reason will be combined into a single line with a multiplier in brackets
