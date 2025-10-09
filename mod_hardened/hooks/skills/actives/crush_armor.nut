@@ -14,6 +14,8 @@
 
 	q.onAnySkillUsed = @(__original) function( _skill, _targetEntity, _properties )
 	{
+		if (_skill != this) return __original(_skill, _targetEntity, _properties);
+
 		// Switcheroo to prevent vanilla to incorporate Hammer Mastery into armor damage calculations
 		local p = this.getContainer().getActor().getCurrentProperties();
 		local oldSpecialized = p.IsSpecializedInHammers;

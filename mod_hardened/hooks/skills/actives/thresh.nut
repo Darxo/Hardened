@@ -16,6 +16,8 @@
 
 	q.onAnySkillUsed = @(__original) function( _skill, _targetEntity, _properties )
 	{
+		if (_skill != this) return __original(_skill, _targetEntity, _properties);
+
 		local oldSpecialized = this.getContainer().getActor().getCurrentProperties().IsSpecializedInFlails;
 		this.getContainer().getActor().getCurrentProperties().IsSpecializedInFlails = false;	// Flail Mastery no longer grants +5% HitChance with this skill
 		__original(_skill, _targetEntity, _properties);
