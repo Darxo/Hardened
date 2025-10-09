@@ -32,6 +32,12 @@
 				entry.text = entry.text.slice(entry.text.find("%[/color]") + 9, entry.text.len());	// Remove the vanilla damage number representation at the start
 				entry.text = ::MSU.Text.colorizePct(this.m.ArmorDamageMult, {InvertColor = true}) + entry.text;
 			}
+			else if (entry.id == 8 && entry.icon == "ui/icons/fatigue.png" && entry.text.find("Weapon skills build up") != null)
+			{
+				// Vanilla: Weapon skills build up +-X more/less fatigue
+				// We shorten the tooltip a bit and add a hyperlink
+				entry.text = "Weapon Skills cost " + ::MSU.Text.colorizeValue(this.m.FatigueOnSkillUse, {AddSign = true, InvertColor = true}) + ::Reforged.Mod.Tooltips.parseString(" [Fatigue|Concept.Fatigue]");
+			}
 		}
 
 		return ret;
