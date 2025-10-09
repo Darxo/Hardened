@@ -26,7 +26,10 @@
 	{
 		__original(_skill, _targetEntity, _properties);
 
-		_properties.ThresholdToInflictInjuryMult *= this.m.ThresholdToInflictInjuryMult;
+		if (_skill == this)
+		{
+			_properties.ThresholdToInflictInjuryMult *= this.m.ThresholdToInflictInjuryMult;
+		}
 	}
 
 	q.onAfterUpdate = @(__original) function( _properties )
