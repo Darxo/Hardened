@@ -23,6 +23,19 @@ This submod is a collection of changes to Reforged that I suggested internally t
 
 - Is safe to remove from- and add to any existing savegames
 
+1.1.1
+	- Slightly improve wording of "weapon skills build up" tooltip on weapons
+	- Increase sprite size of **Crossbow** by 25% to make it more different from **Light Crossbow**
+	- Reduce scroll speed of combat log to 0.5 (down from 15)
+	- Reduce scroll speed of origin selection to 0.5 (down from 5)
+	- Add sound effect for **Onslaught** (reuses the "discover enemy" sound effect)
+	- Add sound effect for **Take Aim** (reuses the "reload" sound effect)
+	- **Line Breaker** is no longer considered an attack
+	- Fix **Reload Handgonne** cost being too cheap after learning **Crossbow Mastery**
+	- Fix **Stab** reducing the injury threshold of all attacks instead of just that of **Stab**
+	- Fix(Vanilla) keyboard inputs for camera movement in combat not being combinable
+	- Fix(Reforged) **Line Breaker** granted by **Onslaught** being usable multiple times
+
 1.1.0
 	- Barbarian Camps now have 200 Resources (up from 180)
 	- Barbarian Shelter now have 80 Resources (up from 75)

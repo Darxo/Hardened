@@ -111,7 +111,10 @@
 			this.m.PrevTile = null;
 		}
 
-		if (this.m.NoDiscountBeforeMovement && this.getActionPointModifier() != 0) this.spawnIcon(this.m.Overlay, this.getContainer().getActor().getTile());
+		if (this.m.NoDiscountBeforeMovement && this.getActionPointModifier() != 0)
+		{
+			this.spawnIcon(this.m.Overlay, this.getContainer().getActor().getTile());
+		}
 	}
 
 	q.onTurnStart <- function()

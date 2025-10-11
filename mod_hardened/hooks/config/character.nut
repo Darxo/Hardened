@@ -67,6 +67,8 @@ local oldGetClone = ::Const.CharacterProperties.getClone;
 ::Const.CharacterProperties.HeadshotReceivedChanceMult <- 1.0;
 
 // New Functions
+
+// Return the chance as _user to hit _bodyPart of _target with _skill
 ::Const.CharacterProperties.getHeadHitchance <- function( _bodyPart, _user = null, _skill = null, _target = null )
 {
 	if (::MSU.isNull(_user) || ::MSU.isNull(_skill) || ::MSU.isNull(_target))

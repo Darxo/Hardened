@@ -405,7 +405,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Misc
 
-- Add sound effect for **Hold Steady** skill
+- Add sound effect for **Hold Steady**, **Onslaught** and **Take Aim** skills
 - Knockback of all skills is reworked and standardized. It still always knocks someone back in a straight line, if user and target are on the same axis and there is space behind the target. In all other cases the destination is now random, instead of fixed/clock-wise
 
 ## Items
@@ -841,7 +841,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Named weapons now have a 40% chance to be the chosen item type for camps (up from 25,9%). Named shields, helmets and armor now have a 20% chance to be chosen (down from 24,7%)
 - **Barbarian Camps** now have 200 Resources (up from 180)
 - **Barbarian Shelter** now have 80 Resources (up from 75)
-- **Goblin Camps** now have 150 Resources (up fro m120)
+- **Goblin Camps** now have 150 Resources (up from 120)
 - **Goblin Hideouts** now have 80 Resources (up from 70)
 - **Orc Camps** now have 225 Resources (up from 140). They are now guaranteed to drop 1 loot item (up from 50% chance)
 - **Orc Caves** now have 150 Resources (up from 100)
@@ -905,6 +905,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Loot that is not equippable in battle no longer appears on the ground (e.g. Beast Trophies/Ingredients)
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
 - Hovering over the tile of a any corpse will now differentiate whether they were *struck down* (= survived with a permanent injury) or *slain* (died permanently)
+- Reduce scroll speed of combat log to 0.5 (down from 15)
 - Increase saturation of ambient light during midnight fights to 70% (up from 50%)
 - Colorize corpse name in tile tooltips
 - Add Setting (on) for displaying skill tags in the descriptions of active skills
@@ -914,6 +915,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Disarm** can no longer be used on enemies which are immune to disarm or which are stunned
 - **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - **Night Effect**, **Double Grip**, **Pattern Recognition**, **Bulwark** and **Man of Steel** no longer display a Mini-Icon
+- Increase sprite size of **Crossbow** by 25% to make it more different from **Light Crossbow**
 - The **Reload** skill is now always visible, even if your weapon is fully loaded
 - All Unhold variants now use their full name in Tooltips and the Combat Dialog
 - Add skill descriptions for all skills from the **Lorekeeper**
@@ -927,6 +929,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Play additional hit-sounds when three headed flail hits multiple times
 - Display the actual minimum armor penetration damage in attack skills, instead of always showing a 0 there
 - Improve description of **Additional Fur Padding** and **Bone Plating** and clarify that they only protect against body attacks
+- Slightly improve wording of "weapon skills build up fatigue" tooltip on weapons
 - Automatically re-equip the accessory that you had previously equiped after an arena fight
 - Reduce pan speed of tactical camera by 20%
 - Improve tooltip of **Disarmed effect**
@@ -995,6 +998,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Improve Concept for **Morale** and add nested tooltip for all morale states (except **Steady**)
 - Improve artwork for **Nimble** perk
 - Improve artwork for **Tattered Sackcloth** item to make it stand out more from **Sackcloth**
+- Reduce scroll speed of origin selection to 0.5 (down from 5)
 - All effects of the difficulty settings are now listed as tooltips before world generation
 
 ## Fixes
@@ -1039,6 +1043,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Fix shieldwall animation still showing up on NPCs who lost the shieldwall effect offscreen
 - Fix barbarian **Drum** being double grippable despite being a two-handed weapon
 - Fix the impact delay of most throwable utility items not lining up with their projectiles, especially on higher game speed
+- Fix keyboard inputs for camera movement in combat not being combinable
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
 - Cartographer will no longer pay for "discovering" the Ancient Watchtower a second time when you interact with it
@@ -1047,9 +1052,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Change the inventory icon of the **Witchhunter's Hat** to look exactly like the sprite on the brother
 - Characters under berserker mushroom effect no longer yell when they use ranged attacks
 - Prevent the same random human name (e.g. for Leader or Knight) to be generated in succession
-- Throw Pot/Flask skills are no longer considered an Attack
+- **Line Breaker**, **Swallow Whole**, **Throw Net** and Throw Pot/Flask skills are no longer considered an Attack
 - Setting a faction as a temporary enemy now instantly updates the name labels of all their world parties accordingly
-- **Throw Net** is no longer considered an Attack
 - Rewrite `queryActorTurnsNearTarget` from `behavior.nut`, making it more accurate by considering current action points
 - Remove a duplicate loading screen
 
@@ -1061,6 +1065,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Improve **Shieldwall effect** when viewed as a hyperlink
 - Fix Item Swaps sometimes requiring a different amount of Action Points than advertised at first
 - **Net Pull** is no longer considered an Attack
+- Fix **Line Breaker** granted by **Onslaught** being usable multiple times
 - Fix crash when trying to sling the same type of pot multiple times with the same character
 
 ### Dynamic Spawns

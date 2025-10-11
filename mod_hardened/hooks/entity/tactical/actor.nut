@@ -39,7 +39,7 @@
 		this.setRenderCallbackEnabled = function( _bool )
 		{
 			// Vanilla Fix: We prevent Vanilla from disabling the RenderCallBack after raising the shield if it is still supposed to lower it afterwards
-			// This is related to the Vanilla Fix about Shieldwall Animation not being removed correctly; See onAppearendeChanged Vanilla Fix
+			// This is related to the Vanilla Fix about Shieldwall Animation not being removed correctly; See onAppearanceChanged Vanilla Fix
 			if (_bool == false && this.m.IsLoweringShield)
 			{
 				return oldSetRenderCallbackEnabled(true);

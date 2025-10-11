@@ -302,9 +302,10 @@
 	- fix description of swordmaster perks (consussive strikes e.g.)
 	- make sure fresh and furious enemies use the free attack despite being at 0 AP
 	- weapon master requirement is not accurate, it should be moved to the bullet point where it is needed
-	- bug: projectiles dont seem to be renders all too often
+	- bug: projectiles dont seem to be renders all too often (reason is likely the high speed with swifter)
 	- fix(vanilla) medium_snow_fort attached locations not being placable on snow
 	- remove trade goods from shop when leaving town (fixes trade ambition exploit)
+	- Remove color-code from item descriptions when they are fetched by the taxidermist (those codes cant be displayed there)
 }
 
 {	// New Content
