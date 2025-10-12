@@ -1,16 +1,50 @@
+::Hardened.wipeClass("scripts/skills/effects/rf_onslaught_effect", [
+	"create",
+	"getTooltip",
+	"onUpdate",
+]);
+
 ::Hardened.HooksMod.hook("scripts/skills/effects/rf_onslaught_effect", function(q) {
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.TurnsLeft = 3;	// In Reforged this is 1. We set this to any higher value, as we don't want Reforgeds turn-based duration to interfer with our round-based one
 
 		this.m.HD_LastsForRounds = 2;	// We now use a round-based duration
+	}
+
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original()
+
+		foreach (entry in ret)
+		{
+			if (entry.id == 12)
+			{
+				// Adjust line breaker link and remove mention of discount
+				entry.text = ::Reforged.Mod.Tooltips.parseString("Gain one use of the [Linebreaker|Skill+hd_onslaught_line_breaker_skill] skill");
+				break;
+			}
+		}
+
+		return ret;
+	}
+
+	q.onAdded = @(__original) function()
+	{
+		__original();
+		this.getContainer().add(::new("scripts/skills/actives/hd_onslaught_line_breaker_skill"));
+	}
+
+	q.onRemoved = @(__original) function()
+	{
+		__original();
+		this.getContainer().removeByID("actives.hd_onslaught_line_breaker");
 	}
 
 	q.onRefresh = @(__original) function()
 	{
 		__original();
-		this.m.IsSpent = false;		// Line Breaker Discount is active again
-		this.m.HD_LastsForRounds = 2;
+		this.getContainer().add(::new("scripts/skills/actives/hd_onslaught_line_breaker_skill"));
+		if (this.m.Overlay != "") this.spawnIcon(this.m.Overlay, this.getContainer().getActor().getTile());
 	}
 });
