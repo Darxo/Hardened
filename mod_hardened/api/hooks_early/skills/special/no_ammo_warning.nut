@@ -7,6 +7,9 @@
 		if (item == null) return true;
 		if (!item.isItemType(::Const.Items.ItemType.RangedWeapon)) return true;
 
-		return item.HD_canShoot();
+		if (item.HD_canShoot()) return true;
+		if (!::Tactical.isActive() && item.HD_hasEnoughAmmoForReload()) return true;	// Outside of combat we dont want to show the warning if the correct ammo is equipped
+
+		return false;
 	}
 });
