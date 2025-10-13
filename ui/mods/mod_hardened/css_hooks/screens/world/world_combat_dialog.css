@@ -1,0 +1,27 @@
+.world-combat-dialog > .l-dialog-container .right-column .entity-table
+{
+	width: 70%;		/* Vanilla: auto; In Vanilla they code this directly into the object declarations on js side*/
+	height: 288px;	/* So that exactly 6 elements a 48px can fit inside at once */
+}
+
+.world-combat-dialog > .l-dialog-container .right-column .entity-table .entity-row {
+	display: flex;
+	align-items: center;
+	height: 48px;	/* Same height as Vanilla */
+  }
+
+  .world-combat-dialog > .l-dialog-container .right-column .entity-table .entity-left {
+	flex: 0 0 auto;
+	width: 48px;
+	margin-right: 6px;	/* So we have some space between image and text */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+
+  .world-combat-dialog > .l-dialog-container .right-column .entity-table .entity-right {
+	flex: 1 1 auto;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+  }
