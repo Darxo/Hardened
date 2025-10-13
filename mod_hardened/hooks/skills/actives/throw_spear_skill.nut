@@ -9,6 +9,22 @@
 		this.m.FatigueDamage = 0;	// In Reforged this is 40
 	}
 
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original();
+
+		foreach (entry in ret)
+		{
+			if (entry.id == 10 && entry.icon == "ui/icons/shield_damage.png")	// In Vanilla the id is 7; In Reforged it is 10
+			{
+				::logWarning("Hardened: throw_spear_skill getTooltip");
+				entry.text = "Inflicts " + ::MSU.Text.colorNegative(this.getExpectedShieldDamage()) + " damage to shields";
+			}
+		}
+
+		return ret;
+	}
+
 // Modular Vanilla Functions
 	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
 	{
@@ -31,5 +47,15 @@
 		}
 
 		return ret;
+	}
+
+// New Functions
+	// Return the expected shielddamage that this skill would do
+	q.getExpectedShieldDamage <- function()
+	{
+		local skillItem = this.getItem();
+		if (::MSU.isNull(skillItem) || !skillItem.isItemType(::Const.Items.ItemType.Weapon)) return 0;
+
+		return skillItem.getShieldDamage() * this.getExpectedShieldDamageMult();	// TODO: fix. This does not work correctly
 	}
 });
