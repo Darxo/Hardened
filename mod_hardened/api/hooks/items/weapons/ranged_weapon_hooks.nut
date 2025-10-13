@@ -83,14 +83,13 @@ Features:
 	q.HD_hasEnoughAmmoForReload <- function( _shotsToReload = 1 )
 	{
 		local actor = this.getContainer().getActor();
+		if (!actor.isPlayerControlled()) return true;	// NPCs don't care about their quiver having ammo in it
 
 		local ammoItem = actor.getItems().getItemAtSlot(::Const.ItemSlot.Ammo);
 		if (ammoItem == null) return false;			// We have no ammo equipped
 		if (ammoItem.getAmmoType() != this.HD_getAmmoType()) return false;	// wrong kind of ammo is equipped
 
-		if (!actor.isPlayerControlled()) return true;	// NPCs don't care about their quiver having ammo in it
-
-		return ammoItem.getAmmo() >= _shotsToReload * this.m.HD_LoadedShotsCost;
+		return ammoItem.getAmmo() >= _shotsToReload * this.HD_getLoadedShotsCost();
 	}
 
 	// @return true, if this weapon can currently be loaded or false otherwise
@@ -109,7 +108,7 @@ Features:
 		local ammoItem = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Ammo);
 		if (ammoItem == null) return;			// We have no ammo equipped
 
-		local ammoToBeConsumed = _shotAmount * this.m.HD_LoadedShotsCost;
+		local ammoToBeConsumed = _shotAmount * this.HD_getLoadedShotsCost();
 		for (local i = 1; i <= ammoToBeConsumed; ++i)
 			ammoItem.consumeAmmo();		// Vanilla ammo is designed so that consumeAmmo only uses a single ammo from it, so we sometimes need to call it multiple times
 	}
