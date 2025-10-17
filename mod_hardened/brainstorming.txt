@@ -201,6 +201,7 @@
 	- mortar impact animation, when shockwave or full force trigger
 	- animate fireplace object
 	- projectile for throw net
+	- effect when character withstands mental moral check (purple particles flying away from head + head blinking white?)
 }
 
 {	// AI
@@ -265,6 +266,7 @@
 }
 
 {	// Fix
+	- Fix corpse armor offset being too low (neck and hand are only halfway visible)
 	- vanilla bug: decapitate max armor pen damage not multiplied by *2
 	- while its not an allies turn, they regularly have +1 max AP. might be connected with waiting
 	- Currently Swing and Hit sfx happen at the same time, which is unrealistic
@@ -349,6 +351,10 @@
 }
 
 {	// Design
+	- allow sanguinary for AoE skills?
+	- make banner and sergeant sash craftable (cloth + dye (+ wood for banner))
+		- make sergeant sash not stackable if multiple people have it equipped
+	- make shields less likely to drop
 	- after spawning a party, delete singular units of the lowest type of each unitblock (if there are any higher tier units of that block present)
 	- more debuff when negotiating (0.5 is barely noticable)
 	- Rain of Arrows
@@ -549,6 +555,8 @@
 }
 
 {	// QoL
+	- New Concept: Zone of Control
+		- Requires: Attack of Opportunity
 	- Write AP prediction for new mauler effect for player and enemies (could be done by simulating a 3 AP discount on all 1-range skills targetting a certain enemy)
 	- turn sequence bar order predictions for next round
 		- can display a second smaller version of the bar blow the original one, where the prediction changes in real time

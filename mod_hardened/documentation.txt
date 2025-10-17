@@ -18,10 +18,18 @@ This submod is a collection of changes to Reforged that I suggested internally t
 # Known Issues:
 
 - Loading the game over an enemy allows them to instantly engage the player in battle
+- Mace Mastery perk description still talks about removing penalty to hit adjacent enemies, but that penalty doesnt even exist anymore
 
 # Compatibility
 
 - Is safe to remove from- and add to any existing savegames
+
+1.1.2
+	- Display all combat dialog entities in the combat dialog with a scroll wheel
+	- Make Dog NPCs prefer engaging single enemies over engaging multiple at the same time
+	- Slightly improve wording for **Reach** nested concept
+	- Fix **Throw Spear** shield damage tooltip not updating correctly after learning **Toolbox**
+	- Fix **No Ammo** warning displaying outside of combat for crossbows/guns if the correct ammuniation is equipped
 
 1.1.1
 	- Slightly improve wording of "weapon skills build up" tooltip on weapons

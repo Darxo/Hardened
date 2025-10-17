@@ -747,6 +747,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 - NPCs now know how to use Bandages
 - NPC ranged troops attribute a target 80% less score from adjacent potential scatter targets
+- NPC Dogs are much less likely to engage multiple enemies at the same time
 - Ranged NPC are 25% less likely to change positions
 - NPCs are 40% more likely to use Reload Actions
 - Necrosavants are a bit more likely to stay on the same tile and attack twice, rather than teleport to a slightly better tile
@@ -958,6 +959,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - World Parties with champions will display an orange skull on top of their socket
 - Hostile Locations now display a tooltip line if they hide defender
 - Display duplicate Situations in towns
+- Display all NPCs in the combat dialog with a scroll wheel
 - Display participating brothers in arena contract dialog
 - Any location that you discover now removes fog of war from the tile it is sitting on
 - Add option in arena contract dialog to "think it over", if too few, or the wrong brothers were selected for the fight
