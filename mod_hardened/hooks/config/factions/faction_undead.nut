@@ -5,7 +5,7 @@
 	::Const.Tactical.Actor.SkeletonLight.ActionPoints = 9;
 	::Const.Tactical.Actor.SkeletonLight.Hitpoints = 45;
 	::Const.Tactical.Actor.SkeletonLight.Bravery = 50;
-	::Const.Tactical.Actor.SkeletonLight.Stamina = 100;
+	::Const.Tactical.Actor.SkeletonLight.Stamina = 200;
 	::Const.Tactical.Actor.SkeletonLight.MeleeSkill = 60;
 	::Const.Tactical.Actor.SkeletonLight.RangedSkill = 0;
 	::Const.Tactical.Actor.SkeletonLight.MeleeDefense = 0;
@@ -20,7 +20,7 @@
 	::Const.Tactical.Actor.RF_SkeletonLightElite.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_SkeletonLightElite.Hitpoints = 55;
 	::Const.Tactical.Actor.RF_SkeletonLightElite.Bravery = 60;
-	::Const.Tactical.Actor.RF_SkeletonLightElite.Stamina = 100;
+	::Const.Tactical.Actor.RF_SkeletonLightElite.Stamina = 200;
 	::Const.Tactical.Actor.RF_SkeletonLightElite.MeleeSkill = 65;
 	::Const.Tactical.Actor.RF_SkeletonLightElite.RangedSkill = 0;
 	::Const.Tactical.Actor.RF_SkeletonLightElite.MeleeDefense = 5;
@@ -34,7 +34,7 @@
 	ActionPoints = 9,
 	Hitpoints = 55,
 	Bravery = 60,
-	Stamina = 120,
+	Stamina = 200,
 	MeleeSkill = 70,
 	RangedSkill = 0,
 	MeleeDefense = 5,
@@ -50,7 +50,7 @@
 	::Const.Tactical.Actor.SkeletonMedium.ActionPoints = 9;
 	::Const.Tactical.Actor.SkeletonMedium.Hitpoints = 65;
 	::Const.Tactical.Actor.SkeletonMedium.Bravery = 70;
-	::Const.Tactical.Actor.SkeletonMedium.Stamina = 100;
+	::Const.Tactical.Actor.SkeletonMedium.Stamina = 200;
 	::Const.Tactical.Actor.SkeletonMedium.MeleeSkill = 70;
 	::Const.Tactical.Actor.SkeletonMedium.RangedSkill = 0;
 	::Const.Tactical.Actor.SkeletonMedium.MeleeDefense = 10;
@@ -64,7 +64,7 @@
 	ActionPoints = 9,
 	Hitpoints = 65,
 	Bravery = 70,
-	Stamina = 100,
+	Stamina = 200,
 	MeleeSkill = 75,
 	RangedSkill = 0,
 	MeleeDefense = 10,
@@ -80,7 +80,7 @@
 	::Const.Tactical.Actor.RF_SkeletonDecanus.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_SkeletonDecanus.Hitpoints = 65;
 	::Const.Tactical.Actor.RF_SkeletonDecanus.Bravery = 80;
-	::Const.Tactical.Actor.RF_SkeletonDecanus.Stamina = 100;
+	::Const.Tactical.Actor.RF_SkeletonDecanus.Stamina = 200;
 	::Const.Tactical.Actor.RF_SkeletonDecanus.MeleeSkill = 70;
 	::Const.Tactical.Actor.RF_SkeletonDecanus.RangedSkill = 0;
 	::Const.Tactical.Actor.RF_SkeletonDecanus.MeleeDefense = 10;
@@ -95,7 +95,7 @@
 	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.Hitpoints = 75;
 	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.Bravery = 90;
-	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.Stamina = 100;
+	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.Stamina = 200;
 	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.MeleeSkill = 75;
 	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.RangedSkill = 0;
 	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.MeleeDefense = 10;
@@ -109,7 +109,7 @@
 	ActionPoints = 9,
 	Hitpoints = 75,
 	Bravery = 90,
-	Stamina = 100,
+	Stamina = 200,
 	MeleeSkill = 75,
 	RangedSkill = 0,
 	MeleeDefense = 15,
@@ -125,7 +125,7 @@
 	::Const.Tactical.Actor.Vampire.ActionPoints = 9;
 	::Const.Tactical.Actor.Vampire.Hitpoints = 225;
 	::Const.Tactical.Actor.Vampire.Bravery = 50;
-	::Const.Tactical.Actor.Vampire.Stamina = 100;
+	::Const.Tactical.Actor.Vampire.Stamina = 200;
 	::Const.Tactical.Actor.Vampire.MeleeSkill = 85;
 	::Const.Tactical.Actor.Vampire.RangedSkill = 0;
 	::Const.Tactical.Actor.Vampire.MeleeDefense = 5;
@@ -140,7 +140,7 @@
 	::Const.Tactical.Actor.RF_SkeletonMediumElite.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_SkeletonMediumElite.Hitpoints = 75;
 	::Const.Tactical.Actor.RF_SkeletonMediumElite.Bravery = 80;
-	::Const.Tactical.Actor.RF_SkeletonMediumElite.Stamina = 100;
+	::Const.Tactical.Actor.RF_SkeletonMediumElite.Stamina = 200;
 	::Const.Tactical.Actor.RF_SkeletonMediumElite.MeleeSkill = 75;
 	::Const.Tactical.Actor.RF_SkeletonMediumElite.RangedSkill = 0;
 	::Const.Tactical.Actor.RF_SkeletonMediumElite.MeleeDefense = 20;
@@ -154,7 +154,7 @@
 	ActionPoints = 9,
 	Hitpoints = 75,
 	Bravery = 80,
-	Stamina = 100,
+	Stamina = 200,
 	MeleeSkill = 85,
 	RangedSkill = 0,
 	MeleeDefense = 15,
@@ -170,7 +170,7 @@
 	::Const.Tactical.Actor.SkeletonPriest.ActionPoints = 9;
 	::Const.Tactical.Actor.SkeletonPriest.Hitpoints = 65;
 	::Const.Tactical.Actor.SkeletonPriest.Bravery = 130;
-	::Const.Tactical.Actor.SkeletonPriest.Stamina = 100;
+	::Const.Tactical.Actor.SkeletonPriest.Stamina = 200;
 	::Const.Tactical.Actor.SkeletonPriest.MeleeSkill = 40;
 	::Const.Tactical.Actor.SkeletonPriest.RangedSkill = 0;
 	::Const.Tactical.Actor.SkeletonPriest.MeleeDefense = 0;
@@ -185,7 +185,7 @@
 	::Const.Tactical.Actor.SkeletonHeavy.ActionPoints = 9;
 	::Const.Tactical.Actor.SkeletonHeavy.Hitpoints = 90;
 	::Const.Tactical.Actor.SkeletonHeavy.Bravery = 100;
-	::Const.Tactical.Actor.SkeletonHeavy.Stamina = 100;
+	::Const.Tactical.Actor.SkeletonHeavy.Stamina = 200;
 	::Const.Tactical.Actor.SkeletonHeavy.MeleeSkill = 90;
 	::Const.Tactical.Actor.SkeletonHeavy.RangedSkill = 0;
 	::Const.Tactical.Actor.SkeletonHeavy.MeleeDefense = 20;
@@ -200,7 +200,7 @@
 	::Const.Tactical.Actor.RF_SkeletonCenturion.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_SkeletonCenturion.Hitpoints = 75;
 	::Const.Tactical.Actor.RF_SkeletonCenturion.Bravery = 90;
-	::Const.Tactical.Actor.RF_SkeletonCenturion.Stamina = 100;
+	::Const.Tactical.Actor.RF_SkeletonCenturion.Stamina = 200;
 	::Const.Tactical.Actor.RF_SkeletonCenturion.MeleeSkill = 75;
 	::Const.Tactical.Actor.RF_SkeletonCenturion.RangedSkill = 0;
 	::Const.Tactical.Actor.RF_SkeletonCenturion.MeleeDefense = 20;
@@ -214,7 +214,7 @@
 	ActionPoints = 9,
 	Hitpoints = 90,
 	Bravery = 100,
-	Stamina = 100,
+	Stamina = 200,
 	MeleeSkill = 90,
 	RangedSkill = 0,
 	MeleeDefense = 30,
@@ -230,7 +230,7 @@
 	::Const.Tactical.Actor.RF_SkeletonLegatus.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_SkeletonLegatus.Hitpoints = 85;
 	::Const.Tactical.Actor.RF_SkeletonLegatus.Bravery = 100;
-	::Const.Tactical.Actor.RF_SkeletonLegatus.Stamina = 100;
+	::Const.Tactical.Actor.RF_SkeletonLegatus.Stamina = 200;
 	::Const.Tactical.Actor.RF_SkeletonLegatus.MeleeSkill = 85;
 	::Const.Tactical.Actor.RF_SkeletonLegatus.RangedSkill = 0;
 	::Const.Tactical.Actor.RF_SkeletonLegatus.MeleeDefense = 20;
@@ -245,7 +245,7 @@
 	::Const.Tactical.Actor.RF_VampireLord.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_VampireLord.Hitpoints = 350;
 	::Const.Tactical.Actor.RF_VampireLord.Bravery = 100;
-	::Const.Tactical.Actor.RF_VampireLord.Stamina = 100;
+	::Const.Tactical.Actor.RF_VampireLord.Stamina = 200;
 	::Const.Tactical.Actor.RF_VampireLord.MeleeSkill = 85;
 	::Const.Tactical.Actor.RF_VampireLord.RangedSkill = 0;
 	::Const.Tactical.Actor.RF_VampireLord.MeleeDefense = 20;
@@ -261,7 +261,7 @@
 	::Const.Tactical.Actor.Zombie.ActionPoints = 6;		// Vanilla 6
 	::Const.Tactical.Actor.Zombie.Hitpoints = 90;		// Vanilla: 100
 	::Const.Tactical.Actor.Zombie.Bravery = 100;		// Vanilla: 100
-	::Const.Tactical.Actor.Zombie.Stamina = 100;		// Vanilla: 100
+	::Const.Tactical.Actor.Zombie.Stamina = 200;		// Vanilla: 100
 	::Const.Tactical.Actor.Zombie.MeleeSkill = 50;		// Vanilla: 45
 	::Const.Tactical.Actor.Zombie.RangedSkill = 0;		// Vanilla: 5
 	::Const.Tactical.Actor.Zombie.MeleeDefense = -10;	// Vanilla: -5
@@ -277,7 +277,7 @@
 	::Const.Tactical.Actor.ZombieYeoman.ActionPoints = 6;		// Vanilla: 6
 	::Const.Tactical.Actor.ZombieYeoman.Hitpoints = 120;		// Vanilla: 130
 	::Const.Tactical.Actor.ZombieYeoman.Bravery = 100;			// Vanilla: 100
-	::Const.Tactical.Actor.ZombieYeoman.Stamina = 100;			// Vanilla: 100
+	::Const.Tactical.Actor.ZombieYeoman.Stamina = 200;			// Vanilla: 100
 	::Const.Tactical.Actor.ZombieYeoman.MeleeSkill = 60;		// Vanilla: 50
 	::Const.Tactical.Actor.ZombieYeoman.RangedSkill = 0;		// Vanilla: 0
 	::Const.Tactical.Actor.ZombieYeoman.MeleeDefense = -5;		// Vanilla: -5
@@ -292,7 +292,7 @@
 	ActionPoints = 6,
 	Hitpoints = 120,
 	Bravery = 100,
-	Stamina = 100,
+	Stamina = 200,
 	MeleeSkill = 65,
 	RangedSkill = 0,
 	MeleeDefense = -5,
@@ -308,7 +308,7 @@
 	::Const.Tactical.Actor.Ghost.ActionPoints = 9;
 	::Const.Tactical.Actor.Ghost.Hitpoints = 1;
 	::Const.Tactical.Actor.Ghost.Bravery = 130;
-	::Const.Tactical.Actor.Ghost.Stamina = 100;
+	::Const.Tactical.Actor.Ghost.Stamina = 200;
 	::Const.Tactical.Actor.Ghost.MeleeSkill = 65;
 	::Const.Tactical.Actor.Ghost.RangedSkill = 0;
 	::Const.Tactical.Actor.Ghost.MeleeDefense = 30;
@@ -324,7 +324,7 @@
 	::Const.Tactical.Actor.ZombieKnight.ActionPoints = 7;		// Vanilla: 7
 	::Const.Tactical.Actor.ZombieKnight.Hitpoints = 150;		// Vanilla: 180
 	::Const.Tactical.Actor.ZombieKnight.Bravery = 100;			// Vanilla: 130
-	::Const.Tactical.Actor.ZombieKnight.Stamina = 150;			// Vanilla: 100
+	::Const.Tactical.Actor.ZombieKnight.Stamina = 200;			// Vanilla: 100
 	::Const.Tactical.Actor.ZombieKnight.MeleeSkill = 70;		// Vanilla: 60
 	::Const.Tactical.Actor.ZombieKnight.RangedSkill = 0;		// Vanilla: 0
 	::Const.Tactical.Actor.ZombieKnight.MeleeDefense = 0;		// Vanilla: 5
