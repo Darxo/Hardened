@@ -36,6 +36,8 @@ this.hd_onslaught_line_breaker_skill <- this.inherit("scripts/skills/actives/lin
 		local ret = this.line_breaker.onUse(_user, _targetTile );
 
 		this.m.IsSpent = true;
+
+		return ret;
 	}
 
 	function onTurnEnd()
