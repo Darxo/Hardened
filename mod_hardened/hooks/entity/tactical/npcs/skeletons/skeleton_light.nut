@@ -1,7 +1,7 @@
 // Hardened completely redesign most NPCs
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
-::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/skeleton_light", function(q) {
+::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/skeleton_light", function(q) {	// Ancient Auxiliary
 	q.create = @(__original) function()
 	{
 		__original();
