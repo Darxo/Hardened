@@ -712,6 +712,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 **Undead**
 - All **Wiederganger** types take 50% more burning damage to hitpoints. They no longer grant experience after being ressurected. They lose **Double Grip** and no longer inflict +5 Fatigue on a hit. They now have a 100% resurrection chance (up from 66%) and resurrect in 1-3 turns (up from 1-2)
 - All **Skeletons** no longer grant experience after being ressurected
+- **Skeleton Racial** now explicitely causes 100% less **Fatigue** build-up
 - **Flesh Golems** lose **Full Force**, gain **Savage Strength** and take 50% more burning damage to hitpoints
 - **Necromancer** lose 20 natural body armor. **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)
 - **Necrosavants** now require the target to have red blood in order to leech life from them, instead of being able to leech life from anyone

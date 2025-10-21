@@ -53,6 +53,7 @@
 	// We make sure, that no roaming party contains 3 "flex" groups
 	foreach (banditPartyID in ["BanditRoamers", "BanditScouts", "BanditRaiders", "BanditBoss"])
 	{
+		// Todo: Adjust this hook after Dynamic Spawns Update is out
 		::DynamicSpawns.Public.getParty(banditPartyID).Class.onBeforeSpawnStart <- function() {
 			local flexBlocks = [];
 			foreach (index, banditBlock in this.__DynamicSpawnables)

@@ -540,6 +540,7 @@
 	- make spider parties rarely spawn with a hexe
 	- make ammo items sold return the ammo supply in them to player count
 	- give necrosavants a bite skill. Currently they have no non-weapon attack
+	- lower minimum weight of named shields (currently weight is the weakest of their rolls)
 }
 
 {	// Tech / API
@@ -555,6 +556,8 @@
 }
 
 {	// QoL
+	- show icon (skull, handshake, crossing sowrds) next to world party names to quickly identify them as (perma enemies, temporary enemies, allies)
+	- show tooltip on world parties showing their relation with you
 	- New Concept: Zone of Control
 		- Requires: Attack of Opportunity
 	- Write AP prediction for new mauler effect for player and enemies (could be done by simulating a 3 AP discount on all 1-range skills targetting a certain enemy)
@@ -685,3 +688,5 @@
 - Promised Potential
 - Between the Eyes
 - Weapon Master
+
+- increase contract/location resources considering reforged soon bug fix about 70-100% resources

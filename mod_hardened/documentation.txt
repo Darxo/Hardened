@@ -1,7 +1,3 @@
-# Description
-
-This submod is a collection of changes to Reforged that I suggested internally that didn't make it into the mod [yet]. In order to still enjoy those ideas/tweaks I made them into this submod for myself; and maybe others.
-
 # Requirements
 
 - Reforged
@@ -23,6 +19,10 @@ This submod is a collection of changes to Reforged that I suggested internally t
 # Compatibility
 
 - Is safe to remove from- and add to any existing savegames
+
+1.1.3
+	- Fix some skeletons building up Fatigue
+	- Change Stamina of all Zombies and Skeletons to 200 to prevent AI edge-cases when their usable fatigue is too low
 
 1.1.2
 	- Display all combat dialog entities in the combat dialog with a scroll wheel
