@@ -248,7 +248,7 @@
 					id = 14,
 					type = "text",
 					icon = "ui/icons/miniboss.png",
-					text = "Contracts are " + ::MSU.Text.colorizeMultWithText(::Hardened.Global.getWorldContractMult(), {InvertColor = true}) + " more difficult",
+					text = "Contracts are " + ::MSU.Text.colorizeMultWithText(::Hardened.Global.getWorldContractMult(), {InvertColor = true}) + " difficult",
 				});
 				break;
 			}

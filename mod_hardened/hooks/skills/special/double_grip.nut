@@ -36,7 +36,7 @@
 				id = 12,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Non-attack skills cost " + ::MSU.Text.colorizeMultWithText(this.m.HD_NonAttackFatigueMult, {InvertColor = true}) + " [Fatigue|Concept.Fatigue]"),
+				text = ::Reforged.Mod.Tooltips.parseString("Non-Attack skills cost " + ::MSU.Text.colorizeMultWithText(this.m.HD_NonAttackFatigueMult, {InvertColor = true}) + " [Fatigue|Concept.Fatigue]"),
 			});
 		}
 

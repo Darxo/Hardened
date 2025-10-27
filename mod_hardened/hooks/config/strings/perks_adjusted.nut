@@ -304,7 +304,7 @@ local adjustedDescriptions = [
 					Description = [
 						"Cleaver Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 						"[Disarm|Skill+disarm_skill] gains " + ::MSU.Text.colorPositive("+10%") + " [Hitchance|Concept.Hitchance]",
-						"Deal " + ::MSU.Text.colorPositive("+50%") + " [Critical Damage|Concept.CriticalDamage] when hitting the Body of someone who is disarmed or who doesn\'t wield a Weapon",
+						"Deal " + ::MSU.Text.colorPositive("+50%") + " [Critical Damage|Concept.CriticalDamage] when hitting the Body of someone who is [disarmed|Skill+disarmed_effect] or who doesn\'t wield a Weapon",
 					],
 				},
 			],
@@ -448,7 +448,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Throwing Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
-					"Your first throwing attack each [turn|Concept.Turn] deals " + ::MSU.Text.colorizeMultWithText(1.3) + " damage",
+					"Your first throwing attack each [round|Concept.Round] deals " + ::MSU.Text.colorizeMultWithText(1.3) + " damage",
 					"Once per [round,|Concept.Round] swapping a throwing weapon with an empty throwing weapon or an empty slot becomes a free action",
 				],
 			}],
@@ -800,7 +800,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Deal " + ::MSU.Text.colorPositive("100%") + " more Shield Damage",
-					"Deal " + ::MSU.Text.colorPositive("+40%") + " Armor Damage gainst enemies who have full health",
+					"Deal " + ::MSU.Text.colorPositive("+40%") + " Armor Damage against enemies who have full [Hitpoints|Concept.Hitpoints]",
 				],
 			}],
 		}),
@@ -1450,9 +1450,9 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Dagger attacks can now target enemies up to 2 tiles away. Attacking from 2 tiles away moves you 1 tile closer before the attack",
+					"Dagger Attacks with a range of 1 tile can now target enemies up to 2 tiles away",
+					"Attacking from 2 tiles away moves you 1 tile closer before the attack",
 					"If the attack hits, you automatically return to your original tile",
-					"Does not affect dagger attacks with a range of 2 tiles or more",
 				],
 			}],
 		}),

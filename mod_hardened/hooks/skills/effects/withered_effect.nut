@@ -18,7 +18,7 @@
 		{
 			if (entry.id == 11 && entry.icon == "ui/icons/fatigue.png")	// Replace mention about stamina mult with new effect
 			{
-				entry.text = ::Reforged.Mod.Tooltips.parseString("Non-attack skills cost " + ::MSU.Text.colorizeMultWithText(this.getNonAttackFatigueMult(), {InvertColor = true}) + " [Fatigue|Concept.Fatigue]");
+				entry.text = ::Reforged.Mod.Tooltips.parseString("Non-Attack skills cost " + ::MSU.Text.colorizeMultWithText(this.getNonAttackFatigueMult(), {InvertColor = true}) + " [Fatigue|Concept.Fatigue]");
 				break;
 			}
 		}
