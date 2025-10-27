@@ -41,7 +41,8 @@
 	"mod_consume [This mods featureset is integrated into Hardened]",
 ]);
 
-::Hardened.HooksMod.queue(">mod_reforged", function() {
+// We need to load after swifter, because we fix a bug there
+::Hardened.HooksMod.queue([">mod_reforged", ">mod_swifter"], function() {
 	::Reforged.Mod.Debug.setFlag("onAnySkillExecutedFully", false);
 	::Reforged.Mod.Debug.setFlag("AIAgentFixes", false);
 
