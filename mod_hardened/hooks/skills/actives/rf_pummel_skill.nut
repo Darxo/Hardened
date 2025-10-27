@@ -62,11 +62,6 @@
 	{
 		__original(_properties);
 
-		if (_properties.IsSpecializedInHammers)
-		{
-			this.m.FatigueCostMult *= ::Const.Combat.WeaponSpecFatigueMult;
-		}
-
 		this.m.ActionPointCost *= this.m.ActionPointCostMult;
 		this.m.FatigueCost *= this.m.HD_FatigueCostMult;
 	}

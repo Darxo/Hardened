@@ -56,8 +56,6 @@ this.hd_whirling_death_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult *= _properties.IsSpecializedInFlails ? ::Const.Combat.WeaponSpecFatigueMult : 1.0;
-
 		if (this.getContainer().hasSkill("effects.hd_whirling_death"))
 		{
 			this.m.ActionPointCost += this.m.ActionPointModifierOnRepeat;
