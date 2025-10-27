@@ -21,7 +21,7 @@
 					}
 					break;
 				}
-				else if (entry.text.find("[/color] Maximum Fatigue") != null)	// Weight tooltip line for attachements
+				else if (entry.text.find("[/color] Maximum Fatigue") != null)	// Weight tooltip line for attachments
 				{
 					entry.icon = "ui/icons/bag.png";
 					entry.text = ::MSU.Text.colorNegative("+" + this.getWeight()) + ::Reforged.Mod.Tooltips.parseString(" [Weight|Concept.Weight]");

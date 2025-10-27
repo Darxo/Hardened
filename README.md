@@ -62,11 +62,12 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 	- Contracts pay 1% more Crowns for every 10 Renown, up to a maximum of 1000% more
 	- Every other scaling encounter in the world becomes 1% more difficult for every day that has passed, up to a maximum of 300% at day 300
 - You can view the current contract difficulty when looking at the renown tooltip
+- Arena Contracts/Tournaments are excluded from that scaling rework and still work like they do in Vanilla
 
 ### Throwing Weapon Rework
 
 - Throwing Weapons now have a minimum attack range of 1, just like all other ranged attacks
-- Throwing regular **Throwing Weapons** now cost 15 Fatigue (up from 10 for Axes, 14 for Javelins and 12 for Bolas), just like in Vanilla
+- Throwing regular **Throwing Weapons** now costs 15 Fatigue (up from 10 for Axes, 14 for Javelins and 12 for Bolas), just like in Vanilla
 - Throwing **Heavy Throwing Weapons** now costs 5 Action Points (up from 4) and 18 Fatigue (up from 15)
 - Throwing **Crude Javelins** now costs 5 Action Points (up from 4)
 - **Heavy Javelins** now deal 40-50 Damage (up from 35-50), have 85% Armor Damage (up from 80%), have +0% Hitchance (up from -5%), 4 Maximum Ammo (down from 5), 0 Weight (down from 8), 3 Weight per Ammo, 2 Ammo Cost (down from 3) and cost 500 Crowns (up from 300)
@@ -86,9 +87,9 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 
 *Forget everything you know about the Reforged Crowded Mechanic*
 - Any Melee Attack Skill that has a Range of at least 2 tiles may have to deal with the new **Crowded** mechanic:
-- Every adjacent ally (except the first two) causes -5% Hitchance with such a skill
-- Every adjacent enemy causes -10% Hitchance with such a skill
-- This effect does not count adjacent characters who are 2 or more levels above or below
+  - Every adjacent ally (except the first two) causes -5% Hitchance with such a skill
+  - Every adjacent enemy causes -10% Hitchance with such a skill
+  - This effect does not count adjacent characters who are 2 or more levels above or below
 - As a consequence of the **Crowded** mechanic, 2-tile melee attacks lose the vanilla hitchance penalty to attack adjacent targets
 
 ### Crossbows & Firearms
@@ -153,7 +154,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 
 - Disable **Veteran Perks**. Your brothers no longer gain perk points after Level 11
 - You can no longer swap your weapon with a dagger from your bag for free
-- Attachements no longer randomly spawn on NPCs
+- Attachments no longer randomly spawn on NPCs
 
 ### Other Notable Changes
 
@@ -170,8 +171,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 
 - **Bearded Blade** (granted by **Axe Mastery**) is completely reworked. It now costs 4 Action Points and 25 Fatigue and it is an attack, that deals no damage and will disarm your opponent for 1 turn on a hit
 - **Chop** now has a 50% chance to decapitate (up from 25%)
-- **Cover Ally** (granted by **Shield Expert**) is completely reworked. It costs 4 Action Points and 20 Fatigue and can be used on adjacent allies. It grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It still lasts until the start of the users next turn or until the user gets stunned or flees
-- **Cover Ally** (granted by **Shield Expert**) is mostly reworked. It still costs 4 Action Points and 20 Fatigue and can only target adjacent allies. It now grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It still lasts until the start of your next turn or until you get stunned or move away from that target
+- **Cover Ally** (granted by **Shield Expert**) is completely reworked. It costs 4 Action Points and 20 Fatigue and can be used on adjacent allies. It grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It lasts until the start of the users next turn or until the user gets stunned, flees or moves away from the target
 - **Dazed** no longer reduces the Stamina by 25%. It now increases the fatigue cost of all non-attacks by 25%
 - **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
 - **Drums of War** now costs 30 Fatigue (up from 15)
@@ -179,7 +179,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
 - **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%)
 - **Flaming Arrow** (granted by **Trick Shooter**) no longer causes an extra morale check on the main target. It now deals 100% Burning Damage (instead of 25% Burning and 75% Piercing Damage)
-- **Passing Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand
+- **Passing Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand. It now has 0 additional fatigue cost (down from 2)
 - **Lunge** now has -10% additional Hitchance (up from -20%)
 - **Net Effect** (caused by **Throw Net**) no longer affects the Initiative of the target. It now applies 50% less Melee Defense (up from 25%) and 50% less Ranged Defense (up from 45%)
 - **Net Pull** now costs 30 Fatigue (up from 25)
@@ -681,7 +681,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 ## Retinue/Follower
 
 - **Blacksmith** no longer requires you to repair 5 items in a town. It now requires you to use 5 paint or attachements. It no longer grants a tool consumption discount. It now grants +50 storage space for Tools
-- **Bount Hunter** costs 2500 Crowns (down from 4000). It now grants +5% for enemies to become champions (up from +3%). It no longer grants Crowns when you kill champions
+- **Bounty Hunter** costs 2500 Crowns (down from 4000). It now grants +5% for enemies to become champions (up from +3%). It no longer grants Crowns when you kill champions
 - **Drill Sergeant** now provides 2% Experience per level below 11 (down from 4%), just like in Vanilla. It now requires a brother with a permanent injury to be dismissed, just like in Vanilla
 - **Lookout** no longer grants 25% more vision at all times. It now always provides a scouting report for enemies near you, just like "Band of Poachers" origin
 - **Quartermaster** now grants 150 Storage for Ammunition (up from 100) and 100 Storage for Tools and Medicine (up from 50)
@@ -736,6 +736,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ### Dynamic Party Adjustments
 
+- Enemy Locations (except Brigands and Nomads) now spawn 15% less troops and instead field higher tier troops
 - Tweak the party compositions of many factions
 	- reducing on average the amount of different entity types in that party
 	- increasing the amount of higher tier units allowed at the same time
@@ -893,7 +894,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 - Your headshot chance is now displayed in the combat tooltip when targeting enemies
 - While previewing movement, tile tooltips show chances and calculations for getting hit by enemies while in zone of control. If not in zone of control tile tooltip instead indicates that
-- Projectiles which fly into obstacles now play a sounf effect and shake the targeted object a bit
+- Projectiles which fly into obstacles now play a sound effect and shake the targeted object a bit
 - Introduce a new **Unworthy** effect which prevents the character from granting experience on death. This is given to all non-player controlled characters who grant 0 XP on death or are allied to the player
 - Introduce a new cosmetic **Non-Combatant** effect, given to non-combatant characters, which explains that they do not need to be killed in order to win
 - Improve restore item after battle logic, to also restore items, which were dropped to the ground or picked up by another brother during battle
@@ -906,7 +907,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add Setting to control the mouse wheel zoom speed during combat
 - Loot that is not equippable in battle no longer appears on the ground (e.g. Beast Trophies/Ingredients)
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
-- Hovering over the tile of a any corpse will now differentiate whether they were *struck down* (= survived with a permanent injury) or *slain* (died permanently)
+- Hovering over the tile of any corpse will now differentiate whether they were *struck down* (= survived with a permanent injury) or *slain* (died permanently)
 - Reduce scroll speed of combat log to 0.5 (down from 15)
 - Increase saturation of ambient light during midnight fights to 70% (up from 50%)
 - Colorize corpse name in tile tooltips
@@ -928,6 +929,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Print combat log for hitpoint damage dealt, when an attack kills the target and include the hitpoints of the target before the kill
 - **Fling Back** (used by Unholds) now has an animation delay of 250ms (down from 750ms)
 - The automatic camera level calculation is improved, especially while in mountanious terrain. Your camera level is now automatically adjusted when moving up or down terrain
+- Print a combat log whenever **Battle Flow** recover Fatigue
 - Play additional hit-sounds when three headed flail hits multiple times
 - Display the actual minimum armor penetration damage in attack skills, instead of always showing a 0 there
 - Improve description of **Additional Fur Padding** and **Bone Plating** and clarify that they only protect against body attacks
@@ -960,7 +962,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - World Parties with champions will display an orange skull on top of their socket
 - Hostile Locations now display a tooltip line if they hide defender
 - Display duplicate Situations in towns
-- Display all NPCs in the combat dialog with a scroll wheel
+- Display all enemy NPCs in the combat dialog with a scroll wheel
 - Display participating brothers in arena contract dialog
 - Any location that you discover now removes fog of war from the tile it is sitting on
 - Add option in arena contract dialog to "think it over", if too few, or the wrong brothers were selected for the fight
@@ -979,7 +981,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - List the effects of camping in the camping tooltip
 - Attached Locations now list the items they produce in their tooltip
 - Destroyed attached locations now display their original name, instead of just being called "Ruins"
-- Add Setting (on) for marking named/legendary helmets/armor or armor with attachements as to-be-repaired whenever it enters your inventory
+- Add Setting (on) for marking named/legendary helmets/armor or armor with attachments as to-be-repaired whenever it enters your inventory
 - Add Setting (on) to display food duration, repair duration and minimum medicine cost in brackets behind those supply values
 - Add 0.8 second delay, before you can click the buttons in event screens to prevent accidental missclicks
 - The Player Banner is no longer hidden while camping
@@ -1047,6 +1049,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Fix barbarian **Drum** being double grippable despite being a two-handed weapon
 - Fix the impact delay of most throwable utility items not lining up with their projectiles, especially on higher game speed
 - Fix keyboard inputs for camera movement in combat not being combinable
+- Fix spiders rarely glitching out, causing their armor to no longer take damage
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
 - Cartographer will no longer pay for "discovering" the Ancient Watchtower a second time when you interact with it
@@ -1064,6 +1067,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 - **Calculated Strikes** now works against stunned enemies
 - **Cheap Trick** now works with delayed skill executions (like Lunge or Aimed Shot)
+- Fix **Weapon Master** secretly adding perks for worn weapon, even if you don't have those perks available in your perk tree
 - The perks **Strengh in Numbers** and **Dynamic Duo** now instantly update the actors stats, if another actor moves adjacent to or away from them
 - Improve **Shieldwall effect** when viewed as a hyperlink
 - Fix Item Swaps sometimes requiring a different amount of Action Points than advertised at first
@@ -1075,6 +1079,10 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 - Fix HardMin in UnitBlocks not forcing them to spawn first
 - Fix Cost of Units with Bodyguards not being predicted correctly
+
+### Swifter
+
+- Fix image of active entity in the turn sequence bar vanishing on higher combat speed
 
 ## For Modders
 
@@ -1143,7 +1151,7 @@ This section can be skipped by any regular user. It is only meant as an overview
 - The amount of shield paint used by the player is now counted in the statistics flag `PaintUsedOnShields`
 - The amount of helmet paint used by the player is now counted in the statistics flag `PaintUsedOnHelmets`
 - The amount of Injuries Treated with Bandages is now counted under the statistics flag `InjuriesTreatedWithBandage`
-- The amount of armor attachements used by the player is now counted in the statistics flag `ArmorAttachementsApplie`
+- The amount of armor attachments used by the player is now counted in the statistics flag `ArmorAttachementsApplie`
 - Body Armor and Helmet `Condition` is now always set to `ConditionMax` at the end of the `create` function
 - Add new `HD_RecoveredHitpointPct = 0.15` member for `unhold_racial` allowing you to set a variable pct of hitpoints recovered per turn
 - NPCs now have 2 bag slots by default (down from 4)

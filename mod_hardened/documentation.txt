@@ -15,10 +15,25 @@
 
 - Loading the game over an enemy allows them to instantly engage the player in battle
 - Mace Mastery perk description still talks about removing penalty to hit adjacent enemies, but that penalty doesnt even exist anymore
+- Injuries now heal at the start of the day and wages are paid at the start of the day; instead of during midday
 
 # Compatibility
 
 - Is safe to remove from- and add to any existing savegames
+
+1.1.4
+	- Barbarian Locations now spawn around 15% less units and instead spawn higher tier units
+	- **Passing Step** now has 0 additional Fatigue cost (down from 2)
+	- **Whirling Death** is now removed when stunned or fleeing
+	- Print a combat log whenever **Battle Flow** recover Fatigue
+	- Add new **Cover** concept explaining this mechanic and add hyperlinks to it in **Bullseye**, **Target Practice** and **Nailed it**
+	- Mention in **Whirling Death** that it is removed when swapping weapons
+	- Mention in the tooltips for **Cover Ally** that the effect ends, when both characters move away from each other
+	- Improve **Passing Step** description
+	- Slightly improve various perk descriptions, adding hyperlinks, clarifying the effect or fixing typos
+	- Fix(Vanilla) spiders rarely glitching out, causing their armor to no longer take damage
+	- Fix(Swifter) image of active entity in the turn sequence bar vanishing on higher combat speed
+	- Fix(Reforged) Weapon Master secretly adding perks for worn weapon, even if you don't have those perks available in your perk tree
 
 1.1.3
 	- Fix some skeletons building up Fatigue

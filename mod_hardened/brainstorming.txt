@@ -255,6 +255,7 @@
 }
 
 {	// Balance
+	- swap rebuke with one with the shield
 	- Look into Recover being blocked by worn down, but still showing as active, when previewing another skill
 	- net price in southern non-coast cities
 }
@@ -266,6 +267,9 @@
 }
 
 {	// Fix
+	- improve the burn-away-roots logic by iterating over all skills on the target, simulating an onUpdate for each of them to find out which one turns on "IsRooted"
+	- overwhelm seems to not take visual effect, when stack is added. only after another update is triggered on the target
+	- adrenaline causes you to recover hitpoitns and fatigue, when it disables injuries which reduced those values (e.g. chest cut)
 	- Fix corpse armor offset being too low (neck and hand are only halfway visible)
 	- vanilla bug: decapitate max armor pen damage not multiplied by *2
 	- while its not an allies turn, they regularly have +1 max AP. might be connected with waiting
@@ -351,6 +355,8 @@
 }
 
 {	// Design
+	- add CheckForSpearwall logic for skill.nut. Some helper function that takes _oldTile as one of its parameters
+		- use it to make **Passing Step** and **Footwork** no longer ignore Spearwall
 	- allow sanguinary for AoE skills?
 	- make banner and sergeant sash craftable (cloth + dye (+ wood for banner))
 		- make sergeant sash not stackable if multiple people have it equipped
@@ -556,6 +562,7 @@
 }
 
 {	// QoL
+	- sort skill tooltips by their id
 	- show icon (skull, handshake, crossing sowrds) next to world party names to quickly identify them as (perma enemies, temporary enemies, allies)
 	- show tooltip on world parties showing their relation with you
 	- New Concept: Zone of Control
@@ -690,3 +697,18 @@
 - Weapon Master
 
 - increase contract/location resources considering reforged soon bug fix about 70-100% resources
+- display effective melee defense in melee defense tooltip
+- item "tag" for
+  - consumable items? Like Berserk Mushrooms
+  - attachements?
+
+- investigate: how did money check timing change?
+- events might not trigger correctly in hardened
+	- they might be delayed by the force trigger of the retinue slot event
+- any brothers that dies during combat causes you to lose renown
+	- either flat 100
+	- or 50 + 10 per level
+	- or 20 * level
+- additional champion chance for every 1000 renown?
+- bug: ready to go does not trigger anymore after some tries
+- improve turn concept to also mention waiting and how your turn only starts and ends once per round, even if you wait
