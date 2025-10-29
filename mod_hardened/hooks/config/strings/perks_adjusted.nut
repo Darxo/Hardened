@@ -546,7 +546,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"[Throw Net|Skill+throw_net] applies [Staggered|Skill+staggered_effect]",
-						"The range of [Throw Net|Skill+throw_net] is increased by " + ::MSU.Text.colorGreen(1) + " tile",
+						"The range of [Throw Net|Skill+throw_net] is increased by " + ::MSU.Text.colorPositive(1) + " tile",
 					],
 				},
 				{

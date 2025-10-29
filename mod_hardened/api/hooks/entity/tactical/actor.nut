@@ -188,7 +188,7 @@
 		local recoveredActionPoints = this.getActionPoints() - oldActionPoints;
 		if (_printLog && recoveredActionPoints > 0 && this.isPlacedOnMap() && this.getTile().IsVisibleForPlayer)
 		{
-			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + " recovers " + ::MSU.Text.colorGreen(recoveredActionPoints) + " Action Points");
+			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + " recovers " + ::MSU.Text.colorPositive(recoveredActionPoints) + " Action Points");
 		}
 
 		return recoveredActionPoints;
@@ -215,7 +215,7 @@
 
 		if (_printLog && ::MSU.Utils.hasState("tactical_state") && flooredRecoveredHitpoints > 0 && this.isPlacedOnMap() && !this.isHiddenToPlayer())
 		{
-			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + " recovers " + ::MSU.Text.colorGreen(flooredRecoveredHitpoints) + " Hitpoints");
+			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + " recovers " + ::MSU.Text.colorPositive(flooredRecoveredHitpoints) + " Hitpoints");
 		}
 
 		this.onUpdateInjuryLayer();
