@@ -78,7 +78,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("+25%") + " [Armor Penetration|Concept.ArmorPenetration] against targets who are not in cover",
+					"Gain " + ::MSU.Text.colorPositive("+25%") + " [Armor Penetration|Concept.ArmorPenetration] against targets who are not [in Cover|Concept.Cover]",
 				],
 			}],
 		}),
@@ -1174,7 +1174,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Gain " + ::MSU.Text.colorPositive("+25%") + " [chance to hit the head|Concept.ChanceToHitHead] when attacking at a distance of 2 tiles",
-					"Your attacks at a distance of 2 tiles will never hit the cover",
+					"Your attacks at a distance of 2 tiles will never hit the [Cover|Concept.Cover]",
 				],
 			}],
 		}),
@@ -1439,7 +1439,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your attacks are " + ::MSU.Text.colorPositive("50%") + " less likely to hit the cover, when you have no clear line of fire on your target",
+					"Your attacks are " + ::MSU.Text.colorPositive("50%") + " less likely to hit the [Cover,|Concept.Cover] when you have no clear line of fire on your target",
 				],
 			}],
 		}),

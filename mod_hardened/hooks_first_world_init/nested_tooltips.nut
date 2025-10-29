@@ -21,6 +21,12 @@
 		"Critical Damage refers to bonus Hitpoint Damage inflicted when striking specific body parts. This damage is applied after armor mitigation.\n\n" +
 		"By default, hits to the head deal " + ::MSU.Text.colorPositive("+50%") + " additional Critical Damage."
 	)),
+	Cover = ::MSU.Class.BasicTooltip("Cover", ::Reforged.Mod.Tooltips.parseString(
+		"Cover refers to obstacles or characters, which characters can hide behind.\n\n" +
+		"A character is considered being in Cover when standing directly behind an obstacle or character from an attackers point of view.\n\n" +
+		"Your allies will not provide cover for enemies that are 2 tiles away from you.\n\n" +
+		"Ranged Attacks against characters that are in cover have a " + ::MSU.Text.colorPositive("75%") + " chance to instead hit one of the covering tiles at random."
+	)),
 	DayTime = ::MSU.Class.BasicTooltip("Day Time", ::Reforged.Mod.Tooltips.parseString(
 		"Each day in Battle Brothers follows a cycle of distinct phases, impacting visibility, combat effectiveness, and available town services.\n\n" +
 		"Daytime begins with 2 hours of Sunrise, followed by 6 hours of Morning, 2 hours of Midday, and 6 hours of Afternoon and ending after 2 hours of Sunset.\n\n" +
