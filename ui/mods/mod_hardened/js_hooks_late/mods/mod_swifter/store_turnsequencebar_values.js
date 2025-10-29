@@ -4,4 +4,7 @@ This introduces a weird bug when applied to already extremely short delays, like
 	Entities moving in the first slot sometimes vanish on higher game speed
 Our fix is to remove that swifter entry, so swifter will leave the vanilla value untouched
 */
-delete Swifter.TurnSequenceBarValues.mResizeFirstSlotTimeIfPreviousWasHiddenToPlayer;
+if (typeof Swifter !== 'undefined')		// simple check, whether Swifter mod is even used
+{
+	delete Swifter.TurnSequenceBarValues.mResizeFirstSlotTimeIfPreviousWasHiddenToPlayer;
+}
