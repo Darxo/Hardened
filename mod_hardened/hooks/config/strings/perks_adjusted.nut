@@ -219,6 +219,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.overwhelm",
+		Key = "Overwhelm",
+		Description = ::UPD.getDescription({
+			Fluff = "Prevent the enemy from attacking effectively by overwhelming them with your attacks!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Your Attacks against anyone who has not started their [turn|Concept.Turn] yet in the current [round|Concept.Round] apply [Overwhelmed|Skill+overwhelmed_effect] for one [turn.|Concept.Turn]",
+					"The effect stacks with each attack, up to a maximum of 7 times, and can be applied to multiple targets at once with a single attack."
+				]
+			}]
+		})
+	},
+	{
 		ID = "perk.mastery.axe",
 		Key = "SpecAxe",
 		Description = ::UPD.getDescription({
