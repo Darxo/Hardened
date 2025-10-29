@@ -31,6 +31,16 @@
 			});
 		}
 
+		if (!::MSU.isNull(this.m.CoverProvider))
+		{
+			ret.push({
+				id = 20,
+				type = "text",
+				icon = "ui/icons/warning.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Is removed when you move away from " + ::Const.UI.getColorizedEntityName(this.m.CoverProvider)),
+			});
+		}
+
 		return ret;
 	}
 

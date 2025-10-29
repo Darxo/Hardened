@@ -49,6 +49,13 @@
 			text = ::Reforged.Mod.Tooltips.parseString("Lasts until the start of your next [turn|Concept.Turn]"),
 		});
 
+		ret.push({
+			id = 21,
+			type = "text",
+			icon = "ui/icons/warning.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Is removed when you get [stunned,|Skill+stunned_effect] start [fleeing|Skill+hd_dummy_morale_state_fleeing] or move away from your target"),
+		});
+
 		if (this.getContainer().hasSkill("effects.rf_covering_ally"))
 		{
 			ret.push({
