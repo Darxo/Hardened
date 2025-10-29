@@ -90,10 +90,4 @@ this.hd_whirling_death_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.IsSpent = false;
 	}
-
-	function onRemoved()
-	{
-		this.getContainer().removeByID("effects.hd_whirling_death");
-	}
 });
-
