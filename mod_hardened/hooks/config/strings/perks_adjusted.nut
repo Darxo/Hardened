@@ -44,6 +44,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.battle_flow",
+		Key = "BattleFlow",
+		Description = ::UPD.getDescription({
+			Fluff = "On to the next!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Once per [round,|Concept.Round] killing an opponent recovers [Fatigue|Concept.Fatigue] equal to " + ::MSU.Text.colorPositive("10%") + " of [Base|Concept.BaseAttribute] [Stamina|Concept.MaximumFatigue]"
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.battle_forged",
 		Key = "BattleForged",
 		Description = ::UPD.getDescription({
