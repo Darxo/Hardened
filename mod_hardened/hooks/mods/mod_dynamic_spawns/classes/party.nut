@@ -1,3 +1,6 @@
+// We reduce the IdealSize multiplier for locations as 50% was too much and was upgrading their troops too late
+::DynamicSpawns.Class.Party.IdealSizeLocationMult <- 1.3;	// Dynamic Spawns: 1.5
+
 // Overwrite to make it so HardMin on unitblocks causes a force spawn on them
 ::DynamicSpawns.Class.Party.prepareAffordables <- function( _spawn, _upgrade )
 {
