@@ -15,7 +15,8 @@
 		this.removeType(::Const.SkillType.StatusEffect);	// We no longer list this perk in the effects list of an entity
 	}
 
-	q.onSpawned = @(__original) function()
+	// Todo: when Reforged fixes their onSpawned events: move back to using onSpawned here
+	q.onCombatStarted = @(__original) function()
 	{
 		__original();
 
