@@ -266,7 +266,18 @@ Features:
 	// Feat: empty out any equipped crossbow or firearm and return their ammunition to the ammo supply pool
 	q.onCombatFinished = @(__original) function()
 	{
+		// Since we hook all weapons, we need to very early decide, whether this is even a loaded weapon
+		if (this.HD_getAmmoType() == ::Const.Items.AmmoType.None) return __original();
+
+		// We switcheroo setLoaded and IsLoaded to prevent any vanilla logic from loading or unloading this weapon during onCombatFinished
+		// Vanilla uses both variants at the same time but after overwriting, only "this.m.IsLoaded = true" is actually happening. A mod might use the other method though
+		local oldIsLoaded = this.m.IsLoaded;
+		local oldSetLoaded = this.setLoaded;
+		this.setLoaded = function (_b) {};
 		__original();
+		this.setLoaded = oldSetLoaded;
+		this.m.IsLoaded = oldIsLoaded;
+
 		this.HD_unloadShotsToAmmoSupply();
 	}
 
