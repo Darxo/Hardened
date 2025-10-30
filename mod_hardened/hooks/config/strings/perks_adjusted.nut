@@ -1666,6 +1666,10 @@ foreach (description in adjustedDescriptions)
 	::UPD.setDescription(description.ID, description.Key, ::Reforged.Mod.Tooltips.parseString(description.Description));
 }
 
+// Hand-Picked Changes
+::Const.Strings.PerkDescription.SpecMace = ::MSU.String.replace(::Const.Strings.PerkDescription.SpecMace, "\n• The Polemace no longer has a penalty for attacking targets directly adjacent.", "");
+::Const.Perks.findById("perk.mastery.mace").Tooltip = ::Const.Strings.PerkDescription.SpecMace;
+
 ::Const.Strings.PerkName.RF_BestialVigor = "Backup Plan";
 ::Const.Perks.findById("perk.rf_bestial_vigor").Name = ::Const.Strings.PerkName.RF_BestialVigor;
 

@@ -42,7 +42,7 @@
 ]);
 
 // We need to load after swifter, because we fix a bug there
-::Hardened.HooksMod.queue([">mod_reforged", ">mod_swifter"], function() {
+::Hardened.HooksMod.queue([">mod_reforged", ">mod_swifter", ">mod_crock_pot"], function() {
 	::Reforged.Mod.Debug.setFlag("onAnySkillExecutedFully", false);
 	::Reforged.Mod.Debug.setFlag("AIAgentFixes", false);
 
