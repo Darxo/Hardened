@@ -21,6 +21,13 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.1.5
+	- Remove old and irrelevant tooltip line about attacking adjacent targets from **Mace Mastery**
+	- Fix **Ready to Go** also triggering at the end of combat
+	- Fix Crossbows and Guns appearing to be loaded after combat or after loading a save
+	- Fix log error when **Swifter** is not present
+	- Fix misleading tooltip lines in **Passing Step** about its cost, while in combat
+
 1.1.4
 	- Barbarian Locations now spawn around 15% less units and instead spawn higher tier units
 	- **Passing Step** now has 0 additional Fatigue cost (down from 2)

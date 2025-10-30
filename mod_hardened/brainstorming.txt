@@ -192,6 +192,7 @@
 
 
 {	// Animation
+	- rabies saliva effect on frenzied direwolf/hyenas
 	- continuous bleed animation if a certain amount of bleed stacks are accumulated on an enemy
 	- smoke bomb on snow is hard to spot
 	- parry fx that spawns towards north, might need to be rendered behind the parry guy (e.g. for the tile on top of him instead of his tile)
@@ -267,6 +268,9 @@
 }
 
 {	// Fix
+	- Sometimes after battle, when shooting and reloading all crossbow,s the crossbows are unloaded, but shortly after loaded again (by vanilla??)
+	- whirling stance is still not correctly removed when stunned. Perhaps it needs to be done in "onOtherSkillAdded"
+	- fix savescumming of tavern rumors; they reset each time you reload and visit the tavern again
 	- improve the burn-away-roots logic by iterating over all skills on the target, simulating an onUpdate for each of them to find out which one turns on "IsRooted"
 	- overwhelm seems to not take visual effect, when stack is added. only after another update is triggered on the target
 	- adrenaline causes you to recover hitpoitns and fatigue, when it disables injuries which reduced those values (e.g. chest cut)
@@ -355,6 +359,8 @@
 }
 
 {	// Design
+	- spider take more burning damage
+	- change skullcap and kettle helmet stats
 	- add CheckForSpearwall logic for skill.nut. Some helper function that takes _oldTile as one of its parameters
 		- use it to make **Passing Step** and **Footwork** no longer ignore Spearwall
 	- allow sanguinary for AoE skills?
@@ -562,6 +568,8 @@
 }
 
 {	// QoL
+	- add tooltip to spiked impaler that it knocks enemies back on a hit
+	- increase saturation of line breaker to tell it more apart from its greyed out version
 	- sort skill tooltips by their id
 	- show icon (skull, handshake, crossing sowrds) next to world party names to quickly identify them as (perma enemies, temporary enemies, allies)
 	- show tooltip on world parties showing their relation with you
