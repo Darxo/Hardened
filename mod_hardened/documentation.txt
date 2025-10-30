@@ -21,6 +21,9 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.1.6
+	- Fix battles not ending correctly when a bow is equipped on a brother
+
 1.1.5
 	- Remove old and irrelevant tooltip line about attacking adjacent targets from **Mace Mastery**
 	- Fix **Ready to Go** also triggering at the end of combat
