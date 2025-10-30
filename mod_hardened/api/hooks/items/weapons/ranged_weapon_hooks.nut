@@ -176,6 +176,7 @@ Features:
 	// Those weapons need to be converted so that they work under the new Hardened internal changes
 	q.HD_convertVanillaLoadedWeapon <- function()
 	{
+		this.m.IsLoaded = false;	// We set all loaded weapons to be unloaded by default
 		this.m.HD_LoadedShotsMax = 1;
 
 		// We adjust some common vanilla functions
