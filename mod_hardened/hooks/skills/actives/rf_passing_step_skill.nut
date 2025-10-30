@@ -38,24 +38,27 @@
 			}
 		}
 
-		if (this.m.ActionPointCost != 0)
+		if (!this.getContainer().getActor().isPlacedOnMap())
 		{
-			ret.push({
-				id = 15,
-				type = "text",
-				icon = "ui/icons/action_points.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Costs " + ::MSU.Text.colorizeValue(this.m.ActionPointCost, {AddSign = true, InvertColor = true}) + " [Action Points|Concept.ActionPoints]"),
-			});
-		}
+			if (this.m.ActionPointCost != 0)
+			{
+				ret.push({
+					id = 15,
+					type = "text",
+					icon = "ui/icons/action_points.png",
+					text = ::Reforged.Mod.Tooltips.parseString("Costs " + ::MSU.Text.colorizeValue(this.m.ActionPointCost, {AddSign = true, InvertColor = true}) + " [Action Points|Concept.ActionPoints]"),
+				});
+			}
 
-		if (this.m.FatigueCost != 0)
-		{
-			ret.push({
-				id = 16,
-				type = "text",
-				icon = "ui/icons/fatigue.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Costs " + ::MSU.Text.colorizeValue(this.m.FatigueCost, {AddSign = true, InvertColor = true}) + " [Fatigue|Concept.Fatigue]"),
-			});
+			if (this.m.FatigueCost != 0)
+			{
+				ret.push({
+					id = 16,
+					type = "text",
+					icon = "ui/icons/fatigue.png",
+					text = ::Reforged.Mod.Tooltips.parseString("Costs " + ::MSU.Text.colorizeValue(this.m.FatigueCost, {AddSign = true, InvertColor = true}) + " [Fatigue|Concept.Fatigue]"),
+				});
+			}
 		}
 
 		return ret;
