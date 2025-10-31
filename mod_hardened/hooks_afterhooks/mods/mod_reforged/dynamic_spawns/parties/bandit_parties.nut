@@ -1,6 +1,9 @@
 
 // Hooking
 {
+	local banditBanditScouts = ::DynamicSpawns.Public.getParty("BanditScouts");
+	banditBanditScouts.HardMin = 5;	// Reforged: 7
+
 	foreach (unitBlock in ::DynamicSpawns.Public.getParty("BanditRoamers").DynamicDefs.UnitBlocks)
 	{
 		if (unitBlock.BaseID == "UnitBlock.RF.BanditDog")
