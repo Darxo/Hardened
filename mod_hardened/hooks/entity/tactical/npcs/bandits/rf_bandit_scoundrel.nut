@@ -10,8 +10,8 @@
 		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 30 - 60
 			[12, "scripts/items/armor/leather_tunic"],
 			[12, "scripts/items/armor/thick_tunic"],
-			[12, "scripts/items/armor/ragged_surcoat"],
-			[12, "scripts/items/armor/padded_surcoat"],
+			[8, "scripts/items/armor/ragged_surcoat"],
+			[8, "scripts/items/armor/padded_surcoat"],
 		]);
 
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 30 - 40

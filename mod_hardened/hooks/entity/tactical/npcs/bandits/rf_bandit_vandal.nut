@@ -10,8 +10,8 @@
 		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 70 - 100
 			[12, "scripts/items/armor/blotched_gambeson"],
 			[12, "scripts/items/armor/padded_leather"],
-			[12, "scripts/items/armor/leather_lamellar"],
-			[12, "scripts/items/armor/patched_mail_shirt"],
+			[8, "scripts/items/armor/leather_lamellar"],
+			[8, "scripts/items/armor/patched_mail_shirt"],
 		]);
 
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 50 - 80
