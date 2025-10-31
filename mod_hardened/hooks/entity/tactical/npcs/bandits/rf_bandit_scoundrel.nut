@@ -7,12 +7,11 @@
 		this.m.Bodies = ::Const.Bodies.Skinny;	// Reforged ::Const.Bodies.AllMale
 		__original();
 
-		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 30 - 70
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 30 - 60
 			[12, "scripts/items/armor/leather_tunic"],
 			[12, "scripts/items/armor/thick_tunic"],
 			[12, "scripts/items/armor/ragged_surcoat"],
 			[12, "scripts/items/armor/padded_surcoat"],
-			[12, "scripts/items/armor/blotched_gambeson"],
 		]);
 
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 30 - 40
