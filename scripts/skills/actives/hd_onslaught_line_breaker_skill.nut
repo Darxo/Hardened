@@ -9,7 +9,8 @@ this.hd_onslaught_line_breaker_skill <- this.inherit("scripts/skills/actives/lin
 		this.m.ID = "actives.hd_onslaught_line_breaker";
 		this.m.Name = "Line Breaker (Onslaught)";
 		this.m.Description = "Push through the ranks of your enemies by knocking back a target and taking its place, all in one action.";
-		this.m.Icon = "skills/rf_line_breaker_skill.png";
+		// We use a modified icon that has more contrast and lightness so it is easier to tell apart from its greyed out version
+		this.m.Icon = "skills/hd_line_breaker_skill.png";
 		this.m.IconDisabled = "skills/rf_line_breaker_skill_sw.png";
 		this.m.Overlay = "rf_line_breaker_skill";
 		this.m.SoundOnUse = [
