@@ -2,7 +2,7 @@
 this.hd_defenders_advantage <- this.inherit("scripts/skills/skill", {
 	m = {
 		VisionModifier = 2,
-		BraveryModifier = 15,
+		BraveryModifier = 10,
 	},
 
 	function create()
