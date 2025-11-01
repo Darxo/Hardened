@@ -63,7 +63,6 @@
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_strength_in_numbers"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_battle_fervor"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_entrenched"));
 	}
 
 	// Assign Head and Body armor to this character
