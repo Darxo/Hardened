@@ -50,8 +50,13 @@
 					{ BaseID = "UnitBlock.RF.CaravanGuard", RatioMin = 0.20, RatioMax = 1.00, DeterminesFigure = false },
 				],
 			},
+
+			function generateIdealSize()
+			{
+				return 6;	// Caravans want to be small and not dynamically larger depending on player party
+			}
 		},
-	]
+	];
 
 	foreach(partyDef in parties)
 	{
