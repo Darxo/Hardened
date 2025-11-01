@@ -1601,12 +1601,6 @@ local adjustedDescriptions = [
 			Requirement = "Non-Hybrid Weapon",
 			Effects = [
 				{
-					Type = ::UPD.EffectType.OneTimeEffect,
-					Description = [
-						"Unlock a new random weapon perk group",
-					],
-				},
-				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Unlock one extra [bag slot|Concept.BagSlots]",
@@ -1614,7 +1608,6 @@ local adjustedDescriptions = [
 					],
 				},
 			],
-			Footer = ::MSU.Text.colorNegative("This perk cannot be refunded."),
 		}),
 	},
 	{
