@@ -44,6 +44,7 @@
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{
 		this.HD_assignArmor();
+		this.HD_assignOtherGear();
 	}}.assignRandomEquipment;
 
 // Reforged Functions
@@ -74,5 +75,11 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
+	}
+
+	// Assign all other gear to this character
+	q.HD_assignOtherGear <- function()
+	{
+		this.getItems().addToBag(::new("scripts/items/accessory/bandage_item"));
 	}
 });
