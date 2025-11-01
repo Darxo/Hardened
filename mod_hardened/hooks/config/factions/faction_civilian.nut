@@ -61,7 +61,7 @@
 	::Const.Tactical.Actor.MilitiaRanged.RangedSkill = 50;
 	::Const.Tactical.Actor.MilitiaRanged.MeleeDefense = 5;
 	::Const.Tactical.Actor.MilitiaRanged.RangedDefense = 0;
-	::Const.Tactical.Actor.MilitiaRanged.Initiative = 100;
+	::Const.Tactical.Actor.MilitiaRanged.Initiative = 75;
 
 	// Optional Stats
 	::Const.Tactical.Actor.MilitiaRanged.Vision <- 8;			// Vanilla: 7
@@ -109,7 +109,7 @@
 	::Const.Tactical.Actor.MilitiaVeteran.RangedSkill = 50;
 	::Const.Tactical.Actor.MilitiaVeteran.MeleeDefense = 15;
 	::Const.Tactical.Actor.MilitiaVeteran.RangedDefense = 10;
-	::Const.Tactical.Actor.MilitiaVeteran.Initiative = 120;
+	::Const.Tactical.Actor.MilitiaVeteran.Initiative = 110;
 }
 
 // scripts/entity/tactical/humans/bounty_hunter
@@ -157,7 +157,7 @@
 	::Const.Tactical.Actor.MilitiaCaptain.RangedSkill = 50;
 	::Const.Tactical.Actor.MilitiaCaptain.MeleeDefense = 20;	// Vanilla: 10; Reforged: 15
 	::Const.Tactical.Actor.MilitiaCaptain.RangedDefense = 10;	// Vanilla: 0; Reforged: 0
-	::Const.Tactical.Actor.MilitiaCaptain.Initiative = 130;		// Vanilla: 100
+	::Const.Tactical.Actor.MilitiaCaptain.Initiative = 100;		// Vanilla: 100
 }
 
 // scripts/entity/tactical/humans/mercenary
