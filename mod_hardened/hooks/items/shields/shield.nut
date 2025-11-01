@@ -9,6 +9,9 @@
 
 		// Hardened values
 		this.m.HD_ConditionValueThreshold = 0.5;	// Condition now only scales the price of this down to 50% of its normal value
+
+		this.m.HD_ConditionThresholdForDrop = 0.0;	// Vanilla: 0.25
+		this.m.HD_BaseDropChance = 50;	// Vanilla: 90
 	}
 
 	// Hook, in order to implement the new character properties ShieldDamageMult and ShieldDamageReceivedMult
