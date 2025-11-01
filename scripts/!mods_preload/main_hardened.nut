@@ -9,7 +9,7 @@
 	Const = {
 		ActionPointChangeOnRally = -3,	// Whenever this actor rallies (going from fleeing to wavering) its action points change by this amount
 		ContractScalingBase = 1.0,	// This contract scaling is happening from day one. This scales additively with PerRep scaling
-		ContractScalingPerReputation = 0.001,	// Each Reputation point causes contracts to be this much more lucrative and dangerous
+		ContractScalingPerReputation = 0.0007,	// Each Reputation point causes contracts to be this much more lucrative and dangerous
 		ContractScalingMin = 0.5,	// Contracts never scale below this value
 		ContractScalingMax = 10.0,	// Contracts never scale beyond this value
 		WorldScalingBase = 1.0,		// This world scaling is happening from day one. This scales additively with PerDay scaling
