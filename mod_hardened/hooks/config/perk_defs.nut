@@ -49,3 +49,15 @@
 		IconDisabled = "ui/perks/perk_rf_trip_artist_sw.png",
 	},
 ]);
+
+// Reforged Fix: Add missing Vanilla Perk Defs, so that they display tooltips correctly
+::DynamicPerks.Perks.addPerks([
+	{
+		ID = "perk.captain",
+		Script = "scripts/skills/perks/perk_captain",
+		Name = ::Const.Strings.PerkName.Captain,
+		Tooltip = ::Const.Strings.PerkDescription.Captain,
+		Icon = "ui/perks/perk_28.png",
+		IconDisabled = "ui/perks/perk_28_sw.png",
+	},
+]);
