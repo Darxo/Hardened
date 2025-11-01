@@ -43,6 +43,21 @@
 		return ret;
 	}
 
+	q.consumeAmmo = @(__original) function()
+	{
+		__original();
+
+		local actor = this.getContainer().getActor();
+		if (this.getAmmo() == 0 && actor.isPlayerControlled() && actor.isPlacedOnMap())
+		{
+			local tile = actor.getTile();
+			if (tile.IsVisibleForPlayer)
+			{
+				::Tactical.spawnIconEffect("status_effect_63", tile, ::Const.Tactical.Settings.SkillIconOffsetX, ::Const.Tactical.Settings.SkillIconOffsetY, ::Const.Tactical.Settings.SkillIconScale, ::Const.Tactical.Settings.SkillIconFadeInDuration, ::Const.Tactical.Settings.SkillIconStayDuration, ::Const.Tactical.Settings.SkillIconFadeOutDuration, ::Const.Tactical.Settings.SkillIconMovement);
+			}
+		}
+	}
+
 	q.lowerCondition = @(__original) function( _value = ::Const.Combat.WeaponDurabilityLossOnHit )
 	{
 		// We only drop the weapon when it has 0 condition BEFORE the condition loss

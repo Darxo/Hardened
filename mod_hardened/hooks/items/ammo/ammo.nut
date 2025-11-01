@@ -15,6 +15,21 @@
 		this.addGenericItemSkill();		// Now that ammunition can inflict a Staminamodifier by design and potentially more effects we force an addGenericItemSkill call
 	}
 
+	q.consumeAmmo = @(__original) function()
+	{
+		__original();
+
+		local actor = this.getContainer().getActor();
+		if (this.getAmmo() == 0 && actor.isPlayerControlled() && actor.isPlacedOnMap())
+		{
+			local tile = actor.getTile();
+			if (tile.IsVisibleForPlayer)
+			{
+				::Tactical.spawnIconEffect("status_effect_63", tile, ::Const.Tactical.Settings.SkillIconOffsetX, ::Const.Tactical.Settings.SkillIconOffsetY, ::Const.Tactical.Settings.SkillIconScale, ::Const.Tactical.Settings.SkillIconFadeInDuration, ::Const.Tactical.Settings.SkillIconStayDuration, ::Const.Tactical.Settings.SkillIconFadeOutDuration, ::Const.Tactical.Settings.SkillIconMovement);
+			}
+		}
+	}
+
 // Function overwrites of 'item.nut' functions
 
 	// New function that new ammunition items can use to reduce the amount of copying the same lines
