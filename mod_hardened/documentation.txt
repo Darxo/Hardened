@@ -21,6 +21,35 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.2.0
+	- You can now purchase missing Weapon perk groups (2500 Crowns) or Armor perk groups (4000 Crowns) at the Training Hall once per brother
+	- Contracts now become 1% more difficult/lucrative per 14 Renown you have (down from 1% per 10 Renown)
+	- **Weapon Master** no longer unlocks a random weapon perk group when picked and it is now refundable
+	- Settlements now have 0.5% more resources available per day (e.g. for Caravans and Militia)
+	- **Defenders Advantage** now provides 10 Resolve (down from 15)
+	- **Brigand Scoundrels** no longer spawn with **Blotched Gambeson**
+	- **Brigand Vandals** can now spawn with **Blotched Gambeson**
+	- **Brigand Scoundrels** and **Brigand **Vandals** are now slightly less likely to spawn with their higher tier armors
+	- **Caravan Hands** now always spawn with a **Bandage**
+	- **Ranged Militia** now have 75 Initiative (down from 100) and lose **Entrenched**
+	- **Militia Veterans** now have 110 Initiative (down from 120)
+	- **Militia Captains** now have 100 Initiative (down from 130)
+	- Lower the minimum possible amount of brigands in the **Restore Location** contract to 5 (down from 7)
+	- **Swordstaff** now has 12 Weight (up from 10)
+	- **Powder Bag** now costs 150 Crowns (up from 50)
+	- **Bandages** worn by enemies now have a 60% chance to drop (down from 100%)
+	- Non-Named shields worn by enemies now have a 50% chance to drop (down from 90%)
+	- All shields worn by enemies can now drop, even if they have less than 25% Condition or less than 6 Condition left
+	- NPCs now completely ignore scatter values when considering targets for ranged attacks (down from 80% less likely)
+	- Spawn an overlay animation when depleting a throwing weapon or a quiver
+	- Increase saturation of **Line Breaker** icon
+	- Use unique icon for **Sergeant** perk
+	- Fix log error when entering a fight with a **Swordmaster**
+	- Fix(Reforged) **Sergeant** perk not showing any perk description
+	- Add `HD_ConditionThresholdForDrop = 0.0` for shields to define their minimum relative condition required to be eligable for dropping when worn by enemies
+	- Add `HD_BaseDropChance = 50` for shields to define their random drop chance when worn by enemies
+	- Add `HD_BaseDropChance = 100` for accessories to define their random drop chance when worn by enemies
+
 1.1.6
 	- Fix battles not ending correctly when a bow is equipped on a brother
 

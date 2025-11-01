@@ -640,7 +640,6 @@
 	- color "struck down" in combat log in green and "killed" in red
 	- in the tooltip of wait concept, mention the wait debuff
 	- make it so the yellow arrow, pointing onto characters when hovering on the turn sequence bar, is rendered in front of the status mini effects (instead of after them)
-	- make arrows hitting trees/rocks also produce decals
 	- Add Setting to disable automove of camera during NPC turns completely (and then allow zooming/panning)
 	- make it so item tooltips in inventory never overlap with the paperdoll stat page
 	- look at how overlay icons are rendered
@@ -702,14 +701,12 @@
 - Discovered Talent
 - Promised Potential
 - Between the Eyes
-- Weapon Master
 
 - increase contract/location resources considering reforged soon bug fix about 70-100% resources
 - display effective melee defense in melee defense tooltip
 - item "tag" for
   - consumable items? Like Berserk Mushrooms
   - attachements?
-
 - investigate: how did money check timing change?
 - events might not trigger correctly in hardened
 	- they might be delayed by the force trigger of the retinue slot event
@@ -718,5 +715,21 @@
 	- or 50 + 10 per level
 	- or 20 * level
 - additional champion chance for every 1000 renown?
-- bug: ready to go does not trigger anymore after some tries
 - improve turn concept to also mention waiting and how your turn only starts and ends once per round, even if you wait
+- make all characters (not just with melee weapons/fists) trigger a morale check when approaching enemies
+- buff brawny to like 35%?
+- slightly reduce NPC need to use rally (by like 20%)
+- increase visual size of feral shield
+- add in vanquisher that it ignores ZoC and spearwall
+- lookout cost to 2000? (from 2500)
+- swap formidable approach with death dealer?
+	- that way it is on par with Duelist and makes the level 7 skill choice ever so more competetive
+- for every scroll container, add white stripes at the top/bottom, if there is still more to scroll in that direction
+- make dropchance of gear (e.g. shields) depending on their relative condition
+- disable the darkness effect, when zooming in/out during combat (not the depth of view, there is a second one at play)
+- reduce dropchance of throwing weapons
+- scale resources and rewards of "Supply Caravan"
+	- currently they have hardcoded resources equal to local r = this.Math.rand(100, 200) * 0.01;
+- add oathbringer as possible elite spawns in mercenary companies
+- amount of anticipation charges in brackets behind effect?
+- simplify broken jaw

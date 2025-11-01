@@ -58,8 +58,9 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 
 - Most vanilla difficulty scaling methods (day/player strength/renown scaling) are disabled
 - Instead the following streamlined system is added:
-	- Contracts are 1% more difficult for every 10 Renown, up to a maximum of 1000% more
-	- Contracts pay 1% more Crowns for every 10 Renown, up to a maximum of 1000% more
+	- Contracts are 1% more difficult for every 14 Renown, up to a maximum of 1000% more
+	- Contracts pay 1% more Crowns for every 14 Renown, up to a maximum of 1000% more
+	- Every Settlement has 0.5% more resources (e.g. for spawning Caravans and Militia) for every day that has passed up to a maximum of 150% at day 300
 	- Every other scaling encounter in the world becomes 1% more difficult for every day that has passed, up to a maximum of 300% at day 300
 - You can view the current contract difficulty when looking at the renown tooltip
 - Arena Contracts/Tournaments are excluded from that scaling rework and still work like they do in Vanilla
@@ -160,6 +161,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 
 - **Night Effect** now causes -3 Vision (down from -2)
 - When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. Each brother can only receive up to 10% of this shared experience.
+- You can now purchase missing Weapon perk groups (2500 Crowns) or Armor perk groups (4000 Crowns) at the Training Hall once per brother
 - You can now use **Bandages** to treat injuries during battle that were received at most 1 round ago
 - Add new **Retreat** skill for player characters, which allows you to retreat individual brothers from a battle if they stand on a border tile and are not engaged in melee
 - Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
@@ -315,7 +317,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Unstoppable** is completely reworked. Once per round during your turn, if you hit an enemy with an attack, gain 1 stack up to a maximum of 3. Each stack grants +1 Action Points and 10% more Initiative. Lose 1 stack if you wait. Lose 1 stack if you end your turn with more than half of your action points remaining. Lose all stacks when you use recover, get stunned or staggered
 - **Vanquisher** is completely reworked. After you step on a corpse that has been created this round, you become Immune to **Displacement** and take 25% less Damage until the start of your next turn. **Gain Ground** (granted by **Vanquisher** perk) is now free
 - **Vigorous Assault** is mostly reworked. It now works with all attacks. It no longer provides a fatigue discount. The discount is no longer lost when swapping weapons or using non-attack skills.
-- **Weapon Master** no longer grants weapon perks while wielding a hybrid weapons. It now grants +1 Bag Slot at all times. When you learn **Weapon Master** you now gain a new random weapon perk group
+- **Weapon Master** no longer grants weapon perks while wielding a hybrid weapons. It now grants +1 Bag Slot at all times
 - **Wears it well** now grants 50% of combined Mainhand and Offhand Weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest Weight)
 - **Wear them Down** is completely reworked. It now causes your hits to apply an additional 10 Fatigue on the target and your misses to apply 5 Fatigue. After your attack, if your target is fully fatigued, apply **Worn Down** effect until the end of their turn, which prevents them from using **Recover** and applies 30% less Melee Defense and 30% less Ranged Defense
 - **Whirling Death** is completely reworked. It now grants a new active skill which creates a buff for 3 turns granting 25% more damage, +2 Reach and 10 Melee Defense to the user
@@ -440,6 +442,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Short Bow** now deals 35-50 damage (up from 30-50), has a Range of 6 (down from 7) and costs 250 Crowns (up from 200)
 - **Spetum** now has a Reach of 7 (up from 6), a Weight of 12 (down from 14) and costs 900 Crowns (down from 1050). The named variant now costs 2800 Crowns (down from 3500)
 - **Spiked Impaler** now has +2 Fatigue Cost for its weapon skills
+- **Swordstaff** now has a Weight of 12 (up from 10)
 - **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and costs 600 Crowns (up from 400)
 - **Three-Headed Flail** now has 3 Reach (down from 4)
 - **Throwing Spears** no longer inflict any fatigue when hitting a shield. They now have a Weight of 4 (down from 6) and costs 60 Crowns (down from 80)
@@ -651,7 +654,6 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Feral Shield** now costs 400 Crowns (up from 50)
 - **Fermented Unhold Heart** now has an expiry date of 40 days (up from 20)
 - **Goblin Poison** now costs 200 Crowns (up from 100)
-- **Gun Powder** now costs 2 **Ammunition Supply** each (up from 1)
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 1000 Value (up from 200) and grants 10 Resolve (up from 5)
 - **Hyena Fur Mantle** now grants 10% more Initiative instead of +15 Initaitive
 - **Masterfully Cured Ration** now has a Stacksize of 50 (up from 25) and costs 300 Crowns (up from 150)
@@ -659,10 +661,11 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - The Named **Wolf Helmet** now has 120 Condition (down from 140), 6 Weight (down from 8) and -1 Vision (down from 0) and costs 3000 Crowns (up from 2000)
 - The Named **Norse Helmet** now has 170 Condition (up from 125), 8 Weight (up from 6) and -3 Vision (down from -1) and costs 3000 Crowns (up from 2000)
 - Named **Wolf Helmets** and **Norse Helmets** are now twice as likely to appear as rewards or in shops
+- **Poisoned Oil** now costs 200 Crowns (up from 150)
+- **Powder Bag** now costs 2 **Ammunition Supply** each (up from 1) and costs 150 Crowns (up from 50)
 - **Reinforced Throwing Net** now has a weight of 8 (up from 2)
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**
 - **Sipar** is now called **Sipar Shield** (just like in Vanilla)
-- **Poisoned Oil** now costs 200 Crowns (up from 150)
 - **Smoked Ham** now has a Stacksize of 30 (up from 25) and cost 115 Crowns (up from 95)
 - **Strange Meat** now has a Stacksize of 20 (down from 25) and costs 35 Crowns (down from 50)
 - **Strange Mushrooms** now cost 200 Crowns (up from 100)
@@ -748,7 +751,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 ### AI
 
 - NPCs now know how to use Bandages
-- NPC ranged troops attribute a target 80% less score from adjacent potential scatter targets
+- NPC ranged troops now ignore the score from potential scatter targets when picking a ranged target
 - NPC Dogs are much less likely to engage multiple enemies at the same time
 - Ranged NPC are 25% less likely to change positions
 - NPCs are 40% more likely to use Reload Actions
@@ -785,7 +788,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 ## Combat General
 
 - Low Morale no longer reduces the Resolve of the character
-- Every Defender of a Location which was fortified now gets a new **Defenders Advantage** effect for that fight, which grants +2 Vision and +15 Resolve
+- Every Defender of a Location which was fortified now gets a new **Defenders Advantage** effect for that fight, which grants +2 Vision and +10 Resolve
 - **Encumbrance** no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level. It no longer requires a minimum armor weight of 20
 - **Wait** now debuffs the actual Initiative by 25% until the start of that brothers next turn
 - Equipped Ammo Items can no longer be dropped to the ground or into an empty inventory slot
@@ -795,6 +798,9 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Fleeing characters who rally, lose 3 Action Points
 - Fleeing characters now have +1 Action Point
 - Player characters now have +1 Action Point during AutoRetreat
+- **Bandages** worn by enemies now have a 60% chance to drop (down from 100%)
+- Non-Named shields worn by enemies now have a 50% chance to drop (down from 90%)
+- All shields worn by enemies can now drop, even if they have less than 25% Condition or less than 6 Condition left
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied
 - No character can receive more than one negative morale check, caused by a fleeing ally, per turn
 - Dying or Fleeing characters no longer trigger negative morale checks for their allies if the distance between them is greater than the vision of the receiving ally
@@ -913,6 +919,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Colorize corpse name in tile tooltips
 - Add Setting (on) for displaying skill tags in the descriptions of active skills
 - Improve visibility of Miasma and Burning Ground
+- Spawn an overlay animation when depleting a throwing weapon or a quiver
 - **Hand to Hand** and **Zombie Bite** skills will now always be sorted to the front in the UI
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to Displacement or which are Rooted. Using them will now print a combat log with the roll and hitchance of the attack
 - **Disarm** can no longer be used on enemies which are immune to disarm or which are stunned
@@ -936,6 +943,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Slightly improve wording of "weapon skills build up fatigue" tooltip on weapons
 - Automatically re-equip the accessory that you had previously equiped after an arena fight
 - Reduce pan speed of tactical camera by 20%
+- Increase saturation of **Line Breaker** icon
+- Use unique icon for **Sergeant** perk
 - Improve tooltip of **Disarmed effect**
 - Improve tooltip of **Whip Disarm** using a nested tooltip for the **Disarmed effect**
 - Add Settings to immediately stop the player movement halfway through, when it reveals an enemy (on) or an ally (off)
@@ -1070,6 +1079,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Fix **Weapon Master** secretly adding perks for worn weapon, even if you don't have those perks available in your perk tree
 - The perks **Strengh in Numbers** and **Dynamic Duo** now instantly update the actors stats, if another actor moves adjacent to or away from them
 - Improve **Shieldwall effect** when viewed as a hyperlink
+- Fix **Sergeant** perk not showing any perk description
 - Fix Item Swaps sometimes requiring a different amount of Action Points than advertised at first
 - **Net Pull** is no longer considered an Attack
 - Fix **Line Breaker** granted by **Onslaught** being usable multiple times
@@ -1088,6 +1098,9 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add `HD_ConditionThresholdForDrop = 0.0` for shields to define their minimum relative condition required to be eligable for dropping when worn by enemies
+- Add `HD_BaseDropChance = 50` for shields to define their random drop chance when worn by enemies
+- Add `HD_BaseDropChance = 100` for accessories to define their random drop chance when worn by enemies
 - Add `getTooltipWithoutChildren()` for `item.nut`, which `getTooltip()` of it but removes all children entries from it
 - Add `HD_onAfterUnEquip()` for `item.nut` which is always triggered following the `onUnequip()` event after the item connection has been severed
 - Add `HD_ConditionValueThreshold = 0.0` for `item.nut`, which can be adjusted to define a minimum value of the item disregarding current condition

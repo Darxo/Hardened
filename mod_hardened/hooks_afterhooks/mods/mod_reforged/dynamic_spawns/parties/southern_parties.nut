@@ -1,5 +1,5 @@
 // Hooking
 {
-	local mercParty = ::DynamicSpawns.Public.getParty("CaravanSouthern");
-	mercParty.HardMin = 4;	// Reforged: 10
+	local southernParty = ::DynamicSpawns.Public.getParty("CaravanSouthern");
+	southernParty.HardMin = 4;	// Reforged: 10
 }
