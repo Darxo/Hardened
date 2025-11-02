@@ -1471,6 +1471,71 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_swordmaster_blade_dancer",
+		Key = "RF_SwordmasterBladeDancer",
+		Description = ::UPD.getDescription({
+			Fluff = "Let's Dance!",
+			Requirement = "Sword",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain additional [Initiative|Concept.Initiative] equal to the [Armor Penetration|Concept.ArmorPenetration] percentage of your equipped sword",
+					"When using a non-fencing sword, non-AoE skills cost " + ::MSU.Text.colorPositive(-1) + " [Action Point|Concept.ActionPoints] and build up " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
+					"[Passing Step|Skill+rf_passing_step_skill] costs " + ::MSU.Text.colorPositive(-2) + " [Action Points|Concept.ActionPoints] and " + ::MSU.Text.colorPositive(-2) + " [Fatigue|Concept.Fatigue]",
+				],
+			}],
+		}),
+		Footer = ::MSU.Text.colorNegative("You can only pick ONE perk from the Swordmaster perk group.")
+	},
+	{
+		ID = "perk.rf_swordmaster_metzger",
+		Key = "RF_SwordmasterMetzger",
+		Description = ::UPD.getDescription({
+			Fluff = "A sword, too, can take someone\'s head off just fine!",
+			Requirement = "Sword",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Swords now additionally qualify as Cleavers",
+						"Gain all the perks of the [Cleaver|PerkGroup+pg.rf_cleaver] perk group"
+						"Attacks from Swords inflict [Bleeding|Skill+bleeding_effect]"
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Active,
+					Description = [
+						"Unlock [Decapitate|Skill+decapitate] with Swords",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.OneTimeEffect,
+					Description = [
+						"Add the [Cleaver|PerkGroup+pg.rf_cleaver] perk group to this character\'s perk tree"
+					]
+				}
+			],
+		}),
+		Footer = ::MSU.Text.colorNegative("You can only pick ONE perk from the Swordmaster perk group.")
+	},
+	{
+		ID = "perk.rf_swordmaster_versatile_swordsman",
+		Key = "RF_SwordmasterVersatileSwordsman",
+		Description = ::UPD.getDescription({
+			Fluff = "King of all trades. Jack of none.",
+			Requirement = "Sword",
+			Effects = [{
+				Type = ::UPD.EffectType.Active,
+				Description = [
+					"Unlock [Half-Swording|Skill+rf_swordmaster_stance_half_swording_skill] stance which allows you to [puncture|Skill+puncture] your opponents",
+					"Unlock [Reverse Grip|Skill+rf_swordmaster_stance_reverse_grip_skill] stance which allows you to use your sword like a Mace",
+					"Unlock [Meisterhau|Skill+rf_swordmaster_stance_meisterhau_skill] stance which allows you to use the [Kick,|Skill+rf_swordmaster_kick_skill] [Push Through|Skill+rf_swordmaster_push_through_skill] and [Tackle|Skill+rf_swordmaster_tackle_skill] skills"
+				]
+			}],
+		}),
+		Footer = ::MSU.Text.colorNegative("You can only pick ONE perk from the Swordmaster perk group.")
+	},
+	{
 		ID = "perk.rf_target_practice",
 		Key = "RF_TargetPractice",
 		Description = ::UPD.getDescription({
