@@ -49,8 +49,8 @@ local newPerks = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Once per [round,|Concept.Round] swapping two weapons with no shared weapon type becomes a free action",
-						"Gain " + ::MSU.Text.colorPositive("+10") + " [Melee Defense,|Concept.MeleeDefense] if you have at least " + ::MSU.Text.colorPositive("70") + " [Base Ranged Skill|Concept.RangeSkill]",
-						"Gain " + ::MSU.Text.colorPositive("+10") + " [Ranged Defense,|Concept.RangeDefense] if you have at least " + ::MSU.Text.colorPositive("70") + " [Base Melee Skill|Concept.MeleeSkill]",
+						"Gain " + ::MSU.Text.colorPositive("+10") + " [Melee Defense,|Concept.MeleeDefense] if you have at least " + ::MSU.Text.colorPositive("70") + " [Base|Concept.BaseAttribute] [Ranged Skill|Concept.RangeSkill]",
+						"Gain " + ::MSU.Text.colorPositive("+10") + " [Ranged Defense,|Concept.RangeDefense] if you have at least " + ::MSU.Text.colorPositive("70") + " [Base|Concept.BaseAttribute] [Melee Skill|Concept.MeleeSkill]",
 					],
 				},
 			],
@@ -84,8 +84,8 @@ local newPerks = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Gain [Melee Defense|Concept.MeleeDefense] equal to your [Base Ranged Defense|Concept.RangeDefense] against weapon attacks",
-						"You have " + ::MSU.Text.colorNegative("70%") + " less [Ranged Defense|Concept.RangeDefense] while engaged with someone wielding a melee weapon",
+						"Gain [Melee Defense|Concept.MeleeDefense] equal to your [Base Ranged Defense|Concept.RangeDefense] against Weapon Attacks",
+						"You have " + ::MSU.Text.colorNegative("70%") + " less [Ranged Defense|Concept.RangeDefense] while engaged with someone wielding a Melee Weapon",
 						"Does not work with shields. Does not work while [disarmed,|Skill+disarmed_effect] [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]",
 					],
 				},
