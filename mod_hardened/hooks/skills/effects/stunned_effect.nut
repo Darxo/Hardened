@@ -16,4 +16,11 @@
 		__original();
 		this.getContainer().getActor().setActionPoints(0);
 	}
+
+	// Set ActionPoints to 0 when resuming the turn, incase a character got stunned during the second half of their turn
+	q.onResumeTurn = @(__original) function()
+	{
+		__original();
+		this.getContainer().getActor().setActionPoints(0);
+	}
 });
