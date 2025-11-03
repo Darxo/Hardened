@@ -2,5 +2,6 @@ Hardened.Hooks.WorldScreenTopbarDayTimeModule_createDIV = WorldScreenTopbarDayTi
 WorldScreenTopbarDayTimeModule.prototype.createDIV = function (_parentDiv)
 {
 	Hardened.Hooks.WorldScreenTopbarDayTimeModule_createDIV.call(this, _parentDiv);
-	this.mContainer.bindTooltip({ contentType: 'msu-generic', modId: Reforged.ID, elementId: "Concept.DayTime" });
+	this.mDayTimeText.bindTooltip({ contentType: 'msu-generic', modId: Reforged.ID, elementId: "Concept.DayTime" });
+	this.mDayTimeImage.bindTooltip({ contentType: 'msu-generic', modId: Reforged.ID, elementId: "Concept.DayTime" });
 }
