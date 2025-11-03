@@ -9,6 +9,11 @@
 ::Reforged.NestedTooltips.Tooltips.Concept.ReachDisadvantage = ::MSU.Class.BasicTooltip("Reach Disadvantage", ::Reforged.Mod.Tooltips.parseString(
 	"A character is considered to have Reach Disadvantage when their [Reach|Concept.Reach] is lower than that of the other character during a melee attack."
 ));
+::Reforged.NestedTooltips.Tooltips.Concept.Wait = ::MSU.Class.BasicTooltip("Wait", ::Reforged.Mod.Tooltips.parseString(
+	"If you are not the last character in the [turn order|Concept.Turn] in a [round,|Concept.Round] you may use the Wait action, which delays your [turn|Concept.Turn] to the end of the current [round.|Concept.Round]\n\n" +
+	"You can only use Wait once per [round.|Concept.Round]\n\n" +
+	"Using Wait applies the [Waiting|Skill+hd_wait_effect] effect, causing you to act later in the following [round.|Concept.Round]"
+));
 
 // New Concepts
 ::MSU.Table.merge(::Reforged.NestedTooltips.Tooltips.Concept, {
