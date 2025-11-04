@@ -113,6 +113,8 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	{	// Power Group
 		local pgPowerGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_power");
 		pgPowerGroup.addPerk("perk.rf_death_dealer", 6);	// Add Death Dealer to Tier 6
+		pgPowerGroup.addPerk("perk.colossus", 1);			// Add Colossus to Tier 1
+		pgPowerGroup.removePerk("perk.crippling_strikes");	// Remove Crippling Strikes from Tier 1
 	}
 
 	{	// Raider Group
@@ -190,16 +192,29 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		changePerkTier(pgThrowingPerkGroup, "perk.rf_hybridization", 2);		// Move Hybridization (now Toolbox) to tier 2 (down from Tier 3)
 	}
 
+	{	// Tough Group
+		local pgToughGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_tough");
+		pgToughGroup.removePerk("perk.colossus");				// Remove Colossus from Tier 1
+		pgToughGroup.addPerk("perk.rf_survival_instinct", 1);	// Add Survival Instinct into Tier 1
+		pgToughGroup.m.Icon = "ui/perks/perk_36.png";			// Change Icon to "Killing Frenzy"; In Reforged this is Colossus
+	}
+
 	{	// Unstoppable Group
 		local pgUnstoppablePerkGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_unstoppable");
 		pgUnstoppablePerkGroup.addPerk("perk.hd_anchor", 3);	// Add Anchor (New Hardened Perk) into the Tier 3
+	}
+
+	{	// Vigorous Group
+		local pgVigorousGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_vigorous");
+		pgVigorousGroup.removePerk("perk.rf_survival_instinct");	// Remove Survival Instinct from Tier 1
+		pgVigorousGroup.addPerk("perk.crippling_strikes", 1);		// Add Crippling Strikes into Tier 1
 	}
 
 	{	// Wildling Group
 		local pgWildling = ::DynamicPerks.PerkGroups.findById("pg.rf_wildling");
 		pgWildling.removePerk("perk.rf_bestial_vigor");	// Remove Bestial Vigor (now Backup Plan) from Wildling
 		pgWildling.removePerk("perk.pathfinder");
-		pgWildling.addPerk("perk.colossus", 1);
+		pgWildling.addPerk("perk.crippling_strikes", 1);		// Add Crippling Strikes into Tier 1
 		pgWildling.getPerkGroupMultiplier = function( _groupID, _perkTree )
 		{
 			switch (_groupID)
