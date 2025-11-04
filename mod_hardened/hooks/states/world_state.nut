@@ -51,7 +51,8 @@
 
 	q.onCombatFinished = @(__original) function()
 	{
-		// Vanilla Fix: We prevent vaniiSwitcheroo, to prevent V
+		// We prevent restoreEquipment from happening during onCombatFinished, because by then, none of the ground items have been looted yet
+		// So our improved restoreEquipment function would not yet be able to restore all equipment to their previous places correctly
 		local oldRestoreEquipment = ::Settings.getGameplaySettings().RestoreEquipment;
 		::Settings.getGameplaySettings().RestoreEquipment = false;
 		__original();

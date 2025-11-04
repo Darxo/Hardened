@@ -731,5 +731,29 @@
 - scale resources and rewards of "Supply Caravan"
 	- currently they have hardcoded resources equal to local r = this.Math.rand(100, 200) * 0.01;
 - add oathbringer as possible elite spawns in mercenary companies
-- amount of anticipation charges in brackets behind effect?
 - simplify broken jaw
+
+::Tactical.State.m.TacticalDialogScreen.m.Animating = true;
+
+- slighty increase available recruits in the nearest town on a new playthrough
+- reduce weapon perk groups of gambler to 2 (down from 3)
+- add supporter to caravan hands
+- slightly reduce the resources for caravan escort missions
+- slightly increase cost of crossbows? they are effectively stronger than in vanilla
+- make it so world camera pans zoom in the camera automatically for as much as possible so that the targeted tile/location is centered (relevant when target is at map border)
+- increase fatigue recovery on orcs (via orc racial)
+- lower difficulty skull from gladiator origin to 2
+- document in the for modder section, how to change the amount of trainable perk groups and add new ones
+- add rotation to militia group and soldier group?
+- make wear them down respect the targets fatigue build up multiplier
+- change scout to also give a soft pathfinder effect?
+- improve gain ground tooltip
+- vanilla fix: auto looted items being lost when loading iron man saves
+- trigger tavern rumor again if it provides the exact same text as the previous one
+- make it so arrow misses causes the target to play a dodge animation
+- make throw pots count as throwables? And make oppotunist work with them?
+- change BusinessReputation =  of various scenarios to 0 (except like gladiators and maybe beast hunters)
+- make infected wound prevent other wounds from healing
+- when trying out, remember the last page we were on (groups, perks, background) and stay there until player changes
+- in concept for cover, mention the tactical overlay of the shield symbol, when someone is "in cover"
+- increase penalty for attacking allies on the world map

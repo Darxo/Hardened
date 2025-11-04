@@ -21,6 +21,22 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.2.1
+	- The minimum Vision of all characters is now 2 (up from 1)
+	- **Reverse Grip** now applies -1 Reach (down from 30% less)
+	- Clean up and update perk descriptions of **Blade Dancer**, **Metzger** and **Versatile Swordsman** to how they work under Hardened
+	- Add custom Concept explaining **Chance to hit head**
+	- Add custom Concept explaining **Vision**
+	- Display a yellow exclamation mark on the effect icon for **Heightened Reflexes (Nine Lives)** similar to its mini-icon
+	- Sligthly improve skill description of **Reverse Grip** stance
+	- Remove redundant **Applicable masteries** tooltip line on Weapons
+	- Use chance to hit head nested tooltip in headshot chance hitfactor
+	- Mention waiting effect in the concept for **Wait**
+	- Slightly improve perk descriptions of **Small Target** and **Parry**
+	- Fix(Reforged) **Lunge** being affected by **Crowded**
+	- Fix DayTime tooltip not triggering correctly when hovering over the day-time disk
+	- Fix stunned enemies who waited sometimes still being able to act
+
 1.2.0
 	- You can now purchase missing Weapon perk groups (2500 Crowns) or Armor perk groups (4000 Crowns) at the Training Hall once per brother
 	- Contracts now become 1% more difficult/lucrative per 14 Renown you have (down from 1% per 10 Renown)

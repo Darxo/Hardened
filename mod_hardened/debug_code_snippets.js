@@ -3,6 +3,11 @@
 
 ::MSU.Log.printData(_table, 2);
 
+## Cause End-of-combat Freeze
+
+::Tactical.State.m.TacticalDialogScreen.m.Animating = true;
+::Tactical.State.m.TacticalDialogScreen.hide();
+
 ## Unbrick End-of-combat Screen
 
 ::Tactical.State.m.TacticalCombatResultScreen.show();

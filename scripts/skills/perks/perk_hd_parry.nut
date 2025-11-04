@@ -144,7 +144,7 @@ this.perk_hd_parry <- ::inherit("scripts/skills/skill", {
 	{
 		if (!this.isEnabled()) return false;
 
-		// Check, if we are adjacent to another person with a melee weapon
+		// Check, if we are adjacent to an enemy with a melee weapon
 		local actor = this.getContainer().getActor();
 		if (actor.isPlacedOnMap())
 		{

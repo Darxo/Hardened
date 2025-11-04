@@ -36,7 +36,7 @@
 		_properties.UpdateWhenTileOccupationChanges = true;	// Because this perk grants damage depending on adjacent enemies
 		if (this.isEnabled())
 		{
-			_properties.TargetAttractionMult *= 1.10;
+			_properties.TargetAttractionMult *= 1.10;	// So that the AI will more often focus this character
 
 			local bonus = this.getDamageBonus();
 			_properties.DamageRegularMin += bonus;

@@ -159,6 +159,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 
 ### Other Notable Changes
 
+- No Character can have less than 2 Vision
 - **Night Effect** now causes -3 Vision (down from -2)
 - When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. Each brother can only receive up to 10% of this shared experience.
 - You can now purchase missing Weapon perk groups (2500 Crowns) or Armor perk groups (4000 Crowns) at the Training Hall once per brother
@@ -188,6 +189,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Quick Shot** now has -2 Shooting Range (down from -1)
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
 - **Recover** now applies the same Initiative debuff as using **Wait**
+- **Reverse Grip** (Versatile Swordsman) now adds -1 Reach while active (down from -30% less)
 - **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack. Riposte no longer has a penalty to Hitchance. It can now be used multiple times per round
 - **Shuffle** (granted by **Dynamic Duo**) no longer puts your partner to the next position in the turn order
 - **Spider Poison** now also reduces the Hitpoints Recovery of the target by 50%
@@ -994,7 +996,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add Setting (on) to display food duration, repair duration and minimum medicine cost in brackets behind those supply values
 - Add 0.8 second delay, before you can click the buttons in event screens to prevent accidental missclicks
 - The Player Banner is no longer hidden while camping
-- Add Concept and Tooltip for Day-Night Cycle
+- Add Concept and Tooltip for Day-Night Cycle, when hovering over the day-night disk
 - Slightly Lower the volume of the annoying kid sfx in towns
 
 ### Misc
@@ -1005,12 +1007,12 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Display current and maximum amount of servings in tooltips of food items
 - Quiver and Weapons that contain Ammo now display the supply cost for replacing ammunition in them
 - Add new Concepts for **Armor Penetration**, **Critical Damage**, **Displacement**, **Hitchance**, **Rally**, **Threat** and **Weight** and and apply these Concepts to existing weapons, items, perks skills
+- Improve the Vanilla Concepts **Chance to hit head**, **Vision** and **Morale** and add nested tooltip for all morale states (except **Steady**)
 - Improve spider poison item, skill and effect tooltips
 - Explain the melee defense softcap in the melee defense tooltip
 - Display item type names for Ammunition, Accessories, Food and Quest Items in the item tooltips
 - Improve tooltips of **Battleforged** perk and **Chop** skill
-- Improve Concept for **Morale** and add nested tooltip for all morale states (except **Steady**)
-- Improve artwork for **Nimble** perk
+- Improve artwork for **Nimble** perk and **Heightened Reflexes (Nine Lives)** effect
 - Improve artwork for **Tattered Sackcloth** item to make it stand out more from **Sackcloth**
 - Reduce scroll speed of origin selection to 0.5 (down from 5)
 - All effects of the difficulty settings are now listed as tooltips before world generation
@@ -1074,6 +1076,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ### Reforged
 
+- Fix **Lunge** being affected by **Crowded**
 - **Calculated Strikes** now works against stunned enemies
 - **Cheap Trick** now works with delayed skill executions (like Lunge or Aimed Shot)
 - Fix **Weapon Master** secretly adding perks for worn weapon, even if you don't have those perks available in your perk tree
