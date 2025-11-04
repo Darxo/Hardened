@@ -40,6 +40,16 @@
 			}
 		}
 
+		for (local index = (ret.len() - 1); index >= 0; index--)
+		{
+			local entry = ret[index];
+			// We delete the Reforged entry about "Applicable masteries" as that whole system is no longer relevant under Hardened
+			if (entry.id == 20 && entry.icon == "ui/icons/special.png")
+			{
+				ret.remove(index);
+			}
+		}
+
 		return ret;
 	}
 
