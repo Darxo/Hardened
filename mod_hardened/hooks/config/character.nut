@@ -5,6 +5,14 @@
 ::Const.Morale.RF_AllyFleeingBraveryModifierPerAlly = 0;	// In Reforged this is 1
 
 // Overwrite vanilla function
+// The minimum vision of any character is now 2 (up from 1)
+// A few AI scripts access this.Vision directly, instead of using this getter. Those are currently unaffected by this change
+::Const.CharacterProperties.getVision = function()
+{
+	return ::Math.max(::Hardened.Const.MinimumVision, ::Math.floor(this.Vision * this.VisionMult));
+}
+
+// Hook Vanilla Functions
 local oldGetHitChance = ::Const.CharacterProperties.getHitchance;
 ::Const.CharacterProperties.getHitchance = function( _bodyPart )
 {

@@ -16,6 +16,7 @@
 		WorldScalingMin = 0.5,		// The world will never scale below this value
 		WorldScalingMax = 4.0,		// The world will never scale beyond this value
 		WorldScalingPerDay = 0.01,	// Each passed day causes the world to be this much more dangerous
+		MinimumVision = 2,			// Vision of characters can never be reduced below this value. In Vanilla this is 1
 	},
 	Global = {
 		// Anything that uses spawntables to spawn/add troops, will its available resources adjusted by this value
