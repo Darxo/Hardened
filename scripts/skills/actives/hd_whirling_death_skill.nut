@@ -22,7 +22,7 @@ this.hd_whirling_death_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = true;
 		this.m.IsWeaponSkill = true;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 10;
+		this.m.FatigueCost = 15;
 		this.m.AIBehaviorID = ::Const.AI.Behavior.ID.HD_Defend_Stance;
 	}
 
