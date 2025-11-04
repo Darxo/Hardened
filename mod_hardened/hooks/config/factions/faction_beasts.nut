@@ -38,7 +38,7 @@
 // scripts/entity/tactical/enemies/spider_bodyguard
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Spider.XP = 180;
+	::Const.Tactical.Actor.Spider.XP = 225;
 	::Const.Tactical.Actor.Spider.ActionPoints = 11;
 	::Const.Tactical.Actor.Spider.Hitpoints = 60;
 	::Const.Tactical.Actor.Spider.Bravery = 45;

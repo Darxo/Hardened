@@ -122,8 +122,8 @@
 // scripts/entity/tactical/enemies/spider
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.Spider.Cost = 12;
-	::Const.World.Spawn.Troops.Spider.Strength = 12;
+	::Const.World.Spawn.Troops.Spider.Cost = 15;
+	::Const.World.Spawn.Troops.Spider.Strength = 15;
 }
 
 // scripts/entity/tactical/enemies/spider_bodyguard
