@@ -281,6 +281,25 @@
 				break;
 			}
 
+			case "character-stats.SightDistance":
+			{
+				foreach (entry in ret)
+				{
+					if ("id" in entry && entry.id == 2)
+					{
+						// We add an explanation about the softcap and emphasize that this stat also helps against animals and two-tile attacks
+						entry.text = ::Reforged.Mod.Tooltips.parseString(
+							"Vision determines how far a character can see on the battlefield and how much of the fog of war they uncover.\n\n" +
+							"Most attacks and skills require the user to have line of sight and sufficient Vision to the targeted tile.\n\n" +
+							"Tiles revealed by a character remain visible until the start of the next [Round|Concept.Round] unless still within sight.\n\n" +
+							"Vision can never be reduced below " + ::MSU.Text.colorPositive("2") + "."
+						);
+						break;
+					}
+				}
+				break;
+			}
+
 			case "character-stats.ChanceToHitHead":
 			{
 				foreach (entry in ret)
