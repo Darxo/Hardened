@@ -162,11 +162,11 @@
 	::Const.Tactical.Actor.RF_Fencer.Hitpoints = 50;
 	::Const.Tactical.Actor.RF_Fencer.Bravery = 70;
 	::Const.Tactical.Actor.RF_Fencer.Stamina = 150;
-	::Const.Tactical.Actor.RF_Fencer.MeleeSkill = 85;
+	::Const.Tactical.Actor.RF_Fencer.MeleeSkill = 95;
 	::Const.Tactical.Actor.RF_Fencer.RangedSkill = 50;
 	::Const.Tactical.Actor.RF_Fencer.MeleeDefense = 20;
 	::Const.Tactical.Actor.RF_Fencer.RangedDefense = 0;
-	::Const.Tactical.Actor.RF_Fencer.Initiative = 130;
+	::Const.Tactical.Actor.RF_Fencer.Initiative = 160;
 }
 
 // scripts/entity/tactical/humans/rf_man_at_arms
