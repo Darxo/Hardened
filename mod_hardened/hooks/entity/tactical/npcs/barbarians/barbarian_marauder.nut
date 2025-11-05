@@ -48,22 +48,6 @@
 		this.HD_assignOtherGear();
 	}}.assignRandomEquipment;
 
-// Reforged Functions
-	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
-	q.onSpawned = @() function()
-	{
-		::Reforged.Skills.addMasteryOfEquippedWeapon(this);
-
-		local weapon = this.getMainhandItem();
-		if (weapon != null)
-		{
-			if (weapon.isItemType(::Const.Items.ItemType.OneHanded))
-			{
-				this.getSkills().add(::new("scripts/skills/perks/perk_rf_double_strike"));	// Because the one-handed barb weapons are on the weaker side
-			}
-		}
-	}
-
 // New Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()
@@ -101,6 +85,7 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_survival_instinct"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vigorous_assault"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_hybridization"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_double_strike"));	// Only relevant for 1H Weapons, because those are on the weaker side
 
 		// Generic Actives
 		this.getSkills().add(::new("scripts/skills/actives/barbarian_fury_skill"));
