@@ -4,6 +4,8 @@
 		__original();
 		this.m.ConditionMax = 6.0;		// Vanilla: 2.0
 		this.m.ArmorDamageMult = 0.5;	// Vanilla: 0.1
+
+		this.addWeaponType(::Const.Items.WeaponType.Mace);
 	}
 
 	// Overwrite, because that makes adjusting the stunchance a bit simpler
