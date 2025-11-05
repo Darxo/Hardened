@@ -14,7 +14,15 @@
 		local actor = this.getContainer().getActor();
 		if (!actor.isPlacedOnMap()) return false;
 
-		local nearbyAllies = ::Tactical.Entities.getAlliedActors(actor.getFaction(), actor.getTile(), this.m.RequiredIsolationDistance);
-		return (nearbyAllies.len() == 1);	// nearbyAllies will always include also include the actor itself
+		local myTile = actor.getTile();
+		foreach (nearbyAlly in ::Tactical.Entities.getInstancesOfFaction(actor.getFaction()))
+		{
+			if (nearbyAlly.getID() == actor.getID()) continue;
+			if (!nearbyAlly.isPlacedOnMap()) continue;
+
+			if (nearbyAlly.getTile().getDistanceTo(myTile) <= this.m.RequiredIsolationDistance) return false;
+		}
+
+		return true;
 	}
 });
