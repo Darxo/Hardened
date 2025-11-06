@@ -4,6 +4,7 @@
 	{
 		__original();
 		this.m.ActionPointCost = 7;		// Vanilla: 9
+		this.m.FatigueCost = 25;		// Vanilla: 20
 	}
 
 	q.onUse = @(__original) function( _user, _targetTile )
