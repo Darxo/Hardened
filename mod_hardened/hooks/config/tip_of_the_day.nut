@@ -10,6 +10,7 @@
 	"Hardened: Corpses will delay their reanimation if the character on top of them is immune to knockback.",
 	"Hardened: Entering combat against an ally or killing their troops will cause you to lose some Relation with them.",
 	"Hardened: Wiederganger who are about to reanimate by themselves, emit a purple smoke.",
+	"Hardened: At a Training Hall, you can purchase a missing Weapon or Armor perk group, once per brother.",
 ]);
 
 ::Const.LoadingScreens.remove(0);	// Remove duplicate loading screen
