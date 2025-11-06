@@ -14,6 +14,9 @@
 
 	// Reloading is a very essential and decent action in all situations. Its safe to push the AI to use it much more often before considering alternatives
 	::Const.AI.Behavior.Score.Reload = 140;			// Vanilla: 100
+
+	// Vanilla/Reforged Leaders use this skill a bit too often. Part of that is probably that they value a missing morale-stage too much, by comparing it against confident
+	::Const.AI.Behavior.Score.Rally = 100;			// Vanilla: 130
 }
 
 // New Hardened Values
