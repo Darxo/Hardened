@@ -5,6 +5,11 @@
 		this.m.IsRemovedAfterBattle = false;	// Vanilla: true
 	}
 
+	// Overwrite, because we disable the hard-coded vanilla action point cost set in here. Usually MV would already overwrite that, but we snipe MV's hook
+	q.onAfterUpdate = @() { function onAfterUpdate( _properties )
+	{
+	}}.onAfterUpdate;
+
 	// Overwrite, because we improve the usability logic
 	q.isUsable = @() function()
 	{
