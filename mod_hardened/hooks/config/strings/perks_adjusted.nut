@@ -1627,7 +1627,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per [round,|Concept.Round] during your [turn,|Concept.Turn] if you hit an enemy with an attack gain 1 stack, up to a maximum of 3 stacks",
+					"Once per [round,|Concept.Round] if you hit an enemy with an attack gain 1 stack, up to a maximum of 3 stacks",
 					"Each stack grants " + ::MSU.Text.colorPositive("+1") + " [Action Point|Concept.ActionPoints] and " + ::MSU.Text.colorPositive("10%") + " more [Initiative|Concept.Initiative]",
 					"Lose 1 stack when you [wait|Concept.Wait]",
 					"Lose 1 stack when you end your [turn|Concept.Turn] with more than half of your [Action Points|Concept.ActionPoints] remaining",
