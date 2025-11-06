@@ -10,7 +10,6 @@
 			[6, "scripts/items/armor/greenskins/orc_warrior_light_armor"],
 			[6, "scripts/items/armor/greenskins/orc_warrior_medium_armor"],
 			[12, "scripts/items/armor/greenskins/orc_warrior_heavy_armor"],
-			[12, "scripts/items/armor/greenskins/orc_warrior_heavy_armor"],
 		]);
 
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
