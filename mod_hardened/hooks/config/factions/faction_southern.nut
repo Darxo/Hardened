@@ -227,7 +227,7 @@
 	::Const.Tactical.Actor.Gunner.Stamina = 120;
 	::Const.Tactical.Actor.Gunner.MeleeSkill = 65;
 	::Const.Tactical.Actor.Gunner.RangedSkill = 75;
-	::Const.Tactical.Actor.Gunner.MeleeDefense = 50;
+	::Const.Tactical.Actor.Gunner.MeleeDefense = 5;
 	::Const.Tactical.Actor.Gunner.RangedDefense = 20;
 	::Const.Tactical.Actor.Gunner.Initiative = 120;
 }
