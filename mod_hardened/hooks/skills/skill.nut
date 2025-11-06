@@ -105,6 +105,7 @@
 
 // Reforged Functions
 	// Overwrite, because we have different conditions for duelistValid
+	// This is more for mod-compatibility, because our Duelist Perk is reworked and does not use this check
 	q.isDuelistValid = @() function()
 	{
 		local mainhandItem = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);

@@ -21,6 +21,21 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.2.2
+	- Goblin-, Brigand-, Nomad- and Mercenary ranged units now play around 35% more defensive
+	- Goblin Overseer now play 100% more defensive, just like Goblin Shamans
+	- NPCs are now ~25% less likely to use **Rally the Troops**
+	- Barbarian Reaver now always have **Double Strike** instead of only when they spawn with 1H Weapons
+	- Improve **Gain Ground** (**Vanquisher**) skill description
+	- Slightly improve **Parry** perk description by coating "Base" term in its own nested tooltip
+	- Add tip of the day for training hall perk group feature
+	- Fix **Lone Wolf** being disabled by Dogs or Allies
+	- Fix Southern Gunner having way too much melee defense
+	- Fix Orc Warrior being able to spawn with an Orc Berserker Armor
+	- Fix Reload Handgonne still costing 9 Action Points after equipping
+	- Fix Reload Handgonne still costing 22 Fatigue when looking at the weapon tooltip
+	- Remove condition in **Unstoppable** perk description about it needing to be your turn
+
 1.2.1
 	- The minimum Vision of all characters is now 2 (up from 1)
 	- **Reverse Grip** now applies -1 Reach (down from 30% less)

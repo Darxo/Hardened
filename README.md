@@ -754,9 +754,12 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 - NPCs now know how to use Bandages
 - NPC ranged troops now ignore the score from potential scatter targets when picking a ranged target
+- Goblin-, Brigand-, Nomad- and Mercenary ranged units now play around 35% more defensive
+- Goblin Overseer now play 100% more defensive, just like Goblin Shamans
 - NPC Dogs are much less likely to engage multiple enemies at the same time
 - Ranged NPC are 25% less likely to change positions
 - NPCs are 40% more likely to use Reload Actions
+- NPCs are now 25% less likely to use **Rally the Troops**
 - Necrosavants are a bit more likely to stay on the same tile and attack twice, rather than teleport to a slightly better tile
 - Improve AI targeting for throwing nets: They value the targets melee defense twice as much and prefer isolated targets
 - NPCs with **Sergeant** perk are 50% more attractive to other NPCs for target selection purposes

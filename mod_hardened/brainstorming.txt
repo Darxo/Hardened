@@ -757,3 +757,17 @@
 - when trying out, remember the last page we were on (groups, perks, background) and stay there until player changes
 - in concept for cover, mention the tactical overlay of the shield symbol, when someone is "in cover"
 - increase penalty for attacking allies on the world map
+- make lower star contracts grant less renown and higher ones grant more renown (instead of all 3 tiers the same amount)
+- move vanquisher to T3?
+- increase geist scream penalty? Afterall they were nerfed by the morale nerf
+- add concept for "level-up": Ability to choose 3 attributes to gain base attributes in, where the amount is randomized, but depending on talent
+- new perk for Schrats: at the start of your turn, recover hitpoints for every adjacent tree
+- orc berserk flanking from EngageFlankingMult 1.5 --> 1.25?
+- reduce minimum vision to 1 (like in vanilla), but allow all attacks to target enemies at 2 tiles, even if you dont see them (but you revealed them this turn)
+- show smoke debuff when looking at the tile tooltip
+- lower pitch of whirling stance
+- make negative stat multipliers no longer affect characters who have negative stats?
+- In tooltip of Mercenaries, show the flag of the noble house, not that of the town
+- Tavern Rumors about Mercenary Companies that are nearby/on the world map atm
+- in the turn sequence bar, display the waiting icon (refresh circle) on every entity, that can still wait this round
+- fix log spam from crossbow and handgonne reload
