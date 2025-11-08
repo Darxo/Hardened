@@ -1,5 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/items/shields/named/named_shield", function(q) {
-	// Overwrite, because we re-enable the ability to roll condition for named shields (removed by Reforged)
+	// Overwrite, because we
+	//	- re-enable the ability to roll condition for named shields (removed by Reforged)
+	//	- change the possible weight reduction to 20%-40% (up from 10%-30%)
 	q.randomizeValues = @() function()
 	{
 		if (this.m.BaseItemScript != null)
@@ -30,7 +32,7 @@
 		});
 		available.push(function ( _i )
 		{
-			_i.m.StaminaModifier = ::Math.round(_i.m.StaminaModifier * ::Math.rand(70, 90) * 0.01);
+			_i.m.StaminaModifier = ::Math.round(_i.m.StaminaModifier * ::Math.rand(60, 80) * 0.01);		// Vanilla: (70, 90)
 		});
 
 		for( local n = 2; n != 0 && available.len() != 0; n = --n )
