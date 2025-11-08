@@ -115,6 +115,16 @@
 		return true;
 	}
 
+// Nested Tooltips Functions
+	// Overwrite, because we need to prevent Nested Tooltips from deleting damage number tooltip lines
+	q.getDefaultNestedTooltip = @() function()
+	{
+		// Nested Tooltips checks, whether there is an item present on this character. If so, they overwrite the damage numbers
+		// However they never explain, why they needed to overwrite and what edge case this fixes
+		// Because as a result of that overwrite, every beast-skill does not display damage numbers
+		return this.getTooltip();
+	}
+
 // New Functions
 	// Call several functions to make sure that other entities/factions know about the action this skill just did, if they see the action
 	// Important: this.getContainer().getActor() must be placed on a tile, so do make sure that is the case before caling this function
