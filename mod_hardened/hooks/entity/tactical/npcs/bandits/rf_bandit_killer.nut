@@ -147,8 +147,12 @@
 	// Assign all other gear to this character
 	q.HD_assignOtherGear <- function()
 	{
-		local throwingWeapon = ::new("scripts/items/weapons/throwing_axe");
-		throwingWeapon.m.Ammo = 3;
-		this.getItems().addToBag(throwingWeapon);
+		local existingBagItem = this.getItems().getItemAtSlot(::Const.ItemSlot.Bag);
+		if (existingBagItem == null || !existingBagItem.isNamed())	// We don't want champions to spawn with two throwing weapons
+		{
+			local throwingWeapon = ::new("scripts/items/weapons/throwing_axe");
+			throwingWeapon.m.Ammo = 3;
+			this.getItems().addToBag(throwingWeapon);
+		}
 	}
 });
