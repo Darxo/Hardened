@@ -5,6 +5,12 @@
 	// Private
 	q.m.HD_LastSpawnedParty <- null;	// weakref to the last party, spawned by this factions spawnEntity function
 
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.HD_PricePctPerNegativeRelation = -0.02;		// Vanilla: -0.006
+	}
+
 	// Overwrite, because we can't easily apply the changes
 	q.addPlayerRelationEx = @() function( _r, _reason = "" )
 	{
