@@ -228,6 +228,15 @@
 });
 
 ::Hardened.HooksMod.hookTree("scripts/skills/skill", function(q) {
+	if (q.contains("create"))	// The base skill class does not contain a create function
+	{
+		q.create = @(__original) function()
+		{
+			__original();
+			this.m.IsAudibleWhenHidden = false;		// In Hardened you will never hear skills if the user is hidden to you
+		}
+	}
+
 	q.onUse = @(__original) function( _user, _targetTile )
 	{
 		// We make sure everyone who needs to know, now knows about the action we just did onto _targetTile, no matter what kind of skill we used
