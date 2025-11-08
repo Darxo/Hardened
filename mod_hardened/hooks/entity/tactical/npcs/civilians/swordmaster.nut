@@ -107,7 +107,7 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_calculated_strikes"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_battle_flow"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_crippling_strikes"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_footwork"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_nimble"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_mastery_sword"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_tempo"));
