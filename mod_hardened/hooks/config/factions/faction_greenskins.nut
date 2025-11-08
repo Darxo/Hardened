@@ -9,7 +9,7 @@
 	::Const.Tactical.Actor.GoblinFighter.MeleeSkill = 70;
 	::Const.Tactical.Actor.GoblinFighter.RangedSkill = 65;
 	::Const.Tactical.Actor.GoblinFighter.MeleeDefense = 5;
-	::Const.Tactical.Actor.GoblinFighter.RangedDefense = 5;
+	::Const.Tactical.Actor.GoblinFighter.RangedDefense = 20;
 	::Const.Tactical.Actor.GoblinFighter.Initiative = 130;
 }
 
