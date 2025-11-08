@@ -2,6 +2,28 @@
 	// Private
 	q.m.LastTroopSize <- 0;		// temporary variable to prevent
 
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original();
+
+		// Feat: We always display the flag of the owning faction, when Mercenaries are spawned by civilians settlements
+		if (this.getFlags().get("IsMercenaries"))
+		{
+			foreach (entry in ret)
+			{
+				if (entry.id == 50 && entry.type == "hint")
+				{
+					local f = ::World.FactionManager.getFaction(this.getFaction());
+					local banner = ::MSU.isNull(f.getOwner()) ? f.getUIBanner() : f.getOwner().getUIBanner();
+					entry.icon = banner;
+					break;
+				}
+			}
+		}
+
+		return ret;
+	}
+
 	q.onAfterInit = @(__original) function()
 	{
 		__original();
