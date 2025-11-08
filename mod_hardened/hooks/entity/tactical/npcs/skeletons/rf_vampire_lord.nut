@@ -42,5 +42,6 @@
 		// Generic Actives
 		this.getSkills().getSkillByID("actives.darkflight").setBaseValue("ActionPointCost", 3);
 		this.getSkills().add(::new("scripts/skills/actives/rf_sanguine_curse_skill"));
+		this.getSkills().add(::new("scripts/skills/actives/hd_vampire_bite"));
 	}
 });

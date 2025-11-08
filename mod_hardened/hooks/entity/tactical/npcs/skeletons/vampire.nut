@@ -111,6 +111,6 @@
 
 		// Generic Actives
 		this.getSkills().add(::new("scripts/skills/actives/darkflight"));
-		this.getSkills().add(::new("scripts/skills/actives/hand_to_hand"));
+		this.getSkills().add(::new("scripts/skills/actives/hd_vampire_bite"));
 	}
 });
