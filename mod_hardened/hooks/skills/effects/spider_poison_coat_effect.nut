@@ -7,6 +7,10 @@
 		__original();
 		this.m.Name = "Coated in Spider Poison";		// Vanilla: Weapon coated with poison
 		this.m.Description = "Your weapons are coated with concentrated webknecht poison.";
+		this.m.SoundOnUse = [
+			"sounds/combat/poison_applied_01.wav",
+			"sounds/combat/poison_applied_02.wav",
+		];
 	}
 
 	// Overwrite, because we prefer a static description
