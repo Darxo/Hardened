@@ -69,7 +69,13 @@
 	q.getDamageTotalMult <- function( _targetEntity )
 	{
 		if (::MSU.isNull(_targetEntity)) return 1.0;
-		if (this.getContainer().getActor().getMoraleState() <= _targetEntity.getMoraleState()) return 1.0;
+
+		local targetMoraleState = _targetEntity.getMoraleState();
+		// Usually "Ignore" is considered the highest state, but because it looks exactly like Steady and for design-reasons
+		// we choose to treat it as "Steady" for the purpose of this perk
+		if (targetMoraleState == ::Const.MoraleState.Ignore) targetMoraleState = ::Const.MoraleState.Steady;
+
+		if (this.getContainer().getActor().getMoraleState() <= targetMoraleState) return 1.0;
 
 		return this.m.DamageTotalMult;
 	}
