@@ -173,22 +173,20 @@
 
 				// This is a recreation of the vanilla algorithm for deciding how much relation influences price
 				// For Buy price this must be subtracted from the multiplier, for Sell price it must be added to the multiplier
-				local r = ::World.FactionManager.getFaction(_entityId).getPlayerRelation();
-				local priceMultAdd = -0.3;
-				priceMultAdd += ::Math.min(50, r) * 0.003 + r * 0.003;
+				local pricePct = ::World.FactionManager.getFaction(_entityId).HD_getRelationPricePct();
 
 				ret.push({
 					id = 15,
 					type = "text",
 					icon = "ui/icons/asset_money.png",
-					text = "Buyprice: " + ::MSU.Text.colorizePct(-1 * priceMultAdd, {AddSign = true, InvertColor = true}),
+					text = "Buyprice: " + ::MSU.Text.colorizePct(-1 * pricePct, {AddSign = true, InvertColor = true}),
 				});
 
 				ret.push({
 					id = 16,
 					type = "text",
 					icon = "ui/icons/asset_money.png",
-					text = "Sellprice: " + ::MSU.Text.colorizePct(priceMultAdd, {AddSign = true}),
+					text = "Sellprice: " + ::MSU.Text.colorizePct(pricePct, {AddSign = true}),
 				});
 
 				// Remove all vanilla relation entries, as we add them slightly differently
