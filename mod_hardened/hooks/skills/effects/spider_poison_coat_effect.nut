@@ -26,8 +26,8 @@
 		ret.push({
 			id = 10,
 			type = "text",
-			icon = "ui/icons/damage_dealt.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Your Weapon Attacks, which deal at least " + ::MSU.Text.colorPositive(this.m.HitpointDamageThreshold) + " [Hitpoint|Concept.Hitpoints] damage, apply [Poisoned (Spider)|Skill+hd_spider_poison_effect_item]"),
+			icon = "ui/icons/damage_received.png",
+			text = "Your Weapon Attacks, which deal at least " + ::MSU.Text.colorNeutral(this.m.HitpointDamageThreshold) + ::Reforged.Mod.Tooltips.parseString(" [Hitpoint|Concept.Hitpoints] damage, apply [Poisoned (Spider)|Skill+spider_poison_effect]"),
 			children = this.createSpiderPoisonEffect().getTooltipWithoutChildren().slice(2),
 		});
 
@@ -35,7 +35,7 @@
 			id = 11,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Lasts for " + ::MSU.Text.colorPositive(this.m.AttacksLeft) + " Attacks",
+			text = "Lasts for " + ::MSU.Text.colorPositive(this.m.AttacksLeft) + " Weapon Attacks",
 		});
 
 		return ret;
@@ -46,13 +46,11 @@
 	//	- simplify the conditions
 	//	- require the skill to be a weapon skill
 	//	- trigger a seperat helper function for applying the actual effect
+	//	- having the "Undead" flag no longer makes you immune to this poison
+	//	- remove 1.5 volume multiplier from sound effect
 	q.onTargetHit = @() function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (!_skill.isAttack()) return;
-
-		local item = _skill.getItem();
-		if (::MSU.isNull(item)) return;
-		if (!item.isItemType(::Const.Items.ItemType.Weapon)) return;
+		if (!this.isSkillValid(_skill)) return;
 
 		--this.m.AttacksLeft;
 		if (this.m.AttacksLeft <= 0) this.removeSelf();
@@ -64,14 +62,47 @@
 		this.inflictPoison(_targetEntity);
 	}
 
+	// Overwrite, because we make the conditions for using charges a bit more strict
+	q.onTargetMissed = @() function( _skill, _targetEntity )
+	{
+		if (!this.isSkillValid(_skill)) return;
+
+		--this.m.AttacksLeft;
+		if (this.m.AttacksLeft <= 0) this.removeSelf();
+	}
+
+// MSU Events
+	q.onQueryTooltip = @() function( _skill, _tooltip )
+	{
+		if (this.isSkillValid(_skill))
+		{
+			_tooltip.push({
+				id = 100,
+				type = "text",
+				icon = "ui/icons/damage_received.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Will apply [Poisoned (Spider),|Skill+spider_poison_effect] when dealing at least ") + ::MSU.Text.colorNeutral(this.m.HitpointDamageThreshold) + ::Reforged.Mod.Tooltips.parseString(" [Hitpoint|Concept.Hitpoints] damage"),
+			});
+		}
+	}
+
 // New Functions
+	q.isSkillValid <- function( _skill )
+	{
+		if (!_skill.isAttack()) return false;
+		local item = _skill.getItem();
+		if (::MSU.isNull(item)) return false;
+		if (!item.isItemType(::Const.Items.ItemType.Weapon)) return false;
+
+		return true;
+	}
+
 	q.inflictPoison <- function( _targetEntity )
 	{
 		if (!_targetEntity.isHiddenToPlayer())
 		{
 			if (this.m.SoundOnUse.len() != 0)
 			{
-				::Sound.play(::MSU.Array.rand(this.m.SoundOnUse), ::Const.Sound.Volume.RacialEffect * 1.5, _targetEntity.getPos());
+				::Sound.play(::MSU.Array.rand(this.m.SoundOnUse), ::Const.Sound.Volume.RacialEffect, _targetEntity.getPos());
 			}
 
 			::Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_targetEntity) + " is poisoned");
