@@ -10,6 +10,13 @@
 		local ret = __original();
 
 		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/stat_screen_dmg_dealt.png",	// Same Icon as Reach in Reforged
+			text = ::Reforged.Mod.Tooltips.parseString("Trigger a free attack on an adjacent enemy whenever they miss an attack against you"),
+		});
+
+		ret.push({
 			id = 11,
 			type = "text",
 			icon = "ui/icons/melee_defense.png",
@@ -29,7 +36,7 @@
 				id = 21,
 				type = "text",
 				icon = "ui/icons/warning.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Is removed when hit"),
+				text = ::Reforged.Mod.Tooltips.parseString("Is removed when hit by an Attack"),
 			});
 		}
 
