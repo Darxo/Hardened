@@ -417,11 +417,11 @@
 					{
 						if (corpse.HD_FatalityType == ::Const.FatalityType.Unconscious)
 						{
-							entry.text = ::Hardened.util.getColorizedCorpseName(corpse) + " was struck down here on round " + corpse.RoundAdded;
+							entry.text = ::Hardened.util.getColorizedCorpseName(corpse) + " was " + ::MSU.Text.colorPositive("struck down") + " here on round " + corpse.RoundAdded;
 						}
 						else
 						{
-							entry.text = ::Hardened.util.getColorizedCorpseName(corpse) + " was slain here on round " + corpse.RoundAdded;
+							entry.text = ::Hardened.util.getColorizedCorpseName(corpse) + " was " + ::MSU.Text.colorPositive("slain") + " here on round " + corpse.RoundAdded;
 						}
 						break;
 					}
