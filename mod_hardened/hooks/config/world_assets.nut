@@ -1,5 +1,5 @@
 ::Const.World.Assets.MedicinePerInjuryDay = 2.0;	// In Vanilla this is 1.0
-::Const.World.Assets.RelationUnitKilled = -2.0;		// In Vanilla this is -0.5
+::Const.World.Assets.RelationUnitKilled = -3.0;		// In Vanilla this is -0.5
 
 // New Values
 // This controls what percentage of a recruits hiring cost is needed to try them out
