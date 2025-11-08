@@ -15,4 +15,7 @@
 
 		return ret;
 	}
+
+	// Overwrite, because we don't grant any AP discount during the first Round
+	q.onAfterUpdate = @() function( _properties ) {}
 });
