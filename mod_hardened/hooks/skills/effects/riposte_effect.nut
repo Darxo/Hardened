@@ -55,9 +55,11 @@
 	// Overwrite, because we disable the hitchance penalty from not having sword mastery
 	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties ) {}
 
-	q.onDamageReceived = @(__original) function( _attacker, _damageHitpoints, _damageArmor )
+	// We use onBeforeDamageReceived because it is guaranteed to run just before we receive damage and it also has access to the skill who dealt the damage
+	q.onBeforeDamageReceived = @(__original) function( _attacker, _skill, _hitinfo, _properties )
 	{
-		if (this.m.IsRemovedWhenHit)
+		__original(_attacker, _skill, _hitinfo, _properties);
+		if (this.m.IsRemovedWhenHit && !::MSU.isNull(_skill) && _skill.isAttack())
 		{
 			this.removeSelf();
 		}
