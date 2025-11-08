@@ -150,6 +150,27 @@
 
 			case "world-relations-screen.Relations":
 			{
+				// Feat: Add simple tooltip line indicating whether you are currently allies or hostile with this faction
+				local relation = ::World.FactionManager.getFaction(_entityId).getPlayerRelation();
+				if (relation < 20.0)	// 20.0 is a magic number by vanilla, defined in faction::updatePlayerRelation
+				{
+					ret.push({
+						id = 14,
+						type = "text",
+						icon = "ui/icons/icon_contract_swords.png",
+						text = "Hostile",
+					});
+				}
+				else
+				{
+					ret.push({
+						id = 14,
+						type = "text",
+						icon = "ui/icons/relations.png",
+						text = "Allied",
+					});
+				}
+
 				// This is a recreation of the vanilla algorithm for deciding how much relation influences price
 				// For Buy price this must be subtracted from the multiplier, for Sell price it must be added to the multiplier
 				local r = ::World.FactionManager.getFaction(_entityId).getPlayerRelation();
