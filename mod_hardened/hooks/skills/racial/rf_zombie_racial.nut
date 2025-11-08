@@ -17,7 +17,7 @@
 				id = 25,
 				type = "text",
 				icon = "ui/icons/campfire.png",
-				text = "Your Hitpoints take " + ::MSU.Text.colorizeMultWithText(this.m.FireDamageMult) + " Fire Damage",
+				text = "Your Hitpoints take " + ::MSU.Text.colorizeMultWithText(this.m.FireDamageMult, {InvertColor = true}) + " Fire Damage",
 			});
 		}
 
