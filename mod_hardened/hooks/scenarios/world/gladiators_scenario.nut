@@ -5,6 +5,14 @@
 		this.m.Description = ::MSU.String.replace(this.m.Description, "12", "13");
 	}
 
+	q.onSpawnAssets = @(__original) function()
+	{
+		__original();
+
+		// The Gladiator
+		::World.Assets.m.BusinessReputation = 200;	// Vanilla: 100
+	}
+
 	q.onInit = @(__original) function()
 	{
 		__original();
