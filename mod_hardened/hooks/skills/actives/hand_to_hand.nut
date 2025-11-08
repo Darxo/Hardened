@@ -1,8 +1,10 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/hand_to_hand", function(q) {
 	q.create = @(__original) function()
 	{
-		__original()
+		__original();
+		this.m.ActionPointCost = 3;		// Vanilla: 4
 
+		// Hardened Values
 		this.m.HD_IsSortedBeforeMainhand = true;
 	}
 
