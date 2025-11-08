@@ -3,6 +3,7 @@
 	{
 		__original();
 		this.m.Description = ::MSU.String.replace(this.m.Description, "12", "13");
+		this.m.Difficulty = 2;	// Vanilla: 3
 	}
 
 	q.onSpawnAssets = @(__original) function()
