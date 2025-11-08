@@ -65,6 +65,30 @@
 		return __original(_mouse);
 	}
 
+	q.tactical_retreat_screen_onYesPressed = @(__original) function()
+	{
+		// Vanilla Fix: We prevent a rare end-of-combat freeze, when "something" is animating while we click the "It\'s over" button
+		// Vanilla always hides dialog when we click the "Yes" button. But some important actions only happen during the popping of the menu stack
+		// Those actions don't happen if TacticalDialogScreen.isAnimating() == true
+		// So in the rare case that something is animating while we press that button, we are softlocked because all interfaces are hidden
+		if (!this.m.TacticalDialogScreen.isAnimating())
+		{
+			__original();
+		}
+	}
+
+	q.tactical_retreat_screen_onNoPressed = @(__original) function()
+	{
+		// Vanilla Fix: We prevent a rare end-of-combat freeze, when "something" is animating while we click the "Run them down!" button
+		// Vanilla always hides dialog when we click the "No" button. But some important actions only happen during the popping of the menu stack
+		// Those actions don't happen if TacticalDialogScreen.isAnimating() == true
+		// So in the rare case that something is animating while we press that button, we are softlocked because all interfaces are hidden
+		if (!this.m.TacticalDialogScreen.isAnimating())
+		{
+			__original();
+		}
+	}
+
 	q.helper_handleContextualKeyInput = @(__original) function( _key )
 	{
 		if (this.isInLoadingScreen()) return __original(_key);
