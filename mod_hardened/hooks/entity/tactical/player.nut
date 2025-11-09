@@ -6,6 +6,16 @@
 
 	q.m.HD_LastSteppedTile <- null;	// Reference to the last tile that we virtually (not really) stepped on in a chain of onMovementStep. Is set to null on onMOvementFinish
 
+	q.create = @(__original) function()
+	{
+		__original();
+
+	// Hardened
+		this.m.HD_XPValueBase = 50;				// Vanilla: 70
+		this.m.HD_XPValuePerRegularLevel = 50;		// Vanilla: 30
+		this.m.HD_XPValuePerVeteranLevel = 10;		// Vanilla: 30
+	}
+
 	q.onInit = @(__original) function()
 	{
 		__original();
