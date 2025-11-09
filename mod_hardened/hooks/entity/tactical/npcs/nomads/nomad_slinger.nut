@@ -73,7 +73,6 @@
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_dodge"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_tricksters_purses"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_fast_adaption"));
 	}
 
 	// Assign Head and Body armor to this character
