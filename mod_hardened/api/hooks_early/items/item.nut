@@ -165,19 +165,22 @@
 	}
 
 // New Functions
-	// Play the InventorySound of an item but as directional sound with a position value
-	// This can be used to player inventory sounds on NPCs during combat
-	q.playInventorySoundWithPosition <- function( _eventType, _position, _volumeMult = 1.0, _pitchMult = 1.0 )
+	// Play the InventorySound of an item but as directional sound given a _tile
+	// This can be used to play inventory sounds on NPCs during combat
+	q.playInventorySoundWithPosition <- function( _eventType, _tile, _volumeMult = 1.0, _pitchMult = 1.0 )
 	{
-		local mockObject;
-		mockObject = ::Hardened.mockFunction(::Sound, "play", function( _soundFile, _volume = 1.0, _pos = null, _pitch = 1.0 ) {
-			mockObject.original(_soundFile, _volume * _volumeMult, _position, _pitch * _pitchMult);
-			return { done = true, value = null };
-		});
+		if (_tile.IsVisibleForPlayer)
+		{
+			local mockObject;
+			mockObject = ::Hardened.mockFunction(::Sound, "play", function( _soundFile, _volume = 1.0, _pos = null, _pitch = 1.0 ) {
+				mockObject.original(_soundFile, _volume * _volumeMult, _tile.Pos, _pitch * _pitchMult);
+				return { done = true, value = null };
+			});
 
-		this.playInventorySound(_eventType);
+			this.playInventorySound(_eventType);
 
-		mockObject.cleanup();
+			mockObject.cleanup();
+		}
 	}
 
 	// Calculate how much the current condition of this items influences its value

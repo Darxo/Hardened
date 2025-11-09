@@ -116,7 +116,7 @@
 		if (ret && !this.m.IsNegatingDisarm)
 		{
 			// Feat: we now play a position-based inventory sound when NPCs equip weapons during combat
-			oldWeaponToEquip.playInventorySoundWithPosition(::Const.Items.InventoryEventType.Equipped, _entity.getPos());
+			oldWeaponToEquip.playInventorySoundWithPosition(::Const.Items.InventoryEventType.Equipped, _entity.getTile());
 		}
 
 		return ret;
