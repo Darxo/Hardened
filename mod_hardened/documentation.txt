@@ -29,11 +29,11 @@
 	- Weapons worn by NPCs now have a 60% chance to drop (down from 90%) but no longer need to have at least 12 Condition to be eligable for dropping
 	- Throwing Weapons no longer need to be equipped, or missing an ammunition to be eligable for dropping
 	- **Whirling Death** now costs 15 Fatigue (up from 10)
-	- **Powerful Strikes** loses **Crippling Strikes** and gains **Colossus**
+	- **Powerful Strikes Group** loses **Crippling Strikes** and gains **Colossus**
 	- **Tough Group** loses **Colossus** and gains **Survival Instinct**
-	- **Vigorous** loses **Survival Instinct** and gains **Crippling Strikes**
+	- **Vigorous Group** loses **Survival Instinct** and gains **Crippling Strikes**
 	- **Wildling Group** loses **Colossus** and gains **Crippling Strikes**
-	- **Powerful Strikes** now uses the icon of **Killing Frenzy**
+	- **Tough Group** now uses the icon of **Killing Frenzy**
 	- **Lunge** damage scaling has been reworked. It now deals 1% less damage per Initiative below 100 and it deals 1% more damage per Initiative above 100 (up to a maximum of 75% more)
 	- **Reload Handgonne** now costs 25 Fatigue (up from 20)
 	- **Dislocated Jaw** now causes you to have 30% less Resolve during your turn, instead of only while using non-attacks
