@@ -711,6 +711,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Introduce new **Cursed** effect. It allows the character to resurrect even after receiving a fatality. It is given to **Fallen Heroes**
 - Introduce new **Bite Reach** effect, which reduces headshot chance by 10% and increases chance to receive headshot by 10%
 	- This effect is given to all **Dogs**, **Wolfs** and **Hyenas**
+- Weapons in the bags of NPCs will now have randomized Condition, similar to their equipped weapons
 
 ### Specific Changes
 
@@ -813,6 +814,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Resurrecting Corpses can no longer knock back characters that are rooted or immune to Displacement. Instead they delay their resurrection
 - Burning Damage (Fire Pot, Burning Arrow, Burning Ground) now remove all root-like effects from the targets
 - Characters which are not visible to the player will no longer produce idle or death sounds
+- Prevent most skills from playing sounds while their user is hidden
 - Weapons no longer drop to the ground when their condition goes to 0. Instead they drop when the condition is lowered, while it was at 0 condition. The weapon break warning is now only displayed while the weapon is at 0 condition
 - Weapons with 0 Condition now deal 50% less damage
 - The combat map is no longer revealed at the end of a battle
@@ -896,6 +898,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 - The **Lone Wolf** and **Gladiator** origins now have a roster size of 13 (up from 12)
+- **Peasant Militia**
 - The Retreat tooltip during combat now also lists the Melee Defense bonus your characters receive during Auto-Retreat
 - **Trade Ambition** now counts the sum of both transaction (buying and selling) instead of just the higher number of the two
 
@@ -948,7 +951,9 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Slightly improve wording of "weapon skills build up fatigue" tooltip on weapons
 - Automatically re-equip the accessory that you had previously equiped after an arena fight
 - Reduce pan speed of tactical camera by 20%
-- Increase saturation of **Line Breaker** icon
+- Improve smoke tooltip on tiles by linking to smoke effect
+- Turn **Decisive** effect icon grey, while a character has 0 stacks
+- Improve brightness and contrast of **Hold Steady**,  **Line Breaker**, **Net Pull** and **Onslaught**
 - Use unique icon for **Sergeant** perk
 - Improve tooltip of **Disarmed effect**
 - Improve tooltip of **Whip Disarm** using a nested tooltip for the **Disarmed effect**
@@ -969,6 +974,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add Setting (on) for displaying and adjusting a Waypoint that indicates, where your character on the world map is currently moving to
 - Settlements now display a tooltip showing how many days ago you last visited that location
 - The Tavern now displays to you how many rumors you received so far
+- Display Noble Faction Banner in the tooltip of Mercenary Parties
 - Add Setting (on) for displaying forbidden destination ports (e.g. when they are hostile to you or the origin port)
 - Add setting (off) for skipping the confirmation dialog when dismissing a freshly hired recruit (0 days with the company)
 - Distance text in rumors and contracts now display the tile distance range in brackets
@@ -982,7 +988,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add option in arena contract dialog to "think it over", if too few, or the wrong brothers were selected for the fight
 - Relation changes that come with a reason now also show the value in brackets, that you gained or lost from this action
 - Subsequent relation changes with the same value and same reason will be combined into a single line with a multiplier in brackets
-- Display price multiplier from relation in factions & relations screen
+- Faction Relation tooltips now show whether you are Allied or Hostile with that faction
+- Faction Relation tooltips now show price multiplier from relation
 - Change mouse wheel zoom speed on the world map to 0.4 (up from 0.3)
 - Add Setting to control the mouse wheel zoom speed on the world map
 - Add Setting (on) for displaying the exact Relation whenever its indirect term appears anywhere
@@ -1013,7 +1020,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Improve the Vanilla Concepts **Chance to hit head**, **Vision** and **Morale** and add nested tooltip for all morale states (except **Steady**)
 - Improve spider poison item, skill and effect tooltips
 - Explain the melee defense softcap in the melee defense tooltip
-- Display item type names for Ammunition, Accessories, Food and Quest Items in the item tooltips
+- Display item type names for Ammunition, Accessories, Consumables, Food and Quest Items in the item tooltips
 - Improve tooltips of **Battleforged** perk and **Chop** skill
 - Improve artwork for **Nimble** perk and **Heightened Reflexes (Nine Lives)** effect
 - Improve artwork for **Tattered Sackcloth** item to make it stand out more from **Sackcloth**
@@ -1063,6 +1070,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Fix barbarian **Drum** being double grippable despite being a two-handed weapon
 - Fix the impact delay of most throwable utility items not lining up with their projectiles, especially on higher game speed
 - Fix keyboard inputs for camera movement in combat not being combinable
+- Fix rare end-of-combat freeze, when clicking "It's over"
 - Fix spiders rarely glitching out, causing their armor to no longer take damage
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
@@ -1099,6 +1107,10 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 ### Swifter
 
 - Fix image of active entity in the turn sequence bar vanishing on higher combat speed
+
+### Nested Tooltips
+
+- Fix Non-Item Attack Skills not showing any damage numbers
 
 ## For Modders
 

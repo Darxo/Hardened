@@ -21,6 +21,27 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.2.3
+	- **Bully** now works against enemies that are immune to morale, if you are **Confident**
+	- Weapons in the bags of NPCs will now have randomized Condition, similar to their equipped weapons
+	- Prevent most skills from playing sounds while their user is hidden
+	- Hidden enemies no longer produce a soundeffect when swapping weapons
+	- Improve brightness and contrast of **Onslaught**, **Hold Steady** and **Net Pull**
+	- Faction Relation tooltips now also show whether you are Allied or Hostile with that faction
+	- Display Noble Faction Banner in the tooltip of Mercenary Parties
+	- Improve smoke tooltip on tiles by linking to smoke effect
+	- Turn **Decisive** effect icon grey, while a character has 0 stacks
+	- Clarify in **Riposte** tooltip that it is only removed when hit by an Attack
+	- Display **Consumable** as a type at the top of consumable item tooltips
+	- Colorize the terms **struck down** and **slain** in the tile tooltips for corpses
+	- Slightly increase Volume when dismissing recruits in a town
+	- Slightly improve tooltips of smoke effect
+	- Fix Champion Brigand Killer sometimes spawning with two throwing weapons
+	- Fix wrong color in tooltip about increased Fire Damage taken on Zombies and Flesh Golems
+	- Fix **Riposte** being removed by bleed, poison, fire or miasma
+	- Fix(Nested Tooltips) Non-Item Attack Skills not showing any damage numbers
+	- Fix(Vanilla) rare end-of-combat freeze, when clicking "It's over"
+
 1.2.2
 	- Goblin-, Brigand-, Nomad- and Mercenary ranged units now play around 35% more defensive
 	- Goblin Overseer now play 100% more defensive, just like Goblin Shamans
