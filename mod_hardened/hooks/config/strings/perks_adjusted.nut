@@ -10,7 +10,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Take less Damage from the first " + ::MSU.Text.colorPositive(2) + " attacks you, or your shield receive each battle",
+					"Take less Damage from the first " + ::MSU.Text.colorPositive(2) + " Attacks you, or your shield receive each battle",
 					"This reduction is a percentage equal to your current [Ranged Defense|Concept.RangeDefense] plus an additional " + ::MSU.Text.colorPositive("10%") + " for each tile between the attacker and you",
 				],
 			}],
@@ -448,8 +448,8 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Throwing Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
-					"Your first throwing attack each [round|Concept.Round] deals " + ::MSU.Text.colorizeMultWithText(1.3) + " damage",
-					"Once per [round,|Concept.Round] swapping a throwing weapon with an empty throwing weapon or an empty slot becomes a free action",
+					"Your first Throwing Attack each [round|Concept.Round] deals " + ::MSU.Text.colorizeMultWithText(1.3) + " damage",
+					"Once per [round,|Concept.Round] swapping a Throwing Weapon with an empty Throwing Weapon or an empty slot becomes a free action",
 				],
 			}],
 		}),
@@ -581,7 +581,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Every hit to the head will [daze|Skill+dazed_effect] your target for " + ::MSU.Text.colorPositive(1) + " [turn|Concept.Turn] or increase the duration of an existing [daze|Skill+dazed_effect] by " + ::MSU.Text.colorPositive(1) + " [turn|Concept.Turn]",
+					"Every [hit to the head|Concept.ChanceToHitHead] will [daze|Skill+dazed_effect] your target for " + ::MSU.Text.colorPositive(1) + " [turn|Concept.Turn] or increase the duration of an existing [daze|Skill+dazed_effect] by " + ::MSU.Text.colorPositive(1) + " [turn|Concept.Turn]",
 				],
 			}],
 		}),
@@ -691,7 +691,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlocks the [Cheap Trick|NullEntitySkill+rf_cheap_trick_skill] skill which increases the [Hitchance|Concept.Hitchance] of your next attack skill but reduces its damage",
+					"Unlocks the [Cheap Trick|NullEntitySkill+rf_cheap_trick_skill] skill which increases the [Hitchance|Concept.Hitchance] of your next Attack skill but reduces its damage",
 				],
 			}],
 		}),
@@ -867,7 +867,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Gain " + ::MSU.Text.colorPositive("+10") + " [Melee Skill|Concept.MeleeSkill] while it is not your [turn|Concept.Turn]",
 					"[Riposte|Skill+riposte_effect] is no longer removed when you get hit or do a counter attack",
-					"Recover " + ::MSU.Text.colorPositive("1") + " [Action Point|Concept.ActionPoints] whenever an opponent misses a melee attack against you",
+					"Recover " + ::MSU.Text.colorPositive("1") + " [Action Point|Concept.ActionPoints] whenever an opponent misses a Melee Attack against you",
 				],
 			}],
 		}),
@@ -895,7 +895,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain a stacking " + ::MSU.Text.colorPositive("+10%") + " [Hitchance|Concept.Hitchance] whenever an opponent misses an attack against you",
+					"Gain a stacking " + ::MSU.Text.colorPositive("+10%") + " [Hitchance|Concept.Hitchance] whenever an opponent misses an Attack against you",
 					"Bonus is reset upon landing a hit",
 				],
 			}],
@@ -939,7 +939,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever you use an Attack during your [turn,|Concept.Turn] perform a free extra attack of the same type to a different valid enemy within 2 tiles. This attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
+					"Whenever you use an Attack during your [turn,|Concept.Turn] perform a free extra Attack of the same type to a different valid enemy within 2 tiles. This Attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
 				],
 			}],
 		}),
@@ -1035,9 +1035,9 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Unlock one extra [bag slot.|Concept.BagSlots] This does not work if you have [Weapon Master|Perk+perk_rf_weapon_master]",
-						"Piercing type throwing attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body",
-						"Cutting type throwing attacks apply [Overwhelmed|Skill+overwhelmed_effect]",
-						"Headshots with blunt type throwing attacks apply [Staggered.|Skill+staggered_effect] All hits with blunt type throwing attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
+						"Piercing type Throwing Attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body",
+						"Cutting type Throwing Attacks apply [Overwhelmed|Skill+overwhelmed_effect]",
+						"Headshots with Blunt type Throwing Attacks apply [Staggered.|Skill+staggered_effect] All hits with Blunt type Throwing Attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
 						"[Throwing Spears|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(2.0) + " damage to shields",
 					],
 				},
@@ -1081,7 +1081,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your spear attacks cost no [Fatigue|Concept.Fatigue]",
+					"Your Spear Attacks cost no [Fatigue|Concept.Fatigue]",
 				],
 			}],
 		}),
@@ -1111,7 +1111,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your first attack each [turn|Concept.Turn] costs " + ::MSU.Text.colorPositive("-1") + " [Action Point|Concept.ActionPoints] for every adjacent ally",
+					"Your first Polearm Attack each [turn|Concept.Turn] costs " + ::MSU.Text.colorPositive("-1") + " [Action Point|Concept.ActionPoints] for every adjacent ally",
 				],
 			}],
 		}),
@@ -1201,7 +1201,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Gain " + ::MSU.Text.colorPositive("+25%") + " [chance to hit the head|Concept.ChanceToHitHead] when attacking at a distance of 2 tiles",
-					"Your attacks at a distance of 2 tiles will never hit the [Cover|Concept.Cover]",
+					"Your Attacks at a distance of 2 tiles will never hit the [Cover|Concept.Cover]",
 				],
 			}],
 		}),
@@ -1244,7 +1244,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Tool skills cost " + ::MSU.Text.colorPositive("-1") + " [Action Point|Concept.ActionPoints]",
 					"Wielding a tool in your offhand does not disable [Double Grip|Skill+double_grip]",
-					"While wielding a tool in your offhand, the first successful attack each [turn|Concept.Turn] will [stagger|Skill+staggered_effect] your target",
+					"While wielding a tool in your offhand, the first successful Attack each [turn|Concept.Turn] will [stagger|Skill+staggered_effect] your target",
 				],
 			}],
 		}),
@@ -1285,7 +1285,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Take up to " + ::MSU.Text.colorPositive("60%") + " less [Armor Penetration|Concept.ArmorPenetration] Damage from attacks. Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each [Weight|Concept.Weight] on your Body Armor and Helmet combined",
+					"Take up to " + ::MSU.Text.colorPositive("60%") + " less [Armor Penetration|Concept.ArmorPenetration] Damage from Attacks. Lose " + ::MSU.Text.colorNegative("1%") + " reduction for each [Weight|Concept.Weight] on your Body Armor and Helmet combined",
 					"Take " + ::MSU.Text.colorPositive("2%") + " less Armor Damage from Attacks for every " + ::MSU.Text.colorPositive("5") + " [Initiative|Concept.Initiative] you have, up to a maximum of " + ::MSU.Text.colorPositive("40%"),
 				],
 			}],
@@ -1300,7 +1300,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever you use an attack during your [turn,|Concept.Turn] spend all remaining [Action Points|Concept.ActionPoints] and deal " + ::MSU.Text.colorizeMultWithText(1.1) + " Damage during this attack for every [Action Point|Concept.ActionPoints] spent this way",
+					"Whenever you use an Attack during your [turn,|Concept.Turn] spend all remaining [Action Points|Concept.ActionPoints] and deal " + ::MSU.Text.colorizeMultWithText(1.1) + " Damage during this Attack for every [Action Point|Concept.ActionPoints] spent this way",
 					"This bonus is doubled for one-handed weapons",
 				],
 			}],
@@ -1314,7 +1314,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever an opponent misses a melee attack against you while it is not your [turn,|Concept.Turn] gain the [Rebuke|Skill+hd_rebuke_effect] effect until the start of your next [turn|Concept.Turn]",
+					"Whenever an opponent misses a Melee Attack against you while it is not your [turn,|Concept.Turn] gain the [Rebuke|Skill+hd_rebuke_effect] effect until the start of your next [turn|Concept.Turn]",
 					"Requires a usable [Attack of Opportunity.|Concept.ZoneOfControl] Does not work while [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]"
 				],
 			}],
@@ -1351,7 +1351,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your attacks that inflict [bleeding|Skill+bleeding_effect] inflict 5 additional stacks of [bleeding|Skill+bleeding_effect]",
+					"Your Attacks that inflict [bleeding|Skill+bleeding_effect] inflict 5 additional stacks of [bleeding|Skill+bleeding_effect]",
 				],
 			}],
 		}),
@@ -1433,8 +1433,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever you get hit by an attack, gain 1 stack",
-					"Whenever an attack misses you, lose 1 stack",
+					"Whenever you get hit by an Attack, gain 1 stack",
+					"Whenever an Attack misses you, lose 1 stack",
 					"You gain " + ::MSU.Text.colorPositive("+10") + " [Melee Defense|Concept.MeleeDefense] and " + ::MSU.Text.colorPositive("+10") + " [Ranged Defense|Concept.RangeDefense] per stack",
 				],
 			}],
@@ -1449,7 +1449,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per [round,|Concept.Round] if you use an attack on an adjacent enemy, gain " + ::MSU.Text.colorPositive("+5") + " [Melee Defense|Concept.MeleeDefense] for every adjacent enemy until the start of your next [turn|Concept.Turn]",
+					"Once per [round,|Concept.Round] if you use an Attack on an adjacent enemy, gain " + ::MSU.Text.colorPositive("+5") + " [Melee Defense|Concept.MeleeDefense] for every adjacent enemy until the start of your next [turn|Concept.Turn]",
 				],
 			}],
 		}),
@@ -1464,8 +1464,8 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Dagger Attacks with a range of 1 tile can now target enemies up to 2 tiles away",
-					"Attacking from 2 tiles away moves you 1 tile closer before the attack",
-					"If the attack hits, you automatically return to your original tile",
+					"Attacking from 2 tiles away moves you 1 tile closer before the Attack",
+					"If the Attack hits, you automatically return to your original tile",
 				],
 			}],
 		}),
@@ -1627,7 +1627,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per [round,|Concept.Round] if you hit an enemy with an attack gain 1 stack, up to a maximum of 3 stacks",
+					"Once per [round,|Concept.Round] if you hit an enemy with an Attack gain 1 stack, up to a maximum of 3 stacks",
 					"Each stack grants " + ::MSU.Text.colorPositive("+1") + " [Action Point|Concept.ActionPoints] and " + ::MSU.Text.colorPositive("10%") + " more [Initiative|Concept.Initiative]",
 					"Lose 1 stack when you [wait|Concept.Wait]",
 					"Lose 1 stack when you end your [turn|Concept.Turn] with more than half of your [Action Points|Concept.ActionPoints] remaining",
