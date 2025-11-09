@@ -306,7 +306,6 @@
 				{
 					if ("id" in entry && entry.id == 2)
 					{
-						// We add an explanation about the softcap and emphasize that this stat also helps against animals and two-tile attacks
 						entry.text = ::Reforged.Mod.Tooltips.parseString(
 							"Vision determines how far a character can see on the battlefield and how much of the fog of war they uncover.\n\n" +
 							"Most attacks and skills require the user to have line of sight and sufficient Vision to the targeted tile.\n\n" +

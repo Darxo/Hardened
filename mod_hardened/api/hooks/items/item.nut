@@ -86,7 +86,7 @@
 	{
 		__original(_isSold);
 
-		if (_isSold)	// This being true is an indicator, that the player just bought this item from a shop
+		if (_isSold)	// This being true is an indicator, that the player just sold this item to a shop
 		{
 			// We don't count trade goods as "Sold", if they were bought by us just moments before
 			if (this.m.HD_BuyBackPrice != null && this.isItemType(::Const.Items.ItemType.TradeGood))
@@ -103,7 +103,7 @@
 	{
 		__original(_isBought);
 
-		if (_isBought)	// This being true is an indicator, that the player just sold this item to a shop
+		if (_isBought)	// This being true is an indicator, that the player just bought this item from a shop
 		{
 			// We don't count trade goods as "Bought", if they were sold by us just moments before
 			if (this.m.HD_BuyBackPrice != null && this.isItemType(::Const.Items.ItemType.TradeGood))

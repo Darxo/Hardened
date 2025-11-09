@@ -5,7 +5,7 @@
 		this.m.RangeIdeal = 3;			// In Vanilla this is 4
 
 		this.m.Value = 600;				// In Vanilla this is 300
-		this.m.StaminaModifier = 0;	// In Vanilla this is -6
+		this.m.StaminaModifier = 0;		// In Vanilla this is -6
 		this.m.AmmoMax = 5;				// In Vanilla this is 5
 		this.m.RegularDamage = 45;		// In Vanilla this is 30
 		this.m.RegularDamageMax = 60;	// In Vanilla this is 50
