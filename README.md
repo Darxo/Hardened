@@ -103,12 +103,13 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - Reloading all Crossbows now costs 5 Action Points (up from 4)
 - Reloading all Firearms now costs 7 Action Points (down from 9)
 
-### Attacking Allies
+### Relation with Factions
 
 - Force Attacking an ally on the world map no longer drops their Relation with you to 0 or causes a Morale Reputation hit. Instead it only makes them temporarily your enemy until you cancel the combat dialog or end the fight with them
 - Whenever you start combat, lose 5 Relation with all hostile Factions that you fight against
 - Whenever you start combat against a temporary enemy (e.g. when Force Attacking an ally), lose 2 Morale Reputation
-- Killing any character now changes Relation with their faction by -2 (down from -0.5). This action will now print a relation change entry with a reason
+- Killing any character now changes Relation with their faction by -3 (down from -0.5). This action will now print a relation change entry with a reason
+- Factions now offer you 2% worse prices for every point of Relation below 50 with them (up from 0.6%)
 
 ### New Perks
 
@@ -179,16 +180,17 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
 - **Drums of War** now costs 30 Fatigue (up from 15)
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
-- **Hand-to-Hand Attack** is now enabled if you carry an empty throwing weapon in your main hand.
+- **Hand-to-Hand Attack** now costs 3 Action Points (down from 4) and it is now enabled if you carry an empty throwing weapon in your main hand.
 - **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%)
 - **Flaming Arrow** (granted by **Trick Shooter**) no longer causes an extra morale check on the main target. It now deals 100% Burning Damage (instead of 25% Burning and 75% Piercing Damage)
 - **Passing Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand. It now has 0 additional fatigue cost (down from 2)
-- **Lunge** now has -10% additional Hitchance (up from -20%)
+- **Lunge** now has -10% additional Hitchance (up from -20%). Its damage scaling from Initiative has been reworked: It now deals 1% less damage per Initiative below 100 and it deals 1% more damage per Initiative above 100 (up to a maximum of 75% more)
 - **Net Effect** (caused by **Throw Net**) no longer affects the Initiative of the target. It now applies 50% less Melee Defense (up from 25%) and 50% less Ranged Defense (up from 45%)
 - **Net Pull** now costs 30 Fatigue (up from 25)
 - **Quick Shot** now has -2 Shooting Range (down from -1)
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
 - **Recover** now applies the same Initiative debuff as using **Wait**
+- **Reload Handgonne** now costs 25 Fatigue (up from 20)
 - **Reverse Grip** (Versatile Swordsman) now adds -1 Reach while active (down from -30% less)
 - **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack. Riposte no longer has a penalty to Hitchance. It can now be used multiple times per round
 - **Shuffle** (granted by **Dynamic Duo**) no longer puts your partner to the next position in the turn order
@@ -298,7 +300,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Rebuke** is completely reworked. It now grants the **Rebuke Effect** whenever an opponent misses a melee attack against you while it's not your turn, until the start of your next turn. This effect reduces your damage by 25% but will make you retaliate every melee attack miss against you.
 - **Rising Star** now only grants 20% experience until you are level 12. It now grants +2 Perk Points at Level 12, instead of 5 levels after picking the perk
 - **Rush of Battle** is completely reworked. While adjacent to an ally and an enemy, gain 20% more Injury Threshold per adjacent enemy and Skills cost 10% less Fatigue per adjacent ally
-- **Sanguinary** is completely reworked. It now causes your non-AoE Cleaver Attacks to apply 5 additional bleed stacks, if the attack applied at least one bleed stack
+- **Sanguinary** is completely reworked. It now causes your Cleaver Attacks to apply 5 additional bleed stacks, if the attack applied at least one bleed stack
 - **Savage Strength** now reduces fatigue cost of weapon skills by 20% (down from 25%). It now grants Immunity to Disarm
 - **Shield Expert** no longer grants 25% increased shield defenses and no longer prevents fatigue build-up when you dodge attacks. It now grants 50% less shield damage taken and it makes it so enemies will never have Reach Advantage over the shield user
 - **Shield Sergeant** is completely reworked. It grants **Shieldwall** effect to all allies who have a shield equippe, at the start of combat. It now causes allies within 3 tiles to imitate shield skills for free that you use during your turn. It also allows you to use **Knock Back** and **Cover Ally** on empty tiles
@@ -325,13 +327,13 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Whirling Death** is completely reworked. It now grants a new active skill which creates a buff for 3 turns granting 25% more damage, +2 Reach and 10 Melee Defense to the user
 
 ### Perk Groups
-
 - **Bags and Belts** is added to **Light Armor** group and removed from **General** group
 - **Bone Breaker** moved to Tier 5 (down from Tier 7)
 - **Bullseye** moved to Tier 6 (up from Tier 3)
 - **Bully** moves to Tier 1 (down from Tier 2)
 - **Cheap Trick** moved to Tier 1 (down from Tier 2)
-- **Colossus** is added to **Wildling** group
+- **Colossus** is removed from **Tough** group and added to **Powerful Strikes** group
+- **Crippling Strikes** is removed from **Powerful Strikes** and added to **Vigorous** group and **Wildling** group
 - **Decisive** is added to **Leadership** group
 - **Death Dealer** is removed from **Agile** and added to **Powerful Strikes**. It moved to Tier 6 (up from Tier 4)
 - **Deep Impact** (now **Breakthrough**) moved to T3 perk (down from Tier 6)
@@ -358,13 +360,15 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Rising Star** moved to Tier 6 (down from Tier 7)
 - **Sanguinary** moved to Tier 6 (up from Tier 2)
 - **Student** is added to **General** group. It is no longer a special perk
+- **Survival Instinct** is removed from **Vigorous** group and added to **Tough** group
 - **Tricksters Purses** moved to Tier 3 (up from Tier 1)
 - **Vigorous Assault** is removed from **Swift Strikes** group
 - **Knave** no longer guarantees the **Dagger** perk group. Now it is just twice as likely. It also no longer guarantees the **Nimble** perk group
-- **Wildling** no longer prevents the perk groups **Ranged**, **Gifted** and **Leadership** from appearing
 - **Leadership** perk group is now part of the **Shared** perk group collection and will compete with shared perk groups
 - **Soldier Group** no longer guarantees **Professional perk** or **Trained Group**. Instead it only applies a 2.5x multiplier for **Trained Group**
 - **Tactician** is now a **Special** perk group and no longer replaces a shared perk group, when it appears
+- **Tough** group now uses the icon of **Killing Frenzy**
+- **Wildling** no longer prevents the perk groups **Ranged**, **Gifted** and **Leadership** from appearing
 
 ### Backgrounds
 
@@ -379,7 +383,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Oathtaker** now spawn with +1 Weapon Group (down from +2)
 - **Pimp** now has 0 to minimum Melee Skill (up from -5) and +5 to maximum Melee Skill (up from -5)
 - **Shepherd** loses the Hitchance Bonus with **Slings**
-- **Swordmaster** no longer has **Sword Mastery** unlocked by default. This perk is now moved to Tier 3 (down from 4) for them. They now have a hiring cost of 400 Crowns (down from 2400), just like in Vanilla
+- **Swordmaster** no longer has **Sword Mastery** unlocked by default. They now have a hiring cost of 400 Crowns (down from 2400), just like in Vanilla
 
 ### Traits
 
@@ -399,6 +403,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Injuries now have a 50% chance to improve each day when you have no remaining Medicine Supplies (up from 0%)
 - **Collapsed Lung** no longer reduces the Stamina. Instead it now disables the use of **Recover**
 - **Crushed Windpipe** no longer reduces the Stamina. Instead it now disables the use of **Recover**
+- **Dislocated Jaw** now causes you to have 30% less Resolve during your turn, instead of only while using Non-Attacks
 - **Dislocated Shoulder** no longer reduces the maximum available Action Points by 3. Instead it now increases the Action Point cost of all skills by 3
 - **Pierced Lung** now reduces Stamina by 30% (down from 60%) and disables the use of **Recover**
 - **Grazed Neck**, **Cut Artery** and **Cut Throat** are no longer removed, when bandaged
@@ -421,6 +426,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Berserk Chain** now has 4 Reach (down from 5)
 - **Cruel Falchion** are now a Sword/Dagger hybrid. They now also grant **Stab**. **Slash** and **Rispote** lose any discount
 - **Cudgel** now deals 40-60 damage (up from 30-50), has 4 Reach (up from 3), costs 400 Crowns (up from 300). **Bash** now costs 5 AP (up from 4). **Knock Out** now has a 100% chance to stun
+- **Dagger** now deals 20-30 Damage (from 15-35)
 - **Estoc** now has 6 Reach (up from 5)
 - **Goblin Skewer** are now a Spear/Dagger hybrid. **Thrust** is replaced with **Stab**. **Spearwall** no longer has any discount. **Riposte** is removed
 - **Goedendag** no longer grants **Cudgel** skill. It now has a 100% chance to stun with **Knock Out** (up from 75%)
@@ -435,11 +441,12 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Heavy Crossbow** now has +2 Fatigue Cost for its weapon skills
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
 - **Longsword** now deals 45-55 damage (down from 65-85) has Armor Penetration of 30% (up from 25%), 75% Armor Damage (down from 100%), +0% Headshot Chance (down from +5%), 6 Reach (up from 5) and costs 1200 Crowns (down from 2400). It loses **Overhead Strike** and gains **Swing**. Its skills no longer have any discount. It can no longer appear as a named weapon
-- **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%), 6 Condition (up from 2) and 50% Armor Damage (up from 10%)
+- **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%), 6 Condition (up from 2) and 50% Armor Damage (up from 10%). It gains the **Mace** Weapontype
 - **Pike** gains the **Spear** Weapontype
 - **Player Banner** now causes -5 to Ranged Defense and it grants **Repel**
 - **Poleflail** now has 5 Reach (down from 6) and costs 1600 Crowns (up from 1400). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
 - **Reinforced Wooden Poleflail** now has 5 Reach (down from 6). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
+- **Rondel Dagger** now deals 25-35 Damage (from 20-40) and costs 500 Crowns
 - **Rusty Warblade** loses **Decapitate** and gains **Split**
 - **Short Bow** now deals 35-50 damage (up from 30-50), has a Range of 6 (down from 7) and costs 250 Crowns (up from 200)
 - **Spetum** now has a Reach of 7 (up from 6), a Weight of 12 (down from 14) and costs 900 Crowns (down from 1050). The named variant now costs 2800 Crowns (down from 3500)
@@ -600,7 +607,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Physician's Mask** now has 5 Weight (up from 3), -3 Vision (down from -1) and costs 150 Crowns (down from 170)
 - **Reinforced Mail Coif** now has 120 Condition (up from 100), 6 Weight (up from 5), -2 Vision (down from -1) and costs 600 Crowns (up from 300)
 - **Rusty Mail Coif** now has 80 Condition (up from 70), 9 Weight (up from 4) and costs 200 Crowns (up from 150)
-- **Sallet Helmet** now has 7 Weight (up from 5)
+- **Sallet Helmet** now has 7 Weight (up from 5) and costs 2000 Crowns (up from 1200)
 - **Southern Head Wrap** now has 3 Weight (up from 0), -1 Vision (down from 0) and costs 30 Crowns (down from 50)
 - **Southern Helmet with Coif** now has 180 Condition (down from 200) and -1 Vision (up from -2)
 - **Spiked Skull Cap with Mail** now has 130 Condition (up from 125) and 8 Weight (up from 7)
@@ -655,11 +662,12 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Fangshire** will no longer spawn at the start of the game
 - **Feral Shield** now costs 400 Crowns (up from 50)
 - **Fermented Unhold Heart** now has an expiry date of 40 days (up from 20)
-- **Goblin Poison** now costs 200 Crowns (up from 100)
+- **Goblin Poison** now costs 200 Crowns (up from 100). It now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 1000 Value (up from 200) and grants 10 Resolve (up from 5)
 - **Hyena Fur Mantle** now grants 10% more Initiative instead of +15 Initaitive
 - **Masterfully Cured Ration** now has a Stacksize of 50 (up from 25) and costs 300 Crowns (up from 150)
 - Named Helmets now have a minumum possible weight of 3 (down from 4)
+- Named Shields can now roll Weight between 60%-80% (down from 70%-90%)
 - The Named **Wolf Helmet** now has 120 Condition (down from 140), 6 Weight (down from 8) and -1 Vision (down from 0) and costs 3000 Crowns (up from 2000)
 - The Named **Norse Helmet** now has 170 Condition (up from 125), 8 Weight (up from 6) and -3 Vision (down from -1) and costs 3000 Crowns (up from 2000)
 - Named **Wolf Helmets** and **Norse Helmets** are now twice as likely to appear as rewards or in shops
@@ -668,6 +676,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Reinforced Throwing Net** now has a weight of 8 (up from 2)
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**
 - **Sipar** is now called **Sipar Shield** (just like in Vanilla)
+- **Spider Poison** now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1
 - **Smoked Ham** now has a Stacksize of 30 (up from 25) and cost 115 Crowns (up from 95)
 - **Strange Meat** now has a Stacksize of 20 (down from 25) and costs 35 Crowns (down from 50)
 - **Strange Mushrooms** now cost 200 Crowns (up from 100)
@@ -689,6 +698,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Bounty Hunter** costs 2500 Crowns (down from 4000). It now grants +5% for enemies to become champions (up from +3%). It no longer grants Crowns when you kill champions
 - **Drill Sergeant** now provides 2% Experience per level below 11 (down from 4%), just like in Vanilla. It now requires a brother with a permanent injury to be dismissed, just like in Vanilla
 - **Lookout** no longer grants 25% more vision at all times. It now always provides a scouting report for enemies near you, just like "Band of Poachers" origin
+- **Negotiator** now grants 100% faster decay of negative Relation (up from 15%). It now has a more accurate list of effects
 - **Quartermaster** now grants 150 Storage for Ammunition (up from 100) and 100 Storage for Tools and Medicine (up from 50)
 - **Scout** no longer grants 15% more movement speed. It now grants 20% more movement speed while in Forests and Swamp. It also grants 25% Vision while on hills or mountains
 - **Surgeon** now also counts Injuries treated by Bandages for its Requirement
@@ -721,7 +731,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Skeleton Racial** now explicitely causes 100% less **Fatigue** build-up
 - **Flesh Golems** lose **Full Force**, gain **Savage Strength** and take 50% more burning damage to hitpoints
 - **Necromancer** lose 20 natural body armor. **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)
-- **Necrosavants** now require the target to have red blood in order to leech life from them, instead of being able to leech life from anyone
+- **Necrosavants** now require the target to have red blood in order to leech life from them, instead of being able to leech life from anyone. They lose immunity against poison
 - **The Conqueror** now has **Savage Strength**. This has no gameplay impact and is only meant to visualize that he is immune to **Disarm**
 
 **Greenskins:**
@@ -746,7 +756,9 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Tweak the party compositions of many factions
 	- reducing on average the amount of different entity types in that party
 	- increasing the amount of higher tier units allowed at the same time
-- Add **Highwayman** as new T1 of the Banditleader Unitblock
+- Add **Brigand Highwayman** as new T1 of the BanditLeader Unitblock
+- Add **Nomad Outlaw** as the new T1 of the NomadLeader UnitBlock
+- **Gladiators** have a 10% chance to appear in southern Caravans during the later parts of the game
 - Mercenaries will more gradually appear in caravan parties, instead of suddenly and in great numbers
 - **Brigand Killer** can now appear in the Disguised Direwolf contract twist
 - Adorned Knights now only bring 1 Squire (down from 2)
@@ -768,7 +780,6 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - NPCs will no longer throw nets while their strategy is defending
 - NPCs with **Bolster** are more likely to attack with their polarm as they are surrounded by more allies
 - NPCs with **Dismantle** are more likely to target enemies with 100% hitpoints
-- NPCs with **Reload Disorientation** are slightly less likely to use a ranged attack
 - NPCs with **Supporter** are 100% more likely to use skills, which would recover Action Points
 - NPCs with **Sweeping Strikes** are more likely to use an appropriate attack as they are surrounded by more enemies
 - NPCs with **Wear them Down** 20% more likely to target someone who is almost fully fatigued
@@ -800,6 +811,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Equipped Ammo Items can no longer be dropped to the ground or into an empty inventory slot
 - **Swamp** tiles no longer reduce Melee Skill by 25%. Instead they now reduce Initiative by 25%
 - The **Hidden** effect (granted by certain tiles) now also provides +10 Ranged Defense and it lists enemies that you are currently revealed to
+- Change XPValue of Player Characters to scale faster from regular levels and slower from veteran levels (past 11). This is mainly relevant for morale checks from movement and from a kill/death
 - Characters can no longer retreat from the battle when standing on a border tile, if they are engaged in melee
 - Fleeing characters who rally, lose 3 Action Points
 - Fleeing characters now have +1 Action Point
@@ -807,6 +819,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Bandages** worn by enemies now have a 60% chance to drop (down from 100%)
 - Non-Named shields worn by enemies now have a 50% chance to drop (down from 90%)
 - All shields worn by enemies can now drop, even if they have less than 25% Condition or less than 6 Condition left
+- Weapons worn by NPCs now have a 60% chance to drop (down from 90%) but no longer need to have at least 12 Condition to be eligable for dropping
+- Throwing Weapons no longer need to be equipped, or missing an ammunition to be eligable for dropping
 - Armor Penetration is capped at 100%. Any Armor Penetration above 100% has no effect. Reaching 100% Armor Pen still has damage reduction from remaining armor applied
 - No character can receive more than one negative morale check, caused by a fleeing ally, per turn
 - Dying or Fleeing characters no longer trigger negative morale checks for their allies if the distance between them is greater than the vision of the receiving ally
@@ -859,9 +873,11 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Barbarian Shelter** now have 80 Resources (up from 75)
 - **Goblin Camps** now have 150 Resources (up from 120)
 - **Goblin Hideouts** now have 80 Resources (up from 70)
+- **Necromancers Lair** now has 200 Resources (up from 150) and it drops 5-15 Tools (up from 0)
 - **Orc Camps** now have 225 Resources (up from 140). They are now guaranteed to drop 1 loot item (up from 50% chance)
 - **Orc Caves** now have 150 Resources (up from 100)
 - **Orc Hideouts** now have 120 Resources (up from 70)
+- **Undead Crypt** now has 250 Resources (up from 180). It drops an additional alcoholic beverage and 8-20 Tools (up from 0)
 - **Undead Graveyards** now have 120 Resources (down from 130). They drop 1 loot item (up from 0-1), 10-80 Crowns (down from 1-200) and 2-8 Tools
 - **Undead Ruins** now have 150 Resources (down from 180). They drop 1 Loot item (down from 2-3), 20-100 Crowns (down from 0-200) and 2-10 Tools
 
@@ -894,10 +910,20 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Beginner Economic Difficulty now makes Contracts pay 20% more (up from 10% more)
 - Expert Economic Difficulty now makes Contracts pay 20% less (down from 10% less)
 
+## Scenarios/Origins
+
+- **Deserters** now start with 0 Renown (down from 150)
+- **Gladiators** now has a roster size of 13 (up from 12), a difficulty Rating of 2 (down from 3) and start with 200 Renown (up from 100)
+- **Lone Wolf** now has a roster size of 13 (up from 12) and starts with 100 Renown (down from 200)
+- **Manhunter** now start with 0 Renown (down from 100)
+- **Northern Raiders** now start with -100 Renown (down from -50)
+- **Rangers** now start with 0 Renown (down from 100)
+- **Tutorial** now starts with 0 Renown (down from 100)
+- **Trader** has a slightly more accurate description
+
 ## Other
 
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
-- The **Lone Wolf** and **Gladiator** origins now have a roster size of 13 (up from 12)
 - **Peasant Militia**
 - The Retreat tooltip during combat now also lists the Melee Defense bonus your characters receive during Auto-Retreat
 - **Trade Ambition** now counts the sum of both transaction (buying and selling) instead of just the higher number of the two
@@ -1018,7 +1044,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Quiver and Weapons that contain Ammo now display the supply cost for replacing ammunition in them
 - Add new Concepts for **Armor Penetration**, **Critical Damage**, **Displacement**, **Hitchance**, **Rally**, **Threat** and **Weight** and and apply these Concepts to existing weapons, items, perks skills
 - Improve the Vanilla Concepts **Chance to hit head**, **Vision** and **Morale** and add nested tooltip for all morale states (except **Steady**)
-- Improve spider poison item, skill and effect tooltips
+- Improve Goblin Poison, Spider Poison item, skill and effect tooltips
 - Explain the melee defense softcap in the melee defense tooltip
 - Display item type names for Ammunition, Accessories, Consumables, Food and Quest Items in the item tooltips
 - Improve tooltips of **Battleforged** perk and **Chop** skill
@@ -1057,6 +1083,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - IdleSounds on higher combat speed are now played less frequently than on lower combat speed
 - Hitpoints recovery on brothers is now more accurate (camping recovery fix)
 - Fix Armor Damage on Weapon tooltips sometimes being off by 1%
+- Fix poisons inflicted by coated weapons not playing a sound effect
+- Fix **Blacksmith Follower** increasing the odds of looting weapons from NPCs
 - Fix some positional effects (e.g. Lone Wolf or Entrenched) visually persisting outside of combat
 - Dying enemies no longer set the LastCombatResult to `EnemyDestroyed`, unless they were the last one to die. This fixes a rare Sunken Library exploit
 - Unique Locations are no longer attackable, if there is a party, hostile to the player, directly next to it (fixes exploit for skipping Goblin City quest)
@@ -1116,6 +1144,12 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add `faction::HD_PricePctPerPositiveRelation = 0.003` for controlling how much prices improve when gaining Relation
+- Add `faction::HD_PricePctPerNegativeRelation = -0.02` for controlling how much prices worsen when losing Relation
+- Add `faction::HD_NeutralRelation = 50` for deciding what the point of reference for relation pricing is
+- Add `weapon::HD_BaseDropChance = 60` for controlling the chance that weapons, worn by NPCs, drop
+- Add `::MSU.Text.colorNeutral` for coloring a text blue
+- Add `player::HD_XPValueBase = 50`, `player::HD_XPValuePerRegularLevel = 50` and `player::HD_XPValuePerVeteranLevel = 10` to allow more granular changes to the getXPValue return value
 - Add `HD_ConditionThresholdForDrop = 0.0` for shields to define their minimum relative condition required to be eligable for dropping when worn by enemies
 - Add `HD_BaseDropChance = 50` for shields to define their random drop chance when worn by enemies
 - Add `HD_BaseDropChance = 100` for accessories to define their random drop chance when worn by enemies

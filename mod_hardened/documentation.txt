@@ -21,6 +21,60 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.3.0
+	- Prices now get 2% worse for every Relation below 50 you have with that faction (up from 0.6% worse)
+	- Killing units during combat now causes -3 Relation with their faction (up from -2)
+	- **Negotiator** retinue now grants 100% faster decay of negative Relation (up from 15%)
+	- Change XPValue of Player Characters to scale faster from regular levels and slower from veteran levels (past 11). This is mainly relevant for morale checks from movement and from a kill/death
+	- Weapons worn by NPCs now have a 60% chance to drop (down from 90%) but no longer need to have at least 12 Condition to be eligable for dropping
+	- Throwing Weapons no longer need to be equipped, or missing an ammunition to be eligable for dropping
+	- **Whirling Death** now costs 15 Fatigue (up from 10)
+	- **Powerful Strikes** loses **Crippling Strikes** and gains **Colossus**
+	- **Tough Group** loses **Colossus** and gains **Survival Instinct**
+	- **Vigorous** loses **Survival Instinct** and gains **Crippling Strikes**
+	- **Wildling Group** loses **Colossus** and gains **Crippling Strikes**
+	- **Powerful Strikes** now uses the icon of **Killing Frenzy**
+	- **Lunge** damage scaling has been reworked. It now deals 1% less damage per Initiative below 100 and it deals 1% more damage per Initiative above 100 (up to a maximum of 75% more)
+	- **Reload Handgonne** now costs 25 Fatigue (up from 20)
+	- **Dislocated Jaw** now causes you to have 30% less Resolve during your turn, instead of only while using non-attacks
+	- Coating your weapons in poison no longer has a discount during the first round of combat
+	- **Goblin Poison** and **Spider Poison** coating are now only applied/used-up by Weapon Attacks. They can now be applied to non-immune Undead units
+	- **Hand to Hand** on Humans now costs 3 Action Points (down from 4)
+	- **Sallet Helmet** now costs 2000 Crowns (up from 1200)
+	- **Undead Crypt** now has 250 Resources (up from 180). It drops an additional alcoholic beverage and 8-20 Tools (up from 0)
+	- **Necromancers Lair** now has 200 Resources (up from 150) and it drops 5-15 Tools (up from 0)
+	- **Noble Fencer** now have 95 Melee Skill (up from 85) and 160 Initiative (up from 130)
+	- **Spiders** now cost 15 Resources (up from 12) and take 50% more Fire Damage
+	- **Swordmaster** lose **Footwork** and gain **Pathfinder**
+	- **Necrosavants** are no longer immune to poison. They gain a new **Vampire Bite** skill which they will use when disarmed
+	- **Goblin Fighter** now have 20 Ranged Defense (up from 5)
+	- **Gladiators** gain **Pathfinder**
+	- **Gladiators** now have a 10% chance to appear as part of Southern Caravans during the late game
+	- **Nomad Slinger** lose **Fast Adaption**
+	- **Dagger** now deals 20-30 Damage (from 15-35)
+	- **Rondel Dagger** now deals 25-35 Damage (from 20-40) and costs 500 Crowns
+	- **Lute** now also has the **Mace** weapon type
+	- Named Shields can now roll Weight between 60%-80% (down from 70%-90%)
+	- Improve tooltips and naming schemes of **Goblin Poison** and **Spider Poison** item and skills
+	- Improve tooltip of **Negotiator** retinue member
+	- Improve tooltip of **Trader** Origin
+	- Improve capitalization of various perk descriptions
+	- **Deserters** now start with 0 Renown (down from 150)
+	- **Gladiators** now start with 200 Renown (up from 100) and gets a difficulty rating of 2 (down from 3)
+	- **Lone Wolf** now starts with 100 Renown (down from 200)
+	- **Manhunter** now start with 0 Renown (down from 100)
+	- **Northern Raiders** now start with -100 Renown (down from -50)
+	- **Rangers** now start with 0 Renown (down from 100)
+	- **Tutorial** now starts with 0 Renown (down from 100)
+	- Fix(Vanilla) poisons inflicted by coated weapons not playing a sound effect
+	- Fix(Vanilla) **Blacksmith Follower** increasing the odds of looting weapons from NPCs
+	- Add `faction::HD_PricePctPerPositiveRelation = 0.003` for controlling how much prices improve when gaining Relation
+	- Add `faction::HD_PricePctPerNegativeRelation = -0.02` for controlling how much prices worsen when losing Relation
+	- Add `faction::HD_NeutralRelation = 50` for deciding what the point of reference for relation pricing is
+	- Add `weapon::HD_BaseDropChance = 60` for controlling the chance that weapons, worn by NPCs, drop
+	- Add `::MSU.Text.colorNeutral` for coloring a text blue
+	- Add `player::HD_XPValueBase = 50`, `player::HD_XPValuePerRegularLevel = 50` and `player::HD_XPValuePerVeteranLevel = 10` to allow more granular changes to the getXPValue return value
+
 1.2.3
 	- **Bully** now works against enemies that are immune to morale, if you are **Confident**
 	- Weapons in the bags of NPCs will now have randomized Condition, similar to their equipped weapons

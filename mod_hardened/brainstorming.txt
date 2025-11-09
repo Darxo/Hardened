@@ -359,14 +359,11 @@
 }
 
 {	// Design
-	- spider take more burning damage
 	- change skullcap and kettle helmet stats
 	- add CheckForSpearwall logic for skill.nut. Some helper function that takes _oldTile as one of its parameters
 		- use it to make **Passing Step** and **Footwork** no longer ignore Spearwall
-	- allow sanguinary for AoE skills?
 	- make banner and sergeant sash craftable (cloth + dye (+ wood for banner))
 		- make sergeant sash not stackable if multiple people have it equipped
-	- make shields less likely to drop
 	- after spawning a party, delete singular units of the lowest type of each unitblock (if there are any higher tier units of that block present)
 	- more debuff when negotiating (0.5 is barely noticable)
 	- Rain of Arrows
@@ -444,7 +441,6 @@
 	- make enemies that are unknown hidden in the turn sequence bar
 	- whenever you win a fight, all brothers in reserve get a non-stacking exp buff for the next fight
 		- **Eager for Battle**
-	- colored rumors (extended for reforged rumors)
 	- add new sorting methods (other than type) for marketplace (e.g. buy-price)
 	- spearwall:
 		- does no/reduced damage?
@@ -470,7 +466,6 @@
 		- this can then be used to visualize that
 	- new perk that grants adjacent allies resolve
 	- rebalance food so that cheap/fresh and looted food comes in smaller stack sizes, so that more of your inventory slots are filled with that
-	- hand to hand down to 3 AP?
 	- remove gladiator/lone wolf party increase?
 	- when comparing distances for spawning locations, instead of direct air distance, use the amount of tiles travelled on the shortest path. That way mountains, rivers and swamp will sometimes increase locations possible
 	- standardize weapon stats, by changing the hidden +20 damage modifer into the weapon itself?
@@ -502,7 +497,6 @@
 		- preventing their auto-reanimation once (e.g. immune to displacement or no space to be pushed)
 		- reduce their reanimation time to a consistent value? e.g. 1 turn? that way vanquisher can be used deterministacally to kill them
 	- new "frenzy" effect for frenzied hyena/wolf, which grants the vanilla damage bonus permant? akin killing frenzy procc
-	- give vampires a bite attack for when they are disarmed
 	- change scrap boy retinue to only generated tools from unlootable/tossed away armor?
 		- daggering down goblins/orcs would preserve their armor and generate tools from it
 		- not-looting
@@ -512,24 +506,16 @@
 	- prevent animations from playing on tiles that are not visible to the player (e.g. ifrit merging)
 		- possible to translate the getPos passed into the animation back to getting a tile on the tactical map
 	- new regular "Executioner" entity, that belongs to Southern/Northern houses. They only spawn with an axe (either bardiche or greataxe)
-	- swordmaster ai -> likes to wait?
 	- make hunting grounds visible even before the ritual armor?
 	- ai: fast bandits wastefully use spinning flail and swap to ranged weapon (probably just remove that perk from them)
 	- reduce damage range of small crossbows. min and max hit almost double
 	- ghouls who swallowed something, have less defenses (or other debuff)
 	- new sandgolem-high attack "Collapse" (replacement melee attack?). Attacks multiple enemies (either in a row or swing, or both) + split into 3 smaller golems around the impact
-	- bone breaker:
-		- 50% of armor damage dealt is treated as hitpoint damage (down from 100%)
-		- 20% less threshold to inflict injuries
 	- improve damage overflow mechanic:
 		- split overflow damage and pen damage by
-	- make bully damage mult working for all skills
-		- give bully to geists and alps
 	- make qatal dagger a cleaver/dagger hybrid?
-	- make early game 2H swords have 4AP main attack + a 6AP Swing AoE
 	- make Between the Eyes instead scale off of ranged skill?
 	- ai merc rework and bounty hunter system
-	- beastmaster crack whip disarm
 	- rework militia spawning system (use time based "resource" system, where militias which return replenish resources. new ones can only spawn if resources are recovered)
 	- lower the minimum weight that named body armors can roll
 	- remove resolve penalty from morale (bag game design as that makes downwards spiral more likely)
@@ -545,14 +531,10 @@
 	- "main character" ai behavior, where certain champs decide that they are the stronged unit in their team and therefor need to carry it by actively taking fights
 		- instead of trying to optimize good encounters by flanking/holding back
 	- make riposte melee defense bonus based on current initiative at point where you use it?
-	- remove reforged goblin racial or adopt it?
 	- make certain traits/backgrounds not care about retreating from battle
 	- make some consumable potions last multiple fights (e.g. iron will)
 	- goblin wolfrider body hits dont cause injuries? (2H flail pound did 90% htpoint damage + stun)
 	- make spider parties rarely spawn with a hexe
-	- make ammo items sold return the ammo supply in them to player count
-	- give necrosavants a bite skill. Currently they have no non-weapon attack
-	- lower minimum weight of named shields (currently weight is the weakest of their rolls)
 }
 
 {	// Tech / API
@@ -568,6 +550,7 @@
 }
 
 {	// QoL
+	- colored rumors (extended for reforged rumors)
 	- add tooltip to spiked impaler that it knocks enemies back on a hit
 	- increase saturation of line breaker to tell it more apart from its greyed out version
 	- sort skill tooltips by their id
@@ -637,7 +620,6 @@
 			- +50% sickness chance
 	- add UI feedback, when quicksaving
 	- reduce time for smoke effect to start
-	- color "struck down" in combat log in green and "killed" in red
 	- in the tooltip of wait concept, mention the wait debuff
 	- make it so the yellow arrow, pointing onto characters when hovering on the turn sequence bar, is rendered in front of the status mini effects (instead of after them)
 	- Add Setting to disable automove of camera during NPC turns completely (and then allow zooming/panning)
@@ -704,9 +686,6 @@
 
 - increase contract/location resources considering reforged soon bug fix about 70-100% resources
 - display effective melee defense in melee defense tooltip
-- item "tag" for
-  - consumable items? Like Berserk Mushrooms
-  - attachements?
 - investigate: how did money check timing change?
 - events might not trigger correctly in hardened
 	- they might be delayed by the force trigger of the retinue slot event
@@ -716,24 +695,17 @@
 	- or 20 * level
 - additional champion chance for every 1000 renown?
 - improve turn concept to also mention waiting and how your turn only starts and ends once per round, even if you wait
-- make all characters (not just with melee weapons/fists) trigger a morale check when approaching enemies
 - buff brawny to like 35%?
-- slightly reduce NPC need to use rally (by like 20%)
 - increase visual size of feral shield
-- add in vanquisher that it ignores ZoC and spearwall
 - lookout cost to 2000? (from 2500)
 - swap formidable approach with death dealer?
 	- that way it is on par with Duelist and makes the level 7 skill choice ever so more competetive
 - for every scroll container, add white stripes at the top/bottom, if there is still more to scroll in that direction
 - make dropchance of gear (e.g. shields) depending on their relative condition
 - disable the darkness effect, when zooming in/out during combat (not the depth of view, there is a second one at play)
-- reduce dropchance of throwing weapons
 - scale resources and rewards of "Supply Caravan"
 	- currently they have hardcoded resources equal to local r = this.Math.rand(100, 200) * 0.01;
 - add oathbringer as possible elite spawns in mercenary companies
-- simplify broken jaw
-
-::Tactical.State.m.TacticalDialogScreen.m.Animating = true;
 
 - slighty increase available recruits in the nearest town on a new playthrough
 - reduce weapon perk groups of gambler to 2 (down from 3)
@@ -741,22 +713,17 @@
 - slightly reduce the resources for caravan escort missions
 - slightly increase cost of crossbows? they are effectively stronger than in vanilla
 - make it so world camera pans zoom in the camera automatically for as much as possible so that the targeted tile/location is centered (relevant when target is at map border)
-- increase fatigue recovery on orcs (via orc racial)
-- lower difficulty skull from gladiator origin to 2
 - document in the for modder section, how to change the amount of trainable perk groups and add new ones
 - add rotation to militia group and soldier group?
 - make wear them down respect the targets fatigue build up multiplier
 - change scout to also give a soft pathfinder effect?
-- improve gain ground tooltip
 - vanilla fix: auto looted items being lost when loading iron man saves
 - trigger tavern rumor again if it provides the exact same text as the previous one
 - make it so arrow misses causes the target to play a dodge animation
 - make throw pots count as throwables? And make oppotunist work with them?
-- change BusinessReputation =  of various scenarios to 0 (except like gladiators and maybe beast hunters)
 - make infected wound prevent other wounds from healing
 - when trying out, remember the last page we were on (groups, perks, background) and stay there until player changes
 - in concept for cover, mention the tactical overlay of the shield symbol, when someone is "in cover"
-- increase penalty for attacking allies on the world map
 - make lower star contracts grant less renown and higher ones grant more renown (instead of all 3 tiers the same amount)
 - move vanquisher to T3?
 - increase geist scream penalty? Afterall they were nerfed by the morale nerf
@@ -764,10 +731,34 @@
 - new perk for Schrats: at the start of your turn, recover hitpoints for every adjacent tree
 - orc berserk flanking from EngageFlankingMult 1.5 --> 1.25?
 - reduce minimum vision to 1 (like in vanilla), but allow all attacks to target enemies at 2 tiles, even if you dont see them (but you revealed them this turn)
-- show smoke debuff when looking at the tile tooltip
-- lower pitch of whirling stance
 - make negative stat multipliers no longer affect characters who have negative stats?
-- In tooltip of Mercenaries, show the flag of the noble house, not that of the town
 - Tavern Rumors about Mercenary Companies that are nearby/on the world map atm
 - in the turn sequence bar, display the waiting icon (refresh circle) on every entity, that can still wait this round
-- fix log spam from crossbow and handgonne reload
+- make the round circle during combat have a background of day/night depending on the daytime
+- increase saturation of tactician perks to make it clearer when they are greyed out
+- make master archer/swordmaster appear slightly later as to not appear in too weak of a camp?
+- make it so hold steady plays a "jump animation" on all affected characters?
+- nerf the padded skull cap because it looks bad?
+- find out when, and why swordmasters lost the change about sword mastery moving to tier 3 (from tier 4). It does not work and I cant find code for it
+- nerf deathblow armor pen or damage, as (unlike vanilla) it is easier to enable its condition
+- fix black skull on death not showing up consistently
+- custom sound effect for whirling stance (lower pitch and repeating)
+- make effect category for follower scrollable (js) detailsRow = $('<div class="row is-ingredients-container"/>');
+- should trader origin really get reduced renown? Might make game not challenging at all
+- make nomad leader spawn a little later
+- buff obsidian dagger
+- explain morale check on enter mechanic somewhere: local difficulty = this.Math.maxf(10.0, 50.0 - this.getXPValue() * 0.1);
+- is there a UTF trick so make two words "stick together"; something that looks like a space. Would be useful for round " + corpse.RoundAdded
+- buff burned hand injury (0.5 threshold) closer to split hand injuries; afterall the 0.25 burned face injury is worse
+- reloadable firelance
+- make a green variant of the damage_received.png to use for poison immunity tooltips or effects around poisons
+- fix(vanilla): a ranged miss with a coat poison effect deducting two charges instead of one (if we miss the main target and the astray target)
+- make all characters (not just with melee weapons/fists) trigger a morale check when approaching enemies
+- add item "tag" for attachements
+- api: add variables to tweak how much/often equipped gear comes as damaged
+
+## Todo
+
+Nested Tooltips Bug:
+- if you view too many stages of nested tooltips of a goblin/spider poison,
+	it becomes somewhat attached to the dummy character and is buggy when trying to interact with it
