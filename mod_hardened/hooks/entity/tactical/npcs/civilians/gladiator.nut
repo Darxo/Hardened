@@ -100,6 +100,7 @@
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_poise"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_survival_instinct"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
 
 		this.getSkills().add(::new("scripts/skills/perks/perk_overwhelm"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_skirmisher"));
