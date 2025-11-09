@@ -2,6 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.Icon = "skills/hd_net_pull_skill.png";	// This modified icon has more contrast and is brighter
 		this.m.IsAttack = false;	// In Reforged this is true
 		this.m.FatigueCost = 30;	// In Reforges this is 25
 		this.m.MaxRange = 3;	// In Reforged this is 2

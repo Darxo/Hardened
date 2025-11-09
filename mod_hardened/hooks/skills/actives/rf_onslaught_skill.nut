@@ -2,6 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.Icon = "skills/hd_onslaught_skill.png";	// This modified icon has more contrast and is brighter
 		this.m.SoundOnUse = ["sounds/enemy_sighted_02.wav"];
 		this.m.MaxRange = 4;		// In Reforged this is unused (0)
 	}

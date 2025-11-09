@@ -5,6 +5,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.Icon = "skills/hd_hold_steady_skill.png";	// This modified icon has more contrast and is brighter
 		this.m.SoundOnUse = ["sounds/combat/hd_hold_steady_main.wav"];
 		this.m.SoundVolume = 1.4;	// The original soundfile above is a bit quiet at -3db peak
 		this.m.ActionPointCost = 8;	// In Reforged this is 7
