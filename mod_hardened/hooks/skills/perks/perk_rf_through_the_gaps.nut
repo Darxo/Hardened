@@ -37,8 +37,8 @@
 	// Copy of reforged isSkillValid implementation
 	q.isSkillValid <- function( _skill )
 	{
-		if (_skill.isRanged() || !_skill.isAttack() || (this.m.RequiredDamageType != null && !_skill.getDamageType().contains(this.m.RequiredDamageType)))
-			return false;
+		if (_skill.isRanged()) return false;
+		if (!_skill.isAttack()) return false;
 
 		if (this.m.RequiredWeaponType == null)
 			return true;

@@ -1587,12 +1587,12 @@ local adjustedDescriptions = [
 		Key = "RF_ThroughTheGaps",
 		Description = ::UPD.getDescription({
 			Fluff = "Learn to call your strikes and target gaps in your opponents\' armor!",
-			Requirement = "Piercing Attack with Spear",
+			Requirement = "Spear Attack",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your attacks against targets with armor will always target the body part with the lowest armor",
-					"You no longer deal [Critical Damage|Concept.CriticalDamage] on a hit to the head",
+					"Your Attacks against targets with armor will always target the body part with the lowest armor",
+					"You no longer deal [Critical Damage|Concept.CriticalDamage] on a [hit to the head|Concept.ChanceToHitHead]",
 				],
 			}],
 		}),
