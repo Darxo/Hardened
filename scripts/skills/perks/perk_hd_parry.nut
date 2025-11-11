@@ -3,6 +3,7 @@ this.perk_hd_parry <- ::inherit("scripts/skills/skill", {
 		// Public
 		BaseRangeDefenseAsMeleeDefensePct = 1.0,	// This much of the Base Ranged Defense is added to Melee Defense while engaged with a weapon wielder
 		RangedDefenseMultWhenEngaged = 0.3,
+		ConditionLossOnParry = 1.0,	// This much condition on your weapon is lost when you parry an attack
 
 		// Private
 		SoundOnParry = ::Const.Sound.ShieldHitMetal,
@@ -196,6 +197,7 @@ this.perk_hd_parry <- ::inherit("scripts/skills/skill", {
 
 	// Triggered, when it is determined, that our parry skill was the deciding factor for avoiding an attack
 	// This functions job is to visualize this fact to the player (e.g. log, overlay icon, sfx, fx)
+	// and to lower condition from our weapon
 	function onParry( _attacker )
 	{
 		local actor = this.getContainer().getActor();
@@ -208,6 +210,26 @@ this.perk_hd_parry <- ::inherit("scripts/skills/skill", {
 		{
 			if ("init" in particles) particles.init(actor.getTile(), _attacker.getTile());	// init adjusts the offset according to where the hit is coming from
 			::Tactical.spawnParticleEffect(false, particles.Brushes, actor.getTile(), particles.Delay, particles.Quantity, particles.LifeTimeQuantity, particles.SpawnRate, particles.Stages);
+		}
+
+		this.applyWeaponDamage(_attacker, this.m.ConditionLossOnParry);
+	}
+
+	// Damage equipped weapon condition as a result of an attack being parried with it
+	function applyWeaponDamage( _user, _damage )
+	{
+		local actor = this.getContainer().getActor();	// We fetch the actor now just in case the weapon gets separated from it during lowerCondition
+		local weapon = actor.getMainhandItem();		// If this function is called, we know for certain that the mainhanditem is a correct weapon
+
+		if (::MSU.isNull(weapon)) return;	// Simple sanity check
+
+		local oldCondition = weapon.getCondition();
+		weapon.lowerCondition(_damage);
+
+		local conditionLost = oldCondition - weapon.getCondition();
+		if (conditionLost > 0)
+		{
+			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(_user) + " has hit " + ::Const.UI.getColorizedEntityName(actor) + "\'s weapon for " + ::MSU.Text.colorNegative(conditionLost) + " damage");
 		}
 	}
 });
