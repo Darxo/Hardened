@@ -15,7 +15,7 @@
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/two_handed_wooden_hammer"],
-			[12, "scripts/items/weapons/two_handed_wooden_flail"],
+			[12, "scripts/items/weapons/two_handed_mace"],
 		]);
 	}
 
