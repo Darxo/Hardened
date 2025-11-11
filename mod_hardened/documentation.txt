@@ -21,6 +21,10 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.3.1
+	- Fix Dagger Attacks as 2 tile distance with **Hit and Run** not triggering any attack
+	- Fix **Brigand Pillager** spawning with **Two handed Wooden Flail**
+
 1.3.0
 	- Prices now get 2% worse for every Relation below 50 you have with that faction (up from 0.6% worse)
 	- Killing units during combat now causes -3 Relation with their faction (up from -2)
