@@ -3,5 +3,8 @@
 	{
 		__original();
 		this.m.GoodForDays = 40;	// In Vanilla this is 20
+
+		// Hardened
+		this.m.HD_MaxAmount = 50;	// Vanilla: 25
 	}
 });
