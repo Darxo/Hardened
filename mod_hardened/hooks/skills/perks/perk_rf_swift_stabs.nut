@@ -144,7 +144,7 @@ local hookDaggerAttack = function( _o )
 
 		// These two are
 		// this.spawnAttackEffect(_tag.TargetTile, ::Const.Tactical.AttackEffectThrust);
-		if ((this.m.IsAudibleWhenHidden || user.getTile().IsVisibleForPlayer) && this.m.SoundOnUse.len() != 0)
+		if ((this.m.IsAudibleWhenHidden || _tag.TargetTile.IsVisibleForPlayer) && this.m.SoundOnUse.len() != 0)
 		{
 			::Sound.play(::MSU.Array.rand(this.m.SoundOnUse), ::Const.Sound.Volume.Skill * this.m.SoundVolume, _entity.getPos());
 		}
