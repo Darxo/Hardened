@@ -14,8 +14,8 @@ local parties = [
 		DynamicDefs = {
 			UnitBlocks = [
 				{ BaseID = "UnitBlock.RF.NobleFrontline", RatioMin = 0.30, RatioMax = 1.00 },
-				{ BaseID = "UnitBlock.RF.NobleBackline", RatioMax = 0.40 },
-				{ BaseID = "UnitBlock.RF.NobleRanged", RatioMax = 0.30, },
+				{ BaseID = "UnitBlock.RF.NobleBackline", RatioMax = 0.30 },
+				{ BaseID = "UnitBlock.RF.NobleRanged", RatioMax = 0.25, },
 				{ BaseID = "UnitBlock.RF.NobleElite",  RatioMin = 0.1, RatioMax = 0.25, PartySizeMin = 15, ExclusionChance = 0.2 }, // vanilla greatswords spawn at 19+
 				{ BaseID = "UnitBlock.RF.NobleSupport", RatioMin = 1.0, HardMax = 1, PartySizeMin = 10, ExclusionChance = 0.3 },
 				{ BaseID = "UnitBlock.RF.NobleSupport", RatioMin = 1.0, HardMax = 1, PartySizeMin = 20, ExclusionChance = 0.3 },
