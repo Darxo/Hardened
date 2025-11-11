@@ -20,6 +20,7 @@
 		]);
 
 		this.getAIAgent().getProperties().EngageTargetMultipleOpponentsMult = 1.0;	// Vanilla: 1.25
+		this.getAIAgent().getProperties().EngageFlankingMult = 1.0;	// Vanilla: 1.25
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
