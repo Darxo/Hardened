@@ -14,6 +14,7 @@
 
 	// Private
 	q.m.HD_recoveredHitpointsOverflow <- 0.0;	// float between 0.0 and 1.0. Is not deserialized, meaning that we lose a tiny bit hitpoint recovery when saving/loading often
+	q.m.HD_ChanceToBeHit <- null;	// Contains an unsigned integer with the % chance that we will hit this entity when we are previewing a skill; null, if no hitchance should be displayed
 
 	// Overwrite, because we re-implement the Reforged logic
 	q.getSurroundedCount = @() function()
@@ -162,6 +163,15 @@
 		return (this.getID() == ::Tactical.TurnSequenceBar.m.CurrentEntities[0].getID());
 	}
 
+	q.setPreviewSkillID = @(__original) function( _skillId )
+	{
+		__original(_skillId);
+
+		// Feat: whenever the player previews a skill, we calculate the chance to hit every targetable entity with it
+		// When the player stops previewing, we reset the calculated hitchances from all entities
+		this.HD_toggleHitchanceOverlay(_skillId);
+	}
+
 // New functions
 	/*
 	Try to recover up to _amount Action Points
@@ -192,6 +202,53 @@
 		}
 
 		return recoveredActionPoints;
+	}
+
+	q.HD_getChanceToBeHit <- function()
+	{
+		return this.m.HD_ChanceToBeHit;
+	}
+
+	// Toggle the Hitchance Overlay on- or off, depending on whether _skillId is "" or an actual skillId
+	q.HD_toggleHitchanceOverlay <- function( _skillId )
+	{
+		if (!::Hardened.Mod.ModSettings.getSetting("DisplayHitchanceOverlays").getValue()) return;
+
+		::Hardened.Private.IsPreviewingAttackWithHitChance = false;
+		if (_skillId == "")	// We stop previewing a skill
+		{
+			// We turn off the ChanceToBeHit of all actors on the battlefield
+			foreach (actor in ::Tactical.Entities.getAllInstancesAsArray())
+			{
+				actor.m.HD_ChanceToBeHit = null;
+			}
+		}
+		else
+		{
+			// Todo: make sub function?
+			foreach (skill in this.getSkills().m.Skills)
+			{
+				if (skill.getID() != _skillId) continue;
+				// We found the skill to be highlighted!
+
+				if (!skill.isAttack()) return;	// Non-Attacks have no hitchance to display
+				if (!skill.isUsingHitchance()) return;
+
+				::Hardened.Private.IsPreviewingAttackWithHitChance = true;
+				foreach (otherActor in ::Tactical.Entities.getAllInstancesAsArray())
+				{
+					if (!otherActor.isPlacedOnMap()) continue;
+					if (skill.isUsableOn(otherActor.getTile()))
+					{
+						otherActor.m.HD_ChanceToBeHit = skill.getHitchance(otherActor);
+					}
+				}
+
+				break;
+			}
+		}
+
+		::Tactical.State.m.TacticalScreen.getOrientationOverlayModule().HD_fullUpdateHitchanceOverlays();
 	}
 
 	// Recover hitpoints up to the maximum and return the amount of hitpoints that were recovered

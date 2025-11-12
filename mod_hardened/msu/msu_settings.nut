@@ -123,6 +123,12 @@
 
 	qolCombatPage.addDivider("MiscDivider4");
 
+	qolCombatPage.addBooleanSetting("DisplayHitchanceOverlays", true, "Display Hitchance Overlays", "Whenever you preview an Attack that is using Hitchance, generate a text label with your hitchance on every character you can attack from your current position.");
+	qolCombatPage.addEnumSetting("HitchanceOverlayColoring", "Green <-> Red", ["Green <-> Red", "Black & White"], "Hitchance Coloring", "Define how you want the Hitchance numbers to appear.\n\nGreen <-> Red: High hitchance numbers are colored green, which then turns into yellow, orange and red as the chances get lower.\n\nWhite & Black: All hitchance numbers are colored white with a black outline.");
+	qolCombatPage.addRangeSetting("HitchanceOverlayFontSize", 2.0, 1.0, 3.0, 0.1, "Hitchance Overlay Font Size", "This controls the font size of the hitchance text on enemies. A bigger font size may clip into neighboring tiles making it more difficult to target those.");
+
+	qolCombatPage.addDivider("MiscDivider5");
+
 	qolCombatPage.addBooleanSetting("DisplaySkillTags", true, "Display Skill Tags", "List common tags and the damage types at the top of the descriptions of active skill.");
 }
 

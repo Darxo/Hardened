@@ -153,3 +153,12 @@ foreach (nextTile in ::MSU.Tile.getNeighbors(bro.getTile()))
 
 	::Tactical.getShaker().shake(nextTile.getEntity(), bro.getTile(), 3);
 }
+
+
+::MSU.Log.printData(::Tactical.getCamera().queryEntityOverlays(), 2);
+
+
+::MSU.Log.printData(::Tactical.getCamera().zoomTo(2.0, 2.0))
+::MSU.Log.printData(::Tactical.getCamera().queryEntityOverlays(), 2);
+
+default y offset is 40 but it is divided by ::Tactical.getCamera().Zoom

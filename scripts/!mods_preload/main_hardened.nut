@@ -30,6 +30,9 @@
 			return ::Math.clampf(ret, ::Hardened.Const.WorldScalingMin, ::Hardened.Const.ContractScalingMax);
 		},
 	},
+	Private = {
+		IsPreviewingAttackWithHitChance = false,		// If true, then the player is currently previewing an attack with a hitchance
+	},
 }
 
 ::Hardened.HooksMod <- ::Hooks.register(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);

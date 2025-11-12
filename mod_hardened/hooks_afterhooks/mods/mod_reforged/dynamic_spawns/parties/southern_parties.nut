@@ -37,15 +37,12 @@
 				local chosenBlock = flexBlockPossibilities.roll();
 				foreach (option in flexBlockPossibilities.toArray())
 				{
-					::logWarning("Hardened: foreach option " + option + " chosenBlock " + chosenBlock);
 					if (option == chosenBlock) continue;
 
 					foreach (index, southernBlock in this.__DynamicSpawnables)
 					{
-						::logWarning("Hardened: index " + index + " southernBlock.getID() " + southernBlock.getID());
 						if (southernBlock.getID().find(option) != null)
 						{
-							::logWarning("Hardened: remove");
 							this.__DynamicSpawnables.remove(index);
 							break;
 						}
