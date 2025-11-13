@@ -78,13 +78,13 @@
 	// Mandatory stats
 	::Const.Tactical.Actor.RF_SkeletonDecanus.XP = 600;
 	::Const.Tactical.Actor.RF_SkeletonDecanus.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_SkeletonDecanus.Hitpoints = 65;
+	::Const.Tactical.Actor.RF_SkeletonDecanus.Hitpoints = 70;
 	::Const.Tactical.Actor.RF_SkeletonDecanus.Bravery = 80;
 	::Const.Tactical.Actor.RF_SkeletonDecanus.Stamina = 200;
 	::Const.Tactical.Actor.RF_SkeletonDecanus.MeleeSkill = 70;
 	::Const.Tactical.Actor.RF_SkeletonDecanus.RangedSkill = 0;
-	::Const.Tactical.Actor.RF_SkeletonDecanus.MeleeDefense = 10;
-	::Const.Tactical.Actor.RF_SkeletonDecanus.RangedDefense = 5;
+	::Const.Tactical.Actor.RF_SkeletonDecanus.MeleeDefense = 0;
+	::Const.Tactical.Actor.RF_SkeletonDecanus.RangedDefense = 0;
 	::Const.Tactical.Actor.RF_SkeletonDecanus.Initiative = 75;
 }
 
@@ -198,14 +198,14 @@
 	// Mandatory stats
 	::Const.Tactical.Actor.RF_SkeletonCenturion.XP = 900;
 	::Const.Tactical.Actor.RF_SkeletonCenturion.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_SkeletonCenturion.Hitpoints = 75;
+	::Const.Tactical.Actor.RF_SkeletonCenturion.Hitpoints = 80;
 	::Const.Tactical.Actor.RF_SkeletonCenturion.Bravery = 90;
 	::Const.Tactical.Actor.RF_SkeletonCenturion.Stamina = 200;
-	::Const.Tactical.Actor.RF_SkeletonCenturion.MeleeSkill = 75;
+	::Const.Tactical.Actor.RF_SkeletonCenturion.MeleeSkill = 80;
 	::Const.Tactical.Actor.RF_SkeletonCenturion.RangedSkill = 0;
 	::Const.Tactical.Actor.RF_SkeletonCenturion.MeleeDefense = 20;
 	::Const.Tactical.Actor.RF_SkeletonCenturion.RangedDefense = 20;
-	::Const.Tactical.Actor.RF_SkeletonCenturion.Initiative = 100;
+	::Const.Tactical.Actor.RF_SkeletonCenturion.Initiative = 120;
 }
 
 // scripts/entity/tactical/enemies/skeleton_heavy_bodyguard
@@ -228,7 +228,7 @@
 	// Mandatory stats
 	::Const.Tactical.Actor.RF_SkeletonLegatus.XP = 1200;
 	::Const.Tactical.Actor.RF_SkeletonLegatus.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_SkeletonLegatus.Hitpoints = 85;
+	::Const.Tactical.Actor.RF_SkeletonLegatus.Hitpoints = 90;
 	::Const.Tactical.Actor.RF_SkeletonLegatus.Bravery = 100;
 	::Const.Tactical.Actor.RF_SkeletonLegatus.Stamina = 200;
 	::Const.Tactical.Actor.RF_SkeletonLegatus.MeleeSkill = 85;
