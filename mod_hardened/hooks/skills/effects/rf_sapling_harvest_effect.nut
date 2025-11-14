@@ -3,5 +3,6 @@
 	{
 		__original();
 		this.m.DamageThreshold = 0.07;	// Reforged: 0.1; We reduce this value because Schrats have more base hitpoints in Hardened
+		this.m.Icon = "ui/orientation/schrat_02_orientation.png";	// In Reforged this is an unused bush of leaves
 	}
 });
