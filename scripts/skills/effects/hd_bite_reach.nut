@@ -1,7 +1,7 @@
 this.hd_bite_reach <- ::inherit("scripts/skills/skill", {
 	m = {
 		HeadshotChanceModifier = -10,
-		HeadshotReceivedChanceModifier = 10,
+		HeadshotReceivedChanceModifier = 0,
 	},
 
 	function create()
