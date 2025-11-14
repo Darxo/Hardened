@@ -58,11 +58,20 @@
 
 	q.spawnCaravan = @(__original) function()
 	{
-		// We switcheroo getProduce, so that vanilla doesnt add its wares items to the caravan. Instead we want to have control over them being added
 		local home = (typeof this.m.Home == "instance" && this.m.Home instanceof ::WeakTableRef) ? this.m.Home.get() : this.m.Home;
+
+		// We switcheroo getProduce, so that vanilla doesnt add its wares items to the caravan. Instead we want to have control over them being added
 		local oldGetProduce = home.getProduce;
 		home.getProduce = function() { return [] };
+
+		// We switcheroo getResources, to prevent the escorted caravan party from scaling with world difficulty
+		local oldGetResources = home.getResources;
+		local resources = home.m.Resources;
+		home.getResources = function() { return resources };
+
 		__original();
+
+		home.getResources = oldGetResources;
 		home.getProduce = oldGetProduce;
 
 		// Now we add produces in our way to the party. But we first need to find it:
