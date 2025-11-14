@@ -2,6 +2,12 @@
 	// Public
 	q.m.HD_WeaponMaxRangeDifference <- -2;	// This skills MaxRange will be set to the equipped weapons + this value; Vanilla: -1
 
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.AdditionalHitChance = -5;	// Vanilla: -4
+	}
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
