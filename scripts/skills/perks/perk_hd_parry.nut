@@ -123,7 +123,7 @@ this.perk_hd_parry <- ::inherit("scripts/skills/skill", {
 		{
 			if (_skill == null) return ret;
 
-			if (_skill.getID() == "actives.disarm")
+			if (_skill.getID() == "actives.disarm" || _skill.getID() == "actives.hd_bearded_blade")
 				ret *= 1.2;	// _user is encouraged to disarm us to disable this perks bonus
 
 			if (_skill.getID() == "actives.knock_out" || _skill.getID() == "actives.knock_over_skill")
