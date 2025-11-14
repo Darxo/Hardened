@@ -48,6 +48,14 @@
 		Icon = "ui/perks/perk_rf_trip_artist.png",
 		IconDisabled = "ui/perks/perk_rf_trip_artist_sw.png",
 	},
+	{
+		ID = "perk.hd_forestbond",
+		Script = "scripts/skills/perks/perk_hd_forestbond",
+		Name = ::Const.Strings.PerkName.HD_Forestbond,
+		Tooltip = ::Const.Strings.PerkDescription.HD_Forestbond,
+		Icon = "skills/terrain_icon_06.png",	// Unused Vanilla art showing a lot of forest leaves
+		IconDisabled = "skills/terrain_icon_06.png",
+	},
 ]);
 
 // Reforged Fix: Add missing Vanilla Perk Defs, so that they display tooltips correctly

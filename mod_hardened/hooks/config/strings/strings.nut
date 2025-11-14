@@ -124,6 +124,21 @@ local newPerks = [
 			],
 		}),
 	},
+	{
+		Key = "HD_Forestbond",
+		Name = "Forestbond",
+		Description = ::UPD.getDescription({
+			Fluff = "Draw strength from the living forest, letting its lifeblood mend your wounds.",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"At the start of each [turn,|Concept.Turn] recover " + ::MSU.Text.colorPositive("3%") + " [Hitpoints|Concept.Hitpoints] for each adjacent obstacle that is a tree",
+					],
+				},
+			],
+		}),
+	},
 ];
 
 // Add new Hardened Perks

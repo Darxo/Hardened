@@ -46,6 +46,7 @@
 		// Generic Effects
 		this.getSkills().add(::new("scripts/skills/racial/schrat_racial"));
 		this.getSkills().add(::new("scripts/skills/effects/rf_sapling_harvest_effect"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_hd_forestbond"));
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
