@@ -34,6 +34,10 @@
 			unitBlock.StartingResourceMin = 180;	// In Reforged this is 250
 			break;
 		}
+		else if (unitBlock.BaseID == "UnitBlock.RF.BanditRanged")
+		{
+			unitBlock.RatioMax = 0.35;	// Reforged: 0.4
+		}
 	}
 	// We make sure, that every camp only contains either Fast or Tough Bandits
 	banditDefenderParty.Class.onBeforeSpawnStart <- function() {
