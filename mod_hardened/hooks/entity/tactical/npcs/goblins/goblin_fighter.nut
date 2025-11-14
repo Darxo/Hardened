@@ -86,6 +86,7 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_elusive"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_anticipation"));
 	}
 
 	// Assign Head and Body armor to this character

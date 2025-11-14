@@ -58,6 +58,8 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_elusive"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_anticipation"));
+
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_combo"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_bullseye"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_captain"));
