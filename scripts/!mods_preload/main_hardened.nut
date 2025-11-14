@@ -78,6 +78,31 @@
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
 	::includeFiles(::IO.enumerateFiles("mod_hardened/hooks_late"));
+
+	local isConfigPresent = function()
+	{
+		foreach (fullPath in ::IO.enumerateFiles("."))	// This is a hack, so we only get shown files that are at the root level of the data folder
+		{
+			if (fullPath == "./_config")
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	if (isConfigPresent())
+	{
+		::logInfo("Hardened: _config.nut was found and will be loaded now");
+		try {
+			::include("_config.nut");
+		}
+		catch (_e)
+		{
+			::logError("_config.nut threw an exception while trying to load");
+			::MSU.Log.printData(_e, 2);
+		}
+	}
 }, ::Hooks.QueueBucket.Late);
 
 ::Hardened.HooksMod.queue(">mod_reforged", function() {
