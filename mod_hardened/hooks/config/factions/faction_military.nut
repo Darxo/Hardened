@@ -22,7 +22,7 @@
 	::Const.Tactical.Actor.Arbalester.Bravery = 60;
 	::Const.Tactical.Actor.Arbalester.Stamina = 100;
 	::Const.Tactical.Actor.Arbalester.MeleeSkill = 55;
-	::Const.Tactical.Actor.Arbalester.RangedSkill = 70;
+	::Const.Tactical.Actor.Arbalester.RangedSkill = 75;
 	::Const.Tactical.Actor.Arbalester.MeleeDefense = 0;
 	::Const.Tactical.Actor.Arbalester.RangedDefense = 10;
 	::Const.Tactical.Actor.Arbalester.Initiative = 110;
