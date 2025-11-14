@@ -91,7 +91,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("+25%") + " [Armor Penetration|Concept.ArmorPenetration] against targets who are not [in Cover|Concept.Cover]",
+					"Gain " + ::MSU.Text.colorPositive("+20%") + " [Armor Penetration|Concept.ArmorPenetration] against targets who are not [in Cover|Concept.Cover]",
 				],
 			}],
 		}),

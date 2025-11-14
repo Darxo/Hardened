@@ -1,5 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_bullseye", function(q) {
-	q.m.DamageDirectAdd <- 0.25;
+	q.m.DamageDirectAdd <- 0.20;
 
 	// This perk no longer nerfs target cover
 	q.onUpdate = @() function( _properties ) {}
