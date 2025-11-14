@@ -8,7 +8,7 @@ this.hd_bite_reach <- ::inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.hd_bite_reach";
 		this.m.Name = "Bite Reach";
-		this.m.Description = "Increases the chance to be headshot while reducing the chance to land a headshot with melee attacks, due to limited reach and reliance on head or claw attacks.";
+		this.m.Description = "Your limited size and reliance on head attacks reduces your chance to hit the head.";
 		this.m.Icon = "skills/dog_01_orientation.png";
 		this.m.Type = ::Const.SkillType.StatusEffect;
 		this.m.IsSerialized = false;
@@ -40,7 +40,7 @@ this.hd_bite_reach <- ::inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/chance_to_hit_head.png",
-				text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(this.m.HeadshotChanceModifier, {AddPercent = true, AddSign = true}) + " chance to [hit the head|Concept.ChanceToHitHead] with melee attacks"),
+				text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(this.m.HeadshotChanceModifier, {AddPercent = true, AddSign = true}) + " chance to [hit the head|Concept.ChanceToHitHead] with Melee Attacks"),
 			});
 		}
 
@@ -60,6 +60,6 @@ this.hd_bite_reach <- ::inherit("scripts/skills/skill", {
 // New Functions
 	function isSkillValid( _skill )
 	{
-		return !_skill.isRanged();
+		return _skill.isAttack() && !_skill.isRanged();
 	}
 });
