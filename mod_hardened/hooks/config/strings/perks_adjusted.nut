@@ -344,7 +344,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Dagger Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
-					"The [Action Point|Concept.ActionPoints] cost of [Puncture|Skill+puncture] and [Deathblow|Skill+deathblow_skill] is reduced to " + ::MSU.Text.colorPositive("3"),
+					"[Puncture|Skill+puncture] and [Deathblow|Skill+deathblow_skill] cost " + ::MSU.Text.colorPositive("-1") + " [Action Point|Concept.ActionPoints]",
 					"Once per [round,|Concept.Round] the first use of your offhand item [weighing|Concept.Weight] less than " + ::MSU.Text.colorPositive(10) + " costs no [Action Points|Concept.ActionPoints]",
 				],
 			}],
@@ -361,7 +361,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Flail Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 					"[Lash|Skill+lash_skill] and [Hail|Skill+hail_skill] ignore the defense bonus granted by shields but not by [Shieldwall|Skill+shieldwall_effect]",
-					"[Pound|Skill+pound] gains " + ::MSU.Text.colorPositive("+10%") + " [Armor Penetration|Concept.ArmorPenetration] on head hits",
+					"[Pound|Skill+pound] gains " + ::MSU.Text.colorPositive("+10%") + " [Armor Penetration|Concept.ArmorPenetration] on [head hits|Concept.ChanceToHitHead]",
 					"After you use a Flail Skill, gain the [From all Sides|Skill+rf_from_all_sides_effect] effect until the start of your next [turn|Concept.Turn]",
 				],
 			}],

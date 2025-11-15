@@ -67,8 +67,8 @@ local newPerks = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Gain " + ::MSU.Text.colorPositive("25%") + " more [Injury Threshold|Concept.InjuryThreshold]",	// Usually we would use "You have" here isntead of "Gain", but this is an exception, because this way the effect fits in one line
-						"You take " + ::MSU.Text.colorPositive("40%") + " less Hitpoint damage from Attacks to the Head, while you have the [Shieldwall effect|Skill+shieldwall_effect]",
-						"You take " + ::MSU.Text.colorPositive("40%") + " less Hitpoint damage from Attacks to the Body, while you don\'t have the [Shieldwall effect|Skill+shieldwall_effect]",
+						"You take " + ::MSU.Text.colorPositive("40%") + " less [Hitpoint|Concept.Hitpoints] damage from Attacks to the Head, while you have the [Shieldwall effect|Skill+shieldwall_effect]",
+						"You take " + ::MSU.Text.colorPositive("40%") + " less [Hitpoint|Concept.Hitpoints] damage from Attacks to the Body, while you don\'t have the [Shieldwall effect|Skill+shieldwall_effect]",
 					],
 				},
 			],
