@@ -87,12 +87,17 @@
 	}
 
 // New Functions
-	// Do we have Reachadvantage over _targetEntity using _skillUsed?
+	// Do we have Reachadvantage over _targetEntity when using _skillUsed?
 	q.hasReachAdvantage <- function( _skillUsed, _targetEntity, _properties )
 	{
-		if (::MSU.isNull(_targetEntity)) return true;
+		if (::MSU.isNull(_skillUsed)) return false;
+		if (!_skillUsed.isAttack()) return false;
+		if (_skillUsed.isRanged()) return false;
+		if (!_skillUsed.isUsingHitchance()) return false;
 
 		if (!_properties.IsAffectedByReach) return false;
+
+		if (::MSU.isNull(_targetEntity)) return true;
 		if (!_targetEntity.getCurrentProperties().IsAffectedByReach) return false;
 		if (!_targetEntity.getCurrentProperties().CanEnemiesHaveReachAdvantage) return false;
 
