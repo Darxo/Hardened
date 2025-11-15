@@ -47,13 +47,21 @@
 		}
 	}
 
-	q.onEquip = @(__original) function( _item )
+	// Overwrite, because we are less restrictive with how we hand out the Take Aim skill
+	q.onEquip = @() function( _item )
 	{
-		__original(_item);
 		if (::Tactical.isActive() && ::Time.getRound() > 0)	// Round 0 is not interesting to us for this visibility calculation
 		{
 			// visibility is usually not changing when switching gear, but with crossbow mastery this can happen now. So we need to manually re-calculate visibility
 			this.getContainer().getActor().updateVisibilityForFaction();
+		}
+
+		// Similar to Reforged, we now add the Take Aim skill
+		if (!_item.isItemType(::Const.Items.ItemType.Weapon)) return;
+		if (_item.isWeaponType(::Const.Items.WeaponType.Crossbow) || _item.isWeaponType(::Const.Items.WeaponType.Firearm))
+		{
+			::logWarning("Hardened: perk_mastery_crossbow onEquip _item " + _item.getName());
+			_item.addSkill(::new("scripts/skills/actives/rf_take_aim_skill"));
 		}
 	}
 
