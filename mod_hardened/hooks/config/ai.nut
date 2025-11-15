@@ -17,6 +17,8 @@
 
 	// Vanilla/Reforged Leaders use this skill a bit too often. Part of that is probably that they value a missing morale-stage too much, by comparing it against confident
 	::Const.AI.Behavior.Score.Rally = 100;			// Vanilla: 130
+
+	::Const.AI.Behavior.Score.SwarmOfInsects = 150;		// Vanilla: 60
 }
 
 // New Hardened Values
