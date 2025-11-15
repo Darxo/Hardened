@@ -61,6 +61,8 @@
 		hitchanceOverlay.append(label);
 		hitchanceOverlay.data('overlayLabel', label);
 
+		hitchanceOverlay.removeClass('is-enabled').addClass('is-disabled');
+
 		return hitchanceOverlay;
 	};
 
