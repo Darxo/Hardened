@@ -340,7 +340,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlocks the [Take Aim|Skill+rf_take_aim_skill] skill which allows you to target opponents behind obstacles with a [crossbow|Item+crossbow] or hit more targets with a [handgonne.|Item+handgonne]",
+						"Unlocks the [Take Aim|Skill+rf_take_aim_skill] skill which allows you to target opponents behind obstacles with a Crossbow or shoot further with a Firearm",
 					],
 				},
 			],
