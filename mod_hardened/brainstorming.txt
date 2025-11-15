@@ -243,6 +243,10 @@
 }
 
 {	// Artwork
+	- improve bola skill contrast
+	- make a green variant of the damage_received.png to use for poison immunity tooltips or effects around poisons
+	- make the round circle during combat have a background of day/night depending on the daytime
+	- increase visual size of feral shield
 	- make spider corpses a bit more transparent, less colored, so that they differ more from alive ones
 		- or make alive ones in a more vibrant color
 	- give bag slot weapons a offset to the top left so simulate depth and make them more visible with attachements on
@@ -268,6 +272,12 @@
 }
 
 {	// Fix
+	- fix(vanilla): a ranged miss with a coat poison effect deducting two charges instead of one (if we miss the main target and the astray target)
+	- vanilla fix: auto looted items being lost when loading iron man saves
+	- events might not trigger correctly in hardened
+		- they might be delayed by the force trigger of the retinue slot event
+	- investigate: how did money check timing change?
+	- increase contract/location resources considering reforged soon bug fix about 70-100% resources
 	- Sometimes after battle, when shooting and reloading all crossbow,s the crossbows are unloaded, but shortly after loaded again (by vanilla??)
 	- whirling stance is still not correctly removed when stunned. Perhaps it needs to be done in "onOtherSkillAdded"
 	- fix savescumming of tavern rumors; they reset each time you reload and visit the tavern again
@@ -344,6 +354,7 @@
 }
 
 {	// Sound
+	- custom sound effect for whirling stance (lower pitch and repeating)
 	- sfx when the target of kingfisher dies (as if you reel in the net)
 	- Howler Monkey sfx for some kind of beast
 	- special sfx when discovering a legendary location
@@ -359,6 +370,51 @@
 }
 
 {	// Design
+	- add oathbringer as possible elite spawns in mercenary companies
+	- scale resources and rewards of "Supply Caravan"
+		- currently they have hardcoded resources equal to local r = this.Math.rand(100, 200) * 0.01;
+	- make dropchance of gear (e.g. shields) depending on their relative condition
+	- swap formidable approach with death dealer?
+		- that way it is on par with Duelist and makes the level 7 skill choice ever so more competetive
+	- lookout cost to 2000? (from 2500)
+	- additional champion chance for every 1000 renown?
+	- any brothers that dies during combat causes you to lose renown
+		- either flat 100
+		- or 50 + 10 per level
+		- or 20 * level
+	- buff burned hand injury (0.5 threshold) closer to split hand injuries; afterall the 0.25 burned face injury is worse
+	- buff obsidian dagger
+	- should trader origin really get reduced renown? Might make game not challenging at all
+	- nerf deathblow armor pen or damage, as (unlike vanilla) it is easier to enable its condition
+	- nerf the padded skull cap because it looks bad?
+	- make master archer/swordmaster appear slightly later as to not appear in too weak of a camp?
+	- make negative stat multipliers no longer affect characters who have negative stats?
+	- reduce minimum vision to 1 (like in vanilla), but allow all attacks to target enemies at 2 tiles, even if you dont see them (but you revealed them this turn)
+	- orc berserk flanking from EngageFlankingMult 1.5 --> 1.25?
+	- increase geist scream penalty? Afterall they were nerfed by the morale nerf
+	- make lower star contracts grant less renown and higher ones grant more renown (instead of all 3 tiers the same amount)
+	- make infected wound prevent other wounds from healing
+	- make throw pots count as throwables? And make oppotunist work with them?
+	- trigger tavern rumor again if it provides the exact same text as the previous one
+	- change scout to also give a soft pathfinder effect?
+	- make wear them down respect the targets fatigue build up multiplier
+	- slightly increase cost of crossbows? they are effectively stronger than in vanilla
+	- add supporter to caravan hands
+	- reduce weapon perk groups of gambler to 2 (down from 3)
+	- slighty increase available recruits in the nearest town on a new playthrough
+	- lower goblin xp and implement their money worth?
+	- change holy water
+		- to not spread
+		- make it craftable
+		- replace third holy water reward in ancient temple with a +1 Perk Point Jug
+	- increase cost of hexen skills so they cant use both at the same time
+	- make "wear them down" increase cost of non-attacks by 50% instead of disabling recover
+	- improve axe hammer damage
+	- move underdog to T3?
+	- allow alps to free from nets, but keep their mskill at 0
+	- barb beastmaster more melee skill
+	- make all characters (not just with melee weapons/fists) trigger a morale check when approaching enemies
+	- reloadable firelance
 	- change skullcap and kettle helmet stats
 	- add CheckForSpearwall logic for skill.nut. Some helper function that takes _oldTile as one of its parameters
 		- use it to make **Passing Step** and **Footwork** no longer ignore Spearwall
@@ -538,6 +594,11 @@
 }
 
 {	// Tech / API
+	- improve corpse effect framework (attach effects to corpses) and hook removeCorpse to allow effects to be removed
+	- api: add variables to tweak how much/often equipped gear comes as damaged
+	- make effect category for follower scrollable (js) detailsRow = $('<div class="row is-ingredients-container"/>');
+	- document in the for modder section, how to change the amount of trainable perk groups and add new ones
+	- for every scroll container, add white stripes at the top/bottom, if there is still more to scroll in that direction
 	- rewrite player banner (AoE) effects to be less of a performance nightmare
 	- Framework for tracking round number of a skill for an entity https://github.com/MSUTeam/MSU/issues/351
 	- New world_state function called "hourly update", which is called once per hour (just like the update from asset manager)
@@ -550,6 +611,20 @@
 }
 
 {	// QoL
+	- find out new name for "waiting effect" so people dont confuse gaining this efect (e.g. from recover) with "using wait" (trigger condition of some perks)
+	- concept about Condition: "Weapons are not destroyed at 0, they deal 50% less damage then. They get dropped when taking more damage, shields get perma destroyed, etc."
+	- improve onLootAllItemsButtonPressed vanilla function to enable auto-loot automatically looting tools/money again etc.
+	- display in charmed tooltip who the receiver is
+	- is there a UTF trick so make two words "stick together"; something that looks like a space. Would be useful for round " + corpse.RoundAdded
+	- explain morale check on enter mechanic somewhere: local difficulty = this.Math.maxf(10.0, 50.0 - this.getXPValue() * 0.1);
+	- in the turn sequence bar, display the waiting icon (refresh circle) on every entity, that can still wait this round
+	- add concept for "level-up": Ability to choose 3 attributes to gain base attributes in, where the amount is randomized, but depending on talent
+	- in concept for cover, mention the tactical overlay of the shield symbol, when someone is "in cover"
+	- make it so arrow misses causes the target to play a dodge animation
+	- make it so world camera pans zoom in the camera automatically for as much as possible so that the targeted tile/location is centered (relevant when target is at map border)
+	- disable the darkness effect, when zooming in/out during combat (not the depth of view, there is a second one at play)
+	- improve turn concept to also mention waiting and how your turn only starts and ends once per round, even if you wait
+	- display effective melee defense in melee defense tooltip
 	- colored rumors (extended for reforged rumors)
 	- add tooltip to spiked impaler that it knocks enemies back on a hit
 	- increase saturation of line breaker to tell it more apart from its greyed out version
@@ -683,82 +758,3 @@
 - Discovered Talent
 - Promised Potential
 - Between the Eyes
-
-- increase contract/location resources considering reforged soon bug fix about 70-100% resources
-- display effective melee defense in melee defense tooltip
-- investigate: how did money check timing change?
-- events might not trigger correctly in hardened
-	- they might be delayed by the force trigger of the retinue slot event
-- any brothers that dies during combat causes you to lose renown
-	- either flat 100
-	- or 50 + 10 per level
-	- or 20 * level
-- additional champion chance for every 1000 renown?
-- improve turn concept to also mention waiting and how your turn only starts and ends once per round, even if you wait
-- buff brawny to like 35%?
-- increase visual size of feral shield
-- lookout cost to 2000? (from 2500)
-- swap formidable approach with death dealer?
-	- that way it is on par with Duelist and makes the level 7 skill choice ever so more competetive
-- for every scroll container, add white stripes at the top/bottom, if there is still more to scroll in that direction
-- make dropchance of gear (e.g. shields) depending on their relative condition
-- disable the darkness effect, when zooming in/out during combat (not the depth of view, there is a second one at play)
-- scale resources and rewards of "Supply Caravan"
-	- currently they have hardcoded resources equal to local r = this.Math.rand(100, 200) * 0.01;
-- add oathbringer as possible elite spawns in mercenary companies
-
-- slighty increase available recruits in the nearest town on a new playthrough
-- reduce weapon perk groups of gambler to 2 (down from 3)
-- add supporter to caravan hands
-- slightly reduce the resources for caravan escort missions
-- slightly increase cost of crossbows? they are effectively stronger than in vanilla
-- make it so world camera pans zoom in the camera automatically for as much as possible so that the targeted tile/location is centered (relevant when target is at map border)
-- document in the for modder section, how to change the amount of trainable perk groups and add new ones
-- add rotation to militia group and soldier group?
-- make wear them down respect the targets fatigue build up multiplier
-- change scout to also give a soft pathfinder effect?
-- vanilla fix: auto looted items being lost when loading iron man saves
-- trigger tavern rumor again if it provides the exact same text as the previous one
-- make it so arrow misses causes the target to play a dodge animation
-- make throw pots count as throwables? And make oppotunist work with them?
-- make infected wound prevent other wounds from healing
-- when trying out, remember the last page we were on (groups, perks, background) and stay there until player changes
-- in concept for cover, mention the tactical overlay of the shield symbol, when someone is "in cover"
-- make lower star contracts grant less renown and higher ones grant more renown (instead of all 3 tiers the same amount)
-- move vanquisher to T3?
-- increase geist scream penalty? Afterall they were nerfed by the morale nerf
-- add concept for "level-up": Ability to choose 3 attributes to gain base attributes in, where the amount is randomized, but depending on talent
-- new perk for Schrats: at the start of your turn, recover hitpoints for every adjacent tree
-- orc berserk flanking from EngageFlankingMult 1.5 --> 1.25?
-- reduce minimum vision to 1 (like in vanilla), but allow all attacks to target enemies at 2 tiles, even if you dont see them (but you revealed them this turn)
-- make negative stat multipliers no longer affect characters who have negative stats?
-- Tavern Rumors about Mercenary Companies that are nearby/on the world map atm
-- in the turn sequence bar, display the waiting icon (refresh circle) on every entity, that can still wait this round
-- make the round circle during combat have a background of day/night depending on the daytime
-- increase saturation of tactician perks to make it clearer when they are greyed out
-- make master archer/swordmaster appear slightly later as to not appear in too weak of a camp?
-- make it so hold steady plays a "jump animation" on all affected characters?
-- nerf the padded skull cap because it looks bad?
-- find out when, and why swordmasters lost the change about sword mastery moving to tier 3 (from tier 4). It does not work and I cant find code for it
-- nerf deathblow armor pen or damage, as (unlike vanilla) it is easier to enable its condition
-- fix black skull on death not showing up consistently
-- custom sound effect for whirling stance (lower pitch and repeating)
-- make effect category for follower scrollable (js) detailsRow = $('<div class="row is-ingredients-container"/>');
-- should trader origin really get reduced renown? Might make game not challenging at all
-- make nomad leader spawn a little later
-- buff obsidian dagger
-- explain morale check on enter mechanic somewhere: local difficulty = this.Math.maxf(10.0, 50.0 - this.getXPValue() * 0.1);
-- is there a UTF trick so make two words "stick together"; something that looks like a space. Would be useful for round " + corpse.RoundAdded
-- buff burned hand injury (0.5 threshold) closer to split hand injuries; afterall the 0.25 burned face injury is worse
-- reloadable firelance
-- make a green variant of the damage_received.png to use for poison immunity tooltips or effects around poisons
-- fix(vanilla): a ranged miss with a coat poison effect deducting two charges instead of one (if we miss the main target and the astray target)
-- make all characters (not just with melee weapons/fists) trigger a morale check when approaching enemies
-- add item "tag" for attachements
-- api: add variables to tweak how much/often equipped gear comes as damaged
-
-## Todo
-
-Nested Tooltips Bug:
-- if you view too many stages of nested tooltips of a goblin/spider poison,
-	it becomes somewhat attached to the dummy character and is buggy when trying to interact with it

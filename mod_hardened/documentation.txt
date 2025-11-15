@@ -14,12 +14,48 @@
 # Known Issues:
 
 - Loading the game over an enemy allows them to instantly engage the player in battle
+- Map Seeds for Vanilla or Reforged are unlikely to work the same under Hardened
 - Mace Mastery perk description still talks about removing penalty to hit adjacent enemies, but that penalty doesnt even exist anymore
 - Injuries now heal at the start of the day and wages are paid at the start of the day; instead of during midday
+- Hitchances of Lunge-Like attacks can be inaccurate as the act of moving next to your target can enable/disable various effects
 
 # Compatibility
 
 - Is safe to remove from- and add to any existing savegames
+
+1.4.0
+	- Add new Setting (on) for displaying hitchance labels for all targetable characters whenever you preview an attack skill
+	- Blocking a weapon attack with **Parry** now damages your weapon by 1 Condition
+	- **Bullseye** now grants 20% Armor Penetration (down from 25%)
+	- **Quick Shot** now loses 5% Hitchance per tile (up from 4%)
+	- **Aimed Shot** no longer deals any bonus damage
+	- **Insect Swarm** now costs 3 Action Points (down from 6) and has a maximum range of 4 tiles (down from 7). NPCs are now 150% more likely to use it
+	- **Bite Reach** no longer increases the chance to be hit in the head by 10%
+	- **Ancient Sword** loses **Stab** and gains **Deathblow** (5 AP and 15 Fatigue)
+	- **Fermented Unhold Heart** now has 50 Servings (up from 25)
+	- **Swordmaster Background** now has a base cost of 2400 (up from 400), just like in Reforged
+	- **Schrats** gain the new perk **Forestbond**, which recovers 3% Hitpoints per adjacent tree obstacle at the start of each turn
+	- **Brigand Pillager** can now spawn with two handed wooden flails again
+	- **Brigand Outlaws** now spawn with two handed maces instead of two handed wooden flails
+	- **Skeleton Decanus** now have 0 Melee Defense (down from 10) and 0 Ranged Defense (down from 5) and 70 Hitpoints (up from 65)
+	- **Skeleton Centurion** now have 80 Hitpoints (up from 75), 80 Melee Skill (up from 75) and 120 Initiative (up from 100)
+	- **Skeleton Legatus** now have 90 Hitpoints (up from 85)
+	- **Goblin Skirmisher** now have 0 Ranged Defense (down from 15) and gain **Anticipation**
+	- **Goblin Overseer** now have 15 Ranged Defense (down from 35) and gain **Anticipation**
+	- **Noble Crossbowmen** now have 75 Ranged Skill (up from 70) and gain **Ready to Go**
+	- **Executioner** no longer spawn with the **Southern Helmet with Coif**
+	- **Necrosavants** now cost 50 Resources (up from 40)
+	- **Necrosavant Lords** now cost 100 Resources (up from 90)
+	- Noble Parties can now only have up to 30% melee backliner (down from 40%) and up to 25% ranged backliner (down from 30%)
+	- Brigand Camps can now have at most 35% ranged units (down from 40%)
+	- **Swordmasters** are now 20% less likely to flank enemies
+	- NPCs are now 20% more likely to use **Bearded Blade** against someone with **Parry**
+	- Improve size and length of death skull animation when a brother dies
+	- Play a sound effect and print a combat log whenever your craftable schrat shield recovers condition
+	- Change the icon of **Sapling Harvest** to that of the sapling overlay icon
+	- Slightly improve formatting of four perk descriptions
+	- Fix caravans spawned for an escort mission scaling with the world difficulty
+	- Fix(Vanilla): named one-handed mace icon art not lining up with their sprite art
 
 1.3.1
 	- Fix Dagger Attacks as 2 tile distance with **Hit and Run** not triggering any attack
@@ -55,6 +91,7 @@
 	- **Gladiators** gain **Pathfinder**
 	- **Gladiators** now have a 10% chance to appear as part of Southern Caravans during the late game
 	- **Nomad Slinger** lose **Fast Adaption**
+	- **Nomad Leader** now generally appear later in nomad camps
 	- **Dagger** now deals 20-30 Damage (from 15-35)
 	- **Rondel Dagger** now deals 25-35 Damage (from 20-40) and costs 500 Crowns
 	- **Lute** now also has the **Mace** weapon type

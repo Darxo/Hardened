@@ -173,6 +173,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 
 ### Active Skills
 
+- **Aimed Shot** no longer deals any bonus damage to hitpoints
 - **Bearded Blade** (granted by **Axe Mastery**) is completely reworked. It now costs 4 Action Points and 25 Fatigue and it is an attack, that deals no damage and will disarm your opponent for 1 turn on a hit
 - **Chop** now has a 50% chance to decapitate (up from 25%)
 - **Cover Ally** (granted by **Shield Expert**) is completely reworked. It costs 4 Action Points and 20 Fatigue and can be used on adjacent allies. It grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It lasts until the start of the users next turn or until the user gets stunned, flees or moves away from the target
@@ -181,13 +182,13 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Drums of War** now costs 30 Fatigue (up from 15)
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
 - **Hand-to-Hand Attack** now costs 3 Action Points (down from 4) and it is now enabled if you carry an empty throwing weapon in your main hand.
-- **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%)
+- **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%). It now costs 3 Action Points (down from 6) and has a maximum range of 4 tiles (down from 7)
 - **Flaming Arrow** (granted by **Trick Shooter**) no longer causes an extra morale check on the main target. It now deals 100% Burning Damage (instead of 25% Burning and 75% Piercing Damage)
 - **Passing Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand. It now has 0 additional fatigue cost (down from 2)
 - **Lunge** now has -10% additional Hitchance (up from -20%). Its damage scaling from Initiative has been reworked: It now deals 1% less damage per Initiative below 100 and it deals 1% more damage per Initiative above 100 (up to a maximum of 75% more)
 - **Net Effect** (caused by **Throw Net**) no longer affects the Initiative of the target. It now applies 50% less Melee Defense (up from 25%) and 50% less Ranged Defense (up from 45%)
 - **Net Pull** now costs 30 Fatigue (up from 25)
-- **Quick Shot** now has -2 Shooting Range (down from -1)
+- **Quick Shot** now has -2 Shooting Range (down from -1) and loses 5% Hitchance per tile (up from 4%)
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Reload Handgonne** now costs 25 Fatigue (up from 20)
@@ -238,7 +239,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bolster** (granted by **Polearm Mastery**) now requires a Polearm equipped, instead of any weapon with a Reach of 6 or more
 - **Bone Breaker** is completely reworked. It now causes Armor Damage you deal to be treated as additional Hitpoint damage for the purpose of inflicting injuries
 - **Bow Mastery** no longer grants +1 Vision
-- **Bullseye** no longer reduces the penalty for shooting behind cover. It also no longer works with **Take Aim**. It now provides 25% Armor Penetration (up from 10% and 20% resepctively)
+- **Bullseye** no longer reduces the penalty for shooting behind cover. It also no longer works with **Take Aim**. It now provides 20% Armor Penetration (up from 10% and 20% resepctively)
 - **Bulwark** is completely reworked. It now grants additional Resolve equal to 5% of your current combined Head and Body Armor condition
 - **Brawny** no longer grants Initiative
 - **Cheap Trick** now affects all attacks of a skill, when you use it with an AoE skill
@@ -383,7 +384,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Oathtaker** now spawn with +1 Weapon Group (down from +2)
 - **Pimp** now has 0 to minimum Melee Skill (up from -5) and +5 to maximum Melee Skill (up from -5)
 - **Shepherd** loses the Hitchance Bonus with **Slings**
-- **Swordmaster** no longer has **Sword Mastery** unlocked by default. They now have a hiring cost of 400 Crowns (down from 2400), just like in Vanilla
+- **Swordmaster** no longer has **Sword Mastery** unlocked by default
 
 ### Traits
 
@@ -423,6 +424,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 - **Ancient Pikes** gains the **Spear** Weapontype
 - **Ancient Spear** now deals 30-40 damage (up from 20-35), has a Weight of 10 (up from 6) and costs 750 Crowns (up from 150)
+- **Ancient Sword** loses **Stab** and gains **Deathblow** (costing 5 Action Points and 15 Fatigue)
 - **Berserk Chain** now has 4 Reach (down from 5)
 - **Cruel Falchion** are now a Sword/Dagger hybrid. They now also grant **Stab**. **Slash** and **Rispote** lose any discount
 - **Cudgel** now deals 40-60 damage (up from 30-50), has 4 Reach (up from 3), costs 400 Crowns (up from 300). **Bash** now costs 5 AP (up from 4). **Knock Out** now has a 100% chance to stun
@@ -661,7 +663,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Dried Lamb** now has a Stacksize of 30 (up from 25) and cost 125 Crowns (up from 105)
 - **Fangshire** will no longer spawn at the start of the game
 - **Feral Shield** now costs 400 Crowns (up from 50)
-- **Fermented Unhold Heart** now has an expiry date of 40 days (up from 20)
+- **Fermented Unhold Heart** now has an expiry date of 40 days (up from 20) and has 50 Servings (up from 25)
 - **Goblin Poison** now costs 200 Crowns (up from 100). It now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 1000 Value (up from 200) and grants 10 Resolve (up from 5)
 - **Hyena Fur Mantle** now grants 10% more Initiative instead of +15 Initaitive
@@ -719,7 +721,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 	- This effect is given to **Ifrits**, **Spider Eggs**, **Headless Zombies**, **Saplings**, **Lindwurm Tails** and **Kraken Tentacles**
 	- **Wiederganger**, which receive this effect, lose **Bite** and gain **Zombie Punch** (which is mostly the same, except without bonus headshot chance)
 - Introduce new **Cursed** effect. It allows the character to resurrect even after receiving a fatality. It is given to **Fallen Heroes**
-- Introduce new **Bite Reach** effect, which reduces headshot chance by 10% and increases chance to receive headshot by 10%
+- Introduce new **Bite Reach** effect, which reduces headshot chance by 10%
 	- This effect is given to all **Dogs**, **Wolfs** and **Hyenas**
 - Weapons in the bags of NPCs will now have randomized Condition, similar to their equipped weapons
 
@@ -749,6 +751,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
   - The **Lindwurm Tail** still inherits most of the stats from the head but has 50% less Hitpoints and Resolve and 50% more Melee Defense
   - The **Lindwurm Tail** can now be stunned and netted but those effects are removed whenever the Head moves away
 - The **Unhold Racial** effect now causes Debuffs on Unholds to last -1 Turns
+- **Schrats** gain the new perk **Forestbond**, which recovers 3% Hitpoints per adjacent tree obstacle at the start of each turn
 
 ### Dynamic Party Adjustments
 
@@ -762,6 +765,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Mercenaries will more gradually appear in caravan parties, instead of suddenly and in great numbers
 - **Brigand Killer** can now appear in the Disguised Direwolf contract twist
 - Adorned Knights now only bring 1 Squire (down from 2)
+- Noble Parties can now only have up to 30% melee backliner (down from 40%) and up to 25% ranged backliner (down from 30%)
+- Brigand Camps can now have at most 35% ranged units (down from 40%)
 
 ### AI
 
@@ -788,7 +793,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - NPCs are 20% more likely to target someone with **Kingfisher** who is currently netting them and 10% more likely to target them, if they are netting anyone
 - NPCs are 10% more likely per **Unstoppable** stack on the target, to use a skill which applies staggered on a hit
 - NPCs are 50% less likely to attack into an active **Rebuke**
-- NPCs are more likely use **Disarm** onto enemies with **Spearwall** or **Riposte**
+- NPCs are 50% more likely use **Disarm** onto enemies with **Spearwall** or **Riposte**
 - NPCs are 1% less likely to use **Break Free** for every Melee Defense below 20 that they have and 1% more likely per Melee Defense above 20
 - NPCs are 20% more likely to try to destroy shields of someone with **Phalanx** perk
 - NPCs are 50% more likely to try to destroy shields of someone with **One with the Shield** perk
@@ -797,10 +802,12 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - NPCs with **Toolbox** are 50% more likely to target a staggered enemy with a blunt throwing attack
 - NPCs are 50% more likely to use **Split Shield** when it would destroy a shield on use
 - NPCs are 20% more likely to use a throwing spear against shield users and 50% more likely to target shields, that it would destroy on use
-- NPCs are 20% more likely to use **Disarm** or **Knock out** on someone who has **Parry**
+- NPCs are 20% more likely to use **Disarm**, **Bearded Blade** or **Knock out** on someone who has **Parry**
 - NPCs are 100% more likely to use rotating skills onto allied Nachzehrer if that would put them on top of a corpse; and 50% less likely if that would put them away a corpses. And vice versa with hostile nachzehrers
+- NPCs are now 150% more likely to use **Insect Swarm**
 - NPCs now take into account all swap-discount perks when considering whether to swap to a (better) melee weapon
 - Skeleton Commander now prefer to use wait
+- **Swordmaster** are 20% less likely to flank
 
 ## Combat General
 
@@ -932,6 +939,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ### Combat
 
+- Add Setting (on) to for displaying hitchance labels for all targetable characters whenever you preview an attack skill
 - Your headshot chance is now displayed in the combat tooltip when targeting enemies
 - While previewing movement, tile tooltips show chances and calculations for getting hit by enemies while in zone of control. If not in zone of control tile tooltip instead indicates that
 - Projectiles which fly into obstacles now play a sound effect and shake the targeted object a bit
@@ -986,6 +994,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add Settings to immediately stop the player movement halfway through, when it reveals an enemy (on) or an ally (off)
 - Add Setting (on) to prevent combat logs, which are the result of the same skill execution, from producing empty newlines
 - Add Setting (off) for preventing tile/enemy tooltips from being generated while it is not your turn
+- Play a sound effect and print a combat log whenever your craftable schrat shield recovers condition
 - **Armored Wiederganger** now display their complete name during battle, instead of just **Wiederganger**
 - Add Setting (off) for making the hotkeys for **Wait** fire continuously, instead of only when released
 - Reduce the Attack sfx volume of Wardogs and Warhounds by 20%
@@ -1100,6 +1109,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Fix keyboard inputs for camera movement in combat not being combinable
 - Fix rare end-of-combat freeze, when clicking "It's over"
 - Fix spiders rarely glitching out, causing their armor to no longer take damage
+- Fix named one-handed mace icon art not lining up with their sprite art
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
 - Cartographer will no longer pay for "discovering" the Ancient Watchtower a second time when you interact with it
@@ -1126,6 +1136,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Net Pull** is no longer considered an Attack
 - Fix **Line Breaker** granted by **Onslaught** being usable multiple times
 - Fix crash when trying to sling the same type of pot multiple times with the same character
+- Change the icon of **Sapling Harvest** to that of the sapling overlay icon
 
 ### Dynamic Spawns
 
@@ -1268,8 +1279,11 @@ This section can be skipped by any regular user. It is only meant as an overview
 
 # Known Issues:
 
+- Loading the game over an enemy allows them to instantly engage the player in battle
 - Map Seeds for Vanilla or Reforged are unlikely to work the same under Hardened
-- Loading a game after getting attacked allows you to turn around an ambush into a regular fight
+- Mace Mastery perk description still talks about removing penalty to hit adjacent enemies, but that penalty doesnt even exist anymore
+- Injuries now heal at the start of the day and wages are paid at the start of the day; instead of during midday
+- Hitchances of Lunge-Like attacks can be inaccurate as the act of moving next to your target can enable/disable various effects
 
 # Compatibility
 
