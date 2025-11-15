@@ -8,22 +8,6 @@
 		this.m.AdditionalHitChance = -5;	// Vanilla: -4
 	}
 
-	q.getTooltip = @(__original) function()
-	{
-		local ret = __original();
-
-		foreach (index, entry in ret)
-		{
-			if (entry.id == 6 && entry.icon == "ui/icons/hitchance.png" && ::String.contains(entry.text, "+10%"))
-			{
-				ret.remove(index);
-				break;
-			}
-		}
-
-		return ret;
-	}
-
 	q.onUpdate = @(__original) function( _properties )
 	{
 		__original(_properties);
