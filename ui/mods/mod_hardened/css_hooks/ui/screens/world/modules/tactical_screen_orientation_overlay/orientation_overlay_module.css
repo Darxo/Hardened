@@ -28,7 +28,6 @@
 		-2px  2px 0 #000,
 		 2px  2px 0 #000;
 	padding: 0.1rem 0.3rem;
-	background: rgba(255, 255, 255, 0.1);
 	border-radius: 0.3rem;
 
 	pointer-events: none;	/* Make sure it doesn’t block clicks */
