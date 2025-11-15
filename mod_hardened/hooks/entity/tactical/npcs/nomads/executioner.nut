@@ -12,7 +12,6 @@
 		]);
 
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/helmets/oriental/southern_helmet_with_coif"],
 			[12, "scripts/items/helmets/oriental/turban_helmet"],
 		]);
 
