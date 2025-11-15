@@ -121,7 +121,7 @@
 // scripts/entity/tactical/enemies/vampire
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Vampire.XP = 600;
+	::Const.Tactical.Actor.Vampire.XP = 750;
 	::Const.Tactical.Actor.Vampire.ActionPoints = 9;
 	::Const.Tactical.Actor.Vampire.Hitpoints = 225;
 	::Const.Tactical.Actor.Vampire.Bravery = 50;
@@ -241,7 +241,7 @@
 // scripts/entity/tactical/enemies/rf_vampire_lord
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_VampireLord.XP = 1350;
+	::Const.Tactical.Actor.RF_VampireLord.XP = 1500;
 	::Const.Tactical.Actor.RF_VampireLord.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_VampireLord.Hitpoints = 350;
 	::Const.Tactical.Actor.RF_VampireLord.Bravery = 100;

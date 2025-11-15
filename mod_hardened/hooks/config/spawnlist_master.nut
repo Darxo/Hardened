@@ -667,8 +667,8 @@
 // scripts/entity/tactical/enemies/vampire
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.Vampire.Cost = 40;
-	::Const.World.Spawn.Troops.Vampire.Strength = 40;
+	::Const.World.Spawn.Troops.Vampire.Cost = 50;
+	::Const.World.Spawn.Troops.Vampire.Strength = 50;
 }
 
 // scripts/entity/tactical/enemies/orc_berserker
@@ -956,8 +956,8 @@
 // scripts/entity/tactical/enemies/rf_vampire_lord
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_VampireLord.Cost = 90;
-	::Const.World.Spawn.Troops.RF_VampireLord.Strength = 90;
+	::Const.World.Spawn.Troops.RF_VampireLord.Cost = 100;
+	::Const.World.Spawn.Troops.RF_VampireLord.Strength = 100;
 }
 
 // scripts/entity/tactical/enemies/unhold_frost_armored
