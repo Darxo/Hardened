@@ -981,7 +981,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Print a combat log whenever **Battle Flow** recover Fatigue
 - Play additional hit-sounds when three headed flail hits multiple times
 - Display the actual minimum armor penetration damage in attack skills, instead of always showing a 0 there
-- Improve description of **Additional Fur Padding** and **Bone Plating** and clarify that they only protect against body attacks
+- Improve description of **Additional Fur Padding**,  **Bone Plating** and **Unhold Fur Cloak** and clarify that they only protect against body attacks
 - Slightly improve wording of "weapon skills build up fatigue" tooltip on weapons
 - Automatically re-equip the accessory that you had previously equiped after an arena fight
 - Reduce pan speed of tactical camera by 20%

@@ -23,6 +23,11 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.4.1
+	- Improve wording on **Unhold Fur Cloak** effect description
+	- Remove slightly transparent background for hitchance labels
+	- Fix "???" text labels at the top left screen at the start of each combat
+
 1.4.0
 	- Add new Setting (on) for displaying hitchance labels for all targetable characters whenever you preview an attack skill
 	- Blocking a weapon attack with **Parry** now damages your weapon by 1 Condition
