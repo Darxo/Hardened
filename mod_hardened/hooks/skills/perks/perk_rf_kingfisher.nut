@@ -183,6 +183,15 @@ q.onQueryTooltip <- function( _skill, _tooltip )
 			if (connectedActor.getID() != _user.getID()) return ret;	// we are only interested in adjusting the AI of someone who is netted by us
 
 			ret *= 1.2;	// We prefer to do anything, which targets the guy, who is perma-netting us currently
+
+			if (_skill != null)
+			{
+				if (_skill.getID() == "actives.knock_back" || _skill.getID() == "actives.repel" || _skill.getID() == "actives.shoot_stake")
+				{
+					// We are encouraged to break the bond between us and the kingfisher to waste their net
+					ret *= 1.5;
+				}
+			}
 		}
 
 		return ret;
