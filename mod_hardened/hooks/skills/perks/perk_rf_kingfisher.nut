@@ -179,13 +179,10 @@ q.onQueryTooltip <- function( _skill, _tooltip )
 			if (_user.getID() != _target.getID()) return ret;		// _user and _target must not be the same
 
 			local connectedActor = this.getConnectedActor();
-			if (::MSU.isNull(connectedActor) || connectedActor.getID() != _user.getID())	// we are only interested in adjusting the AI of someone who
+			if (::MSU.isNull(connectedActor)) return ret;
+			if (connectedActor.getID() != _user.getID()) return ret;	// we are only interested in adjusting the AI of someone who is netted by us
 
-			if (_skill != null)
-			{
-				// We prefer to do anything, which targets the guy, who is perma-netting us currently
-				ret *= 1.2;
-			}
+			ret *= 1.2;	// We prefer to do anything, which targets the guy, who is perma-netting us currently
 		}
 
 		return ret;
