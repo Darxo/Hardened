@@ -232,6 +232,18 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.nine_lives",
+		Key = "NineLives",
+		Description = ::UPD.getDescription({
+	 		Effects = [{
+ 				Type = ::UPD.EffectType.Passive,
+ 				Description = [
+					"Once per battle, upon receiving a killing blow, survive instead with " + ::MSU.Text.colorPositive("11-15") + " [Hitpoints,|Concept.Hitpoints] remove all damage over time effects and gain [Heightened Reflexes|Skill+nine_lives_effect] until the start of your next [turn|Concept.Turn]",
+				]
+ 			}]
+	 	}),
+	},
+	{
 		ID = "perk.overwhelm",
 		Key = "Overwhelm",
 		Description = ::UPD.getDescription({
