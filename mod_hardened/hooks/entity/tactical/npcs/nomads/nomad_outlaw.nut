@@ -32,6 +32,9 @@
 			[12, "scripts/items/shields/oriental/southern_light_shield"],
 			[12, "scripts/items/shields/oriental/metal_round_shield"],
 		]);
+
+		this.m.AIAgent = ::new("scripts/ai/tactical/agents/hd_nomad_melee_agent");
+		this.m.AIAgent.setActor(this);
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own

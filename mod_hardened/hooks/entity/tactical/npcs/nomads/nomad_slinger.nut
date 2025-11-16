@@ -19,6 +19,9 @@
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/oriental/nomad_sling"],
 		]);
+
+		this.m.AIAgent = ::new("scripts/ai/tactical/agents/hd_nomad_ranged_agent");
+		this.m.AIAgent.setActor(this);
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
