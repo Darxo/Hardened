@@ -908,7 +908,7 @@
 {
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.BarbarianChosen.Cost = 80;
-	::Const.World.Spawn.Troops.BarbarianChosen.Strength = 80;
+	::Const.World.Spawn.Troops.BarbarianChosen.Strength = 999;	// It is vital for the Barbarian King contract that this guy can do autobattles but not lose them. Thats why his strengh is this high
 }
 
 // scripts/entity/tactical/enemies/unhold_frost
