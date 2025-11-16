@@ -23,6 +23,12 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.4.2
+	- Allow smaller font sizes for overlay hitchance labels
+	- Fix overlay hitchance labels missalignment when playing on a higher UI Scale
+	- Fix some skills showing a hitfactor for **Reach Advantage**, which would not be affected by it
+	- Fix(Vanilla) UI Scale in the options being able to be set to a value that can brick your UI
+
 1.4.1
 	- Improve wording on **Unhold Fur Cloak** effect description
 	- Remove slightly transparent background for hitchance labels

@@ -1098,6 +1098,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Dying enemies no longer set the LastCombatResult to `EnemyDestroyed`, unless they were the last one to die. This fixes a rare Sunken Library exploit
 - Unique Locations are no longer attackable, if there is a party, hostile to the player, directly next to it (fixes exploit for skipping Goblin City quest)
 - **Knock Back** now displays its hitchance bonus correctly in the preview
+- Fix UI Scale in the options being able to be set to a value that can brick your UI
 - Fix Event manager crash while on the snow during the undead crisis
 - Fix world map zoom sometimes zooming too far during lag
 - Fix tactical map zoom/pan sometimes zooming/panning too far during lag
