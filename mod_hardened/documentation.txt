@@ -23,6 +23,10 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.4.3
+	- Sort **Line Breaker** granted by **Onslaught** to the end of the skill list on the ui
+	- Fix throwing mastery sometimes not providing the damage bonus correctly
+
 1.4.2
 	- Allow smaller font sizes for overlay hitchance labels
 	- Fix overlay hitchance labels missalignment when playing on a higher UI Scale
