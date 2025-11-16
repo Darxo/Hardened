@@ -109,7 +109,7 @@
 // New Functions
 	q.isSkillValidForDamageBonus <- function( _skill )
 	{
-		return this.isSkillValid(_skill) && skill.isAttack();
+		return this.isSkillValid(_skill) && _skill.isAttack();
 	}
 
 	q.isSkillValid <- function( _skill )
