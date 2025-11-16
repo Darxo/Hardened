@@ -20,6 +20,10 @@ this.hd_onslaught_line_breaker_skill <- this.inherit("scripts/skills/actives/lin
 		this.m.FatigueCost = 15;	// Vanilla: 30
 		this.m.AIBehaviorID = ::Const.AI.Behavior.ID.LineBreaker;
 		this.m.IsRemovedAfterBattle = true;
+
+		// We sort this to the back, because it is a temporary skill that can appear on almost any brother
+		// We don't want it to disrupt muscle memory by shuffling around hotkeys
+		this.m.Order = ::Const.SkillOrder.Last;
 	}
 
 	function isHidden()
