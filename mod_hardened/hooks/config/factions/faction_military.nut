@@ -206,7 +206,7 @@
 	::Const.Tactical.Actor.RF_HeraldsBodyguard.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_HeraldsBodyguard.Hitpoints = 120;
 	::Const.Tactical.Actor.RF_HeraldsBodyguard.Bravery = 90;
-	::Const.Tactical.Actor.RF_HeraldsBodyguard.Stamina = 120;
+	::Const.Tactical.Actor.RF_HeraldsBodyguard.Stamina = 140;
 	::Const.Tactical.Actor.RF_HeraldsBodyguard.MeleeSkill = 75;
 	::Const.Tactical.Actor.RF_HeraldsBodyguard.RangedSkill = 60;
 	::Const.Tactical.Actor.RF_HeraldsBodyguard.MeleeDefense = 15;
