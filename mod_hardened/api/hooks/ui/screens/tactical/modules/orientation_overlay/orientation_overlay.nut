@@ -1,4 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/ui/screens/tactical/modules/orientation_overlay/orientation_overlay", function(q) {
+	// Private
+	q.m.HD_UIScale <- 1.0;	// We save the current UIScale in this value to hopefully increase performance, as we need to access it very frequently during ui updates
+
 	q.update = @(__original) function()	// This is called during battle
 	{
 		local doUpdate = false;
@@ -80,6 +83,9 @@
 	// This is a bit more costly and contains more information for the javascript frontend
 	q.HD_queryEntityHitchanceOverlays <- function()
 	{
+		// We fetch this value once, before we go into our foreach loop to hopefully save performance
+		this.m.HD_UIScale = ::Settings.getVideoMode().UIScale;
+
 		local ret = [];
 
 		local camera = ::Tactical.getCamera();
@@ -106,10 +112,12 @@
 			local cameraPos = camera.getPos();
 			local tile = _actor.getTile();
 
+			// Vanilla offers in the options a global "UI Scale" adjustment
+			// Here we react to that scale by scaling our positions accordingly so that they still match
 			entry.visible = true;
-			entry.x <- (tile.Pos.X - cameraPos.X) / ::Tactical.getCamera().Zoom;
-			entry.y <- (cameraPos.Y - tile.Pos.Y) / ::Tactical.getCamera().Zoom;
-			entry.yOffset <- ::Math.max(tile.Level - camera.Level, 0) * 40.0 / camera.Zoom;
+			entry.x <- (tile.Pos.X - cameraPos.X) / camera.Zoom / this.m.HD_UIScale;
+			entry.y <- (cameraPos.Y - tile.Pos.Y) / camera.Zoom / this.m.HD_UIScale;
+			entry.yOffset <- ::Math.max(tile.Level - camera.Level, 0) * 40.0 / camera.Zoom / this.m.HD_UIScale;
 		}
 
 		return entry;
