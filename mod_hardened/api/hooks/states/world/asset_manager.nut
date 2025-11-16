@@ -20,4 +20,22 @@
 	{
 		return this.m.TerrainTypeVisionMult[_tileType];
 	}
+
+	// Return the maximum Ammo that the player can carry around
+	q.HD_getAmmoMax <- function()
+	{
+		return ::Const.Difficulty.MaxResources[this.getEconomicDifficulty()].Ammo + this.m.AmmoMaxAdditional;
+	}
+
+	// Return the maximum Tools that the player can carry around
+	q.HD_getArmorPartsMax <- function()
+	{
+		return ::Const.Difficulty.MaxResources[this.getEconomicDifficulty()].ArmorParts + this.m.ArmorPartsMaxAdditional;
+	}
+
+	// Return the maximum Medicine that the player can carry around
+	q.HD_getMedicineMax <- function()
+	{
+		return ::Const.Difficulty.MaxResources[this.getEconomicDifficulty()].Medicine + this.m.MedicineMaxAdditional;
+	}
 });
