@@ -203,6 +203,14 @@
 	::Const.World.Spawn.Troops.RF_BanditPillager.Strength = 18;
 }
 
+// scripts/entity/tactical/enemies/rf_bandit_robber
+{
+	// Mandatory Entries
+	::Const.World.Spawn.Troops.RF_BanditRobber.Cost = 18;
+	::Const.World.Spawn.Troops.RF_BanditRobber.Strength = 18;
+	::Const.World.Spawn.Troops.RF_BanditRobber.Row = 1;			// Reforged: 0
+}
+
 // scripts/entity/tactical/enemies/zombie_yeoman
 {
 	// Mandatory Entries
@@ -404,6 +412,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.RF_BanditBandit.Cost = 27;
 	::Const.World.Spawn.Troops.RF_BanditBandit.Strength = 27;
+	::Const.World.Spawn.Troops.RF_BanditBandit.Row = 1;			// Reforged: 0
 }
 
 // scripts/entity/tactical/enemies/rf_bandit_outlaw
@@ -588,6 +597,7 @@
 	::Const.World.Spawn.Troops.RF_BanditKiller.Cost = 40;
 	::Const.World.Spawn.Troops.RF_BanditKiller.Strength = 40;
 	::Const.World.Spawn.Troops.RF_BanditKiller.Variant = 1;		// Bandit Killer can now produce Champions
+	::Const.World.Spawn.Troops.RF_BanditKiller.Row = 1;			// Reforged: 0
 
 	// Optional Entries
 	::Const.World.Spawn.Troops.RF_BanditKiller.NameList <- ::Const.Strings.BanditLeaderNames;	// Todo: generate better namelist
