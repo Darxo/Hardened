@@ -99,7 +99,7 @@
 			local skipScreen = true;
 			foreach (screenId in this.m.ScreensToPostpone)
 			{
-				if (screen.ID.find(screenId) != 0) continue;	// ID must start with one of our hand-picked phrases. Those are the most important and safest screens to manipulate
+				if (screen.ID.find(screenId) != null) continue;	// ID must start with one of our hand-picked phrases. Those are the most important and safest screens to manipulate
 				skipScreen = false;
 				break;
 			}
