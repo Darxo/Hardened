@@ -1,6 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/effects/rf_worn_down_effect", function(q) {
 	q.m.MeleeDefenseMult <- 0.7;
 	q.m.RangedDefenseMult <- 0.7;
+	q.m.NonAttackFatigueMult <- 1.5;
 
 	q.getTooltip = @(__original) function()
 	{
@@ -39,7 +40,7 @@
 			id = 11,
 			type = "text",
 			icon = "ui/icons/fatigue.png",
-			text = ::Reforged.Mod.Tooltips.parseString("[Recover|Skill+recover_skill] cannot be used"),
+			text = ::Reforged.Mod.Tooltips.parseString("Non-Attack skills cost " + ::MSU.Text.colorizeMultWithText(this.m.NonAttackFatigueMult, {InvertColor = true}) + " [Fatigue|Concept.Fatigue]"),
 		});
 
 		ret.push({
@@ -55,28 +56,18 @@
 	// Overwrite because we completely replace reforged effects
 	q.onUpdate = @() function( _properties )
 	{
-		local recoverSkill = this.getContainer().getSkillByID("actives.recover");
-		if (recoverSkill != null)
-		{
-			recoverSkill.m.IsUsable = false;
-			this.getContainer().getActor().setDirty(true);	// Update the UI so that Recover is instantly shown as disabled
-		}
-
 		_properties.MeleeDefenseMult *= this.m.MeleeDefenseMult;
 		_properties.RangedDefenseMult *= this.m.RangedDefenseMult;
 	}
 
-// MSU Events
-	q.onQueryTooltip <- function( _skill, _tooltip )
+	q.onAfterUpdate <- function( _properties )
 	{
-		if (_skill.getID() == "actives.recover")
+		foreach (skill in this.getContainer().getAllSkillsOfType(::Const.SkillType.Active))
 		{
-			_tooltip.push({
-				id = 100,
-				type = "text",
-				icon = "ui/icons/warning.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Cannot be used because of " + ::Reforged.NestedTooltips.getNestedSkillName(this)),
-			});
+			if (!skill.isAttack())
+			{
+				skill.m.FatigueCostMult *= this.m.NonAttackFatigueMult;
+			}
 		}
 	}
 });
