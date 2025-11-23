@@ -2,78 +2,105 @@
 	"create",
 ]);
 
-// Our Implementation is not perfect. It can't deal with any delayed skills like Ranged Attacks or Lunge/Charge like abilities
-// However we can deal with proxy-activations where one skill activates another one within it, if those happen instantly with no delay of course
-::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_rattle", function(q) {
+::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_rattle", function(q) {	// We redesign this perk under the name of "Full Force"
 	// Public
-	q.m.DamagePctPerActionPoint <- 0.1;
+	q.m.DamagePctPerActionPoint <- 0.1;	// This much extra damage is dealt for each spent action point
 	q.m.OneHandedMultiplier <- 2.0;		// One Handed weapons gain this much more damage
 
 	// Private
 	q.m.CurrentDamageMult <- 1.0;	// Damage bonus so its preserved throughout multiple skill uses
-	q.m.FullForcedInitiatorSkill <- null;	// Reference of the last FullForcedSkill while we are still within that skills execution
+	q.m.SkillCounter <- null;	// This is used to bind this damage effect to the root skill so that it will empower and rediscover it even through delays
+	q.m.SpentActionPoints <- 0;	// We save this so we can scale our impact animation to the amount of spent action points
+	q.m.HD_LastTileTargeted <- null;	// We save the last tile that was targeted by our boosted attack so that we have it available after the hit, as then the actor might be dead
 
 // Hardened Events
 	q.onReallyBeforeSkillExecuted = @(__original) function( _skill, _targetTile )
 	{
 		__original(_skill, _targetTile);
 
-		if (this.isSkillValid(_skill) && ::MSU.isNull(this.m.FullForcedInitiatorSkill))	// New Full Force was just newly initiated
+		if (this.isSkillValid(_skill) && ::Const.SkillCounter == ::Hardened.Temp.RootSkillCounter)
 		{
 			local actor = this.getContainer().getActor();
-			if (actor.isActiveEntity() && !actor.isDisarmed() && this.isSkillValid(_skill))
+			if (actor.isActiveEntity())		// This perk only works while we are the active entity
 			{
 				local spendableActionPoints = actor.getActionPoints();
 				if (spendableActionPoints > 0)	// Full Force requires at least 1 AP to even trigger
 				{
+					this.m.SpentActionPoints = spendableActionPoints;
+					this.m.SkillCounter = ::Hardened.Temp.RootSkillCounter;	// We bind this effect to the root skill so that we affect all child executions of this chain
+
+					local damagePct = spendableActionPoints * this.m.DamagePctPerActionPoint;
 					if (_skill.getItem().isItemType(::Const.Items.ItemType.OneHanded))
 					{
-						spendableActionPoints *= this.m.OneHandedMultiplier;
+						damagePct *= this.m.OneHandedMultiplier;
 					}
 
-					this.m.CurrentDamageMult = 1.0 + (spendableActionPoints * this.m.DamagePctPerActionPoint);
+					this.m.CurrentDamageMult = 1.0 + damagePct;
 					actor.setActionPoints(0);
-
-					// This line mark the official activation of Full Force for the skill that was just executed
-					this.m.FullForcedInitiatorSkill = _skill;
 				}
 			}
 		}
 	}
 
-	q.onReallyAfterSkillExecuted = @(__original) function( _skill, _targetTile, _success )
-	{
-		__original(_skill, _targetTile, _success);
-
-		if (_skill == this.m.FullForcedInitiatorSkill)
-		{
-			this.m.FullForcedInitiatorSkill = null;		// We end the execution window of our skill. There might still be a delayed execution happening but we dont currently deal with that
-		}
-	}
-
 	q.onAnySkillUsed = @(__original) function( _skill, _targetEntity, _properties )
 	{
-		__original(_skill, _targetEntity, _properties);
+		__original( _skill, _targetEntity, _properties );
+		if (!this.isSkillValid(_skill)) return;
+		if (this.m.SkillCounter != ::Hardened.Temp.RootSkillCounter) return;
 
-		if (this.isEnabled() && this.isSkillValid(_skill))	// Any valid skill between our initial activation and end, will be buffed
-		{
-			_properties.DamageTotalMult *= this.m.CurrentDamageMult;
-		}
+		_properties.DamageTotalMult *= this.m.CurrentDamageMult;
+	}
+
+	q.onBeforeTargetHit = @(__original) function( _skill, _targetEntity, _hitInfo )
+	{
+		__original(_skill, _targetEntity, _hitInfo);
+		if (!this.isSkillValid(_skill)) return;
+		if (this.m.SkillCounter != ::Hardened.Temp.RootSkillCounter) return;
+
+		this.m.HD_LastTileTargeted = _targetEntity.getTile();
+	}
+
+	q.onTargetHit = @(__original) function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
+	{
+		__original(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor);
+		if (!this.isSkillValid(_skill)) return;
+		if (this.m.SkillCounter != ::Hardened.Temp.RootSkillCounter) return;
+
+		// this.displayImpactEffect(this.m.HD_LastTileTargeted, this.m.SpentActionPoints);
+		this.displayImpactEffect(this.m.HD_LastTileTargeted, this.m.SpentActionPoints);
+	}
+
+	q.onCombatFinished = @(__original) function()
+	{
+		__original();
+		this.m.SkillCounter = null;
+		this.m.SpentActionPoints = 0;
 	}
 
 // New Functions
-	q.isEnabled <- function()
-	{
-		if (this.m.FullForcedInitiatorSkill == null) return false;
-		if (this.getContainer().getActor().isDisarmed()) return false;
-		return true;
-	}
-
 	q.isSkillValid <- function( _skill )
 	{
 		if (!_skill.isAttack()) return false;
+		if (this.getContainer().getActor().isDisarmed()) return false;
 
 		local weapon = _skill.getItem();
 		return !::MSU.isNull(weapon) && weapon.isItemType(::Const.Items.ItemType.Weapon) && weapon.isWeaponType(::Const.Items.WeaponType.Hammer);
+	}
+
+	q.displayImpactEffect <- function( _tile, _spentActionPoints )
+	{
+		if (::Hardened.Mod.ModSettings.getSetting("FullForceCameraShake").getValue())
+		{
+			local cameraDistance = ::Math.max(_spentActionPoints, 7);	// We cap the camera shake as it does not look at a certain point anymore
+			::Tactical.getCamera().quake(this.createVec(0, -1.0), cameraDistance, 0.16, 0.35);
+		}
+
+		foreach (entry in ::Const.Tactical.HD_FullForce)
+		{
+			local quantity = entry.Quantity * _spentActionPoints;
+			local lifeTimeQuantity = entry.LifeTimeQuantity * _spentActionPoints;
+			local spawnRate = entry.SpawnRate * _spentActionPoints;
+			::Tactical.spawnParticleEffect(false, entry.Brushes, _tile, entry.Delay, quantity, lifeTimeQuantity, spawnRate, entry.Stages, ::createVec(0, 0));
+		}
 	}
 });

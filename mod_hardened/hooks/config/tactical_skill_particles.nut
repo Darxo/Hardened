@@ -118,3 +118,89 @@
 		},
 	],
 }];
+
+/// This is a grey dust cloud effect that rises very briefly from a targeted point 180° upwards
+/// It is designed to be multiplied by an intensity value just before being executed to archieve a scaled effect depending on strength of attack
+/// This is used by perk_rf_rattle (Full Force Perk)
+::Const.Tactical.HD_FullForce <- [
+	{
+		Delay = 1,
+		Quantity = 20,
+		LifeTimeQuantity = 20,
+		SpawnRate = 100,
+		Brushes = [
+			"ash_01",
+			"ash_02",
+			"ash_light_01",
+			"ash_light_02",
+		],
+		Stages = [
+			{
+				LifeTimeMin = 0.25,
+				LifeTimeMax = 0.4,
+				ColorMin = this.createColor("ffffff00"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 0.3,
+				ScaleMax = 0.4,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-1.0, -0.25),
+				DirectionMax = this.createVec(1.0, 0.25),
+				SpawnOffsetMin = this.createVec(-50, -60),
+				SpawnOffsetMax = this.createVec(50, 30),
+				ForceMin = this.createVec(0, 45),
+				ForceMax = this.createVec(0, 45)
+			},
+			{
+				LifeTimeMin = 0.25,
+				LifeTimeMax = 0.4,
+				ColorMin = this.createColor("ffffffff"),
+				ColorMax = this.createColor("ffffffff"),
+				ScaleMin = 0.4,
+				ScaleMax = 0.5,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 30,
+				VelocityMax = 50,
+				DirectionMin = this.createVec(-0.5, -0.25),
+				DirectionMax = this.createVec(0.5, 0.25),
+				ForceMin = this.createVec(0, 45),
+				ForceMax = this.createVec(0, 45)
+			},
+			{
+				LifeTimeMin = 0.5,
+				LifeTimeMax = 0.7,
+				ColorMin = this.createColor("fffffff0"),
+				ColorMax = this.createColor("fffffff0"),
+				ScaleMin = 0.5,
+				ScaleMax = 0.6,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 20,
+				VelocityMax = 30,
+				DirectionMin = this.createVec(0.0, 0.0),
+				DirectionMax = this.createVec(0.0, 0.0),
+				ForceMin = this.createVec(0, 45),
+				ForceMax = this.createVec(0, 45)
+			},
+			{
+				LifeTimeMin = 0.7,
+				LifeTimeMax = 0.9,
+				ColorMin = this.createColor("ffffff00"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 0.6,
+				ScaleMax = 0.7,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 20,
+				VelocityMax = 30,
+				DirectionMin = this.createVec(0.0, 0.0),
+				DirectionMax = this.createVec(0.0, 0.0),
+				ForceMin = this.createVec(0, 45),
+				ForceMax = this.createVec(0, 45)
+			}
+		]
+	}
+];
