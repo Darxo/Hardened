@@ -1,9 +1,8 @@
-::Hardened.HooksMod.hook("scripts/items/weapons/dagger", function(q) {
+::Hardened.HooksMod.hook("scripts/items/weapons/knife", function(q) {
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.RegularDamage = 20;		// Vanilla: 15
-		this.m.RegularDamageMax = 30;	// Vanilla: 35
+		this.m.RegularDamageMax = 20;	// Vanilla: 25
 	}
 
 	// We overwrite Reforged skill additions, because we dont hand out any discounts
