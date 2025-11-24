@@ -126,6 +126,10 @@
 		if (!wasAlive) return;	// Same check as Vanilla
 		if (::Tactical.State.isScenarioMode()) return;	// Many global objects dont exist here, like FactionManager
 
+		// Some contracts force you to fight against their own (deserter twist), we dont want those cases to cause non-scripted relation damage
+		local currentContract = ::World.Contracts.getActiveContract();
+		if (currentContract != null && this.getFaction() == currentContract.getFaction()) return;
+
 		// This code is mostly a copy of vanillas checks, except that we don't check for ::World.FactionManager.getFaction(this.getFaction()).isTemporaryEnemy()
 		local faction = ::World.FactionManager.getFaction(this.getFaction());
 		if (faction != null && _killer != null && (_killer.getFaction() == ::Const.Faction.Player || _killer.getFaction() == ::Const.Faction.PlayerAnimals))
@@ -140,7 +144,12 @@
 		local faction = ::World.FactionManager.getFaction(this.getFaction());
 		if (faction != null)
 		{
-			faction.addPlayerRelation(::Const.World.Assets.RelationUnitKilled, "Killed one of their units");
+			// Some contracts force you to fight against their own (deserter twist), we dont want those cases to cause non-scripted relation damage
+			local currentContract = ::World.Contracts.getActiveContract();
+			if (currentContract == null || this.getFaction() != currentContract.getFaction())
+			{
+				faction.addPlayerRelation(::Const.World.Assets.RelationUnitKilled, "Killed one of their units");
+			}
 		}
 
 		__original();
