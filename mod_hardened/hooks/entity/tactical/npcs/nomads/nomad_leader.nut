@@ -145,7 +145,7 @@
 		local sidearm = ::new(::MSU.Class.WeightedContainer([
 			[1, "scripts/items/weapons/javelin"],
 		]).roll());
-		sidearm.m.Ammo = 3;
+		sidearm.m.Ammo = 2;
 		this.getItems().addToBag(sidearm);
 	}
 });
