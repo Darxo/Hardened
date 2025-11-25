@@ -15,4 +15,30 @@
 		}
 		return ret;
 	}}.getTooltip;
+
+	q.onNewRound = @(__original) function()
+	{
+		// Vanilla Fix: Vanilla crashes the game, if the smoke effect lingers on an enemy for some reason beyond them still being on the map
+		if (!this.getContainer().getActor().isPlacedOnMap())
+		{
+			this.removeSelf();
+		}
+		else
+		{
+			__original(_properties);
+		}
+	}
+
+	q.onUpdate = @(__original) function( _properties )
+	{
+		// Vanilla Fix: Vanilla crashes the game, if the smoke effect lingers on an enemy for some reason beyond them still being on the map
+		if (!this.getContainer().getActor().isPlacedOnMap())
+		{
+			this.removeSelf();
+		}
+		else
+		{
+			__original(_properties);
+		}
+	}
 });
