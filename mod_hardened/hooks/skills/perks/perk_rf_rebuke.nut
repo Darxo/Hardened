@@ -1,7 +1,18 @@
+// We wipe many reforged functions as we rework this perk for something different
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_rebuke", [
+	"create",
+]);
+
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_rebuke", function(q) {
 	q.m.RebukeTriggerSounds <- [
 		"sounds/combat/return_favor_01.wav",
 	];
+
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.Type = ::Const.SkillType.Perk;
+	}
 
 	q.addResources = @(__original) function()
 	{
@@ -12,7 +23,7 @@
 		}
 	}
 
-	q.onMissed <- function( _attacker, _skill )
+	q.onMissed = @() function( _attacker, _skill )
 	{
 		if (this.canProc(_attacker, _skill) && !this.getContainer().hasSkill("effects.hd_rebuke"))
 		{

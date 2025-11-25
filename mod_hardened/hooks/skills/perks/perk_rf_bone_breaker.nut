@@ -45,12 +45,6 @@
 
 		if (!_targetEntity.isAlive() || _targetEntity.isDying()) return;
 
-		// First we hard-codedly check against the existance of Crippling Strikes, which allows injuries on undead in Reforged
-		if (_targetEntity.getFlags().has("undead") && !_targetEntity.getFlags().has("ghoul") && !_targetEntity.getFlags().has("ghost") && !this.getContainer().hasSkill("perk.crippling_strikes"))
-		{
-			return;
-		}
-
 		// We save the modular vanilla reference in a temporary shorter variable for readability
 		// It is guaranteed to be not null, as onDamageReceived is always called after onBeforeTargetHit and before onTargetHit
 		local hitinfo = ::Const.Tactical.MV_CurrentHitInfo;
@@ -59,19 +53,18 @@
 		local oldDamageInflictedHitpoints = hitinfo.DamageInflictedHitpoints;
 		hitinfo.DamageInflictedHitpoints += hitinfo.DamageInflictedArmor;
 
-		local boneBreakerInjury = null;
 		// We need to replicate any vanilla pre-condition for even considering to apply an injury
 		if (_targetEntity.getCurrentProperties().IsAffectedByInjuries && _targetEntity.m.IsAbleToDie && hitinfo.DamageInflictedHitpoints >= ::Const.Combat.InjuryMinDamage && _targetEntity.getCurrentProperties().ThresholdToReceiveInjuryMult != 0 && hitinfo.InjuryThresholdMult != 0 && hitinfo.Injuries != null)
 		{
 			// Now we run the modularVannilla function MV_applyInjury to atually apply an injury on the target
-			boneBreakerInjury = _targetEntity.MV_applyInjury(_skill, hitinfo);
-		}
+			local boneBreakerInjury = _targetEntity.MV_applyInjury(_skill, hitinfo);
 
-		if (boneBreakerInjury != null)
-		{
-			if (_targetEntity.isPlayerControlled() || !_targetEntity.isHiddenToPlayer())
+			if (boneBreakerInjury != null)
 			{
-				::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(_targetEntity) + "\'s " + ::Const.Strings.BodyPartName[hitinfo.BodyPart] + " suffers " + boneBreakerInjury.getNameOnly() + " because of \'Bone Breaker\'!");
+				if (_targetEntity.isPlayerControlled() || !_targetEntity.isHiddenToPlayer())
+				{
+					::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(_targetEntity) + "\'s " + ::Const.Strings.BodyPartName[hitinfo.BodyPart] + " suffers " + boneBreakerInjury.getNameOnly() + " because of \'Bone Breaker\'!");
+				}
 			}
 		}
 

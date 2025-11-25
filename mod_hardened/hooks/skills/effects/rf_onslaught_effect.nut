@@ -2,16 +2,10 @@
 	"create",
 	"getTooltip",
 	"onUpdate",
+	"onRoundEnd",
 ]);
 
 ::Hardened.HooksMod.hook("scripts/skills/effects/rf_onslaught_effect", function(q) {
-	q.create = @(__original) function()
-	{
-		__original();
-
-		this.m.HD_LastsForRounds = 2;	// We now use a round-based duration
-	}
-
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original()

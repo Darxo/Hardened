@@ -15,6 +15,18 @@
 			// Headshot chance
 			if (this.isAttack())
 			{
+				// First remove remove the headshot entry, created by reforged
+				foreach (index, entry in ret)
+				{
+					// We know only ever one of these two can exist in ret at the same time, so we can remove them like this
+					if (entry.text.find("chance to hit head") != null)
+					{
+						ret.remove(index);
+						break;
+					}
+				}
+
+				// We want a hyperlinked one-liner, that is more accurately calculated
 				local headshotChance = properties.getHeadHitchance(::Const.BodyPart.Head, this.getContainer().getActor(), this, target);
 				ret.insert(0, {
 					icon = "ui/icons/chance_to_hit_head.png",
@@ -113,16 +125,6 @@
 		if (!mainhandItem.isItemType(::Const.Items.ItemType.OneHanded)) return false;
 
 		return true;
-	}
-
-// Nested Tooltips Functions
-	// Overwrite, because we need to prevent Nested Tooltips from deleting damage number tooltip lines
-	q.getDefaultNestedTooltip = @() function()
-	{
-		// Nested Tooltips checks, whether there is an item present on this character. If so, they overwrite the damage numbers
-		// However they never explain, why they needed to overwrite and what edge case this fixes
-		// Because as a result of that overwrite, every beast-skill does not display damage numbers
-		return this.getTooltip();
 	}
 
 // New Functions

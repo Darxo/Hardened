@@ -48,6 +48,11 @@
 			{
 				ret.remove(index);
 			}
+			// We delete the Reforged entry about "Free Dagger Swaps" as that whole system is no longer relevant under Hardened
+			if (entry.id == 30 && entry.icon == "ui/icons/special.png")
+			{
+				ret.remove(index);
+			}
 		}
 
 		return ret;

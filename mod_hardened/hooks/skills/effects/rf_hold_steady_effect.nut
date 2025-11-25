@@ -2,16 +2,12 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.TurnsLeft = 3;	// In Reforged this is 1. We set this to any higher value, as we don't want Reforgeds turn-based duration to interfer with our round-based one
 		this.m.BraveryAdd = 0;	// Reforged: 10
-
-		this.m.HD_LastsForRounds = 2;	// We now use a round-based duration
 	}
 
 	q.onRefresh = @(__original) function()
 	{
 		__original();
 		this.spawnIcon(this.m.Overlay, this.getContainer().getActor().getTile());
-		this.m.HD_LastsForRounds = 2;
 	}
 });

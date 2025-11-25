@@ -24,6 +24,12 @@
 		return ret;
 	}
 
+	// Overwrite, because we don't want to use the pre-calculated melee skill from the start of the execution
+	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties )
+	{
+		_properties.MeleeSkill += this.getModifierForSkill(_skill);
+	}
+
 // Reforged Functions
 	// Overwrite, because we simplify the code and remove the reach condition for enemies
 	q.getModifierForSkill = @() function( _skill )

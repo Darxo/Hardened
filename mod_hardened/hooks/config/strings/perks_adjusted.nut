@@ -703,7 +703,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlocks the [Cheap Trick|NullEntitySkill+rf_cheap_trick_skill] skill which increases the [Hitchance|Concept.Hitchance] of your next Attack skill but reduces its damage",
+					"Unlocks the [Cheap Trick|Skill+rf_cheap_trick_skill] skill which increases the [Hitchance|Concept.Hitchance] of your next Attack skill but reduces its damage",
 				],
 			}],
 		}),

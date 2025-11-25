@@ -31,11 +31,6 @@ this.hd_onslaught_line_breaker_skill <- this.inherit("scripts/skills/actives/lin
 		return this.line_breaker.isHidden() || this.m.IsSpent;
 	}
 
-	function isUsable()
-	{
-		return this.line_breaker.isUsable() && !this.getContainer().getActor().getCurrentProperties().IsRooted;
-	}
-
 	function onUse( _user, _targetTile )
 	{
 		local ret = this.line_breaker.onUse(_user, _targetTile );
