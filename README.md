@@ -186,7 +186,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%). It now costs 3 Action Points (down from 6) and has a maximum range of 4 tiles (down from 7)
 - **Flaming Arrow** (granted by **Trick Shooter**) no longer causes an extra morale check on the main target. It now deals 100% Burning Damage (instead of 25% Burning and 75% Piercing Damage)
 - **Passing Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand. It now has 0 additional fatigue cost (down from 2)
-- **Lunge** now has -10% additional Hitchance (up from -20%). Its damage scaling from Initiative has been reworked: It now deals 1% less damage per Initiative below 100 and it deals 1% more damage per Initiative above 100 (up to a maximum of 75% more)
+- **Lunge** now has -10% additional Hitchance (up from -20%). Its damage scaling from Initiative has been reworked: It now deals 1% less damage per Initiative below 100 and it deals 1% more damage per Initiative above 100 (up to a maximum of 75% more). It is no longer affected by **Crowded**
 - **Net Effect** (caused by **Throw Net**) no longer affects the Initiative of the target. It now applies 50% less Melee Defense (up from 25%) and 50% less Ranged Defense (up from 45%)
 - **Net Pull** now costs 30 Fatigue (up from 25)
 - **Quick Shot** now has -2 Shooting Range (down from -1) and loses 5% Hitchance per tile (up from 4%)
@@ -275,7 +275,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Fruits of Labor** is reworked. It now grants 5% more Hitpoints, Stamina, Resolve and Initiative
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
 - **Hammer Mastery** no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part.
-- **Hold Steady** no longer has a shared cooldown with other brothers who have this perk. It now lasts for 2 rounds, instead of having a turn-based duration. It no longer grants Resolve
+- **Hold Steady** no longer has a shared cooldown with other brothers who have this perk. It no longer grants Resolve
 - **Hybridization** is completely reworked. It is now called **Toolbox** and requires a Throwing Weapon. It grants +1 Bag Slot if you dont have **Weapon Master**. It now causes piercing type hits to the body to inclict **Arrow to the Knee** for 1 turn, cutting type attacks to inflict **Overwhelmed**, blunt type headshots to inflict stagger for 1 turn and any hit with them to stun a staggered opponent and throwing spears to deal 100% more damage to shields
 - **Inspiring Presence** no longer requires a banner. At the start of each round it grants adjacent allies of your faction +3 Action Points for this turn, if they are adjacent to an enemy and have less Resolve than you. The same target can't be inspired multiple times per turn.
 - **Iron Sights** is completely reworked. It now grants +1% chance to hit the head with Crossbows and Firearms for every 3 Initiative you have
@@ -290,7 +290,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Nailed It** is completely reworked. It now works with all attacks and grants 25% chance to hit the head at a distance of 2 tiles. It also makes it so your attacks at a distance of 2 tiles will never hit the cover
 - **Nimble** is completely reworked: It now always provides a 60% Hitpoint damage reduction but no longer reduces your armor damage taken. It now increases your armor damage taken by a percentage equal to your combined helmet and armor weight
 - **Offhand Training** is completely reworked. It now reduces the AP cost of tool skills by 1. Wielding a tool in your offhand no longer disables **Double Grip** and while wielding a tool in your offhand, the first successful attack each turn, will stagger your target
-- **Onslaught** no longer has a shared cooldown with other brothers who have this perk. It now lasts for 2 rounds, instead of having a turn-based duration
+- **Onslaught** no longer has a shared cooldown with other brothers who have this perk
 - **Opportunist** is completely reworked. After moving 3 tiles during your turn, it grants a -5 Action Point discount throwing attacks, until you use a throwing attack, wait or end your turn. Moving on all terrain costs -2 Fatigue, just like the **Athletic** Trait
 - **Phalanx** is completely reworked. It grants +1 Reach for every adjacent ally with a shield. **Shieldwall** no longer ends, while an adjacent brother also has **Shieldwall** active
 - **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. You take 2% less Armor Damage from Attacks for every 5 Initiative you have, up to a maximum of 40%.
@@ -1066,10 +1066,9 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add new Concepts for **Armor Penetration**, **Critical Damage**, **Displacement**, **Hitchance**, **Rally**, **Threat** and **Weight** and and apply these Concepts to existing weapons, items, perks skills
 - Improve the Vanilla Concepts **Chance to hit head**, **Vision** and **Morale** and add nested tooltip for all morale states (except **Steady**)
 - Improve Goblin Poison, Spider Poison item, skill and effect tooltips
-- Explain the melee defense softcap in the melee defense tooltip
 - Display item type names for Ammunition, Accessories, Consumables, Food and Quest Items in the item tooltips
 - Improve tooltips of **Battleforged** perk and **Chop** skill
-- Improve artwork for **Nimble** perk and **Heightened Reflexes (Nine Lives)** effect
+- Improve artwork for **Nimble** perk
 - Improve artwork for **Tattered Sackcloth** item to make it stand out more from **Sackcloth**
 - Reduce scroll speed of origin selection to 0.5 (down from 5)
 - All effects of the difficulty settings are now listed as tooltips before world generation
@@ -1106,6 +1105,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Fix Armor Damage on Weapon tooltips sometimes being off by 1%
 - Fix poisons inflicted by coated weapons not playing a sound effect
 - Fix **Blacksmith Follower** increasing the odds of looting weapons from NPCs
+- Fix crash, when ending a battle in which a brother was struck down while affected by a smoke bomb
 - Fix some positional effects (e.g. Lone Wolf or Entrenched) visually persisting outside of combat
 - Dying enemies no longer set the LastCombatResult to `EnemyDestroyed`, unless they were the last one to die. This fixes a rare Sunken Library exploit
 - Unique Locations are no longer attackable, if there is a party, hostile to the player, directly next to it (fixes exploit for skipping Goblin City quest)
@@ -1121,7 +1121,6 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Fix the impact delay of most throwable utility items not lining up with their projectiles, especially on higher game speed
 - Fix keyboard inputs for camera movement in combat not being combinable
 - Fix rare end-of-combat freeze, when clicking "It's over"
-- Fix spiders rarely glitching out, causing their armor to no longer take damage
 - Fix named one-handed mace icon art not lining up with their sprite art
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
@@ -1138,10 +1137,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ### Reforged
 
-- Fix **Lunge** being affected by **Crowded**
 - **Calculated Strikes** now works against stunned enemies
 - **Cheap Trick** now works with delayed skill executions (like Lunge or Aimed Shot)
-- Fix **Weapon Master** secretly adding perks for worn weapon, even if you don't have those perks available in your perk tree
 - The perks **Strengh in Numbers** and **Dynamic Duo** now instantly update the actors stats, if another actor moves adjacent to or away from them
 - Improve **Shieldwall effect** when viewed as a hyperlink
 - Fix **Sergeant** perk not showing any perk description
@@ -1159,10 +1156,6 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 ### Swifter
 
 - Fix image of active entity in the turn sequence bar vanishing on higher combat speed
-
-### Nested Tooltips
-
-- Fix Non-Item Attack Skills not showing any damage numbers
 
 ## For Modders
 

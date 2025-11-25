@@ -26,8 +26,13 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.5.1
+	- Fix crash when attacking with a three headed flail
+	- Fix some perk descriptions suddenly showing the old reforged descriptions
+	- Fix(Vanilla) crash, when ending a battle in which a brother was struck down while affected by a smoke bomb
+
 1.5.0
-	- **Shuffle** now costs 0 Action Points (down from +1) and 0 Fatigue (down from +2)
+	- **Shuffle** now costs 0 Action Points (down from +1) and 0 Fatigue (down from +2) irregardless the terrain
 	- **Take Aim** (**Crossbow Mastery**) now costs 25 Fatigue (up from 20) but it lowers the Fatigue cost of your next Crossbow or Firearm Attack by 100%.
 	- **Take Aim** can now be used with any Firearm instead of only being restricted to the **Handgonne**
 	- **Take Aim** with Firearms can no longer enlargen the AoE beyond 6 tiles
