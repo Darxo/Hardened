@@ -453,12 +453,6 @@
 					});
 				}
 			}
-
-			// Feat: show hitchance tooltip when moving out of zone of control
-			if (::MSU.isKindOf(activeEntity, "player") && activeEntity.isPlayerControlled())
-			{
-				activeEntity.getZOCHitFactors(ret);
-			}
 		}
 
 		return ret;
@@ -482,5 +476,85 @@
 
 		return ret;
 	}
-});
 
+// Reforged Functions
+	q.RF_getZOCAttackTooltip = @(__original) function( _entity )
+	{
+		// We call the original, because we still want its fatigue tooltip and tooltip for moving into spearwall
+		local ret = __original(_entity);
+
+		// We only show the ZOC hitfactors, if this actor is previewing movement
+		if (::MSU.isNull(_entity) || _entity.getCurrentProperties().IsImmuneToZoneOfControl || _entity.getPreviewMovement() == null)
+		{
+			return ret;
+		}
+
+		// We remove the Reforged tooltips about chance to be hit when moving, except about fatigue cost
+		for (local index = (ret.len() - 1); index >= 0; index--)
+		{
+			local entry = ret[index];
+
+			if (entry.id == 100 && entry.icon != "ui/icons/fatigue.png")
+			{
+				ret.remove(index);
+			}
+		}
+
+		// First we generate hitchances for when we are standing in enemy ZoC
+		if (_entity.getTile().Properties.Effect == null || _entity.getTile().Properties.Effect.Type != "smoke")	// onMovementInZoneOfControl does not check for this, so we do it here now
+		{
+			if (_entity.getTile().getZoneOfControlCountOtherThan(_entity.getAlliedFactions()) == 0)
+			{
+				ret.insert(0, {
+					id = 200,
+					type = "text",
+					// icon = "ui/icons/hitchance.png",
+					text = ::Reforged.Mod.Tooltips.parseString("You are not in an enemy [Zone of Control|Concept.ZoneOfControl]"),
+				});
+			}
+			else
+			{
+				local aooInformation = [];
+				local expectedChanceToBeHit = 0;
+				local childId = 201;
+				foreach (tile in ::MSU.Tile.getNeighbors(_entity.getTile()))
+				{
+					if (!tile.IsOccupiedByActor) continue;
+					if (!tile.getEntity().onMovementInZoneOfControl(_entity, false)) continue;		// The entity in that tile does not exert zone of control onto us
+
+					local aooSkill = tile.getEntity().getSkills().getAttackOfOpportunity();
+					if (!aooSkill.onVerifyTarget(tile, _entity.getTile())) continue;	// The aooSkill found can actually hit us (this will cover cases of tile height difference being too large)
+
+					local chanceToBeHit = aooSkill.getHitchance(_entity);
+					if (expectedChanceToBeHit == 0)
+					{
+						expectedChanceToBeHit = chanceToBeHit;
+					}
+					else
+					{
+						local expectedChanceToDodge = (100 - expectedChanceToBeHit) * (100 - chanceToBeHit) / 100;
+						expectedChanceToBeHit = 100 - expectedChanceToDodge;
+					}
+
+					aooInformation.push({
+						id = childId++,
+						type = "text",
+						icon = "ui/orientation/" + tile.getEntity().getOverlayImage() + ".png",
+						children = aooSkill.getHitFactors(_entity.getTile()),
+						text = ::MSU.Text.colorNegative(chanceToBeHit + "%") + ::Reforged.Mod.Tooltips.parseString(" [Chance to be hit|Concept.ZoneOfControl] by " + ::Const.UI.getColorizedEntityName(tile.getEntity())),
+					});
+				}
+
+				ret.insert(0, {
+					id = 200,
+					type = "text",
+					icon = "ui/icons/hitchance.png",
+					children = aooInformation,
+					text = ::MSU.Text.colorNegative(expectedChanceToBeHit + "%") + ::Reforged.Mod.Tooltips.parseString(" [Expected chance to be hit|Concept.ZoneOfControl]"),
+				});
+			}
+		}
+
+		return ret;
+	}
+});

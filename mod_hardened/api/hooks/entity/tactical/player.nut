@@ -9,69 +9,6 @@
 	}
 
 // New Functions
-	// Write hitfactors into _tooltip, when traveling to out of this characters tile
-	// This function does many checks itself, so those dont need to be done outside
-	q.getZOCHitFactors <- function( _tooltip )
-	{
-		if (this.getCurrentProperties().IsImmuneToZoneOfControl) return;
-
-		if (!this.isPlacedOnMap()) return;
-		if (this.getTile().Properties.Effect != null && this.getTile().Properties.Effect.Type == "smoke") return;	// onMovementInZoneOfControl does not check for this, so we do it here now
-		if (!this.isPreviewing() || this.getPreviewMovement() == null) return;	// We only show the ZOC hitfactors, if this actor is previewing movement
-
-		if (this.getTile().getZoneOfControlCountOtherThan(this.getAlliedFactions()) == 0)
-		{
-			_tooltip.push({
-				id = 10,
-				type = "headerText",
-				// icon = "ui/icons/hitchance.png",
-				text = ::Reforged.Mod.Tooltips.parseString("You are not in an enemy [Zone of Control|Concept.ZoneOfControl]"),
-			});
-
-			return;
-		}
-
-		local aooInformation = [];
-		local expectedChanceToBeHit = 0;
-		local childId = 11;
-
-		foreach (tile in ::MSU.Tile.getNeighbors(this.getTile()))
-		{
-			if (!tile.IsOccupiedByActor) continue;
-			if (!tile.getEntity().onMovementInZoneOfControl(this, false)) continue;		// The entity in that tile does not exert zone of control onto us
-
-			local aooSkill = tile.getEntity().getSkills().getAttackOfOpportunity();
-			if (!aooSkill.onVerifyTarget(tile, this.getTile())) continue;	// The aooSkill found can actually hit us (this will cover cases of tile height difference being too large)
-
-			local chanceToBeHit = aooSkill.getHitchance(this);
-			if (expectedChanceToBeHit == 0)
-			{
-				expectedChanceToBeHit = chanceToBeHit;
-			}
-			else
-			{
-				local expectedChanceToDodge = (100 - expectedChanceToBeHit) * (100 - chanceToBeHit) / 100;
-				expectedChanceToBeHit = 100 - expectedChanceToDodge;
-			}
-
-			aooInformation.push({
-				id = childId++,
-				type = "headerText",
-				icon = "ui/icons/hitchance.png",
-				children = aooSkill.getHitFactors(this.getTile()),
-				text = ::MSU.Text.colorNegative(chanceToBeHit + "%") + ::Reforged.Mod.Tooltips.parseString(" [Chance to be hit|Concept.ZoneOfControl] by " + ::Const.UI.getColorizedEntityName(tile.getEntity())),
-			});
-		}
-
-		_tooltip.push({
-			id = 10,
-			type = "headerText",
-			icon = "ui/icons/hitchance.png",
-			children = aooInformation,
-			text = ::MSU.Text.colorNegative(expectedChanceToBeHit + "%") + ::Reforged.Mod.Tooltips.parseString(" [Expected chance to be hit|Concept.ZoneOfControl]"),
-		});
-	}
-
 	q.getXPMult <- function()
 	{
 		local oldCombatStatsXP = this.m.CombatStats.XPGained;
