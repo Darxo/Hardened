@@ -37,6 +37,7 @@
 		this.getPlayer().setAttackable(false);	// We don't want to immediately get attacked during the loading screen. Todo: though eventually we want that to be a possability to retain the engagement state after loading
 		foreach (worldParty in ::World.getAllEntitiesAtPos(this.getPlayer().getPos(), 2000))
 		{
+			// Could this cause issues when applied to parties that are in combat?
 			worldParty.stun(1);	// We briefly stun all surrounding characters so that they don't move during that one onUpdate call
 			worldParty.onUpdate();
 			worldParty.updatePlayerRelation();

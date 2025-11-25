@@ -21,7 +21,38 @@
 
 # Compatibility
 
+	- **Take Aim** (Crossbow Mastery) now costs 25 Fatigue (up from 20) but it makes your next Crossbow or Firearm Attack cost no fatigue. It can now be used with all Firearms, not just the Handgonne
+	- Slightly improve **Take Aim** descriptions
+
 - Is safe to remove from- and add to any existing savegames
+
+1.5.0
+	- **Shuffle** now costs 0 Action Points (down from +1) and 0 Fatigue (down from +2)
+	- **Take Aim** (**Crossbow Mastery**) now costs 25 Fatigue (up from 20) but it lowers the Fatigue cost of your next Crossbow or Firearm Attack by 100%.
+	- **Take Aim** can now be used with any Firearm instead of only being restricted to the **Handgonne**
+	- **Take Aim** with Firearms can no longer enlargen the AoE beyond 6 tiles
+	- **Handgonne** fire pattern is reworked. It is still the same as in Vanilla when aiming onto the same axis. Anywhere else your shape will now be that of a pyramid
+	- **Worn Down** (inflicted by **Wear them Down**) no longer prevent **Recover** from being used. Instead causes Non-Attack skills to cost 50% more Fatigue
+	- **Sunder** (**Halberd**) now costs 30 Fatigue (up from 15)
+	- **Impale** (**Halberd**) no longer deals reduced Armor Damage
+	- **Claw Club**, **Bludgeon**, **Morning Star**, **Light Southern Mace**, **Nomad Mace** and **Wooden Stick** no longer have any Fatigue discount on their skills
+	- **Knife** and **Dagger** no longer have any Fatigue discount on their skills
+	- **Knife** now deals 15-20 Damage (down from 15-25)
+	- **Quartermaster** Retinue now costs 1500 Crowns (down from 3000), requires 2 Cart Upgrades (from 5 Caravan Contracts) and provides +100 to maximum Ammo (down from +150)
+	- **Fast Bandits** now always spawn in the backline
+	- **Heralds Bodyguards** now have 140 Stamina (up from 120)
+	- **Nomad Leader** now spawn with a 2/5 Javelin (down from 3/5)
+	- Nomad Cutthroats, -Slinger, -Outlaws and -Archers now stay 25% less in Formation, are 20% more likely to avoid engaging multiple opponents, are 20% more likely to flank and are 250% more likely to ignore someone who is already engaged in melee
+	- **Orc Warlords** are now 50% less likely to flank
+	- NPCS are 50% more likely to push back a **Kingfisher**, who is netting them currently
+	- **Full Force** now produces a dust cloud and a camera shake (disablable in the settings) on a hit, which scale with the amount of Action Points invested
+	- Improve **Take Aim** descriptions
+	- Improve icon in tooltip of command skill
+	- Fix contract related event panels sometimes disappearing immediately
+	- Fix some scripted fights losing relation with your contract owner, e.g. when killing deserting troops
+	- Fix **Potion of the Sleepless** not granting any Fatigue discount
+	- Fix Barbarian King having too little strength, making it possible to be killed by World NPCs
+	- Add `asset_manager::HD_getAmmoMax()`, `asset_manager::HD_getArmorPartsMax()` and `asset_manager::HD_getMedicineMax()` for fetching the maximum values of those
 
 1.4.3
 	- Sort **Line Breaker** granted by **Onslaught** to the end of the skill list on the ui

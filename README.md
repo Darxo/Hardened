@@ -102,6 +102,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - All Crossbows now have +10% chance to hit and +10% Armor Penetration
 - Reloading all Crossbows now costs 5 Action Points (up from 4)
 - Reloading all Firearms now costs 7 Action Points (down from 9)
+- **Handgonne** fire pattern is reworked. It is still the same as in Vanilla when aiming onto the same axis. Anywhere else your shape will now be that of a pyramid
 
 ### Relation with Factions
 
@@ -194,11 +195,11 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Reload Handgonne** now costs 25 Fatigue (up from 20)
 - **Reverse Grip** (Versatile Swordsman) now adds -1 Reach while active (down from -30% less)
 - **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack. Riposte no longer has a penalty to Hitchance. It can now be used multiple times per round
-- **Shuffle** (granted by **Dynamic Duo**) no longer puts your partner to the next position in the turn order
+- **Shuffle** (granted by **Dynamic Duo**) no longer puts your partner to the next position in the turn order. It now costs 0 Action Points  and 0 Fatigue on all tile types
 - **Spider Poison** now also reduces the Hitpoints Recovery of the target by 50%
 - **Stab** now costs 3 Action Points (down from 4) and has a 25% higher threshold to inflict injuries
 - **Sword Thrust** now has 0% additional Hitchance (up from -20%)
-- **Take Aim** (granted by **Crossbow and Firearm Mastery**) now costs 3 Action Points (up from 2) and 20 Fatigue (down from 25)
+- **Take Aim** (granted by **Crossbow and Firearm Mastery**) now costs 3 Action Points (up from 2). It now also lowers the Fatigue cost of your next Crossbow or Firearm Attack by 100%. It can now be used with any Firearm instead of only being restricted to the **Handgonne**. **Take Aim** with Firewarms no longer enlerges the AoE beyong 6 tiles, when aiming at close range
 - **Throw Axe** now has a 50% chance to decapitate (up from 0%) and 25% chance to disembowel (up from 0%)
 - **Throw Net** now costs 4 Action Points (down from 5), has a Range of 3 (up from 2) and no longer requires the targets Base Reach to be below a certain value
 - **Withered** no longer reduces Stamina or Fatigue Recovery. It now causes Non-Attacks to cost 50% more Fatigue per remaining turns on the effect duration
@@ -324,7 +325,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Vigorous Assault** is mostly reworked. It now works with all attacks. It no longer provides a fatigue discount. The discount is no longer lost when swapping weapons or using non-attack skills.
 - **Weapon Master** no longer grants weapon perks while wielding a hybrid weapons. It now grants +1 Bag Slot at all times
 - **Wears it well** now grants 50% of combined Mainhand and Offhand Weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest Weight)
-- **Wear them Down** is completely reworked. It now causes your hits to apply an additional 10 Fatigue on the target and your misses to apply 5 Fatigue. After your attack, if your target is fully fatigued, apply **Worn Down** effect until the end of their turn, which prevents them from using **Recover** and applies 30% less Melee Defense and 30% less Ranged Defense
+- **Wear them Down** is completely reworked. It now causes your hits to apply an additional 10 Fatigue on the target and your misses to apply 5 Fatigue. After your attack, if your target is fully fatigued, apply **Worn Down** effect until the end of their turn, which applies 30% less Melee Defense and 30% less Ranged Defense and causes Non-Attack Skills to cost 50% more Fatigue
 - **Whirling Death** is completely reworked. It now grants a new active skill which creates a buff for 3 turns granting 25% more damage, +2 Reach and 10 Melee Defense to the user
 
 ### Perk Groups
@@ -426,6 +427,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Ancient Spear** now deals 30-40 damage (up from 20-35), has a Weight of 10 (up from 6) and costs 750 Crowns (up from 150)
 - **Ancient Sword** loses **Stab** and gains **Deathblow** (costing 5 Action Points and 15 Fatigue)
 - **Berserk Chain** now has 4 Reach (down from 5)
+- **Bludgeon** no longer has any Fatigue discount on its skills
+- **Claw Club** no longer has any Fatigue discount on its skills
 - **Cruel Falchion** are now a Sword/Dagger hybrid. They now also grant **Stab**. **Slash** and **Rispote** lose any discount
 - **Cudgel** now deals 40-60 damage (up from 30-50), has 4 Reach (up from 3), costs 400 Crowns (up from 300). **Bash** now costs 5 AP (up from 4). **Knock Out** now has a 100% chance to stun
 - **Dagger** now deals 20-30 Damage (from 15-35)
@@ -435,15 +438,20 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Fighting Axe** now costs 2300 crowns (down from 2800)
 - **Firelance** now also has the **Firearm** weapontype
 - **Flail** now deals 30-55 damage (up from 25-55) and has 3 Reach (down from 4)
-- **Goblin Pike** now has a Reach of 6 (down from 7) and gains the **Spear** Weapontype
+- **Goblin Pike** now 6 Reach of (down from 7) and gains the **Spear** Weapontype
 - **Greatsword** loses **Split Shield** and its remaining skills no longer have any discount. It now costs 2000 Crowns (down from 2400)
-- **Halberd** now has 6 Reach (down from 7)
+- **Halberd** now has 6 Reach (down from 7). Its **Sunder** skill now costs 30 Fatigue (up from 25) and its **Impale** skill no longer deals reduced Armor Damage
 - **Head Chopper** now has 4 Reach (up from 3)
 - **Head Splitter** now has 4 Reach (up from 3) and deals 20 Shield Damage (up from 16)
 - **Heavy Crossbow** now has +2 Fatigue Cost for its weapon skills
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
+- **Knife** now deals 15-20 Damage (down from 15-25) and no longer has any Fatigue discount on its skills
+- **Dagger** no longer has any Fatigue discount on its skills
+- **Light Southern Mace** no longer has any Fatigue discount on its skills
 - **Longsword** now deals 45-55 damage (down from 65-85) has Armor Penetration of 30% (up from 25%), 75% Armor Damage (down from 100%), +0% Headshot Chance (down from +5%), 6 Reach (up from 5) and costs 1200 Crowns (down from 2400). It loses **Overhead Strike** and gains **Swing**. Its skills no longer have any discount. It can no longer appear as a named weapon
 - **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%), 6 Condition (up from 2) and 50% Armor Damage (up from 10%). It gains the **Mace** Weapontype
+- **Morning Star** no longer has any Fatigue discount on its skills
+- **Nomad Mace** no longer has any Fatigue discount on its skills
 - **Pike** gains the **Spear** Weapontype
 - **Player Banner** now causes -5 to Ranged Defense and it grants **Repel**
 - **Poleflail** now has 5 Reach (down from 6) and costs 1600 Crowns (up from 1400). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
@@ -451,7 +459,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Rondel Dagger** now deals 25-35 Damage (from 20-40) and costs 500 Crowns
 - **Rusty Warblade** loses **Decapitate** and gains **Split**
 - **Short Bow** now deals 35-50 damage (up from 30-50), has a Range of 6 (down from 7) and costs 250 Crowns (up from 200)
-- **Spetum** now has a Reach of 7 (up from 6), a Weight of 12 (down from 14) and costs 900 Crowns (down from 1050). The named variant now costs 2800 Crowns (down from 3500)
+- **Spetum** now has 7 Reach (up from 6), a Weight of 12 (down from 14) and costs 900 Crowns (down from 1050). The named variant now costs 2800 Crowns (down from 3500)
 - **Spiked Impaler** now has +2 Fatigue Cost for its weapon skills
 - **Swordstaff** now has a Weight of 12 (up from 10)
 - **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and costs 600 Crowns (up from 400)
@@ -464,6 +472,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Warbow** now has a Weight of 8 (up from 6) and +2 Fatigue Cost for its weapon skills
 - **Warbrand** now deals 65-75 damage (up from 50-75), has a Armor Penetration of 30% (up from 20%), a Weight of 12 (up from 10), +0% Headshot Chance (down from +5%) and costs 2600 Crowns (up from 1600). It loses **Split** and gains **Riposte**. Its skills no longer have a custom cost
 - **Warfork** now has a Weight of 14 (up from 12) and costs 400 Crowns (down from 600)
+- **Wooden Stick** no longer has any Fatigue discount on its skills
 - **Wonky Bow** now deals 30-45 damage (down from 30-50) a Range of 6 (down from 7), 0% Hitchance bonus (up from -10%) and costs 150 Crowns (up from 100)
 - **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
 - **Zweihander** lose **Split Shield**. It now has 6 Reach (down from 7) and +10% Headshot Chance (up from +5%)
@@ -701,7 +710,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Drill Sergeant** now provides 2% Experience per level below 11 (down from 4%), just like in Vanilla. It now requires a brother with a permanent injury to be dismissed, just like in Vanilla
 - **Lookout** no longer grants 25% more vision at all times. It now always provides a scouting report for enemies near you, just like "Band of Poachers" origin
 - **Negotiator** now grants 100% faster decay of negative Relation (up from 15%). It now has a more accurate list of effects
-- **Quartermaster** now grants 150 Storage for Ammunition (up from 100) and 100 Storage for Tools and Medicine (up from 50)
+- **Quartermaster** now costs 1500 Crowns (down from 3000), requires 2 Caravan Cart Upgrades to unlock and grants 100 Storage for Tools and Medicine (up from 50)
 - **Scout** no longer grants 15% more movement speed. It now grants 20% more movement speed while in Forests and Swamp. It also grants 25% Vision while on hills or mountains
 - **Surgeon** now also counts Injuries treated by Bandages for its Requirement
 - **Trader** now also makes Trading Goods 100% more common in shop
@@ -741,6 +750,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 **Humans:**
 - **Mercenaries** now use Shields that are colored in their respective Banner colors
+- **Fast Brigands** now spawn in the Backline
 
 **Beasts:**
 - **Donkeys** now grant 0 XP (down from 50 XP). They can now be rooted, injured, bled and poisoned. Since they are non-combatants this is mostly a cosmetic change
@@ -772,6 +782,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 - NPCs now know how to use Bandages
 - NPC ranged troops now ignore the score from potential scatter targets when picking a ranged target
+- Regular Nomad Units now stay 25% less in Formation, are 20% more likely to avoid engaging multiple opponents, are 20% more likely to flank and are 250% more likely to ignore someone who is already engaged in melee
 - Goblin-, Brigand-, Nomad- and Mercenary ranged units now play around 35% more defensive
 - Goblin Overseer now play 100% more defensive, just like Goblin Shamans
 - NPC Dogs are much less likely to engage multiple enemies at the same time
@@ -806,6 +817,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - NPCs are 100% more likely to use rotating skills onto allied Nachzehrer if that would put them on top of a corpse; and 50% less likely if that would put them away a corpses. And vice versa with hostile nachzehrers
 - NPCs are now 150% more likely to use **Insect Swarm**
 - NPCs now take into account all swap-discount perks when considering whether to swap to a (better) melee weapon
+- **Orc Warlord** are now 50% less likely to flank
 - Skeleton Commander now prefer to use wait
 - **Swordmaster** are 20% less likely to flank
 

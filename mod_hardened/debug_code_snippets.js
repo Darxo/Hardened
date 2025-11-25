@@ -162,3 +162,11 @@ foreach (nextTile in ::MSU.Tile.getNeighbors(bro.getTile()))
 ::MSU.Log.printData(::Tactical.getCamera().queryEntityOverlays(), 2);
 
 default y offset is 40 but it is divided by ::Tactical.getCamera().Zoom
+
+## Super Speed Swifter World Map
+
+::World.setSpeedMult(400.0);
+
+return ::World.FactionManager.isGreaterEvil();
+return ::World.FactionManager.m.GreaterEvil.Phase;
+

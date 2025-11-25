@@ -200,7 +200,6 @@
 	- bleed animation/effect when inflicting bleed with **Sanguinary**?
 	- trigger smoke effect whenever a brother with **Ghostlike** dodges an attack during their turn
 	- mortar impact animation, when shockwave or full force trigger
-	- animate fireplace object
 	- projectile for throw net
 	- effect when character withstands mental moral check (purple particles flying away from head + head blinking white?)
 }
@@ -303,6 +302,7 @@
 		- This might happen, if their allies, or themselves get pushed into their "KnownOpponents" list, from which they then fetch targets to attack
 			- Perhaps, they get shared wrong information?
 		- fix ghost fights: might have to do with alliances not being created correctly. Maybe the new southern settlements interfere with the placement for hard-coded alliances
+		- could this have to do with me stunning world parties after spawning?
 	- (Vanilla): Split has 30% armor penetration even though every weapon who grants it in vanilla has less pen
 	- local r = this.Math.rand(100, 200) * 0.01; in send_supplies_action gets overwritten later on, causing weird rewards
 	- fix/prevent cheese where you can find out whether someone is hiding in a bush by trying to pathfind into that bush
@@ -536,12 +536,8 @@
 	- redesign the releasable wolf to have lone wolf and like 75 hitchance
 	- remove initiativeForTurnOrder from Golems. Replace with initiative effect or remove fully
 	- replace the reach/def on whirling death with initiative bonus?
-	- goblin bows -> 3 AP attack?
-	- Goblins -> 8 AP?
 	- hexen parties need to lose normal unholds. They should only have bog unholds
-	- unhold heart stew -> stacksize increase
 	- gladiator harness standalone version viable
-	- Lunge: 1% more damage per initiative above 100; -1% Armor Penetration per Initiative below 100
 	- change bloodlust to deal 20% more damage, but no longer grant damage mitigation
 	- double lindwurm loot, reduce price
 	- champion bandit killer: offhand trianing?
@@ -569,7 +565,6 @@
 	- new sandgolem-high attack "Collapse" (replacement melee attack?). Attacks multiple enemies (either in a row or swing, or both) + split into 3 smaller golems around the impact
 	- improve damage overflow mechanic:
 		- split overflow damage and pen damage by
-	- make qatal dagger a cleaver/dagger hybrid?
 	- make Between the Eyes instead scale off of ranged skill?
 	- ai merc rework and bounty hunter system
 	- rework militia spawning system (use time based "resource" system, where militias which return replenish resources. new ones can only spawn if resources are recovered)

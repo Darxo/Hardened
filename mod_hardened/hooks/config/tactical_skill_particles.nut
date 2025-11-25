@@ -13,6 +13,8 @@
 ::Const.Tactical.MiasmaParticles[0].Stages[1].LifeTimeMin = 2.0;	// Vanilla: 4.0
 ::Const.Tactical.MiasmaParticles[0].Stages[1].LifeTimeMax = 3.0;	// Vanilla: 6.0
 
+/// This is a small explosition of brownish particles in 360°
+/// It is designed to visualize the fast and powerful collision of two solid objects, e.g. weapons
 ::Const.Tactical.HD_ParrySparkles <- [
 	{
 		init = function( _myTile, _theirTile ) {
@@ -75,6 +77,8 @@
 	}
 ];
 
+/// This is a small cylinder of purple/lack smoke that rises from the targeted point directly upwards
+/// It is designed to be played continuously to signal the persistance of a reanimation of zombies. Its lifetime is usually managed by some outside manager
 ::Const.Tactical.HD_Reanimation <- [{
 	Delay = 0,
 	Quantity = 30,
