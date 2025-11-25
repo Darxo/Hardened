@@ -55,11 +55,12 @@
 	{
 		if (_skill.getID() == "actives.recover")
 		{
+			local extraData = "entityId:" + this.getContainer().getActor().getID();
 			_tooltip.push({
 				id = 100,
 				type = "text",
 				icon = "ui/icons/warning.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Cannot be used because of " + ::Reforged.NestedTooltips.getNestedSkillName(this)),
+				text = ::Reforged.Mod.Tooltips.parseString("Cannot be used because of " + ::Reforged.NestedTooltips.getNestedSkillName(this, extraData)),
 			});
 		}
 	}

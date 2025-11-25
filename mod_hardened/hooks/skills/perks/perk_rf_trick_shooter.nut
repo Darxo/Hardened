@@ -116,11 +116,12 @@
 	{
 		if (this.isSkillValid(_skill))
 		{
+			local extraData = "entityId:" + this.getContainer().getActor().getID();
 			_tooltip.push({
 				id = 100,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = ::MSU.Text.colorizeValue(this.m.HitChanceModifier, {AddSign = true, AddPercent = true}) + ::Reforged.Mod.Tooltips.parseString(" [Hitchance|Concept.Hitchance] because of " + ::Reforged.NestedTooltips.getNestedSkillName(this)),
+				text = ::MSU.Text.colorizeValue(this.m.HitChanceModifier, {AddSign = true, AddPercent = true}) + ::Reforged.Mod.Tooltips.parseString(" [Hitchance|Concept.Hitchance] because of " + ::Reforged.NestedTooltips.getNestedSkillName(this, extraData)),
 			});
 		}
 	}
