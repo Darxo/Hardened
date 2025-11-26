@@ -24,9 +24,9 @@
 		}
 	}
 
-	q.onAnySkillUsed = @(__original) function( _skill, _targetEntity, _properties )
+	// Overwrite, because we replace the proximity-based damage multiplier with our own version
+	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties )
 	{
-		__original( _skill, _targetEntity, _properties );
 		if (!this.isSkillValidForDamageBonus(_skill)) return;
 
 		// The following condition is a smart way to cover three states
