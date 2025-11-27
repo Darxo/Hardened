@@ -109,6 +109,17 @@
 
 		mockObject.cleanup();
 	}
+
+	q.addSkill = @(__original) function( _skill )
+	{
+		foreach (skillPtr in this.m.SkillPtrs)
+		{
+			// We don't allow weapons adding active skills, which this item has already added before once
+			// This is a hack so that the reload-skill by various loaded weapons is not added additional times
+			if (skillPtr.getID() == _skill.getID()) return null;
+		}
+		return __original(_skill);
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/items/weapons/weapon", function(q) {
