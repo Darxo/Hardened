@@ -26,6 +26,14 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.5.2
+	- Fix **Throwing Mastery** providing a damage bonus at close range
+	- Fix Hitpoint recovery combat logs sometimes printing too large numbers
+	- Fix Old Swordmaster origin not starting correctly, and other potential issues around **En Garde**
+	- Fix Reload skills sometimes persisting on the character after swapping away from the weapon
+	- Fix wrong base stamina and stamina modifier values in fatigue tooltip
+	- Fix log spam around reload skills not having a fatigue cost saved
+
 1.5.1
 	- Fix crash when attacking with a three headed flail
 	- Fix some perk descriptions suddenly showing the old reforged descriptions
