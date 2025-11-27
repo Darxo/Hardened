@@ -1,3 +1,8 @@
+// We wipe many vanilla functions with the goal to de-couple the tail from the head
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_en_garde", [
+	"create",
+]);
+
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_en_garde", function(q) {
 	q.m.MeleeSkillModifier <- 10;
 	q.m.ActionPointsRecovered <- 1;
@@ -21,10 +26,6 @@
 			actor.recoverActionPoints(this.m.ActionPointsRecovered);
 		}
 	}
-
-	// This perk no longer adds any skill
-	q.onAdded = @() function() {}
-	q.onRemoved = @() function() {}
 
 // Hardened Functions
 	q.onOtherSkillAdded = @() function( _skill )
@@ -57,5 +58,3 @@
 		return _skill.isAttack() && !_skill.isRanged();
 	}
 });
-
-
