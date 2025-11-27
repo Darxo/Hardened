@@ -543,4 +543,32 @@
 
 		return ret;
 	}
+
+	// We need to manually recalculate the fatigue tooltip, because Reforged uses actor::getFatigueMax, to try to fetch the base value.
+	// But that function always includes the penalty from item weight in Hardened
+	q.getBaseAttributesTooltip = @(__original) function( _entityId, _elementId, _elementOwner )
+	{
+		local ret = __original(_entityId, _elementId, _elementOwner);
+
+		if (!(_elementId == "character-stats.Fatigue")) return ret;		// We only adjust Fatigue
+
+		local entity = _entityId == null ? null : ::Tactical.getEntityByID(_entityId);
+		if (entity == null || entity == ::MSU.getDummyPlayer()) return ret;
+
+		local baseValue = entity.getBaseProperties().getStamina();
+		local currentValue = entity.getStamina();
+		foreach (entry in ret)
+		{
+			if (entry.id == 3)
+			{
+				entry.text = "Base: " + ::MSU.Text.colorizeValue(baseValue, {AddSign = baseValue < 0});
+			}
+			else if (entry.id == 4)
+			{
+				entry.text = "Modifier: " + ::MSU.Text.colorizeValue(currentValue - baseValue, {AddSign = true});
+			}
+		}
+
+		return ret;
+	}
 });
