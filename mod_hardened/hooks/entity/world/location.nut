@@ -42,6 +42,17 @@
 		return ret;
 	}
 
+	q.onUpdate = @(__original) function()
+	{
+		__original();
+
+		// Feat: Non-Invisible Unique Locations are now always discovered the moment they come into your vision, no matter their terrain type
+		if (this.getVisibilityMult() > 0.0 && this.isLocationType(::Const.World.LocationType.Unique))
+		{
+			this.setVisibility(1.0);
+		}
+	}
+
 	q.isAttackable = @(__original) function()
 	{
 		local ret = __original();
