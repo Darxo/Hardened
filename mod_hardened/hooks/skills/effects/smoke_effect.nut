@@ -25,7 +25,7 @@
 		}
 		else
 		{
-			__original(_properties);
+			__original();
 		}
 	}
 
