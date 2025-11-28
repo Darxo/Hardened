@@ -20,3 +20,6 @@
 	function isDay( _time ) { return !this.isNight(_time) }
 	function isNight( _time ) { return _time == this.Dusk || _time == this.Midnight || _time == this.Dawn }
 };
+
+// We reduce the overall Vision of every world entity, to make deliberate planning of your adventures and secondary information (footsteps, patrols, rumors) more important
+::Const.World.Settings.Vision = 450;	// Vanilla: 500
