@@ -26,6 +26,9 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.5.3
+	- Fix game freeze when starting a round while inside smoke
+
 1.5.2
 	- Fix **Throwing Mastery** providing a damage bonus at close range
 	- Fix Hitpoint recovery combat logs sometimes printing too large numbers
