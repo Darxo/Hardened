@@ -301,7 +301,6 @@
 			local camp = ::World.spawnLocation("scripts/entity/world/locations/legendary/kraken_cult_location", tile.Coords);
 			if (camp != null)
 			{
-				tile.TacticalType = ::Const.World.TerrainTacticalType.Plains;
 				camp.onSpawned();
 			}
 		}
