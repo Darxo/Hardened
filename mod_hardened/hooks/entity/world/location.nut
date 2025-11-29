@@ -58,6 +58,9 @@
 	{
 		__original(_b);
 
+		// Safety check as sometimes a nearby location is in a weird state, where it doesnt have a name label anymore
+		if (!this.hasLabel("name")) return;
+
 		if (_b && this.getDefenderSpawnList() != null && this.getResources() != 0 && ::Hardened.Mod.ModSettings.getSetting("DisplayLocationNumerals").getValue())
 		{
 			if (this.isShowingDefenders())
