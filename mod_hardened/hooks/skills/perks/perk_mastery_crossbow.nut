@@ -60,7 +60,6 @@
 		if (!_item.isItemType(::Const.Items.ItemType.Weapon)) return;
 		if (_item.isWeaponType(::Const.Items.WeaponType.Crossbow) || _item.isWeaponType(::Const.Items.WeaponType.Firearm))
 		{
-			::logWarning("Hardened: perk_mastery_crossbow onEquip _item " + _item.getName());
 			_item.addSkill(::new("scripts/skills/actives/rf_take_aim_skill"));
 		}
 	}
