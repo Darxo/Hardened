@@ -26,6 +26,14 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.5.4
+	- Prevent enraged Kraken Tentacles from using ensnare
+	- Fix Kraken Location tile type being changed to Plains during map generation (this fix only affects newly generated maps)
+	- Fix missing mini-icon and overlayicon for **Rebuke**
+	- Remove old logWarning about "perk_mastery_crossbow"
+	- Fix log error spam about missing "skills/status_effect_02.png"
+	- Fix log errors when near a location that was recently destroyed
+
 1.5.3
 	- Fix game freeze when starting a round while inside smoke
 

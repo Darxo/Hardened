@@ -757,6 +757,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Hyena Bite** costs 10 Fatigue (up from 6)
 - **Direwolf Bite** costs 10 Fatigue (up from 6)
 - All **Ifrits** can now free themselves from nets and roots. They take no Burning Damage (up from 90% less), full damage from blunt ranged attacks (down from 66% less) and 50% less damage from Piercing Damage (down from 50% less against melee and 66% less against ranged). The damage reduction on Ifrits now also affects the armor damage they receive
+- Enraged **Kraken Tentacles** no longer use **Ensnare**
 - **Lindwurms Head** and **Tail** no longer share hitpoints and effects but killing the Tail will no longer kill the Head
   - The **Lindwurm Tail** still inherits most of the stats from the head but has 50% less Hitpoints and Resolve and 50% more Melee Defense
   - The **Lindwurm Tail** can now be stunned and netted but those effects are removed whenever the Head moves away
@@ -943,7 +944,6 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 ## Other
 
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
-- **Peasant Militia**
 - The Retreat tooltip during combat now also lists the Melee Defense bonus your characters receive during Auto-Retreat
 - **Trade Ambition** now counts the sum of both transaction (buying and selling) instead of just the higher number of the two
 
