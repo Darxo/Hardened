@@ -14,6 +14,25 @@
 	{
 		local ret = __original();
 
+		// Vanilla only defines tooltips for Fleeing, Breaking, Wavering and Confident. A state like Steady or some completely new state have no tooltips
+		// We assume that ret == null means, that the tooltip for Steady was fetched
+		// That should not normally happen in Vanilla, because then the morale check effect is hidden
+		if (ret == null)
+		{
+			ret = [
+				{
+					id = 1,
+					type = "title",
+					text = this.getName(),
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Focused and composed. This character is holding his ground with a steady mind.",
+				},
+			];
+		}
+
 		foreach (index, entry in ret)
 		{
 			if (entry.id == 11 && entry.icon == "ui/icons/bravery.png")
