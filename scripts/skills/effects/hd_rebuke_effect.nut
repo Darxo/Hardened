@@ -13,8 +13,8 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 		this.m.Name = "Rebuke";
 		this.m.Description = ::Reforged.Mod.Tooltips.parseString("This character will counter any missed melee attacks with a free melee attack. Requires a usable [Attack of Opportunity.|Concept.ZoneOfControl] Does not work while [stunned|Skill+stunned_effect] or [fleeing.|Concept.Morale]");
 		this.m.Icon = "ui/perks/perk_rf_rebuke.png";
-		this.m.IconMini = "rf_rebuke_effect_mini";
-		this.m.Overlay = "rf_rebuke_effect";
+		this.m.IconMini = "perk_rf_rebuke_mini";
+		this.m.Overlay = "perk_rf_rebuke";
 		this.m.Type = ::Const.SkillType.StatusEffect;
 		this.m.IsRemovedAfterBattle = true;
 	}
