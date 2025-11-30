@@ -66,8 +66,13 @@
 		if (!this.isSkillValid(_skill)) return;
 		if (this.m.SkillCounter != ::Hardened.Temp.RootSkillCounter) return;
 
+		// Some valid skills don't trigger regular attacks and instead call onTargetHit manually (e.g. split shield)
+		// For those we don't have the information about the last targeted tile so we don't play any animation
+		if (this.m.HD_LastTileTargeted == null) return;
+
 		// this.displayImpactEffect(this.m.HD_LastTileTargeted, this.m.SpentActionPoints);
 		this.displayImpactEffect(this.m.HD_LastTileTargeted, this.m.SpentActionPoints);
+		this.m.HD_LastTileTargeted = null;
 	}
 
 	q.onCombatFinished = @(__original) function()
