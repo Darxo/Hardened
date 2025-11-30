@@ -49,6 +49,7 @@
 		if (this.m.SkillCounter != ::Hardened.Temp.RootSkillCounter) return;
 
 		_properties.DamageTotalMult *= this.m.CurrentDamageMult;
+		_properties.ShieldDamageMult *= this.m.CurrentDamageMult;
 	}
 
 	q.onBeforeTargetHit = @(__original) function( _skill, _targetEntity, _hitInfo )
