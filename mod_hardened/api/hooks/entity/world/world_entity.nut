@@ -2,6 +2,7 @@
 	// Private
 	q.m.HD_MintConditionItems <- [];
 	q.m.HD_MintConditionFlag <- "HD_MintConditionFlag";
+	q.m.HD_IsTemporaryUnallied <- false;	// While true, isAlliedWithPlayer will always return false; Can be used to force a troop tooltip on neutral locations
 
 // New Functions
 	// @return an integer representing the last number in this parties player banner brush
@@ -21,6 +22,13 @@
 			}
 		}
 		return -1;
+	}
+
+	q.isAlliedWithPlayer = @(__original) function()
+	{
+		if (this.m.HD_IsTemporaryUnallied) return false;
+
+		return __original();
 	}
 
 	q.onDropLootForPlayer = @(__original) function( _lootTable )
