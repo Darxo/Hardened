@@ -92,4 +92,34 @@
 			}
 		}
 	}
+
+	q.HD_dropFood <- function( _num, _items, _lootTable, _minServingPct = 0.0, _minGoodForPct = 0.0 )
+	{
+		_num = this.Math.max(0, this.Math.round(_num * this.m.LootScale));
+
+		if (_num == 0)
+		{
+			return;
+		}
+
+		for (local i = 0; i != _num; ++i)
+		{
+			local food = ::new("scripts/items/supplies/" + ::MSU.Array.rand(_items));
+
+			local minAmount = ::Math.max(1, food.m.HD_MaxAmount * _minServingPct);
+			food.m.Amount = ::Math.rand(minAmount, food.m.HD_MaxAmount);
+
+			local minGoodFor = ::Math.max(1, food.m.GoodForDays * _minGoodForPct);
+			if (("State" in ::World) && ::World.State != null && ::World.State.getCombatStartTime() != 0)
+			{
+				food.m.BestBefore = ::World.State.getCombatStartTime() + ::Math.rand(minGoodFor, food.m.GoodForDays) * ::World.getTime().SecondsPerDay;
+			}
+			else
+			{
+				food.m.BestBefore = ::Time.getVirtualTimeF() + ::Math.rand(minGoodFor, food.m.GoodForDays) * ::World.getTime().SecondsPerDay;
+			}
+
+			_lootTable.push(food);
+		}
+	}
 });
