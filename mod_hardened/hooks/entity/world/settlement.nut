@@ -246,6 +246,20 @@
 		}
 	}
 
+	q.updatePlayerRelation = @(__original) function()
+	{
+		__original();
+
+		// We now also update the nameplates of all attached locations of this settlement
+		if (this.isPlayerControlled()) return;
+		if (!this.hasLabel("name")) return;
+
+		foreach (attachedLocation in this.m.AttachedLocations)
+		{
+			attachedLocation.updatePlayerRelation();
+		}
+	}
+
 // New Functions
 	q.getLastVisitedString <- function()
 	{
