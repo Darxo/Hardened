@@ -34,6 +34,15 @@
 		}
 	}
 
+	q.setSettlement = @(__original) function( _settlement )
+	{
+		__original(_settlement);
+
+		// Vanilla Fix: Vanilla never calls onSpawned for attached locations
+		// We change that using the fact, that every attached location is always attached to a settlement right after spawn
+		this.onSpawned();
+	}
+
 // New Function
 	q.isRaidable <- function()
 	{
