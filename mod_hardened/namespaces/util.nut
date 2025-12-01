@@ -284,3 +284,27 @@
 
 	return ::MSU.Text.color(color, _corpse.CorpseName);
 }
+
+// Make _sourceHelmet appear as if it was actually _targetHelmetScript
+// Needs to be called during create of _sourceHelmet
+::Hardened.util.impersonateHelmet <- function( _sourceHelmet, _targetHelmetScript )
+{
+	local newHelmet = ::new(_targetHelmetScript);
+
+	// Adjust stats
+	_sourceHelmet.m.Value = newHelmet.m.Value;
+	_sourceHelmet.m.ConditionMax = newHelmet.m.ConditionMax;
+	_sourceHelmet.m.StaminaModifier = newHelmet.m.StaminaModifier;
+	_sourceHelmet.m.Vision = newHelmet.m.Vision;
+
+	// Adjust visual appearance
+	_sourceHelmet.m.Name = newHelmet.m.Name;
+	_sourceHelmet.m.Description = newHelmet.m.Description;
+	_sourceHelmet.m.Variant = newHelmet.m.Variant;
+	_sourceHelmet.m.VariantString = newHelmet.m.VariantString;
+	_sourceHelmet.updateVariant();
+
+	// Overwrite Functions, so that changing color behaves as if this was the new helmet
+	if ("setPlainVariant" in newHelmet) _sourceHelmet.setPlainVariant <- newHelmet.setPlainVariant;
+	if ("onPaint" in newHelmet) _sourceHelmet.onPaint <- newHelmet.onPaint;
+}
