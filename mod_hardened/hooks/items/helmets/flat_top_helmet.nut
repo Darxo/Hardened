@@ -2,9 +2,6 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Value = 800;				// Vanilla: 500
-		this.m.ConditionMax = 160;		// Vanilla: 125
-		this.m.StaminaModifier = -10;	// Vanilla: -7
-		this.m.Vision = -2;				// Vanilla: -1
+		::Hardened.util.impersonateHelmet(this, "scripts/items/helmets/padded_flat_top_helmet");
 	}
 });
