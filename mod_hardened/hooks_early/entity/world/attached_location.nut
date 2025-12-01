@@ -37,6 +37,17 @@
 		return ret;
 	}
 
+	q.setActive = @(__original) function( _active )
+	{
+		// Feat: Attached Locations that get rebuilt, roll named items again
+		if (!this.isActive() && _active)
+		{
+			this.onSpawned();
+		}
+
+		__original(_active);
+	}
+
 // New Function
 	q.getProduceList <- function()
 	{
