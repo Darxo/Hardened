@@ -4,6 +4,23 @@
 	q.m.HD_NearbyLocations <- [];	// Array of "nearby" locations for the purpose of calculating, whether to show their names. They are updated once per hour
 	q.m.HD_LocationTypesToDisplay <- 0;		// combined types of all locations, whose name and optionally numeral we wanna display when they are in range
 
+	q.enterLocation = @(__original) function( _location )
+	{
+		local ret = __original(_location);
+
+		if (ret)
+		{
+			if (_location.isLocationType(::Const.World.LocationType.AttachedLocation) && _location.isRaidable() && _location.isAlliedWithPlayer())
+			{
+				local faction = ::World.FactionManager.getFaction(_location.getFaction());
+				faction.setIsTemporaryEnemy(true);
+				this.showCombatDialog(true, _location.isShowingDefenders());
+			}
+		}
+
+		return ret;
+	}
+
 	q.updateTopbarAssets = @(__original) function()		// In Vanilla this triggers once per hour
 	{
 		__original();
