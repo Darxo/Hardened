@@ -26,6 +26,10 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.5.6
+	- Fix(Vanilla) Ranged AI ignoring hitchance and expected damage, when calculating the best target to attack
+	- Fix Contracts twists sometimes causing the contract to not be completable
+
 1.5.5
 	- Fix crash when using **Split Shield** with a Hammer, on a character with **Full Force**
 	- Fix Action Point cost of **Reload Bolt** on a **Heavy Crossbow** being higher than intended

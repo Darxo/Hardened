@@ -1091,6 +1091,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Remove the requirement for the player to be on a road in order to receive crisis news events. This prevents Events from stop appearing when you are away from a road for a longer time
 - Fix **Bardiche** only dealing 30% armor penetration with its split skill
 - Fix **Battle Standard** resolve effect not updating on allies when equipping or unequipping it
+- Fix Ranged AI ignoring hitchance and expected damage, when calculating the best target to attack
 - **Repel** can no longer push someone back in a 90° angle
 - **Copper Ingot** price is now affected by `BuildingPriceMult`, which causes them to be affected by **Rebuilding Efforts**
 - Economic Difficulty now affects all prices instead of just some of them
