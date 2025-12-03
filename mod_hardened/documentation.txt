@@ -26,6 +26,10 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.5.5
+	- Fix crash when using **Split Shield** with a Hammer, on a character with **Full Force**
+	- Fix Action Point cost of **Reload Bolt** on a **Heavy Crossbow** being higher than intended
+
 1.5.4
 	- Prevent enraged Kraken Tentacles from using ensnare
 	- Fix Kraken Location tile type being changed to Plains during map generation (this fix only affects newly generated maps)
