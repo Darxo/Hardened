@@ -96,10 +96,12 @@
 		{
 			if (screen.Options.len() != 1) continue;
 
-			local skipScreen = true;
+			local skipScreen = true;	// by default we dont hook contract screens
 			foreach (screenId in this.m.ScreensToPostpone)
 			{
-				if (screen.ID.find(screenId) != null) continue;	// ID must start with one of our hand-picked phrases. Those are the most important and safest screens to manipulate
+				if (screen.ID.find(screenId) == null) continue;	// screenId is not part of the screen.ID string, so we keep looking
+				// We found a match! screen is something we want to hook and postpone
+
 				skipScreen = false;
 				break;
 			}
