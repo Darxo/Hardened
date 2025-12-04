@@ -84,7 +84,7 @@
 
 							targetScore -= (1.0/6.0) * 4.0 * (1.0 - this.getProperties().TargetPriorityHittingAlliesMult) * tile.getEntity().getCurrentProperties().TargetAttractionMult;
 						}
-						else
+						else if (::Const.AI.Behavior.AttackRangedHitBystandersMult != 0.0)	// Optimization to prevent needless queryTargetValue calculations
 						{
 							targetScore += (1.0/6.0) * queryTargetValue(_entity, tile.getEntity(), null) * ::Const.AI.Behavior.AttackRangedHitBystandersMult;
 						}
