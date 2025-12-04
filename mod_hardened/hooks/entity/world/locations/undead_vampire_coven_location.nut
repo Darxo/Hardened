@@ -6,4 +6,3 @@
 		this.m.Resources = 200 * ::Hardened.Global.FactionDifficulty.Vampires;		// Vanilla: 250
 	}
 });
-

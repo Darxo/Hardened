@@ -8,7 +8,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/effects/rf_onslaught_effect", function(q) {
 	q.getTooltip = @(__original) function()
 	{
-		local ret = __original()
+		local ret = __original();
 
 		foreach (entry in ret)
 		{

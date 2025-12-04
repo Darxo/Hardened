@@ -120,5 +120,19 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
+		::logWarning("Hardened: orc_warrior::HD_assignArmor");
+		if (this.m.IsMiniboss)
+		{
+			::logWarning("Hardened: IsMiniboss");
+			local bodyItem = this.getBodyItem();
+			if (bodyItem != null)
+			{
+				::logWarning("Hardened: bodyItem != null");
+				bodyItem.setUpgrade(::new("scripts/items/armor_upgrades/bone_platings_upgrade"));
+				local upgrade = bodyItem.getUpgrade();
+
+				::logWarning("Hardened: upgrade " + upgrade.getName());
+			}
+		}
 	}
 });

@@ -9,7 +9,7 @@
 	0.85,	// Player characters receive 15% less damage in beginner difficulty
 	1.0,
 	1.0,
-]
+];
 
 // We change the orientation icons of several bandits to better match the appearance they have in Hardened
 ::Const.EntityIcon[::Const.EntityType.RF_BanditScoundrel] = "rf_bandit_thug_orientation";		// Reforged: bandit_thug_orientation
