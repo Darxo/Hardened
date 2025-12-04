@@ -208,6 +208,15 @@
 			case "building.weaponsmith":
 			case "building.weaponsmith_oriental":
 			{
+				for (local index = (_list.len() - 1); index >= 0; --index)
+				{
+					local entry = _list[index];
+					if (entry.S == "weapons/rf_poleaxe")	// We prevent any poleaxes from being sold at all
+					{
+						_list.remove(index);
+					}
+				}
+
 				_list.push({
 					R = 0,
 					P = 1.25,	// Note that these buildings have an inherent price multiplier of 1.25
