@@ -3,6 +3,6 @@
 	{
 		__original();
 
-		this.m.Resources = 150;		// Vanilla: 120
+		this.m.Resources = 150 * ::Hardened.Global.FactionDifficulty.Goblins;		// Vanilla: 120
 	}
 });

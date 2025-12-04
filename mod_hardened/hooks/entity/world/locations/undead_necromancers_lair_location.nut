@@ -3,7 +3,7 @@
 	{
 		__original();
 
-		this.m.Resources = 200;		// Vanilla: 150
+		this.m.Resources = 200 * ::Hardened.Global.FactionDifficulty.Zombies;		// Vanilla: 150
 	}
 
 	q.onDropLootForPlayer = @(__original) function( _lootTable )

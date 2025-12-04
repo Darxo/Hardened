@@ -3,6 +3,6 @@
 	{
 		__original();
 
-		this.m.Resources = 150;		// Vanilla: 100
+		this.m.Resources = 150 * ::Hardened.Global.FactionDifficulty.Orcs;		// Vanilla: 100
 	}
 });

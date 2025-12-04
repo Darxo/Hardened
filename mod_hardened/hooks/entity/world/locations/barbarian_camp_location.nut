@@ -3,6 +3,6 @@
 	{
 		__original();
 
-		this.m.Resources = 200;		// Vanilla: 180
+		this.m.Resources = 200 * ::Hardened.Global.FactionDifficulty.Barbarians;		// Vanilla: 180
 	}
 });

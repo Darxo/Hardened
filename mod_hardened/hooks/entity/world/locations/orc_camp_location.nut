@@ -3,7 +3,7 @@
 	{
 		__original();
 
-		this.m.Resources = 225;		// Vanilla: 140
+		this.m.Resources = 200 * ::Hardened.Global.FactionDifficulty.Orcs;		// Vanilla: 140
 	}
 
 	// Overwrite, because we adjust the vanilla loot for this location

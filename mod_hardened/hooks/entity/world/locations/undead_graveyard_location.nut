@@ -3,7 +3,7 @@
 	{
 		__original();
 
-		this.m.Resources = 120;		// Vanilla: 130
+		this.m.Resources = 150 * ::Hardened.Global.FactionDifficulty.Zombies;		// Vanilla: 130
 	}
 
 	// Overwrite, because we adjust the vanilla loot for this location
