@@ -115,10 +115,10 @@
 // scripts/entity/tactical/enemies/orc_warrior
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.OrcWarrior.XP = 990;
+	::Const.Tactical.Actor.OrcWarrior.XP = 1080;
 	::Const.Tactical.Actor.OrcWarrior.ActionPoints = 8;
 	::Const.Tactical.Actor.OrcWarrior.Hitpoints = 200;
-	::Const.Tactical.Actor.OrcWarrior.Bravery = 80;
+	::Const.Tactical.Actor.OrcWarrior.Bravery = 70;
 	::Const.Tactical.Actor.OrcWarrior.Stamina = 200;
 	::Const.Tactical.Actor.OrcWarrior.MeleeSkill = 80;
 	::Const.Tactical.Actor.OrcWarrior.RangedSkill = 50;
