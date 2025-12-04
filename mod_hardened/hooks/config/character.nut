@@ -1,5 +1,18 @@
 // Adjusting Vanilla Values
 ::Const.CharacterProperties.InitiativeAfterWaitMult = 1.0;	// In Vanilla this is 0.75; This debuff is now applied via a new effect instead
+::Const.LevelXP = [
+	0,
+	200,
+	500,
+	1000,
+	2000,
+	3500,
+	5500,	// Vanilla: 5000
+	8000,	// Vanilla: 7000
+	11000,	// Vanilla: 9000
+	14500,	// Vanilla: 12000
+	18500,	// Vanilla: 15000
+];
 
 // Adjusted Reforged Values
 ::Const.Morale.RF_AllyFleeingBraveryModifierPerAlly = 0;	// In Reforged this is 1
@@ -111,6 +124,7 @@ local oldGetClone = ::Const.CharacterProperties.getClone;
 }
 
 // Const.Combat
+::Const.Combat.GlobalXPMult = 1.0;		// Vanilla: 0.85
 ::Const.Combat.SpawnArrowDecalAttempts = 10;	// In Vanila this is 3; potentially causing several missiles producing now decal on impact. Not sure why though
 ::Const.Combat.WeaponSpecFatigueMult = 1.0;		// We set this to 1.0 to deactivate the vanilla/modular-vanilla way of applying the fatigue discount
 
