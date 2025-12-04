@@ -21,6 +21,37 @@
 		return ret;
 	}}.checkMorale;
 
+	q.getTooltip = @(__original) { function getTooltip( _targetedWithSkill = null )
+	{
+		local ret = __original(_targetedWithSkill);
+
+		foreach (entry in ret)
+		{
+			if (entry.id == 3 && entry.type == "headerText" && entry.icon == "ui/icons/hitchance.png")
+			{
+				local hitchance =  _targetedWithSkill.getHitchance(this);
+				local uncappedHitchance = null;
+				if (hitchance == ::Const.Combat.MV_HitChanceMax && ::Hardened.Mod.ModSettings.getSetting("ShowUncappedHitchances").getValue())
+				{
+					// We do a switcheroo, so we can fetch the true uncapped hitchance value
+					local oldMV_HitChanceMax = ::Const.Combat.MV_HitChanceMax;
+					::Const.Combat.MV_HitChanceMax = 9000;
+					uncappedHitchance = _targetedWithSkill.getHitchance(this);
+					::Const.Combat.MV_HitChanceMax = oldMV_HitChanceMax;
+
+					if (uncappedHitchance == hitchance) uncappedHitchance = null;	// We only want to show the uncapped hitchance if it is really higher than max hitchance
+				}
+
+				entry.text = ::MSU.Text.colorizeValue(hitchance, {AddPercent = true});
+				entry.text += ::Reforged.Mod.Tooltips.parseString(" [Hitchance|Concept.Hitchance]");
+				if (uncappedHitchance != null) entry.text += " (" + ::MSU.Text.colorizeValue(uncappedHitchance, {AddPercent = true}) + ")";
+				break;
+			}
+		}
+
+		return ret;
+	}}.getTooltip;
+
 	q.onInit = @(__original) function()
 	{
 		__original();
