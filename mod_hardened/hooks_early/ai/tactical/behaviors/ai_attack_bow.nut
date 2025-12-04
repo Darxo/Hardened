@@ -6,6 +6,7 @@
 	//	- BestTarget is now decided by the chosen skill
 	//	- Rewrite the whole function iterating skills first and targets inside those
 	//	- Support ::Const.AI.VerboseMode for more granular debugging logs
+	//	- We restrict AttackLineOfFireBlockedMult multiplier to only apply if the blocked tile contains an ally; but apply once for each blocking ally
 	q.selectBestTargetAndSkill= @() function( _entity, _targets, _skills )
 	{
 		if (_skills.len() == 0) return 0.0;	// No skill found
@@ -58,12 +59,16 @@
 				}
 				if (::Const.AI.VerboseMode) ::logInfo("Hardened: score after queryTargetValue: " + targetScore);
 
-				foreach (tile in ::Const.Tactical.Common.getBlockedTiles(myTile, targetTile, _entity.getFaction()))
+				local blockedTiles = ::Const.Tactical.Common.getBlockedTiles(myTile, targetTile, _entity.getFaction());
+				foreach (tile in blockedTiles)
 				{
-					if(!tile.IsOccupiedByActor || tile.getEntity().isAlliedWith(_entity))
+					if (tile.getEntity().isAlliedWith(_entity))
 					{
 						targetScore *= ::Const.AI.Behavior.AttackLineOfFireBlockedMult;
-						break;
+
+						// With only one possible diversion target, we have the same chance of hitting an ally as if there were two diversion targets, which were both our allies
+						// So we need to apply the AttackLineOfFireBlockedMult twice in this case
+						if (blockedTiles.len() == 1) targetScore *= ::Const.AI.Behavior.AttackLineOfFireBlockedMult;
 					}
 				}
 				if (::Const.AI.VerboseMode) ::logInfo("Hardened: score after lineOfFire: " + targetScore);
