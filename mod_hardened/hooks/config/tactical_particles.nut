@@ -11,7 +11,7 @@
 // This effect spawns a single big black, slightly transparent skull with 1s delay at the center of the targeted tile, which raises for around 2 seconds before disappearing
 ::Const.Tactical.HD_PlayerDeath <- [
 	{
-		Delay = 1000,	// Animation plays 1 second delayed, so that the blood rain has time to settle and player have time to look at the corpse
+		Delay = 500,	// Animation plays 1 second delayed, so that the blood rain has time to settle and player have time to look at the corpse
 		Quantity = 1,
 		LifeTimeQuantity = 1,
 		SpawnRate = 2,
@@ -19,7 +19,7 @@
 			"effect_skull_01"
 		],
 		Stages = [
-			{
+			{	// The skull is invisible
 				LifeTimeMin = 0.2,
 				LifeTimeMax = 0.2,
 				ColorMin = this.createColor("00000000"),
@@ -33,7 +33,7 @@
 				ForceMin = this.createVec(0, 10),
 				ForceMax = this.createVec(0, 15),
 			},
-			{
+			{	// The skull grows bigger and quickly raises straight up
 				LifeTimeMin = 2.2,
 				LifeTimeMax = 2.5,
 				ColorMin = this.createColor("000000bf"),
@@ -47,17 +47,29 @@
 				ForceMin = this.createVec(0, 10),
 				ForceMax = this.createVec(0, 15),
 			},
-			{
+			{	// The skull stays at its position for a good second well visible
+				LifeTimeMin = 1.2,
+				LifeTimeMax = 1.4,
+				ColorMin = this.createColor("000000bf"),
+				ColorMax = this.createColor("031c02bf"),
+				ScaleMin = 3.0,
+				ScaleMax = 3.0,
+				VelocityMin = 0,
+				VelocityMax = 0,
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0),
+			},
+			{	// The skull vanishes quickly
 				LifeTimeMin = 0.2,
 				LifeTimeMax = 0.4,
 				ColorMin = this.createColor("00000000"),
 				ColorMax = this.createColor("031c0200"),
-				ScaleMin = 3.0,
+				ScaleMin = 3.5,
 				ScaleMax = 3.5,
-				VelocityMin = 80,
-				VelocityMax = 100,
-				ForceMin = this.createVec(0, 10),
-				ForceMax = this.createVec(0, 15),
+				VelocityMin = 0,
+				VelocityMax = 0,
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0),
 			}
 		]
 	}
