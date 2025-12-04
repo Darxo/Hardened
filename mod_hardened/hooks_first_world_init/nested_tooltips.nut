@@ -66,6 +66,11 @@
 		"Each point of Threat increases the difficulty of [Morale Checks|Concept.Morale] made by adjacent enemies by 1. Only characters who are not [fleeing|Skill+hd_dummy_morale_state_fleeing] apply their Threat.\n\n" +
 		"By default, Threat is 0, but it can be increased through certain perks, effects, or items."
 	)),
+	Turn = ::MSU.Class.BasicTooltip("Turn", ::Reforged.Mod.Tooltips.parseString(
+		"Combat in Battle Brothers is turn-based. Each [round|Concept.Round], every character receives exactly one turn. The turn order is determined by their [Initiative|Concept.Initiative].\n\n" +
+		"A character is considered to be taking their turn while they are at the leftmost position of the turn sequence bar and can use active skills.\n\n" +
+		"Using [Wait|Concept.Wait] pushes the remainder of the turn to the end of the current [round|Concept.Round]. When it becomes that character\'s turn again, they resume that same turn."
+	)),
 	Rally = ::MSU.Class.BasicTooltip("Rally", ::Reforged.Mod.Tooltips.parseString(
 		"Rallying is a type of positive [Morale Check|Concept.Morale] that can only occur on a character who is currently [fleeing|Skill+hd_dummy_morale_state_fleeing]\n\n" +
 		"A successful rally immediately raises the character's morale to [wavering|Skill+hd_dummy_morale_state_wavering] but removes " + ::MSU.Text.colorNegative(::Math.abs(::Hardened.Const.ActionPointChangeOnRally)) + " [Action Points|Concept.ActionPoints] from them.\n\n" +
