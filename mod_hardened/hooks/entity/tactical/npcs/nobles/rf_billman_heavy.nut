@@ -36,23 +36,20 @@
 		local weapon = this.getMainhandItem();
 		if (weapon != null)
 		{
-			if (weapon.isWeaponType(::Const.Items.WeaponType.Polearm))	// We need to check for polearm first to filter Halberd out here, as that would otherwise be categorized as Hammer
+			if (weapon.isWeaponType(::Const.Items.WeaponType.Axe))	// We need to check for polearm first to filter Halberd out here, as that would otherwise be categorized as Hammer
 			{
-				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_polearm"));
-				this.getSkills().add(::new("scripts/skills/perks/perk_rf_long_reach"));
-				this.getSkills().add(::new("scripts/skills/perks/perk_rf_leverage"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_axe"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_dismemberment"));
 			}
 			else if (weapon.isWeaponType(::Const.Items.WeaponType.Cleaver))
 			{
 				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_cleaver"));
-				this.getSkills().add(::new("scripts/skills/perks/perk_crippling_strikes"));
 				this.getSkills().add(::new("scripts/skills/perks/perk_rf_sanguinary"));
 			}
 			else if (weapon.isWeaponType(::Const.Items.WeaponType.Hammer))
 			{
 				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_hammer"));
-				this.getSkills().add(::new("scripts/skills/perks/perk_crippling_strikes"));
-				this.getSkills().add(::new("scripts/skills/perks/perk_rf_deep_impact"));	// Breakthrough
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_rattle"));			// Full Force
 			}
 		}
 	}
@@ -74,6 +71,7 @@
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_coup_de_grace"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_crippling_strikes"));
 	}
 
 	// Assign Head and Body armor to this character
