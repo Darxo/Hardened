@@ -1,0 +1,5 @@
+<brush name="gfx/hd_world_entity.png" version="17">
+	<sprite id="figure_hd_bandit_pillager" offsetY="20" ic="FF364E6D" width="68" height="106" img="world_entity\party\figure_hd_bandit_pillager.png" left="-18" right="22" top="-38" bottom="6" />
+	<sprite id="figure_hd_bandit_outlaw" offsetY="20" ic="FF364E6D" width="68" height="106" img="world_entity\party\figure_hd_bandit_outlaw.png" left="-18" right="22" top="-38" bottom="6" />
+	<sprite id="figure_hd_bandit_marauder" offsetY="20" ic="FF364E6D" width="68" height="106" img="world_entity\party\figure_hd_bandit_marauder.png" left="-18" right="22" top="-38" bottom="6" />
+</brush>

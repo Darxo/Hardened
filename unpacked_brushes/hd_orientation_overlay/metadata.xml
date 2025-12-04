@@ -1,0 +1,5 @@
+<brush name="gfx/hd_orientation_overlay.png" version="17">
+	<sprite id="hd_bandit_pillager_orientation" ic="FF22200A" img="..\..\gfx\ui\orientation\hd_bandit_pillager_orientation.png" />
+	<sprite id="hd_bandit_outlaw_orientation" ic="FF22200A" img="..\..\gfx\ui\orientation\hd_bandit_outlaw_orientation.png" />
+	<sprite id="hd_bandit_marauder_orientation" ic="FF22200A" img="..\..\gfx\ui\orientation\hd_bandit_marauder_orientation.png" />
+</brush>
