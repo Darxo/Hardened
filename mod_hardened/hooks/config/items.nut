@@ -6,6 +6,10 @@
 ::MSU.Array.removeByValue(::Const.Items.NamedWeapons, "weapons/named/named_rf_longsword");
 ::MSU.Array.removeByValue(::Const.Items.NamedMeleeWeapons, "weapons/named/named_rf_longsword");
 
+// We remove the named battle axe from appearing
+::MSU.Array.removeByValue(::Const.Items.NamedWeapons, "weapons/named/named_rf_battle_axe");
+::MSU.Array.removeByValue(::Const.Items.NamedMeleeWeapons, "weapons/named/named_rf_battle_axe");
+
 {	// MSU Config
 	::Const.Items.ItemTypeName[::MSU.Math.log2int(::Const.Items.ItemType.Ammo) + 1] = "Ammunition";
 	::Const.Items.ItemTypeName[::MSU.Math.log2int(::Const.Items.ItemType.Accessory) + 1] = "Accessory";
