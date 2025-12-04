@@ -235,10 +235,13 @@ local adjustedDescriptions = [
 		ID = "perk.nine_lives",
 		Key = "NineLives",
 		Description = ::UPD.getDescription({
+			Fluff = "Slip past death by sheer instinct!",
 	 		Effects = [{
  				Type = ::UPD.EffectType.Passive,
  				Description = [
-					"Once per battle, upon receiving a killing blow, survive instead with " + ::MSU.Text.colorPositive("11-15") + " [Hitpoints,|Concept.Hitpoints] remove all damage over time effects and gain [Heightened Reflexes|Skill+nine_lives_effect] until the start of your next [turn|Concept.Turn]",
+					"Survive the first time you would receive fatal damage each battle and recover " + ::MSU.Text.colorPositive("11-15") + " [Hitpoints|Concept.Hitpoints]",
+					"When receiving fatal damage, remove all damage over time effects from you",
+					"When receiving fatal damage, gain [Heightened Reflexes|Skill+nine_lives_effect]",
 				]
  			}]
 	 	}),
