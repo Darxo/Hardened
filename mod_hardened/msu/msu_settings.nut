@@ -101,6 +101,7 @@
 
 	qolCombatPage.addBooleanSetting("ShowGlowingEyes", true, "Show Red Glowing Eyes", "Display red glowing eyes on a humans and human-like characters, who have certain temporary damage buffs active.");
 	qolCombatPage.addBooleanSetting("FullForceCameraShake", true, "Shake Camera On Full Force", "Shake the camera as part of the impact animation of a successful Full Force attack");
+	qolCombatPage.addBooleanSetting("ShowUncappedHitchances", true, "Show Uncapped Hitchances", "If your uncapped Hitchance would be larger than the one you currently have when aiming at an enemy, display it in brackets");
 
 	qolCombatPage.addDivider("MiscDivider2");
 
