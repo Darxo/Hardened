@@ -20,6 +20,8 @@
 		this.m.PlayerRelation = ::Math.clampf(this.m.PlayerRelation + _r, 0.0, 100.0);
 		this.updatePlayerRelation();
 
+		// We allow the _reason to be overwritten from the outside. This allows us to mirror the original reason, when an owner applies a penalty following a penalty to one of its lackeys
+		if (::Hardened.Temp.PlayerRelationReason != null) _reason = ::Hardened.Temp.PlayerRelationReason;
 		if (_reason == "") return;
 
 		// Feat: Display the relation change in brackets behind the reason
