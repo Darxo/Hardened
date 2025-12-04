@@ -6,3 +6,5 @@
 ::Const.World.Assets.TryoutCostPct <- 0.2;	// In Vanilla this is 0.1
 ::Const.World.Assets.HD_RelationAttackedThem <- -5.0;	// Relationship penalty, when we enter a fight against any enemy faction (including temporary enemies)
 ::Const.World.Assets.HD_MoraleReputationAttackedThem <- -2;	// Morale Reputation hit, when we enter a fight against a temporary enemy
+
+::Const.World.Assets.HD_BaseLootBuyPrice <- 1.5;	// Buying back Loot is this much more expensive. This is important to fix an exploit of buying those back for cheaper
