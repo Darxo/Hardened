@@ -19,6 +19,10 @@
 	::Const.AI.Behavior.Score.Rally = 100;			// Vanilla: 130
 
 	::Const.AI.Behavior.Score.SwarmOfInsects = 150;		// Vanilla: 60
+
+	// We reduce the intensity of this multiplier, as blocked line of fire is already inherently checked for in queryTargetValue
+	// However this is still useful to discourage someone attacking someone, whose line of fire is blocked by an ally
+	::Const.AI.Behavior.AttackLineOfFireBlockedMult = 0.75;		// Vanilla: 0.5
 }
 
 // New Hardened Values
