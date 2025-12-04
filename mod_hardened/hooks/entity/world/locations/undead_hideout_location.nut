@@ -3,6 +3,8 @@
 	{
 		__original();
 
+		this.m.IsShowingBanner = true;		// Vanilla: false
+
 		this.m.Resources = 100 * ::Hardened.Global.FactionDifficulty.Zombies;		// Vanilla: 80
 	}
 });
