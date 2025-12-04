@@ -3,7 +3,7 @@
 	{
 		__original();
 
-		this.m.Resources = 150;		// Vanilla: 180
+		this.m.Resources = 150 * ::Hardened.Global.FactionDifficulty.Zombies;		// Vanilla: 180
 	}
 
 	// Overwrite, because we adjust the vanilla loot for this location
@@ -24,6 +24,18 @@
 
 		this.dropMoney(::Math.rand(20, 100), _lootTable);	// Vanilla: 0-200
 		this.dropArmorParts(::Math.rand(2, 10), _lootTable);	// Vanilla: 0
+	}
+
+	q.onInit = @(__original) function()
+	{
+		__original();
+
+		// Undead Ruins contain skeletons while in the south, so we adjust the resources accordingly
+		local isSouthern = this.getTile().Type == ::Const.World.TerrainType.Desert || this.getTile().Type == ::Const.World.TerrainType.Steppe || this.getTile().Type == ::Const.World.TerrainType.Oasis || this.getTile().TacticalType == ::Const.World.TerrainTacticalType.DesertHills;
+		if (isSouthern)
+		{
+			this.m.Resources = 150 * ::Hardened.Global.FactionDifficulty.Skeletons;
+		}
 	}
 });
 
