@@ -143,6 +143,9 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		local pgSoldierGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_soldier");
 		pgSoldierGroup.addPerk("perk.rally_the_troops", 3);		// Add Rally the Troops into the Tier 3
 
+		pgSoldierGroup.removePerk("perk.rf_exude_confidence");		// Remove Exude Confidence from Tier 4 (as it needs to move over to Vigorous)
+		pgSoldierGroup.addPerk("perk.rf_decisive", 4);				// Add Decisive into Tier 4 (to still have it available after removing it from Vigorous)
+
 		// Overwrite, because we remove the guaranteed "Professional" and turn guaranteed "Trained" into a 2.5x multiplier
 		pgSoldierGroup.getPerkGroupMultiplier = function( _groupID, _perkTree )
 		{
@@ -208,6 +211,9 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		local pgVigorousGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_vigorous");
 		pgVigorousGroup.removePerk("perk.rf_survival_instinct");	// Remove Survival Instinct from Tier 1
 		pgVigorousGroup.addPerk("perk.crippling_strikes", 1);		// Add Crippling Strikes into Tier 1
+
+		pgVigorousGroup.removePerk("perk.rf_decisive");				// Remove Decisive from Tier 4 (to prevent easy perma indom)
+		pgVigorousGroup.addPerk("perk.rf_exude_confidence", 4);		// Add Exude Confidence into Tier 4 (just to fill the gap from missing Decisive)
 	}
 
 	{	// Wildling Group
