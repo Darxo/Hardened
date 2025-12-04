@@ -65,7 +65,15 @@
 	// This is meant as a rather static price multiplier for this item, that is one part of the getBuyPriceMult function
 	q.getBaseBuyPriceMult <- function()
 	{
-		return ::Const.World.Assets.BaseBuyPrice;
+		if (this.isItemType(::Const.Items.ItemType.Loot))
+		{
+			// Vanilla manually multiplies 1.5 with all buy prices of Loot-type items
+			return ::Const.World.Assets.HD_BaseLootBuyPrice;
+		}
+		else
+		{
+			return ::Const.World.Assets.BaseBuyPrice;
+		}
 	}
 
 	// This is guaranteed to only be called, if ::World.State.getCurrentTown() can be called and doesnt return null
