@@ -826,8 +826,8 @@
 // scripts/entity/tactical/enemies/orc_warrior
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.OrcWarrior.Cost = 55;
-	::Const.World.Spawn.Troops.OrcWarrior.Strength = 55;
+	::Const.World.Spawn.Troops.OrcWarrior.Cost = 60;
+	::Const.World.Spawn.Troops.OrcWarrior.Strength = 60;
 }
 
 // scripts/entity/tactical/enemies/unhold_armored
