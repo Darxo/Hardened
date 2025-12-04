@@ -37,3 +37,11 @@
 		NamePlural = "Powder",
 	},
 ];
+
+// These types of settlements are that many tiles further apart during map generation
+::Hardened.Const.SettlementsSpaceModifier <- {
+	SmallFort = 2,
+	Small = -2,
+	Medium = 2,
+	Large = 10,
+}
