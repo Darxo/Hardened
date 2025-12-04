@@ -38,6 +38,10 @@
 				// We shorten the tooltip a bit and add a hyperlink
 				entry.text = "Weapon Skills cost " + ::MSU.Text.colorizeValue(this.m.FatigueOnSkillUse, {AddSign = true, InvertColor = true}) + ::Reforged.Mod.Tooltips.parseString(" [Fatigue|Concept.Fatigue]");
 			}
+			else if (entry.id == 20 && entry.icon == "ui/icons/rf_reach.png")
+			{
+				entry.text = ::Reforged.Mod.Tooltips.parseString("[Reach|Concept.Reach]: ") + this.m.Reach;
+			}
 		}
 
 		for (local index = (ret.len() - 1); index >= 0; index--)
