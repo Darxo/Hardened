@@ -60,6 +60,13 @@
 
 		return __original(_option);
 	}
+
+	q.setScreen = @(__original) function( _screen, _restartIfAlreadyActive = true )
+	{
+		// Vanilla Fix: setting the screen repeatidly to the same screenID no longer repeadidly triggers the start function
+		// Most notably this fixes a Hardened issue, where the Success screen would award the player the payout multiple times, because it would be postponed
+		return __original(_screen, false);
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/contracts/contract", function(q) {
