@@ -1,4 +1,14 @@
+::Hardened.Temp.PlayerRelationReason <- null;
+
 ::Hardened.HooksMod.hook("scripts/factions/settlement_faction", function(q) {
+	q.addPlayerRelation = @(__original) function( _relation, _reason = "" )
+	{
+		// We briefly fill ::Hardened.Temp.PlayerRelationReason with the reason for the relation change, so that we can mirror that reason for the owner
+		::Hardened.Temp.PlayerRelationReason = _reason;
+		__original(_relation, _reason);
+		::Hardened.Temp.PlayerRelationReason = null;
+	}
+
 	q.getBanner = @(__original) function()
 	{
 		if (!::Tactical.isActive()) return __original();
