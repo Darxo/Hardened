@@ -2,9 +2,6 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 	m = {
 		// Public
 		DamageTotalMult = 0.75,	// Damage multiplier while rebuke is active
-
-		// Private
-		ParentPerk = null,		// This perk requires an reference of perk_rf_rebuke so that I can reuse it's checks. Either a weakref or a full ref is fine
 	},
 
 	function create()
@@ -45,11 +42,11 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 
 	function onMissed( _attacker, _skill )
 	{
-		if (!::MSU.isNull(this.m.ParentPerk) && this.m.ParentPerk.canProc(_attacker, _skill))
+		if (this.isSkillValid(_skill))
 		{
 			local info = {
 				User = this.getContainer().getActor(),
-				Skill = this.getContainer().getAttackOfOpportunity(), // we know it won't be null because we do a getAttackOfOpportunity check in canProc
+				Skill = this,	// So that we can use functions working on this skills
 				TargetTile = _attacker.getTile()
 			};
 			::Time.scheduleEvent(::TimeUnit.Virtual, ::Const.Combat.RiposteDelay, this.onRiposte.bindenv(this), info);
@@ -63,14 +60,7 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (::MSU.isNull(this.m.ParentPerk))
-		{
-			this.removeSelf();
-		}
-		else
-		{
-			_properties.DamageTotalMult *= this.m.DamageTotalMult;
-		}
+		_properties.DamageTotalMult *= this.m.DamageTotalMult;
 	}
 
 // Modular Vanilla Functions
@@ -78,13 +68,13 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 	{
 		local ret = 1.0;
 
-		if (_target.getID() == this.getContainer().getActor().getID() && _user.getID() != _target.getID())	// We must be the _target
+		local actor = this.getContainer().getActor();
+		if (_target.getID() == actor.getID() && _user.getID() != _target.getID())	// We must be the _target
 		{
-			if (_skill != null && !::MSU.isNull(this.m.ParentPerk) && this.m.ParentPerk.canProc(_user, _skill))
+			if (_skill != null && this.isSkillValid(_skill) && this.isEnabled() && this.canRiposteAgainst(_user.getTile()))
 			{
 				// It is not a good idea to attack into an active rebuke, it will turn off anyways, if we wait a turn
-				// Right now we don't check whether our weapon would outrange the target or whether they can even see us
-				ret *= 0.5;
+				ret *= 0.6;
 			}
 		}
 
@@ -94,14 +84,43 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 // New Functions
 	function onRiposte( _info )	// async function
 	{
-		if (!_info.User.isAlive()) return;
-		if (_info.User.m.RiposteSkillCounter == ::Const.SkillCounter) return;	// This is a shared variable used by all riposte effects and ensures that no two riposte effects can trigger from the same attack
-
-		// Check whether our ZOC skill is valid. We can't use isUsableOn because that function checks for skill cost too, which we do not want
-		if (!_info.User.getTile().hasLineOfSightTo(_info.TargetTile, _info.User.getCurrentProperties().getVision())) return;
-		if (!_info.Skill.verifyTargetAndRange(_info.TargetTile, _info.User.getTile())) return;
+		if (!_info.Skill.isEnabled()) return;
+		if (!_info.Skill.canRiposteAgainst(_info.TargetTile)) return;
 
 		_info.User.m.RiposteSkillCounter = ::Const.SkillCounter;
-		_info.Skill.useForFree(_info.TargetTile);
+		_info.Skill.getContainer().getAttackOfOpportunity().useForFree(_info.TargetTile);
+	}
+
+	// Are we allowed to do counter attacks right now?
+	function isEnabled()
+	{
+		local actor = this.getContainer().getActor();
+		if (!actor.isAlive()) return false;
+		if (actor.isActiveEntity()) return false;	// This perk only works while it is not our turn
+		if (actor.getMoraleState() == ::Const.MoraleState.Fleeing || actor.getCurrentProperties().IsStunned) return false;
+		if (actor.m.RiposteSkillCounter == ::Const.SkillCounter) return false;	// This is a shared variable used by all riposte effects and ensures that no two riposte effects can trigger from the same attack
+
+		return true;
+	}
+
+	// Are we allowed to do a riposte against _targetTile?
+	function canRiposteAgainst( _targetTile )
+	{
+		if (!_targetTile.IsOccupiedByActor) return false;
+
+		local attackOfOpportunity = this.getContainer().getAttackOfOpportunity();
+		if (attackOfOpportunity == null) return false;
+
+		local actor = this.getContainer().getActor();
+		if (!actor.getTile().hasLineOfSightTo(_targetTile, actor.getCurrentProperties().getVision())) return false;
+		if (!attackOfOpportunity.verifyTargetAndRange(_targetTile)) return false;
+
+		return true;
+	}
+
+	// Is the attacking skill valid to trigger a riposte?
+	function isSkillValid( _skill )
+	{
+		return _skill.isAttack() && !_skill.isRanged() && !_skill.isIgnoringRiposte();
 	}
 });

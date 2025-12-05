@@ -27,9 +27,7 @@
 	{
 		if (this.canProc(_attacker, _skill) && !this.getContainer().hasSkill("effects.hd_rebuke"))
 		{
-			local rebukeEffect = ::new("scripts/skills/effects/hd_rebuke_effect");
-			rebukeEffect.m.ParentPerk = ::MSU.asWeakTableRef(this);
-			this.getContainer().add(rebukeEffect);
+			this.getContainer().add(::new("scripts/skills/effects/hd_rebuke_effect"));
 			::Sound.play(::MSU.Array.rand(this.m.RebukeTriggerSounds), ::Const.Sound.Volume.Skill * this.m.SoundVolume, this.getContainer().getActor().getPos());
 		}
 	}
@@ -55,7 +53,6 @@
 		local actor = this.getContainer().getActor();
 		if (actor.isActiveEntity()) return false;	// This perk only works while it is not our turn
 		if (actor.getMoraleState() == ::Const.MoraleState.Fleeing || actor.getCurrentProperties().IsStunned) return false;
-		if (actor.getCurrentProperties().IsRiposting) return false;
 		if (this.getContainer().getAttackOfOpportunity() == null) return false;
 
 		return true;
