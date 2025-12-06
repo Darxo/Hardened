@@ -62,6 +62,7 @@ local oldOnApplyFire = ::Const.Tactical.Common.onApplyFire;
 	rootEffect.removeSelf(); 	// we assume that only one of the root effects is present at the same time
 	breakFreeEffect.removeSelf();
 	_entity.setDirty(true);
+	_entity.getSkills().update();	// So that the stats of the character are updated instantly. Removing a skill only sets its IsGarbage to true
 
 	return rootEffect;
 }
