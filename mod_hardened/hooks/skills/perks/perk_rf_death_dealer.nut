@@ -50,6 +50,17 @@
 		}
 	}
 
+	q.onReallyBeforeSkillExecuted = @(__original) function( _skill, _targetTile )
+	{
+		__original(_skill, _targetTile);
+
+		if (!this.isSkillValid(_skill)) return;
+
+		local actor = _skill.getContainer().getActor();
+		local removedRootEffect = ::Const.Tactical.Common.removeRooted(actor);
+		::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(actor) + " breaks free from " + ::MSU.Text.colorNegative(removedRootEffect.getName()));
+	}
+
 // New Functions
 	q.isSkillValid <- function( _skill )
 	{

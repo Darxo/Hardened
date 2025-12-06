@@ -761,6 +761,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Deal " + ::MSU.Text.colorPositive("5%") + " more Damage for every enemy within 2 tiles of you",
+					"Whenever you use an AoE Attack, remove all [rooted|Concept.Rooted] effects from you",
 				],
 			}],
 		}),
