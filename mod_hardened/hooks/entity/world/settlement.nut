@@ -5,9 +5,6 @@
 	{
 		// Feat: the effective resources of settlements now also grow with the world difficulty
 		local worldDifficulty = ::Hardened.Global.getWorldDifficultyMult();
-		worldDifficulty -= 1.0;
-		worldDifficulty *= 0.5;		// Their difficulty only grows half as fast as everything else
-		worldDifficulty += 1.0;
 		return __original() * worldDifficulty;
 	}
 
