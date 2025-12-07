@@ -4,8 +4,24 @@
 	q.getResources = @(__original) function()
 	{
 		// Feat: the effective resources of settlements now also grow with the world difficulty
-		local worldDifficulty = ::Hardened.Global.getWorldDifficultyMult();
-		return __original() * worldDifficulty;
+
+		local ret = __original();
+		ret *= ::Hardened.Global.getWorldDifficultyMult();
+
+		if (this.isSouthern())		// Anything CityState
+		{
+			ret *= ::Hardened.Global.FactionDifficulty.CityState;
+		}
+		else if (this.isMilitary())		// Northern Military Settlements (Noble Forts)
+		{
+			ret *= ::Hardened.Global.FactionDifficulty.Nobles;
+		}
+		else	// Northern Civilian Settlements
+		{
+			ret *= ::Hardened.Global.FactionDifficulty.Militia;
+		}
+
+		return ret
 	}
 
 	q.onEnter = @(__original) function()
