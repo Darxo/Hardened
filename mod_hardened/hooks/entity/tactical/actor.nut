@@ -15,7 +15,7 @@
 		if (oldMoraleState == ::Const.MoraleState.Fleeing && this.m.MoraleState == ::Const.MoraleState.Wavering)	// This is our current definition of being rallied
 		{
 			// Feat: Any character that rallies, loses some action points
-			this.setActionPoints(this.getActionPoints() + ::Hardened.Const.ActionPointChangeOnRally);
+			this.setActionPoints(this.getActionPoints() + ::Hardened.Global.ActionPointChangeOnRally);
 		}
 
 		return ret;

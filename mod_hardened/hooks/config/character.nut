@@ -22,7 +22,7 @@
 // A few AI scripts access this.Vision directly, instead of using this getter. Those are currently unaffected by this change
 ::Const.CharacterProperties.getVision = function()
 {
-	return ::Math.max(::Hardened.Const.MinimumVision, ::Math.floor(this.Vision * this.VisionMult));
+	return ::Math.max(::Hardened.Global.MinimumVision, ::Math.floor(this.Vision * this.VisionMult));
 }
 
 // Hook Vanilla Functions

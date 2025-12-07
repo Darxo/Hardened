@@ -73,7 +73,7 @@
 	)),
 	Rally = ::MSU.Class.BasicTooltip("Rally", ::Reforged.Mod.Tooltips.parseString(
 		"Rallying is a type of positive [Morale Check|Concept.Morale] that can only occur on a character who is currently [fleeing|Skill+hd_dummy_morale_state_fleeing]\n\n" +
-		"A successful rally immediately raises the character's morale to [wavering|Skill+hd_dummy_morale_state_wavering] but removes " + ::MSU.Text.colorNegative(::Math.abs(::Hardened.Const.ActionPointChangeOnRally)) + " [Action Points|Concept.ActionPoints] from them.\n\n" +
+		"A successful rally immediately raises the character's morale to [wavering|Skill+hd_dummy_morale_state_wavering] but removes " + ::MSU.Text.colorNegative(::Math.abs(::Hardened.Global.ActionPointChangeOnRally)) + " [Action Points|Concept.ActionPoints] from them.\n\n" +
 		"Characters will automatically attempt to rally at the start of their turn, as long as they are not engaged in melee combat."
 	)),
 	Weight = ::MSU.Class.BasicTooltip("Weight", ::Reforged.Mod.Tooltips.parseString(

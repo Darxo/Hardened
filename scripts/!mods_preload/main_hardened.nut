@@ -6,30 +6,8 @@
 	Temp = {	// Used to globally store variables between function calls to implement more advanced, albeit hacky behavior
 		RootSkillCounter = null,	// This variable will have the SkillCounter of the root skills during the execution of any skill executions and delayed executions
 	},
-	Const = {
-		ActionPointChangeOnRally = -3,	// Whenever this actor rallies (going from fleeing to wavering) its action points change by this amount
-		ContractScalingBase = 1.0,	// This contract scaling is happening from day one. This scales additively with PerRep scaling
-		ContractScalingPerReputation = 0.0007,	// Each Reputation point causes contracts to be this much more lucrative and dangerous
-		ContractScalingMin = 0.5,	// Contracts never scale below this value
-		ContractScalingMax = 10.0,	// Contracts never scale beyond this value
-		WorldScalingBase = 1.0,		// This world scaling is happening from day one. This scales additively with PerDay scaling
-		WorldScalingMin = 0.5,		// The world will never scale below this value
-		WorldScalingMax = 5.0,		// The world will never scale beyond this value
-		WorldScalingPerDay = 0.013,	// Each passed day causes the world to be this much more dangerous
-		MinimumVision = 2,			// Vision of characters can never be reduced below this value. In Vanilla this is 1
-	},
-	Global = {
-		// Anything that uses spawntables to spawn/add troops, will its available resources adjusted by this value
-		getWorldDifficultyMult = function() {
-			local ret = ::Hardened.Const.WorldScalingBase + ::World.getTime().Days * ::Hardened.Const.WorldScalingPerDay;
-			return ::Math.clampf(ret, ::Hardened.Const.WorldScalingMin, ::Hardened.Const.WorldScalingMax);
-		},
-		// All contracts will be this much harder and also yield this much more rewards
-		getWorldContractMult = function() {
-			local ret = ::Hardened.Const.ContractScalingBase + ::World.Assets.getBusinessReputation() * ::Hardened.Const.ContractScalingPerReputation;
-			return ::Math.clampf(ret, ::Hardened.Const.WorldScalingMin, ::Hardened.Const.ContractScalingMax);
-		},
-	},
+	Const = {},
+	Global = {},
 	Private = {
 		IsPreviewingAttackWithHitChance = false,		// If true, then the player is currently previewing an attack with a hitchance
 	},
