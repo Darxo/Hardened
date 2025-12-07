@@ -105,6 +105,11 @@
 		{
 			// Feat: discovering any location now fully uncovers fog of war from its tile to make discovered locations halfway in fog of war more noticable
 			::World.uncoverFogOfWar(this.getTile().Pos, 100.0);
+
+			if (this.isLocationType(::Const.World.LocationType.Unique))
+			{
+				::World.State.HD_playUniqueLocationDiscoveredSound();
+			}
 		}
 	}
 
