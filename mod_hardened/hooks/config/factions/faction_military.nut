@@ -49,7 +49,7 @@
 // scripts/entity/tactical/humans/rf_squire
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_Squire.XP = 360;
+	::Const.Tactical.Actor.RF_Squire.XP = 420;
 	::Const.Tactical.Actor.RF_Squire.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_Squire.Hitpoints = 70;
 	::Const.Tactical.Actor.RF_Squire.Bravery = 60;

@@ -474,8 +474,8 @@
 // scripts/entity/tactical/humans/rf_squire
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_Squire.Cost = 30;
-	::Const.World.Spawn.Troops.RF_Squire.Strength = 30;
+	::Const.World.Spawn.Troops.RF_Squire.Cost = 35;
+	::Const.World.Spawn.Troops.RF_Squire.Strength = 35;
 }
 
 // scripts/entity/tactical/humans/standard_bearer
