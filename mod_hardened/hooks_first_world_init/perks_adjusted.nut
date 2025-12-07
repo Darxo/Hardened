@@ -733,7 +733,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"All Skills that you have not used yet this [round,|Concept.Round] cost " + ::MSU.Text.colorPositive(-2) + " [Action Points|Concept.ActionPoints], except the first skill you use each [round|Concept.Round]",
+					"All Skills that you have not used yet this [round,|Concept.Round] during your [turn|Concept.Turn], cost " + ::MSU.Text.colorPositive(-2) + " [Action Points|Concept.ActionPoints], except the first skill you use each [round|Concept.Round] during your [turn|Concept.Turn]",
 				],
 			}],
 		}),

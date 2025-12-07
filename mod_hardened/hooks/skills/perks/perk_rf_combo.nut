@@ -80,6 +80,10 @@
 // Hardened Events
 	q.onReallyBeforeSkillExecuted <- function( _skill, _targetTile )
 	{
+		// This perk only counts skills you use during your turn
+		// Otherwise, it would count allies using BreakFree on you, Shield Sergeants causing you to use shield skills or DefaultAttacks triggered by Riposte/Rebuke
+		if (!this.getContainer().getActor().isActiveEntity()) return;
+
 		if (!(_skill.getID() in this.m.UsedSkills))
 		{
 			this.m.UsedSkills[_skill.getID()] <- _skill.getName();
