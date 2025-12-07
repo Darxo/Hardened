@@ -144,3 +144,25 @@
 		return false;
 	}
 });
+
+::Hardened.HooksMod.hookTree("scripts/entity/world/location", function(q) {
+	q.createDefenders = @(__original) function()
+	{
+		// Dynamic Spawns always uses the all available resources for spawning the party
+		// Vanilla however chooses a random party that costs between 75% and 100% of the available resources
+		// Dynamic Spawns Fix: We randomly subtract up to 25% of the resources when generating a dynamic party
+		local mockObject;
+		mockObject = ::Hardened.mockFunction(::DynamicSpawns.Static, "retrieveDynamicParty", function( _vanillaPartyList, _resources = null ) {
+			if (_resources != null)
+			{
+				_resources *= ::MSU.Math.randf(0.75, 1.0);
+				local ret = mockObject.original(_vanillaPartyList, _resources);
+				return { done = true, value = ret };
+			}
+		});
+
+		__original();
+
+		mockObject.cleanup();
+	}
+});
