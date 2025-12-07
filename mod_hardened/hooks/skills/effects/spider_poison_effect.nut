@@ -31,7 +31,7 @@
 			id = 10,
 			type = "text",
 			icon = "ui/icons/damage_received.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Once per [round,|Concept.Round] when you [wait|Concept.Wait] or end your [turn,|Concept.Turn] take " + ::MSU.Text.colorNegative(this.m.Damage) + " [Hitpoint|Concept.Hitpoints] Damage"),
+			text = ::Reforged.Mod.Tooltips.parseString("Once per [round|Concept.Round], when you [wait|Concept.Wait] or end your [turn|Concept.Turn], take " + ::MSU.Text.colorNegative(this.m.Damage) + " [Hitpoint|Concept.Hitpoints] Damage"),
 		});
 
 		ret.push({

@@ -57,7 +57,7 @@
 			id = 22,
 			type = "text",
 			icon = "ui/icons/warning.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Lose all stacks when you use [Recover,|Skill+recover_skill] get [stunned,|Skill+stunned_effect] or [staggered|Skill+staggered_effect]"),
+			text = ::Reforged.Mod.Tooltips.parseString("Lose all stacks when you use [Recover|Skill+recover_skill], get [stunned|Skill+stunned_effect], or [staggered|Skill+staggered_effect]"),
 		});
 
 		return ret;

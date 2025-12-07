@@ -42,7 +42,7 @@ this.perk_hd_forestbond <- ::inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/health.png",
-				text = ::Reforged.Mod.Tooltips.parseString("At the start your [turn,|Concept.Turn] recover " + ::MSU.Text.colorizePct(recoveredHitpointPct) + " of your [Hitpoints|Concept.Hitpoints]"),
+				text = ::Reforged.Mod.Tooltips.parseString("At the start your [turn|Concept.Turn], recover " + ::MSU.Text.colorizePct(recoveredHitpointPct) + " of your [Hitpoints|Concept.Hitpoints]"),
 			});
 		}
 

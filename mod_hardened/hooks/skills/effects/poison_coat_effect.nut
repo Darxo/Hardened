@@ -81,7 +81,7 @@
 				id = 100,
 				type = "text",
 				icon = "ui/icons/damage_received.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Will apply [Poisoned (Goblin),|Skill+goblin_poison_effect] when dealing at least ") + ::MSU.Text.colorNeutral(this.m.HitpointDamageThreshold) + ::Reforged.Mod.Tooltips.parseString(" [Hitpoint|Concept.Hitpoints] damage"),
+				text = ::Reforged.Mod.Tooltips.parseString("Will apply [Poisoned (Goblin)|Skill+goblin_poison_effect], when dealing at least ") + ::MSU.Text.colorNeutral(this.m.HitpointDamageThreshold) + ::Reforged.Mod.Tooltips.parseString(" [Hitpoint|Concept.Hitpoints] damage"),
 			});
 		}
 	}

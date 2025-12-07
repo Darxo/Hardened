@@ -53,7 +53,7 @@ this.hd_lying_in_ambush_effect <- this.inherit("scripts/skills/skill", {
 				id = 20,
 				type = "text",
 				icon = "ui/icons/warning.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Is removed at the start of the [round,|Concept.Round] when an enemy is within " + ::MSU.Text.colorPositive(this.m.TileAlertRadius) + " tiles"),
+				text = ::Reforged.Mod.Tooltips.parseString("Is removed at the start of the [round|Concept.Round], when an enemy is within " + ::MSU.Text.colorPositive(this.m.TileAlertRadius) + " tiles"),
 			});
 		}
 

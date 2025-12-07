@@ -51,7 +51,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per [round,|Concept.Round] killing an opponent recovers [Fatigue|Concept.Fatigue] equal to " + ::MSU.Text.colorPositive("10%") + " of [Base|Concept.BaseAttribute] [Stamina|Concept.MaximumFatigue]"
+					"Once per [round|Concept.Round], killing an opponent recovers [Fatigue|Concept.Fatigue] equal to " + ::MSU.Text.colorPositive("10%") + " of [Base|Concept.BaseAttribute] [Stamina|Concept.MaximumFatigue]"
 				],
 			}],
 		}),
@@ -77,7 +77,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per [round,|Concept.Round] when you kill an enemy, recover " + ::MSU.Text.colorPositive("4") + " [Action Points|Concept.ActionPoints]",
+					"Once per [round|Concept.Round], when you kill an enemy, recover " + ::MSU.Text.colorPositive("4") + " [Action Points|Concept.ActionPoints]",
 				],
 			}],
 		}),
@@ -212,7 +212,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"When no members of your faction are within 2 tiles of distance from you, gain " + ::MSU.Text.colorPositive("15%") + " more [Melee Skill,|Concept.MeleeSkill] [Ranged Skill,|Concept.RangeSkill] [Melee Defense,|Concept.MeleeDefense] [Ranged Defense,|Concept.RangeDefense] and [Resolve|Concept.Bravery]",
+					"When no members of your faction are within 2 tiles of distance from you, gain " + ::MSU.Text.colorPositive("15%") + " more [Melee Skill|Concept.MeleeSkill], [Ranged Skill|Concept.RangeSkill], [Melee Defense|Concept.MeleeDefense], [Ranged Defense|Concept.RangeDefense] and [Resolve|Concept.Bravery]",
 				],
 			}]
 		})
@@ -360,7 +360,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Dagger Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 					"[Puncture|Skill+puncture] and [Deathblow|Skill+deathblow_skill] cost " + ::MSU.Text.colorPositive("-1") + " [Action Point|Concept.ActionPoints]",
-					"Once per [round,|Concept.Round] the first use of your offhand item [weighing|Concept.Weight] less than " + ::MSU.Text.colorPositive(10) + " costs no [Action Points|Concept.ActionPoints]",
+					"Once per [round|Concept.Round], the first use of your offhand item [weighing|Concept.Weight] less than " + ::MSU.Text.colorPositive(10) + " costs no [Action Points|Concept.ActionPoints]",
 				],
 			}],
 		}),
@@ -464,7 +464,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Throwing Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 					"Your first Throwing Attack each [round|Concept.Round] deals " + ::MSU.Text.colorizeMultWithText(1.3) + " damage",
-					"Once per [round,|Concept.Round] swapping a Throwing Weapon with an empty Throwing Weapon or an empty slot becomes a free action",
+					"Once per [round|Concept.Round], swapping a Throwing Weapon with an empty Throwing Weapon or an empty slot becomes a free action",
 				],
 			}],
 		}),
@@ -477,7 +477,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per [round,|Concept.Round] swapping items, except shields, becomes a free action",
+					"Once per [round|Concept.Round], swapping items, except shields, becomes a free action",
 				]
 			}]
 		})
@@ -582,7 +582,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Gain " + ::MSU.Text.colorPositive("10%") + " more [Resolve|Concept.Bravery]",
-					"While at Steady [Morale,|Concept.Morale] gain " + ::MSU.Text.colorPositive("10%") + " more [Melee Skill,|Concept.MeleeSkill] [Ranged Skill,|Concept.RangeSkill] [Melee Defense,|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense]",
+					"While at Steady [Morale|Concept.Morale], gain " + ::MSU.Text.colorPositive("10%") + " more [Melee Skill|Concept.MeleeSkill], [Ranged Skill|Concept.RangeSkill], [Melee Defense|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense]",
 				],
 			}],
 		}),
@@ -733,7 +733,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"All Skills that you have not used yet this [round,|Concept.Round] during your [turn|Concept.Turn], cost " + ::MSU.Text.colorPositive(-2) + " [Action Points|Concept.ActionPoints], except the first skill you use each [round|Concept.Round] during your [turn|Concept.Turn]",
+					"All Skills that you have not used yet this [round|Concept.Round], during your [turn|Concept.Turn], cost " + ::MSU.Text.colorPositive(-2) + " [Action Points|Concept.ActionPoints], except the first skill you use each [round|Concept.Round] during your [turn|Concept.Turn]",
 				],
 			}],
 		}),
@@ -775,7 +775,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain a stack whenever you end your [turn|Concept.Turn] without having used [Wait,|Concept.Wait] up to a maximum of 3 stacks",
+					"Gain a stack whenever you end your [turn|Concept.Turn] without having used [Wait|Concept.Wait], up to a maximum of 3 stacks",
 					"Gain " + ::MSU.Text.colorPositive("15%") + " more [Initiative|Concept.Initiative] while you have at least 1 stack",
 					"Skills build up " + ::MSU.Text.colorPositive("15%") + " less [Fatigue|Concept.Fatigue] while you have at least 2 stacks",
 					"Deal " + ::MSU.Text.colorPositive("15%") + " more damage while you have 3 stacks",
@@ -956,7 +956,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever you use an Attack during your [turn,|Concept.Turn] perform a free extra Attack of the same type to a different valid enemy within 2 tiles. This Attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
+					"Whenever you use an Attack during your [turn|Concept.Turn], perform a free extra Attack of the same type to a different valid enemy within 2 tiles. This Attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
 				],
 			}],
 		}),
@@ -1024,7 +1024,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("5%") + " more [Hitpoints,|Concept.Hitpoints] [Stamina,|Concept.MaximumFatigue] [Resolve|Concept.Bravery] and [Initiative|Concept.Initiative]"
+					"Gain " + ::MSU.Text.colorPositive("5%") + " more [Hitpoints|Concept.Hitpoints], [Stamina|Concept.MaximumFatigue], [Resolve|Concept.Bravery] and [Initiative|Concept.Initiative]"
 				],
 			}],
 		}),
@@ -1191,7 +1191,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per [round|Concept.Round] during your [turn,|Concept.Turn] when you move next to an [injured|Concept.InjuryTemporary] enemy, recover " + ::MSU.Text.colorPositive(3) + " [Action Points|Concept.ActionPoints]",
+					"Once per [round|Concept.Round] during your [turn|Concept.Turn], when you move next to an [injured|Concept.InjuryTemporary] enemy, recover " + ::MSU.Text.colorPositive(3) + " [Action Points|Concept.ActionPoints]",
 				],
 			}],
 		}),
@@ -1274,7 +1274,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlocks the [Onslaught|Skill+rf_onslaught_skill] skill which can be used once per battle to grant nearby members of your company [Initiative,|Concept.Initiative] [Melee Skill|Concept.MeleeSkill] and one use of the [Line Breaker|Skill+rf_line_breaker_skill] skill for two [rounds|Concept.Round]",
+					"Unlocks the [Onslaught|Skill+rf_onslaught_skill] skill which can be used once per battle to grant nearby members of your company [Initiative|Concept.Initiative], [Melee Skill|Concept.MeleeSkill] and one use of the [Line Breaker|Skill+rf_line_breaker_skill] skill for two [rounds|Concept.Round]",
 				],
 			}],
 		}),
@@ -1288,7 +1288,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"After moving 3 tiles during your [turn,|Concept.Turn] Throwing Attacks cost " + ::MSU.Text.colorPositive(-5) + " [Action Points,|Concept.ActionPoints] until you use a throwing attack, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
+					"After moving 3 tiles during your [turn|Concept.Turn], Throwing Attacks cost " + ::MSU.Text.colorPositive(-5) + " [Action Points|Concept.ActionPoints], until you use a throwing attack, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
 					"Moving costs " + ::MSU.Text.colorPositive(-2) + " [Fatigue|Concept.Fatigue]",
 				],
 			}],
@@ -1317,7 +1317,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever you use an Attack during your [turn,|Concept.Turn] spend all remaining [Action Points|Concept.ActionPoints] and deal " + ::MSU.Text.colorPositive("10%") + " more Damage and Shield Damage during this Attack for every [Action Point|Concept.ActionPoints] spent this way",
+					"Whenever you use an Attack during your [turn|Concept.Turn], spend all remaining [Action Points|Concept.ActionPoints] and deal " + ::MSU.Text.colorPositive("10%") + " more Damage and Shield Damage during this Attack for every [Action Point|Concept.ActionPoints] spent this way",
 					"This bonus is doubled for one-handed weapons",
 				],
 			}],
@@ -1331,7 +1331,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever an opponent misses a Melee Attack against you while it is not your [turn,|Concept.Turn] gain the [Rebuke|Skill+hd_rebuke_effect] effect until the start of your next [turn|Concept.Turn]",
+					"Whenever an opponent misses a Melee Attack against you while it is not your [turn|Concept.Turn], gain the [Rebuke|Skill+hd_rebuke_effect] effect until the start of your next [turn|Concept.Turn]",
 					"Requires a usable [Attack of Opportunity.|Concept.ZoneOfControl] Does not work while [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]"
 				],
 			}],
@@ -1396,7 +1396,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Allies with a shield will gain the [Shieldwall effect|Skill+shieldwall_effect] for free at the start of each battle",
-					"Whenever you use a shield skill during your [turn,|Concept.Turn] all allies within " + ::MSU.Text.colorPositive(3) + " tiles who also have that skill will use it for free on a random valid tile",
+					"Whenever you use a shield skill during your [turn|Concept.Turn], all allies within " + ::MSU.Text.colorPositive(3) + " tiles who also have that skill will use it for free on a random valid tile",
 					"[Knock Back|Skill+knock_back] and [Cover Ally|Skill+rf_cover_ally_skill] can be used on empty tiles",
 				],
 			}],
@@ -1466,7 +1466,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per [round,|Concept.Round] if you use an Attack on an adjacent enemy, gain " + ::MSU.Text.colorPositive("+5") + " [Melee Defense|Concept.MeleeDefense] for every adjacent enemy until the start of your next [turn|Concept.Turn]",
+					"Once per [round|Concept.Round], if you use an Attack on an adjacent enemy, gain " + ::MSU.Text.colorPositive("+5") + " [Melee Defense|Concept.MeleeDefense] for every adjacent enemy until the start of your next [turn|Concept.Turn]",
 				],
 			}],
 		}),
@@ -1546,7 +1546,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Unlock [Half-Swording|Skill+rf_swordmaster_stance_half_swording_skill] stance which allows you to [puncture|Skill+puncture] your opponents",
 					"Unlock [Reverse Grip|Skill+rf_swordmaster_stance_reverse_grip_skill] stance which allows you to use your sword like a Mace",
-					"Unlock [Meisterhau|Skill+rf_swordmaster_stance_meisterhau_skill] stance which allows you to use the [Kick,|Skill+rf_swordmaster_kick_skill] [Push Through|Skill+rf_swordmaster_push_through_skill] and [Tackle|Skill+rf_swordmaster_tackle_skill] skills"
+					"Unlock [Meisterhau|Skill+rf_swordmaster_stance_meisterhau_skill] stance which allows you to use the [Kick|Skill+rf_swordmaster_kick_skill], [Push Through|Skill+rf_swordmaster_push_through_skill] and [Tackle|Skill+rf_swordmaster_tackle_skill] skills"
 				]
 			}],
 		}),
@@ -1561,7 +1561,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your attacks are " + ::MSU.Text.colorPositive("50%") + " less likely to hit the [Cover,|Concept.Cover] when you have no clear line of fire on your target",
+					"Your attacks are " + ::MSU.Text.colorPositive("50%") + " less likely to hit the [Cover|Concept.Cover], when you have no clear line of fire on your target",
 				],
 			}],
 		}),
@@ -1644,7 +1644,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per [round,|Concept.Round] during your [turn|Concept.Turn], if you hit an enemy with an Attack gain 1 stack, up to a maximum of 3 stacks",
+					"Once per [round|Concept.Round], during your [turn|Concept.Turn], if you hit an enemy with an Attack gain 1 stack, up to a maximum of 3 stacks",
 					"Each stack grants " + ::MSU.Text.colorPositive("+1") + " [Action Point|Concept.ActionPoints] and " + ::MSU.Text.colorPositive("10%") + " more [Initiative|Concept.Initiative]",
 					"Lose 1 stack when you [wait|Concept.Wait]",
 					"Lose 1 stack when you end your [turn|Concept.Turn] with more than half of your [Action Points|Concept.ActionPoints] remaining",
@@ -1662,7 +1662,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"When you step on a corpse, that was created this [round,|Concept.Round] take " + ::MSU.Text.colorPositive("25%") + " less Damage and become immune to [Displacement|Concept.Displacement] until the start of your next [turn|Concept.Turn]",
+						"When you step on a corpse, that was created this [round|Concept.Round], take " + ::MSU.Text.colorPositive("25%") + " less Damage and become immune to [Displacement|Concept.Displacement] until the start of your next [turn|Concept.Turn]",
 					],
 				},
 				{
@@ -1682,7 +1682,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"For every 2 tiles moved during your [turn,|Concept.Turn] your next Attack costs " + ::MSU.Text.colorPositive(-1) + " [Action Point|Concept.ActionPoints]",
+					"For every 2 tiles moved during your [turn|Concept.Turn], your next Attack costs " + ::MSU.Text.colorPositive(-1) + " [Action Point|Concept.ActionPoints]",
 					"The effect is lost when you use an attack, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
 				],
 			}],

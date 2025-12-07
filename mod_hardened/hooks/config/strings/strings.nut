@@ -33,7 +33,7 @@ local newPerks = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"If you end your turn on the same tile you started it on, become immune to [Displacement|Concept.Displacement] until the start of your next [turn|Concept.Turn]",
-						"During your [turn,|Concept.Turn] take " + ::MSU.Text.colorPositive("50%") + " less Damage from Attacks",
+						"During your [turn|Concept.Turn], take " + ::MSU.Text.colorPositive("50%") + " less Damage from Attacks",
 					],
 				},
 			],
@@ -48,9 +48,9 @@ local newPerks = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Once per [round,|Concept.Round] swapping two weapons with no shared weapon type becomes a free action",
-						"Gain " + ::MSU.Text.colorPositive("+10") + " [Melee Defense,|Concept.MeleeDefense] if you have at least " + ::MSU.Text.colorPositive("70") + " [Base|Concept.BaseAttribute] [Ranged Skill|Concept.RangeSkill]",
-						"Gain " + ::MSU.Text.colorPositive("+10") + " [Ranged Defense,|Concept.RangeDefense] if you have at least " + ::MSU.Text.colorPositive("70") + " [Base|Concept.BaseAttribute] [Melee Skill|Concept.MeleeSkill]",
+						"Once per [round|Concept.Round], swapping two weapons with no shared weapon type becomes a free action",
+						"Gain " + ::MSU.Text.colorPositive("+10") + " [Melee Defense|Concept.MeleeDefense], if you have at least " + ::MSU.Text.colorPositive("70") + " [Base|Concept.BaseAttribute] [Ranged Skill|Concept.RangeSkill]",
+						"Gain " + ::MSU.Text.colorPositive("+10") + " [Ranged Defense|Concept.RangeDefense], if you have at least " + ::MSU.Text.colorPositive("70") + " [Base|Concept.BaseAttribute] [Melee Skill|Concept.MeleeSkill]",
 					],
 				},
 			],
@@ -86,7 +86,7 @@ local newPerks = [
 					Description = [
 						"Gain [Melee Defense|Concept.MeleeDefense] equal to your [Base|Concept.BaseAttribute] [Ranged Defense|Concept.RangeDefense] against Weapon Attacks",
 						"You have " + ::MSU.Text.colorNegative("70%") + " less [Ranged Defense|Concept.RangeDefense] while engaged with someone wielding a Melee Weapon",
-						"Does not work with shields. Does not work while [disarmed,|Skill+disarmed_effect] [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]",
+						"Does not work with shields. Does not work while [disarmed|Skill+disarmed_effect], [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]",
 					],
 				},
 			],
@@ -133,7 +133,7 @@ local newPerks = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"At the start of each [turn,|Concept.Turn] recover " + ::MSU.Text.colorPositive("3%") + " [Hitpoints|Concept.Hitpoints] for each adjacent obstacle that is a tree",
+						"At the start of each [turn|Concept.Turn], recover " + ::MSU.Text.colorPositive("3%") + " [Hitpoints|Concept.Hitpoints] for each adjacent obstacle that is a tree",
 					],
 				},
 			],

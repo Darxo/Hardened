@@ -19,7 +19,7 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/action_points.png",
-				text = ::Reforged.Mod.Tooltips.parseString(format("All skills that you have not used yet this [round,|Concept.Round] cost %s [Action Point|Concept.ActionPoints]", ::MSU.Text.colorizeValue(this.m.ActionPointModifier, {InvertColor = true, AddSign = true}))),
+				text = ::Reforged.Mod.Tooltips.parseString(format("All skills that you have not used yet this [round|Concept.Round], cost %s [Action Point|Concept.ActionPoints]", ::MSU.Text.colorizeValue(this.m.ActionPointModifier, {InvertColor = true, AddSign = true}))),
 			});
 
 			local childrenElements = [];
