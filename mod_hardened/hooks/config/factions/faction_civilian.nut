@@ -153,9 +153,9 @@
 	::Const.Tactical.Actor.MilitiaCaptain.Hitpoints = 90;		// Vanilla: 70; Reforged: 80
 	::Const.Tactical.Actor.MilitiaCaptain.Bravery = 80;			// Vanilla: 70
 	::Const.Tactical.Actor.MilitiaCaptain.Stamina = 130;		// Vanilla: 120
-	::Const.Tactical.Actor.MilitiaCaptain.MeleeSkill = 75;		// Vanilla: 60; Reforged: 70
+	::Const.Tactical.Actor.MilitiaCaptain.MeleeSkill = 70;		// Vanilla: 60; Reforged: 70
 	::Const.Tactical.Actor.MilitiaCaptain.RangedSkill = 50;
-	::Const.Tactical.Actor.MilitiaCaptain.MeleeDefense = 20;	// Vanilla: 10; Reforged: 15
+	::Const.Tactical.Actor.MilitiaCaptain.MeleeDefense = 15;	// Vanilla: 10; Reforged: 15
 	::Const.Tactical.Actor.MilitiaCaptain.RangedDefense = 10;	// Vanilla: 0; Reforged: 0
 	::Const.Tactical.Actor.MilitiaCaptain.Initiative = 100;		// Vanilla: 100
 }
