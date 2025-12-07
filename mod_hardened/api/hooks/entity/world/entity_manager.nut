@@ -6,7 +6,8 @@
 		local mockObject = ::Hardened.mockFunction(::Math, "min", function( _a, _b ) {
 			if (_a == 330 && _b == 150 + ::World.getTime().Days)
 			{
-				return { done = true, value = 150 * ::Hardened.Global.getWorldDifficultyMult() };
+				local newResources = 150 * ::Hardened.Global.getWorldDifficultyMult() * ::Hardened.Global.FactionDifficulty.Mercenaries;
+				return { done = true, value = newResources };
 			}
 		});
 
