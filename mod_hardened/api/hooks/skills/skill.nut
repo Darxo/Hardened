@@ -20,6 +20,11 @@
 	q.m.HD_LastsForRounds <- null;	// When not null, this will decrement at the end of each round and remove this skill, when it reaches 0
 	q.m.HD_KnockBackDistance <- 1;	// [SoftReset] Might be used by certain active skills to determine, how far they knock back a target
 
+	// If true, then trying to add this skill to a character who already has it, has no effect
+	// In Vanilla, setting IsStacking to false was enough to archieve this, but with Stack-Based-Skills, that no longer works and those skills are added anyways
+	// Note: if added via item::addSkill, then these duplicate skills still get added to the items m.SkillPtrs array. But there they should not cause any issues
+	q.m.HD_IsUnique <- false;
+
 	// Private
 	q.m.HD_RoundLastUsed <- null;	// This is set to the current round whenever the skills onUse is called
 	q.m.HD_Temp_IsFree <- false;	// Ignore fatigue and action point cost during isAffordable check
