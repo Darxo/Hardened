@@ -232,7 +232,7 @@
 // scripts/entity/tactical/humans/knight
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Knight.XP = 720;
+	::Const.Tactical.Actor.Knight.XP = 840;
 	::Const.Tactical.Actor.Knight.ActionPoints = 9;
 	::Const.Tactical.Actor.Knight.Hitpoints = 150;
 	::Const.Tactical.Actor.Knight.Bravery = 70;
@@ -247,7 +247,7 @@
 // scripts/entity/tactical/humans/rf_knight_anointed
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_KnightAnointed.XP = 960;
+	::Const.Tactical.Actor.RF_KnightAnointed.XP = 1200;
 	::Const.Tactical.Actor.RF_KnightAnointed.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_KnightAnointed.Hitpoints = 170;
 	::Const.Tactical.Actor.RF_KnightAnointed.Bravery = 80;

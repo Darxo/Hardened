@@ -875,8 +875,8 @@
 // scripts/entity/tactical/humans/knight
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.Knight.Cost = 60;
-	::Const.World.Spawn.Troops.Knight.Strength = 60;
+	::Const.World.Spawn.Troops.Knight.Cost = 70;
+	::Const.World.Spawn.Troops.Knight.Strength = 70;
 }
 
 // scripts/entity/tactical/enemies/skeleton_heavy
@@ -945,8 +945,8 @@
 // scripts/entity/tactical/humans/rf_knight_anointed
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_KnightAnointed.Cost = 80;
-	::Const.World.Spawn.Troops.RF_KnightAnointed.Strength = 80;
+	::Const.World.Spawn.Troops.RF_KnightAnointed.Cost = 100;
+	::Const.World.Spawn.Troops.RF_KnightAnointed.Strength = 100;
 }
 
 // scripts/entity/tactical/enemies/rf_skeleton_legatus
