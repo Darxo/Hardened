@@ -269,6 +269,21 @@
 	::Const.Tactical.Actor.Zombie.Initiative = 50;		// Vanilla: 45
 }
 
+// scripts/entity/tactical/enemies/zombie_player
+{
+	// Mandatory stats
+	::Const.Tactical.Actor.ZombiePlayer.XP = 150;				// Vanilla: 150
+	::Const.Tactical.Actor.ZombiePlayer.ActionPoints = 6;		// Vanilla 6
+	::Const.Tactical.Actor.ZombiePlayer.Hitpoints = 120;		// Vanilla: 130
+	::Const.Tactical.Actor.ZombiePlayer.Bravery = 100;			// Vanilla: 100
+	::Const.Tactical.Actor.ZombiePlayer.Stamina = 200;			// Vanilla: 100
+	::Const.Tactical.Actor.ZombiePlayer.MeleeSkill = 50;		// Vanilla: 50
+	::Const.Tactical.Actor.ZombiePlayer.RangedSkill = 0;		// Vanilla: 0
+	::Const.Tactical.Actor.ZombiePlayer.MeleeDefense = 5;		// Vanilla: 5
+	::Const.Tactical.Actor.ZombiePlayer.RangedDefense = 5;		// Vanilla: 5
+	::Const.Tactical.Actor.ZombiePlayer.Initiative = 50;		// Vanilla: 50
+}
+
 // scripts/entity/tactical/enemies/zombie_yeoman
 // scripts/entity/tactical/enemies/zombie_yeoman_bodyguard
 {
