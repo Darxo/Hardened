@@ -103,7 +103,7 @@
 	q.onTargetHit = @(__original) function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		__original(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor)
-		if (this.isSkillValid(_skill) && ::Time.getRound() != this.m.RoundWhenStackGained)
+		if (::Time.getRound() != this.m.RoundWhenStackGained && this.isSkillValid(_skill) && this.getContainer().getActor().isActiveEntity())
 		{
 			this.m.RoundWhenStackGained = ::Time.getRound();
 			this.setStacks(this.m.Stacks + 1);
