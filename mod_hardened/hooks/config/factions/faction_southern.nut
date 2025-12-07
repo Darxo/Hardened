@@ -75,7 +75,7 @@
 	// Mandatory stats
 	::Const.Tactical.Actor.Executioner.XP = 400;
 	::Const.Tactical.Actor.Executioner.ActionPoints = 9;
-	::Const.Tactical.Actor.Executioner.Hitpoints = 150;
+	::Const.Tactical.Actor.Executioner.Hitpoints = 120;
 	::Const.Tactical.Actor.Executioner.Bravery = 90;
 	::Const.Tactical.Actor.Executioner.Stamina = 160;
 	::Const.Tactical.Actor.Executioner.MeleeSkill = 85;
