@@ -263,7 +263,7 @@
 	::Const.Tactical.Actor.RF_BanditKiller.RangedSkill = 80;
 	::Const.Tactical.Actor.RF_BanditKiller.MeleeDefense = 10;
 	::Const.Tactical.Actor.RF_BanditKiller.RangedDefense = 10;
-	::Const.Tactical.Actor.RF_BanditKiller.Initiative = 120;
+	::Const.Tactical.Actor.RF_BanditKiller.Initiative = 140;
 
 	// Optional Stats
 	::Const.Tactical.Actor.RF_BanditKiller.Vision <- 8;
