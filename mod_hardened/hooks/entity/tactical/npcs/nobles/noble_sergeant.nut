@@ -57,7 +57,7 @@
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_steel_brow"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_crippling_strikes"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_small_target"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_the_rush_of_battle"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_exude_confidence"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_parry"));
