@@ -17,6 +17,10 @@
 // Adjusted Reforged Values
 ::Const.Morale.RF_AllyFleeingBraveryModifierPerAlly = 0;	// In Reforged this is 1
 
+// Adjusting Modular Vanilla Values
+// Vanilla Fix: Revert hidden vanilla 1.25 threshold multiplier for headshots
+::Const.Combat.MV_HeadshotInjuryThresholdMult = 1.0;	// Modular Vanilla: 1.25
+
 // Overwrite vanilla function
 // The minimum vision of any character is now 2 (up from 1)
 // A few AI scripts access this.Vision directly, instead of using this getter. Those are currently unaffected by this change

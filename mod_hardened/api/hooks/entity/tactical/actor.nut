@@ -52,16 +52,6 @@
 		return __original();
 	}
 
-	q.onDamageReceived = @(__original) function( _attacker, _skill, _hitInfo )
-	{
-		if (_hitInfo.BodyPart == ::Const.BodyPart.Head)
-		{
-			// Vanilla Fix: Revert hidden vanilla 1.25 threshold multiplier for headshots
-			_hitInfo.InjuryThresholdMult *= 0.8;
-		}
-		__original(_attacker, _skill, _hitInfo);
-	}
-
 	q.onInit = @(__original) function()
 	{
 		__original();
