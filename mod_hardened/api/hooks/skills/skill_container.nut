@@ -40,26 +40,6 @@
 		return ret;
 	}
 
-	q.add = @(__original) function( _skill, _order = 0 )
-	{
-		// A skill that is considered HD_IsUnique will not be added, if already present
-		// Thiis is similar to the vanilla IsStacking = false behavior but with Stack-Based-Skills that does not work anymore
-		if (_skill.m.HD_IsUnique)
-		{
-			foreach (i, skill in this.m.Skills)
-			{
-				if (!skill.isGarbage() && skill.getID() == _skill.getID()) return;
-			}
-
-			foreach (i, skill in this.m.SkillsToAdd)
-			{
-				if (!skill.isGarbage() && skill.getID() == _skill.getID()) return;
-			}
-		}
-
-		__original(_skill, _order);
-	}
-
 // New Events
 	/// _skill is the new skill that was just added to this skill_container
 	q.onOtherSkillAdded <- function( _skill )

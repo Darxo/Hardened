@@ -126,4 +126,20 @@
 			this.m.DirectDamageAdd += 0.1;
 		}
 	}
+
+	q.onEquip = @(__original) function()
+	{
+		if (!("IsLoaded" in this)) return __original();
+
+		local oldIsLoaded = this.m.IsLoaded;
+		if (_item.isWeaponType(::Const.Items.WeaponType.Crossbow) || _item.isWeaponType(::Const.Items.WeaponType.Firearm))
+		{
+			// Setting this to true prevents Vanilla and any mod from adding an additional redundant reload_bolt skill to this actor
+			this.m.IsLoaded = true;
+		}
+
+		__original();
+
+		this.m.IsLoaded = oldIsLoaded;
+	}
 });

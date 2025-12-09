@@ -3,9 +3,6 @@
 	{
 		__original();
 		this.m.ActionPointCost = 5;		// Vanilla: 4
-
-	// Hardened
-		this.m.HD_IsUnique = true;		// Vanilla adds this skill multiple times over the course of a battle. We only ever want one instance to prevent a MSU log spam about FatigueCost
 	}
 
 	q.onUse = @(__original) function( _user, _targetTile )
