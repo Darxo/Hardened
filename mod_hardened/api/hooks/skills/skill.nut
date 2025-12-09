@@ -12,6 +12,7 @@
 
 ::Hardened.HooksMod.hook("scripts/skills/skill", function(q) {
 	// Public
+	q.m.StunChance <- 0;	// We add this to all skills, so it's easier to read it out, especially for AI scripts
 	q.m.HD_Cooldown <- 0;	// This skill can only be used if HD_RoundLastUsed is null or atleast this many rounds ago
 	q.m.IsHidingIconMini <- false;	// If set to true, then the IconMini will be treated as if it was an empty string and never display
 	q.m.HD_IgnoreForCrowded <- false;	// When true, then this skill will not be affected by crowded, even if it passes all other conditions for that
