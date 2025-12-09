@@ -1420,11 +1420,12 @@ local adjustedDescriptions = [
 		ID = "perk.rf_small_target",
 		Key = "RF_SmallTarget",
 		Description = ::UPD.getDescription({
-			Fluff = "Training against melons of all types has given you a penchant for hitting heads!",
+			Fluff = "You know how fragile a head can be.",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					::MSU.Text.colorPositive("+10%") + " [chance to hit the head|Concept.ChanceToHitHead]",
+					::MSU.Text.colorPositive("+10%") + " chance to [hit the head|Concept.ChanceToHitHead]",
+					::MSU.Text.colorPositive("-10%") + " chance to take a [hit to the head|Concept.ChanceToHitHead]",
 				],
 			}],
 		}),
