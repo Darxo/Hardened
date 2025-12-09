@@ -16,7 +16,6 @@
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/greenskins/orc_metal_club"],
 			[12, "scripts/items/weapons/goedendag"],
-			[12, "scripts/items/weapons/two_handed_wooden_flail"],
 		]);
 	}
 
