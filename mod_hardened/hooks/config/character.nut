@@ -13,6 +13,9 @@
 	14500,	// Vanilla: 12000
 	18500,	// Vanilla: 15000
 ];
+::Const.Combat.GlobalXPMult = 1.0;		// Vanilla: 0.85
+::Const.Combat.SpawnArrowDecalAttempts = 10;	// In Vanila this is 3; potentially causing several missiles producing now decal on impact. Not sure why though
+::Const.Combat.WeaponSpecFatigueMult = 1.0;		// We set this to 1.0 to deactivate the vanilla/modular-vanilla way of applying the fatigue discount
 
 // Adjusted Reforged Values
 ::Const.Morale.RF_AllyFleeingBraveryModifierPerAlly = 0;	// In Reforged this is 1
@@ -126,11 +129,6 @@ local oldGetClone = ::Const.CharacterProperties.getClone;
 	local staminaMult = (this.Stamina >= 0) ? this.StaminaMult : (1 / this.StaminaMult);
 	return ::Math.floor(this.Stamina * staminaMult);
 }
-
-// Const.Combat
-::Const.Combat.GlobalXPMult = 1.0;		// Vanilla: 0.85
-::Const.Combat.SpawnArrowDecalAttempts = 10;	// In Vanila this is 3; potentially causing several missiles producing now decal on impact. Not sure why though
-::Const.Combat.WeaponSpecFatigueMult = 1.0;		// We set this to 1.0 to deactivate the vanilla/modular-vanilla way of applying the fatigue discount
 
 // Corpse
 ::Const.Corpse.HD_CorpseTouched <- 0;	// Used during resurrection to prevent recursions from usage of mockFunction
