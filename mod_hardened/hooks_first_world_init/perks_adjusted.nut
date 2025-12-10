@@ -538,7 +538,7 @@ local adjustedDescriptions = [
 		ID = "perk.underdog",
 		Key = "Underdog",
 		Description = ::UPD.getDescription({
-			Fluff = "I\'m used to it.",
+			Fluff = "\'I\'m used to it.\'",
 	 		Effects = [{
  				Type = ::UPD.EffectType.Passive,
  				Description = [
@@ -652,8 +652,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"While not engaged in melee, whenever you attack, trigger a Positive [Morale Check|Concept.Morale] for adjacent members of your company.",
-					"Each Attack can make at most one adjacent ally [Confident|Skill+hd_dummy_morale_state_confident].",
+					"While not engaged in melee, whenever you attack, trigger a Positive [Morale Check|Concept.Morale] for adjacent members of your company",
+					"Each Attack can make at most one adjacent ally [Confident|Skill+hd_dummy_morale_state_confident]",
 				],
 			}],
 		}),

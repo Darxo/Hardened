@@ -183,11 +183,12 @@
 	{
 	}
 
+	// This event is only called directly before a skills onUse was executed
 	q.onReallyBeforeSkillExecuted <- function( _skill, _targetTile )
 	{
 	}
 
-	// This event is only called directly after a skills
+	// This event is only called directly after a skills onUse was executed
 	/// _success is the return value of the vanilla onUse function
 	q.onReallyAfterSkillExecuted <- function( _skill, _targetTile, _success )
 	{

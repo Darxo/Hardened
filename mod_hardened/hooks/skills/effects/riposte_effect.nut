@@ -54,6 +54,7 @@
 	}
 
 	// Override: This effect no longer sets the IsRiposting flag to true. The underlying behavior is now implemented inside this skill instead
+	// We now purely rely on RiposteSkillCounter to prevent multiple riposte-like effects to trigger at the same time
 	q.onUpdate = @() function( _properties )
 	{
 		_properties.MeleeDefense += this.m.MeleeDefenseModifier;

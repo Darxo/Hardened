@@ -1,7 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_nimble", function(q) {
 	q.getTooltip = @(__original) function()
 	{
-		local ret = __original()
+		local ret = __original();
 
 		// Remove the existing tooltips
 		for (local index = (ret.len() - 1); index >= 0; index--)

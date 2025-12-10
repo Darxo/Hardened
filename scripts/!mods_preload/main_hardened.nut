@@ -3,8 +3,8 @@
 	Name = "Hardened",
 	Version = "1.5.6",
 	GitHubURL = "https://github.com/Darxo/Hardened",
-	Temp = {	// Used to globally store variables between function calls to implement more advanced, albeit hacky behavior
-		RootSkillCounter = null,	// This variable will have the SkillCounter of the root skills during the execution of any skill executions and delayed executions
+	Temp = {	// Used to globally store variables between function calls to implement more advanced, albeit hacky behaviors
+		RootSkillCounter = null,	// This variable will have the SkillCounter of the root skills during the execution of any skill and any delayed executions
 	},
 	Const = {},
 	Global = {},
