@@ -15,6 +15,40 @@
 
 		return ret;
 	}
+
+	q.getHealingTime = @(__original) function()
+	{
+		// We mock .::World.Retinue.hasFollower to have it always return false, when checking for the surgeon
+		// That way, we disable its ability to reduce the injury timer
+		local mockObject = ::Hardened.mockFunction(::World.Retinue, "hasFollower", function( _id ) {
+			if (_id == "follower.surgeon")
+			{
+				return { done = true, value = false };
+			}
+		});
+
+		local ret = __original();
+
+		mockObject.cleanup();
+
+		return ret;
+	}
+
+	q.onNewDay = @(__original) function()
+	{
+		// We mock .::World.Retinue.hasFollower to have it always return false, when checking for the surgeon
+		// That way, we disable its ability to reduce the injury timer
+		local mockObject = ::Hardened.mockFunction(::World.Retinue, "hasFollower", function( _id ) {
+			if (_id == "follower.surgeon")
+			{
+				return { done = true, value = false };
+			}
+		});
+
+		__original();
+
+		mockObject.cleanup();
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/skills/injury/injury", function(q) {

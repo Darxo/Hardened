@@ -2,6 +2,14 @@
 	// Public
 	q.m.HD_RequiredTreatedInjuries <- 5;
 
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.Cost = 3000;		// Vanilla: 3500
+		this.m.Effects.remove(1);	// We remove the entry about injuries taking one day less to heal
+	}
+
 	// Overwrite, because we change the condition the requirement text, and make it more moddable
 	q.onEvaluate = @() function()
 	{
