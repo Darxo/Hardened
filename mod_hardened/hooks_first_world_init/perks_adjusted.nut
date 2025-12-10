@@ -464,7 +464,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Throwing Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue]",
 					"Your first Throwing Attack each [round|Concept.Round] deals " + ::MSU.Text.colorizeMultWithText(1.3) + " damage",
-					"Once per [round|Concept.Round], swapping a Throwing Weapon with an empty Throwing Weapon or an empty slot becomes a free action",
+					"Once per [round|Concept.Round], after you use a Throwing Attack, swapping any item becomes a free action",
 				],
 			}],
 		}),

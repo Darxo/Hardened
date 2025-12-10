@@ -5,8 +5,41 @@
 	q.m.HD_FatigueCostMult <- 0.75;
 
 	// Private
-	q.m.IsQuickSwitchSpent <- false;		// Is quickswitching spent this turn?
+	q.m.GainedQuickSwitchThisRound <- false;
+	q.m.HasQuickSwitch <- false;
 	q.m.SkillCounter <- null;	// This is used to bind this perk_mastery_throwing effect to the root skill that it will empower and rediscover it even through delays
+
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.Description = "Master throwing weapons to wound or kill the enemy before they even get close";
+		this.m.Icon = "ui/perks/perk_50.png";	// Vanilla: "ui/perks/perk_10.png"; which is the Anticipation Icon
+		this.addType(::Const.SkillType.StatusEffect);	// We add StatusEffect so that this perk can produce a status effect icon
+	}
+
+	// Overwrite, because Vanilla defines no tooltips for this perk
+	q.getTooltip = @() function()
+	{
+		local ret = this.skill.getTooltip();
+
+		if (this.m.HasQuickSwitch)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Swapping any item is a free action this [round|Concept.Round]"),
+			});
+		}
+
+		return ret;
+	}
+
+	q.isHidden = @() function()
+	{
+		return !this.m.HasQuickSwitch;
+	}
 
 	q.onAfterUpdate = @(__original) function( _properties )
 	{
@@ -41,70 +74,66 @@
 	// Overwrite to turn off Reforged onHit effects
 	q.onTargetHit = @() function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor ) {}
 
+	q.onNewRound = @(__original) function()
+	{
+		__original();
+		this.m.GainedQuickSwitchThisRound = false;
+		this.m.HasQuickSwitch = false;
+	}
+
 	q.onTurnStart = @(__original) function()
 	{
 		__original();
-		this.m.IsQuickSwitchSpent = false;
 		this.m.SkillCounter = null;
 	}
 
 	q.onCombatFinished = @(__original) function()
 	{
 		__original();
-		this.m.IsQuickSwitchSpent = true;
+		this.m.GainedQuickSwitchThisRound = false;
+		this.m.HasQuickSwitch = false;
 		this.m.SkillCounter = null;
 	}
 
 	q.onPayForItemAction = @(__original) function( _skill, _items )
 	{
 		__original(_skill, _items);
-		if (_skill == this) this.m.IsQuickSwitchSpent = true;
+		if (_skill == this) this.m.HasQuickSwitch = false;
 	}
 
 	// You can now swap a throwing weapon with an empty slot or an empty throwing weapon
 	q.getItemActionCost = @(__original) function( _items )
 	{
-		if (this.m.IsQuickSwitchSpent) return null;
+		if (!this.m.HasQuickSwitch) return null;
 
-		// Currently we have no guarantee about how _items actually looks like or whether it contains elements, see https://github.com/MSUTeam/MSU/issues/435
-		if (_items.len() == 0) return null;
-
-		local sourceItem = _items[0];
-		local targetItem = _items.len() > 1 ? _items[1] : null;
-
-		if (sourceItem == null)		// Fix for when other mods break convention and instead have the first item in the array be the destination item (e.g. Extra Keybinds)
+		local involvedItems = 0;
+		foreach (item in _items)
 		{
-			sourceItem = targetItem;
-			targetItem = null;
+			if (item != null) involvedItems++;
 		}
+		if (involvedItems > 2) return null;
 
-		if (sourceItem.isItemType(::Const.Items.ItemType.Weapon) && sourceItem.isWeaponType(::Const.Items.WeaponType.Throwing))
-		{
-			if (targetItem == null)	// Either the target is an empty slot
-			{
-				return 0;
-			}
-
-			if (targetItem.isItemType(::Const.Items.ItemType.Weapon) && targetItem.isWeaponType(::Const.Items.WeaponType.Throwing))
-			{
-				if ((sourceItem.m.Ammo == 0 && sourceItem.m.AmmoMax != 0) || (targetItem.m.Ammo == 0 && targetItem.m.AmmoMax != 0))	// Or either of the two throwing weapons uses ammunition and is empty
-				{
-					return 0;
-				}
-			}
-		}
-
-		return null;
+		return 0;
 	}
 
 // Hardened Functions
 	q.onReallyBeforeSkillExecuted <- function( _skill, _targetTile )
 	{
-		if (this.isSkillValidForDamageBonus(_skill) && this.m.SkillCounter == null && ::Const.SkillCounter == ::Hardened.Temp.RootSkillCounter)
+		if (!this.isSkillValidForDamageBonus(_skill)) return;
+
+		if (this.m.SkillCounter == null && ::Const.SkillCounter == ::Hardened.Temp.RootSkillCounter)
 		{
 			this.m.SkillCounter = ::Hardened.Temp.RootSkillCounter;	// We bind this effect to the root skill so that we affect all child executions of this chain
 		}
+
+		if (!this.m.GainedQuickSwitchThisRound)
+		{
+			this.m.GainedQuickSwitchThisRound = true;
+			this.m.HasQuickSwitch = true;
+		}
 	}
+
+		// Our effect allows quickswitching of any type of item and even grants a discount when swapping 3 t
 
 // New Functions
 	q.isSkillValidForDamageBonus <- function( _skill )
