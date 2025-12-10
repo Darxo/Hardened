@@ -26,6 +26,128 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.6.0
+	- Locations now only use randomly between 75% and 100% of their available resources to spawn defenders (just like in Vanilla), instead of always using 100% of their resources
+	- Player Characters now gain 100% XP from combat (up from 85%)
+	- XP Requirements for levels 7, 8, 9, 10 and 11 are increased so that you reach level 11 slightly later than before
+	- Base Vision for the player and all world parties is now 450 (down from 500)
+	- World Difficulty now increases by 1,3% per day (up from 1%) up to maximum of 400% more (up from 300% more)
+	- All major factions now have a global difficulty multiplier, which scales their available resources and therefor decides how strong they are compared to each other
+		- These difficulty multiplier now influence the resources those factions have available for generating defenders in their locations and sending out world parties
+	- **Combo** no longer counts skills you use, while it is not your turn (e.g. riposte/rebuke attacks)
+	- **Death Dealer** now also removes all rooted effects from you, whenever you use an AoE Attack
+	- Each attack with **Bolster** can now only make at most one ally confident
+	- **Full Force** now also increases your Shield Damage by the same percentage
+	- **Throwing Mastery** now allows swapping any items for free, oncer per round, but only after you used a Throwing Attack
+	- **Unstoppable** now only grants stacks when you hit an enemy during your turn
+	- **Small Target** now also reduces the chance to take a hit to the head by 10%
+	- **Vigorous Perk Group** loses **Decisive** and gains **Exude Confidence**
+	- **Soldier Perk Group** loses **Exude Confidence** and gains **Decisive**
+	- **Deathblow** now costs 15 Fatigue (up from 10)
+	- **Demolish Armor** now deals 60% more Armor Damage (up from 45% more)
+	- **Throw Fire Bomb** now only marks tiles for impact, if they would be affected by its fire damage. You can no longer throw it on a tile, if no tiles in the impact zone would be affected
+	- Helmets which have both a cloth and a padded variant have their cloth variant no longer spawn (instead those spawn as padded variants)
+	- **Battle Axe** now deals 60-80 Damage (up from 50-70), 32 Shield Damage (up from 26), has 10 Weight (down from 14), 140% Armor Damage (up from 125%), 0% Headshot Chance (down from 5%) and costs 1200 Crowns (down from 1950). It now has the skills **Split Man**, **Round Swing** and **Split Shield** with no discount. Named **Battle Axes** will no longer appear
+	- **Berserk Chain** now deals 65-100 Damage (up from 50-100)
+	- **Halberd** loses the **Polearm** weapon type, has 14 Weight (down from 16) and costs 1600 Crowns (down from 2500). It now has the skills **Strike** (same skill as **Long Axe**) and **Demolish Armor**
+	- **Military Pick** now has 10 Weight (up from 8)
+	- **Poleaxe** and its named versions can no longer be bought or found
+	- **Pickaxe** now has 12 Weight (up from 10)
+	- **Two-Handed Flail** now deals 55-90 Damage (up from 45-90) and costs 1800 Crowns (up from 1400)
+	- **Two-Handed Wooden Flail** now deals 35-65 Damage (up from 30-60) and costs 600 Crowns (up from 500)
+	- **Warhammer** now has 12 Weight (up from 8)
+	- Vastly improve likelyhood of successuly placing settlements by having each settlement consider every valid tile, instead of just 3000 random ones
+	- Settlements which would spawn exactly 1 tile from a coast or ocean will now instead spawn directly next to that coast or ocean
+	- Large Forts and Large Settlements now need a distance of 22 Tiles between each other (up from 12)
+	- Medium Forts, Medium Settlements and Small Forts now need a distance of 14 Tiles between each other (up from 12)
+	- Small Settlements now need a distance of 10 Tiles between each other (down from 12)
+	- During Map Generation: City States are now placed first, followed by Large Forts and Large Settlements, followed by Medium Forts and Medium Settlements, followed by Small Forts and Small Settlements, followed by any other settlements. As a result, larger settlements are more evenly spread out across the map, while smaller settlements fill the gaps
+	- Unique Locations that are not invisible now always have a VisibilityMult of 1.0, no matter what tile they are standing on, causing you to always discover them when they enter your field of view
+	- Resources of Settlements now scale 100% with the WorldDifficulty (up from 50% of it)
+	- The attached locations **Barracks** (350 Resources), **Militia Barracks** (200 Resources), **Southern Militia Barracks** (350 Resources), **Wooden Watchtower** (210 Resources), **Stone Watchtower** (280 Resources) and **Southern Stone Watchtower** (280 Resources) are now attackable. They drop supplies and may also contain named items
+	- All non-unique world locations now have standardized resources, influenced by the aforementioned faction difficulty multipliers. [Visual Overview Here](https://docs.google.com/spreadsheets/d/1fOc6TcgiVm9P_iOyVoqwYNoXETsnuc9I_4YbblBHV18/edit?gid=2122483876#gid=2122483876). The following resources already include these difficulty multiplier:
+		- Bandit Hideouts now have 100 Resources (up from 80)
+		- Bandit Camps now have 200 Resources (up from 180)
+		- Bandit Forts now have 250 Resources (down from 300)
+		- Barbarian Shelters now have 120 Resources (up from 80)
+		- Barbarian Camps now have 240 Resources (up from 200)
+		- Barbarian Sancutaries now have 300 Resources (down from 325)
+		- Goblin Hideouts now have 120 Resources (up from 80)
+		- Goblin Camps now have 180 Resources (up from 150)
+		- Goblin Outposts now have 240 Resources (up from 200)
+		- Goblin Ruins now have 180 Resources (up from 150)
+		- Goblin Settlements now have 300 Resources (down from 350)
+		- Nomad Tents now have 100 Resources (up from 70)
+		- Nomad Hidden Camps now have 200 Resources (up from 180)
+		- Nomad Tent Cities now have 250 Resources (down from 300)
+		- Orc Hideouts now have 140 Resources (up from 120)
+		- Orc Caves now have 210 Resources (up from 150)
+		- Orc Ruins now have 210 Resources (up from 150)
+		- Orc Camps now have 280 Resources (up from 225)
+		- Undead Mass Graves now have 240 Resources (up from 200)
+		- Undead Buried Castles now have 300 Resources (down from 350). They can now spawn up to 15 tiles from the nearest settlement (down from 20) and can now also spawn on steppe and desert
+		- Undead Ruins spawning in the Desert now have 180 Resources (up from 150)
+		- Undead Hideouts now have 100 Resources (up from 80)
+		- Undead Graveyards now have 150 Resources (up from 120)
+	- Increase the BuildCampTries to 3 (up from 1) increasing the odds of camps with stricter placement to be built
+	- **Undead Faction** (skeletons + vampires) now builds up to 12 settlements by default (down from 15) and up to 17 during the undead crisis (down from 23)
+	- **Ancient Praetorians** now spawn with a **Ancient Legionary Helmet** instead of a **Ancient Honor Guard Helmet**
+	- **Brigand Killer** now has 140 Initiative (up from 120)
+	- **Brigand Outlaw** can now spawn with **Two-Handed Wooden Flail**
+	- **Brigand Pillager** no longer spawn with **Two-Handed Wooden Flail**
+	- **Lindwurms** now cost 150 Resources (up from 120)
+	- **Militia Captain** now has 70 Melee Skill (down from 75) and 15 Melee Defense (down from 20)
+	- **Noble Anointed Knight** now costs 100 Resources (up from 80)
+	- **Noble Halberdier** now always gain **Crippling Strikes** no matter the equipped weapon. Those spawning with a **Halberd** lose **Polearm Mastery**, **Long Reach** and **Leverage** and gain **Axe Mastery** and **Dismemberment**. Those spawning with a **Polehammer** lose **Breakthrough** and gain **Full Force**
+	- **Noble Knights** now cost 70 Resources (up from 60)
+	- **Noble Marshalls** lose **Crippling Strikes** and gain **Small Target**
+	- **Noble Sergeants** lose **Crippling Strikes** and gain **Small Target**
+	- **Noble Squires** now cost 35 Resources (up from 30)
+	- **Nomad Executioner** now have120 Hitpoints (down from 150)
+	- **Oathbringer** NPCs are now redesigned with Hardened perks in mind
+	- **Orc Warlords** cost 100 Resources (up from 90)
+	- **Orc Warriors** now have 70 Resolve (down from 80) and cost 60 Resources (up from 55)
+	- Reanimated Humans how have 120 Hitpoints (down from 130) and 200 Stamina (up from 100)
+	- Orc Berserker now have a `EngageMultipleOpponentsMult` of 0.5, (up from -1.0) making them less likely to engage multiple enemies at a time. This might also fix some undefined choices caused by the use of a negative value
+	- Improve performance of `ai_attack_bow` script
+	- NPCs no longer care, if an obstacle obstructs clear line of Sight. This is already implicitely handled by the calculated hitchance anyways
+	- NPCs no longer consider Rebuke twice in their decision making
+	- NPCs are now 40% less likely to attack into an active Rebuke (down from 50% less). They will now ignore this penalty, if their attack could not trigger a rebuke attack
+	- **Phylacteries** (Sunken Library Fight) now remain visible after you discovered them once
+	- **Surgeon Follower** no longer lowers the duration of injuries on your brothers and now costs 3000 Crowns (down from 3500)
+	- **Thief Background** can now roll a maximum Ranged Defense of 10 (down from 13)
+	- Regular Caves now have 180 Resources (up from 140)
+	- Caves with larger beasts (Lindwurms, Unholds) now have 240 Resources (up from 210)
+	- Witch Huts now have 280 Resources (up from 210)
+	- Improve World Figures and Orientation Icons of Brigand Scoundrel, Brigand Thug, Brigand Vandal, Brigand Pillager, Brigand Outlaw and Brigand Marauder to match better with the new appearance they have
+	- Play bleed animation whenever a bleeding character takes damage from bleeding. The animation scales with the number of bleed stacks
+	- Play new sound effect, when discovering a unique location on the world map
+	- Play unique sound effect, when crafting potions, elixirs, oils or antidote in the taxidermist
+	- Add setting (on) for showing your uncapped hitchance during combat, when it would exceed the maximum possible hitchance
+	- **Undead Hideouts** now show their banner
+	- Display reason when the owner of a faction loses relation with you, because you lose relation with that faction
+	- Increase the duration for which the deathskull animation over a slain brother stays up
+	- Improve **Turn** concept
+	- Shorten **Reach** tooltip line on weapons
+	- Improve description of Nine Lives Perk and Effect Tooltip
+	- Update attached location relation color whenever settlement relation with player updates
+	- Move all commas out of hyperlinks in descriptions
+	- Fix infinite money exploit when buying back loot items after leaving and re-entering a town
+	- Fix resurrected entities rarely not gaining weapon skills and being unable to attack
+	- Fix potential cause for world NPCs sometimes fighting "invisible enemies" and producing multiple battle sites in the process
+	- Fix **Metzger** not mentioning, that it does not work with a Fencing Sword
+	- Fix(Vanilla) noble troops spawning for a settlement faction, failing to spawn tabards during combat and glitching out
+	- Fix(Vanilla) contracts rarely triggering start function multiple times
+	- Fix(Vanilla) undead faction spawning zombie locations (it is the job of the zombie faction to spawn their locations)
+	- Add `CREDITS.md` in root directory, giving an overview over used artwork and soundeffects
+	- Automatically include `_config.nut` file, if it exists in the data folder for quickly applying personalized squirrel changes
+	- Add `::Hardened.Global.FactionDifficulty` table with resource multipliers for all notable factions in the game, which can be modified
+	- `ContractScalingBase = 1.0` and `WorldScalingBase = 1.0` are now multiplicatively with Day/Renown scaling (instead of additively)
+	- Reroll named loot whenever an attached location is repaired again
+	- Add `attached_location.m.IsRaidable` which makes the attached location attackable, causes it to spawn defenders and makes it spawn a defender tooltip
+	- Add `skill.m.HD_IsUnique = false`, which can be flipped to `true` to prevent skills from being added to an entity, if the same skill is already present
+	- Trigger `onSpawned` for `attached_location` whenever it is assigned to a settlement
+
 1.5.6
 	- Fix(Vanilla) Ranged AI ignoring hitchance and expected damage, when calculating the best target to attack
 	- Fix Contracts twists sometimes causing the contract to not be completable

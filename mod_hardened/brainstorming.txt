@@ -192,12 +192,14 @@
 
 
 {	// Animation
+	- animation for when bone plating breaks. Like parry but much rougher bigger and granular material flying away
+	- reduce particle amount on tile particles while the cursor is near?
+	- impact animation for handgonne on all affected tiles (slight sweeping fire particle animation)
+	- animate fireplace object
 	- rabies saliva effect on frenzied direwolf/hyenas
-	- continuous bleed animation if a certain amount of bleed stacks are accumulated on an enemy
 	- smoke bomb on snow is hard to spot
 	- parry fx that spawns towards north, might need to be rendered behind the parry guy (e.g. for the tile on top of him instead of his tile)
 	- turn any corpse that is not reanimating and that cant be reanimated (beats or headless corpses) into a pale/grey/low saturation tone, to make it stand further apart from alive ones
-	- bleed animation/effect when inflicting bleed with **Sanguinary**?
 	- trigger smoke effect whenever a brother with **Ghostlike** dodges an attack during their turn
 	- mortar impact animation, when shockwave or full force trigger
 	- projectile for throw net
@@ -222,15 +224,7 @@
 	- If thrower uses last throwing weapon, mak them switch to melee weapon immediately
 	- make NPCs with Formidable Approach more likely to move to tiles with adjacent enemies which they dont yet have in their list or which are confident with less max HP
 	- Fix orcs sometimes using charge, even though they decided to give up
-	- improve orc berserker AI to use stun charge too
-		- their weird choice of setting EngageTargetMultipleOpponentsMult = -1.0,
-			- makes it so the resulting ScoreMult is negative with odd numbers of ZoC enemies and positive with equal numbers
-			- will add tilescores (which isnt even too bad). While a positive value there would remove tilescore
-		- ai_charge is mainly handled via `ai_engage_melee`
-		- in a simple 1v1 test the berserk uses his charge just fine
-		-> maybe a total rewrite of ai_engage_melee is in order
 	- Tests (logs printing) whether ai multiplier for skills are even working
-	- AI: more likely to push back kingfisher guys who are currently netting someone, if the push back tile would break the net
 	- make killing frenzy/berserk AI prefer targets that they can one-shot/kill
 	- Make many skills and attacks from within a bush reveal that character to all enemies, not just the immediate target
 	- Make root skills much more likely to target someone with Unstoppable stacks (because they cancel unstoppable)
@@ -370,6 +364,20 @@
 }
 
 {	// Design
+	- Orcs with white unhold fur (maybe for champions?)
+		- Why do attachments on orcs not visually appear? Their effects work just fine. Maybe a Z value during metadata.xml?
+	- make nomad leader not spawn with javelins anymore
+	- sell bandages in alchemists
+	- increase weight of oathtaker helm by 1 and give it +5 resolve
+	- ijirok perk something like "hardening on impact"
+		- Whenever you take damage, gain a stacking 5% less damage taken until the start of your next turn
+	- make all throwing perks apply to throwing tools
+	- make goblin bows pen to 50% (like the named version has as a base value)
+		- maybe reduce its damage in response
+	- make parry not work against any flail attacks?
+	- change quartermaster to make consumable supplies more likely to be sold by towns
+	- **Disarm** (whips): "You have -1% Hitchance per Weight on the weapon you are targeting"
+	- increase lindwurm acid droprate
 	- add oathbringer as possible elite spawns in mercenary companies
 	- scale resources and rewards of "Supply Caravan"
 		- currently they have hardcoded resources equal to local r = this.Math.rand(100, 200) * 0.01;
@@ -569,7 +577,6 @@
 	- ai merc rework and bounty hunter system
 	- rework militia spawning system (use time based "resource" system, where militias which return replenish resources. new ones can only spawn if resources are recovered)
 	- lower the minimum weight that named body armors can roll
-	- remove resolve penalty from morale (bag game design as that makes downwards spiral more likely)
 	- rework map generation to first place T3 civilian towns in the center of the map
 	- reduce chance of non-named shields dropping from characters (otherwise too many appear eventually)
 		- chance to drop could be % of remaining condition
@@ -622,7 +629,6 @@
 	- display effective melee defense in melee defense tooltip
 	- colored rumors (extended for reforged rumors)
 	- add tooltip to spiked impaler that it knocks enemies back on a hit
-	- increase saturation of line breaker to tell it more apart from its greyed out version
 	- sort skill tooltips by their id
 	- show icon (skull, handshake, crossing sowrds) next to world party names to quickly identify them as (perma enemies, temporary enemies, allies)
 	- show tooltip on world parties showing their relation with you
@@ -631,9 +637,6 @@
 	- Write AP prediction for new mauler effect for player and enemies (could be done by simulating a 3 AP discount on all 1-range skills targetting a certain enemy)
 	- turn sequence bar order predictions for next round
 		- can display a second smaller version of the bar blow the original one, where the prediction changes in real time
-	- Reduce bleeding noise
-		- Cant fix right now, because 'refresh' only supports increased stacks by 1. Reforged suffers the same problem when inflicting 3 bleed via Gouge for example
-	- Mirror the reason of bad relation change for noble houses if it is because of actions against one of their settlements
 	- Add mention in morale check concept about how there is a random roll happening against resolve and being influenced by adjacent allies/enemies
 	- prevent paint being usable on items that already have this color (if the variant doesnt change after applying the paint, the paint is not used)
 	- Only use Paint and spawn sfx, if the Variant of the affected item is different, after calling onPaint on it
@@ -655,7 +658,6 @@
 	- look into sorting of enemy types in combat dialog
 		- most important ones should be sorted to the top
 		- make it scrollable
-	- show uncapped hitchance
 	- make skills which change skill cost temporarily, add tooltip entries in the affected skill tooltips
 		- e.g. dazed, double grip
 	- option for autosaving after battle
@@ -667,10 +669,8 @@
 		- when the movement in combat is aborted because of enemy reveal play a small animation?
 	- add tooltip for donkey cart
 	- in the contract money/renown/relation tech, check the existing list for an entry with same icon and number and skip if that exists
-	- new enemy-only **Restless** effect for Fallen Heroes, that specifies, that they can reanimate even without a head
 	- add special effect/highlighting for legendary locations? Some of them are hard to spot if discovered accidentally
 	- move "this.m.MaxTraversibleLevels = 3;" into spider racial and add tooltip there
-	- disable reforged FatigueDealtPerHitMult, set in zombie racial
 	- add option whether a user even wants preponing of single options, as that can sometimes cause issues
 	- when viewing a character in character screen, display also all items equipped to all brothers who are in reserve in the same screen
 		- First third = regular inventory
@@ -689,17 +689,12 @@
 		- add new **Lightheaded** effect, granted by consuming drugs
 			- +50% sickness chance
 	- add UI feedback, when quicksaving
-	- reduce time for smoke effect to start
-	- in the tooltip of wait concept, mention the wait debuff
 	- make it so the yellow arrow, pointing onto characters when hovering on the turn sequence bar, is rendered in front of the status mini effects (instead of after them)
 	- Add Setting to disable automove of camera during NPC turns completely (and then allow zooming/panning)
 	- make it so item tooltips in inventory never overlap with the paperdoll stat page
-	- look at how overlay icons are rendered
-		-> then, render overlay icons directly on top of a tile, if there is an enemy on top of that tile, but the tile is currently black, because the camera level is too low
 	- add world overlay arrows around the player party pointing towards any visible location/party, that is market as a contract target
 		- can probably scan for anyone asking for that specific sprite when they turn it on
 	- icons on top of NPC world parties signaling, whether they can see you and whether they are currently "hunting" you
-	- make death skull more prominent (I never see it if I dont look for it)
 	- levelup animation
 	- add setting to highlight the world tile that the player is currently on (very light highlighting)
 	- make ancient spire discovering locations play delayed location sounds for those. or just one loud one
@@ -753,3 +748,100 @@
 - Discovered Talent
 - Promised Potential
 - Between the Eyes
+
+- use getNestedEntityImage tech to link overlay icons (e.g. formidable approach)
+- lose fat event cancelable
+
+
+- look into "local rangedInfo = entity.getRangedWeaponInfo();" (vnailla)
+
+- make take aim effect disruptable (when we get that framework)
+
+- this.Settings.getVideoMode();
+
+
+- turn order prediction
+- mention in firepots that they cant be used on certain tiles
+- sun moon in combat
+- show remaining armor on the target when destroying its armor with an attack (just like already with the body part)
+
+- dismantle always active
+- increase the amount of stats gained from the hedge knight duel
+- allow in recruit window to use W and S to scroll through the recruits
+- anchor producing dust effect when proccing
+
+- rework nomad leader ai akin to bandit leader ai? and regular nomad ai?
+- add barbarian king as rare spawn in barb camps
+- reveal the fog of war from the barbarian king when he is revealed to you from the fifth hint in that contract. Right now that hint looks bugged if the king is still under unexplored fog
+
+
+
+- investigate negotiator recovering relation too fast for southern crisis?
+
+- improve ranged ai in considering whether they have ranged advantage
+
+
+
+
+- add new skill for grand diviner called "Invite the Crowd"
+	- Causes flesh golems from the specator ranks to jump down into the areana, should the player be too close to an arena border
+
+- give grand diviner bully perk with custom laugh track?
+- give grand diviner flail spinner
+
+
+- advanced positioning system:
+	- Frontline, FrontlineFlank, Backline, BacklineFlank, Ranged, Centre, Siege, Alp, HidingInBush
+- allow thiefs in return item contract to be nomads if in steppe or desert
+
+- why does the goblin leader regularly just step in front of his boys?
+
+- restructure all api hooks into mod_hardened_api, parallel to the mod_hardened root folder
+
+- use comparison shortcut of `::MSU.isKindOf(weapon, "weapon")` for general coding
+
+- new tactician perk:
+	- Tactician’s Insight
+		- Non-Attack Skills with a Base Action Point cost of 7 or more cost -2 Action Points
+	- obvious synergy with the three tactician skills.
+- make tactician perks repeatable but target only a 7 tile blob, up to 4 tiles away
+
+- use a low EngageFlankingMult to make certain AI Agent prefer to straight push an enemy instead of sliggling around (executioner? Hedge Knights?)
+
+- mention in orc berserkers tooltip that they are immune to injuries (give them iron will effect?)
+
+- use the if (!this.getContainer().RF_isNewSkillUseOrEntity(_targetEntity))
+			return;
+	- check for perks that apply effects which should not happen from cascade/etc.
+
+### Possible Parry Nerfs
+
+- Lose 3 Resolve for each adjacent enemy with a melee weapon, except the first one
+	- "You become less and less confident that you can parry all those different attacks, the more attacker you face"
+	- branching off into a different angle and weakness for parry builds: managing resolve, especially when they are attribute starved
+
+**Rage**
+- Gain 1 Rage Stack whenever you deal X damage
+- Gain 1 Rage Stack whenever you get hit
+- You Maximum Rage Stacks is equal to 20% of your Stamina
+- Deal 1% more melee damage and take 1% less Hitpoint damage per rage stack
+- Lose all Rage Stacks whenever you start, end, wait or resume your turn fully fatigued, or if you use Recover.
+
+
+- apply faction difficulty of caravans to caravan spawns
+
+fanfare announcement 2.wav by zagi2 -- https://freesound.org/s/249404/ -- License: Attribution NonCommercial 4.0
+Success Fanfare Trumpets.mp3 by FunWithSound -- https://freesound.org/s/456966/ -- License: Creative Commons 0
+11512 courier brass fanfare.wav by Robinhood76 -- https://freesound.org/s/690561/ -- License: Attribution NonCommercial 4.0
+
+- remove Fix(Vanilla): Idle Sounds, when that fix goes into reforged/MV
+
+- resilient:
+	- Take 20% less Hitpoint Damage from Piercing Attacks (might be too large of a nerf to Qatal Deathblow)
+	- No longer reduce bleed effect/damage
+
+- compare (with debug logs) the valid tiles at the start and at the end of the map generation. To make sure that they grow smaller
+
+- check if the reforged undead/non-fatigue user hook of getFatigueMax has any issues with Hardened code
+
+- split lindwurm XP between both parts. But make sure that killing just the head also awards the tail XP
