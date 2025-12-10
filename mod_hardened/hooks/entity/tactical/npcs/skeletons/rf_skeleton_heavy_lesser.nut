@@ -12,7 +12,7 @@
 		]);
 
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/helmets/ancient/ancient_honorguard_helmet"],
+			[12, "scripts/items/helmets/ancient/ancient_legionary_helmet"],
 		]);
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
