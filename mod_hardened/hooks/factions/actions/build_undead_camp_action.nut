@@ -1,4 +1,22 @@
 ::Hardened.HooksMod.hook("scripts/factions/actions/build_undead_camp_action", function(q) {
+	q.m.HD_SettlementsBase <- 12;	// Vanilla: 15; By default, this many settlements can exist at the same time
+	q.m.HD_SettlementsCrisis <- 5;	// Vanilla: 8; This many additional settlements can exist during respective crisis
+
+	// Overwrite, because we want to reduce the maximum settlements spawned by this faction and make those numbers moddable
+	q.onUpdate = @() function( _faction )
+	{
+		local settlementsMax = this.m.HD_SettlementsBase;
+		if (::World.FactionManager.isUndeadScourge() && ::World.FactionManager.getGreaterEvilStrength() >= 20.0)
+		{
+			settlementsMax += this.m.HD_SettlementsCrisis;
+		}
+
+		local settlements = _faction.getSettlements();
+		if (settlements.len() > settlementsMax) return;
+
+		this.m.Score = 2;
+	}
+
 	q.onExecute = @(__original) function( _faction )
 	{
 		// We want to prevent Vanilla from ever choosing the options
