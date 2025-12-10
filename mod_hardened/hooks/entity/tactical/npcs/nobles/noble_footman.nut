@@ -83,10 +83,7 @@
 			if (banner <= 4)
 			{
 				helmet = ::new(::MSU.Class.WeightedContainer([
-					[4, "scripts/items/helmets/kettle_hat"],
 					[4, "scripts/items/helmets/padded_kettle_hat"],
-					[1, "scripts/items/helmets/rf_skull_cap"],
-					[1, "scripts/items/helmets/rf_skull_cap_with_rondels"],
 					[1, "scripts/items/helmets/rf_padded_skull_cap"],
 					[1, "scripts/items/helmets/rf_padded_skull_cap_with_rondels"],
 				]).roll());
@@ -94,10 +91,7 @@
 			else if (banner <= 7)
 			{
 				helmet = ::new(::MSU.Class.WeightedContainer([
-					[4, "scripts/items/helmets/flat_top_helmet"],
 					[4, "scripts/items/helmets/padded_flat_top_helmet"],
-					[1, "scripts/items/helmets/rf_skull_cap"],
-					[1, "scripts/items/helmets/rf_skull_cap_with_rondels"],
 					[1, "scripts/items/helmets/rf_padded_skull_cap"],
 					[1, "scripts/items/helmets/rf_padded_skull_cap_with_rondels"],
 				]).roll());
@@ -105,10 +99,7 @@
 			else
 			{
 				helmet = ::new(::MSU.Class.WeightedContainer([
-					[4, "scripts/items/helmets/nasal_helmet"],
 					[4, "scripts/items/helmets/padded_nasal_helmet"],
-					[1, "scripts/items/helmets/rf_skull_cap"],
-					[1, "scripts/items/helmets/rf_skull_cap_with_rondels"],
 					[1, "scripts/items/helmets/rf_padded_skull_cap"],
 					[1, "scripts/items/helmets/rf_padded_skull_cap_with_rondels"],
 				]).roll());

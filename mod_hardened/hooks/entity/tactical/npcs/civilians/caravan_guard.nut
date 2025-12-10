@@ -11,9 +11,9 @@
 			[12, "scripts/items/armor/leather_lamellar"]
 		]);
 
-		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 80 - 120
 			[12, "scripts/items/helmets/mail_coif"],
-			[12, "scripts/items/helmets/nasal_helmet"],
+			[12, "scripts/items/helmets/padded_nasal_helmet"],
 			[12, "scripts/items/helmets/dented_nasal_helmet"],
 		]);
 

@@ -72,21 +72,18 @@
 				if (banner <= 4)
 				{
 					helmet = ::new(::MSU.Class.WeightedContainer([
-						[1, "scripts/items/helmets/kettle_hat"],
 						[1, "scripts/items/helmets/padded_kettle_hat"],
 					]).roll());
 				}
 				else if (banner <= 7)
 				{
 					helmet = ::new(::MSU.Class.WeightedContainer([
-						[1, "scripts/items/helmets/flat_top_helmet"],
 						[1, "scripts/items/helmets/padded_flat_top_helmet"],
 					]).roll());
 				}
 				else
 				{
 					helmet = ::new(::MSU.Class.WeightedContainer([
-						[1, "scripts/items/helmets/nasal_helmet"],
 						[1, "scripts/items/helmets/padded_nasal_helmet"],
 					]).roll());
 				}

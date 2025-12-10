@@ -78,7 +78,7 @@
 		{
 			local helmet = ::new(::MSU.Class.WeightedContainer([
 				[1, "scripts/items/helmets/sallet_helmet"],
-				[1, "scripts/items/helmets/rf_sallet_helmet"],
+				[1, "scripts/items/helmets/rf_padded_sallet_helmet"],
 			]).roll());
 
 			helmet.setPlainVariant();

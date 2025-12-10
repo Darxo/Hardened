@@ -16,9 +16,7 @@
 		]);
 
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 110 - 130
-			[12, "scripts/items/helmets/rf_scale_helmet"],
 			[12, "scripts/items/helmets/rf_padded_scale_helmet"],
-			[12, "scripts/items/helmets/kettle_hat"],
 			[12, "scripts/items/helmets/padded_kettle_hat"],
 		]);
 

@@ -68,7 +68,6 @@
 				[1, "scripts/items/helmets/aketon_cap"],
 				[1, "scripts/items/helmets/full_aketon_cap"],
 				[1, "scripts/items/helmets/full_leather_cap"],
-				[1, "scripts/items/helmets/kettle_hat"],
 				[1, "scripts/items/helmets/padded_kettle_hat"],
 				[1, "scripts/items/helmets/dented_nasal_helmet"],
 				[1, "scripts/items/helmets/mail_coif"],

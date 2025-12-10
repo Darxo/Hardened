@@ -121,8 +121,6 @@
 				helmet = ::new(::MSU.Class.WeightedContainer([
 					[1, "scripts/items/helmets/rf_padded_skull_cap"],
 					[1, "scripts/items/helmets/rf_padded_skull_cap_with_rondels"],
-					[1, "scripts/items/helmets/rf_skull_cap"],
-					[1, "scripts/items/helmets/rf_skull_cap_with_rondels"],
 				]).roll());
 			}
 

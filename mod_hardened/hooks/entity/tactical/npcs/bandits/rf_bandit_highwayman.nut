@@ -14,9 +14,7 @@
 		]);
 
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 140 - 160
-			[12, "scripts/items/helmets/rf_skull_cap"],
 			[12, "scripts/items/helmets/rf_padded_skull_cap"],
-			[12, "scripts/items/helmets/flat_top_helmet"],
 			[12, "scripts/items/helmets/padded_flat_top_helmet"],
 		]);
 
