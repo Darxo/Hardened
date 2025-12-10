@@ -130,7 +130,7 @@
 // scripts/entity/tactical/enemies/orc_warlord
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.OrcWarlord.XP = 1620;
+	::Const.Tactical.Actor.OrcWarlord.XP = 1800;
 	::Const.Tactical.Actor.OrcWarlord.ActionPoints = 9;
 	::Const.Tactical.Actor.OrcWarlord.Hitpoints = 300;
 	::Const.Tactical.Actor.OrcWarlord.Bravery = 80;

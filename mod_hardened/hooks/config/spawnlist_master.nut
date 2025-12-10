@@ -959,8 +959,8 @@
 // scripts/entity/tactical/enemies/orc_warlord
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.OrcWarlord.Cost = 90;
-	::Const.World.Spawn.Troops.OrcWarlord.Strength = 90;
+	::Const.World.Spawn.Troops.OrcWarlord.Cost = 100;
+	::Const.World.Spawn.Troops.OrcWarlord.Strength = 100;
 }
 
 // scripts/entity/tactical/enemies/rf_vampire_lord
@@ -987,6 +987,6 @@
 // scripts/entity/tactical/enemies/lindwurm
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.Lindwurm.Cost = 120;
-	::Const.World.Spawn.Troops.Lindwurm.Strength = 120;
+	::Const.World.Spawn.Troops.Lindwurm.Cost = 150;
+	::Const.World.Spawn.Troops.Lindwurm.Strength = 150;
 }

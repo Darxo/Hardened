@@ -262,7 +262,7 @@
 // scripts/entity/tactical/enemies/lindwurm
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Lindwurm.XP = 1800;				// Vanilla: 800
+	::Const.Tactical.Actor.Lindwurm.XP = 2250;				// Vanilla: 800
 	::Const.Tactical.Actor.Lindwurm.ActionPoints = 7;
 	::Const.Tactical.Actor.Lindwurm.Hitpoints = 1000;		// Vanilla: 1100 (Shared with Tail)
 	::Const.Tactical.Actor.Lindwurm.Bravery = 180;
