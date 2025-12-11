@@ -5,7 +5,7 @@
 		this.m.Chance = 100;
 	}
 
-	q.spinFlail = @(__original) function( _skill, _targetTile )
+	q.doSpinAttack = @(__original) function( _skill, _user, _targetEntity, _targetTile )
 	{
 		local potentialTargets = [];
 		local actor = this.getContainer().getActor();
@@ -24,7 +24,7 @@
 
 		if (potentialTargets.len() != 0)
 		{
-			__original(_skill, ::MSU.Array.rand(potentialTargets));
+			__original(_skill, _user, _targetEntity, ::MSU.Array.rand(potentialTargets));
 		}
 	}
 
