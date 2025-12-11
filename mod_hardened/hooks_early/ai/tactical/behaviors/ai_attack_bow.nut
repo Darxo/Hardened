@@ -62,14 +62,14 @@
 				local blockedTiles = ::Const.Tactical.Common.getBlockedTiles(myTile, targetTile, _entity.getFaction());
 				foreach (tile in blockedTiles)
 				{
-					if (tile.getEntity().isAlliedWith(_entity))
-					{
-						targetScore *= ::Const.AI.Behavior.AttackLineOfFireBlockedMult;
+					if (!tile.IsOccupiedByActor) continue;
+					if (!tile.getEntity().isAlliedWith(_entity)) continue;
 
-						// With only one possible diversion target, we have the same chance of hitting an ally as if there were two diversion targets, which were both our allies
-						// So we need to apply the AttackLineOfFireBlockedMult twice in this case
-						if (blockedTiles.len() == 1) targetScore *= ::Const.AI.Behavior.AttackLineOfFireBlockedMult;
-					}
+					targetScore *= ::Const.AI.Behavior.AttackLineOfFireBlockedMult;
+
+					// With only one possible diversion target, we have the same chance of hitting an ally as if there were two diversion targets, which were both our allies
+					// So we need to apply the AttackLineOfFireBlockedMult twice in this case
+					if (blockedTiles.len() == 1) targetScore *= ::Const.AI.Behavior.AttackLineOfFireBlockedMult;
 				}
 				if (::Const.AI.VerboseMode) ::logInfo("Hardened: score after lineOfFire: " + targetScore);
 
