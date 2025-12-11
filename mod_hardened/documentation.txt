@@ -26,6 +26,9 @@
 
 - Is safe to remove from- and add to any existing savegames
 
+1.6.1
+	- Fix freeze when fighting against ranged enemies
+
 1.6.0
 	- Locations now only use randomly between 75% and 100% of their available resources to spawn defenders (just like in Vanilla), instead of always using 100% of their resources
 	- Player Characters now gain 100% XP from combat (up from 85%)
