@@ -71,10 +71,12 @@
 		// Vanilla always hides dialog when we click the "Yes" button. But some important actions only happen during the popping of the menu stack
 		// Those actions don't happen if TacticalDialogScreen.isAnimating() == true
 		// So in the rare case that something is animating while we press that button, we are softlocked because all interfaces are hidden
-		if (!this.m.TacticalDialogScreen.isAnimating())
-		{
-			__original();
-		}
+		// In one reported case, this animation turned out to be really long, or permanent, so we can't just have the player wait it out
+		// Instead, we pretend like nothing is animating during the resolution of the original function, guaranteeing, that it always resolves
+		local oldTacticalDialogScreen = this.m.TacticalDialogScreen;
+		this.m.TacticalDialogScreen = false;
+		__original();
+		this.m.TacticalDialogScreen = true;
 	}
 
 	q.tactical_retreat_screen_onNoPressed = @(__original) function()
@@ -83,10 +85,12 @@
 		// Vanilla always hides dialog when we click the "No" button. But some important actions only happen during the popping of the menu stack
 		// Those actions don't happen if TacticalDialogScreen.isAnimating() == true
 		// So in the rare case that something is animating while we press that button, we are softlocked because all interfaces are hidden
-		if (!this.m.TacticalDialogScreen.isAnimating())
-		{
-			__original();
-		}
+		// In one reported case, this animation turned out to be really long, or permanent, so we can't just have the player wait it out
+		// Instead, we pretend like nothing is animating during the resolution of the original function, guaranteeing, that it always resolves
+		local oldTacticalDialogScreen = this.m.TacticalDialogScreen;
+		this.m.TacticalDialogScreen = false;
+		__original();
+		this.m.TacticalDialogScreen = true;
 	}
 
 	q.helper_handleContextualKeyInput = @(__original) function( _key )
