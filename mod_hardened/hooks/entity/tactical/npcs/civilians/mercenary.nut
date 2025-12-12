@@ -30,8 +30,9 @@
 			[12, "scripts/items/weapons/arming_sword"],
 			[12, "scripts/items/weapons/flail"],
 			[12, "scripts/items/weapons/military_pick"],
-			[8, "scripts/items/weapons/rf_two_handed_falchion"],
-			[8, "scripts/items/weapons/longsword"],
+			[6, "scripts/items/weapons/rf_battle_axe"],
+			[6, "scripts/items/weapons/rf_two_handed_falchion"],
+			[6, "scripts/items/weapons/longsword"],
 			[8, "scripts/items/weapons/billhook"],
 			[8, "scripts/items/weapons/pike"],
 		]);
