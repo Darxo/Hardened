@@ -58,7 +58,7 @@
 
 		local actor = _skill.getContainer().getActor();
 		local removedRootEffect = ::Const.Tactical.Common.removeRooted(actor);
-		::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(actor) + " breaks free from " + ::MSU.Text.colorNegative(removedRootEffect.getName()));
+		if (removedRootEffect != null) ::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(actor) + " breaks free from " + ::MSU.Text.colorNegative(removedRootEffect.getName()));
 	}
 
 // New Functions
