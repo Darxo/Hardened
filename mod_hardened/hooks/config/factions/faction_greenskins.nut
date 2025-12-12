@@ -3,12 +3,12 @@
 	// Mandatory stats
 	::Const.Tactical.Actor.GoblinFighter.XP = 360;
 	::Const.Tactical.Actor.GoblinFighter.ActionPoints = 9;
-	::Const.Tactical.Actor.GoblinFighter.Hitpoints = 40;
+	::Const.Tactical.Actor.GoblinFighter.Hitpoints = 50;
 	::Const.Tactical.Actor.GoblinFighter.Bravery = 50;
 	::Const.Tactical.Actor.GoblinFighter.Stamina = 100;
 	::Const.Tactical.Actor.GoblinFighter.MeleeSkill = 70;
 	::Const.Tactical.Actor.GoblinFighter.RangedSkill = 65;
-	::Const.Tactical.Actor.GoblinFighter.MeleeDefense = 5;
+	::Const.Tactical.Actor.GoblinFighter.MeleeDefense = 10;
 	::Const.Tactical.Actor.GoblinFighter.RangedDefense = 0;
 	::Const.Tactical.Actor.GoblinFighter.Initiative = 130;
 }
@@ -36,7 +36,7 @@
 	// Mandatory stats
 	::Const.Tactical.Actor.GoblinWolfrider.XP = 540;
 	::Const.Tactical.Actor.GoblinWolfrider.ActionPoints = 13;
-	::Const.Tactical.Actor.GoblinWolfrider.Hitpoints = 60;
+	::Const.Tactical.Actor.GoblinWolfrider.Hitpoints = 70;
 	::Const.Tactical.Actor.GoblinWolfrider.Bravery = 70;		// Vanilla: 60
 	::Const.Tactical.Actor.GoblinWolfrider.Stamina = 100;		// Vanilla: 150
 	::Const.Tactical.Actor.GoblinWolfrider.MeleeSkill = 75;
