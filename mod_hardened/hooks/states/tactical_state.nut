@@ -73,10 +73,10 @@
 		// So in the rare case that something is animating while we press that button, we are softlocked because all interfaces are hidden
 		// In one reported case, this animation turned out to be really long, or permanent, so we can't just have the player wait it out
 		// Instead, we pretend like nothing is animating during the resolution of the original function, guaranteeing, that it always resolves
-		local oldTacticalDialogScreen = this.m.TacticalDialogScreen;
-		this.m.TacticalDialogScreen = false;
+		local oldTacticalDialogScreen = this.m.TacticalDialogScreen.m.Animating;
+		this.m.TacticalDialogScreen.m.Animating = false;
 		__original();
-		this.m.TacticalDialogScreen = true;
+		this.m.TacticalDialogScreen.m.Animating = oldTacticalDialogScreen;
 	}
 
 	q.tactical_retreat_screen_onNoPressed = @(__original) function()
@@ -87,10 +87,10 @@
 		// So in the rare case that something is animating while we press that button, we are softlocked because all interfaces are hidden
 		// In one reported case, this animation turned out to be really long, or permanent, so we can't just have the player wait it out
 		// Instead, we pretend like nothing is animating during the resolution of the original function, guaranteeing, that it always resolves
-		local oldTacticalDialogScreen = this.m.TacticalDialogScreen;
-		this.m.TacticalDialogScreen = false;
+		local oldTacticalDialogScreen = this.m.TacticalDialogScreen.m.Animating;
+		this.m.TacticalDialogScreen.m.Animating = false;
 		__original();
-		this.m.TacticalDialogScreen = true;
+		this.m.TacticalDialogScreen.m.Animating = oldTacticalDialogScreen;
 	}
 
 	q.helper_handleContextualKeyInput = @(__original) function( _key )
