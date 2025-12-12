@@ -198,6 +198,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Net Pull** now costs 30 Fatigue (up from 25)
 - **Quick Shot** now has -2 Shooting Range (down from -1) and loses 5% Hitchance per tile (up from 4%)
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip** but deals 15% less damage at all times
+- **Pummel** is now an Attack. It now costs 4 AP, when used with a One-Handed Hammer
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Reload Handgonne** now costs 25 Fatigue (up from 20)
 - **Reverse Grip** (Versatile Swordsman) now adds -1 Reach while active (down from -30% less)
@@ -1191,6 +1192,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix keyboard inputs for camera movement in combat not being combinable
 - Fix rare end-of-combat freeze, when clicking "It's over"
 - Fix named one-handed mace icon art not lining up with their sprite art
+- Fix world parties able to join the same fight multiple times
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
 - Cartographer will no longer pay for "discovering" the Ancient Watchtower a second time when you interact with it

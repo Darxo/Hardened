@@ -297,6 +297,10 @@
 			- Perhaps, they get shared wrong information?
 		- fix ghost fights: might have to do with alliances not being created correctly. Maybe the new southern settlements interfere with the placement for hard-coded alliances
 		- could this have to do with me stunning world parties after spawning?
+		- We deployed two fixes for this: a party will no attack itself; a party will not join a fight, that itself is already a part of
+		- This probably has to do with the combat manager having its Faction array hard-stuck at a max of 32. While in Vanilla up to 31 Factions can already appear
+			- Any mod, which adds more factions, can probably trigger this issue
+			- However, in Slurgis Hardened run, he didnt use any faction mods and still got the ghost fights
 	- (Vanilla): Split has 30% armor penetration even though every weapon who grants it in vanilla has less pen
 	- local r = this.Math.rand(100, 200) * 0.01; in send_supplies_action gets overwritten later on, causing weird rewards
 	- fix/prevent cheese where you can find out whether someone is hiding in a bush by trying to pathfind into that bush
@@ -830,10 +834,6 @@
 
 - apply faction difficulty of caravans to caravan spawns
 
-fanfare announcement 2.wav by zagi2 -- https://freesound.org/s/249404/ -- License: Attribution NonCommercial 4.0
-Success Fanfare Trumpets.mp3 by FunWithSound -- https://freesound.org/s/456966/ -- License: Creative Commons 0
-11512 courier brass fanfare.wav by Robinhood76 -- https://freesound.org/s/690561/ -- License: Attribution NonCommercial 4.0
-
 - remove Fix(Vanilla): Idle Sounds, when that fix goes into reforged/MV
 
 - resilient:
@@ -845,3 +845,7 @@ Success Fanfare Trumpets.mp3 by FunWithSound -- https://freesound.org/s/456966/ 
 - check if the reforged undead/non-fatigue user hook of getFatigueMax has any issues with Hardened code
 
 - split lindwurm XP between both parts. But make sure that killing just the head also awards the tail XP
+
+- make finished world combats create world history events, to which rumors can then refer to, a few days after that fight
+- make pummel ignore the defense bonus of shields as a nice special effect?
+	- Can help to break stalemates and make it more unique, especially since it lost the special effect of the default attack (+20 dam from 2H or 10 guaranteed HP damage from 1H)

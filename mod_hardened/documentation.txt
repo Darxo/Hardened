@@ -24,6 +24,11 @@
 
 # Changelog
 
+1.6.6
+	- **Pummel** now costs 4 AP when used with one-handed hammers
+	- Fix **Pummel** not being considered an Attack
+	- Fix(Vanilla) world parties being able to join the smae fight multiple times
+
 1.6.5
 	- **Puncture** now deals 15% less damage at all times
 	- Fix **Flail Spinner** not triggering on a kill
