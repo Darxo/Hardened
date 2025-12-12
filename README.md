@@ -197,7 +197,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Net Effect** (caused by **Throw Net**) no longer affects the Initiative of the target. It now applies 50% less Melee Defense (up from 25%) and 50% less Ranged Defense (up from 45%)
 - **Net Pull** now costs 30 Fatigue (up from 25)
 - **Quick Shot** now has -2 Shooting Range (down from -1) and loses 5% Hitchance per tile (up from 4%)
-- **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip**
+- **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip** but deals 15% less damage at all times
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Reload Handgonne** now costs 25 Fatigue (up from 20)
 - **Reverse Grip** (Versatile Swordsman) now adds -1 Reach while active (down from -30% less)

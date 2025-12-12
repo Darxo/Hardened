@@ -24,6 +24,10 @@
 
 # Changelog
 
+1.6.5
+	- **Puncture** now deals 15% less damage at all times
+	- Fix **Flail Spinner** not triggering on a kill
+
 1.6.4
 	- Fix: AoE attacks not executing correctly on someone with **Death Dealer**
 	- Fix named throwing weapons not applying any Weight penalty
