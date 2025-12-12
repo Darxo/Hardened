@@ -281,10 +281,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **From All Sides** (enemy only perk) is completely reworked. You now gain the **From all Sides** effect until the start of your next turn, after you use a Attack Skill. This effect makes you count twice for the purpose of surrounding adjacent enemies
 - **Fruits of Labor** is reworked. It now grants 5% more Hitpoints, Stamina, Resolve and Initiative
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
-- **Hammer Mastery** no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part.
+- **Hammer Mastery** no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part
 - **Hold Steady** no longer has a shared cooldown with other brothers who have this perk. It no longer grants Resolve
 - **Hybridization** is completely reworked. It is now called **Toolbox** and requires a Throwing Weapon. It grants +1 Bag Slot if you dont have **Weapon Master**. It now causes piercing type hits to the body to inclict **Arrow to the Knee** for 1 turn, cutting type attacks to inflict **Overwhelmed**, blunt type headshots to inflict stagger for 1 turn and any hit with them to stun a staggered opponent and throwing spears to deal 100% more damage to shields
-- **Inspiring Presence** no longer requires a banner. At the start of each round it grants adjacent allies of your faction +3 Action Points for this turn, if they are adjacent to an enemy and have less Resolve than you. The same target can't be inspired multiple times per turn.
+- **Inspiring Presence** no longer requires a banner. At the start of each round it grants adjacent allies of your faction +3 Action Points for this turn, if they are adjacent to an enemy and have less Resolve than you. The same target can't be inspired multiple times per turn
 - **Iron Sights** is completely reworked. It now grants +1% chance to hit the head with Crossbows and Firearms for every 3 Initiative you have
 - **King of all Weapons** is now called **Spear Flurry** and is completely reworked. It now prevents spear attacks from building up any fatigue
 - **Kingfisher** is reworked: It grants +2 Reach while you have a net equipped. Netting an adjacent target does not expend your net but prevents you from using or swapping it until that target breaks free or dies. If you move more than 1 tile away from that netted target, lose your equipped net
@@ -388,7 +388,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bowyer** now has -5 minimum Hitpoints (down from 0), +15 minimum Ranged Skill (up from +10) and +15 maximum Ranged Skill (up from +10)
 - **Butcher** loses the Hitchance Bonus with **Butchers Cleaver**
 - **Farmhand** loses the Hitchance Bonus with **Pitchforks** and **Hooked Blades**
-- **Indebted** no longer roll **Pauper Perk Group**. Instead they randomly roll any one of the other exclusive perk groups (except swordmaster)
+- **Indebted** now randomly roll any one of the exclusive perk groups (except pauper and swordmaster)
 - **Lumberjack** loses the Hitchance Bonus with **Woodcutter's Axe** and **Hatchet**
 - **Miner** loses the Hitchance Bonus with **Pickaxe**
 - **Oathtaker** now spawn with +1 Weapon Group (down from +2)

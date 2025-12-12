@@ -24,6 +24,10 @@
 
 # Changelog
 
+1.6.3
+	- Fix end-of-combat dialog always freezing the game
+	- Fix Goblins granting 20% more experience than intended
+
 1.6.2
 	- **Goblin Skirmisher** now have 50 Hitpoints (up from 40) and 10 Melee Defense (up from 5)
 	- **Goblin Wolfrider** now have 70 Hitpoints (up from 60)
