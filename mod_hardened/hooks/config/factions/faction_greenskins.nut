@@ -1,7 +1,7 @@
 // scripts/entity/tactical/enemies/goblin_fighter
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.GoblinFighter.XP = 360;
+	::Const.Tactical.Actor.GoblinFighter.XP = 300;				// Vanilla: 200
 	::Const.Tactical.Actor.GoblinFighter.ActionPoints = 9;
 	::Const.Tactical.Actor.GoblinFighter.Hitpoints = 50;
 	::Const.Tactical.Actor.GoblinFighter.Bravery = 50;
@@ -16,7 +16,7 @@
 // scripts/entity/tactical/enemies/goblin_ambusher
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.GoblinAmbusher.XP = 360;
+	::Const.Tactical.Actor.GoblinAmbusher.XP = 300;				// Vanilla: 250
 	::Const.Tactical.Actor.GoblinAmbusher.ActionPoints = 9;
 	::Const.Tactical.Actor.GoblinAmbusher.Hitpoints = 40;
 	::Const.Tactical.Actor.GoblinAmbusher.Bravery = 50;
@@ -34,7 +34,7 @@
 // scripts/entity/tactical/enemies/goblin_wolfrider
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.GoblinWolfrider.XP = 540;
+	::Const.Tactical.Actor.GoblinWolfrider.XP = 450;
 	::Const.Tactical.Actor.GoblinWolfrider.ActionPoints = 13;
 	::Const.Tactical.Actor.GoblinWolfrider.Hitpoints = 70;
 	::Const.Tactical.Actor.GoblinWolfrider.Bravery = 70;		// Vanilla: 60
@@ -49,7 +49,7 @@
 // scripts/entity/tactical/enemies/goblin_leader
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.GoblinWolfrider.XP = 900;
+	::Const.Tactical.Actor.GoblinWolfrider.XP = 750;
 	::Const.Tactical.Actor.GoblinLeader.ActionPoints = 9;
 	::Const.Tactical.Actor.GoblinLeader.Hitpoints = 70;
 	::Const.Tactical.Actor.GoblinLeader.Bravery = 80;
@@ -67,7 +67,7 @@
 // scripts/entity/tactical/enemies/goblin_shaman
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.GoblinShaman.XP = 900;
+	::Const.Tactical.Actor.GoblinShaman.XP = 750;
 	::Const.Tactical.Actor.GoblinShaman.ActionPoints = 9;
 	::Const.Tactical.Actor.GoblinShaman.Hitpoints = 70;
 	::Const.Tactical.Actor.GoblinShaman.Bravery = 80;
