@@ -24,6 +24,10 @@
 
 # Changelog
 
+1.6.4
+	- Fix: AoE attacks not executing correctly on someone with **Death Dealer**
+	- Fix named throwing weapons not applying any Weight penalty
+
 1.6.3
 	- Fix end-of-combat dialog always freezing the game
 	- Fix Goblins granting 20% more experience than intended
