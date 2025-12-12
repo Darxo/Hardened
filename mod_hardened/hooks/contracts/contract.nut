@@ -63,9 +63,16 @@
 
 	q.setScreen = @(__original) function( _screen, _restartIfAlreadyActive = true )
 	{
-		// Vanilla Fix: setting the screen repeatidly to the same screenID no longer repeadidly triggers the start function
-		// Most notably this fixes a Hardened issue, where the Success screen would award the player the payout multiple times, because it would be postponed
-		return __original(_screen, false);
+		if (::Hardened.getFunctionCaller() != "processInput")
+		{
+			// Vanilla Fix: setting the screen repeatidly to the same screenID will trigger its start function multiple times
+			// This can happen naturally, when two different screens have the same ID, or during negotiations, when we randomly stay on the same page
+			// But it can also happen artificially, when contracts call setScreen during an update loop
+			// We want to fix only the latter causing a Hardened issue, where the Success screen would award the player the payout multiple times, because it would be postponed
+			_restartIfAlreadyActive = false;
+		}
+
+		return __original(_screen, _restartIfAlreadyActive);
 	}
 });
 
