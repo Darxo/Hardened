@@ -469,6 +469,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Player Banner** now causes -5 to Ranged Defense and it grants **Repel**
 - **Poleaxe** and its named versions can no longer be bought or found
 - **Poleflail** now has 5 Reach (down from 6) and costs 1600 Crowns (up from 1400). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
+- **Reinforced Boondock Bow** now has 45% Armor Penetration (up from 35%)
 - **Reinforced Wooden Poleflail** now has 5 Reach (down from 6). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
 - **Rondel Dagger** now deals 25-35 Damage (from 20-40) and costs 500 Crowns
 - **Rusty Warblade** loses **Decapitate** and gains **Split**
@@ -832,6 +833,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Dogs** are much less likely to engage multiple enemies at the same time
 - **Goblin-, Brigand-, Nomad- and Mercenary** ranged units now play around 35% more defensive
 - **Goblin Overseer** now play 100% more defensive, just like Goblin Shamans
+- **Goblin Skirmisher** now prefer to engage more carefully during battle
 - Regular **Nomad** Units now stay 25% less in Formation, are 20% more likely to avoid engaging multiple opponents, are 20% more likely to flank and are 250% more likely to ignore someone who is already engaged in melee
 - **Necrosavants** are a bit more likely to stay on the same tile and attack twice, rather than teleport to a slightly better tile
 - **Orc Warlord** are now 50% less likely to flank

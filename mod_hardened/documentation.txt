@@ -15,16 +15,24 @@
 
 - Loading the game over an enemy allows them to instantly engage the player in battle
 - Map Seeds for Vanilla or Reforged are unlikely to work the same under Hardened
-- Mace Mastery perk description still talks about removing penalty to hit adjacent enemies, but that penalty doesnt even exist anymore
 - Injuries now heal at the start of the day and wages are paid at the start of the day; instead of during midday
 - Hitchances of Lunge-Like attacks can be inaccurate as the act of moving next to your target can enable/disable various effects
 
 # Compatibility
 
-	- **Take Aim** (Crossbow Mastery) now costs 25 Fatigue (up from 20) but it makes your next Crossbow or Firearm Attack cost no fatigue. It can now be used with all Firearms, not just the Handgonne
-	- Slightly improve **Take Aim** descriptions
-
 - Is safe to remove from- and add to any existing savegames
+
+# Changelog
+
+1.6.2
+	- **Goblin Skirmisher** now have 50 Hitpoints (up from 40) and 10 Melee Defense (up from 5)
+	- **Goblin Wolfrider** now have 70 Hitpoints (up from 60)
+	- **Reinforced Boondock Bows** now have 45% Armor Penetration (up from 35%)
+	- **Goblin Skirmisher** now engage enemies more carefully during battle
+	- Fix **Hexen** not having **Soul Link** as intended
+	- Fix Contract Negotiation pages being completely empty
+	- Fix clicking of end of combat dialog buttons rarely not doing anything
+	- Fix **Soul Link** effect not updating, when allies move to, or away from the user
 
 1.6.1
 	- Fix freeze when fighting against ranged enemies

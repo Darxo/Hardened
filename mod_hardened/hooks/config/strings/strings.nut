@@ -60,7 +60,7 @@ local newPerks = [
 		Key = "HD_OneWithTheShield",
 		Name = "One with the Shield",
 		Description = ::UPD.getDescription({
-			Fluff = "Shift your shield to guard vital points; raised to protect your head, lowered to shield your body",
+			Fluff = "Shift your shield to guard vital points.",
 			Requirement = "Shield",
 			Effects = [
 				{
