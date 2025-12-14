@@ -136,7 +136,13 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 	{	// Shield Group
 		local pgShieldGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_shield");
 		pgShieldGroup.removePerk("perk.duelist");		// Remove Duelist from Shields
-		pgShieldGroup.addPerk("perk.hd_one_with_the_shield", 7);		// Add One with the Shield (New Hardened Perk) into the Tier 7
+		pgShieldGroup.addPerk("perk.hd_one_with_the_shield", 1);		// Add One with the Shield (New Hardened Perk) into the Tier 1
+
+		changePerkTier(pgShieldGroup, "perk.rf_exploit_opening", 2);	// Move "Exploit Opening" to Tier 2 (up from Tier 1)
+		changePerkTier(pgShieldGroup, "perk.rf_phalanx", 3);			// Move "Phalanx" to Tier 3 (up from Tier 2)
+		changePerkTier(pgShieldGroup, "perk.shield_expert", 4);			// Move "Shield Expert" to Tier 4 (up from Tier 3)
+		changePerkTier(pgShieldGroup, "perk.rf_line_breaker", 5);		// Move "Line Breaker" to Tier 5 (up from Tier 4)
+		changePerkTier(pgShieldGroup, "perk.rf_rebuke", 7);				// Move "Rebuke" to Tier 7 (up from Tier 5)
 	}
 
 	{	// Soldier Group
