@@ -3,7 +3,7 @@
 	{
 		__original();
 
-		if (!this.isKindOf(this, "actor"))
+		if (!::MSU.isKindOf(this, "actor"))
 		{
 			this.assignObjectHitBehavior();
 		}

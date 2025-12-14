@@ -87,7 +87,7 @@
 		__original();
 		// Feat: Weapons in the bag slots of NPCs now also start the combat damaged
 		// This is exactly the same as how Vanilla does it during onEquip
-		if (this.m.Condition == this.m.ConditionMax && !this.isKindOf(this.getContainer().getActor().get(), "player"))
+		if (this.m.Condition == this.m.ConditionMax && !::MSU.isKindOf(this.getContainer().getActor(), "player"))
 		{
 			this.m.Condition = ::Math.rand(1, ::Math.max(1, this.m.ConditionMax - 2)) * 1.0;
 		}

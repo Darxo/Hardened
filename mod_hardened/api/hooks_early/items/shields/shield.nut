@@ -20,7 +20,7 @@
 		if (!this.item.isDroppedAsLoot()) return false;
 
 		local isBlacksmithed = !::Tactical.State.isScenarioMode() && ::World.Assets.m.IsBlacksmithed;
-		local isPlayer = this.m.LastEquippedByFaction == ::Const.Faction.Player || this.getContainer() != null && this.getContainer().getActor() != null && !this.getContainer().getActor().isNull() && this.isKindOf(this.getContainer().getActor().get(), "player");
+		local isPlayer = this.m.LastEquippedByFaction == ::Const.Faction.Player || this.getContainer() != null && ::MSU.isKindOf(this.getContainer().getActor(), "player");
 
 		if (this.getCondition() <= 0 && isPlayer && !isBlacksmithed) return false;		// The shield is completely destroyed beyond repair
 
