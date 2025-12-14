@@ -1,7 +1,7 @@
 this.perk_hd_one_with_the_shield <- ::inherit("scripts/skills/skill", {
 	m = {
 		// Public
-		ThresholdToReceiveInjuryMult = 1.25,
+		ThresholdToReceiveInjuryMult = 1.0,
 		HeadHitpointReceivedMult = 0.6,
 		BodyHitpointReceivedMult = 0.6,
 	},
