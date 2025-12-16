@@ -24,6 +24,9 @@
 
 # Changelog
 
+1.6.7
+	- Fix potential crash introduced by 1.6.6 when mods add too many new factions
+
 1.6.6
 	- **Pummel** now costs 4 AP when used with one-handed hammers
 	- Fix **Pummel** not being considered an Attack

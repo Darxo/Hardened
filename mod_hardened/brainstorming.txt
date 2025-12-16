@@ -849,3 +849,8 @@
 - make finished world combats create world history events, to which rumors can then refer to, a few days after that fight
 - make pummel ignore the defense bonus of shields as a nice special effect?
 	- Can help to break stalemates and make it more unique, especially since it lost the special effect of the default attack (+20 dam from 2H or 10 guaranteed HP damage from 1H)
+
+- re-do thug orientation (just a hood)
+- re-do poacher orientation (just head scarf)
+- balance the crock pot hooded man accordingly
+- write up documentation for how to use _config.nut
