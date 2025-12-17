@@ -1,6 +1,3 @@
-// We reduce the IdealSize multiplier for locations as 50% was too much and was upgrading their troops too late
-::DynamicSpawns.Class.Party.IdealSizeLocationMult <- 1.3;	// Dynamic Spawns: 1.5
-
 // Overwrite to replace usage of getCost with getMinCost
 ::DynamicSpawns.Class.Party.getFigure <- function()
 {
