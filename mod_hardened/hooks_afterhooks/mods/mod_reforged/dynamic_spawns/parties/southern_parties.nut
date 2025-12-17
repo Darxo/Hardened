@@ -20,14 +20,16 @@
 					{ BaseID = "UnitBlock.RF.Officer", RatioMin = 0.00, RatioMax = 0.08, PartySizeMin = 10, DeterminesFigure = false },
 					{ BaseID = "UnitBlock.RF.SouthernCaravanDonkey", RatioMin = 0.01, RatioMax = 0.12, PartySizeMin = 12 },	// Vanilla: Second starts spawning at 14, then 16+
 
-					// Flex-Block: Only one of these can appear at the same time, as decided by onBeforeSpawnStart
+					// Flex-Block: Only one of these can appear at the same time, as decided by our excludeSpawnables hook
 					{ BaseID = "UnitBlock.RF.Slave", HardMin = 2, RatioMax = 0.25, DeterminesFigure = false },
 					{ BaseID = "UnitBlock.HD.Gladiators", HardMin = 2, StartingResourceMin = 200, RatioMax = 0.25, DeterminesFigure = false },
 				],
 			},
 
-			onBeforeSpawnStart = function()
+			excludeSpawnables = function()
 			{
+				base.excludeSpawnables();
+
 				local flexBlockPossibilities = ::MSU.Class.WeightedContainer([
 					[60, "UnitBlock.RF.Slave"],
 					[10, "UnitBlock.HD.Gladiators"],

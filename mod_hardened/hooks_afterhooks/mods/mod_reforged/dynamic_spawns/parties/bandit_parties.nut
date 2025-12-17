@@ -40,7 +40,9 @@
 		}
 	}
 	// We make sure, that every camp only contains either Fast or Tough Bandits
-	banditDefenderParty.Class.onBeforeSpawnStart <- function() {
+	banditDefenderParty.Class.excludeSpawnables <- function() {
+		base.excludeSpawnables();
+
 		local flexBlocks = [];
 		foreach (index, banditBlock in this.__DynamicSpawnables)
 		{
@@ -61,7 +63,9 @@
 	foreach (banditPartyID in ["BanditRoamers", "BanditScouts", "BanditRaiders", "BanditBoss"])
 	{
 		// Todo: Adjust this hook after Dynamic Spawns Update is out
-		::DynamicSpawns.Public.getParty(banditPartyID).Class.onBeforeSpawnStart <- function() {
+		::DynamicSpawns.Public.getParty(banditPartyID).Class.excludeSpawnables <- function() {
+			base.excludeSpawnables();
+
 			local flexBlocks = [];
 			foreach (index, banditBlock in this.__DynamicSpawnables)
 			{

@@ -25,8 +25,10 @@ local parties = [
 			],
 		},
 
-		function onBeforeSpawnStart()
+		function excludeSpawnables()
 		{
+			base.excludeSpawnables();
+
 			local maxEliteTypes = 2;	// We make sure, that no roaming party contains more than this many elites will appear at the same time
 			foreach (index, nobleBlock in this.__DynamicSpawnables)
 			{
