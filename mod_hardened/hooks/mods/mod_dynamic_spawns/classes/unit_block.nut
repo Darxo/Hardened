@@ -1,5 +1,5 @@
-// Overwrite to replace usage of getCost with getMinCost
+// Overwrite to replace usage of getCost with getPredictedWorth
 ::DynamicSpawns.Class.UnitBlock.sort <- function()
 {
-	this.__DynamicSpawnables.sort(@(a, b) a.getMinCost() <=> b.getMinCost());		// Hardened: We replace getCost with getMinCost for a more accurate upgrade order
+	::DynamicSpawns.__stableSort(this.__DynamicSpawnables, @(a, b) a.getPredictedWorth() <=> b.getPredictedWorth());		// Hardened: We replace getCost with getPredictedWorth for a more accurate upgrade order
 }
