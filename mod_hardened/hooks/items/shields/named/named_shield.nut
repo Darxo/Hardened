@@ -35,7 +35,7 @@
 			_i.m.StaminaModifier = ::Math.round(_i.m.StaminaModifier * ::Math.rand(60, 80) * 0.01);		// Vanilla: (70, 90)
 		});
 
-		for( local n = 2; n != 0 && available.len() != 0; n = --n )
+		for ( local n = 2; n != 0 && available.len() != 0; n = --n )
 		{
 			local r = ::Math.rand(0, available.len() - 1);
 			available[r](this);

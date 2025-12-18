@@ -34,7 +34,7 @@
 				if (::MSU.isNull(target.Actor)) continue;
 
 				local targetTile = target.Actor.getTile();
-				if(!targetTile.IsVisibleForEntity) continue;
+				if (!targetTile.IsVisibleForEntity) continue;
 				if (!skill.isInRange(targetTile)) continue;
 				if (!skill.onVerifyTarget(_entity.getTile(), targetTile)) continue;
 
@@ -43,10 +43,10 @@
 				local tilesAffected = skill.getAffectedTiles(targetTile);
 				foreach (tile in tilesAffected)
 				{
-					if(!tile.IsOccupiedByActor) continue;
+					if (!tile.IsOccupiedByActor) continue;
 
 					local affectedTarget = tile.getEntity();
-					if(_entity.isAlliedWith(affectedTarget))
+					if (_entity.isAlliedWith(affectedTarget))
 					{
 						if (this.getProperties().TargetPriorityHittingAlliesMult >= 1.0) continue;
 
@@ -83,7 +83,7 @@
 						if (tile.IsEmpty) continue;
 						if (!tile.IsOccupiedByActor) continue;
 
-						if(tile.getEntity().isAlliedWith(_entity))
+						if (tile.getEntity().isAlliedWith(_entity))
 						{
 							if (this.getProperties().TargetPriorityHittingAlliesMult >= 1.0) continue;
 

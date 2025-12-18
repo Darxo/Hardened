@@ -81,7 +81,7 @@
 			// We now allow a customizable amount of trade goods. And we mark those trade goods in a special way, so that they drop in mint condition alter on
 			if (home.getProduce().len() != 0)
 			{
-				for(local i = 0; i < this.HD_getProduceAmount(); ++i)
+				for (local i = 0; i < this.HD_getProduceAmount(); ++i)
 				{
 					lastSpawnedParty.HD_addMintItemToInventory(::MSU.Array.rand(home.getProduce()));
 				}

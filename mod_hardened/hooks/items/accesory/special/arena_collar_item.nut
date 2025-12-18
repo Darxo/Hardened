@@ -44,7 +44,7 @@
 				if (item == null) continue;
 				if (item.getID() != targetItemID) continue;
 
-				if(bro.getItems().equip(item))	// We equip the first fitting item. That might not be exactly the one, which we had on previously
+				if (bro.getItems().equip(item))	// We equip the first fitting item. That might not be exactly the one, which we had on previously
 				{
 					stash.remove(item);
 				}

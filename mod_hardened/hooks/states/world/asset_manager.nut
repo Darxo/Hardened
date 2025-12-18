@@ -135,7 +135,7 @@
 				for (local j = stashItems.len() - 1; j >= 0; --j)
 				{
 					local stashItem = stashItems[j];
-					if(stashItem == null) continue;
+					if (stashItem == null) continue;
 					if (!this.HD_isReplacement(stashItem, entry)) continue
 
 					// We found a replacement item in the stash!
