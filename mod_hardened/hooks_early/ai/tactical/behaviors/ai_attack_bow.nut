@@ -38,7 +38,7 @@
 				if (!skill.isInRange(targetTile)) continue;
 				if (!skill.onVerifyTarget(_entity.getTile(), targetTile)) continue;
 
-				if (::Const.AI.VerboseMode) ::logInfo("Hardened: calculating score against " + target.getName());
+				if (::Const.AI.VerboseMode) ::logInfo("Hardened: calculating score against " + target.Actor.getName());
 				local targetScore = 0.0;
 				local tilesAffected = skill.getAffectedTiles(targetTile);
 				foreach (tile in tilesAffected)
