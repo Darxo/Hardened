@@ -14,11 +14,7 @@
 		if (this.RF_canDropLootForPlayer(_killer))
 		{
 			local roll = ::Math.rand(1, 100);
-			if (roll == 1)	// Jackpot - one in a hundred for a big item
-			{
-				ret.push(::new("scripts/items/loot/signet_ring_item"));	// 250 value
-			}
-			else if (roll <= 15)	// A few tools
+			if (roll <= 15)	// A few tools
 			{
 				local tools = ::new("scripts/items/supplies/armor_parts_item");
 				tools.setAmount(::Math.rand(1, 2));
