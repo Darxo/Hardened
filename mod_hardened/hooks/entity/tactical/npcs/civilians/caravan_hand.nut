@@ -6,10 +6,10 @@
 	{
 		__original();
 
-		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 30 - 50
 			[12, "scripts/items/armor/leather_tunic"],
 			[12, "scripts/items/armor/thick_tunic"],
-			[12, "scripts/items/armor/padded_surcoat"],
+			[12, "scripts/items/armor/ragged_surcoat"],
 		]);
 
 		this.m.ChanceForNoHelmet = 60;
