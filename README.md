@@ -781,7 +781,6 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ### Dynamic Party Adjustments
 
-- Enemy Locations (except Brigands and Nomads) now spawn 15% less troops and instead field higher tier troops
 - Tweak the party compositions of many factions
 	- reducing on average the amount of different entity types in that party
 	- increasing the amount of higher tier units allowed at the same time
@@ -1167,7 +1166,6 @@ This section talks about adjustments made to other optional mods, when present a
 - Improve knock back logic for **Spiked Impaler** to behave like the Knock Back skill from shields
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
 - Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
-- IdleSounds on higher combat speed are now played less frequently than on lower combat speed
 - Hitpoints recovery on brothers is now more accurate (camping recovery fix)
 - Fix Armor Damage on Weapon tooltips sometimes being off by 1%
 - Fix noble troops spawning for a settlement faction, failing to spawn tabards during combat and glitching out
@@ -1221,8 +1219,7 @@ This section talks about adjustments made to other optional mods, when present a
 
 ### Dynamic Spawns
 
-- Fix HardMin in UnitBlocks not forcing them to spawn first
-- Fix Cost of Units with Bodyguards not being predicted correctly
+- Fix Unit order in UnitBlocks not taking subparties into account
 
 ### Swifter
 

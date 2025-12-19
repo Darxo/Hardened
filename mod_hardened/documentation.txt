@@ -24,6 +24,12 @@
 
 # Changelog
 
+1.6.8
+	- Make Hardened compatible with Dynamic Spawn Framework 0.5.0
+	- Only allow 2 Tiers of most UnitBlocks to be present at the same time, resulting in less crowded party lists
+	- Fix NPCs spamming idle sounds during combat when opening the menu, when using Modular Vanilla 0.7.0+
+	- Fix Ranged NPCs freezing in battle, when setting `::Const.AI.VerboseMode = true`
+
 1.6.7
 	- Fix potential crash introduced by 1.6.6 when mods add too many new factions
 
