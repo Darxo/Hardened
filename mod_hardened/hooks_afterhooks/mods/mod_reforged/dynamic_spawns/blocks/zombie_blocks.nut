@@ -1,7 +1,6 @@
 {	// UnitBlock.RF.ZombieFrontline
 	local zombieFrontline = ::DynamicSpawns.Public.getUnitBlock("UnitBlock.RF.ZombieFrontline");
 	zombieFrontline.DynamicDefs.Units[2].RatioMax = 1.0;		// Reforged: 0.5
-	zombieFrontline.TierWidth <- 2;		// Reforged: unrestricted
 	zombieFrontline.DynamicDefs.Units.push({ BaseID = "Unit.HD.HD_ZombieBetrayer", RatioMax = 0.2 });		// New highest tier for frontline
 }
 
