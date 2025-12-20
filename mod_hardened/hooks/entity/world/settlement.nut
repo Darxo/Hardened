@@ -221,15 +221,6 @@
 			case "building.weaponsmith":
 			case "building.weaponsmith_oriental":
 			{
-				for (local index = (_list.len() - 1); index >= 0; --index)
-				{
-					local entry = _list[index];
-					if (entry.S == "weapons/rf_poleaxe")	// We prevent any poleaxes from being sold at all
-					{
-						_list.remove(index);
-					}
-				}
-
 				_list.push({
 					R = 0,
 					P = 1.25,	// Note that these buildings have an inherent price multiplier of 1.25
@@ -240,6 +231,16 @@
 		}
 
 		__original(_id, _list);
+
+		// Now we go over the item pool after items from attached locations have been added
+		for (local index = (_list.len() - 1); index >= 0; --index)
+		{
+			local entry = _list[index];
+			if (entry.S == "weapons/rf_poleaxe")	// We prevent any poleaxes from being sold at all
+			{
+				_list.remove(index);
+			}
+		}
 	}
 
 	q.onLeave = @(__original) function()
