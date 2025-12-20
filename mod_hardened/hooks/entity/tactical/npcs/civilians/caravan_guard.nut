@@ -13,8 +13,9 @@
 
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 80 - 120
 			[12, "scripts/items/helmets/mail_coif"],
-			[12, "scripts/items/helmets/padded_nasal_helmet"],
-			[12, "scripts/items/helmets/dented_nasal_helmet"],
+			[12, "scripts/items/helmets/rf_padded_scale_helmet"],
+			[6, "scripts/items/helmets/padded_nasal_helmet"],
+			[6, "scripts/items/helmets/dented_nasal_helmet"],
 		]);
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
