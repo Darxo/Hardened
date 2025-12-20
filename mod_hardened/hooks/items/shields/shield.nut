@@ -52,6 +52,24 @@
 		receiver.getSkills().onAfterShieldDamageReceived( _damage, conditionBefore - this.getCondition(), this, attacker, skill );
 	}
 
+	// Vanilla Fix: Shields sometimes show up as damaged, even if they only missed a few condition points
+	q.updateAppearance = @(__original) function()
+	{
+		__original();
+
+		if (::MSU.isNull(this.getContainer()) || !this.isEquipped()) return;	// Similar condition as in Vanilla
+
+		if (this.m.ShowOnCharacter)
+		{
+			local conditionPct = (this.m.Condition / (this.m.ConditionMax * 1.0));	// Vanilla: (this.m.Condition / this.m.ConditionMax), which almost always floors to 0
+			if (conditionPct > ::Const.Combat.ShowDamagedShieldThreshold)
+			{
+				// We make sure to display the regular shield sprite in all the intended situations
+				this.getContainer().getAppearance().Shield = this.m.Sprite;
+			}
+		}
+	}
+
 // Reforged Functions
 	q.RF_getDefenseMult = @() function()
 	{
