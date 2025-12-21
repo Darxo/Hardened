@@ -22,6 +22,7 @@
 			[12, "scripts/items/weapons/bludgeon"],
 			[12, "scripts/items/weapons/hatchet"],
 			[12, "scripts/items/weapons/militia_spear"],
+			[12, "scripts/items/weapons/shortsword"],
 			[12, "scripts/items/weapons/knife"],
 		]);
 
