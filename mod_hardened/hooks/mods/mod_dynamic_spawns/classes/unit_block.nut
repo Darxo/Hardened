@@ -1,3 +1,13 @@
+// Feat: We prevent any upgrading, if IdealSize is not yet reached
+local oldCanUpgrade = ::DynamicSpawns.Class.UnitBlock.canUpgrade;
+::DynamicSpawns.Class.UnitBlock.canUpgrade <- function()
+{
+	local myParty = this.getTopParty();
+	if (myParty.generateIdealSize() > myParty.getTotal()) return false;
+
+	return oldCanUpgrade();
+}
+
 // All UnitBlocks now have a TierWidth of 2 by default, causing them to only spawn at most 2 tiers at the same time
 // Some blocks might not properly spawn all units then (e.g. Ghouls), but we deal with those on a case by case basis
 ::DynamicSpawns.Class.UnitBlock.TierWidth <- 2;	// Reforged: 9999
