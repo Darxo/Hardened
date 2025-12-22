@@ -2,7 +2,9 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.HitChanceBonus = 0;
+
+	// Reforged
+		this.m.MeleeSkillAdd = 0;	// Reforged: 5
 	}
 
 	q.getTooltip = @(__original) function()
