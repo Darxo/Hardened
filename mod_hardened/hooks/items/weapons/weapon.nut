@@ -62,6 +62,26 @@
 		return ret;
 	}
 
+	q.onDamageDealt = @(__original) function( _target, _skill, _hitInfo )
+	{
+		__original(_target, _skill, _hitInfo);
+
+		local actor = this.getContainer().getActor();
+		if (actor.isPlayerControlled() && _skill.getDirectDamage() < 1.0 && !_skill.isRanged() && this.m.ConditionMax > 1)	// Same conditions as Vanilla
+		{
+			// First condition is like in vanilla, the other two conditions are inversed, as we want to be able to ignore those
+			if (_target.getArmorMax(_hitInfo.BodyPart) >= 50 && _hitInfo.DamageInflictedArmor < 5 && this.m.ConditionMax != 2)
+			{
+				// New Condition. You now damage your weapon, even if you only deal 1 Armor Damage with it
+				// This fixes the Hardened Lute not taking any condition damage
+				if (_hitInfo.DamageInflictedArmor >= 1)
+				{
+					this.lowerCondition();
+				}
+			}
+		}
+	}
+
 	q.onPutIntoBag = @(__original) function()
 	{
 		__original();
