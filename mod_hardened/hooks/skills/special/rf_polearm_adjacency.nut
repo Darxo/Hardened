@@ -16,7 +16,7 @@
 		{
 			if (entry.id == 10 && entry.icon == "ui/icons/hitchance.png")
 			{
-				entry.text = ::MSU.String.replace(entry.text, " with lower [Reach|Concept.Reach] than you", "");
+				entry.text = ::MSU.String.replace(entry.text, ::Reforged.Mod.Tooltips.parseString(" with lower [Reach|Concept.Reach] than you"), "");
 				break;
 			}
 		}
