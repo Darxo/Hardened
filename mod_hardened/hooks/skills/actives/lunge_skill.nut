@@ -8,7 +8,11 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.HitChanceBonus = -10;	// Reforged: -20
+
+	// Reforged
+		this.m.MeleeSkillAdd = -10;	// Reforged: -20
+
+	// Hardened
 		this.m.HD_IgnoreForCrowded = true;	// This skill moves during its execution ending with a regular attack on an adjacent tile so we exclude it from crowded
 	}
 
@@ -56,7 +60,7 @@
 			id = 13,
 			type = "text",
 			icon = "ui/icons/hitchance.png",
-			text = "Has " + ::MSU.Text.colorizeValue(this.m.HitChanceBonus, {AddSign = true, AddPercent = true}) + ::Reforged.Mod.Tooltips.parseString(" [Hitchance|Concept.Hitchance]"),
+			text = "Has " + ::MSU.Text.colorizeValue(this.m.MeleeSkillAdd, {AddSign = true, AddPercent = true}) + ::Reforged.Mod.Tooltips.parseString(" [Hitchance|Concept.Hitchance]"),
 		});
 
 		return ret;
@@ -74,7 +78,7 @@
 			damageMult = ::Math.clampf(damageMult, this.m.HD_DamageTotalMultMin, this.m.HD_DamageTotalMultMax);
 			_properties.DamageTotalMult *= damageMult;
 
-			_properties.MeleeSkill += this.m.HitChanceBonus;
+			_properties.MeleeSkill += this.m.MeleeSkillAdd;
 		}
 	}
 });
