@@ -16,7 +16,7 @@
 		this.m.HD_IgnoreForCrowded = true;	// This skill moves during its execution ending with a regular attack on an adjacent tile so we exclude it from crowded
 	}
 
-	// Overwrite, because we write a all tooltips different from Reforged
+	// Overwrite, because we write all tooltips different from Reforged
 	q.getTooltip = @() function()
 	{
 		local ret = this.getDefaultTooltip();

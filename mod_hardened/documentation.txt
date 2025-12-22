@@ -24,6 +24,10 @@
 
 # Changelog
 
+1.6.10
+	- Fix **Gash**, **Slash** and **Thrust** regaining their Hitchance bonus with Reforged 0.7.20
+	- Fix **Lunge** and **Sword Thrust** losing their Hitchance bonus with Reforged 0.7.20
+
 1.6.9
 	- Melee Weapons are now eligible for losing condition on an attack if they deal at least 1 Armor Damage (down from 5)
 	- Add nested tooltips for **Hitchance** in tooltip of **Crowded**
