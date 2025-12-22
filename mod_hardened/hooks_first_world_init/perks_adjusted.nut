@@ -1444,6 +1444,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_strength_in_numbers",
+		Key = "RF_StrengthInNumbers",
+		Description = ::UPD.getDescription({
+			Fluff = "\'Yeah, skill doesn\'t mean so much when you\'re surrounded by 10 angry townsfolk with sharp pitchforks!\'",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"For each adjacent ally, gain " + ::MSU.Text.colorPositive("+2") + " [Melee Skill|Concept.MeleeSkill], [Ranged Skill|Concept.RangeSkill], [Melee Defense|Concept.MeleeDefense], [Ranged Defense|Concept.RangeDefense] and [Resolve|Concept.Bravery]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_survival_instinct",
 		Key = "RF_SurvivalInstinct",
 		Description = ::UPD.getDescription({
