@@ -14,10 +14,14 @@
 
 		foreach (entry in ret)
 		{
-			if (entry.id == 10 && entry.icon == "ui/icons/hitchance.png")
+			if ("icon" in entry && entry.icon == "ui/icons/hitchance.png")
 			{
-				entry.text = ::MSU.String.replace(entry.text, ::Reforged.Mod.Tooltips.parseString(" with lower [Reach|Concept.Reach] than you"), "");
-				break;
+				entry.text = ::MSU.String.replace(entry.text, "chance to hit", ::Reforged.Mod.Tooltips.parseString("[Hitchance|Concept.Hitchance]"));
+
+				if (entry.id == 10)		// For the tooltip about enemies, we also remove the lower reach
+				{
+					entry.text = ::MSU.String.replace(entry.text, ::Reforged.Mod.Tooltips.parseString(" with lower [Reach|Concept.Reach] than you"), "");
+				}
 			}
 		}
 
