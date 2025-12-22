@@ -24,6 +24,15 @@
 
 # Changelog
 
+1.6.9
+	- Melee Weapons are now eligible for losing condition on an attack if they deal at least 1 Armor Damage (down from 5)
+	- Add nested tooltips for **Hitchance** in tooltip of **Crowded**
+	- Fix enemy parties spawning high tier units way early
+	- Fix(Vanilla) shields sometimes showing up as damaged even if they have more than 50% condition
+	- Fix **Poleaxe** still sometimes appearing in settlements with an ore smelter
+	- Fix **Crowded** tooltip mentioning something about Reach, which is no longer relevant in Hardened
+	- Add potential fix for some parties on the world map seeming to be stuck in place, not doing anything
+
 1.6.8
 	- Make Hardened compatible with Dynamic Spawn Framework 0.5.0
 	- Only allow 2 Tiers of most UnitBlocks to be present at the same time, resulting in less crowded party lists

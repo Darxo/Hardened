@@ -867,6 +867,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Burning Damage (Fire Pot, Burning Arrow, Burning Ground) now remove all root-like effects from the targets
 - Characters which are not visible to the player will no longer produce idle or death sounds
 - Prevent most skills from playing sounds while their user is hidden
+- Melee Weapons are now eligible for losing condition on an attack if they deal at least 1 Armor Damage (down from 5)
 - Weapons no longer drop to the ground when their condition goes to 0. Instead they drop when the condition is lowered, while it was at 0 condition. The weapon break warning is now only displayed while the weapon is at 0 condition
 - Weapons with 0 Condition now deal 50% less damage
 - The combat map is no longer revealed at the end of a battle
@@ -1178,6 +1179,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Dying enemies no longer set the LastCombatResult to `EnemyDestroyed`, unless they were the last one to die. This fixes a rare Sunken Library exploit
 - Unique Locations are no longer attackable, if there is a party, hostile to the player, directly next to it (fixes exploit for skipping Goblin City quest)
 - **Knock Back** now displays its hitchance bonus correctly in the preview
+- Fix shields sometimes showing up as damaged even if they have more than 50% condition
 - Fix UI Scale in the options being able to be set to a value that can brick your UI
 - Fix Event manager crash while on the snow during the undead crisis
 - Fix world map zoom sometimes zooming too far during lag
