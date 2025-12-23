@@ -10,6 +10,9 @@
 			[12, "scripts/items/weapons/fighting_axe"],
 			[12, "scripts/items/weapons/military_cleaver"],
 		]);
+
+		this.m.AIAgent = ::new("scripts/ai/tactical/agents/hd_generic_melee_leader_agent");
+		this.m.AIAgent.setActor(this);
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own

@@ -24,6 +24,11 @@
 		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/shields/kite_shield"],
 		]);
+
+		this.m.AIAgent = ::new("scripts/ai/tactical/agents/hd_generic_melee_leader_agent");
+		this.m.AIAgent.setActor(this);
+		this.m.AIAgent.m.Properties.BehaviorMult[::Const.AI.Behavior.ID.Shieldwall] = 1.2;		// Hardened: 0.8
+		this.m.AIAgent.m.Properties.OverallDefensivenessMult = 4;		// Hardened: 1.0
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own

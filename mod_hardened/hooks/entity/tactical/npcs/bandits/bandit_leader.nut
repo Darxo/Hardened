@@ -30,6 +30,9 @@
 		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/shields/heater_shield"],
 		]);
+
+		this.m.AIAgent = ::new("scripts/ai/tactical/agents/hd_generic_melee_leader_agent");
+		this.m.AIAgent.setActor(this);
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
