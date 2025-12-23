@@ -20,6 +20,9 @@
 			[12, "scripts/items/weapons/two_handed_flanged_mace"],
 			[12, "scripts/items/weapons/two_handed_hammer"],
 		]);
+
+		this.m.AIAgent = ::new("scripts/ai/tactical/agents/hd_generic_carry_agent");
+		this.m.AIAgent.setActor(this);
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own

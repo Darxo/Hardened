@@ -18,6 +18,9 @@
 			[12, "scripts/items/weapons/shamshir"],
 			[12, "scripts/items/weapons/oriental/swordlance"],
 		]);
+
+		this.m.AIAgent = ::new("scripts/ai/tactical/agents/hd_generic_carry_agent");
+		this.m.AIAgent.setActor(this);
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
