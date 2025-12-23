@@ -140,10 +140,16 @@
 	{
 		__original();
 
-		// All Crossbows now have +10% Armor Penetration as a result of the Crossbow Rework
 		if (this.isWeaponType(::Const.Items.WeaponType.Crossbow))
 		{
+			// All Crossbows now have +10% Armor Penetration as a result of the Crossbow Rework
 			this.m.DirectDamageAdd += 0.1;
+		}
+		else if (this.isWeaponType(::Const.Items.WeaponType.Bow))
+		{
+			// All Bows now have -5% Armor Penetration to solidify their role as anti-low-armor
+			// We subtract a tiny extra bit less to fix float rounding errors that would manifest in off-by-one values in weapon and skill tooltips
+			this.m.DirectDamageAdd -= 0.0499;
 		}
 	}
 
