@@ -10,4 +10,16 @@ this.hd_nomad_melee_agent <- ::inherit("scripts/ai/tactical/agents/bandit_melee_
 		this.m.Properties.EngageFlankingMult = 1.5;		// Base: 1.25
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 1.25;		// Base: 0.5
 	}
+
+	function onUpdate()
+	{
+		this.bandit_melee_agent.onUpdate();
+
+		// bandit_melee_agent sets the following value to 0.25 for weapons with a range of 2; and to 0.5 for weapons with a range of 1
+		// The behavior for weapon range of 2 is ok and we like that. But we need to overwrite that for a range of 1, because nomads want empty spaces
+		if (this.m.Properties.EngageTargetAlreadyBeingEngagedMult == 0.5)
+		{
+			this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 1.25;
+		}
+	}
 });
