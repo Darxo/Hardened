@@ -314,6 +314,15 @@
 		__original();
 	}
 
+	q.spawnBloodEffect = @(__original) function( _tile, _mult = 1.0 )
+	{
+		// We prevent blood effects from appearing outside of the players view
+		if (_tile.IsVisibleForPlayer)
+		{
+			__original(_tile, _mult);
+		}
+	}
+
 // Hardened Functions
 	// Our own interpretation of surroundedCount, that is not yet clamped
 	q.__calculateSurroundedCount = @(__original) function()
