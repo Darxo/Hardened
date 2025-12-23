@@ -42,3 +42,25 @@
 		return ret;
 	}
 });
+
+::Hardened.HooksMod.hookTree("scripts/skills/skill_container", function(q) {
+	q.onDamageReceived = @(__original) function( _attacker, _damageHitpoints, _damageArmor )
+	{
+		__original(_attacker, _damageHitpoints, _damageArmor);
+
+		if (!_attacker.isAlliedWith(this.getActor()))
+		{
+			::Tactical.Entities.getStrategy(this.getActor().getFaction()).m.Stats.HD_WasHitByEnemy += 1;
+		}
+	}
+
+	q.onTargetHit = @(__original) function( _caller, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
+	{
+		__original(_caller, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor);
+
+		if (!_targetEntity.isAlliedWith(this.getActor()))
+		{
+			::Tactical.Entities.getStrategy(this.getActor().getFaction()).m.Stats.HD_DealtHitToEnemy += 1;
+		}
+	}
+});
