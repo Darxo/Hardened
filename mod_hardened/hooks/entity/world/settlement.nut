@@ -248,6 +248,11 @@
 					entry.R = 40;	// Down from 40-85
 					break;
 				}
+				case "weapons/rf_kriegsmesser":
+				{
+					entry.R = 80;	// Up from 40-60
+					break;
+				}
 			}
 		}
 	}
