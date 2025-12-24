@@ -1,7 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_marksmanship", function(q) {
 	// Public
 	q.m.DamageModifier <- 10;
-	q.m.RequiredIsolationDistance <- 2;
+	q.m.RequiredIsolationDistance <- 3;
 
 	q.create = @(__original) function()
 	{

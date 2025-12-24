@@ -1177,7 +1177,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"While no enemy is within 2 tiles of you, deal " + ::MSU.Text.colorPositive("+10") + " Damage",
+					"While no enemy is within 3 tiles of you, deal " + ::MSU.Text.colorPositive("+10") + " Damage",
 				],
 			}],
 		}),
