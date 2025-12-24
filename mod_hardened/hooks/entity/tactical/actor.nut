@@ -119,16 +119,26 @@
 
 	q.onDamageReceived = @(__original) function( _attacker, _skill, _hitInfo )
 	{
-		local oldHitpoints = this.getHitpoints();
+		// Feat: we display the hitpoints of before the damage impact in the combat log
+		// We switcheroo the values of the BodyPartNames to also include the current Hitpoints,
+		// so that vanilla displays them in the in the logs that are printed during this function call
+		local oldBodyName = ::Const.Strings.BodyPartName[::Const.BodyPart.Body];
+		local oldHeadName = ::Const.Strings.BodyPartName[::Const.BodyPart.Head];
+		::Const.Strings.BodyPartName[::Const.BodyPart.Body] += " (" + this.getHitpoints() + ")";
+		::Const.Strings.BodyPartName[::Const.BodyPart.Head] += " (" + this.getHitpoints() + ")";
+
 		local mockObject = ::Hardened.mockFunction(this, "kill", function(_killer = null, _skill = null, _fatalityType = ::Const.FatalityType.None, _silent = false) {
 			// Vanilla Fix: Vanilla never prints a hitpoint damage combat log, when the attack kills the target, so we do that here now
-			::Tactical.EventLog.logEx(format("%s\'s %s (%i) is hit for %i damage", ::Const.UI.getColorizedEntityName(this), ::Const.Strings.BodyPartName[_hitInfo.BodyPart], oldHitpoints, ::Math.floor(_hitInfo.DamageInflictedHitpoints)));
+			::Tactical.EventLog.logEx(format("%s\'s %s is hit for %i damage", ::Const.UI.getColorizedEntityName(this), ::Const.Strings.BodyPartName[_hitInfo.BodyPart], ::Math.floor(_hitInfo.DamageInflictedHitpoints)));
 			return { done = true };
 		});
 
 		__original(_attacker, _skill, _hitInfo);
 
 		mockObject.cleanup();
+
+		::Const.Strings.BodyPartName[::Const.BodyPart.Body] = oldBodyName;
+		::Const.Strings.BodyPartName[::Const.BodyPart.Head] = oldHeadName;
 	}
 
 	// Seems to be called from within the .exe and also doesnt seem related to setDiscovered
