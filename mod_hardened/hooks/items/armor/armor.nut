@@ -32,6 +32,15 @@
 		}
 	}
 
+	q.onDamageReceived = @(__original) function( _damage, _fatalityType, _attacker )
+	{
+		// We switcheroo the Name, adding the current condition to it, so that the combat log will include the condition of the armor piece before the hit
+		local oldName = this.m.Name;
+		this.m.Name += " (" + this.getCondition() + ")";
+		__original(_damage, _fatalityType, _attacker);
+		this.m.Name = oldName;
+	}
+
 // Hardened Functions
 	q.getShopAmountMax = @() function()
 	{
