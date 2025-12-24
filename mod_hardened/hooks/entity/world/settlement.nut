@@ -243,6 +243,11 @@
 					_list.remove(index);	// We prevent any poleaxes from being sold at all
 					break;
 				}
+				case "weapons/rf_battle_axe":
+				{
+					entry.R = 40;	// Down from 40-85
+					break;
+				}
 			}
 		}
 	}
