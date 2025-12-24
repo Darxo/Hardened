@@ -15,16 +15,16 @@
 // We change that, so that now these global values are taken instead
 ::Const.Difficulty.StartingResources <- [
 	{
-		Money = 2500,		// Vanilla: 2500
-		Ammo = 80,			// Vanilla: 80
-		Tools = 40,			// Vanilla: 40
-		Medicine = 30,		// Vanilla: 30
+		Money = 3000,		// Vanilla: 2500
+		Ammo = 100,			// Vanilla: 80
+		Tools = 50,			// Vanilla: 40
+		Medicine = 50,		// Vanilla: 30
 	},
 	{
 		Money = 2000,		// Vanilla: 2000
-		Ammo = 40,			// Vanilla: 40
-		Tools = 20,			// Vanilla: 20
-		Medicine = 20,		// Vanilla: 20
+		Ammo = 50,			// Vanilla: 40
+		Tools = 30,			// Vanilla: 20
+		Medicine = 30,		// Vanilla: 20
 	},
 	{
 		Money = 1500,		// Vanilla: 1500
