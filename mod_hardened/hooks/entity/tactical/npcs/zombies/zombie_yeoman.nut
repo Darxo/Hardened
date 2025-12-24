@@ -53,7 +53,6 @@
 			[1, "scripts/items/armor/padded_leather"],
 			[1, "scripts/items/armor/worn_mail_shirt"],
 			[1, "scripts/items/armor/patched_mail_shirt"],
-			[1, "scripts/items/armor/ragged_surcoat"],
 			[1, "scripts/items/armor/basic_mail_shirt"],
 		]).roll());
 		if (this.Math.rand(1, 100) <= 66)
@@ -65,12 +64,11 @@
 		if (this.Math.rand(1, 100) <= 75)
 		{
 			local helmet = ::new(::MSU.Class.WeightedContainer([
-				[1, "scripts/items/helmets/aketon_cap"],
 				[1, "scripts/items/helmets/full_aketon_cap"],
 				[1, "scripts/items/helmets/full_leather_cap"],
 				[1, "scripts/items/helmets/padded_kettle_hat"],
 				[1, "scripts/items/helmets/dented_nasal_helmet"],
-				[1, "scripts/items/helmets/mail_coif"],
+				[1, "scripts/items/helmets/rusty_mail_coif"],
 			]).roll());
 			if (this.Math.rand(1, 100) <= 66)
 			{
