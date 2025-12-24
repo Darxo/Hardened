@@ -236,9 +236,13 @@
 		for (local index = (_list.len() - 1); index >= 0; --index)
 		{
 			local entry = _list[index];
-			if (entry.S == "weapons/rf_poleaxe")	// We prevent any poleaxes from being sold at all
+			switch (entry.S)
 			{
-				_list.remove(index);
+				case "weapons/rf_poleaxe":
+				{
+					_list.remove(index);	// We prevent any poleaxes from being sold at all
+					break;
+				}
 			}
 		}
 	}
