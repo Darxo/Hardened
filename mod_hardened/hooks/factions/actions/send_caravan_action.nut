@@ -20,7 +20,7 @@
 		// We now allow a customizable amount of trade goods. And we mark those trade goods in a special way, so that they drop in mint condition alter on
 		if (start.getProduce().len() != 0)
 		{
-			for (local i = 0; i < this.HD_getProduceAmount(); ++i)
+			for (local i = 0; i < this.HD_getProduceAmount(_faction); ++i)
 			{
 				lastSpawnedParty.HD_addMintItemToInventory(::MSU.Array.rand(start.getProduce()));
 			}
@@ -28,9 +28,14 @@
 	}
 
 // New Functions
-	q.HD_getProduceAmount <- function()
+	q.HD_getProduceAmount <- function( _faction )
 	{
-		return 3;
+		local produceAmount = 2;
+
+		if (this.m.Start.getSize() == 3) produceAmount++;
+		if (_faction.hasTrait(::Const.FactionTrait.OrientalCityState)) produceAmount++;
+
+		return produceAmount;
 	}
 });
 
