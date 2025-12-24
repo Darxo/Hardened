@@ -11,6 +11,29 @@
 	1.0,
 ];
 
+// Vanilla uses magic numbers in asset_manager::setCampaignSettings to apply these resources
+// We change that, so that now these global values are taken instead
+::Const.Difficulty.StartingResources <- [
+	{
+		Money = 2500,		// Vanilla: 2500
+		Ammo = 80,			// Vanilla: 80
+		Tools = 40,			// Vanilla: 40
+		Medicine = 30,		// Vanilla: 30
+	},
+	{
+		Money = 2000,		// Vanilla: 2000
+		Ammo = 40,			// Vanilla: 40
+		Tools = 20,			// Vanilla: 20
+		Medicine = 20,		// Vanilla: 20
+	},
+	{
+		Money = 1500,		// Vanilla: 1500
+		Ammo = 20,			// Vanilla: 20
+		Tools = 10,			// Vanilla: 10
+		Medicine = 10,		// Vanilla: 10
+	},
+];
+
 // We change the orientation icons of several bandits to better match the appearance they have in Hardened
 ::Const.EntityIcon[::Const.EntityType.RF_BanditScoundrel] = "rf_bandit_thug_orientation";		// Reforged: bandit_thug_orientation
 ::Const.EntityIcon[::Const.EntityType.BanditThug] = "bandit_thug_orientation";					// Reforged: rf_bandit_thug_orientation
@@ -133,56 +156,34 @@
 	});
 }
 
-// Vanilla uses magic numbers in-code, so we just re-define those in a simple data-structure, until some mod globalizes them
-local startingResources = [
-	{
-		Money = 2500,
-		Ammo = 80,
-		Tools = 40,
-		Medicine = 30,
-	},
-	{
-		Money = 2000,
-		Ammo = 40,
-		Tools = 20,
-		Medicine = 20,
-	},
-	{
-		Money = 1500,
-		Ammo = 20,
-		Tools = 10,
-		Medicine = 10,
-	},
-];
-
 ::Const.Difficulty.generateStartingDifficultyTooltip <- function( _tooltip, _difficulty )
 {
 	_tooltip.push({		// Starting Money
 		id = 10,
 		type = "text",
 		icon = "ui/icons/asset_money.png",
-		text = "Starting Crowns: " + ::MSU.Text.colorizeValue(startingResources[_difficulty].Money),
+		text = "Starting Crowns: " + ::MSU.Text.colorizeValue(::Const.Difficulty.StartingResources[_difficulty].Money),
 	});
 
 	_tooltip.push({		// Ammunition
 		id = 11,
 		type = "text",
 		icon = "ui/icons/asset_ammo.png",
-		text = "Starting Ammunition: " + ::MSU.Text.colorizeValue(startingResources[_difficulty].Ammo),
+		text = "Starting Ammunition: " + ::MSU.Text.colorizeValue(::Const.Difficulty.StartingResources[_difficulty].Ammo),
 	});
 
 	_tooltip.push({		// Tools and Supplies
 		id = 12,
 		type = "text",
 		icon = "ui/icons/asset_supplies.png",
-		text = "Starting Tools: " + ::MSU.Text.colorizeValue(startingResources[_difficulty].Tools),
+		text = "Starting Tools: " + ::MSU.Text.colorizeValue(::Const.Difficulty.StartingResources[_difficulty].Tools),
 	});
 
 	_tooltip.push({		// Medicine
 		id = 13,
 		type = "text",
 		icon = "ui/icons/asset_medicine.png",
-		text = "Starting Medicine: " + ::MSU.Text.colorizeValue(startingResources[_difficulty].Medicine),
+		text = "Starting Medicine: " + ::MSU.Text.colorizeValue(::Const.Difficulty.StartingResources[_difficulty].Medicine),
 	});
 }
 

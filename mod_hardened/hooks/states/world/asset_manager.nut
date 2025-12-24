@@ -183,6 +183,22 @@
 		this.m.RestoreEquipment = [];	// We clear the array, just like vanilla does it
 	}
 
+	q.setCampaignSettings = @(__original) function( _settings )
+	{
+		// Feat: We make the starting resources moddable
+		this.m.Money = ::Const.Difficulty.StartingResources[_settings.BudgetDifficulty].Money;
+		this.m.Ammo = ::Const.Difficulty.StartingResources[_settings.BudgetDifficulty].Ammo;
+		this.m.ArmorParts = ::Const.Difficulty.StartingResources[_settings.BudgetDifficulty].Tools;
+		this.m.Medicine = ::Const.Difficulty.StartingResources[_settings.BudgetDifficulty].Medicine;
+
+		// We switcheroo it to an invalid value so that Vanilla does not apply its own hard-coded assets
+		// This difficulty is never saved globally or deserialized, but we still preserve the original value, just in case a mod also does logic off of it
+		local oldBudgetDifficulty = _settings.BudgetDifficulty;
+		_settings.BudgetDifficulty = -1;
+		__original(_settings);
+		_settings.BudgetDifficulty = oldBudgetDifficulty;
+	}
+
 // New Functions
 	// Unequip all items equipped to or in the bag of _bro, which are not mentioned in _restorePoint and return them
 	// @return array of item references of all "wrong" items unequipped this way
