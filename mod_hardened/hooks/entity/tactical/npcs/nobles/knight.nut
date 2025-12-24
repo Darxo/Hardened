@@ -41,7 +41,8 @@
 	{
 		if (!this.actor.makeMiniboss()) return false;
 
-		local r = ::Math.rand(1, 4);
+		// Knight Champions never spawn with named helmets as we always want to preserve their faction themed helmet
+		local r = ::Math.rand(1, 3);
 		if (r == 1)
 		{
 			local weapon = ::MSU.Class.WeightedContainer([
@@ -66,18 +67,6 @@
 				}
 			})
 			if (armor != null) this.getItems().equip(::new(armor));
-		}
-		else
-		{
-			local helmet = ::Reforged.ItemTable.NamedHelmetNorthern.roll({
-				Apply = function ( _script, _weight )
-				{
-					local conditionMax = ::ItemTables.ItemInfoByScript[_script].ConditionMax;
-					if (conditionMax < 265) return 0.0;
-					return _weight;
-				}
-			})
-			if (helmet != null) this.getItems().equip(::new(helmet));
 		}
 
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_rebuke"));
