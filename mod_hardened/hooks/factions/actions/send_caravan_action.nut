@@ -1,11 +1,23 @@
 ::Hardened.HooksMod.hook("scripts/factions/actions/send_caravan_action", function(q) {
 	q.onExecute = @(__original) function( _faction )
 	{
+		// We switcheroo this.m.Start.m.Resources for southern caravans, to make them spawn with less resources
+		// Vanilla spawns southern caravans with 60% of the resources of the town they come from (as opposed to 50% for northern ones)
+		// But in Hardened, northern towns have 20% less resources and city states have 40% more resources, so we equalize that vanilla multiplier
+		local oldResources = this.m.Start.m.Resources;
+		if (_faction.hasTrait(::Const.FactionTrait.OrientalCityState))
+		{
+			this.m.Start.m.Resources *= 0.8;
+		}
+
 		// We switcheroo getProduce, so that vanilla doesnt add its wares items to the caravan. Instead we want to have control over them being added
 		local start = (typeof this.m.Start == "instance" && this.m.Start instanceof ::WeakTableRef) ? this.m.Start.get() : this.m.Start;
 		local oldGetProduce = start.getProduce;
 		start.getProduce = function() { return [] };
+
 		__original(_faction);
+
+		this.m.Start.m.Resources = oldResources;
 		start.getProduce = oldGetProduce;
 
 		if (::MSU.isNull(this.m.Faction)) return;
