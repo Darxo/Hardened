@@ -175,22 +175,46 @@ q.onQueryTooltip <- function( _skill, _tooltip )
 	{
 		local ret = __original(_user, _target, _skill);
 
+		if (::MSU.isNull(_skill)) return ret;
+		if (_user.getID() == _target.getID()) return ret;		// _user and _target must not be the same
+
 		if (_target.getID() == this.getContainer().getActor().getID())	// We must be the _target
 		{
-			if (_user.getID() != _target.getID()) return ret;		// _user and _target must not be the same
-
 			local connectedActor = this.getConnectedActor();
 			if (::MSU.isNull(connectedActor)) return ret;
 			if (connectedActor.getID() != _user.getID()) return ret;	// we are only interested in adjusting the AI of someone who is netted by us
 
 			ret *= 1.2;	// We prefer to do anything, which targets the guy, who is perma-netting us currently
 
-			if (_skill != null)
+			if (_skill.getID() == "actives.knock_back" || _skill.getID() == "actives.repel" || _skill.getID() == "actives.shoot_stake")
 			{
-				if (_skill.getID() == "actives.knock_back" || _skill.getID() == "actives.repel" || _skill.getID() == "actives.shoot_stake")
+				// We are encouraged to break the bond between us and the kingfisher to waste their net
+				ret *= 1.5;
+			}
+		}
+		else	// We are the _user
+		{
+			// We must be able to net someone
+			if (::MSU.isNull(this.getConnectedActor()) && _skill.getID() == "actives.rf_net_pull")
+			{
+				local pullTile = _skill.findTileToKnockBackTo(_user.getTile(), _target.getTile());
+				if (pullTile.getDistanceTo(_user.getTile()) == 1)
 				{
-					// We are encouraged to break the bond between us and the kingfisher to waste their net
-					ret *= 1.5;
+					// Net Pull heavily synergises with Kingfisher, allowing us to pull them, stagger them and net them without expending our net
+					ret *= 3.0;
+				}
+			}
+			else if (this.isSkillValid(_skill))
+			{
+				if (_user.getTile().getDistanceTo(_target.getTile()) == 1)
+				{
+					// Kingfisher preserves the net, if we were to throw it on _target, so we heavily encourage that
+					ret *= 2.0;
+				}
+				else
+				{
+					// We don't want to waste our net, as that makes Kingfisher a dead perk, so we are discouraged to throw it on further away enemies
+					ret *= 0.5;
 				}
 			}
 		}
