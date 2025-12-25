@@ -40,7 +40,7 @@
 	q.setActive = @(__original) function( _active )
 	{
 		// Feat: Attached Locations that get rebuilt, roll named items again
-		if (!this.isActive() && _active)
+		if (!this.isActive() && _active && !::MSU.Serialization.isLoading())	// During deserialization, this is also called, so we need to ignore those calls
 		{
 			this.m.Loot.clear();	// First we clear the existing items/named items
 			this.onSpawned();
