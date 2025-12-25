@@ -49,6 +49,19 @@
 		__original(_active);
 	}
 
+	q.onDeserialize = @(__original) function( _in )
+	{
+		__original(_in);
+
+		// Fix: attached locations having too many named items after saving and loading multiple times
+		// This is a retro-active fix for existing saves. It is not required for new saves and should eventually be removed from Hardened
+		if (this.m.Loot.len() > 2)
+		{
+			this.m.Loot.clear();
+			this.onSpawned();
+		}
+	}
+
 // New Function
 	q.getProduceList <- function()
 	{
