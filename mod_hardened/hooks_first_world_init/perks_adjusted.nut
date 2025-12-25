@@ -1170,6 +1170,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_man_of_steel",
+		Key = "RF_ManOfSteel",
+		Description = ::UPD.getDescription({
+			Fluff = "\'S\' is the symbol for \'Hope\'",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Take less [Armor Penetration|Concept.ArmorPenetration] Damage from Attacks equal your Helmet or Body Armor [Weight|Concept.Weight] as a percentage, whichever is lower",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_marksmanship",
 		Key = "RF_Marksmanship",
 		Description = ::UPD.getDescription({
