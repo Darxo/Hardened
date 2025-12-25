@@ -42,6 +42,7 @@
 		// Feat: Attached Locations that get rebuilt, roll named items again
 		if (!this.isActive() && _active)
 		{
+			this.m.Loot.clear();	// First we clear the existing items/named items
 			this.onSpawned();
 		}
 
