@@ -30,7 +30,7 @@
 		if (this.isItemType(::Const.Items.ItemType.Legendary)) return true;
 
 		// Check for whether the condition threshold is met
-		if (this.getCondition() / this.getConditionMax() < this.m.HD_ConditionThresholdForDrop) return false;
+		if ((this.getCondition() / (this.getConditionMax() * 1.0)) < this.m.HD_ConditionThresholdForDrop) return false;
 
 		// Random Chance-Based drop
 		local isLucky = !::Tactical.State.isScenarioMode() && ::World.Assets.getOrigin().isDroppedAsLoot(this);
