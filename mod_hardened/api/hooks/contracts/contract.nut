@@ -37,7 +37,7 @@
 	// We don't do the smae treatment to getReputationToPaymentLightMult, because that one is no guaranteed to encounter enemies
 	q.getReputationToPaymentMult = @() function()
 	{
-		local ret = 1.35;	// Vanillas lowest value is this, so we use it as a baseline, to upscale our own multiplier
+		local ret = 1.0;	// Vanillas lowest value is 1.35, but we start at 1.0 directly and increase the pay of early game contracts by disabling the ::Const.World.Assets.ContractRewardPOW scaling
 		ret *= ::Hardened.Global.getWorldContractMult();
 		ret *= ::Const.Difficulty.PaymentMult[::World.Assets.getEconomicDifficulty()];
 		return ret;
