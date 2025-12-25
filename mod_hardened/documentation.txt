@@ -24,6 +24,11 @@
 
 # Changelog
 
+1.6.11
+	- Fix **Attached Locations** gaining additional stacking named loot whenever you load a save
+	- Fix **Attached Locations** not clearing its named loot correctly when destroyed and rebuilt
+	- Clear and reroll the named items of any attached location with 3 or more items, when loading a save. This is a temporary fix for existing savegames whose locations collected too many items
+
 1.6.10
 	- Fix **Gash**, **Slash** and **Thrust** regaining their Hitchance bonus with Reforged 0.7.20
 	- Fix **Lunge** and **Sword Thrust** losing their Hitchance bonus with Reforged 0.7.20
