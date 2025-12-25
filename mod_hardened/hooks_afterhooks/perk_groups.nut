@@ -50,6 +50,11 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		pgFastGroup.addPerk("perk.rf_wear_them_down", 3);				// Add Wear them Down to Tier 3
 	}
 
+	{	// Fencer Group
+		local pgFencerGroup = ::DynamicPerks.PerkGroups.findById("pg.special.rf_fencer");
+		pgFencerGroup.addPerk("perk.footwork", 1);				// Add Footwork to Tier 1
+	}
+
 	{	// Hammer Group
 		local pgHammerGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_hammer");
 		changePerkTier(pgHammerGroup, "perk.rf_rattle", 6);			// Move rattle (Full Force) into the position where Deep Impact was previously
