@@ -6,6 +6,9 @@
 
 		// Hardened values
 		this.m.HD_ConditionValueThreshold = 0.5;	// Condition now only scales the price of this down to 50% of its normal value
+		this.m.HD_MinConditionForPlayerDrop = 1;	// Vanilla: 11
+		this.m.HD_MinConditionForDrop = 0;			// Vanilla: 31
+		this.m.HD_ConditionThresholdForDrop = 0.5;	// Vanilla: 0.25
 	}
 
 	q.onAddedToStash = @(__original) function( _stashID )
@@ -47,5 +50,19 @@
 		// Almost never do you need to buy the third armor of the same type. Buying the first two should be sufficient
 		// By not generating the third this will prevent low tier and unneeded amounts of armor from spamming late-game shops
 		return 2;
+	}
+
+	// Overwrite, because we make the drop-chance of body armors relative to the relative remaining
+	q.HD_getDropChance = @() function()
+	{
+		local pctCondition = this.getCondition() / (this.getConditionMax() * 1.0);
+
+		// If we enter here, pctCondition is already guaranteed to be at least HD_ConditionThresholdForDrop and at most 1.0
+		// Now we want to transform this range into one that ranges from 0.0 to 1.0
+		// For that, we need to utilize HD_ConditionThresholdForDrop and normalize our pctCondition with its help
+		local normalizedPctCondition = (pctCondition - this.m.HD_ConditionThresholdForDrop) * (1.0 / (1.0 - this.m.HD_ConditionThresholdForDrop));
+
+		// The chance, that a body armor is looted, now drops linearly towards 0%, as its pctCondition moves towards HD_ConditionThresholdForDrop
+		return this.m.HD_BaseDropChance * normalizedPctCondition;
 	}
 });
