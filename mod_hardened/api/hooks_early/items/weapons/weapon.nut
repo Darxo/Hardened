@@ -20,7 +20,7 @@
 	{
 		if (!this.item.isDroppedAsLoot()) return false;
 
-		local isPlayer = this.m.LastEquippedByFaction == ::Const.Faction.Player || !::MSU.isNull(this.getContainer()) && this.getContainer().getActor() != null && ::MSU.isKindOf(this.getContainer().getActor(), "player");
+		local isPlayer = this.m.LastEquippedByFaction == ::Const.Faction.Player || !::MSU.isNull(this.getContainer()) && ::MSU.isKindOf(this.getContainer().getActor(), "player");
 
 		if (isPlayer) return true;	// We always drop weapons worn by players (just like Reforged)
 		if (this.isItemType(::Const.Items.ItemType.Named)) return true;
