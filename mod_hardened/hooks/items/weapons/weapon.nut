@@ -72,9 +72,11 @@
 			// First condition is like in vanilla, the other two conditions are inversed, as we want to be able to ignore those
 			if (_target.getArmorMax(_hitInfo.BodyPart) >= 50 && _hitInfo.DamageInflictedArmor < 5 && this.m.ConditionMax != 2)
 			{
-				// New Condition. You now damage your weapon, even if you only deal 1 Armor Damage with it
-				// This fixes the Hardened Lute not taking any condition damage
-				if (_hitInfo.DamageInflictedArmor >= 1)
+				// New Condition: If your weapon can theoretically deal any armor damage, it will lose condition on hitting armor
+				// So you now damage your weapon, even if you only deal 0 Armor Damage with it
+				// This fixes an issue, where Weapons didnt lose condition if their damage was debuffed too much, or the target has too much mitigation
+				// One example is the Lute, with its very low base damage, knock out reducing it by 50% and the broken weapon debuff reducing it an additional time
+				if (this.m.ArmorDamageMult > 0.0)
 				{
 					this.lowerCondition();
 				}
