@@ -2,7 +2,32 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.Description += ::Reforged.Mod.Tooltips.parseString(" Can not be used while [engaged in melee|Concept.ZoneOfControl].");
 		this.m.AdditionalAccuracy = 20;	// Reforged: 10
+	}
+
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original();
+
+		local actor = this.getContainer().getActor();
+		if (::Tactical.isActive() && actor.getTile().hasZoneOfControlOtherThan(actor.getAlliedFactions()))
+		{
+			ret.push({
+				id = 40,
+				type = "text",
+				icon = "ui/tooltips/warning.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Can not be used because this character is [engaged in melee|Concept.ZoneOfControl]"),
+			});
+		}
+
+		return ret;
+	}
+
+	q.isUsable = @(__original) function()
+	{
+		// We change it so shoot_stake no longer works, while engaged in melee
+		return __original() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
 	}
 
 	q.onUse = @(__original) function( _user, _targetTile )
