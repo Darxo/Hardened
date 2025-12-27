@@ -9,6 +9,14 @@
 		IconDisabled = "ui/perks/perk_hd_anchor_sw.png",
 	},
 	{
+		ID = "perk.hd_brace_for_impact",
+		Script = "scripts/skills/perks/perk_hd_brace_for_impact",
+		Name = ::Const.Strings.PerkName.HD_BraceForImpact,
+		Tooltip = ::Const.Strings.PerkDescription.HD_BraceForImpact,
+		Icon = "ui/perks/perk_hd_brace_for_impact.png",		// Existing unused vanilla art, that we just renamed
+		IconDisabled = "ui/perks/perk_hd_brace_for_impact_sw.png",		// Edited (desatured) version of existing unused vanilla art
+	},
+	{
 		ID = "perk.hd_hybridization",
 		Script = "scripts/skills/perks/perk_hd_hybridization",
 		Name = ::Const.Strings.PerkName.HD_Hybridization,

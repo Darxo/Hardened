@@ -40,6 +40,22 @@ local newPerks = [
 		}),
 	},
 	{
+		Key = "HD_BraceForImpact",
+		Name = "Brace for Impact",
+		Description = ::UPD.getDescription({
+			Fluff = "This is going to hurt.",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Whenever you move to a tile, gain " + ::MSU.Text.colorPositive("1") + " stack for each adjacent enemy (up to a maximum of 5 stacks), until the start of your next [turn|Concept.Turn]",
+						"Take " + ::MSU.Text.colorPositive("10%") + " less [Hitpoint|Concept.Hitpoints] Damage from Attacks for each stack",
+					],
+				},
+			],
+		}),
+	},
+	{
 		Key = "HD_Hybridization",
 		Name = "Hybridization",
 		Description = ::UPD.getDescription({

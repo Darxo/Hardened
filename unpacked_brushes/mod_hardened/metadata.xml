@@ -21,11 +21,13 @@
 	<sprite id="perk_rf_formidable_approach_mini" ic = "FF23165B" img="mini\perk_rf_formidable_approach_mini.png" />
 	<sprite id="perk_rf_marksmanship_mini" ic = "FF23165B" img="mini\perk_rf_marksmanship_mini.png" />
 	<sprite id="perk_rf_vanquisher_mini" ic = "FF23165B" img="mini\perk_rf_vanquisher_mini.png" />
+	<sprite id="hd_brace_for_impact_effect_mini" ic = "FF23165B" img="mini\perk_hd_brace_for_impact_mini.png" />
 	<sprite id="hd_disrupted_flow_mini" ic = "FF23165B" img="mini\hd_disrupted_flow_mini.png" />
 	<sprite id="hd_inspired_by_song_effect_mini" ic = "FF23165B" img="mini\hd_inspired_by_song_effect_mini.png" />
 	<sprite id="hd_reload_disorientation_effect_mini" ic = "FF23165B" img="mini\hd_reload_disorientation_effect_mini.png" />
 	<sprite id="hd_whirling_death_effect_mini" ic = "FF23165B" img="mini\hd_whirling_death_effect_mini.png" />
 
+	<sprite id="hd_brace_for_impact_effect" ic = "FF23165B" img="..\..\gfx\ui\perks\perk_hd_brace_for_impact.png" />
 	<sprite id="hd_disrupted_flow_effect" ic = "FF23165B" img="..\..\gfx\skills\status_effect_62.png" />
 	<sprite id="rf_lucky_trait" ic = "FF23165B" img="..\..\gfx\ui\traits\trait_icon_54.png" />
 
