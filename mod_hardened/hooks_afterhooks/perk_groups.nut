@@ -218,6 +218,13 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		pgUnstoppablePerkGroup.addPerk("perk.hd_anchor", 3);	// Add Anchor (New Hardened Perk) into the Tier 3
 	}
 
+	{	// Vicious Group
+		local pgViciousGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_vicious");
+
+		pgViciousGroup.removePerk("perk.rf_between_the_eyes");		// Remove Between the Eyes from Tier 3
+		pgViciousGroup.addPerk("perk.hd_brace_for_impact", 3);		// Add Brace for Impact (New Hardened Perk) into Tier 3
+	}
+
 	{	// Vigorous Group
 		local pgVigorousGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_vigorous");
 		pgVigorousGroup.removePerk("perk.rf_survival_instinct");	// Remove Survival Instinct from Tier 1
