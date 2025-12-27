@@ -25,7 +25,7 @@ this.perk_hd_one_with_the_shield <- ::inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = ::Reforged.Mod.Tooltips.parseString("You have " + ::MSU.Text.colorizeMultWithText(this.m.ThresholdToReceiveInjuryMult) + " [Injury Threshold|Concept.InjuryThreshold]"),
+				text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeMultWithText(this.m.ThresholdToReceiveInjuryMult) + " [Injury Threshold|Concept.InjuryThreshold]"),
 			});
 		}
 
@@ -36,7 +36,7 @@ this.perk_hd_one_with_the_shield <- ::inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/damage_received.png",
-				text = "You take " + ::MSU.Text.colorizeMultWithText(headHitpointMult, {InvertColor = true}) + " Hitpoint Damage from Attacks to the Head",
+				text = "Take " + ::MSU.Text.colorizeMultWithText(headHitpointMult, {InvertColor = true}) + ::Reforged.Mod.Tooltips.parseString(" [Hitpoint|Concept.Hitpoints] Damage from Attacks to the Head"),
 			});
 		}
 
@@ -47,7 +47,7 @@ this.perk_hd_one_with_the_shield <- ::inherit("scripts/skills/skill", {
 				id = 12,
 				type = "text",
 				icon = "ui/icons/damage_received.png",
-				text = "You take " + ::MSU.Text.colorizeMultWithText(bodyHitpointMult, {InvertColor = true}) + " Hitpoint Damage from Attacks to the Body",
+				text = "Take " + ::MSU.Text.colorizeMultWithText(bodyHitpointMult, {InvertColor = true}) + ::Reforged.Mod.Tooltips.parseString(" [Hitpoint|Concept.Hitpoints] Damage from Attacks to the Body"),
 			});
 		}
 
