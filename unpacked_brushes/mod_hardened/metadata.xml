@@ -29,7 +29,7 @@
 
 	<sprite id="hd_brace_for_impact_effect" ic = "FF23165B" img="..\..\gfx\ui\perks\perk_hd_brace_for_impact.png" />
 	<sprite id="hd_disrupted_flow_effect" ic = "FF23165B" img="..\..\gfx\skills\status_effect_62.png" />
-	<sprite id="rf_lucky_trait" ic = "FF23165B" img="..\..\gfx\ui\traits\trait_icon_54.png" />
+	<sprite id="hd_lucky_trait" ic = "FF23165B" img="..\..\gfx\ui\traits\trait_icon_54.png" />
 
 	<sprite id="icon_HD_crossbow_01" offsetY="35" ic="FF39475F" width="130" height="142" img="icons\icon_HD_crossbow_01.png" left="-10" right="60" top="-53" bottom="2" />
 </brush>
