@@ -223,6 +223,9 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 
 		pgViciousGroup.removePerk("perk.rf_between_the_eyes");		// Remove Between the Eyes from Tier 3
 		pgViciousGroup.addPerk("perk.hd_brace_for_impact", 3);		// Add Brace for Impact (New Hardened Perk) into Tier 3
+
+		changePerkTier(pgViciousGroup, "perk.berserk", 7);		// Move Berserk to Tier 7 (up from Tier 5)
+		changePerkTier(pgViciousGroup, "perk.fearsome", 5);		// Move Fearsome to Tier 5 (down from Tier 7)
 	}
 
 	{	// Vigorous Group
