@@ -333,6 +333,28 @@
 		}
 	}
 
+// Modular Vanilla Functions
+	q.MV_calcHitpointsDamageReceived = @(__original) function( _skill, _hitInfo )
+	{
+		// Vanilla Fix: We apply DamageReceivedRegularMult, DamageReceivedRangedMult and DamageReceivedMeleeMult to DamageMinimum
+		// In Vanilla only DamageReceivedTotalMult affects DamageMinimum
+		//	causing Bone Plating and Indomitable to mitigate the guaranteed damage from one-handed hammer, while Nimble does not mitigate that
+		// In Reforged, Anticipation can make you immune to the complete damage of an attack, even from a one-handed hammer
+		//	But the natural damage-type specific hitpoint mitigation from racial effects can not make you immune to a one-handed hammer
+		local p = _hitInfo.MV_PropertiesForBeingHit;
+		local missingDamageMinimumMult = p.DamageReceivedRegularMult;
+		if (_skill != null)
+		{
+			missingDamageMinimumMult *= _skill.isRanged() ? p.DamageReceivedRangedMult : p.DamageReceivedMeleeMult;
+		}
+
+		// Switcheroo of DamageMinimum, to apply additional
+		local oldDamageMinimum = _hitInfo.DamageMinimum;
+		_hitInfo.DamageMinimum = ::Math.clamp(::Math.round(_hitInfo.DamageMinimum * missingDamageMinimumMult), 0, ::Math.round(_hitInfo.DamageMinimum));
+		__original(_skill, _hitInfo);
+		_hitInfo.DamageMinimum = oldDamageMinimum;
+	}
+
 // Hardened Functions
 	// Our own interpretation of surroundedCount, that is not yet clamped
 	q.__calculateSurroundedCount = @(__original) function()
