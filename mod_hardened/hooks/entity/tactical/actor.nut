@@ -324,6 +324,22 @@
 		__original();
 	}
 
+	q.setCurrentProperties = @(__original) function( _newCurrent )
+	{
+		if (!::Tactical.isActive())
+		{
+			return __original(_newCurrent);
+		}
+
+		// Vanilla Fix: changes to the maximum fatigue of a brother during combat no longer changes his usable fatigue
+		// Vanilla has already implemented this behavior for swapping items
+		// This fix will now make it so getting injuries does not take away fatigue and losing/ignoring injuries does not generate free usable fatigue
+		// That was most notable around Adrenaline, when it makes you immune to Stamina related injuries
+		local oldUsableFatigue = this.HD_getUsableFatigue();
+		__original(_newCurrent);
+		this.HD_setUsableFatigue(oldUsableFatigue);
+	}
+
 	q.spawnBloodEffect = @(__original) function( _tile, _mult = 1.0 )
 	{
 		// We prevent blood effects from appearing outside of the players view
@@ -438,6 +454,11 @@
 	// This must happen as hookTree because there is no guarantee that someone overwriting it will call the child function
 	q.onSpawned = @(__original) function()
 	{
+		// Since we now preserve available fatigue during combat, that causes newly created entities to spawn fully fatigued,
+		//	because in the creation process they start with 0 Stamina
+		// In order to fix that, we automatically set the fatigue of every freshly spawned entity to 0. That is in line with Vanilla behavior anyways
+		this.setFatigue(0);
+
 		__original();
 
 		// The player no longer gains any experience when allies are dying
