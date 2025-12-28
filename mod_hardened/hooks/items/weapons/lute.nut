@@ -19,6 +19,7 @@
 			o.m.IconDisabled = "skills/active_88_sw.png";
 			o.m.Overlay = "active_88";
 			o.m.StunChance = 100;	// In Vanilla this is 30
+			o.m.IsIgnoredAsAOO = false;		// So that the lute exerts zone of control and provides its reach correctly
 		}));
 
 		this.addSkill(::new("scripts/skills/actives/hd_battle_song_skill"));
