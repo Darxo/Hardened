@@ -1,6 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/entity/world/location", function(q) {
 	q.m.HideDefenderAtNight <- true;	// Hide Defender Line up at night?
-	q.m.HD_CanSpawnParties <- true;	// When false, this location will never be chosen for actions which spawn random world parties from it
 	q.m.HD_MinPlayerDistanceForSpawn <- 0;	// If the player is hostile to this location then this many tiles must be between this location and the player for it to be able to spawn parties
 
 	q.getLastSpawnTime = @(__original) function()
@@ -53,8 +52,6 @@
 	// Determines, whether this location is allowed to spawn parties
 	q.HD_canSpawnParties <- function()
 	{
-		if (!this.m.HD_CanSpawnParties) return false;
-
 		if (this.m.HD_MinPlayerDistanceForSpawn == 0) return true;
 		if (::World.State.getPlayer().isAlliedWith(this)) return true;
 		local playerTileDistance = ::World.State.getPlayer().getTile().getDistanceTo(this.getTile());
