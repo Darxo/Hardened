@@ -7,6 +7,7 @@
 		// Vanilla has no member table so we need to add our member variables like this
 		// Public
 		this.m.DamageTotalMult <- 0.50;	// Weapon Damage multiplier, while the weapon is in the broken state
+		this.m.HD_WeaponSkillFatigueMult <- 1.50;	// All Weapon skills have this fatigue multiplier applied to them, while the weapon is about to break
 	}
 
 	q.getTooltip = @(__original) function()
@@ -26,7 +27,17 @@
 				id = 11,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
-				text = "Weapon deals " + ::MSU.Text.colorizeMultWithText(this.m.DamageTotalMult) + " damage",
+				text = "Weapon deals " + ::MSU.Text.colorizeMultWithText(this.m.DamageTotalMult) + " Damage",
+			});
+		}
+
+		if (this.m.HD_WeaponSkillFatigueMult != 1.0)
+		{
+			ret.push({
+				id = 11,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "Weapon Skills cost " + ::MSU.Text.colorizeMultWithText(this.m.HD_WeaponSkillFatigueMult, {InvertColor = true}) + ::Reforged.Mod.Tooltips.parseString(" [Fatigue|Concept.Fatigue]"),
 			});
 		}
 
@@ -37,6 +48,18 @@
 	q.isHidden = @() function()
 	{
 		return !this.isEnabled();
+	}
+
+	q.onAfterUpdate = @(__original) function( _properties )
+	{
+		__original(_properties);
+
+		if (!this.isEnabled()) return;
+
+		foreach (skill in this.getMainhandWeapon().getSkills())
+		{
+			skill.m.FatigueCostMult *= this.m.HD_WeaponSkillFatigueMult;
+		}
 	}
 
 	q.onUpdate = @(__original) function( _properties )
