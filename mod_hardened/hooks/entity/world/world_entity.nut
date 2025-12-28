@@ -14,6 +14,27 @@
 		this.getLabel("name").Text = this.getName() + " (" + ::Hardened.Numerals.getNumeralString(this.m.Troops.len(), true) + ")";
 	}
 
+	q.updatePlayerRelation = @(__original) function()
+	{
+		// Feat: Allies factions that are close to the threshold for becoming hostile are now colored orange
+		// Switcheroo of NeutralColor, so that world factions, who are close to becoming hostile to the player, are colored in a new yellow-ish color
+		local oldNeutralColor = ::Const.Factions.NeutralColor;
+
+		local faction = ::World.FactionManager.getFaction(this.getFaction());
+		if (faction != null)
+		{
+			local playerRelation = faction.getPlayerRelation();
+			if (playerRelation >= 20.0 && playerRelation < 30.0)	// This is exactly the portion called "Unfriendly"
+			{
+				::Const.Factions.NeutralColor = ::Const.Factions.HD_AlmostHostileColor;
+			}
+		}
+
+		__original();
+
+		::Const.Factions.NeutralColor = oldNeutralColor;
+	}
+
 	// For the tooltip of world entities
 	q.getTroopComposition = @(__original) function()
 	{

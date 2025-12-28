@@ -3,3 +3,6 @@
 	::Const.Factions.PermanentHostileColor = ::Const.Factions.HostileColor;
 }
 
+{	// New Values
+	::Const.Factions.HD_AlmostHostileColor <- ::createColor("#ffa046");
+}
