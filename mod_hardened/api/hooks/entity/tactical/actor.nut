@@ -197,6 +197,18 @@
 		return recoveredActionPoints;
 	}
 
+	// Get the usable fatigue, that this brother has, for using skills and such
+	q.HD_getUsableFatigue <- function()
+	{
+		return this.getFatigueMax() - this.getFatigue();
+	}
+
+	// Try to adjust the current fatigue of this brother so that he has _usableFatigue usable fatigue
+	q.HD_setUsableFatigue <- function( _usableFatigue )
+	{
+		this.setFatigue(this.getFatigueMax() - _usableFatigue);
+	}
+
 	q.HD_getChanceToBeHit <- function()
 	{
 		return this.m.HD_ChanceToBeHit;
