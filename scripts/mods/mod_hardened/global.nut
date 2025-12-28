@@ -5,6 +5,8 @@
 		MinimumVision = 2,				// Vision of characters can never be reduced below this value. In Vanilla this is 1
 
 	// World
+		LabelBackgroundAlpha = 150,		// Alpha value for the backgrounds of the world party and location labels
+
 		ContractScalingBase = 1.0,		// This contract scaling is happening from day one. This scales multiplicatively with PerReputation scaling
 		ContractScalingPerReputation = 0.0007,	// Each Reputation point causes contracts to be this much more lucrative and dangerous
 		ContractScalingMin = 0.5,		// Contracts never scale below this value

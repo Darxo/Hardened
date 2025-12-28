@@ -2,6 +2,17 @@
 	// Private
 	q.m.LastTroopSize <- 0;		// temporary variable to prevent
 
+	q.onInit = @(__original) function()
+	{
+		__original();
+
+		// Feat: slightly increase the alpha value of the label background, so that red colors are more readable
+		local backgroundColor = this.createColor("#000000");
+		backgroundColor.A = ::Hardened.Global.LabelBackgroundAlpha;	// Vanilla: 102
+		local label_name = this.getLabel("name");
+		label_name.BackgroundColor = backgroundColor;	// Just changing theA value of the existing color does not seem to do anything, so we just overwrite it
+	}
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
