@@ -74,7 +74,7 @@
 	::Const.Tactical.Actor.CaravanGuard.ActionPoints = 9;
 	::Const.Tactical.Actor.CaravanGuard.Hitpoints = 70;
 	::Const.Tactical.Actor.CaravanGuard.Bravery = 70;
-	::Const.Tactical.Actor.CaravanGuard.Stamina = 130;
+	::Const.Tactical.Actor.CaravanGuard.Stamina = 120;
 	::Const.Tactical.Actor.CaravanGuard.MeleeSkill = 60;
 	::Const.Tactical.Actor.CaravanGuard.RangedSkill = 40;
 	::Const.Tactical.Actor.CaravanGuard.MeleeDefense = 10;
