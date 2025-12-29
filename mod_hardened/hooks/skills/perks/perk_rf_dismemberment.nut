@@ -27,4 +27,16 @@
 			_properties.HitChance[::Const.BodyPart.Head] -= this.m.BodyPartHitChanceModifier
 		}
 	}
+
+// Reforged Functions
+	// Overwrite, because we remove the checks for isRanged and for the damage type
+	q.isSkillValid = @() function( _skill )
+	{
+		if (!_skill.isAttack()) return false;
+
+		if (this.m.RequiredWeaponType == null) return true;
+
+		local weapon = _skill.getItem();
+		return !::MSU.isNull(weapon) && weapon.isItemType(::Const.Items.ItemType.Weapon) && weapon.isWeaponType(this.m.RequiredWeaponType);
+	}
 });

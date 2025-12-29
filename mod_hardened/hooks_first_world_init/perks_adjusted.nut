@@ -831,7 +831,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"When inflicting an [injury|Concept.InjuryTemporary] with a cutting damage attack, if you meet the [threshold|Concept.InjuryThreshold] for the lowest possible [injury|Concept.InjuryTemporary], instead inflict one with the highest [threshold|Concept.InjuryThreshold]",
+					"When inflicting an [injury|Concept.InjuryTemporary] with an Attack, if you meet the [threshold|Concept.InjuryThreshold] for the lowest possible [injury|Concept.InjuryTemporary], instead inflict one with the highest [threshold|Concept.InjuryThreshold]",
 					"Gain " + ::MSU.Text.colorPositive("+20%") + " chance to hit the body part with the most [temporary injuries|Concept.InjuryTemporary]",
 				],
 			}],
