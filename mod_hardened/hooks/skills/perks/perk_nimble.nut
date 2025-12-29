@@ -1,4 +1,10 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_nimble", function(q) {
+	q.getDescription = @() function()
+	{
+		// We remove the part about lighter armor granting more bonus
+		return "Nimble like a cat! This character is able to partially evade or deflect attacks at the last moment, turning them into glancing hits.";
+	}
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
@@ -15,6 +21,10 @@
 			{
 				ret.remove(index);
 			}
+			else if (entry.id == 6 && entry.icon == "ui/icons/special.png")		// We remove
+			{
+				ret.remove(index);
+			}
 		}
 
 		local armorDamageMult = this.getArmorDamage();
@@ -24,7 +34,7 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Take " + ::MSU.Text.colorizeMultWithText(armorDamageMult, {InvertColor = true}) + " armor damage from attacks",
+				text = "Take " + ::MSU.Text.colorizeMultWithText(armorDamageMult, {InvertColor = true}) + " Armor Damage from Attacks",
 			});
 		}
 
