@@ -68,7 +68,6 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_shield_expert"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_phalanx"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_exploit_opening"));
 	}
