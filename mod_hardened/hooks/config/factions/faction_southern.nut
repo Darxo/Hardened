@@ -41,11 +41,11 @@
 	::Const.Tactical.Actor.NomadArcher.ActionPoints = 9;
 	::Const.Tactical.Actor.NomadArcher.Hitpoints = 60;
 	::Const.Tactical.Actor.NomadArcher.Bravery = 60;
-	::Const.Tactical.Actor.NomadArcher.Stamina = 115;
+	::Const.Tactical.Actor.NomadArcher.Stamina = 110;			// Vanilla: 115
 	::Const.Tactical.Actor.NomadArcher.MeleeSkill = 60;
 	::Const.Tactical.Actor.NomadArcher.RangedSkill = 75;
 	::Const.Tactical.Actor.NomadArcher.MeleeDefense = 0;
-	::Const.Tactical.Actor.NomadArcher.RangedDefense = 10;
+	::Const.Tactical.Actor.NomadArcher.RangedDefense = 20;		// Vanilla: 15
 	::Const.Tactical.Actor.NomadArcher.Initiative = 120;
 
 	// Optional Stats
@@ -59,11 +59,11 @@
 	::Const.Tactical.Actor.NomadOutlaw.ActionPoints = 9;
 	::Const.Tactical.Actor.NomadOutlaw.Hitpoints = 75;
 	::Const.Tactical.Actor.NomadOutlaw.Bravery = 70;
-	::Const.Tactical.Actor.NomadOutlaw.Stamina = 125;
+	::Const.Tactical.Actor.NomadOutlaw.Stamina = 120;			// Vanilla: 125
 	::Const.Tactical.Actor.NomadOutlaw.MeleeSkill = 75;
 	::Const.Tactical.Actor.NomadOutlaw.RangedSkill = 70;
-	::Const.Tactical.Actor.NomadOutlaw.MeleeDefense = 15;
-	::Const.Tactical.Actor.NomadOutlaw.RangedDefense = 0;
+	::Const.Tactical.Actor.NomadOutlaw.MeleeDefense = 15;		// Vanilla: 15
+	::Const.Tactical.Actor.NomadOutlaw.RangedDefense = 15;		// Vanilla: 15
 	::Const.Tactical.Actor.NomadOutlaw.Initiative = 140;
 
 	// Optional Stats
@@ -81,8 +81,8 @@
 	::Const.Tactical.Actor.Executioner.MeleeSkill = 85;
 	::Const.Tactical.Actor.Executioner.RangedSkill = 50;
 	::Const.Tactical.Actor.Executioner.MeleeDefense = 25;
-	::Const.Tactical.Actor.Executioner.RangedDefense = 0;
-	::Const.Tactical.Actor.Executioner.Initiative = 115;
+	::Const.Tactical.Actor.Executioner.RangedDefense = 10;		// Vanilla: 20
+	::Const.Tactical.Actor.Executioner.Initiative = 140;		// Vanilla: 115
 
 	// Optional Stats
 	::Const.Tactical.Actor.Executioner.Vision <- 8;			// Vanilla: 7
@@ -114,7 +114,7 @@
 	::Const.Tactical.Actor.NomadLeader.MeleeSkill = 85;
 	::Const.Tactical.Actor.NomadLeader.RangedSkill = 70;
 	::Const.Tactical.Actor.NomadLeader.MeleeDefense = 15;
-	::Const.Tactical.Actor.NomadLeader.RangedDefense = 0;
+	::Const.Tactical.Actor.NomadLeader.RangedDefense = 15;		// Vanilla: 15
 	::Const.Tactical.Actor.NomadLeader.Initiative = 125;
 
 	// Optional Stats
@@ -131,9 +131,9 @@
 	::Const.Tactical.Actor.DesertDevil.Stamina = 130;
 	::Const.Tactical.Actor.DesertDevil.MeleeSkill = 90;
 	::Const.Tactical.Actor.DesertDevil.RangedSkill = 50;
-	::Const.Tactical.Actor.DesertDevil.MeleeDefense = 50;
-	::Const.Tactical.Actor.DesertDevil.RangedDefense = 15;
-	::Const.Tactical.Actor.DesertDevil.Initiative = 125;
+	::Const.Tactical.Actor.DesertDevil.MeleeDefense = 40;
+	::Const.Tactical.Actor.DesertDevil.RangedDefense = 20;
+	::Const.Tactical.Actor.DesertDevil.Initiative = 150;
 
 	// Optional Stats
 	::Const.Tactical.Actor.DesertDevil.Vision <- 8;			// Vanilla: 7
