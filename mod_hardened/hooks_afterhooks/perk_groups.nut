@@ -99,6 +99,11 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		changePerkTier(pgMaceGroup, "perk.rf_bone_breaker", 5);			// Move Bone Breaker from Tier 7 down to Tier 5
 	}
 
+	{	// Man of Steel Group
+		local pgManOfSteel = ::DynamicPerks.PerkGroups.findById("pg.special.rf_man_of_steel");
+		changePerkTier(pgManOfSteel, "perk.rf_man_of_steel", 3);			// Move Man of Steel to Tier 3 (down from Tier 7)
+	}
+
 	{	// Militia Group
 		local pgMilitia = ::DynamicPerks.PerkGroups.findById("pg.rf_militia");
 		changePerkTier(pgMilitia, "perk.rf_phalanx", 3);			// Move "Phalanx" to Tier 3 (up from Tier 1)
