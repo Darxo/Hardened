@@ -273,7 +273,7 @@
 ::Hardened.util.genericGenerateIdealSize <- function()
 {
 	if (!("Assets" in ::World) || ::World.Assets == null) return ::DynamicSpawns.Const.MainMenuIdealSize;	// fix for when we test a party in the main menu
-	return ::Math.max(6, ::Math.min(::World.getPlayerRoster().getSize(), ::World.Assets.getBrothersMaxInCombat()));
+	return Math.clamp(::World.getPlayerRoster().getSize(), 6, 12);
 }
 
 // Return the corpse name of _corpse in a color, depending on whether it was a player corpse or a non-player one
