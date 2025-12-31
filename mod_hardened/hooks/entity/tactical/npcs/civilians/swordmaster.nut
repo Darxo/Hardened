@@ -19,7 +19,6 @@
 			[12, "scripts/items/weapons/noble_sword"],
 		]);
 
-		this.getAIAgent().getProperties().EngageTargetMultipleOpponentsMult = 1.0;	// Vanilla: 1.25
 		this.getAIAgent().getProperties().EngageFlankingMult = 1.0;	// Vanilla: 1.25
 	}
 
