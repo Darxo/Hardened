@@ -59,7 +59,7 @@
 	- **Kriegsmesser** now appear ~half as often in weapon smiths
 	- **Caravan Hands** now spawn with **Ragged Surcoats** (50 Condition) instead of **Padded Surcoats** (60 Condition). They can now also spawn with a **Shortsword**
 	- **Peasants** no longer drop **Signet Ring**
-	- **Caravan Guards** can now also spawn with a **Padded Scale Helmet** (110 Condition). They are 50% less likely to spawn with a 120 Condition helmet. They now have 120 Stamina (down from 130)
+	- **Caravan Guards** lose **Shield Expert**. They can now also spawn with a **Padded Scale Helmet** (110 Condition). They are 50% less likely to spawn with a 120 Condition helmet. They now have 120 Stamina (down from 130)
 	- **Mercenaries** can now also spawn with a **Greatsword**
 	- All **Peasants** now have a 70% chance to spawn with a weapon (up from 60%). Northern **Peasants** can now spawn with **Wooden Flails**
 	- Champion **Knights** and Champion **Anointed Knights** will no longer roll a named helmet
