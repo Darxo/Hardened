@@ -782,17 +782,11 @@
 
 - investigate negotiator recovering relation too fast for southern crisis?
 
-- improve ranged ai in considering whether they have ranged advantage
-
-
-
-
 - add new skill for grand diviner called "Invite the Crowd"
 	- Causes flesh golems from the specator ranks to jump down into the areana, should the player be too close to an arena border
 
 - give grand diviner bully perk with custom laugh track?
 - give grand diviner flail spinner
-
 
 - advanced positioning system:
 	- Frontline, FrontlineFlank, Backline, BacklineFlank, Ranged, Centre, Siege, Alp, HidingInBush
@@ -809,8 +803,6 @@
 		- Non-Attack Skills with a Base Action Point cost of 7 or more cost -2 Action Points
 	- obvious synergy with the three tactician skills.
 - make tactician perks repeatable but target only a 7 tile blob, up to 4 tiles away
-
-- use a low EngageFlankingMult to make certain AI Agent prefer to straight push an enemy instead of sliggling around (executioner? Hedge Knights?)
 
 - mention in orc berserkers tooltip that they are immune to injuries (give them iron will effect?)
 
@@ -830,11 +822,6 @@
 - You Maximum Rage Stacks is equal to 20% of your Stamina
 - Deal 1% more melee damage and take 1% less Hitpoint damage per rage stack
 - Lose all Rage Stacks whenever you start, end, wait or resume your turn fully fatigued, or if you use Recover.
-
-
-- apply faction difficulty of caravans to caravan spawns
-
-- remove Fix(Vanilla): Idle Sounds, when that fix goes into reforged/MV
 
 - resilient:
 	- Take 20% less Hitpoint Damage from Piercing Attacks (might be too large of a nerf to Qatal Deathblow)

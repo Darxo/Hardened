@@ -97,6 +97,17 @@ foreach (factionID, faction in ::World.FactionManager.m.Factions)
 	}
 }
 
+## See stats of nearby locations
+
+foreach (location in ::World.EntityManager.getLocations())
+{
+	if (location.getTile().getDistanceTo(::World.State.getPlayer().getTile()) > 6) continue;
+	if (!location.isLocationType(::Const.World.LocationType.AttachedLocation)) continue;
+	if (location.m.Troops.len() == 0) continue;
+
+	::logWarning("Hardened: " + location.getName() + " loot amount: " + location.m.Loot.getItems().len());
+}
+
 ## Check states of neighbors on battle field
 
 foreach (tile in ::MSU.Tile.getNeighbors(::getBro("Thorben").getTile()))

@@ -24,6 +24,88 @@
 
 # Changelog
 
+1.7.0
+	- Add new **Brace for Impact** perk in Tier 3 of **Vicious**. Whenever you move to a tile, gain 1 stack for each adjacent enemy (up to a maximum of 5), until the start of your next turn. Take 10% less Hitpoint Damage from Attacks for each stack
+	- **Marksmanship** now requires no enemies within 3 tiles, to grant its damage bonus (up from 2)
+	- **Strength in Numbers** now grants +2 Resolve for every adjacent ally (down from +5)
+	- **One with the Shield** no longer increases the Injury Threshold by 25%
+	- **Man of Steel** is completely reworked. It now makes you take less Armor Penetration damage from Attacks damage equal your Helmet or Body Armor Weight as a percentage, whichever is lower
+	- **Dismemberment**'s injury upgrading now works with any damage type
+	- **Arrow to the Knee** can now also be used on undead, that can receive leg injuries
+	- **Shoot Bolt** can no longer be used, when engaged in melee
+	- **Shoot Stake** can no longer be used, when engaged in melee
+	- **One with the Shield** is now a Tier 1 perk (down from Tier 7)
+	- **Exploit Opening** is now a Tier 2 perk (up from Tier 1)
+	- **Phalanx** is now a Tier 3 perk (up from Tier 2)
+	- **Shield Expert** is now a Tier 4 perk (up from Tier 3)
+	- **Line Breaker** is now a Tier 5 perk (up from Tier 4)
+	- **Rebuke** is now a Tier 7 perk (up from Tier 5)
+	- **Footwork** is added to Tier 1 of the **Fencer** perk group
+	- **Between the Eyes** is removed from **Vicious Group** and can no longer appear
+	- **Berserk** moves to Tier 7 of **Vicious Perk Group**
+	- **Fearsome** moves to Tier 5 of **Vicious Perk Group**
+	- **Phalanx** in **Militia Perk Group** moves to Tier 3 (up from Tier 1)
+	- **Man of Steel** from **Man of Steel Special Perk Group** moves to Tier 3 (down from Tier 7)
+	- All Bows lose 5% Armor Penetration
+	- Skills from broken weapons (0 Condition) now cost 50% more Fatigue
+	- **Occult Eye Mask** (Fault Finder) now has 20 Condition (up from 10), 1 Weight (up from 0) and costs 50 Crowns (up from 0)
+	- **Temple of Knowledge** (Fault Finder) now has 3 Weight (up from 0), -1 Vision (down from 0) and costs 200 Crowns (up from 0). It grants +5 Resolve when worn
+	- **Leather Facewrap** (Fault Finder) now has 2 Weight (up from 0), -2 Vision (up from -3) and costs 50 Crowns (up from 0)
+	- Helmets worn by players now need at least 1 Condition to be guaranteed to drop (down from 16)
+	- Body Armors worn by players now need at least 1 Condition to be guaranteed to drop (down from 11)
+	- Body Armors and Helmets worn by NPCs now require at least 50% condition on them to be eligable for dropping (up from 25%). They no longer have a minimum absolute condition required to be eligable for dropping (down from 31)
+	- Body Armors and Helmets, which are eligable for dropping how have a 100% base chance to drop at 100% condition (up from 70%). This chance scales linearly with condition, reaching 0% at 50% condition (e.g. 40% drop chance at 70% condition)
+	- **Battle Axes** now appear ~twice as often in weapon smiths
+	- **Kriegsmesser** now appear ~half as often in weapon smiths
+	- **Caravan Hands** now spawn with **Ragged Surcoats** (50 Condition) instead of **Padded Surcoats** (60 Condition). They can now also spawn with a **Shortsword**
+	- **Peasants** no longer drop **Signet Ring**
+	- **Caravan Guards** can now also spawn with a **Padded Scale Helmet** (110 Condition). They are 50% less likely to spawn with a 120 Condition helmet. They now have 120 Stamina (down from 130)
+	- **Mercenaries** can now also spawn with a **Greatsword**
+	- All **Peasants** now have a 70% chance to spawn with a weapon (up from 60%). Northern **Peasants** can now spawn with **Wooden Flails**
+	- Champion **Knights** and Champion **Anointed Knights** will no longer roll a named helmet
+	- **Armored Wiederganger** no longer spawn with a **Ragged Surcoat**, **Aketon Cap** or **Mail Coif**. They can now spawn with a **Rusty Mail Coif**
+	- **Nomad Archers** now have 110 Stamina (down from 115) and 20 Ranged Defense (up from 10)
+	- **Nomad Outlaws** now have 120 Stamina (down from 125) and 15 Ranged Defense (up from 0)
+	- **Nomad Executioner** now have 10 Ranged Defense (up from 0) and 140 Initiative (up from 115)
+	- **Nomad Leader** now spawn with 1 Ammo in their **Javelin** (down from 2) and have 15 Ranged Defense (up from 0)
+	- **Blade Dancer** now have 40 Melee Defense (down from 50), 20 Ranged Defense (up from 15) and 150 Initiative (up from 125)
+	- Mid-Game Nomad Locations are less likely to contain elite troops
+	- Late-Game Nomad Locations are slightly more likely to contain elite troops
+	- **Trading Caravans** from Tier 1 or Tier 2 settlements now carry 2 produce items (down from 3)
+	- **Trading Caravans** from southern city states now carry 4 produce items (up from 3)
+	- Southern **Trading Caravans** are now 20% weaker and are less likely to spawn with an **Officer**
+	- **Bandit Forts** can now drop **Flash Pot** or **Smoke Pot** as part of their treasure
+	- Any faction that receives at least 3 hits from enemies more than they themselves inflicted onto their enemies, will stop playing defensive
+	- **Nomad Leader**, **Bandit Leader**, **Robber Baron**, **Militia Captain**, **Seargeant**, **Marshal** and **Officer** are now less likely to flank, protect allies, engage multiple opponents at once or use crowd control skills. They are more likely to stay in formation and allies are more likely to gather around them
+	- **Hedge Knight**, **Oathbringer**, **Blade Dancer** and **Executioner** are now less likely to flank, protect allies, act defensive or use crowd control skills. Allies are slightly more likely to gather around them
+	- Noble Ranged NPCs are 50% less likely to consider using **Rotation**
+	- Fast Brigands (Robber, Bandit, Killer) are now much less likely to flank and more likely to stay in formation
+	- NPCs with the **Net Pull** skill are now 400% more likely to use it over alternative options
+	- NPCs with the **Kingfisher** perk are now 200% more likely to use **Net Pull** at a range of 2 tiles, 100% more likely to use **Throw Net** at a distance of 1 tile and 50% less likely to use **Throw Net** at any other distance
+	- **High Starting Funds** now grant 3000 Crowns (up from 2500), 100 Ammo (up from 80), 50 Tools (up from 40) and 50 Medicine (up from 30)
+	- **Medium Starting Funds** now grant 50 Ammo (up from 40), 30 Tools (up from 20) and 30 Medicine (up from 20)
+	- All Contracts now pay 25% less Crowns
+	- Contracts with 1 Skull now pay ~50% more Crowns
+	- Contracts with 3 Skulls now pay ~25% less Crowns
+	- All Weapon Skills now cost 50% more Fatigue, while the weapon is at 0 Condition
+	- Blood Effects no longer spawn on tiles that are hidden from the player
+	- Weapons can now lose condition on a hit, even if they deal no Armor Damage, as long as their Armor Damage Multiplier is greater than 0%
+	- Increase Alpha value of world party label background to 150 (up from 102)
+	- Change name color of permanently hostile world enemies to use the same one, that temporary hostile enemies use, to improve visibility
+	- Add new orange world party name color for factions that have between 20 and 30 relation with the player
+	- Combat Log entries about Armor Items taking damage now also display the armor value before the hit
+	- Combat Log entries about Hitpoints taking damage now also display the hitpoint value before the hit
+	- Idle sounds of enemies during combat now play up to 50% less freqently
+	- Remove effective hitpoint calculation from Nimble perk
+	- Slightly shorten One with the shield tooltip text
+	- Fix **Lute** not exerting zone of control and not providing reach
+	- Fix melee nomads not preferring engaging single opponents correctly
+	- Fix(Vanilla) "Minimum Damage" (found on one-handed hammer) not being mitigated by Melee-, Ranged- and Hitpoint Damage Mitigation
+	- Fix(Vanilla) available fatigue changing, when a character gains- or loses Stamina during combat (e.g. through an injury)
+	- Remove mention in description of Nimble effect about diminishing returns on higher weight
+	- Add ::Const.Difficulty.StartingResources with entries for each difficulty setting for the starting resources on a new campaign
+	- Add `HD_MinConditionForPlayerDrop`, `HD_ConditionThresholdForDrop`, `HD_ConditionThresholdForDrop` and `HD_BaseDropChance` to control drop behavior of helmets and body armors
+
 1.6.11
 	- Fix **Attached Locations** gaining additional stacking named loot whenever you load a save
 	- Fix **Attached Locations** not clearing its named loot correctly when destroyed and rebuilt
