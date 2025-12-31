@@ -241,7 +241,7 @@ local adjustedDescriptions = [
  				Description = [
 					"Survive the first time you would receive fatal damage each battle and recover " + ::MSU.Text.colorPositive("11-15") + " [Hitpoints|Concept.Hitpoints]",
 					"When receiving fatal damage, remove all damage over time effects from you",
-					"When receiving fatal damage, gain [Heightened Reflexes|Skill+nine_lives_effect]",
+					"When receiving fatal damage, gain [Heightened Reflexes|Skill+nine_lives_effect] until the start of your next [turn|Concept.Turn]",
 				]
  			}]
 	 	}),
@@ -667,7 +667,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Armor Damage you deal is treated as additional [Hitpoints|Concept.Hitpoints] Damage for purpose of inflicting [injuries|Concept.InjuryTemporary]",
+					"Armor Damage you deal is treated as additional [Hitpoint|Concept.Hitpoints] Damage for purpose of inflicting [injuries|Concept.InjuryTemporary]",
 				],
 			}],
 		}),
