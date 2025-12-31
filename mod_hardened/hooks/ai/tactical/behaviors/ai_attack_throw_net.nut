@@ -51,7 +51,7 @@
 				time = ::Time.getExactTime();
 			}
 
-			currentScore = this.evaluateTargetScore(target, knownAllies, knownOpponents);
+			currentScore = this.evaluateTargetScore(_entity, target, knownAllies, knownOpponents);
 
 			if (currentScore != null && currentScore > bestScore)
 			{
@@ -81,8 +81,9 @@
 	 * Additions:
 	 * - Presence of nearby allies of the target are taken into account
 	 * - Presence of nearby hostiles of the target are taken into account
+	 * - We multiply the score with this.queryTargetValue to allow for skills to influence this decision making
 	 */
-	q.evaluateTargetScore <- function( _target, _knownAllies, _knownOpponents )
+	q.evaluateTargetScore <- function( _entity, _target, _knownAllies, _knownOpponents )
 	{
 	// Potential skips
 		if (_target.getHitpoints() <= ::Const.AI.Behavior.ThrowNetMinHitpoints) return null;
@@ -145,6 +146,7 @@
 		}
 
 	// Score Multiplier / Reasons to amplify the reasons above
+		score *= this.queryTargetValue(_entity, _target, this.m.Skill);
 		score *= _target.getCurrentProperties().TargetAttractionMult;
 
 		foreach (ally in _knownAllies)
