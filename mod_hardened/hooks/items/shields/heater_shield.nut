@@ -45,18 +45,3 @@
 		}
 	}
 });
-
-/*
-Vanilla
-	Bandit Leader
-	Hedge Knight
-	Mercenary
-	Oathbringer
-
-Reforged
-	Bandit Leader
-	Mercenary
-	Oathrbinger
-	Bandit Baron
-	Bandit Highwayman
-*/

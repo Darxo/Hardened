@@ -44,20 +44,3 @@
 		}
 	}
 });
-
-/*
-Vanilla
-	Bandit Leader
-	Bandit Raider
-	Hedge Knight
-	Mercenary
-	Militia Captain
-
-Reforged
-	Bandit Leader
-	Bandit Raider
-	Mercenary
-	Bandit Baron
-	Bandit Highwayman
-	Bandit Vandal
-*/

@@ -1,6 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/entity/world/party", function(q) {
 	// Private
-	q.m.LastTroopSize <- 0;		// temporary variable to prevent
+	q.m.LastTroopSize <- 0;		// temporary performance variable to prevent the miniboss socket from updating too often
 
 	q.onInit = @(__original) function()
 	{

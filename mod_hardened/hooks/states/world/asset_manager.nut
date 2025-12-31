@@ -31,6 +31,7 @@
 		}
 	}
 
+	// This function fires exactly every 4 hours
 	q.checkDesertion = @(__original) function()
 	{
 		__original();

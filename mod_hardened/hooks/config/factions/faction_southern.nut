@@ -37,16 +37,16 @@
 // scripts/entity/tactical/humans/nomad_archer
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.NomadArcher.XP = 240;
+	::Const.Tactical.Actor.NomadArcher.XP = 240;				// Vanilla: 225
 	::Const.Tactical.Actor.NomadArcher.ActionPoints = 9;
-	::Const.Tactical.Actor.NomadArcher.Hitpoints = 60;
-	::Const.Tactical.Actor.NomadArcher.Bravery = 60;
+	::Const.Tactical.Actor.NomadArcher.Hitpoints = 60;			// Vanilla: 60
+	::Const.Tactical.Actor.NomadArcher.Bravery = 60;			// Vanilla: 55
 	::Const.Tactical.Actor.NomadArcher.Stamina = 110;			// Vanilla: 115
-	::Const.Tactical.Actor.NomadArcher.MeleeSkill = 60;
-	::Const.Tactical.Actor.NomadArcher.RangedSkill = 75;
-	::Const.Tactical.Actor.NomadArcher.MeleeDefense = 0;
+	::Const.Tactical.Actor.NomadArcher.MeleeSkill = 60;			// Vanilla: 50
+	::Const.Tactical.Actor.NomadArcher.RangedSkill = 75;		// Vanilla: 65
+	::Const.Tactical.Actor.NomadArcher.MeleeDefense = 0;		// Vanilla: 5
 	::Const.Tactical.Actor.NomadArcher.RangedDefense = 20;		// Vanilla: 15
-	::Const.Tactical.Actor.NomadArcher.Initiative = 120;
+	::Const.Tactical.Actor.NomadArcher.Initiative = 120;		// Vanilla: 110
 
 	// Optional Stats
 	::Const.Tactical.Actor.NomadArcher.Vision <- 8;
@@ -55,16 +55,16 @@
 // scripts/entity/tactical/humans/nomad_outlaw
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.NomadOutlaw.XP = 300;
+	::Const.Tactical.Actor.NomadOutlaw.XP = 300;				// Vanilla: 250
 	::Const.Tactical.Actor.NomadOutlaw.ActionPoints = 9;
-	::Const.Tactical.Actor.NomadOutlaw.Hitpoints = 75;
-	::Const.Tactical.Actor.NomadOutlaw.Bravery = 70;
+	::Const.Tactical.Actor.NomadOutlaw.Hitpoints = 75;			// Vanilla: 75
+	::Const.Tactical.Actor.NomadOutlaw.Bravery = 70;			// Vanilla: 60
 	::Const.Tactical.Actor.NomadOutlaw.Stamina = 120;			// Vanilla: 125
-	::Const.Tactical.Actor.NomadOutlaw.MeleeSkill = 75;
-	::Const.Tactical.Actor.NomadOutlaw.RangedSkill = 70;
+	::Const.Tactical.Actor.NomadOutlaw.MeleeSkill = 75;			// Vanilla: 65
+	::Const.Tactical.Actor.NomadOutlaw.RangedSkill = 70;		// Vanilla: 55
 	::Const.Tactical.Actor.NomadOutlaw.MeleeDefense = 15;		// Vanilla: 15
 	::Const.Tactical.Actor.NomadOutlaw.RangedDefense = 15;		// Vanilla: 15
-	::Const.Tactical.Actor.NomadOutlaw.Initiative = 140;
+	::Const.Tactical.Actor.NomadOutlaw.Initiative = 140;		// Vanilla: 115
 
 	// Optional Stats
 	::Const.Tactical.Actor.NomadOutlaw.Vision <- 8;			// Vanilla: 7
@@ -73,14 +73,14 @@
 // scripts/entity/tactical/humans/executioner
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Executioner.XP = 400;
+	::Const.Tactical.Actor.Executioner.XP = 400;				// Vanilla: 450
 	::Const.Tactical.Actor.Executioner.ActionPoints = 9;
-	::Const.Tactical.Actor.Executioner.Hitpoints = 120;
-	::Const.Tactical.Actor.Executioner.Bravery = 90;
-	::Const.Tactical.Actor.Executioner.Stamina = 160;
-	::Const.Tactical.Actor.Executioner.MeleeSkill = 85;
-	::Const.Tactical.Actor.Executioner.RangedSkill = 50;
-	::Const.Tactical.Actor.Executioner.MeleeDefense = 25;
+	::Const.Tactical.Actor.Executioner.Hitpoints = 120;			// Vanilla: 170
+	::Const.Tactical.Actor.Executioner.Bravery = 90;			// Vanilla: 90
+	::Const.Tactical.Actor.Executioner.Stamina = 160;			// Vanilla: 160
+	::Const.Tactical.Actor.Executioner.MeleeSkill = 85;			// Vanilla: 85
+	::Const.Tactical.Actor.Executioner.RangedSkill = 50;		// Vanilla: 50
+	::Const.Tactical.Actor.Executioner.MeleeDefense = 25;		// Vanilla: 30
 	::Const.Tactical.Actor.Executioner.RangedDefense = 10;		// Vanilla: 20
 	::Const.Tactical.Actor.Executioner.Initiative = 140;		// Vanilla: 115
 
@@ -106,16 +106,16 @@
 // scripts/entity/tactical/humans/nomad_leader
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.NomadLeader.XP = 500;
+	::Const.Tactical.Actor.NomadLeader.XP = 500;				// Vanilla: 375
 	::Const.Tactical.Actor.NomadLeader.ActionPoints = 9;
-	::Const.Tactical.Actor.NomadLeader.Hitpoints = 100;
-	::Const.Tactical.Actor.NomadLeader.Bravery = 85;
-	::Const.Tactical.Actor.NomadLeader.Stamina = 150;
-	::Const.Tactical.Actor.NomadLeader.MeleeSkill = 85;
-	::Const.Tactical.Actor.NomadLeader.RangedSkill = 70;
-	::Const.Tactical.Actor.NomadLeader.MeleeDefense = 15;
+	::Const.Tactical.Actor.NomadLeader.Hitpoints = 100;			// Vanilla: 100
+	::Const.Tactical.Actor.NomadLeader.Bravery = 85;			// Vanilla: 75
+	::Const.Tactical.Actor.NomadLeader.Stamina = 150;			// Vanilla: 130
+	::Const.Tactical.Actor.NomadLeader.MeleeSkill = 85;			// Vanilla: 75
+	::Const.Tactical.Actor.NomadLeader.RangedSkill = 70;		// Vanilla: 65
+	::Const.Tactical.Actor.NomadLeader.MeleeDefense = 15;		// Vanilla: 20
 	::Const.Tactical.Actor.NomadLeader.RangedDefense = 15;		// Vanilla: 15
-	::Const.Tactical.Actor.NomadLeader.Initiative = 125;
+	::Const.Tactical.Actor.NomadLeader.Initiative = 125;		// Vanilla: 125
 
 	// Optional Stats
 	::Const.Tactical.Actor.NomadLeader.Vision <- 8;			// Vanilla: 7

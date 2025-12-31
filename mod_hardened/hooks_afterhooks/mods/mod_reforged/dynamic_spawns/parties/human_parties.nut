@@ -29,7 +29,7 @@
 {
 	local parties = [
 		{
-			// OVerwrite, because we
+			// Overwrite, because we
 			//	- remove the rare variant with high hardmin and forced mercenary spawns
 			//	- greatly reduce maximum number of caravan hands
 			ID = "Caravan",

@@ -36,19 +36,3 @@
 		}
 	}
 });
-
-/*
-Vanilla
-	Bandit Raider
-	Bandit Thug
-	Bountry Hunter
-	Caravan Guard
-	Mercenary
-	Militia
-
-Reforged
-	Bandit Raider
-	Mercenary
-	Bandit Scoundrel
-	Bandit Vandal
-*/

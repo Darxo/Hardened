@@ -68,6 +68,8 @@
 
 // New Functions
 	/*
+	 * Calculate the score for using this.m.Skill on _target and return that value
+
 	 * Removed from Vanilla:
 	 * - Remove support for ThrowNetVSWardogsMult. The score for those is already super low because of their TargetAttractionMult
 	 * - Remove support for ThrowNetToSetupDeathblowMult. It's a cool idea but way too hard-coded. Its not realistic to support that moving forward for other skills

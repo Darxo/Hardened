@@ -11,7 +11,7 @@
 		else
 		{
 			// If this location is not supposed to spawn world parties, we pretend like its lastSpawnTime is always equal to ::Time.getVirtualTimeF()
-			// This should cause most actions to ignore this locations for their actions
+			// This should cause most actions to ignore this location for their actions
 			return ::Time.getVirtualTimeF();
 		}
 	}

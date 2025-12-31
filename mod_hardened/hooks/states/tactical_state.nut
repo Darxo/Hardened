@@ -34,7 +34,9 @@
 	{
 		if (!this.m.IsExitingToMenu)	// In vanilla this function ends early so we don't apply our switcheroo
 		{
-			::Const.Faction.Player = 0;		// Swicheroo: set player faction briefly to 0 to prevent vanilla from revealing the map for the player
+			// Swicheroo: set player faction briefly to 0 to prevent vanilla from revealing the map for the player
+			// This is revered in tooltip::hide, because we can't wait for the whole function to finish and need to revert it early
+			::Const.Faction.Player = 0;
 		}
 
 		__original();
