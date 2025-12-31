@@ -123,7 +123,7 @@
 
 		if (_target.getID() == this.getContainer().getActor().getID())	// We must be the _target
 		{
-			if (_user.getID() != _target.getID()) return ret;		// _user and _target must not be the same
+			if (_user.getID() == _target.getID()) return ret;		// _user and _target must not be the same
 
 			if (_skill != null && _skill.isAttack() && this.hasEnemy(_user))
 			{
