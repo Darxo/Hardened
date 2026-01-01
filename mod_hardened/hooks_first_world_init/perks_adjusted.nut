@@ -902,7 +902,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Gain " + ::MSU.Text.colorPositive("+5") + " [Resolve|Concept.Bravery] per adjacent ally",
 					"Gain " + ::MSU.Text.colorPositive("+5") + " [Ranged Defense|Concept.RangeDefense] per adjacent obstacle",
-					"Gain " + ::MSU.Text.colorPositive("15%") + " more [Ranged Skill|Concept.RangeSkill] while at least 3 adjacent tiles are occupied by allies or obstacles",
+					"Gain " + ::MSU.Text.colorPositive("10%") + " more [Ranged Skill|Concept.RangeSkill] while at least 3 adjacent tiles are occupied by allies or obstacles",
 				],
 			}],
 		}),
