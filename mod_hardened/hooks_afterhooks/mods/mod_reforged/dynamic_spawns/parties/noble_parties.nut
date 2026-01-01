@@ -15,7 +15,7 @@ local parties = [
 			UnitBlocks = [
 				{ BaseID = "UnitBlock.RF.NobleFrontline", RatioMin = 0.30, RatioMax = 1.00 },
 				{ BaseID = "UnitBlock.RF.NobleBackline", RatioMax = 0.30 },
-				{ BaseID = "UnitBlock.RF.NobleRanged", RatioMax = 0.25, },
+				{ BaseID = "UnitBlock.RF.NobleRanged", RatioMax = 0.25, ExclusionChance = 0.2 },
 				{ BaseID = "UnitBlock.RF.NobleElite",  RatioMin = 0.1, RatioMax = 0.25, PartySizeMin = 15, ExclusionChance = 0.2 }, // vanilla greatswords spawn at 19+
 				{ BaseID = "UnitBlock.RF.NobleSupport", RatioMin = 1.0, HardMax = 1, PartySizeMin = 10, ExclusionChance = 0.3 },
 				{ BaseID = "UnitBlock.RF.NobleSupport", RatioMin = 1.0, HardMax = 1, PartySizeMin = 20, ExclusionChance = 0.3 },
@@ -59,8 +59,8 @@ local parties = [
 			UnitBlocks = [
 				{ BaseID = "UnitBlock.RF.NobleFrontline", RatioMin = 0.40, RatioMax = 1.00, DeterminesFigure = false },		// Reforged: RatioMax = 0.6
 				{ BaseID = "UnitBlock.RF.NobleBackline", RatioMin = 0.00, RatioMax = 0.40, DeterminesFigure = false, ExclusionChance = 0.2 },
-				{ BaseID = "UnitBlock.RF.NobleRanged", RatioMin = 0.10, RatioMax = 0.30, DeterminesFigure = false },
 				{ BaseID = "UnitBlock.RF.NobleElite", RatioMin = 0.00, RatioMax = 0.40, PartySizeMin = 13, DeterminesFigure = false, ExclusionChance = 0.2 },
+				{ BaseID = "UnitBlock.RF.NobleRanged", RatioMin = 0.0, RatioMax = 0.30, DeterminesFigure = false },
 				{ BaseID = "UnitBlock.RF.NobleOfficer", RatioMin = 1.0, PartySizeMin = 13, HardMax = 1, ExclusionChance = 0.5, DeterminesFigure = false, function canUpgrade() { return false; } },  // Vanilla: spawns at 12, at 15 and at 18 once respectively
 				{ BaseID = "UnitBlock.RF.NobleDonkey", RatioMin = 1.0, PartySizeMin = 15, HardMax = 1 },	// Vanilla: second donkey spawns at 14+
 			],
