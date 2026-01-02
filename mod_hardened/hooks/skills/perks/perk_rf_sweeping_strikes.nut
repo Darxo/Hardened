@@ -78,7 +78,7 @@
 
 		if (this.getCurrentMeleeDefenseModifier() != 0) return ret;	// We already triggered this skill once this turn and cannot do it again
 
-		if (_skill == null || this.isSkillValid(_skill)) return ret;
+		if (_skill == null || !this.isSkillValid(_skill)) return ret;
 
 		// Every adjacent hostile characters makes it more attractive to use an attack boosting my melee defense
 		ret *= 1 + (0.1 * ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true).len());
