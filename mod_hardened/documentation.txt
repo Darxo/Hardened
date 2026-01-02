@@ -104,7 +104,7 @@
 	- Fix(Vanilla) available fatigue changing, when a character gains- or loses Stamina during combat (e.g. through an injury)
 	- Remove mention in description of Nimble effect about diminishing returns on higher weight
 	- Add ::Const.Difficulty.StartingResources with entries for each difficulty setting for the starting resources on a new campaign
-	- Add `HD_MinConditionForPlayerDrop`, `HD_ConditionThresholdForDrop`, `HD_ConditionThresholdForDrop` and `HD_BaseDropChance` to control drop behavior of helmets and body armors
+	- Add `HD_MinConditionForPlayerDrop`, `HD_ConditionThresholdForDrop`, `HD_MinConditionForDrop` and `HD_BaseDropChance` to control drop behavior of helmets and body armors
 
 1.6.11
 	- Fix **Attached Locations** gaining additional stacking named loot whenever you load a save

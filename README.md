@@ -1283,7 +1283,7 @@ This section talks about adjustments made to other optional mods, when present a
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
 - Add `::Const.Difficulty.StartingResources` with entries for each difficulty setting for the starting resources on a new campaign
-- Add `HD_MinConditionForPlayerDrop`, `HD_ConditionThresholdForDrop`, `HD_ConditionThresholdForDrop` and `HD_BaseDropChance` to control drop behavior of helmets and body armors
+- Add `HD_MinConditionForPlayerDrop`, `HD_ConditionThresholdForDrop`, `HD_MinConditionForDrop` and `HD_BaseDropChance` to control drop behavior of helmets and body armors
 - Automatically include `_config.nut` file, if it exists in the data folder for quickly applying personalized squirrel changes. This file is loaded during `::Hooks.QueueBucket.Late`
 - Add `::Hardened.Global.FactionDifficulty` table with resource multipliers for all notable factions in the game, which can be modified
 - `ContractScalingBase = 1.0` and `WorldScalingBase = 1.0` are now multiplicatively with Day/Renown scaling (instead of additively)
