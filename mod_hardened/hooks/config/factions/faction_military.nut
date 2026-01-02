@@ -135,7 +135,7 @@
 	::Const.Tactical.Actor.RF_FootmanHeavy.MeleeSkill = 75;
 	::Const.Tactical.Actor.RF_FootmanHeavy.RangedSkill = 50;
 	::Const.Tactical.Actor.RF_FootmanHeavy.MeleeDefense = 25;
-	::Const.Tactical.Actor.RF_FootmanHeavy.RangedDefense = 10;
+	::Const.Tactical.Actor.RF_FootmanHeavy.RangedDefense = 15;
 	::Const.Tactical.Actor.RF_FootmanHeavy.Initiative = 120;
 }
 
