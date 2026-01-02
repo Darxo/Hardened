@@ -455,8 +455,8 @@
 			foreach (entry in ret)
 			{
 				if (!("text" in entry)) continue;
-				entry.text = ::MSU.String.replace(entry.text, "Max Fatigue", "Stamina", true);
-				entry.text = ::MSU.String.replace(entry.text, "Maximum Fatigue", "Stamina", true);
+				entry.text = ::MSU.String.replace(entry.text, "Max Fatigue", ::Reforged.Mod.Tooltips.parseString("[Stamina|Concept.MaximumFatigue]"), true);
+				entry.text = ::MSU.String.replace(entry.text, "Maximum Fatigue", ::Reforged.Mod.Tooltips.parseString("[Stamina|Concept.MaximumFatigue]"), true);
 			}
 		}
 
