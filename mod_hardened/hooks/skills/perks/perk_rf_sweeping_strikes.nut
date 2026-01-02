@@ -72,7 +72,8 @@
 	{
 		local ret = __original(_user, _target, _skill);
 
-		if (this.getContainer().getActor().getID() != _user.getID()) return ret;		// We must be the _user
+		local actor = this.getContainer().getActor();
+		if (actor.getID() != _user.getID()) return ret;		// We must be the _user
 		if (_user.getID() == _target.getID()) return ret;		// _user and _target must not be the same
 
 		if (this.getCurrentMeleeDefenseModifier() != 0) return ret;	// We already triggered this skill once this turn and cannot do it again
