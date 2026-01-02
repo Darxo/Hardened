@@ -48,6 +48,15 @@
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
 	q.onSpawned = @() function()
 	{
+		local weapon = this.getMainhandItem();
+		if (weapon != null)
+		{
+			if (weapon.isWeaponType(::Const.Items.WeaponType.Dagger))
+			{
+				// We only hand out backstabber to the dagger variant because the backline weapons already have reach advantage at this level of play
+				this.getSkills().add(::new("scripts/skills/perks/perk_backstabber"));
+			}
+		}
 	}
 
 // New Functions
@@ -79,7 +88,6 @@
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_bully"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_dodge"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_backstabber"));
 	}
 
 	// Assign Head and Body armor to this character
