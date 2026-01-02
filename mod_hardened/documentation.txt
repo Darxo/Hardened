@@ -24,6 +24,10 @@
 
 # Changelog
 
+1.7.1
+	- Use nested tooltips for the term Stamina in several places
+	- Fix NPCs with **Sweeping Strikes** sometimes freezing the game
+
 1.7.0
 	- Add new **Brace for Impact** perk in Tier 3 of **Vicious**. Whenever you move to a tile, gain 1 stack for each adjacent enemy (up to a maximum of 5), until the start of your next turn. Take 10% less Hitpoint Damage from Attacks for each stack
 	- **Marksmanship** now requires no enemies within 3 tiles, to grant its damage bonus (up from 2)

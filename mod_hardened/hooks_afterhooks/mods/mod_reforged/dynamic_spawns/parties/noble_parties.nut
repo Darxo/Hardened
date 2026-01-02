@@ -21,7 +21,7 @@ local parties = [
 				{ BaseID = "UnitBlock.RF.NobleSupport", RatioMin = 1.0, HardMax = 1, PartySizeMin = 20, ExclusionChance = 0.3 },
 				{ BaseID = "UnitBlock.RF.NobleOfficer", RatioMin = 1.0, HardMax = 1,  PartySizeMin = 15, ExclusionChance = 0.3 }, // vanilla sergeants spawn at 8+
 				{ BaseID = "UnitBlock.RF.NobleLeader", HardMax = 2, PartySizeMin = 20 }, // vanilla knights spawn at 18+
-				{ BaseID = "UnitBlock.RF.NobleFlank", RatioMax = 0.25, HardMax = 3, ExclusionChance = 0.4, PartySizeMax = 20 },
+				{ BaseID = "UnitBlock.RF.NobleFlank", RatioMax = 0.25, HardMax = 3, ExclusionChance = 0.4, PartySizeMax = 20 },		// dogs only spawn in smaller parties
 			],
 		},
 
