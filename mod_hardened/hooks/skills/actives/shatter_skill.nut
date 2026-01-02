@@ -3,11 +3,6 @@
 	q.m.StaggerChance <- 33;
 	q.m.KnockbackChance <- 33;
 
-	q.create = @(__original) function()
-	{
-		__original();
-	}
-
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();

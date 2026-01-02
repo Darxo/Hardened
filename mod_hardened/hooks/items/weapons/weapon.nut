@@ -62,6 +62,19 @@
 		return ret;
 	}
 
+	q.addSkill = @(__original) function( _skill )
+	{
+		// Feat: all skils now automatically inherit the Armor Penetration from the weapon which added them
+		// Some skills are special that they are not supposed to deal any damage (e.g. disarm) or always penetrate all armor (puncture)
+		//	so we exclude those from this new rule
+		if (_skill.m.DirectDamageMult > 0.0 && _skill.m.DirectDamageMult < 1.0)
+		{
+			_skill.m.DirectDamageMult = this.m.DirectDamageMult;
+		}
+
+		__original(_skill);
+	}
+
 	q.onDamageDealt = @(__original) function( _target, _skill, _hitInfo )
 	{
 		// We switcheroo the lowerCondition function so that the Vanilla call will not cause it to trigger

@@ -21,15 +21,9 @@
 		this.weapon.onEquip();
 
 		local self = this;
-		this.addSkill(::Reforged.new("scripts/skills/actives/slash", function(o) {
-			o.m.DirectDamageMult = self.m.DirectDamageMult;
-		}));
 
-		this.addSkill(::Reforged.new("scripts/skills/actives/swing", function(o) {
-			o.m.DirectDamageMult = self.m.DirectDamageMult;
-		}));
-
-		this.addSkill(::Reforged.new("scripts/skills/actives/riposte", function(o) {
-		}));
+		this.addSkill(::new("scripts/skills/actives/slash"));
+		this.addSkill(::new("scripts/skills/actives/swing"));
+		this.addSkill(::new("scripts/skills/actives/riposte"));
 	}}.onEquip;
 });
