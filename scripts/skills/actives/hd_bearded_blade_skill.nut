@@ -48,12 +48,15 @@ this.hd_bearded_blade_skill <- this.inherit("scripts/skills/skill", {
 			text = ::Reforged.Mod.Tooltips.parseString("Apply [disarmed|Skill+disarmed_effect] on a hit"),
 		});
 
-		ret.push({
-			id = 11,
-			type = "text",
-			icon = "ui/icons/vision.png",
-			text = "Has a range of " + ::MSU.Text.colorizeValue(this.getMaxRange()) + " tiles",
-		});
+		if (!::MSU.isEqual(this.getContainer().getActor(), ::MSU.getDummyPlayer()))
+		{
+			ret.push({
+				id = 11,
+				type = "text",
+				icon = "ui/icons/vision.png",
+				text = "Has a range of " + ::MSU.Text.colorizeValue(this.getMaxRange()) + " tiles",
+			});
+		}
 
 		return ret;
 	}
