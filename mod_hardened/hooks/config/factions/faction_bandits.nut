@@ -61,7 +61,7 @@
 	::Const.Tactical.Actor.BanditPoacher.Hitpoints = 55;
 	::Const.Tactical.Actor.BanditPoacher.Bravery = 40;
 	::Const.Tactical.Actor.BanditPoacher.Stamina = 100;
-	::Const.Tactical.Actor.BanditPoacher.MeleeSkill = 45;
+	::Const.Tactical.Actor.BanditPoacher.MeleeSkill = 40;
 	::Const.Tactical.Actor.BanditPoacher.RangedSkill = 50;
 	::Const.Tactical.Actor.BanditPoacher.MeleeDefense = 0;
 	::Const.Tactical.Actor.BanditPoacher.RangedDefense = 5;
@@ -94,7 +94,7 @@
 	::Const.Tactical.Actor.RF_BanditHunter.Hitpoints = 60;
 	::Const.Tactical.Actor.RF_BanditHunter.Bravery = 45;
 	::Const.Tactical.Actor.RF_BanditHunter.Stamina = 105;
-	::Const.Tactical.Actor.RF_BanditHunter.MeleeSkill = 50;
+	::Const.Tactical.Actor.RF_BanditHunter.MeleeSkill = 45;
 	::Const.Tactical.Actor.RF_BanditHunter.RangedSkill = 60;
 	::Const.Tactical.Actor.RF_BanditHunter.MeleeDefense = 0;
 	::Const.Tactical.Actor.RF_BanditHunter.RangedDefense = 10;
@@ -160,7 +160,7 @@
 	::Const.Tactical.Actor.BanditMarksman.Hitpoints = 65;
 	::Const.Tactical.Actor.BanditMarksman.Bravery = 50;
 	::Const.Tactical.Actor.BanditMarksman.Stamina = 115;
-	::Const.Tactical.Actor.BanditMarksman.MeleeSkill = 55;
+	::Const.Tactical.Actor.BanditMarksman.MeleeSkill = 50;
 	::Const.Tactical.Actor.BanditMarksman.RangedSkill = 70;
 	::Const.Tactical.Actor.BanditMarksman.MeleeDefense = 5;
 	::Const.Tactical.Actor.BanditMarksman.RangedDefense = 15;
@@ -241,7 +241,7 @@
 	::Const.Tactical.Actor.RF_BanditSharpshooter.Hitpoints = 70;
 	::Const.Tactical.Actor.RF_BanditSharpshooter.Bravery = 55;
 	::Const.Tactical.Actor.RF_BanditSharpshooter.Stamina = 130;
-	::Const.Tactical.Actor.RF_BanditSharpshooter.MeleeSkill = 60;
+	::Const.Tactical.Actor.RF_BanditSharpshooter.MeleeSkill = 55;
 	::Const.Tactical.Actor.RF_BanditSharpshooter.RangedSkill = 80;
 	::Const.Tactical.Actor.RF_BanditSharpshooter.MeleeDefense = 10;
 	::Const.Tactical.Actor.RF_BanditSharpshooter.RangedDefense = 20;
