@@ -50,31 +50,28 @@
 	q.HD_assignArmor = @() function()
 	{
 		local armor = ::new(::MSU.Class.WeightedContainer([
-			[1, "scripts/items/armor/padded_leather"],
-			[1, "scripts/items/armor/worn_mail_shirt"],
-			[1, "scripts/items/armor/patched_mail_shirt"],
-			[1, "scripts/items/armor/basic_mail_shirt"],
+			[12, "scripts/items/armor/padded_leather"],
+			[12, "scripts/items/armor/worn_mail_shirt"],
+			[12, "scripts/items/armor/patched_mail_shirt"],
+			[6, "scripts/items/armor/basic_mail_shirt"],
 		]).roll());
-		if (this.Math.rand(1, 100) <= 66)
+		if (::Math.rand(1, 100) <= 50)
 		{
-			armor.setArmor(this.Math.round(armor.getArmorMax() / 2 - 1) / 1.0);
+			armor.setArmor(::Math.round(armor.getArmorMax() / 2 - 1) / 1.0);
 		}
 		this.getItems().equip(armor);
 
-		if (this.Math.rand(1, 100) <= 75)
+		local helmet = ::new(::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/full_aketon_cap"],
+			[12, "scripts/items/helmets/full_leather_cap"],
+			[12, "scripts/items/helmets/padded_kettle_hat"],
+			[12, "scripts/items/helmets/dented_nasal_helmet"],
+			[24, "scripts/items/helmets/rusty_mail_coif"],
+		]).roll());
+		if (::Math.rand(1, 100) <= 66)
 		{
-			local helmet = ::new(::MSU.Class.WeightedContainer([
-				[1, "scripts/items/helmets/full_aketon_cap"],
-				[1, "scripts/items/helmets/full_leather_cap"],
-				[1, "scripts/items/helmets/padded_kettle_hat"],
-				[1, "scripts/items/helmets/dented_nasal_helmet"],
-				[1, "scripts/items/helmets/rusty_mail_coif"],
-			]).roll());
-			if (this.Math.rand(1, 100) <= 66)
-			{
-				helmet.setArmor(this.Math.round(helmet.getArmorMax() / 2 - 1) / 1.0);
-			}
-			this.getItems().equip(helmet);
+			helmet.setArmor(::Math.round(helmet.getArmorMax() / 2 - 1) / 1.0);
 		}
+		this.getItems().equip(helmet);
 	}
 });
