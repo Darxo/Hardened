@@ -102,7 +102,7 @@
 		if (offhand != null)
 		{
 			local throwingWeapon = ::new("scripts/items/weapons/greenskins/orc_javelin");
-			throwingWeapon.m.Ammo = 2;
+			throwingWeapon.m.Ammo = 1;
 			this.getItems().addToBag(throwingWeapon);
 		}
 	}
