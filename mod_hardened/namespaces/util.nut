@@ -308,3 +308,34 @@
 	if ("setPlainVariant" in newHelmet) _sourceHelmet.setPlainVariant <- newHelmet.setPlainVariant;
 	if ("onPaint" in newHelmet) _sourceHelmet.onPaint <- newHelmet.onPaint;
 }
+
+// Find a PlayerBanner that is used by neither the player nor another world party and return it
+::Hardened.util.findUnusedMercenaryBanner <- function()
+{
+	local possibleBanners = clone ::Const.PlayerBanners;
+
+	// Remove PlayerBanner
+	::MSU.Array.removeByValue(possibleBanners, ::World.Assets.getBanner());
+
+	foreach (factionID, faction in ::World.FactionManager.m.Factions)
+	{
+		if (faction == null) continue;
+		foreach (worldParty in faction.m.Units)
+		{
+			::MSU.Array.removeByValue(possibleBanners, "banner_" + worldParty.getBannerID());
+		}
+	}
+
+	foreach (location in ::World.EntityManager.getLocations())
+	{
+		::MSU.Array.removeByValue(possibleBanners, "banner_" + location.getBannerID());
+	}
+
+	if (possibleBanners.len() == 0)
+	{
+		::logWarning("Hardened::findUnusedPlayerBanner: No unused mercenary banner was found. PlayerBanner is returned instead.");
+		return ::World.Assets.getBanner();
+	}
+
+	return ::MSU.Array.rand(possibleBanners);
+}
