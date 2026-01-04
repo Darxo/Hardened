@@ -268,6 +268,25 @@
 		}
 	}
 
+	// Feat: replace every occurence of "Max Fatigue" or "Maximum Fatigue" in any skill tooltip into "Stamina"
+	// Better for performance would be going into each individual effect replacing the term there
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original();
+
+		if (ret != null)
+		{
+			foreach (entry in ret)
+			{
+				if (!("text" in entry)) continue;
+				entry.text = ::MSU.String.replace(entry.text, "Max Fatigue", ::Reforged.Mod.Tooltips.parseString("[Stamina|Concept.MaximumFatigue]"), true);
+				entry.text = ::MSU.String.replace(entry.text, "Maximum Fatigue", ::Reforged.Mod.Tooltips.parseString("[Stamina|Concept.MaximumFatigue]"), true);
+			}
+		}
+
+		return ret;
+	}
+
 // Hardened Functions
 	// Overwrite, because we use our new centralized function and support the HD_KnockBackDistance member
 	// Vanilla implements this for various skills. In order to overwrite those implementations, we require hookTree

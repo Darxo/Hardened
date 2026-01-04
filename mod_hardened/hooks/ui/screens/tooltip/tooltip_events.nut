@@ -444,25 +444,6 @@
 		return ret;
 	}
 
-	// Refactor every occurence of "Max Fatigue" in any effect tooltips into "Stamina".
-	// Not good for overall performance: better would be going into each individual effect replacing the term there
-	q.general_queryStatusEffectTooltipData = @(__original) function(_entityId, _statusEffectId)
-	{
-		local ret = __original(_entityId, _statusEffectId);
-
-		if (ret != null)
-		{
-			foreach (entry in ret)
-			{
-				if (!("text" in entry)) continue;
-				entry.text = ::MSU.String.replace(entry.text, "Max Fatigue", ::Reforged.Mod.Tooltips.parseString("[Stamina|Concept.MaximumFatigue]"), true);
-				entry.text = ::MSU.String.replace(entry.text, "Maximum Fatigue", ::Reforged.Mod.Tooltips.parseString("[Stamina|Concept.MaximumFatigue]"), true);
-			}
-		}
-
-		return ret;
-	}
-
 // Reforged Functions
 	q.RF_getZOCAttackTooltip = @(__original) function( _entity )
 	{
