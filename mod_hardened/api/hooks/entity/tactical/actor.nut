@@ -301,20 +301,20 @@
 		return true;
 	}
 
-	// We are an NPC that is deemed to belong to a certain player-possible banner (most likely because of mercenary company)
+	// We are an NPC that is deemed to belong to a certain player-possible banner (most likely because we are a mercenary company too)
 	// This function will find that bannerID by all means necessary and if it can't it will return -1
 	// @return unsigned integer bannerID if a banner could be found
 	// @return -1 if no banner was found
 	q.findAppropriateBannerID <- function()
 	{
 		/*
-		1. this is part of a world party, which uses a mercenary banner -> we use that merc banner
+		1. this is part of a world party, which uses a mercenary banner
 			-> we use that merc banner
-		2. this is part of a world party, which uses a non-mercenary banner
-			-> use random merc banner? If so, how do we make sure all of them use the same banner?
-			- do no coloring?
-		3. this is hostile to the player and at least one of the hostile banners from this combat is a mercenary one
+		2. this is hostile to the player and at least one of the hostile banners from this combat is a mercenary one
 			-> we color our shield in a random hostile player banner from the combat properties
+		3. this is part of a world party, which uses a non-mercenary banner
+			-> we generate a random unused merc banner and add it to the combat properties
+			- Then we return that color
 		*/
 
 		// First we check, if this actor belongs to a world party
@@ -328,21 +328,27 @@
 			}
 		}
 
+		// Is there a mercenary banner present in the combat properties, that we can apply?
 		local stratProps = ::Tactical.State.getStrategicProperties();
 		if (stratProps != null)
 		{
 			local bannerPool = this.isAlliedWithPlayer() ? stratProps.AllyBanners : stratProps.EnemyBanners;
-
 			foreach (banner in bannerPool)
 			{
 				if (banner == ::World.Assets.getBanner()) continue;	// The Banner used by the Player is reserved
 
-				local stringIndex = banner.find("banner_");
+				local stringIndex = banner.find("banner_");		// Only Player Banner start with this string
 				try {	// Non-player banner used here will throw errors
 					return banner.slice(stringIndex + 7).tointeger();	// +7 because "banner_" are 7 characters and we wanna point to the first character after this
 				}
 				catch (err) {}	// Do nothing
 			}
+
+			// We pick a random unused merc banner, add it to the combat properties and return it
+			local unusedBanner = ::Hardened.util.findUnusedMercenaryBanner();
+			bannerPool.push(unusedBanner);
+			unusedBanner = ::MSU.String.replace(unusedBanner, "banner_", "");
+			return unusedBanner.tointeger();
 		}
 
 		return -1;	// We didn't find a good candidate
