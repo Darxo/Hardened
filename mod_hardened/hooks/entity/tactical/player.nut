@@ -158,6 +158,19 @@
 		return ret;
 	}
 
+// Modular Vanilla Functions
+	q.MV_getStrengthRaw = @() function()
+	{
+		local regularLevelUps = ::Math.clamp(getLevel(), 1, ::Const.XP.MaxLevelWithPerkpoints) - 1;		// -1 because the first level does not count
+		local veteranLevelUps =	::Math.clamp(getLevel(), 0, ::Const.XP.MaxLevelWithPerkpoints);
+
+		local strength = 10;	// Arbitruary base value just for being a meat bag on the battle field
+		strength *= ::Math.pow(1.2, regularLevelUps);	// Every Regular Level increases the strength by 20% (Perk + Levelup)
+		strength *= ::Math.pow(1.03, veteranLevelUps);	// Every Veteran Level increases our strength by 3% (Veteran Levelup), so that 6 Veteran Perks roughly equal to one Regular Level
+
+		return strength;
+	}
+
 // Reforged Functions
 	q.getProjectedAttributes = @(__original) function()
 	{

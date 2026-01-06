@@ -1,4 +1,12 @@
 ::Hardened.HooksMod.hook("scripts/states/world/asset_manager", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		// The player party no longer gains strength from missing brothers, so that its strength value is as accurate as possible
+		this.m.BrothersScaleMin = 0;		// Vanilla: 3
+	}
+
 	q.addBusinessReputation = @(__original) function( _f )
 	{
 		__original(_f);
@@ -43,6 +51,13 @@
 		{
 			::World.Events.fire("event.retinue_slot", false);
 		}
+	}
+
+	// Overwrite, because we make this value dynamic based on the frontline-fieldable troops owned by the player
+	// In Vanilla it only returns the value of this.m.BrothersScaleMax. That value is now unused
+	q.getBrothersScaleMax = @() function()
+	{
+		return ::Math.clamp(::World.getPlayerRoster().getAll().len(), 1, this.getBrothersMaxInCombat());
 	}
 
 	q.getMoralReputationAsText = @(__original) function()
