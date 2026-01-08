@@ -4,7 +4,7 @@ this.hd_bearded_blade_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.hd_bearded_blade";
 		this.m.Name = "Bearded Blade";
-		this.m.Description = "Use the bearded blade of your axe to temporarily disarm an opponent on a hit. This attack does not deal damage.";
+		this.m.Description = "Use the bearded blade of your axe to temporarily disarm an opponent on a hit. This Attack does not deal damage.";
 		this.m.Icon = "skills/rf_bearded_blade_skill.png";
 		this.m.IconDisabled = "skills/rf_bearded_blade_skill_sw.png";
 		this.m.Overlay = "rf_bearded_blade_skill";

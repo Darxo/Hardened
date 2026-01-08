@@ -861,7 +861,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"You and your Partner gain the [Shuffle|Skill+rf_dynamic_duo_shuffle_skill] skill that allows you to swap places with each other once per [round|Concept.Round]",
-						"You and your Partner gain " + ::MSU.Text.colorPositive("+20") + " [Resolve|Concept.Bravery] and [Initiative|Concept.Initiative] while you are adjacent to each other and there are no other member of your company adjacent to you or your partner",
+						"You and your Partner gain " + ::MSU.Text.colorPositive("+20") + " [Resolve|Concept.Bravery] and [Initiative|Concept.Initiative] while you are adjacent to each other and there are no other members of your company adjacent to you or your partner",
 					],
 				},
 				{
@@ -1408,7 +1408,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Allies with a shield will gain the [Shieldwall effect|Skill+shieldwall_effect] for free at the start of each battle",
+					"Members of your company with a shield will gain the [Shieldwall effect|Skill+shieldwall_effect] for free at the start of each battle",
 					"Whenever you use a shield skill during your [turn|Concept.Turn], all allies within " + ::MSU.Text.colorPositive(3) + " tiles who also have that skill will use it for free on a random valid tile",
 					"[Knock Back|Skill+knock_back] and [Cover Ally|Skill+rf_cover_ally_skill] can be used on empty tiles",
 				],
