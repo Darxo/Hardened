@@ -24,6 +24,15 @@
 
 # Changelog
 
+1.7.2
+	- Completely rework, how Melee Weapons worn by player characters lose condition on an attack. As long as the Attack does not ignore armor (like puncture), the weapon will always lose condition, if the armor on the body part hit has at least 1 condition remaining after the attack.
+	- Remove **Signet Ring** from drop pool of southern citizens
+	- Hide Attack Distance of **Bearded Blade** in nested tooltips
+	- Improve wording in shield sergeant perk
+	- Fix world entities sometimes freezing in place until after a reload
+	- Fix **Maximum Fatigue** not being replaced correctly into **Stamina** when viewing nested tooltips
+	- Fix some weapon skill tooltips still showing 0 as their minimum Armor Penetration damage
+
 1.7.1
 	- Use nested tooltips for the term Stamina in several places
 	- Fix NPCs with **Sweeping Strikes** sometimes freezing the game

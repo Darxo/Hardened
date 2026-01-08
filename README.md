@@ -906,7 +906,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Burning Damage (Fire Pot, Burning Arrow, Burning Ground) now remove all root-like effects from the targets
 - Characters which are not visible to the player will no longer produce blood effects, idle sounds or death sounds
 - Prevent most skills from playing sounds while their user is hidden
-- Melee Attacks no longer need to have dealt at least 5 Armor Damage to cause a condition loss. Instead it is just enough if the weapon had any Armor Damage Multiplier
+- Completely rework, how Melee Weapons worn by player characters lose Condition on an Attack. As long as the Attack does not ignore armor (like puncture), the weapon will always lose condition, if the Armor on the body part hit has at least 1 Condition remaining after the attack.
 - Weapons no longer drop to the ground when their condition goes to 0. Instead they drop when the condition is lowered, while it was at 0 condition. Weapons are now considered *In poor condition*, when they have 0 Condition (down from 12 or less). A weapon that has 0 Condition now deals 50% less damage and its skills cost 50% more Fatigue
 - Weapons with 0 Condition now deal 50% less damage
 - The combat map is no longer revealed at the end of a battle
@@ -958,7 +958,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - All non-unique hostile world locations now have standardized resources, influenced by a faction difficulty multipliers. The following resources already include these difficulty multiplier (Visual Overview Here)(https://docs.google.com/spreadsheets/d/1fOc6TcgiVm9P_iOyVoqwYNoXETsnuc9I_4YbblBHV18/edit?gid=2122483876#gid=2122483876):
 	- **Bandit Hideouts** now have 100 Resources (up from 80)
 	- **Bandit Camps** now have 200 Resources (up from 180)
-	- **Bandit Forts** now have 250 Resources (down from 300). They can now sometimes drop a smoke por or a flash pot in place of a regular treasure
+	- **Bandit Forts** now have 250 Resources (down from 300). They can now sometimes drop a smoke pot or a flash pot in place of a regular treasure
 	- **Barbarian Shelters** now have 120 Resources (up from 80)
 	- **Barbarian Camps** now have 240 Resources (up from 200)
 	- **Barbarian Sancutaries** now have 300 Resources (down from 325)
@@ -1043,22 +1043,21 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 ### Combat
 
 - Add Setting (on) to for displaying hitchance labels for all targetable characters whenever you preview an attack skill
-- Your headshot chance is now displayed in the combat tooltip when targeting enemies
-- While previewing movement, tile tooltips show chances and calculations for getting hit by enemies while in zone of control. If not in zone of control tile tooltip instead indicates that
 - Projectiles which fly into obstacles now play a sound effect and shake the targeted object a bit
-- Introduce a new **Unworthy** effect which prevents the character from granting experience on death. This is given to all non-player controlled characters who grant 0 XP on death or are allied to the player
-- Introduce a new cosmetic **Non-Combatant** effect, given to non-combatant characters, which explains that they do not need to be killed in order to win
 - Improve restore item after battle logic, to also restore items, which were dropped to the ground or picked up by another brother during battle
 - Automatically replace broken (shields) or used (nets) equipment after each battle, if you have replacements in your inventory
+- Introduce a new **Unworthy** effect which prevents the character from granting experience on death. This is given to all non-player controlled characters who grant 0 XP on death or are allied to the player
+- Introduce a new cosmetic **Non-Combatant** effect, given to non-combatant characters, which explains that they do not need to be killed in order to win
 - Add Setting (on) to display a glowing red eyes effect on any human-sized character, who is under the effect of **Killing Frenzy** or has 3 stacks of **Decisive**
 - Corpses of resurrecting Zombies and Humans now emit a slight purple particle effect
 - Fleeing surrounded hostile characters now take 100% more hitpoint damage, after the player has won but chooses to "Run them down"
+- While previewing movement, tile tooltips show calculations for getting hit by enemies while in zone of control. If not in zone of control tile tooltip instead indicates that
 - When a Brother dies (without getting struck down), a black skull will raise from his corpse
-- Change mouse wheel zoom speed during combat to 0.1 (down from 0.3)
-- Add Setting to control the mouse wheel zoom speed during combat
+- Change mouse wheel zoom speed during combat to 0.1 (down from 0.3) and add Mod Setting to customize that mouse wheel zoom speed
 - Play bleed animation whenever a bleeding character takes damage from bleeding. The animation scales with the number of bleed stacks
 - Loot that is not equippable in battle no longer appears on the ground (e.g. Beast Trophies/Ingredients)
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
+- Shorten the headshot chance tooltip line when targeting enemies
 - Hovering over the tile of any corpse will now differentiate whether they were *struck down* (= survived with a permanent injury) or *slain* (died permanently)
 - Reduce scroll speed of combat log to 0.5 (down from 15)
 - Increase saturation of ambient light during midnight fights to 70% (up from 50%)
@@ -1087,7 +1086,6 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - The automatic camera level calculation is improved, especially while in mountanious terrain. Your camera level is now automatically adjusted when moving up or down terrain
 - **Throw Fire Bomb** now only marks tiles for impact, if they would be affected by its fire damage. You can no longer throw it on a tile, if no tiles in the impact zone would be affected
 - Print a combat log whenever **Battle Flow** recover Fatigue
-- Play additional hit-sounds when three headed flail hits multiple times
 - Display the actual minimum armor penetration damage in attack skills, instead of always showing a 0 there
 - Improve description of **Additional Fur Padding**,  **Bone Plating** and **Unhold Fur Cloak** and clarify that they only protect against body attacks
 - Slightly improve wording of "weapon skills build up fatigue" tooltip on weapons
@@ -1095,7 +1093,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Reduce pan speed of tactical camera by 20%
 - Improve smoke tooltip on tiles by linking to smoke effect
 - Turn **Decisive** effect icon grey, while a character has 0 stacks
-- Improve brightness and contrast of **Hold Steady**,  **Line Breaker**, **Net Pull** and **Onslaught**
+- Improve brightness and contrast of **Hold Steady**,  **Line Breaker**, **Net Pull** and **Onslaught** skills
 - Use unique icon for **Sergeant** perk
 - Idle sounds of enemies during combat now play up to 50% less freqently
 - Improve tooltip of **Disarmed effect**
@@ -1136,8 +1134,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Subsequent relation changes with the same value and same reason will be combined into a single line with a multiplier in brackets
 - Faction Relation tooltips now show whether you are Allied or Hostile with that faction
 - Faction Relation tooltips now show price multiplier from relation
-- Change mouse wheel zoom speed on the world map to 0.4 (up from 0.3)
-- Add Setting to control the mouse wheel zoom speed on the world map
+- Change mouse wheel zoom speed on the world map to 0.4 (up from 0.3) and add Mod Setting to customize the mouse wheel zoom speed on the world map
 - Increase Alpha value of world party label background to 150 (up from 102)
 - Change name color of permanently hostile world enemies to use the same one, that temporary hostile enemies use, to improve readability
 - Add new orange world party name color for factions that have between 20 and 30 relation with the player
@@ -1153,7 +1150,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Attached Locations now list the items they produce in their tooltip
 - Destroyed attached locations now display their original name, instead of just being called "Ruins"
 - Add Setting (on) for marking named/legendary helmets/armor or armor with attachments as to-be-repaired whenever it enters your inventory
-- Add Setting (on) to display food duration, repair duration and minimum medicine cost in brackets behind those supply values
+- Add Setting (on) to display food duration (in days), repair duration (in hours) and minimum medicine cost in brackets behind those supply values
 - Add 0.8 second delay, before you can click the buttons in event screens to prevent accidental missclicks
 - The Player Banner is no longer hidden while camping
 - Add Concept and Tooltip for Day-Night Cycle, when hovering over the day-night disk
