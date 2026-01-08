@@ -7,7 +7,7 @@
 		if (_entity.getID() == this.m.Target.getID())
 		{
 			::logWarning("Hardened: World Entity " + _entity.getName() + " just tried to fight against itself. We prevented that. Please report this");
-			return false;
+			return true;
 		}
 
 		return __original(_entity, _hasChanged);
