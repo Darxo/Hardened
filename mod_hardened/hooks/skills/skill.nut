@@ -94,6 +94,71 @@
 		 return ret;
 	 }
 
+	 q.MV_getDiversionTarget = @(__original) { function MV_getDiversionTarget( _user, _targetEntity, _propertiesForUse = null )
+	 {
+		// We switcheroo CombatDifficulty to be any value other than 0 in order to disable the vanilla hidden hitchance/defense bonus granted by playing on easy
+
+		local divertedTarget
+		local roll = 0;
+		local chance = 0;
+		local aboutToRoll = false;
+
+		local blockedTiles = ::Const.Tactical.Common.getBlockedTiles(_user.getTile(), _targetEntity.getTile(), _user.getFaction());
+		// Target is not in cover, or the setting is not active, so we do nothing
+		if (blockedTiles.len() == 0 || !::Hardened.Mod.ModSettings.getSetting("ShowCoverCombatLogs").getValue())
+		{
+			return __original(_user, _targetEntity, _propertiesForUse);
+		}
+
+		local aboutToRollObject;
+		aboutToRollObject = ::Hardened.mockFunction(::Const.Tactical.Common, "getBlockedTiles", function( _userTile, _targetTile, _userFaction ) {
+			local ret = aboutToRollObject.original(_userTile, _targetTile, _userFaction);
+			aboutToRoll = true;
+			return { done = true, value = ret };
+		});
+
+		local rollMockObject;
+		rollMockObject = ::Hardened.mockFunction(::Math, "rand", function(...) {
+			if (aboutToRoll && vargv.len() == 2 && vargv[0] == 1 && vargv[1] == 100)
+			{
+				roll = rollMockObject.original(vargv[0], vargv[1]);
+				return { done = true, value = roll };
+			}
+		});
+
+		local chanceMockObject;
+		chanceMockObject = ::Hardened.mockFunction(::Math, "ceil", function( _value ) {
+			if (aboutToRoll)
+			{
+				chance = chanceMockObject.original(_value);
+				return { done = true, value = chance };
+			}
+		});
+
+		local ret = __original(_user, _targetEntity, _propertiesForUse);
+		aboutToRollObject.cleanup();
+		rollMockObject.cleanup();
+		chanceMockObject.cleanup();
+
+		// roll and chance are reversed in the vanilla check, so we invert them to be in line with regular hitchance logs
+		roll = 100 - roll;
+		chance = 100 - chance;
+
+		// Now we build a log message to describe how the cover influenced our hitchance and target
+		local logMessage = ::Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " uses " + this.getName() + " and ";
+		if (ret == null)	// Cover is avoided and main target will be hit
+		{
+			logMessage += ::MSU.Text.colorPositive("bypasses") + " the cover (Chance: " + chance + ", Rolled: " + roll + ")";
+		}
+		else	// The cover (object in ret) is hit instead
+		{
+			local newTarget = ::MSU.isKindOf(ret, "actor") ? ::Const.UI.getColorizedEntityName(ret) : ::MSU.Text.colorNeutral(ret.getName());
+			logMessage += ::MSU.Text.colorNegative("fails to bypass") + " the cover (Chance: " + chance + ", Rolled: " + roll + "). The shot diverts to " + newTarget + " instead of " + ::Const.UI.getColorizedEntityName(_targetEntity);
+		}
+		::Tactical.EventLog.log(logMessage);
+
+		return ret;
+	 }}.MV_getDiversionTarget;
 
 // Reforged Functions
 	// Overwrite, because we have different conditions for duelistValid

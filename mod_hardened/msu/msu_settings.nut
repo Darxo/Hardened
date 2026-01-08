@@ -93,8 +93,6 @@
 
 	qolCombatPage.addBooleanSetting("HideTileTooltipsDuringNPCTurn", false, "Hide Tooltips during NPC Turn", "Tile and Character tooltips will not show up, while it is not your turn.");
 
-	qolCombatPage.addBooleanSetting("CombineCombatSkillLogs", true, "Combine Combat Logs of Skills", "Combat Logs, which are the result of the same skill execution no longer produce regular newlines.");
-
 	qolCombatPage.addRangeSetting("MouseWheelZoomMultiplier",0.1 ,0.05 , 0.4, 0.01, "Mouse Wheel Zoom Multiplier", "This controls how fast your mouse wheel will scroll. 0.3 is the vanilla default value.");
 
 	qolCombatPage.addDivider("MiscDivider1");
@@ -132,6 +130,12 @@
 	qolCombatPage.addDivider("MiscDivider5");
 
 	qolCombatPage.addBooleanSetting("DisplaySkillTags", true, "Display Skill Tags", "List common tags and the damage types at the top of the descriptions of active skill.");
+
+	qolCombatPage.addDivider("MiscDivider6");
+
+	qolCombatPage.addBooleanSetting("CombineCombatSkillLogs", true, "Combine Combat Logs of Skills", "Combat Logs, which are the result of the same skill execution no longer produce regular newlines.");
+	qolCombatPage.addBooleanSetting("ShowCoverCombatLogs", true, "Show Cover Combat Logs", "Generate an additional combat log when targeting someone with a ranged attack, who is in cover. This log contains the chance and roll for bypassing the cover and also the initial target and the new target.");
+
 }
 
 // QOL: Character Screen
