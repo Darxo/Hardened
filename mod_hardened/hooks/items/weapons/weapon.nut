@@ -64,24 +64,29 @@
 
 	q.onDamageDealt = @(__original) function( _target, _skill, _hitInfo )
 	{
+		// We switcheroo the lowerCondition function so that the Vanilla call will not cause it to trigger
+		local oldLowerCondition = this.lowerCondition;
+		this.lowerCondition = function() {};
 		__original(_target, _skill, _hitInfo);
+		this.lowerCondition = oldLowerCondition;
+
+		// Feat: We completely rework the vanilla weapon damage calculation.
+		// We remove the following vanilla conditions:
+		// - Targeted Armor must have at least 50 maximum armor
+		// - Attack must deal at least 5 Armor Damage
+		// - Weapon must have at least 2 maximum condition
+		// And we add the following new conditions:
+		// - Targeted Armor must have at least 1 Condition after the hit
+
+		if (_skill.isRanged()) return;
+		if (_skill.getDirectDamage() == 1.0) return;	// e.g. puncture
 
 		local actor = this.getContainer().getActor();
-		if (actor.isPlayerControlled() && _skill.getDirectDamage() < 1.0 && !_skill.isRanged() && this.m.ConditionMax > 1)	// Same conditions as Vanilla
-		{
-			// First condition is like in vanilla, the other two conditions are inversed, as we want to be able to ignore those
-			if (_target.getArmorMax(_hitInfo.BodyPart) >= 50 && _hitInfo.DamageInflictedArmor < 5 && this.m.ConditionMax != 2)
-			{
-				// New Condition: If your weapon can theoretically deal any armor damage, it will lose condition on hitting armor
-				// So you now damage your weapon, even if you only deal 0 Armor Damage with it
-				// This fixes an issue, where Weapons didnt lose condition if their damage was debuffed too much, or the target has too much mitigation
-				// One example is the Lute, with its very low base damage, knock out reducing it by 50% and the broken weapon debuff reducing it an additional time
-				if (this.m.ArmorDamageMult > 0.0)
-				{
-					this.lowerCondition();
-				}
-			}
-		}
+		if (::MSU.isNull(actor)) return;
+		if (!actor.isPlayerControlled()) return;	// NPC weapons don't lose condition
+		if (_target.getArmor(_hitInfo.BodyPart) <= 0) return;	// The targeted Armor must have at least 1 Condition left after the attack
+
+		this.lowerCondition();
 	}
 
 	q.onPutIntoBag = @(__original) function()
