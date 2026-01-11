@@ -79,6 +79,9 @@
 		// - Targeted Armor must have at least 1 Condition after the hit
 
 		if (_skill.isRanged()) return;
+		if (this.getConditionMax() == 1) return;	// 1 is the default value for weapons and is considered as a weapon ignoring condition completely and being indestructable
+		if (!::MSU.isEqual(_skill.getItem(), this)) return;
+
 		if (_skill.getDirectDamage() == 1.0) return;	// e.g. puncture
 
 		local actor = this.getContainer().getActor();
