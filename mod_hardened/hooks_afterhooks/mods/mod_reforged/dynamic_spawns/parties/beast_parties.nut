@@ -1,5 +1,3 @@
-
-
 // Hooking
 {
 	{	// Alps

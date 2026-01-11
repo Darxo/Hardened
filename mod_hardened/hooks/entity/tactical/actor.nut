@@ -467,6 +467,7 @@
 		// Since we now preserve available fatigue during combat, that causes newly created entities to spawn fully fatigued,
 		//	because in the creation process they start with 0 Stamina
 		// In order to fix that, we automatically set the fatigue of every freshly spawned entity to 0. That is in line with Vanilla behavior anyways
+		// We do this both here (so it affects entities spawned-in mid battle), and during onRoundStart (so it keeps their initiative honest for the turn order)
 		this.setFatigue(0);
 
 		__original();

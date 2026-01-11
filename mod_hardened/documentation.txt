@@ -24,6 +24,16 @@
 
 # Changelog
 
+1.7.3
+	- Improve icon of a tooltip line in from all sides effect
+	- Fix NPCs always acting last during the first round
+	- Fix world parties being visible if slightly outside your vision during night, if you load a save
+	- Fix some location names showing their labels slightly outside your vision during night, if you load a save
+	- Fix nets losing condition and breaking when attacking
+	- Fix nearby stunned world parties stop being stunned when loading a game
+	- Fix harmless error line in log when using swifter
+	- Remove two vanilla fixes that became redundant with 1.5.1.8
+
 1.7.2
 	- Completely rework, how Melee Weapons worn by player characters lose condition on an attack. As long as the Attack does not ignore armor (like puncture), the weapon will always lose condition, if the armor on the body part hit has at least 1 condition remaining after the attack.
 	- Remove **Signet Ring** from drop pool of southern citizens

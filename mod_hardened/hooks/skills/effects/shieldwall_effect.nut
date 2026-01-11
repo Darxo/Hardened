@@ -1,7 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/effects/shieldwall_effect", function(q) {
 	q.getTooltip = @(__original) function()
 	{
-		if (this.getContainer().getActor().getID() ==  ::MSU.getDummyPlayer().getID())
+		if (this.getContainer().getActor().getID() == ::MSU.getDummyPlayer().getID())
 		{
 			// We generate a general tooltip for when the user is the dummy player and there usually is no shield available to make the vanilla one work
 			local ret = this.skill.getTooltip();
