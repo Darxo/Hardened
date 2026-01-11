@@ -33,4 +33,10 @@
 			this.m.HitStacks = ::Math.max(0, this.m.HitStacks - 1);
 		}
 	}
+
+	q.onCombatStarted = @(__original) function()
+	{
+		__original();
+		this.m.HitStacks = 1;
+	}
 });

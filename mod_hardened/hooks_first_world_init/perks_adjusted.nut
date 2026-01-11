@@ -1480,6 +1480,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
+					"Start of each battle with 1 stack",
 					"Whenever you get hit by an Attack, gain 1 stack",
 					"Whenever an Attack misses you, lose 1 stack",
 					"You gain " + ::MSU.Text.colorPositive("+10") + " [Melee Defense|Concept.MeleeDefense] and " + ::MSU.Text.colorPositive("+10") + " [Ranged Defense|Concept.RangeDefense] per stack",
