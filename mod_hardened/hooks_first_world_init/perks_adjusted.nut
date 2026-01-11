@@ -194,6 +194,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.hold_out",
+		Key = "HoldOut",
+		Description = ::UPD.getDescription({
+			Fluff = "Keep it together!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Negative [status effects|Concept.StatusEffect] on you last " + ::MSU.Text.colorPositive(-1) + " [turn|Concept.Turn] (to a minimum of 1)",
+					"Whenever [$ $|Skill+stunned_effect] expires on you, become immune to being [$ $|Skill+stunned_effect] until the start of your next [turn|Concept.Turn]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.inspiring_presence",
 		Key = "InspiringPresence",
 		Description = ::UPD.getDescription({
