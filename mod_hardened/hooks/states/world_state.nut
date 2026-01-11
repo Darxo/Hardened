@@ -50,27 +50,7 @@
 	{
 		__original(_campaignFileName);
 
-		// We need to call a world update once, so that the day time is set correctly. Otherwise the player would have no vision penalty for this first frame during night
-		::World.update();	// Function from the .exe, so implementation is unknown
-
-		// Force Update all parties on the world map once so that they VisibilityMult correctly reflects things like Terrain or Invisibility (Alps)
-		this.getPlayer().setAttackable(false);	// We don't want to immediately get attacked during the loading screen. Todo: though eventually we want that to be a possability to retain the engagement state after loading
-		foreach (worldParty in ::World.getAllEntitiesAtPos(this.getPlayer().getPos(), 2000))
-		{
-			if (!::MSU.isKindOf(worldParty, "party")) continue;
-
-			// Switcheroo of the stun timer so that previously stunned world entities remain stunned
-			local oldStun = worldParty.m.StunTime;
-			worldParty.stun(1);	// We briefly stun all surrounding characters so that they don't move during that one onUpdate call
-			worldParty.onUpdate();
-			worldParty.updatePlayerRelation();
-			worldParty.m.StunTime = oldStun;
-		}
-		this.getPlayer().setAttackable(true);
-
-		// These two lines in combination will force reveal all enemies that the player should be able to see. They fix the bug where you don't see enemies when loading a game
-		::World.setPlayerPos(this.getPlayer().getPos());
-		::World.setPlayerVisionRadius(this.getPlayer().getVisionRadius());
+		this.HD_safeUpdatePlayerVision();
 	}
 
 	q.onCombatFinished = @(__original) function()
@@ -177,6 +157,33 @@
 	}
 
 // New Functions
+	// Update the vision of the player party so every nearby entity that it can see, are shown
+	// We make sure that during this update tick, none of those entities will move
+	q.HD_safeUpdatePlayerVision <- function()
+	{
+		// We need to call a world update once, so that the day time is set correctly. Otherwise the player would have no vision penalty for this first frame during night
+		::World.update();	// Function from the .exe, so implementation is unknown
+
+		// Force Update all parties on near the player once so that their VisibilityMult correctly reflects things like Terrain or Invisibility (Alps)
+		this.getPlayer().setAttackable(false);	// We don't want to immediately get attacked during the loading screen. Todo: though eventually we want that to be a possability to retain the engagement state after loading
+		foreach (worldParty in ::World.getAllEntitiesAtPos(this.getPlayer().getPos(), 2000))
+		{
+			if (!::MSU.isKindOf(worldParty, "party")) continue;
+
+			// Switcheroo of the stun timer so that previously stunned world entities remain stunned
+			local oldStun = worldParty.m.StunTime;
+			worldParty.stun(1);	// We briefly stun all surrounding characters so that they don't move during that one onUpdate call
+			worldParty.onUpdate();
+			worldParty.updatePlayerRelation();
+			worldParty.m.StunTime = oldStun;
+		}
+		this.getPlayer().setAttackable(true);
+
+		// These two lines in combination will force reveal all enemies that the player should be able to see. They fix the bug where you don't see enemies when loading a game
+		::World.setPlayerPos(this.getPlayer().getPos());
+		::World.setPlayerVisionRadius(this.getPlayer().getVisionRadius());
+	}
+
 	q.updateLocationNames <- function()
 	{
 		local player = this.getPlayer();
