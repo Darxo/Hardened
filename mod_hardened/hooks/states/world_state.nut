@@ -50,6 +50,9 @@
 	{
 		__original(_campaignFileName);
 
+		// We need to call a world update once, so that the day time is set correctly. Otherwise the player would have no vision penalty for this first frame during night
+		::World.update();	// Function from the .exe, so implementation is unknown
+
 		// Force Update all parties on the world map once so that they VisibilityMult correctly reflects things like Terrain or Invisibility (Alps)
 		this.getPlayer().setAttackable(false);	// We don't want to immediately get attacked during the loading screen. Todo: though eventually we want that to be a possability to retain the engagement state after loading
 		foreach (worldParty in ::World.getAllEntitiesAtPos(this.getPlayer().getPos(), 2000))
