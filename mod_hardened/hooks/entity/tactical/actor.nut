@@ -314,6 +314,16 @@
 	q.onRoundStart = @(__original) function()
 	{
 		__original();
+
+		// Since we now preserve available fatigue during combat, that causes newly created entities to spawn fully fatigued,
+		//	because in the creation process they start with 0 Stamina
+		// In order to fix that, we automatically set the fatigue of every freshly spawned entity to 0. That is in line with Vanilla behavior anyways
+		// We do this both here (so it keeps their initiative honest for the turn order) and during onSpawned (so it affects entities spawned-in mid battle)
+		if (::Time.getRound() == 1)
+		{
+			this.setFatigue(0);
+		}
+
 		this.m.HD_IsDiscovered = this.getTile().IsVisibleForPlayer;
 		this.m.HD_FleeingMoraleTurnNumber = -1;
 	}
