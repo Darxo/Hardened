@@ -21,6 +21,7 @@
 		{
 			// We lower the Resource Requirement for Leader because we add a new lower tier leader unit
 			unitBlock.StartingResourceMin = 180;	// In Reforged this is 250
+			unitBlock.RatioMax = 0.1	// Reforged: 0.11
 			break;
 		}
 	}
@@ -32,6 +33,7 @@
 		{
 			// We lower the Resource Requirement for Leader because we add a new lower tier leader unit
 			unitBlock.StartingResourceMin = 180;	// In Reforged this is 250
+			unitBlock.RatioMax = 0.1	// Reforged: 0.11
 			break;
 		}
 		else if (unitBlock.BaseID == "UnitBlock.RF.BanditRanged")
