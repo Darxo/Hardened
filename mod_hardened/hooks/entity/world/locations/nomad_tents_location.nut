@@ -4,5 +4,6 @@
 		__original();
 
 		this.m.Resources = 100 * ::Hardened.Global.FactionDifficulty.Nomads;		// Vanilla: 70
+		this.m.VisibilityMult = 1.0;	// Vanilla: 0.8
 	}
 });
