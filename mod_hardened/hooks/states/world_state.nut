@@ -150,12 +150,6 @@
 		__original(_isMinor);
 	}
 
-	q.onDeserialize = @(__original) function( _in )
-	{
-		__original(_in);
-		this.updateLocationNames();		// Vanilla already this.updateTopbarAssets() at the end of onDeserialize, so that HD_NearbyLocations is up to date
-	}
-
 // New Functions
 	// Update the vision of the player party so every nearby entity that it can see, are shown
 	// We make sure that during this update tick, none of those entities will move
@@ -182,6 +176,9 @@
 		// These two lines in combination will force reveal all enemies that the player should be able to see. They fix the bug where you don't see enemies when loading a game
 		::World.setPlayerPos(this.getPlayer().getPos());
 		::World.setPlayerVisionRadius(this.getPlayer().getVisionRadius());
+
+		// We update nearby location names once after loading a game, after the player vision has been correctly adjusted including day/night time
+		this.updateLocationNames();
 	}
 
 	q.updateLocationNames <- function()
