@@ -23,4 +23,19 @@
 			}
 		});
 	}
+
+	// Overwrite, because we delete the Reforged adjustments and revert back to Vanilla
+	q.onChangeAttributes = @() function()
+	{
+		return {
+			Hitpoints = [-10, -10],
+			Bravery = [-5, 0],
+			Stamina = [0, 0],
+			MeleeSkill = [0, 0],
+			RangedSkill = [0, 0],
+			MeleeDefense = [0, 0],
+			RangedDefense = [0, 0],
+			Initiative = [-5, -5],
+		};
+	}
 });
