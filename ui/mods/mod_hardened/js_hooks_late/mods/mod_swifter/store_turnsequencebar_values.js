@@ -6,5 +6,12 @@ Our fix is to remove that swifter entry, so swifter will leave the vanilla value
 */
 if (typeof Swifter !== 'undefined')		// simple check, whether Swifter mod is even used
 {
-	delete Swifter.TurnSequenceBarValues.mResizeFirstSlotTimeIfPreviousWasHiddenToPlayer;
+	if (typeof Swifter.TurnSequenceBarValues !== 'undefined')
+	{
+		delete Swifter.TurnSequenceBarValues.mResizeFirstSlotTimeIfPreviousWasHiddenToPlayer;
+	}
+	else if (typeof Swifter.TurnSequenceBarModule !== 'undefined')
+	{
+		delete Swifter.TurnSequenceBarModule.mResizeFirstSlotTimeIfPreviousWasHiddenToPlayer;
+	}
 }
