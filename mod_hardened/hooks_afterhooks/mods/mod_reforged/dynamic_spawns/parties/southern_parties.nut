@@ -17,7 +17,7 @@
 				UnitBlocks = [
 					{ BaseID = "UnitBlock.RF.SouthernFrontline", RatioMin = 0.15, RatioMax = 1.00, DeterminesFigure = false },
 					{ BaseID = "UnitBlock.RF.SouthernBackline", RatioMin = 0.10, RatioMax = 0.40, DeterminesFigure = false },
-					{ BaseID = "UnitBlock.RF.Officer", HardMax = 1, PartySizeMin = 10, ExclusionChance = 0.7 },
+					{ BaseID = "UnitBlock.RF.Officer", HardMax = 1, PartySizeMin = 10, ExclusionChance = 0.7, DeterminesFigure = false },
 					{ BaseID = "UnitBlock.RF.SouthernCaravanDonkey", RatioMin = 0.01, RatioMax = 0.12, PartySizeMin = 12 },	// Vanilla: Second starts spawning at 14, then 16+
 
 					// Flex-Block: Only one of these can appear at the same time, as decided by our excludeSpawnables hook
