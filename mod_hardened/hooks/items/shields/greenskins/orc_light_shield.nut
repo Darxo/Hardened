@@ -2,6 +2,8 @@
 	q.create = @(__original) function()
 	{
 		__original();
+
+		this.m.Description = ::MSU.String.replace(this.m.Description, "A light", "A large");
 		recordReforgedCondition();
 
 	// Vanilla Stats
