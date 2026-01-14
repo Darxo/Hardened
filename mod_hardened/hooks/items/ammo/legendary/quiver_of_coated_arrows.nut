@@ -9,16 +9,15 @@
 	q.getTooltip = @() function()
 	{
 		local ret = this.ammo.getTooltip();		// Reforged fetches the tooltip from quiver_of_coated_arrows instead but that one is missing our ammo related tooltips
-		foreach (entry in ret)
-		{
-			if (entry.id == 7)
-			{
-				// Change the bleeding related entry to multiple stacks of bleeding instead of 2 turns of bleeding
-				// because of different bleeding mechanics in Reforged
-				entry.text = "Inflicts " + ::MSU.Text.colorDamage(this.m.BleedDamage / 5) + ::Reforged.Mod.Tooltips.parseString(" stacks of [Bleeding|Skill+bleeding_effect]");
-				break;
-			}
-		}
+
+		// We manually add the tooltip about the bleed that the vanilla coated arrows has, adjusted with nested tooltips
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/damage_received.png",
+			text = "Inflicts " + ::MSU.Text.colorDamage(this.m.BleedDamage / 5) + ::Reforged.Mod.Tooltips.parseString(" stacks of [Bleeding|Skill+bleeding_effect]"),
+		});
+
 		return ret;
 	}
 });
