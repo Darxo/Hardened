@@ -19,6 +19,20 @@
 					// This does not flip this.isHiddenToPlayer() of the location so the cartographer will not give money for newly discovered locations
 					nearbyEntity.setDiscovered(true);
 					nearbyEntity.onDiscovered();
+
+					// We want the cartographer to pay for previously undiscovered locations, and those to count for ambitions
+					// The vanilla code inside location::onDiscovered does not trigger, because isHiddenToPlayer is not yet flipped, so we need to manually do the same logic here
+					if (nearbyEntity.isHiddenToPlayer() && nearbyEntity.getTypeID() != "location.battlefield")
+					{
+						::World.Statistics.getFlags().increment("LocationsDiscovered");
+
+						if (::World.Retinue.hasFollower("follower.cartographer"))
+						{
+							::World.Retinue.getFollower("follower.cartographer").onLocationDiscovered(nearbyEntity);
+						}
+
+						::World.Ambitions.onLocationDiscovered(nearbyEntity);
+					}
 				}
 			}
 
