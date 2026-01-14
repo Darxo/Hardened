@@ -24,6 +24,7 @@
 	// Private
 	q.m.HD_RoundLastUsed <- null;	// This is set to the current round whenever the skills onUse is called
 	q.m.HD_Temp_IsFree <- false;	// Ignore fatigue and action point cost during isAffordable check
+	q.m.HD_ForFree <- false;		// Is always set to the _forFree value of the last skill::use call of this skill. We use it to access this value in our onUse hook
 
 	q.isAffordable = @(__original) function()
 	{
@@ -35,6 +36,7 @@
 	{
 		::Hardened.Temp.LastUsedSkill = ::MSU.asWeakTableRef(this);		// We can expect the skill to exist long enough, even if it is removed from the actor, usually within delayed events
 		::Hardened.Temp.LastUsedSkillOwner = ::MSU.asWeakTableRef(this.getContainer().getActor());	// The skill might not have an owner anymore by that time, e.g. with Throwing Spear skill
+		this.m.HD_ForFree = _forFree;
 
 		return __original(_targetTile, _forFree);
 	}
@@ -340,6 +342,12 @@
 	{
 		// Todo, only do that during your turn? What happens if this is triggered during someone elses turn?
 		this.m.HD_RoundLastUsed = ::Time.getRound();	// Imprint the last round in which this skill was used for the cooldown framework
+
+		// Fix(Vanilla): some perk implementations (Headhunter, Fast Adaption, Full Force) triggering/not-triggering from zone-of-control attacks
+		// Those attacks count as _forFree but also as full skill uses (rather than just attacks).
+		// They do not advance the SkillCounter in Vanilla, so such perks think they are still part of the previous skill execution and ignore/count them
+		// We fix that by making any free skill now advance the skill counter, if it is the very first skill use of a skill-chain
+		if (::Hardened.Temp.RootSkillCounter == null && this.m.HD_ForFree) ++::Const.SkillCounter;
 
 		local isRootSkill = (::Hardened.Temp.RootSkillCounter == null);
 		if (isRootSkill) ::Hardened.Temp.RootSkillCounter = ::Const.SkillCounter;	// Our execution is the beginning of a new chain. It was not the result of another skills delayed execution
