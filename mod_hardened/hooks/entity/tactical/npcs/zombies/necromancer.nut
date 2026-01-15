@@ -2,6 +2,16 @@
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/necromancer", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/dagger"],
+			[12, "scripts/items/weapons/scramasax"],
+		]);
+	}
+
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
 	q.onInit = @() { function onInit()
 	{
