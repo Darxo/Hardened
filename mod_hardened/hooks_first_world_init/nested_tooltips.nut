@@ -46,6 +46,33 @@
 		"Hitchance is a unified term representing both [Melee Skill|Concept.MeleeSkill] and [Ranged Skill.|Concept.RangeSkill]\n\n" +
 		"Any modifier or multiplier to Hitchance apply equally to both Melee Skill and Ranged Skill, and are affected by their respective multipliers."
 	)),
+	Mood = ::MSU.Class.BasicTooltip("Mood", ::Reforged.Mod.Tooltips.parseString(
+		"Mood reflects how satisfied member of your company are.\n\n" +
+		"It is expressed as a value between " + ::MSU.Text.colorNeutral(0.0) + " and " + ::MSU.Text.colorNeutral(6.95) + " which translates into the following seven mood states: Angry, Disgruntled, Concerned, Neutral, In Good Spirit, Eager and Euphoric.\n\n" +
+		"Mood states above Neutral grant an increasing chance that the character begins battles with [Confident|Skill+hd_dummy_morale_state_confident] morale.\n" +
+		"Mood states below Neutral reduce the maximum possible morale state of the character during battle.\n" +
+		"A character who is Angry might desert you and leave your company.\n\n" +
+		"The default mood value is " + ::MSU.Text.colorNeutral(3.15) + ". Every hour, each character's mood shifts toward this value by at least " + ::MSU.Text.colorPositive(::Const.MoodChange.RecoveryPerHour) + ".\n\n" +
+		"Mood is typically gained from:\n" +
+		"- Visiting a city (" + ::MSU.Text.colorizeValue(::Const.MoodChange.NearCity, {AddSign = true}) + ")\n" +
+		"- Winning a battle (" + ::MSU.Text.colorizeValue(::Const.MoodChange.BattleWon, {AddSign = true}) + ")\n" +
+		"- Getting drunk in a tavern (" + ::MSU.Text.colorizeValue(::Const.MoodChange.DrunkAtTavern, {AddSign = true}) + ")\n" +
+		"- Fulfulling an Ambition (" + ::MSU.Text.colorizeValue(::Const.MoodChange.AmbitionFulfilled, {AddSign = true}) + ")\n" +
+		"- Various Events\n\n" +
+		"Mood is typically lost from:\n" +
+		"- Sitting out a battle (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.BattleWithoutMe, {AddSign = true}) + ")\n" +
+		"- Retreating from a battle (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.BattleRetreat, {AddSign = true}) + ")\n" +
+		"- Losing a battle (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.BattleLost, {AddSign = true}) + ")\n" +
+		"- Not getting paid (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.NotPaid, {AddSign = true}) + ")\n" +
+		"- No food (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.NotEaten, {AddSign = true}) + ")\n" +
+		"- Brother died (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.BrotherDied, {AddSign = true}) + ")\n" +
+		"- Dismissing Brother (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.BrotherDismissed, {AddSign = true}) + ")\n" +
+		"- Dismissing Veteran (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.VeteranDismissed, {AddSign = true}) + ")\n" +
+		"- Receiving an Injury (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.Injury, {AddSign = true}) + ")\n" +
+		"- Permanent Injury (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.PermanentInjury, {AddSign = true}) + ")\n" +
+		"- Failing an Ambition (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.AmbitionFailed, {AddSign = true}) + ")\n" +
+		"- Various Events"
+	)),
 	Morale = ::MSU.Class.BasicTooltip("Morale", ::Reforged.Mod.Tooltips.parseString(
 		"Morale represents the mental condition of characters and influences their effectiveness in battle. It exists in one of five states: [Fleeing|Skill+hd_dummy_morale_state_fleeing], [Breaking|Skill+hd_dummy_morale_state_breaking], [Wavering|Skill+hd_dummy_morale_state_wavering], Steady or [Confident.|Skill+hd_dummy_morale_state_confident]\n\n" +
 		"A positive morale check raises morale on success, a negative check lowers it, and a neutral check does not change morale but may trigger other effects.\n\n" +
