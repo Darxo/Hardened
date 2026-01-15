@@ -48,7 +48,7 @@
 	{
 		__original(_attacker, _damageHitpoints, _damageArmor);
 
-		if (!_attacker.isAlliedWith(this.getActor()))
+		if (_attacker != null && !_attacker.isAlliedWith(this.getActor()))
 		{
 			::Tactical.Entities.getStrategy(this.getActor().getFaction()).m.Stats.HD_WasHitByEnemy += 1;
 		}
