@@ -42,8 +42,8 @@
 			ret.push({
 				id = 10,
 				type = "text",
-				icon = "ui/icons/fatigue.png",
-				text = "Maximum Fatigue " + ::MSU.Text.colorizeValue(this.getStaminaModifier(), {AddSign = true}),
+				icon = "ui/icons/bag.png",
+				text = ::Reforged.Mod.Tooltips.parseString("[Weight|Concept.Weight]: ") + ::MSU.Text.colorNegative(this.getWeight()),
 			});
 		}
 
