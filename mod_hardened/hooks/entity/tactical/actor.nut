@@ -381,6 +381,19 @@
 		_hitInfo.DamageMinimum = oldDamageMinimum;
 	}
 
+	// Reforged Fix: Rare script error, when DamageInflictedHitpoints is greater than getHitpointsMax
+	q.MV_selectInjury = @(__original) function( _skill, _hitInfo )
+	{
+		// Reforged creates weighted container entries using a weight depending on the relation of DamageInflictedHitpoints, getHitpointsMax and the threshold of the respetive injury
+		// That method can produce a weight of 0 or negative values, if the DamageInflictedHitpoints value is greater than getHitpointsMax
+		// In unmodded reforged that can't happen currently, as those cases are filtered out earlier
+		// But if selectInjury is called in isolution, then this can happen, like for example in our bone_breaker perk rework
+		// We fix that shortcomming, by capping the DamageInflictedHitpoints to never be greater than getHitpointsMax
+		_hitInfo.DamageInflictedHitpoints = ::Math.min(_hitInfo.DamageInflictedHitpoints, this.getHitpointsMax());
+
+		return __original(_skill, _hitInfo);
+	}
+
 // Hardened Functions
 	// Our own interpretation of surroundedCount, that is not yet clamped
 	q.__calculateSurroundedCount = @(__original) function()
