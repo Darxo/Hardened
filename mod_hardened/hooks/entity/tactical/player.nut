@@ -18,6 +18,14 @@
 
 	q.improveMood = @(__original) function( _a = 1.0, _reason = "" )
 	{
+		local moodCheck = this.getSkills().getSkillByID("special.mood_check");
+		if (moodCheck != null)
+		{
+			// Feat: Allow the mood_check skill to influence mood changes
+			_a = moodCheck.HD_getNewMoodChange(_a);
+			if (_a == 0.0) return;
+		}
+
 		if (_reason != "")
 		{
 			// Feat: Display the accurate mood change in brackets behind the reason
@@ -29,6 +37,17 @@
 
 	q.worsenMood = @(__original) function( _a = 1.0, _reason = "" )
 	{
+		local moodCheck = this.getSkills().getSkillByID("special.mood_check");
+		if (moodCheck != null)
+		{
+			// Feat: Allow the mood_check skill to influence mood changes
+			// HD_getNewMoodChange requires positive numbers for positive changes and negative numbers for negative changes
+			// This function however expects positive numbers for negative changes, so we need to invert it, before passing it to the function
+			// And we need to invert the result too (which would have the same sign as the input), so it has the same sign as the input again
+			_a = -moodCheck.HD_getNewMoodChange(-1 * _a);
+			if (_a == 0.0) return;
+		}
+
 		if (_reason != "")
 		{
 			// Feat: Display the accurate mood change in brackets behind the reason
