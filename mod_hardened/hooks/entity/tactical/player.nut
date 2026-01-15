@@ -16,6 +16,28 @@
 		this.m.HD_XPValuePerVeteranLevel = 10;		// Vanilla: 30
 	}
 
+	q.improveMood = @(__original) function( _a = 1.0, _reason = "" )
+	{
+		if (_reason != "")
+		{
+			// Feat: Display the accurate mood change in brackets behind the reason
+			_reason += format(" (%s)", ::MSU.Text.colorizeValue(_a, {AddSign = true}));
+		}
+
+		__original(_a, _reason);
+	}
+
+	q.worsenMood = @(__original) function( _a = 1.0, _reason = "" )
+	{
+		if (_reason != "")
+		{
+			// Feat: Display the accurate mood change in brackets behind the reason
+			_reason += format(" (%s)", ::MSU.Text.colorizeValue(-1 * _a, {AddSign = true}));
+		}
+
+		__original(_a, _reason);
+	}
+
 	q.onInit = @(__original) function()
 	{
 		__original();
