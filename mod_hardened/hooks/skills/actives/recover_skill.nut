@@ -1,4 +1,10 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/recover_skill", function(q) {
+	q.create = @(__original) { function create()
+	{
+		__original();
+		this.m.Order = ::Const.SkillOrder.BeforeLast;	// We want this skill to be sorted very late in the skill bar as it is rarely used and shouldnt replace important hotkeys
+	}}.create;
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
