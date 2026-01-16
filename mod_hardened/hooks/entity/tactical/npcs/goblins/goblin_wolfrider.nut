@@ -83,7 +83,6 @@
 		b.setValues(::Const.Tactical.Actor.GoblinWolfrider);
 		b.TargetAttractionMult = 0.1;
 		b.IsAffectedByInjuries = false;
-		b.IsImmuneToDisarm = true;
 
 		// Generic Effects
 		this.getSkills().add(::new("scripts/skills/racial/rf_goblin_wolfrider_racial"));
