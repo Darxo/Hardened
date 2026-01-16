@@ -18,11 +18,28 @@
 - Injuries now heal at the start of the day and wages are paid at the start of the day; instead of during midday
 - Hitchances of Lunge-Like attacks can be inaccurate as the act of moving next to your target can enable/disable various effects
 
+# Compatibility with mods
+
+- **Elite Few**: Hardlock, when trying to negotiate for better pay in contracts
+
 # Compatibility
 
 - Is safe to remove from- and add to any existing savegames
 
 # Changelog
+
+1.7.4
+	- Preemtively mark Reforged >=0.8.0-alpha as incompatible
+	- Change the word "light" to "large" in the tooltip of **Feral Shield**
+	- Fix southern caravans sometimes using the wrong world figure
+	- Fix **Corpse Explosion** from **Fault Finders** not working correctly and slightly bricking the combat log
+	- Fix Ancient Watchtower not granting crowns with Cartographer Follower
+	- Fix **Goblin Wolfrider** being immune to disarm
+	- Fix **Bloodletter's Reach** not mentioning its bleed damage
+	- Fix rare error popup, when causing a headshot with **Bone Breaker** against a skeleton
+	- Fix(Vanilla) **Headhunter** and **Fast Adaption** sometimes not triggering correctly from zone of control attacks
+	- Fix Full Force rarely producing dust particle effect when hitting with a zone of control attack
+	- "Free" skills, that are not triggered by another skill, (e.g. Zone of Control attacks) now increment the ::Const.SkillCounter
 
 1.7.3
 	- Improve icon of a tooltip line in from all sides effect

@@ -1235,6 +1235,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix shieldwall animation still showing up on NPCs who lost the shieldwall effect offscreen
 - Fix barbarian **Drum** being double grippable despite being a two-handed weapon
 - Fix the impact delay of most throwable utility items not lining up with their projectiles, especially on higher game speed
+- Fix **Headhunter** and **Fast Adaption** sometimes not triggering correctly from zone of control attacks
 - Fix keyboard inputs for camera movement in combat not being combinable
 - Fix rare end-of-combat freeze, when clicking "It's over"
 - Fix named one-handed mace icon art not lining up with their sprite art
@@ -1276,6 +1277,7 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- "Free" skills, that are not triggered by another skill, (e.g. Zone of Control attacks) now increment the `::Const.SkillCounter`
 - Add `::Const.Difficulty.StartingResources` with entries for each difficulty setting for the starting resources on a new campaign
 - Add `HD_MinConditionForPlayerDrop`, `HD_ConditionThresholdForDrop`, `HD_MinConditionForDrop` and `HD_BaseDropChance` to control drop behavior of helmets and body armors
 - Automatically include `_config.nut` file, if it exists in the data folder for quickly applying personalized squirrel changes. This file is loaded during `::Hooks.QueueBucket.Late`

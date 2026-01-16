@@ -1,7 +1,7 @@
 ::Hardened <- {
 	ID = "mod_hardened",
 	Name = "Hardened",
-	Version = "1.7.3",
+	Version = "1.7.4",
 	GitHubURL = "https://github.com/Darxo/Hardened",
 	Temp = {	// Used to globally store variables between function calls to implement more advanced, albeit hacky behaviors
 		RootSkillCounter = null,	// This variable will have the SkillCounter of the root skills during the execution of any skill and any delayed executions
@@ -16,6 +16,7 @@
 ::Hardened.HooksMod <- ::Hooks.register(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
 ::Hardened.HooksMod.require([
 	"mod_reforged >= 0.7.19",
+	"mod_reforged < 0.8.0-alpha",
 	"mod_dynamic_spawns >= 0.5.0",
 ]);
 ::Hardened.HooksMod.conflictWith([
