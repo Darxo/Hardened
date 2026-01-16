@@ -6,6 +6,9 @@
 	{
 		__original();
 
+		// We make it so regular Orc Warlords no longer use a unique name, so they don't get confused for Champions
+		this.m.Name = ::Const.Strings.EntityName[this.m.Type];
+
 		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/armor/greenskins/orc_warlord_armor"],
 		]);

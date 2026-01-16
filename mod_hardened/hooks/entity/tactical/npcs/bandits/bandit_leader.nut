@@ -7,6 +7,9 @@
 		this.m.Bodies = ::Const.Bodies.Muscular;	// Reforged: ::Const.Bodies.AllMale
 		__original();
 
+		// We make it so regular Brigand Leaders no longer use a unique name, so they don't get confused for Champions
+		this.m.Name = ::Const.Strings.EntityName[this.m.Type];
+
 		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 190 - 230
 			[12, "scripts/items/armor/footman_armor"],
 			[12, "scripts/items/armor/lamellar_harness"],
