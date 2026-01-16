@@ -36,6 +36,9 @@
 			[12, "scripts/items/shields/oriental/metal_round_shield"],
 			[12, "scripts/items/tools/reinforced_throwing_net"],
 		]);
+
+		this.m.AIAgent = ::new("scripts/ai/tactical/agents/hd_generic_carry_agent");
+		this.m.AIAgent.setActor(this);
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
