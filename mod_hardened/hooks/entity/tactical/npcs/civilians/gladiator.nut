@@ -64,6 +64,10 @@
 		{
 			this.getSkills().add(::new("scripts/skills/perks/perk_nimble"));	// To offset the huge difference in head defense (from 230 to 0)
 		}
+		else
+		{
+			this.getSkills().add(::new("scripts/skills/perks/perk_rf_poise"));
+		}
 
 		if (this.getOffhandItem() == null)	// Two Handed Weapon
 		{
@@ -98,7 +102,6 @@
 		b.setValues(::Const.Tactical.Actor.Gladiator);
 
 		// Generic Perks
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_poise"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_survival_instinct"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
 
