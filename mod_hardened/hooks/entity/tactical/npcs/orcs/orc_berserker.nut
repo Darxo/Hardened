@@ -111,6 +111,7 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_killing_frenzy"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vigorous_assault"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_hd_brace_for_impact"));
 
 		// Generic Actives
 		this.getSkills().add(::new("scripts/skills/actives/hand_to_hand_orc"));
