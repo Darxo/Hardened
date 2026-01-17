@@ -125,6 +125,15 @@
 							id = 3,
 							type = "text",
 							icon = "/ui/icons/xp_received.png",
+							text = "Current Total XP: " + ::MSU.Text.colorPositive(entity.getXP()),
+						},
+					]);
+
+					ret.extend([
+						{
+							id = 6,
+							type = "text",
+							icon = "/ui/icons/xp_received.png",
 							text = "Current XP Mult: " + ::MSU.Text.colorizePct(entity.getXPMult(), {CompareTo = 1.0}),
 						},
 					]);
