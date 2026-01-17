@@ -44,6 +44,31 @@
 		return __original(_originTile, _targetTile) && (this.getAffectedTiles(_targetTile).len() != 0);
 	}
 
+// Modular Vanilla Functions
+	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
+	{
+		local ret = __original(_user, _target, _skill);
+		if (_skill != this) return ret;
+		if (_user.getID() == _target.getID()) return ret;		// _user and _target must not be the same
+
+		if (_user.getID() == this.getContainer().getActor().getID())	// We must be the _user
+		{
+			if (_target.getCurrentProperties().IsRooted)
+			{
+				if (_target.isAlliedWith(_user))
+				{
+					ret *= 1.5;		// It's a good idea to target rooted allies to free them from those roots
+				}
+				else
+				{
+					ret *= 0.7;		// It's a bad idea to target rooted enemies, because this skill removes rooted effects on a hit
+				}
+			}
+		}
+
+		return ret;
+	}
+
 // New Functions
 	q.getAffectedTiles <- function( _targetTile )
 	{
