@@ -79,11 +79,9 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_hold_out"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_survival_instinct"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_adrenalin"));
 
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_survival_instinct"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vigorous_assault"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_hybridization"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_double_strike"));	// Only relevant for 1H Weapons, because those are on the weaker side
 

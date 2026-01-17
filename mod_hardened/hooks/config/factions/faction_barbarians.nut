@@ -8,8 +8,8 @@
 	::Const.Tactical.Actor.BarbarianThrall.Stamina = 115;
 	::Const.Tactical.Actor.BarbarianThrall.MeleeSkill = 65;
 	::Const.Tactical.Actor.BarbarianThrall.RangedSkill = 50;
-	::Const.Tactical.Actor.BarbarianThrall.MeleeDefense = 0;
-	::Const.Tactical.Actor.BarbarianThrall.RangedDefense = 10;
+	::Const.Tactical.Actor.BarbarianThrall.MeleeDefense = -10;
+	::Const.Tactical.Actor.BarbarianThrall.RangedDefense = 0;
 	::Const.Tactical.Actor.BarbarianThrall.Initiative = 115;
 }
 
@@ -23,8 +23,8 @@
 	::Const.Tactical.Actor.BarbarianBeastmaster.Stamina = 120;
 	::Const.Tactical.Actor.BarbarianBeastmaster.MeleeSkill = 70;
 	::Const.Tactical.Actor.BarbarianBeastmaster.RangedSkill = 55;
-	::Const.Tactical.Actor.BarbarianBeastmaster.MeleeDefense = 10;
-	::Const.Tactical.Actor.BarbarianBeastmaster.RangedDefense = 25;
+	::Const.Tactical.Actor.BarbarianBeastmaster.MeleeDefense = 0;
+	::Const.Tactical.Actor.BarbarianBeastmaster.RangedDefense = 20;
 	::Const.Tactical.Actor.BarbarianBeastmaster.Initiative = 110;
 }
 
@@ -38,8 +38,8 @@
 	::Const.Tactical.Actor.BarbarianDrummer.Stamina = 150;
 	::Const.Tactical.Actor.BarbarianDrummer.MeleeSkill = 65;
 	::Const.Tactical.Actor.BarbarianDrummer.RangedSkill = 40;
-	::Const.Tactical.Actor.BarbarianDrummer.MeleeDefense = 15;
-	::Const.Tactical.Actor.BarbarianDrummer.RangedDefense = 5;
+	::Const.Tactical.Actor.BarbarianDrummer.MeleeDefense = 0;
+	::Const.Tactical.Actor.BarbarianDrummer.RangedDefense = 0;
 	::Const.Tactical.Actor.BarbarianDrummer.Initiative = 90;
 }
 
@@ -83,7 +83,7 @@
 	::Const.Tactical.Actor.BarbarianChosen.Stamina = 250;
 	::Const.Tactical.Actor.BarbarianChosen.MeleeSkill = 100;
 	::Const.Tactical.Actor.BarbarianChosen.RangedSkill = 65;
-	::Const.Tactical.Actor.BarbarianChosen.MeleeDefense = 15;
-	::Const.Tactical.Actor.BarbarianChosen.RangedDefense = 10;
+	::Const.Tactical.Actor.BarbarianChosen.MeleeDefense = 5;
+	::Const.Tactical.Actor.BarbarianChosen.RangedDefense = 0;
 	::Const.Tactical.Actor.BarbarianChosen.Initiative = 75;
 }

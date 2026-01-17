@@ -69,7 +69,7 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_hold_out"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_survival_instinct"));
 
 		// Generic Actives
 		this.getSkills().add(::new("scripts/skills/actives/barbarian_fury_skill"));
