@@ -2,6 +2,23 @@
 	q.addCharacterToUIData = @(__original) function( _entity, _target )
 	{
 		__original(_entity, _target);
+
+		// Feat: We rework how experience is displayed to the player
+		// Vanilla shows the total current XP and the XP Threshold for the next level
+		// But those two values tend to become huge on higher levels and lose meaning to the player, because they include all previous experience in them
+		// Also the progress bar tends to be almost always full because of this way of handling XP
+		// We instead let each new level start with "0" XP and the maximum is only the XP needed to go from the previous threshold to the threshold
+		local nextLevelXPThreshold = _entity.getXPForNextLevel();
+		local currentXP = _entity.getXP();
+		local prevLevelXPThreshold = 0;
+		foreach (xpEntry in ::Const.LevelXP)
+		{
+			if (xpEntry > _entity.getXP()) break;
+			prevLevelXPThreshold = xpEntry;
+		}
+		_target.xpValue = currentXP- prevLevelXPThreshold;
+		_target.xpValueMax = nextLevelXPThreshold - prevLevelXPThreshold;
+
 		_target.id <- _entity.getID();	// This is a little redundant, but we need it for the experience tooltip
 	}
 
