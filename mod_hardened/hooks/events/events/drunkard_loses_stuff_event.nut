@@ -3,6 +3,8 @@
 	{
 		__original();
 
+		this.m.Cooldown = 21.0 * ::World.getTime().SecondsPerDay;	// Vanilla: 14 Days
+
 		foreach (screen in this.m.Screens)
 		{
 			if (screen.ID == "A")

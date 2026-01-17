@@ -2,6 +2,8 @@
 	q.onUpdateScore = @(__original) function()
 	{
 		__original();
+
+		this.m.Cooldown = 21.0 * ::World.getTime().SecondsPerDay;	// Vanilla: 14 Days
 		this.m.Score /= 2;	// Vanilla: 10 Score per valid background, we half that chance
 	}
 });
