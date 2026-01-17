@@ -15,6 +15,7 @@
 		this.m.Value = 600;		// In Vanilla this is 250
 		this.m.MeleeDefense = 20;
 		this.m.RangedDefense = 20;
+		this.m.StaminaModifier = -24;	// Vanilla: -22
 	}
 });
 
