@@ -3,8 +3,8 @@
 	{
 		__original();
 		this.m.Value = 200;				// Vanilla: 150
-		this.m.ConditionMax = 80; 		// Vanilla: 70
-		this.m.StaminaModifier = -9; 	// Vanilla: -4
+		this.m.ConditionMax = 70; 		// Vanilla: 70
+		this.m.StaminaModifier = -8; 	// Vanilla: -4
 		this.m.Vision = 0;				// Vanilla: 0
 	}
 });
