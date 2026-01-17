@@ -168,7 +168,7 @@
 				{ stop: 5, color: { r: 255, g: 30,  b: 0   } }, // red
 				{ stop: 33, color: { r: 255, g: 132, b: 0   } }, // orange
 				{ stop: 66, color: { r: 255, g: 234, b: 0   } }, // yellow
-				{ stop: 95, color: { r: 192, g: 255, b: 0   } }  // green
+				{ stop: 95, color: { r: 50, g: 200, b: 0   } }  // green
 			];
 			if (t <= colors[0].stop) return colors[0].color;
 
