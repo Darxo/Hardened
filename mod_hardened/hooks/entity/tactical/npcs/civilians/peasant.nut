@@ -31,6 +31,7 @@
 			[12, "scripts/items/weapons/pitchfork"],
 			[12, "scripts/items/weapons/wooden_flail"],
 			[24, "scripts/items/weapons/wooden_stick"],		// Higher chance because they might have just picked it up off the ground
+			[3, "scripts/items/weapons/lute"],
 		]);
 	}
 });
