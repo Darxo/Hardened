@@ -48,7 +48,7 @@
 	q.isEnabled <- function()
 	{
 		local actor = this.getContainer().getActor();
-		if (!actor.isPlacedOnMap()) return true;	// While on the world map, we want to display the damage bonus to the player
+		if (!actor.isPlacedOnMap()) return false;	// While on the world map, we disable this effect to not confuse the player with the sudden damage stat increase
 
 		local numAdjacentEnemies = ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), this.m.RequiredIsolationDistance).len();
 		return (numAdjacentEnemies == 0);
