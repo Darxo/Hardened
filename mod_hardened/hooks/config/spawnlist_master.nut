@@ -609,6 +609,11 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.RF_BanditMarauder.Cost = 40;
 	::Const.World.Spawn.Troops.RF_BanditMarauder.Strength = 40;
+	::Const.World.Spawn.Troops.RF_BanditMarauder.Variant = 1;		// Bandit Marauder can now produce Champions
+
+	// Optional Entries
+	::Const.World.Spawn.Troops.RF_BanditMarauder.NameList <- ::Const.Strings.BanditLeaderNames;	// Todo: generate better namelist
+	::Const.World.Spawn.Troops.RF_BanditMarauder.TitleList <- null;
 }
 
 // scripts/entity/tactical/enemies/ghoul_high

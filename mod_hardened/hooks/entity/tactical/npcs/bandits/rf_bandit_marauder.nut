@@ -29,6 +29,25 @@
 		this.HD_onInitStatsAndSkills();
 	}
 
+	// Overwrite, because we completely replace Reforged miniboss adjustments with our own
+	q.makeMiniboss = @() { function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss()) return false;
+
+		// This champion only ever spawns with named weapons, never with named gear
+		local namedMeleeWeapon = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/named/named_greatsword"],
+			[12, "scripts/items/weapons/named/named_greataxe"],
+			[12, "scripts/items/weapons/named/named_longaxe"],
+			[12, "scripts/items/weapons/named/named_polehammer"],
+		]).roll();
+		this.getItems().equip(::new(namedMeleeWeapon));
+
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_fresh_and_furious"));
+
+		return true;
+	}}.makeMiniboss;
+
 	// Overwrite, because we completely replace Reforged item adjustments with our own
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{
