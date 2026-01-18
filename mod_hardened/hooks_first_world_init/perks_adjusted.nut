@@ -717,6 +717,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_calculated_strikes",
+		Key = "RF_CalculatedStrikes",
+		Description = ::UPD.getDescription({
+			Fluff = "Take your time and strike true!",
+			Effects = [{
+				Type = ::UPD.EffectType.Active,
+				Description = [
+					"Deal " + ::MSU.Text.colorPositive("20%") + " more damage against anyone who has not started their [turn|Concept.Turn] yet in the current [round|Concept.Round]"
+					"You have " + ::MSU.Text.colorNegative("15%") + " less [Initiative|Concept.Initiative]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_cheap_trick",
 		Key = "RF_CheapTrick",
 		Description = ::UPD.getDescription({
