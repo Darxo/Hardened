@@ -77,7 +77,6 @@
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_overwhelm"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_anchor"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_hold_out"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
 	}
 
