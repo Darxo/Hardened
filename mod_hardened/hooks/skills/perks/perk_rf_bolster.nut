@@ -14,17 +14,8 @@
 		if (!this.isEnabled()) return;
 		if (!this.isSkillValid(_skill)) return;
 
-		local actor = this.getContainer().getActor();
-		local remainingConfident = this.m.HD_MaximumConfidentPerAttack;
-		foreach (ally in ::Tactical.Entities.getFactionActors(actor.getFaction(), actor.getTile(), 1, true))
-		{
-			local moraleState = ally.getMoraleState();
-			if (moraleState == ::Const.MoraleState.Confident) continue;
-			if (moraleState == ::Const.MoraleState.Steady && remainingConfident == 0) continue;
+		this.triggerBolsterEffect();
 
-			ally.checkMorale(1, ::Const.Morale.RallyBaseDifficulty, ::Const.MoraleCheckType.Default, this.m.Overlay);
-			if (ally.getMoraleState() == ::Const.MoraleState.Confident) --remainingConfident;
-		}
 	}
 
 // Modular Vanilla Functions
@@ -66,5 +57,28 @@
 		if (actor.isEngagedInMelee()) return false;
 
 		return true;
+	}
+
+	q.triggerBolsterEffect <- function()
+	{
+		local triggeredMoraleCheck = false;
+
+		local actor = this.getContainer().getActor();
+		local remainingConfident = this.m.HD_MaximumConfidentPerAttack;
+		foreach (ally in ::Tactical.Entities.getFactionActors(actor.getFaction(), actor.getTile(), 1, true))
+		{
+			local moraleState = ally.getMoraleState();
+			if (moraleState == ::Const.MoraleState.Confident) continue;
+			if (moraleState == ::Const.MoraleState.Steady && remainingConfident == 0) continue;
+
+			if (!triggeredMoraleCheck)
+			{
+				triggeredMoraleCheck = true;
+				::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(actor) + " tries to bolster his allies");
+			}
+
+			ally.checkMorale(1, ::Const.Morale.RallyBaseDifficulty, ::Const.MoraleCheckType.Default, this.m.Overlay);
+			if (ally.getMoraleState() == ::Const.MoraleState.Confident) --remainingConfident;
+		}
 	}
 });
