@@ -81,6 +81,7 @@
 		__original();
 		this.m.SkillCounter = null;
 		this.m.SpentActionPoints = 0;
+		this.m.CurrentDamageMult = 1.0;
 	}
 
 // New Functions
