@@ -5,6 +5,7 @@
 		__original();
 		this.m.IsAttackable = true;
 		this.m.IsScalingDefenders = true;
+		this.m.IsShowingBanner = true;
 
 		// Tactical Map
 		this.m.CombatLocation.Template[0] = "tactical.human_camp";
