@@ -45,6 +45,18 @@
 			"goat_cheese_item",
 			"dried_lamb_item",
 		], _lootTable, 0.8, 0.8);
+
+		local paintList = [
+			"misc/paint_set_item",
+			"misc/paint_set_item",
+			"misc/paint_set_item",
+			"misc/paint_black_item",
+			"misc/paint_red_item",
+			"misc/paint_orange_red_item",
+			"misc/paint_white_blue_item",
+			"misc/paint_white_green_yellow_item",
+		];
+		this.dropTreasure(2, paintList, _lootTable);
 	}
 
 	q.onDeserialize = @(__original) function( _in )
