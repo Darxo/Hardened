@@ -164,5 +164,8 @@ foreach (newPerk in newPerks)
 }
 
 ::Const.Strings.EntityName[::Const.EntityType.UnholdBog] = "Bog Unhold";		// Vanilla: Unhold
+::Const.Strings.EntityNamePlural[::Const.EntityType.UnholdBog] = "Bog Unholds";		// Vanilla: Unholds
 ::Const.Strings.EntityName[::Const.EntityType.UnholdFrost] = "Frost Unhold";	// Vanilla: Unhold
+::Const.Strings.EntityNamePlural[::Const.EntityType.UnholdFrost] = "Frost Unholds";		// Vanilla: Unholds
 ::Const.Strings.EntityName[::Const.EntityType.BarbarianUnholdFrost] = "Armored Frost Unhold";	// Vanilla: Armored Unhold
+::Const.Strings.EntityNamePlural[::Const.EntityType.BarbarianUnholdFrost] = "Armored Frost Unholds";		// Vanilla: Armored Unholds
