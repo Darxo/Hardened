@@ -87,3 +87,18 @@
 	::Const.Tactical.Actor.BarbarianChosen.RangedDefense = 0;
 	::Const.Tactical.Actor.BarbarianChosen.Initiative = 75;
 }
+
+// scripts/entity/tactical/humans/barbarian_madman
+{
+	// Mandatory stats
+	::Const.Tactical.Actor.BarbarianMadman.XP = 1200;
+	::Const.Tactical.Actor.BarbarianMadman.ActionPoints = 9;
+	::Const.Tactical.Actor.BarbarianMadman.Hitpoints = 160;
+	::Const.Tactical.Actor.BarbarianMadman.Bravery = 100;
+	::Const.Tactical.Actor.BarbarianMadman.Stamina = 200;
+	::Const.Tactical.Actor.BarbarianMadman.MeleeSkill = 80;
+	::Const.Tactical.Actor.BarbarianMadman.RangedSkill = 0;
+	::Const.Tactical.Actor.BarbarianMadman.MeleeDefense = 0;	// Vanilla: 10
+	::Const.Tactical.Actor.BarbarianMadman.RangedDefense = 0;	// Vanilla: 10
+	::Const.Tactical.Actor.BarbarianMadman.Initiative = 115;
+}
