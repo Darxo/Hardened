@@ -2,6 +2,9 @@
 	q.create = @(__original) { function create()
 	{
 		__original();
+		this.m.Properties.TargetPriorityHitchanceMult = 1.0;		// Vanilla: 0.6
+		this.m.Properties.TargetPriorityFinishOpponentMult = 2.0;	// Vanilla: 3.0
+
 		this.m.Properties.OverallDefensivenessMult = 1.5;	// Vanilla: 1.1
 	}}.create;
 });
