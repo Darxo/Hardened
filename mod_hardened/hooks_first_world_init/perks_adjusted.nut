@@ -665,12 +665,12 @@ local adjustedDescriptions = [
 		Key = "RF_Bolster",
 		Description = ::UPD.getDescription({
 			Fluff = "Your battle brothers feel confident when you\'re there backing them up!",
-			Requirement = "Polearm",
+			Requirement = "Polearm Attack",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"While not engaged in melee, whenever you attack, trigger a Positive [Morale Check|Concept.Morale] for adjacent members of your company, who are not fleeing",
-					"Each Attack can make at most one adjacent ally [Confident|Skill+hd_dummy_morale_state_confident]",
+					"Once per [round|Concept.Round], when you attack, trigger a Positive [Morale Check|Concept.Morale] for adjacent members of your company, who are not fleeing",
+					"This Attack can make at most one adjacent ally [Confident|Skill+hd_dummy_morale_state_confident]",
 				],
 			}],
 		}),

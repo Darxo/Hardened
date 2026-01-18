@@ -1,11 +1,40 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_bolster", function(q) {
 	q.m.HD_MaximumConfidentPerAttack <- 1;	// This is the maximum of allies we can make confident with one attack
 
+	// Private
+	q.m.IsSpent <- false;
+
 	q.create = @(__original) function()
 	{
 		__original();
+
+		this.m.Description = "Your battle brothers feel confident when you\'re there backing them up!";
+		this.addType(::Const.SkillType.StatusEffect);	// We add StatusEffect so that this perk can produce a status effect icon
+
 		this.m.RequiredWeaponType = ::Const.Items.WeaponType.Polearm;
 		this.m.RequiredWeaponReach = 0;
+	}
+
+	// Overwrite, because Vanilla defines no tooltips for this perk
+	q.getTooltip = @() function()
+	{
+		local ret = this.skill.getTooltip();
+
+
+		local weaponTypeName = this.m.RequiredWeaponType == null ? "" : ::Const.Items.getWeaponTypeName(this.m.RequiredWeaponType) + " ";
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString(format("Your next %sAttack, triggers a Positive [Morale Check|Concept.Morale] for adjacent members of your company, who are not fleeing. This Attack can make at most one adjacent ally [Confident|Skill+hd_dummy_morale_state_confident]", weaponTypeName)),
+		});
+
+		return ret;
+	}
+
+	q.isHidden = @() function()
+	{
+		return !this.isEnabled();
 	}
 
 	// Overwrite, because we change the condition under which positive morale checks can trigger
@@ -15,7 +44,18 @@
 		if (!this.isSkillValid(_skill)) return;
 
 		this.triggerBolsterEffect();
+	}
 
+	q.onNewRound = @(__original) function()
+	{
+		__original();
+		this.m.IsSpent = false;
+	}
+
+	q.onCombatFinished = @(__original) function()
+	{
+		__original();
+		this.m.IsSpent = false;
 	}
 
 // Modular Vanilla Functions
@@ -25,7 +65,7 @@
 
 		if (this.getContainer().getActor().getID() != _user.getID()) return ret;		// We must be the _user
 
-		if (_skill != null && this.isSkillValid(_skill))
+		if (_skill != null && this.isEnabled() && this.isSkillValid(_skill))
 		{
 			foreach (ally in ::Tactical.Entities.getFactionActors(_user.getFaction(), _user.getTile(), 1, true))
 			{
@@ -54,13 +94,13 @@
 	{
 		local actor = this.getContainer().getActor();
 		if (!actor.isPlacedOnMap()) return false;
-		if (actor.isEngagedInMelee()) return false;
 
-		return true;
+		return !this.m.IsSpent;
 	}
 
 	q.triggerBolsterEffect <- function()
 	{
+		this.m.IsSpent = true;
 		local triggeredMoraleCheck = false;
 
 		local actor = this.getContainer().getActor();
