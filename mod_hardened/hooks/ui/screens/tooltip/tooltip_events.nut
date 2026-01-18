@@ -148,6 +148,20 @@
 				];
 			}
 
+			case "world-campfire-screen.Cart":
+			{
+				if (::World.Retinue.getInventoryUpgrades() < ::Const.Strings.InventoryUpgradeHeader.len())
+				{
+					ret.push({
+						id = 10,
+						type = "text",
+						icon = "ui/icons/bag.png",
+						text = "Gain " + ::MSU.Text.colorPositive("+27") + " Inventory Slots",
+					});
+				}
+				break;
+			}
+
 			case "world-relations-screen.Relations":
 			{
 				// Feat: Add simple tooltip line indicating whether you are currently allies or hostile with this faction
