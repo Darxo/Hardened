@@ -23,3 +23,10 @@
 
 // We reduce the overall Vision of every world entity, to make deliberate planning of your adventures and secondary information (footsteps, patrols, rumors) more important
 ::Const.World.Settings.Vision = 450;	// Vanilla: 500
+
+// We temporarily make Badlands mirror the properties of the Black Monolith location
+// They will use a barren location for fighting, lowered in the center and littered with rocks
+// They will use the quarry engage image
+// Todo: design unique badlands tactical arena and engage imagery
+::Const.World.TerrainTacticalTemplate[::Const.World.TerrainTacticalType.Badlands] = "tactical.quarry";
+::Const.World.TerrainTacticalImage[::Const.World.TerrainTacticalType.Badlands] = "engage/engage_quarry";
