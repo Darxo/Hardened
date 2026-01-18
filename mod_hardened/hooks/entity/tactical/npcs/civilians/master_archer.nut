@@ -119,11 +119,11 @@
 		{
 			if (weapon.isWeaponType(::Const.Items.WeaponType.Bow))
 			{
-				this.getItems().equip(::new("scripts/items/ammo/quiver_of_arrows"));
+				this.getItems().equip(::new("scripts/items/ammo/large_quiver_of_arrows"));
 			}
 			else
 			{
-				this.getItems().equip(::new("scripts/items/ammo/quiver_of_bolts"));
+				this.getItems().equip(::new("scripts/items/ammo/large_quiver_of_bolts"));
 			}
 		}
 
