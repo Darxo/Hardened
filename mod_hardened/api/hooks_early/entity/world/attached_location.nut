@@ -1,6 +1,21 @@
 ::Hardened.HooksMod.hook("scripts/entity/world/attached_location", function(q) {
 	q.m.IsRaidable <- false;	// If true, then this attached location can be attacked and temporarily destroyed
 
+	q.create = @(__original) function()
+	{
+		__original();
+
+		// Attached Locations no longer display their banner by default
+		this.m.IsShowingBanner = false;
+	}
+
+	q.onAfterInit = @(__original) function()
+	{
+		__original();
+		this.setSpriteScaling("location_banner", true);
+		this.setSpriteOffset("location_banner", this.createVec(-55, 20));
+	}
+
 	q.setActive = @(__original) function( _active )
 	{
 		__original(_active);
@@ -9,6 +24,7 @@
 		{
 			this.m.IsSpawningDefenders = _active;
 			this.m.IsAttackable = _active;
+			this.getSprite("location_banner").Visible = this.m.IsShowingBanner && _active;
 		}
 	}
 
@@ -21,6 +37,11 @@
 			// The attached_location base class always sets this to false during deserialize, so we need to revert that
 			this.setAttackable(this.isActive());
 		}
+
+		// Vanilla calls onAfterInit before onDeserialize and it also serializes the offsets of all sprites
+		// In order to stay compatible with old saves or those from base Reforged, we adjust the banner offset on every deserialize
+		this.setSpriteScaling("location_banner", true);
+		this.setSpriteOffset("location_banner", this.createVec(-55, 20));
 	}
 
 	q.onCombatLost = @(__original) function()
