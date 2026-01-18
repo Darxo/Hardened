@@ -1,0 +1,5 @@
+.character-screen-container .left-panel-header-module .portrait-container .l-button.is-dismiss
+{
+	/* We increase the top distance, so that the dismiss button overlays much less with the character image */
+	top: 7.0rem;	/* Vanilla: 5.8rem */
+}
