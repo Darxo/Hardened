@@ -163,7 +163,7 @@
 	::Const.Tactical.Actor.Slave.XP = 30;				// Vanilla: 50
 	::Const.Tactical.Actor.Slave.ActionPoints = 9;
 	::Const.Tactical.Actor.Slave.Hitpoints = 45;		// Vanilla: 55
-	::Const.Tactical.Actor.Slave.Bravery = 20;			// Vanilla: 40
+	::Const.Tactical.Actor.Slave.Bravery = 30;			// Vanilla: 40
 	::Const.Tactical.Actor.Slave.Stamina = 100;			// Vanilla: 100
 	::Const.Tactical.Actor.Slave.MeleeSkill = 40;		// Vanilla: 40
 	::Const.Tactical.Actor.Slave.RangedSkill = 35;		// Vanilla: 35

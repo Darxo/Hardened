@@ -41,7 +41,7 @@
 	::Const.Tactical.Actor.Spider.XP = 225;
 	::Const.Tactical.Actor.Spider.ActionPoints = 11;
 	::Const.Tactical.Actor.Spider.Hitpoints = 60;
-	::Const.Tactical.Actor.Spider.Bravery = 45;
+	::Const.Tactical.Actor.Spider.Bravery = 50;
 	::Const.Tactical.Actor.Spider.Stamina = 100;		// Vanilla: 130
 	::Const.Tactical.Actor.Spider.MeleeSkill = 60;
 	::Const.Tactical.Actor.Spider.RangedSkill = 0;

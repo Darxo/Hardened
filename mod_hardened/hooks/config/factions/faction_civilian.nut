@@ -40,7 +40,7 @@
 	::Const.Tactical.Actor.Militia.XP = 140;
 	::Const.Tactical.Actor.Militia.ActionPoints = 9;
 	::Const.Tactical.Actor.Militia.Hitpoints = 60;
-	::Const.Tactical.Actor.Militia.Bravery = 60;
+	::Const.Tactical.Actor.Militia.Bravery = 70;
 	::Const.Tactical.Actor.Militia.Stamina = 100;
 	::Const.Tactical.Actor.Militia.MeleeSkill = 55;
 	::Const.Tactical.Actor.Militia.RangedSkill = 35;
@@ -55,7 +55,7 @@
 	::Const.Tactical.Actor.MilitiaRanged.XP = 140;
 	::Const.Tactical.Actor.MilitiaRanged.ActionPoints = 9;
 	::Const.Tactical.Actor.MilitiaRanged.Hitpoints = 50;
-	::Const.Tactical.Actor.MilitiaRanged.Bravery = 60;
+	::Const.Tactical.Actor.MilitiaRanged.Bravery = 70;
 	::Const.Tactical.Actor.MilitiaRanged.Stamina = 100;
 	::Const.Tactical.Actor.MilitiaRanged.MeleeSkill = 40;
 	::Const.Tactical.Actor.MilitiaRanged.RangedSkill = 50;
@@ -103,7 +103,7 @@
 	::Const.Tactical.Actor.MilitiaVeteran.XP = 250;
 	::Const.Tactical.Actor.MilitiaVeteran.ActionPoints = 9;
 	::Const.Tactical.Actor.MilitiaVeteran.Hitpoints = 80;
-	::Const.Tactical.Actor.MilitiaVeteran.Bravery = 60;
+	::Const.Tactical.Actor.MilitiaVeteran.Bravery = 70;
 	::Const.Tactical.Actor.MilitiaVeteran.Stamina = 120;
 	::Const.Tactical.Actor.MilitiaVeteran.MeleeSkill = 70;
 	::Const.Tactical.Actor.MilitiaVeteran.RangedSkill = 50;
@@ -151,7 +151,7 @@
 	::Const.Tactical.Actor.MilitiaCaptain.XP = 350;				// Vanilla: 200; Reforged: 250
 	::Const.Tactical.Actor.MilitiaCaptain.ActionPoints = 9;
 	::Const.Tactical.Actor.MilitiaCaptain.Hitpoints = 90;		// Vanilla: 70; Reforged: 80
-	::Const.Tactical.Actor.MilitiaCaptain.Bravery = 80;			// Vanilla: 70
+	::Const.Tactical.Actor.MilitiaCaptain.Bravery = 85;			// Vanilla: 70
 	::Const.Tactical.Actor.MilitiaCaptain.Stamina = 130;		// Vanilla: 120
 	::Const.Tactical.Actor.MilitiaCaptain.MeleeSkill = 70;		// Vanilla: 60; Reforged: 70
 	::Const.Tactical.Actor.MilitiaCaptain.RangedSkill = 50;
