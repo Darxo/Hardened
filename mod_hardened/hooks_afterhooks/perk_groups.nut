@@ -216,6 +216,12 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		changePerkTier(pgThrowingPerkGroup, "perk.rf_hybridization", 2);		// Move Hybridization (now Toolbox) to tier 2 (down from Tier 3)
 	}
 
+	{	// Trained Group
+		local pgTrained = ::DynamicPerks.PerkGroups.findById("pg.rf_trained");
+		pgTrained.removePerk("perk.rotation");	// Remove Rotation from Tier 3
+		changePerkTier(pgTrained, "perk.underdog", 3)	// Move Underdog from Tier 5 to Tier 3
+	}
+
 	{	// Tough Group
 		local pgToughGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_tough");
 		pgToughGroup.removePerk("perk.colossus");				// Remove Colossus from Tier 1
