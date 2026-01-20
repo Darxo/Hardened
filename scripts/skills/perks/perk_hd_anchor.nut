@@ -17,6 +17,7 @@ this.perk_hd_anchor <- ::inherit("scripts/skills/skill", {
 		this.m.IconMini = "perk_hd_anchor_mini";
 		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
 		this.m.Order = ::Const.SkillOrder.Perk;
+		this.m.SoundVolume = 0.6;
 		this.m.SoundOnHit = [	// We re-use this vanilla array just for the convenience of not having to load these resources ourselves
 			"sounds/combat/flail_hit_01.wav",
 			"sounds/combat/flail_hit_02.wav",
@@ -97,7 +98,7 @@ this.perk_hd_anchor <- ::inherit("scripts/skills/skill", {
 		{
 			this.m.IsInEffect = true;
 			this.spawnIcon("perk_hd_anchor", actor.getTile());
-			::Sound.play(::MSU.Array.rand(this.m.SoundOnHit), ::Const.Sound.Volume.Skill * 0.7, actor.getPos(), 0.5);
+			::Sound.play(::MSU.Array.rand(this.m.SoundOnHit), ::Const.Sound.Volume.Skill * this.m.SoundVolume, actor.getPos(), 0.5);
 		}
 	}
 
