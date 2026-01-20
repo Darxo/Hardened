@@ -1,4 +1,7 @@
 ::Hardened.HooksMod.hookTree("scripts/skills/backgrounds/character_background", function(q) {
+	// Public
+	q.m.CostMultPerVeteranLevel = 1.015;	// Vanilla: 1.03
+
 	// Private
 	q.m.HD_PerkGroupsBoughtFlag <- "HD_perkGroupsBought";
 
