@@ -12,6 +12,7 @@
 	{
 		__original();
 		this.m.Type = ::Const.SkillType.Perk;
+		this.m.SoundVolume = 0.9;	// We reduce the volume as rebuke felt a bit too loud
 	}
 
 	q.addResources = @(__original) function()
