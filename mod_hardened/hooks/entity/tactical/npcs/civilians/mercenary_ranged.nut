@@ -65,7 +65,6 @@
 		b.TargetAttractionMult = 1.1;
 
 		// Generic Perks
-		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_overwhelm"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_fast_adaption"));
 

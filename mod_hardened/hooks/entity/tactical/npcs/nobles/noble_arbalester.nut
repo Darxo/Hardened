@@ -59,7 +59,6 @@
 		b.TargetAttractionMult = 1.1;
 
 		// Generic Perks
-		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_mastery_crossbow"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_through_the_ranks"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_steady_brace"));

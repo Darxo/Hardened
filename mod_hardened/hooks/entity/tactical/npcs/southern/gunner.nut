@@ -57,7 +57,6 @@
 
 		this.getSkills().add(::new("scripts/skills/perks/perk_mastery_crossbow"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_overwhelm"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_combo"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_steady_brace"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_strength_in_numbers"));
