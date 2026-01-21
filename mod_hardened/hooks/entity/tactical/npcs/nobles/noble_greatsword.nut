@@ -6,6 +6,20 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/mail_hauberk"],
+			[12, "scripts/items/armor/rf_brigandine_harness"],
+			[12, "scripts/items/armor/reinforced_mail_hauberk"],
+			[12, "scripts/items/armor/scale_armor"],
+		]);
+
+		this.m.ChanceForNoHelmet = 25;	// If no helmet is assigned here, we will guarantee a faction themed helmet later
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/rf_padded_sallet_helmet"],
+			[12, "scripts/items/helmets/barbute_helmet"],
+			[12, "scripts/items/helmets/rf_half_closed_sallet"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/greatsword"],
 		]);
@@ -104,33 +118,12 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
-		{
-			this.getItems().equip(::new(::MSU.Class.WeightedContainer([
-				[1, "scripts/items/armor/mail_hauberk"],
-				[1, "scripts/items/armor/rf_brigandine_harness"],
-				[1, "scripts/items/armor/reinforced_mail_hauberk"],
-				[1, "scripts/items/armor/scale_armor"],
-			]).roll()));
-		}
-
 		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
 		{
-			if (::Math.rand(1, 4) <= 3)
-			{
-				this.getItems().equip(::new(::MSU.Class.WeightedContainer([
-					[1, "scripts/items/helmets/rf_padded_sallet_helmet"],
-					[1, "scripts/items/helmets/barbute_helmet"],
-					[1, "scripts/items/helmets/rf_half_closed_sallet"],
-				]).roll()));
-			}
-			else
-			{
-				local banner = ::Tactical.State.isScenarioMode() ? this.getFaction() : ::World.FactionManager.getFaction(this.getFaction()).getBanner();
-				local helmet = ::new("scripts/items/helmets/greatsword_faction_helm");
-				helmet.setVariant(banner);
-				this.getItems().equip(helmet);
-			}
+			local banner = ::Tactical.State.isScenarioMode() ? this.getFaction() : ::World.FactionManager.getFaction(this.getFaction()).getBanner();
+			local helmet = ::new("scripts/items/helmets/greatsword_faction_helm");
+			helmet.setVariant(banner);
+			this.getItems().equip(helmet);
 		}
 	}
 

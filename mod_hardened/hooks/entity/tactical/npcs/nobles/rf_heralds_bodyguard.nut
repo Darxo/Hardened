@@ -6,6 +6,12 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/rf_brigandine_harness"],
+			[12, "scripts/items/armor/rf_reinforced_footman_armor"],
+			[12, "scripts/items/armor/scale_armor"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/warbrand"],
 			[12, "scripts/items/weapons/rf_swordstaff"],
@@ -78,15 +84,6 @@
 	q.HD_assignArmor <- function()
 	{
 		// This is currently mostly a 1:1 copy of Reforged code, as there is no easier way to apply our changes via hooking
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
-		{
-			this.getItems().equip(::new(::MSU.Class.WeightedContainer([
-				[1, "scripts/items/armor/rf_brigandine_harness"],
-				[1, "scripts/items/armor/rf_reinforced_footman_armor"],
-				[1, "scripts/items/armor/scale_armor"],
-			]).roll()));
-		}
-
 		local banner = ::Tactical.State.isScenarioMode() ? this.getFaction() : ::World.FactionManager.getFaction(this.getFaction()).getBanner();
 		this.getBodyItem().setUpgrade(::Reforged.new("scripts/items/armor_upgrades/rf_heraldic_cape_upgrade", function(o) {
 			o.setVariant(banner);
