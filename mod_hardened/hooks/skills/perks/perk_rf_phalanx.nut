@@ -6,6 +6,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.Icon = "ui/perks/perk_hd_phalanx.png";
 		this.m.Order = ::Const.SkillOrder.BeforeLast;	// Important so we act after shieldwall effect and prevent its garbage removal
 	}
 
