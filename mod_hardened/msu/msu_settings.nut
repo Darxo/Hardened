@@ -171,4 +171,8 @@
 	qolCharScreenPage.addDivider("MiscDivider1");
 
 	qolCharScreenPage.addBooleanSetting("SkipConfirmationNewRecruits", false, "Skip Confirmation for new Recruits", "Skip the confirmation dialog when trying to dismiss a brother if they were just hired (0 days with the company). Characters with a Level 2 or higher are automatically paid compensation to not miss out on XP.");
+
+	qolCharScreenPage.addDivider("MiscDivider2");
+
+	qolCharScreenPage.addBooleanSetting("ShowAbsoluteMoodValue", true, "Show Absolute Mood Value", "When viewing the mood tooltip of a brother, display the current mood as an absolute value between 0.0 and 6.95. This improves your understanding on how much impact certain mood changes will have. In Vanilla this value is shows as a percentage.");
 }

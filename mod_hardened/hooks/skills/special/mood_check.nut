@@ -9,6 +9,22 @@
 		-0.3,		// Euphoric
 	];
 
+	// Overwrite, because we implement the varying name including the current value of this effect the moment that value is fetched
+	// Vanilla instead manipulates this.m.Name during onUpdate, but that will only update when the brother updates (not when changing settings)
+	q.getName = @() function()
+	{
+		local actor = this.getContainer().getActor();
+		local ret = ::Const.MoodStateName[actor.getMoodState()];
+
+		if (::Hardened.Mod.ModSettings.getSetting("ShowAbsoluteMoodValue").getValue())
+		{
+			// We show the accurate mood, instead of a percentage representation of it
+			ret += " (" + actor.getMood() + "/7.0)";
+		}
+
+		return ret;
+	}
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
@@ -34,15 +50,6 @@
 		}
 
 		return ret;
-	}
-
-	q.onUpdate = @(__original) function( _properties )
-	{
-		__original(_properties);
-
-		// We show the accurate mood, instead of a percentage representation of it
-		local actor = this.getContainer().getActor();
-		this.m.Name = ::Const.MoodStateName[actor.getMoodState()] + " (" + actor.getMood() + "/7.0)";
 	}
 
 // New Functions
