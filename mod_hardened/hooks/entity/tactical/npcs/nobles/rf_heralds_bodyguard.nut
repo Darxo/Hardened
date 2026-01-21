@@ -72,11 +72,13 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
+
 		this.getSkills().add(::new("scripts/skills/perks/perk_relentless"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_mastery_sword"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vigilant"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_hd_warden"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_finesse"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_pattern_recognition"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_combo"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_swordmaster_grappler"));
 	}
 
