@@ -32,6 +32,11 @@ local hookKnockBack = function( _knockBackSkill )
 		}
 		else if (!_targetTile.IsEmpty || _targetTile.Level >= _user.getTile().Level + 2)		// Our knock back hits something solid
 		{
+			if (!_targetTile.IsEmpty)	// Target must be an obstacle
+			{
+				_targetTile.getEntity().HD_onHitByProjectile(_user.getTile());
+			}
+
 			// Fluff: We play a hit-sound when using it on environment
 			::Sound.play(::MSU.Array.rand(this.m.SoundOnHit), ::Const.Sound.Volume.Skill, _user.getPos());
 		}
