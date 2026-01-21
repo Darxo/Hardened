@@ -220,6 +220,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		local pgTrained = ::DynamicPerks.PerkGroups.findById("pg.rf_trained");
 		pgTrained.removePerk("perk.rotation");	// Remove Rotation from Tier 3
 		changePerkTier(pgTrained, "perk.underdog", 3)	// Move Underdog from Tier 5 to Tier 3
+		pgTrained.addPerk("perk.hd_warden", 5);	// Add new Warden perk to Tier 5
 	}
 
 	{	// Tough Group

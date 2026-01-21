@@ -64,6 +64,14 @@
 		Icon = "skills/terrain_icon_06.png",	// Unused Vanilla art showing a lot of forest leaves
 		IconDisabled = "skills/terrain_icon_06.png",
 	},
+	{
+		ID = "perk.hd_warden",
+		Script = "scripts/skills/perks/perk_hd_warden",
+		Name = ::Const.Strings.PerkName.HD_Warden,
+		Tooltip = ::Const.Strings.PerkDescription.HD_Warden,
+		Icon = "ui/perks/perk_rf_phalanx.png",
+		IconDisabled = "ui/perks/perk_rf_phalanx_sw.png",
+	},
 ]);
 
 // Reforged Fix: Add missing Vanilla Perk Defs, so that they display tooltips correctly

@@ -29,6 +29,7 @@
 	<sprite id="hd_whirling_death_effect_mini" ic = "FF23165B" img="mini\hd_whirling_death_effect_mini.png" />
 
 	<sprite id="hd_brace_for_impact_effect" ic = "FF23165B" img="..\..\gfx\ui\perks\perk_hd_brace_for_impact.png" />
+	<sprite id="hd_warden_effect" ic = "FF23165B" img="..\..\gfx\ui\perks\perk_rf_phalanx.png" />
 	<sprite id="hd_resilient_effect" ic = "FF23165B" img="..\..\gfx\ui\perks\perk_hd_resilient.png" />
 	<sprite id="hd_disrupted_flow_effect" ic = "FF23165B" img="..\..\gfx\skills\status_effect_62.png" />
 	<sprite id="hd_lucky_trait" ic = "FF23165B" img="..\..\gfx\ui\traits\trait_icon_54.png" />
