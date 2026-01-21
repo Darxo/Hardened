@@ -4,7 +4,7 @@
 
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_rattle", function(q) {	// We redesign this perk under the name of "Full Force"
 	// Public
-	q.m.DamagePctPerActionPoint <- 0.1;	// This much extra damage is dealt for each spent action point
+	q.m.DamagePctPerActionPoint <- 0.08;	// This much extra damage is dealt for each spent action point
 	q.m.OneHandedMultiplier <- 2.0;		// One Handed weapons gain this much more damage
 
 	// Private
