@@ -33,7 +33,7 @@ local newPerks = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"If you end your turn on the same tile you started it on, become immune to [Displacement|Concept.Displacement] until the start of your next [turn|Concept.Turn]",
-						"During your [turn|Concept.Turn], take " + ::MSU.Text.colorPositive("50%") + " less Damage from Attacks",
+						"During your [turn|Concept.Turn], take " + ::MSU.Text.colorPositive("50%") + " less damage",
 					],
 				},
 			],

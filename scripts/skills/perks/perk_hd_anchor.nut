@@ -36,7 +36,7 @@ this.perk_hd_anchor <- ::inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = format(::Reforged.Mod.Tooltips.parseString("Take %s Damage from Attacks during your [turn|Concept.Turn]"), ::MSU.Text.colorizeMultWithText(damageReceivedTotalMult, {InvertColor =true})),
+				text = format(::Reforged.Mod.Tooltips.parseString("Take %s damage during your [turn|Concept.Turn]"), ::MSU.Text.colorizeMultWithText(damageReceivedTotalMult, {InvertColor =true})),
 			});
 		}
 
@@ -80,8 +80,6 @@ this.perk_hd_anchor <- ::inherit("scripts/skills/skill", {
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		if (_skill == null || !_skill.isAttack()) return;
-
 		_properties.DamageReceivedTotalMult *= this.getDamageReceivedTotalMult();
 	}
 
