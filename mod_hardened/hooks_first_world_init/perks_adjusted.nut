@@ -1268,6 +1268,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_pattern_recognition",
+		Key = "RF_PatternRecognition",
+		Description = ::UPD.getDescription({
+			Fluff = "Your experience in battle has led to you being able to quickly adapt to an opponent\'s fighting style!",
+			Requirement = "Melee Attack",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Every time an opponent attacks you in melee or you attack an opponent, gain a stacking " + ::MSU.Text.colorPositive("+2") + " [Melee Skill|Concept.MeleeSkill] and [Melee Defense|Concept.MeleeDefense] against that opponent for the remainder of the battle.",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_phalanx",
 		Key = "RF_Phalanx",
 		Description = ::UPD.getDescription({
