@@ -6,6 +6,12 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/mail_hauberk"],
+			[12, "scripts/items/armor/mail_shirt"],
+			[12, "scripts/items/armor/light_scale_armor"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/rf_halberd"],
 			[12, "scripts/items/weapons/rf_voulge"],
@@ -77,20 +83,6 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
-		// This is currently mostly a 1:1 copy of Reforged code, as there is no easier way to apply our changes via hooking
-		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Body))
-		{
-			local script = ::MSU.Class.WeightedContainer([
-				[1, "scripts/items/armor/mail_hauberk"],
-				[1, "scripts/items/armor/mail_shirt"],
-				[1, "scripts/items/armor/light_scale_armor"],
-			]).roll();
-			local armor = ::new(script);
-			if (script == "scripts/items/armor/mail_hauberk")
-				armor.setVariant(28);
-			this.getItems().equip(armor);
-		}
-
 		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
 		{
 			local helmet;
