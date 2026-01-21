@@ -26,7 +26,7 @@
 		if (::Const.Tactical.Common.getBlockedTiles(actor.getTile(), _targetTile, actor.getFaction()).len() == 0)
 		{
 			_tooltip.push({
-				icon = "ui/icons/direct_damage.png",
+				icon = this.getIconColored(),
 				text = this.getName(),
 			});
 		}
