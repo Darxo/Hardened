@@ -134,9 +134,9 @@
 	qolCombatPage.addBooleanSetting("DisplaySkillTags", true, "Display Skill Tags", "List common tags and the damage types at the top of the descriptions of active skill.");
 }
 
-// QOL: Misc
+// QOL: Character Screen
 {
-	local qolMiscPage = ::Hardened.Mod.ModSettings.addPage("Misc (QoL)");
+	local qolCharScreenPage = ::Hardened.Mod.ModSettings.addPage("Character Screen (QoL)");
 
 	local silhouetteCallback = function( _oldValue )	// We need to update all characters so that these changes take effect
 	{
@@ -160,11 +160,11 @@
 		}
 	}
 
-	qolMiscPage.addRangeSetting("BagSilhouetteAlpha", 200, 0, 255, 5, "Bag Silhouette Alpha", "This controls the alpha value of the bag item silhouettes during combat only. In the character screen they always show up with an alpha of 255. A value of 0 makes them invisible everywhere and effectively turns off this feature.").addAfterChangeCallback(silhouetteCallback);
-	qolMiscPage.addRangeSetting("BagSilhouetteColor", 60, 0, 255, 5, "Bag Silhouette Color", "This controls the color value of the bag item silhouettes. A value of 0 makes item completely black while a value of 255 keeps its original color.").addAfterChangeCallback(silhouetteCallback);
-	qolMiscPage.addBooleanSetting("ShowShieldSilhouettes", false, "Show Shield Silhouettes", "Display silhouettes for shields in your bag slots. These sprites might look most out of place, so not everone might want them to show up").addAfterChangeCallback(silhouetteCallback);
+	qolCharScreenPage.addRangeSetting("BagSilhouetteAlpha", 200, 0, 255, 5, "Bag Silhouette Alpha", "This controls the alpha value of the bag item silhouettes during combat only. In the character screen they always show up with an alpha of 255. A value of 0 makes them invisible everywhere and effectively turns off this feature.").addAfterChangeCallback(silhouetteCallback);
+	qolCharScreenPage.addRangeSetting("BagSilhouetteColor", 60, 0, 255, 5, "Bag Silhouette Color", "This controls the color value of the bag item silhouettes. A value of 0 makes item completely black while a value of 255 keeps its original color.").addAfterChangeCallback(silhouetteCallback);
+	qolCharScreenPage.addBooleanSetting("ShowShieldSilhouettes", false, "Show Shield Silhouettes", "Display silhouettes for shields in your bag slots. These sprites might look most out of place, so not everone might want them to show up").addAfterChangeCallback(silhouetteCallback);
 
-	qolMiscPage.addDivider("MiscDivider1");
+	qolCharScreenPage.addDivider("MiscDivider1");
 
-	qolMiscPage.addBooleanSetting("SkipConfirmationNewRecruits", false, "Skip Confirmation for new Recruits", "Skip the confirmation dialog when trying to dismiss a brother if they were just hired (0 days with the company). Characters with a Level 2 or higher are automatically paid compensation to not miss out on XP.");
+	qolCharScreenPage.addBooleanSetting("SkipConfirmationNewRecruits", false, "Skip Confirmation for new Recruits", "Skip the confirmation dialog when trying to dismiss a brother if they were just hired (0 days with the company). Characters with a Level 2 or higher are automatically paid compensation to not miss out on XP.");
 }
