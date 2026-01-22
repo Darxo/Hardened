@@ -1,4 +1,15 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/rf_cheap_trick_skill", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.SoundOnUse = [
+			"sounds/dice_01.wav",
+			"sounds/dice_02.wav",
+			"sounds/dice_03.wav",
+		];
+	}
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
