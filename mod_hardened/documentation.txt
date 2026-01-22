@@ -28,6 +28,21 @@
 
 # Changelog
 
+1.7.5
+	- **Gnarly Staff** now has 8 Weight (up from 4) and no longer has any discount on its weapon skills
+	- **Ranged Mercenaries**, **Noble Crossbowmen**, **Noble Arbalester** and **Gunner** lose **Rotation**
+	- Play impact fx and sfx when using **Knock Back** against obstacles
+	- Allow **Mail Hauberk** on noble units to appear in its colored variants
+	- Color shields of mercenaries spawning in some scripted battles
+	- Show **Bullseye** perk icon instead of generic armor penetration icon in the hitchance preview
+	- Improve saturation of green tone for hitchance overlay
+	- Disable **Marksmanship** effect and icon outside of combat
+	- Lower **Rebuke** and **Anchor** sound effect volume slightly
+	- Fix plural names for unholds still using the non-specific shared name
+	- Fix **Full Force** damage bonus sometimes persisting outside of combat
+	- Fix typos in the **Headless** tooltip
+	- Fix(Vanilla) disarm being usable on someone who has no mainhand weapon equipped
+
 1.7.4
 	- Preemtively mark Reforged >=0.8.0-alpha as incompatible
 	- Change the word "light" to "large" in the tooltip of **Feral Shield**

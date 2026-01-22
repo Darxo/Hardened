@@ -4,7 +4,7 @@
 		if (::MSU.isNull(_party)) return;
 
 		// Vanilla Fix: Vanilla allows parties to join a combat multiple times
-		// The root cause of this is unclear
+		// The root cause of this is unclear (though this does not seem the cause for parties attacking themselves)
 		if (this.isInCombat(_combat, _party))
 		{
 			if (!::MSU.Serialization.IsLoading)

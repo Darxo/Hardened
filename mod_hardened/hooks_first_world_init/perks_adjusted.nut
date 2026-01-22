@@ -1,5 +1,8 @@
 // This is loaded AFTER perk_defs.nut is loaded
 
+// This must happen in FirstWorldInit, because Nested Tooltips requires all hooks to be complete, before BB Objects are instantiated
+// In by using things like [$ $| ... ], we instantiate objects while generating perk descriptions
+
 local adjustedDescriptions = [
 	// Vanilla Perks
 	{

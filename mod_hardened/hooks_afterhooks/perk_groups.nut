@@ -1,7 +1,7 @@
 /*
 Regular hooking of Perk Groups does not work because they are instantiated before any hooks run
 They are pushed into ::DynamicPerks.PerkGroups during the execution of scripts/mods/mod_reforged/load.nut
-THerefor the only way we can "hook"" them is by fetching and changing the instantiated objects from the Lookup Maps
+Therefor the only way we can "hook" them is by fetching and changing the instantiated objects from the Lookup Maps
 Same is true for perk_group_collections (::DynamicPerks.PerkGroupCategories)
 */
 

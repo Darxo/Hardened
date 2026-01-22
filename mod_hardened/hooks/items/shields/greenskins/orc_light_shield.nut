@@ -29,11 +29,3 @@
 		// this.addSkill(::new("scripts/skills/actives/knock_back"));
 	}
 });
-
-/*
-Vanilla
-	Orc Young
-
-Reforged
-	Orc Young
-*/

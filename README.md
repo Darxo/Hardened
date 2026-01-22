@@ -479,6 +479,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Fighting Axe** now costs 2300 crowns (down from 2800)
 - **Firelance** now also has the **Firearm** weapontype
 - **Flail** now deals 30-55 damage (up from 25-55) and has 3 Reach (down from 4)
+- **Gnarly Staff** now has 8 Weight (up from 4) and no longer has any discount on its weapon skills
 - **Goblin Pike** now 6 Reach of (down from 7) and gains the **Spear** Weapontype
 - **Greatsword** loses **Split Shield** and its remaining skills no longer have any discount. It now costs 2000 Crowns (down from 2400)
 - **Halberd** loses the **Polearm** weapon type, has 6 Reach (down from 7), 14 Weight (down from 16) and costs 1600 Crowns (down from 2500). It now has the skills **Strike** (same skill as **Long Axe**) and **Demolish Armor**
@@ -1068,7 +1069,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Spawn an overlay animation when depleting a throwing weapon or a quiver
 - **Hand to Hand** and **Zombie Bite** skills will now always be sorted to the front in the UI
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to Displacement or which are Rooted. Using them will now print a combat log with the roll and hitchance of the attack
-- **Disarm** can no longer be used on enemies which are immune to disarm or which are stunned
+- **Disarm** can no longer be used on enemies which are immune to disarm, which are stunned or which have no weapon equipped
 - **Fortified Mind** and **Colossus** on all NPCs are now replaced with an equivalent amount of stats
 - **Night Effect**, **Double Grip**, **Pattern Recognition**, **Bulwark** and **Man of Steel** no longer display a Mini-Icon
 - Increase sprite size of **Crossbow** by 25% to make it more different from **Light Crossbow**
