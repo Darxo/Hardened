@@ -78,6 +78,28 @@
 		}
 	}
 
+// Modular Vanilla Functions
+	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
+	{
+		local ret = __original(_user, _target, _skill);
+
+		if (::MSU.isNull(_skill)) return ret;
+		if (_user.getID() == _target.getID()) return ret;		// _user and _target must not be the same
+
+		if (_target.getID() == this.getContainer().getActor().getID())	// We must be the _user
+		{
+			if (!this.m.IsSpent && this.isSkillValid(_skill))
+			{
+				if (_skill.getID() == "actives.hand_to_hand" && _user.isDisarmed())
+				{
+					ret *= 0.1;		// We should not waste our fresh and furious charge while disarmed
+				}
+			}
+		}
+
+		return ret;
+	}
+
 // Hardened Functions
 	q.onReallyBeforeSkillExecuted <- function( _skill, _targetTile )
 	{
