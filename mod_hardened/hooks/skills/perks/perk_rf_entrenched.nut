@@ -7,7 +7,7 @@
 	q.m.ResolvePerAlly <- 5;
 	q.m.RangedDefensePerObstacle <- 5;
 	q.m.RangedSkillMult <- 1.15;
-	q.m.RequiredAdjacentObjects <- 3;	// Atleast this many adjacent tiles must be allies/obstacles for the ranged skill bonus to activate
+	q.m.RequiredAdjacentObjects <- 3;	// At least this many adjacent tiles must be allies/obstacles for the ranged skill bonus to activate
 
 	q.create = @(__original) function()
 	{

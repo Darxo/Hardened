@@ -42,11 +42,11 @@
 
 		if (_attacker == null)	// This can for example happen when this character receives a mortar attack.
 		{
-			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(actor) + " anticipated an attack on their shield, reducing incomding damage by " + ::MSU.Text.colorPositive(this.m.TempDamageReduction + "%"));
+			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(actor) + " anticipated an attack on their shield, reducing incoming damage by " + ::MSU.Text.colorPositive(this.m.TempDamageReduction + "%"));
 		}
 		else
 		{
-			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(actor) + " anticipated the attack of " + ::Const.UI.getColorizedEntityName(_attacker) + " on their shield, reducing incomding damage by " + ::MSU.Text.colorPositive(this.m.TempDamageReduction + "%"));
+			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(actor) + " anticipated the attack of " + ::Const.UI.getColorizedEntityName(_attacker) + " on their shield, reducing incoming damage by " + ::MSU.Text.colorPositive(this.m.TempDamageReduction + "%"));
 		}
 		actor.setDirty(true);
 	}

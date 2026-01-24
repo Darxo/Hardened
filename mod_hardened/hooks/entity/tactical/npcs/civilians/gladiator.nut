@@ -112,11 +112,11 @@
 		local bodyItem = this.getBodyItem();
 		if (bodyItem != null)
 		{
-			local attachement = ::MSU.Class.WeightedContainer([
+			local attachment = ::MSU.Class.WeightedContainer([
 				[12, "scripts/items/armor_upgrades/light_gladiator_upgrade"],
 				[12, "scripts/items/armor_upgrades/heavy_gladiator_upgrade"],
 			]).roll();
-			bodyItem.setUpgrade(::new(attachement));
+			bodyItem.setUpgrade(::new(attachment));
 		}
 	}
 

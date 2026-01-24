@@ -162,7 +162,7 @@
 
 	qolCharScreenPage.addRangeSetting("BagSilhouetteAlpha", 200, 0, 255, 5, "Bag Silhouette Alpha", "This controls the alpha value of the bag item silhouettes during combat only. In the character screen they always show up with an alpha of 255. A value of 0 makes them invisible everywhere and effectively turns off this feature.").addAfterChangeCallback(silhouetteCallback);
 	qolCharScreenPage.addRangeSetting("BagSilhouetteColor", 60, 0, 255, 5, "Bag Silhouette Color", "This controls the color value of the bag item silhouettes. A value of 0 makes item completely black while a value of 255 keeps its original color.").addAfterChangeCallback(silhouetteCallback);
-	qolCharScreenPage.addBooleanSetting("ShowShieldSilhouettes", false, "Show Shield Silhouettes", "Display silhouettes for shields in your bag slots. These sprites might look most out of place, so not everone might want them to show up").addAfterChangeCallback(silhouetteCallback);
+	qolCharScreenPage.addBooleanSetting("ShowShieldSilhouettes", false, "Show Shield Silhouettes", "Display silhouettes for shields in your bag slots. These sprites might look most out of place, so not everyone might want them to show up").addAfterChangeCallback(silhouetteCallback);
 
 	qolCharScreenPage.addDivider("MiscDivider1");
 
