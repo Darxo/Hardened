@@ -28,6 +28,48 @@
 		this.goblin.onInit();
 	}}.onInit;
 
+	q.spawnGoblin = @(__original) function( _info )
+	{
+		// We mock ::Tactical.spawnEntity in order put an additional skill onto the spawned unit
+		local mockObject;
+		mockObject = ::Hardened.mockFunction(::Tactical, "spawnEntity", function(...) {
+			if (vargv.len() == 3)
+			{
+				local ret = mockObject.original(vargv[0], vargv[1], vargv[2]);
+				if (ret != null)
+				{
+					ret.getSkills().add(::new("scripts/skills/effects/hd_unworthy_effect"));
+				}
+				return { done = true, value = ret };
+			}
+		});
+
+		__original(_info);
+
+		mockObject.cleanup();
+	}
+
+	q.spawnWolf = @(__original) function( _info )
+	{
+		// We mock ::Tactical.spawnEntity in order put an additional skill onto the spawned unit
+		local mockObject;
+		mockObject = ::Hardened.mockFunction(::Tactical, "spawnEntity", function(...) {
+			if (vargv.len() == 3)
+			{
+				local ret = mockObject.original(vargv[0], vargv[1], vargv[2]);
+				if (ret != null)
+				{
+					ret.getSkills().add(::new("scripts/skills/effects/hd_unworthy_effect"));
+				}
+				return { done = true, value = ret };
+			}
+		});
+
+		__original(_info);
+
+		mockObject.cleanup();
+	}
+
 // Reforged Functions
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
 	q.onSpawned = @() function()
