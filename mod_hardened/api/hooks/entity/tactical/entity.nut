@@ -10,6 +10,8 @@
 	// Event, that triggers only when anything calls spawnProjectileEffect targeting the tile that this non-actor object sits on
 	q.HD_onHitByProjectile <- function( _attackerTile )
 	{
+		if (!this.getTile().IsDiscovered) return;
+
 		if (this.m.HD_BloodType != ::Const.BloodType.None)
 		{
 			foreach (bloodEffect in ::Const.Tactical.BloodEffects[this.m.HD_BloodType])
