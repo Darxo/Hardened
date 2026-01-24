@@ -49,7 +49,7 @@
 // scripts/entity/tactical/enemies/goblin_leader
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.GoblinWolfrider.XP = 750;
+	::Const.Tactical.Actor.GoblinLeader.XP = 750;
 	::Const.Tactical.Actor.GoblinLeader.ActionPoints = 9;
 	::Const.Tactical.Actor.GoblinLeader.Hitpoints = 70;
 	::Const.Tactical.Actor.GoblinLeader.Bravery = 80;
