@@ -61,10 +61,26 @@
 		if (removedRootEffect != null) ::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(actor) + " breaks free from " + ::MSU.Text.colorNegative(removedRootEffect.getName()));
 	}
 
+// Modular Vanilla Functions
+	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
+	{
+		local ret = __original(_user, _target, _skill);
+
+		if (this.getContainer().getActor().getID() != _user.getID()) return ret;		// We must be the _user
+
+		if (this.isSkillValid(_skill) && _user.getCurrentProperties().IsRooted)
+		{
+			// An AoE Attack will free us from our entanglement so we are highly encouraged to do that
+			ret *= 3.0;
+		}
+
+		return ret;
+	}
+
 // New Functions
 	q.isSkillValid <- function( _skill )
 	{
-		return _skill.isAttack() && _skill.isAOE();
+		return _skill != null && _skill.isAttack() && _skill.isAOE();
 	}
 
 	q.getDamageMult <- function()
