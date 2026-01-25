@@ -174,7 +174,7 @@
 	// Mandatory stats
 	::Const.Tactical.Actor.RF_ManAtArms.XP = 540;
 	::Const.Tactical.Actor.RF_ManAtArms.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_ManAtArms.Hitpoints = 90;
+	::Const.Tactical.Actor.RF_ManAtArms.Hitpoints = 100;
 	::Const.Tactical.Actor.RF_ManAtArms.Bravery = 70;
 	::Const.Tactical.Actor.RF_ManAtArms.Stamina = 120;
 	::Const.Tactical.Actor.RF_ManAtArms.MeleeSkill = 85;
