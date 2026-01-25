@@ -51,21 +51,9 @@
 		local weapon = this.getMainhandItem();
 		if (weapon != null)
 		{
-			if (weapon.isWeaponType(::Const.Items.WeaponType.Axe))
-			{
-				this.getSkills().add(::new("scripts/skills/perks/perk_rf_death_dealer"));
-			}
-			else if (weapon.isWeaponType(::Const.Items.WeaponType.Cleaver))
-			{
-				this.getSkills().add(::new("scripts/skills/perks/perk_rf_sanguinary"));
-			}
-			else if (weapon.isWeaponType(::Const.Items.WeaponType.Mace))
+			if (weapon.isWeaponType(::Const.Items.WeaponType.Mace))
 			{
 				this.getSkills().add(::new("scripts/skills/perks/perk_rf_bone_breaker"));
-			}
-			else if (weapon.isWeaponType(::Const.Items.WeaponType.Hammer))
-			{
-				this.getSkills().add(::new("scripts/skills/perks/perk_rf_deep_impact"));		// Breakthrough
 			}
 		}
 	}
