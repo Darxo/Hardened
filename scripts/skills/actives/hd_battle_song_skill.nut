@@ -6,7 +6,7 @@ this.hd_battle_song_skill <- ::inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.hd_battle_song";
 		this.m.Name = "Play Battle Song";
-		this.m.Description = "Play a song on your musicial instrument to raise the Resolve of nearby allies. This buff stacks but loses effectiveness over time and is removed when reaching a threshold. Cannot be used while engaged in melee."
+		this.m.Description = "Play a song on your musical instrument to raise the Resolve of nearby allies. Cannot be used while engaged in melee."
 		this.m.Icon = "skills/hd_battle_song_skill.png";
 		this.m.IconDisabled = "skills/hd_battle_song_skill_bw.png";
 		this.m.Overlay = "hd_battle_song_skill";
@@ -34,7 +34,7 @@ this.hd_battle_song_skill <- ::inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Grant [Inspired by Song|Skill+hd_inspired_by_song_effect] to all allies within " + ::MSU.Text.colorPositive(this.getMaxRange()) + " tiles adding " + ::MSU.Text.colorizePct(this.m.ResolveBonusPct) + " (" + ::MSU.Text.colorizeValue(this.getBonus()) + ") of your current [Resolve|Concept.Bravery] to them"),
+				text = ::Reforged.Mod.Tooltips.parseString("Grant a stacking [Inspired by Song|Skill+hd_inspired_by_song_effect] effect to all allies within " + ::MSU.Text.colorPositive(this.getMaxRange()) + " tiles adding " + ::MSU.Text.colorizePct(this.m.ResolveBonusPct) + " (" + ::MSU.Text.colorizeValue(this.getBonus()) + ") of your current [Resolve|Concept.Bravery] to them"),
 			},
 			{
 				id = 20,
