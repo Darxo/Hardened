@@ -49,6 +49,16 @@
 		// Adjustments of vanilla tooltips
 		switch (_elementId)
 		{
+			case "assets.Brothers":
+			{
+				ret.push({
+					id = 10,
+					type = "text",
+					icon = "ui/icons/melee_skill.png",
+					text = "Your Party Strength: " + ::MSU.Text.colorNeutral(::Math.round(::World.State.getPlayer().getStrength())),
+				});
+				return ret;
+			}
 			case "menu-screen.new-campaign.EasyDifficulty":
 				foreach (entry in ret)
 				{
