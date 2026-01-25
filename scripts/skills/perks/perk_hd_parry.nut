@@ -212,7 +212,10 @@ this.perk_hd_parry <- ::inherit("scripts/skills/skill", {
 			::Tactical.spawnParticleEffect(false, particles.Brushes, actor.getTile(), particles.Delay, particles.Quantity, particles.LifeTimeQuantity, particles.SpawnRate, particles.Stages);
 		}
 
-		this.applyWeaponDamage(_attacker, this.m.ConditionLossOnParry);
+		if (actor.isPlayerControlled())		// Only player characters lose weapon condition from parrying
+		{
+			this.applyWeaponDamage(_attacker, this.m.ConditionLossOnParry);
+		}
 	}
 
 	// Damage equipped weapon condition as a result of an attack being parried with it
