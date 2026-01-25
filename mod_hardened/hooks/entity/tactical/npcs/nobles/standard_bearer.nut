@@ -2,6 +2,16 @@
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
 ::Hardened.HooksMod.hook("scripts/entity/tactical/humans/standard_bearer", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 130 - 150
+			[12, "scripts/items/armor/basic_mail_shirt"],
+			[12, "scripts/items/armor/mail_shirt"],
+		]);
+	}
+
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
 	q.onInit = @() { function onInit()
 	{
