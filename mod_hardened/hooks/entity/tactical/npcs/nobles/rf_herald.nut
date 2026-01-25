@@ -2,6 +2,16 @@
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
 ::Hardened.HooksMod.hook("scripts/entity/tactical/humans/rf_herald", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 150 - 180
+			[12, "scripts/items/armor/rf_brigandine_armor"],
+			[12, "scripts/items/armor/rf_brigandine_harness"],
+		]);
+	}
+
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
 	q.onInit = @() { function onInit()
 	{
