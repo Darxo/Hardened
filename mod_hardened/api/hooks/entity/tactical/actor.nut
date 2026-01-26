@@ -16,6 +16,16 @@
 	q.m.HD_recoveredHitpointsOverflow <- 0.0;	// float between 0.0 and 1.0. Is not deserialized, meaning that we lose a tiny bit hitpoint recovery when saving/loading often
 	q.m.HD_ChanceToBeHit <- null;	// Contains an unsigned integer with the % chance that we will hit this entity when we are previewing a skill; null, if no hitchance should be displayed
 
+	q.checkMorale = @(__original) function( _change, _difficulty, _type = this.Const.MoraleCheckType.Default, _showIconBeforeMoraleIcon = "", _noNewLine = false )
+	{
+		local oldMoraleState = this.getMoraleState();
+		__original(_change, _difficulty, _type, _showIconBeforeMoraleIcon, _noNewLine);
+		if (oldMoraleState != ::Const.MoraleState.Fleeing && this.getMoraleState() == ::Const.MoraleState.Fleeing)
+		{
+			this.HD_onStartFleeing();
+		}
+	}
+
 	// Overwrite, because we re-implement the Reforged logic
 	q.getSurroundedCount = @() function()
 	{
@@ -84,6 +94,16 @@
 		else
 		{
 			__original(_newHitpoints);
+		}
+	}
+
+	q.setMoraleState = @(__original) function( _newState )
+	{
+		local oldMoraleState = this.getMoraleState();
+		__original(_newState);
+		if (oldMoraleState != ::Const.MoraleState.Fleeing && this.getMoraleState() == ::Const.MoraleState.Fleeing)
+		{
+			this.HD_onStartFleeing();
 		}
 	}
 
@@ -212,6 +232,12 @@
 	q.HD_getChanceToBeHit <- function()
 	{
 		return this.m.HD_ChanceToBeHit;
+	}
+
+	// This is called whenever an actors Morale is changed to Fleeing, if they were not previously fleeing before
+	// This only covers changes from the functions checkMorale or setMoraleState
+	q.HD_onStartFleeing <- function()
+	{
 	}
 
 	// Toggle the Hitchance Overlay on- or off, depending on whether _skillId is "" or an actual skillId
