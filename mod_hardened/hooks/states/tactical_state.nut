@@ -1,6 +1,10 @@
 ::Hardened.HooksMod.hook("scripts/states/tactical_state", function(q) {
 	// Public
 	q.m.HD_CameraPanSpeed <- 1200.0;		// Vanilla: 1500.0
+	q.m.HD_NeutralCombatTracks <- ["music/hd_silent_music.ogg"];	// Playlist of songs that are played at the start of battle, while you haven't discovered any enemy yet
+
+	// Private
+	q.m.HD_IsPlayingRealCombatMusic <- false;
 
 	// We have to hook onFinish, because it is the last thing that happens, before tactical_state is deconstructed
 	// And it is happening right after the combat loot is added to the stash
@@ -66,6 +70,16 @@
 
 		return __original(_mouse);
 	}
+
+	q.onShow = @(__original) { function onShow()
+	{
+		__original();
+
+		// Feat: Combat Music no longer plays right from the start in order to not spoil the enemy type you are up against
+		// We overwrite the vanilla setTrackList call by calling it again with our neutral track list
+		::Music.setTrackList(this.m.HD_NeutralCombatTracks, ::Const.Sound.CrossFadeTime);
+		this.m.HD_IsPlayingRealCombatMusic = false;
+	}}.onShow;
 
 	q.tactical_retreat_screen_onYesPressed = @(__original) function()
 	{
@@ -183,6 +197,30 @@
 				}
 
 				entity.onRoundStart();
+			}
+		}
+	}
+
+// New Functions
+	// Enable combat music, similar to how Vanilla does it in the onShow function
+	q.RF_playActualTrackList <- function()
+	{
+		if (this.m.HD_IsPlayingRealCombatMusic) return;
+		this.m.HD_IsPlayingRealCombatMusic = true;
+
+		if (this.m.Scenario != null)
+		{
+			::Music.setTrackList(this.m.Scenario.getMusic(), ::Const.Sound.CrossFadeTime);
+		}
+		else
+		{
+			if (this.m.StrategicProperties != null)
+			{
+				::Music.setTrackList(this.m.StrategicProperties.Music, ::Const.Music.CrossFadeTime);
+			}
+			else
+			{
+				::Music.setTrackList(::Const.Music.BattleTracks[this.m.Factions.getHostileFactionWithMostInstances()], ::Const.Music.CrossFadeTime);
 			}
 		}
 	}
