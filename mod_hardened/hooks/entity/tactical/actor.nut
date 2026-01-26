@@ -430,6 +430,28 @@
 		return count;
 	}
 
+	q.HD_onStartFleeing = @(__original) function()
+	{
+		this.HD_playFleeAnimation();
+
+		// Todo: play these sounds delayed, so that they dont overlap with the death sound which might triggered this fleeing.
+		// Todo: play these sounds staggered, so that they dont cause too high volume peaks. Or restrict maximum flee sounds in a time window
+		this.playSound(::Const.Sound.ActorEvent.Flee, ::Const.Sound.Volume.Actor * this.m.SoundVolume[::Const.Sound.ActorEvent.Flee] * this.m.SoundVolumeOverall * 0.8, this.m.SoundPitch);
+	}
+
+// New Functions
+	// Make all layers on this character blink briefly white, to make
+	q.HD_playFleeAnimation <- function()
+	{
+		// The third element of ShakeLayers corresponds to ::Const.BodyPart.All, but not every actor may defined this.
+		//	The Vanilla WolfRider for example does not have this; though we fix that here
+		if (this.m.ShakeLayers.len() < 3) return;
+
+		local layers = this.m.ShakeLayers[::Const.BodyPart.All];
+		::Tactical.getShaker().cancel(this);
+		::Tactical.getShaker().shake(this, this.getTile(), 1, ::Const.Combat.ShakeEffectArmorHitColor, ::Const.Combat.ShakeEffectArmorHitHighlight, ::Const.Combat.ShakeEffectArmorHitFactor, ::Const.Combat.ShakeEffectArmorSaturation, layers, 1.0);
+	}
+
 	// This is called either when onDiscovered or when setDiscovered(true) on this actor are called
 	q.HD_onDiscovered <- function()
 	{
