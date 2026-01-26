@@ -28,6 +28,19 @@
 
 # Changelog
 
+1.7.6
+	- Rename **Misc (QoL)** mod setting tab to **Character Screen**
+	- Reroll and weaken the defender of a **Noble** or **City State** attached military location when they spawn defender
+	- Slightly improve tooltip of battle song
+	- Play dice-sfx, when using **Cheap Trick**
+	- Fix **Goblin Overseer** granting 400 XP (instead of the intended 750 XP)
+	- Fix **Goblin Wolfrider** granting 750 XP (instead of the intended 450 XP)
+	- Fix **Goblin Wolfrider** giving more total XP than intended, by adding **Unworthy** effect to the **Goblin** or **Wolf** spawned by them on death
+	- Fix(Vanilla) caravans rarely despawning when loading a save
+	- Fix NPCs losing condition when parrying with their weapon
+	- Fix Obstacles producing hit sounds and particles, even while not discovered
+	- Fix typos in **Puncture**, **Anticipation**, **Battle Song**, **Reload Disorientation** and the **Show Shield Silhouettes** setting
+
 1.7.5
 	- **Gnarly Staff** now has 8 Weight (up from 4) and no longer has any discount on its weapon skills
 	- **Ranged Mercenaries**, **Noble Crossbowmen**, **Noble Arbalester** and **Gunner** lose **Rotation**

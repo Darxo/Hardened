@@ -1238,6 +1238,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix the impact delay of most throwable utility items not lining up with their projectiles, especially on higher game speed
 - Fix **Headhunter** and **Fast Adaption** sometimes not triggering correctly from zone of control attacks
 - Fix keyboard inputs for camera movement in combat not being combinable
+- Fix caravans rarely despawning when loading a save
 - Fix rare end-of-combat freeze, when clicking "It's over"
 - Fix named one-handed mace icon art not lining up with their sprite art
 - Fix world parties able to join the same fight multiple times
