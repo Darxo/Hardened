@@ -6,6 +6,11 @@
 	{
 		__original();
 
+		// Vanilla Fix: Vanilla does not support ::Const.BodyPart.All for the ShakeLayers of this unit, so we create it
+		this.m.ShakeLayers.push([]);
+		this.m.ShakeLayers[2].extend(this.m.ShakeLayers[0]);
+		this.m.ShakeLayers[2].extend(this.m.ShakeLayers[1]);
+
 		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/armor/greenskins/goblin_medium_armor"],
 			[4, "scripts/items/armor/greenskins/goblin_heavy_armor"],
