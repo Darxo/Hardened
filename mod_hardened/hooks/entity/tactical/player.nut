@@ -78,7 +78,17 @@
 			_xp /= reforgedXPMult;	// So if we divide _xp by it, we land by at the 1.2 mult from vanilla
 		}
 
-		return __original(_xp, _scale);
+		// Vanilla Fix: Prevent Non-Scaling XP being scaled by GlobalXPVeteranLevelMult or the player specific XPGainMult
+		local oldGlobalXPVeteranLevelMult = ::Const.Combat.GlobalXPVeteranLevelMult;
+		local oldCurrentXPGainMult = this.getCurrentProperties().XPGainMult;
+		if (!_scale)
+		{
+			::Const.Combat.GlobalXPVeteranLevelMult = 1.0;
+			this.getCurrentProperties().XPGainMult = 1.0;
+		}
+		__original(_xp, _scale);
+		::Const.Combat.GlobalXPVeteranLevelMult = oldGlobalXPVeteranLevelMult;
+		this.getCurrentProperties().XPGainMult = oldCurrentXPGainMult;
 	}}.addXP;
 
 	q.fillAttributeLevelUpValues = @(__original) function( _amount, _maxOnly = false, _minOnly = false )
