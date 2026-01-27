@@ -25,6 +25,7 @@
 	"EndsBuyback [This mods featureset is integrated into Hardened]",
 	"mod_settlement_situations_msu [This mods featureset is integrated into Hardened]",
 	"mod_consume [This mods featureset is integrated into Hardened]",
+	"mod_equal_location_scouting [This mods featureset is integrated into Hardened]",
 ]);
 
 // We need to load after swifter, because we fix a bug there
