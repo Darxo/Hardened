@@ -95,7 +95,7 @@
 		// Tweak Base Properties
 		local b = this.getBaseProperties();
 		b.setValues(::Const.Tactical.Actor.MasterArcher);
-		b.TargetAttractionMult = 1.1;
+		b.TargetAttractionMult = 1.5;
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_marksmanship"));
