@@ -598,7 +598,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("10%") + " more [Resolve|Concept.Bravery]",
+					"Have " + ::MSU.Text.colorPositive("10%") + " more [Resolve|Concept.Bravery]",
 					"While at Steady [Morale|Concept.Morale], gain " + ::MSU.Text.colorPositive("10%") + " more [Melee Skill|Concept.MeleeSkill], [Ranged Skill|Concept.RangeSkill], [Melee Defense|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense]",
 				],
 			}],
@@ -725,7 +725,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Deal " + ::MSU.Text.colorPositive("20%") + " more damage against anyone who has not started their [turn|Concept.Turn] yet in the current [round|Concept.Round]"
-					"You have " + ::MSU.Text.colorNegative("15%") + " less [Initiative|Concept.Initiative]",
+					"Have " + ::MSU.Text.colorNegative("15%") + " less [Initiative|Concept.Initiative]",
 				],
 			}],
 		}),
@@ -807,7 +807,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Gain a stack whenever you end your [turn|Concept.Turn] without having used [Wait|Concept.Wait], up to a maximum of 3 stacks",
-					"Gain " + ::MSU.Text.colorPositive("15%") + " more [Initiative|Concept.Initiative] while you have at least 1 stack",
+					"Have " + ::MSU.Text.colorPositive("15%") + " more [Initiative|Concept.Initiative] while you have at least 1 stack",
 					"Skills build up " + ::MSU.Text.colorPositive("15%") + " less [Fatigue|Concept.Fatigue] while you have at least 2 stacks",
 					"Deal " + ::MSU.Text.colorPositive("15%") + " more damage while you have 3 stacks",
 					"You lose all stacks if you use [Wait|Concept.Wait]",
@@ -930,7 +930,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Gain " + ::MSU.Text.colorPositive("+5") + " [Resolve|Concept.Bravery] per adjacent ally",
 					"Gain " + ::MSU.Text.colorPositive("+5") + " [Ranged Defense|Concept.RangeDefense] per adjacent obstacle",
-					"Gain " + ::MSU.Text.colorPositive("10%") + " more [Ranged Skill|Concept.RangeSkill] while at least 3 adjacent tiles are occupied by allies or obstacles",
+					"Have " + ::MSU.Text.colorPositive("10%") + " more [Ranged Skill|Concept.RangeSkill] while at least 3 adjacent tiles are occupied by allies or obstacles",
 				],
 			}],
 		}),
@@ -1055,7 +1055,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("5%") + " more [Hitpoints|Concept.Hitpoints], [Stamina|Concept.MaximumFatigue], [Resolve|Concept.Bravery] and [Initiative|Concept.Initiative]"
+					"Have " + ::MSU.Text.colorPositive("5%") + " more [Hitpoints|Concept.Hitpoints], [Stamina|Concept.MaximumFatigue], [Resolve|Concept.Bravery] and [Initiative|Concept.Initiative]"
 				],
 			}],
 		}),
@@ -1648,7 +1648,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("10%") + " more [Initiative|Concept.Initiative] until the start of your next [turn|Concept.Turn] whenever you move a tile during your [turn|Concept.Turn]",
+					"Have " + ::MSU.Text.colorPositive("10%") + " more [Initiative|Concept.Initiative] until the start of your next [turn|Concept.Turn] whenever you move a tile during your [turn|Concept.Turn]",
 				],
 			},
 			{

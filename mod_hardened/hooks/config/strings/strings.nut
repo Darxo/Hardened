@@ -100,7 +100,7 @@ local newPerks = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Gain [Melee Defense|Concept.MeleeDefense] equal to your [Base|Concept.BaseAttribute] [Ranged Defense|Concept.RangeDefense] against Weapon Attacks",
-						"You have " + ::MSU.Text.colorNegative("70%") + " less [Ranged Defense|Concept.RangeDefense] while adjacent to an enemy wielding a Melee Weapon",
+						"Have " + ::MSU.Text.colorNegative("70%") + " less [Ranged Defense|Concept.RangeDefense] while adjacent to an enemy wielding a Melee Weapon",
 						"Does not work with shields. Does not work while [disarmed|Skill+disarmed_effect], [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]",
 					],
 				},
@@ -116,7 +116,7 @@ local newPerks = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"You have " + ::MSU.Text.colorPositive("+1") + " [Vision|Concept.SightDistance] for every 3 adjacent tiles that are either empty or at least 2 levels below your tile",
+						"Gain " + ::MSU.Text.colorPositive("+1") + " [Vision|Concept.SightDistance] for every 3 adjacent tiles that are either empty or at least 2 levels below your tile",
 						"Changing height levels has no additional [Action Point|Concept.ActionPoints] cost",
 					],
 				},
