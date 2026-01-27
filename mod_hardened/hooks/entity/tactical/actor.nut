@@ -432,11 +432,14 @@
 
 	q.HD_onStartFleeing = @(__original) function()
 	{
-		this.HD_playFleeAnimation();
+		if (this.getTile().IsVisibleForPlayer)
+		{
+			this.HD_playFleeAnimation();
 
-		// Todo: play these sounds delayed, so that they dont overlap with the death sound which might triggered this fleeing.
-		// Todo: play these sounds staggered, so that they dont cause too high volume peaks. Or restrict maximum flee sounds in a time window
-		this.playSound(::Const.Sound.ActorEvent.Flee, ::Const.Sound.Volume.Actor * this.m.SoundVolume[::Const.Sound.ActorEvent.Flee] * this.m.SoundVolumeOverall * 0.8, this.m.SoundPitch);
+			// Todo: play these sounds delayed, so that they dont overlap with the death sound which might triggered this fleeing.
+			// Todo: play these sounds staggered, so that they dont cause too high volume peaks. Or restrict maximum flee sounds in a time window
+			this.playSound(::Const.Sound.ActorEvent.Flee, ::Const.Sound.Volume.Actor * this.m.SoundVolume[::Const.Sound.ActorEvent.Flee] * this.m.SoundVolumeOverall * 0.8, this.m.SoundPitch);
+		}
 	}
 
 // New Functions
