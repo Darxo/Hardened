@@ -188,7 +188,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlocks the [Footwork|Skill+footwork] skill which allows you to leave a [Zone of Control|Concept.ZoneOfControl] without triggering free attacks",
+					"Unlock [Footwork|Skill+footwork], which allows you to leave a [Zone of Control|Concept.ZoneOfControl] without triggering free attacks",
 				],
 			}],
 		}),
@@ -295,7 +295,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlocks the [Bearded Blade|Skill+hd_bearded_blade_skill] skill which allows you to disarm your opponents",
+						"Unlock [Bearded Blade|Skill+hd_bearded_blade_skill], which allows you to disarm an enemy",
 					],
 				},
 			],
@@ -318,7 +318,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlocks the [Arrow to the Knee|Skill+rf_arrow_to_the_knee_skill] skill to debilitate your opponents\' capability to move around the battlefield.",
+						"Unlock [Arrow to the Knee|Skill+rf_arrow_to_the_knee_skill], which debilitate your opponents\' capability to move around the battlefield",
 					],
 				},
 			],
@@ -360,7 +360,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlocks the [Take Aim|Skill+rf_take_aim_skill] skill which allows you to target opponents behind obstacles with a Crossbow or shoot further with a Firearm",
+						"Unlock [Take Aim|Skill+rf_take_aim_skill], which allows you to target opponents behind obstacles with a Crossbow or shoot farther with a Firearm",
 					],
 				},
 			],
@@ -531,7 +531,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlocks the [Cover Ally|Skill+rf_cover_ally_skill] skill which allows you to pass your own shield defenses to an adjacent ally until the start of your next turn",
+						"Unlock [Cover Ally|Skill+rf_cover_ally_skill], which allows you to temporarily pass your own shield defenses to an adjacent ally",
 					],
 				},
 			],
@@ -584,7 +584,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlocks the [Net Pull|Skill+rf_net_pull_skill] skill that allows you to pull a target and [net|Skill+net_effect] it",
+						"Unlock [Net Pull|Skill+rf_net_pull_skill], which allows you to pull a target and [net|Skill+net_effect] it",
 					],
 				},
 			],
@@ -640,7 +640,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlocks the [Backup Plan|Skill+hd_backup_plan_skill] skill, allowing you to recover [Action Points|Concept.ActionPoints] once per battle",
+					"Unlock [Backup Plan|Skill+hd_backup_plan_skill], allowing you to recover [Action Points|Concept.ActionPoints] once per battle",
 				],
 			}],
 		}),
@@ -738,7 +738,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlocks the [Cheap Trick|Skill+rf_cheap_trick_skill] skill which increases the [Hitchance|Concept.Hitchance] of your next Attack skill but reduces its damage",
+					"Unlock [Cheap Trick|Skill+rf_cheap_trick_skill], which increases the [Hitchance|Concept.Hitchance] of your next Attack skill but reduces its damage",
 				],
 			}],
 		}),
@@ -751,7 +751,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlocks the [Command|Skill+rf_command_skill] skill which allows you to [Rally|Concept.Rally] an ally and move them forward in the [turn|Concept.Turn] order",
+					"Unlock [Command|Skill+rf_command_skill], which allows you to [Rally|Concept.Rally] an ally and move them forward in the [turn|Concept.Turn] order",
 				],
 			}],
 		}),
@@ -832,7 +832,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Gain the [Pummel|Skill+rf_pummel_skill] skill allowing you to hit an enemy and take their position, all in one action",
+						"Unlock [Pummel|Skill+rf_pummel_skill], allowing you to hit an enemy and take their position, all in one action",
 					],
 				},
 			],
@@ -898,7 +898,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Gain the [Select Partner|Skill+rf_dynamic_duo_select_partner_skill] skill which allows you to choose a partner, if you don\'t already have one",
+						"Unlock [Select Partner|Skill+rf_dynamic_duo_select_partner_skill], which allows you to choose a partner, if you don\'t already have one",
 					]
 				}
 			],
@@ -1068,7 +1068,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlocks the [Hold Steady|Skill+rf_hold_steady_skill] skill which can be used once per battle to grant nearby members of your company increased defenses, immunity against [Stuns|Skill+stunned_effect] and immunity against [Displacement|Concept.Displacement] for two [rounds|Concept.Round]",
+					"Unlock [Hold Steady|Skill+rf_hold_steady_skill], which can be used once per battle to grant nearby members of your company increased defenses, immunity against [Stuns|Skill+stunned_effect] and immunity against [Displacement|Concept.Displacement] for two [rounds|Concept.Round]",
 				],
 			}],
 		}),
@@ -1180,7 +1180,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlocks the [Line Breaker|Skill+rf_line_breaker_skill] skill which allows you to knock back an enemy and take their place, all in one action",
+						"Unlock [Line Breaker|Skill+rf_line_breaker_skill], which allows you to knock back an enemy and take their place, all in one action",
 					],
 				},
 			],
@@ -1332,7 +1332,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlocks the [Onslaught|Skill+rf_onslaught_skill] skill which can be used once per battle to grant nearby members of your company [Initiative|Concept.Initiative], [Melee Skill|Concept.MeleeSkill] and one use of the [Line Breaker|Skill+rf_line_breaker_skill] skill for two [rounds|Concept.Round]",
+					"Unlock [Onslaught|Skill+rf_onslaught_skill], which can be used once per battle to grant nearby members of your company [Initiative|Concept.Initiative], [Melee Skill|Concept.MeleeSkill] and one use of the [Line Breaker|Skill+rf_line_breaker_skill] skill for two [rounds|Concept.Round]",
 				],
 			}],
 		}),
@@ -1654,7 +1654,7 @@ local adjustedDescriptions = [
 			{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlocks the [Passing Step|Skill+rf_passing_step_skill] skill which allows you to dance around your opponent after a successful attack",
+					"Unlock [Passing Step|Skill+rf_passing_step_skill], which allows you to dance around your opponent after a successful attack",
 				],
 			}],
 		}),
@@ -1697,7 +1697,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlock the [Flaming Arrows|Skill+rf_flaming_arrows_skill] skill",
+						"Unlock [Flaming Arrows|Skill+rf_flaming_arrows_skill], which sets a tile on fire on a hit",
 					],
 				},
 				{
@@ -1741,7 +1741,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlocks the [Gain Ground|Skill+rf_gain_ground_skill] skill which, immediately after killing an adjacent opponent, allows you to move into their tile for free, ignoring [Zone of Control|Concept.ZoneOfControl]"
+						"Unlock [Gain Ground|Skill+rf_gain_ground_skill], which, immediately after killing an adjacent opponent, allows you to move into their tile for free, ignoring [Zone of Control|Concept.ZoneOfControl]"
 					],
 				},
 			],
@@ -1815,7 +1815,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlocks the [Whirling Death|Skill+hd_whirling_death_skill] skill, allowing you to prepare a devastating attack",
+					"Unlock [Whirling Death|Skill+hd_whirling_death_skill], allowing you to prepare a devastating attack",
 				]
 			}],
 		}),
