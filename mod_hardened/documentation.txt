@@ -13,10 +13,10 @@
 
 # Known Issues:
 
-- Loading the game over an enemy allows them to instantly engage the player in battle
 - Map Seeds for Vanilla or Reforged are unlikely to work the same under Hardened
 - Injuries now heal at the start of the day and wages are paid at the start of the day; instead of during midday
 - Hitchances of Lunge-Like attacks can be inaccurate as the act of moving next to your target can enable/disable various effects
+- Oathtaker on existing saves (outside of the Oathtaker Origin), which gained an Oath while playing regular Reforged are stuck with that oath after adding Hardened
 
 # Compatibility with mods
 
@@ -27,6 +27,126 @@
 - Is safe to remove from- and add to any existing savegames
 
 # Changelog
+
+1.8.0
+	- Add new **Warden** perk to Tier 5 of **Trained**: Adjacent allies take 30% less damage from Attacks from enemies that are adjacent to you. This does not affect allies who also have the **Warden** perk. Whenever an adjacent ally takes damage, move to the next position in the turn sequence
+	- **Entrenched** now grants 10% more Ranged Skill (down from 15% more)
+	- **Survival Instinct** now grants 1 stack at the start of each battle
+	- **Resilient** is completely reworked: Negative status effects on you last -1 turn (to a minimum of 1). Whenever **stunned** expires on you, become immune to being stunned until the start of your next turn
+	- **Bolster** (from Polearm Mastery) can now only trigger once per round. It now also works while engaged in melee
+	- **Calculated Strikes** now lowers Initiative by 15% (down from 20%)
+	- **Full Force** now grants 8% more damage per spent Action Point (down from 10%)
+	- **Anchor** now reduces all damage during your turn (instead of only Attack damage)
+	- **Pattern Recognition** now increases Melee Skill and Melee Defense by +2 for each stack (instead of +3 for the first 5 stacks and +1 for any further stack)
+	- **Underdog** moves to Tier 3 (down from 5)
+	- Add new icon for **Phalanx** perk
+	- **Trained Perk Group** loses **Rotation**
+	- All Weapon Attacks that deal neither 0% nor 100% Armor Penetration will now inherit the Armor Penetration value of the weapon they come from. As a result:
+		- **Shatter** gains +10% Armor Penetration
+		- **Split** on two-handed swords loses 5% Armor Penetration
+		- **Split** on **Bardiche** gains 10% Armor Penetration
+		- **Reap** gains +5% Armor Penetration
+	- **Dazed** now causes you to deal 20% less damage (up from 25% less)
+	- **Cut Leg Muscles** now inflict 30% less Melee Skill and Initiative (down from 40% less)
+	- **Arrow to the Knee** now has -5% Hitchance per tile (down from -4%)
+	- **Weave Web** (from **Webknecht**) now costs 50 Fatigue (up from 25)
+	- **Cheap Trick** now plays a dice sound effect when used
+	- **Bolas** now deal 100% Blunt Damage (from 50%/50%)
+	- **Mail with Lamellar Plating** now has 170 Condition (up from 160), 17 Weight (down from 18) and costs 2500 Crowns (up from 900)
+	- **Heavy Metal Shield** now has 24 Weight (up from 22)
+	- **Rusty Mail Coif** now has 70 Condition (down from 80) and 8 Weight (down from 9)
+	- **Ancient Legionary Helmet** now has 140 Condition (up from 130) and 12 Weight (up from 10)
+	- **Ancient Household Helmet** now has 10 Weight (up from 8)
+	- Named Weapons now roll between 20% more and 40% more condition (up from 10% less to 40% more)
+	- All Ranged Brigands lose 5 Melee Skill
+	- **Brigand Robber** who spawn with 2-tile melee weapons lose **Backstabber**
+	- **Noble Heavy Footmen** gain 5 Ranged Defense
+	- **Armored Wiederganger** are now less likely to spawn with a **Basic Mail Shirt** and more likely to spawn with a **Rusty Mail Coif**. Body Armors now have a 50% chance to come damaged (down from 66%)
+	- Javelins spawning on **Brigand Robber** now have 1/5 Ammunition (down from 2/5)
+	- **Necromancer** no longer spawn with a knife, butchers cleaver or without a weapon
+	- **Gladiators** who spawn without a helmet now lose **Flexible**
+	- **Orc Berserker** gain **Brace for Impact**
+	- **Orc Warriors** now have 60 Resolve (down from 70)
+	- All **Barbarians** gain **Survival Instinct** and lose **Resilient**
+	- **Barbarian Thralls** now have -10 Melee Defense (down from 0) and 0 Ranged Defense (down from 10)
+	- **Barbarian Beastmasters** now have 0 Melee Defense (down from 10) and 20 Ranged Defense (down from 25)
+	- **Barbarian Drummer** now have 0 Melee Defense (down from 15) and 0 Ranged Defense (down from 5)
+	- **Barbarian Marauder** now have 0 Melee Defense (down from 10) and -10 Ranged Defense (down from 0)
+	- **Barbarian Chosen** now have 15 Melee Defense (up from 10). They lose **Vigorous Assault**. They also lose **Sanguinary** (with a cleaver), **Breakthrough** (with a hammer) and **Death Dealer** (with an axe)
+	- **Barbarian King** now has 5 Melee Defense (Down from 15) and 0 Ranged Defense (Down from 10)
+	- **Barbarian Madman** loses **Executioner**, **Menacing**, **Feral Rage**, **Battle Forged** and **Resilient**. He gains **Fast Adaption**, **Survival Instinct** and **Cleaver Mastery**. He now has 0 Melee Defense (down from 10) and 0 Ranged Defense (down from 10). He now has 320 Body Armor (up from 300) and 310 Head Armor (up from 300)
+	- **Brigand Marauder** can now appear as champions
+	- **Heralds Bodyguards** lose **Vigilant** and **Combo** and gain **Warden**, **Pathfinder** and **Finesse**
+	- **Northern Peasants** can now rarely spawn equipped with a **Lute**
+	- **Man at Arms** now have 100 Hitpoints (up from 90)
+	- **Master Archers** now use large quivers instead of regular ones
+	- **Webknechts** now have 50 Resolve (up from 45)
+	- **Militia**, **Militia Marksmen** and **Militia Veterans** now have 70 Resolve (up from 60)
+	- **Militia Captains** now have 85 Resolve (up from 80)
+	- **Slaves** now have 30 Resolve (up from 20)
+	- **Standard Bearer** no longer spawn with a **Mail Hauberk**
+	- **Heralds** now spawn with either a **Brigandine Armor** or a **Brigandine Harness** as their body armor
+	- **Fallen Soldiers** lose **Resilient**
+	- **Militia Marksmen** are now called **Militia Archer**
+	- Enemies who prefer to wait, now ignore this preference, when they could engage an enemy within 1 tile
+	- **Gladiators** are now less likely to flank, protect allies, act defensive or use crowd control skills. Allies are slightly more likely to gather around them
+	- Make NPCs less likely to use **Flaming Arrow** or **Fire Bomb** on enemies who are rooted
+	- Make NPCs with **Exploit Opening** 10% more likely to attack per stack
+	- **Noble** and **Militia** Ranged Troops are now 50% less likely to shoot at enemies they could kill and 100% more likely to shoot at enemies they have a good hitchance against
+	- Ranged Troops from **Brigands**, **Nomads**, **Mercenaries**, **Goblins** and **Golems** Ranged Troops are 33% less likely to shoot at enemies they could kill and ~100% more likely to shoot at enemies they have a good hitchance against
+	- Ranged **Goblin** Troops are 233% more likely to target enemies that they can deal good hitpoint damage against
+	- Make NPCs 90% less likely to use **Hand to Hand**, while they are disarmed and have **Fresh and Furious** active
+	- Make rooted NPCs with **Death Dealer** 200% more likely to use AoE Attacks
+	- Make NPCs with **Exploit Opening** and 0 stacks 10% less attractive
+	- Make **Master Archers** 35% more attractive
+	- Increase the maximum amount of fallen heroes in world parties by 75%
+	- Make ranged troops in noble armies 20% less likely to appear
+	- Slightly reduce maximum amount of Brigand Leader that can appear at the same time
+	- Small and Medium Nomad Camps now have a VisibilityMult of 1.0 (up from 0.8)
+	- **Black Monolith** now spawns some badlands tiles around its location. This only affects new worlds
+	- Stone Watchtower and Noble/Southern military camps now drop paint in addition to their regular loot
+	- **City States** now sometimes transport tools, medicine and ammo in their caravans
+	- Play flee animation (short white blink) and fleeing sound effect, whenever an actors morale changes from another state to fleeing
+	- Add setting (on) to generate combat logs about chances and rolls for bypassing cover, when aiming at targets that are in cover
+	- Display relative XP in Character Screen instead of absolute values
+	- List total XP in experience tooltip
+	- Make attackable attached locations display the banner of their owning settlement while active
+	- Add new **Mood** concept with a detailed explanation of this mechanic and link to it in the mood toolip
+	- Add setting (on) to show the absolute mood value instead of a percentage in the mood tooltip
+	- List the exact mood changes in brackets in the mood tooltip
+	- Display Frenzy Eyes on a character that is under the effect of berserking mushrooms
+	- Regular (non-Champion) **Brigand Leader**, **Robber Barons**, **Nomad Leader** and **Orc Warlords** no longer spawn with a unique name
+	- Move position of **Recover** in the skill bar to the end
+	- Prevent **Disarm** from being used on enemies who don't have a weapon equipped
+	- Slightly move the dismiss button downwards
+	- Create a combat log when **Bolster** triggers at least one morale check
+	- Display the Player Strength in the roster tooltip
+	- **Paymaster Retinue** no longer requires you to have 16 Brothers in order to unlock. He now requires you to have a day expense of at least 500 crowns. He now reduces your Wage by 25% (up from 15%)
+	- Declare the mod **Equal Location Scouting** as incompatible, because its features are already included in Hardened
+	- Rework play strength calculation:
+		- Having less than 3 Brothers no longer grants free Strength
+		- The maximum limit for Brothers being counted is now equal to your fighting line
+		- Each Brother still contributes 10 Strength by default, just like in Vanilla
+		- Each Regular Level now increases that amount by a multiplicative 20% (up from +2)
+		- Each Veteran Level now increases that amount by a multiplicative 5% (up from +2)
+	- **Eager** mood now causes positive mood changes to grant -0.2 mood
+	- **Euphoric** mood now causes positive mood changes to grant -0.3 mood
+	- Each Veteran Level now increases the wage by a multiplicative 1.5% (down from 3%)
+	- Oathtaker (outside of the Oathtaker origin) no longer gain random oaths every 15 days
+		- Note that your Oathtaker from existing saves will keep their last oath forever
+	- **Drunkard loses Item**, **Bad Omen** and **Player plays Dice** Events now have a cooldown of 21 days (up from 14)
+	- Revert Attribute changes to **Indebted**, made by Reforged
+	- Delay the combat music until the first enemy is discovered
+	- **Militia Origin** no longer grants every brother the **Militia Perk Group**
+	- Fix(Vanilla) the same Human being able to play the same sound effect twice in a row
+	- Fix(Vanilla) Non-Scaled Experience gained (e.g. via Event or Dismissing Brothers) still being scaled by XP effects on the receiving character
+	- Fix(Vanilla) Goblin Wolfrider having no BodyPart.All ShakeLayer defined
+	- Add `actor::HD_onStartFleeing` event, that is fired, whenever the morale state of that actor is changed from a different state to fleeing
+	- Add `HD_ConditionMultMin` and `HD_ConditionMultMax` for `named_weapon` to control the range in which the condition rolls
+	- Add `CostMultPerRegularLevel = 1.1` and `CostMultPerVeteranLevel = 1.03` for `character_background`
+	- Add `actor::HD_onFleeing` event, which is always triggered, when that actor changes from another morale state into fleeing during a checkMorale call
+	- Add `::Hardened.util.findUnusedMercenaryBanner` for finding a banner that is currently neither used by the player nor by any mercenary party on the world map
+	- Weapons now pass down their Armor Penetration values into their attack skills. If you want to design attack skills with different Armor Penetration, you need to change those inside of onAnySkillUsed
 
 1.7.6
 	- Rename **Misc (QoL)** mod setting tab to **Character Screen**

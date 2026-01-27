@@ -181,3 +181,8 @@ default y offset is 40 but it is divided by ::Tactical.getCamera().Zoom
 return ::World.FactionManager.isGreaterEvil();
 return ::World.FactionManager.m.GreaterEvil.Phase;
 
+## Allow saves with night vision helmet fang to be loaded
+::Const.DLC.Mask = 343;
+
+## Add injury to a brother
+ ::getBro("Edmund").getSkills().add(::new("scripts/skills/injury/cut_leg_muscles_injury"));
