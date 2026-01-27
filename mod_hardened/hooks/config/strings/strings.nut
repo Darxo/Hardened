@@ -165,6 +165,7 @@ local newPerks = [
 					Description = [
 						"Adjacent allies take " + ::MSU.Text.colorPositive("30%") + " less damage from Attacks from enemies that are adjacent to you. This does not affect allies who also have [Warden|Perk+perk_hd_warden]",
 						"Whenever an adjacent ally takes damage, move to the next position in the [turn|Concept.Turn] sequence",
+						"Does not work while [fleeing|Skill+hd_dummy_morale_state_fleeing]"
 					],
 				},
 			],
