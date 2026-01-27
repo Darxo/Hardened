@@ -10,23 +10,20 @@
 		];
 		local mapGen = ::MapGen.get(::Const.World.TerrainScript[::Const.World.TerrainType.Badlands]);
 
-		for (local i = 0; i < 6; ++i)
+		foreach (nextTile in ::MSU.Tile.getNeighbors(myTile))
 		{
-			local nextTile = myTile.getNextTile(i);
 			badlandsTiles.push(nextTile);
 
 			// Look tiles up to two tiles away, but those further tiles only have a 66% chance to be transformed
-			for (local j = 0; j < 6; ++j)
+			foreach (veryNextTile in ::MSU.Tile.getNeighbors(nextTile))
 			{
 				if (::Math.rand(1, 100) > 66) continue;
-				local veryNextTile = nextTile.getNextTile(j);
 				if (veryNextTile.getDistanceTo(myTile) != 2) continue;
 				badlandsTiles.push(veryNextTile);
 
-				for (local k = 0; k < 6; ++k)
+				foreach (veryVeryNextTile in ::MSU.Tile.getNeighbors(veryNextTile))
 				{
 					if (::Math.rand(1, 100) > 66) continue;
-					local veryVeryNextTile = veryNextTile.getNextTile(k);
 					if (veryVeryNextTile.getDistanceTo(myTile) != 3) continue;
 					badlandsTiles.push(veryVeryNextTile);
 				}
