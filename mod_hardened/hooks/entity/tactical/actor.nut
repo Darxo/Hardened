@@ -452,6 +452,23 @@
 		::Tactical.getShaker().shake(this, this.getTile(), 1, ::Const.Combat.ShakeEffectArmorHitColor, ::Const.Combat.ShakeEffectArmorHitHighlight, ::Const.Combat.ShakeEffectArmorHitFactor, ::Const.Combat.ShakeEffectArmorSaturation, layers, 1.0);
 	}
 
+	// Make all layers on this character blink briefly red, to highlight, that this enemy will attack us, if we move
+	q.HD_playZOCHighlightAnimation <- function()
+	{
+		// The third element of ShakeLayers corresponds to ::Const.BodyPart.All, but not every actor may defined this.
+		//	The Vanilla WolfRider for example does not have this; though we fix that here
+		//	That's why we instead use whatever element is last in ShakeLayers
+		if (this.m.ShakeLayers.len() == 0)
+		{
+			::logWarning("Hardened::HD_playFleeAnimation: The entity " + this.getName() + " has no ShakeLayers defined");
+			return;
+		}
+		local layers = this.m.ShakeLayers.top();
+
+		::Tactical.getShaker().cancel(this);
+		::Tactical.getShaker().shake(this, this.getTile(), 3, ::Const.Combat.ShakeEffectZOCHighlight, ::Const.Combat.ShakeEffectZOCHighlight, ::Const.Combat.ShakeEffectArmorHitFactor, ::Const.Combat.ShakeEffectArmorSaturation, layers, 1.0);
+	}
+
 	// This is called either when onDiscovered or when setDiscovered(true) on this actor are called
 	q.HD_onDiscovered <- function()
 	{

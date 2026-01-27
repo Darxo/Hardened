@@ -6,6 +6,25 @@
 	// Private
 	q.m.HD_IsPlayingRealCombatMusic <- false;
 
+	q.computeEntityPath = @(__original) function( _activeEntity, _mouseEvent )
+	{
+		local prevState = this.m.CurrentActionState;
+
+		__original(_activeEntity, _mouseEvent);
+
+		if (this.m.CurrentActionState == ::Const.Tactical.ActionState.ComputePath)	// Simple check to make sure an entity path was actually calculated
+		{
+			foreach (neighbor in ::Tactical.Entities.getAdjacentActors(_activeEntity.getTile()))
+			{
+				if (_activeEntity.isAlliedWith(neighbor)) continue;
+				if (!neighbor.onMovementInZoneOfControl(_activeEntity, false)) continue;
+				if (!neighbor.getTile().IsVisibleForPlayer) continue;	// Just in case, even though adjacent tiles should always be visible
+
+				neighbor.HD_playZOCHighlightAnimation();
+			}
+		}
+	}
+
 	// We have to hook onFinish, because it is the last thing that happens, before tactical_state is deconstructed
 	// And it is happening right after the combat loot is added to the stash
 	q.onFinish = @(__original) function()
