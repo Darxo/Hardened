@@ -1,4 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/injury/cut_throat_injury", function(q) {
+	// Public
+	q.m.HD_BleedStacks <- 6;
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
@@ -15,6 +18,13 @@
 			}
 		}
 
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/damage_received.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Gain " + ::MSU.Text.colorDamage(this.m.HD_BleedStacks) + " stacks of [Bleeding|Skill+bleeding_effect] when you receive this injury during combat"),
+		});
+
 		return ret;
 	}
 
@@ -24,9 +34,8 @@
 
 		if (::Tactical.isActive())
 		{
-			local vanillaDamagePerRound = 6;
 			local bleed = ::new("scripts/skills/effects/bleeding_effect");
-			for (local i = 1; i <= vanillaDamagePerRound; ++i)
+			for (local i = 1; i <= this.m.HD_BleedStacks; ++i)
 			{
 				this.getContainer().getActor().getSkills().add(bleed);
 			}
