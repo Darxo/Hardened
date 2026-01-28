@@ -51,7 +51,8 @@
 		if (_reason != "")
 		{
 			// Feat: Display the accurate mood change in brackets behind the reason
-			_reason += format(" (%s)", ::MSU.Text.colorizeValue(-1 * _a, {AddSign = true}));
+			// MSU Fix: We must force-convert the result of colorizeValue into a string, because it is not guaranteed to actually return a string
+			_reason += format(" (%s)", "" + ::MSU.Text.colorizeValue((-1 * _a), {AddSign = true}));
 		}
 
 		__original(_a, _reason);
