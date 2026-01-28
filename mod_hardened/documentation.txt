@@ -28,6 +28,19 @@
 
 # Changelog
 
+1.8.1
+	- Whenever you preview a movement during combat, highlight adjacent enemies, who would get a zone of control attack against you, with a brief red blinking
+	- Mention in the perk description of **Warden** that it does not work, while fleeing
+	- Mention in the effect descriptions of **Grazed Neck**, **Cut Artery** and **Cut Throat** that they inflict bleeding stacks when received
+	- Streamline wording of the **Active** section in many perk descriptions
+	- Streamline wording for multiplicative attribute changes in some perk descriptions
+	- Fix error when receiving mood changes with a change value of 0
+	- Fix Manhunter Origin not loading correctly
+	- Fix rare crash during map generation when the **Black Monolith** would spawn too close to the border
+	- Fix fleeing sound effect playing, if the character is not visible to the player
+	- Fix **Calculated Strikes** description classifying the effect as **Active**
+	- Fix typo in **Warden** perk description
+
 1.8.0
 	- Add new **Warden** perk to Tier 5 of **Trained**: Adjacent allies take 30% less damage from Attacks from enemies that are adjacent to you. This does not affect allies who also have the **Warden** perk. Whenever an adjacent ally takes damage, move to the next position in the turn sequence
 	- **Entrenched** now grants 10% more Ranged Skill (down from 15% more)

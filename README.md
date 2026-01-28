@@ -10,7 +10,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - Simplified Reach Mechanic and Double Grip effect
 - Shields are destructible again
 - Streamlined world and contract scaling
-- [7 New Perks](https://github.com/Darxo/Hardened/wiki/New-Perks)
+- [8 New Perks](https://github.com/Darxo/Hardened/wiki/New-Perks)
 - [~100 Perks are tweaked or reworked](https://github.com/Darxo/Hardened/wiki/Perk-changes-Side%E2%80%90By%E2%80%90Side)
 - ~55 Weapons and Shields are tweaked
 - [~50 Body Armors are reworked](https://github.com/Darxo/Hardened/wiki/Vanilla-Hardened-Armor-Changes)
@@ -1081,6 +1081,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Corpses of resurrecting Zombies and Humans now emit a slight purple particle effect
 - Fleeing surrounded hostile characters now take 100% more hitpoint damage, after the player has won but chooses to "Run them down"
 - While previewing movement, tile tooltips show calculations for getting hit by enemies while in zone of control. If not in zone of control tile tooltip instead indicates that
+- Whenever you preview a movement during combat, briefly highlight adjacent enemies, who would get a zone of control attack against you
 - Play flee animation (short white blink) and fleeing sound effect, whenever an actors morale changes from another state to fleeing
 - When a Brother dies (without getting struck down), a black skull will raise from his corpse
 - Change mouse wheel zoom speed during combat to 0.1 (down from 0.3) and add Mod Setting to customize that mouse wheel zoom speed
