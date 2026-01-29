@@ -4,7 +4,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Effects[2] = "Increases the amount of tools you can carry by 50";		// In Vanilla this is "Reduces tool consumption by 20%"
+		this.m.Effects[2] = "+50 Capacity for Tools and Supplies";		// In Vanilla this is "Reduces tool consumption by 20%"
 
 	}
 
