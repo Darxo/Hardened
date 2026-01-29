@@ -25,7 +25,7 @@
 	}
 
 	qolWorldPage.addBooleanSetting("DisplayLocationNumerals", true, "Display Numerals for Location", "Locations display the Numerals for their Troops if they are known to you.").addAfterChangeCallback(updateLocationTypesToDisplay);
-	qolWorldPage.addBooleanSetting("DisplayUniqueLocationsNames", true, "Display Unique Location Names", "Unique display their name to you while you are near them.").addAfterChangeCallback(updateLocationTypesToDisplay);
+	qolWorldPage.addBooleanSetting("DisplayUniqueLocationsNames", true, "Display Unique Location Names", "Unique Locations display their name to you while you are near them.").addAfterChangeCallback(updateLocationTypesToDisplay);
 	qolWorldPage.addBooleanSetting("DisplayCampLocationsNames", true, "Display Lair Location Names", "Lairs display their name to you while you are near them.").addAfterChangeCallback(updateLocationTypesToDisplay);
 	qolWorldPage.addBooleanSetting("DisplayAttachedLocationNames", false, "Display Attached Location Names", "Attached Location display their name to you while you are near them.").addAfterChangeCallback(updateLocationTypesToDisplay);
 
@@ -81,7 +81,7 @@
 
 	qolWorldPage.addDivider("MiscDivider7");
 
-	qolWorldPage.addRangeSetting("WorldMouseWheelZoomMultiplier",0.4 ,0.1 , 0.8, 0.05, "Mouse Wheel Zoom Multiplier", "This controls how fast your mouse wheel will scroll. 0.3 is the vanilla default value.");
+	qolWorldPage.addRangeSetting("WorldMouseWheelZoomMultiplier",0.4 ,0.1 , 0.8, 0.05, "Mouse Wheel Zoom Multiplier", "This controls how fast your mouse wheel will change your camera zoom on the world map. 0.3 is the vanilla default value.");
 }
 
 // QOL: Combat
@@ -93,7 +93,7 @@
 
 	qolCombatPage.addBooleanSetting("HideTileTooltipsDuringNPCTurn", false, "Hide Tooltips during NPC Turn", "Tile and Character tooltips will not show up, while it is not your turn.");
 
-	qolCombatPage.addRangeSetting("MouseWheelZoomMultiplier",0.1 ,0.05 , 0.4, 0.01, "Mouse Wheel Zoom Multiplier", "This controls how fast your mouse wheel will scroll. 0.3 is the vanilla default value.");
+	qolCombatPage.addRangeSetting("MouseWheelZoomMultiplier",0.1 ,0.05 , 0.4, 0.01, "Mouse Wheel Zoom Multiplier", "This controls how fast your mouse wheel will change your camera zoom during combat. 0.3 is the vanilla default value.");
 
 	qolCombatPage.addDivider("MiscDivider1");
 
@@ -133,7 +133,7 @@
 
 	qolCombatPage.addDivider("MiscDivider6");
 
-	qolCombatPage.addBooleanSetting("CombineCombatSkillLogs", true, "Combine Combat Logs of Skills", "Combat Logs, which are the result of the same skill execution no longer produce regular newlines.");
+	qolCombatPage.addBooleanSetting("CombineCombatSkillLogs", true, "Combine Combat Logs of Skills", "Combat Logs, which are the result of the same skill execution no longer produce empty halflines.");
 	qolCombatPage.addBooleanSetting("ShowCoverCombatLogs", true, "Show Cover Combat Logs", "Generate an additional combat log when targeting someone with a ranged attack, who is in cover. This log contains the chance and roll for bypassing the cover and also the initial target and the new target.");
 
 }
@@ -166,7 +166,7 @@
 
 	qolCharScreenPage.addRangeSetting("BagSilhouetteAlpha", 200, 0, 255, 5, "Bag Silhouette Alpha", "This controls the alpha value of the bag item silhouettes during combat only. In the character screen they always show up with an alpha of 255. A value of 0 makes them invisible everywhere and effectively turns off this feature.").addAfterChangeCallback(silhouetteCallback);
 	qolCharScreenPage.addRangeSetting("BagSilhouetteColor", 60, 0, 255, 5, "Bag Silhouette Color", "This controls the color value of the bag item silhouettes. A value of 0 makes item completely black while a value of 255 keeps its original color.").addAfterChangeCallback(silhouetteCallback);
-	qolCharScreenPage.addBooleanSetting("ShowShieldSilhouettes", false, "Show Shield Silhouettes", "Display silhouettes for shields in your bag slots. These sprites might look most out of place, so not everyone might want them to show up").addAfterChangeCallback(silhouetteCallback);
+	qolCharScreenPage.addBooleanSetting("ShowShieldSilhouettes", false, "Show Shield Silhouettes", "Display silhouettes for shields in your bag slots. These sprites look most out of place, so not everyone might want them to show up").addAfterChangeCallback(silhouetteCallback);
 
 	qolCharScreenPage.addDivider("MiscDivider1");
 
