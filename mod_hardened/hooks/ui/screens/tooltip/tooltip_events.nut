@@ -10,7 +10,7 @@
 				local desc = "Medical Supplies consist of bandages, herbs, salves and the like, and are used to heal the more severe injuries sustained by your men in battle.";	// Fluff
 				desc += "\n\nEvery Injury requires " + ::MSU.Text.colorPositive(::Const.World.Assets.MedicinePerInjuryDay) + " Medical Supplies each day to improve and ultimately heal."	// Vanilla Mechanic
 				desc += "\nIf you run out of medicine supplies, Injuries have only a " + ::MSU.Text.colorNegative("50%") + " chance to improve each day.";	// New Hardened mechanic
-				desc += "\nLost hitpoints heal on their own.";	// Vanilla info
+				desc += ::Reforged.Mod.Tooltips.parseString("\nLost [Hitpoints|Concept.Hitpoints] heal on their own.");	// Vanilla info
 
 				local heal = ::World.Assets.getHealingRequired();
 				if (heal.MedicineMin > 0)
@@ -348,7 +348,7 @@
 							"Determines the likelihood of striking an enemy's head instead of their body.\n\n" +
 							"A hit to the head deals " + ::MSU.Text.colorizeMult(::Const.CharacterProperties.DamageAgainstMult[::Const.BodyPart.Head], {AddSign = true}) + " [Critical Damage.|Concept.CriticalDamage]\n\n" +
 							"The default chance to hit the head is " + ::MSU.Text.colorPositive(::Const.CharacterProperties.HitChance[::Const.BodyPart.Head] + "%") + ", but this can be modified by perks or specific attacks.\n\n" +
-							"Some enemies lack a head, resulting in all attacks hitting the body."
+							"Some enemies [lack a head|Skill+hd_headless_effect], resulting in all attacks hitting the body."
 						);
 						break;
 					}

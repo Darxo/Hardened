@@ -2,7 +2,7 @@
 ::Reforged.NestedTooltips.Tooltips.Concept.Reach = ::MSU.Class.BasicTooltip("Reach", ::Reforged.Mod.Tooltips.parseString(
 	"Reach is a depiction of how far a character\'s attacks can reach, making melee combat easier against targets with shorter reach.\n\n" +
 	"Gain " + ::MSU.Text.colorizeMultWithText(::Reforged.Reach.ReachAdvantageMult) + " [Melee skill|Concept.MeleeSkill] when attacking someone with shorter reach.\n\n" +
-	"Characters who are [stunned|Skill+stunned_effect], fleeing, or without a viable [Attack of Opportunity|Concept.ZoneOfControl] skill have no Reach."
+	"Characters who are [stunned|Skill+stunned_effect], [fleeing|Skill+hd_dummy_morale_state_fleeing], or without a viable [Attack of Opportunity|Concept.ZoneOfControl] skill have no Reach."
 ));
 ::Reforged.NestedTooltips.Tooltips.Concept.ReachAdvantage = ::MSU.Class.BasicTooltip("Reach Advantage", ::Reforged.Mod.Tooltips.parseString(
 	"A character is considered to have Reach Advantage when their [Reach|Concept.Reach] is greater than that of the other character during a melee attack."
@@ -19,12 +19,12 @@
 // New Concepts
 ::MSU.Table.merge(::Reforged.NestedTooltips.Tooltips.Concept, {
 	ArmorPenetration = ::MSU.Class.BasicTooltip("Armor Penetration", ::Reforged.Mod.Tooltips.parseString(
-		"Armor Penetration is a property that determines how much of an attack\'s damage bypasses armor and directly affects the target's hitpoints.\n\n" +
+		"Armor Penetration is a property that determines how much of an attack\'s damage bypasses armor and directly affects the target's [Hitpoints|Concept.Hitpoints].\n\n" +
 		"It is expressed as a percentage, ranging from " + ::MSU.Text.colorPositive("0%") + " to a maximum of " + ::MSU.Text.colorPositive("100%") + ".\n\n" +
-		"Before the damage reaches the hitpoints, any regular damage reduction from other effects is applied first. Then, the remaining armor on the body part hit reduces the damage further by " + ::MSU.Text.colorizePct(::Const.Combat.ArmorDirectDamageMitigationMult) + " of its current value."
+		"Before the damage reaches the [Hitpoints|Concept.Hitpoints], any regular damage reduction from other effects is applied first. Then, the remaining armor on the body part hit reduces the damage further by " + ::MSU.Text.colorizePct(::Const.Combat.ArmorDirectDamageMitigationMult) + " of its current value."
 	)),
 	CriticalDamage = ::MSU.Class.BasicTooltip("Critical Damage", ::Reforged.Mod.Tooltips.parseString(
-		"Critical Damage refers to bonus Hitpoint Damage inflicted when striking specific body parts. This damage is applied after armor mitigation.\n\n" +
+		"Critical Damage refers to bonus [Hitpoint|Concept.Hitpoints] Damage inflicted when striking specific body parts. This damage is applied after armor mitigation.\n\n" +
 		"By default, [hits to the head|Concept.ChanceToHitHead] deal " + ::MSU.Text.colorPositive("+50%") + " additional Critical Damage."
 	)),
 	Cover = ::MSU.Class.BasicTooltip("Cover", ::Reforged.Mod.Tooltips.parseString(
@@ -80,7 +80,7 @@
 		"Typical positive checks:\n" +
 		"- Killing an enemy\n" +
 		"- Seeing an enemy killed by an ally\n" +
-		"- Beginning a turn while Fleeing and not in a Zone of Control triggers a [Rally|Concept.Rally]\n\n" +
+		"- Beginning a [turn|Concept.Turn] while [Fleeing|Skill+hd_dummy_morale_state_fleeing] and not in a [Zone of Control|Concept.ZoneOfControl] triggers a [Rally|Concept.Rally]\n\n" +
 		"Typical negative checks:\n" +
 		"- Seeing an ally killed\n" +
 		"- Seeing an ally flee\n" +
@@ -100,8 +100,8 @@
 	)),
 	Rally = ::MSU.Class.BasicTooltip("Rally", ::Reforged.Mod.Tooltips.parseString(
 		"Rallying is a type of positive [Morale Check|Concept.Morale] that can only occur on a character who is currently [fleeing|Skill+hd_dummy_morale_state_fleeing]\n\n" +
-		"A successful rally immediately raises the character's morale to [wavering|Skill+hd_dummy_morale_state_wavering] but removes " + ::MSU.Text.colorNegative(::Math.abs(::Hardened.Global.ActionPointChangeOnRally)) + " [Action Points|Concept.ActionPoints] from them.\n\n" +
-		"Characters will automatically attempt to rally at the start of their turn, as long as they are not engaged in melee combat."
+		"A successful rally immediately raises the character's [Morale|Concept.Morale] to [Wavering|Skill+hd_dummy_morale_state_wavering] but removes " + ::MSU.Text.colorNegative(::Math.abs(::Hardened.Global.ActionPointChangeOnRally)) + " [Action Points|Concept.ActionPoints] from them.\n\n" +
+		"Characters will automatically attempt to rally at the start of their [turn|Concept.Turn], as long as they are not engaged in melee combat."
 	)),
 	Weight = ::MSU.Class.BasicTooltip("Weight", ::Reforged.Mod.Tooltips.parseString(
 		"Each equippable item can have a weight value, which determines how much it impacts a character\'s performance.\n\n" +

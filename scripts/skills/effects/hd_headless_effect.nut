@@ -61,7 +61,7 @@ this.hd_headless_effect <- ::inherit("scripts/skills/skill", {
 			id = 11,
 			type = "text",
 			icon = "ui/icons/chance_to_hit_head.png",
-			text = "Lose no hitpoints from damage sources targeting the head",
+			text = ::Reforged.Mod.Tooltips.parseString("Lose no [Hitpoints|Concept.Hitpoints] from damage sources targeting the head"),
 		});
 
 		tooltip.push({

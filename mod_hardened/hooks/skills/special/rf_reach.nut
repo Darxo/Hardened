@@ -8,7 +8,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Description = ::Reforged.Mod.Tooltips.parseString("Reach is a depiction of how far a character\'s attacks can reach, making melee combat easier against targets with shorter reach.\n\nGain " + ::MSU.Text.colorizeMultWithText(::Reforged.Reach.ReachAdvantageMult) + " [Melee skill|Concept.MeleeSkill] when attacking someone with shorter reach. Characters who are [stunned|Skill+stunned_effect], fleeing, or without a melee attack have no Reach.");
+		this.m.Description = ::Reforged.Mod.Tooltips.parseString("Reach is a depiction of how far a character\'s attacks can reach, making melee combat easier against targets with shorter reach.\n\nGain " + ::MSU.Text.colorizeMultWithText(::Reforged.Reach.ReachAdvantageMult) + " [Melee skill|Concept.MeleeSkill] when attacking someone with shorter reach. Characters who are [stunned|Skill+stunned_effect], [fleeing|Skill+hd_dummy_morale_state_fleeing], or without a melee attack have no Reach.");
 	}
 
 	q.getTooltip = @(__original) function()
@@ -25,7 +25,7 @@
 					id = 11,
 					type = "text",
 					icon = "ui/icons/melee_skill.png",
-					text = ::Reforged.Mod.Tooltips.parseString("Reach Advantage grants " + ::MSU.Text.colorizeMultWithText(properties.getReachAdvantageMult()) + " [Melee Skill|Concept.MeleeSkill]"),
+					text = ::Reforged.Mod.Tooltips.parseString("[Reach Advantage|Concept.ReachAdvantage] grants " + ::MSU.Text.colorizeMultWithText(properties.getReachAdvantageMult()) + " [Melee Skill|Concept.MeleeSkill]"),
 				});
 			}
 		}
@@ -81,7 +81,7 @@
 		{
 			_tooltip.push({
 				icon = approximateBonus > 0 ? "ui/tooltips/positive.png" : "ui/tooltips/negative.png",
-				text = ::MSU.Text.colorizeValue(approximateBonus, {AddPercent = true}) + " Reach Advantage"
+				text = ::MSU.Text.colorizeValue(approximateBonus, {AddPercent = true}) + ::Reforged.Mod.Tooltips.parseString(" [Reach Advantage|Concept.ReachAdvantage]"),
 			});
 		}
 	}

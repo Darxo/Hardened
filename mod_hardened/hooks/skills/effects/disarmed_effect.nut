@@ -2,7 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Description = "This characters weapon has been temporarily pulled out of their hand. Switching to a different weapon will remove this effect immediately.";
+		this.m.Description = "This characters weapon has been temporarily pulled out of their hand. Switching to a different weapon will remove this effect immediately. Does not work on [headless|Skill+hd_headless_effect] characters";
 
 		this.m.HD_LastsForTurns = 1;
 	}
