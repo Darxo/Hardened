@@ -15,7 +15,7 @@
 			if (entry.id == 12)
 			{
 				// Adjust line breaker link and remove mention of discount
-				entry.text = ::Reforged.Mod.Tooltips.parseString("Gain one use of the [Linebreaker|Skill+hd_onslaught_line_breaker_skill] skill");
+				entry.text = ::Reforged.Mod.Tooltips.parseString("Gain one use of the [Line Breaker|Skill+hd_onslaught_line_breaker_skill] skill");
 				break;
 			}
 		}

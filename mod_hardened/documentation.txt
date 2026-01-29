@@ -28,6 +28,12 @@
 
 # Changelog
 
+1.8.2
+	- Add many nested tooltips in various concepts and effect descriptions
+	- Slightly improve several mod setting descriptions
+	- Shorten tooltip in **Blacksmith Retinue**
+	- Fix freeze in battles against enemies with **Exploit Opening**
+
 1.8.1
 	- Whenever you preview a movement during combat, highlight adjacent enemies, who would get a zone of control attack against you, with a brief red blinking
 	- Mention in the perk description of **Warden** that it does not work, while fleeing
