@@ -12,7 +12,15 @@
 		{
 			this.spawnIcon(this.m.Overlay, this.getContainer().getActor().getTile());
 		}
+
+		// Reforged Fix: Hide tooltips about mitigating damage, when the actor is not visible to the player
+		local oldlogEx = ::Tactical.EventLog.get().logEx;
+		if (this.getContainer().getActor().isHiddenToPlayer())
+		{
+			::Tactical.EventLog.get().logEx = function(_text) {};
+		}
 		__original(_attacker, _damageHitpoints, _damageArmor);
+		::Tactical.EventLog.get().logEx = oldlogEx;
 	}
 
 // Hardened Events
@@ -38,15 +46,17 @@
 		this.m.UsesRemaining = ::Math.max(0, this.m.UsesRemaining - 1);
 
 		local actor = this.getContainer().getActor();
-		this.spawnIcon(this.m.Overlay, actor.getTile());
-
-		if (_attacker == null)	// This can for example happen when this character receives a mortar attack.
+		if (!actor.isHiddenToPlayer())
 		{
-			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(actor) + " anticipated an attack on their shield, reducing incoming damage by " + ::MSU.Text.colorPositive(this.m.TempDamageReduction + "%"));
-		}
-		else
-		{
-			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(actor) + " anticipated the attack of " + ::Const.UI.getColorizedEntityName(_attacker) + " on their shield, reducing incoming damage by " + ::MSU.Text.colorPositive(this.m.TempDamageReduction + "%"));
+			this.spawnIcon(this.m.Overlay, actor.getTile());
+			if (_attacker == null)	// This can for example happen when this character receives a mortar attack.
+			{
+				::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(actor) + " anticipated an attack on their shield, reducing incoming damage by " + ::MSU.Text.colorPositive(this.m.TempDamageReduction + "%"));
+			}
+			else
+			{
+				::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(actor) + " anticipated the attack of " + ::Const.UI.getColorizedEntityName(_attacker) + " on their shield, reducing incoming damage by " + ::MSU.Text.colorPositive(this.m.TempDamageReduction + "%"));
+			}
 		}
 		actor.setDirty(true);
 	}
