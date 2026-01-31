@@ -483,7 +483,7 @@
 		if (!this.isPlayerControlled() && !this.isAlliedWithPlayer())
 		{
 			// Feat: When any hostile character is discovered, then the actual combat music starts playing
-			::Tactical.State.RF_playActualTrackList();
+			::Tactical.State.HD_playActualTrackList();
 		}
 
 		// Feat: stop player movement midway, when he discovers an enemy/ally

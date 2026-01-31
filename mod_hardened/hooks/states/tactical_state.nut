@@ -4,7 +4,8 @@
 	q.m.HD_NeutralCombatTracks <- ["music/hd_silent_music.ogg"];	// Playlist of songs that are played at the start of battle, while you haven't discovered any enemy yet
 
 	// Private
-	q.m.HD_IsPlayingRealCombatMusic <- false;
+	q.m.HD_HasDiscoveredEnemy <- false;
+	q.m.HD_IsHidingMusic <- false;
 
 	q.computeEntityPath = @(__original) function( _activeEntity, _mouseEvent )
 	{
@@ -94,10 +95,22 @@
 	{
 		__original();
 
-		// Feat: Combat Music no longer plays right from the start in order to not spoil the enemy type you are up against
-		// We overwrite the vanilla setTrackList call by calling it again with our neutral track list
-		::Music.setTrackList(this.m.HD_NeutralCombatTracks, ::Const.Sound.CrossFadeTime);
-		this.m.HD_IsPlayingRealCombatMusic = false;
+		// Discovering enemies you see during the first round happens before `onShow`, so we return early in that case
+		if (this.m.HD_HasDiscoveredEnemy) return;
+
+		foreach (party in ::Tactical.State.getStrategicProperties().Parties)
+		{
+			if (party.isAlliedWithPlayer()) continue;
+			if (!party.isLocation()) continue;
+			if (party.isShowingDefenders()) continue;
+
+			// Feat: Combat Music no longer plays right from the start, when fighting locations which hide their defender
+			// 	Instead the music will start later, when you discover the first enemy
+			// We overwrite the vanilla setTrackList call by calling it again with our neutral track list
+			::Music.setTrackList(this.m.HD_NeutralCombatTracks, 1000);
+			this.m.HD_IsHidingMusic = true;
+			break;
+		}
 	}}.onShow;
 
 	q.tactical_retreat_screen_onYesPressed = @(__original) function()
@@ -222,10 +235,13 @@
 
 // New Functions
 	// Enable combat music, similar to how Vanilla does it in the onShow function
-	q.RF_playActualTrackList <- function()
+	q.HD_playActualTrackList <- function()
 	{
-		if (this.m.HD_IsPlayingRealCombatMusic) return;
-		this.m.HD_IsPlayingRealCombatMusic = true;
+		// Currently we only trigger this function, when discovering non-player controlled enemies; that's why we can flip this variable here
+		this.m.HD_HasDiscoveredEnemy = true;
+
+		if (!this.m.HD_IsHidingMusic) return;
+		this.m.HD_IsHidingMusic = true;
 
 		if (this.m.Scenario != null)
 		{
