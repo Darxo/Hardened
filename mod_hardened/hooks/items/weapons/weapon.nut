@@ -18,6 +18,11 @@
 				// Improve wording and add Hyperlink for Armor Penetration
 				entry.text = ::MSU.String.replace(entry.text, "of damage ignores armor", ::Reforged.Mod.Tooltips.parseString("[Armor Penetration|Concept.ArmorPenetration]"));
 			}
+			else if (entry.id == 9 && entry.icon == "ui/icons/chance_to_hit_head.png")
+			{
+				// Vanilla does not show the maximum ammunition. We now also color the remaining ammunition in the negative color if it is 0
+				entry.text =  ::Reforged.Mod.Tooltips.parseString("[Chance to hit head|Concept.ChanceToHitHead]: ") + ::MSU.Text.colorizeValue(this.m.ChanceToHitHead, {AddSign = true, AddPercent = true});
+			}
 			else if (entry.id == 10 && entry.icon == "ui/icons/ammo.png")
 			{
 				// Vanilla does not show the maximum ammunition. We now also color the remaining ammunition in the negative color if it is 0
