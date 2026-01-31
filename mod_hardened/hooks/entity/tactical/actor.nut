@@ -119,6 +119,8 @@
 
 	q.onDamageReceived = @(__original) function( _attacker, _skill, _hitInfo )
 	{
+		if (this.isHiddenToPlayer()) return __original(_attacker, _skill, _hitInfo);
+
 		// Feat: we display the hitpoints of before the damage impact in the combat log
 		// We switcheroo the values of the BodyPartNames to also include the current Hitpoints,
 		// so that vanilla displays them in the in the logs that are printed during this function call
