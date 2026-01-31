@@ -229,17 +229,17 @@
 
 		if (this.m.Scenario != null)
 		{
-			::Music.setTrackList(this.m.Scenario.getMusic(), ::Const.Sound.CrossFadeTime);
+			::Music.setTrackList(this.m.Scenario.getMusic(), 100);
 		}
 		else
 		{
 			if (this.m.StrategicProperties != null)
 			{
-				::Music.setTrackList(this.m.StrategicProperties.Music, ::Const.Music.CrossFadeTime);
+				::Music.setTrackList(this.m.StrategicProperties.Music, 100);
 			}
 			else
 			{
-				::Music.setTrackList(::Const.Music.BattleTracks[this.m.Factions.getHostileFactionWithMostInstances()], ::Const.Music.CrossFadeTime);
+				::Music.setTrackList(::Const.Music.BattleTracks[this.m.Factions.getHostileFactionWithMostInstances()], 100);
 			}
 		}
 	}
