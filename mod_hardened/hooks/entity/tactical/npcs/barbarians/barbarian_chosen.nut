@@ -87,14 +87,15 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_survival_instinct"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_adrenalin"));
 
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_survival_instinct"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_feral_rage"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_family_pride"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_exude_confidence"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vigorous_assault"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_formidable_approach"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_berserk"));
-
-		this.getSkills().add(::new("scripts/skills/perks/perk_battle_forged"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_menacing"));
 
 		// Generic Actives
