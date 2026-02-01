@@ -919,7 +919,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Swamp** tiles no longer reduce Melee Skill by 25%. Instead they now reduce Initiative by 25%
 - The **Hidden** effect (granted by certain tiles) now also provides +10 Ranged Defense and it lists enemies that you are currently revealed to
 - Change XPValue of Player Characters to scale faster from regular levels and slower from veteran levels (past 11). This is mainly relevant for morale checks from movement and from a kill/death
-- Delay the combat music until the first enemy is discovered
+- Delay the combat music, when attacking locations that hide their defender line up, until the first enemy is discovered
 - Characters can no longer retreat from the battle when standing on a border tile, if they are engaged in melee
 - Fleeing characters who rally, lose 3 Action Points
 - Fleeing characters now have +1 Action Point
@@ -1287,6 +1287,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
 - Every accessory now plays a default sound when moved around in the inventory
 - Roads will no longer be generated directly on the map border
+- Fix Armor Damage combat logs being generated for non-visible actors
 - Change the inventory icon of the **Witchhunter's Hat** to look exactly like the sprite on the brother
 - Characters under berserker mushroom effect no longer yell when they use ranged attacks
 - Prevent the same random human name (e.g. for Leader or Knight) to be generated in succession
@@ -1307,6 +1308,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix **Line Breaker** granted by **Onslaught** being usable multiple times
 - Fix crash when trying to sling the same type of pot multiple times with the same character
 - Change the icon of **Sapling Harvest** to that of the sapling overlay icon
+- Fix **Anticipation** producing combat logs when the actor is not visible
 
 ### Dynamic Spawns
 

@@ -28,6 +28,18 @@
 
 # Changelog
 
+1.8.3
+	- Combat Music is now only delayed, when fighting a location which is currently hiding its defenders on the world map
+	- Restrict **Full Force** camera shock to 6+ Action Points spent
+	- Add nested tooltip for headshot chance on weapon items
+	- Shorten duration after which the combat music starts playing when discovering an enemy
+	- Fix **Barbarian Chosen** having the perks from **Barbarian King**
+	- Fix **Barbarian King** having the perks from **Barbarian Chosen**
+	- Fix(Vanilla) Armor Damage combat logs being generated for non-visible actors
+	- Fix **Anticipation** producing combat logs when the actor is not visible
+	- Fix killing blows producing combat logs when the actor is not visible
+	- Fix combat music sometimes not starting correctly during combat
+
 1.8.2
 	- Add many nested tooltips in various concepts and effect descriptions
 	- Slightly improve several mod setting descriptions
