@@ -241,7 +241,7 @@
 		this.m.HD_HasDiscoveredEnemy = true;
 
 		if (!this.m.HD_IsHidingMusic) return;
-		this.m.HD_IsHidingMusic = true;
+		this.m.HD_IsHidingMusic = false;
 
 		if (this.m.Scenario != null)
 		{
