@@ -28,6 +28,10 @@
 
 # Changelog
 
+1.8.4
+	- Fix combat music resetting whenever a new enemy is discovered
+	- Fix broken nested tooltip in sanguine curse effect
+
 1.8.3
 	- Combat Music is now only delayed, when fighting a location which is currently hiding its defenders on the world map
 	- Restrict **Full Force** camera shock to 6+ Action Points spent
