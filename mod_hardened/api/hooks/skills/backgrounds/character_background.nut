@@ -1,4 +1,4 @@
-::Hardened.HooksMod.hookTree("scripts/skills/backgrounds/character_background", function(q) {
+::Hardened.HooksMod.hook("scripts/skills/backgrounds/character_background", function(q) {
 	// Public
 	q.m.CostMultPerRegularLevel <- 1.1;		// Every Regular Level above 1 increases this characaters wage by this amount multiplicatively
 	q.m.CostMultPerVeteranLevel <- 1.03;	// Every Veteran Level above 1 increases this characaters wage by this amount multiplicatively
