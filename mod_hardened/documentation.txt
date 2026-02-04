@@ -28,6 +28,10 @@
 
 # Changelog
 
+1.8.5
+	- Display terrain type name and day/night status in the subtitle of combat dialog
+	- Fix background effects not working correctly (e.g. Headshot Chance or Experience multipliers)
+
 1.8.4
 	- Fix combat music resetting whenever a new enemy is discovered
 	- Fix broken nested tooltip in sanguine curse effect

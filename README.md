@@ -1151,6 +1151,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add Setting (on) for displaying and adjusting a Waypoint that indicates, where your character on the world map is currently moving to
 - Settlements now display a tooltip showing how many days ago you last visited that location
 - The Tavern now displays to you how many rumors you received so far
+- Display terrain type name and day/night status in the subtitle of combat dialog
 - Display Noble Faction Banner in the tooltip of Mercenary Parties
 - Add Setting (on) for displaying forbidden destination ports (e.g. when they are hostile to you or the origin port)
 - Add setting (off) for skipping the confirmation dialog when dismissing a freshly hired recruit (0 days with the company)
