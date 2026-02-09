@@ -22,7 +22,7 @@
 				id = 12,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Negative [status effects|Concept.StatusEffect] last " + ::MSU.Text.colorizeValue(this.m.HD_NegativeStatusEffectDurationModifier, {InvertColor = true, AddSign = true}) + " [turn(s)|Concept.Turn]"),
+				text = ::Reforged.Mod.Tooltips.parseString("Negative [status effects|Concept.StatusEffect] on you last " + ::MSU.Text.colorizeValue(this.m.HD_NegativeStatusEffectDurationModifier, {InvertColor = true, AddSign = true}) + " [turn(s)|Concept.Turn] (to a minimum of 1)"),
 			});
 		}
 

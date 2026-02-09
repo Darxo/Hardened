@@ -21,7 +21,7 @@ this.hd_hexe_racial <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/sturdiness.png",
-				text = "Negative status effect with a finite duration last " + ::MSU.Text.colorizeValue(this.m.NegativeStatusEffectDurationModifier, {AddSign = true, InvertColor = true}) + ::Reforged.Mod.Tooltips.parseString(" [Turn|Concept.Turn]"),
+				text = ::Reforged.Mod.Tooltips.parseString("Negative [status effects|Concept.StatusEffect] on you last " + ::MSU.Text.colorizeValue(this.m.NegativeStatusEffectDurationModifier, {AddSign = true, InvertColor = true}) + " [turn(s)|Concept.Turn] (to a minimum of 1)"),
 			});
 		}
 
