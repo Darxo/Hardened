@@ -15,10 +15,10 @@
 			},
 			DynamicDefs = {
 				UnitBlocks = [
-					{ BaseID = "UnitBlock.RF.SouthernFrontline", RatioMin = 0.15, RatioMax = 1.00, DeterminesFigure = false },
-					{ BaseID = "UnitBlock.RF.SouthernBackline", RatioMin = 0.10, RatioMax = 0.40, DeterminesFigure = false },
-					{ BaseID = "UnitBlock.RF.Officer", HardMax = 1, PartySizeMin = 10, ExclusionChance = 0.7, DeterminesFigure = false },
-					{ BaseID = "UnitBlock.RF.SouthernCaravanDonkey", RatioMin = 0.01, RatioMax = 0.12, PartySizeMin = 12 },	// Vanilla: Second starts spawning at 14, then 16+
+					{ BaseID = "UnitBlock.RF.SouthernCaravanDonkey", RatioMin = 0.10, RatioMax = 0.20, PartySizeMin = 8, HardMax = 2 },	// Vanilla: Second Donkey starts spawning at 7+.  Max 3 Donkies in vanilla parties.
+					{ BaseID = "UnitBlock.CP.CaravanHandSouthern", RatioMin = 0.10, RatioMax = 0.20, DeterminesFigure = false },
+					{ BaseID = "UnitBlock.CP.CaravanGuardSouthern", RatioMin = 0.20, RatioMax = 1.00, DeterminesFigure = false },
+					{ BaseID = "UnitBlock.RF.SouthernBackline", PartySizeMin = 10, RatioMin = 0.10, RatioMax = 0.30, ExclusionChance = 0.4, DeterminesFigure = false },
 
 					// Flex-Block: Only one of these can appear at the same time, as decided by our excludeSpawnables hook
 					{ BaseID = "UnitBlock.RF.Slave", HardMin = 2, RatioMax = 0.25, DeterminesFigure = false },
