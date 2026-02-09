@@ -23,43 +23,42 @@
 			break;
 		}
 	}
+
+	local caravanParty = ::DynamicSpawns.Public.getParty("Caravan");
+	caravanParty.filter(function(_item, _weight) {
+		if (_item.ID == "Caravan_0")
+		{
+			foreach (unitBlock in _item.DynamicDefs.UnitBlocks)
+			{
+				if (unitBlock.BaseID == "UnitBlock.RF.CaravanDonkey")
+				{
+					unitBlock.RatioMin = 0.15;		// Reforged: 0.17
+					unitBlock.RatioMax = 0.25;		// Reforged: 0.2
+				}
+				else if (unitBlock.BaseID == "UnitBlock.RF.CaravanHand")
+				{
+					unitBlock.RatioMin = 0.1;		// Reforged: 0.35
+					unitBlock.RatioMax = 0.20;		// Reforged: 0.8
+				}
+				else if (unitBlock.BaseID == "UnitBlock.RF.CaravanGuard")
+				{
+					unitBlock.RatioMin = 0.2;		// Reforged: 0.15
+					unitBlock.RatioMax = 1.0;		// Reforged: 0.55
+				}
+			}
+			_item.generateIdealSize <- function()
+			{
+				return 6;	// Caravans want to be small and not dynamically larger depending on player party
+			}
+		}
+		else if (_item.ID == "Caravan_1")
+		{
+			// We set the weight of the second caravan variant to 0, as we never want it to appear
+			caravanParty.setWeight(_item, 0);		// Reforged: 1
+		}
+	});
 }
 
 // Overwriting
 {
-	local parties = [
-		{
-			// Overwrite, because we
-			//	- remove the rare variant with high hardmin and forced mercenary spawns
-			//	- greatly reduce maximum number of caravan hands
-			ID = "Caravan",
-			HardMin = 4,
-			DefaultFigure = "cart_02",
-			MovementSpeedMult = 0.5,
-			VisibilityMult = 1.0,
-			VisionMult = 0.25,
-			StaticDefs = {
-				Units = [
-					{ BaseID = "Unit.RF.CaravanDonkey" },
-				],
-			},
-			DynamicDefs = {
-				UnitBlocks = [
-					{ BaseID = "UnitBlock.RF.CaravanDonkey", RatioMin = 0.15, RatioMax = 0.25, PartySizeMin = 6, HardMax = 2 },	// Vanilla: Second Donkey starts spawning at 7+.  Max 3 Donkies in vanilla parties.
-					{ BaseID = "UnitBlock.RF.CaravanHand", RatioMin = 0.10, RatioMax = 0.20, DeterminesFigure = false },
-					{ BaseID = "UnitBlock.RF.CaravanGuard", RatioMin = 0.20, RatioMax = 1.00, DeterminesFigure = false },
-				],
-			},
-
-			function generateIdealSize()
-			{
-				return 6;	// Caravans want to be small and not dynamically larger depending on player party
-			}
-		},
-	];
-
-	foreach(partyDef in parties)
-	{
-		::DynamicSpawns.Public.registerParty(partyDef);
-	}
 }
