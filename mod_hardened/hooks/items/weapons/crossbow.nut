@@ -5,6 +5,8 @@
 
 		// We replace the vanilla crossbow with a version that's 25% larger to make it easier to differentiate from light crossbows
 		this.m.ArmamentIcon = "icon_HD_crossbow_01";	// Vanilla: icon_crossbow_01
+
+		this.m.ArmorDamageMult = 0.5;	// Vanilla: 0.7
 	}
 
 	q.addSkill = @(__original) { function addSkill( _skill )

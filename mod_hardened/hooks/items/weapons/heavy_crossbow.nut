@@ -3,6 +3,8 @@
 	{
 		__original();
 		this.m.FatigueOnSkillUse = 2;	// In Vanilla this is 0
+
+		this.m.ArmorDamageMult = 0.5;	// Vanilla: 0.75
 	}
 
 	q.addSkill = @(__original) { function addSkill( _skill )
