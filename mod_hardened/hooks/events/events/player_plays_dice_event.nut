@@ -1,9 +1,15 @@
 ::Hardened.HooksMod.hook("scripts/events/events/player_plays_dice_event", function(q) {
-	q.onUpdateScore = @(__original) function()
+	q.create = @(__original) function()
 	{
 		__original();
 
 		this.m.Cooldown = 21.0 * ::World.getTime().SecondsPerDay;	// Vanilla: 14 Days
+	}
+
+	q.onUpdateScore = @(__original) function()
+	{
+		__original();
+
 		this.m.Score /= 2;	// Vanilla: 10 Score per valid background, we half that chance
 	}
 });

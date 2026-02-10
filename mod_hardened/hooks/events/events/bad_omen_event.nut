@@ -1,5 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/events/events/bad_omen_event", function(q) {
-	q.onUpdateScore = @(__original) function()
+	q.create = @(__original) function()
 	{
 		__original();
 
