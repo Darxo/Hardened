@@ -4,5 +4,7 @@
 		__original();
 		this.m.StaminaModifier = -8;	// In Vanilla this is -6
 		this.m.FatigueOnSkillUse = 2;	// In Vanilla this is 0
+
+		this.m.ArmorDamageMult = 0.5;	// Vanilla: 0.6
 	}
 });

@@ -8,5 +8,7 @@
 		// this.m.RegularDamage = 30;		// Vanilla: 30
 		this.m.RegularDamageMax = 45;	// Vanilla: 50
 		this.m.AdditionalAccuracy = 0;	// Vanilla: -10
+
+		this.m.ArmorDamageMult = 0.5;	// Vanilla: 0.5
 	}
 });

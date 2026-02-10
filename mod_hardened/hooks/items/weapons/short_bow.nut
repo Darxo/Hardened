@@ -7,5 +7,7 @@
 		this.m.RangeMax = 6;			// Vanilla: 7
 		this.m.RegularDamage = 35;		// Vanilla: 30
 		// this.m.RegularDamageMax = 50;	// Vanilla: 50
+
+		this.m.ArmorDamageMult = 0.5;	// Vanilla: 0.5
 	}
 });
