@@ -1,4 +1,13 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/tactical_entity_manager", function(q) {
+	q.makeAllHostilesRetreat = @(__original) function()
+	{
+		// Vanilla Fix: Kill enemy non-combatants, when you end the battle early
+		// In Vanilla non-combatants will are not killed in this case and instead "flee", causing caravan donkey to grant no meat
+		this.killNonCombatants();
+
+		__original();
+	}
+
 	q.spawn = @(__original) function( _properties )
 	{
 		__original(_properties);
