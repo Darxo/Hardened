@@ -15,4 +15,10 @@
 		else
 			return null;
 	}
+
+// New Events
+	// This Event is triggered after this ammo item has been used to reload an item
+	q.HD_onReload <- function( _reloadedItem )
+	{
+	}
 });

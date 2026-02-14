@@ -135,6 +135,13 @@ Features:
 
 		this.HD_consumeAmmo(_shotsToReload);
 		this.HD_loadWeapon(_shotsToReload);
+
+		local ammoItem = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Ammo);
+		if (ammoItem != null)
+		{
+			ammoItem.HD_onReload(this);
+		}
+
 		return true;
 	}
 
