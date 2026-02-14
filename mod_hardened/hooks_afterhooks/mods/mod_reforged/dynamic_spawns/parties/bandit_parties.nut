@@ -1,4 +1,3 @@
-
 // Hooking
 {
 	local banditBanditScouts = ::DynamicSpawns.Public.getParty("BanditScouts");
@@ -24,6 +23,11 @@
 			unitBlock.RatioMax = 0.1	// Reforged: 0.11
 			break;
 		}
+		else if (unitBlock.BaseID == "UnitBlock.RF.BanditElite")
+		{
+			unitBlock.RatioMax = 0.15;	// Reforged: 0.1
+			unitBlock.StartingResourceMin = 400;	// Reforged: 320
+		}
 	}
 
 	local banditDefenderParty = ::DynamicSpawns.Public.getParty("BanditDefenders");
@@ -39,6 +43,11 @@
 		else if (unitBlock.BaseID == "UnitBlock.RF.BanditRanged")
 		{
 			unitBlock.RatioMax = 0.35;	// Reforged: 0.4
+		}
+		else if (unitBlock.BaseID == "UnitBlock.RF.BanditElite")
+		{
+			unitBlock.RatioMax = 0.15;	// Reforged: 0.1
+			unitBlock.StartingResourceMin <- 400;
 		}
 	}
 	// We make sure, that every camp only contains either Fast or Tough Bandits
