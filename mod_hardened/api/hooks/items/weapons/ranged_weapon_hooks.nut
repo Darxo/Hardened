@@ -30,6 +30,7 @@ Features:
 	// Private
 	q.m.IsLoaded <- false;	// We still support this vanilla variable as some vanilla logic uses it so we put it into the weapon base class
 	q.m.HD_LoadedShots <- 0;			// how many shots are currently loaded into this weapon
+	q.m.HD_UsedAmmoItem <- null;		// Reference to the last Ammo-Item was used to reload this item
 
 // New Getter Setter
 	q.HD_getAmmoType <- function()
@@ -137,6 +138,7 @@ Features:
 		this.HD_loadWeapon(_shotsToReload);
 
 		local ammoItem = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Ammo);
+		this.m.HD_UsedAmmoItem = ammoItem;	// We dont mind, if this contains null
 		if (ammoItem != null)
 		{
 			ammoItem.HD_onReload(this);
@@ -291,6 +293,7 @@ Features:
 		}
 
 		this.HD_unloadShotsToAmmoSupply();
+		this.m.HD_UsedAmmoItem = null;
 	}
 
 	// We do this as a hookTree because some weapon implementations of this function might not call the base functions
