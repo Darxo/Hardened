@@ -214,7 +214,9 @@ Features:
 
 		if (("Assets" in ::World) && ::World.Assets != null)	// In Scenarios this might not be instantiated
 		{
-			::World.Assets.addAmmo(unloadedShots * this.HD_getLoadedShotsCost());
+			local ammoCost = this.m.HD_UsedAmmoItem == null ? 1 : this.m.HD_UsedAmmoItem.getAmmoCost();
+			local recoveredAmmoSupply = unloadedShots * this.HD_getLoadedShotsCost() * ammoCost;
+			::World.Assets.addAmmo(recoveredAmmoSupply);
 		}
 	}
 });
