@@ -6,6 +6,9 @@
 	// Public
 	q.m.DamageReceivedTotalMult <- 0.75;
 
+	// Private
+	q.m.HD_TriggerEffectOnFinish <- false;	// If set to true during movement steps, then on finishing the movement, this perks effect is triggered
+
 	q.create = @(__original) function()
 	{
 		__original();
@@ -67,14 +70,17 @@
 		_properties.IsImmuneToKnockBackAndGrab = true;
 	}
 
+
 	q.onMovementFinished <- function()
 	{
-		local tile = this.getContainer().getActor().getTile();
-		if (!this.m.IsInEffect && this.isTileValid(tile))
+		local myTile = this.getContainer().getActor().getTile();
+		if (this.m.HD_TriggerEffectOnFinish || this.HD_willTriggerVanquisher(myTile))
 		{
 			this.m.IsInEffect = true;
-			this.spawnIcon("perk_rf_vanquisher", tile);
+			this.spawnIcon("perk_rf_vanquisher", myTile);
 		}
+
+		this.m.HD_TriggerEffectOnFinish = false;
 	}
 
 	q.onTurnStart <- function()
@@ -89,6 +95,16 @@
 	}
 
 // MSU Functions
+	q.onMovementStep = @() function( _tile, _levelDifference )
+	{
+		// We don't count fresh corpses that are blocked by allies/objects we pass over
+		if (_tile.IsEmpty && this.HD_willTriggerVanquisher(_tile))
+		{
+			// We can't trigger the effect at this point, because
+			this.m.HD_TriggerEffectOnFinish = true;
+		}
+	}
+
 	q.onQueryTileTooltip <- function( _tile, _tooltip )
 	{
 		if (this.isTileValid(_tile))
@@ -103,6 +119,15 @@
 	}
 
 // New Functions
+	// Return true, if _tile is valid to trigger this perks effect
+	q.HD_willTriggerVanquisher <- function( _tile )
+	{
+		if (this.m.IsInEffect) return false;
+		if (!this.isTileValid(_tile)) return false;
+
+		return true;
+	}
+
 	q.isTileValid <- function( _tile )
 	{
 		if (_tile.IsCorpseSpawned && _tile.Properties.has("Corpse"))
