@@ -1,10 +1,17 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_inspiring_presence", function(q) {
 	q.m.BonusActionPoints <- 3;		// This many Action Points are given to adjacent allies
+	q.m.HD_BraveryMult <- 0.9;
 
 	// Overwrite, because we no longer show a status effect or mini icon for this perk, as it is practically always enabled
 	q.isHidden = @() function()
 	{
 		return true;	// There is no more additional conditional info to be presented, that's not already on the perk
+	}
+
+	q.onUpdate = @(__original) function( _properties )
+	{
+		__original(_properties);
+		_properties.BraveryMult *= this.m.HD_BraveryMult;
 	}
 
 	q.onNewRound = @(__original) function()

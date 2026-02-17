@@ -215,8 +215,9 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
+					"Have " + ::MSU.Text.colorNegative("10%") + " less [Resolve|Concept.Bravery]",
 					"At the start of each [round|Concept.Round] every adjacent ally from your company, with less [Resolve|Concept.Bravery] than you, gains " + ::MSU.Text.colorPositive("+3") + " [Action Points|Concept.ActionPoints] if they are adjacent to an enemy",
-					"Does not affect [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing] allies. Every character can only be [inspired|Skill+hd_inspiring_presence_buff_effect] once per [round|Concept.Round]"
+					"Does not affect [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing] allies. Every character can only be [inspired|Skill+hd_inspiring_presence_buff_effect] once per [round|Concept.Round]",
 				],
 			}],
 		}),
