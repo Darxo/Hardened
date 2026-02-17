@@ -24,6 +24,19 @@
 		return ret
 	}
 
+	q.getProduce = @(__original) function()
+	{
+		local ret = __original();
+
+		// Feat: Any settlement that currently has no produce, will instead transport money in their caravans
+		if (ret.len() == 0)
+		{
+			ret.push("supplies/money_item");
+		}
+
+		return ret;
+	}
+
 	q.onEnter = @(__original) function()
 	{
 		this.m.LastVisited = ::World.getTime().Days;
