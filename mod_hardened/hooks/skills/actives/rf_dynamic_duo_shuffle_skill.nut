@@ -2,8 +2,8 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.ActionPointCost = 0;
-		this.m.FatigueCost = 0;
+		this.m.ActionPointCost = 0;		// Reforged: 1
+		this.m.FatigueCost = 5;			// Reforged: 2
 	}
 
 	q.getTooltip = @(__original) function()
