@@ -6,7 +6,9 @@
 		local mockObject = ::Hardened.mockFunction(::Math, "min", function( _a, _b ) {
 			if (_a == 330 && _b == 150 + ::World.getTime().Days)
 			{
-				local newResources = 150 * ::Hardened.Global.getWorldDifficultyMult() * ::Hardened.Global.FactionDifficulty.Mercenaries;
+				// We now have mercenaries start with 180 Base Resources (up from 150) at day 1, so that they scale a bit faster
+				// This doesnt make them harder in the early game because their party has a HardMin of 6 anyways
+				local newResources = 180 * ::Hardened.Global.getWorldDifficultyMult() * ::Hardened.Global.FactionDifficulty.Mercenaries;
 				return { done = true, value = newResources };
 			}
 		});
