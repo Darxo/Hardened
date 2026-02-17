@@ -3,6 +3,9 @@
 	{
 		__original();
 		this.m.IsDroppedAsLoot = true;
+
+		// We default the value and amount to 200, so that this item can now be used as produce for caravans
+		this.setAmount(200);
 	}
 
 	q.onAddedToStash = @(__original) function( _stashID )
