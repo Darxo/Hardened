@@ -10,6 +10,8 @@
 	// Event, that triggers only when anything calls spawnProjectileEffect targeting the tile that this non-actor object sits on
 	q.HD_onHitByProjectile <- function( _attackerTile )
 	{
+		if (this == null) return;	// This can happen, if our attack diverted to an empty tile, which briefly contained a dummy object
+
 		if (!this.getTile().IsDiscovered) return;
 
 		if (this.m.HD_BloodType != ::Const.BloodType.None)
