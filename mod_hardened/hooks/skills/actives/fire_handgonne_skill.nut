@@ -23,8 +23,11 @@
 	{
 		__original();
 
-		// Copy of how vanilla adds the reload skill duing onUse
-		this.getItem().addSkill(::new("scripts/skills/actives/reload_handgonne_skill"));
+		// Don't add skill for the dummy player to prevent duplicate reload skills
+		if (!::MSU.isEqual(this.getContainer().getActor(), ::MSU.getDummyPlayer()))
+		{
+			this.getItem().addSkill(::new("scripts/skills/actives/reload_handgonne_skill"));
+		}
 	}
 
 	// Overwrite, because there is no other way of skipping the Reforged changes without keepings its changes to other functions of this class
