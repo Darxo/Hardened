@@ -93,6 +93,7 @@
 	q.onBully <- function()
 	{
 		local actor = this.getContainer().getActor();
+		if (!actor.isHuman()) return;	// Our laugh-track is from a human only
 
 		::Sound.play(::MSU.Array.rand(this.m.SoundOnBully), ::Const.Sound.Volume.Skill, actor.getPos());
 	}
