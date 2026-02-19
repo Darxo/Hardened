@@ -324,7 +324,7 @@
 	::Const.Tactical.Actor.Ghost.Hitpoints = 1;
 	::Const.Tactical.Actor.Ghost.Bravery = 130;
 	::Const.Tactical.Actor.Ghost.Stamina = 200;
-	::Const.Tactical.Actor.Ghost.MeleeSkill = 65;
+	::Const.Tactical.Actor.Ghost.MeleeSkill = 70;		// Vanilla: 65
 	::Const.Tactical.Actor.Ghost.RangedSkill = 0;
 	::Const.Tactical.Actor.Ghost.MeleeDefense = 30;
 	::Const.Tactical.Actor.Ghost.RangedDefense = 999;
