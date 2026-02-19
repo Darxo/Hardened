@@ -31,9 +31,9 @@
 				base.excludeSpawnables();
 
 				local flexBlockPossibilities = ::MSU.Class.WeightedContainer([
-					[60, "UnitBlock.RF.Slave"],
+					[40, "UnitBlock.RF.Slave"],
 					[10, "UnitBlock.HD.Gladiators"],
-					[30, "None"],
+					[50, "None"],
 				]);
 
 				local chosenBlock = flexBlockPossibilities.roll();
