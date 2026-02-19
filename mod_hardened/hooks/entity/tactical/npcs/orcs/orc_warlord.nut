@@ -107,7 +107,6 @@
 		this.getSkills().add(::new("scripts/skills/effects/captain_effect"));
 
 		// Generic Perks
-		this.getSkills().add(::new("scripts/skills/perks/perk_berserk"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hold_out"));
 
 		this.getSkills().add(::new("scripts/skills/perks/perk_battering_ram"));
