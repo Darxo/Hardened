@@ -1386,13 +1386,21 @@ local adjustedDescriptions = [
 		Key = "RF_Rebuke",
 		Description = ::UPD.getDescription({
 			Fluff = "Show \'em how it\'s done!",
-			Effects = [{
-				Type = ::UPD.EffectType.Passive,
-				Description = [
-					"Whenever an opponent misses a Melee Attack against you while it is not your [turn|Concept.Turn], gain the [Rebuke|Skill+hd_rebuke_effect] effect until the start of your next [turn|Concept.Turn]",
-					"Requires a usable [Attack of Opportunity.|Concept.ZoneOfControl] Does not work while [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]"
-				],
-			}],
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Whenever an opponent misses a Melee Attack against you while it is not your [turn|Concept.Turn], gain the [Rebuke|Skill+hd_rebuke_effect] effect until the start of your next [turn|Concept.Turn]",
+						"Requires a usable [Attack of Opportunity.|Concept.ZoneOfControl] Does not work while [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Clarification,
+					Description = [
+						"A character will only trigger one counter attack per attack. Therefore this perk does not stack with other effects that trigger counter attacks",
+					],
+				},
+			],
 		}),
 	},
 	{

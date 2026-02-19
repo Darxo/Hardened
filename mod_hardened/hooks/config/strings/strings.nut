@@ -104,6 +104,12 @@ local newPerks = [
 						"Does not work with shields. Does not work while [disarmed|Skill+disarmed_effect], [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]",
 					],
 				},
+				{
+					Type = ::UPD.EffectType.Clarification,
+					Description = [
+						"The [Melee Defense|Concept.MeleeDefense] scales off of a [Base Attribute|Concept.BaseAttribute] and is therefore unaffected by any modifiers to that Attribute, including this perk\'s own penalty",
+					],
+				},
 			],
 		}),
 	},
