@@ -68,4 +68,9 @@
 
 		return true;
 	}
+
+	q.isHuman <- function()
+	{
+		return ::MSU.isKindOf(this, "human");
+	}
 });
