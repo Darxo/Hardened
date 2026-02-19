@@ -2,7 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Description = ::Reforged.Mod.Tooltips.parseString("Encourage an ally from your faction to raise their current [Morale.|Concept.Morale] Cannot be used on [fleeing|Concept.Morale], [steady|Concept.Morale] or [stunned|Skill+stunned_effect] allies.");
+		this.m.Description = ::Reforged.Mod.Tooltips.parseString("Encourage an ally from your faction to raise their current [Morale|Concept.Morale]. Cannot be used on [fleeing|Concept.Morale], [steady|Concept.Morale] or [stunned|Skill+stunned_effect] allies.");
 	}
 
 	q.getTooltip = @(__original) function()

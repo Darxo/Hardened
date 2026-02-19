@@ -40,7 +40,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Unlock two extra [bag slots.|Concept.BagSlots]",
+					"Unlock two extra [bag slots|Concept.BagSlots].",
 					"Items placed in [bags|Concept.BagSlots] no longer apply a penalty to [Stamina|Concept.MaximumFatigue]",
 				],
 			}],
@@ -271,7 +271,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your Attacks against anyone who has not started their [turn|Concept.Turn] yet in the current [round|Concept.Round] apply [Overwhelmed|Skill+overwhelmed_effect] for one [turn.|Concept.Turn]",
+					"Your Attacks against anyone who has not started their [turn|Concept.Turn] yet in the current [round|Concept.Round] apply [Overwhelmed|Skill+overwhelmed_effect] for one [turn|Concept.Turn].",
 					"The effect stacks with each attack, up to a maximum of 7 times, and can be applied to multiple targets at once with a single attack."
 				]
 			}]
@@ -409,7 +409,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Hammer Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue.|Concept.Fatigue]",
+						"Hammer Skills cost " + ::MSU.Text.colorPositive("25%") + " less [Fatigue|Concept.Fatigue].",
 						"[Shatter|Skill+shatter_skill] gains " + ::MSU.Text.colorPositive("+5%") + " [Hitchance|Concept.Hitchance]",
 						::MSU.Text.colorPositive("50%") + " of the Armor Damage you deal to one body part is also dealt to the other body part",
 					],
@@ -898,9 +898,9 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlock [Select Partner|Skill+rf_dynamic_duo_select_partner_skill], which allows you to choose a partner, if you don\'t already have one",
-					]
-				}
+						"Unlock [Select Partner|Skill+rf_dynamic_duo_select_partner_skill], which allows you to choose a Partner, if you don\'t already have one",
+					],
+				},
 			],
 		}),
 	},
@@ -1082,10 +1082,10 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Unlock one extra [bag slot.|Concept.BagSlots] This does not work if you have [Weapon Master|Perk+perk_rf_weapon_master]",
+						"Unlock one extra [bag slot|Concept.BagSlots]. This does not work if you have [Weapon Master|Perk+perk_rf_weapon_master]",
 						"Piercing type Throwing Attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body",
 						"Cutting type Throwing Attacks apply [Overwhelmed|Skill+overwhelmed_effect]",
-						"Headshots with Blunt type Throwing Attacks apply [Staggered.|Skill+staggered_effect] All hits with Blunt type Throwing Attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
+						"Headshots with Blunt type Throwing Attacks apply [Staggered|Skill+staggered_effect]. All hits with Blunt type Throwing Attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
 						"[Throwing Spears|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(2.0) + " damage to shields",
 					],
 				},
@@ -1391,7 +1391,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Whenever an opponent misses a Melee Attack against you while it is not your [turn|Concept.Turn], gain the [Rebuke|Skill+hd_rebuke_effect] effect until the start of your next [turn|Concept.Turn]",
-						"Requires a usable [Attack of Opportunity.|Concept.ZoneOfControl] Does not work while [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]",
+						"Requires a usable [Attack of Opportunity|Concept.ZoneOfControl]. Does not work while [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]",
 					],
 				},
 				{

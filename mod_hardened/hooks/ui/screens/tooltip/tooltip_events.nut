@@ -346,7 +346,7 @@
 						// We add an explanation about the softcap and emphasize that this stat also helps against animals and two-tile attacks
 						entry.text = ::Reforged.Mod.Tooltips.parseString(
 							"Determines the likelihood of striking an enemy's head instead of their body.\n\n" +
-							"A hit to the head deals " + ::MSU.Text.colorizeMult(::Const.CharacterProperties.DamageAgainstMult[::Const.BodyPart.Head], {AddSign = true}) + " [Critical Damage.|Concept.CriticalDamage]\n\n" +
+							"A hit to the head deals " + ::MSU.Text.colorizeMult(::Const.CharacterProperties.DamageAgainstMult[::Const.BodyPart.Head], {AddSign = true}) + " [Critical Damage|Concept.CriticalDamage].\n\n" +
 							"The default chance to hit the head is " + ::MSU.Text.colorPositive(::Const.CharacterProperties.HitChance[::Const.BodyPart.Head] + "%") + ", but this can be modified by perks or specific attacks.\n\n" +
 							"Some enemies [lack a head|Skill+hd_headless_effect], resulting in all attacks hitting the body."
 						);
