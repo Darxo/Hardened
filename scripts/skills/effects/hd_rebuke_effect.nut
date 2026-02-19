@@ -8,7 +8,7 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.hd_rebuke";
 		this.m.Name = "Rebuke";
-		this.m.Description = ::Reforged.Mod.Tooltips.parseString("This character will counter any missed melee attacks with a free melee attack. Requires a usable [Attack of Opportunity.|Concept.ZoneOfControl] Does not work while [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]");
+		this.m.Description = "Show \'em how it\'s done!";
 		this.m.Icon = "ui/perks/perk_rf_rebuke.png";
 		this.m.IconMini = "perk_rf_rebuke_mini";
 		this.m.Overlay = "perk_rf_rebuke";
@@ -20,18 +20,37 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 	{
 		local ret = this.skill.getTooltip();
 
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/stat_screen_dmg_dealt.png",	// Same Icon as Reach in Reforged
+			text = ::Reforged.Mod.Tooltips.parseString("Trigger a free melee attack on any enemy who misses a melee attack against you"),
+			children = [
+				{
+					id = 10,
+					type = "text",
+					text = ::Reforged.Mod.Tooltips.parseString("Requires a usable [Attack of Opportunity|Concept.ZoneOfControl]"),
+				},
+				{
+					id = 11,
+					type = "text",
+					text = ::Reforged.Mod.Tooltips.parseString("Does not work while [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]"),
+				},
+			],
+		});
+
 		if (this.m.DamageTotalMult != 1.0)
 		{
 			ret.push({
-				id = 10,
+				id = 11,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
-				text = ::MSU.Text.colorizeMultWithText(this.m.DamageTotalMult) + " Damage",
+				text = "Deal " + ::MSU.Text.colorizeMultWithText(this.m.DamageTotalMult) + " Damage",
 			});
 		}
 
 		ret.push({
-			id = 20,
+			id = 21,
 			type = "text",
 			icon = "ui/icons/action_points.png",
 			text = ::Reforged.Mod.Tooltips.parseString("Lasts until the start of your next [turn|Concept.Turn]"),
