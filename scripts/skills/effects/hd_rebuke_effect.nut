@@ -53,7 +53,7 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 			id = 21,
 			type = "text",
 			icon = "ui/icons/action_points.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Lasts until the start of your next [turn|Concept.Turn]"),
+			text = ::Reforged.Mod.Tooltips.parseString("Lasts until the start of your [turn|Concept.Turn]"),
 		});
 
 		return ret;
