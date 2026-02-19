@@ -126,7 +126,7 @@ q.onQueryTooltip <- function( _skill, _tooltip )
 		return this.m.ConnectedNetEffect.getContainer().getActor();
 	}
 
-	/// Check whether the net would still be locked
+	/// Check whether our equipped net would still be locked
 	/// If we realize that the net is no longer locked this function will clean it up correctly
 	/// @return true if the net is still locked or false if it is no longer locked
 	q.checkLocked <- function()

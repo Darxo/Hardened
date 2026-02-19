@@ -28,6 +28,22 @@
 
 # Changelog
 
+1.8.6
+	- **Vanquisher** now triggers when moving over empty tiles with a valid corpse on them
+	- Add clarifications to the **Parry** and **Rebuke** perk descriptions
+	- Slightly improve formatting in several tooltips
+	- Fix duplicate reload skills on crossbows and firearms
+	- Fix glitches when a character with **Bone Breaker** attacks a character with **Soul Link** or an active **Hex**
+	- Fix cooldown adjustments of the Events **Bad Omen** and **Player Plays Dice** not working consistently
+	- Fix donkeys not dying/granting meat when you choose to end a fight early
+	- Fix too few ammo supplies being returned after combat when unloading a loaded weapon, if the ammo item used to load it had a ammo cost of more than 1
+	- Fix rare error when generating city state caravans due to inconstent produces
+	- Fix error when a projectile that is hitting the cover, lands on an empty tile
+	- Fix **Bully** playing the laugh track when it appears on non-humans
+	- Add new `Clarifications` unified perk description effect type, which can be used to give additional context or clarify freqently asked questions about a perk interaction
+	- Add `actor::isHuman()` check
+	- Add `ammo::HD_onReload(_reloadedItem)` event which triggers whenever that ammo item is used to reload something
+
 1.8.5
 	- Display terrain type name and day/night status in the subtitle of combat dialog
 	- Fix background effects not working correctly (e.g. Headshot Chance or Experience multipliers)

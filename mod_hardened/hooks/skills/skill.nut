@@ -96,8 +96,6 @@
 
 	 q.MV_getDiversionTarget = @(__original) { function MV_getDiversionTarget( _user, _targetEntity, _propertiesForUse = null )
 	 {
-		// We switcheroo CombatDifficulty to be any value other than 0 in order to disable the vanilla hidden hitchance/defense bonus granted by playing on easy
-
 		local divertedTarget
 		local roll = 0;
 		local chance = 0;

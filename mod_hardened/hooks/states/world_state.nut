@@ -225,7 +225,7 @@
 		}
 		else
 		{
-			local playerPath = this.getPlayer().m.Path;
+			local playerPath = this.getPlayer().getPath();
 			local playerDestination = this.getPlayer().m.Destination;
 			if (playerPath == null && playerDestination == null)
 			{

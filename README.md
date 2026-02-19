@@ -1211,6 +1211,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Improve Goblin Poison, Spider Poison item, skill and effect tooltips
 - Display item type names for Ammunition, Accessories, Consumables, Food and Quest Items in the item tooltips
 - Improve tooltips of **Battleforged** and **Nine Lives** perks and **Chop** skill
+- Clarify in **Rebuke** perk description that it does not stack with other effects that grant counter attacks
 - Improve artwork for **Nimble** perk and remove effective hitpoint calculation from its tooltip
 - Improve artwork for **Tattered Sackcloth** item to make it stand out more from **Sackcloth**
 - Reduce scroll speed of origin selection to 0.5 (down from 5)
@@ -1323,6 +1324,9 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add new `Clarifications` unified perk description effect type, which can be used to give additional context or clarify freqently asked questions about a perk interaction
+- Add `actor::isHuman()` check
+- Add `ammo::HD_onReload(_reloadedItem)` event which triggers whenever that ammo item is used to reload something
 - Add `actor::HD_onStartFleeing` event, that is fired, whenever the morale state of that actor is changed from a different state to fleeing
 - Add `HD_ConditionMultMin` and `HD_ConditionMultMax` for `named_weapon` to control the range in which the condition rolls
 - Add `CostMultPerRegularLevel = 1.1` and `CostMultPerVeteranLevel = 1.03` for `character_background`
