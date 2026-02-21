@@ -105,14 +105,15 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
+
 		this.getSkills().add(::new("scripts/skills/perks/perk_mastery_sword"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_overwhelm"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_berserk"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_the_rush_of_battle"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_sweeping_strikes"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_death_dealer"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_tempo"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vanquisher"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_hd_brace_for_impact"));
 	}
 
 	// Assign Head and Body armor to this character

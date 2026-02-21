@@ -714,8 +714,8 @@
 // scripts/entity/tactical/humans/noble_greatsword
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.Greatsword.Cost = 45;
-	::Const.World.Spawn.Troops.Greatsword.Strength = 45;
+	::Const.World.Spawn.Troops.Greatsword.Cost = 50;
+	::Const.World.Spawn.Troops.Greatsword.Strength = 50;
 }
 
 // scripts/entity/tactical/humans/rf_fencer
