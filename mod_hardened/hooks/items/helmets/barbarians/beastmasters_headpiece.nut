@@ -5,6 +5,6 @@
 		this.m.Value = 500;				// Vanilla: 350
 		this.m.ConditionMax = 130;		// Vanilla: 130
 		this.m.StaminaModifier = -8;	// Vanilla: -8
-		this.m.Vision = -1;				// Vanilla: -1
+		this.m.Vision = -1;				// Vanilla: -1; Reforged: 0
 	}
 });
