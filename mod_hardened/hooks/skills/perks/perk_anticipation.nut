@@ -13,14 +13,7 @@
 			this.spawnIcon(this.m.Overlay, this.getContainer().getActor().getTile());
 		}
 
-		// Reforged Fix: Hide tooltips about mitigating damage, when the actor is not visible to the player
-		local oldlogEx = ::Tactical.EventLog.get().logEx;
-		if (this.getContainer().getActor().isHiddenToPlayer())
-		{
-			::Tactical.EventLog.get().logEx = function(_text) {};
-		}
 		__original(_attacker, _damageHitpoints, _damageArmor);
-		::Tactical.EventLog.get().logEx = oldlogEx;
 	}
 
 // Hardened Events
