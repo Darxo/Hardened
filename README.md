@@ -84,14 +84,14 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 
 ### Combat Loot Changes
 
-- Weapons worn by NPCs now have a 60% chance to drop (down from 90%) but no longer need to have at least 12 Condition to be eligable for dropping
-- Throwing Weapons no longer need to be equipped, or missing an ammunition to be eligable for dropping
+- Weapons worn by NPCs now have a 60% chance to drop (down from 90%) but no longer need to have at least 12 Condition to be eligible for dropping
+- Throwing Weapons no longer need to be equipped, or missing an ammunition to be eligible for dropping
 - Non-Named shields worn by enemies now have a 50% chance to drop (down from 90%)
 - All shields worn by enemies can now drop, even if they have less than 25% Condition or less than 6 Condition left
 - Helmets worn by players now need at least 1 Condition to be guaranteed to drop (down from 16)
 - Body Armors worn by players now need at least 1 Condition to be guaranteed to drop (down from 11)
-- Body Armors and Helmets worn by NPCs now require at least 50% condition on them to be eligable for dropping (up from 25%). They no longer require a minimum absolute condition to be eligable for dropping (down from 31)
-- Body Armors and Helmets, which are eligable for dropping how have a 100% base chance to drop at 100% condition (up from 70% for helmets). This chance now scales linearly with condition, reaching 0% drop chance at 50% condition (e.g. 40% drop chance at 70% condition)
+- Body Armors and Helmets worn by NPCs now require at least 50% condition on them to be eligible for dropping (up from 25%). They no longer require a minimum absolute condition to be eligible for dropping (down from 31)
+- Body Armors and Helmets, which are eligible for dropping how have a 100% base chance to drop at 100% condition (up from 70% for helmets). This chance now scales linearly with condition, reaching 0% drop chance at 50% condition (e.g. 40% drop chance at 70% condition)
 - **Bandages** worn by enemies now have a 60% chance to drop (down from 100%)
 
 ### Throwing Weapon Rework
@@ -480,6 +480,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bludgeon** no longer has any Fatigue discount on its skills
 - **Claw Club** no longer has any Fatigue discount on its skills
 - **Cruel Falchion** are now a Sword/Dagger hybrid. They now also grant **Stab**. **Slash** and **Rispote** lose any discount
+- **Crossbow** no longer has any Fatigue discount on its skills
 - **Cudgel** now deals 40-60 damage (up from 30-50), has 4 Reach (up from 3), costs 400 Crowns (up from 300). **Bash** now costs 5 AP (up from 4). **Knock Out** now has a 100% chance to stun
 - **Dagger** now deals 20-30 Damage (from 15-35)
 - **Estoc** now has 6 Reach (up from 5)
@@ -498,6 +499,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
 - **Knife** now deals 15-20 Damage (down from 15-25) and no longer has any Fatigue discount on its skills
 - **Dagger** no longer has any Fatigue discount on its skills
+- **Light Crossbow** no longer has any Fatigue discount on its skills
 - **Light Southern Mace** no longer has any Fatigue discount on its skills
 - **Longsword** now deals 45-55 damage (down from 65-85) has Armor Penetration of 30% (up from 25%), 75% Armor Damage (down from 100%), +0% Headshot Chance (down from +5%), 6 Reach (up from 5) and costs 1200 Crowns (down from 2400). It loses **Overhead Strike** and gains **Swing**. Its skills no longer have any discount. It can no longer appear as a named weapon
 - **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%), 6 Condition (up from 2) and 50% Armor Damage (up from 10%). It gains the **Mace** Weapontype
@@ -525,7 +527,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Two-handed Wooden Flail** now has 4 Reach (down from 5), deals 35-65 Damage (up from 30-60) and costs 600 Crowns (up from 500)
 - **Two-handed Wooden Hammer** now costs 600 Crowns (up from 500)
 - **Warbow** now has a Weight of 8 (up from 6) and +2 Fatigue Cost for its weapon skills
-- **Warbrand** now deals 65-75 damage (up from 50-75), has a Armor Penetration of 30% (up from 20%), a Weight of 12 (up from 10), +0% Headshot Chance (down from +5%) and costs 2600 Crowns (up from 1600). It loses **Split** and gains **Riposte**. Its skills no longer have a custom cost
+- **Warbrand** now deals 65-75 damage (up from 50-75), has a Armor Penetration of 30% (up from 20%), a Weight of 12 (up from 10), +0% Headshot Chance (down from +5%) and costs 2600 Crowns (up from 1600). It loses **Split** and gains **Riposte**. Its skills no longer have a custom cost. The **Named Warbrand** no longer has any custom damage bonus
 - **Warhammer** now has 12 Weight (up from 8)
 - **Warfork** now has a Weight of 14 (up from 12) and costs 400 Crowns (down from 600)
 - **Wooden Stick** no longer has any Fatigue discount on its skills
@@ -612,21 +614,20 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Assassin's Face Mask** now has 130 Condition (down from 140), 8 Weight (up from 6) and costs 500 Crowns (up from 1800)
 - **Assassin's Head Wrap** now has 70 Condition (up from 40), 1 Weight (up from 0), -2 Vision (down from 0) and costs 900 Crowns (up from 60)
 - **Barbute Helmet** now has 180 Condition (down from 190) and costs 2500 Crowns (down from 2600)
-- **Bascinet with Mail** now has 230 Condition (up from 210) and 16 Weight (up from 13)
+- **Bascinet with Mail** now has 230 Condition (up from 210), 16 Weight (up from 13) and -2 Vision (down from -1)
 - **Bear Headpiece** now has 60 Condition (up from 50), 7 Weight (up from 3), -1 Vision (down from 0) and costs 80 Crowns (down from 100)
-- **Beastmaster's Headpiece** now costs 500 Crowns (up from 350)
+- **Beastmaster's Headpiece** now has -1 Vision (down from 0) and costs 500 Crowns (up from 350)
 - **Blade Dancer's Head Wrap** now has 70 Condition (up from 60), -2 Vision (down from 0) and costs 900 Crowns (up from 150)
 - **Closed Flat Top Helmet** now has 180 Condition (up from 170), 12 Weight (up from 10) and costs 1100 Crowns (up from 1000)
 - **Closed Flat Top with Mail** now costs 300 Crowns (down from 3000)
 - **Closed Mail Coif** now has 100 Condition (down from 90), 6 Weight (up from 4), -1 Vision (down from 0) and costs 450 Crowns (up from 250)
-- **Closed Scrap Metal Helmet** now has 200 Condition (up from 190), 17 Weight (down from 18) and -3 Vision (down from -2)
+- **Closed Scrap Metal Helmet** now has 200 Condition (up from 190) and 17 Weight (down from 18)
 - **Closed and Padded Flat Top** now has 12 Weight (up from 11)
-- **Conic Helmet with Closed Mail** now has 260 Condition (down from 265), 17 Weight (down from 18) and -3 Vision (down from -2)
+- **Conic Helmet with Closed Mail** now has 260 Condition (down from 265) and 17 Weight (down from 18)
 - **Covered Decayed Closed Flat Top with Mail** will no longer appear in the game. Any versions of it will instead change to look like **Decayed Closed Flat Top with Mail**
-- **Crude Faceguard Helmet** now has -3 Vision (down from -2)
 - **Crude Metal Helmet** now has 130 Condition (down from 145) and costs 400 Crowns (down from 550)
 - **Cultist Hood** now has 50 Condition (up from 30), 4 Weight (up from 0), -3 Vision (down from -1) and costs 50 Crowns (up from 20)
-- **Cultist Leather Hood** now has 80 Condition (up from 60), 7 Weight (up from 3), -3 Vision (down from -1) and costs 90 Crowns (up from 140)
+- **Cultist Leather Hood** now has 80 Condition (up from 60), 7 Weight (up from 3), -3 Vision (down from -2) and costs 90 Crowns (up from 140)
 - **Dark Cowl** now has 30 Condition (down from 40), 3 Weight (up from 0), -1 Vision (down from 0) and costs 30 Crowns (up from 100)
 - **Decayed Closed Flat Top with Mail** now has 220 Condition (down from 230), 18 Weight (down from 19) and costs 1200 Crowns (down from 1250)
 - **Decayed Great Helm** is now called **Tarnished Full Helm**, has 240 Condition (down from 255) and 23 Weight (up from 22)
@@ -636,7 +637,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Engineer's Hat** now has 60 Condition (up from 30), 4 Weight (up from 0) and costs 500 Crowns (up from 50)
 - **Feathered Hat** now has 40 Condition (up from 30), 5 Weight (up from 0) and costs 50 Crowns (down from 80)
 - **Flat Top with Closed Mail** now has 260 Condition (down from 265) and costs 2500 Crowns (down from 2600)
-- **Flat Top with Mail** now has 240 Condition (up from 230) and 16 Weight (up from 15)
+- **Flat Top with Mail** now has 240 Condition (up from 230), 16 Weight (up from 15) and -2 Vision (down from -1)
 - **Full Aketon Cap** now has 60 Condition (up from 50), 6 Weight (up from 2) and -1 Vision (down from 0)
 - **Full Leather Cap** now has 60 Condition (up from 45), 6 Weight (up from 3), -1 Vision (down from 0) and costs 100 Crowns (down from 80)
 - **Gladiator Helmet** now has 230 Condition (up from 225), -4 Vision (down from -3) and costs 2500 Crowns (up from 2200)
@@ -653,7 +654,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Leather Facewrap** now has 2 Weight (up from 0), -2 Vision (up from -3) and costs 50 Crowns (up from 0)
 - **Leather Head Wrap** now has 50 Condition (up from 40), 5 Weight (up from 2), -1 Vision (down from 0) and costs 80 Crowns (up from 60)
 - **Leather Headband** now has 20 Condition (down from 30), 2 Weight (up from 0) and costs 20 Crowns (down from 30)
-- **Leather Helmet** now has 100 Condition (down from 105), 7 Weight (up from 6), -2 Vision (down from -1) and costs 200 Crowns (down from 320)
+- **Leather Helmet** now has 100 Condition (down from 105), 7 Weight (up from 6) and costs 200 Crowns (down from 320)
 - **Mail Coif** now has 6 Weight (up from 4) and costs 350 Crowns (up from 200)
 - **Masked Kettle Helmet** now has 140 Condition (up from 120), 8 Weight (up from 6), -3 Vision (down from -2) and costs 500 Crowns (down from 550)
 - **Mouth Piece** now has 20 Condition (up from 10), 2 Weight (up from 0) and costs 20 Crowns (up from 15)
@@ -679,7 +680,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Southern Head Wrap** now has 3 Weight (up from 0), -1 Vision (down from 0) and costs 30 Crowns (down from 50)
 - **Southern Helmet with Coif** now has 180 Condition (down from 200) and -1 Vision (up from -2)
 - **Spiked Skull Cap with Mail** now has 130 Condition (up from 125) and 8 Weight (up from 7)
-- **Steppe Helmet with Mail** now has 14 Weight (up from 12)
+- **Steppe Helmet with Mail** now has 14 Weight (up from 12) and -2 Vision (down from -1)
 - **Straw Hat** now has 3 Weight (up from 0), -1 Vision (down from 0) and costs 30 Crowns (down from 60)
 - **Temple of Knowledge** now has 3 Weight (up from 0), -1 Vision (down from 0) and costs 200 Crowns (up from 0). It grants +5 Resolve when worn
 - **Turban Helmet** now has 280 Condition (down from 290), 19 Weight (down from 20) and costs 3000 Crowns (down from 3200)
@@ -687,7 +688,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Witchhunter's Hat** now has 50 Condition (up from 40), 3 Weight (up from 0), -1 Vision (down from 0) and costs 120 Crowns (up from 100)
 - **Wizard's Hat** now has 50 Condition (up from 30), 2 Weight (up from 0), -1 Vision (down from 0) and costs 300 Crowns (up from 30)
 - **Wrapped Southern Helmet** now has 100 Condition (down from 105), 6 Weight (up from 5) and costs 450 Crowns (up from 350)
-- **Zweihander's Helmet** now has 8 Weight (up from 7) and costs 1500 Crowns (up from 850)
+- **Zweihander's Helmet** now has 8 Weight (up from 7), -1 Vision (down from 0) and costs 1500 Crowns (up from 850)
 
 **Reforged:**
 - **Closed Bascinet with Mail** now has 230 Condition (down from 260), 14 Weight (down from 17), -2 Vision (down from -3) and costs 2500 Crowns (up from 2400)
@@ -783,6 +784,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ### General Changes
 
+- **Brigand Scoundrels**, **-Pillagers**, **-Outlaws** and **-Marauders** use their actual name while on the world map, instead of being merged with the other Brigand Frontliner
 - **Fallen Heroes** are now called **Fallen Soldiers** and can no longer resurrect, if decapitated
 - **Fallen Betrayers** are now called **Fallen Heroes** and can spawn in regular world parties
 - Introduce a new **Headless** effect. It redirects any attack to hit the body, reduces all other damage targeting the head to 0 (e.g. secondary attack from Split Man), grants immunity to **Distracted**, **Sleep**, **Insect Swarm** and sets the headarmor to 0
@@ -796,9 +798,9 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 ### Specific Changes
 
 **Undead**
-- All **Wiederganger** types take 50% more burning damage to hitpoints. They no longer grant experience after being ressurected. They lose **Double Grip** and no longer inflict +5 Fatigue on a hit. They now have a 100% resurrection chance (up from 66%) and resurrect in 1-3 turns (up from 1-2)
+- All **Wiederganger** types take 50% more burning damage to hitpoints. They no longer grant experience after being resurected. They lose **Double Grip** and no longer inflict +5 Fatigue on a hit. They now have a 100% resurrection chance (up from 66%) and resurrect in 1-3 turns (up from 1-2)
 - Reanimated Humans how have 120 Hitpoints (down from 130) and 200 Stamina (up from 100)
-- All **Skeletons** no longer grant experience after being ressurected
+- All **Skeletons** no longer grant experience after being resurected
 - **Skeleton Racial** now explicitely causes 100% less **Fatigue** build-up
 - **Flesh Golems** lose **Full Force**, gain **Savage Strength** and take 50% more burning damage to hitpoints
 - **Necromancer** lose 20 natural body armor. **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)
@@ -1310,7 +1312,6 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix **Line Breaker** granted by **Onslaught** being usable multiple times
 - Fix crash when trying to sling the same type of pot multiple times with the same character
 - Change the icon of **Sapling Harvest** to that of the sapling overlay icon
-- Fix **Anticipation** producing combat logs when the actor is not visible
 
 ### Dynamic Spawns
 
@@ -1349,7 +1350,7 @@ This section can be skipped by any regular user. It is only meant as an overview
 - Add `weapon::HD_BaseDropChance = 60` for controlling the chance that weapons, worn by NPCs, drop
 - Add `::MSU.Text.colorNeutral` for coloring a text blue
 - Add `player::HD_XPValueBase = 50`, `player::HD_XPValuePerRegularLevel = 50` and `player::HD_XPValuePerVeteranLevel = 10` to allow more granular changes to the getXPValue return value
-- Add `HD_ConditionThresholdForDrop = 0.0` for shields to define their minimum relative condition required to be eligable for dropping when worn by enemies
+- Add `HD_ConditionThresholdForDrop = 0.0` for shields to define their minimum relative condition required to be eligible for dropping when worn by enemies
 - Add `HD_BaseDropChance = 50` for shields to define their random drop chance when worn by enemies
 - Add `HD_BaseDropChance = 100` for accessories to define their random drop chance when worn by enemies
 - Add `getTooltipWithoutChildren()` for `item.nut`, which `getTooltip()` of it but removes all children entries from it

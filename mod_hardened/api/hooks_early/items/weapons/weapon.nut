@@ -15,7 +15,7 @@
 	//	- Blacksmith no longer improves our odds of looting enemy Weapons
 	//	- Weapons with 11 or less Condition on enemies can now drop
 	//	- We add this.m.HD_BaseDropChance to make the random roll moddable
-	//	- Throwing Weapons no longer need to be equipped or missing an ammunition to be eligable for dropping
+	//	- Throwing Weapons no longer need to be equipped or missing an ammunition to be eligible for dropping
 	q.isDroppedAsLoot = @() function()
 	{
 		if (!this.item.isDroppedAsLoot()) return false;

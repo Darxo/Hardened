@@ -1,7 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_dagger", function(q) {
 	// Public
 	q.m.HD_FatigueCostMult <- 0.75;
-	q.m.WeightThreshold <- 10;	// Offhand item must weigh less than this to be eligable for free use
+	q.m.WeightThreshold <- 10;	// Offhand item must weigh less than this to be eligible for free use
 
 	// Private
 	q.m.IsSpent <- true;	// Has the free offhand item use already been spent?
