@@ -66,6 +66,7 @@
 // scripts/entity/tactical/enemies/rf_bandit_scoundrel
 {
 	// Mandatory Entries
+	::Const.World.Spawn.Troops.RF_BanditScoundrel.ID = ::Const.EntityType.RF_BanditScoundrel;		// Reforged: ::Const.EntityType.BanditThug
 	::Const.World.Spawn.Troops.RF_BanditScoundrel.Cost = 10;
 	::Const.World.Spawn.Troops.RF_BanditScoundrel.Strength = 10;
 }
@@ -199,6 +200,7 @@
 // scripts/entity/tactical/enemies/rf_bandit_pillager
 {
 	// Mandatory Entries
+	::Const.World.Spawn.Troops.RF_BanditPillager.ID = ::Const.EntityType.RF_BanditPillager;		// Reforged: ::Const.EntityType.RF_BanditVandal
 	::Const.World.Spawn.Troops.RF_BanditPillager.Cost = 18;
 	::Const.World.Spawn.Troops.RF_BanditPillager.Strength = 18;
 }
@@ -418,6 +420,7 @@
 // scripts/entity/tactical/enemies/rf_bandit_outlaw
 {
 	// Mandatory Entries
+	::Const.World.Spawn.Troops.RF_BanditOutlaw.ID = ::Const.EntityType.RF_BanditOutlaw;		// Reforged: ::Const.EntityType.BanditRaider
 	::Const.World.Spawn.Troops.RF_BanditOutlaw.Cost = 27;
 	::Const.World.Spawn.Troops.RF_BanditOutlaw.Strength = 27;
 }
@@ -607,6 +610,7 @@
 // scripts/entity/tactical/enemies/rf_bandit_marauder
 {
 	// Mandatory Entries
+	::Const.World.Spawn.Troops.RF_BanditMarauder.ID = ::Const.EntityType.RF_BanditMarauder;		// Reforged: ::Const.EntityType.RF_BanditHighwayman
 	::Const.World.Spawn.Troops.RF_BanditMarauder.Cost = 40;
 	::Const.World.Spawn.Troops.RF_BanditMarauder.Strength = 40;
 	::Const.World.Spawn.Troops.RF_BanditMarauder.Variant = 1;		// Bandit Marauder can now produce Champions
