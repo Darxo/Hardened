@@ -5,6 +5,8 @@ this.hd_whirling_death_effect <- this.inherit("scripts/skills/skill", {
 		ReachModifier = 2,
 		MeleeDefenseModifier = 10,
 		DurationInTurns = 3,
+
+		IconBaseName = "skills/hd_whirling_death_effect_0",
 	},
 
 	function create()
@@ -12,7 +14,7 @@ this.hd_whirling_death_effect <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "effects.hd_whirling_death";
 		this.m.Name = "Whirling Stance";
 		this.m.Description = "You are now in a relentless stance, your flail spinning in a deadly arc. Your attacks are more powerful while you keep your enemies at bay."
-		this.m.Icon = "skills/hd_whirling_death_effect.png";
+		this.m.Icon = "skills/hd_whirling_death_effect_03.png";
 		this.m.IconMini = "hd_whirling_death_effect_mini";
 		this.m.Type = ::Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
@@ -82,6 +84,14 @@ this.hd_whirling_death_effect <- this.inherit("scripts/skills/skill", {
 	function onRefresh()
 	{
 		this.m.HD_LastsForTurns = this.m.DurationInTurns;
+		this.updateIcon(this.m.HD_LastsForTurns);
+	}
+
+	function onTurnEnd()
+	{
+		// HD_LastsForTurns is decremented during onTurnEnd but via a hookTree on skill.nut, which comes after all regular onTurnEnd events
+		// Therefor we need to pass its value -1
+		this.updateIcon(this.m.HD_LastsForTurns - 1);
 	}
 
 	function onUpdate( _properties )
@@ -107,5 +117,10 @@ this.hd_whirling_death_effect <- this.inherit("scripts/skills/skill", {
 
 		return true;
 	}
-});
 
+	function updateIcon( _turnsLeft )
+	{
+		this.m.Icon = this.m.IconBaseName + ::Math.clamp(_turnsLeft, 1, 3) + ".png";
+		this.getContainer().getActor().setDirty(true);
+	}
+});
