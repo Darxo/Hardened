@@ -1,4 +1,4 @@
-::Hardened.HooksMod.hook("scripts/crafting/blueprints/night_vision_elixir_blueprint", function(q) {
+::Hardened.HooksMod.hook("scripts/crafting/blueprints/poisoned_oil_blueprint", function(q) {
 	q.create = @(__original) function()
 	{
 		__original();
