@@ -146,6 +146,7 @@ this.hd_warded_effect <- this.inherit("scripts/skills/skill", {
 	function triggerCommandEffect()
 	{
 		if (this.m.SourceWarden.isTurnDone()) return;
+		if (this.m.SourceWarden.isActiveEntity()) return;	// This can happen with AoE attacks and charmed brothers. The latter may brick AI and softlock combat
 
 		::Tactical.TurnSequenceBar.moveEntityToFront(this.m.SourceWarden.getID());
 
