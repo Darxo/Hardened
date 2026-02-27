@@ -1303,7 +1303,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain the first two [perks|Concept.Perk] in a random melee perk group that you have access to",
+					"Gain the first two [perks|Concept.Perk] in a random melee perk group (except daggers) that you have access to",
 					"Gain " + ::MSU.Text.colorNegative("5%") + " less [Experience|Concept.Experience]",
 				],
 			}],
