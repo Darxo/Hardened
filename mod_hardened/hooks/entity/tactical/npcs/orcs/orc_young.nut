@@ -70,7 +70,7 @@
 		injury_body.setBrush("bust_orc_01_body_injured");
 		this.addSprite("armor");
 		local head = this.addSprite("head");
-		head.setBrush("bust_orc_01_head_0" + this.Math.rand(1, 3));
+		head.setBrush("bust_orc_01_head_0" + ::Math.rand(1, 3));
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 		local injury = this.addSprite("injury");
@@ -116,7 +116,7 @@
 	// Assign all other gear to this character
 	q.HD_assignOtherGear <- function()
 	{
-		if (this.Math.rand(1, 100) <= 25)
+		if (::Math.rand(1, 100) <= 25)
 		{
 			local sidearm = ::new(::MSU.Class.WeightedContainer([
 				[12, "scripts/items/weapons/greenskins/orc_javelin"],

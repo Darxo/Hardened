@@ -20,7 +20,7 @@
 		body.setBrush("bust_alp_body_01");
 		body.varySaturation(0.2);
 		local head = this.addSprite("head");
-		head.setBrush("bust_alp_head_0" + this.Math.rand(1, 3));
+		head.setBrush("bust_alp_head_0" + ::Math.rand(1, 3));
 		head.Saturation = body.Saturation;
 		local injury = this.addSprite("injury");
 		injury.setBrush("bust_alp_01_injured");
@@ -36,7 +36,7 @@
 		// Tweak Base Properties
 		local b = this.getBaseProperties();
 		b.setValues(::Const.Tactical.Actor.Alp);
-		// b.Initiative += this.Math.rand(0, 55);
+		// b.Initiative += ::Math.rand(0, 55);
 
 		// Generic Effects
 		this.getSkills().add(::new("scripts/skills/racial/alp_racial"));

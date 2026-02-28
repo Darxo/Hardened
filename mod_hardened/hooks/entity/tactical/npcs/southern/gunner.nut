@@ -67,7 +67,7 @@
 	q.HD_assignArmor <- function()
 	{
 		local banner = 13;
-		if (!this.Tactical.State.isScenarioMode())
+		if (!::Tactical.State.isScenarioMode())
 		{
 			banner = ::World.FactionManager.getFaction(this.getFaction()).getBanner();
 		}

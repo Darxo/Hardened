@@ -22,7 +22,7 @@
 		legs_back.setBrush("bust_spider_legs_back");
 
 		local body = this.addSprite("body");
-		body.setBrush("bust_spider_body_0" + this.Math.rand(1, 4));
+		body.setBrush("bust_spider_body_0" + ::Math.rand(1, 4));
 		body.varySaturation(0.3);
 		body.varyColor(0.1, 0.1, 0.1);
 		body.varyBrightness(0.1);
@@ -48,7 +48,7 @@
 		this.setSpriteOffset("status_rooted", this.createVec(7, 10));
 		this.setSpriteOffset("status_stunned", this.createVec(0, -20));
 		this.setSpriteOffset("arrow", this.createVec(0, -20));
-		this.setSize(this.Math.rand(70, 90) * 0.01);
+		this.setSize(::Math.rand(70, 90) * 0.01);
 	}
 
 	// Assign Stats and Unconditional Immunities, Perks and Actives

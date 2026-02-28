@@ -72,7 +72,7 @@
 	q.HD_onInitSprites = @(__original) function()
 	{
 		__original();
-		this.getSprite("head").setBrush("bust_goblin_01_head_0" + this.Math.rand(1, 3));
+		this.getSprite("head").setBrush("bust_goblin_01_head_0" + ::Math.rand(1, 3));
 		this.addDefaultStatusSprites();
 	}
 

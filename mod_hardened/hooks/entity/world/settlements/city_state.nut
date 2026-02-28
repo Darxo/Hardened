@@ -5,7 +5,7 @@
 
 		// We apply a consistent seed, so that multiple subsequent calls of this function provide the exact same result
 		// This is important, because vanilla calls this multiple times for the same caravan generation in the style of
-		//	> party.addToInventory(this.m.Start.getProduce()[this.Math.rand(0, this.m.Start.getProduce().len() - 1)]);
+		//	> party.addToInventory(this.m.Start.getProduce()[::Math.rand(0, this.m.Start.getProduce().len() - 1)]);
 		//	And we must guarantee that the returned array has the same size in both calls
 		::Reforged.Math.seedRandom(
 			"HD_FixedCityStateProduceSeed",	// Fixed salt, specific to use-case

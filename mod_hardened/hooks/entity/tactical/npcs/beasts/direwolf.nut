@@ -17,12 +17,12 @@
 	{
 		this.addSprite("socket").setBrush("bust_base_beasts");
 		local body = this.addSprite("body");
-		body.setBrush("bust_direwolf_0" + this.Math.rand(1, 3));
+		body.setBrush("bust_direwolf_0" + ::Math.rand(1, 3));
 		body.varySaturation(0.2);
 		body.varyColor(0.05, 0.05, 0.05);
 
 		local head = this.addSprite("head");
-		head.setBrush("bust_direwolf_0" + this.Math.rand(1, 3) + "_head");
+		head.setBrush("bust_direwolf_0" + ::Math.rand(1, 3) + "_head");
 		head.Color = body.Color;
 		head.Saturation = body.Saturation;
 

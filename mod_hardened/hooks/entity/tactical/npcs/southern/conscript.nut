@@ -66,12 +66,12 @@
 	{
 		// This is currently mostly a 1:1 copy of Vanilla code, as there is no easier way to apply our changes via hooking
 		local banner = 13;
-		if (!this.Tactical.State.isScenarioMode())
+		if (!::Tactical.State.isScenarioMode())
 		{
 			banner = ::World.FactionManager.getFaction(this.getFaction()).getBanner();
 		}
 
-		if (this.Math.rand(1, 3) <= 2)
+		if (::Math.rand(1, 3) <= 2)
 		{
 			local armor = ::new("scripts/items/armor/oriental/linothorax");
 			if (banner == 12) armor.setVariant(9);
@@ -84,7 +84,7 @@
 			this.getItems().equip(::new("scripts/items/armor/oriental/southern_mail_shirt"));
 		}
 
-		local r = this.Math.rand(1, 3);
+		local r = ::Math.rand(1, 3);
 		if (r == 1)
 		{
 			local helmet = ::new("scripts/items/helmets/oriental/southern_head_wrap");

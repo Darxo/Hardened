@@ -15,10 +15,10 @@
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()
 	{
-		local hairColor = ::Const.HairColors.Zombie[this.Math.rand(0, ::Const.HairColors.Zombie.len() - 1)];
+		local hairColor = ::Const.HairColors.Zombie[::Math.rand(0, ::Const.HairColors.Zombie.len() - 1)];
 		this.addSprite("socket").setBrush("bust_base_undead");
 		local body = this.addSprite("body");
-		body.setBrush("bust_skeleton_body_0" + this.Math.rand(1, 2));
+		body.setBrush("bust_skeleton_body_0" + ::Math.rand(1, 2));
 		body.setHorizontalFlipping(true);
 		body.Saturation = 0.8;
 		body.varySaturation(0.2);
@@ -36,20 +36,20 @@
 		local beard = this.addSprite("beard");
 		beard.varyColor(0.02, 0.02, 0.02);
 
-		if (this.Math.rand(1, 100) <= 25)
+		if (::Math.rand(1, 100) <= 25)
 		{
-			beard.setBrush("beard_" + hairColor + "_" + ::Const.Beards.ZombieOnly[this.Math.rand(0, ::Const.Beards.ZombieOnly.len() - 1)]);
+			beard.setBrush("beard_" + hairColor + "_" + ::Const.Beards.ZombieOnly[::Math.rand(0, ::Const.Beards.ZombieOnly.len() - 1)]);
 		}
 
 		local face = this.addSprite("face");
-		face.setBrush("bust_skeleton_face_0" + this.Math.rand(1, 6));
+		face.setBrush("bust_skeleton_face_0" + ::Math.rand(1, 6));
 		local hair = this.addSprite("hair");
 		hair.setHorizontalFlipping(true);
 		hair.Color = beard.Color;
 
-		if (this.Math.rand(1, 100) <= 50)
+		if (::Math.rand(1, 100) <= 50)
 		{
-			hair.setBrush("hair_" + hairColor + "_" + ::Const.Hair.ZombieOnly[this.Math.rand(0, ::Const.Hair.ZombieOnly.len() - 1)]);
+			hair.setBrush("hair_" + hairColor + "_" + ::Const.Hair.ZombieOnly[::Math.rand(0, ::Const.Hair.ZombieOnly.len() - 1)]);
 		}
 
 		this.setSpriteOffset("hair", this.createVec(0, -3));
@@ -70,7 +70,7 @@
 		local body_dirt = this.addSprite("dirt");
 		body_dirt.setBrush("bust_body_dirt_02");
 		body_dirt.setHorizontalFlipping(true);
-		body_dirt.Visible = this.Math.rand(1, 100) <= 33;
+		body_dirt.Visible = ::Math.rand(1, 100) <= 33;
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
 	}

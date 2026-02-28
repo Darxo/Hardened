@@ -86,9 +86,9 @@
 		local armor = ::new(::MSU.Class.WeightedContainer([
 			[1, "scripts/items/armor/decayed_reinforced_mail_hauberk"],
 		]).roll());
-		if (this.Math.rand(1, 100) <= 33)
+		if (::Math.rand(1, 100) <= 33)
 		{
-			armor.setArmor(this.Math.round(armor.getArmorMax() / 2 - 1) / 1.0);
+			armor.setArmor(::Math.round(armor.getArmorMax() / 2 - 1) / 1.0);
 		}
 		this.getItems().equip(armor);
 
@@ -96,9 +96,9 @@
 			[12, "scripts/items/helmets/decayed_closed_flat_top_with_mail"],
 			[12, "scripts/items/helmets/decayed_full_helm"],
 		]).roll());
-		if (this.Math.rand(1, 100) <= 33)
+		if (::Math.rand(1, 100) <= 33)
 		{
-			helmet.setArmor(this.Math.round(helmet.getArmorMax() / 2 - 1) / 1.0);
+			helmet.setArmor(::Math.round(helmet.getArmorMax() / 2 - 1) / 1.0);
 		}
 		this.getItems().equip(helmet);
 	}

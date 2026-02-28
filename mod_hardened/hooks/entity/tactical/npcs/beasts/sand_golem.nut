@@ -48,7 +48,7 @@
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()
 	{
-		this.m.Variant = this.Math.rand(1, 2);
+		this.m.Variant = ::Math.rand(1, 2);
 		this.addSprite("socket").setBrush("bust_base_beasts");
 		local body = this.addSprite("body");
 		body.setBrush("bust_golem_body_0" + this.m.Variant + "_small");

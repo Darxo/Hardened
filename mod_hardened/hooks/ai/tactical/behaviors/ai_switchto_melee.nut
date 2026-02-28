@@ -35,8 +35,8 @@
 				}
 				else
 				{
-					local targets = this.queryTargetsInMeleeRange(this.Math.min(mainhandItem.getRangeMin(), _entity.getCurrentProperties().Vision), this.Math.min(mainhandItem.getRangeMax(), _entity.getCurrentProperties().Vision) + myTile.Level, 3);
-					local bestTarget = this.queryBestRangedTarget(_entity, null, targets, this.Math.min(mainhandItem.getRangeMax(), _entity.getCurrentProperties().Vision));
+					local targets = this.queryTargetsInMeleeRange(::Math.min(mainhandItem.getRangeMin(), _entity.getCurrentProperties().Vision), ::Math.min(mainhandItem.getRangeMax(), _entity.getCurrentProperties().Vision) + myTile.Level, 3);
+					local bestTarget = this.queryBestRangedTarget(_entity, null, targets, ::Math.min(mainhandItem.getRangeMax(), _entity.getCurrentProperties().Vision));
 
 					if (bestTarget.Target == null || bestTarget.Score < 0)
 					{

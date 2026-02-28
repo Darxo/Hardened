@@ -47,7 +47,7 @@
 		if (!rolledBuriedCastle) return;
 
 		local disallowTerrain = [];
-		for (local i = 0; i != this.Const.World.TerrainType.COUNT; ++i)
+		for (local i = 0; i != ::Const.World.TerrainType.COUNT; ++i)
 		{
 			// In Vanilla only Snow and Tundra are eligible, resulting in very few buried castles
 			if (i == ::Const.World.TerrainType.Snow) continue;

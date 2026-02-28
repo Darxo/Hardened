@@ -201,7 +201,7 @@
 		// That works because turnsequencebar_onNextRound() is the first thing happening after vanilla calls onRoundEnd() and the first thing happening before onRoundStart()
 
 		// We clone this in order to not trigger onRoundEnd() for newly spawned entities which were just added by other onRoundEnd() calls
-		local instances = clone this.Tactical.Entities.getAllInstances();
+		local instances = clone ::Tactical.Entities.getAllInstances();
 		foreach (faction in instances)
 		{
 			foreach (entity in faction)
@@ -218,7 +218,7 @@
 		__original(_round);
 
 		// We clone this in order to not trigger onRoundStart() for newly spawned entities which were just added by other onRoundStart() calls
-		instances = clone this.Tactical.Entities.getAllInstances();
+		instances = clone ::Tactical.Entities.getAllInstances();
 		foreach (faction in instances)
 		{
 			foreach (entity in faction)

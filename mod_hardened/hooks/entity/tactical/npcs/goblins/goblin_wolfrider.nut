@@ -86,7 +86,7 @@
 	q.HD_onInitSprites = @(__original) function()
 	{
 		__original();
-		this.getSprite("head").setBrush("bust_goblin_01_head_0" + this.Math.rand(1, 3));
+		this.getSprite("head").setBrush("bust_goblin_01_head_0" + ::Math.rand(1, 3));
 		this.setAlwaysApplySpriteOffset(true);
 		local offset = this.createVec(8, 14);
 		this.setSpriteOffset("body", offset);
@@ -96,7 +96,7 @@
 		this.setSpriteOffset("helmet", offset);
 		this.setSpriteOffset("helmet_damage", offset);
 		this.setSpriteOffset("body_blood", offset);
-		local variant = this.Math.rand(1, 2);
+		local variant = ::Math.rand(1, 2);
 		local wolf = this.addSprite("wolf");
 		wolf.setBrush("bust_wolf_0" + variant + "_body");
 		wolf.varySaturation(0.15);

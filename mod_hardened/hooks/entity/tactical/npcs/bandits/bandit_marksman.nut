@@ -51,7 +51,7 @@
 	q.HD_onInitSprites <- function()
 	{
 		this.getSprite("socket").setBrush("bust_base_bandits");
-		if (this.Math.rand(1, 100) <= 20)
+		if (::Math.rand(1, 100) <= 20)
 		{
 			local pox = this.getSprite("tattoo_head");
 			pox.Visible = true;
@@ -61,7 +61,7 @@
 		{
 			local dirt = this.getSprite("dirt");
 			dirt.Visible = true;
-			dirt.Alpha = this.Math.rand(150, 255);
+			dirt.Alpha = ::Math.rand(150, 255);
 		}
 
 		this.getSprite("armor").Saturation = 0.85;

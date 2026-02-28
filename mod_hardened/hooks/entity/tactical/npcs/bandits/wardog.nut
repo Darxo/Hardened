@@ -15,7 +15,7 @@
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()
 	{
-		local variant = this.Math.rand(1, 4);
+		local variant = ::Math.rand(1, 4);
 		this.getItems().getAppearance().Body = "bust_dog_01_body_0" + variant;
 		this.addSprite("socket").setBrush("bust_base_player");
 		local body = this.addSprite("body");

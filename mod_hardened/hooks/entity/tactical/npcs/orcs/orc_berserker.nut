@@ -56,9 +56,9 @@
 		body.varyColor(0.08, 0.08, 0.08);
 
 		local tattoo_body = this.addSprite("tattoo_body");
-		if (this.Math.rand(1, 100) <= 50)
+		if (::Math.rand(1, 100) <= 50)
 		{
-			tattoo_body.setBrush("bust_orc_02_body_paint_0" + this.Math.rand(1, 3));
+			tattoo_body.setBrush("bust_orc_02_body_paint_0" + ::Math.rand(1, 3));
 		}
 
 		local injury_body = this.addSprite("injury_body");
@@ -67,14 +67,14 @@
 
 		this.addSprite("armor");
 		local head = this.addSprite("head");
-		head.setBrush("bust_orc_02_head_0" + this.Math.rand(1, 3));
+		head.setBrush("bust_orc_02_head_0" + ::Math.rand(1, 3));
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 
 		local tattoo_head = this.addSprite("tattoo_head");
-		if (this.Math.rand(1, 100) <= 50)
+		if (::Math.rand(1, 100) <= 50)
 		{
-			tattoo_head.setBrush("bust_orc_02_head_paint_0" + this.Math.rand(1, 3));
+			tattoo_head.setBrush("bust_orc_02_head_paint_0" + ::Math.rand(1, 3));
 		}
 
 		local injury = this.addSprite("injury");

@@ -48,7 +48,7 @@
 
 		// This Settings section is exactly like Vanilla
 		local targetTile = _target.getTile();
-		local navigator = this.Tactical.getNavigator();
+		local navigator = ::Tactical.getNavigator();
 		local settings = navigator.createSettings();
 		settings.ActionPointCosts = _actor.getActionPointCosts();
 		settings.ActionPointCostPerLevel = _actor.getLevelActionPointCost();

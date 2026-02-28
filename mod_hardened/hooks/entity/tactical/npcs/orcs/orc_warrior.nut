@@ -75,7 +75,7 @@
 		injury_body.setBrush("bust_orc_03_body_injured");
 		this.addSprite("armor");
 		local head = this.addSprite("head");
-		head.setBrush("bust_orc_03_head_0" + this.Math.rand(1, 3));
+		head.setBrush("bust_orc_03_head_0" + ::Math.rand(1, 3));
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 		local injury = this.addSprite("injury");

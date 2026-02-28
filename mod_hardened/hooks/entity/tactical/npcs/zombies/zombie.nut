@@ -29,10 +29,10 @@
 	q.HD_onInitSprites <- function()
 	{
 		local app = this.getItems().getAppearance();
-		app.Body = "bust_naked_body_0" + this.Math.rand(0, 2);
+		app.Body = "bust_naked_body_0" + ::Math.rand(0, 2);
 		app.Corpse = app.Body + "_dead";
-		this.m.InjuryType = this.Math.rand(1, 4);
-		local hairColor = ::Const.HairColors.Zombie[this.Math.rand(0, ::Const.HairColors.Zombie.len() - 1)];
+		this.m.InjuryType = ::Math.rand(1, 4);
+		local hairColor = ::Const.HairColors.Zombie[::Math.rand(0, ::Const.HairColors.Zombie.len() - 1)];
 		this.addSprite("background");
 		this.addSprite("socket").setBrush("bust_base_undead");
 		this.addSprite("quiver").setHorizontalFlipping(true);
@@ -65,7 +65,7 @@
 
 		local head = this.addSprite("head");
 		head.setHorizontalFlipping(true);
-		head.setBrush(::Const.Faces.AllMale[this.Math.rand(0, ::Const.Faces.AllMale.len() - 1)]);
+		head.setBrush(::Const.Faces.AllMale[::Math.rand(0, ::Const.Faces.AllMale.len() - 1)]);
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 
@@ -77,16 +77,16 @@
 		local beard = this.addSprite("beard");
 		beard.setHorizontalFlipping(true);
 		beard.varyColor(0.02, 0.02, 0.02);
-		if (this.Math.rand(1, 100) <= 50)
+		if (::Math.rand(1, 100) <= 50)
 		{
 			if (this.m.InjuryType == 4)
 			{
-				beard.setBrush("beard_" + hairColor + "_" + ::Const.Beards.ZombieExtended[this.Math.rand(0, ::Const.Beards.ZombieExtended.len() - 1)]);
+				beard.setBrush("beard_" + hairColor + "_" + ::Const.Beards.ZombieExtended[::Math.rand(0, ::Const.Beards.ZombieExtended.len() - 1)]);
 				beard.setBrightness(0.9);
 			}
 			else
 			{
-				beard.setBrush("beard_" + hairColor + "_" + ::Const.Beards.Zombie[this.Math.rand(0, ::Const.Beards.Zombie.len() - 1)]);
+				beard.setBrush("beard_" + hairColor + "_" + ::Const.Beards.Zombie[::Math.rand(0, ::Const.Beards.Zombie.len() - 1)]);
 			}
 		}
 
@@ -98,9 +98,9 @@
 		local hair = this.addSprite("hair");
 		hair.setHorizontalFlipping(true);
 		hair.Color = beard.Color;
-		if (this.Math.rand(0, ::Const.Hair.Zombie.len()) != ::Const.Hair.Zombie.len())
+		if (::Math.rand(0, ::Const.Hair.Zombie.len()) != ::Const.Hair.Zombie.len())
 		{
-			hair.setBrush("hair_" + hairColor + "_" + ::Const.Hair.Zombie[this.Math.rand(0, ::Const.Hair.Zombie.len() - 1)]);
+			hair.setBrush("hair_" + hairColor + "_" + ::Const.Hair.Zombie[::Math.rand(0, ::Const.Hair.Zombie.len() - 1)]);
 		}
 
 		this.addSprite("helmet").setHorizontalFlipping(true);
@@ -118,12 +118,12 @@
 		local body_blood = this.addSprite("body_blood");
 		body_blood.setBrush("bust_body_bloodied_02");
 		body_blood.setHorizontalFlipping(true);
-		body_blood.Visible = this.Math.rand(1, 100) <= 33;
+		body_blood.Visible = ::Math.rand(1, 100) <= 33;
 
 		local body_dirt = this.addSprite("dirt");
 		body_dirt.setBrush("bust_body_dirt_02");
 		body_dirt.setHorizontalFlipping(true);
-		body_dirt.Visible = this.Math.rand(1, 100) <= 50;
+		body_dirt.Visible = ::Math.rand(1, 100) <= 50;
 
 		local rage = this.addSprite("status_rage");
 		rage.setHorizontalFlipping(true);
@@ -168,13 +168,13 @@
 			[1, "scripts/items/armor/butcher_apron"],
 			[1, "scripts/items/armor/monk_robe"],
 		]).roll());
-		if (this.Math.rand(1, 100) <= 50)
+		if (::Math.rand(1, 100) <= 50)
 		{
-			armor.setArmor(this.Math.round(armor.getArmorMax() / 2 - 1) / 1.0);
+			armor.setArmor(::Math.round(armor.getArmorMax() / 2 - 1) / 1.0);
 		}
 		this.getItems().equip(armor);
 
-		if (this.Math.rand(1, 100) <= 33)
+		if (::Math.rand(1, 100) <= 33)
 		{
 			local helmet = ::new(::MSU.Class.WeightedContainer([
 				[1, "scripts/items/helmets/hood"],
@@ -183,9 +183,9 @@
 				[1, "scripts/items/helmets/open_leather_cap"],
 				[1, "scripts/items/helmets/full_leather_cap"],
 			]).roll());
-			if (this.Math.rand(1, 100) <= 50)
+			if (::Math.rand(1, 100) <= 50)
 			{
-				helmet.setArmor(this.Math.round(helmet.getArmorMax() / 2 - 1) / 1.0);
+				helmet.setArmor(::Math.round(helmet.getArmorMax() / 2 - 1) / 1.0);
 			}
 			this.getItems().equip(helmet);
 		}

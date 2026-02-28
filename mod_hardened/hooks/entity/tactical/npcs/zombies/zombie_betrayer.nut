@@ -106,7 +106,7 @@
 		]).roll());
 		if (this.Math.rand(1, 100) <= 33)
 		{
-			armor.setArmor(this.Math.round(armor.getArmorMax() / 2 - 1) / 1.0);
+			armor.setArmor(::Math.round(armor.getArmorMax() / 2 - 1) / 1.0);
 		}
 		this.getItems().equip(armor);
 
@@ -115,7 +115,7 @@
 		]).roll());
 		if (this.Math.rand(1, 100) <= 33)
 		{
-			helmet.setArmor(this.Math.round(helmet.getArmorMax() / 2 - 1) / 1.0);
+			helmet.setArmor(::Math.round(helmet.getArmorMax() / 2 - 1) / 1.0);
 		}
 		this.getItems().equip(helmet);
 	}

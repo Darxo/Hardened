@@ -59,7 +59,7 @@
 	q.HD_onInitSprites = @(__original) function()
 	{
 		__original();
-		this.getSprite("head").setBrush("bust_goblin_01_head_0" + this.Math.rand(1, 3));
+		this.getSprite("head").setBrush("bust_goblin_01_head_0" + ::Math.rand(1, 3));
 		this.getSprite("quiver").Visible = true;
 		this.addDefaultStatusSprites();
 	}
@@ -92,7 +92,7 @@
 		this.getItems().equip(::new("scripts/items/ammo/quiver_of_arrows"));
 		this.getItems().addToBag(::new("scripts/items/weapons/greenskins/goblin_notched_blade"));
 
-		if (this.Math.rand(1, 100) <= 10)
+		if (::Math.rand(1, 100) <= 10)
 		{
 			this.getItems().addToBag(::new("scripts/items/accessory/poison_item"));	// This is just added as a drop. Goblin Ambusher have a special effect to always poison
 		}

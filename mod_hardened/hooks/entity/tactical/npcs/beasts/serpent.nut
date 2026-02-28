@@ -17,8 +17,8 @@
 	{
 		this.addSprite("socket").setBrush("bust_base_beasts");
 		local body = this.addSprite("body");
-		this.m.Variant = this.Math.rand(1, 2);
-		body.setBrush("bust_snake_0" + this.m.Variant + "_head_0" + this.Math.rand(1, 2));
+		this.m.Variant = ::Math.rand(1, 2);
+		body.setBrush("bust_snake_0" + this.m.Variant + "_head_0" + ::Math.rand(1, 2));
 		body.varySaturation(0.1);
 		body.varyColor(0.1, 0.1, 0.1);
 		body.varyBrightness(0.1);
@@ -40,7 +40,7 @@
 		// Tweak Base Properties
 		local b = this.getBaseProperties();
 		b.setValues(::Const.Tactical.Actor.Serpent);
-		// b.Initiative += this.Math.rand(0, 50);
+		// b.Initiative += ::Math.rand(0, 50);
 		b.IsAffectedByNight = false;
 
 		// Generic Effects

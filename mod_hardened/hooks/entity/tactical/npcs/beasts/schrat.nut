@@ -23,7 +23,7 @@
 		body.varyColor(0.05, 0.05, 0.05);
 		this.m.BloodColor = body.Color;
 		local head = this.addSprite("head");
-		head.setBrush("bust_schrat_head_0" + this.Math.rand(1, 2));
+		head.setBrush("bust_schrat_head_0" + ::Math.rand(1, 2));
 		head.Color = body.Color;
 		head.Saturation = body.Saturation;
 		local injury = this.addSprite("injury");

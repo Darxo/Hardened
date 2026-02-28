@@ -31,7 +31,7 @@
 		}
 
 		// Same Hard-Coded experience penalty implementtion for manhunter origin as in Vanilla
-		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin() != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getID() != "background.slave")
+		if (("State" in ::World) && ::World.State != null && ::World.Assets.getOrigin() != null && ::World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getID() != "background.slave")
 		{
 			_properties.XPGainMult *= 0.9;
 		}

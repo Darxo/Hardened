@@ -65,7 +65,7 @@
 		head.setBrush("bust_ghoul_head_01");
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
-		this.m.Head = this.Math.rand(1, 3);
+		this.m.Head = ::Math.rand(1, 3);
 		local injury = this.addSprite("injury");
 		injury.setBrush("bust_ghoul_01_injured");
 		injury.Visible = false;

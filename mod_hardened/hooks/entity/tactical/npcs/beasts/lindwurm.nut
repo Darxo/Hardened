@@ -24,11 +24,11 @@
 	{
 		this.addSprite("socket").setBrush("bust_base_beasts");
 		local body = this.addSprite("body");
-		body.setBrush("bust_lindwurm_body_0" + this.Math.rand(1, 1));
+		body.setBrush("bust_lindwurm_body_0" + ::Math.rand(1, 1));
 		body.varySaturation(0.2);
 		body.varyColor(0.08, 0.08, 0.08);
 		local head = this.addSprite("head");
-		head.setBrush("bust_lindwurm_head_0" + this.Math.rand(1, 1));
+		head.setBrush("bust_lindwurm_head_0" + ::Math.rand(1, 1));
 		head.Color = body.Color;
 		head.Saturation = body.Saturation;
 		local injury = this.addSprite("injury");
@@ -91,7 +91,7 @@
 
 		if (spawnTile != null)
 		{
-			this.m.Tail = this.WeakTableRef(this.Tactical.spawnEntity("scripts/entity/tactical/enemies/lindwurm_tail", spawnTile.Coords.X, spawnTile.Coords.Y, this.getID()));
+			this.m.Tail = this.WeakTableRef(::Tactical.spawnEntity("scripts/entity/tactical/enemies/lindwurm_tail", spawnTile.Coords.X, spawnTile.Coords.Y, this.getID()));
 			this.m.Tail.m.Body = this.WeakTableRef(this);
 
 			local body = this.getSprite("body");

@@ -21,7 +21,7 @@
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()
 	{
-		local hairColor = ::Const.HairColors.Zombie[this.Math.rand(0, ::Const.HairColors.Zombie.len() - 1)];
+		local hairColor = ::Const.HairColors.Zombie[::Math.rand(0, ::Const.HairColors.Zombie.len() - 1)];
 		this.addSprite("socket").setBrush("bust_base_undead");
 		local body = this.addSprite("body");
 		body.setBrush("bust_skeleton_body_05");
@@ -31,9 +31,9 @@
 		this.addSprite("armor");
 		local body_detail = this.addSprite("body_detail");
 
-		if (this.Math.rand(1, 100) <= 75)
+		if (::Math.rand(1, 100) <= 75)
 		{
-			body_detail.setBrush("bust_skeleton_detail_0" + this.Math.rand(2, 3));
+			body_detail.setBrush("bust_skeleton_detail_0" + ::Math.rand(2, 3));
 		}
 
 		local head = this.addSprite("head");
@@ -45,7 +45,7 @@
 		injury.setBrush("bust_skeleton_head_05_injured");
 		local head_detail = this.addSprite("head_detail");
 
-		if (this.Math.rand(1, 100) <= 50)
+		if (::Math.rand(1, 100) <= 50)
 		{
 			head_detail.setBrush("bust_skeleton_head_detail_01");
 		}
@@ -62,9 +62,9 @@
 		local hair = this.addSprite("hair");
 		hair.Color = beard.Color;
 
-		if (this.Math.rand(1, 100) <= 75)
+		if (::Math.rand(1, 100) <= 75)
 		{
-			hair.setBrush("hair_" + hairColor + "_" + ::Const.Hair.Vampire[this.Math.rand(0, ::Const.Hair.Vampire.len() - 1)]);
+			hair.setBrush("hair_" + hairColor + "_" + ::Const.Hair.Vampire[::Math.rand(0, ::Const.Hair.Vampire.len() - 1)]);
 		}
 
 		this.setSpriteOffset("hair", this.createVec(0, -3));
@@ -85,7 +85,7 @@
 		local body_dirt = this.addSprite("dirt");
 		body_dirt.setBrush("bust_body_dirt_02");
 		body_dirt.setHorizontalFlipping(true);
-		body_dirt.Visible = this.Math.rand(1, 100) <= 33;
+		body_dirt.Visible = ::Math.rand(1, 100) <= 33;
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
 	}

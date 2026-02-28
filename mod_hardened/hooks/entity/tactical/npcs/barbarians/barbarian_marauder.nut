@@ -54,7 +54,7 @@
 	{
 		this.getSprite("socket").setBrush("bust_base_wildmen_01");
 		local tattoos = [3,	4, 5, 6];
-		if (this.Math.rand(1, 100) <= 66)
+		if (::Math.rand(1, 100) <= 66)
 		{
 			local tattoo_body = this.actor.getSprite("tattoo_body");
 			local body = this.actor.getSprite("body");
@@ -62,7 +62,7 @@
 			tattoo_body.Visible = true;
 		}
 
-		if (this.Math.rand(1, 100) <= 50)
+		if (::Math.rand(1, 100) <= 50)
 		{
 			local tattoo_head = this.actor.getSprite("tattoo_head");
 			tattoo_head.setBrush("tattoo_0" + ::MSU.Array.rand(tattoos) + "_head");

@@ -106,7 +106,7 @@
 		}
 	}
 
-	::MSU.Log.printData(this.Tactical.getCamera().queryEntityOverlays(), 2)
+	::MSU.Log.printData(::Tactical.getCamera().queryEntityOverlays(), 2)
 
 	return xpPerBrother;
 }

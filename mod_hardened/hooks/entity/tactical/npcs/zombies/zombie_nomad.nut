@@ -63,9 +63,9 @@
 			[1, "scripts/items/armor/oriental/nomad_robe"],
 			[1, "scripts/items/armor/oriental/thick_nomad_robe"],
 		]).roll());
-		if (this.Math.rand(1, 100) <= 66)
+		if (::Math.rand(1, 100) <= 66)
 		{
-			armor.setArmor(this.Math.round(armor.getArmorMax() / 2 - 1) / 1.0);
+			armor.setArmor(::Math.round(armor.getArmorMax() / 2 - 1) / 1.0);
 		}
 		this.getItems().equip(armor);
 
@@ -76,9 +76,9 @@
 			[6, "scripts/items/helmets/oriental/leather_head_wrap"],
 			[12, "scripts/items/helmets/oriental/nomad_head_wrap"],
 		]).roll());
-		if (this.Math.rand(1, 100) <= 66)
+		if (::Math.rand(1, 100) <= 66)
 		{
-			helmet.setArmor(this.Math.round(helmet.getArmorMax() / 2 - 1) / 1.0);
+			helmet.setArmor(::Math.round(helmet.getArmorMax() / 2 - 1) / 1.0);
 		}
 		this.getItems().equip(helmet);
 	}

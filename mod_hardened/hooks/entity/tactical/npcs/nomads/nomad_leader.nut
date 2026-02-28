@@ -114,7 +114,7 @@
 		this.getSprite("socket").setBrush("bust_base_nomads");
 		local dirt = this.getSprite("dirt");
 		dirt.Visible = true;
-		dirt.Alpha = this.Math.rand(150, 255);
+		dirt.Alpha = ::Math.rand(150, 255);
 	}
 
 	// Assign Stats and Unconditional Immunities, Perks and Actives

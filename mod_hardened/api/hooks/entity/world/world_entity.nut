@@ -95,7 +95,7 @@
 
 	q.HD_dropFood <- function( _num, _items, _lootTable, _minServingPct = 0.0, _minGoodForPct = 0.0 )
 	{
-		_num = this.Math.max(0, this.Math.round(_num * this.m.LootScale));
+		_num = ::Math.max(0, ::Math.round(_num * this.m.LootScale));
 
 		if (_num == 0)
 		{

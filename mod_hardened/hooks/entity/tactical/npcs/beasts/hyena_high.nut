@@ -14,9 +14,9 @@
 	{
 		__original();
 		local body = this.getSprite("body");
-		body.setBrush("bust_hyena_0" + this.Math.rand(4, 6));
+		body.setBrush("bust_hyena_0" + ::Math.rand(4, 6));
 		local head = this.getSprite("head");
-		head.setBrush("bust_hyena_0" + this.Math.rand(4, 6) + "_head");
+		head.setBrush("bust_hyena_0" + ::Math.rand(4, 6) + "_head");
 	}
 
 	// Assign Stats and Unconditional Immunities, Perks and Actives

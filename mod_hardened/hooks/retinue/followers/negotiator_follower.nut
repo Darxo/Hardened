@@ -12,10 +12,10 @@
 	q.onUpdate = @(__original) function()
 	{
 		// We prevent Vanilla from adjusting the RelationDecayGoodMult
-		local oldRelationDecayBadMult = this.World.Assets.m.RelationDecayBadMult;
+		local oldRelationDecayBadMult = ::World.Assets.m.RelationDecayBadMult;
 		__original();
-		this.World.Assets.m.RelationDecayBadMult = oldRelationDecayBadMult;
+		::World.Assets.m.RelationDecayBadMult = oldRelationDecayBadMult;
 
-		this.World.Assets.m.RelationDecayBadMult *= 2.0;	// Vanilla: 1.15
+		::World.Assets.m.RelationDecayBadMult *= 2.0;	// Vanilla: 1.15
 	}
 });

@@ -66,7 +66,7 @@
 	q.HD_onInitSprites <- function()
 	{
 		this.getSprite("socket").setBrush("bust_base_nomads");
-		if (this.Math.rand(1, 100) <= 15)
+		if (::Math.rand(1, 100) <= 15)
 		{
 			local pox = this.getSprite("tattoo_head");
 			pox.Visible = true;
@@ -77,7 +77,7 @@
 			local dirt = this.getSprite("dirt");
 			dirt.Visible = true;
 		}
-		if (this.Math.rand(1, 100) <= 25)
+		if (::Math.rand(1, 100) <= 25)
 		{
 			this.getSprite("eye_rings").Visible = true;
 		}

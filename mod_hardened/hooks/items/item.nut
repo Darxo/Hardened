@@ -8,7 +8,7 @@
 		{
 			if ("text" in entry)
 			{
-				if (entry.text.find("Maximum Fatigue [color=" + this.Const.UI.Color.NegativeValue + "]") != null)	// Regular weight tooltip line for items
+				if (entry.text.find("Maximum Fatigue [color=" + ::Const.UI.Color.NegativeValue + "]") != null)	// Regular weight tooltip line for items
 				{
 					if (this.getWeight() == 0)	// Since we made Vanilla produce weight tooltips for weapons even while the item has no weight, we need to clean them up now
 					{

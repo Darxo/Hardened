@@ -105,7 +105,7 @@
 				::Sound.play(::MSU.Array.rand(this.m.SoundOnUse), ::Const.Sound.Volume.RacialEffect, _targetEntity.getPos());
 			}
 
-			::Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_targetEntity) + " is poisoned");
+			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(_targetEntity) + " is poisoned");
 		}
 
 		_targetEntity.getSkills().add(this.createSpiderPoisonEffect());
