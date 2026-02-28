@@ -224,11 +224,12 @@
 		__original(_appearance, _setDirty);
 		if (!this.m.IsAlive || this.m.IsDying) return;	// Same early return as in Vanilla
 
-		// Vanilla Fix: In Vanilla a shield can not be visually lowered, if it has not been visually raised yet (offset.Y != 0)
+		// Vanilla Fix: Update shieldwall animation correctly if an NPC loses that effect while not visible to the player
 		// A shield can only be visually raised/lowered, while an entity is rendering (= visible to the player)
-		// So if an NPC gets shieldwall but is not visible; and then a little later loses shieldwall, it will not get this.m.IsLoweringShield set to true;
-		// Its shield will appear raised up until any other onAppearanceChanged call happens on them
-		// We fix that bug here by also allowing this.m.IsLoweringShield to be set to true, when this.m.IsRaisingShield == true
+		//	So if an NPC gets shieldwall but is not visible; and then a little later loses shieldwall, it will not get this.m.IsLoweringShield set to true;
+		//	Its shield will appear raised up until any other onAppearanceChanged call happens on them
+		// We fix that bug here by also allowing this.m.IsLoweringShield to be set to true, while this.m.IsRaisingShield == true
+		// This fix also requires a tweak in actor::setRenderCallbackEnabled to make sure, that both queued animations are correctly rendered
 		if (this.hasSprite("shield_icon") && _appearance.Shield.len() != 0)
 		{
 			local offset = this.getSpriteOffset("shield_icon");
