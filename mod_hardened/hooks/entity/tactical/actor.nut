@@ -243,10 +243,10 @@
 	q.onMovementFinish = @(__original) function( _tile )
 	{
 		__original(_tile);
-		if (this.isPlayerControlled())
+		if (this.isPlayerControlled() && ::Settings.getGameplaySettings().AdjustCameraLevel)
 		{
 			local camera = ::Tactical.getCamera();
-			camera.Level = camera.getBestLevelForTile(_tile);	// Todo: Setting for this?
+			camera.Level = camera.getBestLevelForTile(_tile);
 		}
 
 		if (!_tile.IsVisibleForPlayer) this.m.HD_IsDiscovered = false;
