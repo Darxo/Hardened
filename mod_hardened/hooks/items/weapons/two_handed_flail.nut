@@ -6,6 +6,7 @@
 		this.m.Value = 1800;			// Vanilla: 1400
 		this.m.RegularDamage = 55; 		// Vanilla: 45
 		this.m.RegularDamageMax = 90; 	// Vanilla: 90
+		this.m.DirectDamageMult = 0.4; 	// Vanilla: 0.3
 
 		this.m.Reach = 4;		// In Reforged this is 5
 	}
