@@ -231,7 +231,7 @@
 		if (this.hasSprite("shield_icon") && _appearance.Shield.len() != 0)
 		{
 			local offset = this.getSpriteOffset("shield_icon");
-			if (!this.m.IsLoweringShield && !_appearance.RaiseShield && (offset.Y != 0 || this.m.IsRaisingShield))	// This is the only different line to vanilla logic
+			if (!this.m.IsLoweringShield && !_appearance.RaiseShield && this.m.IsRaisingShield)	// This is the only different line to vanilla logic
 			{
 				this.m.IsLoweringShield = true;
 				this.setRenderCallbackEnabled(true);
