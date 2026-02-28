@@ -208,3 +208,159 @@
 		]
 	}
 ];
+
+::Const.Tactical.HD_FireLanceDirectionalParticles <- [
+	{
+		init = function( _startTile, _destinationTile ) {
+			local direction = _startTile.getDirectionTo(_destinationTile);
+			this.Stages[0].SpawnOffsetMin = ::Hardened.animation.getSpawnOffset(direction).Min;
+			this.Stages[0].SpawnOffsetMax = ::Hardened.animation.getSpawnOffset(direction).Max;
+			this.Stages[0].DirectionMin = ::Hardened.animation.getDirectionVector(direction, 0.1).Min;
+			this.Stages[0].DirectionMax = ::Hardened.animation.getDirectionVector(direction, 0.1).Max;
+			this.Stages[1].DirectionMin = ::Hardened.animation.getDirectionVector(direction).Min;
+			this.Stages[1].DirectionMax = ::Hardened.animation.getDirectionVector(direction).Max;
+			foreach (entry in this.Stages)
+			{
+				entry.ForceMin = ::Hardened.animation.getDirectionForce(direction, 70);
+				entry.ForceMax = ::Hardened.animation.getDirectionForce(direction, 70);
+			}
+		},
+
+		Delay = 100,
+		Quantity = 230,
+		LifeTimeQuantity = 230,
+		SpawnRate = 256,
+		Brushes = [
+			"effect_fire_01",
+			"effect_fire_02",
+			"effect_fire_03"
+		],
+		Stages = [
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.1,
+				ColorMin = this.createColor("ffe7cf00"),
+				ColorMax = this.createColor("ffeacf00"),
+				ScaleMin = 0.5,
+				ScaleMax = 0.75,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 200,
+				VelocityMax = 300,
+				DirectionMin = this.createVec(1.0, -0.1),
+				DirectionMax = this.createVec(1.0, 0.1),
+				SpawnOffsetMin = this.createVec(20, -2),
+				SpawnOffsetMax = this.createVec(30, 8),
+				ForceMin = this.createVec(0, 70),
+				ForceMax = this.createVec(0, 70)
+			},
+			{
+				LifeTimeMin = 0.2,
+				LifeTimeMax = 0.4,
+				ColorMin = this.createColor("ff813dff"),
+				ColorMax = this.createColor("fec19fff"),
+				ScaleMin = 0.5,
+				ScaleMax = 0.75,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 200,
+				VelocityMax = 300,
+				DirectionMin = this.createVec(1.0, -0.1),
+				DirectionMax = this.createVec(1.0, 0.1),
+				ForceMin = this.createVec(0, 70),
+				ForceMax = this.createVec(0, 70)
+			},
+			{
+				LifeTimeMin = 0.2,
+				LifeTimeMax = 0.4,
+				ColorMin = this.createColor("fc6a52f0"),
+				ColorMax = this.createColor("fcaa52f0"),
+				ScaleMin = 0.75,
+				ScaleMax = 1.0,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 200,
+				VelocityMax = 300,
+				ForceMin = this.createVec(0, 70),
+				ForceMax = this.createVec(0, 70)
+			},
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.2,
+				ColorMin = this.createColor("d8380000"),
+				ColorMax = this.createColor("d8380000"),
+				ScaleMin = 0.75,
+				ScaleMax = 1.0,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 200,
+				VelocityMax = 300,
+				ForceMin = this.createVec(0, 70),
+				ForceMax = this.createVec(0, 70)
+			}
+		]
+	},
+	{
+		init = function( _startTile, _destinationTile ) {
+			local direction = _startTile.getDirectionTo(_destinationTile);
+			this.Stages[0].SpawnOffsetMin = ::Hardened.animation.getSpawnOffset(direction).Min;
+			this.Stages[0].SpawnOffsetMax = ::Hardened.animation.getSpawnOffset(direction).Max;
+			this.Stages[0].DirectionMin = ::Hardened.animation.getDirectionVector(direction, 0.2).Min;
+			this.Stages[0].DirectionMax = ::Hardened.animation.getDirectionVector(direction, 0.2).Max;
+			this.Stages[1].ForceMin = ::Hardened.animation.getDirectionForce(direction, 35);
+			this.Stages[1].ForceMax = ::Hardened.animation.getDirectionForce(direction, 35);
+			this.Stages[2].ForceMin = ::Hardened.animation.getDirectionForce(direction, 35);
+			this.Stages[2].ForceMax = ::Hardened.animation.getDirectionForce(direction, 35);
+		},
+
+		Delay = 200,
+		Quantity = 50,
+		LifeTimeQuantity = 50,
+		SpawnRate = 20,
+		Brushes = [
+			"ash_01"
+		],
+		Stages = [
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.2,
+				ColorMin = this.createColor("ffffff00"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 0.5,
+				ScaleMax = 0.5,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(1.0, -0.2),
+				DirectionMax = this.createVec(1.0, 0.2),
+				SpawnOffsetMin = this.createVec(15, -2),
+				SpawnOffsetMax = this.createVec(25, 8)
+			},
+			{
+				LifeTimeMin = 2.0,
+				LifeTimeMax = 3.0,
+				ColorMin = this.createColor("ffffffff"),
+				ColorMax = this.createColor("ffffffff"),
+				ScaleMin = 0.5,
+				ScaleMax = 0.75,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				ForceMin = this.createVec(0, 30),
+				ForceMax = this.createVec(0, 40)
+			},
+			{
+				LifeTimeMin = 0.2,
+				LifeTimeMax = 0.3,
+				ColorMin = this.createColor("ffffff00"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 0.75,
+				ScaleMax = 1.0,
+				VelocityMin = 0,
+				VelocityMax = 0,
+				ForceMin = this.createVec(0, 30),
+				ForceMax = this.createVec(0, 40)
+			}
+		]
+	}
+];
