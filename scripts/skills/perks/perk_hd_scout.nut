@@ -44,7 +44,7 @@ this.perk_hd_scout <- ::inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		_properties.UpdateWhenTileOccupationChanges = true;	// Because this perk grants vision depending on adjacent objects
-		this.getContainer().getActor().m.LevelActionPointCost = 0;
+		this.getContainer().getActor().m.ActionPointCosts = ::Const.PathfinderMovementAPCost;	// This will not stack with Pathfinder perk
 		_properties.Vision += this.getVisionModifier(this.m.CurrentVirtualStepTile);
 	}
 

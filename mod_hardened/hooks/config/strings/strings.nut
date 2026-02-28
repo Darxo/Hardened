@@ -123,7 +123,7 @@ local newPerks = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Gain " + ::MSU.Text.colorPositive("+1") + " [Vision|Concept.SightDistance] for every 3 adjacent tiles that are either empty or at least 2 levels below your tile",
-						"Changing height levels has no additional [Action Point|Concept.ActionPoints] cost",
+						"[Action Point|Concept.ActionPoints] costs for movement on all terrain is reduced by 1 to a minimum of 2 [Action Points|Concept.ActionPoints] per tile. This does not stack with [Pathfinder|Perk+perk_pathfinder] or [Elusive|Perk+perk_elusive]",
 					],
 				},
 			],
