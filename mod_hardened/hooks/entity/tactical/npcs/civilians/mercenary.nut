@@ -9,6 +9,18 @@
 	{
 		__original();
 
+		if (::Math.rand(1, 100) <= 15)
+		{
+			// Feat: There is a small chance for mercenaries to be of southern heritage
+			this.m.Bodies = ::Const.Bodies.SouthernMale;
+			this.m.Faces = ::Const.Faces.SouthernMale;
+			this.m.Hairs = ::Const.Hair.SouthernMale;
+			this.m.HairColors = ::Const.HairColors.Southern;
+			this.m.Beards = ::Const.Beards.Southern;
+			this.m.BeardChance = 90;
+			this.m.Ethnicity = 1;
+		}
+
 		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 130 - 190
 			[12, "scripts/items/armor/basic_mail_shirt"],
 			[12, "scripts/items/armor/leather_scale_armor"],
