@@ -104,7 +104,8 @@
 			[1, "scripts/items/armor/decayed_coat_of_plates"],
 			[1, "scripts/items/armor/decayed_coat_of_scales"],
 		]).roll());
-		if (this.Math.rand(1, 100) <= 33)
+
+		if (!this.m.IsMiniboss && ::Math.rand(1, 100) <= 33)
 		{
 			armor.setArmor(::Math.round(armor.getArmorMax() / 2 - 1) / 1.0);
 		}
@@ -113,7 +114,7 @@
 		local helmet = ::new(::MSU.Class.WeightedContainer([
 			[12, "scripts/items/helmets/decayed_great_helm"],
 		]).roll());
-		if (this.Math.rand(1, 100) <= 33)
+		if (!this.m.IsMiniboss && ::Math.rand(1, 100) <= 33)
 		{
 			helmet.setArmor(::Math.round(helmet.getArmorMax() / 2 - 1) / 1.0);
 		}
