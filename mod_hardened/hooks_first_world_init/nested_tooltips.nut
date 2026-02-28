@@ -25,7 +25,7 @@
 	)),
 	CriticalDamage = ::MSU.Class.BasicTooltip("Critical Damage", ::Reforged.Mod.Tooltips.parseString(
 		"Critical Damage refers to bonus [Hitpoint|Concept.Hitpoints] Damage inflicted when striking specific body parts. This damage is applied after armor mitigation.\n\n" +
-		"By default, [hits to the head|Concept.ChanceToHitHead] deal " + ::MSU.Text.colorPositive("+50%") + " additional Critical Damage."
+		"By default, [hits to the head|Concept.ChanceToHitHead] deal " + ::MSU.Text.colorizeMult(::Const.CharacterProperties.DamageAgainstMult[::Const.BodyPart.Head]) + " additional Critical Damage."
 	)),
 	Cover = ::MSU.Class.BasicTooltip("Cover", ::Reforged.Mod.Tooltips.parseString(
 		"Cover refers to obstacles or characters, which characters can hide behind.\n\n" +
