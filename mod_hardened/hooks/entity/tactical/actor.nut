@@ -69,9 +69,10 @@
 		local oldSetRenderCallbackEnabled = this.setRenderCallbackEnabled;
 		this.setRenderCallbackEnabled = function( _bool )
 		{
-			// Vanilla Fix: We prevent Vanilla from disabling the RenderCallBack after raising the shield if it is still supposed to lower it afterwards
-			// This is related to the Vanilla Fix about Shieldwall Animation not being removed correctly; See onAppearanceChanged Vanilla Fix
-			if (_bool == false && this.m.IsLoweringShield)
+			// Vanilla Fix: Keep the RenderCallback enabled, after raising the shield if it is still supposed to lower it afterwards
+			// Vanilla Fix: Keep the RenderCallback enabled, after lowering the weapon or if it is still supposed to raise it afterwards
+			// This is related to the Vanilla Fix about Shieldwall/Spearwall Animation not being removed correctly; See onAppearanceChanged Vanilla Fix
+			if (_bool == false && (this.m.IsLoweringShield || this.m.IsRaisingWeapon))
 			{
 				return oldSetRenderCallbackEnabled(true);
 			}
@@ -234,6 +235,24 @@
 			if (!this.m.IsLoweringShield && !_appearance.RaiseShield && this.m.IsRaisingShield)	// This is the only different line to vanilla logic
 			{
 				this.m.IsLoweringShield = true;
+				this.setRenderCallbackEnabled(true);
+				this.m.RenderAnimationStartTime = ::Time.getVirtualTimeF();
+			}
+		}
+
+		// Vanilla Fix: Update spearwall animation correctly if an NPC loses that effect while not visible to the player
+		// A weapon can only be visually lowered/raised, while an entity is rendering (= visible to the player)
+		// 	So if an NPC gets spearwall but is not visible; and then a little later loses spearwall, it will not get this.m.IsRaisingWeapon set to true;
+		// 	Its weapon will appear lowered up until any other onAppearanceChanged call happens on them
+		// We fix that bug here by also allowing this.m.IsRaisingWeapon to be set to true, while this.m.IsLoweringWeapon == true
+		// This fix also requires a tweak in actor::setRenderCallbackEnabled to make sure, that both queued animations are correctly rendered
+		if (this.hasSprite("arms_icon") && _appearance.Weapon.len() != 0)
+		{
+			local arms_icon = this.getSprite("arms_icon");
+			local arms_rotation = arms_icon.Rotation;
+			if (!this.m.IsRaisingWeapon && !_appearance.LowerWeapon && this.m.IsLoweringWeapon)	// This is the only different line to vanilla logic
+			{
+				this.m.IsRaisingWeapon = true;
 				this.setRenderCallbackEnabled(true);
 				this.m.RenderAnimationStartTime = ::Time.getVirtualTimeF();
 			}
