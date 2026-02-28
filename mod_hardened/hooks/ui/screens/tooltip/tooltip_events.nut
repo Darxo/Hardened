@@ -289,6 +289,31 @@
 					}
 				}
 
+				foreach (entry in ret)
+				{
+					if (!("id" in entry)) continue;
+
+					if (entry.id == 2 && entry.type == "description")
+					{
+						// Feat: we list the most common sources of positive and negative renown
+						entry.text += ::Reforged.Mod.Tooltips.parseString(
+							"\n\n" +
+							"Renown is typically gained from:\n" +
+							"- Winning a regular fight (" + ::MSU.Text.colorizeValue(::Const.World.Assets.ReputationOnVictory, {AddSign = true}) + ")\n" +
+							"- Defeating a location (" + ::MSU.Text.colorizeValue(::Const.World.Assets.ReputationOnVictoryVSLocation, {AddSign = true}) + ")\n" +
+							"- Fulfilling a contract (" + ::MSU.Text.colorizeValue(::Const.World.Assets.ReputationOnContractSuccess, {AddSign = true}) + ")\n" +
+							"- Fulfilling an ambition (" + ::MSU.Text.colorizeValue(::Const.World.Assets.ReputationOnAmbition, {AddSign = true}) + ")\n" +
+							"- Various Events\n\n" +
+							"Renown is typically lost from:\n" +
+							"- Losing a fight (" + ::MSU.Text.colorizeValue(::Const.World.Assets.ReputationOnLoss, {AddSign = true}) + ")\n" +
+							"- Failing a contract (" + ::MSU.Text.colorizeValue(::Const.World.Assets.ReputationOnContractFail, {AddSign = true}) + ")\n" +
+							"- Cancelling a contract (" + ::MSU.Text.colorizeValue(::Const.World.Assets.ReputationOnContractCancel, {AddSign = true}) + ")\n" +
+							"- Each passing day (" + ::MSU.Text.colorizeValue(::Const.World.Assets.ReputationDaily, {AddSign = true}) + ")\n" +
+							"- Various Events"
+						);
+					}
+				}
+
 				ret.push({
 					id = 13,
 					type = "text",
