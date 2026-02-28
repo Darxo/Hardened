@@ -98,6 +98,8 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
+
+		this.getSkills().add(::new("scripts/skills/perks/perk_battle_forged"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_crippling_strikes"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_fast_adaption"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_the_rush_of_battle"));

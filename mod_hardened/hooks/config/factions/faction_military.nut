@@ -176,11 +176,11 @@
 	::Const.Tactical.Actor.RF_ManAtArms.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_ManAtArms.Hitpoints = 100;
 	::Const.Tactical.Actor.RF_ManAtArms.Bravery = 70;
-	::Const.Tactical.Actor.RF_ManAtArms.Stamina = 120;
+	::Const.Tactical.Actor.RF_ManAtArms.Stamina = 150;
 	::Const.Tactical.Actor.RF_ManAtArms.MeleeSkill = 85;
 	::Const.Tactical.Actor.RF_ManAtArms.RangedSkill = 50;
-	::Const.Tactical.Actor.RF_ManAtArms.MeleeDefense = 20;
-	::Const.Tactical.Actor.RF_ManAtArms.RangedDefense = 10;
+	::Const.Tactical.Actor.RF_ManAtArms.MeleeDefense = 30;
+	::Const.Tactical.Actor.RF_ManAtArms.RangedDefense = 20;
 	::Const.Tactical.Actor.RF_ManAtArms.Initiative = 110;
 }
 

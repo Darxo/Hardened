@@ -728,8 +728,8 @@
 // scripts/entity/tactical/humans/rf_man_at_arms
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_ManAtArms.Cost = 45;
-	::Const.World.Spawn.Troops.RF_ManAtArms.Strength = 45;
+	::Const.World.Spawn.Troops.RF_ManAtArms.Cost = 50;
+	::Const.World.Spawn.Troops.RF_ManAtArms.Strength = 50;
 }
 
 // scripts/entity/tactical/humans/rf_herald
