@@ -211,6 +211,7 @@
 	}
 
 // Modular Vanilla Functions
+	// Overwrite, because we implement our own strength calculation
 	q.MV_getStrengthRaw = @() function()
 	{
 		local regularLevelUps = ::Math.clamp(getLevel(), 1, ::Const.XP.MaxLevelWithPerkpoints) - 1;		// -1 because the first level does not count

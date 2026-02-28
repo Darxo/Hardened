@@ -533,7 +533,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Wooden Stick** no longer has any Fatigue discount on its skills
 - **Wonky Bow** now deals 30-45 damage (down from 30-50) a Range of 6 (down from 7), 0% Hitchance bonus (up from -10%) and costs 150 Crowns (up from 100)
 - **Woodcutters Axe** now deals 35-60 damage (down from 35-70)
-- **Zweihander** lose **Split Shield**. It now has 6 Reach (down from 7) and +10% Headshot Chance (up from +5%)
+- **Zweihander** loses **Split Shield**. It now has 6 Reach (down from 7) and +10% Headshot Chance (up from +5%)
 
 ### Armor Condition/Weight/Value changes
 
@@ -1131,6 +1131,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Turn **Decisive** effect icon grey, while a character has 0 stacks
 - Improve brightness and contrast of **Hold Steady**,  **Line Breaker**, **Net Pull** and **Onslaught** skills
 - Use unique icon for **Sergeant** perk
+- Play the **Ignite Firelance** animation in the actual direction you aim at
 - Idle sounds of enemies during combat now play up to 50% less freqently
 - Improve tooltip of **Disarmed effect**
 - Improve tooltip of **Whip Disarm** using a nested tooltip for the **Disarmed effect**
@@ -1179,6 +1180,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add Setting (on) for displaying the exact Relation whenever its indirect term appears anywhere
 - Add Setting (on) for displaying the exact Morale Reputation whenever its indirect term appears anywhere
 - Add Setting (on) for displaying the exact Renown whenever its indirect term appears anywhere
+- Add Setting (on) to display the AI intent of world parties (attacking/fleeing)
 - Peasants and Caravans on the world map display a banner
 - Display reason when the owner-faction of a faction loses relation with you, because you lost relation with that child-faction
 - Add tooltip for undesirable food (e.g. Strange Meat) explaining that their are eaten last
@@ -1208,7 +1210,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add setting (on) to show the absolute mood value instead of a percentage in the mood tooltip
 - List the exact mood changes in brackets in the mood tooltip
 - Slightly move the dismiss button downwards
-- Improve the Vanilla Concepts **Chance to hit head**, **Vision** and **Morale** and add nested tooltip for all morale states (except **Steady**)
+- Improve the Vanilla Concepts **Chance to hit head**, **Vision**, **Renown** and **Morale** and add nested tooltip for all morale states (except **Steady**)
 - Improve the Reforged Concept for **Turn**
 - Improve Goblin Poison, Spider Poison item, skill and effect tooltips
 - Display item type names for Ammunition, Accessories, Consumables, Food and Quest Items in the item tooltips
@@ -1276,6 +1278,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix tactical map zoom/pan sometimes zooming/panning too far during lag
 - Fix Quivers needing to re-use the same ID to be correctly identified as ammo
 - Fix shieldwall animation still showing up on NPCs who lost the shieldwall effect offscreen
+- Fix spearwall animation showing up on NPCs who lost the spearwall effect offscreen
 - Fix barbarian **Drum** being double grippable despite being a two-handed weapon
 - Fix the impact delay of most throwable utility items not lining up with their projectiles, especially on higher game speed
 - Fix **Headhunter** and **Fast Adaption** sometimes not triggering correctly from zone of control attacks
@@ -1287,6 +1290,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix the same Human being able to play the same sound effect twice in a row
 - Fix Non-Scaled Experience gained (e.g. via Event or Dismissing Brothers) still being scaled by XP effects on the receiving character
 - Fix **Goblin Wolfrider** having no `ShakeLayer` for `BodyPart.All` defined
+- Fix **Wolf**, spawned by a dying **Goblin Wolfrider**, sometimes having an action in the round it spawned
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
 - Every accessory now plays a default sound when moved around in the inventory
@@ -1312,6 +1316,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix **Line Breaker** granted by **Onslaught** being usable multiple times
 - Fix crash when trying to sling the same type of pot multiple times with the same character
 - Change the icon of **Sapling Harvest** to that of the sapling overlay icon
+- Mention in **Professional**, that it will never roll **Dagger Group**
 
 ### Dynamic Spawns
 

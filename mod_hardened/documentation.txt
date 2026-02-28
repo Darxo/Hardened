@@ -28,6 +28,19 @@
 
 # Changelog
 
+1.8.8
+	- Add setting (on) to display the AI intent of world parties (attacking/fleeing)
+	- Grant regular Mercenary units a 15% chance to spawn with southern ethnicity (this is a purely visual change)
+	- Add a list of common sources of Renown in the Renown tooltip
+	- Play the **Ignite Firelance** animation in the actual direction you aim at
+	- Mention in **Professional**, that it will never roll **Dagger Group**
+	- Fix character with **Warden**, who was charmed and attacking an adjacent ally, softlocking the game
+	- Fix(vanilla) Spearwall animation showing up on NPCs who lost the spearwall effect offscreen
+	- Fix camera level auto adjusting, even if the vanilla setting for that is turned off
+	- Fix champion **Legatus** spawning with the wrong named weapon
+	- Fix **Wolf**, spawned by a dying **Goblin Wolfrider**, sometimes having an action in the round it spawned
+	- Fix spider poison crafting recipe not producing the correct sound effect
+
 1.8.7
 	- **Brigand Scoundrels**, **-Pillagers**, **-Outlaws** and **-Marauders** use their actual name while on the world map, instead of being merged with the other Brigand Frontliner
 	- **Light Crossbow** and **Crossbow** no longer have any Fatigue discount on their skills

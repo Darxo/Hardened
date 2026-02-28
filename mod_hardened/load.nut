@@ -22,7 +22,7 @@
 ::includeFiles(::IO.enumerateFiles("mod_hardened/hooks"));
 
 // Crock Pot specific hooks
-if (::mods_getRegisteredMod("mod_crock_pot") != null)
+if (::Hooks.hasMod("mod_crock_pot"))
 {
 	::includeFiles(::IO.enumerateFiles("mod_hardened/crock_pot_hooks"));
 }

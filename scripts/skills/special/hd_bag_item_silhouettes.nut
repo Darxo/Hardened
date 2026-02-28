@@ -14,7 +14,6 @@ this.hd_bag_item_silhouettes <- ::inherit("scripts/skills/skill", {
 		this.m.IsSerialized = false;
 	}
 
-	// Overwrite vanilla function to replace its hard-coded effect
 	function onUpdate( _properties )
 	{
 		local silhouettesHidden = !this.isShowing();
