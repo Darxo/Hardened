@@ -12,7 +12,8 @@
 			[12, "scripts/items/armor/reinforced_leather_tunic"],
 		]);
 
-		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 120
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 100 - 120
+			[12, "scripts/items/helmets/closed_mail_coif"],
 			[12, "scripts/items/helmets/reinforced_mail_coif"],
 		]);
 
