@@ -5,7 +5,13 @@
 	q.create = @(__original) function()
 	{
 		this.m.Bodies = ::Const.Bodies.Thick;	// Reforged: ::Const.Bodies.AllMale
+
+		// Switcheroo the RF_BanditHighwayman ID into that of RF_BanditMarauder, to make Reforged assign the ID, that we want
+		// We must do this via switcheroo, so that the name assignment works correctly
+		local oldRF_BanditHighwayman = ::Const.EntityType.RF_BanditHighwayman;
+		::Const.EntityType.RF_BanditHighwayman = ::Const.EntityType.RF_BanditMarauder;
 		__original();
+		::Const.EntityType.RF_BanditHighwayman = oldRF_BanditHighwayman;
 
 		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 100 - 110
 			[12, "scripts/items/armor/patched_mail_shirt"],
