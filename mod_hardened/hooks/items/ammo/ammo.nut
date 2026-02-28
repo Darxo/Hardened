@@ -31,11 +31,12 @@
 	}
 
 // Function overwrites of 'item.nut' functions
-
-	// New function that new ammunition items can use to reduce the amount of copying the same lines
-	q.getTooltip = @(__original) function()
+	// Overwrite, because Vanilla never defines this function and we wanna be explicit,
+	//	that our implementation replaces whatever they would consider a ammo base getTooltip functionality
+	// This can be used by new ammunition items to reduce the amount of copying the same lines
+	q.getTooltip = @() function()
 	{
-		local ret = __original();   // Name + Description + Category + Value + image
+		local ret = this.item.getTooltip();   // Name + Description + Category + Value + image
 
 		if (this.getStaminaModifier() != 0)
 		{
