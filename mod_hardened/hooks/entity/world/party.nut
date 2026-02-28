@@ -46,6 +46,38 @@
 		// socketMinibossSprite.setOffset(::createVec(4, 6));	// Move the sprite so it fits perfectly on the common sockets
 		socketMinibossSprite.Color = ::createColor("ffaa00ff");	// Color the socket in an orange tone
 		socketMinibossSprite.Visible = false;	// By default this is not visible
+
+		local fleeFlagSprite = this.addSprite("HD_flee_flag");
+		fleeFlagSprite.setBrush("icon_fleeing");		// tactical entities already have this
+		fleeFlagSprite.Visible = false;	// By default this is not visible
+
+		local attackFlagSprite = this.addSprite("HD_attack_flag");
+		attackFlagSprite.setBrush("icon_confident_orcs");		// tactical entities already have this
+		attackFlagSprite.Visible = false;	// By default this is not visible
+		// socketMinibossSprite.Scale = 0.45;					// This sprite was initially made for tactical entities, not the smaller world ones. 0.45 is ideal for the smaller goblin base but a bit tight for the bigger orc ones
+		// socketMinibossSprite.setOffset(::createVec(4, 6));	// Move the sprite so it fits perfectly on the common sockets
+	}
+
+	q.setOrders = @(__original) function( _newOrder )
+	{
+		__original(_newOrder);
+
+		// We reset all known intent sprites
+		local fleeFlagSprite = this.getSprite("HD_flee_flag");
+		local attackFlagSprite = this.getSprite("HD_attack_flag");
+		fleeFlagSprite.Visible = false;
+		attackFlagSprite.Visible = false;
+
+		if (!::Hardened.Mod.ModSettings.getSetting("DisplayAIIntent").getValue()) return;
+
+		if (_newOrder == "Fleeing")
+		{
+			fleeFlagSprite.Visible = true;
+		}
+		else if (_newOrder != "Attacking Zone" && ::String.contains(_newOrder, "Attacking "))
+		{
+			attackFlagSprite.Visible = true;
+		}
 	}
 
 	q.onUpdate = @(__original) function()

@@ -81,6 +81,10 @@
 
 	qolWorldPage.addDivider("MiscDivider7");
 
+	qolWorldPage.addBooleanSetting("DisplayAIIntent", true, "Display AI Intent", "If \'true\', then any fleeing world party display a white flag on their characters and any attacking party displays a red flag with a skull.");
+
+	qolWorldPage.addDivider("MiscDivider8");
+
 	qolWorldPage.addRangeSetting("WorldMouseWheelZoomMultiplier",0.4 ,0.1 , 0.8, 0.05, "Mouse Wheel Zoom Multiplier", "This controls how fast your mouse wheel will change your camera zoom on the world map. 0.3 is the vanilla default value.");
 }
 
