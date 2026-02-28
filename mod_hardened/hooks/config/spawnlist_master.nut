@@ -721,8 +721,8 @@
 // scripts/entity/tactical/humans/rf_fencer
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_Fencer.Cost = 45;
-	::Const.World.Spawn.Troops.RF_Fencer.Strength = 45;
+	::Const.World.Spawn.Troops.RF_Fencer.Cost = 50;
+	::Const.World.Spawn.Troops.RF_Fencer.Strength = 50;
 }
 
 // scripts/entity/tactical/humans/rf_man_at_arms
