@@ -1,5 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/items/helmets/decayed_great_helm", function(q) {
-	q.m.HD_ThreatModifier <- 5;	// This much Threat is exerted by the character, while this item is equipped
+	q.m.HD_ThreatModifier <- 10;	// This much Threat is exerted by the character, while this item is equipped
 	q.m.HD_Variants <- [	// Array of subset of the original vanilla artwork that we deem fitting for this helmet
 		12,
 		13,
