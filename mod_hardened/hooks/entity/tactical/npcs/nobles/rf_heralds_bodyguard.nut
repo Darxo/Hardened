@@ -6,10 +6,10 @@
 	{
 		__original();
 
-		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/armor/rf_brigandine_harness"],
-			[12, "scripts/items/armor/rf_reinforced_footman_armor"],
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([ // 230 - 260
 			[12, "scripts/items/armor/scale_armor"],
+			[12, "scripts/items/armor/rf_breastplate"],
+			[12, "scripts/items/armor/rf_reinforced_footman_armor"],
 		]);
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
