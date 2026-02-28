@@ -82,7 +82,6 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_bully"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_bullseye"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_combo"));
 	}
 
 	// Assign Head and Body armor to this character
