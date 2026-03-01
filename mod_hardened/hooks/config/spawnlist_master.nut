@@ -599,7 +599,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.RF_BanditKiller.Cost = 40;
 	::Const.World.Spawn.Troops.RF_BanditKiller.Strength = 40;
-	::Const.World.Spawn.Troops.RF_BanditKiller.Variant = 1;		// Bandit Killer can now produce Champions
+	::Const.World.Spawn.Troops.RF_BanditKiller.Variant = 2;		// Bandit Killer can now produce Champions
 	::Const.World.Spawn.Troops.RF_BanditKiller.Row = 1;			// Reforged: 0
 
 	// Optional Entries
@@ -613,7 +613,7 @@
 	::Const.World.Spawn.Troops.RF_BanditMarauder.ID = ::Const.EntityType.RF_BanditMarauder;		// Reforged: ::Const.EntityType.RF_BanditHighwayman
 	::Const.World.Spawn.Troops.RF_BanditMarauder.Cost = 40;
 	::Const.World.Spawn.Troops.RF_BanditMarauder.Strength = 40;
-	::Const.World.Spawn.Troops.RF_BanditMarauder.Variant = 1;		// Bandit Marauder can now produce Champions
+	::Const.World.Spawn.Troops.RF_BanditMarauder.Variant = 2;		// Bandit Marauder can now produce Champions
 
 	// Optional Entries
 	::Const.World.Spawn.Troops.RF_BanditMarauder.NameList <- ::Const.Strings.BanditLeaderNames;	// Todo: generate better namelist
@@ -653,6 +653,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.Executioner.Cost = 40;
 	::Const.World.Spawn.Troops.Executioner.Strength = 40;
+	::Const.World.Spawn.Troops.Executioner.Variant = 3;		// Vanilla: 2
 }
 
 // scripts/entity/tactical/humans/assassin
@@ -702,6 +703,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.BarbarianChampion.Cost = 45;
 	::Const.World.Spawn.Troops.BarbarianChampion.Strength = 45;
+	::Const.World.Spawn.Troops.BarbarianChampion.Variant = 2;	// Vanilla: 1
 }
 
 // scripts/entity/tactical/humans/gladiator
@@ -709,6 +711,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.Gladiator.Cost = 45;
 	::Const.World.Spawn.Troops.Gladiator.Strength = 45;
+	::Const.World.Spawn.Troops.Gladiator.Variant = 3;		// Vanilla: 2
 }
 
 // scripts/entity/tactical/humans/noble_greatsword
@@ -723,6 +726,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.RF_Fencer.Cost = 50;
 	::Const.World.Spawn.Troops.RF_Fencer.Strength = 50;
+	::Const.World.Spawn.Troops.RF_Fencer.Variant = 2;		// Reforged: 1
 }
 
 // scripts/entity/tactical/humans/rf_man_at_arms
@@ -730,6 +734,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.RF_ManAtArms.Cost = 50;
 	::Const.World.Spawn.Troops.RF_ManAtArms.Strength = 50;
+	::Const.World.Spawn.Troops.RF_ManAtArms.Variant = 2;		// Reforged: 1
 }
 
 // scripts/entity/tactical/humans/rf_herald
@@ -758,7 +763,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.RF_SkeletonMediumElitePolearm.Cost = 45;
 	::Const.World.Spawn.Troops.RF_SkeletonMediumElitePolearm.Strength = 45;
-	::Const.World.Spawn.Troops.RF_SkeletonMediumElitePolearm.Variant = 1;
+	::Const.World.Spawn.Troops.RF_SkeletonMediumElitePolearm.Variant = 2;
 }
 
 // scripts/entity/tactical/enemies/necromancer
@@ -773,6 +778,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.BanditLeader.Cost = 50;
 	::Const.World.Spawn.Troops.BanditLeader.Strength = 50;
+	::Const.World.Spawn.Troops.BanditLeader.Variant = 5;	// Vanilla: 1
 }
 
 // scripts/entity/tactical/enemies/goblin_leader
@@ -794,6 +800,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.NomadLeader.Cost = 50;
 	::Const.World.Spawn.Troops.NomadLeader.Strength = 50;
+	::Const.World.Spawn.Troops.NomadLeader.Variant = 5;		// Vanilla: 1
 }
 
 // scripts/entity/tactical/humans/desert_devil
@@ -801,6 +808,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.DesertDevil.Cost = 50;
 	::Const.World.Spawn.Troops.DesertDevil.Strength = 50;
+	::Const.World.Spawn.Troops.DesertDevil.Variant = 3;		// Vanilla: 2
 }
 
 // scripts/entity/tactical/humans/desert_stalker
@@ -808,6 +816,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.DesertStalker.Cost = 50;
 	::Const.World.Spawn.Troops.DesertStalker.Strength = 50;
+	::Const.World.Spawn.Troops.DesertStalker.Variant = 3;		// Vanilla: 2
 }
 
 // scripts/entity/tactical/humans/officer
@@ -815,6 +824,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.Officer.Cost = 50;
 	::Const.World.Spawn.Troops.Officer.Strength = 50;
+	::Const.World.Spawn.Troops.Officer.Variant = 5;		// Vanilla: 1
 }
 
 // scripts/entity/tactical/enemies/skeleton_priest
@@ -865,6 +875,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.HedgeKnight.Cost = 60;
 	::Const.World.Spawn.Troops.HedgeKnight.Strength = 60;
+	::Const.World.Spawn.Troops.HedgeKnight.Variant = 3;		// Vanilla: 2
 }
 
 // scripts/entity/tactical/humans/master_archer
@@ -872,6 +883,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.MasterArcher.Cost = 60;
 	::Const.World.Spawn.Troops.MasterArcher.Strength = 60;
+	::Const.World.Spawn.Troops.MasterArcher.Variant = 3;		// Vanilla: 2
 }
 
 // scripts/entity/tactical/humans/rf_marshal
@@ -886,6 +898,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.Knight.Cost = 70;
 	::Const.World.Spawn.Troops.Knight.Strength = 70;
+	::Const.World.Spawn.Troops.Knight.Variant = 5;		// Vanilla: 2
 }
 
 // scripts/entity/tactical/enemies/skeleton_heavy
@@ -893,6 +906,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.SkeletonHeavy.Cost = 60;
 	::Const.World.Spawn.Troops.SkeletonHeavy.Strength = 60;
+	::Const.World.Spawn.Troops.SkeletonHeavy.Variant = 2;	// Vanilla: 1
 }
 
 // scripts/entity/tactical/enemies/rf_skeleton_centurion
@@ -921,6 +935,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.RF_BanditBaron.Cost = 80;
 	::Const.World.Spawn.Troops.RF_BanditBaron.Strength = 80;
+	::Const.World.Spawn.Troops.RF_BanditBaron.Variant = 10;		// Reforged: 1
 }
 
 // scripts/entity/tactical/humans/barbarian_chosen
@@ -949,6 +964,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.Swordmaster.Cost = 80;
 	::Const.World.Spawn.Troops.Swordmaster.Strength = 80;
+	::Const.World.Spawn.Troops.Swordmaster.Variant = 3;		// Vanilla: 2
 }
 
 // scripts/entity/tactical/humans/rf_knight_anointed
@@ -956,6 +972,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.RF_KnightAnointed.Cost = 100;
 	::Const.World.Spawn.Troops.RF_KnightAnointed.Strength = 100;
+	::Const.World.Spawn.Troops.RF_KnightAnointed.Variant = 10;		// Reforged: 2
 }
 
 // scripts/entity/tactical/enemies/rf_skeleton_legatus
@@ -963,6 +980,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.RF_SkeletonLegatus.Cost = 80;
 	::Const.World.Spawn.Troops.RF_SkeletonLegatus.Strength = 80;
+	::Const.World.Spawn.Troops.RF_SkeletonLegatus.Variant = 5;		// Reforged: 1
 }
 
 // scripts/entity/tactical/enemies/orc_warlord
@@ -977,6 +995,7 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.RF_VampireLord.Cost = 100;
 	::Const.World.Spawn.Troops.RF_VampireLord.Strength = 100;
+	::Const.World.Spawn.Troops.RF_VampireLord.Variant = 5;		// Reforged: 1
 }
 
 // scripts/entity/tactical/enemies/unhold_frost_armored
