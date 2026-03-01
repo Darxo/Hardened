@@ -26,7 +26,7 @@
 		if (this.getContainer().getActor().getID() != _user.getID()) return ret;		// We must be the _user
 		if (_user.getID() == _target.getID()) return ret;		// _user and _target must not be the same
 
-		if (_target.getSkills().hasSkill("perk.rf_wear_them_down"))
+		if (_target.getSkills().hasSkill("effects.rf_worn_down"))
 		{
 			ret *= 0.9;	// There is little sense in attacking someone who is already debuffed, as the debuff does not stack
 		}
