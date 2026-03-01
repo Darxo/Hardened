@@ -308,6 +308,7 @@
 							"- Losing a fight (" + ::MSU.Text.colorizeValue(::Const.World.Assets.ReputationOnLoss, {AddSign = true}) + ")\n" +
 							"- Failing a contract (" + ::MSU.Text.colorizeValue(::Const.World.Assets.ReputationOnContractFail, {AddSign = true}) + ")\n" +
 							"- Cancelling a contract (" + ::MSU.Text.colorizeValue(::Const.World.Assets.ReputationOnContractCancel, {AddSign = true}) + ")\n" +
+							"- Cancelling a contract with advanced pay (" + ::MSU.Text.colorizeValue(::Const.World.Assets.ReputationOnContractCancel + ::Const.World.Assets.HD_ReputationOnContractCancelAdvance, {AddSign = true}) + ")\n" +
 							"- Each passing day (" + ::MSU.Text.colorizeValue(::Const.World.Assets.ReputationDaily, {AddSign = true}) + ")\n" +
 							"- Various Events"
 						);

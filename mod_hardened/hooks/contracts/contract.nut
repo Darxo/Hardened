@@ -13,6 +13,17 @@
 		this.m.HD_PerHead = null;
 	}
 
+	q.cancel = @(__original) function()
+	{
+		__original();
+
+		// Feat: breaking a contract where you took advanced pay, now inflicts a second renown penalty, similar to the relation penalty
+		if (this.m.Faction != 0 && this.m.Payment.Advance != 0)
+		{
+			::World.Assets.addBusinessReputation(::Const.World.Assets.HD_ReputationOnContractCancelAdvance);
+		}
+	}
+
 	q.onBeforeStart = @(__original) function( _screen )
 	{
 		__original(_screen);

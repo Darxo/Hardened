@@ -13,3 +13,6 @@
 ::Const.World.Assets.HD_MoraleReputationAttackedThem <- -2;	// Morale Reputation hit, when we enter a fight against a temporary enemy
 
 ::Const.World.Assets.HD_BaseLootBuyPrice <- 1.5;	// Buying back Loot is this much more expensive. This is important to fix an exploit of buying those back for cheaper
+
+// Renown-Hit, when you cancel a contract for which you took payment in advance
+::Const.World.Assets.HD_ReputationOnContractCancelAdvance <- -50;		// Vanilla: -100
