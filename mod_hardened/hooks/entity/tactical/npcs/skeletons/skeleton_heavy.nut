@@ -37,7 +37,7 @@
 		]).roll();
 		this.getItems().equip(::new(weapon));
 
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_unstoppable"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_menacing"));
 		return true;
 	}}.makeMiniboss;
 
