@@ -30,13 +30,6 @@
 			text = "When receiving fatal damage, remove all damage over time effects from you",
 		});
 
-		ret.push({
-			id = 12,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = ::Reforged.Mod.Tooltips.parseString("When receiving fatal damage, gain [Heightened Reflexes|Skill+nine_lives_effect]"),
-		});
-
 		return ret;
 	}
 });
