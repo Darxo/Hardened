@@ -28,6 +28,9 @@
 
 # Changelog
 
+1.8.9
+	- Fix certain supernatural skills like **Horrify** (Ancient Priest) or **Charm** (Hexe) ignoring the result of the morale check and always succeeding
+
 1.8.8
 	- Add setting (on) to display the AI intent of world parties (attacking/fleeing)
 	- Grant regular Mercenary units a 15% chance to spawn with southern ethnicity (this is a purely visual change)
