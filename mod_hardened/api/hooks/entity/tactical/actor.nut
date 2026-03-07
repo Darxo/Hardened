@@ -19,11 +19,13 @@
 	q.checkMorale = @(__original) function( _change, _difficulty, _type = ::Const.MoraleCheckType.Default, _showIconBeforeMoraleIcon = "", _noNewLine = false )
 	{
 		local oldMoraleState = this.getMoraleState();
-		__original(_change, _difficulty, _type, _showIconBeforeMoraleIcon, _noNewLine);
+		local ret = __original(_change, _difficulty, _type, _showIconBeforeMoraleIcon, _noNewLine);
 		if (oldMoraleState != ::Const.MoraleState.Fleeing && this.getMoraleState() == ::Const.MoraleState.Fleeing)
 		{
 			this.HD_onStartFleeing();
 		}
+
+		return ret;
 	}
 
 	// Overwrite, because we re-implement the Reforged logic
