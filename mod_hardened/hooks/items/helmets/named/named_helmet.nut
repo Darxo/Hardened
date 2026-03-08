@@ -1,5 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/items/helmets/named/named_helmet", function(q) {
-	q.m.HD_RandomizedWeightThreshold <- -3;	// Vanilla: -4; This is the lowest that a randomized Weight for a named helmet can roll
+	q.m.HD_RandomizedWeightThreshold <- 3;	// Vanilla: 4; This is the lowest that a randomized Weight for a named helmet can roll
 
 	q.randomizeValues = @(__original) function()
 	{
