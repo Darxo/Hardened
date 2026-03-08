@@ -110,6 +110,7 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_bloodlust"));
 
 		// Generic Actives
+		this.getSkills().add(::new("scripts/skills/actives/rf_vampire_bite_skill"));
 		this.getSkills().add(::new("scripts/skills/actives/darkflight"));
 	}
 });
