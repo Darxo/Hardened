@@ -555,8 +555,8 @@
 // scripts/entity/tactical/enemies/hyena_high
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.HyenaHIGH.Cost = 35;
-	::Const.World.Spawn.Troops.HyenaHIGH.Strength = 35;
+	::Const.World.Spawn.Troops.HyenaHIGH.Cost = 40;
+	::Const.World.Spawn.Troops.HyenaHIGH.Strength = 40;
 }
 
 // scripts/entity/tactical/humans/mercenary
