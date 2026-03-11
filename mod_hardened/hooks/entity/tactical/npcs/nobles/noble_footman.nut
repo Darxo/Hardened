@@ -19,8 +19,7 @@
 		]);
 
 		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/shields/faction_heater_shield"],
-			[12, "scripts/items/shields/faction_kite_shield"],
+			[12, "scripts/items/shields/faction_wooden_shield"],
 		]);
 	}
 

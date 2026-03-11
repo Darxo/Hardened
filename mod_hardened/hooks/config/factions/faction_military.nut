@@ -36,7 +36,7 @@
 	// Mandatory stats
 	::Const.Tactical.Actor.Footman.XP = 288;
 	::Const.Tactical.Actor.Footman.ActionPoints = 9;
-	::Const.Tactical.Actor.Footman.Hitpoints = 80;
+	::Const.Tactical.Actor.Footman.Hitpoints = 85;
 	::Const.Tactical.Actor.Footman.Bravery = 65;
 	::Const.Tactical.Actor.Footman.Stamina = 120;
 	::Const.Tactical.Actor.Footman.MeleeSkill = 70;
