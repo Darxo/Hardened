@@ -25,9 +25,9 @@
 	::Const.Tactical.Actor.NomadSlinger.Bravery = 50;
 	::Const.Tactical.Actor.NomadSlinger.Stamina = 100;
 	::Const.Tactical.Actor.NomadSlinger.MeleeSkill = 45;
-	::Const.Tactical.Actor.NomadSlinger.RangedSkill = 70;
+	::Const.Tactical.Actor.NomadSlinger.RangedSkill = 65;
 	::Const.Tactical.Actor.NomadSlinger.MeleeDefense = 0;
-	::Const.Tactical.Actor.NomadSlinger.RangedDefense = 0;
+	::Const.Tactical.Actor.NomadSlinger.RangedDefense = 5;
 	::Const.Tactical.Actor.NomadSlinger.Initiative = 110;
 
 	// Optional Stats
