@@ -675,7 +675,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Physician's Mask** now has 5 Weight (up from 3), -3 Vision (down from -1) and costs 150 Crowns (down from 170)
 - **Reinforced Mail Coif** now has 120 Condition (up from 100), 6 Weight (up from 5), -2 Vision (down from -1) and costs 600 Crowns (up from 300)
 - **Rusty Mail Coif** now has 8 Weight (up from 4) and costs 200 Crowns (up from 150)
-- **Occult Eye Mask** now has 20 Condition (up from 10), 1 Weight (up from 0) and costs 50 Crowns (up from 0)
+- **Occult Eye Mask** now has 20 Condition (up from 10) and costs 50 Crowns (up from 0)
 - **Open Faced Sallet Helmet** now has 7 Weight (up from 5) and costs 2000 Crowns (up from 1200)
 - **Southern Head Wrap** now has 3 Weight (up from 0), -1 Vision (down from 0) and costs 30 Crowns (down from 50)
 - **Southern Helmet with Coif** now has 180 Condition (down from 200) and -1 Vision (up from -2)

@@ -28,6 +28,14 @@
 
 # Changelog
 
+1.8.10
+	- Fix bad packaging of mod, producing a log error during loading and potentially causing a variety of knock-on effects
+	- Fix maximum hitpoints, stamina, initiative and resolve rarely being off by 1, when that attribute is affected by a multiplier
+	- Fix named helmets being able to roll lower weight values than intended
+	- Fix **Occult Eye Mask** having a negative weight. It's weight is now 0
+	- Fix vampires not attacking while disarmed
+	- Fix NPCs with **Wear them down** not ignoring already worn down enemies correctly in their decision making
+
 1.8.9
 	- Fix certain supernatural skills like **Horrify** (Ancient Priest) or **Charm** (Hexe) ignoring the result of the morale check and always succeeding
 
