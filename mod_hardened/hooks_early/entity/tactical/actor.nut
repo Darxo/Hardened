@@ -33,6 +33,13 @@
 		return this.getStamina();
 	}
 
+	// Overwrite, because its not possible to apply our fix otherwise
+	q.getHitpointsMax = @() function()
+	{
+		// Vanilla Fix: We add a "roundToDec" into the calculation, because multiplications like 120 * 1.05 produce 125.999992, which is falsely floored to 15 then
+		return ::Math.floor(::MSU.Math.roundToDec(this.m.CurrentProperties.Hitpoints * (this.m.CurrentProperties.HitpointsMult >= 0 ? this.m.CurrentProperties.HitpointsMult : 1.0 / this.m.CurrentProperties.HitpointsMult), 3));
+	}
+
 	// Overwrite because we don't want the Vanilla way of calculating
 	// Changes:
 	// 	- Weight now affects your Initiative AFTER multipliers (instead of before)

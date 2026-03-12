@@ -32,6 +32,18 @@
 	return ::Math.max(::Hardened.Global.MinimumVision, ::Math.floor(this.Vision * this.VisionMult));
 }
 
+::Const.CharacterProperties.getBravery = function()
+{
+	// Vanilla Fix: We add a "roundToDec" into the calculation, because multiplications like 120 * 1.05 produce 125.999992, which is falsely floored to 15 then
+	return ::Math.floor(::MSU.Math.roundToDec(this.Bravery * (this.Bravery >= 0 ? this.BraveryMult : 1.0 / this.BraveryMult), 3));
+}
+
+::Const.CharacterProperties.getInitiative = function()
+{
+	// Vanilla Fix: We add a "roundToDec" into the calculation, because multiplications like 120 * 1.05 produce 125.999992, which is falsely floored to 15 then
+	return ::Math.floor(::MSU.Math.roundToDec(this.Initiative * (this.Initiative >= 0 ? this.InitiativeMult : 1.0 / this.InitiativeMult), 3));
+}
+
 // Hook Vanilla Functions
 local oldGetHitChance = ::Const.CharacterProperties.getHitchance;
 ::Const.CharacterProperties.getHitchance = function( _bodyPart )
@@ -129,7 +141,8 @@ local oldGetClone = ::Const.CharacterProperties.getClone;
 {
 	// A negative Stamina should get worse from a positive StaminaMult, so we reverse the effect of the StaminaMult in this case
 	local staminaMult = (this.Stamina >= 0) ? this.StaminaMult : (1 / this.StaminaMult);
-	return ::Math.floor(this.Stamina * staminaMult);
+	// We add a "roundToDec" into the calculation, because multiplications like 120 * 1.05 produce 125.999992, which is falsely floored to 15 then
+	return ::Math.floor(::MSU.Math.roundToDec(this.Stamina * staminaMult, 3));
 }
 
 // Corpse
