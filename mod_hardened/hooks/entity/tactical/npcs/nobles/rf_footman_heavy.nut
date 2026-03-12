@@ -65,7 +65,6 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_one_with_the_shield"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_battle_forged"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_rebuke"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_shield_expert"));
 	}
 
 	// Assign Head and Body armor to this character
