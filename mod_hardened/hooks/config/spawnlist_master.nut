@@ -548,8 +548,8 @@
 // scripts/entity/tactical/enemies/direwolf_high
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.DirewolfHIGH.Cost = 35;
-	::Const.World.Spawn.Troops.DirewolfHIGH.Strength = 35;
+	::Const.World.Spawn.Troops.DirewolfHIGH.Cost = 40;
+	::Const.World.Spawn.Troops.DirewolfHIGH.Strength = 40;
 }
 
 // scripts/entity/tactical/enemies/hyena_high

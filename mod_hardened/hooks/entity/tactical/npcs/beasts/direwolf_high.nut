@@ -28,7 +28,7 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_battle_flow"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_overwhelm"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_coup_de_grace"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_lone_wolf"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_ghostlike"));
 	}
 });
 

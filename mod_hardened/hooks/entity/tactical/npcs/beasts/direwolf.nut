@@ -53,7 +53,7 @@
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_from_all_sides"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_lone_wolf"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_berserk"));
 
 		// Generic Actives
