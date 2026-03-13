@@ -8,6 +8,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.Description = "You made a formidable approach towards an enemy";
 		this.m.Overlay = "perk_rf_formidable_approach";
 		this.m.IconMini = "perk_rf_formidable_approach_mini";
 		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
