@@ -3,6 +3,8 @@
 	{
 		__original();
 		this.m.Description = "Having just landed a hit, this character is ready to perform a powerful followup strike!";	// We just remove the second sentence added by reforged as it is redundant
+
+		this.m.DamageBonus = 25;
 	}
 
 	// Double Strike no longer turns off if you switch weapons

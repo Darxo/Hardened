@@ -877,7 +877,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"After a successful hit, deal " + ::MSU.Text.colorPositive("20%") + " more Damage until you miss an attack, move, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
+					"After a successful hit, deal " + ::MSU.Text.colorPositive("25%") + " more Damage until you miss an attack, move, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
 				],
 			}],
 		}),
