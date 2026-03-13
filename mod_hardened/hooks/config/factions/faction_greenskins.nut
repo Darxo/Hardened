@@ -122,7 +122,7 @@
 	::Const.Tactical.Actor.OrcWarrior.Stamina = 200;
 	::Const.Tactical.Actor.OrcWarrior.MeleeSkill = 80;
 	::Const.Tactical.Actor.OrcWarrior.RangedSkill = 50;
-	::Const.Tactical.Actor.OrcWarrior.MeleeDefense = -10;
+	::Const.Tactical.Actor.OrcWarrior.MeleeDefense = -5;
 	::Const.Tactical.Actor.OrcWarrior.RangedDefense = -10;
 	::Const.Tactical.Actor.OrcWarrior.Initiative = 120;
 }
