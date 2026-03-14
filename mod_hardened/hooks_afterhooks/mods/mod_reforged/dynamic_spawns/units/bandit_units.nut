@@ -9,6 +9,11 @@
 	::DynamicSpawns.Public.getUnit("Unit.RF.RF_BanditOutlaw").Figure = "figure_hd_bandit_outlaw";		// Reforged: figure_rf_bandit_thug
 	::DynamicSpawns.Public.getUnit("Unit.RF.RF_BanditMarauder").Figure = "figure_hd_bandit_marauder";	// Reforged: figure_rf_bandit_thug
 
+	::DynamicSpawns.Public.getUnit("Unit.RF.RF_BanditPillager").StartingResourceMin = 120;		// Reforged: 140
+	::DynamicSpawns.Public.getUnit("Unit.RF.RF_BanditRobber").StartingResourceMin = 120;		// Reforged: 100
+	::DynamicSpawns.Public.getUnit("Unit.RF.RF_BanditBandit").StartingResourceMin = 185;		// Reforged: 150
+	::DynamicSpawns.Public.getUnit("Unit.RF.RF_BanditKiller").StartingResourceMin = 250;		// Reforged: 225
+
 	// We enforce a much higher resource value for the robber baron
 	::DynamicSpawns.Public.getUnit("Unit.RF.RF_BanditBaron").StartingResourceMin = 500;		// Reforged: 350
 }
