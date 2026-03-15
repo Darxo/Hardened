@@ -19,6 +19,7 @@
 		]);
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/two_handed_mace"],
 			[12, "scripts/items/weapons/rf_battle_axe"],
 			[12, "scripts/items/weapons/rf_greatsword"],
 			[12, "scripts/items/weapons/longaxe"],
@@ -45,6 +46,7 @@
 			[12, "scripts/items/weapons/named/named_greatsword"],
 			[12, "scripts/items/weapons/named/named_greataxe"],
 			[12, "scripts/items/weapons/named/named_longaxe"],
+			[12, "scripts/items/weapons/named/named_two_handed_mace"],
 			[12, "scripts/items/weapons/named/named_polehammer"],
 		]).roll();
 		this.getItems().equip(::new(namedMeleeWeapon));
@@ -74,6 +76,10 @@
 			else if (weapon.isWeaponType(::Const.Items.WeaponType.Hammer))
 			{
 				this.getSkills().add(::new("scripts/skills/perks/perk_rf_rattle"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Mace))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_bone_breaker"));
 			}
 			else if (weapon.isWeaponType(::Const.Items.WeaponType.Sword))
 			{
