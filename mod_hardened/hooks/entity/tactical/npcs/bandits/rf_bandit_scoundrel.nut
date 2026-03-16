@@ -15,6 +15,7 @@
 			[8, "scripts/items/armor/padded_surcoat"],
 		]);
 
+		this.m.ChanceForNoHelmet = 20;
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 30 - 40
 			[12, "scripts/items/helmets/hood"],
 			[4, "scripts/items/helmets/straw_hat"],
