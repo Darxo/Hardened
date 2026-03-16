@@ -67,7 +67,7 @@
 	::Const.Tactical.Actor.StandardBearer.XP = 360;
 	::Const.Tactical.Actor.StandardBearer.ActionPoints = 9;
 	::Const.Tactical.Actor.StandardBearer.Hitpoints = 70;
-	::Const.Tactical.Actor.StandardBearer.Bravery = 90;
+	::Const.Tactical.Actor.StandardBearer.Bravery = 110;
 	::Const.Tactical.Actor.StandardBearer.Stamina = 115;
 	::Const.Tactical.Actor.StandardBearer.MeleeSkill = 65;
 	::Const.Tactical.Actor.StandardBearer.RangedSkill = 40;
@@ -190,7 +190,7 @@
 	::Const.Tactical.Actor.RF_Herald.XP = 540;
 	::Const.Tactical.Actor.RF_Herald.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_Herald.Hitpoints = 80;
-	::Const.Tactical.Actor.RF_Herald.Bravery = 130;
+	::Const.Tactical.Actor.RF_Herald.Bravery = 150;
 	::Const.Tactical.Actor.RF_Herald.Stamina = 125;
 	::Const.Tactical.Actor.RF_Herald.MeleeSkill = 75;
 	::Const.Tactical.Actor.RF_Herald.RangedSkill = 50;

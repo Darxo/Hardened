@@ -290,7 +290,7 @@
 	::Const.Tactical.Actor.BanditLeader.XP = 500;
 	::Const.Tactical.Actor.BanditLeader.ActionPoints = 9;
 	::Const.Tactical.Actor.BanditLeader.Hitpoints = 120;
-	::Const.Tactical.Actor.BanditLeader.Bravery = 85;
+	::Const.Tactical.Actor.BanditLeader.Bravery = 100;
 	::Const.Tactical.Actor.BanditLeader.Stamina = 130;
 	::Const.Tactical.Actor.BanditLeader.MeleeSkill = 80;
 	::Const.Tactical.Actor.BanditLeader.RangedSkill = 45;
@@ -305,7 +305,7 @@
 	::Const.Tactical.Actor.RF_BanditBaron.XP = 800;
 	::Const.Tactical.Actor.RF_BanditBaron.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_BanditBaron.Hitpoints = 150;
-	::Const.Tactical.Actor.RF_BanditBaron.Bravery = 120;
+	::Const.Tactical.Actor.RF_BanditBaron.Bravery = 130;
 	::Const.Tactical.Actor.RF_BanditBaron.Stamina = 150;
 	::Const.Tactical.Actor.RF_BanditBaron.MeleeSkill = 100;
 	::Const.Tactical.Actor.RF_BanditBaron.RangedSkill = 45;

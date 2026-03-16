@@ -109,7 +109,7 @@
 	::Const.Tactical.Actor.NomadLeader.XP = 500;				// Vanilla: 375
 	::Const.Tactical.Actor.NomadLeader.ActionPoints = 9;
 	::Const.Tactical.Actor.NomadLeader.Hitpoints = 100;			// Vanilla: 100
-	::Const.Tactical.Actor.NomadLeader.Bravery = 85;			// Vanilla: 75
+	::Const.Tactical.Actor.NomadLeader.Bravery = 100;			// Vanilla: 75
 	::Const.Tactical.Actor.NomadLeader.Stamina = 150;			// Vanilla: 130
 	::Const.Tactical.Actor.NomadLeader.MeleeSkill = 85;			// Vanilla: 75
 	::Const.Tactical.Actor.NomadLeader.RangedSkill = 70;		// Vanilla: 65
