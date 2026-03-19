@@ -33,11 +33,30 @@
 		"Your allies will not provide cover for enemies that are 2 tiles away from you.\n\n" +
 		"Ranged Attacks against characters that are in cover have a " + ::MSU.Text.colorPositive("75%") + " chance to instead hit one of the covering tiles at random."
 	)),
-	DayTime = ::MSU.Class.BasicTooltip("Day Time", ::Reforged.Mod.Tooltips.parseString(
-		"Each day in Battle Brothers follows a cycle of distinct phases, impacting visibility, combat effectiveness, and available town services.\n\n" +
-		"Daytime begins with 2 hours of Sunrise, followed by 6 hours of Morning, 2 hours of Midday, and 6 hours of Afternoon and ending after 2 hours of Sunset.\n\n" +
-		"Nighttime starts with 2 hours of Dusk followed by 2 hours of Midnight and ending after 2 hours of Dawn.\nFighting during Night will apply the [Nighttime effect|Skill+night_effect]."
-	)),
+	DayTime = ::MSU.Class.CustomTooltip(function(_data){
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = "Day Time",
+			},
+			{
+				id = 2,
+				type = 	"description"
+				text = ::Reforged.Mod.Tooltips.parseString(
+					"Each day in Battle Brothers follows a cycle of distinct phases, impacting visibility, combat effectiveness, and available town services.\n\n" +
+					"Daytime begins with 2 hours of Sunrise, followed by 6 hours of Morning, 2 hours of Midday, and 6 hours of Afternoon and ending after 2 hours of Sunset.\n\n" +
+					"Nighttime starts with 2 hours of Dusk followed by 2 hours of Midnight and ending after 2 hours of Dawn.\nFighting during Night will apply the [Nighttime effect|Skill+night_effect]."
+				),
+			},
+			{
+				id = 50,
+				type = "hint",
+				icon = "ui/icons/miniboss.png",
+				text = "World Difficulty: " + ::MSU.Text.colorizePct(::Hardened.Global.getWorldDifficultyMult()),
+			},
+		];
+	}),
 	Displacement = ::MSU.Class.BasicTooltip("Displacement", ::Reforged.Mod.Tooltips.parseString(
 		"Displacement is the act of moving a character to a different tile involuntarily against their will.\n\n" +
 		"A character that is displaced into a tile with more adjacent enemies than before will receive a Negative [Morale Check|Concept.Morale]."
