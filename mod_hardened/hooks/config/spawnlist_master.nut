@@ -701,8 +701,8 @@
 // scripts/entity/tactical/humans/barbarian_champion
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.BarbarianChampion.Cost = 45;
-	::Const.World.Spawn.Troops.BarbarianChampion.Strength = 45;
+	::Const.World.Spawn.Troops.BarbarianChampion.Cost = 50;
+	::Const.World.Spawn.Troops.BarbarianChampion.Strength = 50;
 	::Const.World.Spawn.Troops.BarbarianChampion.Variant = 2;	// Vanilla: 1
 }
 
