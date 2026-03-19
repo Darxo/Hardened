@@ -47,7 +47,7 @@
 	q.onTargetHit = @(__original) function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		__original(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor);
-		if (_skill != this)
+		if (_skill != this) return;
 
 		if (!_targetEntity.isAlive()) return;
 		if (_targetEntity.getCurrentProperties().IsImmuneToStun) return;
