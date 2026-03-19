@@ -28,6 +28,11 @@
 
 # Changelog
 
+1.9.1
+	- World Difficulty is now displayed in the day-time tooltip
+	- **Barbarian Chosen** now have a cost of 50 (up from 45)
+	- Fix crash when a character with **Flail Mastery** kills someone with a headshot from **Pound**
+
 1.9.0
 // Perks and Skills
 	- **Inspiring Presence** now also causes the user to have 10% less Resolve

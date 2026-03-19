@@ -65,7 +65,8 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 	- Contracts with 1 Skull no longer apply the penalty to pay twice and those with 3 Skulls no longer apply the bonus to pay twice
 	- Settlement have 1,3% more resources available per day (e.g. for spawning Caravans and Militia), up to a maximum of 400% at day ~300
 	- Every other scaling encounter in the world becomes 1,3% more difficult per day, up to a maximum of 400% at day ~300
-- You can view the current contract difficulty when looking at the renown tooltip
+- You can view the current Contract Difficulty when looking at the renown tooltip
+- You can view the current World Difficulty when looking at the day-time tooltip on the world map
 - All major factions now have a global difficulty multiplier (ranging from 0.6 to 1.4), which decides how strong they are compared to each other
 	- These difficulty multiplier influence the resources those factions have available for generating defenders in their locations and when sending out world parties
 - Arena Contracts/Tournaments are excluded from that scaling rework and still work like they do in Vanilla
@@ -783,7 +784,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 - **Blacksmith** no longer requires you to repair 5 items in a town. It now requires you to use 5 paint or attachements. It no longer grants a tool consumption discount. It now grants +50 storage space for Tools
 - **Bounty Hunter** costs 2500 Crowns (down from 4000). It now grants +5% for enemies to become champions (up from +3%). It no longer grants Crowns when you kill champions
-- **Brigand Follower** no longer reveals Caravans on the world map. Instead you travel 20% faster while following a visible enemy on the world map
+- **Brigand** no longer reveals Caravans on the world map. Instead you travel 20% faster while following a visible enemy on the world map
 - **Drill Sergeant** now provides 2% Experience per level below 11 (down from 4%), just like in Vanilla. It now requires a brother with a permanent injury to be dismissed, just like in Vanilla
 - **Lookout** no longer grants 25% more vision at all times. It now always provides a scouting report for enemies near you, just like "Band of Poachers" origin
 - **Negotiator** now grants 100% faster decay of negative Relation (up from 15%). It now has a more accurate list of effects
