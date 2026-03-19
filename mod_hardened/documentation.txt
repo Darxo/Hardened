@@ -30,127 +30,127 @@
 
 1.9.0
 // Perks and Skills
-- **Inspiring Presence** now also causes the user to have 10% less Resolve
-- **Shuffle** (granted by Dynamic Duo) now costs 5 Fatigue (up from 0)
-- **Pound** no longer has +10% Armor Penetration on a hit to the head or 30% chance to stun on a hit
-- **Thresh** no longer has 20% chance to stun on a hit
-- **Flail Mastery** no longer grants **Pound** +10% Armor Penetration on a hit to the head. It now grants **Pound** as 50% chance to stun on a hit to the head
-- **Scout** no longer grants an Action Point discount forr changing heigh levels. It now makes moving on all terrain cost -1 Action Point (to a minimum of 2), similar to **Pathfinder** or **Elusive**
-- The lightning strikes, triggered by **Lightbringer** are reworked the following way: They now deal 10-15 (down from 15-20) Non-Attack (previously Attack) Burning damage (previously undefined damage) to the head (previously to the body)
-- **Nine Lives** no longer grants **Heightened Reflexes** for 1 turn when it triggers
-- The **Taunt** skill (granted by the perk **Taunt**) now has a maximum Range of 4 tiles (up from 3)
-- **Double Strike** now causes you to deal 25% more damage (up from 20%)
+	- **Inspiring Presence** now also causes the user to have 10% less Resolve
+	- **Shuffle** (granted by Dynamic Duo) now costs 5 Fatigue (up from 0)
+	- **Pound** no longer has +10% Armor Penetration on a hit to the head or 30% chance to stun on a hit
+	- **Thresh** no longer has 20% chance to stun on a hit
+	- **Flail Mastery** no longer grants **Pound** +10% Armor Penetration on a hit to the head. It now grants **Pound** as 50% chance to stun on a hit to the head
+	- **Scout** no longer grants an Action Point discount forr changing heigh levels. It now makes moving on all terrain cost -1 Action Point (to a minimum of 2), similar to **Pathfinder** or **Elusive**
+	- The lightning strikes, triggered by **Lightbringer** are reworked the following way: They now deal 10-15 (down from 15-20) Non-Attack (previously Attack) Burning damage (previously undefined damage) to the head (previously to the body)
+	- **Nine Lives** no longer grants **Heightened Reflexes** for 1 turn when it triggers
+	- The **Taunt** skill (granted by the perk **Taunt**) now has a maximum Range of 4 tiles (up from 3)
+	- **Double Strike** now causes you to deal 25% more damage (up from 20%)
 // Items
-- **Schrat Shield** now has 25 Melee Defense (up from 20), 20 Ranged Defense (up from 17) and loses **Shieldwall**
-- **Lindwurm Shield** now has 20 Melee Defense (up from 17) and 20 Ranged Defense (down from 25)
-- **Light Crossbow** now has 50% Armor Damage (down from 60%)
-- **Crossbow** now has 50% Armor Damage (down from 70%)
-- **Heavy Crossbow now has 50% Armor Damage (down from 75%)
-- **Spiked Impaler** now has 50% Armor Penetration (down from 60%) and 80% Armor Damage (up from 75%)
-- **Hunting Bow** now has 50% Armor Damage (down from 55%)
-- **War Bow** now has 50% Armor Damage (down from 60%)
-- **Berserk Chain** now has 40% Armor Penetration (up from 30%)
-- **Two-handed Flail** now has 40% Armor Penetration (up from 30%)
-- **Two-handed Wooden Flail** now has 40% Armor Penetration (up from 30%)
-- **Tarnished Full Helm** now grants +10 Threat (up from +5)
-- **Holy Water** now costs 400 Crowns (up from 100)
-- **Occult Eye Mask** now costs 200 Crowns (up from 50)
-- **Woodcutters Axe** now deals 40-65 Damage (up from 35-60) and no longer has any discount on its weapon skills
-- **Two Handed Wooden Flail** now deals 35-70 Damage (up from 35-65) and no longer has any discount on its weapon skills
-- **Tree Limb** now deals 40-60 Damage (up from 30-50), has a Weight of 18 (up from 15) and costs 450 Crowns (up from 300). **Knock Out** with it now costs 5 Action Points (up from 4)
-- **Cudgel** now deals 45-65 Damage (up from 40-60), 120% Armor Damage (up from 90%), has a Weight of 24 (up from 18) and costs 600 Crowns (up from 400). **Knock Out** with it now costs 5 Action Points (up from 4)
+	- **Schrat Shield** now has 25 Melee Defense (up from 20), 20 Ranged Defense (up from 17) and loses **Shieldwall**
+	- **Lindwurm Shield** now has 20 Melee Defense (up from 17) and 20 Ranged Defense (down from 25)
+	- **Light Crossbow** now has 50% Armor Damage (down from 60%)
+	- **Crossbow** now has 50% Armor Damage (down from 70%)
+	- **Heavy Crossbow now has 50% Armor Damage (down from 75%)
+	- **Spiked Impaler** now has 50% Armor Penetration (down from 60%) and 80% Armor Damage (up from 75%)
+	- **Hunting Bow** now has 50% Armor Damage (down from 55%)
+	- **War Bow** now has 50% Armor Damage (down from 60%)
+	- **Berserk Chain** now has 40% Armor Penetration (up from 30%)
+	- **Two-handed Flail** now has 40% Armor Penetration (up from 30%)
+	- **Two-handed Wooden Flail** now has 40% Armor Penetration (up from 30%)
+	- **Tarnished Full Helm** now grants +10 Threat (up from +5)
+	- **Holy Water** now costs 400 Crowns (up from 100)
+	- **Occult Eye Mask** now costs 200 Crowns (up from 50)
+	- **Woodcutters Axe** now deals 40-65 Damage (up from 35-60) and no longer has any discount on its weapon skills
+	- **Two Handed Wooden Flail** now deals 35-70 Damage (up from 35-65) and no longer has any discount on its weapon skills
+	- **Tree Limb** now deals 40-60 Damage (up from 30-50), has a Weight of 18 (up from 15) and costs 450 Crowns (up from 300). **Knock Out** with it now costs 5 Action Points (up from 4)
+	- **Cudgel** now deals 45-65 Damage (up from 40-60), 120% Armor Damage (up from 90%), has a Weight of 24 (up from 18) and costs 600 Crowns (up from 400). **Knock Out** with it now costs 5 Action Points (up from 4)
 // NPCs
-- **Geists** now have 70 Melee Skill (up from 65) and deal 15-20 damage (down from 15-25)
-- **Noble Standard Bearer** and **Noble Heralds** no longer grant **For the Realm**
-- **Orc Warlord** loses **Berserk**
-- **Brigand Bandit** now spawns with **Undertaker's Hat** instead of **Closed Mail Coif**
-- **Brigand Killer** can now also spawn with **Closed Mail Coif**
-- **Flesh Cradles** now drop **Strange Meat** on death
-- **Brigand Sharpshooter** lose **Combo**
-- **Heralds Bodyguard** no longer spawns with **Brigandine Harness** (180 Condition) and can now spawn with a **Breastplate** (230 Condition)
-- **Noble Fencer** now have a cost of 50 (up from 45). They now have 55 Hitpoints (up from 50), 100 Melee Skill (up from 95) and 10 Ranged Defense (up from 0)
-- **Noble Man at Arms** now have a Cost of 50 (up from 45). They gain **Battle Forged** and now have 150 Stamina (up from 120), 30 Melee Defense (up from 20) and 20 Ranged Defense (up from 10)
-- **Noble Standard Bearer** now have 100 Resolve (up from 85)
-- **Noble Heralds** now have 150 Resolve (up from 130)
-- **Noble Zweihander** now have a Cost of 50 (up from 45), loses **Overwhelm** and gains **Brace for Impact**
-- **Nomad Leader** now have 100 Resolve (up from 85)
-- Champion **Ancient Honor Guards** lose **Unstoppable** and gain **Menacing**
-- Champion **Fallen Heroes** now always spawn with full armor condition
-- **Frenzied Hyenas** now have a cost of 40 (up from 35)
-- **Noble Footmen** no longer spawn with **Kite Shield** or **Heater Shield**. They now always spawn with a **Wooden Shield**. They now have 85 Hitpoints (up from 80)
-- **Noble Heavy Footmen** lose **Shield Expert**. They now have 30 Melee Defense (up from 25) and 20 Ranged Defense (up from 15)
-- **Nomad Slinger** now have 65 Ranged Skill (down from 70) and 5 Ranged Defense (up from 0)
-- **Direwolfs** lose **Rotation** and gain **Lone Wolf**
-- **Frenzied Direwolfs** lose **Rotation and gain **Ghostlike**. They now have a cost of 40 (up from 35)
-- **Orc Warriors** lose **Mauler** and **Dismemberment** and now have -5 Melee Defense (up from -10)
-- **Orc Young** are now less likely to spawn with a **Morning Star** or a **Cudgel**
-- **Brigand Leader** now have 100 Resolve (up from 85)
-- **Brigand Marauder**  can now spawn with a **Two Handed Mace** and those spawning with it gain **Bone Breaker**
-- **Brigand Outlaw** no longer spawn with **Two Handed Mace**. They can now spawn with **Cudgel**
-- **Brigand Pillager** no longer spawn with **Cudgel**. They can now spawn with **Woodcutters Axe** and **Tree Limb**. They gain **Vigorous Assault**
-- **Brigand Robber Baron** now have 130 Resolve (up from 120)
-- **Brigand Scoundrels** (lowest tier of **Balanced Brigands**) are now called **Brigand Thug**. They now have a 20% chance to spawn without a helmet
+	- **Geists** now have 70 Melee Skill (up from 65) and deal 15-20 damage (down from 15-25)
+	- **Noble Standard Bearer** and **Noble Heralds** no longer grant **For the Realm**
+	- **Orc Warlord** loses **Berserk**
+	- **Brigand Bandit** now spawns with **Undertaker's Hat** instead of **Closed Mail Coif**
+	- **Brigand Killer** can now also spawn with **Closed Mail Coif**
+	- **Flesh Cradles** now drop **Strange Meat** on death
+	- **Brigand Sharpshooter** lose **Combo**
+	- **Heralds Bodyguard** no longer spawns with **Brigandine Harness** (180 Condition) and can now spawn with a **Breastplate** (230 Condition)
+	- **Noble Fencer** now have a cost of 50 (up from 45). They now have 55 Hitpoints (up from 50), 100 Melee Skill (up from 95) and 10 Ranged Defense (up from 0)
+	- **Noble Man at Arms** now have a Cost of 50 (up from 45). They gain **Battle Forged** and now have 150 Stamina (up from 120), 30 Melee Defense (up from 20) and 20 Ranged Defense (up from 10)
+	- **Noble Standard Bearer** now have 100 Resolve (up from 85)
+	- **Noble Heralds** now have 150 Resolve (up from 130)
+	- **Noble Zweihander** now have a Cost of 50 (up from 45), loses **Overwhelm** and gains **Brace for Impact**
+	- **Nomad Leader** now have 100 Resolve (up from 85)
+	- Champion **Ancient Honor Guards** lose **Unstoppable** and gain **Menacing**
+	- Champion **Fallen Heroes** now always spawn with full armor condition
+	- **Frenzied Hyenas** now have a cost of 40 (up from 35)
+	- **Noble Footmen** no longer spawn with **Kite Shield** or **Heater Shield**. They now always spawn with a **Wooden Shield**. They now have 85 Hitpoints (up from 80)
+	- **Noble Heavy Footmen** lose **Shield Expert**. They now have 30 Melee Defense (up from 25) and 20 Ranged Defense (up from 15)
+	- **Nomad Slinger** now have 65 Ranged Skill (down from 70) and 5 Ranged Defense (up from 0)
+	- **Direwolfs** lose **Rotation** and gain **Lone Wolf**
+	- **Frenzied Direwolfs** lose **Rotation and gain **Ghostlike**. They now have a cost of 40 (up from 35)
+	- **Orc Warriors** lose **Mauler** and **Dismemberment** and now have -5 Melee Defense (up from -10)
+	- **Orc Young** are now less likely to spawn with a **Morning Star** or a **Cudgel**
+	- **Brigand Leader** now have 100 Resolve (up from 85)
+	- **Brigand Marauder**  can now spawn with a **Two Handed Mace** and those spawning with it gain **Bone Breaker**
+	- **Brigand Outlaw** no longer spawn with **Two Handed Mace**. They can now spawn with **Cudgel**
+	- **Brigand Pillager** no longer spawn with **Cudgel**. They can now spawn with **Woodcutters Axe** and **Tree Limb**. They gain **Vigorous Assault**
+	- **Brigand Robber Baron** now have 130 Resolve (up from 120)
+	- **Brigand Scoundrels** (lowest tier of **Balanced Brigands**) are now called **Brigand Thug**. They now have a 20% chance to spawn without a helmet
 // Renown
-- Add new additional penalty of -50 Renown when cancelling a contract for which you got paid in advance
-- Cancelling a contract now inflicts -5 Relation (down from -10)
-- Cancelling a contract for which you got paid in advance now inflicts and additional -15 Relation (up from -10)
-- Cancelling a contract now inflicts -50 Renown (down from -100)
-- Failing a contract now inflicts -50 Renown (down from -75)
+	- Add new additional penalty of -50 Renown when cancelling a contract for which you got paid in advance
+	- Cancelling a contract now inflicts -5 Relation (down from -10)
+	- Cancelling a contract for which you got paid in advance now inflicts and additional -15 Relation (up from -10)
+	- Cancelling a contract now inflicts -50 Renown (down from -100)
+	- Failing a contract now inflicts -50 Renown (down from -75)
 // Champion Spawnrate
-The champion spawnrate of the following entities has changed:
-- **Brigand Killer**: 2% Chance (up from 1%)
-- **Brigand Marauder** 2% Chance (up from 1%)
-- **Nomad Executioner** 3% Chance (up from 2%)
-- **Barbarian Chosen** 2% Chance (up from 1%)
-- **Gladiator** 3% Chance (up from 2%)
-- **Noble Fencer** 2% Chance (up from 1%)
-- **Man at Arms** 2% Chance (up from 1%)
-- **Ancient Palatini** (Polearm Variant) 2% Chance (up from 1%)
-- **Brigand Leader** 5% Chance (up from 1%)
-- **Nomad Leader** 5% Chance (up from 1%)
-- **Bladedancer** 3% Chance (up from 2%)
-- **Desert Stalker** 3% Chance (up from 2%)
-- **Officer** 5% Chance (up from 1%)
-- **Hedge Knight** 3% Chance (up from 2%)
-- **Master Archer** 3% Chance (up from 2%)
-- **Noble Knight** 3% Chance (up from 2%)
-- **Ancient Honor Guard** 2% Chance (up from 1%)
-- **Brigand Robber Baron** 10% Chance (up from 1%)
-- **Swordmaster** 3% Chance (up from 2%)
-- **Noble Anointed Knight** 10% Chance (up from 2%)
-- **Ancient Legatus** 5% Chance (up from 1%)
-- **Necrosavant Lord** 5% Chance (up from 1%)
+	The champion spawnrate of the following entities has changed:
+	- **Brigand Killer**: 2% Chance (up from 1%)
+	- **Brigand Marauder** 2% Chance (up from 1%)
+	- **Nomad Executioner** 3% Chance (up from 2%)
+	- **Barbarian Chosen** 2% Chance (up from 1%)
+	- **Gladiator** 3% Chance (up from 2%)
+	- **Noble Fencer** 2% Chance (up from 1%)
+	- **Man at Arms** 2% Chance (up from 1%)
+	- **Ancient Palatini** (Polearm Variant) 2% Chance (up from 1%)
+	- **Brigand Leader** 5% Chance (up from 1%)
+	- **Nomad Leader** 5% Chance (up from 1%)
+	- **Bladedancer** 3% Chance (up from 2%)
+	- **Desert Stalker** 3% Chance (up from 2%)
+	- **Officer** 5% Chance (up from 1%)
+	- **Hedge Knight** 3% Chance (up from 2%)
+	- **Master Archer** 3% Chance (up from 2%)
+	- **Noble Knight** 3% Chance (up from 2%)
+	- **Ancient Honor Guard** 2% Chance (up from 1%)
+	- **Brigand Robber Baron** 10% Chance (up from 1%)
+	- **Swordmaster** 3% Chance (up from 2%)
+	- **Noble Anointed Knight** 10% Chance (up from 2%)
+	- **Ancient Legatus** 5% Chance (up from 1%)
+	- **Necrosavant Lord** 5% Chance (up from 1%)
 // World Parties
-- **Brigand Thugs** (lowest tier of tough brigands) will no longer naturally spawn, reducing the **Tough Brigand** block to 3 Tiers
-- **Slaves** now have a chance of 40% to be part of a southern caravan (down from 60%)
-- Brigand Elites (**Master Archer**, **Hedge Knights** and **Swordmaster**) now require 400 min resources to be able to appear (up from 320) and can maximum possible amount of 15% of the party (up from 10%)
-- Mercenary Parties now have 180 Base Resources (up from 150)
-- Make city states caravans transport tools, medicine or ammo 33% less often
-- Any settlement which does not produce any regular item currently will count as producing **Crowns**, so their caravans will transport stacks of crowns instead of transporting nothing
-- Southern Caravans no longer have a 40% chance to not a Conscript Backline
-- **Men at Arms** are now more common in late game noble armies
-- **Noble Knights** and **Anointed Knights** now require a minimum army size of 12 (down from 20) in order to appear. Up to 15% of an army can be filled by them (up from a maximum of 2)
-- The minimum resource value to be eligable for spawning of various units has changed the following way:
-	- **Noble Knights** now require 500 (up from 350)
-	- **Noble Anointed Knights** now require 700 (up from 450)
-	- **Noble Marshals** now require 400 (up from 350)
-	- **Noble Heralds** now require 500 (up from 350)
-	- **Brigand Pillager** now require 120 (up from 140)
-	- **Brigand Robber** now require 120 (up from 100)
-	- **Brigand Bandit** now require 185 (up from 150)
-	- **Brigand Killer** now require 250 (up from 225)
-	- **Brigand Robber Baron** now require 500 (up from 350)
+	- **Brigand Thugs** (lowest tier of tough brigands) will no longer naturally spawn, reducing the **Tough Brigand** block to 3 Tiers
+	- **Slaves** now have a chance of 40% to be part of a southern caravan (down from 60%)
+	- Brigand Elites (**Master Archer**, **Hedge Knights** and **Swordmaster**) now require 400 min resources to be able to appear (up from 320) and can maximum possible amount of 15% of the party (up from 10%)
+	- Mercenary Parties now have 180 Base Resources (up from 150)
+	- Make city states caravans transport tools, medicine or ammo 33% less often
+	- Any settlement which does not produce any regular item currently will count as producing **Crowns**, so their caravans will transport stacks of crowns instead of transporting nothing
+	- Southern Caravans no longer have a 40% chance to not a Conscript Backline
+	- **Men at Arms** are now more common in late game noble armies
+	- **Noble Knights** and **Anointed Knights** now require a minimum army size of 12 (down from 20) in order to appear. Up to 15% of an army can be filled by them (up from a maximum of 2)
+	- The minimum resource value to be eligable for spawning of various units has changed the following way:
+		- **Noble Knights** now require 500 (up from 350)
+		- **Noble Anointed Knights** now require 700 (up from 450)
+		- **Noble Marshals** now require 400 (up from 350)
+		- **Noble Heralds** now require 500 (up from 350)
+		- **Brigand Pillager** now require 120 (up from 140)
+		- **Brigand Robber** now require 120 (up from 100)
+		- **Brigand Bandit** now require 185 (up from 150)
+		- **Brigand Killer** now require 250 (up from 225)
+		- **Brigand Robber Baron** now require 500 (up from 350)
 // Combat
-- Tactical Forest Maps no longer randomly spawn **Grassland** tiles (2 AP per move)
-- Tactical Swamp Maps no longer randomly spawn **Plashy Grass** tiles (2 AP per move)
+	- Tactical Forest Maps no longer randomly spawn **Grassland** tiles (2 AP per move)
+	- Tactical Swamp Maps no longer randomly spawn **Plashy Grass** tiles (2 AP per move)
 // World
-- Each regular and permanent injury now reduces the strength of that character by a multiplicative 10%
+	- Each regular and permanent injury now reduces the strength of that character by a multiplicative 10%
 // Retinue
-- **Brigand Follower** no longer reveals Caravans on the world map. Instead you travel 20% faster while following a visible enemy on the world map.
+	- **Brigand Follower** no longer reveals Caravans on the world map. Instead you travel 20% faster while following a visible enemy on the world map.
 // Minor Changes
-- Improve tooltip description of **Formidable Approach** effect
+	- Improve tooltip description of **Formidable Approach** effect
 // For Modder
-- The default amount of `money_item` now defaults to 200 (up from 0), allowing it to be used for example as produce
+	- The default amount of `money_item` now defaults to 200 (up from 0), allowing it to be used for example as produce
 
 1.8.10
 	- Fix bad packaging of mod, producing a log error during loading and potentially causing a variety of knock-on effects
