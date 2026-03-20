@@ -33,7 +33,7 @@
 		"Your allies will not provide cover for enemies that are 2 tiles away from you.\n\n" +
 		"Ranged Attacks against characters that are in cover have a " + ::MSU.Text.colorPositive("75%") + " chance to instead hit one of the covering tiles at random."
 	)),
-	DayTime = ::MSU.Class.CustomTooltip(function(_data){
+	DayTime = ::MSU.Class.CustomTooltip(function( _data ) {
 		return [
 			{
 				id = 1,
@@ -42,7 +42,7 @@
 			},
 			{
 				id = 2,
-				type = 	"description"
+				type = 	"description",
 				text = ::Reforged.Mod.Tooltips.parseString(
 					"Each day in Battle Brothers follows a cycle of distinct phases, impacting visibility, combat effectiveness, and available town services.\n\n" +
 					"Daytime begins with 2 hours of Sunrise, followed by 6 hours of Morning, 2 hours of Midday, and 6 hours of Afternoon and ending after 2 hours of Sunset.\n\n" +
