@@ -56,13 +56,13 @@
 // scripts/entity/tactical/enemies/bandit_poacher
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.BanditPoacher.XP = 100;
+	::Const.Tactical.Actor.BanditPoacher.XP = 120;
 	::Const.Tactical.Actor.BanditPoacher.ActionPoints = 9;
 	::Const.Tactical.Actor.BanditPoacher.Hitpoints = 55;
 	::Const.Tactical.Actor.BanditPoacher.Bravery = 40;
-	::Const.Tactical.Actor.BanditPoacher.Stamina = 100;
+	::Const.Tactical.Actor.BanditPoacher.Stamina = 80;
 	::Const.Tactical.Actor.BanditPoacher.MeleeSkill = 40;
-	::Const.Tactical.Actor.BanditPoacher.RangedSkill = 50;
+	::Const.Tactical.Actor.BanditPoacher.RangedSkill = 60;
 	::Const.Tactical.Actor.BanditPoacher.MeleeDefense = 0;
 	::Const.Tactical.Actor.BanditPoacher.RangedDefense = 5;
 	::Const.Tactical.Actor.BanditPoacher.Initiative = 80;
@@ -155,7 +155,7 @@
 // scripts/entity/tactical/enemies/bandit_marksman
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.BanditMarksman.XP = 240;
+	::Const.Tactical.Actor.BanditMarksman.XP = 200;
 	::Const.Tactical.Actor.BanditMarksman.ActionPoints = 9;
 	::Const.Tactical.Actor.BanditMarksman.Hitpoints = 65;
 	::Const.Tactical.Actor.BanditMarksman.Bravery = 50;
@@ -179,7 +179,7 @@
 	::Const.Tactical.Actor.BanditRaider.Bravery = 60;
 	::Const.Tactical.Actor.BanditRaider.Stamina = 125;
 	::Const.Tactical.Actor.BanditRaider.MeleeSkill = 75;
-	::Const.Tactical.Actor.BanditRaider.RangedSkill = 55;
+	::Const.Tactical.Actor.BanditRaider.RangedSkill = 60;
 	::Const.Tactical.Actor.BanditRaider.MeleeDefense = 10;
 	::Const.Tactical.Actor.BanditRaider.RangedDefense = 0;
 	::Const.Tactical.Actor.BanditRaider.Initiative = 110;
@@ -241,7 +241,7 @@
 	::Const.Tactical.Actor.RF_BanditSharpshooter.Hitpoints = 70;
 	::Const.Tactical.Actor.RF_BanditSharpshooter.Bravery = 55;
 	::Const.Tactical.Actor.RF_BanditSharpshooter.Stamina = 130;
-	::Const.Tactical.Actor.RF_BanditSharpshooter.MeleeSkill = 55;
+	::Const.Tactical.Actor.RF_BanditSharpshooter.MeleeSkill = 60;
 	::Const.Tactical.Actor.RF_BanditSharpshooter.RangedSkill = 80;
 	::Const.Tactical.Actor.RF_BanditSharpshooter.MeleeDefense = 10;
 	::Const.Tactical.Actor.RF_BanditSharpshooter.RangedDefense = 20;

@@ -74,8 +74,8 @@
 // scripts/entity/tactical/enemies/bandit_poacher
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.BanditMarksmanLOW.Cost = 10;
-	::Const.World.Spawn.Troops.BanditMarksmanLOW.Strength = 10;
+	::Const.World.Spawn.Troops.BanditMarksmanLOW.Cost = 12;
+	::Const.World.Spawn.Troops.BanditMarksmanLOW.Strength = 12;
 }
 
 // scripts/entity/tactical/warhound
@@ -321,8 +321,8 @@
 // scripts/entity/tactical/enemies/bandit_marksman
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.BanditMarksman.Cost = 24;
-	::Const.World.Spawn.Troops.BanditMarksman.Strength = 24;
+	::Const.World.Spawn.Troops.BanditMarksman.Cost = 20;
+	::Const.World.Spawn.Troops.BanditMarksman.Strength = 20;
 }
 
 // scripts/entity/tactical/enemies/bandit_raider

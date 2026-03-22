@@ -7,12 +7,14 @@
 		this.m.Bodies = ::Const.Bodies.Skinny;	// Reforged ::Const.Bodies.AllMale
 		__original();
 
-		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 70
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 60 - 70
+			[12, "scripts/items/armor/padded_surcoat"],
 			[12, "scripts/items/armor/gambeson"],
 			[12, "scripts/items/armor/blotched_gambeson"],
 		]);
 
-		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 60
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 40 - 60
+			[12, "scripts/items/helmets/aketon_cap"],
 			[12, "scripts/items/helmets/full_leather_cap"],
 			[12, "scripts/items/helmets/full_aketon_cap"],
 		]);
@@ -81,7 +83,6 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_bully"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_bullseye"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
 	}
 
