@@ -142,7 +142,7 @@
 // scripts/entity/tactical/humans/noble_greatsword
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Greatsword.XP = 540;
+	::Const.Tactical.Actor.Greatsword.XP = 600;
 	::Const.Tactical.Actor.Greatsword.ActionPoints = 9;
 	::Const.Tactical.Actor.Greatsword.Hitpoints = 90;
 	::Const.Tactical.Actor.Greatsword.Bravery = 70;
@@ -157,7 +157,7 @@
 // scripts/entity/tactical/humans/rf_fencer
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_Fencer.XP = 540;
+	::Const.Tactical.Actor.RF_Fencer.XP = 600;
 	::Const.Tactical.Actor.RF_Fencer.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_Fencer.Hitpoints = 55;
 	::Const.Tactical.Actor.RF_Fencer.Bravery = 70;
@@ -172,7 +172,7 @@
 // scripts/entity/tactical/humans/rf_man_at_arms
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_ManAtArms.XP = 540;
+	::Const.Tactical.Actor.RF_ManAtArms.XP = 600;
 	::Const.Tactical.Actor.RF_ManAtArms.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_ManAtArms.Hitpoints = 100;
 	::Const.Tactical.Actor.RF_ManAtArms.Bravery = 70;

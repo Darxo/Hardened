@@ -150,7 +150,7 @@
 // scripts/entity/tactical/enemies/direwolf_bodyguard
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.FrenziedDirewolf.XP = 525;				// Vanilla: 250
+	::Const.Tactical.Actor.FrenziedDirewolf.XP = 600;				// Vanilla: 250
 	::Const.Tactical.Actor.FrenziedDirewolf.ActionPoints = 12;
 	::Const.Tactical.Actor.FrenziedDirewolf.Hitpoints = 150;
 	::Const.Tactical.Actor.FrenziedDirewolf.Bravery = 70;
@@ -168,7 +168,7 @@
 // scripts/entity/tactical/enemies/hyena_high
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.FrenziedHyena.XP = 525;				// Vanilla: 250
+	::Const.Tactical.Actor.FrenziedHyena.XP = 600;				// Vanilla: 250
 	::Const.Tactical.Actor.FrenziedHyena.ActionPoints = 14;
 	::Const.Tactical.Actor.FrenziedHyena.Hitpoints = 140;
 	::Const.Tactical.Actor.FrenziedHyena.Bravery = 70;

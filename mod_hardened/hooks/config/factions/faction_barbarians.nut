@@ -61,7 +61,7 @@
 // scripts/entity/tactical/humans/barbarian_champion
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.BarbarianChampion.XP = 675;
+	::Const.Tactical.Actor.BarbarianChampion.XP = 750;
 	::Const.Tactical.Actor.BarbarianChampion.ActionPoints = 9;
 	::Const.Tactical.Actor.BarbarianChampion.Hitpoints = 150;
 	::Const.Tactical.Actor.BarbarianChampion.Bravery = 90;
