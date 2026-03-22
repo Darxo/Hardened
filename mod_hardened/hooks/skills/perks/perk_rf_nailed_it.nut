@@ -5,7 +5,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_nailed_it", function(q) {
 	// Public
 	q.m.HeadShotChance <- 25;	// This much Headshot chance is granted at a range of 2 tiles
-	q.m.RangedAttackBlockedChanceMult <- 0.5;	// Multiplier for blocked attacks at a range of 2 tiles
+	q.m.RangedAttackBlockedChanceMult <- 0.0;	// Multiplier for blocked attacks at a range of 2 tiles
 
 	q.onAnySkillUsed = @(__original) function( _skill, _targetEntity, _properties )
 	{
@@ -14,7 +14,7 @@
 		if (this.isAttackValid(_skill, _targetEntity))
 		{
 			_properties.HitChance[::Const.BodyPart.Head] += this.m.HeadShotChance;
-			_properties.RangedAttackBlockedChanceMult = 0;
+			_properties.RangedAttackBlockedChanceMult *= this.m.RangedAttackBlockedChanceMult;
 		}
 	}
 
