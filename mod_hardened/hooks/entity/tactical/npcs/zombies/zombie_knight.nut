@@ -1,7 +1,7 @@
 // Hardened completely redesign most NPCs
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
-// Zombie Knights are now called "Fallen Soldiers" in Hardened
+// Fallen Knights are now called "Fallen Soldiers" in Hardened
 ::Const.Strings.EntityName[::Const.EntityType.ZombieKnight] = "Fallen Soldier";
 ::Const.Strings.EntityNamePlural[::Const.EntityType.ZombieKnight] = "Fallen Soldiers";
 
@@ -43,26 +43,7 @@
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
 	q.onSpawned = @() function()
 	{
-		local weapon = this.getMainhandItem();
-		if (weapon != null)
-		{
-			if (weapon.isWeaponType(::Const.Items.WeaponType.Flail))
-			{
-				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_flail"));
-			}
-			else if (weapon.isWeaponType(::Const.Items.WeaponType.Hammer))
-			{
-				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_hammer"));
-			}
-			else if (weapon.isWeaponType(::Const.Items.WeaponType.Mace))
-			{
-				this.getSkills().add(::new("scripts/skills/perks/perk_rf_bone_breaker"));
-			}
-			else if (weapon.isWeaponType(::Const.Items.WeaponType.Sword))
-			{
-				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_sword"));
-			}
-		}
+		::Reforged.Skills.addMasteryOfEquippedWeapon(this);
 	}
 
 // Hardened Functions

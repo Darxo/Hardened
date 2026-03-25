@@ -1,11 +1,8 @@
 // Hardened completely redesign most NPCs
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
-// Fallen Betrayers are now called "Fallen Heroes" in Hardened
-::Const.Strings.EntityName[::Const.EntityType.ZombieBetrayer] = "Fallen Hero";
-::Const.Strings.EntityNamePlural[::Const.EntityType.ZombieBetrayer] = "Fallen Heroes";
-
-::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/zombie_betrayer", function(q) {
+// Fallen Hero - Zombie Frontline - Tier 4
+::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/rf_zombie_hero", function(q) {
 	q.create = @(__original) function()
 	{
 		__original();
