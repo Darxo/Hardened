@@ -63,21 +63,6 @@
 	::Const.World.Spawn.Troops.PeasantArmed.Strength = 10;
 }
 
-// scripts/entity/tactical/enemies/rf_bandit_scoundrel
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_BanditScoundrel.ID = ::Const.EntityType.RF_BanditScoundrel;		// Reforged: ::Const.EntityType.BanditThug
-	::Const.World.Spawn.Troops.RF_BanditScoundrel.Cost = 10;
-	::Const.World.Spawn.Troops.RF_BanditScoundrel.Strength = 10;
-}
-
-// scripts/entity/tactical/enemies/bandit_poacher
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.BanditMarksmanLOW.Cost = 12;
-	::Const.World.Spawn.Troops.BanditMarksmanLOW.Strength = 12;
-}
-
 // scripts/entity/tactical/warhound
 {
 	// Mandatory Entries
@@ -104,13 +89,6 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.ZombieBodyguard.Cost = 10;
 	::Const.World.Spawn.Troops.ZombieBodyguard.Strength = 10;
-}
-
-// scripts/entity/tactical/enemies/bandit_thug
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.BanditThug.Cost = 12;
-	::Const.World.Spawn.Troops.BanditThug.Strength = 12;
 }
 
 // scripts/entity/tactical/enemies/ghoul
@@ -181,36 +159,6 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.NomadSlinger.Cost = 15;
 	::Const.World.Spawn.Troops.NomadSlinger.Strength = 15;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_hunter
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_BanditHunter.Cost = 16;
-	::Const.World.Spawn.Troops.RF_BanditHunter.Strength = 16;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_vandal
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_BanditVandal.Cost = 16;
-	::Const.World.Spawn.Troops.RF_BanditVandal.Strength = 16;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_pillager
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_BanditPillager.ID = ::Const.EntityType.RF_BanditPillager;		// Reforged: ::Const.EntityType.RF_BanditVandal
-	::Const.World.Spawn.Troops.RF_BanditPillager.Cost = 18;
-	::Const.World.Spawn.Troops.RF_BanditPillager.Strength = 18;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_robber
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_BanditRobber.Cost = 18;
-	::Const.World.Spawn.Troops.RF_BanditRobber.Strength = 18;
-	::Const.World.Spawn.Troops.RF_BanditRobber.Row = 1;			// Reforged: 0
 }
 
 // scripts/entity/tactical/enemies/zombie_yeoman
@@ -318,20 +266,6 @@
 	::Const.World.Spawn.Troops.RF_SkeletonLightElitePolearm.Strength = 22;
 }
 
-// scripts/entity/tactical/enemies/bandit_marksman
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.BanditMarksman.Cost = 20;
-	::Const.World.Spawn.Troops.BanditMarksman.Strength = 20;
-}
-
-// scripts/entity/tactical/enemies/bandit_raider
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.BanditRaider.Cost = 24;
-	::Const.World.Spawn.Troops.BanditRaider.Strength = 24;
-}
-
 // scripts/entity/tactical/humans/noble_billman
 {
 	// Mandatory Entries
@@ -407,22 +341,6 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.Ghost.Cost = 25;
 	::Const.World.Spawn.Troops.Ghost.Strength = 25;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_bandit
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_BanditBandit.Cost = 27;
-	::Const.World.Spawn.Troops.RF_BanditBandit.Strength = 27;
-	::Const.World.Spawn.Troops.RF_BanditBandit.Row = 1;			// Reforged: 0
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_outlaw
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_BanditOutlaw.ID = ::Const.EntityType.RF_BanditOutlaw;		// Reforged: ::Const.EntityType.BanditRaider
-	::Const.World.Spawn.Troops.RF_BanditOutlaw.Cost = 27;
-	::Const.World.Spawn.Troops.RF_BanditOutlaw.Strength = 27;
 }
 
 // scripts/entity/tactical/humans/bounty_hunter
@@ -531,20 +449,6 @@
 	::Const.World.Spawn.Troops.SkeletonMediumPolearm.Strength = 32;
 }
 
-// scripts/entity/tactical/enemies/rf_bandit_highwayman
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_BanditHighwayman.Cost = 35;
-	::Const.World.Spawn.Troops.RF_BanditHighwayman.Strength = 35;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_sharpshooter
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_BanditSharpshooter.Cost = 35;
-	::Const.World.Spawn.Troops.RF_BanditSharpshooter.Strength = 35;
-}
-
 // scripts/entity/tactical/enemies/direwolf_high
 {
 	// Mandatory Entries
@@ -592,32 +496,6 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.SandGolemMEDIUM.Cost = 36;
 	::Const.World.Spawn.Troops.SandGolemMEDIUM.Strength = 36;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_killer
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_BanditKiller.Cost = 40;
-	::Const.World.Spawn.Troops.RF_BanditKiller.Strength = 40;
-	::Const.World.Spawn.Troops.RF_BanditKiller.Variant = 2;		// Bandit Killer can now produce Champions
-	::Const.World.Spawn.Troops.RF_BanditKiller.Row = 1;			// Reforged: 0
-
-	// Optional Entries
-	::Const.World.Spawn.Troops.RF_BanditKiller.NameList <- ::Const.Strings.BanditLeaderNames;	// Todo: generate better namelist
-	::Const.World.Spawn.Troops.RF_BanditKiller.TitleList <- null;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_marauder
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_BanditMarauder.ID = ::Const.EntityType.RF_BanditMarauder;		// Reforged: ::Const.EntityType.RF_BanditHighwayman
-	::Const.World.Spawn.Troops.RF_BanditMarauder.Cost = 40;
-	::Const.World.Spawn.Troops.RF_BanditMarauder.Strength = 40;
-	::Const.World.Spawn.Troops.RF_BanditMarauder.Variant = 2;		// Bandit Marauder can now produce Champions
-
-	// Optional Entries
-	::Const.World.Spawn.Troops.RF_BanditMarauder.NameList <- ::Const.Strings.BanditLeaderNames;	// Todo: generate better namelist
-	::Const.World.Spawn.Troops.RF_BanditMarauder.TitleList <- null;
 }
 
 // scripts/entity/tactical/enemies/ghoul_high

@@ -1,28 +1,37 @@
 // Hardened completely redesign most NPCs
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
+// Brigand Robber - Fast Brigand - Tier 2 (Brigand Outlaw)
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/rf_bandit_outlaw", function(q) {
 	q.create = @(__original) function()
 	{
-		this.m.Bodies = ::Const.Bodies.Thick;	// Reforged: ::Const.Bodies.AllMale
+		this.m.Bodies = ::Const.Bodies.Skinny;	// Reforged: ::Const.Bodies.AllMale
 
-		// Switcheroo the BanditRaider ID into that of RF_BanditOutlaw, to make Reforged assign the ID, that we want
+		// Switcheroo the RF_BanditOutlaw ID into that of HD_BrigandRobber, to make Reforged assign the ID, that we want
 		// We must do this via switcheroo, so that the name assignment works correctly
-		local oldBanditRaider = ::Const.EntityType.BanditRaider;
-		::Const.EntityType.BanditRaider = ::Const.EntityType.RF_BanditOutlaw;
+		local oldRF_BanditOutlaw = ::Const.EntityType.RF_BanditOutlaw;
+		::Const.EntityType.RF_BanditOutlaw = ::Const.EntityType.HD_BrigandRobber;
 		__original();
-		::Const.EntityType.BanditRaider = oldBanditRaider;
+		::Const.EntityType.RF_BanditOutlaw = oldRF_BanditOutlaw;
 
-		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 70 - 80
-			[6, "scripts/items/armor/gambeson"],
-			[12, "scripts/items/armor/blotched_gambeson"],
-			[6, "scripts/items/armor/padded_leather"],
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 70 - 90
+			[12, "scripts/items/armor/wanderers_coat"],
+			[12, "scripts/items/armor/reinforced_leather_tunic"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 50
+			[12, "scripts/items/helmets/undertaker_hat"],
 		]);
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/weapons/greenskins/orc_metal_club"],
-			[12, "scripts/items/weapons/two_handed_wooden_flail"],
-			[12, "scripts/items/weapons/two_handed_wooden_hammer"],
+			[12, "scripts/items/weapons/pike"],
+			[12, "scripts/items/weapons/spetum"],
+			[24, "scripts/items/weapons/dagger"],
+		]);
+
+		// If the offhand is empty (spawned with dagger), we also equip a net
+		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/tools/reinforced_throwing_net"],
 		]);
 	}
 
@@ -39,12 +48,25 @@
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{
 		this.HD_assignArmor();
+		this.HD_assignOtherGear();
 	}}.assignRandomEquipment;
 
 // Reforged Functions
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
 	q.onSpawned = @() function()
 	{
+		local weapon = this.getMainhandItem();
+		if (weapon != null)
+		{
+			if (weapon.isWeaponType(::Const.Items.WeaponType.Spear))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_through_the_gaps"));
+			}
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Dagger))
+			{
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_between_the_ribs"));
+			}
+		}
 	}
 
 // New Functions
@@ -60,6 +82,10 @@
 		this.getSprite("helmet_damage").Saturation = 0.85;
 		this.getSprite("shield_icon").Saturation = 0.85;
 		this.getSprite("shield_icon").setBrightness(0.85);
+
+		local tattoo_head = this.getSprite("tattoo_head");
+		tattoo_head.setBrush("warpaint_0" + ::Math.rand(2, 3) + "_head");
+		tattoo_head.Visible = true;
 	}
 
 	// Assign Stats and Unconditional Immunities, Perks and Actives
@@ -71,14 +97,30 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_bully"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_steel_brow"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_hold_out"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vigorous_assault"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_formidable_approach"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_dodge"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_ghostlike"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_relentless"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_hd_hybridization"));
+
+		this.m.HasNet = ::Math.rand(1, 3) == 3; // 33% chance
+		this.m.IsRegularThrower = ::Math.rand(1, 2) == 2;  // 50% chance
+
+		if (this.m.IsRegularThrower == false)
+		{
+			this.m.IsSpearThrower = ::Math.rand(1, 4) == 4; // 25% chance. only rolled if not regular thrower.
+		}
 	}
 
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
+	}
+
+	// Assign all other gear to this character
+	q.HD_assignOtherGear <- function()
+	{
+		local throwingWeapon = ::new("scripts/items/weapons/throwing_axe");
+		throwingWeapon.m.Ammo = 2;
+		this.getItems().addToBag(throwingWeapon);
 	}
 });

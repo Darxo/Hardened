@@ -1,31 +1,51 @@
 // Hardened completely redesign most NPCs
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
+// Brigand Thug - Balanced Brigand - Tier 1
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/bandit_thug", function(q) {
 	q.create = @(__original) function()
 	{
-		this.m.Bodies = ::Const.Bodies.Thick;	// Vanilla: ::Const.Bodies.AllMale
+		this.m.Bodies = ::Const.Bodies.Skinny;	// Reforged ::Const.Bodies.AllMale
+
 		__original();
 
-		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 20
-			[12, "scripts/items/armor/sackcloth"],
-			[12, "scripts/items/armor/leather_wraps"],
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 30 - 60
+			[12, "scripts/items/armor/leather_tunic"],
+			[12, "scripts/items/armor/thick_tunic"],
+			[8, "scripts/items/armor/ragged_surcoat"],
+			[8, "scripts/items/armor/padded_surcoat"],
+		]);
+
+		this.m.ChanceForNoHelmet = 20;
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 30 - 40
+			[12, "scripts/items/helmets/hood"],
+			[4, "scripts/items/helmets/straw_hat"],
+			[4, "scripts/items/helmets/aketon_cap"],
 		]);
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/weapons/greenskins/orc_wooden_club"],
-			[12, "scripts/items/weapons/woodcutters_axe"],
+			[12, "scripts/items/weapons/bludgeon"],
+			[12, "scripts/items/weapons/hatchet"],
+			[12, "scripts/items/weapons/militia_spear"],
+			[12, "scripts/items/weapons/pickaxe"],
+			[12, "scripts/items/weapons/knife"],
+		]);
+
+		this.m.ChanceForNoOffhand = 67;
+		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/shields/buckler_shield"],
+			[12, "scripts/items/shields/wooden_shield_old"],
 		]);
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
-	q.onInit = @() function()
+	q.onInit = @() { function onInit()
 	{
 		this.human.onInit();
 
 		this.HD_onInitSprites();
 		this.HD_onInitStatsAndSkills();
-	}
+	}}.onInit;
 
 	// Overwrite, because we completely replace Reforged item adjustments with our own
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
@@ -83,7 +103,6 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_bully"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_steel_brow"));
 	}
 
 	// Assign Head and Body armor to this character

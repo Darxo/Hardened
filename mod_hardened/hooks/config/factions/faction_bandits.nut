@@ -1,3 +1,278 @@
+{	// Balanced
+	// scripts/entity/tactical/enemies/bandit_thug
+	::Reforged.Entities.editEntity("BanditThug",
+		{
+			Cost = 10, 		// Reforged: 9; Vanilla: 9
+			Strength = 10, 	// Reforged: 9; Vanilla: 9
+		},
+		{
+			XP = 100, // Reforged: 120; Vanilla 150
+			Hitpoints = 55, // Reforged: 55
+			Bravery = 40, // Reforged: 40
+			Stamina = 100, // Reforged: 95
+			MeleeSkill = 55, // Reforged: 55
+			RangedSkill = 40, // Reforged: 45
+			MeleeDefense = 0,	// Reforged: 0
+			RangedDefense = 0, // Reforged: 0
+			Initiative = 100,	// Reforged: 95
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_bandit_pillager
+	::Reforged.Entities.editEntity("RF_BanditPillager",
+		{
+			Cost = 16, 		// Reforged: 18
+			Strength = 16, 	// Reforged: 18
+		},
+		{
+			XP = 160, // Reforged: 120; Vanilla 150
+			Hitpoints = 65, // Reforged: 75
+			Bravery = 50, // Reforged: 50
+			Stamina = 115, // Reforged: 115
+			MeleeSkill = 65, // Reforged: 65
+			RangedSkill = 55, // Reforged: 55
+			MeleeDefense = 5,	// Reforged: 10
+			RangedDefense = 0, // Reforged: 0
+			Initiative = 100,	// Reforged: 105
+		}
+	);
+
+	// scripts/entity/tactical/enemies/bandit_raider
+	::Reforged.Entities.editEntity("BanditRaider",
+		{
+			Cost = 24, 		// Reforged: 22; Vanilla: 20
+			Strength = 24, 	// Reforged: 28; Vanilla: 20
+		},
+		{
+			XP = 240, // Reforged: 250; Vanilla 250
+			Hitpoints = 75, // Reforged: 80; Vanilla: 75
+			Bravery = 60, // Reforged: 60; Vanilla: 55
+			Stamina = 125, // Reforged: 125
+			MeleeSkill = 75, // Reforged: 72
+			RangedSkill = 60, // Reforged: 60
+			MeleeDefense = 10,	// Reforged: 10
+			RangedDefense = 0, // Reforged: 0
+			Initiative = 110,	// Reforged: 110; Vanilla: 115
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_bandit_marauder
+	::Reforged.Entities.editEntity("RF_BanditMarauder",
+		{
+			Cost = 35, 		// Reforged: 26
+			Strength = 35, 	// Reforged: 36
+		},
+		{
+			XP = 350, // Reforged: 300
+			Hitpoints = 85, // Reforged: 85
+			Bravery = 70, // Reforged: 70
+			Stamina = 130, // Reforged: 130
+			MeleeSkill = 85, // Reforged: 80
+			RangedSkill = 65, // Reforged: 65
+			MeleeDefense = 15,	// Reforged: 15
+			RangedDefense = 0, // Reforged: 0
+			Initiative = 110,	// Reforged: 115
+		}
+	);
+}
+
+{	// Ranged
+	// scripts/entity/tactical/enemies/bandit_marksman
+	::Reforged.Entities.editEntity("BanditPoacher",
+		null,	// In Vanilla the BanditPoacher spawnlist entry is called "BanditMarksmanLOW", so we cant adjust those stats here
+		{
+			XP = 120, // Reforged: 150; Vanilla 175
+			Hitpoints = 55, // Reforged: 55; Vanilla: 60
+			Bravery = 40, // Reforged: 40
+			Stamina = 80, // Reforged: 95
+			MeleeSkill = 40, // Reforged: 50
+			RangedSkill = 60, // Reforged: 50
+			MeleeDefense = 0,	// Reforged: 0
+			RangedDefense = 5, // Reforged: 5
+			Initiative = 80,	// Reforged: 95
+			Vision = 8,		// Reforged: 7
+		}
+	);
+
+	// scripts/entity/tactical/enemies/bandit_poacher
+	::Reforged.Entities.editEntity("BanditMarksmanLOW",
+		{
+			Cost = 12, 		// Reforged: 9; Vanilla: 9
+			Strength = 12, 	// Reforged: 9; Vanilla: 9
+		}
+	);
+
+	// scripts/entity/tactical/enemies/bandit_marksman
+	::Reforged.Entities.editEntity("BanditMarksman",
+		{
+			Cost = 20, 		// Reforged: 18; Vanilla: 15
+			Strength = 20, 	// Reforged: 18; Vanilla: 15
+		},
+		{
+			XP = 200, // Reforged: 225; Vanilla 225
+			Hitpoints = 65, // Vanilla: 60
+			Bravery = 50, // Reforged: 55; Vanilla 50
+			Stamina = 115, // Reforged: 105; Vanilla: 115
+			MeleeSkill = 50, // Reforged: 50; Vanilla 50
+			RangedSkill = 65, // Reforged: 70; Vanilla 60
+			MeleeDefense = 5,	// Reforged: 0
+			RangedDefense = 15, // Reforged: 10; Vanilla 10
+			Initiative = 100,	// Reforged: 110
+			Vision = 8,		// Reforged: 7
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_bandit_sharpshooter
+	::Reforged.Entities.editEntity("RF_BanditSharpshooter",
+		{
+			Cost = 35, 		// Reforged: 30
+			Strength = 35, 	// Reforged: 30
+		},
+		{
+			XP = 350, // Reforged: 275
+			Hitpoints = 70, // Reforged: 65
+			Bravery = 55, // Reforged: 55
+			Stamina = 130, // Reforged: 115
+			MeleeSkill = 60, // Reforged: 55
+			RangedSkill = 80, // Reforged: 70
+			MeleeDefense = 10,	// Reforged: 5
+			RangedDefense = 20, // Reforged: 15
+			Initiative = 100,	// Reforged: 115
+			Vision = 8,		// Reforged: 7
+		}
+	);
+}
+
+{	// Tough
+	// scripts/entity/tactical/enemies/rf_bandit_pillager_tough
+	::Reforged.Entities.editEntity("RF_BanditPillagerTough",
+		{
+			Cost = 18, 		// Reforged: 18
+			Strength = 18, 	// Reforged: 20
+		},
+		{
+			XP = 180, // Reforged: 200
+			Hitpoints = 110, // Reforged: 110
+			Bravery = 60, // Reforged: 60
+			Stamina = 120, // Reforged: 115
+			MeleeSkill = 65, // Reforged: 65
+			RangedSkill = 25, // Reforged: 45
+			MeleeDefense = 5,	// Reforged: 0
+			RangedDefense = 0, // Reforged: 0
+			Initiative = 60,	// Reforged: 70
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_bandit_raider_tough
+	::Reforged.Entities.editEntity("RF_BanditRaiderTough",
+		{
+			Cost = 27, 		// Reforged: 22
+			Strength = 27, 	// Reforged: 28
+		},
+		{
+			XP = 270, // Reforged: 250
+			Hitpoints = 130, // Reforged: 130
+			Bravery = 70, // Reforged: 70
+			Stamina = 120, // Reforged: 115
+			MeleeSkill = 75, // Reforged: 72
+			RangedSkill = 25, // Reforged: 45
+			MeleeDefense = 10,	// Reforged: 5
+			RangedDefense = 0, // Reforged: 0
+			Initiative = 70,	// Reforged: 75
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_bandit_marauder_tough
+	::Reforged.Entities.editEntity("RF_BanditMarauderTough",
+		{
+			Cost = 40, 		// Reforged: 26
+			Strength = 40, 	// Reforged: 36
+			Variant = 2,	// Brigand Marauder can now produce Champions
+			NameList = ::Const.Strings.BanditLeaderNames,	// Todo: generate unique namelist
+			TitleList = null,
+		},
+		{
+			XP = 400, // Reforged: 300
+			Hitpoints = 150, // Reforged: 150
+			Bravery = 80, // Reforged: 80
+			Stamina = 140, // Reforged: 125
+			MeleeSkill = 80, // Reforged: 85
+			RangedSkill = 25, // Reforged: 45
+			MeleeDefense = 15,	// Reforged: 10
+			RangedDefense = 0, // Reforged: 0
+			Initiative = 70,	// Reforged: 80
+		}
+	);
+}
+
+{	// Fast
+	// scripts/entity/tactical/enemies/rf_bandit_vandal
+	::Reforged.Entities.editEntity("RF_BanditVandal",	// Brigand Scoundrel
+		{
+			Cost = 18, 		// Reforged: 18
+			Strength = 18, 	// Reforged: 20
+			Row = 1,		// Reforged: 0
+		},
+		{
+			XP = 180, // Reforged: 200
+			Hitpoints = 60, // Reforged: 60
+			Bravery = 40, // Reforged: 45
+			Stamina = 100, // Reforged: 100
+			MeleeSkill = 65, // Reforged: 65
+			RangedSkill = 60, // Reforged: 55
+			MeleeDefense = 0,	// Reforged: 0
+			RangedDefense = 0, // Reforged: 0
+			Initiative = 120,	// Reforged: 110
+			Vision = 8,			// Reforged: 7
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_bandit_outlaw
+	::Reforged.Entities.editEntity("RF_BanditOutlaw",	// Brigand Robber
+		{
+			Cost = 27, 		// Reforged: 22
+			Strength = 27, 	// Reforged: 28
+			Row = 1,		// Reforged: 0
+		},
+		{
+			XP = 270, // Reforged: 250
+			Hitpoints = 70, // Reforged: 70
+			Bravery = 50, // Reforged: 55
+			Stamina = 110, // Reforged: 110
+			MeleeSkill = 75, // Reforged: 72
+			RangedSkill = 70, // Reforged: 60
+			MeleeDefense = 0,	// Reforged: 10
+			RangedDefense = 0, // Reforged: 5
+			Initiative = 130,	// Reforged: 125
+			Vision = 8,			// Reforged: 7
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_bandit_highwayman
+	::Reforged.Entities.editEntity("RF_BanditHighwayman",	// Now called // Brigand Killer
+		{
+			Cost = 40, 		// Reforged: 26
+			Strength = 40, 	// Reforged: 36
+			Row = 1,		// Reforged: 0
+			Variant = 2,	// Brigand Killer can now produce Champions
+			NameList = ::Const.Strings.BanditLeaderNames,	// Todo: generate unique namelist
+			TitleList = null,
+		},
+		{
+			XP = 400, // Reforged: 300
+			Hitpoints = 70, // Reforged: 70
+			Bravery = 60, // Reforged: 60
+			Stamina = 120, // Reforged: 120
+			MeleeSkill = 80, // Reforged: 80
+			RangedSkill = 80, // Reforged: 70
+			MeleeDefense = 10,	// Reforged: 15
+			RangedDefense = 10, // Reforged: 10
+			Initiative = 140,	// Reforged: 130
+			Vision = 8,			// Reforged: 7
+		}
+	);
+}
+
 // scripts/entity/tactical/wardog
 // scripts/entity/tactical/armored_wardog
 {
@@ -36,252 +311,6 @@
 	// Optional Stats
 	::Const.Tactical.Actor.Warhound.Vision <- 5;		// Vanilla: 7
 	::Const.Tactical.Actor.Warhound.Reach <- 2;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_scoundrel
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_BanditScoundrel.XP = 100;
-	::Const.Tactical.Actor.RF_BanditScoundrel.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_BanditScoundrel.Hitpoints = 55;
-	::Const.Tactical.Actor.RF_BanditScoundrel.Bravery = 40;
-	::Const.Tactical.Actor.RF_BanditScoundrel.Stamina = 100;
-	::Const.Tactical.Actor.RF_BanditScoundrel.MeleeSkill = 55;
-	::Const.Tactical.Actor.RF_BanditScoundrel.RangedSkill = 40;
-	::Const.Tactical.Actor.RF_BanditScoundrel.MeleeDefense = 0;
-	::Const.Tactical.Actor.RF_BanditScoundrel.RangedDefense = 0;
-	::Const.Tactical.Actor.RF_BanditScoundrel.Initiative = 100;
-}
-
-// scripts/entity/tactical/enemies/bandit_poacher
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.BanditPoacher.XP = 120;
-	::Const.Tactical.Actor.BanditPoacher.ActionPoints = 9;
-	::Const.Tactical.Actor.BanditPoacher.Hitpoints = 55;
-	::Const.Tactical.Actor.BanditPoacher.Bravery = 40;
-	::Const.Tactical.Actor.BanditPoacher.Stamina = 80;
-	::Const.Tactical.Actor.BanditPoacher.MeleeSkill = 40;
-	::Const.Tactical.Actor.BanditPoacher.RangedSkill = 60;
-	::Const.Tactical.Actor.BanditPoacher.MeleeDefense = 0;
-	::Const.Tactical.Actor.BanditPoacher.RangedDefense = 5;
-	::Const.Tactical.Actor.BanditPoacher.Initiative = 80;
-
-	// Optional Stats
-	::Const.Tactical.Actor.BanditPoacher.Vision <- 8;			// Vanilla: 7
-}
-
-// scripts/entity/tactical/enemies/bandit_thug
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.BanditThug.XP = 120;
-	::Const.Tactical.Actor.BanditThug.ActionPoints = 9;
-	::Const.Tactical.Actor.BanditThug.Hitpoints = 90;
-	::Const.Tactical.Actor.BanditThug.Bravery = 50;
-	::Const.Tactical.Actor.BanditThug.Stamina = 110;
-	::Const.Tactical.Actor.BanditThug.MeleeSkill = 55;
-	::Const.Tactical.Actor.BanditThug.RangedSkill = 25;
-	::Const.Tactical.Actor.BanditThug.MeleeDefense = 0;		// Reforged: -5
-	::Const.Tactical.Actor.BanditThug.RangedDefense = 0;
-	::Const.Tactical.Actor.BanditThug.Initiative = 60;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_hunter
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_BanditHunter.XP = 160;
-	::Const.Tactical.Actor.RF_BanditHunter.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_BanditHunter.Hitpoints = 60;
-	::Const.Tactical.Actor.RF_BanditHunter.Bravery = 45;
-	::Const.Tactical.Actor.RF_BanditHunter.Stamina = 105;
-	::Const.Tactical.Actor.RF_BanditHunter.MeleeSkill = 45;
-	::Const.Tactical.Actor.RF_BanditHunter.RangedSkill = 60;
-	::Const.Tactical.Actor.RF_BanditHunter.MeleeDefense = 0;
-	::Const.Tactical.Actor.RF_BanditHunter.RangedDefense = 10;
-	::Const.Tactical.Actor.RF_BanditHunter.Initiative = 90;
-
-	// Optional Stats
-	::Const.Tactical.Actor.RF_BanditHunter.Vision <- 8;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_vandal
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_BanditVandal.XP = 160;
-	::Const.Tactical.Actor.RF_BanditVandal.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_BanditVandal.Hitpoints = 65;
-	::Const.Tactical.Actor.RF_BanditVandal.Bravery = 50;
-	::Const.Tactical.Actor.RF_BanditVandal.Stamina = 115;
-	::Const.Tactical.Actor.RF_BanditVandal.MeleeSkill = 65;
-	::Const.Tactical.Actor.RF_BanditVandal.RangedSkill = 55;
-	::Const.Tactical.Actor.RF_BanditVandal.MeleeDefense = 5;
-	::Const.Tactical.Actor.RF_BanditVandal.RangedDefense = 0;
-	::Const.Tactical.Actor.RF_BanditVandal.Initiative = 100;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_pillager
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_BanditPillager.XP = 180;
-	::Const.Tactical.Actor.RF_BanditPillager.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_BanditPillager.Hitpoints = 110;
-	::Const.Tactical.Actor.RF_BanditPillager.Bravery = 60;
-	::Const.Tactical.Actor.RF_BanditPillager.Stamina = 120;
-	::Const.Tactical.Actor.RF_BanditPillager.MeleeSkill = 65;
-	::Const.Tactical.Actor.RF_BanditPillager.RangedSkill = 25;
-	::Const.Tactical.Actor.RF_BanditPillager.MeleeDefense = 5;		// Reforged: 0
-	::Const.Tactical.Actor.RF_BanditPillager.RangedDefense = 0;
-	::Const.Tactical.Actor.RF_BanditPillager.Initiative = 60;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_robber
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_BanditRobber.XP = 180;
-	::Const.Tactical.Actor.RF_BanditRobber.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_BanditRobber.Hitpoints = 60;
-	::Const.Tactical.Actor.RF_BanditRobber.Bravery = 40;
-	::Const.Tactical.Actor.RF_BanditRobber.Stamina = 100;
-	::Const.Tactical.Actor.RF_BanditRobber.MeleeSkill = 65;
-	::Const.Tactical.Actor.RF_BanditRobber.RangedSkill = 60;
-	::Const.Tactical.Actor.RF_BanditRobber.MeleeDefense = 0;
-	::Const.Tactical.Actor.RF_BanditRobber.RangedDefense = 0;
-	::Const.Tactical.Actor.RF_BanditRobber.Initiative = 120;
-
-	// Optional Stats
-	::Const.Tactical.Actor.RF_BanditRobber.Vision <- 8;
-}
-
-// scripts/entity/tactical/enemies/bandit_marksman
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.BanditMarksman.XP = 200;
-	::Const.Tactical.Actor.BanditMarksman.ActionPoints = 9;
-	::Const.Tactical.Actor.BanditMarksman.Hitpoints = 65;
-	::Const.Tactical.Actor.BanditMarksman.Bravery = 50;
-	::Const.Tactical.Actor.BanditMarksman.Stamina = 115;
-	::Const.Tactical.Actor.BanditMarksman.MeleeSkill = 50;
-	::Const.Tactical.Actor.BanditMarksman.RangedSkill = 70;
-	::Const.Tactical.Actor.BanditMarksman.MeleeDefense = 5;
-	::Const.Tactical.Actor.BanditMarksman.RangedDefense = 15;
-	::Const.Tactical.Actor.BanditMarksman.Initiative = 100;
-
-	// Optional Stats
-	::Const.Tactical.Actor.BanditMarksman.Vision <- 8;
-}
-
-// scripts/entity/tactical/enemies/bandit_raider
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.BanditRaider.XP = 240;
-	::Const.Tactical.Actor.BanditRaider.ActionPoints = 9;
-	::Const.Tactical.Actor.BanditRaider.Hitpoints = 75;
-	::Const.Tactical.Actor.BanditRaider.Bravery = 60;
-	::Const.Tactical.Actor.BanditRaider.Stamina = 125;
-	::Const.Tactical.Actor.BanditRaider.MeleeSkill = 75;
-	::Const.Tactical.Actor.BanditRaider.RangedSkill = 60;
-	::Const.Tactical.Actor.BanditRaider.MeleeDefense = 10;
-	::Const.Tactical.Actor.BanditRaider.RangedDefense = 0;
-	::Const.Tactical.Actor.BanditRaider.Initiative = 110;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_bandit
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_BanditBandit.XP = 270;
-	::Const.Tactical.Actor.RF_BanditBandit.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_BanditBandit.Hitpoints = 70;
-	::Const.Tactical.Actor.RF_BanditBandit.Bravery = 50;
-	::Const.Tactical.Actor.RF_BanditBandit.Stamina = 110;
-	::Const.Tactical.Actor.RF_BanditBandit.MeleeSkill = 75;
-	::Const.Tactical.Actor.RF_BanditBandit.RangedSkill = 70;
-	::Const.Tactical.Actor.RF_BanditBandit.MeleeDefense = 0;
-	::Const.Tactical.Actor.RF_BanditBandit.RangedDefense = 0;
-	::Const.Tactical.Actor.RF_BanditBandit.Initiative = 130;
-
-	// Optional Stats
-	::Const.Tactical.Actor.RF_BanditBandit.Vision <- 8;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_outlaw
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_BanditOutlaw.XP = 270;
-	::Const.Tactical.Actor.RF_BanditOutlaw.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_BanditOutlaw.Hitpoints = 130;
-	::Const.Tactical.Actor.RF_BanditOutlaw.Bravery = 70;
-	::Const.Tactical.Actor.RF_BanditOutlaw.Stamina = 130;
-	::Const.Tactical.Actor.RF_BanditOutlaw.MeleeSkill = 75;
-	::Const.Tactical.Actor.RF_BanditOutlaw.RangedSkill = 27;
-	::Const.Tactical.Actor.RF_BanditOutlaw.MeleeDefense = 10;		// Reforged: 5
-	::Const.Tactical.Actor.RF_BanditOutlaw.RangedDefense = 0;
-	::Const.Tactical.Actor.RF_BanditOutlaw.Initiative = 70;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_highwayman
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_BanditHighwayman.XP = 350;
-	::Const.Tactical.Actor.RF_BanditHighwayman.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_BanditHighwayman.Hitpoints = 85;
-	::Const.Tactical.Actor.RF_BanditHighwayman.Bravery = 70;
-	::Const.Tactical.Actor.RF_BanditHighwayman.Stamina = 130;
-	::Const.Tactical.Actor.RF_BanditHighwayman.MeleeSkill = 85;
-	::Const.Tactical.Actor.RF_BanditHighwayman.RangedSkill = 65;
-	::Const.Tactical.Actor.RF_BanditHighwayman.MeleeDefense = 15;
-	::Const.Tactical.Actor.RF_BanditHighwayman.RangedDefense = 0;
-	::Const.Tactical.Actor.RF_BanditHighwayman.Initiative = 110;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_sharpshooter
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_BanditSharpshooter.XP = 350;
-	::Const.Tactical.Actor.RF_BanditSharpshooter.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_BanditSharpshooter.Hitpoints = 70;
-	::Const.Tactical.Actor.RF_BanditSharpshooter.Bravery = 55;
-	::Const.Tactical.Actor.RF_BanditSharpshooter.Stamina = 130;
-	::Const.Tactical.Actor.RF_BanditSharpshooter.MeleeSkill = 60;
-	::Const.Tactical.Actor.RF_BanditSharpshooter.RangedSkill = 80;
-	::Const.Tactical.Actor.RF_BanditSharpshooter.MeleeDefense = 10;
-	::Const.Tactical.Actor.RF_BanditSharpshooter.RangedDefense = 20;
-	::Const.Tactical.Actor.RF_BanditSharpshooter.Initiative = 100;
-
-	// Optional Stats
-	::Const.Tactical.Actor.RF_BanditSharpshooter.Vision <- 8;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_killer
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_BanditKiller.XP = 400;
-	::Const.Tactical.Actor.RF_BanditKiller.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_BanditKiller.Hitpoints = 70;
-	::Const.Tactical.Actor.RF_BanditKiller.Bravery = 60;
-	::Const.Tactical.Actor.RF_BanditKiller.Stamina = 120;
-	::Const.Tactical.Actor.RF_BanditKiller.MeleeSkill = 80;
-	::Const.Tactical.Actor.RF_BanditKiller.RangedSkill = 80;
-	::Const.Tactical.Actor.RF_BanditKiller.MeleeDefense = 10;
-	::Const.Tactical.Actor.RF_BanditKiller.RangedDefense = 10;
-	::Const.Tactical.Actor.RF_BanditKiller.Initiative = 140;
-
-	// Optional Stats
-	::Const.Tactical.Actor.RF_BanditKiller.Vision <- 8;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_marauder
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_BanditMarauder.XP = 400;
-	::Const.Tactical.Actor.RF_BanditMarauder.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_BanditMarauder.Hitpoints = 150;
-	::Const.Tactical.Actor.RF_BanditMarauder.Bravery = 80;
-	::Const.Tactical.Actor.RF_BanditMarauder.Stamina = 140;
-	::Const.Tactical.Actor.RF_BanditMarauder.MeleeSkill = 85;
-	::Const.Tactical.Actor.RF_BanditMarauder.RangedSkill = 25;
-	::Const.Tactical.Actor.RF_BanditMarauder.MeleeDefense = 15;		// Reforged: 10
-	::Const.Tactical.Actor.RF_BanditMarauder.RangedDefense = 0;
-	::Const.Tactical.Actor.RF_BanditMarauder.Initiative = 70;
 }
 
 // scripts/entity/tactical/enemies/bandit_leader

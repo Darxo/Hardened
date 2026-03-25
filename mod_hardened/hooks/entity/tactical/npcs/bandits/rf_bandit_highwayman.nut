@@ -1,35 +1,38 @@
 // Hardened completely redesign most NPCs
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
+// Brigand Killer - Fast Brigand - Tier 3 (Brigand Highwayman)
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/rf_bandit_highwayman", function(q) {
 	q.create = @(__original) function()
 	{
-		this.m.Bodies = ::Const.Bodies.Skinny;	// Reforged ::Const.Bodies.AllMale
-		__original();
+		this.m.Bodies = ::Const.Bodies.Skinny;	// Reforged: ::Const.Bodies.AllMale
 
-		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 170 - 190
-			[12, "scripts/items/armor/light_scale_armor"],
-			[12, "scripts/items/armor/mail_hauberk"],
-			[12, "scripts/items/armor/footman_armor"],
+		// Switcheroo the RF_BanditHighwayman ID into that of HD_BrigandKiller, to make Reforged assign the ID, that we want
+		// We must do this via switcheroo, so that the name assignment works correctly
+		local oldRF_BanditHighwayman = ::Const.EntityType.RF_BanditHighwayman;
+		::Const.EntityType.RF_BanditHighwayman = ::Const.EntityType.HD_BrigandKiller;
+		__original();
+		::Const.EntityType.RF_BanditHighwayman = oldRF_BanditHighwayman;
+
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 70 - 90
+			[12, "scripts/items/armor/wanderers_coat"],
+			[12, "scripts/items/armor/reinforced_leather_tunic"],
 		]);
 
-		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 140 - 160
-			[12, "scripts/items/helmets/rf_padded_skull_cap"],
-			[12, "scripts/items/helmets/padded_flat_top_helmet"],
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 100 - 120
+			[12, "scripts/items/helmets/closed_mail_coif"],
+			[12, "scripts/items/helmets/reinforced_mail_coif"],
 		]);
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/weapons/arming_sword"],
-			[12, "scripts/items/weapons/flail"],
-			[12, "scripts/items/weapons/military_pick"],
-			[12, "scripts/items/weapons/morning_star"],
+			[12, "scripts/items/weapons/billhook"],
+			[12, "scripts/items/weapons/rf_poleflail"],
+			[24, "scripts/items/weapons/rondel_dagger"],
 		]);
 
+		// If the offhand is empty (spawned with dagger), we also equip a net
 		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/shields/worn_heater_shield"],
-			[12, "scripts/items/shields/worn_kite_shield"],
-			[12, "scripts/items/shields/heater_shield"],
-			[12, "scripts/items/shields/kite_shield"],
+			[12, "scripts/items/tools/reinforced_throwing_net"],
 		]);
 	}
 
@@ -42,6 +45,35 @@
 		this.HD_onInitStatsAndSkills();
 	}
 
+	// Overwrite, because we completely replace Reforged miniboss adjustments with our own
+	q.makeMiniboss = @() { function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss()) return false;
+
+		// This champion only ever spawns with named weapons, never with named gear
+		if (::Math.rand(1, 2) == 1)
+		{
+			local namedMeleeWeapon = ::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/named/named_billhook"],
+				[12, "scripts/items/weapons/named/named_rf_poleflail"],
+				[24, "scripts/items/weapons/named/named_dagger"],
+			]).roll();
+			this.getItems().equip(::new(namedMeleeWeapon));
+		}
+		else
+		{
+			local namedThrowingWeapon = ::new(::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/named/named_javelin"],
+				[12, "scripts/items/weapons/named/named_throwing_axe"],
+			]).roll());
+			this.getItems().addToBag(namedThrowingWeapon);
+		}
+
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_fresh_and_furious"));
+
+		return true;
+	}}.makeMiniboss;
+
 	// Overwrite, because we completely replace Reforged item adjustments with our own
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{
@@ -53,26 +85,24 @@
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
 	q.onSpawned = @() function()
 	{
-		::Reforged.Skills.addMasteryOfEquippedWeapon(this);
-
 		local weapon = this.getMainhandItem();
 		if (weapon != null)
 		{
-			if (weapon.isWeaponType(::Const.Items.WeaponType.Sword))
+			if (weapon.isWeaponType(::Const.Items.WeaponType.Polearm))
 			{
-				this.getSkills().add(::new("scripts/skills/perks/perk_rf_en_garde"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_long_reach"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_leverage"));
 			}
 			else if (weapon.isWeaponType(::Const.Items.WeaponType.Flail))
 			{
-				this.getSkills().add(::new("scripts/skills/perks/perk_rf_whirling_death"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_flail"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_flail_spinner"));
 			}
-			else if (weapon.isWeaponType(::Const.Items.WeaponType.Hammer))
+			else if (weapon.isWeaponType(::Const.Items.WeaponType.Dagger))
 			{
-				this.getSkills().add(::new("scripts/skills/perks/perk_rf_deep_impact"));	// Breakthrough
-			}
-			else if (weapon.isWeaponType(::Const.Items.WeaponType.Mace))
-			{
-				this.getSkills().add(::new("scripts/skills/perks/perk_rf_concussive_strikes"));		// Shockwave
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_between_the_ribs"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_dagger"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_rf_swift_stabs"));
 			}
 		}
 	}
@@ -90,6 +120,10 @@
 		this.getSprite("helmet_damage").Saturation = 0.85;
 		this.getSprite("shield_icon").Saturation = 0.85;
 		this.getSprite("shield_icon").setBrightness(0.85);
+
+		local tattoo_head = this.getSprite("tattoo_head");
+		tattoo_head.setBrush("warpaint_0" + ::Math.rand(2, 3) + "_head");
+		tattoo_head.Visible = true;
 	}
 
 	// Assign Stats and Unconditional Immunities, Perks and Actives
@@ -101,21 +135,31 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_bully"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_quick_hands"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_dodge"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_backstabber"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_ghostlike"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_relentless"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_hd_hybridization"));
 	}
 
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
+		local bodyItem = this.getBodyItem();
+		if (bodyItem != null)
+		{
+			bodyItem.setUpgrade(::new("scripts/items/armor_upgrades/direwolf_pelt_upgrade"));
+		}
 	}
 
 	// Assign all other gear to this character
 	q.HD_assignOtherGear <- function()
 	{
-		if (::Math.rand(1, 100) <= 25)
+		local existingBagItem = this.getItems().getItemAtSlot(::Const.ItemSlot.Bag);
+		if (existingBagItem == null || !existingBagItem.isNamed())	// We don't want champions to spawn with two throwing weapons
 		{
-			local throwingWeapon = ::new("scripts/items/weapons/throwing_spear");
+			local throwingWeapon = ::new("scripts/items/weapons/throwing_axe");
+			throwingWeapon.m.Ammo = 3;
 			this.getItems().addToBag(throwingWeapon);
 		}
 	}

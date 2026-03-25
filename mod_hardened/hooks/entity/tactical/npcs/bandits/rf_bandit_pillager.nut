@@ -1,28 +1,37 @@
 // Hardened completely redesign most NPCs
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
+// Brigand Outlaw - Balanced Brigand - Tier 2 (Reforged: Brigand Pillager)
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/rf_bandit_pillager", function(q) {
 	q.create = @(__original) function()
 	{
-		this.m.Bodies = ::Const.Bodies.Thick;	// Reforged: ::Const.Bodies.AllMale
-
-		// Switcheroo the RF_BanditVandal ID into that of RF_BanditPillager, to make Reforged assign the ID, that we want
-		// We must do this via switcheroo, so that the name assignment works correctly
-		local oldRF_BanditVandal = ::Const.EntityType.RF_BanditVandal;
-		::Const.EntityType.RF_BanditVandal = ::Const.EntityType.RF_BanditPillager;
+		this.m.Bodies = ::Const.Bodies.Skinny;	// Reforged ::Const.Bodies.AllMale
 		__original();
-		::Const.EntityType.RF_BanditVandal = oldRF_BanditVandal;
 
-		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 40
-			[12, "scripts/items/armor/thick_tunic"],
-			[6, "scripts/items/armor/apron"],
-			[6, "scripts/items/armor/butcher_apron"],
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 70 - 100
+			[12, "scripts/items/armor/blotched_gambeson"],
+			[12, "scripts/items/armor/padded_leather"],
+			[8, "scripts/items/armor/leather_lamellar"],
+			[8, "scripts/items/armor/patched_mail_shirt"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 50 - 80
+			[12, "scripts/items/helmets/open_leather_cap"],
+			[12, "scripts/items/helmets/full_aketon_cap"],
+			[12, "scripts/items/helmets/full_leather_cap"],
+			[12, "scripts/items/helmets/rusty_mail_coif"],
 		]);
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/weapons/greenskins/orc_wooden_club"],
-			[12, "scripts/items/weapons/woodcutters_axe"],
-			[12, "scripts/items/weapons/goedendag"],
+			[12, "scripts/items/weapons/reinforced_wooden_flail"],
+			[12, "scripts/items/weapons/shortsword"],
+			[12, "scripts/items/weapons/scramasax"],
+		]);
+
+		this.m.ChanceForNoOffhand = 25;
+		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/shields/wooden_shield_old"],
+			[12, "scripts/items/shields/wooden_shield"],
 		]);
 	}
 
@@ -39,6 +48,7 @@
 	q.assignRandomEquipment = @() { function assignRandomEquipment()
 	{
 		this.HD_assignArmor();
+		this.HD_assignOtherGear();
 	}}.assignRandomEquipment;
 
 // Reforged Functions
@@ -71,12 +81,23 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_bully"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_steel_brow"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vigorous_assault"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_quick_hands"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
 	}
 
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor <- function()
 	{
+	}
+
+	// Assign all other gear to this character
+	q.HD_assignOtherGear <- function()
+	{
+		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Offhand))
+		{
+			local throwingWeapon = ::new("scripts/items/weapons/greenskins/orc_javelin");
+			throwingWeapon.m.Ammo = 1;
+			this.getItems().addToBag(throwingWeapon);
+		}
 	}
 });

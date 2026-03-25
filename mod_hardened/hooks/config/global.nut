@@ -34,13 +34,11 @@
 	},
 ];
 
-// We change the orientation icons of several bandits to better match the appearance they have in Hardened
-::Const.EntityIcon[::Const.EntityType.RF_BanditScoundrel] = "rf_bandit_thug_orientation";		// Reforged: bandit_thug_orientation
-::Const.EntityIcon[::Const.EntityType.BanditThug] = "bandit_thug_orientation";					// Reforged: rf_bandit_thug_orientation
-::Const.EntityIcon[::Const.EntityType.RF_BanditVandal] = "rf_bandit_pillager_orientation";		// Reforged: bandit_raider_orientation
-::Const.EntityIcon[::Const.EntityType.RF_BanditPillager] = "hd_bandit_pillager_orientation";	// Reforged: rf_bandit_pillager_orientation
-::Const.EntityIcon[::Const.EntityType.RF_BanditOutlaw] = "hd_bandit_outlaw_orientation";		// Reforged: rf_bandit_outlaw_orientation
-::Const.EntityIcon[::Const.EntityType.RF_BanditMarauder] = "hd_bandit_marauder_orientation";	// Reforged: rf_bandit_marauder_orientation
+// We change the names of two of the balanced brigand tiers according to our Hardened design
+::Const.Strings.EntityName[::Const.EntityType.RF_BanditPillager] = "Brigand Outlaw";
+::Const.Strings.EntityNamePlural[::Const.EntityType.RF_BanditPillager] = "Brigand Outlaws";
+::Const.Strings.EntityName[::Const.EntityType.RF_BanditMarauder] = "Brigand Highwayman";
+::Const.Strings.EntityNamePlural[::Const.EntityType.RF_BanditMarauder] = "Brigand Highwaymen";
 
 ::Const.Difficulty.getPlayerDamageReceivedMult <- function()
 {
