@@ -1,4 +1,5 @@
-foreach (unitBlock in ::DynamicSpawns.Public.getParty("NomadDefenders").DynamicDefs.UnitBlocks)
+local nomadDefenders = ::Reforged.Spawns.Parties["NomadDefenders"];
+foreach (unitBlock in nomadDefenders.DynamicDefs.UnitBlocks)
 {
 	if (unitBlock.BaseID == "UnitBlock.RF.NomadElite")
 	{
@@ -10,7 +11,7 @@ foreach (unitBlock in ::DynamicSpawns.Public.getParty("NomadDefenders").DynamicD
 }
 
 // We add a new lower tier NomadElite block, which uses an exclusion chance and lower RatioMax to take up less resources
-::DynamicSpawns.Public.getParty("NomadDefenders").DynamicDefs.UnitBlocks.push({
+nomadDefenders.DynamicDefs.UnitBlocks.push({
 	BaseID = "UnitBlock.RF.NomadElite",
 	StartingResourceMin = 300,
 	ExclusionChance = 0.5,
@@ -18,7 +19,8 @@ foreach (unitBlock in ::DynamicSpawns.Public.getParty("NomadDefenders").DynamicD
 	RatioMax = 0.2,
 });
 
-foreach (unitBlock in ::DynamicSpawns.Public.getParty("NomadRaiders").DynamicDefs.UnitBlocks)
+local nomadRaiders = ::Reforged.Spawns.Parties["NomadRaiders"];
+foreach (unitBlock in nomadRaiders.DynamicDefs.UnitBlocks)
 {
 	if (unitBlock.BaseID == "UnitBlock.RF.NomadElite")
 	{
@@ -30,7 +32,7 @@ foreach (unitBlock in ::DynamicSpawns.Public.getParty("NomadRaiders").DynamicDef
 }
 
 // We add a new lower tier NomadElite block, which uses an exclusion chance and lower RatioMax to take up less resources
-::DynamicSpawns.Public.getParty("NomadRaiders").DynamicDefs.UnitBlocks.push({
+nomadRaiders.DynamicDefs.UnitBlocks.push({
 	BaseID = "UnitBlock.RF.NomadElite",
 	StartingResourceMin = 300,
 	ExclusionChance = 0.5,

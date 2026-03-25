@@ -1,9 +1,10 @@
 // Hooking
 {
-	local banditBanditScouts = ::DynamicSpawns.Public.getParty("BanditScouts");
-	banditBanditScouts.HardMin = 5;	// Reforged: 7
+	local banditScouts = ::Reforged.Spawns.Parties["BanditScouts"];
+	banditScouts.HardMin = 5;	// Reforged: 7
 
-	foreach (unitBlock in ::DynamicSpawns.Public.getParty("BanditRoamers").DynamicDefs.UnitBlocks)
+	local banditRoamer = ::Reforged.Spawns.Parties["BanditRoamers"];
+	foreach (unitBlock in banditRoamer.DynamicDefs.UnitBlocks)
 	{
 		if (unitBlock.BaseID == "UnitBlock.RF.BanditDog")
 		{
@@ -14,7 +15,8 @@
 		}
 	}
 
-	foreach (unitBlock in ::DynamicSpawns.Public.getParty("BanditRaiders").DynamicDefs.UnitBlocks)
+	local banditRaider = ::Reforged.Spawns.Parties["BanditRaiders"];
+	foreach (unitBlock in banditRaider.DynamicDefs.UnitBlocks)
 	{
 		if (unitBlock.BaseID == "UnitBlock.RF.BanditBoss" && "StartingResourceMin" in unitBlock)
 		{
@@ -30,7 +32,7 @@
 		}
 	}
 
-	local banditDefenderParty = ::DynamicSpawns.Public.getParty("BanditDefenders");
+	local banditDefenderParty = ::Reforged.Spawns.Parties["BanditDefenders"];
 	foreach (unitBlock in banditDefenderParty.DynamicDefs.UnitBlocks)
 	{
 		if (unitBlock.BaseID == "UnitBlock.RF.BanditBoss" && "StartingResourceMin" in unitBlock)
@@ -51,7 +53,7 @@
 		}
 	}
 	// We make sure, that every camp only contains either Fast or Tough Bandits
-	banditDefenderParty.Class.excludeSpawnables <- function() {
+	banditDefenderParty.excludeSpawnables <- function() {
 		base.excludeSpawnables();
 
 		local flexBlocks = [];
@@ -74,7 +76,7 @@
 	foreach (banditPartyID in ["BanditRoamers", "BanditScouts", "BanditRaiders", "BanditBoss"])
 	{
 		// Todo: Adjust this hook after Dynamic Spawns Update is out
-		::DynamicSpawns.Public.getParty(banditPartyID).Class.excludeSpawnables <- function() {
+		::Reforged.Spawns.Parties[banditPartyID].excludeSpawnables <- function() {
 			base.excludeSpawnables();
 
 			local flexBlocks = [];

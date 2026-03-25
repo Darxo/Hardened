@@ -22,7 +22,7 @@ if (!::Hooks.hasMod("mod_crock_pot") || ::Hooks.getMod("mod_crock_pot").getVersi
 
 		foreach (blockDef in unitBlocks)
 		{
-			::DynamicSpawns.Public.registerUnitBlock(blockDef);
+			::Reforged.Spawns.UnitBlocks[blockDef.ID] <- blockDef;
 		}
 	}
 }
@@ -40,6 +40,6 @@ if (!::Hooks.hasMod("mod_crock_pot") || ::Hooks.getMod("mod_crock_pot").getVersi
 
 	foreach (blockDef in unitBlocks)
 	{
-		::DynamicSpawns.Public.registerUnitBlock(blockDef);
+		::Reforged.Spawns.UnitBlocks[blockDef.ID] <- blockDef;
 	}
 }

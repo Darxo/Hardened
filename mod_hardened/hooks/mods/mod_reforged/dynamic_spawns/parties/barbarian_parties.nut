@@ -1,7 +1,8 @@
 
 // Hooking
 {
-	foreach (unitBlock in ::DynamicSpawns.Public.getParty("Barbarians").DynamicDefs.UnitBlocks)
+	local barbarians = ::Reforged.Spawns.Parties["Barbarians"];
+	foreach (unitBlock in barbarians.DynamicDefs.UnitBlocks)
 	{
 		if (unitBlock.BaseID == "UnitBlock.RF.BarbarianBeastmaster")
 		{
@@ -16,7 +17,7 @@
 		}
 	}
 	// We add a new lower tier barbarian beastmaster block, so that you will see lower camps more often without unholds
-	::DynamicSpawns.Public.getParty("Barbarians").DynamicDefs.UnitBlocks.push({
+	barbarians.DynamicDefs.UnitBlocks.push({
 		BaseID = "UnitBlock.RF.BarbarianBeastmaster",
 		StartingResourceMax = 399,
 		ExclusionChance = 0.5,

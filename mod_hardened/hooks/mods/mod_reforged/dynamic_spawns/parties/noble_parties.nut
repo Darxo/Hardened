@@ -70,5 +70,5 @@ local parties = [
 
 foreach(partyDef in parties)
 {
-	::DynamicSpawns.Public.registerParty(partyDef);
+	::Reforged.Spawns.Parties[partyDef.ID] <- partyDef;
 }

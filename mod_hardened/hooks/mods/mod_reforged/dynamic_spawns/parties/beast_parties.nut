@@ -1,7 +1,7 @@
 // Hooking
 {
 	{	// Alps
-		local alpParty = ::DynamicSpawns.Public.getParty("Alps");
+		local alpParty = ::Reforged.Spawns.Parties["Alps"];
 		foreach (unitBlock in alpParty.DynamicDefs.UnitBlocks)
 		{
 			if (unitBlock.BaseID == "UnitBlock.RF.Alp")
@@ -21,7 +21,7 @@
 	}
 
 	{	// Ghouls
-		local ghoulParty = ::DynamicSpawns.Public.getParty("Ghouls");
+		local ghoulParty = ::Reforged.Spawns.Parties["Ghouls"];
 		ghoulParty.generateIdealSize <- function()
 		{
 			local ret = ::Hardened.util.genericGenerateIdealSize();
@@ -85,6 +85,6 @@
 
 	foreach(partyDef in parties)
 	{
-		::DynamicSpawns.Public.registerParty(partyDef);
+		::Reforged.Spawns.Parties[partyDef.ID] <- partyDef;
 	}
 }
