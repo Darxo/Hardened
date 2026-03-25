@@ -10,7 +10,6 @@ local parties = [
 		MovementSpeedMult = 1.0,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
-		UpgradeChance = 0.50,
 		DynamicDefs = {
 			UnitBlocks = [
 				{ BaseID = "UnitBlock.RF.NobleFrontline", RatioMin = 0.30, RatioMax = 1.00 },
@@ -49,7 +48,6 @@ local parties = [
 		MovementSpeedMult = 0.5,
 		VisibilityMult = 1.0,
 		VisionMult = 0.25,
-		UpgradeChance = 0.50,
 		StaticDefs = {
 			Units = [
 				"Unit.RF.NobleCaravanDonkey",	// Makes it much easier to get a good ratio
@@ -62,7 +60,7 @@ local parties = [
 				{ BaseID = "UnitBlock.RF.NobleElite", RatioMin = 0.00, RatioMax = 0.40, PartySizeMin = 13, DeterminesFigure = false, ExclusionChance = 0.2 },
 				{ BaseID = "UnitBlock.RF.NobleRanged", RatioMin = 0.0, RatioMax = 0.30, DeterminesFigure = false },
 				{ BaseID = "UnitBlock.RF.NobleOfficer", RatioMin = 1.0, PartySizeMin = 13, HardMax = 1, ExclusionChance = 0.5, DeterminesFigure = false, function canUpgrade() { return false; } },  // Vanilla: spawns at 12, at 15 and at 18 once respectively
-				{ BaseID = "UnitBlock.RF.NobleDonkey", RatioMin = 1.0, PartySizeMin = 15, HardMax = 1 },	// Vanilla: second donkey spawns at 14+
+				{ BaseID = "UnitBlock.RF.NobleDonkey", RatioMin = 1.0, PartySizeMin = 15, HardMax = 1 },
 			],
 		},
 	},

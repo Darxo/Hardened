@@ -17,7 +17,7 @@
 	{
 		if (unitBlock.BaseID == "UnitBlock.RF.MilitiaCaptain")
 		{
-			unitBlock.StartingResourceMin = 250;	// Reforged: 130
+			unitBlock.StartingResourceMin = 200;	// Reforged: 130
 			break;
 		}
 	}
@@ -30,18 +30,19 @@
 			{
 				if (unitBlock.BaseID == "UnitBlock.RF.CaravanDonkey")
 				{
-					unitBlock.RatioMin = 0.15;		// Reforged: 0.17
-					unitBlock.RatioMax = 0.25;		// Reforged: 0.2
+					unitBlock.RatioMax = 0.2;		// Reforged: 0.1
 				}
 				else if (unitBlock.BaseID == "UnitBlock.RF.CaravanHand")
 				{
-					unitBlock.RatioMin = 0.1;		// Reforged: 0.35
-					unitBlock.RatioMax = 0.20;		// Reforged: 0.8
+					// We reduce the amount of caravan hands, because they now also exist as the lowest tier of the CaravanGuards
+					unitBlock.RatioMin = 0.05;		// Reforged: 0.35
+					unitBlock.RatioMax = 0.15;		// Reforged: 0.8
 				}
 				else if (unitBlock.BaseID == "UnitBlock.RF.CaravanGuard")
 				{
 					unitBlock.RatioMin = 0.2;		// Reforged: 0.15
-					unitBlock.RatioMax = 1.0;		// Reforged: 0.55
+					unitBlock.RatioMax = 1.0;		// Reforged: 0.6
+					delete unitBlock.getSpawnWeight;
 				}
 			}
 			_item.generateIdealSize <- function()

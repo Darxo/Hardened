@@ -1,7 +1,5 @@
 // Hooks
 {
-	// Fix(Reforged): We replace instances of hard-coded costs with those from spawnlist_master
-	::Reforged.Spawns.Units["Unit.RF.SouthernDonkey"].Cost = ::Const.World.Spawn.Troops.SouthernDonkey.Cost;
 }
 
 // New Units

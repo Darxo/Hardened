@@ -15,7 +15,7 @@
 			},
 			DynamicDefs = {
 				UnitBlocks = [
-					{ BaseID = "UnitBlock.RF.SouthernCaravanDonkey", RatioMin = 0.10, RatioMax = 0.20, PartySizeMin = 8, HardMax = 2 },	// Vanilla: Second Donkey starts spawning at 7+.  Max 3 Donkies in vanilla parties.
+					{ BaseID = "UnitBlock.RF.SouthernCaravanDonkey", RatioMin = 0.1, RatioMax = 0.15, PartySizeMin = 8, HardMax = 2 },	// Vanilla: Second Donkey starts spawning at 7+.  Max 3 Donkies in vanilla parties.
 					{ BaseID = "UnitBlock.CP.CaravanHandSouthern", RatioMin = 0.10, RatioMax = 0.20, DeterminesFigure = false },
 					{ BaseID = "UnitBlock.CP.CaravanGuardSouthern", RatioMin = 0.20, RatioMax = 1.00, DeterminesFigure = false },
 					{ BaseID = "UnitBlock.RF.SouthernBackline", PartySizeMin = 10, RatioMin = 0.10, RatioMax = 0.30, DeterminesFigure = false },

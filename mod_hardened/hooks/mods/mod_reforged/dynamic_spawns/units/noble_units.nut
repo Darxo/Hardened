@@ -1,8 +1,5 @@
 // Hooks
 {
-	// Fix(Reforged): We replace instances of hard-coded costs with those from spawnlist_master
-	::Reforged.Spawns.Units["Unit.RF.NobleCaravanDonkey"].Cost = ::Const.World.Spawn.Troops.CaravanDonkey.Cost;
-
 	// We enforce a much higher base resource value for the noble leader to appear, as they take a lot of those resources for themselves
 	::Reforged.Spawns.Units["Unit.RF.Knight"].StartingResourceMin = 500;		// Reforged: 350
 	::Reforged.Spawns.Units["Unit.RF.RF_KnightAnointed"].StartingResourceMin = 700;		// Reforged: 450

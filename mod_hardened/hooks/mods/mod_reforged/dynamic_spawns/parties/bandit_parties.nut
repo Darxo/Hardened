@@ -8,9 +8,8 @@
 	{
 		if (unitBlock.BaseID == "UnitBlock.RF.BanditDog")
 		{
-			// Increase the exclusion chance for dogs but garuantee a certain amount of them, to make their inclusion rarer and more of a novelty
-			unitBlock.ExclusionChance = 0.7;	// Reforged: 0.1
-			unitBlock.RatioMin = 0.08;			// Reforged: 0.0
+			// Increase the exclusion chance for dogs to make their inclusion rarer and more of a novelty
+			unitBlock.ExclusionChance = 0.7;	// Reforged: 0.4
 			break;
 		}
 	}
@@ -18,16 +17,9 @@
 	local banditRaider = ::Reforged.Spawns.Parties["BanditRaiders"];
 	foreach (unitBlock in banditRaider.DynamicDefs.UnitBlocks)
 	{
-		if (unitBlock.BaseID == "UnitBlock.RF.BanditBoss" && "StartingResourceMin" in unitBlock)
+		if (unitBlock.BaseID == "UnitBlock.RF.BanditElite")
 		{
-			// We lower the Resource Requirement for Leader because we add a new lower tier leader unit
-			unitBlock.StartingResourceMin = 180;	// In Reforged this is 250
-			unitBlock.RatioMax = 0.1	// Reforged: 0.11
-			break;
-		}
-		else if (unitBlock.BaseID == "UnitBlock.RF.BanditElite")
-		{
-			unitBlock.RatioMax = 0.15;	// Reforged: 0.1
+			unitBlock.RatioMax = 0.15;	// Reforged: 0.13
 			unitBlock.StartingResourceMin = 400;	// Reforged: 320
 		}
 	}
@@ -35,23 +27,23 @@
 	local banditDefenderParty = ::Reforged.Spawns.Parties["BanditDefenders"];
 	foreach (unitBlock in banditDefenderParty.DynamicDefs.UnitBlocks)
 	{
-		if (unitBlock.BaseID == "UnitBlock.RF.BanditBoss" && "StartingResourceMin" in unitBlock)
+		if (unitBlock.BaseID == "UnitBlock.RF.BanditRanged")
 		{
-			// We lower the Resource Requirement for Leader because we add a new lower tier leader unit
-			unitBlock.StartingResourceMin = 180;	// In Reforged this is 250
-			unitBlock.RatioMax = 0.1	// Reforged: 0.11
-			break;
-		}
-		else if (unitBlock.BaseID == "UnitBlock.RF.BanditRanged")
-		{
-			unitBlock.RatioMax = 0.35;	// Reforged: 0.4
+			unitBlock.RatioMax = 0.25;	// Reforged: 0.55
+			unitBlock.StartingResourceMin <- 150;
 		}
 		else if (unitBlock.BaseID == "UnitBlock.RF.BanditElite")
 		{
-			unitBlock.RatioMax = 0.15;	// Reforged: 0.1
 			unitBlock.StartingResourceMin <- 400;
 		}
 	}
+	// We add a new low-resource-only ranged block, that is much more freqently missing, so that you face pure frontline battles more often during the early game
+	banditDefenderParty.DynamicDefs.UnitBlocks.push({
+		BaseID = "UnitBlock.RF.BanditRanged",
+		RatioMax = 0.25,
+		ExclusionChance = 0.5,
+		StartingResourceMax = 149,
+	})
 	// We make sure, that every camp only contains either Fast or Tough Bandits
 	banditDefenderParty.excludeSpawnables <- function() {
 		base.excludeSpawnables();
