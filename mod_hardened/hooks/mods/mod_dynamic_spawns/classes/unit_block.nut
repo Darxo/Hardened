@@ -8,9 +8,9 @@ local oldCanUpgrade = ::DynamicSpawns.Class.UnitBlock.canUpgrade;
 	return oldCanUpgrade();
 }
 
-// All UnitBlocks now have a TierWidth of 2 by default, causing them to only spawn at most 2 tiers at the same time
-// Some blocks might not properly spawn all units then (e.g. Ghouls), but we deal with those on a case by case basis
-::DynamicSpawns.Class.UnitBlock.TierWidth <- 2;	// Reforged: 9999
+// All UnitBlocks now have a TierWidth of 3 by default, causing them to only spawn at most 3 tiers at the same time
+// Some blocks might not properly spawn all units then (e.g. Zombie Frontline), but we deal with those on a case by case basis
+::DynamicSpawns.Class.UnitBlock.TierWidth <- 3;		// Reforged: 9999
 
 // Overwrite to replace usage of getCost with getPredictedWorth
 ::DynamicSpawns.Class.UnitBlock.sort <- function()
