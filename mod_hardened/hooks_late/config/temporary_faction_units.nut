@@ -1,3 +1,46 @@
+{	// Beasts
+	::Hardened.Global.addTemporaryEntity(
+		"HD_HyenaHigh",
+		"Frenzied Hyena",
+		"Frenzied Hyenas",
+		::Const.EntityIcon[::Const.EntityType.Hyena],
+		::Const.EntityType.getDefaultFaction(::Const.EntityType.Hyena),
+		"scripts/entity/tactical/enemies/hyena_high",
+		::Const.EntityType.Hyena
+	);
+
+	::Hardened.Global.addTemporaryEntity(
+		"HD_DirewolfHIGH",
+		"Frenzied Direwolf",
+		"Frenzied Direwolfs",
+		::Const.EntityIcon[::Const.EntityType.Direwolf],
+		::Const.EntityType.getDefaultFaction(::Const.EntityType.Direwolf),
+		"scripts/entity/tactical/enemies/direwolf_high",
+		::Const.EntityType.Direwolf
+	);
+	::Hardened.Global.addEntityFallback("scripts/entity/tactical/enemies/direwolf_bodyguard", ::Const.EntityType.Direwolf, ::Const.EntityType.HD_DirewolfHIGH);
+
+	::Hardened.Global.addTemporaryEntity(
+		"HD_Ghoul",
+		"Medium Nachzehrer",
+		"Medium Nachzehrers",
+		::Const.EntityIcon[::Const.EntityType.Ghoul],
+		::Const.EntityType.getDefaultFaction(::Const.EntityType.Ghoul),
+		"scripts/entity/tactical/enemies/ghoul_medium",
+		::Const.EntityType.Ghoul
+	);
+
+	::Hardened.Global.addTemporaryEntity(
+		"HD_GhoulHIGH",
+		"Large Nachzehrer",
+		"Large Nachzehrers",
+		::Const.EntityIcon[::Const.EntityType.Ghoul],
+		::Const.EntityType.getDefaultFaction(::Const.EntityType.Ghoul),
+		"scripts/entity/tactical/enemies/ghoul_high",
+		::Const.EntityType.Ghoul
+	);
+}
+
 {	// Bandits
 	{ 	// Tough Bandits
 		// Vandal (Tier 1 Tough)
