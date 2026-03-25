@@ -47,7 +47,9 @@
 
 		this.getFlags().set(this.m.HD_MintConditionFlag, mintConditionString);
 
+		::Hardened.Global.switchWorldTroopsToReforged(this);
 		__original(_out);
+		::Hardened.Global.switchWorldTroopsToHardened(this);
 	}
 
 	q.onDeserialize = @(__original) function( _in )
@@ -61,6 +63,8 @@
 				this.m.HD_MintConditionItems.push(mintItem);
 			}
 		}
+
+		::Hardened.Global.switchWorldTroopsToHardened(this);
 	}
 
 // New Functions

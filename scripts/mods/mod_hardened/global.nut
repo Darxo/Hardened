@@ -55,5 +55,83 @@
 			local ret = ::Hardened.Global.ContractScalingBase * (1.0 + ::World.Assets.getBusinessReputation() * ::Hardened.Global.ContractScalingPerReputation);
 			return ::Math.clampf(ret, ::Hardened.Global.ContractScalingMin, ::Hardened.Global.ContractScalingMax);
 		},
+
+		// Add a new Entity Entry that can be used to split different entities on the world map to use unique names and icons
+		// _entityID string that is the new and unique internal ID for this entity
+		// _name display name for when a single of this unit is present
+		// _namePlural display name for when multiple of this unit is present in a world party
+		// _orientationIcon icon that is displayed in world map tooltips
+		// _defaultFaction the default faction that is assigned to this unit when spawned in battle
+		// _relatedScript is the script for which this new entry is supposed to be a replacement
+		// _fallBackEntityID the entity ID, that this troop in a world party will receive during deserialization to stay compatible with Reforged
+		addTemporaryEntity = function( _entityID, _name, _namePlural, _orientationIcon, _defaultFaction, _relatedScript, _fallBackEntityID )
+		{
+			local highestID = 0;
+			foreach (key, value in ::Const.EntityType)
+			{
+				if (typeof value == "integer" && value > highestID)
+					highestID = value;
+			}
+			++highestID;
+
+			::Const.EntityType[_entityID] <- highestID;
+			::Const.Strings.EntityName.push(_name);
+			::Const.Strings.EntityNamePlural.push(_namePlural);
+			::Const.EntityIcon.push(_orientationIcon);
+			::Reforged.Entities.DefaultFaction[highestID] <- _defaultFaction;
+
+			::Hardened.Global.addEntityFallback(_relatedScript, _fallBackEntityID, highestID);
+		}
+
+		addEntityFallback = function( _scriptName, _reforgedID, _hardenedID )
+		{
+			::Hardened.Private.EntityIDFallback[_scriptName] <- {
+				Reforged = _reforgedID,
+				Hardened = _hardenedID,
+			}
+
+			foreach (key, troop in ::Const.World.Spawn.Troops)
+			{
+				if (troop.Script == _scriptName)
+				{
+					troop.ID = _hardenedID;
+				}
+			}
+		}
+
+		hasEntityFallbackID = function( _scriptName )
+		{
+			return _scriptName in ::Hardened.Private.EntityIDFallback;
+		}
+
+		getEntityFallbackID = function( _scriptName )
+		{
+			return ::Hardened.Private.EntityIDFallback[_scriptName];
+		}
+
+		switchWorldTroopsToReforged = function( _worldParty )
+		{
+			foreach (troop in _worldParty.m.Troops)
+			{
+				if (::Hardened.Global.hasEntityFallbackID(troop.Script))
+				{
+					// During serialization, we replace all entity IDs, which only temporarily exist within Hardened,
+					// so that the saves can be loaded correctly with just Base Reforged
+					troop.ID = ::Hardened.Global.getEntityFallbackID(troop.Script).Reforged;
+				}
+			}
+		}
+
+		switchWorldTroopsToHardened = function( _worldParty )
+		{
+			foreach (troop in _worldParty.m.Troops)
+			{
+				if (::Hardened.Global.hasEntityFallbackID(troop.Script))
+				{
+					// During deserialization, we replace all entity IDs, for which there are new, Hardened-only variants
+					troop.ID = ::Hardened.Global.getEntityFallbackID(troop.Script).Hardened;
+				}
+			}
+		}
 	});
 }
