@@ -21,7 +21,7 @@
 		this.m.IsHidingIconMini = true;
 		if (this.getContainer().getActor().isPlacedOnMap())
 		{
-			local defenseValue = this.calculateBonus();
+			local defenseValue = this.calculateBonus(null, _properties);
 			if (defenseValue > 0)
 			{
 				_properties.MeleeDefense += defenseValue;
@@ -84,7 +84,7 @@
 	}
 
 // private
-	q.calculateBonus <- function( _emptyTilesOverwrite = null )
+	q.calculateBonus <- function( _emptyTilesOverwrite = null, _propertiesOverwrite = null )
 	{
 		local combinedFraction = this.m.BaseFraction;
 
@@ -107,7 +107,18 @@
 			combinedFraction += (_emptyTilesOverwrite * this.m.FractionPerEmptyTile);
 		}
 
-		local defenseValue = ::Math.floor(this.getContainer().getActor().getInitiative() * combinedFraction);
+		local actor = this.getContainer().getActor();
+
+		// Switcheroo of CurrentProperties, so that dodge is taking into account the most up-to-date initiative values from the current update cycle
+		// Otherwise effects like Dazed or Distracted will not update the dodge values currently until another update-cycle is triggered on the character
+		local oldCurrentProperties = actor.m.CurrentProperties;
+		if (_propertiesOverwrite != null)
+		{
+			actor.m.CurrentProperties = _propertiesOverwrite;
+		}
+		local defenseValue = ::Math.floor(actor.getInitiative() * combinedFraction);
+		actor.m.CurrentProperties = oldCurrentProperties;
+
 		return ::Math.max(0, defenseValue);
 	}
 });
