@@ -143,8 +143,8 @@
 // scripts/entity/tactical/enemies/skeleton_light
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.SkeletonLight.Cost = 14;
-	::Const.World.Spawn.Troops.SkeletonLight.Strength = 14;
+	::Const.World.Spawn.Troops.SkeletonLight.Cost = 16;
+	::Const.World.Spawn.Troops.SkeletonLight.Strength = 16;
 }
 
 // scripts/entity/tactical/enemies/nomad_cutthroat
@@ -250,20 +250,6 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.ZombieNomadBodyguard.Cost = 20;
 	::Const.World.Spawn.Troops.ZombieNomadBodyguard.Strength = 20;
-}
-
-// scripts/entity/tactical/enemies/rf_skeleton_light_elite
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_SkeletonLightElite.Cost = 22;
-	::Const.World.Spawn.Troops.RF_SkeletonLightElite.Strength = 22;
-}
-
-// scripts/entity/tactical/enemies/rf_skeleton_light_elite_polearm
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_SkeletonLightElitePolearm.Cost = 22;
-	::Const.World.Spawn.Troops.RF_SkeletonLightElitePolearm.Strength = 22;
 }
 
 // scripts/entity/tactical/humans/noble_billman
@@ -438,7 +424,7 @@
 // scripts/entity/tactical/enemies/skeleton_medium
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.SkeletonMedium.Cost = 32;
+	::Const.World.Spawn.Troops.SkeletonMedium.Cost = 28;
 	::Const.World.Spawn.Troops.SkeletonMedium.Strength = 32;
 }
 
@@ -546,20 +532,6 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.RF_SkeletonDecanus.Cost = 40;
 	::Const.World.Spawn.Troops.RF_SkeletonDecanus.Strength = 40;
-}
-
-// scripts/entity/tactical/enemies/rf_skeleton_heavy_lesser
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_SkeletonHeavyLesser.Cost = 40;
-	::Const.World.Spawn.Troops.RF_SkeletonHeavyLesser.Strength = 40;
-}
-
-// scripts/entity/tactical/enemies/rf_skeleton_heavy_lesser_bodyguard
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_SkeletonHeavyLesserBodyguard.Cost = 40;
-	::Const.World.Spawn.Troops.RF_SkeletonHeavyLesserBodyguard.Strength = 40;
 }
 
 // scripts/entity/tactical/enemies/vampire
@@ -779,26 +751,11 @@
 	::Const.World.Spawn.Troops.Knight.Variant = 5;		// Vanilla: 2
 }
 
-// scripts/entity/tactical/enemies/skeleton_heavy
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.SkeletonHeavy.Cost = 60;
-	::Const.World.Spawn.Troops.SkeletonHeavy.Strength = 60;
-	::Const.World.Spawn.Troops.SkeletonHeavy.Variant = 2;	// Vanilla: 1
-}
-
 // scripts/entity/tactical/enemies/rf_skeleton_centurion
 {
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.RF_SkeletonCenturion.Cost = 60;
 	::Const.World.Spawn.Troops.RF_SkeletonCenturion.Strength = 60;
-}
-
-// scripts/entity/tactical/enemies/skeleton_heavy_bodyguard
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.SkeletonHeavyBodyguard.Cost = 60;
-	::Const.World.Spawn.Troops.SkeletonHeavyBodyguard.Strength = 60;
 }
 
 // scripts/entity/tactical/enemies/unhold_bog

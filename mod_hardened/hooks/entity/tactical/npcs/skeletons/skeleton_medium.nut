@@ -56,7 +56,6 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_one_with_the_shield"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_exploit_opening"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_shield_expert"));
 	}
 
 	// Assign Head and Body armor to this character

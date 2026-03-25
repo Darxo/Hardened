@@ -1,31 +1,78 @@
+{	// Elite
+	// scripts/entity/tactical/enemies/skeleton_heavy
+	::Reforged.Entities.editEntity("SkeletonHeavy",
+		{
+			Cost = 40,
+			Strength = 40, 	// Reforged: 35; Vanilla: 30
+			Variant = 0,	// Reforged: 0; Vanilla: 1
+		},
+		{
+			XP = 600, // Reforged: 350
+			Hitpoints = 75, // Reforged: 75
+			Bravery = 90, // Reforged: 90
+			Stamina = 200, // Reforged: 100
+			MeleeSkill = 75, // Reforged: 75
+			RangedSkill = 0, // Reforged: 0
+			MeleeDefense = 10,	// Reforged: 10
+			RangedDefense = 0, // Reforged: 0
+			Initiative = 75,	// Reforged: 75
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_bandit_pillager
+	::Reforged.Entities.editEntity("SkeletonHeavyBodyguard",
+		{
+			Cost = 40,			// Vanilla: 30
+			Strength = 40,		// Vanilla: 30
+		}
+	);
+
+	// We dont need to adjust the troop
+
+	// scripts/entity/tactical/enemies/rf_bandit_pillager
+	::Reforged.Entities.editEntity("RF_SkeletonHeavyElite",
+		{
+			Cost = 60, 		// Reforged: 45
+			Strength = 60, 	// Reforged: 45
+			Variant = 2,	// Reforged: 1
+		},
+		{
+			XP = 900, // Reforged: 450
+			Hitpoints = 90, // Reforged: 90
+			Bravery = 100, // Reforged: 100
+			Stamina = 200, // Reforged: 100
+			MeleeSkill = 90, // Reforged: 80
+			RangedSkill = 55, // Reforged: 0
+			MeleeDefense = 20,	// Reforged: 15
+			RangedDefense = 0, // Reforged: 0
+			Initiative = 75,	// Reforged: 75
+		}
+	);
+
+	// Same as what Reforged does
+	::Reforged.Entities.addTroop(
+		"RF_SkeletonHeavyEliteBodyguard",
+		::MSU.Table.merge(clone ::Const.World.Spawn.Troops.RF_SkeletonHeavyElite, {
+			Variant = 0,
+			Row = 2,
+			Script = "scripts/entity/tactical/enemies/rf_skeleton_heavy_elite_bodyguard"
+		})
+	);
+}
+
 // scripts/entity/tactical/enemies/skeleton_light
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.SkeletonLight.XP = 210;
+	::Const.Tactical.Actor.SkeletonLight.XP = 240;
 	::Const.Tactical.Actor.SkeletonLight.ActionPoints = 9;
-	::Const.Tactical.Actor.SkeletonLight.Hitpoints = 45;
+	::Const.Tactical.Actor.SkeletonLight.Hitpoints = 55;
 	::Const.Tactical.Actor.SkeletonLight.Bravery = 50;
 	::Const.Tactical.Actor.SkeletonLight.Stamina = 200;
-	::Const.Tactical.Actor.SkeletonLight.MeleeSkill = 60;
+	::Const.Tactical.Actor.SkeletonLight.MeleeSkill = 65;
 	::Const.Tactical.Actor.SkeletonLight.RangedSkill = 0;
-	::Const.Tactical.Actor.SkeletonLight.MeleeDefense = 0;
+	::Const.Tactical.Actor.SkeletonLight.MeleeDefense = 5;
 	::Const.Tactical.Actor.SkeletonLight.RangedDefense = 0;
 	::Const.Tactical.Actor.SkeletonLight.Initiative = 50;
-}
-
-// scripts/entity/tactical/enemies/rf_skeleton_light_elite
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_SkeletonLightElite.XP = 330;
-	::Const.Tactical.Actor.RF_SkeletonLightElite.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_SkeletonLightElite.Hitpoints = 55;
-	::Const.Tactical.Actor.RF_SkeletonLightElite.Bravery = 60;
-	::Const.Tactical.Actor.RF_SkeletonLightElite.Stamina = 200;
-	::Const.Tactical.Actor.RF_SkeletonLightElite.MeleeSkill = 65;
-	::Const.Tactical.Actor.RF_SkeletonLightElite.RangedSkill = 0;
-	::Const.Tactical.Actor.RF_SkeletonLightElite.MeleeDefense = 5;
-	::Const.Tactical.Actor.RF_SkeletonLightElite.RangedDefense = 0;
-	::Const.Tactical.Actor.RF_SkeletonLightElite.Initiative = 50;
 }
 
 // scripts/entity/tactical/enemies/rf_skeleton_light_elite_polearm
@@ -46,7 +93,7 @@
 // scripts/entity/tactical/enemies/skeleton_medium
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.SkeletonMedium.XP = 480;
+	::Const.Tactical.Actor.SkeletonMedium.XP = 420;
 	::Const.Tactical.Actor.SkeletonMedium.ActionPoints = 9;
 	::Const.Tactical.Actor.SkeletonMedium.Hitpoints = 65;
 	::Const.Tactical.Actor.SkeletonMedium.Bravery = 70;
@@ -87,36 +134,6 @@
 	::Const.Tactical.Actor.RF_SkeletonDecanus.RangedDefense = 0;
 	::Const.Tactical.Actor.RF_SkeletonDecanus.Initiative = 75;
 }
-
-// scripts/entity/tactical/enemies/rf_skeleton_heavy_lesser
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.XP = 600;
-	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.Hitpoints = 75;
-	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.Bravery = 90;
-	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.Stamina = 200;
-	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.MeleeSkill = 75;
-	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.RangedSkill = 0;
-	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.MeleeDefense = 10;
-	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.RangedDefense = 0;
-	::Const.Tactical.Actor.RF_SkeletonHeavyLesser.Initiative = 75;
-}
-
-// scripts/entity/tactical/enemies/rf_skeleton_heavy_lesser_bodyguard
-::Const.Tactical.Actor.HD_SkeletonHeavyLesserBodyguard <- {
-	XP = 600,
-	ActionPoints = 9,
-	Hitpoints = 75,
-	Bravery = 90,
-	Stamina = 200,
-	MeleeSkill = 75,
-	RangedSkill = 0,
-	MeleeDefense = 15,
-	RangedDefense = 5,
-	Initiative = 25,
-	Armor = [0, 0],
-};
 
 // scripts/entity/tactical/enemies/vampire
 {
@@ -176,21 +193,6 @@
 	::Const.Tactical.Actor.SkeletonPriest.MeleeDefense = 0;
 	::Const.Tactical.Actor.SkeletonPriest.RangedDefense = 5;
 	::Const.Tactical.Actor.SkeletonPriest.Initiative = 10;
-}
-
-// scripts/entity/tactical/enemies/skeleton_heavy
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.SkeletonHeavy.XP = 900;
-	::Const.Tactical.Actor.SkeletonHeavy.ActionPoints = 9;
-	::Const.Tactical.Actor.SkeletonHeavy.Hitpoints = 90;
-	::Const.Tactical.Actor.SkeletonHeavy.Bravery = 100;
-	::Const.Tactical.Actor.SkeletonHeavy.Stamina = 200;
-	::Const.Tactical.Actor.SkeletonHeavy.MeleeSkill = 90;
-	::Const.Tactical.Actor.SkeletonHeavy.RangedSkill = 0;
-	::Const.Tactical.Actor.SkeletonHeavy.MeleeDefense = 20;
-	::Const.Tactical.Actor.SkeletonHeavy.RangedDefense = 0;
-	::Const.Tactical.Actor.SkeletonHeavy.Initiative = 75;
 }
 
 // scripts/entity/tactical/enemies/rf_skeleton_centurion
