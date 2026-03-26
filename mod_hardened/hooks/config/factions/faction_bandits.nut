@@ -136,7 +136,7 @@
 			MeleeSkill = 60, // Reforged: 55
 			RangedSkill = 80, // Reforged: 70
 			MeleeDefense = 10,	// Reforged: 5
-			RangedDefense = 20, // Reforged: 15
+			RangedDefense = 15, // Reforged: 15
 			Initiative = 100,	// Reforged: 115
 			Vision = 8,		// Reforged: 7
 		}
