@@ -60,6 +60,88 @@
 	);
 }
 
+{	// Zombie Orcs
+	// scripts/entity/tactical/enemies/rf_zombie_orc_young
+	::Reforged.Entities.editEntity("RF_ZombieOrcYoung",
+		{
+			Strength = 20,	// Reforged: 14;
+			Cost = 20,		// Reforged: 12;
+		},
+		{
+			XP = 300, // Reforged: 200
+			ActionPoints = 7,	// Reforged: 6
+			Hitpoints = 200, // Reforged: 200
+			Bravery = 100, // Reforged: 100
+			Stamina = 100, // Reforged: 100
+			MeleeSkill = 55, // Reforged: 50
+			RangedSkill = 0, // Reforged: 0
+			MeleeDefense = -10,	// Reforged: -10
+			RangedDefense = -10, // Reforged: -10
+			Initiative = 60,	// Reforged: 60
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_zombie_orc_warrior
+	::Reforged.Entities.editEntity("RF_ZombieOrcWarrior",
+		{
+			Strength = 50,	// Reforged: 28;
+			Cost = 50,		// Reforged: 25;
+		},
+		{
+			XP = 750, // Reforged: 350
+			ActionPoints = 7,	// Reforged: 7
+			Hitpoints = 300, // Reforged: 300
+			Bravery = 90, // Reforged: 90
+			Stamina = 100, // Reforged: 100
+			MeleeSkill = 70, // Reforged: 60
+			RangedSkill = 0, // Reforged: 0
+			MeleeDefense = -15,	// Reforged: -15
+			RangedDefense = -15, // Reforged: -15
+			Initiative = 60,	// Reforged: 60
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_zombie_orc_berserker
+	::Reforged.Entities.editEntity("RF_ZombieOrcBerserker",
+		{
+			Strength = 40,	// Reforged: 25;
+			Cost = 40,		// Reforged: 20;
+		},
+		{
+			XP = 600, // Reforged: 300
+			ActionPoints = 7,	// Reforged: 7
+			Hitpoints = 350, // Reforged: 350
+			Bravery = 90, // Reforged: 90
+			Stamina = 100, // Reforged: 100
+			MeleeSkill = 70, // Reforged: 60
+			RangedSkill = 0, // Reforged: 0
+			MeleeDefense = 0,	// Reforged: 0
+			RangedDefense = -5, // Reforged: -5
+			Initiative = 60,	// Reforged: 60
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_zombie_orc_warlord
+	::Reforged.Entities.editEntity("RF_ZombieOrcWarlord",
+		{
+			Strength = 80,	// Reforged: 36;
+			Cost = 80,		// Reforged: 34;
+		},
+		{
+			XP = 1200, // Reforged: 450
+			ActionPoints = 7,	// Reforged: 7
+			Hitpoints = 600, // Reforged: 600
+			Bravery = 130, // Reforged: 130
+			Stamina = 100, // Reforged: 100
+			MeleeSkill = 80, // Reforged: 70
+			RangedSkill = -15, // Reforged: -15
+			MeleeDefense = -15,	// Reforged: -15
+			RangedDefense = -5, // Reforged: -5
+			Initiative = 60,	// Reforged: 60
+		}
+	);
+}
+
 // scripts/entity/tactical/enemies/skeleton_light
 {
 	// Mandatory stats
