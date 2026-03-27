@@ -60,6 +60,49 @@
 	);
 }
 
+{	// Ghosts
+	// scripts/entity/tactical/enemies/rf_banshee
+	::Reforged.Entities.editEntity("RF_Banshee",
+		{
+			Strength = 80,	// Reforged: 50;
+			Cost = 80,		// Reforged: 50;
+		},
+		{
+			XP = 1200, // Reforged: 550
+			Hitpoints = 64, // Reforged: 1
+			Bravery = 100, // Reforged: 100
+			Stamina = 100, // Reforged: 100
+			MeleeSkill = 90, // Reforged: 80
+			RangedSkill = 0, // Reforged: 0
+			MeleeDefense = 30,	// Reforged: 30
+			RangedDefense = 999, // Reforged: 999
+			Initiative = 100,	// Reforged: 100
+		}
+	);
+}
+
+{	// Flank
+	// scripts/entity/tactical/enemies/rf_hollenhund
+	::Reforged.Entities.editEntity("RF_Hollenhund",
+		{
+			Strength = 50,	// Reforged: 40;
+			Cost = 50,		// Reforged: 20;
+		},
+		{
+			XP = 750, // Reforged: 400
+			ActionPoints = 12,	// Reforged: 12
+			Hitpoints = 150, // Reforged: 150
+			Bravery = 90, // Reforged: 90
+			Stamina = 100, // Reforged: 100
+			MeleeSkill = 80, // Reforged: 80
+			RangedSkill = 0, // Reforged: 0
+			MeleeDefense = 30,	// Reforged: 30
+			RangedDefense = 30, // Reforged: 50
+			Initiative = 110,	// Reforged: 110
+		}
+	);
+}
+
 {	// Zombie Orcs
 	// scripts/entity/tactical/enemies/rf_zombie_orc_young
 	::Reforged.Entities.editEntity("RF_ZombieOrcYoung",
