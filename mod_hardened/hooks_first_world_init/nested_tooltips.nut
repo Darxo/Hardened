@@ -67,7 +67,7 @@
 	)),
 	Mood = ::MSU.Class.BasicTooltip("Mood", ::Reforged.Mod.Tooltips.parseString(
 		"Mood reflects how satisfied member of your company are.\n\n" +
-		"It is expressed as a value between " + ::MSU.Text.colorNeutral(0.0) + " and " + ::MSU.Text.colorNeutral(6.95) + " which translates into the following seven mood states: Angry, Disgruntled, Concerned, Neutral, In Good Spirit, Eager and Euphoric.\n\n" +
+		"It is expressed as a value between " + ::MSU.Text.colorNeutral(0.0) + " and " + ::MSU.Text.colorNeutral(6.95) + " which translates into the following seven mood states: Angry, Disgruntled, Dissatisfied, Content, In good spirit, Eager and Euphoric.\n\n" +
 		"Mood states above Neutral grant an increasing chance that the character begins battles with [Confident|Skill+hd_dummy_morale_state_confident] morale.\n" +
 		"Mood states below Neutral reduce the maximum possible morale state of the character during battle.\n" +
 		"A character who is Angry might desert you and leave your company.\n\n" +
