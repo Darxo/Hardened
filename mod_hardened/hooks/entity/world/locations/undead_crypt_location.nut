@@ -3,7 +3,7 @@
 	{
 		__original();
 
-		this.m.Resources = 250 * ::Hardened.Global.FactionDifficulty.Zombies;		// Vanilla: 180
+		this.m.Resources = 200 * ::Hardened.Global.FactionDifficulty.Zombies;		// Vanilla: 180; Reforged: 230
 	}
 
 	q.onDropLootForPlayer = @(__original) function( _lootTable )
@@ -15,6 +15,6 @@
 			"wine_item",
 			"mead_item",
 		], _lootTable);
-		this.dropArmorParts(::Math.rand(8, 20), _lootTable);	// Vanilla: 0
+		this.dropArmorParts(::Math.rand(5, 15), _lootTable);	// Vanilla: 0
 	}
 });
