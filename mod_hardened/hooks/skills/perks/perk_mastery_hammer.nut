@@ -2,7 +2,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_hammer", function(q) {
 	// Public
 	q.m.ArmorDamageSpreadPct <- 0.5;	// This much of the initial armor damage is spread towards the other bodypart
-	q.m.HD_FatigueCostMult <- 0.75;
+	q.m.HD_FatigueCostMult <- ::Hardened.Global.WeaponSpecFatigueMult;
 
 	q.onAfterUpdate = @(__original) function( _properties )
 	{

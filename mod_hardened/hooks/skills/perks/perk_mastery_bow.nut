@@ -1,6 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_bow", function(q) {
 	// Public
-	q.m.HD_FatigueCostMult <- 0.75;
+	q.m.HD_FatigueCostMult <- ::Hardened.Global.WeaponSpecFatigueMult;
 
 	q.onAfterUpdate = @(__original) function( _properties )
 	{

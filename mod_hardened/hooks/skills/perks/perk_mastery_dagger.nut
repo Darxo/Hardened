@@ -1,6 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_dagger", function(q) {
 	// Public
-	q.m.HD_FatigueCostMult <- 0.75;
+	q.m.HD_FatigueCostMult <- ::Hardened.Global.WeaponSpecFatigueMult;
 	q.m.WeightThreshold <- 10;	// Offhand item must weigh less than this to be eligible for free use
 
 	// Private

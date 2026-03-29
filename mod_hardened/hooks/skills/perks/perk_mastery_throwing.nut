@@ -2,7 +2,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_throwing", function(q) {
 	// Public
 	q.m.DamageTotalMult <- 1.3;	// Damage Multiplier for first throwing attack each turn
-	q.m.HD_FatigueCostMult <- 0.75;
+	q.m.HD_FatigueCostMult <- ::Hardened.Global.WeaponSpecFatigueMult;
 
 	// Private
 	q.m.GainedQuickSwitchThisRound <- false;

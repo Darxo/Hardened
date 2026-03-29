@@ -2,7 +2,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_cleaver", function(q) {
 	// Public
 	q.m.CriticalDamagePct <- 0.5;	// This much Critical Damage is gained when targeting the body of a disarmed or unarmed (melee weapon) enemy
-	q.m.HD_FatigueCostMult <- 0.75;
+	q.m.HD_FatigueCostMult <- ::Hardened.Global.WeaponSpecFatigueMult;
 
 	q.create = @(__original) function()
 	{

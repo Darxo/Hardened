@@ -1,7 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_polearm", function(q) {
 	// Public
 	q.m.DisplacementHitChanceModifier <- 15;
-	q.m.HD_FatigueCostMult <- 0.75;
+	q.m.HD_FatigueCostMult <- ::Hardened.Global.WeaponSpecFatigueMult;
 
 	q.create = @(__original) function()
 	{

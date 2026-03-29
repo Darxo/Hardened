@@ -1,6 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_crossbow", function(q) {
 	// Public
-	q.m.HD_FatigueCostMult <- 0.75;
+	q.m.HD_FatigueCostMult <- ::Hardened.Global.WeaponSpecFatigueMult;
 	q.m.RequiredWeaponType <- ::Const.Items.WeaponType.Crossbow | ::Const.Items.WeaponType.Firearm;
 	q.m.FirearmReloadAPModifier <- -1;	// AP cost of Reload with Handgonnes is modified by this value
 

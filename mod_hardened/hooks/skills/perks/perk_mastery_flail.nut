@@ -1,6 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_flail", function(q) {
 	// Public
-	q.m.HD_FatigueCostMult <- 0.75;
+	q.m.HD_FatigueCostMult <- ::Hardened.Global.WeaponSpecFatigueMult;
 	q.m.HD_HeadshotStunChanceAdd <- 50;
 
 	// We overwrite these functions because flail mastery no longer adds the perk_rf_from_all_sides
