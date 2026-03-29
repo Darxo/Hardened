@@ -69,6 +69,10 @@
 		{
 			ret *= 1.5;		// We strongly prefer to target enemies that are staggered, but not yet stunned
 		}
+		else if (_skill.getDamageType().contains(::Const.Damage.DamageType.Piercing) && _target.getSkills().hasSkill("effects.rf_arrow_to_the_knee_debuff"))
+		{
+			ret *= 0.8;		// We are less likely to target someone, who already has the arrow to the knee effect with a piercing throw
+		}
 
 		return ret;
 	}
