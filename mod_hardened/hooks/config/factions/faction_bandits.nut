@@ -236,7 +236,7 @@
 		},
 		{
 			XP = 270, // Reforged: 250
-			Hitpoints = 70, // Reforged: 70
+			Hitpoints = 65, // Reforged: 70
 			Bravery = 50, // Reforged: 55
 			Stamina = 110, // Reforged: 110
 			MeleeSkill = 75, // Reforged: 72
