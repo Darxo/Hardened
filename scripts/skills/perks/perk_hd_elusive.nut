@@ -48,6 +48,15 @@ this.perk_hd_elusive <- ::inherit("scripts/skills/skill", {
 		return !this.m.IsInEffect;
 	}
 
+	function onAdded()
+	{
+		// We need this perk is added during combat, we need to quickly instantiate this.m.PrevTile to prevent a crash from moving
+		if (::Tactical.isActive())
+		{
+			this.m.PrevTile = this.getContainer().getActor().getTile();
+		}
+	}
+
 	function onUpdate( _properties )
 	{
 		this.getContainer().getActor().m.ActionPointCosts = ::Const.PathfinderMovementAPCost;	// This will not stack with Pathfinder perk
