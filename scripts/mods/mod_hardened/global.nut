@@ -3,7 +3,7 @@
 	// Tactical
 		ActionPointChangeOnRally = -3,	// Whenever this actor rallies (going from fleeing to wavering) its action points change by this amount
 		MinimumVision = 2,				// Vision of characters can never be reduced below this value. In Vanilla this is 1
-		WeaponSpecFatigueMult = 0.75,	// Fatigue Multiplier for weapon skills, granted by all Weapon Masteries; Vanilla: 0.75
+		WeaponSpecFatigueMult = 0.8,	// Fatigue Multiplier for weapon skills, granted by all Weapon Masteries; Vanilla: 0.75
 
 	// World
 		LabelBackgroundAlpha = 150,		// Alpha value for the backgrounds of the world party and location labels
