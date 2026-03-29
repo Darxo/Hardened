@@ -1,5 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/skills/effects/spider_poison_coat_effect", function (q) {
-	q.m.HitpointDamagePerTurn <- 10;	// Vanilla: 10; In Vanilla the regular spider poison deals only 5 damage per turn
+	q.m.HitpointDamagePerTurn <- 15;	// Vanilla: 10; In Vanilla the regular spider poison deals only 5 damage per turn
 	q.m.HitpointDamageThreshold <- ::Const.Combat.PoisonEffectMinDamage;	// The poison is only applied when dealing at least this much hitpoint damage
 
 	q.create = @(__original) function()
