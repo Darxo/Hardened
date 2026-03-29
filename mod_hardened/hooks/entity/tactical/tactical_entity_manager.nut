@@ -34,4 +34,21 @@
 			}
 		}
 	}
+
+	q.setupAmbience = @(__original) function( _worldTile )
+	{
+		// Feat: We apply a consistent seed, so that multiple calls of this function provide the exact same weather/ambience
+		// We do this to make sure, that reloading a fight, or doing quick fights in succession will make them happen with the same weather effects
+		// We decide that the ambience/weather stays the same during a whole day or night
+		::Reforged.Math.seedRandom(
+			"HD_FixedAmbienceSeed",			// Fixed salt, specific to use-case
+			::World.getTime().Days			// Day specific salt
+			::World.getTime().IsDaytime		// Day/Night specific salt
+		);
+
+		__original(_worldTile);
+
+		// We randomize the seed again, as we are done with its usage for our purpose. We dont want following random calls to be influenced too
+		::Math.seedRandom(::Time.getRealTime());
+	}
 });
