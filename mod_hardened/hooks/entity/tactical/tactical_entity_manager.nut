@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/tactical_entity_manager", function(q) {
+	q.m.HD_ChanceForDesertStorm <- 20;		// Combat on Desert or DesertHill tiles during day have this much chance to also have a cosmetic desert storm effect
+
 	q.makeAllHostilesRetreat = @(__original) function()
 	{
 		// Vanilla Fix: Kill enemy non-combatants, when you end the battle early
@@ -47,6 +49,41 @@
 		);
 
 		__original(_worldTile);
+
+		if (::Math.rand(1, 100) <= this.m.HD_ChanceForDesertStorm && ::World.getTime().IsDaytime)
+		{
+			switch (_worldTile.TacticalType)
+			{
+				case ::Const.World.TerrainTacticalType.Desert:
+				case ::Const.World.TerrainTacticalType.DesertHills:
+				{
+					// We create "clouds" similar to how vanilla created blizzards
+					local weather = ::Tactical.getWeather();
+					local clouds = weather.createCloudSettings();
+					clouds.Type = this.getconsttable().CloudType.Custom;
+					clouds.MinClouds = 150;
+					clouds.MaxClouds = 150;
+					clouds.MinVelocity = 400.0;
+					clouds.MaxVelocity = 500.0;
+					clouds.MinAlpha = 0.2;
+					clouds.MaxAlpha = 0.5;
+					clouds.MinScale = 1.0;
+					clouds.MaxScale = 2.0;
+					clouds.Sprite = "wind_01";
+					clouds.RandomizeDirection = false;
+					clouds.RandomizeRotation = false;
+					clouds.Direction = ::createVec(-1.0, -0.7);
+
+					// We give those desert storms a yellow coloring
+					clouds.Color = ::createColor("#f0df9c");
+
+					weather.buildCloudCover(clouds);
+
+					// The blizzard track also fits pretty well with a desert storm, so we re-use it
+					::Sound.setAmbience(0, ::Const.SoundAmbience.Blizzard, ::Const.Sound.Volume.Ambience, 0);
+				}
+			}
+		}
 
 		// We randomize the seed again, as we are done with its usage for our purpose. We dont want following random calls to be influenced too
 		::Math.seedRandom(::Time.getRealTime());
