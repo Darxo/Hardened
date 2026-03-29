@@ -137,7 +137,9 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_hybridization"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_hybridization"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_onslaught"));
+
+		// Generic Actives
+		this.getSkills().add(::new("scripts/skills/actives/rf_onslaught_skill"));		// This skill is different from the version that the player gets
 	}
 
 	// Assign Head and Body armor to this character

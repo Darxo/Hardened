@@ -1345,7 +1345,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlock [Onslaught|Skill+rf_onslaught_skill], which can be used once per battle to grant nearby members of your company [Initiative|Concept.Initiative], [Melee Skill|Concept.MeleeSkill] and one use of the [Line Breaker|Skill+rf_line_breaker_skill] skill for two [rounds|Concept.Round]",
+					"Unlock [$ $|Skill+hd_onslaught_skill]",
 				],
 			}],
 		}),

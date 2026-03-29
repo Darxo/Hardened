@@ -1,44 +1,71 @@
 ::Hardened.wipeClass("scripts/skills/effects/rf_onslaught_effect", [
 	"create",
-	"getTooltip",
-	"onUpdate",
-	"onRoundEnd",
 ]);
 
 ::Hardened.HooksMod.hook("scripts/skills/effects/rf_onslaught_effect", function(q) {
-	q.getTooltip = @(__original) function()
-	{
-		local ret = __original();
+	q.m.LastsForRounds <- 2;
 
-		foreach (entry in ret)
-		{
-			if (entry.id == 12)
-			{
-				// Adjust line breaker link and remove mention of discount
-				entry.text = ::Reforged.Mod.Tooltips.parseString("Gain one use of the [Line Breaker|Skill+hd_onslaught_line_breaker_skill] skill");
-				break;
-			}
-		}
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.HD_LastsForRounds = this.m.LastsForRounds;
+	}
+
+	q.getTooltip = @() function()
+	{
+		local ret = this.skill.getTooltip();
+
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Gain [$ $|Perk+perk_pathfinder]"),
+		});
+
+		ret.push({
+			id = 11,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Gain [$ $|Perk+perk_rf_vigorous_assault]"),
+		});
+
+		ret.push({
+			id = 12,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Gain [$ $|Perk+perk_hd_elusive]"),
+		});
 
 		return ret;
 	}
 
-	q.onAdded = @(__original) function()
+	q.onAdded = @() function()
 	{
-		__original();
-		this.getContainer().add(::new("scripts/skills/actives/hd_onslaught_line_breaker_skill"));
+		this.getContainer().add(::Reforged.new("scripts/skills/perks/perk_pathfinder", function(o) {
+			o.m.IsSerialized = false;
+		}));
+
+		this.getContainer().add(::Reforged.new("scripts/skills/perks/perk_rf_vigorous_assault", function(o) {
+			o.m.IsSerialized = false;
+		}));
+
+		this.getContainer().add(::Reforged.new("scripts/skills/perks/perk_hd_elusive", function(o) {
+			o.m.IsSerialized = false;
+		}));
 	}
 
-	q.onRemoved = @(__original) function()
+	q.onRemoved = @() function()
 	{
-		__original();
-		this.getContainer().removeByID("actives.hd_onslaught_line_breaker");
+		// We need to use "removeByStackByID" (added by Stack-Based-Skills), because its hook of the vanilla removeByID , used on perks, only remove the serialized version of them
+		this.getContainer().removeByStackByID("perk.pathfinder", false);
+		this.getContainer().removeByStackByID("perk.rf_vigorous_assault", false);
+		this.getContainer().removeByStackByID("perk.hd_elusive", false);
 	}
 
-	q.onRefresh = @(__original) function()
+	q.onRefresh = @() function()
 	{
-		__original();
-		this.getContainer().add(::new("scripts/skills/actives/hd_onslaught_line_breaker_skill"));
-		if (this.m.Overlay != "") this.spawnIcon(this.m.Overlay, this.getContainer().getActor().getTile());
+		this.m.HD_LastsForRounds = this.m.LastsForRounds;
+		this.spawnIcon(this.m.Overlay, this.getContainer().getActor().getTile());
 	}
 });
