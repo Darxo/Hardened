@@ -1081,7 +1081,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlock [Hold Steady|Skill+rf_hold_steady_skill], which can be used once per battle to grant nearby members of your company increased defenses, immunity against [Stuns|Skill+stunned_effect] and immunity against [Displacement|Concept.Displacement] for two [rounds|Concept.Round]",
+					"Unlock [$ $|Skill+hd_hold_steady_skill]",
 				],
 			}],
 		}),

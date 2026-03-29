@@ -60,7 +60,9 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_inspiring_presence"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rally_the_troops"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_captain"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_hold_steady"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_mastery_polearm"));
+
+		// Generic Actives
+		this.getSkills().add(::new("scripts/skills/actives/rf_hold_steady_skill"));		// This skill is different from the version that the player gets
 	}
 });

@@ -69,7 +69,9 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_the_rush_of_battle"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_exude_confidence"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_parry"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_hold_steady"));
+
+		// Generic Actives
+		this.getSkills().add(::new("scripts/skills/actives/rf_hold_steady_skill"));		// This skill is different from the version that the player gets
 	}
 
 	// Assign Head and Body armor to this character
