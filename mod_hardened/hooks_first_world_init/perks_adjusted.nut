@@ -646,6 +646,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_blitzkrieg",
+		Key = "RF_Blitzkrieg",
+		Description = ::UPD.getDescription({
+			Fluff = "It will be over in a flash!",
+			Effects = [{
+				Type = ::UPD.EffectType.Active,
+				Description = [
+					"Unlock [$ $|Skill+hd_blitzkrieg_skill]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_bloodlust",
 		Key = "RF_Bloodlust",
 		Description = ::UPD.getDescription({

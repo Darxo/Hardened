@@ -66,9 +66,11 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_parry"));
 
 		this.getSkills().add(::new("scripts/skills/perks/perk_captain"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_blitzkrieg"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_decisive"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rally_the_troops"));
+
+		// Generic Actives
+		this.getSkills().add(::new("scripts/skills/actives/rf_blitzkrieg_skill"));		// This skill is different from the version that the player gets
 	}
 
 	// Assign Head and Body armor to this character
