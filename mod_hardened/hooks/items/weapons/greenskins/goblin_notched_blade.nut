@@ -1,0 +1,16 @@
+::Hardened.HooksMod.hook("scripts/items/weapons/greenskins/goblin_falchion", function(q) {
+	// We overwrite Reforged skill additions, because we dont hand out any discounts
+	q.onEquip = @(__original) function()
+	{
+		this.weapon.onEquip();
+
+		this.addSkill(::Reforged.new("scripts/skills/actives/slash", function(o) {
+			o.m.ActionPointCost -= 1;
+			o.m.Icon = "skills/active_77.png";
+			o.m.IconDisabled = "skills/active_77_sw.png";
+			o.m.Overlay = "active_77";
+		}));
+
+		this.addSkill(::new("scripts/skills/actives/puncture"));
+	}
+});

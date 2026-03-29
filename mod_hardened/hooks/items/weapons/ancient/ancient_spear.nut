@@ -8,4 +8,12 @@
 		this.m.RegularDamage = 30;		// Vanilla: 20
 		this.m.RegularDamageMax = 40;	// Vanilla: 35
 	}
+
+	q.onEquip = @() { function onEquip()
+	{
+		this.weapon.onEquip();
+
+		this.addSkill(::new("scripts/skills/actives/thrust"));
+		this.addSkill(::new("scripts/skills/actives/spearwall"));
+	}}.onEquip;
 });
