@@ -17,7 +17,6 @@
 		{
 			if (entry.id == 10 && entry.icon == "ui/icons/shield_damage.png")	// In Vanilla the id is 7; In Reforged it is 10
 			{
-				::logWarning("Hardened: throw_spear_skill getTooltip");
 				entry.text = "Inflicts " + ::MSU.Text.colorNegative(this.getExpectedShieldDamage()) + " damage to shields";
 			}
 		}
