@@ -183,7 +183,7 @@ local newPerks = [
 foreach (newPerk in newPerks)
 {
 	::Const.Strings.PerkName[newPerk.Key] <- ::Reforged.Mod.Tooltips.parseString(newPerk.Name);
-	::Const.Strings.PerkDescription[newPerk.Key] <- ::Reforged.Mod.Tooltips.parseString(newPerk.Description);
+	::Const.Strings.PerkDescription[newPerk.Key] <- newPerk.Description;	// Reforged does a parsing of all perk description during FirstWorldInit
 }
 
 ::Const.Strings.EntityName[::Const.EntityType.UnholdBog] = "Bog Unhold";		// Vanilla: Unhold
