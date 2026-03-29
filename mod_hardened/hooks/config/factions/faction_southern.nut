@@ -1,7 +1,7 @@
 // scripts/entity/tactical/humans/nomad_cutthroat
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.NomadCutthroat.XP = 150;
+	::Const.Tactical.Actor.NomadCutthroat.XP = 150 * ::Hardened.Global.FactionExperience.Nomads;
 	::Const.Tactical.Actor.NomadCutthroat.ActionPoints = 9;
 	::Const.Tactical.Actor.NomadCutthroat.Hitpoints = 55;
 	::Const.Tactical.Actor.NomadCutthroat.Bravery = 50;
@@ -19,7 +19,7 @@
 // scripts/entity/tactical/humans/nomad_slinger
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.NomadSlinger.XP = 150;
+	::Const.Tactical.Actor.NomadSlinger.XP = 150 * ::Hardened.Global.FactionExperience.Nomads;
 	::Const.Tactical.Actor.NomadSlinger.ActionPoints = 9;
 	::Const.Tactical.Actor.NomadSlinger.Hitpoints = 50;
 	::Const.Tactical.Actor.NomadSlinger.Bravery = 50;
@@ -37,7 +37,7 @@
 // scripts/entity/tactical/humans/nomad_archer
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.NomadArcher.XP = 240;				// Vanilla: 225
+	::Const.Tactical.Actor.NomadArcher.XP = 240 * ::Hardened.Global.FactionExperience.Nomads;		// Vanilla: 225
 	::Const.Tactical.Actor.NomadArcher.ActionPoints = 9;
 	::Const.Tactical.Actor.NomadArcher.Hitpoints = 60;			// Vanilla: 60
 	::Const.Tactical.Actor.NomadArcher.Bravery = 60;			// Vanilla: 55
@@ -55,7 +55,7 @@
 // scripts/entity/tactical/humans/nomad_outlaw
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.NomadOutlaw.XP = 300;				// Vanilla: 250
+	::Const.Tactical.Actor.NomadOutlaw.XP = 300 * ::Hardened.Global.FactionExperience.Nomads;		// Vanilla: 250
 	::Const.Tactical.Actor.NomadOutlaw.ActionPoints = 9;
 	::Const.Tactical.Actor.NomadOutlaw.Hitpoints = 75;			// Vanilla: 75
 	::Const.Tactical.Actor.NomadOutlaw.Bravery = 70;			// Vanilla: 60
@@ -73,7 +73,7 @@
 // scripts/entity/tactical/humans/executioner
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Executioner.XP = 400;				// Vanilla: 450
+	::Const.Tactical.Actor.Executioner.XP = 400 * ::Hardened.Global.FactionExperience.Nomads;		// Vanilla: 450
 	::Const.Tactical.Actor.Executioner.ActionPoints = 9;
 	::Const.Tactical.Actor.Executioner.Hitpoints = 120;			// Vanilla: 170
 	::Const.Tactical.Actor.Executioner.Bravery = 90;			// Vanilla: 90
@@ -91,7 +91,7 @@
 // scripts/entity/tactical/humans/gladiator
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Gladiator.XP = 450;				// Vanilla: 350
+	::Const.Tactical.Actor.Gladiator.XP = 450 * ::Hardened.Global.FactionExperience.Nomads;		// Vanilla: 350
 	::Const.Tactical.Actor.Gladiator.ActionPoints = 9;
 	::Const.Tactical.Actor.Gladiator.Hitpoints = 110;		// Vanilla: 110
 	::Const.Tactical.Actor.Gladiator.Bravery = 100;			// Vanilla: 90
@@ -106,7 +106,7 @@
 // scripts/entity/tactical/humans/nomad_leader
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.NomadLeader.XP = 500;				// Vanilla: 375
+	::Const.Tactical.Actor.NomadLeader.XP = 500 * ::Hardened.Global.FactionExperience.Nomads;		// Vanilla: 375
 	::Const.Tactical.Actor.NomadLeader.ActionPoints = 9;
 	::Const.Tactical.Actor.NomadLeader.Hitpoints = 100;			// Vanilla: 100
 	::Const.Tactical.Actor.NomadLeader.Bravery = 100;			// Vanilla: 75
@@ -124,7 +124,7 @@
 // scripts/entity/tactical/humans/desert_devil
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.DesertDevil.XP = 500;
+	::Const.Tactical.Actor.DesertDevil.XP = 500 * ::Hardened.Global.FactionExperience.Nomads;
 	::Const.Tactical.Actor.DesertDevil.ActionPoints = 9;
 	::Const.Tactical.Actor.DesertDevil.Hitpoints = 70;
 	::Const.Tactical.Actor.DesertDevil.Bravery = 90;
@@ -142,7 +142,7 @@
 // scripts/entity/tactical/humans/desert_stalker
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.DesertStalker.XP = 500;
+	::Const.Tactical.Actor.DesertStalker.XP = 500 * ::Hardened.Global.FactionExperience.Nomads;
 	::Const.Tactical.Actor.DesertStalker.ActionPoints = 9;
 	::Const.Tactical.Actor.DesertStalker.Hitpoints = 60;
 	::Const.Tactical.Actor.DesertStalker.Bravery = 70;
@@ -160,7 +160,7 @@
 // scripts/entity/tactical/humans/slave
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Slave.XP = 30;				// Vanilla: 50
+	::Const.Tactical.Actor.Slave.XP = 30 * ::Hardened.Global.FactionExperience.Slaves;		// Vanilla: 50
 	::Const.Tactical.Actor.Slave.ActionPoints = 9;
 	::Const.Tactical.Actor.Slave.Hitpoints = 45;		// Vanilla: 55
 	::Const.Tactical.Actor.Slave.Bravery = 30;			// Vanilla: 40
@@ -175,7 +175,7 @@
 // scripts/entity/tactical/humans/engineer
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Engineer.XP = 240;
+	::Const.Tactical.Actor.Engineer.XP = 200 * ::Hardened.Global.FactionExperience.CityStates;
 	::Const.Tactical.Actor.Engineer.ActionPoints = 9;
 	::Const.Tactical.Actor.Engineer.Hitpoints = 60;
 	::Const.Tactical.Actor.Engineer.Bravery = 70;
@@ -189,7 +189,7 @@
 
 // scripts/entity/tactical/humans/conscript_polearm
 ::Const.Tactical.Actor.HD_ConscriptPolearm <- {
-	XP = 300,
+	XP = 250 * ::Hardened.Global.FactionExperience.CityStates,
 	ActionPoints = 9,
 	Hitpoints = 60,
 	Bravery = 70,
@@ -205,7 +205,7 @@
 // scripts/entity/tactical/humans/conscript
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Conscript.XP = 300;
+	::Const.Tactical.Actor.Conscript.XP = 250 * ::Hardened.Global.FactionExperience.CityStates;
 	::Const.Tactical.Actor.Conscript.ActionPoints = 9;
 	::Const.Tactical.Actor.Conscript.Hitpoints = 70;
 	::Const.Tactical.Actor.Conscript.Bravery = 70;
@@ -220,7 +220,7 @@
 // scripts/entity/tactical/humans/gunner
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Gunner.XP = 360;
+	::Const.Tactical.Actor.Gunner.XP = 300 * ::Hardened.Global.FactionExperience.CityStates;
 	::Const.Tactical.Actor.Gunner.ActionPoints = 9;
 	::Const.Tactical.Actor.Gunner.Hitpoints = 60;
 	::Const.Tactical.Actor.Gunner.Bravery = 70;
@@ -235,7 +235,7 @@
 // scripts/entity/tactical/humans/assassin
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Assassin.XP = 480;
+	::Const.Tactical.Actor.Assassin.XP = 400 * ::Hardened.Global.FactionExperience.CityStates;
 	::Const.Tactical.Actor.Assassin.ActionPoints = 9;
 	::Const.Tactical.Actor.Assassin.Hitpoints = 80;
 	::Const.Tactical.Actor.Assassin.Bravery = 85;
@@ -250,7 +250,7 @@
 // scripts/entity/tactical/humans/officer
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Officer.XP = 600;
+	::Const.Tactical.Actor.Officer.XP = 500 * ::Hardened.Global.FactionExperience.CityStates;
 	::Const.Tactical.Actor.Officer.ActionPoints = 9;
 	::Const.Tactical.Actor.Officer.Hitpoints = 110;
 	::Const.Tactical.Actor.Officer.Bravery = 85;

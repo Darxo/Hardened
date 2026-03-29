@@ -6,7 +6,7 @@
 			Strength = 10, 	// Reforged: 9; Vanilla: 9
 		},
 		{
-			XP = 100, // Reforged: 120; Vanilla 150
+			XP = 100 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 120; Vanilla 150
 			Hitpoints = 55, // Reforged: 55
 			Bravery = 40, // Reforged: 40
 			Stamina = 100, // Reforged: 95
@@ -25,7 +25,7 @@
 			Strength = 16, 	// Reforged: 18
 		},
 		{
-			XP = 160, // Reforged: 120; Vanilla 150
+			XP = 160 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 120; Vanilla 150
 			Hitpoints = 65, // Reforged: 75
 			Bravery = 50, // Reforged: 50
 			Stamina = 115, // Reforged: 115
@@ -44,7 +44,7 @@
 			Strength = 24, 	// Reforged: 28; Vanilla: 20
 		},
 		{
-			XP = 240, // Reforged: 250; Vanilla 250
+			XP = 240 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 250; Vanilla 250
 			Hitpoints = 75, // Reforged: 80; Vanilla: 75
 			Bravery = 60, // Reforged: 60; Vanilla: 55
 			Stamina = 125, // Reforged: 125
@@ -63,7 +63,7 @@
 			Strength = 35, 	// Reforged: 36
 		},
 		{
-			XP = 350, // Reforged: 300
+			XP = 350 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 300
 			Hitpoints = 85, // Reforged: 85
 			Bravery = 70, // Reforged: 70
 			Stamina = 130, // Reforged: 130
@@ -81,7 +81,7 @@
 	::Reforged.Entities.editEntity("BanditPoacher",
 		null,	// In Vanilla the BanditPoacher spawnlist entry is called "BanditMarksmanLOW", so we cant adjust those stats here
 		{
-			XP = 120, // Reforged: 150; Vanilla 175
+			XP = 120 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 150; Vanilla 175
 			Hitpoints = 55, // Reforged: 55; Vanilla: 60
 			Bravery = 40, // Reforged: 40
 			Stamina = 80, // Reforged: 95
@@ -109,7 +109,7 @@
 			Strength = 20, 	// Reforged: 18; Vanilla: 15
 		},
 		{
-			XP = 200, // Reforged: 225; Vanilla 225
+			XP = 200 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 225; Vanilla 225
 			Hitpoints = 65, // Vanilla: 60
 			Bravery = 50, // Reforged: 55; Vanilla 50
 			Stamina = 115, // Reforged: 105; Vanilla: 115
@@ -129,7 +129,7 @@
 			Strength = 35, 	// Reforged: 30
 		},
 		{
-			XP = 350, // Reforged: 275
+			XP = 350 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 275
 			Hitpoints = 70, // Reforged: 65
 			Bravery = 55, // Reforged: 55
 			Stamina = 130, // Reforged: 115
@@ -151,7 +151,7 @@
 			Strength = 18, 	// Reforged: 20
 		},
 		{
-			XP = 180, // Reforged: 200
+			XP = 180 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 200
 			Hitpoints = 110, // Reforged: 110
 			Bravery = 60, // Reforged: 60
 			Stamina = 120, // Reforged: 115
@@ -170,7 +170,7 @@
 			Strength = 27, 	// Reforged: 28
 		},
 		{
-			XP = 270, // Reforged: 250
+			XP = 270 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 250
 			Hitpoints = 130, // Reforged: 130
 			Bravery = 70, // Reforged: 70
 			Stamina = 120, // Reforged: 115
@@ -192,7 +192,7 @@
 			TitleList = null,
 		},
 		{
-			XP = 400, // Reforged: 300
+			XP = 400 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 300
 			Hitpoints = 150, // Reforged: 150
 			Bravery = 80, // Reforged: 80
 			Stamina = 140, // Reforged: 125
@@ -214,7 +214,7 @@
 			Row = 1,		// Reforged: 0
 		},
 		{
-			XP = 180, // Reforged: 200
+			XP = 180 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 200
 			Hitpoints = 60, // Reforged: 60
 			Bravery = 40, // Reforged: 45
 			Stamina = 100, // Reforged: 100
@@ -235,7 +235,7 @@
 			Row = 1,		// Reforged: 0
 		},
 		{
-			XP = 270, // Reforged: 250
+			XP = 270 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 250
 			Hitpoints = 65, // Reforged: 70
 			Bravery = 50, // Reforged: 55
 			Stamina = 110, // Reforged: 110
@@ -259,7 +259,7 @@
 			TitleList = null,
 		},
 		{
-			XP = 400, // Reforged: 300
+			XP = 400 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 300
 			Hitpoints = 70, // Reforged: 70
 			Bravery = 60, // Reforged: 60
 			Stamina = 120, // Reforged: 120
@@ -316,7 +316,7 @@
 // scripts/entity/tactical/enemies/bandit_leader
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.BanditLeader.XP = 500;
+	::Const.Tactical.Actor.BanditLeader.XP = 500 * ::Hardened.Global.FactionExperience.Brigands;
 	::Const.Tactical.Actor.BanditLeader.ActionPoints = 9;
 	::Const.Tactical.Actor.BanditLeader.Hitpoints = 120;
 	::Const.Tactical.Actor.BanditLeader.Bravery = 100;
@@ -331,7 +331,7 @@
 // scripts/entity/tactical/enemies/rf_bandit_baron
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_BanditBaron.XP = 800;
+	::Const.Tactical.Actor.RF_BanditBaron.XP = 800 * ::Hardened.Global.FactionExperience.Brigands;
 	::Const.Tactical.Actor.RF_BanditBaron.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_BanditBaron.Hitpoints = 150;
 	::Const.Tactical.Actor.RF_BanditBaron.Bravery = 130;

@@ -1,7 +1,7 @@
 // scripts/entity/tactical/humans/barbarian_thrall
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.BarbarianThrall.XP = 225;
+	::Const.Tactical.Actor.BarbarianThrall.XP = 150 * ::Hardened.Global.FactionExperience.Barbarians;
 	::Const.Tactical.Actor.BarbarianThrall.ActionPoints = 9;
 	::Const.Tactical.Actor.BarbarianThrall.Hitpoints = 80;
 	::Const.Tactical.Actor.BarbarianThrall.Bravery = 70;
@@ -16,7 +16,7 @@
 // scripts/entity/tactical/humans/barbarian_beastmaster
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.BarbarianBeastmaster.XP = 300;
+	::Const.Tactical.Actor.BarbarianBeastmaster.XP = 200 * ::Hardened.Global.FactionExperience.Barbarians;
 	::Const.Tactical.Actor.BarbarianBeastmaster.ActionPoints = 9;
 	::Const.Tactical.Actor.BarbarianBeastmaster.Hitpoints = 70;
 	::Const.Tactical.Actor.BarbarianBeastmaster.Bravery = 90;
@@ -31,7 +31,7 @@
 // scripts/entity/tactical/humans/barbarian_drummer
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.BarbarianDrummer.XP = 450;
+	::Const.Tactical.Actor.BarbarianDrummer.XP = 300 * ::Hardened.Global.FactionExperience.Barbarians;
 	::Const.Tactical.Actor.BarbarianDrummer.ActionPoints = 9;
 	::Const.Tactical.Actor.BarbarianDrummer.Hitpoints = 90;
 	::Const.Tactical.Actor.BarbarianDrummer.Bravery = 80;
@@ -46,7 +46,7 @@
 // scripts/entity/tactical/humans/barbarian_marauder
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.BarbarianMarauder.XP = 450;
+	::Const.Tactical.Actor.BarbarianMarauder.XP = 300 * ::Hardened.Global.FactionExperience.Barbarians;
 	::Const.Tactical.Actor.BarbarianMarauder.ActionPoints = 9;
 	::Const.Tactical.Actor.BarbarianMarauder.Hitpoints = 120;
 	::Const.Tactical.Actor.BarbarianMarauder.Bravery = 80;
@@ -61,7 +61,7 @@
 // scripts/entity/tactical/humans/barbarian_champion
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.BarbarianChampion.XP = 750;
+	::Const.Tactical.Actor.BarbarianChampion.XP = 500 * ::Hardened.Global.FactionExperience.Barbarians;
 	::Const.Tactical.Actor.BarbarianChampion.ActionPoints = 9;
 	::Const.Tactical.Actor.BarbarianChampion.Hitpoints = 150;
 	::Const.Tactical.Actor.BarbarianChampion.Bravery = 90;
@@ -76,7 +76,7 @@
 // scripts/entity/tactical/humans/barbarian_chosen
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.BarbarianChosen.XP = 1200;
+	::Const.Tactical.Actor.BarbarianChosen.XP = 800 * ::Hardened.Global.FactionExperience.Barbarians;
 	::Const.Tactical.Actor.BarbarianChosen.ActionPoints = 9;
 	::Const.Tactical.Actor.BarbarianChosen.Hitpoints = 150;
 	::Const.Tactical.Actor.BarbarianChosen.Bravery = 110;
@@ -91,7 +91,7 @@
 // scripts/entity/tactical/humans/barbarian_madman
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.BarbarianMadman.XP = 1200;
+	::Const.Tactical.Actor.BarbarianMadman.XP = 800 * ::Hardened.Global.FactionExperience.Barbarians;
 	::Const.Tactical.Actor.BarbarianMadman.ActionPoints = 9;
 	::Const.Tactical.Actor.BarbarianMadman.Hitpoints = 160;
 	::Const.Tactical.Actor.BarbarianMadman.Bravery = 100;

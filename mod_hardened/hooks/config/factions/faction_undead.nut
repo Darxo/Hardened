@@ -7,7 +7,7 @@
 			Variant = 0,	// Reforged: 0; Vanilla: 1
 		},
 		{
-			XP = 600, // Reforged: 350
+			XP = 400 * ::Hardened.Global.FactionExperience.Skeletons, 	// Reforged: 350
 			Hitpoints = 75, // Reforged: 75
 			Bravery = 90, // Reforged: 90
 			Stamina = 200, // Reforged: 100
@@ -37,7 +37,7 @@
 			Variant = 2,	// Reforged: 1
 		},
 		{
-			XP = 900, // Reforged: 450
+			XP = 600 * ::Hardened.Global.FactionExperience.Skeletons, // Reforged: 450
 			Hitpoints = 90, // Reforged: 90
 			Bravery = 100, // Reforged: 100
 			Stamina = 200, // Reforged: 100
@@ -68,7 +68,7 @@
 			Cost = 80,		// Reforged: 50;
 		},
 		{
-			XP = 1200, // Reforged: 550
+			XP = 800 * ::Hardened.Global.FactionExperience.Zombies, // Reforged: 550
 			Hitpoints = 64, // Reforged: 1
 			Bravery = 100, // Reforged: 100
 			Stamina = 100, // Reforged: 100
@@ -89,7 +89,7 @@
 			Cost = 50,		// Reforged: 20;
 		},
 		{
-			XP = 750, // Reforged: 400
+			XP = 500 * ::Hardened.Global.FactionExperience.Zombies, // Reforged: 400
 			ActionPoints = 12,	// Reforged: 12
 			Hitpoints = 150, // Reforged: 150
 			Bravery = 90, // Reforged: 90
@@ -111,7 +111,7 @@
 			Cost = 20,		// Reforged: 12;
 		},
 		{
-			XP = 300, // Reforged: 200
+			XP = 200 * ::Hardened.Global.FactionExperience.Zombies, // Reforged: 200
 			ActionPoints = 7,	// Reforged: 6
 			Hitpoints = 200, // Reforged: 200
 			Bravery = 100, // Reforged: 100
@@ -131,7 +131,7 @@
 			Cost = 50,		// Reforged: 25;
 		},
 		{
-			XP = 750, // Reforged: 350
+			XP = 500 * ::Hardened.Global.FactionExperience.Zombies, // Reforged: 350
 			ActionPoints = 7,	// Reforged: 7
 			Hitpoints = 300, // Reforged: 300
 			Bravery = 90, // Reforged: 90
@@ -151,7 +151,7 @@
 			Cost = 40,		// Reforged: 20;
 		},
 		{
-			XP = 600, // Reforged: 300
+			XP = 400 * ::Hardened.Global.FactionExperience.Zombies, // Reforged: 300
 			ActionPoints = 7,	// Reforged: 7
 			Hitpoints = 350, // Reforged: 350
 			Bravery = 90, // Reforged: 90
@@ -171,7 +171,7 @@
 			Cost = 80,		// Reforged: 34;
 		},
 		{
-			XP = 1200, // Reforged: 450
+			XP = 800 * ::Hardened.Global.FactionExperience.Zombies, // Reforged: 450
 			ActionPoints = 7,	// Reforged: 7
 			Hitpoints = 600, // Reforged: 600
 			Bravery = 130, // Reforged: 130
@@ -188,7 +188,7 @@
 // scripts/entity/tactical/enemies/skeleton_light
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.SkeletonLight.XP = 240;
+	::Const.Tactical.Actor.SkeletonLight.XP = 160 * ::Hardened.Global.FactionExperience.Skeletons;
 	::Const.Tactical.Actor.SkeletonLight.ActionPoints = 9;
 	::Const.Tactical.Actor.SkeletonLight.Hitpoints = 55;
 	::Const.Tactical.Actor.SkeletonLight.Bravery = 50;
@@ -200,25 +200,10 @@
 	::Const.Tactical.Actor.SkeletonLight.Initiative = 50;
 }
 
-// scripts/entity/tactical/enemies/rf_skeleton_light_elite_polearm
-::Const.Tactical.Actor.HD_SkeletonLightElitePolearm <- {
-	XP = 330,
-	ActionPoints = 9,
-	Hitpoints = 55,
-	Bravery = 60,
-	Stamina = 200,
-	MeleeSkill = 70,
-	RangedSkill = 0,
-	MeleeDefense = 5,
-	RangedDefense = 0,
-	Initiative = 40,
-	Armor = [0, 0],
-};
-
 // scripts/entity/tactical/enemies/skeleton_medium
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.SkeletonMedium.XP = 420;
+	::Const.Tactical.Actor.SkeletonMedium.XP = 280 * ::Hardened.Global.FactionExperience.Skeletons;
 	::Const.Tactical.Actor.SkeletonMedium.ActionPoints = 9;
 	::Const.Tactical.Actor.SkeletonMedium.Hitpoints = 65;
 	::Const.Tactical.Actor.SkeletonMedium.Bravery = 70;
@@ -232,7 +217,7 @@
 
 // scripts/entity/tactical/enemies/skeleton_medium_polearm
 ::Const.Tactical.Actor.HD_SkeletonMediumPolearm <- {
-	XP = 480,
+	XP = 320 * ::Hardened.Global.FactionExperience.Skeletons,
 	ActionPoints = 9,
 	Hitpoints = 65,
 	Bravery = 70,
@@ -248,7 +233,7 @@
 // scripts/entity/tactical/enemies/rf_skeleton_decanus
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_SkeletonDecanus.XP = 600;
+	::Const.Tactical.Actor.RF_SkeletonDecanus.XP = 400 * ::Hardened.Global.FactionExperience.Skeletons;
 	::Const.Tactical.Actor.RF_SkeletonDecanus.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_SkeletonDecanus.Hitpoints = 70;
 	::Const.Tactical.Actor.RF_SkeletonDecanus.Bravery = 80;
@@ -263,7 +248,7 @@
 // scripts/entity/tactical/enemies/vampire
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Vampire.XP = 750;
+	::Const.Tactical.Actor.Vampire.XP = 500 * ::Hardened.Global.FactionExperience.Skeletons;
 	::Const.Tactical.Actor.Vampire.ActionPoints = 9;
 	::Const.Tactical.Actor.Vampire.Hitpoints = 225;
 	::Const.Tactical.Actor.Vampire.Bravery = 50;
@@ -278,7 +263,7 @@
 // scripts/entity/tactical/enemies/rf_skeleton_medium_elite
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_SkeletonMediumElite.XP = 675;
+	::Const.Tactical.Actor.RF_SkeletonMediumElite.XP = 450 * ::Hardened.Global.FactionExperience.Skeletons;
 	::Const.Tactical.Actor.RF_SkeletonMediumElite.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_SkeletonMediumElite.Hitpoints = 75;
 	::Const.Tactical.Actor.RF_SkeletonMediumElite.Bravery = 80;
@@ -292,7 +277,7 @@
 
 // scripts/entity/tactical/enemies/rf_skeleton_medium_elite_polearm
 ::Const.Tactical.Actor.HD_SkeletonMediumElitePolearm <- {
-	XP = 675,
+	XP = 450 * ::Hardened.Global.FactionExperience.Skeletons,
 	ActionPoints = 9,
 	Hitpoints = 75,
 	Bravery = 80,
@@ -308,7 +293,7 @@
 // scripts/entity/tactical/enemies/skeleton_priest
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.SkeletonPriest.XP = 750;
+	::Const.Tactical.Actor.SkeletonPriest.XP = 500 * ::Hardened.Global.FactionExperience.Skeletons;
 	::Const.Tactical.Actor.SkeletonPriest.ActionPoints = 9;
 	::Const.Tactical.Actor.SkeletonPriest.Hitpoints = 65;
 	::Const.Tactical.Actor.SkeletonPriest.Bravery = 130;
@@ -323,7 +308,7 @@
 // scripts/entity/tactical/enemies/rf_skeleton_centurion
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_SkeletonCenturion.XP = 900;
+	::Const.Tactical.Actor.RF_SkeletonCenturion.XP = 600 * ::Hardened.Global.FactionExperience.Skeletons;
 	::Const.Tactical.Actor.RF_SkeletonCenturion.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_SkeletonCenturion.Hitpoints = 80;
 	::Const.Tactical.Actor.RF_SkeletonCenturion.Bravery = 90;
@@ -337,7 +322,7 @@
 
 // scripts/entity/tactical/enemies/skeleton_heavy_bodyguard
 ::Const.Tactical.Actor.HD_SkeletonHeavyBodyguard <- {
-	XP = 900,
+	XP = 600 * ::Hardened.Global.FactionExperience.Skeletons,
 	ActionPoints = 9,
 	Hitpoints = 90,
 	Bravery = 100,
@@ -353,7 +338,7 @@
 // scripts/entity/tactical/enemies/rf_skeleton_legatus
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_SkeletonLegatus.XP = 1200;
+	::Const.Tactical.Actor.RF_SkeletonLegatus.XP = 800 * ::Hardened.Global.FactionExperience.Skeletons;
 	::Const.Tactical.Actor.RF_SkeletonLegatus.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_SkeletonLegatus.Hitpoints = 90;
 	::Const.Tactical.Actor.RF_SkeletonLegatus.Bravery = 100;
@@ -368,7 +353,7 @@
 // scripts/entity/tactical/enemies/rf_vampire_lord
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_VampireLord.XP = 1500;
+	::Const.Tactical.Actor.RF_VampireLord.XP = 1000 * ::Hardened.Global.FactionExperience.Skeletons;
 	::Const.Tactical.Actor.RF_VampireLord.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_VampireLord.Hitpoints = 350;
 	::Const.Tactical.Actor.RF_VampireLord.Bravery = 100;
@@ -384,7 +369,7 @@
 // scripts/entity/tactical/enemies/zombie_bodyguard
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Zombie.XP = 180;				// Vanilla: 100
+	::Const.Tactical.Actor.Zombie.XP = 100 * ::Hardened.Global.FactionExperience.Zombies;		// Vanilla: 100
 	::Const.Tactical.Actor.Zombie.ActionPoints = 6;		// Vanilla 6
 	::Const.Tactical.Actor.Zombie.Hitpoints = 90;		// Vanilla: 100
 	::Const.Tactical.Actor.Zombie.Bravery = 100;		// Vanilla: 100
@@ -399,7 +384,7 @@
 // scripts/entity/tactical/enemies/zombie_player
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.ZombiePlayer.XP = 150;				// Vanilla: 150
+	::Const.Tactical.Actor.ZombiePlayer.XP = 100 * ::Hardened.Global.FactionExperience.Zombies;				// Vanilla: 150
 	::Const.Tactical.Actor.ZombiePlayer.ActionPoints = 6;		// Vanilla 6
 	::Const.Tactical.Actor.ZombiePlayer.Hitpoints = 120;		// Vanilla: 130
 	::Const.Tactical.Actor.ZombiePlayer.Bravery = 100;			// Vanilla: 100
@@ -415,7 +400,7 @@
 // scripts/entity/tactical/enemies/zombie_yeoman_bodyguard
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.ZombieYeoman.XP = 324;				// Vanilla: 150
+	::Const.Tactical.Actor.ZombieYeoman.XP = 180 * ::Hardened.Global.FactionExperience.Zombies;;				// Vanilla: 150
 	::Const.Tactical.Actor.ZombieYeoman.ActionPoints = 6;		// Vanilla: 6
 	::Const.Tactical.Actor.ZombieYeoman.Hitpoints = 120;		// Vanilla: 130
 	::Const.Tactical.Actor.ZombieYeoman.Bravery = 100;			// Vanilla: 100
@@ -430,7 +415,7 @@
 // scripts/entity/tactical/enemies/zombie_nomad
 // scripts/entity/tactical/enemies/zombie_nomad_bodyguard
 ::Const.Tactical.Actor.HD_ZombieNomad <- {
-	XP = 360,
+	XP = 200 * ::Hardened.Global.FactionExperience.Zombies,
 	ActionPoints = 6,
 	Hitpoints = 120,
 	Bravery = 100,
@@ -446,7 +431,7 @@
 // scripts/entity/tactical/enemies/ghost
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Ghost.XP = 450;
+	::Const.Tactical.Actor.Ghost.XP = 250 * ::Hardened.Global.FactionExperience.Zombies;
 	::Const.Tactical.Actor.Ghost.ActionPoints = 9;
 	::Const.Tactical.Actor.Ghost.Hitpoints = 1;
 	::Const.Tactical.Actor.Ghost.Bravery = 130;
@@ -462,7 +447,7 @@
 // scripts/entity/tactical/enemies/zombie_knight_bodyguard
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.ZombieKnight.XP = 540;				// Vanilla: 250
+	::Const.Tactical.Actor.ZombieKnight.XP = 300 * ::Hardened.Global.FactionExperience.Zombies;		// Vanilla: 250
 	::Const.Tactical.Actor.ZombieKnight.ActionPoints = 7;		// Vanilla: 7
 	::Const.Tactical.Actor.ZombieKnight.Hitpoints = 150;		// Vanilla: 180
 	::Const.Tactical.Actor.ZombieKnight.Bravery = 100;			// Vanilla: 130
@@ -477,7 +462,7 @@
 // scripts/entity/tactical/enemies/necromancer
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Necromancer.XP = 810;
+	::Const.Tactical.Actor.Necromancer.XP = 450 * ::Hardened.Global.FactionExperience.Zombies;
 	::Const.Tactical.Actor.Necromancer.ActionPoints = 7;
 	::Const.Tactical.Actor.Necromancer.Hitpoints = 50;
 	::Const.Tactical.Actor.Necromancer.Bravery = 120;
@@ -496,22 +481,18 @@
 // scripts/entity/tactical/enemies/zombie_betrayer
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.ZombieBetrayer.XP = 900;				// Vanilla: 350
-	::Const.Tactical.Actor.ZombieBetrayer.ActionPoints = 8;		// Vanilla: 8
-	::Const.Tactical.Actor.ZombieBetrayer.Hitpoints = 200;		// Vanilla: 200
+	::Const.Tactical.Actor.ZombieBetrayer.XP = 500 * ::Hardened.Global.FactionExperience.Zombies;		// Vanilla: 350
 	::Const.Tactical.Actor.ZombieBetrayer.Bravery = 100;		// Vanilla: 110
 	::Const.Tactical.Actor.ZombieBetrayer.Stamina = 200;		// Vanilla: 100
-	::Const.Tactical.Actor.ZombieBetrayer.MeleeSkill = 80;		// Vanilla: 80
-	::Const.Tactical.Actor.ZombieBetrayer.RangedSkill = 0;		// Vanilla: 0
-	::Const.Tactical.Actor.ZombieBetrayer.MeleeDefense = 5;		// Vanilla: 5
-	::Const.Tactical.Actor.ZombieBetrayer.RangedDefense = 5;	// Vanilla: 0
+	::Const.Tactical.Actor.ZombieBetrayer.MeleeDefense = 20;	// Vanilla: 5
+	::Const.Tactical.Actor.ZombieBetrayer.RangedDefense = 20;	// Vanilla: 0
 	::Const.Tactical.Actor.ZombieBetrayer.Initiative = 70;		// Vanilla: 60
 }
 
 // scripts/entity/tactical/enemies/zombie_boss
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.ZombieBoss.XP = 1620;			// Vanilla: 500
+	::Const.Tactical.Actor.ZombieBoss.XP = 900 * ::Hardened.Global.FactionExperience.Zombies;	// Vanilla: 500
 	::Const.Tactical.Actor.ZombieBoss.ActionPoints = 7;		// Vanilla: 7
 	::Const.Tactical.Actor.ZombieBoss.Hitpoints = 300;		// Vanilla: 500
 	::Const.Tactical.Actor.ZombieBoss.Bravery = 110;		// Vanilla: 110

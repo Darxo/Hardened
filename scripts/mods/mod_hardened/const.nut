@@ -45,3 +45,13 @@
 	Medium = 2,
 	Large = 10,
 }
+
+// These are the five tiers for experience mults that can be assigned to any faction
+// Tier 1 = bad for the player; Tier 5 = good for the player
+::Hardened.Const.ExperienceTierMult <- {
+	Tier1 = 0.5,
+	Tier2 = 1.0,
+	Tier3 = 1.2,
+	Tier4 = 1.5,
+	Tier5 = 1.8,
+};

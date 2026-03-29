@@ -7,7 +7,7 @@
 // scripts/entity/tactical/humans/peasant_armed
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Peasant.XP = 40;
+	::Const.Tactical.Actor.Peasant.XP = 40 * ::Hardened.Global.FactionExperience.Civilians;
 	::Const.Tactical.Actor.Peasant.ActionPoints = 9;
 	::Const.Tactical.Actor.Peasant.Hitpoints = 55;
 	::Const.Tactical.Actor.Peasant.Bravery = 30;
@@ -22,7 +22,7 @@
 // scripts/entity/tactical/humans/caravan_hand
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.CaravanHand.XP = 100;
+	::Const.Tactical.Actor.CaravanHand.XP = 100 * ::Hardened.Global.FactionExperience.Caravans;
 	::Const.Tactical.Actor.CaravanHand.ActionPoints = 9;
 	::Const.Tactical.Actor.CaravanHand.Hitpoints = 60;
 	::Const.Tactical.Actor.CaravanHand.Bravery = 30;
@@ -37,7 +37,7 @@
 // scripts/entity/tactical/humans/militia
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Militia.XP = 140;
+	::Const.Tactical.Actor.Militia.XP = 140 * ::Hardened.Global.FactionExperience.Militia;
 	::Const.Tactical.Actor.Militia.ActionPoints = 9;
 	::Const.Tactical.Actor.Militia.Hitpoints = 60;
 	::Const.Tactical.Actor.Militia.Bravery = 70;
@@ -52,7 +52,7 @@
 // scripts/entity/tactical/humans/militia_ranged
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.MilitiaRanged.XP = 140;
+	::Const.Tactical.Actor.MilitiaRanged.XP = 140 * ::Hardened.Global.FactionExperience.Militia;
 	::Const.Tactical.Actor.MilitiaRanged.ActionPoints = 9;
 	::Const.Tactical.Actor.MilitiaRanged.Hitpoints = 50;
 	::Const.Tactical.Actor.MilitiaRanged.Bravery = 70;
@@ -70,7 +70,7 @@
 // scripts/entity/tactical/humans/caravan_guard
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.CaravanGuard.XP = 200;
+	::Const.Tactical.Actor.CaravanGuard.XP = 200 * ::Hardened.Global.FactionExperience.Caravans;
 	::Const.Tactical.Actor.CaravanGuard.ActionPoints = 9;
 	::Const.Tactical.Actor.CaravanGuard.Hitpoints = 70;
 	::Const.Tactical.Actor.CaravanGuard.Bravery = 70;
@@ -100,7 +100,7 @@
 // scripts/entity/tactical/humans/militia_veteran
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.MilitiaVeteran.XP = 250;
+	::Const.Tactical.Actor.MilitiaVeteran.XP = 250 * ::Hardened.Global.FactionExperience.Militia;
 	::Const.Tactical.Actor.MilitiaVeteran.ActionPoints = 9;
 	::Const.Tactical.Actor.MilitiaVeteran.Hitpoints = 80;
 	::Const.Tactical.Actor.MilitiaVeteran.Bravery = 70;
@@ -115,7 +115,7 @@
 // scripts/entity/tactical/humans/bounty_hunter
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.BountyHunter.XP = 300;				// Vanilla: 300
+	::Const.Tactical.Actor.BountyHunter.XP = 300 * ::Hardened.Global.FactionExperience.Mercenaries;		// Vanilla: 300
 	::Const.Tactical.Actor.BountyHunter.ActionPoints = 9;
 	::Const.Tactical.Actor.BountyHunter.Hitpoints = 80;			// Vanilla: 80
 	::Const.Tactical.Actor.BountyHunter.Bravery = 70;			// Vanilla: 65
@@ -130,7 +130,7 @@
 // scripts/entity/tactical/humans/bounty_hunter_ranged
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.BountyHunterRanged.XP = 300;				// Vanilla: 250
+	::Const.Tactical.Actor.BountyHunterRanged.XP = 300 * ::Hardened.Global.FactionExperience.Mercenaries;		// Vanilla: 250
 	::Const.Tactical.Actor.BountyHunterRanged.ActionPoints = 9;
 	::Const.Tactical.Actor.BountyHunterRanged.Hitpoints = 70;		// Vanilla: 60
 	::Const.Tactical.Actor.BountyHunterRanged.Bravery = 65;			// Vanilla: 65
@@ -148,7 +148,7 @@
 // scripts/entity/tactical/humans/militia_captain
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.MilitiaCaptain.XP = 350;				// Vanilla: 200; Reforged: 250
+	::Const.Tactical.Actor.MilitiaCaptain.XP = 350 * ::Hardened.Global.FactionExperience.Militia;		// Vanilla: 200; Reforged: 250
 	::Const.Tactical.Actor.MilitiaCaptain.ActionPoints = 9;
 	::Const.Tactical.Actor.MilitiaCaptain.Hitpoints = 90;		// Vanilla: 70; Reforged: 80
 	::Const.Tactical.Actor.MilitiaCaptain.Bravery = 85;			// Vanilla: 70
@@ -163,7 +163,7 @@
 // scripts/entity/tactical/humans/mercenary
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Mercenary.XP = 350;
+	::Const.Tactical.Actor.Mercenary.XP = 350 * ::Hardened.Global.FactionExperience.Mercenaries;
 	::Const.Tactical.Actor.Mercenary.ActionPoints = 9;
 	::Const.Tactical.Actor.Mercenary.Hitpoints = 90;
 	::Const.Tactical.Actor.Mercenary.Bravery = 70;
@@ -178,7 +178,7 @@
 // scripts/entity/tactical/humans/mercenary_ranged
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.MercenaryRanged.XP = 350;
+	::Const.Tactical.Actor.MercenaryRanged.XP = 350 * ::Hardened.Global.FactionExperience.Mercenaries;
 	::Const.Tactical.Actor.MercenaryRanged.ActionPoints = 9;
 	::Const.Tactical.Actor.MercenaryRanged.Hitpoints = 75;
 	::Const.Tactical.Actor.MercenaryRanged.Bravery = 70;
@@ -196,7 +196,7 @@
 // scripts/entity/tactical/humans/hedge_knight
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.HedgeKnight.XP = 600;
+	::Const.Tactical.Actor.HedgeKnight.XP = 600 * ::Hardened.Global.FactionExperience.Brigands;
 	::Const.Tactical.Actor.HedgeKnight.ActionPoints = 9;
 	::Const.Tactical.Actor.HedgeKnight.Hitpoints = 150;
 	::Const.Tactical.Actor.HedgeKnight.Bravery = 90;
@@ -211,7 +211,7 @@
 // scripts/entity/tactical/humans/master_archer
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.MasterArcher.XP = 600;
+	::Const.Tactical.Actor.MasterArcher.XP = 600 * ::Hardened.Global.FactionExperience.Brigands;
 	::Const.Tactical.Actor.MasterArcher.ActionPoints = 9;
 	::Const.Tactical.Actor.MasterArcher.Hitpoints = 80;
 	::Const.Tactical.Actor.MasterArcher.Bravery = 70;
@@ -229,7 +229,7 @@
 // scripts/entity/tactical/humans/swordmaster
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Swordmaster.XP = 800;
+	::Const.Tactical.Actor.Swordmaster.XP = 800 * ::Hardened.Global.FactionExperience.Brigands;
 	::Const.Tactical.Actor.Swordmaster.ActionPoints = 9;
 	::Const.Tactical.Actor.Swordmaster.Hitpoints = 80;
 	::Const.Tactical.Actor.Swordmaster.Bravery = 90;

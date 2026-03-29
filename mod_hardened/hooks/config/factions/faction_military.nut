@@ -1,7 +1,7 @@
 // scripts/entity/tactical/humans/noble_billman
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Billman.XP = 288;
+	::Const.Tactical.Actor.Billman.XP = 240 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.Billman.ActionPoints = 9;
 	::Const.Tactical.Actor.Billman.Hitpoints = 70;
 	::Const.Tactical.Actor.Billman.Bravery = 60;
@@ -16,7 +16,7 @@
 // scripts/entity/tactical/humans/noble_arbalester
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Arbalester.XP = 288;
+	::Const.Tactical.Actor.Arbalester.XP = 240 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.Arbalester.ActionPoints = 9;
 	::Const.Tactical.Actor.Arbalester.Hitpoints = 70;
 	::Const.Tactical.Actor.Arbalester.Bravery = 60;
@@ -34,7 +34,7 @@
 // scripts/entity/tactical/humans/noble_footman
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Footman.XP = 288;
+	::Const.Tactical.Actor.Footman.XP = 240 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.Footman.ActionPoints = 9;
 	::Const.Tactical.Actor.Footman.Hitpoints = 85;
 	::Const.Tactical.Actor.Footman.Bravery = 65;
@@ -49,7 +49,7 @@
 // scripts/entity/tactical/humans/rf_squire
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_Squire.XP = 420;
+	::Const.Tactical.Actor.RF_Squire.XP = 350 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.RF_Squire.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_Squire.Hitpoints = 70;
 	::Const.Tactical.Actor.RF_Squire.Bravery = 60;
@@ -64,7 +64,7 @@
 // scripts/entity/tactical/humans/standard_bearer
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.StandardBearer.XP = 360;
+	::Const.Tactical.Actor.StandardBearer.XP = 300 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.StandardBearer.ActionPoints = 9;
 	::Const.Tactical.Actor.StandardBearer.Hitpoints = 70;
 	::Const.Tactical.Actor.StandardBearer.Bravery = 110;
@@ -79,7 +79,7 @@
 // scripts/entity/tactical/humans/noble_sergeant
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Sergeant.XP = 420;
+	::Const.Tactical.Actor.Sergeant.XP = 350 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.Sergeant.ActionPoints = 9;
 	::Const.Tactical.Actor.Sergeant.Hitpoints = 120;
 	::Const.Tactical.Actor.Sergeant.Bravery = 90;
@@ -94,7 +94,7 @@
 // scripts/entity/tactical/humans/rf_arbalester_heavy
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_ArbalesterHeavy.XP = 480;
+	::Const.Tactical.Actor.RF_ArbalesterHeavy.XP = 400 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.RF_ArbalesterHeavy.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_ArbalesterHeavy.Hitpoints = 80;
 	::Const.Tactical.Actor.RF_ArbalesterHeavy.Bravery = 60;
@@ -112,7 +112,7 @@
 // scripts/entity/tactical/humans/rf_billman_heavy
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_BillmanHeavy.XP = 480;
+	::Const.Tactical.Actor.RF_BillmanHeavy.XP = 400 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.RF_BillmanHeavy.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_BillmanHeavy.Hitpoints = 80;
 	::Const.Tactical.Actor.RF_BillmanHeavy.Bravery = 70;
@@ -127,7 +127,7 @@
 // scripts/entity/tactical/humans/rf_footman_heavy
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_FootmanHeavy.XP = 480;
+	::Const.Tactical.Actor.RF_FootmanHeavy.XP = 400 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.RF_FootmanHeavy.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_FootmanHeavy.Hitpoints = 100;
 	::Const.Tactical.Actor.RF_FootmanHeavy.Bravery = 75;
@@ -142,7 +142,7 @@
 // scripts/entity/tactical/humans/noble_greatsword
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Greatsword.XP = 600;
+	::Const.Tactical.Actor.Greatsword.XP = 500 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.Greatsword.ActionPoints = 9;
 	::Const.Tactical.Actor.Greatsword.Hitpoints = 90;
 	::Const.Tactical.Actor.Greatsword.Bravery = 70;
@@ -157,7 +157,7 @@
 // scripts/entity/tactical/humans/rf_fencer
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_Fencer.XP = 600;
+	::Const.Tactical.Actor.RF_Fencer.XP = 500 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.RF_Fencer.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_Fencer.Hitpoints = 55;
 	::Const.Tactical.Actor.RF_Fencer.Bravery = 70;
@@ -172,7 +172,7 @@
 // scripts/entity/tactical/humans/rf_man_at_arms
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_ManAtArms.XP = 600;
+	::Const.Tactical.Actor.RF_ManAtArms.XP = 500 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.RF_ManAtArms.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_ManAtArms.Hitpoints = 100;
 	::Const.Tactical.Actor.RF_ManAtArms.Bravery = 70;
@@ -187,7 +187,7 @@
 // scripts/entity/tactical/humans/rf_herald
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_Herald.XP = 540;
+	::Const.Tactical.Actor.RF_Herald.XP = 450 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.RF_Herald.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_Herald.Hitpoints = 80;
 	::Const.Tactical.Actor.RF_Herald.Bravery = 150;
@@ -202,7 +202,7 @@
 // scripts/entity/tactical/humans/rf_heralds_bodyguard
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_HeraldsBodyguard.XP = 540;
+	::Const.Tactical.Actor.RF_HeraldsBodyguard.XP = 450 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.RF_HeraldsBodyguard.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_HeraldsBodyguard.Hitpoints = 120;
 	::Const.Tactical.Actor.RF_HeraldsBodyguard.Bravery = 90;
@@ -217,7 +217,7 @@
 // scripts/entity/tactical/humans/rf_marshal
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_Marshal.XP = 720;
+	::Const.Tactical.Actor.RF_Marshal.XP = 600 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.RF_Marshal.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_Marshal.Hitpoints = 150;
 	::Const.Tactical.Actor.RF_Marshal.Bravery = 120;
@@ -232,7 +232,7 @@
 // scripts/entity/tactical/humans/knight
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.Knight.XP = 840;
+	::Const.Tactical.Actor.Knight.XP = 700 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.Knight.ActionPoints = 9;
 	::Const.Tactical.Actor.Knight.Hitpoints = 150;
 	::Const.Tactical.Actor.Knight.Bravery = 70;
@@ -247,7 +247,7 @@
 // scripts/entity/tactical/humans/rf_knight_anointed
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.RF_KnightAnointed.XP = 1200;
+	::Const.Tactical.Actor.RF_KnightAnointed.XP = 1000 * ::Hardened.Global.FactionExperience.Nobles;
 	::Const.Tactical.Actor.RF_KnightAnointed.ActionPoints = 9;
 	::Const.Tactical.Actor.RF_KnightAnointed.Hitpoints = 170;
 	::Const.Tactical.Actor.RF_KnightAnointed.Bravery = 80;

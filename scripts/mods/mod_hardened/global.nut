@@ -1,3 +1,5 @@
+local experienceMult = ::Hardened.Const.ExperienceTierMult;
+
 {	// Variables
 	::MSU.Table.merge(::Hardened.Global, {
 	// Tactical
@@ -37,6 +39,28 @@
 			Slaves = 0.6,
 			Vampires = 1.4,
 			Zombies = 1.0,
+		},
+
+		// This is a global xp multiplier for each Faction
+		// Setting those to the same value would make each faction roughly equally rewarding in terms of XP
+		FactionExperience = {
+			Barbarians = experienceMult.Tier4,
+			Beasts = experienceMult.Tier4,
+			Brigands = experienceMult.Tier2,
+			Caravans = experienceMult.Tier2,
+			CityStates = experienceMult.Tier3,
+			Civilians = experienceMult.Tier1,
+			Goblins = experienceMult.Tier4,
+			Hexen = experienceMult.Tier4,
+			Mercenaries = experienceMult.Tier3,
+			Militia = experienceMult.Tier2,
+			Nobles = experienceMult.Tier3,
+			Nomads = experienceMult.Tier2,
+			Orcs = experienceMult.Tier5,
+			Skeletons = experienceMult.Tier4,
+			Slaves = experienceMult.Tier1,
+			Vampires = experienceMult.Tier4,
+			Zombies = experienceMult.Tier5,
 		},
 	});
 }
