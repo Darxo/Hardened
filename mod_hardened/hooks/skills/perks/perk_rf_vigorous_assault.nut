@@ -23,12 +23,17 @@
 	// Overwrite because swapping weapons no longer disables this perks effect
 	q.onPayForItemAction = @() function( _skill, _items ) {}
 
-	// Overwrite, because we only reset the effect when attacks are used
+	// Overwrite, because we only reset the effect when a valid skill was used
 	q.onAnySkillExecuted = @() function( _skill, _targetTile, _targetEntity, _forFree )
 	{
-		if (_skill.isAttack())
+		if (this.isSkillValid(_skill))
 		{
 			this.m.NumTilesMoved = 0;
 		}
+	}
+
+	q.isSkillValid = @() function( _skill )
+	{
+		return _skill.isAttack();
 	}
 });
