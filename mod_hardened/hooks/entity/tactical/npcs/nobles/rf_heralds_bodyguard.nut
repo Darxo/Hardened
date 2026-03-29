@@ -68,7 +68,9 @@
 		b.setValues(::Const.Tactical.Actor.RF_HeraldsBodyguard);
 
 		// Generic Effects
-		this.getSkills().add(::new("scripts/skills/special/rf_bodyguard"));
+		this.getSkills().add(::Reforged.new("scripts/skills/special/rf_bodyguard", function(o) {
+			o.m.Radius = 2;		// Reforged: 3
+		}));
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
