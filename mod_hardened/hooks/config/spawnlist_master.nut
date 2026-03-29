@@ -684,14 +684,6 @@
 	::Const.World.Spawn.Troops.SkeletonPriest.Strength = 50;
 }
 
-// scripts/entity/tactical/enemies/zombie_betrayer
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.ZombieBetrayer.Cost = 50;
-	::Const.World.Spawn.Troops.ZombieBetrayer.Strength = 50;
-	::Const.World.Spawn.Troops.ZombieBetrayer.Variant = 2;	// Vanilla: 0
-}
-
 // scripts/entity/tactical/enemies/orc_warrior
 {
 	// Mandatory Entries
