@@ -28,6 +28,52 @@
 
 # Changelog
 
+1.11.0
+	- Now Requires Reforged 0.8.0 or later
+	- **Klagmutter** now cost 80 Resources (up from 50), have 64 Hitpoints (up from 1) and 90 Melee Skill (up from 80). They now deal 15-20 Damage (down from 15-25). They lose **Fearsome** and gain **Backstabber**
+	- **Hollenhund** now cost 50 Resources (up from 20) and have 30 Ranged Defense (down from 50). They now deal 15-20 Damage (down from 15-25)
+	- **Wiederganger Orc Young** now cost 20 Resources (up from 12) and have 55 Melee Skill (up from 50). They now have a 100% chance to resurrect (up from 66). They lose **Backstabber** and **Double Grip**
+	- **Wiederganger Orc Warrior** now cost 50 Resources (up from 25) and have 70 Melee Skill (up from 60). They now have a 100% chance to resurrect (up from 80). They lose **Backstabber** and **Double Grip**
+	- **Wiederganger Orc Berserker** now cost 40 Resources (up from 20) and have 70 Melee Skill (up from 60). They now have a 100% chance to resurrect (up from 80). They lose **Backstabber** and **Double Grip**
+	- **Wiederganger Orc Warlord** now cost 80 Resources (up from 34) and have 80 Melee Skill (up from 70). They now have a 100% chance to resurrect (up from 90). They lose **Backstabber**, **Double Grip** and all weapon perks. They gain **Formidable Approach** and **Death Dealer**
+	- **Barrowkin Thralls** now cost 25 Resources (up from 18)
+	- **Barrowkin Warriors** now cost 40 Resources (up from 35)
+	- **Barrowkin Huskarls** now cost 55 Resources (up from 45)
+	- **Barrowkin Heroes** now cost 80 Resources (up from 60)
+	- **Barrowkin Shamans** now cost 100 Resources (up from 60)
+	- **Draugr Barrows** now have 280 Resources (up from 200)
+	- **Draugr Crypts** now have 350 Resources (down from 400)
+	- **Draugr Fane** now have 420 Resources (down from 600)
+	- Tough Brigands and Balanced Brigands no longer share the same names
+	- Brigand Units now use the following names going forward:
+		- Balanced: **Thug** -> **Outlaw** (instead of Vandal) -> **Raider** -> **Highwayman**
+		- Tough: **Vandal** (instead of Pillager) -> **Pillager** (instead of Outlaw) -> **Marauder**
+		- Fast: **Scoundrel** (instead of Robber) -> **Robber** (instead of Bandit) -> **Killer**
+		- Ranged: **Poacher** -> **Marksman** -> **Sharpshooter**
+	- **Civilians** and **Slaves** grant 20% more Experience
+	- **Barbarians**, **Beasts**, **Goblins**, **Hexen**, **Skeletons** and **Vampires** now grant 7% less Experience
+	- **Orcs** and **Zombies** now grant 12% less Experience
+	- **Brigand Robber** now have 65 Hitpoints (down from 70)
+	- **Brigand Poacher** now have a cost of 12 (up from 10), 80 Stamina (down from 100) and 60 Ranged Skill (up from 50)
+	- **Brigand Marksman** now have a cost of 20 (down from 24) and lose **Bullseye**. They can now spawn with slightly worse armor
+	- **Brigand Sharpshooter** now have 60 Melee Skill (up from 55) and 15 Ranged Defense (down from 20)
+	- **Brigand Raider** now have 60 Ranged Skill (up from 55)
+	- **Ancient Auxiliary** now has a cost of 16 (up from 14), 55 Hitpoints (up from 45), 65 Melee Skill (up from 60) and 5 Melee Defense (up from 0)
+	- **Ancient Legionary** (Frontliner) now has a cost of 28 (down from 32). They lose **Shield Expert**
+	- **Undead Crypt** now have 200 Resources (down from 250) and drop 5-15 Tools (down from 8-20)
+	- **Necromancers Lairs** now have 250 Resources (up from 200) and drop 8-20 Tools (up from 5-15)
+	- **Anticipation** remains unchanged (Reforged revert has been reverted)
+	- **Feral Rage** is completely reworked: Gain 1 Rage Stack whenever you miss a Non-AoE Attack or get hit by an Attack from an enemy, up to a maximum of 4 Stacks. Lose all Rage Stacks when you hit with a Non-AoE Attack. Deal 25% more Damage with Non-AoE Attacks for each Rage Stack. While you have at least 4 Rage Stacks, become Immunt to Stuns and take 20% less Hitpoint Damage
+	- **Adrenaline** now costs 20 Fatigue (up from 15), just like in Reforged
+	- **Overwhelm**, **Fast Adaptation**, **Survival Instinct** **Pattern Recognition** can now trigger multiple times per Attack-Use
+	- **Three-Headed Flail** now deals 30-60 Damage (down from 30-75)
+	- Contracts now become 1% more difficult/lucrative for every 12,5 Renown you have (up from 1 for ever 14 Renown)
+	- Hyenas, Direwolfs and Nachzehrer now use unique names for each tier on the world map
+	- You now lose 5 Renown per day (up from 3)
+	- You now gain 15 Renown when destroying a location (up from 10)
+	- Sell Price for items is now 80% while on Expert Economic Difficulty (down from 90%)
+	- `skill::RF_isNewSkillUseOrEntity` will now return `true`
+
 1.10.2
 	- Fix items not being craftable in the Taxidermist
 

@@ -64,6 +64,7 @@
 
 		ret *= currentTown.getSellPriceMult();	// In Vanilla this is multiplied in the getBuyPrice implementation
 
+		// Vanilla applies the economic sell price only for Loot-Items
 		ret *= ::Const.Difficulty.SellPriceMult[::World.Assets.getEconomicDifficulty()];
 
 		if (this.isBuildingSupply())

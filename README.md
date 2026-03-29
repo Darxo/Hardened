@@ -60,7 +60,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 
 - Most vanilla difficulty scaling methods (day/player strength/renown scaling) are disabled
 - Instead the following streamlined system is added:
-	- Contracts are 1% more difficult for every 14 Renown, up to a maximum of 1000% more
+	- Contracts are 1% more difficult for every 12,5 Renown, up to a maximum of 1000% more
 	- Contracts pay 1% more Crowns for every 14 Renown, up to a maximum of 1000% more
 	- Contracts with 1 Skull no longer apply the penalty to pay twice and those with 3 Skulls no longer apply the bonus to pay twice
 	- Settlement have 1,3% more resources available per day (e.g. for spawning Caravans and Militia), up to a maximum of 400% at day ~300
@@ -159,7 +159,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - You no longer lose or gain **Initiative**, when you lose or gain **Stamina** (e.g. from **Strong Trait** or from certain Injuries)
 - A new term **Weight** replaces the existing **Maximum Fatigue** property on equippable items but works very similar
 - The **Stamina** penalty from **Weight** is now applied last (after Stamina Multiplier from effects). This is similar to how the **Initiative** penalty from **Weight** is applied in Vanilla
-  - Therefor percentage based debuffs and injuries affecting **Stamina** are worse
+  - Therefore percentage based debuffs and injuries affecting **Stamina** are worse
   - And percentage based buffs affecting **Stamina** are stronger
 - No Character can ever have less than 10 **Stamina**
 
@@ -198,10 +198,11 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Base Vision for the player and all world parties is now 450 (down from 500)
 - Player Characters now gain 100% XP from combat (up from 85%)
 - Level 7 now requires 5500 XP (up from 5000). Level 8 now requires 8000 XP (up from 7000). Level 9 now requires 11000 XP (up from 9000). Level 10 now requires 14500 XP (up from 12000). Level 11 now requires 18500 XP (up from 15000)
-- No Character can have less than 2 Vision
 - **Night Effect** now causes -3 Vision (down from -2)
+- No Character can have less than 2 Vision
 - When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. Each brother can only receive up to 10% of this shared experience.
 - You can now purchase missing Weapon perk groups (2500 Crowns) or Armor perk groups (4000 Crowns) at the Training Hall once per brother
+- Lower Tier weapons no longer have a Fatigue Discount for the skills
 - You can now use **Bandages** to treat injuries during battle that were received at most 1 round ago
 - Add new **Retreat** skill for player characters, which allows you to retreat individual brothers from a battle if they stand on a border tile and are not engaged in melee
 - Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
@@ -213,7 +214,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 
 - **Arrow to the Knee** can now also be used on undead, that can receive leg injuries. It now has -5% Hitchance per tile (down from -4%)
 - **Bearded Blade** (granted by **Axe Mastery**) is completely reworked. It now costs 4 Action Points and 25 Fatigue and it is an attack, that deals no damage and will disarm your opponent for 1 turn on a hit
-- **Blitzkrieg** is completely reworked for the player: It now costs 9 AP (up from 7) and 50 Fatigue (up from 30). It now targets a tile (range of 4) and affects all tiles within 1 tile of that target. It grants all allies of your faction on those tiles **Adrenaline** until the start of their turn in the next round. NPCs still use the Reforged version of **Blitzkrieg**, which now also costs 9 AP (up from 7) and 50 Fatigue (up from 50)
+- **Blitzkrieg** is completely reworked for the player: Each character can only use it once per battle. It now costs 9 AP (up from 7) and 50 Fatigue (up from 30). It now targets a tile (range of 4) and affects all tiles within 1 tile of that target. It grants all allies of your faction on those tiles **Adrenaline** until the start of their turn in the next round. NPCs still use the Reforged version of **Blitzkrieg**, which now also costs 9 AP (up from 7) and 50 Fatigue (up from 50)
 - **Chop** now has a 50% chance to decapitate (up from 25%)
 - **Cover Ally** (granted by **Shield Expert**) is completely reworked. It costs 4 Action Points and 20 Fatigue and can be used on adjacent allies. It grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It lasts until the start of the users next turn or until the user gets stunned, flees or moves away from the target
 - **Dazed** no longer reduces the Stamina by 25%. It now increases the fatigue cost of all non-attacks by 25%. It now causes you to deal 20% less damage (up from 25% less)
@@ -273,9 +274,8 @@ Skill nerfs as a result of the Reach system:
 
 Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-changes-Side‐By‐Side
 
-- **Adrenaline** skill now costs 15 Fatigue (up from 10)
 - **Angler** no longer increases the cost of **Break Free** on the target. It now staggers every character that you net. **Net Pull** now has a Range of 3 (up from 2)
-- **Anticipation** now also proccs whenever your shield takes damage from an attack
+- **Anticipation** is completely reworked: Take less Damage from the first 2 Attacks you, or your shield receive each battle. This reduction is a percentage equal to your current Ranged Defense plus an additional 10% for each tile between the attacker and you
 - **Axe Mastery** now makes skills cost 20% less Fatigue (down from 25%). It no longer grants **Hook Shield**. It now causes **Split Shield** to apply **Dazed** for 1 turn
 - **Backstabber** is rewritten. It now grants +5% Hitchance per character surrounding your target, except the first one. It now also affects ranged attacks
 - **Bags and Belts** now also includes two-handed weapons but no longer grants Initiative
@@ -285,7 +285,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bestial Vigor** is completely reworked. It is now called **Backup Plan** and grants the skill **Backup Plan** which can be used once per battle to recover 7 Action Points and disable all Attack-Skills for the rest of this turn. It has been removed from the **Wildling** perk group and added to the **Tactician** perk group at Tier 2
 - **Bully** is completely reworked. It now grants 10% more damage against anyone with a lower morale than you. It also grants +5 Melee Defense against anyone with less maximum Hitpoints than you
 - **Between the Ribs** no longer requires the attack to be of piercing type. It now also lowers your chance to hit the head by 10% for each surrounding character
-- **Blitzkrieg** now costs 9 Action Points (up from 7), 50 Fatigue (up from 30), no longer requires 10 usable fatigue on the targets. It no longer has a shared cooldown with other brothers who have this perk. It is now limited to being usable once per battle instead of once per day
 - **Bloodlust** (no longer available) is completely reworked. It now grants 10% more damage against bleeding enemies and makes you receive 10% less damage from bleeding enemies
 - **Bolster** (granted by **Polearm Mastery**) now requires a Polearm equipped, instead of any weapon with a Reach of 6 or more. It can now only trigger once per round. It can now trigger while engaged in melee. It can now only make at most one ally confident per attack
 - **Bone Breaker** is completely reworked. It now causes Armor Damage you deal to be treated as additional Hitpoint damage for the purpose of inflicting injuries
@@ -315,7 +314,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Entrenched** has been completely reworked. It now grants +5 Resolve per adjacent ally, +5 Ranged Defense per adjacent obstacle and 10% more Ranged Skill if at least 3 adjacent tiles are allies or obstacles
 - **Executioner** no longer works against stunned or sleeping targets. It now works against all rooted targets instead of just a select subset of those effects
 - **Exploit Opening** is completely reworked. It now grants a stacking +10% chance to hit whenever an opponent misses an attack against you. Bonus is reset upon landing a hit (just like Fast Adaptation)
+- **Fast Adaptation** can now trigger multiple times per Attack-Use
 - **Fencer** no longer grants +10% chance to hit or 20% less fatigue cost. It no longer removes the damage type requirement from **Passing Step**. It now causes your fencing swords to lose 50% less durability
+- **Feral Rage** is completely reworked: Gain 1 Rage Stack whenever you miss a Non-AoE Attack or get hit by an Attack from an enemy, up to a maximum of 4 Stacks. Lose all Rage Stacks when you hit with a Non-AoE Attack. Deal 25% more Damage with Non-AoE Attacks for each Rage Stack. While you have at least 4 Rage Stacks, become Immunt to Stuns and take 20% less Hitpoint Damage
 - **Flail Mastery** now makes skills cost 20% less Fatigue (down from 25%). It no longer grants +5% HitChance with **Thresh** and it no longer grants the **From all Sides** perk. You now gain the **From all Sides** effect until the start of your next turn, after you use a Flail Skill. This effect makes you count twice for the purpose of surrounding adjacent enemies
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy
 - **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you or you move away from each other
@@ -344,7 +345,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Offhand Training** is completely reworked. It now reduces the AP cost of tool skills by 1. Wielding a tool in your offhand no longer disables **Double Grip** and while wielding a tool in your offhand, the first successful attack each turn, will stagger your target
 - **Onslaught** no longer has a shared cooldown with other brothers who have this perk
 - **Opportunist** is completely reworked. After moving 3 tiles during your turn, it grants a -5 Action Point discount throwing attacks, until you use a throwing attack, wait or end your turn. Moving on all terrain costs -2 Fatigue, just like the **Athletic** Trait
-- **Pattern Recognition** now increases Melee Skill and Melee Defense by +2 for each stack (instead of +3 for the first 5 stacks and +1 for any further stack)
+- **Overwhelm** can now trigger multiple times per Attack-Use
+- **Pattern Recognition** can now trigger multiple times per Attack-Use. It now increases Melee Skill and Melee Defense by +2 for each stack (instead of +3 for the first 5 stacks and +1 for any further stack)
 - **Phalanx** is completely reworked. It grants +1 Reach for every adjacent ally with a shield. **Shieldwall** no longer ends, while an adjacent brother also has **Shieldwall** active. It gains a new perk icon
 - **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. You take 2% less Armor Damage from Attacks for every 5 Initiative you have, up to a maximum of 40%.
 - **Polearm Mastery** now makes skills cost 20% less Fatigue (down from 25%). It no longer reduces the Action Point cost of 2 handed reach weapons by 1. It now grants +15% chance to hit for **Repel** and **Hook**.
@@ -498,38 +500,32 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Ancient Pikes** gains the **Spear** Weapontype
 - **Ancient Spear** now deals 30-40 damage (up from 20-35), has a Weight of 10 (up from 6) and costs 750 Crowns (up from 150)
 - **Ancient Sword** loses **Stab** and gains **Deathblow** (costing 5 Action Points and 15 Fatigue)
-- **Battle Axe** now deals 60-80 Damage (up from 50-70), 32 Shield Damage (up from 26), has 10 Weight (down from 14), 140% Armor Damage (up from 125%), 0% Headshot Chance (down from 5%) and costs 1200 Crowns (down from 1950). It now has the skills **Split Man**, **Round Swing** and **Split Shield** with no discount. Named **Battle Axes** will no longer appear
+- **Battle Axe** now deals 60-80 Damage (up from 50-70), 32 Shield Damage (up from 26), has 10 Weight (down from 14), 140% Armor Damage (up from 125%), 0% Headshot Chance (down from 5%) and costs 1200 Crowns (down from 1950). It now has the skills **Split Man**, **Round Swing** and **Split Shield**. Named **Battle Axes** will no longer appear
 - **Berserk Chain** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5) and deals 65-100 Damage (up from 50-100)
-- **Bludgeon** no longer has any Fatigue discount on its skills
-- **Claw Club** no longer has any Fatigue discount on its skills
-- **Cruel Falchion** are now a Sword/Dagger hybrid. They now also grant **Stab**. **Slash** and **Rispote** lose any discount
-- **Crossbow**now has 60% Armor Penetration (up from 50%), 50% Armor Damage (down from 70%) and no longer has any Fatigue discount on its skills
+- **Cruel Falchion** are now a Sword/Dagger hybrid. They now also grant **Stab**
+- **Crossbow**now has 60% Armor Penetration (up from 50%), 50% Armor Damage (down from 70%)
 - **Cudgel** now deals 45-65 damage (up from 30-50), has 120% Armor Damage (up from 90%), has 4 Reach (up from 3), costs 600 Crowns (up from 300). **Bash** now costs 5 AP (up from 4). **Knock Out** now costs 5 AP (up from 4) has a 100% chance to stun
 - **Dagger** now deals 20-30 Damage (from 15-35)
 - **Estoc** now has 6 Reach (up from 5)
-- **Goblin Skewer** are now a Spear/Dagger hybrid. **Thrust** is replaced with **Stab**. **Spearwall** no longer has any discount. **Riposte** is removed
+- **Goblin Skewer** are now a Spear/Dagger hybrid. **Thrust** is replaced with **Stab**. **Riposte** is removed
 - **Goedendag** no longer grants **Cudgel** skill. It now has a 100% chance to stun with **Knock Out** (up from 75%)
 - **Fighting Axe** now costs 2300 crowns (down from 2800)
 - **Firelance** now also has the **Firearm** weapontype
 - **Flail** now deals 30-55 damage (up from 25-55) and has 3 Reach (down from 4)
-- **Gnarly Staff** now has 8 Weight (up from 4) and no longer has any discount on its weapon skills
+- **Gnarly Staff** now has 8 Weight (up from 4)
 - **Goblin Pike** now 6 Reach of (down from 7) and gains the **Spear** Weapontype
-- **Greatsword** loses **Split Shield** and its remaining skills no longer have any discount. It now costs 2000 Crowns (down from 2400)
+- **Greatsword** loses **Split Shield**. It now costs 2000 Crowns (down from 2400)
 - **Halberd** loses the **Polearm** weapon type, has 6 Reach (down from 7), 14 Weight (down from 16) and costs 1600 Crowns (down from 2500). It now has the skills **Strike** (same skill as **Long Axe**) and **Demolish Armor**
 - **Head Chopper** now has 4 Reach (up from 3)
 - **Head Splitter** now has 4 Reach (up from 3) and deals 20 Shield Damage (up from 16)
 - **Heavy Crossbow** now has 60% Armor Penetration (up from 50%), 50% Armor Damage (down from 75%) and +2 Fatigue Cost for its weapon skills
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
 - **Hunting Bow** now has 50% Armor Damage (down from 55%)
-- **Knife** now deals 15-20 Damage (down from 15-25) and no longer has any Fatigue discount on its skills
-- **Dagger** no longer has any Fatigue discount on its skills
-- **Light Crossbow** now has 60% Armor Penetration (up from 50%), 50% Armor Damage (down from 60%) and no longer has any Fatigue discount on its skills
-- **Light Southern Mace** no longer has any Fatigue discount on its skills
+- **Knife** now deals 15-20 Damage (down from 15-25)
+- **Light Crossbow** now has 60% Armor Penetration (up from 50%), 50% Armor Damage (down from 60%)
 - **Longsword** now deals 45-55 damage (down from 65-85) has Armor Penetration of 30% (up from 25%), 75% Armor Damage (down from 100%), +0% Headshot Chance (down from +5%), 6 Reach (up from 5) and costs 1200 Crowns (down from 2400). It loses **Overhead Strike** and gains **Swing**. Its skills no longer have any discount. It can no longer appear as a named weapon
 - **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%), 6 Condition (up from 2) and 50% Armor Damage (up from 10%). It gains the **Mace** Weapontype
  **Military Pick** now has 10 Weight (up from 8)
-- **Morning Star** no longer has any Fatigue discount on its skills
-- **Nomad Mace** no longer has any Fatigue discount on its skills
 - **Pickaxe** now has 12 Weight (up from 10)
 - **Pike** gains the **Spear** Weapontype
 - **Player Banner** now causes -5 to Ranged Defense and it grants **Repel**
@@ -544,19 +540,18 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Spiked Impaler** now has 80% Armor Damage (up from 75%) now has +2 Fatigue Cost for its weapon skills
 - **Swordstaff** now has a Weight of 12 (up from 10)
 - **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and costs 600 Crowns (up from 400)
-- **Three-Headed Flail** now attacks 2 times per skill use (down from 3) and deals 50% weapon damage per attack (up from 33%). It now has 3 Reach (down from 4)
+- **Three-Headed Flail** now attacks 2 times per skill use (down from 3) and deals 50% weapon damage per attack (up from 33%). It now has 3 Reach (down from 4) and deals 30-60 Damage (down from 30-75)
 - **Throwing Spears** no longer inflict any fatigue when hitting a shield. They now have a Weight of 4 (down from 6) and costs 60 Crowns (down from 80)
 - **Tree Limb** now deals 40-60 damage (up from 25-40), deals 90% Armor Damage (up from 75%), has 4 Reach (up from 3), a weight of 18 (down from 20), costs 450 Crowns (up from 150). **Bash** now costs 5 AP (up from 4). **Knock Out** now costs 5 AP (up from 4) has a 100% chance to stun
 - **Two-handed Flail** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5), deals 55-90 Damage (up from 45-90) and costs 1800 Crowns (up from 1400)
-- **Two-handed Wooden Flail** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5), deals 35-65 Damage (up from 30-60) and costs 600 Crowns (up from 500). It no longer has any discount on its wepaon skills
+- **Two-handed Wooden Flail** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5), deals 35-65 Damage (up from 30-60) and costs 600 Crowns (up from 500). It no longer has any discount on its weapon skills
 - **Two-handed Wooden Hammer** now costs 600 Crowns (up from 500)
 - **War Bow** now has 50% Armor Damage (down from 60%), a Weight of 8 (up from 6) and +2 Fatigue Cost for its weapon skills
 - **Warbrand** now deals 65-75 damage (up from 50-75), has a Armor Penetration of 30% (up from 20%), a Weight of 12 (up from 10), +0% Headshot Chance (down from +5%) and costs 2600 Crowns (up from 1600). It loses **Split** and gains **Riposte**. Its skills no longer have a custom cost. The **Named Warbrand** no longer has any custom damage bonus
 - **Warhammer** now has 12 Weight (up from 8)
 - **Warfork** now has a Weight of 14 (up from 12) and costs 400 Crowns (down from 600)
-- **Wooden Stick** no longer has any Fatigue discount on its skills
 - **Wonky Bow** now deals 30-45 damage (down from 30-50) a Range of 6 (down from 7), 0% Hitchance bonus (up from -10%) and costs 150 Crowns (up from 100)
-- **Woodcutters Axe** now deals 40-65 damage (from 35-70) and no longer has any discount on its wepaon skills
+- **Woodcutters Axe** now deals 40-65 damage (from 35-70) and no longer has any discount on its weapon skills
 - **Zweihander** loses **Split Shield**. It now has 6 Reach (down from 7) and +10% Headshot Chance (up from +5%)
 
 ### Armor Condition/Weight/Value changes
@@ -809,7 +804,12 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 ### General Changes
 
 - The lowest tier of the **Tough Brigand** unit block will no longer spawn
-- **Tough Brigands** use the following unique names: **Brigand Pillager** -> **Brigand Outlaw** -> **Brigand Marauder**, instead of sharing names with the **Balanced Brigands**
+- Tough Brigands and Balanced Brigands no longer share the same names
+Brigand Units now use the following names:
+- Balanced: **Thug** -> **Outlaw** (instead of Pillager) -> **Raider** -> **Highwayman** (instead of Marauder)
+- Tough: **Vandal** (instead of Pillager) -> **Pillager** (instead of Raider) -> **Marauder**
+- Fast: **Scoundrel** (instead of Vandal) -> **Robber** (instead of Outlaw) -> **Killer** (instead of Highwayman)
+- Ranged: **Poacher** -> **Marksman** -> **Sharpshooter**
 - **Fallen Heroes** are now called **Fallen Soldiers** and can no longer resurrect, if decapitated
 - **Fallen Betrayers** are now called **Fallen Heroes** and can spawn in regular world parties
 - Introduce a new **Headless** effect. It redirects any attack to hit the body, reduces all other damage targeting the head to 0 (e.g. secondary attack from Split Man), grants immunity to **Distracted**, **Sleep**, **Insect Swarm** and sets the headarmor to 0
@@ -825,6 +825,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 **Undead**
 - All **Wiederganger** types take 50% more burning damage to hitpoints. They no longer grant experience after being resurected. They lose **Double Grip** and no longer inflict +5 Fatigue on a hit. They now have a 100% resurrection chance (up from 66%) and resurrect in 1-3 turns (up from 1-2)
+- All **Zombie Orcs** now have a 100% resurrection chance (up from 66%-90%)
 - Reanimated Humans how have 120 Hitpoints (down from 130) and 200 Stamina (up from 100)
 - All **Skeletons** no longer grant experience after being resurected
 - **Skeleton Racial** now explicitely causes 100% less **Fatigue** build-up
@@ -1024,6 +1025,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Cancelling a contract for which you got paid in advance now inflicts and additional -15 Relation (up from -10)
 - Cancelling a contract now inflicts -50 Renown (down from -100)
 - Failing a contract now inflicts -50 Renown (down from -75)
+- You now lose 5 Renown every day (up from 3)
+- Destroying a Location now grants +15 Renown (up from +10)
 
 ### Settlements
 
@@ -1071,6 +1074,9 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 	- **Barbarian Shelters** now have 120 Resources (up from 80)
 	- **Barbarian Camps** now have 240 Resources (up from 200)
 	- **Barbarian Sancutaries** now have 300 Resources (down from 325)
+	- **Draugr Barrows** now have 280 Resources (up from 200)
+	- **Draugr Crypts** now have 350 Resources (down from 400)
+	- **Draugr Fane** now have 420 Resources (down from 600)
 	- **Goblin Hideouts** now have 120 Resources (up from 80)
 	- **Goblin Camps** now have 180 Resources (up from 150)
 	- **Goblin Outposts** now have 240 Resources (up from 200)
@@ -1083,13 +1089,13 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 	- **Orc Caves** now have 210 Resources (up from 100) and are guaranteed to drop 1 loot item (up from 50% chance)
 	- **Orc Ruins** now have 210 Resources (up from 150)
 	- **Orc Camps** now have 280 Resources (up from 225)
-	- **Undead Crypts** now have 250 Resources (up from 180). They drop an additional alcoholic beverage and 8-20 Tools (up from 0)
+	- **Undead Crypts** now have 200 Resources (up from 180). They drop an additional alcoholic beverage and 5-15 Tools (up from 0)
 	- **Undead Mass Graves** now have 240 Resources (up from 200)
 	- **Undead Buried Castles** now have 300 Resources (down from 350). They now also drop either a Flash Pot, Fire Pot or Smoke Pot. They can now spawn up to 15 tiles from the nearest settlement (down from 20) and can now also spawn on steppe and desert
 	- **Undead Ruins** (Zombies) now have 150 Resources (down from 180), if they are generated by the Zombie Faction and 180 Resources, if generated by the Skeleton Faction. They drop 1 Loot item (down from 2-3), 20-100 Crowns (down from 0-200) and 2-10 Tools
 	- **Undead Hideouts** now have 100 Resources (up from 80). They now show their banner
 	- **Undead Graveyards** now have 150 Resources (up from 130). They drop 1 loot item (up from 0-1), 10-80 Crowns (down from 1-200) and 2-8 Tools
-	- **Undead Necromancers Lair** now has 200 Resources (up from 150) and it drops 5-15 Tools (up from 0)
+	- **Undead Necromancers Lair** now has 250 Resources (up from 150) and it drops 8-20 Tools (up from 0)
 - At the start of each new campaign ~5 additional **Bandit Hideouts** are spawned in the world
 - Increase the `BuildCampTries` to 3 (up from 1) increasing the odds of placing camps with stricter tile requirements
 - **Skeleton Faction** (skeletons + vampires) now builds up to 12 settlements by default (down from 15) and up to 17 during the undead crisis (down from 23)
@@ -1130,7 +1136,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Beginner Combat Difficulty** now causes player characters to receive 15% less hitpoint and armor damage from all sources. It no longer grants a hidden +5% chance to hit and -5% chance to be hit
 - **Expert Combat Difficulty** now grants enemy parties 120% resources (up from 115%)
 - **Beginner Economic Difficulty** now makes Contracts pay 20% more (up from 10% more)
-- **Expert Economic Difficulty** now makes Contracts pay 20% less (down from 10% less)
+- **Expert Economic Difficulty** now makes Contracts pay 20% less (down from 10% less) and makes Items sell for 20% less (down from 10% less)
 
 ## Scenarios/Origins
 
@@ -1248,6 +1254,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Display duplicate Situations in towns
 - Display all enemy NPCs in the combat dialog with a scroll wheel
 - Display participating brothers in arena contract dialog
+- **Frenzied Hyenas**, **Frenzied Direwolfs**, **Medium Nachzehrer** and **Large Nachzehrer** now use unique names on the world map and are no longer merged under one name
 - Any location that you discover now removes fog of war from the tile it is sitting on
 - Add option in arena contract dialog to "think it over", if too few, or the wrong brothers were selected for the fight
 - Relation changes that come with a reason now also show the value in brackets, that you gained or lost from this action
@@ -1413,6 +1420,7 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- `skill::RF_isNewSkillUseOrEntity` will now always return `true`
 - Add `::Hardened.Global.WeaponSpecFatigueMult = 0.8` which can be used to adjust the fatigue discount, granted by all weapon masteries
 - Add `HD_AttacksPerUse = 2` and `HD_DamageTotalMult = 0.5` for `cascade_skill` and `hail_skill` to manipulate, how often and how hard the three headed flail hits per skill use
 - The default amount of `money_item` now defaults to 200 (up from 0), allowing it to be used for example as produce

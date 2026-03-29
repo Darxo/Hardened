@@ -126,14 +126,14 @@
 	::Const.World.Spawn.Troops.ArmoredWardog.Strength = 12;
 }
 
-// scripts/entity/tactical/enemies/militia
+// scripts/entity/tactical/humans/militia
 {
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.Militia.Cost = 14;
 	::Const.World.Spawn.Troops.Militia.Strength = 14;
 }
 
-// scripts/entity/tactical/enemies/militia_ranged
+// scripts/entity/tactical/humans/militia_ranged
 {
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.MilitiaRanged.Cost = 14;
