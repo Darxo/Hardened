@@ -28,6 +28,35 @@
 
 # Changelog
 
+1.10.0
+	- All weapon masteries now make skills cost 20% less fatigue (down from 25% less)
+	- Remove Fatigue discount on weapon skills for all lower tier weapons
+	- **Three Headed Flail** now attacks 2 times per skill use (down from 3) and deals 50% weapon damage per attack (up from 33%)
+	- **Onslaught Effect** (granted by **Onslaught**) no longer grants one use of **Line Breaker** skill, +10 Melee Skill or +20 Initiative. It now grants the **Pathfinder**, **Vigorous Assauolt** and **Elusive** perks
+	- **Hold Steady Effect** (granted by **Hold Steady**) no longer grants +10 Melee Defense or +10 Ranged Defense. It now grants the **Entrenched** perk
+	- **Hold Steady Skill** is completely reworked for the player: It now costs 7 AP (unchanged) and 40 Fatigue (up from 30) and is no longer restricted to "once per battle". It now targets a tile (range of 4) and affects all tiles within 1 tile of that target (up to 7). It grants all allies of your faction on those tiles the **Hold Steady Effect** for 2 rounds
+		- NPCs still use the Reforged version of **Hold Steady Skill**
+	- **Onslaught** is completely reworked for the player: It now costs 7 AP (unchanged) and 40 Fatigue (up from 30)  and is no longer restricted to "once per battle". It now targets a tile (range of 4) and affects all tiles within 1 tile of that target. It grants all allies of your faction on those tiles the **Onslaught Effect** for 2 rounds
+		- NPCs still use the Reforged version of **Onslaught Skill**
+	- **Blitzkrieg** is completely reworked for the player: It costs 9 AP (unchanged) and 50 Fatigue (unchanged). It now targets a tile (range of 4) and affects all tiles within 1 tile of that target. It grants all allies of your faction on those tiles **Adrenaline** until the start of their turn in the next round
+		- NPCs still use the Reforged version of **Blitzkrieg**, which now costs 9 AP (up from 7) and 50 Fatigue (up from 50)
+	- **Footwork** now costs -1 Action Point for every tile you move during your turn, until you use Footwork or end your turn
+	- The poison from the craftable spider poison now deals 15 Damage per turn (up from 10)
+	- Make NPCs with **Toolbox** less likely to attack someone with a piercing throwing attack, who already suffers the **Arrow to the Knee** debuff
+	- Fighting in the desert during the day now has a 20% chance to spawn a cosmetic Desert-Storm effect
+	- Ambience effects (e.g. rain, storm) during combat are now seeded using day number and `IsDayTime` as salt
+	- Reduce lag when opening Taxidermist or crafting in Taxidermist, when many blueprints are avaiable or the player inventory is large
+	- Improve wording of **Hit and Run** tooltip additions
+	- Fix the following units giving less XP than intended: **Barbarian Chosen**, **Frenzied Direwolfs**, **Frenzied Hyenas**, **Noble Zweihander**, **Noble Fencer** and **Men at Armors**
+	- Fix(Vanilla) dodge defenses sometimes not updating immediately after receiving an initiative buff/debuff
+	- Fix wrong mood names in mood concept
+	- Fix **Disarmed Effect** wrongly mentioning the headless effect in its tooltip
+	- Fix debug log warning, when vieweing throwing spear skill tooltip
+	- Fix crash when **Elusive** is added to a character during combat
+	- Fix **Vigorous Assault** now working for all ranged attacks
+	- Add `::Hardened.Global.WeaponSpecFatigueMult = 0.8` which can be used to adjust the fatigue discount, granted by all weapon masteries
+	- Add `HD_AttacksPerUse = 2` and `HD_DamageTotalMult = 0.5` for `cascade_skill` and `hail_skill` to manipulate, how often and how hard the three headed flail hits per skill use
+
 1.9.1
 	- World Difficulty is now displayed in the day-time tooltip
 	- **Barbarian Chosen** now have a cost of 50 (up from 45)

@@ -209,10 +209,11 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 
 ## Skills
 
-### Active Skills
+### Active/Passive Skills
 
 - **Arrow to the Knee** can now also be used on undead, that can receive leg injuries. It now has -5% Hitchance per tile (down from -4%)
 - **Bearded Blade** (granted by **Axe Mastery**) is completely reworked. It now costs 4 Action Points and 25 Fatigue and it is an attack, that deals no damage and will disarm your opponent for 1 turn on a hit
+- **Blitzkrieg** is completely reworked for the player: It now costs 9 AP (up from 7) and 50 Fatigue (up from 30). It now targets a tile (range of 4) and affects all tiles within 1 tile of that target. It grants all allies of your faction on those tiles **Adrenaline** until the start of their turn in the next round. NPCs still use the Reforged version of **Blitzkrieg**, which now also costs 9 AP (up from 7) and 50 Fatigue (up from 50)
 - **Chop** now has a 50% chance to decapitate (up from 25%)
 - **Cover Ally** (granted by **Shield Expert**) is completely reworked. It costs 4 Action Points and 20 Fatigue and can be used on adjacent allies. It grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It lasts until the start of the users next turn or until the user gets stunned, flees or moves away from the target
 - **Dazed** no longer reduces the Stamina by 25%. It now increases the fatigue cost of all non-attacks by 25%. It now causes you to deal 20% less damage (up from 25% less)
@@ -221,14 +222,19 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
 - **Drums of War** now costs 30 Fatigue (up from 15)
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
-- **Hand-to-Hand Attack** now costs 3 Action Points (down from 4) and it is now enabled if you carry an empty throwing weapon in your main hand.
-- **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%). It now costs 3 Action Points (down from 6) and has a maximum range of 4 tiles (down from 7)
 - **Flaming Arrow** (granted by **Trick Shooter**) no longer causes an extra morale check on the main target. It now deals 100% Burning Damage (instead of 25% Burning and 75% Piercing Damage)
-- **Passing Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand. It now has 0 additional fatigue cost (down from 2)
+- **Footwork** (granted by **Footwork**) now costs -1 Action Point for every tile you move during your turn, until you use Footwork or end your turn
+- **Hand-to-Hand Attack** now costs 3 Action Points (down from 4) and it is now enabled if you carry an empty throwing weapon in your main hand.
+- **Hold Steady Skill** is completely reworked for the player: It now costs 7 Action Points (unchanged) and 40 Fatigue (up from 30) and is no longer restricted to "once per battle". It now targets a tile (range of 4) and affects all tiles within 1 tile of that target (up to 7). It grants all allies of your faction on those tiles the **Hold Steady Effect** for 2 rounds. NPCs still use the Reforged version of **Hold Steady Skill**
+- **Hold Steady Effect** (granted by **Hold Steady**) no longer grants +10 Melee Defense or +10 Ranged Defense. It now grants the **Entrenched** perk
+- **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%). It now costs 3 Action Points (down from 6) and has a maximum range of 4 tiles (down from 7)
 - The lightning strikes, triggered by **Lightbringer** are reworked the following way: They now deal 10-15 (down from 15-20) Non-Attack (previously Attack) Burning damage (previously undefined damage) to the head (previously to the body)
 - **Lunge** now has -10% additional Hitchance (up from -20%). Its damage scaling from Initiative has been reworked: It now deals 1% less damage per Initiative below 100 and it deals 1% more damage per Initiative above 100 (up to a maximum of 75% more). It is no longer affected by **Crowded**
 - **Net Effect** (caused by **Throw Net**) no longer affects the Initiative of the target. It now applies 50% less Melee Defense (up from 25%) and 50% less Ranged Defense (up from 45%)
 - **Net Pull** now costs 30 Fatigue (up from 25)
+- **Onslaught** is completely reworked for the player: It now costs 7 Action Points (unchanged) and 40 Fatigue (up from 30) and is no longer restricted to "once per battle". It now targets a tile (range of 4) and affects all tiles within 1 tile of that target. It grants all allies of your faction on those tiles the **Onslaught Effect** for 2 rounds. NPCs still use the Reforged version of **Onslaught Skill**
+- **Onslaught Effect** (granted by **Onslaught**) no longer grants one use of **Line Breaker** skill, +10 Melee Skill or +20 Initiative. It now grants the **Pathfinder**, **Vigorous Assauolt** and **Elusive** perks
+- **Passing Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand. It now has 0 additional fatigue cost (down from 2)
 - **Pound** no longer has +10% Armor Penetration on a hit to the head or 30% chance to stun on a hit
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip** but deals 15% less damage at all times
 - **Pummel** is now an Attack. It now costs 4 AP, when used with a One-Handed Hammer
@@ -270,7 +276,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Adrenaline** skill now costs 15 Fatigue (up from 10)
 - **Angler** no longer increases the cost of **Break Free** on the target. It now staggers every character that you net. **Net Pull** now has a Range of 3 (up from 2)
 - **Anticipation** now also proccs whenever your shield takes damage from an attack
-- **Axe Mastery** no longer grants **Hook Shield**. It now causes **Split Shield** to apply **Dazed** for 1 turn
+- **Axe Mastery** now makes skills cost 20% less Fatigue (down from 25%). It no longer grants **Hook Shield**. It now causes **Split Shield** to apply **Dazed** for 1 turn
 - **Backstabber** is rewritten. It now grants +5% Hitchance per character surrounding your target, except the first one. It now also affects ranged attacks
 - **Bags and Belts** now also includes two-handed weapons but no longer grants Initiative
 - **Battle Fervor** is completely reworked. It grants 10% more Resolve. It also grants 10% more Melee Skill, Melee Defense, Ranged Skill and Ranged Defense while at Steady Morale
@@ -283,19 +289,19 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bloodlust** (no longer available) is completely reworked. It now grants 10% more damage against bleeding enemies and makes you receive 10% less damage from bleeding enemies
 - **Bolster** (granted by **Polearm Mastery**) now requires a Polearm equipped, instead of any weapon with a Reach of 6 or more. It can now only trigger once per round. It can now trigger while engaged in melee. It can now only make at most one ally confident per attack
 - **Bone Breaker** is completely reworked. It now causes Armor Damage you deal to be treated as additional Hitpoint damage for the purpose of inflicting injuries
-- **Bow Mastery** no longer grants +1 Vision
+- **Bow Mastery** now makes skills cost 20% less Fatigue (down from 25%). It no longer grants +1 Vision
 - **Bullseye** no longer reduces the penalty for shooting behind cover. It also no longer works with **Take Aim**. It now provides 20% Armor Penetration (up from 10% and 20% resepctively)
 - **Bulwark** is completely reworked. It now grants additional Resolve equal to 5% of your current combined Head and Body Armor condition
 - **Brawny** no longer grants Initiative
 - **Calculated Strikes** now lowers Initiative by 15% (down from 20%)
 - **Cheap Trick** now affects all attacks of a skill, when you use it with an AoE skill
-- **Cleaver Mastery** is completely reworked. It still makes Cleaver Skills cost 25% less Fatigue and grants +10% Hitchance when using **Disarm**. You now deal +50% Critical Damage when hitting the Body of someone who is disarmed or who doesn't wield a Weapon
+- **Cleaver Mastery** is completely reworked. It still makes Cleaver Skills cost 20% less Fatigue and grants +10% Hitchance when using **Disarm**. You now deal +50% Critical Damage when hitting the Body of someone who is disarmed or who doesn't wield a Weapon
 - **Colossus** now grants +15 Hitpoints, instead of 25% more Hitpoints
 - **Command** can now be used on fleeing allies. In this case it triggers a positive morale check first. Then, if they are not fleeing, they are moved forward in the turn order, like before
 - **Combo** is reworked. It now reduces the cost of all skills you haven't used yet this turn by 2 Action Points, except the first skill you use each turn
 - **Concussive strikes** is completely reworked. It is now called **Shockwave** and it makes it so your kills or stuns with maces will daze all enemies adjacent to your target for 1 turn
-- **Crossbow and Firearm Mastery** now grants +1 Vision while you wear a Helmet with a Vision Penalty. It no longer reduces the reload cost of **Heavy Crossbows** by 1
-- **Dagger Mastery** no longer grant any reach ignore. It now reduces the action point cost of the first offhand skill each turn to 0, if your offhand item has a weight lower than 10
+- **Crossbow and Firearm Mastery** now makes skills cost 20% less Fatigue (down from 25%). It now grants +1 Vision while you wear a Helmet with a Vision Penalty. It no longer reduces the reload cost of **Heavy Crossbows** by 1
+- **Dagger Mastery** now makes skills cost 20% less Fatigue (down from 25%). It no longer grant any reach ignore. It now reduces the action point cost of the first offhand skill each turn to 0, if your offhand item has a weight lower than 10
 - **Decisive** no longer grants 15% more Resolve at 1 Stack
 - **Death Dealer** is completely reworked. It now grants 5% more damage with AoE-Attacks for every enemy within 2 tiles. It also removes any rooted effects, whenever you use an AoE Attack
 - **Deep Impact** is now called **Breakthrough** and has been completely reworked. It grants the **Pummel** skill, which can now be used with any hammer. It also makes it so **Shatter** has a 100% chance to knock targets back on a hit and it increases the knock back distance of **Shatter** by 1
@@ -310,7 +316,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Executioner** no longer works against stunned or sleeping targets. It now works against all rooted targets instead of just a select subset of those effects
 - **Exploit Opening** is completely reworked. It now grants a stacking +10% chance to hit whenever an opponent misses an attack against you. Bonus is reset upon landing a hit (just like Fast Adaptation)
 - **Fencer** no longer grants +10% chance to hit or 20% less fatigue cost. It no longer removes the damage type requirement from **Passing Step**. It now causes your fencing swords to lose 50% less durability
-- **Flail Mastery** no longer grants +5% HitChance with **Thresh** and it no longer grants the **From all Sides** perk. You now gain the **From all Sides** effect until the start of your next turn, after you use a Flail Skill. This effect makes you count twice for the purpose of surrounding adjacent enemies
+- **Flail Mastery** now makes skills cost 20% less Fatigue (down from 25%). It no longer grants +5% HitChance with **Thresh** and it no longer grants the **From all Sides** perk. You now gain the **From all Sides** effect until the start of your next turn, after you use a Flail Skill. This effect makes you count twice for the purpose of surrounding adjacent enemies
 - **Flail Spinner** now has a 100% chance to procc (up from 50%) but will only target a random different valid enemy
 - **Formidable Approach** is completely reworked. Moving next to an enemy that has less maximum Hitpoints than you, removes Confident from them. Moving next to an enemy grants +15 Melee Skill against them until they damage you or you move away from each other
 - **Fortified Mind** now grants +25 Resolve (instead of 25% more) and you lose Resolve equal to the Weight of your Helmet
@@ -319,8 +325,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **From All Sides** (enemy only perk) is completely reworked. You now gain the **From all Sides** effect until the start of your next turn, after you use a Attack Skill. This effect makes you count twice for the purpose of surrounding adjacent enemies
 - **Fruits of Labor** is reworked. It now grants 5% more Hitpoints, Stamina, Resolve and Initiative
 - **Ghostlike** has been completely reworked. It no longer has any requirements. It now grants 50% of your Resolve as extra Melee Defense during your turn. When you start or resume your turn not adjacent to enemies, gain +15% Armor Penetration and 15% more damage against adjacent targets until you wait or end your turn
-- **Hammer Mastery** no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part
-- **Hold Steady** no longer has a shared cooldown with other brothers who have this perk. It no longer grants Resolve
+- **Hammer Mastery** now makes skills cost 20% less Fatigue (down from 25%). It no longer grants **Pummel** or increases the Armor Damage dealt by **Crush Armor** and **Demolish Armor**. Now 50% of the Armor Damage you deal to one body part is also dealt to the other body part
 - **Hybridization** is completely reworked. It is now called **Toolbox** and requires a Throwing Weapon. It grants +1 Bag Slot if you dont have **Weapon Master**. It now causes piercing type hits to the body to inclict **Arrow to the Knee** for 1 turn, cutting type attacks to inflict **Overwhelmed**, blunt type headshots to inflict stagger for 1 turn and any hit with them to stun a staggered opponent and throwing spears to deal 100% more damage to shields
 - **Inspiring Presence** no longer requires a banner. Have 10% less Resolve. At the start of each round it grants adjacent allies of your faction +3 Action Points for this turn, if they are adjacent to an enemy and have less Resolve than you. The same target can't be inspired multiple times per turn
 - **Iron Sights** is completely reworked. It now grants +1% chance to hit the head with Crossbows and Firearms for every 3 Initiative you have
@@ -342,7 +347,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Pattern Recognition** now increases Melee Skill and Melee Defense by +2 for each stack (instead of +3 for the first 5 stacks and +1 for any further stack)
 - **Phalanx** is completely reworked. It grants +1 Reach for every adjacent ally with a shield. **Shieldwall** no longer ends, while an adjacent brother also has **Shieldwall** active. It gains a new perk icon
 - **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. You take 2% less Armor Damage from Attacks for every 5 Initiative you have, up to a maximum of 40%.
-- **Polearm Mastery** no longer reduces the Action Point cost of 2 handed reach weapons by 1. It now grants +15% chance to hit for **Repel** and **Hook**.
+- **Polearm Mastery** now makes skills cost 20% less Fatigue (down from 25%). It no longer reduces the Action Point cost of 2 handed reach weapons by 1. It now grants +15% chance to hit for **Repel** and **Hook**.
 - **Professional** now reduces the experience gained by 5%
 - **Quickhands** can now also swap two two-handed weapons, just like in Vanilla. It now stacks with other effects that grant free swaps
 - **Rally the Troops** can now also be used even the user was already rallied by someone else this round
@@ -357,18 +362,18 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Shield Sergeant** is completely reworked. It grants **Shieldwall** effect to all allies who have a shield equippe, at the start of combat. It now causes allies within 3 tiles to imitate shield skills for free that you use during your turn. It also allows you to use **Knock Back** and **Cover Ally** on empty tiles
 - **Skirmisher** now grants 50% of body armor weight as initiative (previously 30% of body/helmet armor weight) and no longer displays an effect icon
 - **Small Target** now also reduces the chance to take a hit to the head by 10%
-- **Spear Mastery** no longer provides a free spear attack each turn. Instead it now grants 15% more Melee Skill while you have Reach Advantage
+- **Spear Mastery** now makes skills cost 20% less Fatigue (down from 25%). It no longer provides a free spear attack each turn. Instead it now grants 15% more Melee Skill while you have Reach Advantage
 - **Survival Instinct** is completely reworked. It grants 1 stack at the start of each battle. It grants 1 stack, when you get hit by an attack, and you lose 1 stack when you dodge an attack. Every stack grants 10 Melee Defense and 10 Ranged Defense
 - **Steady Brace** is now called **Ready to Go** and has been completely reworked. It makes it so your Crossbows and Firearms start each battle loaded, including those carried in the bag, if you have the correct- and enough ammunition equipped
 - **Student** no longer grants any experience. It now grants +1 Perk Point when you reach level 8 instead of level 11
 - **Strength in Numbers** now grants +2 Resolve for every adjacent ally (down from +5)
 - **Sweeping Strikes** is completely reworked. It now grants +5 Melee Defense for every adjacent enemy until the start of your next turn the first time you use a melee attack skill on an adjacent enemy. It still requires a two-handed weapon
 - **Swift Stabs** has been completely reworked. It's now called **Hit and Run**. It makes it so all dagger attacks can be used at 2 tiles and will move the user one tile closer before the attack. When the attack hits the enemy, the user is moved back to the original tile
-- **Sword Mastery** no longer grants **Passing Step** and it no longer increases the HitChance with **Riposte**. It now causes your attacks against enemies whose turn has already started to lower their Initaitive by a stacking 15% (up to a maximum of 90%) until the start of their next turn
+- **Sword Mastery** now makes skills cost 20% less Fatigue (down from 25%). It no longer grants **Passing Step** and it no longer increases the HitChance with **Riposte**. It now causes your attacks against enemies whose turn has already started to lower their Initaitive by a stacking 15% (up to a maximum of 90%) until the start of their next turn
 - **Target Practice** has been completely reworked. It now makes it 50% less likely for your arrows to hit the cover, when you have no clear line of fire (stronger than vanilla Bullseye)
 - **Tempo** is completely reworked. It grants 10% more Initiative until the start of your next turn whenever you move a tile during your turn. It also grants **Passing Step**
 - **Through the Gaps** is completely reworked. It causes your piercing spear attacks to always target the body part with the lowest total armor but no longer deal critical damage on a hit to the head
-- **Throwing Mastery** is mostly completely reworked. It now grants 30% more damage for your first throwing attack each turn, no matter the range. It now allows swapping any item once per round, after you attacks with a throwing weapon
+- **Throwing Mastery** is mostly completely reworked. It now makes skills cost 20% less Fatigue (down from 25%). It now grants 30% more damage for your first throwing attack each turn, no matter the range. It now allows swapping any item once per round, after you attacks with a throwing weapon
 - **Trick Shooter** is completely reworked. It makes all Bow Skills that you have not used yet this battle, have +15% Hitchance. It also grants the Flaming Arrow skill (instead of the perk)
 - **Underdog** is rewritten. It now grants +5 Melee Defense for every character surrounding you, except the first one. Compared to the vanilla implementation this defense is now affected by defense multiplier and by the softcap for defense
 - **Unstoppable** is completely reworked. Once per round during your turn, if you hit an enemy with an attack, gain 1 stack up to a maximum of 3. Each stack grants +1 Action Points and 10% more Initiative. Lose 1 stack if you wait. Lose 1 stack if you end your turn with more than half of your action points remaining. Lose all stacks when you use recover, get stunned or staggered
@@ -539,7 +544,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Spiked Impaler** now has 80% Armor Damage (up from 75%) now has +2 Fatigue Cost for its weapon skills
 - **Swordstaff** now has a Weight of 12 (up from 10)
 - **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and costs 600 Crowns (up from 400)
-- **Three-Headed Flail** now has 3 Reach (down from 4)
+- **Three-Headed Flail** now attacks 2 times per skill use (down from 3) and deals 50% weapon damage per attack (up from 33%). It now has 3 Reach (down from 4)
 - **Throwing Spears** no longer inflict any fatigue when hitting a shield. They now have a Weight of 4 (down from 6) and costs 60 Crowns (down from 80)
 - **Tree Limb** now deals 40-60 damage (up from 25-40), deals 90% Armor Damage (up from 75%), has 4 Reach (up from 3), a weight of 18 (down from 20), costs 450 Crowns (up from 150). **Bash** now costs 5 AP (up from 4). **Knock Out** now costs 5 AP (up from 4) has a 100% chance to stun
 - **Two-handed Flail** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5), deals 55-90 Damage (up from 45-90) and costs 1800 Crowns (up from 1400)
@@ -764,7 +769,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Reinforced Throwing Net** now has a weight of 8 (up from 2)
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**
 - **Sipar** is now called **Sipar Shield** (just like in Vanilla)
-- **Spider Poison** now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1
+- **Spider Poison** now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1. It now deals 15 Damage per turn (up from 10)
 - **Smoked Ham** now has a Stacksize of 30 (up from 25) and cost 115 Crowns (up from 95)
 - **Strange Meat** now has a Stacksize of 20 (down from 25) and costs 35 Crowns (down from 50)
 - **Strange Mushrooms** now cost 200 Crowns (up from 100)
@@ -941,6 +946,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - NPC with **Fresh and Furious** are 90% less likely to use **Hand to Hand**, while they are disarmed and **Fresh and Furious** is active
 - NPCs are 100% more likely to use **Throw Dirt** for every fleeing ally adjacent to the target
 - NPCs are 20% more likely to target enemies with **Formidable Approach** if it has been procced against them
+- NPCs with **Toolbox** are 20% less likely to throw a piercing weapon at an enemy with **Arrow to the Knee Effect**
 - NPCs are 20% more likely to target someone with **Kingfisher** who is currently netting them and 10% more likely to target them, if they are netting anyone
 - NPCs are 10% more likely per **Unstoppable** stack on the target, to use a skill which applies staggered on a hit
 - NPCs are 50% less likely to attack into an active **Rebuke**
@@ -1000,6 +1006,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - The combat map is no longer revealed at the end of a battle
 - Tactical Forest Maps no longer randomly spawn **Grassland** tiles (2 AP per move)
 - Tactical Swamp Maps no longer randomly spawn **Plashy Grass** tiles (2 AP per move)
+- Fighting in the desert during the day now has a 20% chance to spawn a cosmetic Desert-Storm effect
+- Ambience effects (e.g. rain, storm) during combat are now seeded using day number and day/night cycle as additional salt
 
 ## Crisis
 
@@ -1260,6 +1268,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Add Setting (on) for displaying non-settlement location names and numerals while they are within your vision (Lairs, Unique Locations, Attached Locations)
 - Brothers that "die" outside of combat (e.g. Events) will now always transfer their equipment into your stash
 - List the effects of camping in the camping tooltip
+- Reduce lag when opening Taxidermist or crafting in Taxidermist, when many blueprints are avaiable or the player inventory is large
 - Display the Player Strength in the roster tooltip
 - Attached Locations now list the items they produce in their tooltip
 - Destroyed attached locations now display their original name, instead of just being called "Ruins"
@@ -1349,6 +1358,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix UI Scale in the options being able to be set to a value that can brick your UI
 - Fix world map zoom sometimes zooming too far during lag
 - Fix tactical map zoom/pan sometimes zooming/panning too far during lag
+- Fix **Dodge** defenses sometimes not updating immediately after receiving an initiative buff/debuff
 - Fix Quivers needing to re-use the same ID to be correctly identified as ammo
 - Fix shieldwall animation still showing up on NPCs who lost the shieldwall effect offscreen
 - Fix spearwall animation showing up on NPCs who lost the spearwall effect offscreen
@@ -1403,6 +1413,8 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add `::Hardened.Global.WeaponSpecFatigueMult = 0.8` which can be used to adjust the fatigue discount, granted by all weapon masteries
+- Add `HD_AttacksPerUse = 2` and `HD_DamageTotalMult = 0.5` for `cascade_skill` and `hail_skill` to manipulate, how often and how hard the three headed flail hits per skill use
 - The default amount of `money_item` now defaults to 200 (up from 0), allowing it to be used for example as produce
 - Add new `Clarifications` unified perk description effect type, which can be used to give additional context or clarify freqently asked questions about a perk interaction
 - Add `actor::isHuman()` check
