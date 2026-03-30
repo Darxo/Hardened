@@ -34,10 +34,9 @@
 
 		if (::Tactical.isActive())
 		{
-			local bleed = ::new("scripts/skills/effects/bleeding_effect");
 			for (local i = 1; i <= this.m.HD_BleedStacks; ++i)
 			{
-				this.getContainer().getActor().getSkills().add(bleed);
+				this.getContainer().getActor().getSkills().add(::new("scripts/skills/effects/bleeding_effect"));
 			}
 		}
 	}
