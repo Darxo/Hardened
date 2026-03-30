@@ -28,6 +28,9 @@
 
 # Changelog
 
+1.10.1
+	- Fix script error, when **Cut Artery**, **Cut Neck Vein** or **Grazed Neck** are inflicted on a character during an attack that triggers **Nine Lives**
+
 1.10.0
 	- All weapon masteries now make skills cost 20% less fatigue (down from 25% less)
 	- Remove Fatigue discount on weapon skills for all lower tier weapons
