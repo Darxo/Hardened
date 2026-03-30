@@ -52,9 +52,9 @@
 			foreach (item in ::World.Assets.getStash().getItems())
 			{
 				if (item == null) continue;
-				if (item.getID() != c.Instance.getID()) continue;
+				if (item.getID() != _itemID) continue;
 
-				num = ++num;
+				++num;
 				if (num >= _targetedAmount)
 				{
 					return true;
