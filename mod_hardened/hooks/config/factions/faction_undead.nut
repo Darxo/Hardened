@@ -185,6 +185,63 @@
 	);
 }
 
+{	// Draugr
+	// scripts/entity/tactical/enemies/rf_draugr_thrall
+	::Reforged.Entities.editEntity("RF_DraugrThrall",
+		{
+			Strength = 25,	// Reforged: 25;
+			Cost = 25,		// Reforged: 18;
+		},
+		{
+			XP = 200 * ::Hardened.Global.FactionExperience.Draugr, // Reforged: 200
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_draugr_warrior
+	::Reforged.Entities.editEntity("RF_DraugrWarrior",
+		{
+			Strength = 40,	// Reforged: 35;
+			Cost = 40,		// Reforged: 35;
+		},
+		{
+			XP = 400 * ::Hardened.Global.FactionExperience.Draugr, 	// Reforged: 350
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_draugr_huskarl
+	::Reforged.Entities.editEntity("RF_DraugrHuskarl",
+		{
+			Strength = 55,	// Reforged: 45;
+			Cost = 55,		// Reforged: 45;
+		},
+		{
+			XP = 550 * ::Hardened.Global.FactionExperience.Draugr, 	// Reforged: 450
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_draugr_hero
+	::Reforged.Entities.editEntity("RF_DraugrHero",
+		{
+			Strength = 80,	// Reforged: 60;
+			Cost = 80,		// Reforged: 60;
+		},
+		{
+			XP = 800 * ::Hardened.Global.FactionExperience.Draugr, 	// Reforged: 650
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_draugr_shaman
+	::Reforged.Entities.editEntity("RF_DraugrShaman",
+		{
+			Strength = 100,	// Reforged: 60;
+			Cost = 100,		// Reforged: 60;
+		},
+		{
+			XP = 1000 * ::Hardened.Global.FactionExperience.Draugr, 	// Reforged: 500
+		}
+	);
+}
+
 // scripts/entity/tactical/enemies/skeleton_light
 {
 	// Mandatory stats
