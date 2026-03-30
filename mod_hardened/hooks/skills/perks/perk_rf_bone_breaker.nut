@@ -47,7 +47,7 @@
 
 		// We save the modular vanilla reference in a temporary shorter variable for readability
 		// It is guaranteed to be not null, as onDamageReceived is always called after onBeforeTargetHit and before onTargetHit
-		local hitinfo = ::Const.Tactical.MV_CurrentHitInfo;
+		local hitinfo = ::Tactical.State.MV_getCurrentHitInfo();
 
 		// We actually implement the Bonebreaker effect, by adding armor damage dealt on top of Hitpoint damage for the purpose of injuries
 		local oldDamageInflictedHitpoints = hitinfo.DamageInflictedHitpoints;
