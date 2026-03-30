@@ -1,7 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/cascade_skill", function(q) {
 	// Public
-	q.m.HD_AttacksPerUse <- 3;	// Vanilla: 3
-	q.m.HD_DamageTotalMult <- 0.33333334;	// Vanilla: 0.33333334
+	q.m.HD_AttacksPerUse <- 2;	// Vanilla: 3
+	q.m.HD_DamageTotalMult <- 0.5;	// Vanilla: 0.33333334
 
 	q.getTooltip = @(__original) function()
 	{
