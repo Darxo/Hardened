@@ -28,6 +28,9 @@
 
 # Changelog
 
+1.10.2
+	- Fix items not being craftable in the Taxidermist
+
 1.10.1
 	- Fix script error, when **Cut Artery**, **Cut Neck Vein** or **Grazed Neck** are inflicted on a character during an attack that triggers **Nine Lives**
 
