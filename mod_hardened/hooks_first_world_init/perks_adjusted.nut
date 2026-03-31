@@ -979,6 +979,22 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_feral_rage",
+		Key = "RF_FeralRage",
+		Description = ::UPD.getDescription({
+			Requirement = "Non-AoE Attack",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive("1") + " Rage Stack whenever you miss a Non-AoE Attack or get hit by an Attack from an Enemy, up to a maximum of " + ::MSU.Text.colorNeutral("4") + " Stacks",
+					"Lose all Rage Stacks when you hit with a Non-AoE Attack",
+					"Deal " + ::MSU.Text.colorPositive("25%") + " more Damage with Non-AoE Attacks for each Rage Stack",
+					"While you have at least " + ::MSU.Text.colorNeutral("4") + " Rage Stacks, become [Immune to Stun|Skill+stunned_effect] and take " + ::MSU.Text.colorPositive("20%") + " less [Hitpoint|Concept.Hitpoints] Damage",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_finesse",
 		Key = "RF_Finesse",
 		Description = ::UPD.getDescription({
