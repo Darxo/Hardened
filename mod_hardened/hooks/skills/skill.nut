@@ -170,6 +170,13 @@
 		return true;
 	}
 
+	// Overwrite, because we disable the functionality of this function and allow any multi-hit to trigger effects multiple times that were gated by this in Reforged
+	// Most notably this affects: Overwhelm and Pattern Recognition, which will now trigger multiple times from a three headed flail attack
+	q.RF_isNewSkillUseOrEntity = @() function( _entity, _isAttacker = false )
+	{
+		return true;
+	}
+
 // New Functions
 	// Call several functions to make sure that other entities/factions know about the action this skill just did, if they see the action
 	// Important: this.getContainer().getActor() must be placed on a tile, so do make sure that is the case before caling this function
