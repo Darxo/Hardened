@@ -5,6 +5,8 @@
 ::Const.Difficulty.PaymentMult[0] = 1.2;	// Vanilla: 1.1
 ::Const.Difficulty.PaymentMult[2] = 0.8;	// Vanilla: 0.9
 
+::Const.Difficulty.SellPriceMult[2] = 0.8;	// Vanilla: 0.9
+
 ::Const.Difficulty.PlayerDamageReceivedMult <- [
 	0.85,	// Player characters receive 15% less damage in beginner difficulty
 	1.0,
