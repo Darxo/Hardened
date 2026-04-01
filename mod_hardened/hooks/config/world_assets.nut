@@ -14,6 +14,8 @@
 
 // We make poor performing players lose Renown slightly faster, so they are quicker falling back to easier difficulties
 ::Const.World.Assets.ReputationDaily = -5;	// Vanilla -3
+// For well performing players, we improve the location reputation to balance out the daily tax
+::Const.World.Assets.ReputationOnVictoryVSLocation = 15;	// Vanilla 10
 
 // New Values
 // This controls what percentage of a recruits hiring cost is needed to try them out
