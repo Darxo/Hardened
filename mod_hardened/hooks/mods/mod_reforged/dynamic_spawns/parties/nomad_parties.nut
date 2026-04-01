@@ -15,7 +15,7 @@
 	nomadDefenders.DynamicDefs.UnitBlocks.push({
 		BaseID = "UnitBlock.RF.NomadElite",
 		StartingResourceMin = 350,
-		ExclusionChance = 0.6,
+		ExclusionChance = 60,
 		RatioMin = 0.0,
 		RatioMax = 0.2,
 	});
@@ -38,7 +38,7 @@
 	nomadRaiders.DynamicDefs.UnitBlocks.push({
 		BaseID = "UnitBlock.RF.NomadElite",
 		StartingResourceMin = 350,
-		ExclusionChance = 0.6,
+		ExclusionChance = 60,
 		RatioMin = 0.0,
 		RatioMax = 0.2,
 	});

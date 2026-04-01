@@ -23,7 +23,7 @@
 			_item.DynamicDefs.UnitBlocks.push({
 				BaseID = "UnitBlock.RF.NecromancerWithBodyguards",
 				PartySizeMin = 15,
-				ExclusionChance = 0.8,
+				ExclusionChance = 80,
 				HardMin = 1,
 				HardMax = 1,
 			});

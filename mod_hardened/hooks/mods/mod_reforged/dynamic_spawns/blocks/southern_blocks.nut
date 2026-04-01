@@ -8,7 +8,7 @@ if (!::Hooks.hasMod("mod_crock_pot") || ::Hooks.getMod("mod_crock_pot").getVersi
 				DynamicDefs = {
 					Units = [
 						{ BaseID = "Unit.RF.Conscript" },
-						{ BaseID = "Unit.RF.Officer", HardMax = 1, PartySizeMin = 12, ExclusionChance = 0.5 }
+						{ BaseID = "Unit.RF.Officer", HardMax = 1, PartySizeMin = 12, ExclusionChance = 50 }
 					],
 				}
 			},

@@ -9,7 +9,7 @@
 		if (unitBlock.BaseID == "UnitBlock.RF.BanditDog")
 		{
 			// Increase the exclusion chance for dogs to make their inclusion rarer and more of a novelty
-			unitBlock.ExclusionChance = 0.7;	// Reforged: 0.4
+			unitBlock.ExclusionChance = 70;	// Reforged: 40
 			break;
 		}
 	}
@@ -41,7 +41,7 @@
 	banditDefenderParty.DynamicDefs.UnitBlocks.push({
 		BaseID = "UnitBlock.RF.BanditRanged",
 		RatioMax = 0.25,
-		ExclusionChance = 0.5,
+		ExclusionChance = 50,
 		StartingResourceMax = 149,
 	})
 	// We make sure, that every camp only contains either Fast or Tough Bandits
