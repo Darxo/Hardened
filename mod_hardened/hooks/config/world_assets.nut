@@ -12,6 +12,9 @@
 ::Const.World.Assets.ReputationOnContractCancel = -50;		// Vanilla: -100
 ::Const.World.Assets.ReputationOnContractFail = -50;		// Vanilla: -75
 
+// We make poor performing players lose Renown slightly faster, so they are quicker falling back to easier difficulties
+::Const.World.Assets.ReputationDaily = -5;	// Vanilla -3
+
 // New Values
 // This controls what percentage of a recruits hiring cost is needed to try them out
 ::Const.World.Assets.TryoutCostPct <- 0.2;	// In Vanilla this is 0.1
