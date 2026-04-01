@@ -12,7 +12,7 @@ local resourceMult = ::Hardened.Const.ResourceTierMult;
 		LabelBackgroundAlpha = 150,		// Alpha value for the backgrounds of the world party and location labels
 
 		ContractScalingBase = 1.0,		// This contract scaling is happening from day one. This scales multiplicatively with PerReputation scaling
-		ContractScalingPerReputation = 0.0007,	// Each Reputation point causes contracts to be this much more lucrative and dangerous
+		ContractScalingPerReputation = 0.0008,	// Each Reputation point causes contracts to be this much more lucrative and dangerous
 		ContractScalingMin = 0.5,		// Contracts never scale below this value
 		ContractScalingMax = 10.0,		// Contracts never scale beyond this value
 		WorldScalingBase = 1.0,			// This world scaling is happening from day one. This scales multiplicatively with PerDay scaling
