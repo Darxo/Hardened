@@ -982,7 +982,6 @@ local adjustedDescriptions = [
 		ID = "perk.rf_feral_rage",
 		Key = "RF_FeralRage",
 		Description = ::UPD.getDescription({
-			Requirement = "Non-AoE Attack",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
