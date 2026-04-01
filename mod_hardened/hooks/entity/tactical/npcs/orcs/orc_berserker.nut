@@ -20,6 +20,7 @@
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/greenskins/orc_flail_2h"],
 			[12, "scripts/items/weapons/greenskins/orc_axe_2h"],
+			[12, "scripts/items/weapons/greenskins/rf_orc_mace_2h"],
 		]);
 	}
 
