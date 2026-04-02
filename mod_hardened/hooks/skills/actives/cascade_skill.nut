@@ -49,8 +49,8 @@
 				::Time.scheduleEvent(::TimeUnit.Virtual, delay, function ( _skill )
 				{
 					_skill.m.IsDoingAttackMove = false;
-					_skill.getContainer().setBusy(false);
-					if (target.isAlive() && _user.isAlive())
+					_user.getSkills().setBusy(false);
+					if (target.isAlive() && _user.isAlive() && !::MSU.isNull(_skill.getContainer()))
 					{
 						_skill.attackEntity(_user, target);
 					}
@@ -64,7 +64,7 @@
 			local ret = false;
 			for (local i = 0; i < this.m.HD_AttacksPerUse; ++i)
 			{
-				if (target.isAlive() && _user.isAlive())
+				if (target.isAlive() && _user.isAlive() && !::MSU.isNull(this.getContainer()))
 				{
 					ret = this.attackEntity(_user, target) || ret;
 				}
