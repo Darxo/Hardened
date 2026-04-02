@@ -1,4 +1,4 @@
-::Hardened.HooksMod.hookTree("scripts/crafting/crafting_manager", function(q) {
+::Hardened.HooksMod.hook("scripts/crafting/crafting_manager", function(q) {
 	q.m.HD_MappedPlayerInventory <- {};
 
 	q.getQualifiedBlueprintsForUI = @(__original) function()
