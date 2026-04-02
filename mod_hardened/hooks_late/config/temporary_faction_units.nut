@@ -46,7 +46,7 @@
 		// Vandal (Tier 1 Tough)
 		// In Reforged this is the Tier 2 Tough Brigand and sharing the name "Pillager" with the Tier 2 Balanced Brigand
 		::Hardened.Global.addTemporaryEntity(
-			"HD_BrigandVandal",
+			"HD_BanditVandal",
 			"Brigand Vandal",
 			"Brigand Vandals",
 			"hd_bandit_pillager_orientation",
@@ -84,7 +84,7 @@
 		// Scoundrel (Tier 1 Fast)
 		// We use a temporary entity so that this unit has the name "Scoundrel" (Reforged: Vandal) while on the world map
 		::Hardened.Global.addTemporaryEntity(
-			"HD_BrigandScoundrel",
+			"HD_BanditScoundrel",
 			"Brigand Scoundrel",
 			"Brigand Scoundrels",
 			"rf_bandit_vandal_orientation",
@@ -96,7 +96,7 @@
 		// Robber (Tier 2 Fast)
 		// We use a temporary entity so that this unit has the name "Robber" (Reforged: Outlaw) while on the world map
 		::Hardened.Global.addTemporaryEntity(
-			"HD_BrigandRobber",
+			"HD_BanditRobber",
 			"Brigand Robber",
 			"Brigand Robber",
 			"rf_bandit_outlaw_orientation",
@@ -108,7 +108,7 @@
 		// Killer (Tier 3 Fast)
 		// We use a temporary entity so that this unit has the name "Killer" (Reforged: Highwayman) while on the world map
 		::Hardened.Global.addTemporaryEntity(
-			"HD_BrigandKiller",
+			"HD_BanditKiller",
 			"Brigand Killer",
 			"Brigand Killer",
 			"rf_bandit_highwayman_orientation",
