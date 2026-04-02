@@ -28,6 +28,13 @@
 
 # Changelog
 
+1.11.1
+	- **Barrowkin Fane** now have a VisibilityMult of 1.5 (up from 1.0)
+	- Increase Stamina of zombie orcs to 200 (up from 100)
+	- Fix freeze in barrowkin fights when the turn of the shaman starts
+	- Fix **Mace Mastery** still showing the old fatigue cost
+	- Remove requirement string in **Feral Rage** perk description
+
 1.11.0
 	- Now Requires Reforged 0.8.0 or later
 	- **Klagmutter** now cost 80 Resources (up from 50), have 64 Hitpoints (up from 1) and 90 Melee Skill (up from 80). They now deal 15-20 Damage (down from 15-25). They lose **Fearsome** and gain **Backstabber**

@@ -1076,7 +1076,7 @@ Brigand Units now use the following names:
 	- **Barbarian Sancutaries** now have 300 Resources (down from 325)
 	- **Draugr Barrows** now have 280 Resources (up from 200)
 	- **Draugr Crypts** now have 350 Resources (down from 400)
-	- **Draugr Fane** now have 420 Resources (down from 600)
+	- **Draugr Fane** now have 420 Resources (down from 600) and a VisibilityMult of 1.5 (up from 1.0)
 	- **Goblin Hideouts** now have 120 Resources (up from 80)
 	- **Goblin Camps** now have 180 Resources (up from 150)
 	- **Goblin Outposts** now have 240 Resources (up from 200)
