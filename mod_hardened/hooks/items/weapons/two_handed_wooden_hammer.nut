@@ -3,6 +3,9 @@
 	{
 		__original();
 
+		this.m.RegularDamageMax = 60;	// Vanilla: 70
+		this.m.ArmorDamageMult = 2.0;	// Vanilla: 1.5
+
 		this.m.Value = 600;		// Vanilla: 500
 	}
 
