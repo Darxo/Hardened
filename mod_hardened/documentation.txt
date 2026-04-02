@@ -28,6 +28,9 @@
 
 # Changelog
 
+1.11.2
+	- Fix loading screen freeze when fighting brigands
+
 1.11.1
 	- **Barrowkin Fane** now have a VisibilityMult of 1.5 (up from 1.0)
 	- Increase Stamina of zombie orcs to 200 (up from 100)
