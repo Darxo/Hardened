@@ -367,8 +367,8 @@
 // scripts/entity/tactical/enemies/alp
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.Alp.Cost = 30;
-	::Const.World.Spawn.Troops.Alp.Strength = 30;
+	::Const.World.Spawn.Troops.Alp.Cost = 25;
+	::Const.World.Spawn.Troops.Alp.Strength = 25;
 }
 
 // scripts/entity/tactical/enemies/goblin_wolfrider
