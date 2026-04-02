@@ -7,10 +7,10 @@
 	{
 		this.m.Bodies = ::Const.Bodies.Thick;	// Reforged: ::Const.Bodies.AllMale
 
-		// Switcheroo the RF_BanditPillager ID into that of HD_BrigandVandal, to make Reforged assign the ID, that we want
+		// Switcheroo the RF_BanditPillager ID into that of HD_BanditVandal, to make Reforged assign the ID, that we want
 		// We must do this via switcheroo, so that the name assignment works correctly
 		local oldRF_BanditPillager = ::Const.EntityType.RF_BanditPillager;
-		::Const.EntityType.RF_BanditPillager = ::Const.EntityType.HD_BrigandVandal;
+		::Const.EntityType.RF_BanditPillager = ::Const.EntityType.HD_BanditVandal;
 		__original();
 		::Const.EntityType.RF_BanditPillager = oldRF_BanditPillager;
 
