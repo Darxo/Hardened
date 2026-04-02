@@ -17,11 +17,23 @@
 			[12, "scripts/items/helmets/greenskins/orc_berserker_helmet"],
 		]);
 
-		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/weapons/greenskins/orc_flail_2h"],
-			[12, "scripts/items/weapons/greenskins/orc_axe_2h"],
-			[12, "scripts/items/weapons/greenskins/rf_orc_mace_2h"],
-		]);
+
+		if (::Hooks.getMod("mod_reforged").getVersion() <= ::Hooks.SQClass.ModVersion("0.8.1"))
+		{
+			this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/greenskins/orc_flail_2h"],
+				[12, "scripts/items/weapons/greenskins/orc_axe_2h"],
+				[12, "scripts/items/weapons/rf_orc_mace_2h"],
+			]);
+		}
+		else
+		{
+			this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/greenskins/orc_flail_2h"],
+				[12, "scripts/items/weapons/greenskins/orc_axe_2h"],
+				[12, "scripts/items/weapons/greenskins/rf_orc_mace_2h"],
+			]);
+		}
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
