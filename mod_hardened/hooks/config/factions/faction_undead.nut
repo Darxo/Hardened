@@ -115,7 +115,7 @@
 			ActionPoints = 7,	// Reforged: 6
 			Hitpoints = 200, // Reforged: 200
 			Bravery = 100, // Reforged: 100
-			Stamina = 100, // Reforged: 100
+			Stamina = 200, // Reforged: 100
 			MeleeSkill = 55, // Reforged: 50
 			RangedSkill = 0, // Reforged: 0
 			MeleeDefense = -10,	// Reforged: -10
@@ -135,7 +135,7 @@
 			ActionPoints = 7,	// Reforged: 7
 			Hitpoints = 300, // Reforged: 300
 			Bravery = 90, // Reforged: 90
-			Stamina = 100, // Reforged: 100
+			Stamina = 200, // Reforged: 100
 			MeleeSkill = 70, // Reforged: 60
 			RangedSkill = 0, // Reforged: 0
 			MeleeDefense = -15,	// Reforged: -15
@@ -155,7 +155,7 @@
 			ActionPoints = 7,	// Reforged: 7
 			Hitpoints = 350, // Reforged: 350
 			Bravery = 90, // Reforged: 90
-			Stamina = 100, // Reforged: 100
+			Stamina = 200, // Reforged: 100
 			MeleeSkill = 70, // Reforged: 60
 			RangedSkill = 0, // Reforged: 0
 			MeleeDefense = 0,	// Reforged: 0
@@ -175,7 +175,7 @@
 			ActionPoints = 7,	// Reforged: 7
 			Hitpoints = 600, // Reforged: 600
 			Bravery = 130, // Reforged: 130
-			Stamina = 100, // Reforged: 100
+			Stamina = 200, // Reforged: 100
 			MeleeSkill = 80, // Reforged: 70
 			RangedSkill = -15, // Reforged: -15
 			MeleeDefense = -15,	// Reforged: -15
