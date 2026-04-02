@@ -26,8 +26,8 @@
 	::Const.Tactical.Actor.Schrat.Stamina = 400;
 	::Const.Tactical.Actor.Schrat.MeleeSkill = 70;
 	::Const.Tactical.Actor.Schrat.RangedSkill = 0;
-	::Const.Tactical.Actor.Schrat.MeleeDefense = -5;
-	::Const.Tactical.Actor.Schrat.RangedDefense = -5;
+	::Const.Tactical.Actor.Schrat.MeleeDefense = 10;
+	::Const.Tactical.Actor.Schrat.RangedDefense = 0;
 	::Const.Tactical.Actor.Schrat.Initiative = 60;
 
 	// Optional Stats
