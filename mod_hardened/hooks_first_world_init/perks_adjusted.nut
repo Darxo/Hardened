@@ -982,6 +982,7 @@ local adjustedDescriptions = [
 		ID = "perk.rf_feral_rage",
 		Key = "RF_FeralRage",
 		Description = ::UPD.getDescription({
+			Fluff = "Now you made by angry!",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
