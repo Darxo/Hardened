@@ -28,6 +28,10 @@
 
 # Changelog
 
+1.11.3
+	- Add fluff text for **Feral Rage** perk
+	- Fix battles against orc berserker sometimes not loading
+
 1.11.2
 	- Fix loading screen freeze when fighting brigands
 
