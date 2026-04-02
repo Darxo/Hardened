@@ -7,7 +7,7 @@
 		{
 			// We are only interested in behaviors, which control a certain skill use, which targets a certain tile at the end
 			// Thankfully all of those vanilla implementations use this.m.Skill and this.m.TargetTile to store those results in
-			if (this.m.Skill != null && this.m.TargetTile != null && this.m.TargetTile.getEntity() != null)
+			if (this.m.Skill != null && this.m.TargetTile != null && this.m.TargetTile.IsOccupiedByActor)
 			{
 				// Attacks are already covered by ModularVanillas hook of queryTargetValue
 				// queryTargetValue seems to almost never be used for nonAttacks, so t
