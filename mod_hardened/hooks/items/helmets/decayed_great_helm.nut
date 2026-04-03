@@ -11,8 +11,8 @@
 		this.m.Name = "Tarnished Full Helm";	// In Vanilla this is "Decayed Great Helm"
 		this.m.Description = "A full helm dulled by age and wear, its once-proud ornamentation now twisted and corroded. It must have once belonged to a renowned knight.";
 
-		this.m.Value = 2000;			// Vanilla: 2000
-		this.m.ConditionMax = 240;		// Vanilla: 255
+		this.m.Value = 2500;			// Vanilla: 2000
+		this.m.ConditionMax = 250;		// Vanilla: 255
 		this.m.StaminaModifier = -23;	// Vanilla: -22
 		this.m.Vision = -3;				// Vanilla: -3
 
