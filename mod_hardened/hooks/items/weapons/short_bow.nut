@@ -3,7 +3,7 @@
 	{
 		__original();
 
-		this.m.Value = 250;				// Vanilla: 200
+		this.m.Value = 300;				// Vanilla: 200
 		this.m.RangeMax = 6;			// Vanilla: 7
 		this.m.RegularDamage = 35;		// Vanilla: 30
 		// this.m.RegularDamageMax = 50;	// Vanilla: 50

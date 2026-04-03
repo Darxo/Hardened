@@ -3,6 +3,7 @@
 	{
 		__original();
 
+		this.m.Value = 900;		// Vanilla: 750
 		// We replace the vanilla crossbow with a version that's 25% larger to make it easier to differentiate from light crossbows
 		this.m.ArmamentIcon = "icon_HD_crossbow_01";	// Vanilla: icon_crossbow_01
 

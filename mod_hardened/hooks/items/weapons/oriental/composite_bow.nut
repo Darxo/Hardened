@@ -1,4 +1,11 @@
 ::Hardened.HooksMod.hook("scripts/items/weapons/oriental/composite_bow", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.Value = 800;		// Vanilla: 400
+	}
+
 	// We overwrite Reforged skill additions, because we dont hand out any discounts
 	q.onEquip = @() { function onEquip()
 	{

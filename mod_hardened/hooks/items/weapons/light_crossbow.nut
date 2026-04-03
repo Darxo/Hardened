@@ -3,6 +3,7 @@
 	{
 		__original();
 
+		this.m.Value = 400;				// Vanilla: 300
 		this.m.ArmorDamageMult = 0.5;	// Vanilla: 0.6
 	}
 
