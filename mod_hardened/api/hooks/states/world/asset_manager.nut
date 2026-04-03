@@ -16,6 +16,19 @@
 	}
 
 // New Functions
+	q.HD_getFormationSize <- function()
+	{
+		// Todo: test against the expanded reserve mod from discord
+		local ret = 0;
+
+		foreach (bro in ::World.getPlayerRoster().getAll())
+		{
+			if (bro.getPlaceInFormation() < 18) ++ret;
+		}
+
+		return ret;
+	}
+
 	q.getTerrainTypeVisionMult <- function( _tileType )
 	{
 		return this.m.TerrainTypeVisionMult[_tileType];

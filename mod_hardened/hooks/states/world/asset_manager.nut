@@ -53,6 +53,26 @@
 		}
 	}
 
+	q.getBrothersMaxInCombat = @(__original) function()
+	{
+		local ret = __original();
+
+		// Some origins may use very small frontline sizes. For those we don't want to nerf the size at all
+		// This value was chosen somewhat arbitruary
+		local constMinimumFrontline = 6;
+
+		// We do not touch
+		if (ret <= constMinimumFrontline) return ret;
+
+		// Feat: The last two frontline slots are now unlocked when buying the caravan upgrades
+		ret -= 2;
+		if (::World.Retinue.getInventoryUpgrades() >= 1) ++ret;
+		if (::World.Retinue.getInventoryUpgrades() >= 2) ++ret;
+
+		local absoluteMinimum = ::Math.max(constMinimumFrontline, this.HD_getFormationSize());
+		return ::Math.max(ret, absoluteMinimum);
+	}
+
 	// Overwrite, because we make this value dynamic based on the frontline-fieldable troops owned by the player
 	// In Vanilla it only returns the value of this.m.BrothersScaleMax. That value is now unused
 	q.getBrothersScaleMax = @() function()
@@ -82,6 +102,15 @@
 		}
 
 		return ret;
+	}
+
+	// Vanilla Fix: Make updateFormation use the function getBrothersMaxInCombat(), instead of accessing the value of m.BrothersMaxInCombat directly
+	q.updateFormation = @(__original) function( considerMaxBros = false )
+	{
+		local oldBrothersMaxInCombat = this.m.BrothersMaxInCombat;
+		this.m.BrothersMaxInCombat = this.getBrothersMaxInCombat();
+		__original(considerMaxBros);
+		this.m.BrothersMaxInCombat = oldBrothersMaxInCombat;
 	}
 
 	// Overwrite, because we rewrite the original function a bit cleaner and with more recovery functionality

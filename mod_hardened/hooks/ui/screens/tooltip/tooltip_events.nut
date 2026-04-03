@@ -167,8 +167,30 @@
 				];
 			}
 
+			case "stash.ActiveRoster":
+			{
+				foreach (entry in ret)
+				{
+					if (!("id" in entry)) continue;
+					if (entry.id == 2 && entry.type == "description")
+					{
+						entry.text += "\n\nYou can increase your Formation Size by upgrading your Cart.";
+					}
+				}
+				break;
+			}
+
 			case "world-campfire-screen.Cart":
 			{
+				foreach (entry in ret)
+				{
+					if (!("id" in entry)) continue;
+					if (entry.id == 2 && entry.type == "description")
+					{
+						entry.text = "A mercenary company has to carry a lot of equipment and supplies. Better logistics allow for more gear to be carried and more men to be kept ready for battle."
+					}
+				}
+
 				if (::World.Retinue.getInventoryUpgrades() < ::Const.Strings.InventoryUpgradeHeader.len())
 				{
 					ret.push({
@@ -176,6 +198,16 @@
 						type = "text",
 						icon = "ui/icons/bag.png",
 						text = "Gain " + ::MSU.Text.colorPositive("+27") + " Inventory Slots",
+					});
+				}
+
+				if (::World.Retinue.getInventoryUpgrades() == 0 || ::World.Retinue.getInventoryUpgrades() == 1)
+				{
+					ret.push({
+						id = 10,
+						type = "text",
+						icon = "ui/icons/asset_brothers.png",
+						text = "Have " + ::MSU.Text.colorPositive("+1") + " Formation Size",
 					});
 				}
 				break;
