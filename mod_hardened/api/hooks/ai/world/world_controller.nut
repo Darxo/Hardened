@@ -13,4 +13,14 @@
 
 		__original(_entity);
 	}
+
+	q.popOrder = @(__original) function()
+	{
+		if (this.m.Orders.len() != 0)
+		{
+			this.m.Orders[0].HD_onRemoved();
+		}
+
+		__original();
+	}
 });
