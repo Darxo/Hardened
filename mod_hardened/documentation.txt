@@ -28,6 +28,11 @@
 
 # Changelog
 
+1.11.4
+	- Fix crafting in Taxidermist when using Crock Pot mod
+	- Fix **Three Headed Flail** dealing much more damage than intended
+	- Fix potential crash when three-headed-flail breaks in the middle of an attack
+
 1.11.3
 	- Add fluff text for **Feral Rage** perk
 	- Fix battles against orc berserker sometimes not loading
