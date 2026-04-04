@@ -1,8 +1,8 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/strike_down_skill", function(q) {
-	q.m.StunChance = 75;	// Vanilla: 75
+	q.m.StunChance = 100;	// Vanilla: 75
 
 	// Public:
-	q.m.HD_StunDuration <- 2;	// Vanilla: 2
+	q.m.HD_StunDuration <- 1;	// Vanilla: 2
 	q.m.HD_FatigueDealtPerHit <- 20.0;	// Vanilla: 20
 	q.m.HD_DamageTotalMult <- 0.5;		// Vanilla: 0.5
 

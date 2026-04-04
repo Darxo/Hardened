@@ -418,6 +418,25 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.mastery.mace",
+		Key = "SpecMace",
+		Description = ::UPD.getDescription({
+			Fluff = "Master maces to beat your opponents into submission, armored or not.",
+			Requirement = "Mace",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Mace Skills cost " + ::MSU.Text.colorizeMultWithText(::Hardened.Global.WeaponSpecFatigueMult, {InvertColor = true}) + " [Fatigue|Concept.Fatigue]",
+						"Every [hit to the head|Concept.ChanceToHitHead] will [daze|Skill+dazed_effect] your target for " + ::MSU.Text.colorPositive(1) + " [Turn|Concept.Turn]",
+						"[$ $|Skill+knock_out] and [$ $|Skill+knock_over_skill] have a " + ::MSU.Text.colorPositive("100%") + " chance to [stun|Skill+stunned_effect]",
+						"[$ $|Skill+strike_down_skill] [stuns|Skill+stunned_effect] the target for an additional [Turn|Concept.Turn]",
+					],
+				},
+			],
+		}),
+	},
+	{
 		ID = "perk.mastery.polearm",
 		Key = "SpecPolearm",
 		Description = ::UPD.getDescription({
@@ -1863,9 +1882,3 @@ foreach (description in adjustedDescriptions)
 {
 	::UPD.setDescription(description.ID, description.Key, ::Reforged.Mod.Tooltips.parseString(description.Description));
 }
-
-// Hand-Picked Changes
-::Const.Strings.PerkDescription.SpecMace = ::MSU.String.replace(::Const.Strings.PerkDescription.SpecMace, "\n• The Polemace no longer has a penalty for attacking targets directly adjacent.", "");
-::Const.Strings.PerkDescription.SpecMace = ::MSU.String.replace(::Const.Strings.PerkDescription.SpecMace, "• Skills build up", "• Mace Skills cost");
-::Const.Strings.PerkDescription.SpecMace = ::MSU.String.replace(::Const.Strings.PerkDescription.SpecMace, "25%", "20%");
-::Const.Perks.findById("perk.mastery.mace").Tooltip = ::Const.Strings.PerkDescription.SpecMace;

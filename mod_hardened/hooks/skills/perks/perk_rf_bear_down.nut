@@ -27,11 +27,6 @@
 				::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(actor) + " has dazed " + ::Const.UI.getColorizedEntityName(_targetEntity) + " for " + ::MSU.Text.colorPositive(this.m.DazedDuration) + " turn(s)");
 			}
 		}
-		else
-		{
-			existingDazed.setTurns(existingDazed.m.TurnsLeft + this.m.DazedDuration);
-			this.spawnIcon("status_effect_87", _targetEntity.getTile());
-		}
 	}
 
 // Reforged Functions
