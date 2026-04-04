@@ -18,4 +18,30 @@
 		this.m.RoadsOnly = _in.readBool();
 		this.m.AvoidSettlements = _in.readBool();
 	}
+
+// Hardened Events
+	q.HD_onRemoved = @(__original) function()
+	{
+		__original();
+
+		local party = this.getController().getEntity();
+		if (party.getFlags().has("HD_IsBountyHunters"))
+		{
+			foreach (worldEntity in ::World.getAllEntitiesAtPos(party.getPos(), 100))
+			{
+				if (!worldEntity.isLocation()) continue;
+				if (!worldEntity.isLocationType(::Const.World.LocationType.Settlement)) continue;
+
+				if (worldEntity.getFactions().len() == 1)
+				{
+					party.setFaction(worldEntity.getOwner().getID());
+				}
+				else
+				{
+					party.setFaction(worldEntity.getFactionOfType(::Const.FactionType.Settlement).getID());
+				}
+				break;
+			}
+		}
+	}
 });

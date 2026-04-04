@@ -150,6 +150,13 @@
 		__original(_isMinor);
 	}
 
+	q.onSerialize = @(__original) function( _out )
+	{
+		::World.EntityManager.m.HD_BountyHunterManager.onSerialize();
+
+		__original(_out);
+	}
+
 // New Functions
 	// Update the vision of the player party so every nearby entity that it can see, are shown
 	// We make sure that during this update tick, none of those entities will move

@@ -2,6 +2,20 @@
 	// Public
 	q.m.HD_MercenariesBaseResources <- 180;		// Vanilla: 150
 
+	// Private
+	q.m.HD_BountyHunterManager <- null;		// weakrefs on all bounty hunter parties existing in the world
+
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.HD_BountyHunterManager = ::new("scripts/mods/mod_hardened/ai/world/bounty_hunter_manager");
+	}
+
+	q.update = @(__original) function()
+	{
+		__original();
+		this.m.HD_BountyHunterManager.update();
+	}
 
 	// This is called like 30 times per second while unpaused for garbage collection purposes.
 	// The actual meat of this function however is only executed once ever 3 seconds
@@ -23,5 +37,18 @@
 		__original();
 
 		mockObject.cleanup();
+	}
+
+	q.clear = @(__original) function()
+	{
+		__original();
+		this.m.HD_BountyHunterManager.clear();
+	}
+
+	q.onDeserialize = @(__original) function( _in )
+	{
+		__original(_in);
+
+		this.m.HD_BountyHunterManager.onDeserialize();
 	}
 });
