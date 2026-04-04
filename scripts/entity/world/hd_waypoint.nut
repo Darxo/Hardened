@@ -8,6 +8,16 @@ this.hd_waypoint <- this.inherit("scripts/entity/world/party", {
 		return this.m.CustomID;
 	}
 
+	function create()
+	{
+		this.party.create();
+
+		// Similar to the player, we must make sure Controller are only attached to real AI world parties
+		// Otherwise, the WayPoint will start sharing KnownOpponents with nearby "Allies",
+		// 	which can confuse them by adding those allies as their own opponents
+		this.m.Controller = null;
+	}
+
 	function onInit()
 	{
 		this.party.onInit();
