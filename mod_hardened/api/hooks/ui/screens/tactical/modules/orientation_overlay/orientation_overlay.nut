@@ -65,8 +65,8 @@
 	{
 		local ret = [];
 
-		local camera = ::Tactical.getCamera();
-		local cameraPos = camera.getPos();
+		// We fetch this value once, before we go into our foreach loop to hopefully save performance
+		this.m.HD_UIScale = ::Settings.getVideoMode().UIScale;
 		foreach (otherActor in ::Tactical.Entities.getAllInstancesAsArray())
 		{
 			// We check for these conditions twice to filter out all unnecessary overlay changes for efficiency
@@ -83,13 +83,11 @@
 	// This is a bit more costly and contains more information for the javascript frontend
 	q.HD_queryEntityHitchanceOverlays <- function()
 	{
+		local ret = [];
+
 		// We fetch this value once, before we go into our foreach loop to hopefully save performance
 		this.m.HD_UIScale = ::Settings.getVideoMode().UIScale;
 
-		local ret = [];
-
-		local camera = ::Tactical.getCamera();
-		local cameraPos = camera.getPos();
 		foreach (otherActor in ::Tactical.Entities.getAllInstancesAsArray())
 		{
 			ret.push(this.HD_getActorOverlayEntry(otherActor));
@@ -102,12 +100,14 @@
 	{
 		local entry = {
 			id = _actor.getID(),
-			chanceToBeHit = _actor.HD_getChanceToBeHit(),
 			visible = false,
 		};
 
-		if (entry.chanceToBeHit != null && _actor.isPlacedOnMap())
+		local currentChanceToBeHit = _actor.HD_getChanceToBeHit();
+		if (currentChanceToBeHit != null && _actor.isPlacedOnMap())
 		{
+			entry.chanceToBeHit <- currentChanceToBeHit;
+
 			local camera = ::Tactical.getCamera();
 			local cameraPos = camera.getPos();
 			local tile = _actor.getTile();
