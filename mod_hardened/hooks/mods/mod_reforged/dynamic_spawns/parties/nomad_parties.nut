@@ -7,7 +7,11 @@
 			unitBlock.RatioMin = 0.1;	// Reforged: 0.0
 			unitBlock.StartingResourceMin <- 450;	// Reforged: 0
 			delete unitBlock.getSpawnWeight;
-			break;
+		}
+		else if (unitBlock.BaseID == "UnitBlock.RF.NomadRanged")
+		{
+			delete unitBlock.getRatioMax;
+			unitBlock.RatioMax <- 0.35;	// Reforged: 0.45-0.8
 		}
 	}
 
@@ -39,7 +43,18 @@
 		BaseID = "UnitBlock.RF.NomadElite",
 		StartingResourceMin = 350,
 		ExclusionChance = 60,
-		RatioMin = 0.0,
 		RatioMax = 0.2,
 	});
+}
+
+{	// NomadRoamers
+	local nomadRoamers = ::Reforged.Spawns.Parties["NomadRoamers"];
+	foreach (unitBlock in nomadRoamers.DynamicDefs.UnitBlocks)
+	{
+		if (unitBlock.BaseID == "UnitBlock.RF.NomadRanged")
+		{
+			unitBlock.RatioMax = 0.35;	// Reforged: 0.5
+			break;
+		}
+	}
 }
