@@ -28,6 +28,13 @@
 
 # Changelog
 
+1.11.5
+	- Display **Chance to Dodge** as overlay percentage, when previewing movement while in Zone of Control
+	- Reduce frequency and amount of **Barbarian Drummer**, **Skeleton Leader** and **Nomad Ranged Units** in parties
+	- Improve Accuracy of **Expected Chance to be Hit** in the tile tooltip, when previewing movement while in Zone of Control
+	- Fix likely cause for world parties sometimes standing unresponsive in the wilderness and the log being spammed with warnings about that party
+	- Fix likely cause for allied world parties sometimes following the player around
+
 1.11.4
 	- Fix crafting in Taxidermist when using Crock Pot mod
 	- Fix **Three Headed Flail** dealing much more damage than intended

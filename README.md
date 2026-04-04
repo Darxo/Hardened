@@ -1160,7 +1160,9 @@ Brigand Units now use the following names:
 
 ### Combat
 
-- Add Setting (on) to for displaying hitchance labels for all targetable characters whenever you preview an attack skill
+- Add Setting (on) to for
+  - displaying hitchance labels for all targetable characters whenever you preview an attack skill
+  - display chance to dodge label on the active entity, whenever you preview movement while in a Zone of Control
 - Projectiles which fly into obstacles now play a sound effect and shake the targeted object a bit
 - Improve restore item after battle logic, to also restore items, which were dropped to the ground or picked up by another brother during battle
 - Automatically replace broken (shields) or used (nets) equipment after each battle, if you have replacements in your inventory
@@ -1410,6 +1412,7 @@ This section talks about adjustments made to other optional mods, when present a
 
 ### Dynamic Spawns
 
+- Prevent parties from upgrading their units while they are below an **Idealsize** as defined by the return value of the `party::generateIdealSize()` function. By default it returns a value equal to the amount of brothers that the player has and clamped between 6 and 12
 - Fix Unit order in UnitBlocks not taking subparties into account
 
 ### Swifter
