@@ -318,13 +318,9 @@
 	// Remove PlayerBanner
 	::MSU.Array.removeByValue(possibleBanners, ::World.Assets.getBanner());
 
-	foreach (factionID, faction in ::World.FactionManager.m.Factions)
+	foreach (worldParty in ::Hardened.util.getAllWorldEntities())
 	{
-		if (faction == null) continue;
-		foreach (worldParty in faction.m.Units)
-		{
-			::MSU.Array.removeByValue(possibleBanners, "banner_" + worldParty.getBannerID());
-		}
+		::MSU.Array.removeByValue(possibleBanners, "banner_" + worldParty.getBannerID());
 	}
 
 	foreach (location in ::World.EntityManager.getLocations())
@@ -339,4 +335,9 @@
 	}
 
 	return ::MSU.Array.rand(possibleBanners);
+}
+
+::Hardened.util.getAllWorldEntities <- function()
+{
+	return ::World.getAllEntitiesAtPos(::World.State.getPlayer().getPos(), 9000000);
 }
