@@ -14,12 +14,10 @@
 			o.m.FatigueCost += 5;
 		}));
 
-		this.addSkill(::Reforged.new("scripts/skills/actives/knock_out", function(o) {
+		this.addSkill(::Reforged.new("scripts/skills/actives/strike_down_skill", function(o) {
 			o.m.Icon = "skills/active_127.png";
 			o.m.IconDisabled = "skills/active_127_sw.png";
 			o.m.Overlay = "active_127";
-			o.m.ActionPointCost += 2;
-			o.m.StunChance = 100;	// In Vanilla this is 75
 		}));
 	}
 });
