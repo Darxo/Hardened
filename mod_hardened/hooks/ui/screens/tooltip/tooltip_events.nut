@@ -541,7 +541,7 @@
 			else
 			{
 				local aooInformation = [];
-				local expectedChanceToBeHit = 0;
+				local expectedChanceToDodge = null;
 				local childId = 201;
 				foreach (tile in ::MSU.Tile.getNeighbors(_entity.getTile()))
 				{
@@ -552,14 +552,13 @@
 					if (!aooSkill.onVerifyTarget(tile, _entity.getTile())) continue;	// The aooSkill found can actually hit us (this will cover cases of tile height difference being too large)
 
 					local chanceToBeHit = aooSkill.getHitchance(_entity);
-					if (expectedChanceToBeHit == 0)
+					if (expectedChanceToDodge == null)
 					{
-						expectedChanceToBeHit = chanceToBeHit;
+						expectedChanceToDodge = 100.0 - chanceToBeHit;
 					}
 					else
 					{
-						local expectedChanceToDodge = (100 - expectedChanceToBeHit) * (100 - chanceToBeHit) / 100;
-						expectedChanceToBeHit = 100 - expectedChanceToDodge;
+						expectedChanceToDodge *= (100.0 - chanceToBeHit) / 100.0;
 					}
 
 					aooInformation.push({
@@ -571,13 +570,16 @@
 					});
 				}
 
-				ret.insert(0, {
-					id = 200,
-					type = "text",
-					icon = "ui/icons/hitchance.png",
-					children = aooInformation,
-					text = ::MSU.Text.colorNegative(expectedChanceToBeHit + "%") + ::Reforged.Mod.Tooltips.parseString(" [Expected chance to be hit|Concept.ZoneOfControl]"),
-				});
+				if (expectedChanceToDodge != null)
+				{
+					ret.insert(0, {
+						id = 200,
+						type = "text",
+						icon = "ui/icons/hitchance.png",
+						children = aooInformation,
+						text = ::MSU.Text.colorNegative(::Math.round(100.0 - expectedChanceToDodge) + "%") + ::Reforged.Mod.Tooltips.parseString(" [Expected chance to be hit|Concept.ZoneOfControl]"),
+					});
+				}
 			}
 		}
 
