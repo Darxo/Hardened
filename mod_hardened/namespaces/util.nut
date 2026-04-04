@@ -272,8 +272,9 @@
 // This function is meant as a baseline for custom generateIdealSize implementations in dynamic parties
 ::Hardened.util.genericGenerateIdealSize <- function()
 {
-	if (!("Assets" in ::World) || ::World.Assets == null) return ::DynamicSpawns.Const.MainMenuIdealSize;	// fix for when we test a party in the main menu
-	return Math.clamp(::World.getPlayerRoster().getSize(), 6, 12);
+	if (!("Assets" in ::World) || ::World.Assets == null) return 10;	// fix for when we test a party in the main menu
+	local fieldableBrothers = ::Math.min(::World.getPlayerRoster().getSize(), ::World.Assets.getBrothersMaxInCombat());
+	return Math.clamp(fieldableBrothers, 6, 12);
 }
 
 // Return the corpse name of _corpse in a color, depending on whether it was a player corpse or a non-player one

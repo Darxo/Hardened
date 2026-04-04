@@ -52,6 +52,10 @@
 				}
 			},
 			// In Vanilla this party is also able to spawn just with mercenaries. But this is so rare that I chose to not try to mirror that behavior here
+			generateIdealSize = function()
+			{
+				return 8;	// Caravans want to be small and not dynamically larger depending on player party
+			}
 		},
 	];
 
