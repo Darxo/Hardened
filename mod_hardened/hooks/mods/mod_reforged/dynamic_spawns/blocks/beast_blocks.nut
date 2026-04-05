@@ -10,4 +10,12 @@
 			}
 		}
 	}
+
+	{	// UnitBlock.RF.GhoulLowOnly
+		local ghoulBlock = ::Reforged.Spawns.UnitBlocks["UnitBlock.RF.GhoulLowOnly"];
+		ghoulBlock.DynamicDefs.Units.push({
+			BaseID = "Unit.RF.Ghoul",
+			RatioMax =  0.7,
+		});
+	}
 }
