@@ -15,7 +15,6 @@
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/helmets/closed_flat_top_with_mail"],
 			[12, "scripts/items/helmets/conic_helmet_with_faceguard"],
-			[12, "scripts/items/helmets/full_helm"],
 		]);
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
