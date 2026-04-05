@@ -1,7 +1,7 @@
 // Hooking
 {
 	local banditScouts = ::Reforged.Spawns.Parties["BanditScouts"];
-	banditScouts.HardMin = 5;	// Reforged: 7
+	banditScouts.HardMin = 5;	// Reforged: 6
 
 	local banditRoamer = ::Reforged.Spawns.Parties["BanditRoamers"];
 	foreach (unitBlock in banditRoamer.DynamicDefs.UnitBlocks)

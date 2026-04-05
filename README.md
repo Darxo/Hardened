@@ -195,6 +195,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 
 ### Other Notable Changes
 
+- You can now bring -2 Brothers into Battle, compared to what your origin allows. The first two Cart Upgrades allow you to bring +1 Brother into battle each
 - Base Vision for the player and all world parties is now 450 (down from 500)
 - Player Characters now gain 100% XP from combat (up from 85%)
 - Level 7 now requires 5500 XP (up from 5000). Level 8 now requires 8000 XP (up from 7000). Level 9 now requires 11000 XP (up from 9000). Level 10 now requires 14500 XP (up from 12000). Level 11 now requires 18500 XP (up from 15000)
@@ -246,6 +247,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - **Shuffle** (granted by **Dynamic Duo**) no longer puts your partner to the next position in the turn order. It now costs 0 Action Points and 5 Fatigue on all tile types
 - **Spider Poison** now also reduces the Hitpoints Recovery of the target by 50%
 - **Stab** now costs 3 Action Points (down from 4) and has a 25% higher threshold to inflict injuries
+- **Strike Down** now has a 100% Chance to Stun (up from 75%) and has a Stun Duration of 1 Turn (down from 2)
 - **Sword Thrust** now has 0% additional Hitchance (up from -20%)
 - **Take Aim** (granted by **Crossbow and Firearm Mastery**) now costs 3 Action Points (up from 2). It now also lowers the Fatigue cost of your next Crossbow or Firearm Attack by 100%. It can now be used with any Firearm instead of only being restricted to the **Handgonne**. **Take Aim** with Firewarms no longer enlerges the AoE beyong 6 tiles, when aiming at close range
 - **Taunt** (granted by **Taunt** perk) now has a Range of 4 tiles (up from 3)
@@ -281,7 +283,6 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bags and Belts** now also includes two-handed weapons but no longer grants Initiative
 - **Battle Fervor** is completely reworked. It grants 10% more Resolve. It also grants 10% more Melee Skill, Melee Defense, Ranged Skill and Ranged Defense while at Steady Morale
 - **Battle Forged** no longer has any prerequisites. It no longer provide any Reach Ignore
-- **Bear Down** (granted by **Mace Mastery**) is completely reworked. It now causes every headshot to daze the target for 1 turn, or increase the duration of an existing daze by 1 turn
 - **Bestial Vigor** is completely reworked. It is now called **Backup Plan** and grants the skill **Backup Plan** which can be used once per battle to recover 7 Action Points and disable all Attack-Skills for the rest of this turn. It has been removed from the **Wildling** perk group and added to the **Tactician** perk group at Tier 2
 - **Bully** is completely reworked. It now grants 10% more damage against anyone with a lower morale than you. It also grants +5 Melee Defense against anyone with less maximum Hitpoints than you
 - **Between the Ribs** no longer requires the attack to be of piercing type. It now also lowers your chance to hit the head by 10% for each surrounding character
@@ -336,6 +337,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Line Breaker** no longer grants **Shield Bash**. It now causes **Knock Back** to stagger the target on a hit
 - **Lone Wolf** is now only active if no ally from your company is within 2 tiles
 - **Long Reach** now only works while it is NOT your turn
+- **Mace Mastery** no longer grants the **Bear Down** perk. It now causes all mace hits to the head to apply dazed for 1 turn. It now also causes the stun from **Strike Down** to last for 1 additional turn
 - **Man of Steel** is completely reworked. It now makes you take less Armor Penetration damage from Attacks damage equal your Helmet or Body Armor Weight as a percentage, whichever is lower
 - **Marksmanship** is completely reworked. It now grants +10 minimum and maximum damage while there are no enemies within 3 tiles
 - **Mauler** is completely reworked. Once per round, during your turn, if you move next to an injured enemy, you recover 3 Action Points
@@ -501,9 +503,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Ancient Spear** now deals 30-40 damage (up from 20-35), has a Weight of 10 (up from 6) and costs 750 Crowns (up from 150)
 - **Ancient Sword** loses **Stab** and gains **Deathblow** (costing 5 Action Points and 15 Fatigue)
 - **Battle Axe** now deals 60-80 Damage (up from 50-70), 32 Shield Damage (up from 26), has 10 Weight (down from 14), 140% Armor Damage (up from 125%), 0% Headshot Chance (down from 5%) and costs 1200 Crowns (down from 1950). It now has the skills **Split Man**, **Round Swing** and **Split Shield**. Named **Battle Axes** will no longer appear
-- **Berserk Chain** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5) and deals 65-100 Damage (up from 50-100)
+- **Berserk Chain** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5) and deals 65-100 Damage (down from 60-110)
 - **Cruel Falchion** are now a Sword/Dagger hybrid. They now also grant **Stab**
-- **Crossbow**now has 60% Armor Penetration (up from 50%), 50% Armor Damage (down from 70%)
+- **Crossbow** now has 60% Armor Penetration (up from 50%), 50% Armor Damage (down from 70%) and costs 900 Crowns (up from 750)
+- **Composite Bow** now costs 800 Crowns (up from 400)
 - **Cudgel** now deals 45-65 damage (up from 30-50), has 120% Armor Damage (up from 90%), has 4 Reach (up from 3), costs 600 Crowns (up from 300). **Bash** now costs 5 AP (up from 4). **Knock Out** now costs 5 AP (up from 4) has a 100% chance to stun
 - **Dagger** now deals 20-30 Damage (from 15-35)
 - **Estoc** now has 6 Reach (up from 5)
@@ -520,9 +523,9 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Head Splitter** now has 4 Reach (up from 3) and deals 20 Shield Damage (up from 16)
 - **Heavy Crossbow** now has 60% Armor Penetration (up from 50%), 50% Armor Damage (down from 75%) and +2 Fatigue Cost for its weapon skills
 - **Hooked Blade** now deals 40-60 Damage (down from 40-70) and costs 550 Crowns (down from 700)
-- **Hunting Bow** now has 50% Armor Damage (down from 55%)
+- **Hunting Bow** now has 50% Armor Damage (down from 55%) and costs 800 Crowns (up from 400)
 - **Knife** now deals 15-20 Damage (down from 15-25)
-- **Light Crossbow** now has 60% Armor Penetration (up from 50%), 50% Armor Damage (down from 60%)
+- **Light Crossbow** now has 60% Armor Penetration (up from 50%), 50% Armor Damage (down from 60%) and costs 400 Crowns (up from 300)
 - **Longsword** now deals 45-55 damage (down from 65-85) has Armor Penetration of 30% (up from 25%), 75% Armor Damage (down from 100%), +0% Headshot Chance (down from +5%), 6 Reach (up from 5) and costs 1200 Crowns (down from 2400). It loses **Overhead Strike** and gains **Swing**. Its skills no longer have any discount. It can no longer appear as a named weapon
 - **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%), 6 Condition (up from 2) and 50% Armor Damage (up from 10%). It gains the **Mace** Weapontype
  **Military Pick** now has 10 Weight (up from 8)
@@ -535,7 +538,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Reinforced Wooden Poleflail** now has 5 Reach (down from 6). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
 - **Rondel Dagger** now deals 25-35 Damage (from 20-40) and costs 500 Crowns
 - **Rusty Warblade** loses **Decapitate** and gains **Split**
-- **Short Bow** now deals 35-50 damage (up from 30-50), has a Range of 6 (down from 7) and costs 250 Crowns (up from 200)
+- **Short Bow** now deals 35-50 damage (up from 30-50), has a Range of 6 (down from 7) and costs 300 Crowns (up from 200)
 - **Spetum** now has 7 Reach (up from 6), a Weight of 12 (down from 14) and costs 900 Crowns (down from 1050). The named variant now costs 2800 Crowns (down from 3500)
 - **Spiked Impaler** now has 80% Armor Damage (up from 75%) now has +2 Fatigue Cost for its weapon skills
 - **Swordstaff** now has a Weight of 12 (up from 10)
@@ -543,9 +546,10 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Three-Headed Flail** now attacks 2 times per skill use (down from 3) and deals 50% weapon damage per attack (up from 33%). It now has 3 Reach (down from 4) and deals 30-60 Damage (down from 30-75)
 - **Throwing Spears** no longer inflict any fatigue when hitting a shield. They now have a Weight of 4 (down from 6) and costs 60 Crowns (down from 80)
 - **Tree Limb** now deals 40-60 damage (up from 25-40), deals 90% Armor Damage (up from 75%), has 4 Reach (up from 3), a weight of 18 (down from 20), costs 450 Crowns (up from 150). **Bash** now costs 5 AP (up from 4). **Knock Out** now costs 5 AP (up from 4) has a 100% chance to stun
-- **Two-handed Flail** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5), deals 55-90 Damage (up from 45-90) and costs 1800 Crowns (up from 1400)
-- **Two-handed Wooden Flail** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5), deals 35-65 Damage (up from 30-60) and costs 600 Crowns (up from 500). It no longer has any discount on its weapon skills
-- **Two-handed Wooden Hammer** now costs 600 Crowns (up from 500)
+- **Two-handed Flail** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5), deals 55-90 Damage (down from 60-95) and costs 1800 Crowns (up from 1400)
+- **Two-handed Wooden Hammer** now deals 40-60 Damage (down from 40-70) and 200% Armor Damage (up from 150%)
+- **Two-handed Wooden Flail** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5), deals 35-65 Damage (instead of 40-60) and costs 600 Crowns (up from 500). It no longer has any discount on its weapon skills
+- **Two-handed Wooden Hammer** now deals 40-60 Damage (down from 40-70), 200% Armor Damage (up from 150%) and costs 600 Crowns (up from 500)
 - **War Bow** now has 50% Armor Damage (down from 60%), a Weight of 8 (up from 6) and +2 Fatigue Cost for its weapon skills
 - **Warbrand** now deals 65-75 damage (up from 50-75), has a Armor Penetration of 30% (up from 20%), a Weight of 12 (up from 10), +0% Headshot Chance (down from +5%) and costs 2600 Crowns (up from 1600). It loses **Split** and gains **Riposte**. Its skills no longer have a custom cost. The **Named Warbrand** no longer has any custom damage bonus
 - **Warhammer** now has 12 Weight (up from 8)
@@ -638,10 +642,11 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Beastmaster's Headpiece** now has -1 Vision (down from 0) and costs 500 Crowns (up from 350)
 - **Blade Dancer's Head Wrap** now has 70 Condition (up from 60), -2 Vision (down from 0) and costs 900 Crowns (up from 150)
 - **Closed Flat Top Helmet** now has 180 Condition (up from 170), 12 Weight (up from 10) and costs 1100 Crowns (up from 1000)
-- **Closed Flat Top with Mail** now costs 300 Crowns (down from 3000)
+- **Closed Flat Top with Mail** now has 20 Weight (up from 19)
 - **Closed Mail Coif** now has 100 Condition (down from 90), 6 Weight (up from 4), -1 Vision (down from 0) and costs 450 Crowns (up from 250)
 - **Closed Scrap Metal Helmet** now has 200 Condition (up from 190) and 17 Weight (down from 18)
 - **Closed and Padded Flat Top** now has 12 Weight (up from 11)
+- **Conic Helmet with Faceguard** now has 280 Condition (down from 290) and 20 Weight (up from 19)
 - **Conic Helmet with Closed Mail** now has 260 Condition (down from 265) and 17 Weight (down from 18)
 - **Covered Decayed Closed Flat Top with Mail** will no longer appear in the game. Any versions of it will instead change to look like **Decayed Closed Flat Top with Mail**
 - **Crude Metal Helmet** now has 130 Condition (down from 145) and costs 400 Crowns (down from 550)
@@ -649,7 +654,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Cultist Leather Hood** now has 80 Condition (up from 60), 7 Weight (up from 3), -3 Vision (down from -2) and costs 90 Crowns (up from 140)
 - **Dark Cowl** now has 30 Condition (down from 40), 3 Weight (up from 0), -1 Vision (down from 0) and costs 30 Crowns (up from 100)
 - **Decayed Closed Flat Top with Mail** now has 220 Condition (down from 230), 18 Weight (down from 19) and costs 1200 Crowns (down from 1250)
-- **Decayed Great Helm** is now called **Tarnished Full Helm**, has 240 Condition (down from 255) and 23 Weight (up from 22)
+- **Decayed Great Helm** is now called **Tarnished Full Helm**, has 250 Condition (down from 255), 23 Weight (up from 22) and costs 2500 Crowns (up from 2000)
 - **Decorated Full Helm** now has 300 Condition (down from 320), 23 Weight (up from 21) and costs 5000 Crowns (up from 4000)
 - **Desert Stalker's Head Wrap** now has 50 Condition (up from 45), 1 Weight (up from 0) and costs 900 Crowns (up from 120)
 - **Duelist's Hat** now has 60 Condition (down from 70), 1 Weight (down from 3), -1 Vision (down from 0) and costs 900 Crowns (up from 200)
@@ -662,7 +667,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Gladiator Helmet** now has 230 Condition (up from 225), -4 Vision (down from -3) and costs 2500 Crowns (up from 2200)
 - **Gunner's Hat** now has 70 Condition (up from 30), 4 Weight (up from 0), -1 Vision (down from 0) and costs 500 Crowns (up from 50)
 - **Headscarf** now has 2 Weight (up from 0) and costs 20 Crowns (down from 30)
-- **Heavy Horned Plate Helmet** now has and costs 1500 Crowns (up from 1300)
+- **Heavy Horned Plate Helmet** now grants +10 Threat and costs 2500 Crowns (up from 1300)
 - **Heavy Lamellar Helmet** now has 260 Condition (up from 255) and 18 Weight (up from 17)
 - **Heavy Mail Coif** now has 120 Condition (up from 110), 7 Weight (up from 5), -1 Vision (down from 0) and costs 600 Crowns (up from 375)
 - **Hood** now has 3 Weight (up from 0), -1 Vision (down from 0) and costs 30 Crowns (down from 40)
@@ -702,7 +707,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Steppe Helmet with Mail** now has 14 Weight (up from 12) and -2 Vision (down from -1)
 - **Straw Hat** now has 3 Weight (up from 0), -1 Vision (down from 0) and costs 30 Crowns (down from 60)
 - **Temple of Knowledge** now has 3 Weight (up from 0), -1 Vision (down from 0) and costs 200 Crowns (up from 0). It grants +5 Resolve when worn
-- **Turban Helmet** now has 280 Condition (down from 290), 19 Weight (down from 20) and costs 3000 Crowns (down from 3200)
+- **Turban Helmet** now has 280 Condition (down from 290) and costs 3000 Crowns (down from 3200)
 - **Undertaker's Hat** now has 50 Condition (up from 40), 3 Weight (up from 0) and -1 Vision (down from 0)
 - **Witchhunter's Hat** now has 50 Condition (up from 40), 3 Weight (up from 0), -1 Vision (down from 0) and costs 120 Crowns (up from 100)
 - **Wizard's Hat** now has 50 Condition (up from 30), 2 Weight (up from 0), -1 Vision (down from 0) and costs 300 Crowns (up from 30)
@@ -1105,6 +1110,7 @@ Brigand Units now use the following names:
 
 ### World Parties
 
+- Introduce a roaming **Bounty Hunter** company. They behave very similar to roaming Mercenary Companies but use different units to fight
 - World Parties are no longer stunned, when you cancel the combat dialog with them
 - Food Products transported by Caravans now always drop at full stacksize and freshness
 - Caravans from Tier 1 and Tier 2 civilian settlements now transport 2 produces (down from 3)
@@ -1423,6 +1429,8 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add `::Hardened.util.getAllWorldEntities()` which returns an array of all world entitiy (locations, and parties alike)
+- Add `world_behavior::HD_onRemoved()` Event, which triggers just before that order is removed by `world_controller::popOrder`
 - `skill::RF_isNewSkillUseOrEntity` will now always return `true`
 - Add `::Hardened.Global.WeaponSpecFatigueMult = 0.8` which can be used to adjust the fatigue discount, granted by all weapon masteries
 - Add `HD_AttacksPerUse = 2` and `HD_DamageTotalMult = 0.5` for `cascade_skill` and `hail_skill` to manipulate, how often and how hard the three headed flail hits per skill use
@@ -1572,7 +1580,6 @@ This section can be skipped by any regular user. It is only meant as an overview
 
 - Loading the game over an enemy allows them to instantly engage the player in battle
 - Map Seeds for Vanilla or Reforged are unlikely to work the same under Hardened
-- Mace Mastery perk description still talks about removing penalty to hit adjacent enemies, but that penalty doesnt even exist anymore
 - Injuries now heal at the start of the day and wages are paid at the start of the day; instead of during midday
 - Hitchances of Lunge-Like attacks can be inaccurate as the act of moving next to your target can enable/disable various effects
 

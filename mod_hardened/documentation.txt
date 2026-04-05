@@ -28,6 +28,33 @@
 
 # Changelog
 
+1.12.0
+	- You can now bring -2 Brothers into Battle, compared to what your origin allows. The first two Cart Upgrades allow you to bring +1 Brother into battle each
+	- Introduce a roaming **Bounty Hunter** company. They behave very similar to roaming Mercenary Companies but use different units to fight
+	- **Mace Mastery** no longer grants the **Bear Down** perk. It now causes all mace hit to the head to apply dazed for 1 turn. It now also causes the stun from **Strike Down** to last for 1 additional turn
+	- **Strike Down** now has a 100% Chance to Stun (up from 75%) and has a Stun Duration of 1 Turn (down from 2)
+	- **Two-Handed Wooden Hammer** now deals 40-60 Damage (down from 40-70) and 200% Armor Damage (up from 150%)
+	- **Two-Handed Hammer** now deals 55-75 Damage (down from 60-90) and 250% Armor Damage (up from 200%)
+	- **Tarnished Full Helm** now has 250 Condition (up from 240) and costs 2500 Crowns (up from 2000)
+	- **Heavy Horned Plate Helmet** now grants +10 **Threat** and costs 2500 Crowns (up from 1500)
+	- **Closed Flat Top with Mail** now has a Weight of 20 (up from 19)
+	- **Conic Helmet with Faceguard** now has a Weight of 20 (up from 19)
+	- **Turban Helmet** now has a Weight of 20 (up from 19)
+	- **Short Bow** now costs 300 Crowns (up from 250)
+	- **Hunting Bow** now costs 800 Crowns (up from 400)
+	- **Composite Bow** now costs 800 Crowns (up from 400)
+	- **Light Crossbow** now costs 400 Crowns (up from 300)
+	- **Crossbow** now costs 900 Crowns (up from 750)
+	- **Alps** now have a cost of 25 (down from 30)
+	- **Schrats** now have 10 Melee Defense (up from -5) and 0 Ranged Defense (up from -5). Their Shield now has 25 Melee Defense (up from 20)
+	- **Hedge Knights** no longer spawn with a **Full Helm**
+	- Slightly improve the tooltips of **Strike Down**
+	- Slightly shorten toolbox perk description
+	- Fix fights against Orc Berserker not starting correctly
+	- Fix `::Hardened.util.findUnusedMercenaryBanner` producing duplicates
+	- Add `::Hardened.util.getAllWorldEntities()` which returns an array of all world entitiy (locations, and parties alike)
+	- Add `world_behavior::HD_onRemoved()` Event, which triggers just before that order is removed by `world_controller::popOrder`
+
 1.11.5
 	- Display **Chance to Dodge** as overlay percentage, when previewing movement while in Zone of Control
 	- Reduce frequency and amount of **Barbarian Drummer**, **Skeleton Leader** and **Nomad Ranged Units** in parties

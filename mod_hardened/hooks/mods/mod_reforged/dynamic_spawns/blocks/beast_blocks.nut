@@ -1,5 +1,5 @@
 // Hooks
-{
+{	// Ghouls
 	{	// UnitBlock.RF.Ghoul
 		local ghoulBlock = ::Reforged.Spawns.UnitBlocks["UnitBlock.RF.Ghoul"];
 		foreach (unitDef in ghoulBlock.DynamicDefs.Units)
