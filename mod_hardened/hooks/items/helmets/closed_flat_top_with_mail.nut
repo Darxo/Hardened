@@ -4,7 +4,7 @@
 		__original();
 		this.m.Value = 3000;			// Vanilla: 3000
 		this.m.ConditionMax = 280;		// Vanilla: 280
-		this.m.StaminaModifier = -19;	// Vanilla: -19
+		this.m.StaminaModifier = -20;	// Vanilla: -19
 		this.m.Vision = -3;				// Vanilla: -3
 	}
 });
