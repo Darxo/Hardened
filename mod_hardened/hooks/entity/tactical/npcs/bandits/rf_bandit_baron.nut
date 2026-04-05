@@ -17,11 +17,11 @@
 			[12, "scripts/items/armor/coat_of_scales"],
 		]);
 
-		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 240 - 280
-			[12, "scripts/items/helmets/flat_top_with_mail"],
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 260 - 280
 			[12, "scripts/items/helmets/nordic_helmet_with_closed_mail"],
 			[12, "scripts/items/helmets/conic_helmet_with_closed_mail"],
 			[12, "scripts/items/helmets/conic_helmet_with_faceguard"],
+			[12, "scripts/items/helmets/closed_flat_top_with_mail"],
 		]);
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
