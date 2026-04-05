@@ -18,7 +18,7 @@
 		]);
 
 
-		if (::Hooks.getMod("mod_reforged").getVersion() <= ::Hooks.SQClass.ModVersion("0.8.1"))
+		if (::Hooks.getMod("mod_reforged_assets").getVersion() <= ::Hooks.SQClass.ModVersion("0.1.0"))
 		{
 			this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 				[12, "scripts/items/weapons/greenskins/orc_flail_2h"],
