@@ -2,3 +2,4 @@
 brushes/
 gfx/*.png
 !gfx/*/.png
+.bbbuilder/
