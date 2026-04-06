@@ -45,6 +45,11 @@
 			this.m.Loot.clear();	// First we clear the existing items/named items
 			this.onSpawned();
 		}
+		// Feat: Attached Locations that are destroyed, will get their troops wiped
+		else if (!_active)
+		{
+			this.clearTroops();
+		}
 
 		__original(_active);
 	}
