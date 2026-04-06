@@ -32,6 +32,9 @@
 	// We disable the vanilla defender day scaling and instead apply it via ::Hardened.Global.getWorldDifficultyMult()
 	q.createDefenders = @(__original) function()
 	{
+		// Vanilla Fix: Inactive (temporarily destroyed) locations no longer create defenders
+		if (!this.isActive()) return;
+
 		if (!this.m.IsScalingDefenders) return __original();
 
 		// Switcheroo of this.m.Resources to apply our new global difficulty multiplier in a dynamic way
