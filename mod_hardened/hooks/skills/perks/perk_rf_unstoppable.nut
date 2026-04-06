@@ -83,6 +83,10 @@
 		{
 			this.setStacks(0);
 		}
+		else if (!_skill.isAttack())
+		{
+			this.setStacks(this.m.Stacks - 1);
+		}
 	}
 
 	q.onUpdate = @(__original) function( _properties )
@@ -108,22 +112,6 @@
 			this.m.RoundWhenStackGained = ::Time.getRound();
 			this.setStacks(this.m.Stacks + 1);
 		}
-	}
-
-	q.onTurnEnd = @(__original) function()
-	{
-		__original();
-		local actor = this.getContainer().getActor();
-		if (actor.getActionPoints() > this.getActionPointThreshold())
-		{
-			this.setStacks(this.m.Stacks - 1);
-		}
-	}
-
-	q.onWaitTurn = @(__original) function()
-	{
-		__original();
-		this.setStacks(this.m.Stacks - 1);
 	}
 
 // Modular Vanilla Functions
@@ -168,9 +156,7 @@
 
 	q.setStacks <- function( _newStacks )
 	{
-		_newStacks = ::Math.max(0, _newStacks);
-		_newStacks = ::Math.min(this.m.MaxStacks, _newStacks);
-
+		_newStacks = ::Math.clamp(_newStacks, 0, this.m.MaxStacks);
 		if (_newStacks == this.m.Stacks) return;
 
 		this.m.Stacks = _newStacks;
