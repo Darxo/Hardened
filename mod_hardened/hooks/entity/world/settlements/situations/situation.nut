@@ -153,7 +153,7 @@
 				id = 15,
 				type = "text",
 				icon = "ui/icons/asset_brothers.png",
-				text = background.getNameOnly() + "s are more common",
+				text = background.getNameOnly() + "s are " + ::MSU.Text.colorPositive("more") + " common",
 			});
 		}
 
@@ -163,7 +163,7 @@
 				id = 16,
 				type = "text",
 				icon = "ui/icons/asset_brothers.png",
-				text = removedBackground.getNameOnly() + "s are not available for hire",
+				text = removedBackground.getNameOnly() + "s are " + ::MSU.Text.colorNegative("not") + " available for hire",
 			});
 		}
 	}
