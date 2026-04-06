@@ -81,6 +81,23 @@
 		}
 	}
 
+	q.onMissed = @(__original) function( _attacker, _skill, _dontShake = false )
+	{
+		__original(_attacker, _skill, _dontShake);
+
+		if (_dontShake) return;
+		if (this.isHiddenToPlayer()) return;
+		if (!this.m.IsShakingOnHit) return;
+		if (this.Tactical.getNavigator().isTravelling(this)) return;
+
+		// Vanilla explicitely does only shake, when the attack is Non-Ranged or at a Distance of 1 Tile, so we filter this specific case out here
+		if (!_skill.isRanged()) return;
+		if (_attacker.getTile().getDistanceTo(this.getTile()) == 1) return;
+
+		// Feat: Ranged Attacks at a range of 2 or more tiles now cause us to shake
+		this.HD_dodgeSidewaysAnimation(_attacker.getTile());
+	}
+
 	// Vanilla Fix: We prevent a dying NPC from flipping the setLastCombatResult, unless they were the last enemy to die
 	// This prevents a bug in the Sunken Library, where the player wins if his last brother dies from a Flying Skull detonation
 	// The issue in Vanilla is that the Skull dies first, within its Kill function the player dies
@@ -480,6 +497,13 @@
 
 		::Tactical.getShaker().cancel(this);
 		::Tactical.getShaker().shake(this, this.getTile(), 1, ::Const.Combat.ShakeEffectArmorHitColor, ::Const.Combat.ShakeEffectArmorHitHighlight, ::Const.Combat.ShakeEffectArmorHitFactor, ::Const.Combat.ShakeEffectArmorSaturation, layers, 1.0);
+	}
+
+	// Play a dodge animation that dodges an incoming attack in a 90% angle in to either side
+	q.HD_dodgeSidewaysAnimation <- function( _attackerTile )
+	{
+		// Todo: actually do the shake in 90° angle
+		::Tactical.getShaker().shake(this, _attackerTile, 4);
 	}
 
 	// Make all layers on this character blink briefly red, to highlight, that this enemy will attack us, if we move
