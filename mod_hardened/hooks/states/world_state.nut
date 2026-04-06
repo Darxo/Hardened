@@ -10,7 +10,7 @@
 
 		if (ret)
 		{
-			if (_location.isLocationType(::Const.World.LocationType.AttachedLocation) && _location.isRaidable() && _location.isAlliedWithPlayer())
+			if (_location.isAttackable() && _location.isLocationType(::Const.World.LocationType.AttachedLocation) && _location.isRaidable() && _location.isAlliedWithPlayer())
 			{
 				local faction = ::World.FactionManager.getFaction(_location.getFaction());
 				faction.setIsTemporaryEnemy(true);
