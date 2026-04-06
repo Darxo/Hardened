@@ -28,6 +28,21 @@
 
 # Changelog
 
+1.12.1
+	- Play dodge-animation for many actors when they dodge a ranged attack
+	- Colorize recruit bullet points in settlement situation tooltip
+	- Shorten **Backup Plan** Perk description
+	- Improve tooltip of **Backup Plan** skill
+	- Slightly improve wording on caravan card upgrade tooltip
+	- Slightly improve **Blitzkrieg** skill tooltip
+	- Fix **Unstoppable** spawning an overlay icon when the character is not visible to the player
+	- Fix troops of destroyed attached locations not being cleared correctly when it is destroyed
+	- Fix destroyed attached locations still being attackable
+	- Fix mood tooltip showing too many decimal places
+	- Fix **Anticipation** effect not displaying its tooltip correctly
+	- Fix **Strike Down** still mentioning the stun duration in its description
+	- Fix(Vanilla) destroyed locations being able to generate defenders
+
 1.12.0
 	- You can now bring -2 Brothers into Battle, compared to what your origin allows. The first two Cart Upgrades allow you to bring +1 Brother into battle each
 	- Introduce a roaming **Bounty Hunter** company. They behave very similar to roaming Mercenary Companies but use different units to fight

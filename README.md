@@ -511,7 +511,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Dagger** now deals 20-30 Damage (from 15-35)
 - **Estoc** now has 6 Reach (up from 5)
 - **Goblin Skewer** are now a Spear/Dagger hybrid. **Thrust** is replaced with **Stab**. **Riposte** is removed
-- **Goedendag** no longer grants **Cudgel** skill. It now has a 100% chance to stun with **Knock Out** (up from 75%)
+- **Goedendag** no longer grants **Cudgel** skill. It loses **Knock Out** and gains **Strike Down**
 - **Fighting Axe** now costs 2300 crowns (down from 2800)
 - **Firelance** now also has the **Firearm** weapontype
 - **Flail** now deals 30-55 damage (up from 25-55) and has 3 Reach (down from 4)
@@ -1176,6 +1176,7 @@ Brigand Units now use the following names:
 - Introduce a new cosmetic **Non-Combatant** effect, given to non-combatant characters, which explains that they do not need to be killed in order to win
 - Add Setting (on) to display a glowing red eyes effect on any human-sized character, who is under the effect of **Killing Frenzy**, **Berserking Mushrooms** or has 3 stacks of **Decisive**
 - Corpses of resurrecting Zombies and Humans now emit a slight purple particle effect
+- Play dodge-animation for many actors when they dodge a ranged attack
 - Fleeing surrounded hostile characters now take 100% more hitpoint damage, after the player has won but chooses to "Run them down"
 - While previewing movement, tile tooltips show calculations for getting hit by enemies while in zone of control. If not in zone of control tile tooltip instead indicates that
 - Whenever you preview a movement during combat, briefly highlight adjacent enemies, who would get a zone of control attack against you
@@ -1386,6 +1387,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix named one-handed mace icon art not lining up with their sprite art
 - Fix world parties able to join the same fight multiple times
 - Fix the same Human being able to play the same sound effect twice in a row
+- Fix destroyed locations being able to generate defenders
 - Fix Non-Scaled Experience gained (e.g. via Event or Dismissing Brothers) still being scaled by XP effects on the receiving character
 - Fix **Goblin Wolfrider** having no `ShakeLayer` for `BodyPart.All` defined
 - Fix **Wolf**, spawned by a dying **Goblin Wolfrider**, sometimes having an action in the round it spawned
@@ -1429,6 +1431,8 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add `settlement::HD_getBuildings()` which returns an array of all settlement buildings
+- Add `building::HD_onUpdateOtherShopList(_id, _list)` event which triggers after the shoplist of a town building is generated
 - Add `::Hardened.util.getAllWorldEntities()` which returns an array of all world entitiy (locations, and parties alike)
 - Add `world_behavior::HD_onRemoved()` Event, which triggers just before that order is removed by `world_controller::popOrder`
 - `skill::RF_isNewSkillUseOrEntity` will now always return `true`
