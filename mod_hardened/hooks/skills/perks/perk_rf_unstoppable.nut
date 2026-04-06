@@ -174,9 +174,9 @@
 		if (_newStacks == this.m.Stacks) return;
 
 		this.m.Stacks = _newStacks;
-		local actor = this.getContainer().getActor()
+		local actor = this.getContainer().getActor();
 		actor.setDirty(true);	// We force another update on this character as its stacks have changes
-		if (actor.isPlacedOnMap())
+		if (actor.isPlacedOnMap() && !actor.isHiddenToPlayer())
 		{
 			this.spawnIcon("perk_rf_unstoppable", actor.getTile());
 		}
