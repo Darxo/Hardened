@@ -40,19 +40,19 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "Take " + ::MSU.Text.colorizeMultWithText(damageReduction, {InvertColor = true}) + " damage from all attacks"
+				text = "Take " + ::MSU.Text.colorizeMultWithText(damageReduction, {InvertColor = true}) + " damage from all attacks",
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = ::MSU.Text.colorNegative(this.m.DamageReductionPerTile + "%") + " additional reduced damage received from all attacks for every tile between the attacker and you"
+				text = "Take an additional " + ::MSU.Text.colorizePct(this.m.DamageReceivedTotalPctPerTile) + " less damage from all attacks for every tile between the attacker and you",
 			},
 			{
 				id = 15,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = ::MSU.Text.colorPositive(this.m.UsesRemaining) + " uses remaining"
+				text = ::MSU.Text.colorPositive(this.m.UsesRemaining) + " uses remaining",
 			}
 		]);
 
