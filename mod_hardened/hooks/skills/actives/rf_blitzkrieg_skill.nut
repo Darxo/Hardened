@@ -27,7 +27,7 @@
 				if (this.m.IsSpent)
 				{
 					entry.icon = "ui/icons/warning.png";
-					entry.text = "Cannot be used, because you already used this skill";
+					entry.text = "Cannot be used, because you already used this skill in this battle";
 				}
 				else
 				{
