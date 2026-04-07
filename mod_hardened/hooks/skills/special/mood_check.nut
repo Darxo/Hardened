@@ -19,7 +19,7 @@
 		if (::Hardened.Mod.ModSettings.getSetting("ShowAbsoluteMoodValue").getValue())
 		{
 			// We show the accurate mood, instead of a percentage representation of it
-			ret += " (" + actor.getMood() + "/7.0)";
+			ret += " (" + ::MSU.Math.roundToDec(actor.getMood(), 2) + "/7.0)";
 		}
 
 		return ret;
