@@ -9,7 +9,9 @@
 	q.softReset = @(__original) function()
 	{
 		__original();
+		this.m.Description = "Strike a heavy blow intended to incapacitate and stun your target, but not to do the most damage. Stunned targets can not keep up their Shieldwall, Spearwall or similar defensive skills.";
 		this.m.StunChance = this.b.StunChance;
+
 		this.m.HD_StunDuration = this.b.HD_StunDuration;
 	}
 
