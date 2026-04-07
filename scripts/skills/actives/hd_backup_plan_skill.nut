@@ -47,20 +47,22 @@ this.hd_backup_plan_skill <- this.inherit("scripts/skills/skill", {
 			text = ::Reforged.Mod.Tooltips.parseString("Disable all Attack-Skills during your turn until the end of your turn"),
 		});
 
-		ret.push({
-			id = 20,
-			type = "text",
-			icon = "ui/icons/warning.png",
-			text = "Can only be used once per battle",
-		});
-
 		if (this.m.IsSpent)
 		{
 			ret.push({
-				id = 21,
+				id = 20,
 				type = "text",
 				icon = "ui/icons/warning.png",
-				text = ::MSU.Text.colorNegative("Has already been used this battle"),
+				text = "Cannot be used, because you already used this skill in this battle",
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 20,
+				type = "text",
+				icon = "ui/icons/unlocked_small.png",
+				text = "Can only be used once per battle",
 			});
 		}
 
