@@ -207,7 +207,7 @@
 						id = 10,
 						type = "text",
 						icon = "ui/icons/asset_brothers.png",
-						text = "Have " + ::MSU.Text.colorPositive("+1") + " Formation Size",
+						text = "Gain " + ::MSU.Text.colorPositive("+1") + " Formation Size",
 					});
 				}
 				break;
