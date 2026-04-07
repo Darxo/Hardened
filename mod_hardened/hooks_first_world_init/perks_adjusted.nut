@@ -659,7 +659,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlock [Backup Plan|Skill+hd_backup_plan_skill], allowing you to recover [Action Points|Concept.ActionPoints] once per battle",
+					"Unlock [Backup Plan|Skill+hd_backup_plan_skill]",
 				],
 			}],
 		}),
