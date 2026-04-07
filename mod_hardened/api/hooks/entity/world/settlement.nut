@@ -30,6 +30,17 @@
 		return priceMult;
 	}
 
+	q.onUpdateShopList = @(__original) function( _id, _list )
+	{
+		__original(_id, _list);
+
+		// Feat: shoplists of one building can now be influenced by other existing buildings
+		foreach (building in this.HD_getBuildings())
+		{
+			building.HD_onUpdateOtherShopList(_id, _list);
+		}
+	}
+
 // New Functions
 	q.HD_getBuildings <- function()
 	{

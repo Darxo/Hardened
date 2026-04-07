@@ -68,4 +68,11 @@
 			_item.setCondition(::Math.rand(_item.getConditionMax() * this.m.HD_DamagedConditionMin, _item.getConditionMax()) * 1.0);
 		}
 	}
+
+	/// New Event, that is triggered for every building in a settlement, whenever a building updates its shoplist
+	/// @param _id is the ID of the building
+	/// @param _list array with the current list of items
+	q.HD_onUpdateOtherShopList <- function( _id, _list )
+	{
+	}
 });
