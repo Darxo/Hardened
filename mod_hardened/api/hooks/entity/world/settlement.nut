@@ -29,4 +29,15 @@
 		priceMult *= this.m.Modifiers.SellPriceMult;
 		return priceMult;
 	}
+
+// New Functions
+	q.HD_getBuildings <- function()
+	{
+		local ret = [];
+		foreach (building in this.m.Buildings)
+		{
+			if (building != null) ret.push(building);
+		}
+		return ret;
+	}
 });
