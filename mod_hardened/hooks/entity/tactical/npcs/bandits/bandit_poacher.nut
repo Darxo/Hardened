@@ -79,7 +79,6 @@
 		b.setValues(::Const.Tactical.Actor.BanditPoacher);
 
 		// Generic Perks
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_bully"));
 	}
 
 	// Assign Head and Body armor to this character

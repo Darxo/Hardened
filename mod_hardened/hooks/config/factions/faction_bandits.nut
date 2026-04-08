@@ -12,7 +12,7 @@
 			Stamina = 100, // Reforged: 95
 			MeleeSkill = 55, // Reforged: 55
 			RangedSkill = 40, // Reforged: 45
-			MeleeDefense = 0,	// Reforged: 0
+			MeleeDefense = 5,	// Reforged: 0
 			RangedDefense = 0, // Reforged: 0
 			Initiative = 100,	// Reforged: 95
 		}
