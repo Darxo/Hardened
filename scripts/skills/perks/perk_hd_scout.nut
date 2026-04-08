@@ -48,6 +48,11 @@ this.perk_hd_scout <- ::inherit("scripts/skills/skill", {
 		_properties.Vision += this.getVisionModifier(this.m.CurrentVirtualStepTile);
 	}
 
+	function onRemoved()
+	{
+		this.getContainer().getActor().m.ActionPointCosts = clone ::Const.DefaultMovementAPCost;
+	}
+
 // MSU Events
 	function onMovementStep( _tile, _levelDifference )
 	{

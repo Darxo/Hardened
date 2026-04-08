@@ -59,11 +59,16 @@ this.perk_hd_elusive <- ::inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		this.getContainer().getActor().m.ActionPointCosts = ::Const.PathfinderMovementAPCost;	// This will not stack with Pathfinder perk
+		this.getContainer().getActor().m.ActionPointCosts = clone ::Const.PathfinderMovementAPCost;	// This will not stack with Pathfinder perk
 		if (this.m.IsInEffect)
 		{
 			_properties.IsImmuneToRoot = true;
 		}
+	}
+
+	function onRemoved()
+	{
+		this.getContainer().getActor().m.ActionPointCosts = clone ::Const.DefaultMovementAPCost;
 	}
 
 	function onTurnStart()
