@@ -51,4 +51,40 @@
 	{
 		return ::Const.Difficulty.MaxResources[this.getEconomicDifficulty()].Medicine + this.m.MedicineMaxAdditional;
 	}
+
+	/// @return Array with all items from the player stash and those equipped to characters in the player roster
+	q.HD_getAllItems <- function()
+	{
+		local ret = [];
+
+		foreach (item in this.getStash().getItems())
+		{
+			if (item != null) ret.push(item);
+		}
+
+		foreach (brother in ::World.getPlayerRoster().getAll())
+		{
+			ret.extend(brother.getItems().getAllItems());
+		}
+
+		return ret;
+	}
+
+	// Remove the item _itemInstance, whether it is equipped to a brother or stored in the player stash
+	q.HD_removeItemAnywhere <- function( _itemInstance )
+	{
+		foreach (brother in ::World.getPlayerRoster().getAll())
+		{
+			local item = brother.getItems().getItemByInstanceID(_itemInstance.getInstanceID());
+			if (item == null) continue;
+
+			return brother.getItems().HD_removeItemAnywhere(_itemInstance);
+		}
+
+		// The remove function always returns null, so we need a seperate check to confirm, whether _itemInstance was actually removed
+		if (this.getStash().getItemByInstanceID(_itemInstance.getInstanceID()) == null) return false;
+
+		this.getStash().remove(_itemInstance);
+		return true;
+	}
 });

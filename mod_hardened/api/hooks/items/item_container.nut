@@ -32,6 +32,20 @@
 		local staminaModifier = this.getStaminaModifier(_slots);
 		return ::Math.max(0, -1 * staminaModifier);
 	}
+
+	// Unequip _item, no matter where it is equipped
+	/// @return true, if _item was equipped and successfully removed
+	q.HD_removeItemAnywhere <- function( _item )
+	{
+		if (_item.getCurrentSlotType() == ::Const.ItemSlot.Bag)
+		{
+			return removeFromBag(_item);
+		}
+		else
+		{
+			return unequip(_item);
+		}
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/items/item_container", function(q) {
