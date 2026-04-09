@@ -197,7 +197,7 @@
 						id = 10,
 						type = "text",
 						icon = "ui/icons/bag.png",
-						text = "Gain " + ::MSU.Text.colorPositive("+27") + " Inventory Slots",
+						text = "Gain " + ::MSU.Text.colorPositive("+" + ::World.Retinue.HD_getInventoryUpdateAmount()) + " Inventory Slots",
 					});
 				}
 

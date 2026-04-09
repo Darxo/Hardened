@@ -29,4 +29,11 @@
 
 	// Renown-Hit, when you cancel a contract for which you took payment in advance
 	::Const.World.Assets.HD_ReputationOnContractCancelAdvance <- -50;		// Vanilla: -100
+
+	// This many inventory slots are gained when purchasing the respective cart upgrade
+	::Const.World.HD_InventoryUpgradeSlots <- [
+		27,
+		27,
+		27,
+	];
 }
