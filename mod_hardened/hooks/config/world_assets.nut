@@ -32,8 +32,8 @@
 
 	// This many inventory slots are gained when purchasing the respective cart upgrade
 	::Const.World.HD_InventoryUpgradeSlots <- [
+		18,
 		27,
-		27,
-		27,
+		36,
 	];
 }
