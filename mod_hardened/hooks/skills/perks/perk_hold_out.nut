@@ -53,28 +53,23 @@
 		}
 	}}.onUpdate;
 
+	q.onAfterUpdate = @(__original) function( _properties )
+	{
+		__original(_properties);
+
+		if (this.getContainer().getActor().getCurrentProperties().IsStunned && !_properties.IsStunned)
+		{
+			// This perk triggers its immunity, whenever our actor loses stunned
+			// We do that by checking whether our previous character properties determined us being stunned, but the new properties have us no longer stunned
+			this.triggerStunImmunity();
+		}
+	}
+
 	q.onTurnStart = @(__original) { function onTurnStart()
 	{
 		__original();
 		this.m.HD_IsActive = false;
 	}}.onTurnStart;
-
-	q.onTurnEnd = @(__original) { function onTurnEnd()
-	{
-		__original();
-
-		// This perk triggers its immunity, whenever our actor loses stunned
-		// Since the only source of stunned is the stunned_effect, we can just look for that one
-		// There is no onSkillRemoved event yet, so instead we check for the existance of that effect and how many turns it has left
-		// Depending on timing, isGarbage of the stunned_effect might already be set. So we need to iterate over .m.Skills directly
-		foreach (skill in this.getContainer().getActor().getSkills().m.Skills)
-		{
-			if (skill.getID() != "effects.stunned") continue;
-			if (skill.m.TurnsLeft != 1) continue;	// Our SkillOrder is lower than that of the stunned effect, so our onTurnEnd triggers sooner, so we check for TurnsLeft being equal to 1
-
-			this.triggerStunImmunity();
-		}
-	}}.onTurnEnd;
 
 	q.onCombatFinished = @(__original) { function onCombatFinished()
 	{
