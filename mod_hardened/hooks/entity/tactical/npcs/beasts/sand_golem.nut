@@ -72,7 +72,6 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_crippling_strikes"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_man_of_steel"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hold_out"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
 
