@@ -50,6 +50,7 @@ local newPerks = [
 					Description = [
 						"Whenever you move to a tile, gain " + ::MSU.Text.colorPositive("1") + " stack for each adjacent enemy (up to a maximum of 5 stacks), until the start of your next [turn|Concept.Turn]",
 						"Take " + ::MSU.Text.colorPositive("10%") + " less [Hitpoint|Concept.Hitpoints] Damage from Attacks for each stack",
+						"Have " + ::MSU.Text.colorPositive("10%") + " more [Injury Threshold|Concept.InjuryThreshold] for each stack",
 					],
 				},
 			],

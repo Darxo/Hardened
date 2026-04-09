@@ -2,6 +2,7 @@ this.perk_hd_brace_for_impact <- ::inherit("scripts/skills/skill", {
 	m = {
 	// Public
 		HitpointMitigationPct = 0.1,	// We take this much less Hitpoint damage for every stack
+		InjuryThresholdPctPerStack = 0.1,	// We have this much more Injury Threshold for every stack
 		StacksMax = 5,		// We can only have at most this many stacks
 
 	// Private
@@ -46,6 +47,17 @@ this.perk_hd_brace_for_impact <- ::inherit("scripts/skills/skill", {
 			});
 		}
 
+		local injuryThresholdMult = this.HD_getInjuryThresholdMult();
+		if (injuryThresholdMult != 1.0)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/asset_medicine.png",	// This is not an ideal icon, but at least closely related
+				text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeMultWithText(injuryThresholdMult) + " [Injury Threshold|Concept.InjuryThreshold]"),
+			});
+		}
+
 		ret.push({
 			id = 20,
 			type = "text",
@@ -62,6 +74,11 @@ this.perk_hd_brace_for_impact <- ::inherit("scripts/skills/skill", {
 
 		// DamageReceivedTotalMult
 		_properties.DamageReceivedRegularMult *= this.HD_getDamageReceivedRegularMult();
+	}
+
+	function onUpdate( _properties )
+	{
+		_properties.ThresholdToReceiveInjuryMult *= this.HD_getInjuryThresholdMult();
 	}
 
 	function onTurnStart()
@@ -103,6 +120,11 @@ this.perk_hd_brace_for_impact <- ::inherit("scripts/skills/skill", {
 
 	function HD_getDamageReceivedRegularMult()
 	{
-		return ::Math.maxf(0, 1.0 - (this.m.Stacks * this.m.HitpointMitigationPct));
+		return ::Math.maxf(0.0, 1.0 - (this.m.Stacks * this.m.HitpointMitigationPct));
+	}
+
+	function HD_getInjuryThresholdMult()
+	{
+		return ::Math.maxf(0.0, 1.0 + (this.m.Stacks * this.m.InjuryThresholdPctPerStack));
 	}
 });
