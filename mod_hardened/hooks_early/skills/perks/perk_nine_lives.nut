@@ -5,5 +5,8 @@
 		// This perk no longer grants heighened reflexes effect when triggered
 		this.m.IsSpent = _newSpent;
 		this.m.LastFrameUsed = ::Time.getFrame();
+
+		// We still trigger the overlay icon to visualize, that nine lives has triggered
+		this.spawnIcon("perk_07", this.getContainer().getActor().getTile());
 	}
 });
