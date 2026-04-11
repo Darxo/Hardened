@@ -20,6 +20,9 @@ local resourceMult = ::Hardened.Const.ResourceTierMult;
 		WorldScalingMax = 5.0,			// The world will never scale beyond this value
 		WorldScalingPerDay = 0.013,		// Each passed day causes the world to be this much more dangerous
 
+		ContractNegotiationRelationCost = -0.5,	// Relation with town takes this much of a hit each time you try to negotiate (Vanilla: -0.5)
+		ContractNegotiationPaymentMult = [1.03, 1.1],	// Minimum and Maximum Payment Multiplier for succesful negotiations; (Vanilla: 3%-10%)
+
 		// This is a global resource multiplier for each Faction
 		// Setting those to the same value would make each faction roughly equally strong
 		FactionDifficulty = {
