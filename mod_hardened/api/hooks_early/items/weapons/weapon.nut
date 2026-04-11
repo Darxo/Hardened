@@ -14,7 +14,7 @@
 	// 	- We always drop weapons worn by players (just like Reforged)
 	//	- Blacksmith no longer improves our odds of looting enemy Weapons
 	//	- Weapons with 11 or less Condition on enemies can now drop
-	//	- We add this.m.HD_BaseDropChance to make the random roll moddable
+	//	- We use this.HD_getDropChance() to make the random roll moddable
 	//	- Throwing Weapons no longer need to be equipped or missing an ammunition to be eligible for dropping
 	q.isDroppedAsLoot = @() function()
 	{
@@ -30,6 +30,12 @@
 		local isLucky = !::Tactical.State.isScenarioMode() && ::World.Assets.getOrigin().isDroppedAsLoot(this);
 		if (isLucky) return true;	// If our scenario randomly decides it so, we will skip the chance based roll
 
-		return ::Math.rand(1, 100) <= this.m.HD_BaseDropChance;
+		return ::Math.rand(1, 100) <= this.HD_getDropChance();
+	}
+
+// New Functions
+	q.HD_getDropChance <- function()
+	{
+		return this.m.HD_BaseDropChance;
 	}
 });
