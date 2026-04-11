@@ -5,6 +5,6 @@
 		this.m.ResolveModifier = 10;
 		this.m.ConditionModifier = 20;
 		this.m.StaminaModifier = 0;
-		this.m.Value = 1000;
+		this.m.Value = 2000;
 	}
 });
