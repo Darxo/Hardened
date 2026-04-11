@@ -28,6 +28,56 @@
 
 # Changelog
 
+1.13.0
+	- All Player Characters now have +5 Hitpoints
+	- All temporary Injuries with an Injury Threshold of 25% now have an injury Threshold of 20%
+	- Upgrading the Donkey Cart the first time now grants 18 Inventory Slots (down from 27). Upgrading it the third time now grants 36 Inventory Slots (up from 27)
+	- Completing the **Allied Nobles** Ambition now also rewards a **Heraldic Cape** of that faction
+	- Negotiating now builds up 2-21 Annoyance (up from 3-6)
+	- You now have a 4% chance per Current Annoyance to fail an attempt for more pay (down from 10% per Annoyance)
+	- You now fail negotiations when you reach 21 Annoyance (up from 10) and lose 5 Relation when that happens (up from 2.5)
+	- Asking for more pay during negotiations now costs 1 Relation (up from 0.5) and grants 10%-30% more pay (up from 3%-10%)
+	- The **Negotiator Follower** no longer makes you build up 50% less Annoyance, or increases the maximum advance-payment you can negotiate. He now doubles the bonus you get from negotiating more pay
+	- **Brace for Impact** now also grants 10% more Injury Threshold for each stack
+	- **Unstoppable** now longer loses Stacks, when you wait or end your turn with more than half of your action points. It no loses 1 Stack whenever you use a Non-Attack skill
+	- **Break Free** and **Break Ally Free** now cost 3 Action Points (down from 4). They now have -20% base chance to succeed (down from 0%). They now gain +30% chance to succeed on a failed attempt (up from +10%)
+	- Add new NPC-Only **Ethreal** perk. It grants +10 Melee Defense and +10 Ranged Defense against Attacks for each tile between the Attacker and you
+	- **Ghost** racial effect no longer grants +10 Melee Defend and +10 Ranged Defense per tile between the attacker and you. It now grants the **Ethereal** perk
+	- Empty Non-Named Throwing Weapons on enemies can no longer drop as loot
+	- **Holy Water** now costs 300 Crowns (down from 400) and is now considered a Medical item
+	- Settlements with a **Temple** now regularly sell **Holy Water** in the Marketplace
+	- **Throw Holy Water** will no longer randomly hit bystanders
+	- **Heraldic Cape** now costs 2000 Crowns (up from 1000)
+	- **Phantom Draught** no longer grants +5 Melee Defense or +10 Ranged Defense. It now grants the **Ethereal** perk
+	- **Wardogs fight each other** Event now only triggers, while you have more than 1 dog per 2 brothers (instead of at least 2 dogs in your inventory) and it will count any dog you own, even those equipped
+	- **Caravan Hand expands Cart** Event can now also trigger after you have already upgraded your cart
+	- **Return Item** and **Discover Location** contract now have a 100% base chance to be in the contract pool -1% chance for every 10 Renown you have, down to a minimum of 10%. In Vanilla they have a 80% chance during day 1-3 and 10% afterwards.
+	- **Discover Location** contract can now also choose **Brigand-**, **Barbarian-**, **Beast-**, **Goblin-**, **Orc-** and **Nomad** Location as the target (instead of just Skeleton and Zombie locations)
+	- The Legendary Location **Ancient Temple** will now reward you with a guaranteed **Mysterious Jug** (+1 Perk Point)
+	- The Legendary Location **Ancient Temple** now allows you to hire the riddler you meet during that encounter, if you choose the **Help me kick in that gate** option. He is a random cripple with the **Mad** Trait and the **Brain Damage** injury.
+	- **Goblin Shamans** now have a Cost of 80 (up from 50)
+	- Champion **Orc Warlords** can now also spawn with a named **Orc Metal Shield** in their bag
+	- **Brigand Thugs** lose **Bully** and gain +5 Melee Defense. They now have a 30% chance to spawn with no helmet (up from 20%)
+	- **Brigand Poachers** lose **Bully**
+	- Add unique names for champion **Brigand Killer** and **Brigand Marauder**
+	- Add new larger list of unique names for mercenary companies
+	- Remove now-redundant "Last Visited:" tooltip on settlements
+	- Add Setting (on) for displaying the accurate day ranges in brackets for estimated contract/situation durations and the time you last visited a settlement
+	- Display combat log entry with round number when a new round starts
+	- Fix **Brigand Robber** failing to generate correctly during combat
+	- Fix fleeing NPCs sometimes doing more than 2 flee attempts per round
+	- Fix **Battle Song** not working correctly after Reforged 0.8.5
+	- Fix Mercenary Parties rarely using the same name as a roaming bounty hunter company
+	- Add `weapon::HD_getDropChance()` which can be overwritten to assign custom and dynamic drop chances for weapons
+	- Add `::Hardened.util.findUnusedMercenaryName()` which returns a name from `::Const.Strings.MercenaryCompanyNames` which not used by any world party, while replacing %randomname% with a random character name
+	- Add `::Const.World.HD_InventoryUpgradeSlots` array, that defines how many inventory slots each upgrade of the cart grants to the player
+	- Add `item_container::HD_removeItemAnywhere(_item)` function that unequips an item from this item container, no matter if it is in the bag, or directly equipped
+	- Add `asset_manager::HD_getAllItems()` function which returns an array with all items that are in the player inventory or equipped to any brother
+	- Add `asset_manager::HD_removeItemAnywhere(_itemInstance)` function which removes an item from the player inventory or equipped to any brother
+	- Add `settlement::HD_getBuildings()` which returns an array of all settlement buildings
+	- Add `building::HD_onUpdateOtherShopList(_id, _list)` event which triggers after the shoplist of a town building is generated
+	- Add `faction_action::HD_ScoreOverwrite = null` which can be adjusted to overwrite the Score for this action (if it rolled a score > 0)
+
 1.12.2
 	- Make Hardened compatible with Reforged 0.8.5
 	- **Ifrits** lose **Man of Steel**
@@ -41,7 +91,7 @@
 	- Play dodge-animation for many actors when they dodge a ranged attack
 	- Colorize recruit bullet points in settlement situation tooltip
 	- Shorten **Backup Plan** Perk description
-	- Improve tooltip of **Backup Plan** skill
+	- Improve tooltip of **Backup Plan** onAnySkillExecutedFully
 	- Slightly improve wording on caravan card upgrade tooltip
 	- Slightly improve **Blitzkrieg** skill tooltip
 	- Fix **Unstoppable** spawning an overlay icon when the character is not visible to the player

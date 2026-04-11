@@ -88,7 +88,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 ### Combat Loot Changes
 
 - Weapons worn by NPCs now have a 60% chance to drop (down from 90%) but no longer need to have at least 12 Condition to be eligible for dropping
-- Throwing Weapons no longer need to be equipped, or missing an ammunition to be eligible for dropping
+- Throwing Weapons in a bag slot, or with full ammunition can now also drop
 - Non-Named shields worn by enemies now have a 50% chance to drop (down from 90%)
 - All shields worn by enemies can now drop, even if they have less than 25% Condition or less than 6 Condition left
 - Helmets worn by players now need at least 1 Condition to be guaranteed to drop (down from 16)
@@ -109,7 +109,6 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Crude Javelins** now deal 35-45 Damage (up from 30-40), have 0 Weight (down from 8), 3 Weight per Ammo and 1 Ammo Cost (down from 3)
 - **Javelins** now deal 35-45 Damage (up from 30-45), deal 70% Armor Damage (down from 75%), have 0 Weight (down from 6), 2 Weight per Ammo, 2 Ammo Cost (down from 3) and costs 350 Crown (up from 200)
 - **Throwing Axes** now deal 35-50 Damage (up from 30-50), have -10% Hitchance (down from +0%), +10% Headshot Chance (up from +5%), 0 Weight (down from 4), 2 Weight per Ammo, 2 Ammo Cost (down from 3) and cost 400 Crowns (up from 200)
-- Marketplaces now sell **Crude Javelins** instead of regular **Javelins**
 
 ### Bows, Crossbows & Firearms Rework
 
@@ -137,7 +136,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 ### New Perks
 
 - Add new **Anchor** perk in Tier 3 of **Unstoppable Group**: It grants immunity against **Displacement** until the start of your next turn, if you end your turn on the same tile you started it on. You also take 50% less Damage during your turn.
-- Add new **Brace for Impact** perk in Tier 3 of **Vicious**: Whenever you move to a tile, gain 1 stack for each adjacent enemy (up to a maximum of 5), until the start of your next turn. Take 10% less Hitpoint Damage from Attacks for each stack
+- Add new **Brace for Impact** perk in Tier 3 of **Vicious**: Whenever you move to a tile, gain 1 stack for each adjacent enemy (up to a maximum of 5), until the start of your next turn. Take 10% less Hitpoint Damage from Attacks and have 10% more Injury Threshold for each stack
 - Add new **Hybridization** perk in Tier 3 of **Ranged Group**: It allows swapping two weapons with no shared weapon types for free, once per turn. It grants +10 Melee Defense if you have at least 70 Base Ranged Skill and it grants +10 Ranged Defense, if you have at least 70 Base Melee Skill
 - Add new **Elusive** perk in Tier 2 of **Swift Group**: It reduces the AP cost for movement on all terrain by 1 to a minimum of 2. This does not stack with **Pathfinder** or **Scout**. After moving 2 tiles, become immune to rooted effects, until the start of your next turn
 - Add new **One with the Shield** perk in Tier 1 of **Shield Group**: It requires a shield. While you have Shieldwall effect you take 40% less Hitpoint damage from head attack. While you don't have Shieldwall effect you take 40% less Hitpoint damage from body attacks
@@ -196,17 +195,16 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 ### Other Notable Changes
 
 - You can now bring -2 Brothers into Battle, compared to what your origin allows. The first two Cart Upgrades allow you to bring +1 Brother into battle each
+- All Player Characters have +5 Hitpoints
 - Base Vision for the player and all world parties is now 450 (down from 500)
 - Player Characters now gain 100% XP from combat (up from 85%)
 - Level 7 now requires 5500 XP (up from 5000). Level 8 now requires 8000 XP (up from 7000). Level 9 now requires 11000 XP (up from 9000). Level 10 now requires 14500 XP (up from 12000). Level 11 now requires 18500 XP (up from 15000)
-- **Night Effect** now causes -3 Vision (down from -2)
 - No Character can have less than 2 Vision
 - When you pay compensation on dismissing a brother, he will share 50% of his experience with all remaining brothers. Each brother can only receive up to 10% of this shared experience.
-- You can now purchase missing Weapon perk groups (2500 Crowns) or Armor perk groups (4000 Crowns) at the Training Hall once per brother
+- You can now purchase missing Weapon perk groups (2500 Crowns) or Armor perk groups (4000 Crowns) at the **Training Hall**, once per brother
 - Lower Tier weapons no longer have a Fatigue Discount for the skills
 - You can now use **Bandages** to treat injuries during battle that were received at most 1 round ago
 - Add new **Retreat** skill for player characters, which allows you to retreat individual brothers from a battle if they stand on a border tile and are not engaged in melee
-- Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
 - The fatigue discount from having multiple weapon masteries now stacks when using hybrid weapons
 
 ## Skills
@@ -216,6 +214,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - **Arrow to the Knee** can now also be used on undead, that can receive leg injuries. It now has -5% Hitchance per tile (down from -4%)
 - **Bearded Blade** (granted by **Axe Mastery**) is completely reworked. It now costs 4 Action Points and 25 Fatigue and it is an attack, that deals no damage and will disarm your opponent for 1 turn on a hit
 - **Blitzkrieg** is completely reworked for the player: Each character can only use it once per battle. It now costs 9 AP (up from 7) and 50 Fatigue (up from 30). It now targets a tile (range of 4) and affects all tiles within 1 tile of that target. It grants all allies of your faction on those tiles **Adrenaline** until the start of their turn in the next round. NPCs still use the Reforged version of **Blitzkrieg**, which now also costs 9 AP (up from 7) and 50 Fatigue (up from 50)
+- **Break Free** and **Break Free Ally** now cost 3 Action Points (down from 4). They now have -20% base chance to succeed (down from 0%). They now gain +30% chance to succeed on a failed attempt (up from +10%)
 - **Chop** now has a 50% chance to decapitate (up from 25%)
 - **Cover Ally** (granted by **Shield Expert**) is completely reworked. It costs 4 Action Points and 20 Fatigue and can be used on adjacent allies. It grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It lasts until the start of the users next turn or until the user gets stunned, flees or moves away from the target
 - **Dazed** no longer reduces the Stamina by 25%. It now increases the fatigue cost of all non-attacks by 25%. It now causes you to deal 20% less damage (up from 25% less)
@@ -234,6 +233,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - **Lunge** now has -10% additional Hitchance (up from -20%). Its damage scaling from Initiative has been reworked: It now deals 1% less damage per Initiative below 100 and it deals 1% more damage per Initiative above 100 (up to a maximum of 75% more). It is no longer affected by **Crowded**
 - **Net Effect** (caused by **Throw Net**) no longer affects the Initiative of the target. It now applies 50% less Melee Defense (up from 25%) and 50% less Ranged Defense (up from 45%)
 - **Net Pull** now costs 30 Fatigue (up from 25)
+- **Night Effect** now causes -3 Vision (down from -2)
 - **Onslaught** is completely reworked for the player: It now costs 7 Action Points (unchanged) and 40 Fatigue (up from 30) and is no longer restricted to "once per battle". It now targets a tile (range of 4) and affects all tiles within 1 tile of that target. It grants all allies of your faction on those tiles the **Onslaught Effect** for 2 rounds. NPCs still use the Reforged version of **Onslaught Skill**
 - **Onslaught Effect** (granted by **Onslaught**) no longer grants one use of **Line Breaker** skill, +10 Melee Skill or +20 Initiative. It now grants the **Pathfinder**, **Vigorous Assauolt** and **Elusive** perks
 - **Passing Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand. It now has 0 additional fatigue cost (down from 2)
@@ -380,7 +380,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Throwing Mastery** is mostly completely reworked. It now makes skills cost 20% less Fatigue (down from 25%). It now grants 30% more damage for your first throwing attack each turn, no matter the range. It now allows swapping any item once per round, after you attacks with a throwing weapon
 - **Trick Shooter** is completely reworked. It makes all Bow Skills that you have not used yet this battle, have +15% Hitchance. It also grants the Flaming Arrow skill (instead of the perk)
 - **Underdog** is rewritten. It now grants +5 Melee Defense for every character surrounding you, except the first one. Compared to the vanilla implementation this defense is now affected by defense multiplier and by the softcap for defense
-- **Unstoppable** is completely reworked. Once per round during your turn, if you hit an enemy with an attack, gain 1 stack up to a maximum of 3. Each stack grants +1 Action Points and 10% more Initiative. Lose 1 stack if you wait. Lose 1 stack if you end your turn with more than half of your action points remaining. Lose all stacks when you use recover, get stunned or staggered
+- **Unstoppable** is completely reworked. Once per round during your turn, if you hit an enemy with an attack, gain 1 stack up to a maximum of 3. Each stack grants +1 Action Points and 10% more Initiative. Lose 1 stack whenever you use a Non-Attack skill. Lose all stacks when you use recover, get stunned or staggered
 - **Vanquisher** is completely reworked. After you step on a corpse that has been created this round, you become Immune to **Displacement** and take 25% less Damage until the start of your next turn. **Gain Ground** (granted by **Vanquisher** perk) is now free
 - **Vigorous Assault** is mostly reworked. It now works with all attacks. It no longer provides a fatigue discount. The discount is no longer lost when swapping weapons or using non-attack skills.
 - **Weapon Master** no longer grants weapon perks while wielding a hybrid weapons. It now grants +1 Bag Slot at all times
@@ -475,6 +475,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Injuries
 
+- All temporary Injuries with an Injury Threshold of 25% now have an Injury Threshold of 20%
 - Injuries now require 2 Medicine Supplies per day (up from 1)
 - Injuries now have a 50% chance to improve each day when you have no remaining Medicine Supplies (up from 0%)
 - **Collapsed Lung** no longer reduces the Stamina. Instead it now disables the use of **Recover**
@@ -491,9 +492,12 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Misc
 
+- Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
 - All Weapon Attacks that deal neither 0% nor 100% Armor Penetration will now inherit the Armor Penetration value of the weapon they come from
 - Add sound effect for **Cheap Trick**, **Hold Steady**, **Onslaught** and **Take Aim** skills
 - Knockback of all skills is reworked and standardized. It still always knocks someone back in a straight line, if user and target are on the same axis and there is space behind the target. In all other cases the destination is now random, instead of fixed/clock-wise
+- Add NPC-Only perk **Forestbond**. It recovers 3% Hitpoints per adjacent tree obstacle at the start of each turn
+- Add NPC-Only perk **Ethereal**. It grants +10 Melee Defense and +10 Ranged Defense against Attacks for each tile between the Attacker and you
 
 ## Items
 
@@ -754,8 +758,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Feral Shield** now costs 400 Crowns (up from 50)
 - **Fermented Unhold Heart** now has an expiry date of 40 days (up from 20) and has 50 Servings (up from 25)
 - **Goblin Poison** now costs 200 Crowns (up from 100). It now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1
-- **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 1000 Value (up from 200) and grants 10 Resolve (up from 5)
-- **Holy Water** now costs 400 Crowns (up from 100)
+- **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 2000 Value (up from 200) and grants 10 Resolve (up from 5)
+- **Holy Water** now costs 300 Crowns (up from 100) and is now considered `IsMedical` causing it to be affected by medical-related settlement situations
 - **Hyena Fur Mantle** now grants 10% more Initiative instead of +15 Initaitive
 - **Kriegsmesser** now appear ~half as often in weapon smiths
 - **Masterfully Cured Ration** now has a Stacksize of 50 (up from 25) and costs 300 Crowns (up from 150)
@@ -764,6 +768,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - The Named **Wolf Helmet** now has 120 Condition (down from 140), 6 Weight (down from 8) and -1 Vision (down from 0) and costs 3000 Crowns (up from 2000)
 - The Named **Norse Helmet** now has 170 Condition (up from 125), 8 Weight (up from 6) and -3 Vision (down from -1) and costs 3000 Crowns (up from 2000)
 - Named **Wolf Helmets** and **Norse Helmets** are now twice as likely to appear as rewards or in shops
+- **Phantom Draught** no longer grants +5 Melee Defense or +10 Ranged Defense. It now grants the **Ethereal** perk
 - **Poisoned Oil** now costs 200 Crowns (up from 150)
 - **Powder Bag** now costs 2 **Ammunition Supply** each (up from 1) and costs 150 Crowns (up from 50)
 - **Reinforced Throwing Net** now has a weight of 8 (up from 2)
@@ -792,12 +797,14 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Brigand** no longer reveals Caravans on the world map. Instead you travel 20% faster while following a visible enemy on the world map
 - **Drill Sergeant** now provides 2% Experience per level below 11 (down from 4%), just like in Vanilla. It now requires a brother with a permanent injury to be dismissed, just like in Vanilla
 - **Lookout** no longer grants 25% more vision at all times. It now always provides a scouting report for enemies near you, just like "Band of Poachers" origin
-- **Negotiator** now grants 100% faster decay of negative Relation (up from 15%). It now has a more accurate list of effects
+- **Negotiator** is completely reworked. He now doubles the additional pay you gain from successfully negotiating additional pay. He also grants 100% faster decay of negative Relation and 15% slower decay of friendly Relation
 - **Paymaster Retinue** no longer requires you to have 16 Brothers in order to unlock. He now requires you to have a day expense of at least 500 crowns. He now reduces your Wage by 25% (up from 15%)
 - **Quartermaster** now costs 1500 Crowns (down from 3000), requires 2 Caravan Cart Upgrades to unlock and grants 100 Storage for Tools and Medicine (up from 50)
 - **Scout** no longer grants 15% more movement speed. It now grants 20% more movement speed while in Forests and Swamp. It also grants 25% Vision while on hills or mountains
 - **Surgeon** now also counts Injuries treated by Bandages for its Requirement. It no longer lowers the duration of injuries on your brothers and now costs 3000 Crowns (down from 3500)
 - **Trader** now also makes Trading Goods 100% more common in shop
+- The first **Cart Upgrade** now grants 18 Inventory Slots (down from 27)
+- The last **Cart Upgrade** now grants 36 Inventory Slots (up from 27)
 
 ## Enemies
 
@@ -833,6 +840,7 @@ Brigand Units now use the following names:
 - All **Zombie Orcs** now have a 100% resurrection chance (up from 66%-90%)
 - Reanimated Humans how have 120 Hitpoints (down from 130) and 200 Stamina (up from 100)
 - All **Skeletons** no longer grant experience after being resurected
+- **Ghost Racial** no longer grants +10 Melee Defend and +10 Ranged Defense per tile between the attacker and you. It now grants the **Ethereal** perk
 - **Skeleton Racial** now explicitely causes 100% less **Fatigue** build-up
 - **Flesh Golems** lose **Full Force**, gain **Savage Strength** and take 50% more burning damage to hitpoints
 - **Necromancer** lose 20 natural body armor. **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)
@@ -1046,7 +1054,9 @@ Brigand Units now use the following names:
 - You can now get up to 6 Tavern Rumors every cycle (up from 4)
 - Tavern Rumors now have a linearly scaling cost. Each paid rumor costs an amount based on the standard (vanilla) rumor price, multiplied by the number of the paid rumor you are about to buy
 - Armorsmiths will now sometimes sell Named Shields
+- Marketplaces now sell **Crude Javelins** instead of regular **Javelins**
 - Small civilian settlements now sell **Old Wooden Shields** and **Lute**
+- Settlements with a **Temple** now regularly sell **Holy Water** in the Marketplace
 - Big northern settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
 - Weaponsmiths and Armorsmiths now sell **Armor Parts** with a price multiplier of 1.25
 - Fletcher now sell roughly 5 times as many **Throwing Spears** but with a price multiplier of 1.5 (up from 1.0)
@@ -1062,6 +1072,8 @@ Brigand Units now use the following names:
 - Unique Locations that are not invisible now always have a VisibilityMult of 1.0, no matter what tile they are standing on, resulting in you always discovering them when they enter your field of view
 - Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken
 - The **Ancient Spire** now reveals an area of 3000 (up from 1900)
+- The **Ancient Temple** will now reward you with a guaranteed **Mysterious Jug** (+1 Perk Point).
+- The **Ancient Temple** now allows you to hire the riddler you meet during that encounter, if you choose the **Help me kick in that gate** option. He is a random cripple with the **Mad** Trait and the **Brain Damage** injury.
 - **Black Monolith** now spawns some badlands tiles around its location
 - The **Stone Pillars** (Kraken) now always requires 3 Hides and 3 Dust, no matter how much you already had in your inventory
 - Restrict the allowed Y coordinates for many unique locations to where their allowed tiles usually spawn to speed up map generation
@@ -1110,6 +1122,7 @@ Brigand Units now use the following names:
 
 ### World Parties
 
+- Add many new name combinations for roaming Mercenary Parties
 - Introduce a roaming **Bounty Hunter** company. They behave very similar to roaming Mercenary Companies but use different units to fight
 - World Parties are no longer stunned, when you cancel the combat dialog with them
 - Food Products transported by Caravans now always drop at full stacksize and freshness
@@ -1119,18 +1132,33 @@ Brigand Units now use the following names:
 
 ## Contracts
 
-- Necrosavants in the scripted Caravan Contract Ambush now idle during the first round
-- **Caravan Contracts** that are declined or which expire now spawn a caravan towards the destination if the town hasn't spawned one in a while
-- The **Barbarian King** and **Find Location** contracts no longer spawn a hint directly after loading and display the direction information of your last hint in your bullet points
+### Negotiating
+- Any Negotiation now builds up between 2 and 21 Annoyance (from 3-6)
+- Choosing *"We need to be paid more than this"* now:
+  - causes -1.0 Relation with that faction (down from -0.5)
+  - grants 10-30% more pay (up from 3%-10%) on a success
+- Failing an individual attempt now has a 4% chance per Annoyance (down from 10%)
+- Failing the Negotiation and losing the contract now:
+  - happens when you reach 21 Annoyance (up from 10)
+  - causes -5.0 Relation (down from -2.5)
+
+### Specific Contracts
+- Necrosavants in the scripted Ambush from the **Escort Caravan** contract now idle during the first round
+- **Escort Caravan** contracts that are declined or which expire now spawn a caravan towards the destination if the town hasn't spawned one in a while
+- **Find Location** and **Barbarian King** contracts no longer spawn a hint directly after loading and display the direction information of your last hint in your bullet points
+- **Find Location** contract can now also choose **Brigand-**, **Barbarian-**, **Beast-**, **Goblin-**, **Orc-** and **Nomad** Location as the target (instead of just Skeleton and Zombie locations)
+- **Find Location** and **Return Item** contract now have a 100% base chance to be in the contract pool -1% chance for every 10 Renown you have, down to a minimum of 10%. In Vanilla they have a 80% chance during day 1-3 and 10% afterwards
 - During the **Escort Envoy** Contract: You move 20% slower, while the Envoy is in your party. The Envoy has 6 Action Points (down from 9) and the contract grants 50% more Crowns. The envoy now always takes 16 hours at the destination and that number is displayed and counted down in the contract description
 
 ## Events
 
 - The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event
+- The Event **Caravan Hand expands Cart** can now also trigger after you have already upgraded your cart
 - The Event **Drunkard loses Item** now has an option where you order the Drunkard to search for the item. This recovers the item, but causes the same mood debuff on the drunkard as if he was flogged
 - The Event **Player plays dice** now has 50% less score
 - The Event **Infected Wound** now has a cooldown of 14 days (down from 21 days) and is thrice as likely to trigger, if you have no Medicine left
-- The Event-Option to shoot down the bird who shat your brother now costs 5 Ammunition
+- The Event **Wardogs fight each other** now only triggers, while you have more than 1 dog per 2 brothers (instead of at least 2 dogs in your inventory) and it will count any dog you own, even those currently equipped
+- The Event **Bird shits on Sellsword** now costs 5 Ammunition for shooting down the bird
 - The **Orc Slayer** and **Crusader** (temporary Crisis backgrounds) now share 100% of their experience with your remaining party, when they leave you after the Crisis ended
 - **Drunkard loses Item**, **Bad Omen** and **Player plays Dice** Events now have a cooldown of 21 days (up from 14)
 
@@ -1161,6 +1189,7 @@ Brigand Units now use the following names:
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 - The Retreat tooltip during combat now also lists the Melee Defense bonus your characters receive during Auto-Retreat
 - **Trade Ambition** now counts the sum of both transaction (buying and selling) instead of just the higher number of the two
+- **Allied Noble Ambition** now also rewards a **Heraldic Cape** attachement on completion
 
 ## Quality of Life
 
@@ -1219,6 +1248,7 @@ Brigand Units now use the following names:
 - **Throw Fire Bomb** now only marks tiles for impact, if they would be affected by its fire damage. You can no longer throw it on a tile, if no tiles in the impact zone would be affected
 - Print a combat log whenever **Battle Flow** recover Fatigue
 - Display the actual minimum armor penetration damage in attack skills, instead of always showing a 0 there
+- Display combat log entry with round number when a new round starts
 - Improve description of **Additional Fur Padding**,  **Bone Plating** and **Unhold Fur Cloak** and clarify that they only protect against body attacks
 - Slightly improve wording of "weapon skills build up fatigue" tooltip on weapons
 - Automatically re-equip the accessory that you had previously equiped after an arena fight
@@ -1248,7 +1278,6 @@ Brigand Units now use the following names:
 - Display tooltips for the effects for all common settlement Situations
 - Items that you bought or sold can now be sold or bought back for the exact same price as long as you didn't leave the town
 - Add Setting (on) for displaying and adjusting a Waypoint that indicates, where your character on the world map is currently moving to
-- Settlements now display a tooltip showing how many days ago you last visited that location
 - The Tavern now displays to you how many rumors you received so far
 - Display terrain type name and day/night status in the subtitle of combat dialog
 - Display Noble Faction Banner in the tooltip of Mercenary Parties
@@ -1278,6 +1307,7 @@ Brigand Units now use the following names:
 - Add Setting (on) for displaying the exact Morale Reputation whenever its indirect term appears anywhere
 - Add Setting (on) for displaying the exact Renown whenever its indirect term appears anywhere
 - Add Setting (on) to display the AI intent of world parties (attacking/fleeing)
+- Add Setting (on) for displaying the accurate day ranges in brackets for estimated contract/situation durations and the time you last visited a settlement
 - Peasants and Caravans on the world map display a banner
 - Display reason when the owner-faction of a faction loses relation with you, because you lost relation with that child-faction
 - Add tooltip for undesirable food (e.g. Strange Meat) explaining that their are eaten last
@@ -1432,6 +1462,15 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add `weapon::HD_getDropChance()` which can be overwritten to assign custom and dynamic drop chances for weapons
+- Add `::Hardened.util.findUnusedMercenaryName()` which returns a name from `::Const.Strings.MercenaryCompanyNames` which not used by any world party, while replacing %randomname% with a random character name
+- Add `::Const.World.HD_InventoryUpgradeSlots` array, that defines how many inventory slots each upgrade of the cart grants to the player
+- Add `item_container::HD_removeItemAnywhere(_item)` function that unequips an item from this item container, no matter if it is in the bag, or directly equipped
+- Add `asset_manager::HD_getAllItems()` function which returns an array with all items that are in the player inventory or equipped to any brother
+- Add `asset_manager::HD_removeItemAnywhere(_item)` function which removes an item from the player inventory or unequip it from any brother
+- Add `settlement::HD_getBuildings()` which returns an array of all settlement buildings
+- Add `building::HD_onUpdateOtherShopList(_id, _list)` event which triggers after the shoplist of a town building is generated
+- Add `faction_action::HD_ScoreOverwrite = null` which can be adjusted to overwrite the Score for this action (if it rolled a score > 0)
 - Add `settlement::HD_getBuildings()` which returns an array of all settlement buildings
 - Add `building::HD_onUpdateOtherShopList(_id, _list)` event which triggers after the shoplist of a town building is generated
 - Add `::Hardened.util.getAllWorldEntities()` which returns an array of all world entitiy (locations, and parties alike)
