@@ -188,7 +188,7 @@
 			Cost = 40, 		// Reforged: 26
 			Strength = 40, 	// Reforged: 36
 			Variant = 2,	// Brigand Marauder can now produce Champions
-			NameList = ::Const.Strings.BanditLeaderNames,	// Todo: generate unique namelist
+			NameList = ::Const.Strings.HD_BanditMarauderTitles,
 			TitleList = null,
 		},
 		{

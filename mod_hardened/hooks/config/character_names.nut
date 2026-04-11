@@ -85,4 +85,26 @@ local generateAllIterations = function( _prefixes, _suffixes )
 		];
 		::Const.Strings.HD_BanditKillerTitles <- generateAllIterations(["%randomname%"], killerSuffixes);
 	}
+
+	{	// ::Const.Strings.HD_BanditMarauderTitles
+		local marauderSuffixes = [
+			"the Brimstone",
+			"the Brute",
+			"the Cruel",
+			"the Marauder",
+			"the Ox",
+			"the Pillager",
+			"the Slaughterer",
+			"the Mauler",
+			"the Breaker",
+			"the Ravager",
+			"the Smasher",
+			"the Reaver",
+			"the Butcher",
+			"the Crusher",
+			"the Gorehand",
+			"the Heavy",
+		];
+		::Const.Strings.HD_BanditMarauderTitles <- generateAllIterations(["%randomname%"], marauderSuffixes);
+	}
 }
