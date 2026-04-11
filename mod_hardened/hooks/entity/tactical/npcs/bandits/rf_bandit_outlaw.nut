@@ -101,14 +101,6 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_ghostlike"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_relentless"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_hybridization"));
-
-		this.m.HasNet = ::Math.rand(1, 3) == 3; // 33% chance
-		this.m.IsRegularThrower = ::Math.rand(1, 2) == 2;  // 50% chance
-
-		if (this.m.IsRegularThrower == false)
-		{
-			this.m.IsSpearThrower = ::Math.rand(1, 4) == 4; // 25% chance. only rolled if not regular thrower.
-		}
 	}
 
 	// Assign Head and Body armor to this character
