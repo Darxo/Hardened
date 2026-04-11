@@ -3,6 +3,8 @@
 	{
 		__original();
 		this.m.Value = 250; 	// Vanilla: 100
+
+		this.m.HD_IsMedical = true;
 	}
 
 	q.getTooltip = @(__original) function()
