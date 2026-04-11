@@ -57,6 +57,8 @@
 	myEnumSetting = ::MSU.Class.EnumSetting("CombatDialogRepresentation", "Numeral (Range)", ["Numeral", "Numeral (Range)", "Range"], "Combat Dialog Size", "Define how the size of entities in combat dialogs and tooltips are shown. 'Numeral' is a word/string while 'Range' is the range that is represented by that word");
 	qolWorldPage.addElement(myEnumSetting);
 
+	qolWorldPage.addBooleanSetting("DisplayTownDayRanges", true, "Display Town Day Ranges", "Display the day ranges in brackets, when given estimates for contract and situation durations.");
+
 	qolWorldPage.addDivider("MiscDivider6");
 
 	local waypointUpdateCallback = function( _oldValue )
