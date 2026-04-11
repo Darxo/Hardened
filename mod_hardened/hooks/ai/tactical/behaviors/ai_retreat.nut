@@ -40,7 +40,7 @@
 		}
 
 		// Feat: We stop NPCs trying to retreat out of zone of control, after a few tries
-		if (_entity.getFaction() != ::Const.Faction.Player && this.m.HD_AttemptsThisTurn >= ::Const.AI.Agent.MaxFleeAttemptsPerTurn)
+		if (_entity.getFaction() != ::Const.Faction.Player)
 		{
 			// This condition is new, we now use a similar attemts counter as ai_flee
 			if (this.m.HD_AttemptsThisTurn >= ::Const.AI.Agent.MaxFleeAttemptsPerTurn) return ::Const.AI.Behavior.Score.Zero;
