@@ -10,6 +10,7 @@
 	// We make cancelling contracts a bit more viable and less punishing
 	::Const.World.Assets.RelationContractCancel = -5.0;		// Vanilla: -10.0
 	::Const.World.Assets.RelationContractCancelAdvance = -15.0;		// Vanilla: -10.0
+	::Const.World.Assets.RelationContractNegotiationsFail = -5.0;	// Vanilla: -2.5
 	::Const.World.Assets.ReputationOnContractCancel = -50;		// Vanilla: -100
 	::Const.World.Assets.ReputationOnContractFail = -50;		// Vanilla: -75
 
