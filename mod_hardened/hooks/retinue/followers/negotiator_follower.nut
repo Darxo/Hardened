@@ -3,19 +3,19 @@
 	{
 		__original();
 		this.m.Effects = [
-			"Allows for more rounds of contract negotiations and without any hit to relation",
+			"Successful negotiations grant double bonus payment",
 			"Bad Relations recover 100% faster",
 			"Good Relations decay 15% slower",
 		];
 	}
 
-	q.onUpdate = @(__original) function()
+	// Overwrite, because we change too many values
+	q.onUpdate = @() function()
 	{
-		// We prevent Vanilla from adjusting the RelationDecayGoodMult
-		local oldRelationDecayBadMult = ::World.Assets.m.RelationDecayBadMult;
-		__original();
-		::World.Assets.m.RelationDecayBadMult = oldRelationDecayBadMult;
-
-		::World.Assets.m.RelationDecayBadMult *= 2.0;	// Vanilla: 1.15
+		// ::World.Assets.m.HD_NegotiationPaymentMult = 0.5;
+		// ::World.Assets.m.AdvancePaymentCap = 0.75;
+		::World.Assets.m.HD_NegotiationPaymentMult = 2.0;
+		::World.Assets.m.RelationDecayGoodMult = 0.85;		// Vanilla: 0.85
+		::World.Assets.m.RelationDecayBadMult = 2.0;		// Vanilla: 1.15
 	}
 });
