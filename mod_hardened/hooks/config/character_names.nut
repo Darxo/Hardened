@@ -65,3 +65,24 @@ local generateAllIterations = function( _prefixes, _suffixes )
 	}
 }
 
+{	// New Additions
+	{	// ::Const.Strings.HD_BanditKillerTitles
+		local killerSuffixes = [
+			"Four Fingers",
+			"Mad Eyes",
+			"the Cruel",
+			"the Cutpurse",
+			"the Hyena",
+			"the Killer",
+			"the Knife",
+			"the Outcast",
+			"the Pickpocket",
+			"the Robber",
+			"the Snake",
+			"the Viper",
+			"the Claw",
+			"the Flicker",
+		];
+		::Const.Strings.HD_BanditKillerTitles <- generateAllIterations(["%randomname%"], killerSuffixes);
+	}
+}

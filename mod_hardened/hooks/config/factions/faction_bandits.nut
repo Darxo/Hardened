@@ -255,7 +255,7 @@
 			Strength = 40, 	// Reforged: 36
 			Row = 1,		// Reforged: 0
 			Variant = 2,	// Brigand Killer can now produce Champions
-			NameList = ::Const.Strings.BanditLeaderNames,	// Todo: generate unique namelist
+			NameList = ::Const.Strings.HD_BanditKillerTitles,
 			TitleList = null,
 		},
 		{
