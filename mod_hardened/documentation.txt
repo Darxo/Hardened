@@ -28,6 +28,15 @@
 
 # Changelog
 
+1.12.2
+	- Make Hardened compatible with Reforged 0.8.5
+	- **Ifrits** lose **Man of Steel**
+	- Remove "(Shielded)" text in **Schrat Racial** name
+	- Display overlay icon, when **Nine Lives** triggers
+	- Fix **Resilient** sometimes not providing stun immunity correctly
+	- Fix **Pathfinder**, **Elusive** and **Scout** effects not being reset correctly when the perk is removed
+	- Fix NPCs not fleeing correctly to the border, while in Zone of Control
+
 1.12.1
 	- Play dodge-animation for many actors when they dodge a ranged attack
 	- Colorize recruit bullet points in settlement situation tooltip

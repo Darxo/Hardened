@@ -1389,6 +1389,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix the same Human being able to play the same sound effect twice in a row
 - Fix destroyed locations being able to generate defenders
 - Fix Non-Scaled Experience gained (e.g. via Event or Dismissing Brothers) still being scaled by XP effects on the receiving character
+- Fix **Pathfinder** effect persisting, after being removed/refunded from a brother
 - Fix **Goblin Wolfrider** having no `ShakeLayer` for `BodyPart.All` defined
 - Fix **Wolf**, spawned by a dying **Goblin Wolfrider**, sometimes having an action in the round it spawned
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
