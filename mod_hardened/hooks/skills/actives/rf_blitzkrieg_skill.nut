@@ -1,11 +1,12 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/rf_blitzkrieg_skill", function(q) {
 	// Public
+	q.m.HD_Radius <- 4;
+
 	q.create = @(__original) function()
 	{
 		__original();
 		this.m.ActionPointCost = 9;	// In Reforged this is 7
 		this.m.FatigueCost = 50;	// In Reforged this is 30
-		this.m.MaxRange = 4;		// In Reforged this is unused (0)
 	}
 
 	q.getTooltip = @(__original) function()
@@ -16,7 +17,7 @@
 		{
 			if (entry.id == 10)
 			{
-				entry.text = ::Reforged.Mod.Tooltips.parseString("You and allies of your faction within " + ::MSU.Text.colorPositive("4") + " tiles gain the [Adrenaline|Skill+adrenaline_effect] effect until they start their turn in the next round");
+				entry.text = ::Reforged.Mod.Tooltips.parseString("You and allies of your faction within " + ::MSU.Text.colorPositive(this.m.HD_Radius) + " tiles gain the [Adrenaline|Skill+adrenaline_effect] effect until they start their turn in the next round");
 			}
 			else if (entry.id == 20)
 			{
@@ -59,16 +60,14 @@
 		{
 			if (ally.getMoraleState() == ::Const.MoraleState.Fleeing) continue;
 			if (ally.getCurrentProperties().IsStunned) continue;
+			if (ally.getTile().getDistanceTo(myTile) > this.m.HD_Radius) continue;
 
-			if (ally.getTile().getDistanceTo(myTile) >= this.getMinRange() && ally.getTile().getDistanceTo(myTile) <= this.getMaxRange())
+			local effect = ::new("scripts/skills/effects/adrenaline_effect");
+			if (!ally.isTurnStarted() && !ally.isTurnDone())
 			{
-				local effect = ::new("scripts/skills/effects/adrenaline_effect");
-				if (!ally.isTurnStarted() && !ally.isTurnDone())
-				{
-					effect.m.TurnsLeft++;
-				}
-				ally.getSkills().add(effect);
+				effect.m.TurnsLeft++;
 			}
+			ally.getSkills().add(effect);
 		}
 
 		return true;

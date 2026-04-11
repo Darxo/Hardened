@@ -1,6 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/rf_hold_steady_skill", function(q) {
 	// Public
 	q.m.HD_SoundOnTarget <- "sounds/combat/hd_hold_steady_secondary.wav";
+	q.m.HD_Radius <- 4;
 
 	q.create = @(__original) function()
 	{
@@ -10,7 +11,6 @@
 		this.m.SoundVolume = 1.4;	// The original soundfile above is a bit quiet at -3db peak
 		this.m.ActionPointCost = 7;	// In Reforged this is 7
 		this.m.FatigueCost = 30;	// In Reforged this is 30
-		this.m.MaxRange = 4;		// In Reforged this is unused (0)
 	}
 
 	q.getTooltip = @(__original) function()
@@ -21,7 +21,7 @@
 		{
 			if (entry.id == 10)
 			{
-				entry.text = ::Reforged.Mod.Tooltips.parseString("You and your allies within " + ::MSU.Text.colorPositive(this.m.MaxRange) + " tiles gain the [Holding Steady|Skill+rf_hold_steady_effect] effect for two [rounds|Concept.Round]");
+				entry.text = ::Reforged.Mod.Tooltips.parseString("You and your allies within " + ::MSU.Text.colorPositive(this.m.HD_Radius) + " tiles gain the [Holding Steady|Skill+rf_hold_steady_effect] effect for two [rounds|Concept.Round]");
 			}
 			else if (entry.id == 20)
 			{
@@ -69,8 +69,7 @@
 		{
 			if (ally.getMoraleState() == ::Const.MoraleState.Fleeing) continue;
 			if (ally.getCurrentProperties().IsStunned) continue;
-			if (ally.getTile().getDistanceTo(myTile) < this.getMinRange()) continue;
-			if (ally.getTile().getDistanceTo(myTile) > this.getMaxRange()) continue;
+			if (ally.getTile().getDistanceTo(myTile) > this.m.HD_Radius) continue;
 
 			ally.getSkills().add(::new("scripts/skills/effects/rf_hold_steady_effect"));
 			affectedAllies++;
