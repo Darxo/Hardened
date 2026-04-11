@@ -7,7 +7,7 @@
 
 {	// UnitBlock.RF.BanditTough
 	local banditTough = ::Reforged.Spawns.UnitBlocks["UnitBlock.RF.BanditTough"];
-	banditTough.DynamicDefs.Units.remove(0);		// We permenantly prevent the lowest Reforged tough tier from spawning
+	banditTough.DynamicDefs.Units[0].HardMax <- 0;		// We permenantly prevent the lowest Reforged tough tier from spawning, by setting its HardMax to 0, to keep compatibility with Reforged
 	banditTough.getUpgradeWeight <- function() { return base.getUpgradeWeight() * 0.8 };	// Slower upgrading to stay in line with the 4-tier blocks
 	banditTough.TierWidth <- 2;		// Reforged: unrestricted;
 }

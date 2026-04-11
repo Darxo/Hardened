@@ -110,8 +110,8 @@
 		},
 		{
 			XP = 200 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 225; Vanilla 225
-			Hitpoints = 65, // Vanilla: 60
-			Bravery = 50, // Reforged: 55; Vanilla 50
+			Hitpoints = 65, // Reforged: 60; Vanilla: 60
+			Bravery = 50, // Reforged: 50; Vanilla 50
 			Stamina = 115, // Reforged: 105; Vanilla: 115
 			MeleeSkill = 50, // Reforged: 50; Vanilla 50
 			RangedSkill = 65, // Reforged: 70; Vanilla 60
