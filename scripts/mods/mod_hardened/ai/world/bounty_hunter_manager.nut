@@ -259,33 +259,3 @@ this.bounty_hunter_manager <- {
 		return ::MSU.Array.rand(unusedNames);
 	}
 }
-
-
-/*
-
-return ::World.EntityManager.m.HD_BountyHunterManager.getAllBountyHunters().len();
-foreach (worldParty in ::World.EntityManager.m.HD_BountyHunterManager.getAllBountyHunters())
-{
-	::logWarning("Hardened: " + worldParty.getName());
-}
-
-::MSU.Log.printData(::World.getAllRosters()[0], 2);
-
-return ::World.getAllRosters().len()
-
-
-
-
-return ::World.EntityManager.m.HD_BountyHunterManager.m.LastUpdateTime
-return ::Time.getVirtualTimeF()
-
-function __isNewUpdateCycle()
-{
-	if (this.m.LastUpdateTime + this.m.UpdateTimeInSeconds > ::Time.getVirtualTimeF()) return false;
-
-	this.m.LastUpdateTime = ::Time.getVirtualTimeF();
-	return true;
-}
-
-
-*/
