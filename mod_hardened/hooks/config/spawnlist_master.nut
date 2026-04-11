@@ -641,8 +641,8 @@
 // scripts/entity/tactical/enemies/goblin_shaman
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.GoblinShaman.Cost = 50;
-	::Const.World.Spawn.Troops.GoblinShaman.Strength = 50;
+	::Const.World.Spawn.Troops.GoblinShaman.Cost = 80;
+	::Const.World.Spawn.Troops.GoblinShaman.Strength = 80;
 }
 
 // scripts/entity/tactical/humans/nomad_leader
