@@ -106,7 +106,7 @@ this.bounty_hunter_manager <- {
 		local party = ::World.spawnEntity("scripts/entity/world/party", originSettlement.getTile().Coords);
 		party.setPos(::createVec(party.getPos().X - 50, party.getPos().Y - 50));
 
-		party.setName(this.__findUnusedMercenaryName());
+		party.setName(::Hardened.util.findUnusedMercenaryName());
 		party.setDescription("A group of bounty hunters travelling the lands and lending their swords to the highest bidder.");
 		party.setFootprintType(::Const.World.FootprintsType.Mercenaries);
 		party.getSprite("base").setBrush("world_base_07");
@@ -232,30 +232,5 @@ this.bounty_hunter_manager <- {
 		if (validSettlements.len() == 0) return null;
 
 		return ::MSU.Array.rand(validSettlements);
-	}
-
-	function __findUnusedMercenaryName()
-	{
-		local unusedNames = [];
-
-		foreach (mercName in ::Const.Strings.MercenaryCompanyNames)
-		{
-			if (mercName == ::World.Assets.getName()) continue;
-
-			local skipName = false;
-			foreach (worldParty in ::Hardened.util.getAllWorldEntities())
-			{
-				if (mercName == worldParty.getName())
-				{
-					skipName = true;
-					break;
-				}
-			}
-			if (skipName) continue;
-
-			unusedNames.push(mercName);
-		}
-
-		return ::MSU.Array.rand(unusedNames);
 	}
 }

@@ -337,6 +337,35 @@
 	return ::MSU.Array.rand(possibleBanners);
 }
 
+// Generate and return a random name from ::Const.Strings.MercenaryCompanyNames, which is not used by any world party
+// Replace %randomname% with a random name from ::Const.Strings.CharacterNames
+::Hardened.util.findUnusedMercenaryName <- function()
+{
+	local unusedNames = [];
+
+	local randName = ::MSU.Array.rand(::Const.Strings.CharacterNames);
+	foreach (mercName in ::Const.Strings.MercenaryCompanyNames)
+	{
+		mercName = ::MSU.String.replace(mercName, "%randomname%", randName);
+		if (mercName == ::World.Assets.getName()) continue;
+
+		local skipName = false;
+		foreach (worldParty in ::Hardened.util.getAllWorldEntities())
+		{
+			if (mercName == worldParty.getName())
+			{
+				skipName = true;
+				break;
+			}
+		}
+		if (skipName) continue;
+
+		unusedNames.push(mercName);
+	}
+
+	return ::MSU.Array.rand(unusedNames);
+}
+
 ::Hardened.util.getAllWorldEntities <- function()
 {
 	return ::World.getAllEntitiesAtPos(::World.State.getPlayer().getPos(), 9000000);
