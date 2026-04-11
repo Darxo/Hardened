@@ -8,6 +8,33 @@
 	// Private
 	q.m.CachedInformation <- null;	// Will later contain a table with 4 cached direction information
 
+	q.setup = @(__original) function()
+	{
+		local mockObject;
+		// Vanilla triggers two calls of this function. The first is using Undead as the argument
+		// The second call is using Zombies as argument. Here we return an empty array back and can also deconstruct our mockobject
+		mockObject = ::Hardened.mockFunction(::World.FactionManager, "getFactionOfType", function( _factionType ) {
+			if (_factionType == ::Const.FactionType.Undead)
+			{
+				local possibleLocations = [];
+				// We use the exact same faction list as defined in the respective action
+				foreach (factionType in ::new("scripts/factions/contracts/discover_location_action").m.HD_ScoutableFactions)
+				{
+					possibleLocations.extend(mockObject.original(factionType).getSettlements());
+				}
+				return { value = { function getSettlements() {return possibleLocations}} };
+			}
+			else if (_factionType == ::Const.FactionType.Zombies)
+			{
+				return { done = true, value = { function getSettlements() {return []}} };
+			}
+		});
+
+		local ret = __original();
+
+		mockObject.cleanup();
+	}
+
 	q.createScreens = @(__original) function()
 	{
 		__original();
