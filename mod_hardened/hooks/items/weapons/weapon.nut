@@ -196,4 +196,13 @@
 
 		this.m.IsLoaded = oldIsLoaded;
 	}
+
+// Hardened Functions
+	q.HD_getDropChance = @(__original) function()
+	{
+		// Feat: Empty Throwing Weapons will never randomly drop as loot
+		if (this.isWeaponType(::Const.Items.WeaponType.Throwing) && this.getAmmo() == 0 && this.getAmmoMax() > 0) return 0;
+
+		return __original();
+	}
 });
