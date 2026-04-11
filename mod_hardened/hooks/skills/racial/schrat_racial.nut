@@ -3,6 +3,11 @@
 	q.m.PiercingDamageMult <- 0.5;
 	q.m.FireDamageMult <- 2.0;
 
+	q.getName = @() { function getName()
+	{
+		return this.skill.getName();
+	}}.getName;
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
