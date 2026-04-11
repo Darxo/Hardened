@@ -40,6 +40,7 @@
 		local namedMeleeWeapon = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/named/named_orc_cleaver"],
 			[12, "scripts/items/weapons/named/named_orc_axe"],
+			[12, "scripts/items/shields/named/named_orc_heavy_shield"],
 		]).roll();
 		this.getItems().addToBag(::new(namedMeleeWeapon));
 
