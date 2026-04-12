@@ -24,15 +24,15 @@
 	},
 	{
 		Money = 2000,		// Vanilla: 2000
-		Ammo = 50,			// Vanilla: 40
-		Tools = 30,			// Vanilla: 20
-		Medicine = 30,		// Vanilla: 20
+		Ammo = 80,			// Vanilla: 40
+		Tools = 40,			// Vanilla: 20
+		Medicine = 40,		// Vanilla: 20
 	},
 	{
 		Money = 1500,		// Vanilla: 1500
-		Ammo = 20,			// Vanilla: 20
-		Tools = 10,			// Vanilla: 10
-		Medicine = 10,		// Vanilla: 10
+		Ammo = 40,			// Vanilla: 20
+		Tools = 20,			// Vanilla: 10
+		Medicine = 20,		// Vanilla: 10
 	},
 ];
 
