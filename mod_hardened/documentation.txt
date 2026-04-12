@@ -28,6 +28,15 @@
 
 # Changelog
 
+1.13.1
+	- **Wooden Shields** now cost 160 Crowns (up from 150)
+	- NPCs now use **Rally the Troops** 50% less often (down from 25% less)
+	- Fix Brigand Parties spawning more different unit types at the same time than intended
+	- Fix "day remaining" and "day ago" range display not supporting the highest time range
+	- Fix **Two-handed Saif** still having a fatigue discount on its skills
+	- Fix Player Characters visually gaining +1 Maximum Action Point whenever an enemy dies
+	- Fix(Extra Keybinds) Log Error, during `ExtraKeybinds_onQueryEntityItemSwaps`
+
 1.13.0
 	- All Player Characters now have +5 Hitpoints
 	- All temporary Injuries with an Injury Threshold of 25% now have an injury Threshold of 20%
@@ -39,7 +48,7 @@
 	- Asking for more pay during negotiations now costs 1 Relation (up from 0.5) and grants 10%-30% more pay (up from 3%-10%)
 	- The **Negotiator Follower** no longer makes you build up 50% less Annoyance, or increases the maximum advance-payment you can negotiate. He now doubles the bonus you get from negotiating more pay
 	- **Brace for Impact** now also grants 10% more Injury Threshold for each stack
-	- **Unstoppable** now longer loses Stacks, when you wait or end your turn with more than half of your action points. It no loses 1 Stack whenever you use a Non-Attack skill
+	- **Unstoppable** no longer loses Stacks, when you wait or end your turn with more than half of your action points. It now loses 1 Stack whenever you use a Non-Attack skill
 	- **Break Free** and **Break Ally Free** now cost 3 Action Points (down from 4). They now have -20% base chance to succeed (down from 0%). They now gain +30% chance to succeed on a failed attempt (up from +10%)
 	- Add new NPC-Only **Ethreal** perk. It grants +10 Melee Defense and +10 Ranged Defense against Attacks for each tile between the Attacker and you
 	- **Ghost** racial effect no longer grants +10 Melee Defend and +10 Ranged Defense per tile between the attacker and you. It now grants the **Ethereal** perk

@@ -60,8 +60,8 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 
 - Most vanilla difficulty scaling methods (day/player strength/renown scaling) are disabled
 - Instead the following streamlined system is added:
-	- Contracts are 1% more difficult for every 12,5 Renown, up to a maximum of 1000% more
-	- Contracts pay 1% more Crowns for every 14 Renown, up to a maximum of 1000% more
+	- Contracts are 1% more difficult for every 12.5 Renown, up to a maximum of 1000% more
+	- Contracts pay 1% more Crowns for every 12.5 Renown, up to a maximum of 1000% more
 	- Contracts with 1 Skull no longer apply the penalty to pay twice and those with 3 Skulls no longer apply the bonus to pay twice
 	- Settlement have 1,3% more resources available per day (e.g. for spawning Caravans and Militia), up to a maximum of 400% at day ~300
 	- Every other scaling encounter in the world becomes 1,3% more difficult per day, up to a maximum of 400% at day ~300
@@ -120,10 +120,10 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - Reloading any Crossbow or Firearm now applies the **Reload Disorientation**  until the start of your next turn
   - **Reload Disorientation** grants 50% less Ranged Defense
 - All Crossbows now have +10% chance to hit and +10% Armor Penetration
- **Shoot Bolt** and **Shoot Stake** can no longer be used, while engaged in melee
+- **Shoot Bolt** and **Shoot Stake** can no longer be used, while engaged in melee
 - Reloading all Crossbows now costs 5 Action Points (up from 4)
 - Reloading all Firearms now costs 7 Action Points (down from 9)
-- **Handgonne** fire pattern is reworked. It is still the same as in Vanilla when aiming onto the same axis. Anywhere else your shape will now be that of a pyramid
+- **Handgonne** fire pattern is reworked. It is still the same as in Vanilla when aiming onto the same axis. Anywhere else your shape will now be a triangle
 
 ### Relation with Factions
 
@@ -154,7 +154,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 
 ### Stamina, Initiaitive and Weight
 
-- The term **Maximum Fatigue** in many places is replaced with the shorter term **Stamina**. They mean the same thing
+- The term **Maximum Fatigue** in most places is replaced with the shorter term **Stamina**. They mean the same thing
 - You no longer lose or gain **Initiative**, when you lose or gain **Stamina** (e.g. from **Strong Trait** or from certain Injuries)
 - A new term **Weight** replaces the existing **Maximum Fatigue** property on equippable items but works very similar
 - The **Stamina** penalty from **Weight** is now applied last (after Stamina Multiplier from effects). This is similar to how the **Initiative** penalty from **Weight** is applied in Vanilla
@@ -176,16 +176,6 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - You can no longer see the exact size of enemy parties on the world map
 - Add settings to control, whether to display Numerals or their actual Ranges
 
-### Player Party Strengh Rework
-
-Player Party Strength (influences NPC world party decisions) is the sum of your strongest brothers. Its calculations is reworked the following way:
-- Having less than 3 Brothers no longer grants free Strength
-- The maximum limit for Brothers being counted is now equal to your fighting line, instead of being being decided by the respective scenario
-- By default each Brother now contributes 12 Strength (up from 10)
-- Each Regular Level now increases that amount by 20% (up from +20)
-- Each Veteran Level now increases that amount by 5% (up from +20)
-- Each regular and permanent injury now reduces the strength of that character by a multiplicative 10%
-
 ### Notable Changes when coming from Reforged
 
 - Disable **Veteran Perks**. Your brothers no longer gain perk points after Level 11
@@ -194,7 +184,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 
 ### Other Notable Changes
 
-- You can now bring -2 Brothers into Battle, compared to what your origin allows. The first two Cart Upgrades allow you to bring +1 Brother into battle each
+- You can now bring 2 fewer Brothers into Battle, compared to what your origin allows. The first two Cart Upgrades allow you to bring +1 Brother into battle each
 - All Player Characters have +5 Hitpoints
 - Base Vision for the player and all world parties is now 450 (down from 500)
 - Player Characters now gain 100% XP from combat (up from 85%)
@@ -785,7 +775,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Unhold Fur Cloak** now grants 15 Condition (up from 10)
 - **Wardogs** now cost 250 Crowns (up from 200) and the variant with dog armor costs 450 Crowns (up from 400). They appear ~75% less often in regular marketplaces
 - **Warhounds** now cost 400 Crowns (up from 300) and the variant with dog armor costs 600 Crowns (up from 500). They appear ~75% less often in regular marketplaces
-- **Wooden Shields** appear less common in marketplaces
+- **Wooden Shields** now cost 160 Crowns (up from 100) and appear less common in marketplaces
 - **Worn Mail Shirt** can now appear in the Variant 50, which is a skin that previously was used by **Decayed Reinforced Mail Hauberk**
 - Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and **Large Powder Bags** weigh 4.
 - The value of almost all other non-named shields is increased by 50%-100%
@@ -931,6 +921,7 @@ Brigand Units now use the following names:
 
 ### AI General
 
+- NPC ranged troops now ignore the score from potential scatter targets when picking a ranged target. They also ignore the score penalty from obstacles blocking line of sight (that penalty is already implicitely handled by the predicted hitchance)
 - Any faction that receives at least 3 hits from enemies more than they themselves inflicted onto their enemies, will stop playing defensive
 - **Nomad Leader**, **Bandit Leader**, **Robber Baron**, **Militia Captain**, **Seargeant**, **Marshal** and **Officer** are now less likely to flank, protect allies, engage multiple opponents at once or use crowd control skills. They are more likely to stay in formation and allies are more likely to gather around them
 - **Blade Dancer**, **Executioner**, **Gladiators**, **Hedge Knight** and **Oathbringer** are now less likely to flank, protect allies, act defensive or use crowd control skills. Allies are slightly more likely to gather around them
@@ -938,13 +929,13 @@ Brigand Units now use the following names:
 - Ranged Troops from **Brigands**, **Nomads**, **Mercenaries**, **Goblins** and **Golems** Ranged Troops are 33% less likely to shoot at enemies they could kill and ~100% more likely to shoot at enemies they have a good hitchance against
 - Ranged **Goblin** Troops are 233% more likely to target enemies that they can deal good hitpoint damage against
 - Fast Brigands (Robber, Bandit, Killer) are now much less likely to flank and more likely to stay in formation
-- NPCs now know how to use Bandages
-- NPC ranged troops now ignore the score from potential scatter targets when picking a ranged target. They also ignore the score penalty from obstacles blocking line of sight (that penalty is already implicitely handled by the predicted hitchance)
+- Regular **Nomad** Units now stay 25% less in Formation, are 20% more likely to avoid engaging multiple opponents, are 20% more likely to flank and are 250% more likely to ignore someone who is already engaged in melee
 - Ranged NPC are 25% less likely to change positions
-- NPCs are 40% more likely to use Reload Actions
-- NPCs are now 25% less likely to use **Rally the Troops**
 - Enemies who prefer to wait, now ignore this preference, when they could engage an enemy within 1 tile
 - Improve AI targeting for throwing nets: They value the targets melee defense twice as much and prefer isolated targets
+- NPCs now know how to use Bandages
+- NPCs are 40% more likely to use Reload Actions
+- NPCs are now 50% less likely to use **Rally the Troops**
 - NPCs with **Sergeant** perk are 50% more attractive for other NPCs for target selection purposes
 - NPCs are now twice as likely to throw a net or use a throwing pot/bomb while adjacent to an enemy
 - NPCs will no longer throw nets while their strategy is defending
@@ -957,7 +948,7 @@ Brigand Units now use the following names:
 - NPCs with the **Net Pull** skill are now 400% more likely to use it, when possible
 - NPCs with **Death Dealer** are 200% more likely to use AoE Attacks
 - NPCs with **Exploit Opening** are 10% more likely to attack per stack, and they are 10% less attractive for others, if they have 0 stacks
-- NPC with **Fresh and Furious** are 90% less likely to use **Hand to Hand**, while they are disarmed and **Fresh and Furious** is active
+- NPC with **Fresh and Furious** active are 90% less likely to use **Hand to Hand**
 - NPCs are 100% more likely to use **Throw Dirt** for every fleeing ally adjacent to the target
 - NPCs are 20% more likely to target enemies with **Formidable Approach** if it has been procced against them
 - NPCs with **Toolbox** are 20% less likely to throw a piercing weapon at an enemy with **Arrow to the Knee Effect**
@@ -985,7 +976,6 @@ Brigand Units now use the following names:
 - **Goblin-, Brigand-, Nomad- and Mercenary** ranged units now play around 35% more defensive
 - **Goblin Overseer** now play 100% more defensive, just like Goblin Shamans
 - **Goblin Skirmisher** now prefer to engage more carefully during battle
-- Regular **Nomad** Units now stay 25% less in Formation, are 20% more likely to avoid engaging multiple opponents, are 20% more likely to flank and are 250% more likely to ignore someone who is already engaged in melee
 - **Necrosavants** are a bit more likely to stay on the same tile and attack twice, rather than teleport to a slightly better tile
 - **Orc Warlord** are now 50% less likely to flank
 - Skeleton Commander now prefer to use wait
@@ -1040,6 +1030,16 @@ Brigand Units now use the following names:
 - Failing a contract now inflicts -50 Renown (down from -75)
 - You now lose 5 Renown every day (up from 3)
 - Destroying a Location now grants +15 Renown (up from +10)
+
+### Player Party Strengh Rework
+
+Player Party Strength (influences NPC world party decisions) is the sum of your strongest brothers. Its calculations is reworked the following way:
+- Having less than 3 Brothers no longer grants free Strength
+- The maximum limit for Brothers being counted is now equal to your fighting line, instead of being being decided by the respective scenario
+- By default each Brother now contributes 12 Strength (up from 10)
+- Each Regular Level now increases that amount by 20% (up from +20)
+- Each Veteran Level now increases that amount by 5% (up from +20)
+- Each regular and permanent injury now reduces the strength of that character by a multiplicative 10%
 
 ### Settlements
 

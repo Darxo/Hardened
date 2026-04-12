@@ -94,7 +94,7 @@
 	- Many vanilla Contracts hand out those values during the getResult() of the only option. So for those we can't display them automatically
 	Possible Soluition:
 	1. Adjust all those vanilla contracts manually and move those changes forward
-	2. Move those List-Items showing the chages into the next screen shown. If that was the last screen, we generate a new dummy screen to display them
+	2. Move those List-Items showing the changes into the next screen shown. If that was the last screen, we generate a new dummy screen to display them
 	3. When only one option is available, we execute it during start(), so that all its changes (which would be applied anyways) are triggered earlier
 		- However here we must ignore a handful of function calls, which mess up the contract screen, when called too early
 	Goal (Option 3):
