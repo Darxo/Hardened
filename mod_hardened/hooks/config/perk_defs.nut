@@ -17,6 +17,14 @@
 		IconDisabled = "ui/perks/perk_hd_brace_for_impact_sw.png",		// Edited (desatured) version of existing unused vanilla art
 	},
 	{
+		ID = "perk.hd_ethereal",
+		Script = "scripts/skills/perks/perk_hd_ethereal",
+		Name = ::Const.Strings.PerkName.HD_Ethereal,
+		Tooltip = ::Const.Strings.PerkDescription.HD_Ethereal,
+		Icon = "ui/orientation/rf_banshee_orientation.png",
+		IconDisabled = "ui/orientation/rf_banshee_orientation.png",
+	},
+	{
 		ID = "perk.hd_hybridization",
 		Script = "scripts/skills/perks/perk_hd_hybridization",
 		Name = ::Const.Strings.PerkName.HD_Hybridization,

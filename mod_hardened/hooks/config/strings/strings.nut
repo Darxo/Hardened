@@ -57,6 +57,21 @@ local newPerks = [
 		}),
 	},
 	{
+		Key = "HD_Ethereal",
+		Name = "Ethereal",
+		Description = ::UPD.getDescription({
+			Fluff = "Your form appears faint and uncertain at a distance, as if not fully bound to the world.",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Gain " + ::MSU.Text.colorPositive("+10") + " [Melee Defense|Concept.MeleeDefense] and [Ranged Defense|Concept.RangeDefense] against Attacks for every tile between the attacker and you",
+					],
+				},
+			],
+		}),
+	},
+	{
 		Key = "HD_Hybridization",
 		Name = "Hybridization",
 		Description = ::UPD.getDescription({
