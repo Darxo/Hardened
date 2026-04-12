@@ -1,6 +1,7 @@
 this.hd_battle_song_skill <- ::inherit("scripts/skills/skill", {
 	m = {
 		ResolveBonusPct = 0.2,
+		HD_Radius = 4,
 	},
 	function create()
 	{
@@ -21,8 +22,6 @@ this.hd_battle_song_skill <- ::inherit("scripts/skills/skill", {
 		this.m.IsActive = true;
 		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 20;
-		this.m.MinRange = 1;
-		this.m.MaxRange = 4;
 	}
 
 	function getTooltip()
@@ -34,7 +33,7 @@ this.hd_battle_song_skill <- ::inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Grant a stacking [Inspired by Song|Skill+hd_inspired_by_song_effect] effect to all allies within " + ::MSU.Text.colorPositive(this.getMaxRange()) + " tiles adding " + ::MSU.Text.colorizePct(this.m.ResolveBonusPct) + " (" + ::MSU.Text.colorizeValue(this.getBonus()) + ") of your current [Resolve|Concept.Bravery] to them"),
+				text = ::Reforged.Mod.Tooltips.parseString("Grant a stacking [Inspired by Song|Skill+hd_inspired_by_song_effect] effect to all allies within " + ::MSU.Text.colorPositive(this.m.HD_Radius) + " tiles adding " + ::MSU.Text.colorizePct(this.m.ResolveBonusPct) + " (" + ::MSU.Text.colorizeValue(this.getBonus()) + ") of your current [Resolve|Concept.Bravery] to them"),
 			},
 			{
 				id = 20,
@@ -62,7 +61,7 @@ this.hd_battle_song_skill <- ::inherit("scripts/skills/skill", {
 	{
 		foreach (ally in ::Tactical.Entities.getInstancesOfFaction(_user.getFaction()))
 		{
-			if (ally.getTile().getDistanceTo(_user.getTile()) > this.getMaxRange()) continue;
+			if (ally.getTile().getDistanceTo(_user.getTile()) > this.m.HD_Radius) continue;
 			if (ally.getID() == _user.getID()) continue;
 
 			local existingSkill = ally.getSkills().getSkillByID("effects.rf_inspired_by_song");
