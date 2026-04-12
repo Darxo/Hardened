@@ -14,4 +14,15 @@
 
 		return ret;
 	}
+
+	q.initNextRound = @(__original) function()
+	{
+		__original();
+
+		if (!this.m.IsBattleEnded)
+		{
+			// Feat: Display in the combat log, whenever a new round starts
+			::Tactical.EventLog.logEx("\n=== Round " + this.getCurrentRound() + " ===");
+		}
+	}
 });
