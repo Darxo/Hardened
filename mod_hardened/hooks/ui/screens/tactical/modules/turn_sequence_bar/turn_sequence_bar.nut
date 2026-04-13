@@ -25,4 +25,39 @@
 			::Tactical.EventLog.logEx("\n=== Round " + this.getCurrentRound() + " ===");
 		}
 	}
+
+	if (::Hooks.hasMod("mod_extra_keybinds"))
+	{
+		// Extra Keybinds Fix: script error, when findEntityByID returns null
+		// Extra Keybinds never checks, whether the return value is null
+		q.ExtraKeybinds_onQueryEntityItemSwaps = @() function( _entityId )
+		{
+			local entityEntry = this.findEntityByID(this.m.CurrentEntities, _entityId);
+			if (entityEntry == null) return null;
+
+			local entity = entityEntry.entity;
+			// The code below is a 1:1 copy of Extry Keybinds Code
+			if (entity != null && entity.isPlayerControlled())
+			{
+				local items = entity.getItems().m.Items[::Const.ItemSlot.Bag]
+				local ret = array(items.len());
+				foreach (i, item in items) // can be null
+				{
+					if (item == null || item.getSlotType() == ::Const.ItemSlot.Bag) continue;
+					local currentItem = entity.getItems().getItemAtSlot(item.getSlotType()) // can be null
+					local blockedItem = entity.getItems().getItemAtSlot(item.getBlockedSlotType()) // can be null
+					ret[i] = {
+						id = item.getID(),
+						idx = i,
+						instanceId = item.getInstanceID(),
+						imagePath = "ui/items/" + item.getIcon(),
+						isUsable = item.isChangeableInBattle() && (currentItem == null || currentItem.isChangeableInBattle() && (blockedItem == null || blockedItem.isChangeableInBattle()))
+						isAffordable = entity.getItems().isActionAffordable([currentItem, item, blockedItem])
+					};
+				}
+				return ret;
+			}
+			return null;
+		}
+	}
 });
