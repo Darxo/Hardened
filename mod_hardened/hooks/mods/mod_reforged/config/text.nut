@@ -13,6 +13,7 @@
 			min = i;
 		}
 	}
+	::Reforged.Text.HD_DaysRemainingTable.push(min);
 
 	::Reforged.Text.HD_getDayRange <- function( _dayNumber )
 	{
@@ -46,6 +47,7 @@
 			min = i;
 		}
 	}
+	::Reforged.Text.HD_DaysAgoAsTable.push(min);
 
 	::Reforged.Text.HD_getDayAgoAsRange <- function( _dayNumber )
 	{
