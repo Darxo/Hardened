@@ -104,29 +104,26 @@
 	// but the last thing happening is the skull registering its death for setLastCombatResult, making this a player win
 	q.kill = @(__original) function( _killer = null, _skill = null, _fatalityType = ::Const.FatalityType.None, _silent = false )
 	{
-		if (this.isPlayerControlled())	// We are only interested in non-player deaths
+		// We first filter out two paths, that we are not interested in, to reduce performance impact and simplify later conditions
+		if (this.isPlayerControlled() || ::Tactical.State.isAutoRetreat())
 		{
 			return __original(_killer, _skill, _fatalityType, _silent);
 		}
 
-		// We make sure that isAutoRetreat always returns true, so that the lastCombatResult is not set to EnemyDestroyed by vanilla during the kill function
-		local mockObject = ::Hardened.mockFunction(::Tactical.State, "isAutoRetreat", function() {
-			return { value = true };
+		// We make sure that setLastCombatResult(::Const.Tactical.CombatResult.EnemyDestroyed) has no effect, while there are still enemies alive
+		local mockObject = ::Hardened.mockFunction(::Tactical.Entities, "setLastCombatResult", function( _combatResult ) {
+			// We no longer allow anyone to set the CombatResult to "EnemyDestroyed", if there are still enemies left, while our actor dies
+			if (::Tactical.Entities.getHostilesNum() == 0 && _combatResult == ::Const.Tactical.CombatResult.EnemyDestroyed)
+			{
+				return { value = null };
+			}
 		});
+
+		local oldLastCombatResult = ::Tactical.Entities.m.LastCombatResult
 
 		__original(_killer, _skill, _fatalityType, _silent);
 
 		mockObject.cleanup();
-
-		// If a kill happens within a kill (e.g. Flying Skull kills another Flying Skull), then multiple Mocks happen
-		//  and only the root kill caller, gets an honest read on "isAutoRetreat". Only he is able to actually setLastCombatResult correctly
-		if (!::Tactical.State.isAutoRetreat())
-		{
-			if (::Tactical.Entities.getHostilesNum() == 0)	// If not all enemies have died yet, we don't want to draw conclusions too early so we revert back to the previous state
-			{
-				::Tactical.Entities.setLastCombatResult(::Const.Tactical.CombatResult.EnemyDestroyed);
-			}
-		}
 	}
 
 	q.wait = @(__original) function()
