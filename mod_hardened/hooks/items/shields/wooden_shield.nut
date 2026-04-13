@@ -13,7 +13,7 @@
 		this.m.ConditionMax = 24;
 
 	// Hardened Adjustments
-		this.m.Value = 150;		// In Vanilla this is 100
+		this.m.Value = 160;		// In Vanilla this is 100
 	}
 
 // Hardened Funnctions
