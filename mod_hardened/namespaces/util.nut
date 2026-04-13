@@ -546,3 +546,30 @@
 		script = _script,
 	});
 }
+
+/// Remove one, or all bullet points from _tooltip, for which _filter( _entry ) returns true
+/// @param _function function, that takes exactly one argument, the bullet point table, currently viewed
+/// @return true, if at least one bullet point was found and removed
+::Hardened.util.HD_deleteBulletPoint <- function( _tooltip, _filter, _all = true )
+{
+	if (typeof _filter != "function")
+	{
+		::logError("Hardened: _filter must be of type function");
+		::MSU.Log.printStackTrace();
+		return false;
+	}
+
+	local removedEntry = false;
+	for (local i = _tooltip.len() - 1; i >= 0; --i)
+	{
+		local entry = _tooltip[i];
+		if (!("icon" in entry)) entry.icon <- "";	// Not every tooltip line has an icon defined
+		if (_filter(entry))
+		{
+			_tooltip.remove(i);
+			if(!_all) return true;
+			removedEntry = true;
+		}
+	}
+	return removedEntry;
+}
