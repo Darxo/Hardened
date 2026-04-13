@@ -10,8 +10,8 @@ this.pg_special_hd_tactician <- ::inherit(::DynamicPerks.Class.SpecialPerkGroup,
 		this.m.Tree = [
 			[],
 			["perk.rf_bestial_vigor"],	// New: Bestial Vigor (Backup Plan)
-			["perk.rf_shield_sergeant"],
 			["perk.rf_onslaught"],
+			["perk.rf_shield_sergeant"],
 			["perk.rf_hold_steady"],
 			[],
 			["perk.rf_blitzkrieg"],
