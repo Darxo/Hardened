@@ -165,7 +165,6 @@
 				returnValue = this.earlyGetResult();
 			}
 
-			local self = this;
 			// These are vanilla functions which all screw with our preponing action, so we need to mock them during that
 			// We need to pass a strongref to the Contracts object as the weakref sometimes become null during the mockFunction calls. No idea why that is happening though
 			this.preponeFunction(screen, ::World.State.m.Contracts, "finishActiveContract");
