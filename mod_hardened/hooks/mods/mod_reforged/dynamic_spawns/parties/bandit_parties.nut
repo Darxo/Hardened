@@ -52,46 +52,21 @@
 		banditDefenderParty.excludeSpawnables <- function() {
 			base.excludeSpawnables();
 
-			local flexBlocks = [];
-			foreach (index, banditBlock in this.__DynamicSpawnables)
-			{
-				if (banditBlock.getID().find("UnitBlock.RF.BanditFast") != null) flexBlocks.push(index);
-				if (banditBlock.getID().find("UnitBlock.RF.BanditTough") != null) flexBlocks.push(index);
-			}
-
-			// We remove a single flex block, if there are too many
-			// This approach does not work when removing multiple flex blocks, because __DynamicSpawnables order becomes undefined after the first removal of an array value
-			if (flexBlocks.len() > 1)
-			{
-				local unitBlockIndexToRemove = flexBlocks.remove(::Math.rand(0, flexBlocks.len() - 1));
-				this.__DynamicSpawnables.remove(unitBlockIndexToRemove);
-			}
+			local unitBlockIDs = ["UnitBlock.RF.BanditFast", "UnitBlock.RF.BanditTough", "UnitBlock.RF.BanditRanged"];
+			::Hardened.util.enforceFlexSpawnable(this, unitBlockIDs, 1);
 		};
 	}
 
-	{	// "BanditRoamers", "BanditScouts", "BanditRaiders", "BanditBoss"
-		// We make sure, that no roaming party contains 3 "flex" groups
-		foreach (banditPartyID in ["BanditRoamers", "BanditScouts", "BanditRaiders", "BanditBoss"])
+	{	// "BanditScouts", "BanditRaiders", "BanditBoss"
+		// We make sure, that no roaming party contains more than 2 "flex" groups
+		foreach (banditPartyID in ["BanditScouts", "BanditRaiders", "BanditBoss"])
 		{
 			// Todo: Adjust this hook after Dynamic Spawns Update is out
 			::Reforged.Spawns.Parties[banditPartyID].excludeSpawnables <- function() {
 				base.excludeSpawnables();
 
-				local flexBlocks = [];
-				foreach (index, banditBlock in this.__DynamicSpawnables)
-				{
-					if (banditBlock.getID().find("UnitBlock.RF.BanditFast") != null) flexBlocks.push(index);
-					if (banditBlock.getID().find("UnitBlock.RF.BanditTough") != null) flexBlocks.push(index);
-					if (banditBlock.getID().find("UnitBlock.RF.BanditRanged") != null) flexBlocks.push(index);
-				}
-
-				// We remove a single flex block, if there are too many
-				// This approach does not work when removing multiple flex blocks, because __DynamicSpawnables order becomes undefined after the first removal of an array value
-				if (flexBlocks.len() > 2)
-				{
-					local unitBlockIndexToRemove = flexBlocks.remove(::Math.rand(0, flexBlocks.len() - 1));
-					this.__DynamicSpawnables.remove(unitBlockIndexToRemove);
-				}
+				local unitBlockIDs = ["UnitBlock.RF.BanditFast", "UnitBlock.RF.BanditTough", "UnitBlock.RF.BanditRanged"];
+				::Hardened.util.enforceFlexSpawnable(this, unitBlockIDs, 2);
 			};
 		}
 	}
