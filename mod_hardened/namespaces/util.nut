@@ -370,3 +370,22 @@
 {
 	return ::World.getAllEntitiesAtPos(::World.State.getPlayer().getPos(), 9000000);
 }
+
+/// Remove spawnables from _spawnableIdArray from _party, until there are _maximumAmount or less spawnables from _spawnableIdArray left there
+/// This can be used to make sure, not too many special units or blocks are present in a party at once
+::Hardened.util.enforceFlexSpawnable <- function( _party, _spawnableIdArray, _maximumAmount )
+{
+	local flexObjects = [];
+	foreach (spawnableID in _spawnableIdArray)
+	{
+		local obj = _party.getSpawnable(spawnableID);
+		if (obj != null) flexObjects.push(obj);
+	}
+
+	while (flexObjects.len() > _maximumAmount)
+	{
+		local removedFlexObject = ::MSU.Array.rand(flexObjects);
+		_party.removeSpawnable(removedFlexObject.getID());
+		::MSU.Array.removeByValue(flexObjects, removedFlexObject);
+	}
+}
