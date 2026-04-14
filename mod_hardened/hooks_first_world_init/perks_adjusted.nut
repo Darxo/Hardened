@@ -1496,7 +1496,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Weapon Skills cost " + ::MSU.Text.colorPositive("20%") + " less [Fatigue|Concept.Fatigue]",
-					"You are immune to [disarm|Skill+disarmed_effect]",
+					"Become immune to [disarm|Skill+disarmed_effect]",
 				],
 			}],
 		}),
