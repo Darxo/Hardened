@@ -43,3 +43,9 @@ local oldCanUpgrade = ::DynamicSpawns.Class.UnitBlock.canUpgrade;
 	return true;
 }
 
+// Remove a spawnable, no matter how deep it is hiding within this spawnable
+::DynamicSpawns.Class.UnitBlock.removeSpawnable <- function( _id, _all = true )
+{
+	return base.removeSpawnable(_id, _all);
+}
+

@@ -11,3 +11,9 @@
 	return 0;
 }
 
+// Remove a spawnable, no matter how deep it is hiding within this spawnable
+::DynamicSpawns.Class.Unit.removeSpawnable <- function( _id, _all = true )
+{
+	return base.removeSpawnable(_id, _all);
+}
+
