@@ -375,6 +375,8 @@
 /// This can be used to make sure, not too many special units or blocks are present in a party at once
 ::Hardened.util.enforceFlexSpawnable <- function( _party, _spawnableIdArray, _maximumAmount )
 {
+	if (::MSU.isNull(_party)) return;
+
 	local flexObjects = [];
 	foreach (spawnableID in _spawnableIdArray)
 	{
