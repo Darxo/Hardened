@@ -25,7 +25,12 @@
 
 	q.getChance = @(__original) function()
 	{
+		// Switcheroo, because __original, clamps the value to never exceed 100. We dont want chance being lost to that
+		local oldChanceBonus = this.m.ChanceBonus;
+		this.m.ChanceBonus += this.m.HD_BaseChance;
 		// Feat: We make the base chance for breaking free moddable
-		return ::Math.clamp(__original() + this.m.HD_BaseChance, 0, 100);
+		local ret = __original();
+		this.m.ChanceBonus = oldChanceBonus;
+		return ::Math.clamp(ret, 0, 100);
 	}
 });
