@@ -879,8 +879,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
+					"Deal " + ::MSU.Text.colorPositive("+20%") + " Armor Damage",
 					"Deal " + ::MSU.Text.colorPositive("100%") + " more Shield Damage",
-					"Deal " + ::MSU.Text.colorPositive("+40%") + " Armor Damage against enemies who have full [Hitpoints|Concept.Hitpoints]",
 				],
 			}],
 		}),
