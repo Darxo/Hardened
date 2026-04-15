@@ -2,6 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.Cost = 2500;		// Vanilla: 3000
 		this.m.Effects = [
 			"Successful negotiations grant double bonus payment",
 			"Bad Relations recover 100% faster",
