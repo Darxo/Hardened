@@ -97,7 +97,7 @@
 
 		if (::Hardened.Mod.ModSettings.getSetting("DisplayRelationValue").getValue())
 		{
-			ret += " (" + this.m.PlayerRelation + ")";
+			ret += " (" + ::MSU.Math.roundToDec(this.m.PlayerRelation, 1) + ")";
 		}
 
 		return ret;
