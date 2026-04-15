@@ -1,6 +1,9 @@
 // Hardened completely redesign most NPCs
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
+::Const.Strings.EntityName[::Const.EntityType.RF_BanditMarauder] = "Brigand Highwayman";
+::Const.Strings.EntityNamePlural[::Const.EntityType.RF_BanditMarauder] = "Brigand Highwaymen";
+
 // Brigand Highwayman - Balanced Brigand - Tier 4 (Reforged: Brigand Marauder)
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/rf_bandit_marauder", function(q) {
 	q.create = @(__original) function()

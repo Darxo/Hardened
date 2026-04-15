@@ -36,12 +36,6 @@
 	},
 ];
 
-// We change the names of two of the balanced brigand tiers according to our Hardened design
-::Const.Strings.EntityName[::Const.EntityType.RF_BanditPillager] = "Brigand Outlaw";
-::Const.Strings.EntityNamePlural[::Const.EntityType.RF_BanditPillager] = "Brigand Outlaws";
-::Const.Strings.EntityName[::Const.EntityType.RF_BanditMarauder] = "Brigand Highwayman";
-::Const.Strings.EntityNamePlural[::Const.EntityType.RF_BanditMarauder] = "Brigand Highwaymen";
-
 ::Const.Difficulty.getPlayerDamageReceivedMult <- function()
 {
 	if (!::MSU.Utils.hasState("tactical_state")) return 1.0;
