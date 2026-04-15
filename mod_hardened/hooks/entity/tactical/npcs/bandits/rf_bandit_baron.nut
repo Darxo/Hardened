@@ -1,6 +1,9 @@
 // Hardened completely redesign most NPCs
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
+::Const.Strings.EntityName[::Const.EntityType.RF_BanditBaron] = "Brigand Baron";			// Reforged: Robber Baron
+::Const.Strings.EntityNamePlural[::Const.EntityType.RF_BanditBaron] = "Brigand Barons";		// Reforged: Robbern Barons
+
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/rf_bandit_baron", function(q) {
 	q.create = @(__original) function()
 	{
