@@ -1453,15 +1453,19 @@ This section talks about adjustments made to other optional mods, when present a
 
 - Prevent parties from upgrading their units while they are below an **Idealsize** as defined by the return value of the `party::generateIdealSize()` function. By default it returns a value equal to the amount of brothers that the player has and clamped between 6 and 12
 - Fix Unit order in UnitBlocks not taking subparties into account
+- Add `::DynamicSpawns.Class.Party.removeSpawnable(_id, _all = true)` for removing spawnables from from a party during party generation
+-
 
-### Swifter
+### Other Mods
 
-- Fix image of active entity in the turn sequence bar vanishing on higher combat speed
+- Fix(Swifter) image of active entity in the turn sequence bar vanishing on higher combat speed
+- Fix(Extra Keybinds) Log Error, during ExtraKeybinds_onQueryEntityItemSwaps
 
 ## For Modders
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add `::Hardened.util.enforceFlexSpawnable(_party, _spawnableIdArray, _maximumAmount)` for encorving a maximum shared amount of existing spawnables during party generation
 - Add `weapon::HD_getDropChance()` which can be overwritten to assign custom and dynamic drop chances for weapons
 - Add `::Hardened.util.findUnusedMercenaryName()` which returns a name from `::Const.Strings.MercenaryCompanyNames` which not used by any world party, while replacing %randomname% with a random character name
 - Add `::Const.World.HD_InventoryUpgradeSlots` array, that defines how many inventory slots each upgrade of the cart grants to the player

@@ -37,7 +37,6 @@
 			if (myTile.getDistanceTo(location.getTile()) > this.m.HD_MaximumDistance) continue;
 
 			this.m.Score = this.m.HD_ScoreOverwrite;
-			return;
 		}
 	}
 

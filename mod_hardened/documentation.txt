@@ -28,6 +28,12 @@
 
 # Changelog
 
+1.13.2
+	- Fix **Return Item** contracts on appearing
+	- Fix maximum **Break Free** chance being capped at 80%
+	- Fix Faction Relation value sometimes showing too many decimal places
+	- Fix typo in **Feral Rage** perk flavor text
+
 1.13.1
 	- **Wooden Shields** now cost 160 Crowns (up from 150)
 	- NPCs now use **Rally the Troops** 50% less often (down from 25% less)
