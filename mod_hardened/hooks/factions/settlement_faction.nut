@@ -19,4 +19,16 @@
 
 		return owner.getBanner();
 	}
+
+// Hardened Functions
+	q.HD_getMaxConcurrentContracts = @() function()
+	{
+		return this.getSettlements()[0].getSize() + ::World.Assets.m.HD_AdditionalCivilianContracts;
+	}
+
+	q.HD_getContractDelay = @() function()
+	{
+		local delay = 5.0 - (this.getSettlements()[0].getSize() - 1);
+		return (delay + ::World.Assets.m.HD_CivilianContractDayDelayModifier) * ::World.getTime().SecondsPerDay;
+	}
 });

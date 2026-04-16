@@ -2,6 +2,8 @@
 	q.m.IsAlwaysShowingScoutingReport <- false;		// Same effect as Vanilla Poacher Origin
 	q.m.HD_NegotiationPaymentMult <- 1.0;
 	q.m.TerrainTypeVisionMult <- [];
+	q.m.HD_AdditionalCivilianContracts <- 0;	// Factions have this many additional Contracts available
+	q.m.HD_CivilianContractDayDelayModifier <- 0.0;		// Civilian Factions require this many additional days until they spawn another contract
 
 	q.create = @(__original) function()
 	{
@@ -14,6 +16,8 @@
 		this.m.IsAlwaysShowingScoutingReport = false;
 		this.m.HD_NegotiationPaymentMult = 1.0;
 		this.m.TerrainTypeVisionMult = array(::Const.World.TerrainFoodConsumption.len(), 1.0);
+		this.m.HD_AdditionalCivilianContracts = 0;
+		this.m.HD_CivilianContractDayDelayModifier = 0.0;
 		__original();
 	}
 
