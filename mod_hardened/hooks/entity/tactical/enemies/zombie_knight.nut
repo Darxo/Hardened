@@ -4,10 +4,4 @@
 	{
 		return this.actor.onDamageReceived(_attacker, _skill, _hitInfo);
 	}
-
-	q.makeMiniboss = @(__original) function()
-	{
-		__original();
-		this.getSkills().removeByID("perk.nine_lives");
-	}
 });
