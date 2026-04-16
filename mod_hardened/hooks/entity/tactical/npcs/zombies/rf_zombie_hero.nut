@@ -46,6 +46,12 @@
 		this.HD_assignOtherGear();
 	}}.assignRandomEquipment;
 
+	// Overwrite, because damage is now redirected/handled by hd_headless_effect
+	q.onDamageReceived = @() { function onDamageReceived( _attacker, _skill, _hitInfo )
+	{
+		return this.actor.onDamageReceived(_attacker, _skill, _hitInfo);
+	}}.onDamageReceived;
+
 // Reforged Functions
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
 	q.onSpawned = @() function()
