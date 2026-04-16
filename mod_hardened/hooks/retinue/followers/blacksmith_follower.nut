@@ -1,11 +1,13 @@
 ::Hardened.HooksMod.hook("scripts/retinue/followers/blacksmith_follower", function(q) {
 	q.m.HD_RequiredArmorConsumables <- 5;
+	q.m.HD_RepairSpeedMult <- 1.5;
 
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.Cost = 3500;			// Vanilla: 3000
+		this.m.Effects[1] = "50% more Repair Speed";		// Vanilla: 20%
 		this.m.Effects[2] = "+50 Capacity for Tools and Supplies";		// In Vanilla this is "Reduces tool consumption by 20%"
-
 	}
 
 	// Overwrite, because we change almost everything about Vanilla effect
@@ -13,9 +15,12 @@
 	{
 		// We revert changes to tool consumption as that is no longer part of this retinues effect
 		local oldArmorPartsPerArmor = ::World.Assets.m.ArmorPartsPerArmor;
+		local oldRepairSpeedMult = ::World.Assets.m.RepairSpeedMult;
 		__original();
 		::World.Assets.m.ArmorPartsPerArmor = oldArmorPartsPerArmor;
+		::World.Assets.m.RepairSpeedMult = oldRepairSpeedMult;
 
+		::World.Assets.m.RepairSpeedMult *= this.m.HD_RepairSpeedMult;
 		::World.Assets.m.ArmorPartsMaxAdditional += 50;
 	}
 
