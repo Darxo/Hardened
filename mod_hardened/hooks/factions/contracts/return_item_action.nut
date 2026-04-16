@@ -7,7 +7,7 @@
 		if (_faction.getSettlements()[0].isIsolatedFromRoads()) return;
 		if (!this.HD_rollContractChance()) return;
 
-		return this.m.HD_ScoreOverwrite;
+		this.m.Score = this.m.HD_ScoreOverwrite;
 	}
 
 // New Functions
