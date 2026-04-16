@@ -27,7 +27,7 @@
 		this.addSprite("armor");
 		local head = this.addSprite("head");
 		head.setBrush("bust_unhold_head_02");
-		if (::Math.rand(1, 100) <= 5) head.setBrush("bust_rf_unhold_head_smiling");	// Reforged adds a chance to have smiling unhold face as head sprite
+		if (::Math.rand(1, 100) <= 1) head.setBrush("bust_rf_unhold_head_smiling");		// Reforged: 5% chance
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 		this.addSprite("helmet");
