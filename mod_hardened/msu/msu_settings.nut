@@ -38,7 +38,7 @@
 	qolWorldPage.addDivider("MiscDivider4");
 
 	qolWorldPage.addBooleanSetting("DisplayFoodDuration", true, "Display Food Duration", "Display next to your food supplies the amount of days that they will last for your company. This duration will never be larger than expiration date of your longest lasting food.");
-	qolWorldPage.addBooleanSetting("DisplayRepairDuration", true, "Display Repair Duration", "Display next to your tool supplies the amount of hours that it will take to fully repair all gear.");
+	qolWorldPage.addBooleanSetting("DisplayRepairDuration", true, "Display Repair Cost", "Display next to your tool supplies the amount of tools required to fully repair all gear.");
 	qolWorldPage.addBooleanSetting("DisplayMinMedicineCost", true, "Display Min Medicine Cost", "Display next to your medicine supplies the minimum supplies that your currently injured brothers will require to fully recover.");
 
 	qolWorldPage.addDivider("MiscDivider5");

@@ -45,9 +45,9 @@
 		if (::Hardened.Mod.ModSettings.getSetting("DisplayRepairDuration").getValue())
 		{
 			local armorParts = ::World.Assets.getRepairRequired();	// .ArmorParts .Hours
-			if (armorParts.Hours > 0)
+			if (armorParts.ArmorParts > 0)
 			{
-				ret.RepairHoursLeft <- armorParts.Hours;
+				ret.RepairHoursLeft <- armorParts.ArmorParts;
 			}
 		}
 
