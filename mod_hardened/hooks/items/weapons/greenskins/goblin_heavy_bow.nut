@@ -3,6 +3,9 @@
 	{
 		__original();
 
+		this.m.RegularDamage = 40;		// Vanilla: 30
+		this.m.RegularDamageMax = 55;	// Vanilla: 50
+		this.m.ArmorDamageMult = 0.5;	// Vanilla: 0.6
 		// In Vanilla named goblin bows have +10% Armor Penetration. We choose to give that to every goblin bow now
 		this.m.DirectDamageAdd = 0.1;	// Vanilla: 0.0
 	}
