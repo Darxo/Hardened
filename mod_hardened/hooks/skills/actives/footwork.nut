@@ -7,6 +7,9 @@
 	{
 		__original();
 		this.m.Description = "Use skillful footwork to get out of danger.";
+
+		// Footwork now has a 1 round cooldown. This fixes NPCs using it multiple times a turn
+		this.m.HD_Cooldown = 1;
 	}
 
 	q.getTooltip = @(__original) function()
