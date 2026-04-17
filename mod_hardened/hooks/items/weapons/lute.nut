@@ -13,12 +13,10 @@
 	{
 		this.weapon.onEquip();
 
-		this.addSkill(::Reforged.new("scripts/skills/actives/knock_out", function(o) {
-			o.m.IsFromLute = true;
+		this.addSkill(::Reforged.new("scripts/skills/actives/strike_down_skill", function(o) {
 			o.m.Icon = "skills/active_88.png";
 			o.m.IconDisabled = "skills/active_88_sw.png";
 			o.m.Overlay = "active_88";
-			o.m.StunChance = 100;	// In Vanilla this is 30
 			o.m.IsIgnoredAsAOO = false;		// So that the lute exerts zone of control and provides its reach correctly
 		}));
 
