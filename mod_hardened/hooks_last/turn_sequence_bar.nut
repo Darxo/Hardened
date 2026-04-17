@@ -12,32 +12,14 @@
 		if (!activeEntity.isPreviewing()) return;
 		if (activeEntity.getPreviewMovement() == null) return;
 
+		if (!::Hardened.util.willBeAttackedLeavingZoneOfControl(activeEntity)) return;
+
+		// Feat: Display chance to dodge, when we preview movement while in zone of control
 		::Hardened.Private.IsPreviewingAttackWithHitChance = true;
-
-		local expectedChanceToDodge = null;
-		foreach (tile in ::MSU.Tile.getNeighbors(activeEntity.getTile()))
-		{
-			if (!tile.IsOccupiedByActor) continue;
-			if (!tile.getEntity().onMovementInZoneOfControl(activeEntity, false)) continue;		// The entity in that tile does not exert zone of control onto us
-
-			local aooSkill = tile.getEntity().getSkills().getAttackOfOpportunity();
-			if (!aooSkill.onVerifyTarget(tile, activeEntity.getTile())) continue;	// The aooSkill found can actually hit us (this will cover cases of tile height difference being too large)
-
-			local chanceToBeHit = aooSkill.getHitchance(activeEntity);
-			if (expectedChanceToDodge == null)
-			{
-				expectedChanceToDodge = 100.0 - chanceToBeHit;
-			}
-			else
-			{
-				expectedChanceToDodge *= (100.0 - chanceToBeHit) / 100.0;
-			}
-		}
-		if (expectedChanceToDodge == null) return;
 
 		// For moving out of zone of control as the player, we instead display the chance to dodge,
 		// That way we can re-use the coloring logic on the js side
-		activeEntity.m.HD_ChanceToBeHit = ::Math.round(expectedChanceToDodge);
+		activeEntity.m.HD_ChanceToBeHit = ::Math.round(::Hardened.util.getChancetoDodgeLeavingTile(activeEntity));
 
 		::Tactical.State.m.TacticalScreen.getOrientationOverlayModule().HD_fullUpdateHitchanceOverlays();
 	}

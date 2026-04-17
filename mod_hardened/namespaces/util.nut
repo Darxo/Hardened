@@ -391,3 +391,41 @@
 		::MSU.Array.removeByValue(flexObjects, removedFlexObject);
 	}
 }
+
+::Hardened.util.getChancetoDodgeLeavingTile <- function( _actor )
+{
+	local expectedChanceToDodge = 100;
+	local tile = _actor.getTile();
+	foreach (nextTile in ::MSU.Tile.getNeighbors(tile))
+	{
+		if (!nextTile.IsOccupiedByActor) continue;
+		if (!nextTile.getEntity().onMovementInZoneOfControl(_actor, false)) continue;		// The entity in that tile does not exert zone of control onto us
+
+		local aooSkill = nextTile.getEntity().getSkills().getAttackOfOpportunity();
+		if (!aooSkill.onVerifyTarget(nextTile, tile)) continue;	// The aooSkill found can actually hit us (this will cover cases of tile height difference being too large)
+
+		local chanceToBeHit = aooSkill.getHitchance(_actor);
+		expectedChanceToDodge *= (100.0 - chanceToBeHit) / 100.0;
+	}
+
+	return expectedChanceToDodge;
+}
+
+::Hardened.util.willBeAttackedLeavingZoneOfControl <- function( _actor )
+{
+	local tile = _actor.getTile();
+	if (tile.Properties.Effect != null && tile.Properties.Effect.Type == "smoke") return false;
+
+	foreach (nextTile in ::MSU.Tile.getNeighbors(tile))
+	{
+		if (!nextTile.IsOccupiedByActor) continue;
+		if (!nextTile.getEntity().onMovementInZoneOfControl(_actor, false)) continue;		// The entity in that tile does not exert zone of control onto us
+
+		local aooSkill = nextTile.getEntity().getSkills().getAttackOfOpportunity();
+		if (!aooSkill.onVerifyTarget(nextTile, tile)) continue;	// The aooSkill found can actually hit us (this will cover cases of tile height difference being too large)
+
+		return true;
+	}
+
+	return false;
+}

@@ -558,8 +558,7 @@
 			}
 		}
 
-		// First we generate hitchances for when we are standing in enemy ZoC
-		if (_entity.getTile().Properties.Effect == null || _entity.getTile().Properties.Effect.Type != "smoke")	// onMovementInZoneOfControl does not check for this, so we do it here now
+		if (::Hardened.util.willBeAttackedLeavingZoneOfControl(_entity))
 		{
 			if (_entity.getTile().getZoneOfControlCountOtherThan(_entity.getAlliedFactions()) == 0)
 			{
@@ -573,7 +572,6 @@
 			else
 			{
 				local aooInformation = [];
-				local expectedChanceToDodge = null;
 				local childId = 201;
 				foreach (tile in ::MSU.Tile.getNeighbors(_entity.getTile()))
 				{
@@ -584,14 +582,6 @@
 					if (!aooSkill.onVerifyTarget(tile, _entity.getTile())) continue;	// The aooSkill found can actually hit us (this will cover cases of tile height difference being too large)
 
 					local chanceToBeHit = aooSkill.getHitchance(_entity);
-					if (expectedChanceToDodge == null)
-					{
-						expectedChanceToDodge = 100.0 - chanceToBeHit;
-					}
-					else
-					{
-						expectedChanceToDodge *= (100.0 - chanceToBeHit) / 100.0;
-					}
 
 					aooInformation.push({
 						id = childId++,
@@ -602,16 +592,13 @@
 					});
 				}
 
-				if (expectedChanceToDodge != null)
-				{
-					ret.insert(0, {
-						id = 200,
-						type = "text",
-						icon = "ui/icons/hitchance.png",
-						children = aooInformation,
-						text = ::MSU.Text.colorNegative(::Math.round(100.0 - expectedChanceToDodge) + "%") + ::Reforged.Mod.Tooltips.parseString(" [Expected chance to be hit|Concept.ZoneOfControl]"),
-					});
-				}
+				ret.insert(0, {
+					id = 200,
+					type = "text",
+					icon = "ui/icons/hitchance.png",
+					children = aooInformation,
+					text = ::MSU.Text.colorNegative((100 - ::Math.round(::Hardened.util.getChancetoDodgeLeavingTile(_entity))) + "%") + ::Reforged.Mod.Tooltips.parseString(" [Expected chance to be hit|Concept.ZoneOfControl]"),
+				});
 			}
 		}
 
