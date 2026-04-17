@@ -50,7 +50,6 @@
 		// Generic Effects
 		this.getSkills().add(::new("scripts/skills/effects/captain_effect"));
 		this.getSkills().add(::new("scripts/skills/special/double_grip"));
-		this.getSkills().add(::new("scripts/skills/racial/rf_goblin_racial"));
 		this.getSkills().add(::new("scripts/skills/racial/hd_goblin_racial"));
 
 		// Generic Perks
