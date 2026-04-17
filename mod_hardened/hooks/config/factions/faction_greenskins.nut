@@ -111,49 +111,53 @@
 
 {	// Goblins
 	{	// Frontline
-		// scripts/entity/tactical/enemies/goblin_fighter
-		::Reforged.Entities.editEntity("GoblinSkirmisher",
-			{
-				Cost = 20, 		// Reforged: 18; Vanilla: 15
-				Strength = 20, 	// Reforged: 18; Vanilla: 18
-			}
-		);
-		// scripts/entity/tactical/enemies/goblin_fighter
-		::Reforged.Entities.editEntity("GoblinFighter",
-			null,
-			{
-				XP = 200 * ::Hardened.Global.FactionExperience.Goblins,		// Vanilla: 200
-				Hitpoints = 50,
-				Bravery = 50,
-				Stamina = 100,
-				MeleeSkill = 70,
-				RangedSkill = 65,
-				MeleeDefense = 10,
-				RangedDefense = 0,
-				Initiative = 130,
-			}
-		);
+		{	// Goblin Fighter
+			// scripts/entity/tactical/enemies/goblin_fighter
+			::Reforged.Entities.editEntity("GoblinSkirmisher",
+				{
+					Cost = 35, 		// Reforged: 18; Vanilla: 15
+					Strength = 35, 	// Reforged: 18; Vanilla: 18
+				}
+			);
+			// scripts/entity/tactical/enemies/goblin_fighter
+			::Reforged.Entities.editEntity("GoblinFighter",
+				null,
+				{
+					XP = 350 * ::Hardened.Global.FactionExperience.Goblins,		// Vanilla: 200
+					Hitpoints = 70,
+					Bravery = 60,
+					Stamina = 100,
+					MeleeSkill = 75,
+					RangedSkill = 65,
+					MeleeDefense = 15,
+					RangedDefense = 0,
+					Initiative = 130,
+				}
+			);
+		}
 	}
 
 	{	// Ranged
-		// scripts/entity/tactical/enemies/goblin_ambusher
-		::Reforged.Entities.editEntity("GoblinAmbusher",
-			{
-				Cost = 20, 		// Reforged: 18; Vanilla: 15
-				Strength = 20, 	// Reforged: 18; Vanilla: 18
-			},
-			{
-				XP = 200 * ::Hardened.Global.FactionExperience.Goblins,		// Vanilla: 200
-				Hitpoints = 40,
-				Bravery = 50,
-				Stamina = 100,
-				MeleeSkill = 55,
-				RangedSkill = 70,
-				MeleeDefense = 0,
-				RangedDefense = 20,
-				Initiative = 140,
-				Vision = 8,
-			}
-		);
+		{	// Goblin Stalker
+			// scripts/entity/tactical/enemies/goblin_ambusher
+			::Reforged.Entities.editEntity("GoblinAmbusher",
+				{
+					Cost = 35, 		// Reforged: 18; Vanilla: 15
+					Strength = 35, 	// Reforged: 18; Vanilla: 18
+				},
+				{
+					XP = 350 * ::Hardened.Global.FactionExperience.Goblins,		// Vanilla: 200
+					Hitpoints = 50,
+					Bravery = 60,
+					Stamina = 100,
+					MeleeSkill = 60,
+					RangedSkill = 70,
+					MeleeDefense = 0,
+					RangedDefense = 25,
+					Initiative = 130,
+					Vision = 8,
+				}
+			);
+		}
 	}
 }

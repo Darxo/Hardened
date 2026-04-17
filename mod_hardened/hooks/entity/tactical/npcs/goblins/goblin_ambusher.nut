@@ -1,6 +1,9 @@
 // Hardened completely redesign most NPCs
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
+::Const.Strings.EntityName[::Const.EntityType.GoblinAmbusher] = "Goblin Stalker";
+::Const.Strings.EntityNamePlural[::Const.EntityType.GoblinAmbusher] = "Goblin Stalkers";
+
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/goblin_ambusher", function(q) {
 	q.create = @(__original) function()
 	{
@@ -77,8 +80,9 @@
 		this.getSkills().add(::new("scripts/skills/racial/goblin_ambusher_racial"));
 
 		// Generic Perks
-		this.getSkills().add(::new("scripts/skills/perks/perk_hd_elusive"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_anticipation"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_hd_elusive"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_bullseye"));
 	}
 
 	// Assign Head and Body armor to this character

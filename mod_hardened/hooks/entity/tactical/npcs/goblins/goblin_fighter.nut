@@ -1,20 +1,22 @@
 // Hardened completely redesign most NPCs
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
+::Const.Strings.EntityName[::Const.EntityType.GoblinFighter] = "Goblin Fighter";
+::Const.Strings.EntityNamePlural[::Const.EntityType.GoblinFighter] = "Goblin Fighters";
+
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/goblin_fighter", function(q) {
 	q.create = @(__original) function()
 	{
 		__original();
 
 		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/armor/greenskins/goblin_light_armor"],
 			[12, "scripts/items/armor/greenskins/goblin_medium_armor"],
 			[12, "scripts/items/armor/greenskins/goblin_heavy_armor"],
 		]);
 
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/helmets/greenskins/goblin_light_helmet"],
-			[4, "scripts/items/helmets/greenskins/goblin_heavy_helmet"],
+			[12, "scripts/items/helmets/greenskins/goblin_heavy_helmet"],
 		]);
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
@@ -24,8 +26,6 @@
 		]);
 
 		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
-			[24, "scripts/items/tools/throwing_net"],
-			[12, "scripts/items/shields/greenskins/goblin_light_shield"],
 			[12, "scripts/items/shields/greenskins/goblin_heavy_shield"],
 		]);
 	}
@@ -65,6 +65,14 @@
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
 	q.onSpawned = @() function()
 	{
+		if (this.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand).isItemType(::Const.Items.ItemType.TwoHanded))
+		{
+			this.getSkills().add(::new("scripts/skills/perks/perk_rf_long_reach"));
+		}
+		else	// Shield
+		{
+			this.getSkills().add(::new("scripts/skills/perks/perk_hd_one_with_the_shield"));
+		}
 	}
 
 // Hardened Functions
@@ -87,6 +95,7 @@
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_elusive"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_anticipation"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_coup_de_grace"));
 	}
 
 	// Assign Head and Body armor to this character
@@ -97,10 +106,11 @@
 	// Assign all other gear to this character
 	q.HD_assignOtherGear <- function()
 	{
-		// Same condition as vanilla for when to assign bolas
-		if (this.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand).getID() != "weapon.goblin_spear" && this.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand).getID() != "weapon.named_goblin_spear")
+		if (this.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand).getID() == "weapon.goblin_falchion")
 		{
-			this.getItems().addToBag(::new("scripts/items/weapons/greenskins/goblin_spiked_balls"));
+			local throwingWeapon = ::new("scripts/items/weapons/greenskins/goblin_spiked_balls");
+			throwingWeapon.m.Ammo = 4;
+			this.getItems().addToBag(throwingWeapon);
 		}
 	}
 });
