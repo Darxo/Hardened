@@ -1,36 +1,3 @@
-// scripts/entity/tactical/enemies/goblin_fighter
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.GoblinFighter.XP = 200 * ::Hardened.Global.FactionExperience.Goblins;		// Vanilla: 200
-	::Const.Tactical.Actor.GoblinFighter.ActionPoints = 9;
-	::Const.Tactical.Actor.GoblinFighter.Hitpoints = 50;
-	::Const.Tactical.Actor.GoblinFighter.Bravery = 50;
-	::Const.Tactical.Actor.GoblinFighter.Stamina = 100;
-	::Const.Tactical.Actor.GoblinFighter.MeleeSkill = 70;
-	::Const.Tactical.Actor.GoblinFighter.RangedSkill = 65;
-	::Const.Tactical.Actor.GoblinFighter.MeleeDefense = 10;
-	::Const.Tactical.Actor.GoblinFighter.RangedDefense = 0;
-	::Const.Tactical.Actor.GoblinFighter.Initiative = 130;
-}
-
-// scripts/entity/tactical/enemies/goblin_ambusher
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.GoblinAmbusher.XP = 200 * ::Hardened.Global.FactionExperience.Goblins;		// Vanilla: 250
-	::Const.Tactical.Actor.GoblinAmbusher.ActionPoints = 9;
-	::Const.Tactical.Actor.GoblinAmbusher.Hitpoints = 40;
-	::Const.Tactical.Actor.GoblinAmbusher.Bravery = 50;
-	::Const.Tactical.Actor.GoblinAmbusher.Stamina = 100;
-	::Const.Tactical.Actor.GoblinAmbusher.MeleeSkill = 55;
-	::Const.Tactical.Actor.GoblinAmbusher.RangedSkill = 70;
-	::Const.Tactical.Actor.GoblinAmbusher.MeleeDefense = 0;
-	::Const.Tactical.Actor.GoblinAmbusher.RangedDefense = 20;
-	::Const.Tactical.Actor.GoblinAmbusher.Initiative = 140;
-
-	// Optional Stats
-	::Const.Tactical.Actor.GoblinAmbusher.Vision <- 8;
-}
-
 // scripts/entity/tactical/enemies/goblin_wolfrider
 {
 	// Mandatory stats
@@ -140,4 +107,53 @@
 	::Const.Tactical.Actor.OrcWarlord.MeleeDefense = 10;
 	::Const.Tactical.Actor.OrcWarlord.RangedDefense = 0;
 	::Const.Tactical.Actor.OrcWarlord.Initiative = 125;
+}
+
+{	// Goblins
+	{	// Frontline
+		// scripts/entity/tactical/enemies/goblin_fighter
+		::Reforged.Entities.editEntity("GoblinSkirmisher",
+			{
+				Cost = 20, 		// Reforged: 18; Vanilla: 15
+				Strength = 20, 	// Reforged: 18; Vanilla: 18
+			}
+		);
+		// scripts/entity/tactical/enemies/goblin_fighter
+		::Reforged.Entities.editEntity("GoblinFighter",
+			null,
+			{
+				XP = 200 * ::Hardened.Global.FactionExperience.Goblins,		// Vanilla: 200
+				Hitpoints = 50,
+				Bravery = 50,
+				Stamina = 100,
+				MeleeSkill = 70,
+				RangedSkill = 65,
+				MeleeDefense = 10,
+				RangedDefense = 0,
+				Initiative = 130,
+			}
+		);
+	}
+
+	{	// Ranged
+		// scripts/entity/tactical/enemies/goblin_ambusher
+		::Reforged.Entities.editEntity("GoblinAmbusher",
+			{
+				Cost = 20, 		// Reforged: 18; Vanilla: 15
+				Strength = 20, 	// Reforged: 18; Vanilla: 18
+			},
+			{
+				XP = 200 * ::Hardened.Global.FactionExperience.Goblins,		// Vanilla: 200
+				Hitpoints = 40,
+				Bravery = 50,
+				Stamina = 100,
+				MeleeSkill = 55,
+				RangedSkill = 70,
+				MeleeDefense = 0,
+				RangedDefense = 20,
+				Initiative = 140,
+				Vision = 8,
+			}
+		);
+	}
 }

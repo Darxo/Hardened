@@ -210,20 +210,6 @@
 	::Const.World.Spawn.Troops.Hyena.Strength = 20;
 }
 
-// scripts/entity/tactical/enemies/goblin_fighter
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.GoblinSkirmisher.Cost = 20;
-	::Const.World.Spawn.Troops.GoblinSkirmisher.Strength = 20;
-}
-
-// scripts/entity/tactical/enemies/goblin_ambusher
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.GoblinAmbusher.Cost = 20;
-	::Const.World.Spawn.Troops.GoblinAmbusher.Strength = 20;
-}
-
 // scripts/entity/tactical/humans/engineer
 {
 	// Mandatory Entries
