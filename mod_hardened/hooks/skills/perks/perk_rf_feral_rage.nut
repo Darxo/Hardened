@@ -124,6 +124,32 @@
 		this.m.HD_RageStacks = 0;
 	}
 
+// Modular Vanilla Functions
+	q.getQueryTargetValueMult = @(__original) function( _user, _target, _skill )
+	{
+		local ret = __original(_user, _target, _skill);
+
+		if (_user.getID() == _target.getID()) return ret;		// _user and _target must not be the same
+
+		if (_target.getID() == this.getContainer().getActor().getID())	// We must be the _target
+		{
+			// Since any attack builds up rage stacks, it's generally a bad idea to attack into such a character, unless they have full stacks
+			if (this.m.HD_RageStacks < this.m.HD_RageStacksMax)
+			{
+				ret *= 0.8;
+
+				// It is an especially bad idea, if that target is stunned and very close to receiving the stun immunity from reaching full stacks
+				if (this.m.HD_RageStacks + 1 == this.m.HD_RageStacksMax && _target.getCurrentProperties().IsStunned)
+				{
+					ret *= 0.8;
+				}
+			}
+
+		}
+
+		return ret;
+	}
+
 // New Functions
 	q.isEnabled <- function()
 	{
