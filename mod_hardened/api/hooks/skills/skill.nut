@@ -221,11 +221,21 @@
 		if (this.isOnCooldown())
 		{
 			local remainingCooldown = this.m.HD_RoundLastUsed + this.m.HD_Cooldown - ::Time.getRound();
+			local cooldownText = "Can be used again ";
+			if (remainingCooldown == 1)
+			{
+				cooldownText += ::MSU.Text.colorNegative(remainingCooldown) + ::Reforged.Mod.Tooltips.parseString(" [rounds|Concept.Round]");
+			}
+			else
+			{
+				cooldownText += ::MSU.Text.colorNegative(remainingCooldown) + ::Reforged.Mod.Tooltips.parseString("next [round|Concept.Round]");
+			}
+
 			ret.push({
 				id = 42,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "Can be used again in " + ::MSU.Text.colorNegative(remainingCooldown) + ::Reforged.Mod.Tooltips.parseString(" [round(s)|Concept.Round]"),
+				text = cooldownText,
 			});
 		}
 		else
@@ -235,8 +245,8 @@
 				ret.push({
 					id = 42,
 					type = "text",
-					icon = "ui/icons/action_points.png",
-					text = ::Reforged.Mod.Tooltips.parseString("Can only be used once per [round(s)|Concept.Round]"),
+					icon = "ui/icons/unlocked_small.png",
+					text = ::Reforged.Mod.Tooltips.parseString("Can only be used once per [round|Concept.Round]"),
 				});
 			}
 			else if (this.m.HD_Cooldown > 1)
@@ -244,7 +254,7 @@
 				ret.push({
 					id = 42,
 					type = "text",
-					icon = "ui/icons/action_points.png",
+					icon = "ui/icons/unlocked_small.png",
 					text = "Can only be used once every " + ::MSU.Text.colorNegative(this.m.HD_Cooldown) + ::Reforged.Mod.Tooltips.parseString(" [rounds|Concept.Round]"),
 				});
 			}
