@@ -66,8 +66,8 @@
 		if (this.m.IsInEffect)
 		{
 			_properties.DamageReceivedTotalMult *= this.m.DamageReceivedTotalMult;
+			_properties.IsImmuneToKnockBackAndGrab = true;
 		}
-		_properties.IsImmuneToKnockBackAndGrab = true;
 	}
 
 
