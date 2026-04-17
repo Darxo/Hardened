@@ -12,6 +12,8 @@
 			o.m.Overlay = "active_182";
 		}));
 
+		this.addSkill(::new("scripts/skills/actives/split_axe"));
+
 		this.addSkill(::Reforged.new("scripts/skills/actives/split_shield", function(o) {
 			o.m.ActionPointCost += 2;
 			o.m.FatigueCost += 5;
