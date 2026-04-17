@@ -20,9 +20,6 @@
 			o.m.ActionPointCost += 1;
 		}));
 
-		this.addSkill(::Reforged.new("scripts/skills/actives/knock_out", function(o) {
-			o.m.ActionPointCost += 1;
-			o.m.StunChance = 100;
-		}));
+		this.addSkill(::new("scripts/skills/actives/strike_down_skill"));
 	}
 });
