@@ -111,6 +111,38 @@
 
 {	// Goblins
 	{	// Frontline
+		{	// Goblin Skirmisher
+			::Reforged.Entities.addEntity(
+				"HD_GoblinSkirmisher",
+				"Goblin Skirmisher",
+				"Goblin Skirmishers",
+				"goblin_01_orientation",
+				::Const.FactionType.Goblins,
+				{
+					Variant = 0,
+					Strength = 18,
+					Cost = 18,
+					Row = 0,
+					Script = "scripts/entity/tactical/enemies/goblin_fighter_low",
+				},
+				{
+					XP = 180 * ::Hardened.Global.FactionExperience.Goblins,		// Vanilla: 200
+					ActionPoints = 9,
+					Hitpoints = 50,
+					Bravery = 50,
+					Stamina = 100,
+					MeleeSkill = 60,
+					RangedSkill = 55,
+					MeleeDefense = 5,
+					RangedDefense = 0,
+					Initiative = 110,
+					Armor = [0, 0],
+				}
+			);
+
+			::Hardened.Global.addEntityFallback("scripts/entity/tactical/enemies/goblin_fighter_low", ::Const.EntityType.GoblinFighter, ::Const.EntityType.HD_GoblinSkirmisher);
+		}
+
 		{	// Goblin Fighter
 			// scripts/entity/tactical/enemies/goblin_fighter
 			::Reforged.Entities.editEntity("GoblinSkirmisher",
@@ -138,6 +170,38 @@
 	}
 
 	{	// Ranged
+		{	// Goblin Ambusher
+			::Reforged.Entities.addEntity(
+				"HD_GoblinAmbusher",
+				"Goblin Ambusher",
+				"Goblin Ambushers",
+				"goblin_04_orientation",
+				::Const.FactionType.Goblins,
+				{
+					Variant = 0,
+					Strength = 18,
+					Cost = 18,
+					Row = 1,
+					Script = "scripts/entity/tactical/enemies/goblin_ambusher_low",
+				},
+				{
+					XP = 180,
+					ActionPoints = 9,
+					Hitpoints = 40,
+					Bravery = 50,
+					Stamina = 100,
+					MeleeSkill = 50,
+					RangedSkill = 60,
+					MeleeDefense = 0,
+					RangedDefense = 15,
+					Initiative = 110,
+					Armor = [0, 0],
+				}
+			);
+
+			::Hardened.Global.addEntityFallback("scripts/entity/tactical/enemies/goblin_ambusher_low", ::Const.EntityType.GoblinAmbusher, ::Const.EntityType.HD_GoblinAmbusher);
+		}
+
 		{	// Goblin Stalker
 			// scripts/entity/tactical/enemies/goblin_ambusher
 			::Reforged.Entities.editEntity("GoblinAmbusher",
