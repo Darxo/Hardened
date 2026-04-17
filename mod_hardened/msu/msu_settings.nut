@@ -136,6 +136,7 @@
 	qolCombatPage.addDivider("MiscDivider5");
 
 	qolCombatPage.addBooleanSetting("DisplaySkillTags", true, "Display Skill Tags", "List common tags and the damage types at the top of the descriptions of active skill.");
+	qolCombatPage.addBooleanSetting("AutoCameraLevelSkillUse", true, "Auto Camera Level when using Skills", "Adjust the Camera Level automatically whenever you preview a skill, so that all potential targets are visible. If that is not possible, then the priority lies on no target being hidden by hills. When you stop previewing a skill, adjust the camera so that your character and its surrounding tiles are visible");
 
 	qolCombatPage.addDivider("MiscDivider6");
 

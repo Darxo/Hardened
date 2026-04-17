@@ -427,6 +427,36 @@
 	return ::Math.clamp(idealNeighborLevel, minLevelForActor, maxLevelForActor);
 }
 
+::Hardened.util.getBestLevelForTargeting <- function( _skill )
+{
+	local validTargets = [];
+	foreach (otherActor in ::Tactical.Entities.getAllInstancesAsArray())
+	{
+		if (!otherActor.isPlacedOnMap()) continue;
+		if (!_skill.isUsableOn(otherActor.getTile())) continue;
+
+		validTargets.push(otherActor.getTile());
+	}
+
+	// Between min and max, all targets are visible
+	local minRequiredLevel = 0;		// min camera level required, so that no character is sitting on a black cut-off tile
+	local maxRequiredLevel = 3;		// max camera level, beyond which some character are hidden by hills
+
+	foreach (tile in validTargets)
+	{
+		minRequiredLevel = ::Math.max(minRequiredLevel, tile.Level);
+
+		if (tile.hasNextTile(::Const.Direction.S) && tile.getNextTile(::Const.Direction.S).Level >= (tile.Level + 2))
+		{
+			maxRequiredLevel = ::Math.min(maxRequiredLevel, tile.Level + 1);
+		}
+	}
+
+	// For now we only ever return maxRequiredLevel
+	// In the future we might employ some logic, where the level is returned, which displays the most characters
+	return maxRequiredLevel;
+}
+
 ::Hardened.util.getChancetoDodgeLeavingTile <- function( _actor )
 {
 	local expectedChanceToDodge = 100;

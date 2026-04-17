@@ -185,6 +185,27 @@
 		// Feat: whenever the player previews a skill, we calculate the chance to hit every targetable entity with it
 		// When the player stops previewing, we reset the calculated hitchances from all entities
 		this.HD_toggleHitchanceOverlay(_skillId);
+
+		if (::Settings.getGameplaySettings().AdjustCameraLevel && ::Hardened.Mod.ModSettings.getSetting("AutoCameraLevelSkillUse").getValue())
+		{
+			if (_skillId == "")
+			{
+				// Todo: Reset old Camera Level
+				::Tactical.getCamera().Level = ::Hardened.util.getBestLevelForTile(this.getTile());
+			}
+			else
+			{
+				foreach (skill in this.getSkills().m.Skills)
+				{
+					if (skill.getID() == _skillId)
+					{
+						// Todo: Save old Camera Level
+						::Tactical.getCamera().Level = ::Hardened.util.getBestLevelForTargeting(skill);
+						break;
+					}
+				}
+			}
+		}
 	}
 
 // New functions
