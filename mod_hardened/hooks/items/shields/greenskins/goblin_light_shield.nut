@@ -11,6 +11,7 @@
 		this.m.ConditionMax = 12;
 
 	// Hardened Adjustments
+		this.m.StaminaModifier = -2;
 	}
 
 	// Overwrite because Reforged skill preview does not work with removing skills

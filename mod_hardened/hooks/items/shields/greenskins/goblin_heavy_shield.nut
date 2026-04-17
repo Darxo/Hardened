@@ -14,6 +14,7 @@
 		this.m.Value = 65;		// In Vanilla this is 45
 		this.m.MeleeDefense = 15;
 		this.m.RangedDefense = 15;
+		this.m.StaminaModifier = -4;
 	}
 
 	// Overwrite because Reforged skill preview does not work with removing skills
