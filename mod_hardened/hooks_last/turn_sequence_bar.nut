@@ -14,6 +14,19 @@
 
 		if (!::Hardened.util.willBeAttackedLeavingZoneOfControl(activeEntity)) return;
 
+		// Feat: make adjacent enemies briefly blink red, when we preview movement while in zone of control
+		foreach (neighbor in ::Tactical.Entities.getAdjacentActors(activeEntity.getTile()))
+		{
+			if (activeEntity.isAlliedWith(neighbor)) continue;
+			if (!neighbor.onMovementInZoneOfControl(activeEntity, false)) continue;
+			if (!neighbor.getTile().IsVisibleForPlayer) continue;	// Just in case, even though adjacent tiles should always be visible
+
+			local aooSkill = neighbor.getSkills().getAttackOfOpportunity();
+			if (!aooSkill.onVerifyTarget(neighbor.getTile(), activeEntity.getTile())) continue;	// The aooSkill found can actually hit us (this will cover cases of tile height difference being too large)
+
+			neighbor.HD_playZOCHighlightAnimation();
+		}
+
 		// Feat: Display chance to dodge, when we preview movement while in zone of control
 		::Hardened.Private.IsPreviewingAttackWithHitChance = true;
 
