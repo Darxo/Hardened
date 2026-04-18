@@ -273,13 +273,6 @@
 	::Const.World.Spawn.Troops.BanditRaiderWolf.Strength = 25;
 }
 
-// scripts/entity/tactical/enemies/orc_young
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.OrcYoung.Cost = 25;
-	::Const.World.Spawn.Troops.OrcYoung.Strength = 25;
-}
-
 // scripts/entity/tactical/enemies/ghoul_medium
 {
 	// Mandatory Entries

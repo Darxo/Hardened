@@ -49,21 +49,6 @@
 	::Const.Tactical.Actor.GoblinShaman.Vision <- 8;
 }
 
-// scripts/entity/tactical/enemies/orc_young
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.OrcYoung.XP = 250 * ::Hardened.Global.FactionExperience.Orcs;		// Vanilla: 250
-	::Const.Tactical.Actor.OrcYoung.ActionPoints = 9;		// Vanilla: 9
-	::Const.Tactical.Actor.OrcYoung.Hitpoints = 130;		// Vanilla: 125
-	::Const.Tactical.Actor.OrcYoung.Bravery = 65;			// Vanilla: 65
-	::Const.Tactical.Actor.OrcYoung.Stamina = 150;			// Vanilla: 150
-	::Const.Tactical.Actor.OrcYoung.MeleeSkill = 60;		// Vanilla: 60
-	::Const.Tactical.Actor.OrcYoung.RangedSkill = 50;		// Vanilla: 50
-	::Const.Tactical.Actor.OrcYoung.MeleeDefense = -5;		// Vanilla: -5
-	::Const.Tactical.Actor.OrcYoung.RangedDefense = -5;		// Vanilla: -5
-	::Const.Tactical.Actor.OrcYoung.Initiative = 120;		// Vanilla: 120
-}
-
 // scripts/entity/tactical/enemies/orc_berserker
 {
 	// Mandatory stats
@@ -220,6 +205,31 @@
 					RangedDefense = 25,
 					Initiative = 130,
 					Vision = 8,
+				}
+			);
+		}
+	}
+}
+
+{	// Orcs
+	{	// Young Frontline
+		{	// Orc Young
+			// scripts/entity/tactical/enemies/orc_young
+			::Reforged.Entities.editEntity("OrcYoung",
+				{
+					Cost = 25,
+					Strength = 25,
+				}
+				{
+					XP = 250 * ::Hardened.Global.FactionExperience.Orcs,		// Vanilla: 250
+					Hitpoints = 130,	// Vanilla: 125
+					Bravery = 65,		// Vanilla: 65
+					Stamina = 150,		// Vanilla: 150
+					MeleeSkill = 60,	// Vanilla: 60
+					RangedSkill = 50,	// Vanilla: 50
+					MeleeDefense = -5,	// Vanilla: -5
+					RangedDefense = -5,	// Vanilla: -5
+					Initiative = 120,	// Vanilla: 120
 				}
 			);
 		}
