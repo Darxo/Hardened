@@ -2,6 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.Value = 2000;		// Vanilla: 700
 		this.m.AmmoWeight = 0.2;
 	}
 
