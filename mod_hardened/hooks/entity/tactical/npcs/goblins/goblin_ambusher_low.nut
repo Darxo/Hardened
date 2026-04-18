@@ -50,5 +50,7 @@
 	// Assign all other gear to this character
 	q.HD_assignOtherGear = @() function()
 	{
+		this.getItems().equip(::new("scripts/items/ammo/quiver_of_arrows"));
+		this.getItems().addToBag(::new("scripts/items/weapons/greenskins/goblin_notched_blade"));
 	}
 });
