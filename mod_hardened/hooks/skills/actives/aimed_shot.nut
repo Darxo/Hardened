@@ -1,6 +1,13 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/aimed_shot", function(q) {
 	q.m.HD_DamageRegularMult <- 1.0;		// Vanilla: 1.1
 
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.Delay = 800;		// Vanilla: 1000
+	}
+
 	q.onAnySkillUsed = @(__original) { function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)
