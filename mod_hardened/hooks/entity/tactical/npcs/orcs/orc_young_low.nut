@@ -35,22 +35,6 @@
 		]);
 	}
 
-	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
-	q.onInit = @() { function onInit()
-	{
-		this.actor.onInit();
-
-		this.HD_onInitSprites();
-		this.HD_onInitStatsAndSkills();
-	}}.onInit;
-
-	// Overwrite, because we completely replace Reforged item adjustments with our own
-	q.assignRandomEquipment = @() { function assignRandomEquipment()
-	{
-		this.HD_assignArmor();
-		this.HD_assignOtherGear();
-	}}.assignRandomEquipment;
-
 // Reforged Functions
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
 	q.onSpawned = @() function()
@@ -58,33 +42,6 @@
 	}
 
 // New Functions
-	// Assign Socket and adjust Sprites
-	q.HD_onInitSprites <- function()
-	{
-		this.getItems().getAppearance().Body = "bust_orc_01_body";
-		this.addSprite("socket").setBrush("bust_base_orcs");
-		local body = this.addSprite("body");
-		body.setBrush("bust_orc_01_body");
-		body.varySaturation(0.05);
-		body.varyColor(0.07, 0.07, 0.07);
-		local injury_body = this.addSprite("injury_body");
-		injury_body.Visible = false;
-		injury_body.setBrush("bust_orc_01_body_injured");
-		this.addSprite("armor");
-		local head = this.addSprite("head");
-		head.setBrush("bust_orc_01_head_0" + ::Math.rand(1, 3));
-		head.Saturation = body.Saturation;
-		head.Color = body.Color;
-		local injury = this.addSprite("injury");
-		injury.Visible = false;
-		injury.setBrush("bust_orc_01_head_injured");
-		this.addSprite("helmet");
-		local body_blood = this.addSprite("body_blood");
-		body_blood.setBrush("bust_orc_01_body_bloodied");
-		body_blood.Visible = false;
-		this.addDefaultStatusSprites();
-		this.getSprite("status_rooted").Scale = 0.55;
-	}
 
 	// Assign Stats and Unconditional Immunities, Perks and Actives
 	q.HD_onInitStatsAndSkills <- function()
@@ -106,11 +63,6 @@
 		this.getSkills().add(::new("scripts/skills/actives/hand_to_hand_orc"));
 		this.getSkills().add(::new("scripts/skills/actives/wake_ally_skill"));
 		this.getSkills().add(::new("scripts/skills/actives/charge"));
-	}
-
-	// Assign Head and Body armor to this character
-	q.HD_assignArmor <- function()
-	{
 	}
 
 	// Assign all other gear to this character
