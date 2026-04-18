@@ -31,7 +31,11 @@ if (tile != null)
 
 ## Fire Event
 
-::World.Events.fire("event.religious_peasants", true);
+local eventID = "event.crisis.civilwar_conscription";
+local eventToFire = ::World.Events.getEvent(eventID);
+eventToFire.onClear();
+eventToFire.onUpdateScore();
+::World.Events.fire(eventID, true);
 
 ## Show current combats on world map
 
@@ -199,5 +203,9 @@ foreach (factionID, faction in ::World.FactionManager.m.Factions)
 		if (unit.getTile().getDistanceTo(::World.State.getPlayer().getTile()) > 3) continue;
 		::logWarning("Hardened: factionID " + factionID + " getName " + faction.getName());
 		::logWarning("Hardened: " + faction.isReadyForContract());
+		::logWarning("Hardened: " + faction.m.LastContractTime);
+		::logWarning("Hardened: " + faction.HD_getMaxConcurrentContracts());
+		::logWarning("Hardened: " + faction.HD_getContractDelay());
+
 	}
 }

@@ -18,6 +18,7 @@
 - Hitchances of Lunge-Like attacks can be inaccurate as the act of moving next to your target can enable/disable various effects
 - Oathtaker on existing saves (outside of the Oathtaker Origin), which gained an Oath while playing regular Reforged are stuck with that oath after adding Hardened
 - Stunning with a Lute no longer grants the Lute Achievement
+- The Tactician skill ranges are not highlighted correctly when previewing them. It is intended that they can be used beyond 1 tile level difference
 
 # Compatibility with mods
 
@@ -28,6 +29,9 @@
 - Is safe to remove from- and add to any existing savegames
 
 # Changelog
+
+1.14.3
+	- Fix Settlements not receiving new contracts after day 1
 
 1.14.2
 	- Fix settlements not being filled with contracts correctly at the start of a new campaign
