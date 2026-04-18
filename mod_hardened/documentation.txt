@@ -29,6 +29,9 @@
 
 # Changelog
 
+1.14.1
+	- Fix **Goblin Ambusher** not attacking
+
 1.14.0
 	- **Dismantle** now longer grants +40% Armor Damage against enemies with Full Health. It now grants +20% Armor Damage at all times
 	- Move **Shield Sergeant** to Tier 4 (up from Tier 3)
