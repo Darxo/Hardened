@@ -43,7 +43,7 @@
 		local maxContracts = this.HD_getMaxConcurrentContracts();
 		if (maxContracts != null && this.getContracts().len() >= maxContracts) return false;
 		local contractDelay = this.HD_getContractDelay();
-		if (contractDelay != null && ::Time.getVirtualTimeF() > this.m.LastContractTime + contractDelay) return false;
+		if (contractDelay != null && ::Time.getVirtualTimeF() <= this.m.LastContractTime + contractDelay) return false;
 
 		// Switcheroo of contract array and last contract time, to make vanilla checks about those always pass
 		local oldContracts = this.m.Contracts;
