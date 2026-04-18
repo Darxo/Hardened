@@ -213,6 +213,42 @@
 
 {	// Orcs
 	{	// Young Frontline
+		{	// Orc Young
+
+			::Reforged.Entities.addEntity(
+				"HD_OrcYoung",
+				"Orc Young",
+				"Orc Young",
+				"orc_04_orientation",
+				::Const.FactionType.Goblins,
+				{
+					Variant = 0,
+					Cost = 20,		// Vanilla: 13
+					Strength = 20,	// Vanilla: 14
+					Row = -1,
+					Script = "scripts/entity/tactical/enemies/orc_young_low",
+				},
+				{
+					XP = 200 * ::Hardened.Global.FactionExperience.Orcs,		// Vanilla: 250
+					ActionPoints = 9,
+					Hitpoints = 120,	// Vanilla: 125
+					Bravery = 60,		// Vanilla: 65
+					Stamina = 120,		// Vanilla: 150
+					MeleeSkill = 60,	// Vanilla: 60
+					RangedSkill = 60,	// Vanilla: 50
+					MeleeDefense = -5,	// Vanilla: -5
+					RangedDefense = -5,	// Vanilla: -5
+					Initiative = 120,	// Vanilla: 120
+					Armor = [0, 0],
+				}
+			);
+
+			// Vanilla Fix: OrcYoungLOW spawnlist entry not actually spawning orc young low
+			::Const.World.Spawn.Troops.OrcYoungLOW.Script = "scripts/entity/tactical/enemies/orc_young_low";
+
+			::Hardened.Global.addEntityFallback("scripts/entity/tactical/enemies/orc_young_low", ::Const.EntityType.OrcYoung, ::Const.EntityType.HD_OrcYoung);
+		}
+
 		{	// Orc Grunt
 			// scripts/entity/tactical/enemies/orc_young
 			::Reforged.Entities.editEntity("OrcYoung",
