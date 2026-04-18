@@ -1,30 +1,28 @@
 // Hardened completely redesign most NPCs
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
+::Const.Strings.EntityName[::Const.EntityType.OrcYoung] = "Orc Grunt";
+::Const.Strings.EntityNamePlural[::Const.EntityType.OrcYoung] = "Orc Grunts";
+
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/orc_young", function(q) {
 	q.create = @(__original) function()
 	{
 		__original();
 
-		this.m.ChanceForNoChest = 25;
 		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/armor/greenskins/orc_young_very_light_armor"],
-			[12, "scripts/items/armor/greenskins/orc_young_light_armor"],
 			[12, "scripts/items/armor/greenskins/orc_young_medium_armor"],
 			[12, "scripts/items/armor/greenskins/orc_young_heavy_armor"],
 		]);
 
-		this.m.ChanceForNoHelmet = 25;
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/helmets/greenskins/orc_young_light_helmet"],
 			[12, "scripts/items/helmets/greenskins/orc_young_medium_helmet"],
 			[12, "scripts/items/helmets/greenskins/orc_young_heavy_helmet"],
 		]);
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
-			[6, "scripts/items/weapons/morning_star"],
-			[6, "scripts/items/weapons/greenskins/orc_metal_club"],
-			[12, "scripts/items/weapons/greenskins/orc_wooden_club"],
+			[12, "scripts/items/weapons/greenskins/orc_axe"],
+			[12, "scripts/items/weapons/greenskins/orc_cleaver"],
+			[12, "scripts/items/weapons/greenskins/orc_metal_club"],
 		]);
 
 		this.m.ChanceForNoOffhand = 50;
@@ -53,6 +51,9 @@
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
 	q.onSpawned = @() function()
 	{
+		::Reforged.Skills.addMasteryOfEquippedWeapon(this);
+		::Hardened.util.preSwapRangedWeapon(this);
+		::Reforged.Skills.addMasteryOfEquippedWeapon(this);
 	}
 
 // New Functions
@@ -99,8 +100,6 @@
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_berserk"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hold_out"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_mastery_mace"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_concussive_strikes"));
 
 		// Generic Actives
 		this.getSkills().add(::new("scripts/skills/actives/hand_to_hand_orc"));
@@ -116,8 +115,10 @@
 	// Assign all other gear to this character
 	q.HD_assignOtherGear <- function()
 	{
-		if (::Math.rand(1, 100) <= 25)
+		local offhand = this.getOffhandItem();
+		if ((offhand == null || !offhand.isItemType(::Const.Items.ItemType.Shield)) && ::Math.rand(1, 100) <= 50)
 		{
+			// Orcs without shields have a 50% chance to spawn with throwing weapons, as they are usually less resilient in direct melee contact
 			local sidearm = ::new(::MSU.Class.WeightedContainer([
 				[12, "scripts/items/weapons/greenskins/orc_javelin"],
 			]).roll());

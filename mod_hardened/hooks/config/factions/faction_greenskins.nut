@@ -213,21 +213,21 @@
 
 {	// Orcs
 	{	// Young Frontline
-		{	// Orc Young
+		{	// Orc Grunt
 			// scripts/entity/tactical/enemies/orc_young
 			::Reforged.Entities.editEntity("OrcYoung",
 				{
-					Cost = 25,
-					Strength = 25,
-				}
+					Cost = 35,		// Vanilla: 16
+					Strength = 35,	// Vanilla: 16
+				},
 				{
-					XP = 250 * ::Hardened.Global.FactionExperience.Orcs,		// Vanilla: 250
-					Hitpoints = 130,	// Vanilla: 125
-					Bravery = 65,		// Vanilla: 65
+					XP = 320 * ::Hardened.Global.FactionExperience.Orcs,		// Vanilla: 250
+					Hitpoints = 140,	// Vanilla: 125
+					Bravery = 70,		// Vanilla: 65
 					Stamina = 150,		// Vanilla: 150
-					MeleeSkill = 60,	// Vanilla: 60
-					RangedSkill = 50,	// Vanilla: 50
-					MeleeDefense = -5,	// Vanilla: -5
+					MeleeSkill = 70,	// Vanilla: 60
+					RangedSkill = 70,	// Vanilla: 50
+					MeleeDefense = 5,	// Vanilla: -5
 					RangedDefense = -5,	// Vanilla: -5
 					Initiative = 120,	// Vanilla: 120
 				}
