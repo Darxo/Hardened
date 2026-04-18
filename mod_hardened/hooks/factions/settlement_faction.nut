@@ -28,6 +28,9 @@
 
 	q.HD_getContractDelay = @() function()
 	{
+		// We use vanilla delay rules, during the first day
+		if (::World.getTime().Days <= 1) return null;
+
 		local delay = 5.0 - (this.getSettlements()[0].getSize() - 1);
 		return (delay + ::World.Assets.m.HD_CivilianContractDayDelayModifier) * ::World.getTime().SecondsPerDay;
 	}
