@@ -41,6 +41,17 @@
 			});
 		}
 
+		local potionsUsed = this.getContainer().getActor().getFlags().getAsInt("PotionsUsed");
+		if (potionsUsed > 0)
+		{
+			ret.push({
+				id = 50,
+				type = "text",
+				icon = "ui/icons/asset_medicine.png",
+				text = "Overdosed on Drugs: " + potionsUsed,
+			});
+		}
+
 		return ret;
 	}}.getTooltip;
 })
