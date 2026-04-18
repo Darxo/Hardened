@@ -10,6 +10,25 @@
 
 		oldOnApplyFire(_tile, _entity);
 	}
+
+	local oldCheckDrugEffect = ::Const.Tactical.Common.checkDrugEffect;
+	::Const.Tactical.Common.checkDrugEffect = function( _actor )
+	{
+		local decrementPotionUsed = false;
+		if (_actor.getFlags().getAsInt("PotionLastUsed") == 0)
+		{
+			decrementPotionUsed = true;
+		}
+		else if (_actor.getFlags().get("PotionLastUsed") + ::World.getTime().SecondsPerDay < ::Time.getVirtualTimeF())
+		{
+			decrementPotionUsed = true;
+		}
+
+		oldCheckDrugEffect(_actor);
+
+		// Feat: PotionsUsed (relevant for addiction-related events) now only increments, if you use have used another drug in the last 24 hours
+		if (decrementPotionUsed) _actor.getFlags().increment("PotionsUsed", -1);
+	}
 }
 
 {	// New Functions
