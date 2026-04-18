@@ -5,7 +5,7 @@
 	{
 		__original(_entity);
 
-		if (_entity.getTile().hasZoneOfControlOtherThan(_entity.getAlliedFactions()))
+		if (::Hardened.util.willBeAttackedLeavingZoneOfControl(_entity))
 		{
 			++this.m.HD_AttemptsThisTurn;
 		}
@@ -84,9 +84,9 @@
 
 	q.isAtMapBorder = @(__original) function( _entity )
 	{
-		// We hijack the isAtMapBorder function to introduce a new condition
+		// We hijack the isAtMapBorder function to introduce a new condition:
 		//	You can no longer retreat, while in zone of control of another character
-		if (_entity.getTile().hasZoneOfControlOtherThan(_entity.getAlliedFactions())) return false;
+		if (::Hardened.util.willBeAttackedLeavingZoneOfControl(_entity)) return false;
 
 		if (!__original(_entity)) return false;
 
