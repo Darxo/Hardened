@@ -29,6 +29,9 @@
 
 # Changelog
 
+1.14.2
+	- Fix settlements not being filled with contracts correctly at the start of a new campaign
+
 1.14.1
 	- Fix **Goblin Ambusher** not attacking
 
