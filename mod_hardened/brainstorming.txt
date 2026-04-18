@@ -841,3 +841,72 @@
 - re-do poacher orientation (just head scarf)
 - balance the crock pot hooded man accordingly
 - write up documentation for how to use _config.nut
+
+
+- make all factions which are allied to the player, also allied to each other during combat
+	- rarely during noble/holy war, you can be drawn into a four-party fight with 2 allies (e.g. during caravan quest) and 1 hostile faction
+	- your allies fight each other, including your donkeys and you can't do much here.
+
+
+- prevent dismissing of brothers who are angry
+
+
+- Hide Noble Houses and City States in Relation screen, if you havent discovered them yet
+
+- allow NPCs to throw nets while defending again (we took that out at some point, but it can make sense to delay enemies)
+
+- smooth out world movement, by causing player party to not bind to hexagons directly, but rather follow hexagon path beyond
+	- Alway direct-path to the second tile in the path (not the first)
+	- But when you are halfway to that second tile, you now target the new second tile
+
+
+fix indebted origin:
+
+function getXPForNextLevel()
+function addXP( _xp, _scale = true )
+function addXP( _xp, _scale = true )
+function character_background::onUpdate( _properties )
+function queryRosterInformation()
+
+
+Mod Description:
+- Common newbie pitfalls are streamlined away. Instead the difficulty and learning curve comes from a large number of competetive choices
+
+- buff reinforced wooden flail
+
+- remove hit and run from brigand killer? This would allow displacement as an option to keep them from killing someone
+
+- give bandit leader weapon mastery?
+
+- add unique orientation icons for differently sized nachos
+
+- change warhound perks compared to wardog
+	- Wawrdog: low chance to hit, low damage, wear them down, great mobility
+	- Warhound: medium chance to hit, medium damage, low mobility
+
+- make all weapons deal 1% less damage per 2% missing condition? This would align perfectly with the penalty for when the weapon is broken
+	- but 1% less might per 2% might bee too much and nerf the player too much
+
+- buff pike or nerf bladed pike. Their price difference is too large too
+
+- there is a bug around shield wall animation stopping before shieldwall effect is lost. Any hit to those guys reactivates shieldwall (visually)
+
+- make several enemy helmet and body armor start damaged, so that it is harder to farm them for gear
+	- Examples: Hedge Knights, Mercenaries, Bounty Hunters, Sellswords, Crowntakers,
+	- Ideally those conditions are 80%, 90% and 100%
+	-
+
+- add option to display mini icons for nimble/flexible/battleforged. While these are permanent effects, therefore theoretically redundant to show
+	- they are practically the most impactful perks that dont have mini-icons. Especially on your own brothers its important to know if they have one or the other
+
+- bludgeon as sidearm for marksmen/sharpshooter
+
+- make brace for impact trigger on tiles that you move over (and are empty), similar to vanquisher
+
+- play an animation, whenever a character steps in a bush, or tall grass (hiding it)
+
+- lower cooldown of some contracts? (like how return item has more cooldown than caravan)
+
+- fix fleeinng enemies still fleeing more than 2 times
+
+- give geists combo, so that they can melee attack and scream at the same time

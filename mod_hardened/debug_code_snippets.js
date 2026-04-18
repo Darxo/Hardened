@@ -160,9 +160,11 @@ local bro = ::getBro("Gernot");
 foreach (nextTile in ::MSU.Tile.getNeighbors(bro.getTile()))
 {
 	if (nextTile.IsEmpty) continue;
-	if (nextTile.IsOccupiedByActor) continue;
+	if (!nextTile.IsOccupiedByActor) continue;
 
-	::Tactical.getShaker().shake(nextTile.getEntity(), bro.getTile(), 3);
+	local nextEntity = nextTile.getEntity();
+	::logWarning("Next Entity " + nextEntity.getName());
+	::Tactical.getShaker().shake(nextEntity, bro.getTile(), 3);
 }
 
 
@@ -186,3 +188,16 @@ return ::World.FactionManager.m.GreaterEvil.Phase;
 
 ## Add injury to a brother
  ::getBro("Edmund").getSkills().add(::new("scripts/skills/injury/cut_leg_muscles_injury"));
+
+## Learn something about a nearby settlement/faction
+
+foreach (factionID, faction in ::World.FactionManager.m.Factions)
+{
+	if (faction == null) continue;
+	foreach (unit in faction.m.Settlements)
+	{
+		if (unit.getTile().getDistanceTo(::World.State.getPlayer().getTile()) > 3) continue;
+		::logWarning("Hardened: factionID " + factionID + " getName " + faction.getName());
+		::logWarning("Hardened: " + faction.isReadyForContract());
+	}
+}

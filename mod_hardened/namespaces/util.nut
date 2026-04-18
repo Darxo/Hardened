@@ -457,6 +457,9 @@
 	return maxRequiredLevel;
 }
 
+/// Calculate and return the estimated chance to dodge all attacks, when leaving zone of control
+/// @return 100, if not in zone of control
+/// Note that the return value is a float so you need to ::Math.round it if you wanna display it anywhere
 ::Hardened.util.getChancetoDodgeLeavingTile <- function( _actor )
 {
 	local expectedChanceToDodge = 100;

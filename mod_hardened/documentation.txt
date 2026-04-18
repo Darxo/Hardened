@@ -17,6 +17,7 @@
 - Injuries now heal at the start of the day and wages are paid at the start of the day; instead of during midday
 - Hitchances of Lunge-Like attacks can be inaccurate as the act of moving next to your target can enable/disable various effects
 - Oathtaker on existing saves (outside of the Oathtaker Origin), which gained an Oath while playing regular Reforged are stuck with that oath after adding Hardened
+- Stunning with a Lute no longer grants the Lute Achievement
 
 # Compatibility with mods
 
@@ -27,6 +28,57 @@
 - Is safe to remove from- and add to any existing savegames
 
 # Changelog
+
+1.14.0
+	- **Dismantle** now longer grants +40% Armor Damage against enemies with Full Health. It now grants +20% Armor Damage at all times
+	- Move **Shield Sergeant** to Tier 4 (up from Tier 3)
+	- Move **Onslaught** to Tier 3 (down from Tier 4)
+	- Add **Overwhelm** into Tier 6 of **Militia Group**
+	- **Hex** skill (Hexen) now costs 20 Fatigue (up from 5)
+	- **Footwork** can now only be used once per round
+	- Items in **Kennel Building** now cost 25% more Crowns (up from 25% less)
+	- **Boondock Bows** now deal 30-45 Damage (up from 25-40), have 50% Armor Damage (down from 55%) and 40% Armor Penetration (up from 30%)
+	- **Reinforced Boondock Bows** now deal 40-55 Damage (up from 30-50) and have 50% Armor Damage (down from 60%)
+	- **Wooden Skirmisher Shield** now has a Weight of 2 (down from 4)
+	- **Reinforced Skirmisher Shield** now has a Weight of 4 (down from 8)
+	- **Bloodletter's Reach** now costs 2000 Crowns (up from 700)
+	- **Geist Tear** now costs 800 Crowns (up from 300)
+	- **Lute**, **Tree Limb** and **Cudgel** lose **Knock Out** and gain **Strike Down** with no action point discount
+	- **Goblin Skirmishers** now cost 18 Resources (down from 20), have 60 Melee Skill (down from 70), 55 Ranged Skill (down from 65), 5 Melee Defense (down from 10) and 110 Initiative (down from 130). They no longer spawn with the highest tier armor, highest tier shield, any helmet or a **Goblin Pike**. They can now spawn with a **Notched Blade**
+	- **Goblin Ambusher** now cost 18 Resources (down from 20), have 50 Melee Skill (down from 55), 60 Ranged Skill (down from 70), 15 Ranged Defense (down from 20) and 110 Initiative (down from 130). They now spawn with a **Boondock Bow** instead of a **Reinforced Boondock Bow** and no longer spawn with a helmet. They no longer apply goblin poison on hit
+	- **Orc Young** now cost 20 Resources (down from 25), have 60 Ranged Skill (up from 50), 120 Hitpoints (down from 130), 60 Resolve (down from 65) and 120 Stamina (down from 150). They are now guaranteed to spawn with a body armor (up from 75%), no longer spawn with the highest tier armors or helmets. They now have a 50% chance to spawn with a helmet (down from 75%). They no longer spawn with **Cudgels**. They can now spawn with **Handaxe** or **Scramasax**. They either spawn with a **Feral Shield** or **Crude Javelins**. They lose **Shockwave** and **Mace Mastery**
+	- Add new **Goblin Fighter** as a higher tier **Goblin Skirmisher**. They cost 35 Resources, have +20 Hitpoints, +10 Resolve, +15 Melee Skill, +10 Ranged Skill, +10 Melee Defense and +20 Initiative. They use **Goblin Spear**, **Cruel Falchion**, **Goblin Pike** and **Reinforced Skirmisher Shield**. They gain **Executioner**, **Long Reach** (if **Goblin Pike**) and **One with the Shield** (if shield)
+	- Add new **Goblin Stalker** as a higher tier **Goblin Ambusher**. They cost 35 Resources, have +10 Hitpoints, +10 Resolve, +10 Melee Skill, +10 Ranged Skill, +10 Ranged Defense and +20 Initiative. They use **Reinforced Boondock Bows**. They gain **Bullseye** and apply **Goblin Poison** on a hit
+	- Add new **Orc Grunt** as a higher tier **Orc Young**. They cost 35 Resources, have +20 Hitpoints, +10 Resolve, +30 Stamina, +10 Melee Skill, +10 Ranged Skill and +10 Melee Defense. They use **Headsplitter**, **Head Chopper** or **Cudgel**, heavier armor and a guaranteed helmet. They either spawn with a **Feral Shield** or **Crude Javelins**. They will always have all Weapon Masteries for their weapons
+	- **Robber Baron** is now called **Brigand Baron**
+	- **Brigand Leader** now have 150 Stamina (up from 130)
+	- **Brigand Barons** now have 180 Stamina (up from 150)
+	- **Fallen Soldiers** lose **Anchor**
+	- **Lesser Flesh Golems** lose **Steelbrow**, **Underdog** and all Weapon specific perks. They gain **Fast Adaptation**
+	- **Negotiator Follower** now costs 2500 Crowns (down from 3000)
+	- **Blacksmith Follower** now costs 3500 Crowns (up from 3000) and grants 50% more Repair Speed (up from 20% more)
+	- **Trader Follower** now costs 2500 Crowns (down from 3500)
+	- **Alchemist Follower** now costs 3500 Crowns (up from 2500)
+	- **Minstrel Follower** now costs 500 Crowns (down from 2000) and no longer makes Tavern Rumors more useful. He now requires you to visit 15 Settlements to unlock (instead of all of them)
+	- **Agent Follower** no longer reveals Contracts or Situations in all Settlements. He now makes Tavern Rumors more useful, grants +1 Maximum Contracts in Settlements and makes Civilian Contracts refresh 1 day sooner
+	- **Low Starting Funds** now grants 40 Ammo (up from 20), 20 Tools (up from 10) and 20 Medicine (up from 10)
+	- **Medium Starting Funds** now grants 80 Ammo (up from 50), 40 Tools (up from 20) and 40 Medicine (up from 20)
+	- Refuse Chance in Negotiations is now 3% per Annoyance (down from 4%)
+	- Prevent any drug use from incrementing `PotionUsed` if you have not used any other drug in the last 24 hours
+	- **Unholds** now have a 1% chance to spawn with a smile (down from 5%)
+	- **Civilwar Conscription Event** now grants +7.5 Relation with the Noble House when you side with them (up from +2.5)
+	- Make NPCs 20% less likely to attack someone with **Feral Rage** who does not yet have full stacks. And another 20% less likely if that target is stunned and 1 stack away from receiving stun immunity
+	- Display **Required Tools** instead of **Repair Duration** in brackets next to tool supply
+	- Improve wording and icons of cooldown tooltips on some skills
+	- Improve automatic camera level adjustment to make sure, that neither the character itself nor any adjacent tiles within 1 level are hidden by hills
+	- Change delay of **Aimed Shot** animation to 800ms (down from 1000ms)
+	- Display amount of Overdoses ("PotionsUsed") in the background tooltip, if > 0. This is only relevant for the addict event
+	- Add Setting (on) for automatically adjusting the camera level, whenever you preview a skill, so that none of your valid targets are hidden by hills
+	- Fix **Lash** with Poleflails still having a penalty for attacking adjacent targets
+	- Fix Chance to Dodge showing up when leaving Zone of Control showing up while in smoke
+	- Fix **Vanquisher** always granting immunity against **Displacement**
+	- Fix **Rusty Warblade** not granting **Split** skill
+	- Fix adjacent enemies blinking red when previewing movement while covered by a smoke bomb
 
 1.13.2
 	- Fix **Return Item** contracts on appearing

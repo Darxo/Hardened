@@ -41,17 +41,17 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Schrat Shield** no longer spawns saplings
 - Additionally the following balance changes have been made compared to the vanilla stats:
 	- **Adarga Shields** now have 8 Weight (down from 10), 16 Condition (down from 18) and lose **Knock Back**
-	- **Buckler** now have a Weight of 2 (down from 4)
+	- **Buckler** now have 2 Weight (down from 4)
 	- **Feral Shields** now have 20 Melee Defense (up from 15), 25 Ranged Defense (up from 20), 20 Weight (up from 12), 24 Condition (up from 16), +5 Fatige on use (up from 0) and they lose **Knock Back**
 	- **Heater Shields** now have 25 Melee Defense (up from 20) and lose **Shieldwall**
 	- **Kite Shields** lose **Knock Back**
 	- **Lindwurm Shields** now have 20 Melee Defense (up from 17), 20 Ranged Defense (down from 25)
 	- **Heavy Metal Shields** now have 20 Melee Defense (up from 15) and 20 Ranged Defense (up from 15) and 24 Weight (up from 22)
 	- **Old Wooden Shields** now have 13 Melee Defense (down from 15) and 13 Ranged Defense (down from 15)
-	- **Reinforced Skirmisher Shields** now have 15 Melee Defense (up from 10), 15 Ranged Defense (up from 10), lose **Shieldwall** and now grant **Knock Back**
+	- **Reinforced Skirmisher Shields** now have 15 Melee Defense (up from 10), 15 Ranged Defense (up from 10) and 4 Weight (down from 8). They lose **Shieldwall** and gain **Knock Back**
 	- **Schrat Shields** now have 25 Melee Defense (up from 20), 20 Ranged Defense (up from 17) and lose **Shieldwall**
 	- **Tower Shields** now have 30 Condition (up from 24) and lose **Knock Back**
-	- **Wooden Skirmisher Shields** lose **Shieldwall** and now grant **Knock Back**
+	- **Wooden Skirmisher Shields** now have 2 Weight (down from 4). They lose **Shieldwall** and gain **Knock Back**
 	- **Worn Heater Shields** now have 23 Melee Defense (up from 20), 13 Ranged Defense (down from 15) and lose **Shieldwall**
 	- **Worn Kite Shields** now have 13 Melee Defense (down from 15), 23 Ranged Defense (down from 25) and lose **Knock Back**
 - Wooden Shields, Kite Shields and Heater Shields which are colored in Mercenary Colors (e.g. your own) grant +5 Resolve while equipped
@@ -214,8 +214,9 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Drums of War** now costs 30 Fatigue (up from 15)
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
 - **Flaming Arrow** (granted by **Trick Shooter**) no longer causes an extra morale check on the main target. It now deals 100% Burning Damage (instead of 25% Burning and 75% Piercing Damage)
-- **Footwork** (granted by **Footwork**) now costs -1 Action Point for every tile you move during your turn, until you use Footwork or end your turn
+- **Footwork** (granted by **Footwork**) now costs -1 Action Point for every tile you move during your turn, until you use Footwork or end your turn. It can now only be used once per round
 - **Hand-to-Hand Attack** now costs 3 Action Points (down from 4) and it is now enabled if you carry an empty throwing weapon in your main hand.
+- **Hex** (from **Hexen**) now costs 20 Fatigue (up from 5)
 - **Hold Steady Skill** is completely reworked for the player: It now costs 7 Action Points (unchanged) and 40 Fatigue (up from 30) and is no longer restricted to "once per battle". It now targets a tile (range of 4) and affects all tiles within 1 tile of that target (up to 7). It grants all allies of your faction on those tiles the **Hold Steady Effect** for 2 rounds. NPCs still use the Reforged version of **Hold Steady Skill**
 - **Hold Steady Effect** (granted by **Hold Steady**) no longer grants +10 Melee Defense or +10 Ranged Defense. It now grants the **Entrenched** perk
 - **Insect Swarm** now disables the targets Zone of Control during its effect. It no longer reduces the Initiative. It now reduces the combat stats by 30% (down from 50%). It now costs 3 Action Points (down from 6) and has a maximum range of 4 tiles (down from 7)
@@ -295,7 +296,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Decisive** no longer grants 15% more Resolve at 1 Stack
 - **Death Dealer** is completely reworked. It now grants 5% more damage with AoE-Attacks for every enemy within 2 tiles. It also removes any rooted effects, whenever you use an AoE Attack
 - **Deep Impact** is now called **Breakthrough** and has been completely reworked. It grants the **Pummel** skill, which can now be used with any hammer. It also makes it so **Shatter** has a 100% chance to knock targets back on a hit and it increases the knock back distance of **Shatter** by 1
-- **Dismantle** has been completely reworked. It now grants 100% more Shield Damage. It also grants +40% Armor Damage against enemies who have full health
+- **Dismantle** has been completely reworked. It now grants +20% Armor Damage and 100% more Shield Damage
 - **Dismemberment** no longer causes any morale checks. It now grants +20% chance to hit the body part with the most temporary injuries. This perk no longer requires the attack to be cutting damage in order to upgrade injuries
 - **Dodge** now grants 5% of Initiative as extra Melee Defense and Ranged Defense for every empty adjacent tile (down from always 15%)
 - **Double Strike** now grants 25% more damage (up from 20%). It now works with ranged attacks and the damage bonus is no longer lost when you swap weapons
@@ -382,50 +383,52 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bags and Belts** is added to **Light Armor** group and removed from **General** group
 - **Between the Eyes** is removed from **Vicious Group** and can no longer appear
 - **Berserk** moves to Tier 7 of **Vicious** Perk Group
-- **Bone Breaker** moved to Tier 5 (down from Tier 7)
-- **Bullseye** moved to Tier 6 (up from Tier 3)
+- **Bone Breaker** moves to Tier 5 (down from Tier 7)
+- **Bullseye** moves to Tier 6 (up from Tier 3)
 - **Bully** moves to Tier 1 (down from Tier 2)
-- **Cheap Trick** moved to Tier 1 (down from Tier 2)
+- **Cheap Trick** moves to Tier 1 (down from Tier 2)
 - **Colossus** is removed from **Tough** group and added to **Powerful Strikes** group
 - **Crippling Strikes** is removed from **Powerful Strikes** and added to **Vigorous** group and **Wildling** group
 - **Decisive** is removed from **Vigorous** group and added to **Leadership** and **Soldier** group
 - **Death Dealer** is removed from **Agile** and added to **Powerful Strikes**. It moved to Tier 6 (up from Tier 4)
-- **Deep Impact** (now **Breakthrough**) moved to T3 perk (down from Tier 6)
-- **Dismantle** moved to Tier 6 (up from Tier 2)
-- **Dismemberment** moved to Tier 2 (down from Tier 6)
+- **Deep Impact** (now **Breakthrough**) moves to T3 (down from Tier 6)
+- **Dismantle** moves to Tier 6 (up from Tier 2)
+- **Dismemberment** moves to Tier 2 (down from Tier 6)
 - **Dodge** is removed from **Light Armor** group
 - **Duelist** is removed from **Shield** group
 - **Dynamic Duo** is removed from **Fast** group and added to **Agile** group
-- **Exploit Opening** moves to Tier 2 perk (up from Tier 1)
+- **Exploit Opening** moves to Tier 2 (up from Tier 1)
 - **Exude Confidence** is removed from **Soldier** group and added to **Vigorous** group
 - **Fearsome** moves to Tier 5 of **Vicious** Perk Group
 - **Wear them Down** is added to **Fast** group in Tier 3
-- **Footwork** moved to Tier 1 (down from Tier 5)
+- **Footwork** moves to Tier 1 (down from Tier 5)
 - **Footwork** is added to Tier 1 of the **Fencer** perk group
 - **Ghostlike** is now Tier 5 (up from Tier 4)
 - **Inspiring Presence** added to **Noble** group
-- **King of all Weapons** (now **Spear Flurry**) moved to Tier 6 perk (down from Tier 7)
-- **Leverage** moved to Tier 7 (up from Tier 3)
-- **Line Breaker** moves to Tier 5 perk (up from Tier 4)
-- **Long Reach** moved to Tier 2 (down from Tier 7)
+- **King of all Weapons** (now **Spear Flurry**) moves to Tier 6 (down from Tier 7)
+- **Leverage** moves to Tier 7 (up from Tier 3)
+- **Line Breaker** moves to Tier 5 (up from Tier 4)
+- **Long Reach** moves to Tier 2 (down from Tier 7)
 - **Man of Steel** moves to Tier 3 (down from Tier 7)
 - **Marksmanship** is added to **Ranged** group. It is no longer a special perk
-- **Mauler** moved to Tier 2 (down from Tier 6)
+- **Mauler** moves to Tier 2 (down from Tier 6)
 - **Menacing** moves to Tier 3 (up from Tier 1)
+- **Onslaught** moves to Tier 3 (down from Tier 4)
 - **Overwhelm** is removed from **Ranged** group
-- **Pathfinder** moved to Tier 3 (up from Tier 1). It is removed from **Wildling** group and added to **Leadership** group
-- **Phalanx** moves to Tier 3 perk (up from Tier 2 (Shield Group) and up from Tier 1 (Militia Group))
+- **Pathfinder** moves to Tier 3 (up from Tier 1). It is removed from **Wildling** group and added to **Leadership** group
+- **Phalanx** moves to Tier 3 (up from Tier 2 (Shield Group) and up from Tier 1 (Militia Group))
 - **Polearm Mastery** and **Fortified Mind** are removed from the **Leadership** group
-- **Rally the Troops** moved to Tier 3 (up from Tier 2). It is added to **Soldier** group
-- **Rattle** (now **Full Force**) moved to Tier 6 (up from Tier 3)
-- **Rebuke** moves Tier 7 perk (up from Tier 5)
-- **Rising Star** moved to Tier 6 (down from Tier 7)
+- **Rally the Troops** moves to Tier 3 (up from Tier 2). It is added to **Soldier** group
+- **Rattle** (now **Full Force**) moves to Tier 6 (up from Tier 3)
+- **Rebuke** moves to Tier Tier 7 (up from Tier 5)
+- **Rising Star** moves to Tier 6 (down from Tier 7)
 - **Rotation** is removed from **Trained**
-- **Sanguinary** moved to Tier 6 (up from Tier 2)
-- **Shield Expert** moves to Tier 4 perk (up from Tier 3)
+- **Sanguinary** moves to Tier 6 (up from Tier 2)
+- **Shield Expert** moves to Tier 4 (up from Tier 3)
+- **Shield Sergeant** moves to Tier 4 (up from Tier 3)
 - **Student** is added to **General** group. It is no longer a special perk
 - **Survival Instinct** is removed from **Vigorous** group and added to **Tough** group
-- **Tricksters Purses** moved to Tier 3 (up from Tier 1)
+- **Tricksters Purses** moves to Tier 3 (up from Tier 1)
 - **Underdog** moves to Tier 3 (down from 5)
 - **Vigorous Assault** is removed from **Swift Strikes** group
 - **Knave** no longer guarantees the **Dagger** perk group. Now it is just twice as likely. It also no longer guarantees the **Nimble** perk group
@@ -494,14 +497,15 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 ### Weapons
 
 - **Ancient Pikes** gains the **Spear** Weapontype
-- **Ancient Spear** now deals 30-40 damage (up from 20-35), has a Weight of 10 (up from 6) and costs 750 Crowns (up from 150)
+- **Ancient Spear** now deals 30-40 damage (up from 20-35), has 10 Weight (up from 6) and costs 750 Crowns (up from 150)
 - **Ancient Sword** loses **Stab** and gains **Deathblow** (costing 5 Action Points and 15 Fatigue)
 - **Battle Axe** now deals 60-80 Damage (up from 50-70), 32 Shield Damage (up from 26), has 10 Weight (down from 14), 140% Armor Damage (up from 125%), 0% Headshot Chance (down from 5%) and costs 1200 Crowns (down from 1950). It now has the skills **Split Man**, **Round Swing** and **Split Shield**. Named **Battle Axes** will no longer appear
 - **Berserk Chain** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5) and deals 65-100 Damage (down from 60-110)
+- **Boondock Bow** now deals 30-45 Damage (up from 25-40), has 50% Armor Damage (down from 55%) and 40% Armor Penetration (up from 30%)
 - **Cruel Falchion** are now a Sword/Dagger hybrid. They now also grant **Stab**
 - **Crossbow** now has 60% Armor Penetration (up from 50%), 50% Armor Damage (down from 70%) and costs 900 Crowns (up from 750)
 - **Composite Bow** now costs 800 Crowns (up from 400)
-- **Cudgel** now deals 45-65 damage (up from 30-50), has 120% Armor Damage (up from 90%), has 4 Reach (up from 3), costs 600 Crowns (up from 300). **Bash** now costs 5 AP (up from 4). **Knock Out** now costs 5 AP (up from 4) has a 100% chance to stun
+- **Cudgel** now deals 45-65 damage (up from 30-50), has 120% Armor Damage (up from 90%), has 4 Reach (up from 3), costs 600 Crowns (up from 300). **Bash** now costs 5 AP (up from 4). It loses **Knock Out** and gains **Strike Down**
 - **Dagger** now deals 20-30 Damage (from 15-35)
 - **Estoc** now has 6 Reach (up from 5)
 - **Goblin Skewer** are now a Spear/Dagger hybrid. **Thrust** is replaced with **Stab**. **Riposte** is removed
@@ -521,33 +525,33 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Knife** now deals 15-20 Damage (down from 15-25)
 - **Light Crossbow** now has 60% Armor Penetration (up from 50%), 50% Armor Damage (down from 60%) and costs 400 Crowns (up from 300)
 - **Longsword** now deals 45-55 damage (down from 65-85) has Armor Penetration of 30% (up from 25%), 75% Armor Damage (down from 100%), +0% Headshot Chance (down from +5%), 6 Reach (up from 5) and costs 1200 Crowns (down from 2400). It loses **Overhead Strike** and gains **Swing**. Its skills no longer have any discount. It can no longer appear as a named weapon
-- **Lute** now has a 100% chance to stun with **Knock Out** (up from 30%), 6 Condition (up from 2) and 50% Armor Damage (up from 10%). It gains the **Mace** Weapontype
+- **Lute** now has 6 Condition (up from 2) and 50% Armor Damage (up from 10%). It gains the **Mace** Weapontype. It loses **Knock Out** and gains **Strike Down**
  **Military Pick** now has 10 Weight (up from 8)
 - **Pickaxe** now has 12 Weight (up from 10)
 - **Pike** gains the **Spear** Weapontype
 - **Player Banner** now causes -5 to Ranged Defense and it grants **Repel**
 - **Poleaxe** and its named versions can no longer be bought or found
 - **Poleflail** now has 5 Reach (down from 6) and costs 1600 Crowns (up from 1400). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
-- **Reinforced Boondock Bow** now has 45% Armor Penetration (up from 35%)
+- **Reinforced Boondock Bow** now deals 40-55 Damage (up from 30-50), has 50% Armor Damage (down from 60%) and 40% Armor Penetration (up from 35%)
 - **Reinforced Wooden Poleflail** now has 5 Reach (down from 6). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
 - **Rondel Dagger** now deals 25-35 Damage (from 20-40) and costs 500 Crowns
 - **Rusty Warblade** loses **Decapitate** and gains **Split**
 - **Short Bow** now deals 35-50 damage (up from 30-50), has a Range of 6 (down from 7) and costs 300 Crowns (up from 200)
-- **Spetum** now has 7 Reach (up from 6), a Weight of 12 (down from 14) and costs 900 Crowns (down from 1050). The named variant now costs 2800 Crowns (down from 3500)
+- **Spetum** now has 7 Reach (up from 6), 12 Weight (down from 14) and costs 900 Crowns (down from 1050). The named variant now costs 2800 Crowns (down from 3500)
 - **Spiked Impaler** now has 80% Armor Damage (up from 75%) now has +2 Fatigue Cost for its weapon skills
-- **Swordstaff** now has a Weight of 12 (up from 10)
-- **Thorned Whip** now deals 20-35 Damage (up from 15-25), has a Weight of 10 (up from 6), has a Condition of 25 (down from 40) and costs 600 Crowns (up from 400)
+- **Swordstaff** now has 12 Weight (up from 10)
+- **Thorned Whip** now deals 20-35 Damage (up from 15-25), has 10 Weight (up from 6), has a Condition of 25 (down from 40) and costs 600 Crowns (up from 400)
 - **Three-Headed Flail** now attacks 2 times per skill use (down from 3) and deals 50% weapon damage per attack (up from 33%). It now has 3 Reach (down from 4) and deals 30-60 Damage (down from 30-75)
-- **Throwing Spears** no longer inflict any fatigue when hitting a shield. They now have a Weight of 4 (down from 6) and costs 60 Crowns (down from 80)
-- **Tree Limb** now deals 40-60 damage (up from 25-40), deals 90% Armor Damage (up from 75%), has 4 Reach (up from 3), a weight of 18 (down from 20), costs 450 Crowns (up from 150). **Bash** now costs 5 AP (up from 4). **Knock Out** now costs 5 AP (up from 4) has a 100% chance to stun
+- **Throwing Spears** no longer inflict any fatigue when hitting a shield. They now have 4 Weight (down from 6) and costs 60 Crowns (down from 80)
+- **Tree Limb** now deals 40-60 damage (up from 25-40), deals 90% Armor Damage (up from 75%), has 4 Reach (up from 3), 18 Weight (down from 20), costs 450 Crowns (up from 150). **Bash** now costs 5 AP (up from 4). It loses **Knock Out** and gains **Strike Down**
 - **Two-handed Flail** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5), deals 55-90 Damage (down from 60-95) and costs 1800 Crowns (up from 1400)
 - **Two-handed Wooden Hammer** now deals 40-60 Damage (down from 40-70) and 200% Armor Damage (up from 150%)
 - **Two-handed Wooden Flail** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5), deals 35-65 Damage (instead of 40-60) and costs 600 Crowns (up from 500). It no longer has any discount on its weapon skills
 - **Two-handed Wooden Hammer** now deals 40-60 Damage (down from 40-70), 200% Armor Damage (up from 150%) and costs 600 Crowns (up from 500)
-- **War Bow** now has 50% Armor Damage (down from 60%), a Weight of 8 (up from 6) and +2 Fatigue Cost for its weapon skills
-- **Warbrand** now deals 65-75 damage (up from 50-75), has a Armor Penetration of 30% (up from 20%), a Weight of 12 (up from 10), +0% Headshot Chance (down from +5%) and costs 2600 Crowns (up from 1600). It loses **Split** and gains **Riposte**. Its skills no longer have a custom cost. The **Named Warbrand** no longer has any custom damage bonus
+- **War Bow** now has 50% Armor Damage (down from 60%), 8 Weight (up from 6) and +2 Fatigue Cost for its weapon skills
+- **Warbrand** now deals 65-75 damage (up from 50-75), has a Armor Penetration of 30% (up from 20%), 12 Weight (up from 10), +0% Headshot Chance (down from +5%) and costs 2600 Crowns (up from 1600). It loses **Split** and gains **Riposte**. Its skills no longer have a custom cost. The **Named Warbrand** no longer has any custom damage bonus
 - **Warhammer** now has 12 Weight (up from 8)
-- **Warfork** now has a Weight of 14 (up from 12) and costs 400 Crowns (down from 600)
+- **Warfork** now has 14 Weight (up from 12) and costs 400 Crowns (down from 600)
 - **Wonky Bow** now deals 30-45 damage (down from 30-50) a Range of 6 (down from 7), 0% Hitchance bonus (up from -10%) and costs 150 Crowns (up from 100)
 - **Woodcutters Axe** now deals 40-65 damage (from 35-70) and no longer has any discount on its weapon skills
 - **Zweihander** loses **Split Shield**. It now has 6 Reach (down from 7) and +10% Headshot Chance (up from +5%)
@@ -730,6 +734,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ### Other Item Changes
 
+- Prevent any drug use from incrementing `PotionUsed` (relevant for addict related events) if you have not used any other drug in the last 24 hours
 - Items with Condition now have 50% of their value at 0 Condition (up from 0% value), which increases linearly to 100% value as the item gains condition
 - Loot from beasts (like webbed valueables, ancient amber, etc.) are no longer affected by situations like **Collector**
 - Food now only loses value once half of its shelf life is over
@@ -747,6 +752,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Fangshire** will no longer spawn at the start of the game
 - **Feral Shield** now costs 400 Crowns (up from 50)
 - **Fermented Unhold Heart** now has an expiry date of 40 days (up from 20) and has 50 Servings (up from 25)
+- **Geist Tear** now costs 800 Crowns (up from 300)
 - **Goblin Poison** now costs 200 Crowns (up from 100). It now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 2000 Value (up from 200) and grants 10 Resolve (up from 5)
 - **Holy Water** now costs 300 Crowns (up from 100) and is now considered `IsMedical` causing it to be affected by medical-related settlement situations
@@ -761,7 +767,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Phantom Draught** no longer grants +5 Melee Defense or +10 Ranged Defense. It now grants the **Ethereal** perk
 - **Poisoned Oil** now costs 200 Crowns (up from 150)
 - **Powder Bag** now costs 2 **Ammunition Supply** each (up from 1) and costs 150 Crowns (up from 50)
-- **Reinforced Throwing Net** now has a weight of 8 (up from 2)
+- **Reinforced Throwing Net** now has 8 Weight (up from 2)
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**
 - **Sipar** is now called **Sipar Shield** (just like in Vanilla)
 - **Spider Poison** now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1. It now deals 15 Damage per turn (up from 10)
@@ -770,7 +776,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Strange Mushrooms** now cost 200 Crowns (up from 100)
 - **Smoke Bomb** costs 400 Crowns (up from 275). Smoke now lasts 2 Rounds (up from 1)
 - **Tarnished Full Helm** now grants +10 Threat (similar to Direwolf Pelt). It now only appears in the Full Helm looking variants
-- **Throwing Net** now has a weight of 4 (up from 2)
+- **Throwing Net** now has 4 Weight (up from 2)
 - **Tools and Supplies** are now marked as `IsBuildingSupply`, causing them to be affected by building-supply-related settlement situations
 - **Unhold Fur Cloak** now grants 15 Condition (up from 10)
 - **Wardogs** now cost 250 Crowns (up from 200) and the variant with dog armor costs 450 Crowns (up from 400). They appear ~75% less often in regular marketplaces
@@ -782,17 +788,20 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ## Retinue/Follower
 
-- **Blacksmith** no longer requires you to repair 5 items in a town. It now requires you to use 5 paint or attachements. It no longer grants a tool consumption discount. It now grants +50 storage space for Tools
-- **Bounty Hunter** costs 2500 Crowns (down from 4000). It now grants +5% for enemies to become champions (up from +3%). It no longer grants Crowns when you kill champions
+- **Agent Follower** no longer reveals Contracts or Situations in all Settlements. She now makes Tavern Rumors more useful, grants +1 Maximum Contracts in Settlements and makes Civilian Contracts refresh 1 day sooner
+- **Alchemist** now costs 3500 Crowns (up from 2500)
+- **Blacksmith** now costs 3500 Crowns (up from 3000). He no longer requires you to repair 5 items in a town. Instead he now requires you to use 5 paint or attachements. he grants 50% more Repair Speed (up from 20% more). He no longer grants a tool consumption discount. He now grants +50 storage space for Tools.
+- **Bounty Hunter** now costs 2500 Crowns (down from 4000). He now grants +5% for enemies to become champions (up from +3%). He no longer grants Crowns when you kill champions
 - **Brigand** no longer reveals Caravans on the world map. Instead you travel 20% faster while following a visible enemy on the world map
-- **Drill Sergeant** now provides 2% Experience per level below 11 (down from 4%), just like in Vanilla. It now requires a brother with a permanent injury to be dismissed, just like in Vanilla
-- **Lookout** no longer grants 25% more vision at all times. It now always provides a scouting report for enemies near you, just like "Band of Poachers" origin
-- **Negotiator** is completely reworked. He now doubles the additional pay you gain from successfully negotiating additional pay. He also grants 100% faster decay of negative Relation and 15% slower decay of friendly Relation
+- **Drill Sergeant** now provides 2% Experience per level below 11 (down from 4%), just like in Vanilla. He now requires a brother with a permanent injury to be dismissed, just like in Vanilla
+- **Lookout** no longer grants 25% more vision at all times. She now always provides a scouting report for enemies near you, just like "Band of Poachers" origin
+- **Minstrel Follower** now costs 500 Crowns (down from 2000) and no longer makes Tavern Rumors more useful. He now requires you to visit 15 Settlements to unlock (instead of all of them)
+- **Negotiator** now costs 2500 Crowns (down from 3000) and is completely reworked. He now doubles the additional pay you gain from successfully negotiating additional pay. He also grants 100% faster decay of negative Relation and 15% slower decay of friendly Relation
 - **Paymaster Retinue** no longer requires you to have 16 Brothers in order to unlock. He now requires you to have a day expense of at least 500 crowns. He now reduces your Wage by 25% (up from 15%)
 - **Quartermaster** now costs 1500 Crowns (down from 3000), requires 2 Caravan Cart Upgrades to unlock and grants 100 Storage for Tools and Medicine (up from 50)
-- **Scout** no longer grants 15% more movement speed. It now grants 20% more movement speed while in Forests and Swamp. It also grants 25% Vision while on hills or mountains
-- **Surgeon** now also counts Injuries treated by Bandages for its Requirement. It no longer lowers the duration of injuries on your brothers and now costs 3000 Crowns (down from 3500)
-- **Trader** now also makes Trading Goods 100% more common in shop
+- **Scout** no longer grants 15% more movement speed. He now grants 20% more movement speed while in Forests and Swamp. He also grants 25% Vision while on hills or mountains
+- **Surgeon** now also counts Injuries treated by Bandages for its Requirement. He no longer lowers the duration of injuries on your brothers and now costs 3000 Crowns (down from 3500)
+- **Trader** now costs 2500 Crowns (down from 3500). He now also makes Trading Goods 100% more common in shop
 - The first **Cart Upgrade** now grants 18 Inventory Slots (down from 27)
 - The last **Cart Upgrade** now grants 36 Inventory Slots (up from 27)
 
@@ -805,15 +814,6 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ### General Changes
 
-- The lowest tier of the **Tough Brigand** unit block will no longer spawn
-- Tough Brigands and Balanced Brigands no longer share the same names
-Brigand Units now use the following names:
-- Balanced: **Thug** -> **Outlaw** (instead of Pillager) -> **Raider** -> **Highwayman** (instead of Marauder)
-- Tough: **Vandal** (instead of Pillager) -> **Pillager** (instead of Raider) -> **Marauder**
-- Fast: **Scoundrel** (instead of Vandal) -> **Robber** (instead of Outlaw) -> **Killer** (instead of Highwayman)
-- Ranged: **Poacher** -> **Marksman** -> **Sharpshooter**
-- **Fallen Heroes** are now called **Fallen Soldiers** and can no longer resurrect, if decapitated
-- **Fallen Betrayers** are now called **Fallen Heroes** and can spawn in regular world parties
 - Introduce a new **Headless** effect. It redirects any attack to hit the body, reduces all other damage targeting the head to 0 (e.g. secondary attack from Split Man), grants immunity to **Distracted**, **Sleep**, **Insect Swarm** and sets the headarmor to 0
 	- This effect is given to **Ifrits**, **Spider Eggs**, **Headless Zombies**, **Saplings**, **Lindwurm Tails** and **Kraken Tentacles**
 	- **Wiederganger**, which receive this effect, lose **Bite** and gain **Zombie Punch** (which is mostly the same, except without bonus headshot chance)
@@ -838,9 +838,12 @@ Brigand Units now use the following names:
 - **Phylacteries** (Sunken Library Fight) now remain visible after you discovered them once
 - **The Conqueror** now has **Savage Strength**. This has no gameplay impact and is only meant to visualize that he is immune to **Disarm**
 - **Ancient Palatini** with polearms can now appear as Champions
+- **Fallen Knights** are now called **Fallen Soldiers** and can no longer resurrect, if decapitated
 - Champion **Fallen Heroes** now always spawn with full armor condition
 
 **Greenskins:**
+- Add **Goblin Fighter** (higher tier version of **Goblin Skirmisher**)
+- Add **Goblin Stalker** (higher tier version of **Goblin Ambusher**)
 - **Goblin Racial** now grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
 
 **Humans:**
@@ -864,6 +867,20 @@ Brigand Units now use the following names:
 - **Nachzehrer** lose immunity to poison
 - The **Unhold Racial** effect now causes Debuffs on Unholds to last -1 Turns
 - **Schrats** gain the new perk **Forestbond**, which recovers 3% Hitpoints per adjacent tree obstacle at the start of each turn
+- **Unholds** now have a 1% chance to spawn with a smile (down from 5%)
+
+**Brigands:**
+- Tough Brigands and Balanced Brigands no longer share the same names
+- Brigand Units now use the following names:
+  - Balanced: **Thug** -> **Outlaw** (instead of Pillager) -> **Raider** -> **Highwayman** (instead of Marauder)
+  - Tough: **Vandal** (instead of Pillager) -> **Pillager** (instead of Raider) -> **Marauder**
+  - Fast: **Scoundrel** (instead of Vandal) -> **Robber** (instead of Outlaw) -> **Killer** (instead of Highwayman)
+  - Ranged: **Poacher** -> **Marksman** -> **Sharpshooter**
+- The lowest tier of the **Tough Brigand** unit block will no longer spawn
+- **Robber Baron** is now called **Brigand Baron**
+
+**Orcs:**
+- Add **Orc Grunt** (higher tier version of **Orc Young**)
 
 ### Champion Spawnchance Adjustments
 
@@ -961,6 +978,7 @@ Brigand Units now use the following names:
 - NPCs are 50% more likely to try to destroy shields of someone with **One with the Shield** perk
 - NPCs are 1% more likely to focus Nachzehrer sitting on consumable corpses for every % of hitpoints missing on them
 - NPCs are 200% more likely to target a fleeing character with **Command**
+- NPCs are 20% less likely to attack someone with **Feral Rage** who does not yet have full stacks. And another 20% less likely if that target is stunned and 1 stack away from receiving stun immunity
 - NPCs with **Toolbox** are 50% more likely to target a staggered enemy with a blunt throwing attack
 - NPC are less likely to use **Flaming Arrow** or **Fire Bomb** on enemies who are rooted
 - NPCs are 50% more likely to use **Split Shield** when it would destroy a shield on use
@@ -1045,22 +1063,23 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 
 - Vastly improve likelyhood of successuly placing settlements during map generation by having each settlement consider every valid tile, instead of just 3000 random ones
 - Settlements which would spawn exactly 1 tile from a coast or ocean will now instead spawn directly next to that coast or ocean
-- During Map Generation: City States are now placed first, followed by Large Forts and Large Settlements, followed by Medium Forts and Medium Settlements, followed by Small Forts and Small Settlements, followed by any other settlements. As a result, larger settlements are more evenly spread out across the map, while smaller settlements fill the gaps
+- During Map Generation: **City States** are now placed first, followed by Large Forts and Large Settlements, followed by Medium Forts and Medium Settlements, followed by Small Forts and Small Settlements, followed by any other settlements. As a result, larger settlements are more evenly spread out across the map, while smaller settlements fill the gaps
 	- Large Forts and Large Settlements now need a distance of 22 Tiles between each other (up from 12)
 	- Medium Forts, Medium Settlements and Small Forts now need a distance of 14 Tiles between each other (up from 12)
 	- Small Settlements now need a distance of 10 Tiles between each other (down from 12)
 - Resources of Settlements now scale 100% with the WorldDifficulty (up from 50% of it)
 - Try out now costs 100% more. You can now dismiss recruits after you tried them out to make room for new recruits
-- You can now get up to 6 Tavern Rumors every cycle (up from 4)
-- Tavern Rumors now have a linearly scaling cost. Each paid rumor costs an amount based on the standard (vanilla) rumor price, multiplied by the number of the paid rumor you are about to buy
+- You can now get up to 6 **Tavern Rumors** every cycle (up from 4)
+- **Tavern Rumors** now have a linearly scaling cost. Each paid rumor costs an amount based on the standard (vanilla) rumor price, multiplied by the number of the paid rumor you are about to buy
 - Armorsmiths will now sometimes sell Named Shields
 - Marketplaces now sell **Crude Javelins** instead of regular **Javelins**
 - Small civilian settlements now sell **Old Wooden Shields** and **Lute**
 - Settlements with a **Temple** now regularly sell **Holy Water** in the Marketplace
 - Big northern settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
-- Weaponsmiths and Armorsmiths now sell **Armor Parts** with a price multiplier of 1.25
-- Fletcher now sell roughly 5 times as many **Throwing Spears** but with a price multiplier of 1.5 (up from 1.0)
-- Nets sold by Fletcher now have a price multiplier of 2.0 (down from 3.0)
+- **Weaponsmiths** and Armorsmiths now sell **Armor Parts** with a price multiplier of 1.25
+- **Kennels** now have a Price Multiplier of 1.25 (up from 0.75)
+- **Fletcher** now sell roughly 5 times as many **Throwing Spears** but with a price multiplier of 1.5 (up from 1.0)
+- Nets sold by **Fletcher** now have a price multiplier of 2.0 (down from 3.0)
 - Any settlement which does not produce any regular item currently will count as producing **Crowns**, so their caravans will transport stacks of crowns instead of transporting nothing
 
 ### Attached Locations
@@ -1137,7 +1156,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Choosing *"We need to be paid more than this"* now:
   - causes -1.0 Relation with that faction (down from -0.5)
   - grants 10-30% more pay (up from 3%-10%) on a success
-- Failing an individual attempt now has a 4% chance per Annoyance (down from 10%)
+- Failing an individual attempt now has a 3% chance per Annoyance (down from 10%)
 - Failing the Negotiation and losing the contract now:
   - happens when you reach 21 Annoyance (up from 10)
   - causes -5.0 Relation (down from -2.5)
@@ -1154,6 +1173,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 
 - The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event
 - The Event **Caravan Hand expands Cart** can now also trigger after you have already upgraded your cart
+- The Event **Civilwar Conscription** now grants +7.5 Relation with the Noble House when you side with them (up from +2.5)
 - The Event **Drunkard loses Item** now has an option where you order the Drunkard to search for the item. This recovers the item, but causes the same mood debuff on the drunkard as if he was flogged
 - The Event **Player plays dice** now has 50% less score
 - The Event **Infected Wound** now has a cooldown of 14 days (down from 21 days) and is thrice as likely to trigger, if you have no Medicine left
@@ -1165,7 +1185,8 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 ## Difficulty
 
 - **High Starting Funds** now grant 3000 Crowns (up from 2500), 100 Ammo (up from 80), 50 Tools (up from 40) and 50 Medicine (up from 30)
-- **Medium Starting Funds** now grant 50 Ammo (up from 40), 30 Tools (up from 20) and 30 Medicine (up from 20)
+- **Medium Starting Funds** now grant 80 Ammo (up from 40), 40 Tools (up from 20) and 40 Medicine (up from 20)
+- **Low Starting Funds** now grant 40 Ammo (up from 20), 20 Tools (up from 10) and 20 Medicine (up from 10)
 - **Beginner Combat Difficulty** now grants enemy parties 100% resources (up from 85%)
 - **Beginner Combat Difficulty** now causes player characters to receive 15% less hitpoint and armor damage from all sources. It no longer grants a hidden +5% chance to hit and -5% chance to be hit
 - **Expert Combat Difficulty** now grants enemy parties 120% resources (up from 115%)
@@ -1244,7 +1265,9 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Combat Log entries about Hitpoints taking damage now also display the hitpoint value before the hit
 - Print combat log for hitpoint damage dealt, when an attack kills the target and include the hitpoints of the target before the kill
 - **Fling Back** (used by Unholds) now has an animation delay of 250ms (down from 750ms)
-- The automatic camera level calculation is improved, especially while in mountanious terrain. Your camera level is now automatically adjusted when moving up or down terrain
+- Improve automatic camera level adjustment, to make sure that neither the character itself (priority), nor any adjacent tiles within 1 level are hidden by hills
+- Adjust camera level automatically after every move
+- Add Setting (on) for automatically adjusting the camera level, whenever you preview a skill, so that none of your valid targets are hidden by hills
 - **Throw Fire Bomb** now only marks tiles for impact, if they would be affected by its fire damage. You can no longer throw it on a tile, if no tiles in the impact zone would be affected
 - Print a combat log whenever **Battle Flow** recover Fatigue
 - Display the actual minimum armor penetration damage in attack skills, instead of always showing a 0 there
@@ -1257,6 +1280,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Turn **Decisive** effect icon grey, while a character has 0 stacks
 - Improve brightness and contrast of **Hold Steady**,  **Line Breaker**, **Net Pull** and **Onslaught** skills
 - Use unique icon for **Sergeant** perk
+- Change delay of **Aimed Shot** animation to 800ms (down from 1000ms)
 - Play the **Ignite Firelance** animation in the actual direction you aim at
 - Idle sounds of enemies during combat now play up to 50% less freqently
 - Improve tooltip of **Disarmed effect**
@@ -1319,7 +1343,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Attached Locations now list the items they produce in their tooltip
 - Destroyed attached locations now display their original name, instead of just being called "Ruins"
 - Add Setting (on) for marking named/legendary helmets/armor or armor with attachments as to-be-repaired whenever it enters your inventory
-- Add Setting (on) to display food duration (in days), repair duration (in hours) and minimum medicine cost in brackets behind those supply values
+- Add Setting (on) to display food duration (in days), repair cost and minimum medicine cost in brackets behind those supply values
 - Add 0.8 second delay, before you can click the buttons in event screens to prevent accidental missclicks
 - The Player Banner is no longer hidden while camping
 - Add Concept and Tooltip for Day-Night Cycle, when hovering over the day-night disk
@@ -1340,6 +1364,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Slightly move the dismiss button downwards
 - Improve the Vanilla Concepts **Chance to hit head**, **Vision**, **Renown** and **Morale** and add nested tooltip for all morale states (except **Steady**)
 - Improve the Reforged Concept for **Turn**
+- Display amount of Overdoses (`PotionsUsed`) in the background tooltip, if > 0
 - Improve Goblin Poison, Spider Poison item, skill and effect tooltips
 - Display item type names for Ammunition, Accessories, Consumables, Food and Quest Items in the item tooltips
 - Improve tooltips of **Battleforged** and **Nine Lives** perks and **Chop** skill
