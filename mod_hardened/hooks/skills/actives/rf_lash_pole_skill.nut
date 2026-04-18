@@ -1,3 +1,5 @@
+::Hardened.removeTooClosePenalty("scripts/skills/actives/rf_lash_pole_skill");
+
 ::Hardened.HooksMod.hook("scripts/skills/actives/rf_lash_pole_skill", function(q) {
 	q.create = @(__original) function()
 	{
