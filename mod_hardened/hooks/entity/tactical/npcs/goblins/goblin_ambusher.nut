@@ -96,7 +96,7 @@
 		this.getItems().equip(::new("scripts/items/ammo/quiver_of_arrows"));
 		this.getItems().addToBag(::new("scripts/items/weapons/greenskins/goblin_notched_blade"));
 
-		if (::Math.rand(1, 100) <= 10)
+		if (::Math.rand(1, 100) <= 20)
 		{
 			this.getItems().addToBag(::new("scripts/items/accessory/poison_item"));	// This is just added as a drop. Goblin Ambusher have a special effect to always poison
 		}
