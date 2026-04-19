@@ -7,6 +7,7 @@ this.perk_hd_elusive <- ::inherit("scripts/skills/skill", {
 		IsInEffect = false,
 		TilesMovedThisTurn = 0,
 		PrevTile = null,	// Previous tile, so that we can measure the distance after moving from it
+		MovementAPCostBackup = null,	// We save the original value for this character before the addition of this perk, so we can reset it after removal
 	},
 	function create()
 	{
@@ -50,6 +51,8 @@ this.perk_hd_elusive <- ::inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
+		this.m.MovementAPCostBackup = this.getContainer().getActor().m.ActionPointCosts;
+
 		// We need this perk is added during combat, we need to quickly instantiate this.m.PrevTile to prevent a crash from moving
 		if (::Tactical.isActive())
 		{
@@ -68,7 +71,10 @@ this.perk_hd_elusive <- ::inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-		this.getContainer().getActor().m.ActionPointCosts = clone ::Const.DefaultMovementAPCost;
+		if (this.m.MovementAPCostBackup != null)
+		{
+			this.getContainer().getActor().m.ActionPointCosts = this.m.MovementAPCostBackup;
+		}
 	}
 
 	function onTurnStart()

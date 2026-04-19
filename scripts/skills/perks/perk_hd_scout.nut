@@ -7,6 +7,7 @@ this.perk_hd_scout <- ::inherit("scripts/skills/skill", {
 		// Private
 		CurrentVirtualStepTile = null,	// We remember the virtual tile during movement steps so we are able to calculate Vision, as if we are at that location
 		NextVirtualStepTile = null,	// Helper variable to save the next tile in this step-sequence. Required because during the very first step of a sequence should be using the actors current position
+		MovementAPCostBackup = null,	// We save the original value for this character before the addition of this perk, so we can reset it after removal
 	},
 	function create()
 	{
@@ -41,16 +42,24 @@ this.perk_hd_scout <- ::inherit("scripts/skills/skill", {
 		return this.getVisionModifier(this.m.CurrentVirtualStepTile) <= this.m.VisionModifier;	// We only display this perk if its conditional bonus is active, to reduce overall effect bloat
 	}
 
+	function onAdded()
+	{
+		this.m.MovementAPCostBackup = this.getContainer().getActor().m.ActionPointCosts;
+	}
+
 	function onUpdate( _properties )
 	{
 		_properties.UpdateWhenTileOccupationChanges = true;	// Because this perk grants vision depending on adjacent objects
-		this.getContainer().getActor().m.ActionPointCosts = ::Const.PathfinderMovementAPCost;	// This will not stack with Pathfinder perk
+		this.getContainer().getActor().m.ActionPointCosts = clone ::Const.PathfinderMovementAPCost;		// This will not stack with Pathfinder perk
 		_properties.Vision += this.getVisionModifier(this.m.CurrentVirtualStepTile);
 	}
 
 	function onRemoved()
 	{
-		this.getContainer().getActor().m.ActionPointCosts = clone ::Const.DefaultMovementAPCost;
+		if (this.m.MovementAPCostBackup != null)
+		{
+			this.getContainer().getActor().m.ActionPointCosts = this.m.MovementAPCostBackup;
+		}
 	}
 
 // MSU Events
