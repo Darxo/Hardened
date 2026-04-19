@@ -67,9 +67,9 @@
 
 	local isConfigPresent = function()
 	{
-		foreach (fullPath in ::IO.enumerateFiles("."))	// This is a hack, so we only get shown files that are at the root level of the data folder
+		foreach (fullPath in ::IO.enumerateFiles("data/"))
 		{
-			if (fullPath == "./_config")
+			if (fullPath == "data/_config")
 			{
 				return true;
 			}
