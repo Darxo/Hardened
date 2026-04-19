@@ -67,6 +67,7 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_fearsome"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_fast_adaption"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_menacing"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_savage_strength"));
 
 		// Generic Actives
 	}
