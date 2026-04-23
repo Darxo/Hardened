@@ -11,3 +11,5 @@
 ::Reforged.Reach.Default.BeastHuge = 6;		// Unholds
 ::Reforged.Reach.Default.BeastEnormous = 7;		// Ijirok
 ::Reforged.Reach.Default.BeastGargantuan = 7;		// Lindwurm
+
+::Reforged.Reach.Default.NetImmune = 9999;		// We disable reach granting immunity to nets
