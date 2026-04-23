@@ -62,7 +62,16 @@
 				id = 21,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorNegative("Cannot be used when already [providing cover|Skill+rf_covering_ally_effect] to an ally")),
+				text = ::Reforged.Mod.Tooltips.parseString("Cannot be used because you are already [providing cover|Skill+rf_covering_ally_effect] to an ally"),
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 21,
+				type = "text",
+				icon = "ui/icons/unlocked_small.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Cannot be used while already [providing cover|Skill+rf_covering_ally_effect] to an ally"),
 			});
 		}
 
