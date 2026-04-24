@@ -1,6 +1,5 @@
 this.hd_whirling_death_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		IsSpent = false,
 		ActionPointModifierOnRepeat = -3,
 	},
 	function create()
@@ -24,6 +23,8 @@ this.hd_whirling_death_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 15;
 		this.m.AIBehaviorID = ::Const.AI.Behavior.ID.HD_Defend_Stance;
+
+		this.m.HD_Cooldown = 1;
 	}
 
 	function getTooltip()
@@ -49,11 +50,6 @@ this.hd_whirling_death_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function isUsable()
-	{
-		return !this.m.IsSpent && this.skill.isUsable();
-	}
-
 	function onAfterUpdate( _properties )
 	{
 		if (this.getContainer().hasSkill("effects.hd_whirling_death"))
@@ -69,25 +65,13 @@ this.hd_whirling_death_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		if (!this.m.IsSpent)
+		this.getContainer().add(::new("scripts/skills/effects/hd_whirling_death_effect"));
+
+		if (!_user.isHiddenToPlayer())
 		{
-			this.m.IsSpent = true;
-
-			this.getContainer().add(::new("scripts/skills/effects/hd_whirling_death_effect"));
-
-			if (!_user.isHiddenToPlayer())
-			{
-				::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(_user) + " uses Whirling Death");
-			}
-
-			return true;
+			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(_user) + " uses Whirling Death");
 		}
 
-		return false;
-	}
-
-	function onTurnStart()
-	{
-		this.m.IsSpent = false;
+		return true;
 	}
 });
