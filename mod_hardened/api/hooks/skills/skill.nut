@@ -34,8 +34,9 @@
 
 	q.use = @(__original) function( _targetTile, _forFree = false )
 	{
+		local actor = this.getContainer().getActor();
 		::Hardened.Temp.LastUsedSkill = ::MSU.asWeakTableRef(this);		// We can expect the skill to exist long enough, even if it is removed from the actor, usually within delayed events
-		::Hardened.Temp.LastUsedSkillOwner = ::MSU.asWeakTableRef(this.getContainer().getActor());	// The skill might not have an owner anymore by that time, e.g. with Throwing Spear skill
+		::Hardened.Temp.LastUsedSkillOwner = ::MSU.asWeakTableRef(actor);	// The skill might not have an owner anymore by that time, e.g. with Throwing Spear skill
 		this.m.HD_ForFree = _forFree;
 
 		return __original(_targetTile, _forFree);
