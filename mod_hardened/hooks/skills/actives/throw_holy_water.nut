@@ -18,6 +18,13 @@
 			}
 		}
 
+		ret.push({
+			id = 11,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a range of " + ::MSU.Text.colorizeValue(this.getMaxRange()) + " tiles",
+		});
+
 		return ret;
 	}
 

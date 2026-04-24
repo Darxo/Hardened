@@ -16,6 +16,13 @@
 			text = ::Reforged.Mod.Tooltips.parseString("Burns away any [rooted|Concept.Rooted] effects on the target"),
 		});
 
+		ret.push({
+			id = 11,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a range of " + ::MSU.Text.colorizeValue(this.getMaxRange()) + " tiles",
+		});
+
 		return ret;
 	}
 });
