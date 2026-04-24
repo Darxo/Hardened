@@ -142,6 +142,7 @@
 
 	qolCombatPage.addBooleanSetting("CombineCombatSkillLogs", true, "Combine Combat Logs of Skills", "Combat Logs, which are the result of the same skill execution no longer produce empty halflines.");
 	qolCombatPage.addBooleanSetting("ShowCoverCombatLogs", true, "Show Cover Combat Logs", "Generate an additional combat log when targeting someone with a ranged attack, who is in cover. This log contains the chance and roll for bypassing the cover and also the initial target and the new target.");
+	qolCombatPage.addRangeSetting("CombatLogForNonAttackUse", 0, 0, 10, 1, "Combat Logs for Non-Attack use", "Generate a combat log line with user, skill and target, whenever anyone uses a Non-Attack skill, which costs at least this many Action Points");
 }
 
 // QOL: Character Screen
