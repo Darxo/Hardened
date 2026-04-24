@@ -222,9 +222,9 @@
 		{
 			local remainingCooldown = this.m.HD_RoundLastUsed + this.m.HD_Cooldown - ::Time.getRound();
 			local cooldownText = "Can be used again ";
-			if (remainingCooldown == 1)
+			if (remainingCooldown > 1)
 			{
-				cooldownText += ::MSU.Text.colorNegative(remainingCooldown) + ::Reforged.Mod.Tooltips.parseString(" [rounds|Concept.Round]");
+				cooldownText += "in " + ::MSU.Text.colorNegative(remainingCooldown) + ::Reforged.Mod.Tooltips.parseString(" [rounds|Concept.Round]");
 			}
 			else
 			{
