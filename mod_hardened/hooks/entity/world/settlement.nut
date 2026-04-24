@@ -88,7 +88,7 @@
 					}
 					else if (entry.S == "accessory/armored_warhound_item")
 					{
-						entry.R = 95;	// Reforged: 80
+						entry.R = 99;	// Reforged: 80
 					}
 					else if (entry.S == "accessory/wardog_item")
 					{
@@ -96,7 +96,7 @@
 					}
 					else if (entry.S == "accessory/armored_wardog_item")
 					{
-						entry.R = 95;	// Reforged: 80
+						entry.R = 99;	// Reforged: 80
 					}
 				}
 
