@@ -47,6 +47,7 @@
 		if (this.requirementsMet() == false) return;
 
 		local actor = this.getContainer().getActor();
+		if (!actor.isActiveEntity()) return;
 		if (actor.m.CurrentMovementType == ::Const.Tactical.MovementType.Involuntary) return;	// Pushing/Pulling an enemy does not trigger formidable approach
 
 		// MoraleCheck
