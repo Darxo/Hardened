@@ -30,6 +30,30 @@
 
 # Changelog
 
+1.14.4
+	- Increase chance for **Goblin Stalker** to drop **Goblin Poison** to 20% (up from 10%)
+	- **Fault Finder** now spawn with **Knifes** instead of **Daggers**
+	- **Armored Wardogs** and **Armored Warhounds** in Marketplaces now have a rarity of 99 (up from 95)
+	- **Rally the Troops** skill and tooltip are rewritten but work very similar. Distance Penalty now effects both morale checks, instead of only the non-fleeing ones. Distance Penalty is now -15 per tile between the user and the target (instead of -10 per tile distance from the user to target)
+	- The Numeral **Lots of** now means 16-23 (up from 16-21)
+	- The Numeral **Dozens** now means 24-36 (from 22-37)
+	- The Numeral **A plethora** now means 37-69 (down from 38-69)
+	- NPCs are now less likely to use **Break Free** while in Zone of Control, if the chance to succeed is low
+	- Add setting (on) for displaying combat log entries whenever a Non-Attack skill is used
+	- Display hitchances for secondary targets when previewing AoE Attacks
+	- Display Range on the skill for throwing various flasks and bombs
+	- Fix wording in some cooldown-related skill tooltips
+	- Improve wording and icons of cover ally skill tooltip conditions
+	- Improve hitchance icon and text when targeting with Non-Attacks
+	- Clarify in **Whirling Death** tooltip, that it can only be used once per round
+	- Improve compatibility of **Elusive** and **Scount** code
+	- Slightly improve accuracy of locating the _config.nut file
+	- Remove **Pathfinder** vanilla fix
+	- Fix(Vanilla) fleeing enemies in Zone of Control sometimes not breaking themselves free from roots
+	- Fix(Vanilla) hitfactor tooltips displaying hitchance related entries for Non-Attacks
+	- Fix(Vanilla) tile preview for many ranged Non-Attack skills not being accurate when the targeted tile level is different by more than 1
+	- Fix(Vanilla) covering tiles being highlighted when aiming with Non-Attacks
+
 1.14.3
 	- Fix Settlements not receiving new contracts after day 1
 

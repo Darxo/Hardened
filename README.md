@@ -169,9 +169,9 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 	- 4-6: Some
 	- 7-10:	Several
 	- 11-15: Many
-	- 16-21: Lots
-	- 22-37: Dozens
-	- 38-69: A plethora
+	- 16-23: Lots
+	- 24-36: Dozens
+	- 37-69: A plethora
 	- 70+: An army
 - You can no longer see the exact size of enemy parties on the world map
 - Add settings to control, whether to display Numerals or their actual Ranges
@@ -345,7 +345,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Polearm Mastery** now makes skills cost 20% less Fatigue (down from 25%). It no longer reduces the Action Point cost of 2 handed reach weapons by 1. It now grants +15% chance to hit for **Repel** and **Hook**.
 - **Professional** now reduces the experience gained by 5%
 - **Quickhands** can now also swap two two-handed weapons, just like in Vanilla. It now stacks with other effects that grant free swaps
-- **Rally the Troops** can now also be used even the user was already rallied by someone else this round
+- **Rally the Troops** skill and tooltip is streamlined: It now explicitely has a cooldown of 1 round. It can now be used, even after you were rallied by someone else. Multiple uses of **Rally the Troops** can now affect the same character multiple times. Morale Checks now have a penalty of -15 per tile between the target and you (instead of -10 per tile distance). Rallying a fleeing character is now also affected by the distance penalty
 - **Rattle** is now called **Full Force** and has been completely reworked. It now causes you to spend all remaining Action Points whenever you attack during your turn and gain 8% more Damage and 8% more Shield Samage per Action Point spent. The effect is double for one-handed weapons
 - **Rebuke** is completely reworked. It now grants the **Rebuke Effect** whenever an opponent misses a melee attack against you while it's not your turn, until the start of your next turn. This effect reduces your damage by 25% but will make you retaliate every melee attack miss against you
 - **Resilient** is completely reworked: Negative status effects on you last -1 turn (to a minimum of 1). Whenever **stunned** expires on you, become immune to being stunned until the start of your next turn
@@ -779,8 +779,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Throwing Net** now has 4 Weight (up from 2)
 - **Tools and Supplies** are now marked as `IsBuildingSupply`, causing them to be affected by building-supply-related settlement situations
 - **Unhold Fur Cloak** now grants 15 Condition (up from 10)
-- **Wardogs** now cost 250 Crowns (up from 200) and the variant with dog armor costs 450 Crowns (up from 400). They appear ~75% less often in regular marketplaces
-- **Warhounds** now cost 400 Crowns (up from 300) and the variant with dog armor costs 600 Crowns (up from 500). They appear ~75% less often in regular marketplaces
+- **Wardogs** now cost 250 Crowns (up from 200) and the variant with dog armor costs 450 Crowns (up from 400). In Marketplaces, **Wardogs** now have 95 rarity (up from 70) and **Armored Wardogs** now have 99 rarity (up from 80)
+- **Warhounds** now cost 400 Crowns (up from 300) and the variant with dog armor costs 600 Crowns (up from 500). In Marketplaces, **Warhounds** now have 95 rarity (up from 70) and **Armored Warhounds** now have 99 rarity (up from 80)
 - **Wooden Shields** now cost 160 Crowns (up from 100) and appear less common in marketplaces
 - **Worn Mail Shirt** can now appear in the Variant 50, which is a skin that previously was used by **Decayed Reinforced Mail Hauberk**
 - Ammo now has weight. All **Quivers** and **Powder Bags** weigh 0 when empty. When full, regular ones weigh 2, **Large Quivers** weigh 5, and **Large Powder Bags** weigh 4.
@@ -832,7 +832,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - All **Skeletons** no longer grant experience after being resurected
 - **Ghost Racial** no longer grants +10 Melee Defend and +10 Ranged Defense per tile between the attacker and you. It now grants the **Ethereal** perk
 - **Skeleton Racial** now explicitely causes 100% less **Fatigue** build-up
-- **Flesh Golems** lose **Full Force**, gain **Savage Strength** and take 50% more burning damage to hitpoints
+- **Flesh Golems** take 50% more burning damage to hitpoints
 - **Necromancer** lose 20 natural body armor. **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)
 - **Necrosavants** now require the target to have red blood in order to leech life from them, instead of being able to leech life from anyone. They lose immunity against poison
 - **Phylacteries** (Sunken Library Fight) now remain visible after you discovered them once
@@ -973,7 +973,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - NPCs are 10% more likely per **Unstoppable** stack on the target, to use a skill which applies staggered on a hit
 - NPCs are 50% less likely to attack into an active **Rebuke**
 - NPCs are 50% more likely use **Disarm** onto enemies with **Spearwall** or **Riposte**
-- NPCs are 1% less likely to use **Break Free** for every Melee Defense below 20 that they have and 1% more likely per Melee Defense above 20
+- NPCs are 1% less likely to use **Break Free** while in Zone of Control per 1% chance to succeed below 100%. And they are 1% more likely to use it per point of Melee Defense
 - NPCs are 20% more likely to try to destroy shields of someone with **Phalanx** perk
 - NPCs are 50% more likely to try to destroy shields of someone with **One with the Shield** perk
 - NPCs are 1% more likely to focus Nachzehrer sitting on consumable corpses for every % of hitpoints missing on them
@@ -1217,8 +1217,8 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 ### Combat
 
 - Add Setting (on) to for
-  - displaying hitchance labels for all targetable characters whenever you preview an attack skill
-  - display chance to dodge label on the active entity, whenever you preview movement while in a Zone of Control
+  - displaying hitchance labels for all targetable primary (targetable) and secondary (if AoE skill) characters whenever you preview an attack skill
+  - displaying chance to dodge label on the active entity, whenever you preview movement while in a Zone of Control
 - Projectiles which fly into obstacles now play a sound effect and shake the targeted object a bit
 - Improve restore item after battle logic, to also restore items, which were dropped to the ground or picked up by another brother during battle
 - Automatically replace broken (shields) or used (nets) equipment after each battle, if you have replacements in your inventory
@@ -1245,6 +1245,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Add setting (on) to generate combat logs about chances and rolls for bypassing cover, when aiming at targets that are in cover
 - Add setting (on) for showing your uncapped hitchance during combat, when it would exceed the maximum possible hitchance
 - Add Setting (on) for displaying skill tags in the descriptions of active skills
+- Add setting (on) for displaying combat log entries whenever a Non-Attack skill is used
 - Improve visibility of Miasma and Burning Ground
 - Spawn an overlay animation when depleting a throwing weapon or a quiver
 - **Hand to Hand** and **Zombie Bite** skills will now always be sorted to the front in the UI
@@ -1415,6 +1416,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
 - Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
 - Hitpoints recovery on brothers is now more accurate (camping recovery fix)
+- Fix fleeing enemies in Zone of Control sometimes not breaking themselves free from roots
 - Fix Armor Damage on Weapon tooltips sometimes being off by 1%
 - Fix noble troops spawning for a settlement faction, failing to spawn tabards during combat and glitching out
 - Fix contracts rarely triggering start function multiple times
@@ -1425,6 +1427,9 @@ This section talks about adjustments made to other optional mods, when present a
 - Dying enemies no longer set the LastCombatResult to `EnemyDestroyed`, unless they were the last one to die. This fixes a rare Sunken Library exploit
 - Unique Locations are no longer attackable, if there is a party, hostile to the player, directly next to it (fixes exploit for skipping Goblin City quest)
 - **Knock Back** now displays its hitchance bonus correctly in the preview
+- Fix hitfactor tooltips displaying hitchance related entries for Non-Attacks
+- Fix covering tiles being highlighted when aiming with Non-Attacks
+- Fix tile preview for many ranged Non-Attack skills not being accurate when the targeted tile level is different by more than 1 level
 - Fix shields sometimes showing up as damaged even if they have more than 50% condition
 - Fix UI Scale in the options being able to be set to a value that can brick your UI
 - Fix world map zoom sometimes zooming too far during lag

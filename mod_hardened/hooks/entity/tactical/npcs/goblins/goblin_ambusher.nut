@@ -77,7 +77,7 @@
 		b.TargetAttractionMult = 1.1;
 
 		// Generic Effects
-		this.getSkills().add(::new("scripts/skills/racial/goblin_ambusher_racial"));
+		this.getSkills().add(::new("scripts/skills/racial/goblin_ambusher_racial"));	// Poison on hit
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_anticipation"));
@@ -98,7 +98,8 @@
 
 		if (::Math.rand(1, 100) <= 20)
 		{
-			this.getItems().addToBag(::new("scripts/items/accessory/poison_item"));	// This is just added as a drop. Goblin Ambusher have a special effect to always poison
+			// Similar to Vanilla, we randomly put poison items into their bags, so that they will drop those as loot
+			this.getItems().addToBag(::new("scripts/items/accessory/poison_item"));
 		}
 	}
 });
