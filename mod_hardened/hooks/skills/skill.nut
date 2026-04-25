@@ -309,6 +309,13 @@
 		{
 			__original();
 			this.m.IsAudibleWhenHidden = false;		// In Hardened you will never hear skills if the user is hidden to you
+
+			// Vanilla Fix: Tile Preview for skills not working correctly when tile level difference is greater than 1
+			if (this.isActive() && !this.isAttack() && this.isTargeted())
+			{
+				this.m.IsRanged = true;		// Required, so that the preview tiles render correctly when more than 1 level difference from targetMaxRangeBonus
+				this.m.MaxRangeBonus = 0;	// Required, so that this skill does not get bonus range downhills
+			}
 		}
 	}
 
