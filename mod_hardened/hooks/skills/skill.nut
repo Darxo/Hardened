@@ -15,6 +15,10 @@
 			local phrasesToRemove = [];
 			if (this.isAttack())
 			{
+				// Feat: remove headshot chance added by reforged, as we replace it later
+				phrasesToRemove.extend([
+					"chance to hit head",
+				]);
 			}
 			else
 			{
@@ -42,26 +46,16 @@
 		}
 
 		// New Entries
-		// Feat: add tooltip about Headshot chance
-		if (this.isAttack())
 		{
-			// First remove remove the headshot entry, created by reforged
-			foreach (index, entry in ret)
+			if (this.isAttack())
 			{
-				// We know only ever one of these two can exist in ret at the same time, so we can remove them like this
-				if (entry.text.find("chance to hit head") != null)
-				{
-					ret.remove(index);
-					break;
-				}
+				// Feat: We add a hyperlinked one-liner hitfactor about headshot chance, that is accurately calculated
+				local headshotChance = properties.getHeadHitchance(::Const.BodyPart.Head, this.getContainer().getActor(), this, target);
+				ret.insert(0, {
+					icon = "ui/icons/chance_to_hit_head.png",
+					text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(headshotChance, {AddPercent = true}) + " [Headshot chance|Concept.ChanceToHitHead]"),
+				});
 			}
-
-			// We want a hyperlinked one-liner, that is more accurately calculated
-			local headshotChance = properties.getHeadHitchance(::Const.BodyPart.Head, this.getContainer().getActor(), this, target);
-			ret.insert(0, {
-				icon = "ui/icons/chance_to_hit_head.png",
-				text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(headshotChance, {AddPercent = true}) + " [Headshot chance|Concept.ChanceToHitHead]"),
-			});
 		}
 
 		return ret;
