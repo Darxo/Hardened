@@ -32,6 +32,9 @@
 			{
 				if (!_targetedWithSkill.isAttack() && !_targetedWithSkill.isUsingHitchance())
 				{
+					// Feat: for non-attacks, which don't use hitchances, we display a new special text and icon
+					entry.text = "Valid Target";
+					entry.icon = "ui/icons/special.png";
 				}
 				else
 				{
