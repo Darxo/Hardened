@@ -16,6 +16,7 @@ this.perk_hd_elusive <- ::inherit("scripts/skills/skill", {
 		this.m.Description = "You are impossible to pin down!";
 		this.m.Icon = "ui/perks/perk_rf_trip_artist.png";
 		this.m.IconMini = "perk_hd_elusive_mini";
+		this.m.Overlay = "perk_hd_elusive";
 		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
 		this.m.Order = ::Const.SkillOrder.Perk;
 	}
@@ -99,7 +100,7 @@ this.perk_hd_elusive <- ::inherit("scripts/skills/skill", {
 		// Usually we'd want the tile calculation to be more sophisticated, but since we stop counting at 2 tiles, we dont have to deal with curves
 		if (this.m.TilesMovedThisTurn >= this.m.RequiredTileDistance)
 		{
-			this.m.IsInEffect = true;
+			this.HD_triggerEffect();
 		}
 	}
 
@@ -107,5 +108,19 @@ this.perk_hd_elusive <- ::inherit("scripts/skills/skill", {
 	function onSpawned()
 	{
 		this.m.PrevTile = this.getContainer().getActor().getTile();
+	}
+
+// New Functions
+	function HD_triggerEffect()
+	{
+		if (this.m.IsInEffect) return;
+
+		this.m.IsInEffect = true;
+
+		local actor = this.getContainer().getActor();
+		if (!actor.isHiddenToPlayer())
+		{
+			this.spawnIcon(this.m.Overlay, actor.getTile());
+		}
 	}
 });
