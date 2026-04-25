@@ -295,6 +295,8 @@
 					if (skill.isUsableOn(otherActor.getTile()))
 					{
 						otherActor.m.HD_ChanceToBeHit = skill.getHitchance(otherActor);
+
+						this.HD_showHitchanceTargetSelected(skill, otherActor);
 					}
 				}
 
@@ -303,6 +305,26 @@
 		}
 
 		::Tactical.State.m.TacticalScreen.getOrientationOverlayModule().HD_fullUpdateHitchanceOverlays();
+	}
+
+	// Call this.onTargetSelected, but intercept any overlay highlighting and instead assign all targets
+	q.HD_showHitchanceTargetSelected <- function( _skill, _target )
+	{
+		local mockObject = ::Hardened.mockFunction(::Tactical.getHighlighter(), "addOverlayIcon", function( _icon, _tile, _x, _y ) {
+			if (_icon == ::Const.Tactical.Settings.AreaOfEffectIcon)
+			{
+				if (_tile.IsOccupiedByActor)
+				{
+					local target = _tile.getEntity();
+					target.m.HD_ChanceToBeHit = _skill.getHitchance(target);
+				}
+				return { value = null };	// We don't want to call the original
+			}
+		});
+
+		_skill.onTargetSelected(_target.getTile());
+
+		mockObject.cleanup();
 	}
 
 	// Recover hitpoints up to the maximum and return the amount of hitpoints that were recovered
