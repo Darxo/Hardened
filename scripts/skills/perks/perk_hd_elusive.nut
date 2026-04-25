@@ -93,7 +93,10 @@ this.perk_hd_elusive <- ::inherit("scripts/skills/skill", {
 
 	function onMovementFinished()
 	{
-		local tile = this.getContainer().getActor().getTile();
+		local actor = this.getContainer().getActor();
+		if (!actor.isActiveEntity()) return;
+
+		local tile = actor.getTile();
 		this.m.TilesMovedThisTurn += tile.getDistanceTo(this.m.PrevTile);
 		this.m.PrevTile = tile;
 
