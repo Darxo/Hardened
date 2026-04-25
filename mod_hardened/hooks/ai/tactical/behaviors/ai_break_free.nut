@@ -13,10 +13,12 @@
 		this.m.Skill = this.selectSkill(this.m.PossibleSkills);
 		if (this.m.Skill == null) return zero;
 
+		// A player character will ignore this behavior, unless he is fleeing or retreating
+		if (_entity.isPlayerControlled() && _entity.getMoraleState() != ::Const.MoraleState.Fleeing && !::Tactical.State.isAutoRetreat()) return zero;
+
 		// A fleeing character will always want to break free
 		if (_entity.getMoraleState() == ::Const.MoraleState.Fleeing) return ::Const.AI.Behavior.Score.BreakFree;
-
-		// A player character will always want to break free during auto retreat
+		// A retreating player character will always want to break free
 		if (_entity.isPlayerControlled() && ::Tactical.State.isAutoRetreat()) return ::Const.AI.Behavior.Score.BreakFree;
 
 		local scoreMult = this.getProperties().BehaviorMult[this.m.ID];
