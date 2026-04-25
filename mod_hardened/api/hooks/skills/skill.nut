@@ -110,6 +110,14 @@
 		}
 	}
 
+	q.onTargetSelected = @(__original) function( _targetTile )
+	{
+		// Vanilla Fix: Cover being highlighted for non-attacks
+		if (!this.isAttack()) return;
+
+		__original(_targetTile);
+	}
+
 // MSU Functions
 	q.softReset = @(__original) function()
 	{
