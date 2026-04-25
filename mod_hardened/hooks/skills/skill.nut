@@ -10,6 +10,37 @@
 		local target = _targetTile.getEntity();
 		local properties = this.getContainer().buildPropertiesForUse(this, target);
 
+		// Remove Entries
+		{
+			local phrasesToRemove = [];
+			if (this.isAttack())
+			{
+			}
+			else
+			{
+				// Feat: remove attack-related hitfactor tooltips, when aiming with non-attacks
+				phrasesToRemove.extend([
+					"Distance of",
+					"Height Advantage",
+					"Height Disadvantage",
+					"Surrounded",
+					"Too close",
+				]);
+			}
+
+			for (local index = (ret.len() - 1); index >= 0; index--)
+			{
+				local entry = ret[index];
+				foreach (phrase in phrasesToRemove)
+				{
+					if (entry.text.find(phrase) == null) continue;
+
+					ret.remove(index);
+					break;
+				}
+			}
+		}
+
 		// New Entries
 		// Feat: add tooltip about Headshot chance
 		if (this.isAttack())
