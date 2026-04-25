@@ -5,34 +5,32 @@
 	q.getHitFactors = @(__original) function( _targetTile )
 	{
 		local ret = __original(_targetTile);
+		if (!_targetTile.IsOccupiedByActor) return ret;
+
+		local target = _targetTile.getEntity();
+		local properties = this.getContainer().buildPropertiesForUse(this, target);
 
 		// New Entries
-		if (_targetTile.IsOccupiedByActor)
+		// Feat: add tooltip about Headshot chance
+		if (this.isAttack())
 		{
-			local target = _targetTile.getEntity();
-			local properties = this.getContainer().buildPropertiesForUse(this, target);
-
-			// Headshot chance
-			if (this.isAttack())
+			// First remove remove the headshot entry, created by reforged
+			foreach (index, entry in ret)
 			{
-				// First remove remove the headshot entry, created by reforged
-				foreach (index, entry in ret)
+				// We know only ever one of these two can exist in ret at the same time, so we can remove them like this
+				if (entry.text.find("chance to hit head") != null)
 				{
-					// We know only ever one of these two can exist in ret at the same time, so we can remove them like this
-					if (entry.text.find("chance to hit head") != null)
-					{
-						ret.remove(index);
-						break;
-					}
+					ret.remove(index);
+					break;
 				}
-
-				// We want a hyperlinked one-liner, that is more accurately calculated
-				local headshotChance = properties.getHeadHitchance(::Const.BodyPart.Head, this.getContainer().getActor(), this, target);
-				ret.insert(0, {
-					icon = "ui/icons/chance_to_hit_head.png",
-					text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(headshotChance, {AddPercent = true}) + " [Headshot chance|Concept.ChanceToHitHead]"),
-				});
 			}
+
+			// We want a hyperlinked one-liner, that is more accurately calculated
+			local headshotChance = properties.getHeadHitchance(::Const.BodyPart.Head, this.getContainer().getActor(), this, target);
+			ret.insert(0, {
+				icon = "ui/icons/chance_to_hit_head.png",
+				text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(headshotChance, {AddPercent = true}) + " [Headshot chance|Concept.ChanceToHitHead]"),
+			});
 		}
 
 		return ret;
