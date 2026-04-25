@@ -107,7 +107,7 @@
 	{
 		__original(_attacker, _skill, _hitinfo, _properties);
 
-		if (::MSU.isNull(_skill) == null) return;
+		if (::MSU.isNull(_skill)) return;
 		if (!_skill.isAttack()) return;
 		if (_attacker == null) return;
 		if (_attacker.isAlliedWith(this.getContainer().getActor())) return;
