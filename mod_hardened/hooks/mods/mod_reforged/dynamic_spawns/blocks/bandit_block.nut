@@ -27,6 +27,6 @@
 
 {	// UnitBlock.RF.BanditDisguisedDirewolf
 	local banditDirewolfs = ::Reforged.Spawns.UnitBlocks["UnitBlock.RF.BanditDisguisedDirewolf"];
-	banditDirewolfs.DynamicDefs.Units.insert(1, { BaseID = "Unit.RF.RF_BanditHighwayman", HardMax = 3 });		// T3 Fast Bandits are new highest tier for disguised bandits
+	banditDirewolfs.DynamicDefs.Units.insert(1, { BaseID = "Unit.RF.RF_BanditHighwayman", HardMax = 3, DeterminesFigure = false });		// T3 Fast Bandits are new highest tier for disguised bandits
 	banditDirewolfs.TierWidth <- 2;		// Reforged: unrestricted;
 }
