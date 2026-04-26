@@ -4,22 +4,27 @@
 
 	q.log = @(__original) function( _text )
 	{
-		if (!::Hardened.Mod.ModSettings.getSetting("CombineCombatSkillLogs").getValue() || ::Hardened.Temp.RootSkillCounter == null)
+		if (this.HD_isCombiningLogs())
 		{
-			return __original(_text);
-		}
-
-		if (::Hardened.Temp.RootSkillCounter == this.m.LastSkillCounter)
-		{
-			// If we meet the new root-skill counter the second time around and any future times, we redirect logs so they don't produce newlines
+			// Feat: We combine log lines under certain circumstances to make the log more readable
 			this.logEx(_text);
 		}
 		else
 		{
-			// If the current root-skill is different from the last one we generated logs for, we don't change the behavior and let it create a newline
-			// We save that root-skill counter
-			this.m.LastSkillCounter = ::Hardened.Temp.RootSkillCounter;
 			__original(_text);
 		}
+
+		// We save that root-skill counter, so that next time we know if we need to combine lines
+		this.m.LastSkillCounter = ::Hardened.Temp.RootSkillCounter;
+	}
+
+// New Functions
+	q.HD_isCombiningLogs <- function()
+	{
+		if (::Hardened.Temp.RootSkillCounter == null) return false;		// We are not in the execution of a skill
+		if (::Hardened.Temp.RootSkillCounter != this.m.LastSkillCounter) return false;
+		if (!::Hardened.Mod.ModSettings.getSetting("CombineCombatSkillLogs").getValue()) return false;		// Mod setting is not active
+
+		return true;
 	}
 });
