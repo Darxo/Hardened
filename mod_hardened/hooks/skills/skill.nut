@@ -2,6 +2,27 @@
 	// Private
 	q.m.HD_PreviousRandomResult <- 0;	// We save the previous damage roll here, so we can make sure that armor and hitpoint rolls are exactly the same
 
+	q.use = @(__original) function( _targetTile, _forFree = false )
+	{
+		local actor = this.getContainer().getActor();
+		// Feat: We display a combat log, whenever anyone uses a Non-Attack with at least a certain AP cost. Vanilla only prints combat use-logs for Attacks
+		if (!_forFree && !this.isAttack() && this.getActionPointCost() >= ::Hardened.Mod.ModSettings.getSetting("CombatLogForNonAttackUse").getValue())	// Attacks are already covered with vanilla combat logs
+		{
+			if (_targetTile.IsVisibleForPlayer || !actor.isHiddenToPlayer())
+			{
+				local useText = ::Const.UI.getColorizedEntityName(actor) + " uses " + this.getName();
+
+				if (_targetTile.IsOccupiedByActor && !_targetTile.isSameTileAs(actor.getTile()))
+				{
+					useText += " targeting " + ::Const.UI.getColorizedEntityName(_targetTile.getEntity());
+				}
+				::Tactical.EventLog.log(useText);
+			}
+		}
+
+		return __original(_targetTile, _forFree);
+	}
+
 	q.getHitFactors = @(__original) function( _targetTile )
 	{
 		local ret = __original(_targetTile);
