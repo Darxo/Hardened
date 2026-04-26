@@ -18,7 +18,6 @@
 - Hitchances of Lunge-Like attacks can be inaccurate as the act of moving next to your target can enable/disable various effects
 - Oathtaker on existing saves (outside of the Oathtaker Origin), which gained an Oath while playing regular Reforged are stuck with that oath after adding Hardened
 - Stunning with a Lute no longer grants the Lute Achievement
-- The Tactician skill ranges are not highlighted correctly when previewing them. It is intended that they can be used beyond 1 tile level difference
 
 # Compatibility with mods
 
@@ -29,6 +28,15 @@
 - Is safe to remove from- and add to any existing savegames
 
 # Changelog
+
+1.14.5
+	- **Ancient Honor Guards** lose **Mauler** and **Tempo**
+	- Display Overlay Icon when **Elusive** triggers
+	- Restrict **Elusive** to only count tiles moved during your turn
+	- Restrict **Formidable Approach** to only trigger during your turn
+	- Fix player characters trying to free themselves automatically
+	- Fix combat freeze when a character with **Feral Rage** takes damage from burning ground
+	- Fix missing word in **Agent** retinue effect description
 
 1.14.4
 	- Increase chance for **Goblin Stalker** to drop **Goblin Poison** to 20% (up from 10%)
