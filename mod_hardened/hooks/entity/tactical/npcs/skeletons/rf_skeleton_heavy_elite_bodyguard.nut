@@ -61,7 +61,6 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_duelist"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_battle_forged"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_sanguinary"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_mauler"));
 	}
 
 	// Assign Head and Body armor to this character

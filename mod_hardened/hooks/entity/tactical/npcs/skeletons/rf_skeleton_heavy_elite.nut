@@ -58,12 +58,10 @@
 		{
 			if (weapon.isWeaponType(::Const.Items.WeaponType.Cleaver))
 			{
-				this.getSkills().add(::new("scripts/skills/perks/perk_rf_mauler"));
 				this.getSkills().add(::new("scripts/skills/perks/perk_rf_sanguinary"));
 			}
 			else if (weapon.isWeaponType(::Const.Items.WeaponType.Sword))
 			{
-				this.getSkills().add(::new("scripts/skills/perks/perk_rf_tempo"));
 				this.getSkills().add(::new("scripts/skills/perks/perk_rf_death_dealer"));
 			}
 		}
