@@ -7,7 +7,7 @@
 		this.m.ID = "follower.HD_agent";	// We change the ID, so that the settlement.nut tooltip no longer applies the vanilla effect
 		this.m.Effects[0] = "+1 Maximum Contract in Settlements";
 		this.m.Effects.push("Civilian Contracts refresh 1 days sooner");
-		this.m.Effects.push("Tavern Rumors more likely to contain useful information");
+		this.m.Effects.push("Tavern Rumors are more likely to contain useful information");
 	}
 
 	q.onUpdate = @(__original) function()
