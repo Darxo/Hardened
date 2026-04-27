@@ -16,7 +16,21 @@
 		}
 		::Tactical.EventLog.log(useText);
 
-		return __original(_targetTile, _forFree);
+		// Now we snipe the very next log, if it was a hard-coded "uses"-log. Vanilla has done this for a few skills
+		local skillName = this.getName();
+		local mockObject = ::Hardened.mockFunction(::Tactical.EventLog, "log", function( _text ) {
+			if (_text.find(" uses ") != null && _text.find(skillName) != null)
+			{
+				return { done = true, value = null };
+			}
+			return { done = true };		// In any case we only ever look at the next log
+		});
+
+		local ret = __original(_targetTile, _forFree);
+
+		mockObject.cleanup();
+
+		return ret;
 	}
 
 	q.getHitFactors = @(__original) function( _targetTile )
