@@ -4,21 +4,17 @@
 
 	q.use = @(__original) function( _targetTile, _forFree = false )
 	{
+		if (!this.HD_isPrintingUseLog(_targetTile, _forFree)) return __original(_targetTile, _forFree);
+
 		local actor = this.getContainer().getActor();
 		// Feat: We display a combat log, whenever anyone uses a Non-Attack with at least a certain AP cost. Vanilla only prints combat use-logs for Attacks
-		if (!_forFree && !this.isAttack() && this.getActionPointCost() >= ::Hardened.Mod.ModSettings.getSetting("CombatLogForNonAttackUse").getValue())	// Attacks are already covered with vanilla combat logs
-		{
-			if (_targetTile.IsVisibleForPlayer || !actor.isHiddenToPlayer())
-			{
-				local useText = ::Const.UI.getColorizedEntityName(actor) + " uses " + this.getName();
 
-				if (_targetTile.IsOccupiedByActor && !_targetTile.isSameTileAs(actor.getTile()))
-				{
-					useText += " targeting " + ::Const.UI.getColorizedEntityName(_targetTile.getEntity());
-				}
-				::Tactical.EventLog.log(useText);
-			}
+		local useText = ::Const.UI.getColorizedEntityName(actor) + " uses " + this.getName();
+		if (_targetTile.IsOccupiedByActor && !_targetTile.isSameTileAs(actor.getTile()))
+		{
+			useText += " targeting " + ::Const.UI.getColorizedEntityName(_targetTile.getEntity());
 		}
+		::Tactical.EventLog.log(useText);
 
 		return __original(_targetTile, _forFree);
 	}
@@ -320,6 +316,19 @@
 		if (itemTags != "") itemTags = itemTags.slice(0, -2);
 
 		return ::MSU.Text.color("#1e468f", "Tags: ") + itemTags;
+	}
+
+	q.HD_isPrintingUseLog <- function( _targetTile, _forFree )
+	{
+		if (_forFree) return false;
+		if (this.isAttack()) return false;	// Attacks are already covered with vanilla combat logs
+
+		local actor = this.getContainer().getActor();
+		if (!_targetTile.IsVisibleForPlayer && actor.isHiddenToPlayer()) return false;
+
+		if (this.getActionPointCost() < ::Hardened.Mod.ModSettings.getSetting("CombatLogForNonAttackUse").getValue()) return false;
+
+		return true;
 	}
 });
 
