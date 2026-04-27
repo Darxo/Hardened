@@ -18,6 +18,7 @@
 - Hitchances of Lunge-Like attacks can be inaccurate as the act of moving next to your target can enable/disable various effects
 - Oathtaker on existing saves (outside of the Oathtaker Origin), which gained an Oath while playing regular Reforged are stuck with that oath after adding Hardened
 - Stunning with a Lute no longer grants the Lute Achievement
+- Brigand Killer spawning as "Disguised Bandits" in that contract twist, blow the cover when looking at their tooltip
 
 # Compatibility with mods
 
@@ -28,6 +29,12 @@
 - Is safe to remove from- and add to any existing savegames
 
 # Changelog
+
+1.14.6
+	- **Charmed** (from **Hexen**) now also grants **Resilient**
+	- Fix **Disguised Brigand Killer** not using the direwolf world figure
+	- Fix some skills producing duplicate use-logs
+	- Fix **Abandoned Village** fight not starting correctly
 
 1.14.5
 	- **Ancient Honor Guards** lose **Mauler** and **Tempo**
