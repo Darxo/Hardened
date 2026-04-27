@@ -4,6 +4,7 @@
 		::Const.FactionType.Bandits,
 		::Const.FactionType.Barbarians,
 		::Const.FactionType.Beasts,
+		::Const.FactionType.RF_Draugr,
 		::Const.FactionType.Goblins,
 		::Const.FactionType.Orcs,
 		::Const.FactionType.OrientalBandits,
