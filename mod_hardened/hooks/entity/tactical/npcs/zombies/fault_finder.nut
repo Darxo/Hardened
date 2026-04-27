@@ -7,7 +7,7 @@
 		__original();
 
 		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/armor/oriental/fault_finder_robes"],
+			[12, "scripts/items/armor/golems/fault_finder_robes"],
 		]);
 
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
