@@ -11,7 +11,7 @@
 	q.onAddedToStash = @(__original) function( _stashID )
 	{
 		__original(_stashID);
-		if (!::Hardened.Temp.LootAllItemsButtonPressed && _stashID == "player")
+		if (_stashID == "player")
 		{
 			this.consume();
 			::World.Assets.getStash().remove(this);
