@@ -2,6 +2,6 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Value = 200;		// Vanilla: 150
+		this.m.Value = 300;		// Vanilla: 150
 	}
 });
