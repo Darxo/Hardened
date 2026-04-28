@@ -435,7 +435,7 @@
 	::Const.Tactical.Actor.Zombie.RangedSkill = 0;		// Vanilla: 5
 	::Const.Tactical.Actor.Zombie.MeleeDefense = -10;	// Vanilla: -5
 	::Const.Tactical.Actor.Zombie.RangedDefense = -10;	// Vanilla: -5
-	::Const.Tactical.Actor.Zombie.Initiative = 50;		// Vanilla: 45
+	::Const.Tactical.Actor.Zombie.Initiative = 40;		// Vanilla: 45
 }
 
 // scripts/entity/tactical/enemies/zombie_player
@@ -450,7 +450,7 @@
 	::Const.Tactical.Actor.ZombiePlayer.RangedSkill = 0;		// Vanilla: 0
 	::Const.Tactical.Actor.ZombiePlayer.MeleeDefense = 5;		// Vanilla: 5
 	::Const.Tactical.Actor.ZombiePlayer.RangedDefense = 5;		// Vanilla: 5
-	::Const.Tactical.Actor.ZombiePlayer.Initiative = 50;		// Vanilla: 50
+	::Const.Tactical.Actor.ZombiePlayer.Initiative = 40;		// Vanilla: 50
 }
 
 // scripts/entity/tactical/enemies/zombie_yeoman
@@ -466,7 +466,7 @@
 	::Const.Tactical.Actor.ZombieYeoman.RangedSkill = 0;		// Vanilla: 0
 	::Const.Tactical.Actor.ZombieYeoman.MeleeDefense = -5;		// Vanilla: -5
 	::Const.Tactical.Actor.ZombieYeoman.RangedDefense = -5;		// Vanilla: -5
-	::Const.Tactical.Actor.ZombieYeoman.Initiative = 50;		// Vanilla: 45
+	::Const.Tactical.Actor.ZombieYeoman.Initiative = 40;		// Vanilla: 45
 }
 
 // scripts/entity/tactical/enemies/zombie_nomad
