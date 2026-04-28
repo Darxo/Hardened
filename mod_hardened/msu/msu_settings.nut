@@ -182,4 +182,8 @@
 	qolCharScreenPage.addDivider("MiscDivider2");
 
 	qolCharScreenPage.addBooleanSetting("ShowAbsoluteMoodValue", true, "Show Absolute Mood Value", "When viewing the mood tooltip of a brother, display the current mood as an absolute value between 0.0 and 6.95. This improves your understanding on how much impact certain mood changes will have. In Vanilla this value is shows as a percentage.");
+
+	qolCharScreenPage.addDivider("MiscDivider3");
+
+	qolCharScreenPage.addBooleanSetting("EnableSmartAutoLoot", true, "Enable Smart Auto Loot", "Replace the default Auto-Loot Feature with a smarter system.\n\nWhen the Playerstash is full, the least valueable items are replaced with the excess loot.\n\nThe following itemtypes are ignored, when trying to make room:\n- Unique\n- Precious\n- Crafting\n- Food\n- Tool\n- Usable");
 }
