@@ -30,6 +30,9 @@
 		return ret;
 	}}.getTooltip;
 
+	// We delete this function to prevent overwhelmed from being removed at the start of a new round, as that is never communicated properly
+	q.onNewRound = @() function() {}
+
 // New Functions
 	q.getMeleeSkillMult <- function()
 	{
