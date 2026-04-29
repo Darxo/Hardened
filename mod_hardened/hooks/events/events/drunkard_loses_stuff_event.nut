@@ -58,4 +58,31 @@
 			}
 		});
 	}
+
+	// Overwrite, because we change some things about how the item is chosen
+	//	- Named Items are now ignored ignored
+	//	- This Event can even choose equipped items
+	q.onPrepare = @() function()
+	{
+		local candidates = [];
+		foreach (item in ::World.Assets.HD_getAllItems())
+		{
+			if (this.HD_isLosable(item))
+			{
+				candidates.push(item);
+			}
+		}
+		this.m.Item = ::MSU.Array.rand(candidates);
+		::World.Assets.HD_removeItemAnywhere(this.m.Item);
+	}
+
+// New Functions
+	q.HD_isLosable <- function( _item )
+	{
+		if (_item == null) return false;
+		if (_item.isUnique()) return false;
+
+		local losableTypes = ::Const.Items.ItemType.Weapon | ::Const.Items.ItemType.Shield | ::Const.Items.ItemType.Armor | ::Const.Items.ItemType.Helmet;
+		return _item.isItemType(losableTypes);
+	}
 });
