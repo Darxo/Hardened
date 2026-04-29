@@ -271,11 +271,10 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your Attacks against anyone who has not started their [turn|Concept.Turn] yet in the current [round|Concept.Round] apply [Overwhelmed|Skill+overwhelmed_effect] for one [turn|Concept.Turn].",
-					"The effect stacks with each attack, up to a maximum of 7 times, and can be applied to multiple targets at once with a single attack."
-				]
-			}]
-		})
+					"Your Attacks against anyone who has not started their [turn|Concept.Turn] yet in the current [round|Concept.Round] apply 1 stack of [$ $|Skill+overwhelmed_effect]",
+				],
+			}],
+		}),
 	},
 	{
 		ID = "perk.mastery.axe",

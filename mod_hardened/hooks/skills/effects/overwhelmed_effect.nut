@@ -2,6 +2,8 @@
 	q.m.HD_MeleeSkillPctPerStack <- -0.1;
 	q.m.HD_RangedSkillPctPerStack <- -0.1;
 
+	q.m.HD_LastsForTurns = 1;
+
 	q.getTooltip = @(__original) { function getTooltip()
 	{
 		local ret = __original();
@@ -17,6 +19,13 @@
 				entry.text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeMultWithText(this.getRangedSkillMult()) + " [Ranged Skill|Concept.RangeSkill]");
 			}
 		}
+
+		ret.push({
+			id = 15,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Maximum Stacks: " + ::MSU.Text.colorPositive(7),	// Currently hard-coded under Reforged
+		});
 
 		return ret;
 	}}.getTooltip;
