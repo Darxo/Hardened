@@ -200,15 +200,15 @@
 			// scripts/entity/tactical/enemies/goblin_wolfrider
 			::Reforged.Entities.editEntity("GoblinWolfrider",
 				{
-					Cost = 30, 		// Reforged: 20; Vanilla: 20
-					Strength = 30, 	// Reforged: 20; Vanilla: 20
+					Cost = 40, 		// Reforged: 20; Vanilla: 20
+					Strength = 40, 	// Reforged: 20; Vanilla: 20
 				},
 				{
 					XP = 300 * ::Hardened.Global.FactionExperience.Goblins,		// Vanilla: 200
 					ActionPoints = 13,
-					Hitpoints = 70,
+					Hitpoints = 80,
 					Bravery = 70,		// Vanilla: 60
-					Stamina = 100,		// Vanilla: 150
+					Stamina = 120,		// Vanilla: 150
 					MeleeSkill = 75,
 					RangedSkill = 50,
 					MeleeDefense = 15,

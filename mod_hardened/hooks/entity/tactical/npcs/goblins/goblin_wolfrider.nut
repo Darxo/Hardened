@@ -25,6 +25,10 @@
 			[12, "scripts/items/weapons/greenskins/goblin_spear"],
 			[12, "scripts/items/weapons/greenskins/goblin_falchion"],
 		]);
+
+		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/tools/throwing_net"],
+		]);
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
@@ -135,6 +139,7 @@
 		this.getSkills().add(::new("scripts/skills/racial/rf_goblin_wolfrider_racial"));
 
 		// Generic Perks
+		this.getSkills().add(::new("scripts/skills/perks/perk_coup_de_grace"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
 
 		// Generic Actives
