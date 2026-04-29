@@ -23,7 +23,7 @@
 	::Const.Tactical.Actor.GoblinShaman.ActionPoints = 9;
 	::Const.Tactical.Actor.GoblinShaman.Hitpoints = 70;
 	::Const.Tactical.Actor.GoblinShaman.Bravery = 80;
-	::Const.Tactical.Actor.GoblinShaman.Stamina = 90;
+	::Const.Tactical.Actor.GoblinShaman.Stamina = 110;
 	::Const.Tactical.Actor.GoblinShaman.MeleeSkill = 60;
 	::Const.Tactical.Actor.GoblinShaman.RangedSkill = 60;
 	::Const.Tactical.Actor.GoblinShaman.MeleeDefense = 10;
