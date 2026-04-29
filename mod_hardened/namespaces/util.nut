@@ -268,8 +268,6 @@
 	return true;
 }
 
-// Return the number of player characters and clamp that value between 6 and 12
-// This function is meant as a baseline for custom generateIdealSize implementations in dynamic parties
 ::Hardened.util.genericGenerateIdealSize <- function( _partyMult = 1.0 )
 {
 	local ret = ::Hardened.Global.IdealSizeBase;

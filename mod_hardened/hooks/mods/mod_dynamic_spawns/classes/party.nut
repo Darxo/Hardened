@@ -1,12 +1,27 @@
+::DynamicSpawns.Class.Party.__IdealSize <- 12;	// This is calculated at the start of a party generation
 // Return the number of troops up until that one, no upgrading may happen
-// This is meant to be overwritten by parties, which want to upgrade earlier or later
-::DynamicSpawns.Class.Party.generateIdealSize <- function()
+::DynamicSpawns.Class.Party.getIdealSize <- function()
 {
-	return ::Hardened.util.genericGenerateIdealSize();
+	return this.__IdealSize;
+}
+
+::DynamicSpawns.Class.Party.IdealSizeMult <- 1.0;	// This is meant to be adjusted by the party definition
+::DynamicSpawns.Class.Party.__generateIdealSize <- function()
+{
+	this.__IdealSize = ::Hardened.util.genericGenerateIdealSize(this.IdealSizeMult);
 }
 
 // Remove a spawnable, no matter how deep it is hiding within this spawnable
 ::DynamicSpawns.Class.Party.removeSpawnable <- function( _id, _all = true )
 {
 	return base.removeSpawnable(_id, _all);
+}
+
+{	// Hooks
+	local oldSpawn = ::DynamicSpawns.Class.Party.spawn;
+	::DynamicSpawns.Class.Party.spawn <- function( _resources = null )
+	{
+		this.__generateIdealSize();
+		return oldSpawn.call(this, _resources);
+	}
 }

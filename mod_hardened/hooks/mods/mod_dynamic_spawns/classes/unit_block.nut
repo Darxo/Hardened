@@ -3,7 +3,7 @@ local oldCanUpgrade = ::DynamicSpawns.Class.UnitBlock.canUpgrade;
 ::DynamicSpawns.Class.UnitBlock.canUpgrade <- function()
 {
 	local myParty = this.getTopParty();
-	if (myParty.generateIdealSize() > myParty.getTotal()) return false;
+	if (myParty.getIdealSize() > myParty.getTotal()) return false;
 
 	return oldCanUpgrade();
 }
