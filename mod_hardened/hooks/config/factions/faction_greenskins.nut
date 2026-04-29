@@ -1,18 +1,3 @@
-// scripts/entity/tactical/enemies/goblin_wolfrider
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.GoblinWolfrider.XP = 300 * ::Hardened.Global.FactionExperience.Goblins;
-	::Const.Tactical.Actor.GoblinWolfrider.ActionPoints = 13;
-	::Const.Tactical.Actor.GoblinWolfrider.Hitpoints = 70;
-	::Const.Tactical.Actor.GoblinWolfrider.Bravery = 70;		// Vanilla: 60
-	::Const.Tactical.Actor.GoblinWolfrider.Stamina = 100;		// Vanilla: 150
-	::Const.Tactical.Actor.GoblinWolfrider.MeleeSkill = 75;
-	::Const.Tactical.Actor.GoblinWolfrider.RangedSkill = 50;
-	::Const.Tactical.Actor.GoblinWolfrider.MeleeDefense = 15;
-	::Const.Tactical.Actor.GoblinWolfrider.RangedDefense = 25;	// Vanilla: 15
-	::Const.Tactical.Actor.GoblinWolfrider.Initiative = 130;
-}
-
 // scripts/entity/tactical/enemies/goblin_leader
 {
 	// Mandatory stats
@@ -205,6 +190,30 @@
 					RangedDefense = 25,
 					Initiative = 130,
 					Vision = 8,
+				}
+			);
+		}
+	}
+
+	{	// Flank
+		{	// Goblin Wolfrider
+			// scripts/entity/tactical/enemies/goblin_wolfrider
+			::Reforged.Entities.editEntity("GoblinWolfrider",
+				{
+					Cost = 30, 		// Reforged: 20; Vanilla: 20
+					Strength = 30, 	// Reforged: 20; Vanilla: 20
+				},
+				{
+					XP = 300 * ::Hardened.Global.FactionExperience.Goblins,		// Vanilla: 200
+					ActionPoints = 13,
+					Hitpoints = 70,
+					Bravery = 70,		// Vanilla: 60
+					Stamina = 100,		// Vanilla: 150
+					MeleeSkill = 75,
+					RangedSkill = 50,
+					MeleeDefense = 15,
+					RangedDefense = 25,
+					Initiative = 130,
 				}
 			);
 		}

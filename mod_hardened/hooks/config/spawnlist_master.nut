@@ -350,13 +350,6 @@
 	::Const.World.Spawn.Troops.Alp.Strength = 25;
 }
 
-// scripts/entity/tactical/enemies/goblin_wolfrider
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.GoblinWolfrider.Cost = 30;
-	::Const.World.Spawn.Troops.GoblinWolfrider.Strength = 30;
-}
-
 // scripts/entity/tactical/humans/rf_squire
 {
 	// Mandatory Entries
