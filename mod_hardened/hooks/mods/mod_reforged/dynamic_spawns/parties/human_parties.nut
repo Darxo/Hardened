@@ -1,5 +1,14 @@
 // Hooking
 {
+	::Reforged.Spawns.Parties["Cultists"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Civilians;
+	::Reforged.Spawns.Parties["Peasants"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Civilians * ::Hardened.Global.PartySizeMult.Caravan;
+	::Reforged.Spawns.Parties["PeasantsArmed"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Civilians;
+	::Reforged.Spawns.Parties["PeasantsSouthern"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Civilians * ::Hardened.Global.PartySizeMult.Caravan;
+	::Reforged.Spawns.Parties["BountyHunters"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Mercenaries;
+	::Reforged.Spawns.Parties["Mercenaries"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Mercenaries;
+	::Reforged.Spawns.Parties["Militia"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Militia;
+	::Reforged.Spawns.Parties["CaravanEscort"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Civilians * ::Hardened.Global.PartySizeMult.Caravan;
+
 	local mercParty = ::Reforged.Spawns.Parties["Mercenaries"];
 	mercParty.HardMin = 6;	// Reforged: 8
 	foreach (unitBlock in mercParty.DynamicDefs.UnitBlocks)
@@ -24,6 +33,7 @@
 
 	local caravanParty = ::Reforged.Spawns.Parties["Caravan"];
 	caravanParty.Variants.filter(function(_item, _weight) {
+		_item.IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Civilians * ::Hardened.Global.PartySizeMult.Caravan;
 		if (_item.ID == "Caravan_0")
 		{
 			foreach (unitBlock in _item.DynamicDefs.UnitBlocks)
@@ -44,10 +54,6 @@
 					unitBlock.RatioMax = 1.0;		// Reforged: 0.6
 					delete unitBlock.getSpawnWeight;
 				}
-			}
-			_item.generateIdealSize <- function()
-			{
-				return 6;	// Caravans want to be small and not dynamically larger depending on player party
 			}
 		}
 		else if (_item.ID == "Caravan_1")

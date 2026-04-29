@@ -1,5 +1,16 @@
 // Hooking
 {
+	::Reforged.Spawns.Parties["Ghouls"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Ghouls;
+	::Reforged.Spawns.Parties["Lindwurm"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Lindwurms;
+	::Reforged.Spawns.Parties["Unhold"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Unholds;
+	::Reforged.Spawns.Parties["UnholdFrost"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Unholds;
+	::Reforged.Spawns.Parties["UnholdBog"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Unholds;
+	::Reforged.Spawns.Parties["Spiders"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Spiders;
+	::Reforged.Spawns.Parties["Schrats"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Schrats;
+	::Reforged.Spawns.Parties["HexenAndMore"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Hexen;
+	::Reforged.Spawns.Parties["HexenAndNoSpiders"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Hexen;
+	::Reforged.Spawns.Parties["Hexen"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Hexen;
+
 	{	// Alps
 	}
 

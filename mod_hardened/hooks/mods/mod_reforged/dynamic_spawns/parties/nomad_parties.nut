@@ -1,3 +1,7 @@
+::Reforged.Spawns.Parties["NomadDefenders"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Nomads * ::Hardened.Global.PartySizeMult.Location;
+::Reforged.Spawns.Parties["NomadRaiders"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Nomads;
+::Reforged.Spawns.Parties["NomadRoamers"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Nomads;
+
 {	// NomadDefenders
 	local nomadDefenders = ::Reforged.Spawns.Parties["NomadDefenders"];
 	foreach (unitBlock in nomadDefenders.DynamicDefs.UnitBlocks)

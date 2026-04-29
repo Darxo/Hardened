@@ -1,3 +1,5 @@
+::Reforged.Spawns.Parties["NobleCaravan"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Nobles * ::Hardened.Global.PartySizeMult.Caravan;
+
 local parties = [
 	{
 		// Changes:
@@ -6,6 +8,7 @@ local parties = [
 		//	- Officer is restricted to 1
 		ID = "Noble",
 		HardMin = 8,
+		IdealSizeMult = ::Hardened.Global.FactionIdealSizeMult.Nobles,
 		DefaultFigure = "figure_noble_01",
 		MovementSpeedMult = 1.0,
 		VisibilityMult = 1.0,

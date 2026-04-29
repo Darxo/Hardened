@@ -1,5 +1,12 @@
 // Hooking
 {
+	::Reforged.Spawns.Parties["BanditRoamers"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Brigands;
+	::Reforged.Spawns.Parties["BanditScouts"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Brigands * ::Hardened.Global.PartySizeMult.Scouts;
+	::Reforged.Spawns.Parties["BanditRaiders"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Brigands;
+	::Reforged.Spawns.Parties["BanditDefenders"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Brigands * ::Hardened.Global.PartySizeMult.Location;
+	::Reforged.Spawns.Parties["BanditBoss"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Brigands;
+	::Reforged.Spawns.Parties["BanditsDisguisedAsDirewolves"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Brigands;
+
 	local banditScouts = ::Reforged.Spawns.Parties["BanditScouts"];
 	banditScouts.HardMin = 5;	// Reforged: 6
 

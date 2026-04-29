@@ -1,9 +1,18 @@
+{	// Hooking
+	::Reforged.Spawns.Parties["Southern"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.CityStates;
+	::Reforged.Spawns.Parties["CaravanSouthernEscort"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.CityStates * ::Hardened.Global.PartySizeMult.Caravan;
+	::Reforged.Spawns.Parties["Slaves"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Slaves;
+	::Reforged.Spawns.Parties["NorthernSlaves"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Slaves;
+	::Reforged.Spawns.Parties["Assassins"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.CityStates * ::Hardened.Global.PartySizeMult.Specialists;
+}
+
 // Overwrites
 {
 	local parties = [
 		{
 			ID = "CaravanSouthern",
 			HardMin = 4,
+			IdealSizeMult = ::Hardened.Global.FactionIdealSizeMult.CityStates * ::Hardened.Global.PartySizeMult.Caravan,
 			DefaultFigure = "cart_03",
 			MovementSpeedMult = 0.5,
 			VisibilityMult = 1.0,
@@ -51,11 +60,6 @@
 					}
 				}
 			},
-			// In Vanilla this party is also able to spawn just with mercenaries. But this is so rare that I chose to not try to mirror that behavior here
-			generateIdealSize = function()
-			{
-				return 8;	// Caravans want to be small and not dynamically larger depending on player party
-			}
 		},
 	];
 

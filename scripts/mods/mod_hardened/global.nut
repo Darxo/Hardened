@@ -77,6 +77,36 @@ local resourceMult = ::Hardened.Const.ResourceTierMult;
 		CompressionMin = 6.0,
 		CompressionMax = 24.0,
 		CompressionPull = 0.5,
+		FactionIdealSizeMult = {
+			Barbarians = 1.0,
+			Brigands = 1.0,
+			CityStates = 1.2,
+			Civilians = 1.2,
+			Draugr = 1.0,
+			Ghouls = 1.2,
+			Goblins = 1.2,
+			Hexen = 0.8,
+			Lindwurms = 0.33,
+			Mercenaries = 0.8,
+			Militia = 1.2,
+			Nobles = 1.2,
+			Nomads = 1.0,
+			Orcs = 0.8,
+			Skeletons = 1.0,
+			Schrats = 0.33,
+			Slaves = 1.2,
+			Spiders = 1.2,
+			Unholds = 0.33,
+			Vampires = 0.8,
+			Zombies = 1.2,
+		},
+		PartySizeMult = {
+			Location = 1.5,		// Locations have more quantity of units in general
+			Caravan = 0.5,		// The main purpose of the units is transportation of themselves or some goods
+			Scouts = 0.5,		// Fewer units, not meant to be a fighting force
+			Offensive = 1.2,	// A special greater type of raiding party
+			Specialists = 0.25,		// Specialists of one type, usually added on top of another party in a scripted combat
+		},
 	});
 }
 

@@ -1,6 +1,10 @@
 
 // Hooking
 {
+	::Reforged.Spawns.Parties["Barbarians"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Barbarians;
+	::Reforged.Spawns.Parties["BarbarianHunters"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Barbarians * ::Hardened.Global.PartySizeMult.Scouts;
+	::Reforged.Spawns.Parties["BarbarianKing"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Barbarians;
+
 	local barbarians = ::Reforged.Spawns.Parties["Barbarians"];
 	foreach (unitBlock in barbarians.DynamicDefs.UnitBlocks)
 	{

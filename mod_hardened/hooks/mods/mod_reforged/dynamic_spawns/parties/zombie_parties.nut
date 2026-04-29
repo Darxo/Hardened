@@ -1,7 +1,13 @@
 // Hooking
 {
+	::Reforged.Spawns.Parties["ZombieOrcs"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Orcs;
+	::Reforged.Spawns.Parties["Zombies"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Zombies;
+	::Reforged.Spawns.Parties["ZombiesAndGhouls"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Zombies;
+	::Reforged.Spawns.Parties["ZombiesAndGhosts"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Zombies;
+
 	local necromancerParty = ::Reforged.Spawns.Parties["Necromancer"];
 	necromancerParty.Variants.filter(function(_item, _weight) {
+		_item.IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Zombies;
 		if (_item.ID == "Necromancer_0")
 		{
 			_item.HardMin = 6;	// Reforged: 10
@@ -28,5 +34,10 @@
 				HardMax = 1,
 			});
 		}
+	});
+
+	local necromancerSouthernParty = ::Reforged.Spawns.Parties["NecromancerSouthern"];
+	necromancerSouthernParty.Variants.filter(function(_item, _weight) {
+		_item.IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Zombies;
 	});
 }
