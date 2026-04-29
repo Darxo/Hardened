@@ -1,4 +1,10 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/goblin_whip", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.Order = ::Const.SkillOrder.UtilityTargeted;
+	}
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
