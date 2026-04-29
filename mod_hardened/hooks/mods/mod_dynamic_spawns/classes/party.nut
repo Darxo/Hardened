@@ -17,6 +17,8 @@
 	return base.removeSpawnable(_id, _all);
 }
 
+::DynamicSpawns.Class.Party.__getUpgradeChance <- function() { return 100; }
+
 {	// Hooks
 	local oldSpawn = ::DynamicSpawns.Class.Party.spawn;
 	::DynamicSpawns.Class.Party.spawn <- function( _resources = null )
