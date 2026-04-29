@@ -22,7 +22,7 @@
 		local adjacentFactionAllies = ::Tactical.Entities.getFactionActors(actor.getFaction(), actor.getTile(), 1, true);
 		foreach (ally in adjacentFactionAllies)
 		{
-			if (ally.getCurrentProperties().getBravery() > actor.getCurrentProperties().getBravery()) continue;
+			if (ally.getCurrentProperties().getBravery() >= actor.getCurrentProperties().getBravery()) continue;
 			if (ally.getMoraleState() == ::Const.MoraleState.Fleeing) continue;
 			if (ally.getCurrentProperties().IsStunned) continue;
 
