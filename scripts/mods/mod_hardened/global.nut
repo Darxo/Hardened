@@ -68,6 +68,15 @@ local resourceMult = ::Hardened.Const.ResourceTierMult;
 			Vampires = experienceMult.Tier4,
 			Zombies = experienceMult.Tier5,
 		},
+
+	// Dynamic Spawns
+		IdealSizeBase = 12.0,
+		FieldableBrothersDefault = 10.0,
+		FieldableBrothersPull = 0.5,
+		BellCurveMult = [0.75, 1.25],
+		CompressionMin = 6.0,
+		CompressionMax = 24.0,
+		CompressionPull = 0.5,
 	});
 }
 

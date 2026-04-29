@@ -268,13 +268,45 @@
 	return true;
 }
 
-// Return the number of player characters and clamp that value between 6 and the maximum amount of brothers that the player can field at once
+// Return the number of player characters and clamp that value between 6 and 12
 // This function is meant as a baseline for custom generateIdealSize implementations in dynamic parties
-::Hardened.util.genericGenerateIdealSize <- function()
+::Hardened.util.genericGenerateIdealSize <- function( _partyMult = 1.0 )
 {
-	if (!("Assets" in ::World) || ::World.Assets == null) return 10;	// fix for when we test a party in the main menu
-	local fieldableBrothers = ::Math.min(::World.getPlayerRoster().getSize(), ::World.Assets.getBrothersMaxInCombat());
-	return Math.clamp(fieldableBrothers, 6, 12);
+	local ret = ::Hardened.Global.IdealSizeBase;
+
+	local fieldableBrothers = ::Hardened.Global.FieldableBrothersDefault;
+	if (("Assets" in ::World) && ::World.Assets != null)
+	{
+		fieldableBrothers = ::Math.min(::World.getPlayerRoster().getSize(), ::World.Assets.getBrothersMaxInCombat());
+		fieldableBrothers = ::Math.max(fieldableBrothers, 6);	// We don't want extremely low player numbers (e.g. during day 1) to briefly taint all roaming parties
+	}
+	ret = ::Math.lerp(ret, fieldableBrothers, ::Hardened.Global.FieldableBrothersPull);
+
+	function getCloser( _oldValue, _newValue, _target )
+	{
+		local oldDistance = ::Math.abs(_oldValue - _target);
+		local newDistance = ::Math.abs(_newValue - _target);
+		return (newDistance < oldDistance) ? _newValue : _oldValue;
+	}
+
+	function sampleClosest( _min, _max, _target, _tries = 2 )
+	{
+		local ret = ::MSU.Math.randf(_min, _max);
+		for (local i = 2; i <= _tries; ++i )
+		{
+			ret = getCloser(ret, ::MSU.Math.randf(_min, _max), _target);
+		}
+		return ret;
+	}
+
+	ret *= _partyMult;
+
+	local bellCurveMult = sampleClosest(::Hardened.Global.BellCurveMult[0], ::Hardened.Global.BellCurveMult[1], 1.0, 2);
+	ret *= bellCurveMult;
+
+	ret = ::Math.compress(ret, ::Hardened.Global.CompressionMin, ::Hardened.Global.CompressionMax, ::Hardened.Global.CompressionPull);
+
+	return ret;
 }
 
 // Return the corpse name of _corpse in a color, depending on whether it was a player corpse or a non-player one
