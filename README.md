@@ -227,7 +227,8 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Net Pull** now costs 30 Fatigue (up from 25)
 - **Night Effect** now causes -3 Vision (down from -2)
 - **Onslaught** is completely reworked for the player: It now costs 7 Action Points (unchanged) and 40 Fatigue (up from 30) and is no longer restricted to "once per battle". It now targets a tile (range of 4) and affects all tiles within 1 tile of that target. It grants all allies of your faction on those tiles the **Onslaught Effect** for 2 rounds. NPCs still use the Reforged version of **Onslaught Skill**
-- **Onslaught Effect** (granted by **Onslaught**) no longer grants one use of **Line Breaker** skill, +10 Melee Skill or +20 Initiative. It now grants the **Pathfinder**, **Vigorous Assauolt** and **Elusive** perks
+- **Onslaught Effect** (granted by **Onslaught**) no longer grants one use of **Line Breaker** skill, +10 Melee Skill or +20 Initiative. It now grants the
+**Pathfinder**, **Vigorous Assauolt** and **Elusive** perks
 - **Passing Step** (granted by **Tempo**) can now be used no matter the damage type of the attack or whether you have something in your offhand. It now has 0 additional fatigue cost (down from 2)
 - **Pound** no longer has +10% Armor Penetration on a hit to the head or 30% chance to stun on a hit
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip** but deals 15% less damage at all times
@@ -247,6 +248,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Throw Axe** now has a 50% chance to decapitate (up from 0%) and 25% chance to disembowel (up from 0%)
 - **Throw Net** now costs 4 Action Points (down from 5), has a Range of 3 (up from 2) and no longer requires the targets Base Reach to be below a certain value
 - **Weave Web** (from **Webknecht**) now costs 50 Fatigue (up from 25)
+- **Whip** (from **Goblin Overseer**) can no longer be used while engage in melee
 - **Withered** no longer reduces Stamina or Fatigue Recovery. It now causes Non-Attacks to cost 50% more Fatigue per remaining turns on the effect duration
 
 Skill nerfs as a result of the Reach system:
@@ -754,7 +756,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Feral Shield** now costs 400 Crowns (up from 50)
 - **Fermented Unhold Heart** now has an expiry date of 40 days (up from 20) and has 50 Servings (up from 25)
 - **Geist Tear** now costs 800 Crowns (up from 300)
-- **Goblin Poison** now costs 200 Crowns (up from 100). It now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1
+- **Goblin Poison** now costs 300 Crowns (up from 100). It now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 2000 Value (up from 200) and grants 10 Resolve (up from 5)
 - **Holy Water** now costs 300 Crowns (up from 100) and is now considered `IsMedical` causing it to be affected by medical-related settlement situations
 - **Hyena Fur Mantle** now grants 10% more Initiative instead of +15 Initaitive
@@ -771,7 +773,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Reinforced Throwing Net** now has 8 Weight (up from 2)
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**
 - **Sipar** is now called **Sipar Shield** (just like in Vanilla)
-- **Spider Poison** now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1. It now deals 15 Damage per turn (up from 10)
+- **Spider Poison** now costs 300 Crowns (up from 150). It now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1. It now deals 15 Damage per turn (up from 10)
 - **Smoked Ham** now has a Stacksize of 30 (up from 25) and cost 115 Crowns (up from 95)
 - **Strange Meat** now has a Stacksize of 20 (down from 25) and costs 35 Crowns (down from 50)
 - **Strange Mushrooms** now cost 200 Crowns (up from 100)
@@ -1166,7 +1168,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Necrosavants in the scripted Ambush from the **Escort Caravan** contract now idle during the first round
 - **Escort Caravan** contracts that are declined or which expire now spawn a caravan towards the destination if the town hasn't spawned one in a while
 - **Find Location** and **Barbarian King** contracts no longer spawn a hint directly after loading and display the direction information of your last hint in your bullet points
-- **Find Location** contract can now also choose **Brigand-**, **Barbarian-**, **Beast-**, **Goblin-**, **Orc-** and **Nomad** Location as the target (instead of just Skeleton and Zombie locations)
+- **Find Location** contract can now also choose **Barrowkin-**, **Brigand-**, **Barbarian-**, **Beast-**, **Goblin-**, **Orc-** and **Nomad** Location as the target (instead of just Skeleton and Zombie locations)
 - **Find Location** and **Return Item** contract now have a 100% base chance to be in the contract pool -1% chance for every 10 Renown you have, down to a minimum of 10%. In Vanilla they have a 80% chance during day 1-3 and 10% afterwards
 - During the **Escort Envoy** Contract: You move 20% slower, while the Envoy is in your party. The Envoy has 6 Action Points (down from 9) and the contract grants 50% more Crowns. The envoy now always takes 16 hours at the destination and that number is displayed and counted down in the contract description
 
@@ -1175,7 +1177,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event
 - The Event **Caravan Hand expands Cart** can now also trigger after you have already upgraded your cart
 - The Event **Civilwar Conscription** now grants +7.5 Relation with the Noble House when you side with them (up from +2.5)
-- The Event **Drunkard loses Item** now has an option where you order the Drunkard to search for the item. This recovers the item, but causes the same mood debuff on the drunkard as if he was flogged
+- The Event **Drunkard loses Item** no longer targets named items. It can now also target items that are equipped to a brother. It now has an option where you order the Drunkard to search for the item. This recovers the item, but causes the same mood debuff on the drunkard as if he was flogged
 - The Event **Player plays dice** now has 50% less score
 - The Event **Infected Wound** now has a cooldown of 14 days (down from 21 days) and is thrice as likely to trigger, if you have no Medicine left
 - The Event **Wardogs fight each other** now only triggers, while you have more than 1 dog per 2 brothers (instead of at least 2 dogs in your inventory) and it will count any dog you own, even those currently equipped
@@ -1221,6 +1223,8 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
   - displaying hitchance labels for all targetable primary (targetable) and secondary (if AoE skill) characters whenever you preview an attack skill
   - displaying chance to dodge label on the active entity, whenever you preview movement while in a Zone of Control
 - Projectiles which fly into obstacles now play a sound effect and shake the targeted object a bit
+- Automatically consume supply items, when auto looting items
+- Add Setting (on) to replace the default Auto-Loot Feature with a smarter system. When the player stash is full, the least valueable items are replaced with the excess loot. The following categories are ignored, when trying to make room: Unique, Precious, Crafting, Food, Tool, Usable
 - Improve restore item after battle logic, to also restore items, which were dropped to the ground or picked up by another brother during battle
 - Automatically replace broken (shields) or used (nets) equipment after each battle, if you have replacements in your inventory
 - Introduce a new **Unworthy** effect which prevents the character from granting experience on death. This is given to all non-player controlled characters who grant 0 XP on death or are allied to the player
@@ -1437,6 +1441,8 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix tactical map zoom/pan sometimes zooming/panning too far during lag
 - Fix **Dodge** defenses sometimes not updating immediately after receiving an initiative buff/debuff
 - Fix Quivers needing to re-use the same ID to be correctly identified as ammo
+- Fix **Overwhelmed Effect** being removed at the start of a new round
+- Fix **Necrosavants** sometimes walking instead of teleporting
 - Fix shieldwall animation still showing up on NPCs who lost the shieldwall effect offscreen
 - Fix spearwall animation showing up on NPCs who lost the spearwall effect offscreen
 - Fix barbarian **Drum** being double grippable despite being a two-handed weapon
@@ -1482,10 +1488,11 @@ This section talks about adjustments made to other optional mods, when present a
 
 ### Dynamic Spawns
 
-- Prevent parties from upgrading their units while they are below an **Idealsize** as defined by the return value of the `party::generateIdealSize()` function. By default it returns a value equal to the amount of brothers that the player has and clamped between 6 and 12
+- Streamline dynamic party size calculation resulting in overall smaller average party sizes during the mid game
+  - Parties will now always spawn units until they hit an `IdealSize` value that is determined through `::Hardened.util.genericGenerateIdealSize`
+  - After the `IdealSize` is hit, parties will now always upgrade units, until there is nothing more to upgrade
 - Fix Unit order in UnitBlocks not taking subparties into account
 - Add `::DynamicSpawns.Class.Party.removeSpawnable(_id, _all = true)` for removing spawnables from from a party during party generation
--
 
 ### Other Mods
 

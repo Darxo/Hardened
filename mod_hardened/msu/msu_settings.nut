@@ -185,5 +185,5 @@
 
 	qolCharScreenPage.addDivider("MiscDivider3");
 
-	qolCharScreenPage.addBooleanSetting("EnableSmartAutoLoot", true, "Enable Smart Auto Loot", "Replace the default Auto-Loot Feature with a smarter system.\n\nWhen the Playerstash is full, the least valueable items are replaced with the excess loot.\n\nThe following itemtypes are ignored, when trying to make room:\n- Unique\n- Precious\n- Crafting\n- Food\n- Tool\n- Usable");
+	qolCharScreenPage.addBooleanSetting("EnableSmartAutoLoot", true, "Enable Smart Auto Loot", "Replace the default Auto-Loot Feature with a smarter system.\n\nSupply Items are consumed automatically.\nWhen the Playerstash is full, the least valueable items are replaced with the excess loot.\n\nThe following itemtypes are ignored, when trying to make room:\n- Unique\n- Precious\n- Crafting\n- Food\n- Loot\n- Tool\n- Usable");
 }

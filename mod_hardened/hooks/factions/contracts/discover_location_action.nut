@@ -12,7 +12,7 @@
 		::Const.FactionType.Zombies,
 	];
 	q.m.HD_MaximumDistance <- 20;	// Vanilla: 19
-	q.m.HD_ScoreOverwrite = 12;		// Lower score, because we allow way more targeted locations
+	q.m.HD_ScoreOverwrite = 12;
 
 	// Overwrite, because we change too many things from the original function:
 	//	- This contract is no longer restricted to Undead and Zombie locations

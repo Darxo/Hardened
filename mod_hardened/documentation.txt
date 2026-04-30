@@ -30,6 +30,25 @@
 
 # Changelog
 
+1.15.0
+	- Streamline dynamic party size calculation resulting in overall smaller average party sizes during the mid game
+	- **Goblin Poison** now costs 300 Crowns (up from 200)
+	- **Spider Poison** now costs 300 Crowns (up from 200)
+	- **Goblin Wolfrider** now cost 40 Resources (up from 30), have 80 Hitpoints (up from 70), 120 Stamina (up from 100) and gain **Executioner**. They now always spawn with a **Throwing Net**
+	- **Goblin Shamans** now have 110 Stamina (up from 90)
+	- **Whip** (from Goblins) now requires the user to not be in Zone of Control
+	- **Wiederganger** and **Armored Wiederganger now have 40 Initiative (down from 50)
+	- Automatically consume supply items when auto looting items
+	- Add Setting (on) to replace the default Auto-Loot Feature with a smarter system. When the player stash is full, the least valueable items are replaced with the excess loot. The following itemtypes are ignored, when trying to make room: Unique, Precious, Crafting, Food, Tool, Usable
+	- **Drunkard Loses Item** no longer targets named items. It can now target items that are equipped to a brother
+	- Allow **Barrowkin** locations to be the target of **Discover Location** contracts
+	- Declare **mod_deathlog** as incompatible
+	- Improve description of **Overwhelm** perk and effect
+	- Fix freeze in combat against Nomads
+	- Fix(Vanilla) **Overwhelm** effect being removed at the start of a new round
+	- Fix **Necrosavants** sometimes walking instead of teleporting
+	- Fix **Inspiring Presence** affecting allies with equal Resolve
+
 1.14.6
 	- **Charmed** (from **Hexen**) now also grants **Resilient**
 	- Fix **Disguised Brigand Killer** not using the direwolf world figure
