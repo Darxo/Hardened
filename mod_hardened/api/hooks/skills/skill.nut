@@ -148,6 +148,14 @@
 		return ::Time.getRound() < this.m.HD_RoundLastUsed + this.m.HD_Cooldown;
 	}
 
+	q.HD_isWeaponSkill <- function()
+	{
+		local item = _skill.getItem();
+		if (::MSU.isNull(item)) return false;
+
+		return item.isItemType(::Const.Items.ItemType.Weapon)
+	}
+
 	// Return the expected shield damage multiplier incluencing this skill, when targeting the shield of _target
 	q.getExpectedShieldDamageMult <- function( _target = null )
 	{
