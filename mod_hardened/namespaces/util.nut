@@ -527,3 +527,22 @@
 
 	return false;
 }
+
+::Hardened.util.registerScenario <- function( _script )
+{
+	local unusedId = 0;
+	foreach (scenario in ::RootState.get("MainMenuState").scenario_menu_module_onQueryData())
+	{
+		if (scenario.id < unusedId) continue;
+		unusedId = scenario.id + 1;
+	}
+
+	local scenarioObject = ::new(_script);
+
+	::Hardened.Private.CustomTacticalScenarios.push({
+		id = unusedId,
+		name = scenarioObject.m.Name,
+		description = scenarioObject.m.Description,
+		script = _script,
+	});
+}

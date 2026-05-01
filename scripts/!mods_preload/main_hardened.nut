@@ -13,6 +13,7 @@
 		// Key are full entity scripts
 		// Values are Tables with the entries: Reforged and Hardened
 		EntityIDFallback = {},
+		CustomTacticalScenarios = [],
 	},
 }
 
