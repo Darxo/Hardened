@@ -88,5 +88,13 @@
 			__original(_tile);
 		}
 	}
+
+	q.isChangeableInBattle = @(__original) function()
+	{
+		// Vanilla Fix: Armor and Dogs not being swappable during the preparation phase of tactical scenarios
+		if (::Tactical.isActive() && ::Tactical.State.m.CharacterScreen.isInBattlePreparationMode()) return true;
+
+		return __original();
+	}
 });
 
