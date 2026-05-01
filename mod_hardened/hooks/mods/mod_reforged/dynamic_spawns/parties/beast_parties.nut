@@ -7,8 +7,6 @@
 	::Reforged.Spawns.Parties["UnholdBog"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Unholds;
 	::Reforged.Spawns.Parties["Spiders"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Spiders;
 	::Reforged.Spawns.Parties["Schrats"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Schrats;
-	::Reforged.Spawns.Parties["HexenAndMore"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Hexen;
-	::Reforged.Spawns.Parties["HexenAndNoSpiders"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Hexen;
 	::Reforged.Spawns.Parties["Hexen"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Hexen;
 
 	{	// Alps
@@ -36,6 +34,7 @@
 			VisibilityMult = 1.0,
 			VisionMult = 1.0,
 			HardMin = 2,
+			IdealSizeMult = ::Hardened.Global.FactionIdealSizeMult.Hexen,
 			DynamicDefs = {
 				UnitBlocks = [
 					{ BaseID = "UnitBlock.RF.HexeWithBodyguard", StartingResourceMin = 0, HardMin = 1, HardMax = 1 },	// We guarantee one hexe in every party but also allow it to upgrade its bodyguards using resources
@@ -62,6 +61,7 @@
 			VisibilityMult = 1.0,
 			VisionMult = 1.0,
 			HardMin = 2,
+			IdealSizeMult = ::Hardened.Global.FactionIdealSizeMult.Hexen,
 			DynamicDefs = {
 				UnitBlocks = [
 					{ BaseID = "UnitBlock.RF.HexeNoSpider", StartingResourceMin = 0, HardMin = 1, HardMax = 1 },	// We guarantee one hexe in every party but also allow it to upgrade its bodyguards using resources
