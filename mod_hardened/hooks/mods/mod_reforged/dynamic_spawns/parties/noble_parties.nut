@@ -27,6 +27,12 @@ local parties = [
 			],
 		},
 
+		function getIdealSizeMult() {
+			local ret = base.getIdealSizeMult();
+			if (this.getTopParty().HD_isLocation()) ret *= ::Hardened.Global.PartySizeMult.Location;
+			return ret;
+		},
+
 		function excludeSpawnables()
 		{
 			base.excludeSpawnables();

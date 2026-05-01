@@ -16,6 +16,12 @@
 		local ghoulParty = ::Reforged.Spawns.Parties["Ghouls"];
 		// We remove Reforged adjustments during onBeforeSpawnStart where they set custom Ratios and StartingResource on a unit-basis
 		delete ghoulParty.onBeforeSpawnStart;
+
+		ghoulParty.getIdealSizeMult <- function() {
+			local ret = base.getIdealSizeMult();
+			if (this.getTopParty().HD_isLocation()) ret *= ::Hardened.Global.PartySizeMult.Location;
+			return ret;
+		}
 	}
 }
 
@@ -48,6 +54,11 @@
 					{ BaseID = "UnitBlock.RF.UnholdBog", StartingResourceMin = 250, ExclusionChance = 60, function getSpawnWeight() { return base.getSpawnWeight() * 0.50}, DeterminesFigure = false },
 				],
 			},
+			function getIdealSizeMult() {
+				local ret = base.getIdealSizeMult();
+				if (this.getTopParty().HD_isLocation()) ret *= ::Hardened.Global.PartySizeMult.Location;
+				return ret;
+			},
 		},
 		{
 			// Overwrite, because we
@@ -73,6 +84,11 @@
 					{ BaseID = "UnitBlock.RF.Schrat", StartingResourceMin = 250, ExclusionChance = 60, function getSpawnWeight() { return base.getSpawnWeight() * 0.50}, DeterminesFigure = false },
 					{ BaseID = "UnitBlock.RF.UnholdBog", StartingResourceMin = 250, ExclusionChance = 60, function getSpawnWeight() { return base.getSpawnWeight() * 0.50}, DeterminesFigure = false },
 				],
+			},
+			function getIdealSizeMult() {
+				local ret = base.getIdealSizeMult();
+				if (this.getTopParty().HD_isLocation()) ret *= ::Hardened.Global.PartySizeMult.Location;
+				return ret;
 			},
 		},
 	];

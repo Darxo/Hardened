@@ -1,13 +1,39 @@
 // Hooking
 {
 	::Reforged.Spawns.Parties["ZombieOrcs"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Orcs;
+	::Reforged.Spawns.Parties["ZombieOrcs"].getIdealSizeMult <- function() {
+		local ret = base.getIdealSizeMult();
+		if (this.getTopParty().HD_isLocation()) ret *= ::Hardened.Global.PartySizeMult.Location;
+		return ret;
+	};
 	::Reforged.Spawns.Parties["Zombies"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Zombies;
+	::Reforged.Spawns.Parties["Zombies"].getIdealSizeMult <- function() {
+		local ret = base.getIdealSizeMult();
+		if (this.getTopParty().HD_isLocation()) ret *= ::Hardened.Global.PartySizeMult.Location;
+		return ret;
+	};
 	::Reforged.Spawns.Parties["ZombiesAndGhouls"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Zombies;
+	::Reforged.Spawns.Parties["ZombiesAndGhouls"].getIdealSizeMult <- function() {
+		local ret = base.getIdealSizeMult();
+		if (this.getTopParty().HD_isLocation()) ret *= ::Hardened.Global.PartySizeMult.Location;
+		return ret;
+	};
 	::Reforged.Spawns.Parties["ZombiesAndGhosts"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Zombies;
+	::Reforged.Spawns.Parties["ZombiesAndGhosts"].getIdealSizeMult <- function() {
+		local ret = base.getIdealSizeMult();
+		if (this.getTopParty().HD_isLocation()) ret *= ::Hardened.Global.PartySizeMult.Location;
+		return ret;
+	};
 
 	local necromancerParty = ::Reforged.Spawns.Parties["Necromancer"];
 	necromancerParty.Variants.filter(function(_item, _weight) {
 		_item.IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Zombies;
+		_item.getIdealSizeMult <- function() {
+			local ret = base.getIdealSizeMult();
+			if (this.getTopParty().HD_isLocation()) ret *= ::Hardened.Global.PartySizeMult.Location;
+			return ret;
+		};
+
 		if (_item.ID == "Necromancer_0")
 		{
 			_item.HardMin = 6;	// Reforged: 10

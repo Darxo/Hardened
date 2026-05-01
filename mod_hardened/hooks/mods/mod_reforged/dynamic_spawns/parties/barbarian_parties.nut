@@ -6,6 +6,11 @@
 	::Reforged.Spawns.Parties["BarbarianKing"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Barbarians;
 
 	local barbarians = ::Reforged.Spawns.Parties["Barbarians"];
+	barbarians.getIdealSizeMult <- function() {
+		local ret = base.getIdealSizeMult();
+		if (this.getTopParty().HD_isLocation()) ret *= ::Hardened.Global.PartySizeMult.Location;
+		return ret;
+	}
 	foreach (unitBlock in barbarians.DynamicDefs.UnitBlocks)
 	{
 		if (unitBlock.BaseID == "UnitBlock.RF.BarbarianDog")

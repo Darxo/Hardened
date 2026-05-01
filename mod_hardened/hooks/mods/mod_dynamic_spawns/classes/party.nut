@@ -11,6 +11,11 @@
 	this.__IdealSize = ::Hardened.util.genericGenerateIdealSize(this.IdealSizeMult);
 }
 
+::DynamicSpawns.Class.Party.HD_isLocation <- function()
+{
+	return this.getWorldEntity() != null && this.getWorldEntity().isLocation();
+}
+
 // Remove a spawnable, no matter how deep it is hiding within this spawnable
 ::DynamicSpawns.Class.Party.removeSpawnable <- function( _id, _all = true )
 {
