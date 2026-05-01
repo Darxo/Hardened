@@ -6,9 +6,12 @@
 }
 
 ::DynamicSpawns.Class.Party.IdealSizeMult <- 1.0;	// This is meant to be adjusted by the party definition
+::DynamicSpawns.Class.Party.getIdealSizeMult <- function() {
+	return this.IdealSizeMult;
+}
 ::DynamicSpawns.Class.Party.__generateIdealSize <- function()
 {
-	this.__IdealSize = ::Hardened.util.genericGenerateIdealSize(this.IdealSizeMult);
+	this.__IdealSize = ::Hardened.util.genericGenerateIdealSize(this.getIdealSizeMult());
 }
 
 ::DynamicSpawns.Class.Party.HD_isLocation <- function()
