@@ -4,6 +4,10 @@
 	{
 		__original();
 
+		// During the tactical scenario version of the black monolith fight, we call this onSpawned, to fetch all units for the fight
+		// In that case we need to return early, because this location does not exist on an actual tile
+		if (::Tactical.isActive() && ::Tactical.State.isScenarioMode()) return;
+
 		local myTile = this.getTile();
 		local badlandsTiles = [
 			myTile,
