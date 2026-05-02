@@ -12,5 +12,6 @@
 		::Hardened.util.registerScenario("scripts/scenarios/tactical/scenario_hd_abandoned_village");
 		::Hardened.util.registerScenario("scripts/scenarios/tactical/scenario_hd_artifact_reliquary");
 		::Hardened.util.registerScenario("scripts/scenarios/tactical/scenario_hd_goblin_city");
+		::Hardened.util.registerScenario("scripts/scenarios/tactical/scenario_hd_watermill");
 	}
 });
