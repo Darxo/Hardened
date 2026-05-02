@@ -168,6 +168,8 @@
 	{
 		__original();
 
+		this.m.Condition = this.m.ConditionMax;		// We do this here so that it doesn't have to be done in the individual weapon scripts anymore
+
 		if (this.isWeaponType(::Const.Items.WeaponType.Crossbow))
 		{
 			// All Crossbows now have +10% Armor Penetration as a result of the Crossbow Rework
