@@ -1,0 +1,8 @@
+::Hardened.HooksMod.hook("scripts/states/main_menu_state", function(q) {
+	q.onInit = @(__original) function()
+	{
+		__original();
+
+		::Hardened.util.registerScenario("scripts/scenarios/tactical/scenario_hd_kraken");
+	}
+});
