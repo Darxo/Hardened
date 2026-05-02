@@ -6,6 +6,12 @@
 		::MSU.__canCreateDummyPlayer = true;
 
 		__original();
+
+		// Fix(Vanilla): some enemy configuration (e.g. icy cave-like fight) as Tactical Scenarios not attacking properly
+		foreach (index, strategy in ::Tactical.Entities.m.Strategies)
+		{
+			strategy.setIsAttackingOnWorldmap(true);
+		}
 	}
 
 // New Functions
