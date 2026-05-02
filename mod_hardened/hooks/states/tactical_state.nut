@@ -7,6 +7,18 @@
 	q.m.HD_HasDiscoveredEnemy <- false;
 	q.m.HD_IsHidingMusic <- false;
 
+	q.gatherLoot = @(__original) function()
+	{
+		// In Hardened we default initialize this.m.StrategicProperties to improve compatibility of tactical scenarios
+		// Vanilla tries to access World.State, if this is not null, so we need to revert StrategicProperties back to null
+		if (this.isScenarioMode())
+		{
+			this.m.StrategicProperties = null;
+		}
+
+		__original();
+	}
+
 	// We have to hook onFinish, because it is the last thing that happens, before tactical_state is deconstructed
 	// And it is happening right after the combat loot is added to the stash
 	q.onFinish = @(__original) function()
