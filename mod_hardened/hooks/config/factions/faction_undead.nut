@@ -231,7 +231,7 @@
 			Cost = 70,		// Reforged: 45;
 		},
 		{
-			XP = 600 * ::Hardened.Global.FactionExperience.Draugr, 	// Reforged: 450
+			XP = 700 * ::Hardened.Global.FactionExperience.Draugr, 	// Reforged: 450
 			Hitpoints = 200,		// Reforged: 200
 			Bravery = 100,			// Reforged: 100
 			Stamina = 100,			// Reforged: 100
