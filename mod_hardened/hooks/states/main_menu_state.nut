@@ -5,5 +5,6 @@
 
 		::Hardened.util.registerScenario("scripts/scenarios/tactical/scenario_hd_kraken");
 		::Hardened.util.registerScenario("scripts/scenarios/tactical/scenario_hd_ijirok");
+		::Hardened.util.registerScenario("scripts/scenarios/tactical/scenario_hd_sunken_library");
 	}
 });
