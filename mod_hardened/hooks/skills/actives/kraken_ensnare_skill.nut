@@ -9,4 +9,20 @@
 	{
 		return __original() && this.getContainer().getActor().getMode() == 0;
 	}
+
+	// Overwrite, because we need to replace one use of "TimeUnit.Real" with "TimeUnit.Virtual"
+	q.onUse = @() function( _user, _targetTile )
+	{
+		// Fix(Vanilla): Kraken Crash when playing at higher swifter speed
+		_user.sinkIntoGround(0.75);
+		_user.getSkills().setBusy(true);
+		_user.m.IsAbleToDie = false;
+		::Time.scheduleEvent(::TimeUnit.Virtual, 800, this.onNetSpawn.bindenv(this), {
+			User = _user,
+			Skill = this,
+			TargetEntity = _targetTile.getEntity(),
+			LoseHitpoints = true
+		});
+		return true;
+	}
 });
