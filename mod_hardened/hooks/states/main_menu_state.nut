@@ -7,5 +7,6 @@
 		::Hardened.util.registerScenario("scripts/scenarios/tactical/scenario_hd_ijirok");
 		::Hardened.util.registerScenario("scripts/scenarios/tactical/scenario_hd_sunken_library");
 		::Hardened.util.registerScenario("scripts/scenarios/tactical/scenario_hd_icy_cave");
+		::Hardened.util.registerScenario("scripts/scenarios/tactical/scenario_hd_witch_hut");
 	}
 });
