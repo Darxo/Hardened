@@ -193,7 +193,15 @@
 			Cost = 25,		// Reforged: 18;
 		},
 		{
-			XP = 200 * ::Hardened.Global.FactionExperience.Draugr, // Reforged: 200
+			XP = 250 * ::Hardened.Global.FactionExperience.Draugr, // Reforged: 200
+			Hitpoints = 120,		// Reforged: 120
+			Bravery = 100,			// Reforged: 100
+			Stamina = 100,			// Reforged: 100
+			MeleeSkill = 60,		// Reforged: 65
+			RangedSkill = 0,		// Reforged: 0
+			MeleeDefense = 10,		// Reforged: 10
+			RangedDefense = 0,		// Reforged: 0
+			Initiative = 50,		// Reforged: 55
 		}
 	);
 
@@ -205,28 +213,60 @@
 		},
 		{
 			XP = 400 * ::Hardened.Global.FactionExperience.Draugr, 	// Reforged: 350
+			Hitpoints = 160,		// Reforged: 160
+			Bravery = 100,			// Reforged: 100
+			Stamina = 100,			// Reforged: 100
+			MeleeSkill = 70,		// Reforged: 75
+			RangedSkill = 0,		// Reforged: 0
+			MeleeDefense = 20,		// Reforged: 15
+			RangedDefense = 0,		// Reforged: 0
+			Initiative = 60,		// Reforged: 60
 		}
 	);
 
 	// scripts/entity/tactical/enemies/rf_draugr_huskarl
 	::Reforged.Entities.editEntity("RF_DraugrHuskarl",
 		{
-			Strength = 55,	// Reforged: 45;
-			Cost = 55,		// Reforged: 45;
+			Strength = 70,	// Reforged: 45;
+			Cost = 70,		// Reforged: 45;
 		},
 		{
-			XP = 550 * ::Hardened.Global.FactionExperience.Draugr, 	// Reforged: 450
+			XP = 600 * ::Hardened.Global.FactionExperience.Draugr, 	// Reforged: 450
+			Hitpoints = 200,		// Reforged: 200
+			Bravery = 100,			// Reforged: 100
+			Stamina = 100,			// Reforged: 100
+			MeleeSkill = 80,		// Reforged: 85
+			RangedSkill = 0,		// Reforged: 0
+			MeleeDefense = 30,		// Reforged: 25
+			RangedDefense = 10,		// Reforged: 0
+			Initiative = 70,		// Reforged: 65
 		}
 	);
 
 	// scripts/entity/tactical/enemies/rf_draugr_hero
 	::Reforged.Entities.editEntity("RF_DraugrHero",
 		{
-			Strength = 80,	// Reforged: 60;
-			Cost = 80,		// Reforged: 60;
+			Strength = 100,	// Reforged: 60;
+			Cost = 100,		// Reforged: 60;
 		},
 		{
-			XP = 800 * ::Hardened.Global.FactionExperience.Draugr, 	// Reforged: 650
+			XP = 1000 * ::Hardened.Global.FactionExperience.Draugr, 	// Reforged: 650
+			Hitpoints = 250,		// Reforged: 220
+			Bravery = 100,			// Reforged: 100
+			Stamina = 100,			// Reforged: 100
+			MeleeSkill = 90,		// Reforged: 95
+			RangedSkill = 0,		// Reforged: 0
+			MeleeDefense = 40,		// Reforged: 35
+			RangedDefense = 10,		// Reforged: 0
+			Initiative = 80,		// Reforged: 70
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_draugr_hero
+	::Reforged.Entities.editEntity("RF_DraugrHero",
+		{
+			Strength = 150,		// Reforged: 60;
+			Cost = 150,			// Reforged: 60;
 		}
 	);
 
@@ -238,6 +278,14 @@
 		},
 		{
 			XP = 1000 * ::Hardened.Global.FactionExperience.Draugr, 	// Reforged: 500
+			Hitpoints = 120,		// Reforged: 150
+			Bravery = 100,			// Reforged: 100
+			Stamina = 100,			// Reforged: 100
+			MeleeSkill = 60,		// Reforged: 60
+			RangedSkill = 0,		// Reforged: 0
+			MeleeDefense = 10,		// Reforged: 10
+			RangedDefense = 20,		// Reforged: 20
+			Initiative = 75,		// Reforged: 75
 		}
 	);
 }
