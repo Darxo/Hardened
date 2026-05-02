@@ -9,5 +9,6 @@
 		::Hardened.util.registerScenario("scripts/scenarios/tactical/scenario_hd_icy_cave");
 		::Hardened.util.registerScenario("scripts/scenarios/tactical/scenario_hd_witch_hut");
 		::Hardened.util.registerScenario("scripts/scenarios/tactical/scenario_hd_black_monolith");
+		::Hardened.util.registerScenario("scripts/scenarios/tactical/scenario_hd_abandoned_village");
 	}
 });
