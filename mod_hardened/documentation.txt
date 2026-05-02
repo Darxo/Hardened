@@ -30,6 +30,12 @@
 
 # Changelog
 
+1.16.1
+	- Fix compatibility issue with Reforged 0.8.16
+	- Fix **Barrowkin Huskarls** granting slightly less XP than intended
+	- Fix **Unstoppable** effect tooltip still containing the old conditions
+	- Fix log error when combat simulator is not present
+
 1.16.0
 	- Add new **Follow the Tracks** Tactical Scenario for practising a typical day 1 contract
 	- Add new Tactical Scenarios for the Legendary Fights: **Kraken**, **Ijirok**, **Sunken Library**, **Icy Cave**, **Witch Hut**, **Black Monolith**, **Abandoned Village**, **Artifact Reliquary**, **Goblin City** and **Watermill**
