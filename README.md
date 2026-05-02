@@ -41,6 +41,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Schrat Shield** no longer spawns saplings
 - Additionally the following balance changes have been made compared to the vanilla stats:
 	- **Adarga Shields** now have 8 Weight (down from 10), 16 Condition (down from 18) and lose **Knock Back**
+	- **Barrowkin Round Shield** now has 15 Melee Defense (down from 18), 15 Ranged Defense (down from 18), 10 Weight (down from 15), 24 Condition (down from 48) and costs 160 Crowns (up from 60)
 	- **Buckler** now have 2 Weight (down from 4)
 	- **Feral Shields** now have 20 Melee Defense (up from 15), 25 Ranged Defense (up from 20), 20 Weight (up from 12), 24 Condition (up from 16), +5 Fatige on use (up from 0) and they lose **Knock Back**
 	- **Heater Shields** now have 25 Melee Defense (up from 20) and lose **Shieldwall**
@@ -216,6 +217,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
 - **Flaming Arrow** (granted by **Trick Shooter**) no longer causes an extra morale check on the main target. It now deals 100% Burning Damage (instead of 25% Burning and 75% Piercing Damage)
 - **Footwork** (granted by **Footwork**) now costs -1 Action Point for every tile you move during your turn, until you use Footwork or end your turn. It can now only be used once per round
+- **Frostbound** (from Barrowkin) no longer builds up 2 Fatigue, when you start your turn next to those Barrowkins. Instead it now applies **Worn Down** on everyone, starting their turn adjacent to those enemies
 - **Hand-to-Hand Attack** now costs 3 Action Points (down from 4) and it is now enabled if you carry an empty throwing weapon in your main hand.
 - **Hex** (from **Hexen**) now costs 20 Fatigue (up from 5)
 - **Hold Steady Skill** is completely reworked for the player: It now costs 7 Action Points (unchanged) and 40 Fatigue (up from 30) and is no longer restricted to "once per battle". It now targets a tile (range of 4) and affects all tiles within 1 tile of that target (up to 7). It grants all allies of your faction on those tiles the **Hold Steady Effect** for 2 rounds. NPCs still use the Reforged version of **Hold Steady Skill**
@@ -247,6 +249,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Thresh** no longer has 20% chance to stun on a hit
 - **Throw Axe** now has a 50% chance to decapitate (up from 0%) and 25% chance to disembowel (up from 0%)
 - **Throw Net** now costs 4 Action Points (down from 5), has a Range of 3 (up from 2) and no longer requires the targets Base Reach to be below a certain value
+- **Unnerving Presence** (From Barrowkin Huskarl) now has +0 Difficulty for the Morale Check it inflicts (down from +10)
 - **Weave Web** (from **Webknecht**) now costs 50 Fatigue (up from 25)
 - **Whip** (from **Goblin Overseer**) can no longer be used while engage in melee
 - **Withered** no longer reduces Stamina or Fatigue Recovery. It now causes Non-Attacks to cost 50% more Fatigue per remaining turns on the effect duration
@@ -502,6 +505,14 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Ancient Pikes** gains the **Spear** Weapontype
 - **Ancient Spear** now deals 30-40 damage (up from 20-35), has 10 Weight (up from 6) and costs 750 Crowns (up from 150)
 - **Ancient Sword** loses **Stab** and gains **Deathblow** (costing 5 Action Points and 15 Fatigue)
+- **Barrowkin Axe** now deals 35-50 Damage (up from 30-45), 130% Armor Damage (up from 120%), 30% Armor Penetration (down from 35%), 16 Shielddamage (up from 14), has 4 Reach (up from 3), 80 Condition (up from 76) and costs 2300 Crowns (up from 800)
+- **Barrowkin Battle Axe** now deals 60-80 Damage (up from 45-65), 140% Armor Damage (up from 135%), 40% Armor Penetration (down from 45%), +0% Headshot Chance (down from +5%), 12 Weight (down from 14), 32 Shielddamge (down from 24), 64 Condition (down from 72), 6 Reach (up from 5) and costs 1700 Crowns (up from 1650). It no longer has any discount on its weapon skills, loses **Chop** and gains **Roundswing**
+- **Barrowkin Cleaver** now deals 45-55 Damage (up from 30-45), 85% Armor Damage (up from 80%), 25% Armor Penetration (down from 30%), 4 Reach (up from 3), 12 Weight (up from 10), 80 Condition (up from 60) and costs 1900 Crowns (up from 650)
+- **Barrowkin Greataxe** now deals 80-100 Damage (up from 80-95), 40% Armor Penetration (down from 45%), 32 Shielddamage (down from 40), 80 Condition (down from 88), 6 Reach (up from 5) and costs 2800 Crowns (Up from 2000)
+- **Ancestral Sword** now deals 42-47 Damage (up from 40-45), 85% Armor Damage (up from 80%), 8 Weigh (up rom 6), 72 Condition (up from 52) and costs 3200 Crowns (up from 1000)
+- **Barrowkin Voulge** now deals 60-85 Damage (up from 55-70), 30% Armor Penetration (down from 35%), +5% Headshot Chance (down from +10%), 7 Reach (up from 6), 64 Condition (up from 60) and costs 1600 Crowns (down from 2000)
+- **Named Barrowkin 2H Axe** is now fully based on the **Barrowkin Greataxe** instead of a **Bardiche**
+- **Named Barrowkin 2H Sword** is now based on a **Warbrand**. Additionally it gains **Split**, deals 60-80 Damage (up from 55-75) and has 14 Weight (up from 12)
 - **Battle Axe** now deals 60-80 Damage (up from 50-70), 32 Shield Damage (up from 26), has 10 Weight (down from 14), 140% Armor Damage (up from 125%), 0% Headshot Chance (down from 5%) and costs 1200 Crowns (down from 1950). It now has the skills **Split Man**, **Round Swing** and **Split Shield**. Named **Battle Axes** will no longer appear
 - **Berserk Chain** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5) and deals 65-100 Damage (down from 60-110)
 - **Boondock Bow** now deals 30-45 Damage (up from 25-40), has 50% Armor Damage (down from 55%) and 40% Armor Penetration (up from 30%)
@@ -529,7 +540,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Light Crossbow** now has 60% Armor Penetration (up from 50%), 50% Armor Damage (down from 60%) and costs 400 Crowns (up from 300)
 - **Longsword** now deals 45-55 damage (down from 65-85) has Armor Penetration of 30% (up from 25%), 75% Armor Damage (down from 100%), +0% Headshot Chance (down from +5%), 6 Reach (up from 5) and costs 1200 Crowns (down from 2400). It loses **Overhead Strike** and gains **Swing**. Its skills no longer have any discount. It can no longer appear as a named weapon
 - **Lute** now has 6 Condition (up from 2) and 50% Armor Damage (up from 10%). It gains the **Mace** Weapontype. It loses **Knock Out** and gains **Strike Down**
- **Military Pick** now has 10 Weight (up from 8)
+- **Military Cleaver** now has 3 Reach (down from 4)
+- **Military Pick** now has 10 Weight (up from 8)
 - **Pickaxe** now has 12 Weight (up from 10)
 - **Pike** gains the **Spear** Weapontype
 - **Player Banner** now causes -5 to Ranged Defense and it grants **Repel**
@@ -650,6 +662,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Conic Helmet with Faceguard** now has 280 Condition (down from 290) and 20 Weight (up from 19)
 - **Conic Helmet with Closed Mail** now has 260 Condition (down from 265) and 17 Weight (down from 18)
 - **Covered Decayed Closed Flat Top with Mail** will no longer appear in the game. Any versions of it will instead change to look like **Decayed Closed Flat Top with Mail**
+- **Cowl of Divination** now has 100 Condition (up from 90)
 - **Crude Metal Helmet** now has 130 Condition (down from 145) and costs 400 Crowns (down from 550)
 - **Cultist Hood** now has 50 Condition (up from 30), 4 Weight (up from 0), -3 Vision (down from -1) and costs 50 Crowns (up from 20)
 - **Cultist Leather Hood** now has 80 Condition (up from 60), 7 Weight (up from 3), -3 Vision (down from -2) and costs 90 Crowns (up from 140)
@@ -833,6 +846,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - All **Zombie Orcs** now have a 100% resurrection chance (up from 66%-90%)
 - Reanimated Humans how have 120 Hitpoints (down from 130) and 200 Stamina (up from 100)
 - All **Skeletons** no longer grant experience after being resurected
+- **Barrowkin Racial** no longer grants 10% less Melee Damage taken per Attacker Morale State below Steady
 - **Ghost Racial** no longer grants +10 Melee Defend and +10 Ranged Defense per tile between the attacker and you. It now grants the **Ethereal** perk
 - **Skeleton Racial** now explicitely causes 100% less **Fatigue** build-up
 - **Flesh Golems** take 50% more burning damage to hitpoints
@@ -1001,6 +1015,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Orc Warlord** are now 50% less likely to flank
 - Skeleton Commander now prefer to use wait
 - **Swordmaster** are 20% less likely to flank
+- **Hollenhunds** are 250% more likely to flanke
 
 ## Combat General
 
@@ -1207,6 +1222,11 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - **Rangers** now start with 0 Renown (down from 100)
 - **Tutorial** now starts with 0 Renown (down from 100)
 - **Trader** has a slightly more accurate description
+
+## Tactical Scenarios
+
+- Add **Follow the Tracks** Scenario for practicing a typical early game contract encounter
+- Add Scenarios for the following legendary locations, to get a preview or refresher for what to expect in them: **Kraken**, **Ijirok**, **Sunken Library**, **Icy Cave**, **Witch Hut**, **Black Monolith**, **Abandoned Village**, **Artifact Reliquary**, **Goblin City** and **Watermill**
 
 ## Other
 
@@ -1432,6 +1452,8 @@ This section talks about adjustments made to other optional mods, when present a
 - Dying enemies no longer set the LastCombatResult to `EnemyDestroyed`, unless they were the last one to die. This fixes a rare Sunken Library exploit
 - Unique Locations are no longer attackable, if there is a party, hostile to the player, directly next to it (fixes exploit for skipping Goblin City quest)
 - **Knock Back** now displays its hitchance bonus correctly in the preview
+- Fix Armor Items and Accessories not being swappable during Tactical Scenarios
+- Fix enemies in Tactical Scenarios sometimes playing too defensive
 - Fix hitfactor tooltips displaying hitchance related entries for Non-Attacks
 - Fix covering tiles being highlighted when aiming with Non-Attacks
 - Fix tile preview for many ranged Non-Attack skills not being accurate when the targeted tile level is different by more than 1 level
@@ -1474,6 +1496,8 @@ This section talks about adjustments made to other optional mods, when present a
 
 ### Reforged
 
+- Fix various compatibility Issues when trying to start or end Tactical Scenarios
+- Fix crash in Kraken fight when playing at higher combat speed
 - **Calculated Strikes** now works against stunned enemies
 - **Cheap Trick** now works with delayed skill executions (like Lunge or Aimed Shot)
 - The perks **Strengh in Numbers** and **Dynamic Duo** now instantly update the actors stats, if another actor moves adjacent to or away from them
@@ -1496,6 +1520,7 @@ This section talks about adjustments made to other optional mods, when present a
 
 ### Other Mods
 
+- Fix(Combat Simulator) Tactical Scenarios not starting correctly
 - Fix(Swifter) image of active entity in the turn sequence bar vanishing on higher combat speed
 - Fix(Extra Keybinds) Log Error, during ExtraKeybinds_onQueryEntityItemSwaps
 
@@ -1503,6 +1528,7 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add `::Hardened.util.registerScenario(_script)` for registering new custom tactical scenarios inheriting from `scenario_hd_template`
 - Add `::Hardened.util.enforceFlexSpawnable(_party, _spawnableIdArray, _maximumAmount)` for encorving a maximum shared amount of existing spawnables during party generation
 - Add `weapon::HD_getDropChance()` which can be overwritten to assign custom and dynamic drop chances for weapons
 - Add `::Hardened.util.findUnusedMercenaryName()` which returns a name from `::Const.Strings.MercenaryCompanyNames` which not used by any world party, while replacing %randomname% with a random character name
@@ -1613,7 +1639,7 @@ This section can be skipped by any regular user. It is only meant as an overview
 - The amount of helmet paint used by the player is now counted in the statistics flag `PaintUsedOnHelmets`
 - The amount of Injuries Treated with Bandages is now counted under the statistics flag `InjuriesTreatedWithBandage`
 - The amount of armor attachments used by the player is now counted in the statistics flag `ArmorAttachementsApplie`
-- Body Armor and Helmet `Condition` is now always set to `ConditionMax` at the end of the `create` function
+- Weapons, Body Armor and Helmet `Condition` is now always set to `ConditionMax` at the end of the `create` function
 - Add new `HD_RecoveredHitpointPct = 0.15` member for `unhold_racial` allowing you to set a variable pct of hitpoints recovered per turn
 - NPCs now have 2 bag slots by default (down from 4)
 - Add `HD_getBrush` function for `item.nut` which returns the brushname representing that item currently. Or `null`, if the item is not represented by a brush

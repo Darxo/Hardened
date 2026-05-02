@@ -30,6 +30,44 @@
 
 # Changelog
 
+1.16.0
+	- Add new **Follow the Tracks** Tactical Scenario for practising a typical day 1 contract
+	- Add new Tactical Scenarios for the Legendary Fights: **Kraken**, **Ijirok**, **Sunken Library**, **Icy Cave**, **Witch Hut**, **Black Monolith**, **Abandoned Village**, **Artifact Reliquary**, **Goblin City** and **Watermill**
+	- **Frostbound** no longer builds up 2 Fatigue, when you start your turn next to those Barrowkins. It now applies **Worn Down** on everyone, starting their turn adjacent to those enemies
+	- **Unnerving Presence** now has +0 Difficulty for the Morale Check it inflicts (down from +10)
+	- All **Barrowkin** no longer take 10% less Melee Damage per Attacker Morale State below steady
+	- **Military Cleaver** now has 3 Reach (down from 4)
+	- **Cowl of Divination** now has 100 Condition (up from 90)
+	- **Barrowkin Round Shield** now has 15 Melee Defense (down from 18), 15 Ranged Defense (down from 18), 10 Weight (down from 15), 24 Condition (down from 48) and costs 160 Crowns (up from 60)
+	- **Named Barrowkin 2H Axe** is now fully based on the **Barrowkin Greataxe** instead of a **Bardiche**
+	- **Named Barrowkin 2H Sword** is now based on a **Warbrand**. Additionally it gains **Split**, deals 60-80 Damage (up from 55-75) and has 14 Weight (up from 12)
+	- **Barrowkin Axe** now deals 35-50 Damage (up from 30-45), 130% Armor Damage (up from 120%), 30% Armor Penetration (down from 35%), 16 Shielddamage (up from 14), has 4 Reach (up from 3), 80 Condition (up from 76) and costs 2300 Crowns (up from 800)
+	- **Barrowkin Battle Axe** now deals 60-80 Damage (up from 45-65), 140% Armor Damage (up from 135%), 40% Armor Penetration (down from 45%), +0% Headshot Chance (down from +5%), 12 Weight (down from 14), 32 Shielddamge (down from 24), 64 Condition (down from 72), 6 Reach (up from 5) and costs 1700 Crowns (up from 1650). It no longer has any discount on its weapon skills, loses **Chop** and gains **Roundswing**
+	- **Barrowkin Cleaver** now deals 45-55 Damage (up from 30-45), 85% Armor Damage (up from 80%), 25% Armor Penetration (down from 30%), 4 Reach (up from 3), 12 Weight (up from 10), 80 Condition (up from 60) and costs 1900 Crowns (up from 650)
+	- **Barrowkin Greataxe** now deals 80-100 Damage (up from 80-95), 40% Armor Penetration (down from 45%), 32 Shielddamage (down from 40), 80 Condition (down from 88), 6 Reach (up from 5) and costs 2800 Crowns (Up from 2000)
+	- **Ancestral Sword** now deals 42-47 Damage (up from 40-45), 85% Armor Damage (up from 80%), 8 Weigh (up rom 6), 72 Condition (up from 52) and costs 3200 Crowns (up from 1000)
+	- **Barrowkin Voulge** now deals 60-85 Damage (up from 55-70), 30% Armor Penetration (down from 35%), +5% Headshot Chance (down from +10%), 7 Reach (up from 6), 64 Condition (up from 60) and costs 1600 Crowns (down from 2000)
+	- **Barrowkin Heroes** now always wear 230 Condition Body Armor (up from 90-210) and Condition 180 Helmets (up from 150-180)
+	- **Barrowkin Heroes** now have 250 Hitpoints (up from 220), have 90 Melee Skill (down from 95) and 40 Melee Defense (up from 35), 10 Ranged Defense (up from 0) and 80 Initiative (up from 70). They now have **Bully**, **Rebuke**, **Menacing**, **Brace for Impact**, **Survival Instinct**, **Formidable Approach**, **Savage Strength**, **Death Dealer**, **Pathfinder** and **Vigorous Assault
+	- **Barrowkin Huskarls** now always wear 170 Condition Body Armor (up from 60-105) and Condition 150 Helmets (from 120-160). They now also use **Barrowkin Axe** and **Barrowkin Cleaver**
+	- **Barrowkin Huskarls** now cost 70 Resources (up from 55), have 80 Melee Skill (down from 85) and 30 Melee Defense (up from 25), 10 Ranged Defense (up from 0) and 70 Initiative (up from 65). They now have **Bully**, **Rebuke**, **Menacing**, **Brace for Impact**, **Survival Instinct** (2H Axe), **Formidable Approach** (2H Axe), **Head Hunter** (Reach Cleaver), **Sanguinary** (Reach Cleaver), **Duelist** (Shield), **One with the Shield** (Shield) and **Shield Sergeant** (Shield)
+	- **Barrowkin Drengr** now always wear 130 Condition Body Armor (up from 60-105) and Condition 30 Helmets (down from 30-50). They now also use **Ancestral Sword**
+	- **Barrowkin Drengr** now have 70 Melee Skill (down from 75) and 20 Melee Defense (up from 15). They gain **Bully** and now always have **Rebuke**. They no longer have the first two weapon perk for their weapon
+	- **Barrowkin Thralls** now wear 50 Condition Body Armor (up from 15-20) and 20 Condition Helmets (down from 20-30). They no longer use **Barrowkin Axe** or **Barrowkin Cleaver**. They now use **Axehammer**, **Blunt Cleaver** or **Crude Axe**
+	- **Barrowkin Thralls** now have 60 Melee Skill (down from 65) and 50 Initiative (down from 55). They no longer have the first weapon perk for their weapon.
+	- **Barrowkin Shamans** now wear 80 Condition Body Armor (up from 50) and 70 Condition Helmets (down from 50-70)
+	- **Barrowkin Shamans** now have 120 Hitpoints (down from 150). They gain **Anticipation**. **Barrow Chant** now has a 100% chance to grant every ally **Restless** on death (up from 50%)
+	- Make **Hollenhunds** 250% more likely to flanke the enemy
+	- Make Wardogs appear less often in large noble armies
+	- Increase number of units in Barbarian-, Nachzehrer-, Hexen-, Noble- Zombie Locations by 50%
+	- Fix(Combat Simulator) Tactical Scenarios not starting correctly
+	- Fix(Vanilla) Armor Items and Dogs not being swappable during Tactical Scenarios
+	- Fix various Compatibility Issues when trying to start or end Tactical Scenarios
+	- Fix(Vanilla) enemies in Tactical Scenarios sometimes playing too defensive
+	- Fix crash in Kraken fight when playing at higher combat speed
+	- Set **Condition** on to **ConditionMax** at the end of the `weapon::create`
+	- Add `::Hardened.util.registerScenario(_script)` for registering new custom tactical scenarios inheriting from `scenario_hd_template`
+
 1.15.0
 	- Streamline dynamic party size calculation resulting in overall smaller average party sizes during the mid game
 	- **Goblin Poison** now costs 300 Crowns (up from 200)
