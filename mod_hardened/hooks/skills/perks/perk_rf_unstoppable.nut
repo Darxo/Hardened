@@ -43,14 +43,7 @@
 			id = 20,
 			type = "text",
 			icon = "ui/icons/warning.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Lose 1 stack when you [wait|Concept.Wait]"),
-		});
-
-		ret.push({
-			id = 21,
-			type = "text",
-			icon = "ui/icons/warning.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Lose 1 stack when you end your [turn|Concept.Turn] with more than " + this.getActionPointThreshold() + " [Action Points|Concept.ActionPoints] remaining"),
+			text = ::Reforged.Mod.Tooltips.parseString("Lose 1 stack whenever you use a Non-Attack skill"),
 		});
 
 		ret.push({
