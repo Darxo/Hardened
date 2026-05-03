@@ -31,25 +31,6 @@
 		});
 
 		local actor = this.getContainer().getActor();
-		if (!::Tactical.isActive() || !actor.getTile().hasZoneOfControlOtherThan(actor.getAlliedFactions()))
-		{
-			ret.push({
-				id = 20,
-				type = "text",
-				icon = "ui/tooltips/warning.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Cannot be used because you are not in an opponent\'s [Zone of Control|Concept.ZoneOfControl]"),
-			});
-		}
-		else
-		{
-			ret.push({
-				id = 20,
-				type = "text",
-				icon = "ui/icons/unlocked_small.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Can only be used while in an opponent\'s [Zone of Control|Concept.ZoneOfControl]"),
-			});
-		}
-
 		if (actor.getCurrentProperties().IsRooted)
 		{
 			ret.push({
@@ -70,6 +51,11 @@
 		}
 
 		return ret;
+	}
+
+	q.isUsable = @() function()
+	{
+		return this.skill.isUsable();
 	}
 
 	q.onAnySkillExecuted = @(__original) function( _skill, _targetTile, _targetEntity, _forFree )
