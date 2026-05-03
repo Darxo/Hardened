@@ -98,6 +98,25 @@
 ::Const.Strings.PerkName.RF_BestialVigor = "Backup Plan";
 ::Const.Perks.findById("perk.rf_bestial_vigor").Name = ::Const.Strings.PerkName.RF_BestialVigor;
 
+::Const.Perks.findById("perk.rf_discovered_talent").verifyPrerequisites = function( _player, _tooltip )
+{
+	// We prevent this skill from being learnable with pending LevelUps, to prevent the following exploits:
+	//	- Rerolling a badly rolled Level-Up
+	//	- Rerolling a Veteran Level-Up, or similar Level-Ups with purposefully bad rolls
+	if (_player.m.LevelUps > 0)
+	{
+		_tooltip.push({
+			id = 3,
+			type = "hint",
+			icon = "ui/icons/icon_locked.png",
+			text = "Locked because this character has unspent Level-Ups",
+		});
+		return false;
+	}
+
+	return true;
+}
+
 ::Const.Strings.PerkName.RF_ConcussiveStrikes = "Shockwave";
 ::Const.Perks.findById("perk.rf_concussive_strikes").Name = ::Const.Strings.PerkName.RF_ConcussiveStrikes;
 

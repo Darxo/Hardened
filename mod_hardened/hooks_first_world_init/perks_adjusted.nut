@@ -870,6 +870,21 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_discovered_talent",
+		Key = "RF_DiscoveredTalent",
+		Description = ::UPD.getDescription({
+			Fluff = "You don\'t know where it came from, but you\'ve suddenly started excelling at everything you do!",
+				Effects = [{
+				Type = ::UPD.EffectType.OneTimeEffect,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive("3") + " [Talent|Concept.Talent] Stars in an Attribute that none",
+					"Gain " + ::MSU.Text.colorPositive("1") + " random Fighting Style Perk Group",
+				],
+			}],
+			Footer = ::MSU.Text.colorNegative("This perk cannot be picked while you have a pending Level-Up. This perk cannot be refunded."),
+		}),
+	},
+	{
 		ID = "perk.rf_dismantle",
 		Key = "RF_Dismantle",
 		Description = ::UPD.getDescription({
