@@ -536,7 +536,7 @@
 	}
 
 // Reforged Functions
-	q.RF_getZOCAttackTooltip = @(__original) function( _entity )
+	q.RF_getHitchancesForMovementPreview = @(__original) function( _entity )
 	{
 		// We call the original, because we still want its fatigue tooltip and tooltip for moving into spearwall
 		local ret = __original(_entity);
@@ -552,7 +552,7 @@
 		{
 			local entry = ret[index];
 
-			if (entry.id == 100 && entry.icon != "ui/icons/fatigue.png")
+			if (entry.id == 100 && entry.icon == "ui/icons/warning.png")
 			{
 				ret.remove(index);
 			}
