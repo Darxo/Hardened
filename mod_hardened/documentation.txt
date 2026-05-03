@@ -30,6 +30,10 @@
 
 # Changelog
 
+1.16.2
+	- Use Nested Tooltips for **Goblin Trophy** and **Orc Trophy** descriptions
+	- Fix world difficulty quickly raising to maximum value
+
 1.16.1
 	- Fix compatibility issue with Reforged 0.8.16
 	- Fix **Barrowkin Huskarls** granting slightly less XP than intended

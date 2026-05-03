@@ -1310,7 +1310,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Play the **Ignite Firelance** animation in the actual direction you aim at
 - Idle sounds of enemies during combat now play up to 50% less freqently
 - Improve tooltip of **Disarmed effect**
-- Improve tooltip of **Whip Disarm** using a nested tooltip for the **Disarmed effect**
+- Improve tooltip of **Whip Disarm**, **Goblin Trophy** and **Orc Trophy** using a nested tooltips
 - Create a combat log when **Bolster** triggers at least one morale check
 - Add Settings to immediately stop the player movement halfway through, when it reveals an enemy (on) or an ally (off)
 - Add Setting (on) to prevent combat logs, which are the result of the same skill execution, from producing empty newlines
@@ -1411,6 +1411,13 @@ This section talks about adjustments made to other optional mods, when present a
 - **Caves** with larger beasts (Lindwurms, Unholds) now have 240 Resources (up from 210)
 - **Witch Huts** now have 280 Resources (up from 210)
 
+### Dynamic Spawns
+
+- Streamline dynamic party size calculation resulting in overall smaller average party sizes during the mid game
+  - Parties will now always spawn units until they hit an `IdealSize` value that is determined through `::Hardened.util.genericGenerateIdealSize`
+  - After the `IdealSize` is hit, parties will now always upgrade units, until there is nothing more to upgrade
+- Add `::DynamicSpawns.Class.Party.removeSpawnable(_id, _all = true)` for removing spawnables from a party during party generation
+
 ## Fixes
 
 ### Vanilla
@@ -1478,7 +1485,6 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix the same Human being able to play the same sound effect twice in a row
 - Fix destroyed locations being able to generate defenders
 - Fix Non-Scaled Experience gained (e.g. via Event or Dismissing Brothers) still being scaled by XP effects on the receiving character
-- Fix **Pathfinder** effect persisting, after being removed/refunded from a brother
 - Fix **Goblin Wolfrider** having no `ShakeLayer` for `BodyPart.All` defined
 - Fix **Wolf**, spawned by a dying **Goblin Wolfrider**, sometimes having an action in the round it spawned
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
@@ -1501,7 +1507,7 @@ This section talks about adjustments made to other optional mods, when present a
 - **Calculated Strikes** now works against stunned enemies
 - **Cheap Trick** now works with delayed skill executions (like Lunge or Aimed Shot)
 - The perks **Strengh in Numbers** and **Dynamic Duo** now instantly update the actors stats, if another actor moves adjacent to or away from them
-- Improve **Shieldwall effect** when viewed as a hyperlink
+- Improve **Shieldwall effect** when viewed as a nested tooltip
 - Fix **Sergeant** perk not showing any perk description
 - Fix Item Swaps sometimes requiring a different amount of Action Points than advertised at first
 - **Net Pull** is no longer considered an Attack
@@ -1510,17 +1516,10 @@ This section talks about adjustments made to other optional mods, when present a
 - Change the icon of **Sapling Harvest** to that of the sapling overlay icon
 - Mention in **Professional**, that it will never roll **Dagger Group**
 
-### Dynamic Spawns
-
-- Streamline dynamic party size calculation resulting in overall smaller average party sizes during the mid game
-  - Parties will now always spawn units until they hit an `IdealSize` value that is determined through `::Hardened.util.genericGenerateIdealSize`
-  - After the `IdealSize` is hit, parties will now always upgrade units, until there is nothing more to upgrade
-- Fix Unit order in UnitBlocks not taking subparties into account
-- Add `::DynamicSpawns.Class.Party.removeSpawnable(_id, _all = true)` for removing spawnables from from a party during party generation
-
 ### Other Mods
 
 - Fix(Combat Simulator) Tactical Scenarios not starting correctly
+- Fix(Dynamic Spawns) Unit order in UnitBlocks not taking subparties into account
 - Fix(Swifter) image of active entity in the turn sequence bar vanishing on higher combat speed
 - Fix(Extra Keybinds) Log Error, during ExtraKeybinds_onQueryEntityItemSwaps
 
