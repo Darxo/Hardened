@@ -274,7 +274,7 @@
 
 	currentTable[_functionName] = function (...)
 	{
-		vargv.insert(0, _table);
+		vargv.insert(0, _table instanceof ::WeakTableRef ? _table.get() : _table);
 		local mockResult = _mockedBehavior.acall(vargv);	// Todo: check, how many arguments _mockedBehavior expects/can handle. Only if it can handle exactly this many, call it, otherwise dont call it
 
 		if ("done" in mockResult && mockResult.done)	// the mock function signals that it is done and we can begin the clean up process
@@ -295,7 +295,7 @@
 	return {
 		cleanup = cleanupMockedFunction,
 		original = function(...) {
-			vargv.insert(0, _table);
+			vargv.insert(0, _table instanceof ::WeakTableRef ? _table.get() : _table);
 			return oldFunction.acall(vargv);
 		},
 	};
