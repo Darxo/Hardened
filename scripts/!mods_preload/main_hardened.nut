@@ -207,75 +207,76 @@
 /// [[nodiscard]] Change the behavior of an existing function for a limited number of times
 /// @important You should always call the cleanup() of this functions return value once you know you are done
 ///
-/// _table must either be a table or an instance (delegation is allowed) containing the function _functionName somewhere in it
-/// _functionName is the name of the function we want to mock
-/// _mockedBehavior is a function with the same parameters (including defaults) as _functionName
-///   However it must return a table with these optionals entries:
-///     "done == false" (optional) is a bool signalising if we can start cleaning up
-///     "value" (optional) is the return value we want the mocked function to return instead
-///       If this is empty the original function is called to gain the return value. In this case we must make sure to not change the arguments that came by reference, unless that is our intention
+///	_object must either be a table or an instance (delegation is allowed) containing the function _functionName somewhere in it
+///	_functionName is the name of the function we want to mock
+///	_mockedBehavior is a function with the same parameters (including defaults) as _functionName
+///		It may return a table with the following two entries
+///			"done" (default = false) is a bool signalising if we can start cleaning up
+///			"value" (default = not existing) is the custom return value we want the mocked function to return instead. If undefined, then the original function will be called and its return value will be returned. In this case we must make sure to not change the arguments that came by reference, unless that is our intention
+///		If the returned table is empty, or nothing is returned (= null), then the default values are used
 /// @return object with a:
 /// 	cleanup() function, which can be used to manually trigger the cleanup
 ///		original(...) function, which can be used to manually call the original to trigger its effect or get its return value
 ///			You must declared the variable for the mockObject in the line before you initiative it with the mockFunction return value, if you want to use mockObject.original in the mockFunction function argument
-::Hardened.mockFunction <- function( _table, _functionName, _mockedBehavior )
+::Hardened.mockFunction <- function( _object, _functionName, _mockedBehavior )
 {
-	if (_table == null)
+	if (::MSU.isNull(_object))
 	{
-		::logError("Hardened: mockFunction cannot mock '" + _functionName + "' because the passed _table is null");
-		::MSU.Log.printStackTrace();
-		throw ::MSU.Exception.InvalidType(_table);
-	}
-	else if (::MSU.isNull(_table))
-	{
-		::logError("Hardened: mockFunction cannot mock '" + _functionName + "' because the passed _table is a weakRef which is no longer valid");
-		::MSU.Log.printStackTrace();
-		throw ::MSU.Exception.InvalidType(_table);
-	}
-
-	local oldFunction = ::MSU.getMember(_table, _functionName);	// Store the original function
-
-	// Find the actual table where the function is defined (if inheritance is at play)
-	local currentTable = _table;
-	while (!::MSU.isIn(_functionName, currentTable))
-	{
-		if (currentTable instanceof ::WeakTableRef)	// weak table check must be first
+		if (_object == null)
 		{
-			currentTable = currentTable.get();
-		}
-		else if (typeof currentTable == "table")
-		{
-			currentTable = currentTable.getdelegate();
-		}
-		else if (typeof currentTable == "instance")
-		{
-			currentTable = currentTable.getclass();
+			::logError("Hardened: mockFunction cannot mock '" + _functionName + "' because the passed _object is null");
 		}
 		else
 		{
-			throw ::MSU.Exception.InvalidType(currentTable);
+			::logError("Hardened: mockFunction cannot mock '" + _functionName + "' because the passed _object is a weakRef which is no longer valid");
+		}
+		::MSU.Log.printStackTrace();
+		throw ::MSU.Exception.InvalidType(_object);
+	}
+
+	// A WeakTableRef is an invalid context. It's _get overwrite, will cause globally defined methods/members to no longer be accessible
+	local context = _object instanceof ::WeakTableRef ? _object.get() : _object;
+
+	// Find the actual table where the function is defined (if inheritance is at play)
+	local functionDefinitionOwner = context;
+	while (!::MSU.isIn(_functionName, functionDefinitionOwner))
+	{
+		if (functionDefinitionOwner instanceof ::WeakTableRef)	// weak table check must be first
+		{
+			functionDefinitionOwner = functionDefinitionOwner.get();
+		}
+		else if (typeof functionDefinitionOwner == "table")
+		{
+			functionDefinitionOwner = functionDefinitionOwner.getdelegate();
+		}
+		else if (typeof functionDefinitionOwner == "instance")
+		{
+			functionDefinitionOwner = functionDefinitionOwner.getclass();
+		}
+		else
+		{
+			throw ::MSU.Exception.InvalidType(functionDefinitionOwner);
 		}
 	}
 
-	if (currentTable instanceof ::WeakTableRef)	// weak table check must be first
-	{
-		currentTable = currentTable.get();
-	}
+	local oldFunction = functionDefinitionOwner[_functionName];		// Store the original function
 
+	// Mocking
 	local hasCleanupHappened = false;
 	local cleanupMockedFunction = function()
 	{
 		if (!hasCleanupHappened)
 		{
 			hasCleanupHappened = true;
-			currentTable[_functionName] = oldFunction;		// Restore the original function
+			functionDefinitionOwner[_functionName] = oldFunction;		// Restore the original function
 		}
 	}
 
-	currentTable[_functionName] = function (...)
+	functionDefinitionOwner[_functionName] = function (...)
 	{
-		vargv.insert(0, _table instanceof ::WeakTableRef ? _table.get() : _table);
-		local mockResult = _mockedBehavior.acall(vargv);	// Todo: check, how many arguments _mockedBehavior expects/can handle. Only if it can handle exactly this many, call it, otherwise dont call it
+		// Some BB Object functions will ignore the custom context and instead use their local one. But that is still correct and fine by us. They usually stop ignoring the custom context the moment, that they are hooked via Modern Hooks
+		vargv.insert(0, context);
+		local mockResult = _mockedBehavior.acall(vargv);
 
 		if ("done" in mockResult && mockResult.done)	// the mock function signals that it is done and we can begin the clean up process
 		{
@@ -295,7 +296,7 @@
 	return {
 		cleanup = cleanupMockedFunction,
 		original = function(...) {
-			vargv.insert(0, _table instanceof ::WeakTableRef ? _table.get() : _table);
+			vargv.insert(0, context);
 			return oldFunction.acall(vargv);
 		},
 	};
