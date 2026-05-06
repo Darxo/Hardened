@@ -63,7 +63,7 @@
 	{
 		if (this.isInLoadingScreen()) return __original(_mouse);
 		if (this.m.IsBattleEnded) return __original(_mouse);
-		if (this.isInputLocked()) return __original(_mouse);
+		if (!::Tactical.State.isPaused() && this.isInputLocked()) return __original(_mouse);		// Feat: We allow zooming while the game is paused
 
 		// We overwrite only the mouse wheel events coming from vanilla to customize the zoom multiplier
 		if (_mouse.getID() == 7)
@@ -142,7 +142,8 @@
 		if (_key.getModifier() == KeyModifier.Control) return __original(_key);
 		if (_key.getState() == 1)
 		{
-			if (this.isInputLocked() || this.isInCharacterScreen() || this.m.IsDeveloperModeEnabled || this.m.MenuStack.hasBacksteps()) return false;
+			// Feat: We allow moving the camera with hotkeys while the game is paused
+			if ((!::Tactical.State.isPaused() && this.isInputLocked()) || this.isInCharacterScreen() || this.m.IsDeveloperModeEnabled || this.m.MenuStack.hasBacksteps()) return false;
 
 			// Vanilla Fix: We prevent Lag Spikes during battle from causing the camera position to jump from pressing WASD keys
 			// This is caused because (I assume) helper_handleContextualKeyInput is called once every frame

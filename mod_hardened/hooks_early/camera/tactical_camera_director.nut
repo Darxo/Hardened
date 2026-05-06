@@ -3,6 +3,8 @@
 	// Overwrite, because we need to replace the vanilla !this.isMoving() condition with out new this.m.Events.len() > 0 condition
 	q.isInputAllowed = @() function()
 	{
+		if (::Tactical.State.isPaused()) return true;
+
 		if (::Tactical.TurnSequenceBar.getActiveEntity() == null) return false;
 		if (!::Tactical.TurnSequenceBar.getActiveEntity().isPlayerControlled()) return false;	// The player may only do input while its their turn
 		if (this.m.Events.len() > 0) return false;	// If there are active events, then the player may not do inputs
