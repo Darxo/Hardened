@@ -137,7 +137,7 @@
 	q.helper_handleContextualKeyInput = @(__original) function( _key )
 	{
 		if (this.isInLoadingScreen()) return __original(_key);
-		if (this.helper_handleDeveloperKeyInput(_key)) return __original(_key);
+		if (this.helper_handleDeveloperKeyInput(_key)) return true;
 		if (this.isBattleEnded()) return __original(_key);
 		if (_key.getModifier() == KeyModifier.Control) return __original(_key);
 		if (_key.getState() == 1)
