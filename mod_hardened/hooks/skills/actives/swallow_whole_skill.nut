@@ -2,13 +2,41 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Description = "Swallow an adjacent player controlled character. Cannot be used while netted.";
 		this.m.IsAttack = false;	// Vanilla: true; We turn this off as it otherwise synergises with various perks
+		this.m.IsUsingHitchance = false;	// Vanilla: true
 	}
+
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original();
+
+		local actor = this.getContainer().getActor();
+		if (actor.getCurrentProperties().IsRooted)
+		{
+			ret.push({
+				id = 20,
+				type = "text",
+				icon = "ui/tooltips/warning.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Cannot be used because you are [rooted|Concept.Rooted]"),
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 20,
+				type = "text",
+				icon = "ui/icons/unlocked_small.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Cannot be used while [rooted|Concept.Rooted]"),
+			});
+		}
+
+		return ret;
+	}
+
 
 	q.isUsable = @(__original) function()
 	{
-		if (this.getContainer().hasSkill("effects.net"))
+		if (this.getContainer().getActor().getCurrentProperties().IsRooted)
 		{
 			return false;
 		}
