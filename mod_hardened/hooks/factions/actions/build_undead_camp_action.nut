@@ -1,71 +1,92 @@
 ::Hardened.HooksMod.hook("scripts/factions/actions/build_undead_camp_action", function(q) {
-	q.m.HD_SettlementsBase <- 12;	// Vanilla: 15; By default, this many settlements can exist at the same time
-	q.m.HD_SettlementsCrisis <- 5;	// Vanilla: 8; This many additional settlements can exist during respective crisis
+	q.m.HD_SettlementsBase <- 12;	// Vanilla: 16; By default, this many settlements can exist at the same time
+	q.m.HD_SettlementsCrisis <- 6;	// Vanilla: 8; This many additional settlements can exist during undead crisis
 
-	// Overwrite, because we want to reduce the maximum settlements spawned by this faction and make those numbers moddable
-	q.onUpdate = @() function( _faction )
+	// Hardened
+	q.m.HD_EnableCustomLocationBuilding = true;
+	q.m.HD_AlternativeBanners = ::Const.UndeadBanners;
+	q.m.HD_BannerAssimilationDistance = 15;		// Vanilla: 15
+
+	q.create = @(__original) function()
 	{
-		local settlementsMax = this.m.HD_SettlementsBase;
-		if (::World.FactionManager.isUndeadScourge() && ::World.FactionManager.getGreaterEvilStrength() >= 20.0)
-		{
-			settlementsMax += this.m.HD_SettlementsCrisis;
-		}
+		__original();
 
-		local settlements = _faction.getSettlements();
-		if (settlements.len() > settlementsMax) return;
-
-		this.m.Score = 2;
+		this.HD_addLocationTicket("scripts/entity/world/locations/undead_ruins_location", {
+			RatioMax = 0.3,
+		});
+		this.HD_addLocationTicket("scripts/entity/world/locations/undead_mass_grave_location", {
+			RatioMax = 0.5,
+		});
+		this.HD_addLocationTicket("scripts/entity/world/locations/undead_vampire_coven_location", {
+			RatioMax = 0.3,
+		});
+		this.HD_addLocationTicket("scripts/entity/world/locations/undead_buried_castle_location", {
+			RatioMax = 0.4,
+		});
 	}
 
-	q.onExecute = @(__original) function( _faction )
+// Hardened Functions
+	q.HD_findTileForLocation = @(__original) function( _script )
 	{
-		// We want to prevent Vanilla from ever choosing the options
-		//	- 1 or 3 as both of those are actually zombie locations and would take away skeleton spawns
-		//	- 7, as those are desert exclusive vampire covens which take up too many skeleton positions. there is already a global vampire coven spawn
-		//	- Overwrite the spawn of buried castles (r == 5) to make them more common
-		local rolledBuriedCastle = false;
-		local mockObjectRand;
-		mockObjectRand = ::Hardened.mockFunction(::Math, "rand", function(...) {
-			if (vargv.len() == 2 && vargv[0] == 1 && vargv[1] == 8)
+		// Todo: implement crisis handling, like zombies, orcs, goblins do?
+
+		switch (_script)
+		{
+			case "scripts/entity/world/locations/undead_ruins_location":
 			{
-				// We start at 4 to skip the rolls 1 and 3
-				local ret = mockObjectRand.original(4, 8);
-				if (ret == 7) ret = 2;	// 7 is the third roll to skip, so we redirect it to become 2
-				if (ret == 5)
+				// Only Undead Ruins on Desert or Steppe contain Skeleton Spawnlists
+				// Unlike Vanilla, we now also allow those to appear on Steppe Tiles
+				local disallowTerrain = [];
+				for (local i = 0; i != ::Const.World.TerrainType.COUNT; ++i)
 				{
-					ret = 9;	// A roll of a 5 will cause nothing to spawn by vanilla
-					rolledBuriedCastle = true;	// Instead, we make note of that to spawn such a location manually later
+					if (i == ::Const.World.TerrainType.Desert) continue;
+					if (i == ::Const.World.TerrainType.Steppe) continue;
+					disallowTerrain.push(i);
 				}
-				return { done = true, value = ret };
+
+				return this.getTileToSpawnLocation(::Const.Factions.BuildCampTries, disallowTerrain, 7, 30);
 			}
-		});
+			case "scripts/entity/world/locations/undead_mass_grave_location":
+			{
+				return this.getTileToSpawnLocation(::Const.Factions.BuildCampTries, [
+					::Const.World.TerrainType.Mountains,
+				], 12);
+			}
+			case "scripts/entity/world/locations/undead_vampire_coven_location":
+			{
+				return this.getTileToSpawnLocation(::Const.Factions.BuildCampTries, [
+					::Const.World.TerrainType.Mountains,
+				], 15, 25);
+			}
+			case "scripts/entity/world/locations/undead_buried_castle_location":
+			{
+				local disallowTerrain = [];
+				for (local i = 0; i != ::Const.World.TerrainType.COUNT; ++i)
+				{
+					// In Vanilla only Snow and Tundra are eligible, resulting in very few buried castles
+					if (i == ::Const.World.TerrainType.Snow) continue;
+					if (i == ::Const.World.TerrainType.Tundra) continue;
+					if (i == ::Const.World.TerrainType.Steppe) continue;
+					if (i == ::Const.World.TerrainType.Desert) continue;
 
-		__original(_faction);
+					disallowTerrain.push(i);
+				}
 
-		mockObjectRand.cleanup();
+				return this.getTileToSpawnLocation(::Const.Factions.BuildCampTries, disallowTerrain, 15, 1000);
+			}
+		}
+		return __original(_script);
+	}
 
-		if (!rolledBuriedCastle) return;
+	q.HD_getLocationsMax = @() function()
+	{
+		local ret = this.m.HD_SettlementsBase;
 
-		local disallowTerrain = [];
-		for (local i = 0; i != ::Const.World.TerrainType.COUNT; ++i)
+		if (::World.FactionManager.isUndeadScourge() && ::World.FactionManager.getGreaterEvilStrength() >= 20.0)
 		{
-			// In Vanilla only Snow and Tundra are eligible, resulting in very few buried castles
-			if (i == ::Const.World.TerrainType.Snow) continue;
-			if (i == ::Const.World.TerrainType.Tundra) continue;
-			if (i == ::Const.World.TerrainType.Steppe) continue;
-			if (i == ::Const.World.TerrainType.Desert) continue;
-
-			disallowTerrain.push(i);
+			ret += this.m.HD_SettlementsCrisis;
 		}
 
-		local tile = this.getTileToSpawnLocation(::Const.Factions.BuildCampTries, disallowTerrain, 15, 1000);	// In Vanilla the minimum distance is 20
-		if (tile != null)
-		{
-			local camp = ::World.spawnLocation("scripts/entity/world/locations/undead_buried_castle_location", tile.Coords);
-			local banner = this.getAppropriateBanner(camp, _faction.getSettlements(), 15, ::Const.UndeadBanners);
-			camp.onSpawned();
-			camp.setBanner(banner);
-			_faction.addSettlement(camp, false);
-		}
+		return ret;
 	}
 });
