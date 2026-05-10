@@ -26,6 +26,12 @@
 			[12, "scripts/items/weapons/longaxe"],
 			[12, "scripts/items/weapons/polehammer"],
 		]);
+
+		this.m.ChestConditionRoll = ::MSU.Class.WeightedContainer([
+			[12, 0.8],
+			[12, 1.0],
+		]);
+		this.m.HelmetConditionRoll = this.m.ChestConditionRoll;
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
@@ -53,6 +59,8 @@
 		this.getItems().equip(::new(namedMeleeWeapon));
 
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_fresh_and_furious"));
+
+		this.m.ChestConditionRoll = null;
 
 		return true;
 	}}.makeMiniboss;

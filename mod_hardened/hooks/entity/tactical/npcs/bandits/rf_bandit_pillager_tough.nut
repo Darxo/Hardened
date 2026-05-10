@@ -25,6 +25,12 @@
 			[12, "scripts/items/weapons/woodcutters_axe"],
 			[12, "scripts/items/weapons/goedendag"],
 		]);
+
+		this.m.ChestConditionRoll = ::MSU.Class.WeightedContainer([
+			[12, 0.8],
+			[12, 1.0],
+		]);
+		this.m.HelmetConditionRoll = this.m.ChestConditionRoll;
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own

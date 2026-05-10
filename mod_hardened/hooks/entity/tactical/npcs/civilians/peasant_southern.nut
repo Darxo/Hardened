@@ -29,5 +29,11 @@
 			[12, "scripts/items/weapons/pitchfork"],
 			[12, "scripts/items/weapons/wooden_stick"],
 		]);
+
+		this.m.ChestConditionRoll = ::MSU.Class.WeightedContainer([
+			[12, 0.8],
+			[12, 1.0],
+		]);
+		this.m.HelmetConditionRoll = this.m.ChestConditionRoll;
 	}
 });

@@ -34,6 +34,12 @@
 		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/tools/reinforced_throwing_net"],
 		]);
+
+		this.m.ChestConditionRoll = ::MSU.Class.WeightedContainer([
+			[12, 0.8],
+			[12, 1.0],
+		]);
+		this.m.HelmetConditionRoll = this.m.ChestConditionRoll;
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
@@ -68,6 +74,9 @@
 			]).roll());
 			this.getItems().addToBag(namedThrowingWeapon);
 		}
+
+		this.m.ChestConditionRoll = null;
+		this.m.HelmetConditionRoll = null;
 
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_fresh_and_furious"));
 

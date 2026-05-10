@@ -33,5 +33,11 @@
 			[24, "scripts/items/weapons/wooden_stick"],		// Higher chance because they might have just picked it up off the ground
 			[3, "scripts/items/weapons/lute"],
 		]);
+
+		this.m.ChestConditionRoll = ::MSU.Class.WeightedContainer([
+			[12, 0.8],
+			[12, 1.0],
+		]);
+		this.m.HelmetConditionRoll = this.m.ChestConditionRoll;
 	}
 });
