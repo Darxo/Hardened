@@ -5,8 +5,10 @@
 
 	q.m.ChanceForNoChest <- 0;		// Value between 1 and 100 determining the chance for this actor to get no Body Armor assigned from ChestWeightedContainer
 	q.m.ChestWeightedContainer <- null;		// If defined, the Body Armor worn by this actor will by assigned by this weighted container
+	q.m.ChestConditionRoll <- null;		// If defined, the Body Armor worn, will get its condition pct set by this weighted container
 	q.m.ChanceForNoHelmet <- 0;		// Value between 1 and 100 determining the chance for this actor to get no Helmet assigned from ChestWeightedContainer
 	q.m.HelmetWeightedContainer <- null;	// If defined, the Helmet worn by this actor will by assigned by this weighted container
+	q.m.HelmetConditionRoll <- null;		// If defined, the Helmet worn, will get its condition pct set by this weighted container
 	q.m.ChanceForNoWeapon <- 0;		// Value between 1 and 100 determining the chance for this actor to get no Weapon assigned from WeaponWeightContainer
 	q.m.WeaponWeightContainer <- null;		// If defined, the Weapon worn by this actor will by assigned by this weighted container
 	q.m.ChanceForNoOffhand <- 0;		// Value between 1 and 100 determining the chance for this actor to get no Offhand assigned from OffhandWeightContainer
@@ -545,7 +547,9 @@
 		{
 			if (::Math.rand(1, 100) > this.m.ChanceForNoChest)
 			{
-				this.getItems().equip(::new(this.m.ChestWeightedContainer.roll()));
+				local chest = ::new(this.m.ChestWeightedContainer.roll());
+				if (this.m.ChestConditionRoll != null) chest.setArmor(::Math.round(chest.getArmorMax() * this.m.ChestConditionRoll.roll()));
+				this.getItems().equip(chest);
 			}
 		}
 
@@ -553,7 +557,9 @@
 		{
 			if (::Math.rand(1, 100) > this.m.ChanceForNoHelmet)
 			{
-				this.getItems().equip(::new(this.m.HelmetWeightedContainer.roll()));
+				local helmet = ::new(this.m.HelmetWeightedContainer.roll());
+				if (this.m.HelmetConditionRoll != null) helmet.setArmor(::Math.round(helmet.getArmorMax() * this.m.HelmetConditionRoll.roll()));
+				this.getItems().equip(helmet);
 			}
 		}
 
