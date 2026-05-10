@@ -90,7 +90,7 @@ this.hd_onslaught_skill <- this.inherit("scripts/skills/actives/rf_onslaught_ski
 	// Determine, whether _target is a valid entity to be affected by this skills
 	function HD_isValidTarget( _target )
 	{
-		if (_target.getFaction() != ::Const.Faction.Player) return false;;
+		if (_target.getFaction() != ::Const.Faction.Player) return false;
 		if (_target.getMoraleState() == ::Const.MoraleState.Fleeing) return false;
 		if (_target.getCurrentProperties().IsStunned) return false;
 		if (_target.isNonCombatant()) return false;

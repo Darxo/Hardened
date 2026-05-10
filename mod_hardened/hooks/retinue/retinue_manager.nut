@@ -2,7 +2,7 @@
 	// Overwrite, because we make the itemslot amount, that you gain per upgrade, moddable
 	q.upgradeInventory = @() function()
 	{
-		local newSize = ::World.Assets.getStash().getCapacity() + this.HD_getInventoryUpdateAmount();;
+		local newSize = ::World.Assets.getStash().getCapacity() + this.HD_getInventoryUpdateAmount();
 		::World.Assets.getStash().resize(newSize);
 
 		++this.m.InventoryUpgrades;

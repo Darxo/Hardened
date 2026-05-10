@@ -194,7 +194,7 @@
 
 		if (this.HD_isInArena())
 		{
-			resolve += this.HD_getArenaBraveryModifier();;
+			resolve += this.HD_getArenaBraveryModifier();
 		}
 
 		if (this.HD_isArenaChampion())

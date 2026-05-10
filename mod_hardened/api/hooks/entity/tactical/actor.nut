@@ -117,7 +117,7 @@
 	{
 		if (::MSU.isNull(this.m.WorldTroop)) return null;
 		if (!("Party" in this.m.WorldTroop)) return null;
-		if (::MSU.isNull(this.m.WorldTroop.Party)) return null;;
+		if (::MSU.isNull(this.m.WorldTroop.Party)) return null;
 
 		return this.m.WorldTroop.Party;
 	}

@@ -78,7 +78,7 @@
 
 		if (this.HD_isInArena())
 		{
-			resolve += this.HD_getArenaBraveryModifier();;
+			resolve += this.HD_getArenaBraveryModifier();
 		}
 
 		return resolve;

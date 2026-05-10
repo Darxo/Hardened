@@ -505,7 +505,7 @@
 // scripts/entity/tactical/enemies/zombie_yeoman_bodyguard
 {
 	// Mandatory stats
-	::Const.Tactical.Actor.ZombieYeoman.XP = 180 * ::Hardened.Global.FactionExperience.Zombies;;				// Vanilla: 150
+	::Const.Tactical.Actor.ZombieYeoman.XP = 180 * ::Hardened.Global.FactionExperience.Zombies;				// Vanilla: 150
 	::Const.Tactical.Actor.ZombieYeoman.ActionPoints = 6;		// Vanilla: 6
 	::Const.Tactical.Actor.ZombieYeoman.Hitpoints = 120;		// Vanilla: 130
 	::Const.Tactical.Actor.ZombieYeoman.Bravery = 100;			// Vanilla: 100
