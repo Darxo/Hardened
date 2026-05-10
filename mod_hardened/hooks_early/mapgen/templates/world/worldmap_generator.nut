@@ -13,7 +13,7 @@
 		logInfo("Hardened: Building settlements...");
 
 		// We randomly decide, whether the settlements should be spawned on the right or left side of the map
-		local isLeft = Math.rand(0, 1);
+		local isLeft = ::Math.rand(0, 1);
 		::World.Flags.set("HD_SettlementTimezone", isLeft ? "Left" : "Right");
 		::World.Flags.set("HD_OrcHemisphere", ::Math.rand(0, 1) ? "Top" : "Bottom");
 

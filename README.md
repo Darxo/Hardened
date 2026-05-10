@@ -213,10 +213,11 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Deathblow** now costs 15 Fatigue (up from 10)
 - **Demolish Armor** now deals 60% more Armor Damage (up from 45% more)
 - **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
+- **Drink Night Owl Elixir** (from **Hexen** and **Assassins**) now costs 5 AP (up from 2)
 - **Drums of War** now costs 30 Fatigue (up from 15)
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
 - **Flaming Arrow** (granted by **Trick Shooter**) no longer causes an extra morale check on the main target. It now deals 100% Burning Damage (instead of 25% Burning and 75% Piercing Damage)
-- **Footwork** (granted by **Footwork**) now costs -1 Action Point for every tile you move during your turn, until you use Footwork or end your turn. It can now only be used once per round
+- **Footwork** (granted by **Footwork**) now costs -1 Action Point for every tile you move during your turn, until you use Footwork or end your turn. It can now only be used once per round. It can now be used even while not the the Zone of Control of an enemy
 - **Frostbound** (from Barrowkin) no longer builds up 2 Fatigue, when you start your turn next to those Barrowkins. Instead it now applies **Worn Down** on everyone, starting their turn adjacent to those enemies
 - **Hand-to-Hand Attack** now costs 3 Action Points (down from 4) and it is now enabled if you carry an empty throwing weapon in your main hand.
 - **Hex** (from **Hexen**) now costs 20 Fatigue (up from 5)
@@ -243,6 +244,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Spider Poison** now also reduces the Hitpoints Recovery of the target by 50%
 - **Stab** now costs 3 Action Points (down from 4) and has a 25% higher threshold to inflict injuries
 - **Strike Down** now has a 100% Chance to Stun (up from 75%) and has a Stun Duration of 1 Turn (down from 2)
+- **Swallow Whole** (from **Large Nachzehrer**) can no longer be used while rooted
 - **Sword Thrust** now has 0% additional Hitchance (up from -20%)
 - **Take Aim** (granted by **Crossbow and Firearm Mastery**) now costs 3 Action Points (up from 2). It now also lowers the Fatigue cost of your next Crossbow or Firearm Attack by 100%. It can now be used with any Firearm instead of only being restricted to the **Handgonne**. **Take Aim** with Firewarms no longer enlerges the AoE beyong 6 tiles, when aiming at close range
 - **Taunt** (granted by **Taunt** perk) now has a Range of 4 tiles (up from 3)
@@ -302,6 +304,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Decisive** no longer grants 15% more Resolve at 1 Stack
 - **Death Dealer** is completely reworked. It now grants 5% more damage with AoE-Attacks for every enemy within 2 tiles. It also removes any rooted effects, whenever you use an AoE Attack
 - **Deep Impact** is now called **Breakthrough** and has been completely reworked. It grants the **Pummel** skill, which can now be used with any hammer. It also makes it so **Shatter** has a 100% chance to knock targets back on a hit and it increases the knock back distance of **Shatter** by 1
+- **Discovered Talent** is completely reworked. When you pick it, it now grants 3 Talent stars in a random attributes that you have none in and a random **Fighting Style** Perk Group. It can no longer be learned, while you have any pending Level-Up
 - **Dismantle** has been completely reworked. It now grants +20% Armor Damage and 100% more Shield Damage
 - **Dismemberment** no longer causes any morale checks. It now grants +20% chance to hit the body part with the most temporary injuries. This perk no longer requires the attack to be cutting damage in order to upgrade injuries
 - **Dodge** now grants 5% of Initiative as extra Melee Defense and Ranged Defense for every empty adjacent tile (down from always 15%)
@@ -462,9 +465,13 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Traits
 
+- **Pit Fighter** now grants +1 Resolve during Arena Fights for each Arena Fight you have won so far
+- **Arena Fighter** no longer grants +5 Resolve. On top of the bonuses from the previous rank, it now also grants 50% more chance to survive, if struck down while fighting in the Arena.
+- **Arena Veteran** no longer grants +10 Resolve or 50% more chance to survive, if struck down. On top of the bonuses from the previous rank, you now also gain +15 global Resolve while you have the most Arena Wins out of all of your brothers
 - **Ailing** now also makes temporary injuries you receive during combat last 50% longer
 - **Brute Trait** now grants 15% more damage instead of 15% more hitpoint damage. It is no longer negated by **Steelbrow** or enemies who are immune to critical damage
 - **Huge** no longer increases the Reach by 1
+- **Impatient** trait is completely reworked. Using Wait now delays your turn by 6 turns, instead of until the end of the current round
 - **Irrational** will no longer appear on recruits
 - **Night Blind** now causes -2 Vision during night (down from -1)
 - **Night Owl** now grants +2 Vision during night (up from +1)
@@ -502,7 +509,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Weapons
 
-- **Ancient Pikes** gains the **Spear** Weapontype
+- **Ancient Bladed Pike** now deals 55-75 Damage (down from 55-80), 130% Armor Damage (up from 125%), has 42 Condition (up from 30) and costs 800 Crowns (up from 600). They gain the **Spear** Weapontype
 - **Ancient Spear** now deals 30-40 damage (up from 20-35), has 10 Weight (up from 6) and costs 750 Crowns (up from 150)
 - **Ancient Sword** loses **Stab** and gains **Deathblow** (costing 5 Action Points and 15 Fatigue)
 - **Barrowkin Axe** now deals 35-50 Damage (up from 30-45), 130% Armor Damage (up from 120%), 30% Armor Penetration (down from 35%), 16 Shielddamage (up from 14), has 4 Reach (up from 3), 80 Condition (up from 76) and costs 2300 Crowns (up from 800)
@@ -567,6 +574,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Warbrand** now deals 65-75 damage (up from 50-75), has a Armor Penetration of 30% (up from 20%), 12 Weight (up from 10), +0% Headshot Chance (down from +5%) and costs 2600 Crowns (up from 1600). It loses **Split** and gains **Riposte**. Its skills no longer have a custom cost. The **Named Warbrand** no longer has any custom damage bonus
 - **Warhammer** now has 12 Weight (up from 8)
 - **Warfork** now has 14 Weight (up from 12) and costs 400 Crowns (down from 600)
+- **Warscythe** now deals 55-75 Damage (down from 55-80), 120% Armor Damage (up from 105%) and costs 1000 Crowns (up from 700)
 - **Wonky Bow** now deals 30-45 damage (down from 30-50) a Range of 6 (down from 7), 0% Hitchance bonus (up from -10%) and costs 150 Crowns (up from 100)
 - **Woodcutters Axe** now deals 40-65 damage (from 35-70) and no longer has any discount on its weapon skills
 - **Zweihander** loses **Split Shield**. It now has 6 Reach (down from 7) and +10% Headshot Chance (up from +5%)
@@ -756,6 +764,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Food now only loses value once half of its shelf life is over
 - **Adarga** is now called **Adarga Shield** (just like in Vanilla)
 - **Antidote** now costs 100 Crowns (down from 150). Crafting it now costs 40 Crowns (down from 50) and 1 Jagged Fang (down from 2). It is now considered `IsMedical` causing it to be affected by medical-related settlement situations
+- **Alp Trophy** now makes NPCs 50% less likely to target you with **Sleep** and **Nightmare**
 - **Apothecary\'s Miracle** is now marked as `IsMedical`, causing it to be affected by medical-related settlement situations
 - **Bandage** costs 40 Crowns (up from 25). It is now considered `IsMedical` causing it to be affected by medical-related settlement situations
 - **Battle Axes** now appear ~twice as often in weapon smiths
@@ -770,16 +779,20 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Fermented Unhold Heart** now has an expiry date of 40 days (up from 20) and has 50 Servings (up from 25)
 - **Geist Tear** now costs 800 Crowns (up from 300)
 - **Goblin Poison** now costs 300 Crowns (up from 100). It now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1
+- **Goblin Trophy** now also grant +5 Resolve
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 2000 Value (up from 200) and grants 10 Resolve (up from 5)
+- **Hexen Trophy** now makes NPCs 50% less likely to target you with **Charm** and **Hex**. It now grants +5 Resolve (down from +6)
 - **Holy Water** now costs 300 Crowns (up from 100) and is now considered `IsMedical` causing it to be affected by medical-related settlement situations
 - **Hyena Fur Mantle** now grants 10% more Initiative instead of +15 Initaitive
 - **Kriegsmesser** now appear ~half as often in weapon smiths
 - **Masterfully Cured Ration** now has a Stacksize of 50 (up from 25) and costs 300 Crowns (up from 150)
+- **Nachzehrer Trophy** now makes NPCs 50% less likely to target you with **Ghoul Claw** and **Swallow Whole**. It now grants +5 Resolve (up from +4)
 - Named Helmets now have a minumum possible weight of 3 (down from 4)
 - Named Shields can now roll Weight between 60%-80% (down from 70%-90%)
 - The Named **Wolf Helmet** now has 120 Condition (down from 140), 6 Weight (down from 8) and -1 Vision (down from 0) and costs 3000 Crowns (up from 2000)
 - The Named **Norse Helmet** now has 170 Condition (up from 125), 8 Weight (up from 6) and -3 Vision (down from -1) and costs 3000 Crowns (up from 2000)
 - Named **Wolf Helmets** and **Norse Helmets** are now twice as likely to appear as rewards or in shops
+- **Orc Trophy** now also grant +5 Resolve
 - **Phantom Draught** no longer grants +5 Melee Defense or +10 Ranged Defense. It now grants the **Ethereal** perk
 - **Poisoned Oil** now costs 200 Crowns (up from 150)
 - **Powder Bag** now costs 2 **Ammunition Supply** each (up from 1) and costs 150 Crowns (up from 50)
@@ -794,6 +807,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Tarnished Full Helm** now grants +10 Threat (similar to Direwolf Pelt). It now only appears in the Full Helm looking variants
 - **Throwing Net** now has 4 Weight (up from 2)
 - **Tools and Supplies** are now marked as `IsBuildingSupply`, causing them to be affected by building-supply-related settlement situations
+- **Undead Trophy** now also grant +5 Resolve
 - **Unhold Fur Cloak** now grants 15 Condition (up from 10)
 - **Wardogs** now cost 250 Crowns (up from 200) and the variant with dog armor costs 450 Crowns (up from 400). In Marketplaces, **Wardogs** now have 95 rarity (up from 70) and **Armored Wardogs** now have 99 rarity (up from 80)
 - **Warhounds** now cost 400 Crowns (up from 300) and the variant with dog armor costs 600 Crowns (up from 500). In Marketplaces, **Warhounds** now have 95 rarity (up from 70) and **Armored Warhounds** now have 99 rarity (up from 80)
@@ -838,11 +852,13 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 	- This effect is given to all **Dogs**, **Wolfs** and **Hyenas**
 - Weapons in the bags of NPCs will now have randomized Condition, similar to their equipped weapons
 - Noble Armies with a Banner are no longer under the effect of **For the Realm**
+- The following units now have a 50% chance to spawn with 80% condition on their armor: All Brigands (except Leader and Baron), Barbarians (except Madman), Peasants, Caravan Hands and Caravan Guards
 
 ### Specific Changes
 
 **Undead**
 - All **Wiederganger** types take 50% more burning damage to hitpoints. They no longer grant experience after being resurected. They lose **Double Grip** and no longer inflict +5 Fatigue on a hit. They now have a 100% resurrection chance (up from 66%) and resurrect in 1-3 turns (up from 1-2)
+- **Armored Wiederganger**, **Fallen Soldiers** and **Fallen Heroes** now have 3 possible damage states at the start of combat (up from 2)
 - All **Zombie Orcs** now have a 100% resurrection chance (up from 66%-90%)
 - Reanimated Humans how have 120 Hitpoints (down from 130) and 200 Stamina (up from 100)
 - All **Skeletons** no longer grant experience after being resurected
@@ -938,6 +954,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Adorned Knights now only bring 1 Squire (down from 2)
 - Noble Parties can now only have up to 30% melee backliner (down from 40%) and up to 25% ranged backliner (down from 30%)
 - Brigand Camps can now have at most 35% ranged units (down from 40%)
+- Brigand Frontline can now have at most 40% Fast and 40% Tough Brigands (down from 50% both)
 - Nomad Parties up to a resource value of 450 now spawn less elite units than before and they spawn more elite troops than before past 450 resources
 - **Brigand Elites** (**Master Archer**, **Hedge Knights** and **Swordmaster**) now require 400 mininum resources to be able to appear (up from 320). Up to 15% of an army can be filled by them (up from 10%)
 - **Men at Arms** are now more common in late game noble armies
@@ -983,6 +1000,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - NPCs with **Death Dealer** are 200% more likely to use AoE Attacks
 - NPCs with **Exploit Opening** are 10% more likely to attack per stack, and they are 10% less attractive for others, if they have 0 stacks
 - NPC with **Fresh and Furious** active are 90% less likely to use **Hand to Hand**
+- **Fresh and Furious** now makes a character 10% more likely to be targeted by NPCs, while it is active
 - NPCs are 100% more likely to use **Throw Dirt** for every fleeing ally adjacent to the target
 - NPCs are 20% more likely to target enemies with **Formidable Approach** if it has been procced against them
 - NPCs with **Toolbox** are 20% less likely to throw a piercing weapon at an enemy with **Arrow to the Knee Effect**
@@ -1118,13 +1136,16 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Restrict the Y-position of the **Oracle** unique location to be between 10% and 35% (previously unrestricted)
 - **Flesh Cradles** now drop **Strange Meat** on death
 
-### Other Locations
+### Attackable Locations
 
-- Locations now only use randomly between 75% and 100% of their available resources to spawn defenders (just like in Vanilla), instead of always using 100% of their resources
+- Hostile Locations now hide their Defender Line-Up during night
+- Hostile Locations will no longer spawn roaming parties or defenders while you are within 2 tiles of it
+- At the start of each new campaign ~3 additional **Bandit Hideouts** are spawned in the world
+- Named weapons now have a 40% chance to be the chosen item type for camps (up from 25,9%). Named shields, helmets and armor now have a 20% chance to be chosen (down from 24,7%)
 - All non-unique hostile world locations now have standardized resources, influenced by a faction difficulty multipliers. The following resources already include these difficulty multiplier (Visual Overview Here)(https://docs.google.com/spreadsheets/d/1fOc6TcgiVm9P_iOyVoqwYNoXETsnuc9I_4YbblBHV18/edit?gid=2122483876#gid=2122483876):
-	- **Bandit Hideouts** now have 100 Resources (up from 80)
-	- **Bandit Camps** now have 200 Resources (up from 180)
-	- **Bandit Forts** now have 250 Resources (down from 300). They can now sometimes drop a smoke pot or a flash pot in place of a regular treasure
+	- **Brigand Hideouts** now have 100 Resources (up from 80)
+	- **Brigand Camps** now have 200 Resources (up from 180)
+	- **Brigand Forts** now have 250 Resources (down from 300). They can now sometimes drop a smoke pot or a flash pot in place of a regular treasure
 	- **Barbarian Shelters** now have 120 Resources (up from 80)
 	- **Barbarian Camps** now have 240 Resources (up from 200)
 	- **Barbarian Sancutaries** now have 300 Resources (down from 325)
@@ -1150,12 +1171,16 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 	- **Undead Hideouts** now have 100 Resources (up from 80). They now show their banner
 	- **Undead Graveyards** now have 150 Resources (up from 130). They drop 1 loot item (up from 0-1), 10-80 Crowns (down from 1-200) and 2-8 Tools
 	- **Undead Necromancers Lair** now has 250 Resources (up from 150) and it drops 8-20 Tools (up from 0)
-- At the start of each new campaign ~5 additional **Bandit Hideouts** are spawned in the world
+- All Factions which build locations got their spawn behavior and rules tweaked. The most notable changes are:
+- **Brigands** now build up to 12 Locations by default (up from 9). No Brigand Location type can now take up more than 40% of their total locations
+	- **Skeletons** now spawn now spawn up to 12 Locations (down from 16) and +6 additional locations during the undead crisis (down from +8). No Undead Location type can now take up more than 50% of their total locations. Skeleton Ruins can now appear in Steppe areas
+	- **Nomads** now spawn +0 additional locations during any crisis (up from -2). No Nomad location type can now take up more than 40% of their total locations. Skeleton Ruins can now appear in Steppe areas. Nomad Ruins can no appear in Steppe areas
+	- **Zombies** now spawn +6 additional locations during the undead crisis (down from +8). No Zombie location type can now take up more than 40% of their total locations. Higher tier locations now spawn further away from settlements
+	- **Barbarians** now spawn up to 9 Locations (up from 8) and spawn -3 additional locations during any crisis (down from -2). No Barbarian location type can now take up more than 60% of their total Locations
+	- **Barrowkin** now spawn 0 additional locations during the undead crisis (down from +3). No Barrowkin location type can now take up more than 60% of their total locations. Higher tier locations now spawn further away from settlements. Their locations now spawn roughly 10 tiles further away from settlements
+	- **Goblins** now spawn up to 12 locations (down from 13) and +6 additional locations during the Greenskin crisis (down from +8). No Goblin location type can now take up more than 40% of their total locations. Goblin locations can no longer spawn in the snow. Goblin Locations now only spawn either east or west, on the opposite side to where the settlements spawn. Goblins now only spawn either north or south, on the opposite side to where Orcs spawn
+	- **Orcs** now spawn up to 12 locations (down from 15). No Orc location type can now take up more than 40% of their total locations. Orc Locations now only spawn either east or west, on the opposite side to where the settlements spawn. Orcs now only spawn either north or south, on the opposite side to where Goblins spawn
 - Increase the `BuildCampTries` to 3 (up from 1) increasing the odds of placing camps with stricter tile requirements
-- **Skeleton Faction** (skeletons + vampires) now builds up to 12 settlements by default (down from 15) and up to 17 during the undead crisis (down from 23)
-- Hostile Locations now hide their Defender Line-Up during night
-- Hostile Locations will no longer spawn roaming parties or defenders while you are within 2 tiles of it
-- Named weapons now have a 40% chance to be the chosen item type for camps (up from 25,9%). Named shields, helmets and armor now have a 20% chance to be chosen (down from 24,7%)
 
 ### World Parties
 
@@ -1223,6 +1248,13 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - **Tutorial** now starts with 0 Renown (down from 100)
 - **Trader** has a slightly more accurate description
 
+## Ambitions
+
+- **Battle Standard Ambition** now requires a minimum of 600 Renown in order to appear (up from 0)
+- **Sergeant Sash Ambition** now requires a minimum of 1000 Renown in order to appear (up from 0)
+- **Trade Ambition** now counts the sum of both transaction (buying and selling) instead of just the higher number of the two
+- **Allied Noble Ambition** now also rewards a **Heraldic Cape** attachement on completion
+
 ## Tactical Scenarios
 
 - Add **Follow the Tracks** Scenario for practicing a typical early game contract encounter
@@ -1232,8 +1264,6 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 - The Retreat tooltip during combat now also lists the Melee Defense bonus your characters receive during Auto-Retreat
-- **Trade Ambition** now counts the sum of both transaction (buying and selling) instead of just the higher number of the two
-- **Allied Noble Ambition** now also rewards a **Heraldic Cape** attachement on completion
 
 ## Quality of Life
 
@@ -1263,6 +1293,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Add tooltip for the duration of tile effects (smoke, flames, miasma)
 - Shorten the headshot chance tooltip line when targeting enemies
 - Hovering over the tile of any corpse will now differentiate whether they were *struck down* (= survived with a permanent injury) or *slain* (died permanently)
+- Allow moving and zooming the camera during combat while the game is pause
 - Reduce scroll speed of combat log to 0.5 (down from 15)
 - Increase saturation of ambient light during midnight fights to 70% (up from 50%)
 - Colorize corpse name in tile tooltips
@@ -1319,6 +1350,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - **Armored Wiederganger** now display their complete name during battle, instead of just **Wiederganger**
 - Add Setting (off) for making the hotkeys for **Wait** fire continuously, instead of only when released
 - Reduce the Attack sfx volume of Wardogs and Warhounds by 20%
+- Lower size and alpha value of blizzard special effects
 - Change the name of all tactical objects called "Brush" into "Bush"
 
 ### World
@@ -1454,6 +1486,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix contracts rarely triggering start function multiple times
 - Fix undead (skeleton) faction spawning zombie locations (it is the job of the zombie faction to spawn their own locations)
 - Fix poisons inflicted by coated weapons not playing a sound effect
+- Fix Goblin Settlements not respecting the distance to other locations when spawning
 - Fix **Blacksmith Follower** increasing the odds of looting weapons from NPCs
 - Fix some positional effects (e.g. Lone Wolf or Entrenched) visually persisting outside of combat
 - Dying enemies no longer set the LastCombatResult to `EnemyDestroyed`, unless they were the last one to die. This fixes a rare Sunken Library exploit
@@ -1497,6 +1530,8 @@ This section talks about adjustments made to other optional mods, when present a
 - Prevent the same random human name (e.g. for Leader or Knight) to be generated in succession
 - **Line Breaker**, **Swallow Whole**, **Throw Net** and Throw Pot/Flask skills are no longer considered an Attack
 - Setting a faction as a temporary enemy now instantly updates the name labels of all their world parties accordingly
+- Fix `ai_sleep` not passing its skill when calling `queryTargetValue`
+- Make **Swallow Whole**, **Hex** and **Charm**  call and consider `queryTargetValue`
 - Rewrite `queryActorTurnsNearTarget` from `behavior.nut`, making it more accurate by considering current action points
 - Remove a duplicate loading screen
 
@@ -1527,6 +1562,8 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add shared boilerplate code for location build actions into `faction_action`
+- Add `actor.m.ChestConditionRoll = null` and `actor.m.HelmetConditionRoll = null` which can be assigned WeightedContainer to define armor condtition percentages of the assigned armors
 - Add `::Hardened.util.registerScenario(_script)` for registering new custom tactical scenarios inheriting from `scenario_hd_template`
 - Add `::Hardened.util.enforceFlexSpawnable(_party, _spawnableIdArray, _maximumAmount)` for encorving a maximum shared amount of existing spawnables during party generation
 - Add `weapon::HD_getDropChance()` which can be overwritten to assign custom and dynamic drop chances for weapons

@@ -30,6 +30,51 @@
 
 # Changelog
 
+1.17.0
+	- **Discovered Talent** is completely reworked. When you pick it, it now grants 3 Talent stars in a random attributes that you have none in and a random **Fighting Style** Perk Group. It can no longer be learned, while you have any pending Level-Up
+	- **Footwork** can now be used even while not in an opponents Zone of Control
+	- **Impatient** trait is completely reworked. Using Wait now delays your turn by 6 turns, instead of until the end of the current round
+	- **Drink Night Owl Elixir** (from **Hexen** and **Assassins**) now costs 5 AP (up from 2)
+	- **Pit Fighter** now grants +1 Resolve during Arena Fights for each Arena Fight you have won so far
+	- **Arena Fighter** no longer grants +5 Resolve. On top of the bonuses from the previous rank, it now also grants 50% more chance to survive, if struck down while fighting in the Arena.
+	- **Arena Veteran** no longer grants +10 Resolve or 50% more chance to survive, if struck down. On top of the bonuses from the previous rank, you now also gain +15 global Resolve while you have the most Arena Wins out of all of your brothers
+	- **Swallow Whole** (from Large Nachzehrer) can no longer be used while rooted (up from while netted)
+	- Improve tooltip of **Voice of Davkul** skill
+	- **Goblin Trophy**, **Orc Trophy** and **Undead Trophy** now also grant +5 Resolve
+	- **Alp Trophy** now makes NPCs 50% less likely to target you with **Sleep** and **Nightmare**
+	- **Nachzehrer Trophy** now makes NPCs 50% less likely to target you with **Ghoul Claw** and **Swallow Whole**. It now grants +5 Resolve (up from +4)
+	- **Hexen Trophy** now makes NPCs 50% less likely to target you with **Charm** and **Hex**. It now grants +5 Resolve (down from +6)
+	- **Ancient Bladed Pike** now deals 55-75 Damage (down from 55-80), 130% Armor Damage (up from 125%), has 42 Condition (up from 30) and costs 800 Crowns (up from 600)
+	- **Warscythe** now deals 55-75 Damage (down from 55-80), 120% Armor Damage (up from 105%) and costs 1000 Crowns (up from 700)
+	- **Brigand Highwayman** now have a 20% chance to spawn without a shield and two **Throwing Spears**
+	- **Brigand Marksman** now spawn with **Bludgeons** instead of **Dagger**
+	- **Brigand Barons** no longer spawn with a **Scale Armor**
+	- Slightly lower the relative amount of Fast and Tough Brigands that can be part of any brigand party
+	- The following units now have a 50% chance to spawn with 80% condition on their armor: All Brigands (except Leader and Barons), Barbarians (except Madman), Peasants, Caravan Hands and Caravan Guards
+	- **Armored Wiederganger** now have a 33% chance to spawn with 60% condition and 33% chance to spawn with 80% condition (instead of 66% chance to spawn with 50% condition)
+	- **Fallen Soldiers** and **Fallen Heroes** now have a 33% chance to spawn with 50% condition and 33% chance to spawn with 75% condition (instead of 50% chance to spawn with 50% condition)
+	- **Brigands** now build up to 12 Locations by default (up from 9). No Brigand Location type can now take up more than 40% of their total locations
+	- **Skeletons** now spawn up to +6 additional locations during the undead crisis (up from +5). No Undead Location type can now take up more than 50% of their total locations. Skeleton Ruins can now appear in Steppe areas
+	- **Nomads** now spawn +0 additional locations during any crisis (up from -2). No Nomad location type can now take up more than 40% of their total locations. Skeleton Ruins can now appear in Steppe areas. Nomad Ruins can no appear in Steppe areas
+	- **Zombies** now spawn +6 additional locations during the undead crisis (down from +8). No Zombie location type can now take up more than 40% of their total locations. Higher tier locations now spawn further away from settlements
+	- **Barbarians** now spawn up to 9 Locations (up from 8) and spawn -3 additional locations during any crisis (down from -2). No Barbarian location type can now take up more than 60% of their total Locations
+	- **Barrowkin** now spawn 0 additional locations during the undead crisis (down from +3). No Barrowkin location type can now take up more than 60% of their total locations. Higher tier locations now spawn further away from settlements. Their locations now spawn roughly 10 tiles further away from settlements
+	- **Goblins** now spawn up to 12 locations (down from 13) and +6 additional locations during the Greenskin crisis (down from +8). No Goblin location type can now take up more than 40% of their total locations. Goblin locations can no longer spawn in the snow. Goblin Locations now only spawn either east or west, on the opposite side to where the settlements spawn. Goblins now only spawn either north or south, on the opposite side to where Orcs spawn
+	- **Orcs** now spawn up to 12 locations (down from 15). No Orc location type can now take up more than 40% of their total locations. Orc Locations now only spawn either east or west, on the opposite side to where the settlements spawn. Orcs now only spawn either north or south, on the opposite side to where Goblins spawn
+	- Additional **Brigand Hideouts** at the beginning of a new game now only fill up the locations to a total of 15 (down from 18)
+	- **Battle Standard Ambition** now requires a minimum of 600 Renown in order to appear (up from 0)
+	- **Sergeant Sash Ambition** now requires a minimum of 1000 Renown in order to appear (up from 0)
+	- **Fresh and Furious** now makes a character 10% more likely to be targeted by NPCs, while it is active
+	- Allow moving and zooming the camera during combat while the game is paused
+	- Lower size and alpha value of blizzard special effects
+	- **Brace for Impact** now also triggers for empty tiles that you move over
+	- Fix developer keybinds being executed twice
+	- Fix(Vanilla) Goblin Settlements not respecting the distance to other locations when spawning
+	- Fix(Vanilla) `ai_sleep` not passing its skill when calling `queryTargetValue`
+	- Make **Swallow Whole**, **Hex** and **Charm**  call and consider `queryTargetValue`
+	- Add shared boilerplate code for location build actions into `faction_action`
+	- Add `actor.m.ChestConditionRoll = null` and `actor.m.HelmetConditionRoll = null` which can be assigned WeightedContainer to define armor condtition percentages of the assigned armors
+
 1.16.2
 	- Use Nested Tooltips for **Goblin Trophy** and **Orc Trophy** descriptions
 	- Fix world difficulty quickly raising to maximum value

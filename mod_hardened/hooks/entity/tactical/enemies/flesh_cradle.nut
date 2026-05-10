@@ -2,7 +2,7 @@
 // Reforged Functions
 	q.getLootForTile = @(__original) function( _killer, _loot )
 	{
-		if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
+		if (_killer == null || _killer.getFaction() == ::Const.Faction.Player || _killer.getFaction() == ::Const.Faction.PlayerAnimals)
 		{
 			_loot.push(this.new("scripts/items/supplies/strange_meat_item"));
 		}

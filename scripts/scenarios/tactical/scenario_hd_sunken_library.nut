@@ -28,7 +28,7 @@ this.scenario_hd_sunken_library <- this.inherit("scripts/scenarios/tactical/scen
 			H = minY,
 		}, null);
 
-		local properties = this.Const.Tactical.CombatInfo.getClone();
+		local properties = ::Const.Tactical.CombatInfo.getClone();
 		properties.LocationTemplate = clone ::Const.Tactical.LocationTemplate;
 		// ShiftX must be 0 so that the sunken_library template objects are centered correctly
 		// the Vanilla sunken_library template never sets this to 0, which is confusing, as to why it works for them

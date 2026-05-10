@@ -209,3 +209,31 @@ foreach (factionID, faction in ::World.FactionManager.m.Factions)
 
 	}
 }
+
+
+### Get Information about some faction
+
+local faction = ::World.FactionManager.getFactionOfType(::Const.FactionType.Bandits);
+::logWarning("Faction.getName() " + faction.getName() + " has this many locations: " + faction.getSettlements().len());
+local faction = ::World.FactionManager.getFactionOfType(::Const.FactionType.Goblins);
+::logWarning("Faction.getName() " + faction.getName() + " has this many locations: " + faction.getSettlements().len());
+local faction = ::World.FactionManager.getFactionOfType(::Const.FactionType.Orcs);
+::logWarning("Faction.getName() " + faction.getName() + " has this many locations: " + faction.getSettlements().len());
+
+local faction = ::World.FactionManager.getFactionOfType(::Const.FactionType.Goblins);
+foreach (location in faction.getSettlements())
+{
+	::logWarning("Hardened: " + ::IO.scriptFilenameByHash(location.ClassNameHash))
+}
+
+
+### Selectively turn a crisis on
+
+::World.FactionManager.get().isCivilWar = function() {return true;}
+::World.FactionManager.get().isGreenskinInvasion = function() {return true;}
+::World.FactionManager.get().isHolyWar = function() {return true;}
+::World.FactionManager.get().isUndeadScourge = function() {return true;}
+
+
+
+return ::World.FactionManager.isGreenskinInvasion();

@@ -1,7 +1,7 @@
 ::Hardened <- {
 	ID = "mod_hardened",
 	Name = "Hardened",
-	Version = "1.16.2",
+	Version = "1.17.0",
 	GitHubURL = "https://github.com/Darxo/Hardened",
 	Temp = {	// Used to globally store variables between function calls to implement more advanced, albeit hacky behaviors
 		RootSkillCounter = null,	// This variable will have the SkillCounter of the root skills during the execution of any skill and any delayed executions
@@ -149,6 +149,7 @@
 	}
 }
 
+/// Remove all hooks from the mod _modID that are targeting the script _src
 ::Hardened.snipeHook <- function( _src, _modID )
 {
 	if (_src in ::Hooks.BBClass)
