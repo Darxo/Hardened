@@ -20,6 +20,7 @@
 	q.m.HD_LastsForTurns <- null;	// When not null, this will decrement at the end of each turn and remove this skill, when it reaches 0
 	q.m.HD_LastsForRounds <- null;	// When not null, this will decrement at the end of each round and remove this skill, when it reaches 0
 	q.m.HD_KnockBackDistance <- 1;	// [SoftReset] Might be used by certain active skills to determine, how far they knock back a target
+	q.m.HD_UsableWhileEngagedInMelee <- true;	// If false, then this skill is not usable while in enemy zone of control and a tooltip is added
 
 	// Private
 	q.m.HD_RoundLastUsed <- null;	// This is set to the current round whenever the skills onUse is called
@@ -235,6 +236,37 @@
 	{
 		local ret = __original();
 
+		local actor = this.getContainer().getActor();
+		if (!this.m.HD_UsableWhileEngagedInMelee)
+		{
+			// We try to detect the vanilla/reforged tooltip about zone of control and delete it
+			::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
+				if (_entry.icon != "ui/tooltips/warning.png") return false;
+				if (_entry.text.find("engaged in melee") == null) return false;
+				if (_entry.text.find("because this character") == null) return false;
+				return true;
+			});
+
+			if (::Tactical.isActive() && actor.HD_isEngagedInMelee())
+			{
+				ret.push({
+					id = 41,
+					type = "text",
+					icon = "ui/tooltips/warning.png",
+					text = ::Reforged.Mod.Tooltips.parseString("Cannot be used, because you are [Engaged in Melee|Concept.ZoneOfControl]"),
+				});
+			}
+			else
+			{
+				ret.push({
+					id = 41,
+					type = "text",
+					icon = "ui/icons/unlocked_small.png",
+					text = ::Reforged.Mod.Tooltips.parseString("Cannot be used while [Engaged in Melee|Concept.ZoneOfControl]"),
+				});
+			}
+		}
+
 		if (this.isOnCooldown())
 		{
 			local remainingCooldown = this.m.HD_RoundLastUsed + this.m.HD_Cooldown - ::Time.getRound();
@@ -285,7 +317,7 @@
 				icon = "ui/icons/action_points.png",
 				text = "Lasts until the end of ",
 			};
-			entry.text += this.getContainer().getActor().isActiveEntity() ? "this": "your next";
+			entry.text += actor.isActiveEntity() ? "this": "your next";
 			entry.text += ::Reforged.Mod.Tooltips.parseString(" [turn|Concept.Turn]");
 			ret.push(entry);
 		}
@@ -330,7 +362,13 @@
 
 	q.isUsable = @(__original) function()
 	{
-		return !this.isOnCooldown() && __original();
+		if (!this.m.HD_UsableWhileEngagedInMelee && ::Tactical.isActive())
+		{
+			if (this.getContainer().getActor().HD_isEngagedInMelee()) return false;
+		}
+
+		if (this.isOnCooldown()) return false;
+		return __original();
 	}
 
 	q.onAdded = @(__original) function()
