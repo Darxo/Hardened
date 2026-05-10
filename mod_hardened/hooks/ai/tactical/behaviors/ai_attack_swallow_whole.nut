@@ -16,4 +16,36 @@
 		mockObject.cleanup();	// It is very likely that our mock function was never called, so we must clean up now
 		return ret;
 	}
+
+	// Overwrite, because there is no way to otherwise the usage of queryTargetValue
+	q.getBestTarget = @() function( _entity, _skill, _targets )
+	{
+		local bestTarget;
+		local bestScore = 0.0;
+		foreach( target in _targets )
+		{
+			if (!_skill.onVerifyTarget(_entity.getTile(), target.getTile())) continue;
+			if (target.getHitpoints() <= 10) continue;
+
+			local score = 0.0;
+			local p = target.getCurrentProperties();
+			score += p.getMeleeDefense();
+			score += p.getMeleeSkill() * 0.25;
+			score += target.getHitpoints() * 0.25;
+			score += (target.getArmor(::Const.BodyPart.Body) * (p.HitChance[::Const.BodyPart.Body] / 100.0) + target.getArmor(::Const.BodyPart.Head) * (p.HitChance[::Const.BodyPart.Head] / 100.0)) * 0.1;
+			// Feat: We now call queryTargetValue instead of just multiplying with TargetAttractionMult
+			score *= this.queryTargetValue(_entity, target, this.m.Skill);
+
+			if (score > bestScore)
+			{
+				bestTarget = target;
+				bestScore = score;
+			}
+		}
+
+		return {
+			Target = bestTarget,
+			Score = bestScore * 0.01
+		};
+	}
 });
