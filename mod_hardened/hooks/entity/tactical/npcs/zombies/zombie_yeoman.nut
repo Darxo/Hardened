@@ -6,12 +6,34 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/padded_leather"],
+			[12, "scripts/items/armor/worn_mail_shirt"],
+			[12, "scripts/items/armor/patched_mail_shirt"],
+			[6, "scripts/items/armor/basic_mail_shirt"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/full_aketon_cap"],
+			[12, "scripts/items/helmets/full_leather_cap"],
+			[12, "scripts/items/helmets/padded_kettle_hat"],
+			[12, "scripts/items/helmets/dented_nasal_helmet"],
+			[24, "scripts/items/helmets/rusty_mail_coif"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/bludgeon"],
 			[12, "scripts/items/weapons/scramasax"],
 			[12, "scripts/items/weapons/shortsword"],
 			[12, "scripts/items/weapons/reinforced_wooden_flail"],
 		]);
+
+		this.m.ChestConditionRoll = ::MSU.Class.WeightedContainer([
+			[12, 0.4],
+			[12, 0.7],
+			[12, 1.0],
+		]);
+		this.m.HelmetConditionRoll = this.m.ChestConditionRoll;
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
@@ -49,29 +71,5 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor = @() function()
 	{
-		local armor = ::new(::MSU.Class.WeightedContainer([
-			[12, "scripts/items/armor/padded_leather"],
-			[12, "scripts/items/armor/worn_mail_shirt"],
-			[12, "scripts/items/armor/patched_mail_shirt"],
-			[6, "scripts/items/armor/basic_mail_shirt"],
-		]).roll());
-		if (::Math.rand(1, 100) <= 50)
-		{
-			armor.setArmor(::Math.round(armor.getArmorMax() / 2 - 1) / 1.0);
-		}
-		this.getItems().equip(armor);
-
-		local helmet = ::new(::MSU.Class.WeightedContainer([
-			[12, "scripts/items/helmets/full_aketon_cap"],
-			[12, "scripts/items/helmets/full_leather_cap"],
-			[12, "scripts/items/helmets/padded_kettle_hat"],
-			[12, "scripts/items/helmets/dented_nasal_helmet"],
-			[24, "scripts/items/helmets/rusty_mail_coif"],
-		]).roll());
-		if (::Math.rand(1, 100) <= 66)
-		{
-			helmet.setArmor(::Math.round(helmet.getArmorMax() / 2 - 1) / 1.0);
-		}
-		this.getItems().equip(helmet);
 	}
 });

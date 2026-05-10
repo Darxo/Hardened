@@ -6,6 +6,22 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/oriental/stitched_nomad_armor"],
+			[12, "scripts/items/armor/oriental/plated_nomad_mail"],
+			[12, "scripts/items/armor/oriental/leather_nomad_robe"],
+			[12, "scripts/items/armor/oriental/nomad_robe"],
+			[12, "scripts/items/armor/oriental/thick_nomad_robe"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[6, "scripts/items/helmets/oriental/nomad_leather_cap"],
+			[6, "scripts/items/helmets/oriental/nomad_light_helmet"],
+			[6, "scripts/items/helmets/oriental/nomad_reinforced_helmet"],
+			[6, "scripts/items/helmets/oriental/leather_head_wrap"],
+			[12, "scripts/items/helmets/oriental/nomad_head_wrap"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/boar_spear"],
 			[12, "scripts/items/weapons/scimitar"],
@@ -18,6 +34,13 @@
 		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/shields/oriental/southern_light_shield"],
 		]);
+
+		this.m.ChestConditionRoll = ::MSU.Class.WeightedContainer([
+			[12, 0.4],
+			[12, 0.7],
+			[12, 1.0],
+		]);
+		this.m.HelmetConditionRoll = this.m.ChestConditionRoll;
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
@@ -56,30 +79,5 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor = @() function()
 	{
-		local armor = ::new(::MSU.Class.WeightedContainer([
-			[1, "scripts/items/armor/oriental/stitched_nomad_armor"],
-			[1, "scripts/items/armor/oriental/plated_nomad_mail"],
-			[1, "scripts/items/armor/oriental/leather_nomad_robe"],
-			[1, "scripts/items/armor/oriental/nomad_robe"],
-			[1, "scripts/items/armor/oriental/thick_nomad_robe"],
-		]).roll());
-		if (::Math.rand(1, 100) <= 66)
-		{
-			armor.setArmor(::Math.round(armor.getArmorMax() / 2 - 1) / 1.0);
-		}
-		this.getItems().equip(armor);
-
-		local helmet = ::new(::MSU.Class.WeightedContainer([
-			[6, "scripts/items/helmets/oriental/nomad_leather_cap"],
-			[6, "scripts/items/helmets/oriental/nomad_light_helmet"],
-			[6, "scripts/items/helmets/oriental/nomad_reinforced_helmet"],
-			[6, "scripts/items/helmets/oriental/leather_head_wrap"],
-			[12, "scripts/items/helmets/oriental/nomad_head_wrap"],
-		]).roll());
-		if (::Math.rand(1, 100) <= 66)
-		{
-			helmet.setArmor(::Math.round(helmet.getArmorMax() / 2 - 1) / 1.0);
-		}
-		this.getItems().equip(helmet);
 	}
 });

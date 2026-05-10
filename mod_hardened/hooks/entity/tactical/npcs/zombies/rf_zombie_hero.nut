@@ -7,12 +7,28 @@
 	{
 		__original();
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/decayed_coat_of_plates"],
+			[12, "scripts/items/armor/decayed_coat_of_scales"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/decayed_great_helm"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/greataxe"],
 			[12, "scripts/items/weapons/two_handed_flail"],
 			[12, "scripts/items/weapons/two_handed_flanged_mace"],
 			[12, "scripts/items/weapons/two_handed_hammer"],
 		]);
+
+		this.m.ChestConditionRoll = ::MSU.Class.WeightedContainer([
+			[12, 0.5],
+			[12, 0.75],
+			[12, 1.0],
+		]);
+		this.m.HelmetConditionRoll = this.m.ChestConditionRoll;
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
@@ -35,6 +51,9 @@
 		this.getItems().equip(::new(namedMeleeWeapon));
 
 		this.getSkills().add(::new("scripts/skills/perks/perk_battle_forged"));
+
+		this.m.ChestConditionRoll = null;
+		this.m.HelmetConditionRoll = null;
 
 		return true;
 	}}.makeMiniboss;
@@ -103,24 +122,5 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor = @() function()
 	{
-		local armor = ::new(::MSU.Class.WeightedContainer([
-			[1, "scripts/items/armor/decayed_coat_of_plates"],
-			[1, "scripts/items/armor/decayed_coat_of_scales"],
-		]).roll());
-
-		if (!this.m.IsMiniboss && ::Math.rand(1, 100) <= 33)
-		{
-			armor.setArmor(::Math.round(armor.getArmorMax() / 2 - 1) / 1.0);
-		}
-		this.getItems().equip(armor);
-
-		local helmet = ::new(::MSU.Class.WeightedContainer([
-			[12, "scripts/items/helmets/decayed_great_helm"],
-		]).roll());
-		if (!this.m.IsMiniboss && ::Math.rand(1, 100) <= 33)
-		{
-			helmet.setArmor(::Math.round(helmet.getArmorMax() / 2 - 1) / 1.0);
-		}
-		this.getItems().equip(helmet);
 	}
 });

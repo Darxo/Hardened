@@ -12,6 +12,15 @@
 
 		this.m.IsResurrectingOnFatality = false;	// Zombie Knights can no longer be reanimated without a head
 
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/armor/decayed_reinforced_mail_hauberk"],
+		]);
+
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/helmets/decayed_closed_flat_top_with_mail"],
+			[12, "scripts/items/helmets/decayed_full_helm"],
+		]);
+
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/arming_sword"],
 			[12, "scripts/items/weapons/flail"],
@@ -24,6 +33,13 @@
 			[12, "scripts/items/shields/worn_heater_shield"],
 			[12, "scripts/items/shields/worn_kite_shield"],
 		]);
+
+		this.m.ChestConditionRoll = ::MSU.Class.WeightedContainer([
+			[12, 0.5],
+			[12, 0.75],
+			[12, 1.0],
+		]);
+		this.m.HelmetConditionRoll = this.m.ChestConditionRoll;
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
@@ -69,23 +85,5 @@
 	// Assign Head and Body armor to this character
 	q.HD_assignArmor = @() function()
 	{
-		local armor = ::new(::MSU.Class.WeightedContainer([
-			[1, "scripts/items/armor/decayed_reinforced_mail_hauberk"],
-		]).roll());
-		if (::Math.rand(1, 100) <= 33)
-		{
-			armor.setArmor(::Math.round(armor.getArmorMax() / 2 - 1) / 1.0);
-		}
-		this.getItems().equip(armor);
-
-		local helmet = ::new(::MSU.Class.WeightedContainer([
-			[12, "scripts/items/helmets/decayed_closed_flat_top_with_mail"],
-			[12, "scripts/items/helmets/decayed_full_helm"],
-		]).roll());
-		if (::Math.rand(1, 100) <= 33)
-		{
-			helmet.setArmor(::Math.round(helmet.getArmorMax() / 2 - 1) / 1.0);
-		}
-		this.getItems().equip(helmet);
 	}
 });
