@@ -7,6 +7,7 @@ this.perk_hd_brace_for_impact <- ::inherit("scripts/skills/skill", {
 
 	// Private
 		Stacks = 0,
+		DelayedTriggerFromMovementStep = 0,		// counts how many trigger happened from movement steps, to be applied when we arrive at the destination
 	},
 
 	function create()
@@ -93,9 +94,21 @@ this.perk_hd_brace_for_impact <- ::inherit("scripts/skills/skill", {
 
 	function onMovementFinished()
 	{
-		local actor = this.getContainer().getActor();
-		local adjacentEnemies = ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true);
-		this.addStacks(adjacentEnemies.len());
+		this.addStacks(this.m.DelayedTriggerFromMovementStep);
+		this.m.DelayedTriggerFromMovementStep = 0;
+	}
+
+// MSU Functions
+	function onMovementStep( _tile, _levelDifference )
+	{
+		// We don't count tiles that are blocked by allies/objects we pass over
+		if (_tile.IsEmpty)
+		{
+			local actor = this.getContainer().getActor();
+			local adjacentEnemies = ::Tactical.Entities.getHostileActors(actor.getFaction(), _tile, 1, true);
+			this.m.DelayedTriggerFromMovementStep += adjacentEnemies.len();
+			// We can't trigger the effect at this point, because we don't know the final tile to animate the overlay icon on
+		}
 	}
 
 // New Functions
