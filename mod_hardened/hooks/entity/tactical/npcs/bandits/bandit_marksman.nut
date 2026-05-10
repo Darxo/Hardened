@@ -113,6 +113,6 @@
 			}
 		}
 
-		this.getItems().addToBag(::new("scripts/items/weapons/dagger"));
+		this.getItems().addToBag(::new("scripts/items/weapons/bludgeon"));
 	}
 });
