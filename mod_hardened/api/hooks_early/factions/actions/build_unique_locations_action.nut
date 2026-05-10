@@ -12,7 +12,7 @@
 	q.m.HD_FountainOfYouthY <- [0.2, 0.75];		// In Vanilla the Fountain of Youth only spawns in Forest, LeaveForest or AutumnForest, so we limit the Y axis between 0.2 and 0.75 to save performance
 	q.m.HD_GolemLocation1Y <- [0.2, 0.9];		// In Vanilla the Abandoned Village only spawns in the Plains and Tundra, so we limit the Y axis between 0.2 and 0.9 to save performance
 	q.m.HD_GolemLocation2Y <- [0.2, 0.9];		// In Vanilla the Ancient Reliquary only spawns in the Plains, Steppe and Tundra, so we limit the Y axis between 0.2 and 0.9 to save performance
-	q.m.HD_GoblinCityY <- [0.0, 1.0];			// In Vanilla the Goblin City can spawn almost anywhere, so we don't limit the Y of it
+	q.m.HD_GoblinCityY <- [0.2, 0.85];			// In Vanilla the Goblin City can spawn almost anywhere, so we don't limit the Y of it
 	q.m.HD_HuntingGroundY <- [0.7, 1.0];		// In Vanilla the Hunting Grounds only spawns in the Tundra, so we limit the Y axis between 0.7 and 1.0 to save performance
 	q.m.HD_IcyCaveY <- [0.8, 1.0];				// In Vanilla the Icy Cave only spawns in the Snow, so we limit the Y axis between 0.8 and 1.0 to save performance
 	q.m.HD_KrakenCultY <- [0.3, 0.8];			// In Vanilla the Kraken Cult only spawns in Swamp, so we limit the Y axis between 0.3 and 0.8 to save performance
@@ -173,15 +173,44 @@
 	{
 		local minY = this.m.HD_GoblinCityY[0];	// Vanilla: 0.0
 		local maxY = this.m.HD_GoblinCityY[1];	// Vanilla: 1.0
-
-		local disallowedTerrain = [];
-		for (local i = 0; i < ::Const.World.TerrainType.COUNT; ++i)
-		{
-			if (i == ::Const.World.TerrainType.Hills || i == ::Const.World.TerrainType.Mountains) continue;
-			disallowedTerrain.push(i);
+		{	// Decide Hemisphere
+			// Feat: Goblins now only occupy one hemisphere. Either the northern or southern one
+			if (::World.Flags.get("HD_OrcHemisphere") == "Top")
+			{
+				maxY = 0.5;
+			}
+			else
+			{
+				minY = 0.5;
+			}
 		}
 
-		local tile = this.getTileToSpawnLocation(::Const.Factions.BuildCampTries * 100, disallowedTerrain, 30, 1000, 1001, this.m.HD_DistanceToOthers, this.m.HD_DistanceToOthers, null, minY, maxY);
+		local minX = 0.0;
+		local maxX = 1.0;
+		{	// Decide Timezone
+			// Feat: Goblins now only occupy the timezone, that the settlements do not occupy
+			if (::World.Flags.get("HD_SettlementTimezone") == "Left")
+			{
+				minX = 0.4;
+			}
+			else if (::World.Flags.get("HD_SettlementTimezone") == "Right")
+			{
+				maxX = 0.6;
+			}
+		}
+
+		// Vanilla Fix: settlements disrespecting distance to other locations due to wrong order/number of passed arguments
+		local tile = this.HD_getTileToSpawnLocation({
+			onTerrain = [::Const.World.TerrainType.Hills, ::Const.World.TerrainType.Mountains],
+			minDistToSettlements = 30,
+			minDistToEnemies = this.m.HD_DistanceToOthers,
+			minDistToAllies = this.m.HD_DistanceToOthers,
+			minX = minX,
+			maxX = maxX,
+			minY = minY,
+			maxY = maxY,
+		});
+
 		if (tile != null)
 		{
 			local camp = ::World.spawnLocation("scripts/entity/world/locations/legendary/unique_goblin_city_location", tile.Coords);
