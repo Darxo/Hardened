@@ -36,7 +36,7 @@
 	{
 		local faction = this.getFactionOfType(::Const.FactionType.Bandits);
 		local minDistToSettlements = 7;		// In Vanilla this is 6, but was treated as 7 anyways, because of minDistToEnemies
-		local maxDistToSettlements = 18;	// In Vanilla this is 12
+		local maxDistToSettlements = 15;	// In Vanilla this is 12
 
 		// We want those locations to be really spaced out and fill out the remaining land
 		local minDistToEnemies = 7;	// In Vanilla this is 7, because we want to maintain a close possible distance to towns
