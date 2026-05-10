@@ -13,8 +13,7 @@
 		// We make it so regular Robber Barons no longer use a unique name, so they don't get confused for Champions
 		this.m.Name = ::Const.Strings.EntityName[this.m.Type];
 
-		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 240 - 300
-			[12, "scripts/items/armor/scale_armor"],
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 260 - 300
 			[12, "scripts/items/armor/rf_reinforced_footman_armor"],
 			[12, "scripts/items/armor/heavy_lamellar_armor"],
 			[12, "scripts/items/armor/coat_of_scales"],
