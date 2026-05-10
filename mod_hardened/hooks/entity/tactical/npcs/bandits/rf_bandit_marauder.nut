@@ -29,6 +29,7 @@
 			[12, "scripts/items/weapons/morning_star"],
 		]);
 
+		this.m.ChanceForNoOffhand = 20;
 		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/shields/worn_heater_shield"],
 			[12, "scripts/items/shields/worn_kite_shield"],
@@ -117,8 +118,10 @@
 	// Assign all other gear to this character
 	q.HD_assignOtherGear <- function()
 	{
-		if (::Math.rand(1, 100) <= 25)
+		if (this.getItems().hasEmptySlot(::Const.ItemSlot.Offhand))
 		{
+			local throwingWeapon = ::new("scripts/items/weapons/throwing_spear");
+			this.getItems().addToBag(throwingWeapon);
 			local throwingWeapon = ::new("scripts/items/weapons/throwing_spear");
 			this.getItems().addToBag(throwingWeapon);
 		}
