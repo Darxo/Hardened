@@ -30,6 +30,14 @@
 		return !::Tactical.isActive();
 	}
 
+	q.onUpdate = @(__original) function( _properties )
+	{
+		if (!this.m.IsSpent)
+		{
+			_properties.TargetAttractionMult *= 1.1;	// Character with active Fresh & Furious are larger threats
+		}
+	}
+
 	// Overwrite because we change the discount, its condition and make it also affect skills which cost 1 AP
 	q.onAfterUpdate = @() function( _properties )
 	{
