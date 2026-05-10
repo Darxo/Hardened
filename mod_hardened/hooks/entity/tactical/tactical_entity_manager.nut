@@ -48,7 +48,41 @@
 			::World.getTime().IsDaytime		// Day/Night specific salt
 		);
 
+		local isBlizzard = false;
+		local mockObject = ::Hardened.mockFunction(::Sound, "setAmbience", function( ... ) {
+			if (vargv.len() == 4 && vargv[1] == ::Const.SoundAmbience.Blizzard)
+			{
+				isBlizzard = true;
+				return { done = true };
+			}
+		});
+
 		__original(_worldTile);
+
+		mockObject.cleanup();
+
+		if (isBlizzard)
+		{
+			// We overwrite the vanilla blizzard clouds with new improved clouds, which:
+			//	- Have 50% less Alpha
+			//	- Are 50% smaller in size
+			local weather = ::Tactical.getWeather();
+			local clouds = weather.createCloudSettings();
+			clouds.Type = this.getconsttable().CloudType.Custom;
+			clouds.MinClouds = 150;
+			clouds.MaxClouds = 150;
+			clouds.MinVelocity = 400.0;
+			clouds.MaxVelocity = 500.0;
+			clouds.MinAlpha = 0.3;
+			clouds.MaxAlpha = 0.6;
+			clouds.MinScale = 1.0;
+			clouds.MaxScale = 2.0;
+			clouds.Sprite = "wind_01";
+			clouds.RandomizeDirection = false;
+			clouds.RandomizeRotation = false;
+			clouds.Direction = ::createVec(-1.0, -0.7);
+			weather.buildCloudCover(clouds);
+		}
 
 		if (::Math.rand(1, 100) <= this.m.HD_ChanceForDesertStorm && ::World.getTime().IsDaytime)
 		{
