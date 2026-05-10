@@ -10,6 +10,15 @@
 	local banditScouts = ::Reforged.Spawns.Parties["BanditScouts"];
 	banditScouts.HardMin = 5;	// Reforged: 6
 
+	{	// RF_BanditFrontline
+		local banditFrontline = ::Reforged.Spawns.Parties["RF_BanditFrontline"];
+		foreach (unitBlock in banditFrontline.DynamicDefs.UnitBlocks)
+		{
+			if (unitBlock.BaseID == "UnitBlock.RF.BanditFast") unitBlock.RatioMax = 0.4;	// Reforged: 0.5
+			if (unitBlock.BaseID == "UnitBlock.RF.BanditTough") unitBlock.RatioMax = 0.4;	// Reforged: 0.5
+		}
+	}
+
 	{	// BanditRoamers
 		local banditRoamer = ::Reforged.Spawns.Parties["BanditRoamers"];
 		foreach (unitBlock in banditRoamer.DynamicDefs.UnitBlocks)
