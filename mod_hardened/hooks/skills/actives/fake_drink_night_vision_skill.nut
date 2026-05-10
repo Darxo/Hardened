@@ -2,6 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.ActionPointCost = 5;		// Vanilla: 2
 		this.m.AIBehaviorID = ::Const.AI.Behavior.ID.UsePotion;
 	}
 });
