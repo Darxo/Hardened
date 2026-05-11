@@ -117,6 +117,21 @@
 	return true;
 }
 
+::Const.Perks.findById("perk.student").verifyPrerequisites <- function( _player, _tooltip )
+{
+	if (_player.getLevel() >= 8)
+	{
+		_tooltip.push({
+			id = 3,
+			type = "hint",
+			icon = "ui/icons/icon_locked.png",
+			text = "Locked because this character has already reached Level 8",
+		});
+		return false;
+	}
+	return true;
+}
+
 ::Const.Strings.PerkName.RF_ConcussiveStrikes = "Shockwave";
 ::Const.Perks.findById("perk.rf_concussive_strikes").Name = ::Const.Strings.PerkName.RF_ConcussiveStrikes;
 
