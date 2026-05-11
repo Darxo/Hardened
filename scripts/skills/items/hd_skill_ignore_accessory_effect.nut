@@ -6,6 +6,7 @@ this.hd_skill_ignore_accessory_effect <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "effects.hd_skill_ignore_accessory";
 		this.m.Name = "Skill Ignore Accessory Effect (Hidden)";
 		this.m.IsHidden = true;
+		this.m.IsSerialized = false;
 	}
 
 // Modular Vanilla Functions
