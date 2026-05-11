@@ -231,6 +231,7 @@
 
 	q.HD_isArenaChampion <- function()
 	{
+		if (::MSU.isNull(this.getContainer())) return false;	// Can happen, because we call this function during getIcon
 		return this.getContainer().getActor().getFlags().getAsInt("ArenaFightsWon") >= ::World.Flags.getAsInt(this.m.HD_MostWonFlag);
 	}
 
