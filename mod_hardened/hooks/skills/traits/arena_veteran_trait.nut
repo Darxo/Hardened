@@ -141,11 +141,10 @@
 		this.HD_CalculateMostWon(true);
 	}
 
-	q.onDeserialize = @(__original) function(_in)
+	q.onAdded = @(__original) function()
 	{
-		__original(_in);
-
-		this.HD_CalculateMostWon(false);
+		__original();
+		this.HD_CalculateMostWon(false);	// This covers deserialization
 	}
 
 // MSU Functions
