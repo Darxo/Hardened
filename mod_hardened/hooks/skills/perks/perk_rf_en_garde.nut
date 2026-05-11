@@ -21,7 +21,7 @@
 	{
 		__original(_attacker, _skill);
 		local actor = this.getContainer().getActor();
-		if (this.isEnabled() && this.isSkillValid(_skill) && !_attacker.isAlliedWith(actor))
+		if (!actor.isTurnDone() && this.isEnabled() && this.isSkillValid(_skill) && !_attacker.isAlliedWith(actor))
 		{
 			actor.recoverActionPoints(this.m.ActionPointsRecovered);
 		}
