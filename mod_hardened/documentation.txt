@@ -30,6 +30,9 @@
 
 # Changelog
 
+1.17.1
+	- Fix saves with an arena veteran not loading correctly
+
 1.17.0
 	- **Discovered Talent** is completely reworked. When you pick it, it now grants 3 Talent stars in a random attributes that you have none in and a random **Fighting Style** Perk Group. It can no longer be learned, while you have any pending Level-Up
 	- **Footwork** can now be used even while not in an opponents Zone of Control
