@@ -179,7 +179,7 @@
 			{
 				maxY = 0.5;
 			}
-			else
+			else if (::World.Flags.get("HD_OrcHemisphere") == "Bottom")
 			{
 				minY = 0.5;
 			}
