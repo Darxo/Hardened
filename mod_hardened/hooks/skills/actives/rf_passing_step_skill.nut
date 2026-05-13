@@ -2,6 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.Order = ::Const.SkillOrder.OtherTargeted;	// Reforged: ::Const.SkillOrder.Last
 		this.m.RequiredDamageType = null;	// Any damage type is allowed, as long as it came from a sword
 		this.m.RequireOffhandFree = false;	// Anything in the offhand is allowed
 

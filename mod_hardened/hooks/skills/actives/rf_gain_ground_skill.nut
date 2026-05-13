@@ -5,6 +5,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.Order = ::Const.SkillOrder.OtherTargeted;	// Reforged: ::Const.SkillOrder.Last
 		this.m.ActionPointCost = 0;
 	}
 
