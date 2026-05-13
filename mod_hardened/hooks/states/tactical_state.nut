@@ -235,31 +235,4 @@
 			}
 		}
 	}
-
-// New Functions
-	// Enable combat music, similar to how Vanilla does it in the onShow function
-	q.HD_playActualTrackList <- function()
-	{
-		// Currently we only trigger this function, when discovering non-player controlled enemies; that's why we can flip this variable here
-		this.m.HD_HasDiscoveredEnemy = true;
-
-		if (!this.m.HD_IsHidingMusic) return;
-		this.m.HD_IsHidingMusic = false;
-
-		if (this.m.Scenario != null)
-		{
-			::Music.setTrackList(this.m.Scenario.getMusic(), 100);
-		}
-		else
-		{
-			if (this.m.StrategicProperties != null)
-			{
-				::Music.setTrackList(this.m.StrategicProperties.Music, 100);
-			}
-			else
-			{
-				::Music.setTrackList(::Const.Music.BattleTracks[this.m.Factions.getHostileFactionWithMostInstances()], 100);
-			}
-		}
-	}
 });
