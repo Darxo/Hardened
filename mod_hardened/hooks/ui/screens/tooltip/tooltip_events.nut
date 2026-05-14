@@ -125,6 +125,21 @@
 				return ret;
 			}
 
+			case "tactical-screen.turn-sequence-bar-module.EndTurnButton":
+			{
+				foreach (entry in ret)
+				{
+					if (entry.id == 1 && entry.type == "title")
+					{
+						local keyCombinations = ::MSU.Vanilla.Keybinds.getKeybind("tactical_initNextTurn").getKeyCombinations();
+						keyCombinations = ::MSU.String.replace(keyCombinations, "/", ", ", true);
+						entry.text = "End Turn (" + keyCombinations + ")";
+						break;
+					}
+				}
+				return ret;
+			}
+
 			case "character-screen.left-panel-header-module.Experience":
 			{
 				local entity = _entityId == null ? null : ::Tactical.getEntityByID(_entityId);
