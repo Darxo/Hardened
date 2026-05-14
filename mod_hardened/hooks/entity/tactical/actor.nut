@@ -509,7 +509,6 @@
 	// Play a dodge animation that dodges an incoming attack in a 90% angle in to either side
 	q.HD_dodgeSidewaysAnimation <- function( _attackerTile )
 	{
-		// Todo: actually do the shake in 90° angle
 		::Tactical.getShaker().shake(this, _attackerTile, 4);
 	}
 

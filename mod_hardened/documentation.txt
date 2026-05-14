@@ -30,6 +30,14 @@
 
 # Changelog
 
+1.17.3
+	- Add setting (1 second delay) for preventing the player from accidentally ending their turn shortly after the active entity recovered action points, or the movement was paused because an NPC was discovered
+	- Include up-to-date keybind combinations in tooltip for End Turn button
+	- Fix(MSU): keybind `tactical_initNextTurn` not including the keybind "F" by default
+	- Fix(MSU): vanilla keybinds for ending turn still being active
+	- Display custom keybinds in "End Turn" button tooltip
+	- Add `::Tactical.TurnSequenceBar.HD_protectTurnEnd()` for briefly preventing the player from ending the curren turn, if the setting is enabled
+
 1.17.2
 	- Prevent **En Garde** from recovering Action Points if the characters turn has already ended
 	- Prevent **Student** from being learned after reaching Level 8

@@ -1302,6 +1302,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Add setting (on) for showing your uncapped hitchance during combat, when it would exceed the maximum possible hitchance
 - Add Setting (on) for displaying skill tags in the descriptions of active skills
 - Add setting (on) for displaying combat log entries whenever a Non-Attack skill is used
+- Add setting (1 second delay) for preventing the player from accidentally ending their turn shortly after the active entity recovered action points, or the movement was paused because an NPC was discovered
 - Improve visibility of Miasma and Burning Ground
 - Spawn an overlay animation when depleting a throwing weapon or a quiver
 - **Hand to Hand** and **Zombie Bite** skills will now always be sorted to the front in the UI
@@ -1551,6 +1552,12 @@ This section talks about adjustments made to other optional mods, when present a
 - Change the icon of **Sapling Harvest** to that of the sapling overlay icon
 - Mention in **Professional**, that it will never roll **Dagger Group**
 
+### MSU
+
+- Fix **End Turn** button not showing the up-to-date keybind combinations in its tooltip
+- Fix keybind for ending the current turn not including the vanilla keybind "F" by default
+- Fix vanilla keybinds for ending turn still being active
+
 ### Other Mods
 
 - Fix(Combat Simulator) Tactical Scenarios not starting correctly
@@ -1562,6 +1569,7 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add `::Tactical.TurnSequenceBar.HD_protectTurnEnd()` for briefly preventing the player from ending the curren turn, if the setting is enabled
 - Add shared boilerplate code for location build actions into `faction_action`
 - Add `actor.m.ChestConditionRoll = null` and `actor.m.HelmetConditionRoll = null` which can be assigned WeightedContainer to define armor condtition percentages of the assigned armors
 - Add `::Hardened.util.registerScenario(_script)` for registering new custom tactical scenarios inheriting from `scenario_hd_template`
