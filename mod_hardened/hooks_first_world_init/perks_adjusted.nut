@@ -1385,6 +1385,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_promised_potential",
+		Key = "RF_PromisedPotential",
+		Description = ::UPD.getDescription({
+			Fluff = "The Captain said he\'d take a gamble on you, but you\'d better not disappoint!",
+			Effects = [{
+				Type = ::UPD.EffectType.OneTimeEffect,
+				Description = [
+					"After gaining " + ::MSU.Text.colorPositive("4") + " more levels, transform into [$ $|Perk+perk_rf_realized_potential]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_offhand_training",
 		Key = "RF_OffhandTraining",
 		Description = ::UPD.getDescription({
@@ -1454,6 +1467,24 @@ local adjustedDescriptions = [
 					"This bonus is " + ::MSU.Text.colorPositive("doubled") + " for one-handed weapons",
 				],
 			}],
+		}),
+	},
+	{
+		ID = "perk.rf_realized_potential",
+		Key = "RF_RealizedPotential",
+		Description = ::UPD.getDescription({
+			Fluff = "From bones to brawn! This character has truly come a long way. Who was once a dreg of society is now a full-fledged mercenary.",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.OneTimeEffect,
+					Description = [
+						"Refund all spent Perk Points",
+						"Gain " + ::MSU.Text.colorPositive("1") + " Level Up",
+						"Gain " + ::MSU.Text.colorPositive("1") + " random Shared Perk Group",
+					],
+				},
+			],
+			Footer = ::MSU.Text.colorNegative("This perk cannot be refunded."),
 		}),
 	},
 	{
