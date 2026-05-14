@@ -478,7 +478,7 @@
 
 	q.HD_onStartFleeing = @(__original) function()
 	{
-		if (this.getTile().IsVisibleForPlayer)
+		if (this.isPlacedOnMap() && this.getTile().IsVisibleForPlayer)
 		{
 			this.HD_playFleeAnimation();
 
