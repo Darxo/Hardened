@@ -234,9 +234,12 @@
 		}
 
 		local recoveredActionPoints = this.getActionPoints() - oldActionPoints;
-		if (_printLog && recoveredActionPoints > 0 && this.isPlacedOnMap() && this.getTile().IsVisibleForPlayer)
+		if (recoveredActionPoints > 0 && this.isPlacedOnMap())
 		{
-			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + " recovers " + ::MSU.Text.colorPositive(recoveredActionPoints) + " Action Points");
+			if (this.getTile().IsVisibleForPlayer)
+			{
+				if (_printLog) ::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + " recovers " + ::MSU.Text.colorPositive(recoveredActionPoints) + " Action Points");
+			}
 		}
 
 		return recoveredActionPoints;
