@@ -53,4 +53,19 @@
 
 		return ret;
 	}
+
+	q.onUse = @(__original) function( _user, _targetTile )
+	{
+		local target = _targetTile.getEntity();
+		local oldMoraleState = target.getMoraleState();
+
+		__original(_user, _targetTile);
+
+		if (target.getMoraleState() > oldMoraleState)
+		{
+			// Fix: prevent swallow-whole from improving the morale of the target
+			// 	In Vanilla this can happen when swallowing a fleeing enemy, because the skills always sets the targets morale to breaking
+			target.setMoraleState(oldMoraleState);
+		}
+	}
 });
