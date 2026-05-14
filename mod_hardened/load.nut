@@ -8,7 +8,8 @@
 ::includeFiles(::IO.enumerateFiles("mod_hardened/namespaces"));
 
 // Load global variables
-::includeFiles(::IO.enumerateFiles("scripts/mods/mod_hardened"));
+::include("scripts/mods/mod_hardened/const");
+::include("scripts/mods/mod_hardened/global");
 
 ::include("mod_hardened/hooks/config/strings/strings");	// This needs priority, because perk_defs hooks build upon this
 ::include("mod_hardened/reforged/reach");	// This file needs priority
