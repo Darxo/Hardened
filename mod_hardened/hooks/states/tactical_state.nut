@@ -185,6 +185,15 @@
 				}
 			}
 		}
+		else (_key.getState() != 1)		// Vanilla checks some keys only on release
+		{
+			if (this.isInCharacterScreen()) return __original(_key);
+			if (this.m.MenuStack.hasBacksteps()) return __original(_key);
+
+			// We prevent some hard-coded vanilla F keybind from doing anything. MSU has a custom keybind for this
+			if (_key.getKey() == Key.F) return false;
+			if (_key.getKey() == Key.Return) return false;
+		}
 		return __original(_key);
 	}
 
