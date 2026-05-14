@@ -1045,7 +1045,6 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Swamp** tiles no longer reduce Melee Skill by 25%. Instead they now reduce Initiative by 25%
 - The **Hidden** effect (granted by certain tiles) now also provides +10 Ranged Defense and it lists enemies that you are currently revealed to
 - Change XPValue of Player Characters to scale faster from regular levels and slower from veteran levels (past 11). This is mainly relevant for morale checks from movement and from a kill/death
-- Delay the combat music, when attacking locations that hide their defender line up, until the first enemy is discovered
 - Characters can no longer retreat from the battle when standing on a border tile, if they are engaged in melee
 - Fleeing characters who rally, lose 3 Action Points
 - Fleeing characters now have +1 Action Point
@@ -1344,6 +1343,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Improve tooltip of **Disarmed effect**
 - Improve tooltip of **Whip Disarm**, **Goblin Trophy** and **Orc Trophy** using a nested tooltips
 - Create a combat log when **Bolster** triggers at least one morale check
+- Lower UI Order of **Gain Ground** and **Passing Step** skills
 - Add Settings to immediately stop the player movement halfway through, when it reveals an enemy (on) or an ally (off)
 - Add Setting (on) to prevent combat logs, which are the result of the same skill execution, from producing empty newlines
 - Add Setting (off) for preventing tile/enemy tooltips from being generated while it is not your turn
@@ -1481,6 +1481,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
 - Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
 - Hitpoints recovery on brothers is now more accurate (camping recovery fix)
+- Fix **Swallow Whole** setting morale of fleeing characters to breaking
 - Fix fleeing enemies in Zone of Control sometimes not breaking themselves free from roots
 - Fix Armor Damage on Weapon tooltips sometimes being off by 1%
 - Fix noble troops spawning for a settlement faction, failing to spawn tabards during combat and glitching out

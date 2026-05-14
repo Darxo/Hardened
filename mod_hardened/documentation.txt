@@ -30,6 +30,12 @@
 
 # Changelog
 
+1.17.4
+	- Lower UI Order of **Gain Ground** and **Passing Step** skills
+	- Fix compatibility issue with breditor
+	- Fix typo in **Discovered Talent** perk description
+	- Fix(Vanilla): **Swallow Whole** setting morale of fleeing characters to breaking
+
 1.17.3
 	- Add setting (1 second delay) for preventing the player from accidentally ending their turn shortly after the active entity recovered action points, or the movement was paused because an NPC was discovered
 	- Include up-to-date keybind combinations in tooltip for End Turn button
