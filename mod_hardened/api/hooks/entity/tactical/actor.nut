@@ -236,6 +236,11 @@
 		local recoveredActionPoints = this.getActionPoints() - oldActionPoints;
 		if (recoveredActionPoints > 0 && this.isPlacedOnMap())
 		{
+			if (this.isPlayerControlled())
+			{
+				::Tactical.TurnSequenceBar.HD_protectTurnEnd();
+			}
+
 			if (this.getTile().IsVisibleForPlayer)
 			{
 				if (_printLog) ::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + " recovers " + ::MSU.Text.colorPositive(recoveredActionPoints) + " Action Points");
