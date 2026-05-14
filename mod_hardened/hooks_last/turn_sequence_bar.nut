@@ -24,7 +24,7 @@
 			local aooSkill = neighbor.getSkills().getAttackOfOpportunity();
 			if (!aooSkill.onVerifyTarget(neighbor.getTile(), activeEntity.getTile())) continue;	// The aooSkill found can actually hit us (this will cover cases of tile height difference being too large)
 
-			neighbor.HD_playZOCHighlightAnimation();
+			neighbor.HD_playColoredJumpAnimation(::Const.Combat.ShakeEffectZOCHighlight);
 		}
 
 		// Feat: Display chance to dodge, when we preview movement while in zone of control
