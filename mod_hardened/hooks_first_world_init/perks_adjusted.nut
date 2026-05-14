@@ -877,7 +877,7 @@ local adjustedDescriptions = [
 				Effects = [{
 				Type = ::UPD.EffectType.OneTimeEffect,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("3") + " [Talent|Concept.Talent] Stars in an Attribute that none",
+					"Gain " + ::MSU.Text.colorPositive("3") + " [Talent|Concept.Talent] Stars in an Attribute that has none",
 					"Gain " + ::MSU.Text.colorPositive("1") + " random Fighting Style Perk Group",
 				],
 			}],
