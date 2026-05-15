@@ -220,7 +220,7 @@
 	*/
 	q.recoverActionPoints <- function( _amount, _printLog = true, _canExceedMaximum = false )
 	{
-		if (_amount <= 0) return;
+		if (_amount <= 0) return 0;
 
 		local oldActionPoints = this.getActionPoints();
 
