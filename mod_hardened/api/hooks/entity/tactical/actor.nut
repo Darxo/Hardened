@@ -250,6 +250,31 @@
 		return recoveredActionPoints;
 	}
 
+	/// Try to recover up to _amount Fatigue
+	/// @param _amount unsigned value of fatigue that will then be subtracted from the current fatigue value
+	/// @param _printLog if true, print a combat log entry stating how much Fatigue was recovered
+	/// @return actual amount of Fatigue recovered
+	q.HD_recoverFatigue <- function( _amount, _printLog = true )
+	{
+		if (_amount <= 0) return 0;
+
+		local oldFatigue = this.getFatigue();
+
+		this.setFatigue(::Math.clamp(this.getFatigue() - _amount, 0, this.getFatigueMax()));
+
+		local recoveredFatigue = oldFatigue - this.getFatigue();
+		if (recoveredFatigue > 0 && this.isPlacedOnMap())
+		{
+			// Todo: Only display these logs for the player?
+			if (this.getTile().IsVisibleForPlayer)
+			{
+				if (_printLog) ::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + " recovers " + ::MSU.Text.colorPositive(recoveredFatigue) + " Fatigue");
+			}
+		}
+
+		return recoveredFatigue;
+	}
+
 	// Get the usable fatigue, that this brother has, for using skills and such
 	q.HD_getUsableFatigue <- function()
 	{
