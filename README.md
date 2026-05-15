@@ -563,7 +563,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Short Bow** now deals 35-50 damage (up from 30-50), has a Range of 6 (down from 7) and costs 300 Crowns (up from 200)
 - **Spetum** now has 7 Reach (up from 6), 12 Weight (down from 14) and costs 900 Crowns (down from 1050). The named variant now costs 2800 Crowns (down from 3500)
 - **Spiked Impaler** now has 80% Armor Damage (up from 75%) now has +2 Fatigue Cost for its weapon skills
-- **Swordstaff** now has 12 Weight (up from 10)
+- **Swordstaff** now has 12 Weight (up from 10). **Overhead Strike** no longer has a Reach Penalty
 - **Thorned Whip** now deals 20-35 Damage (up from 15-25), has 10 Weight (up from 6), has a Condition of 25 (down from 40) and costs 600 Crowns (up from 400)
 - **Three-Headed Flail** now attacks 2 times per skill use (down from 3) and deals 50% weapon damage per attack (up from 33%). It now has 3 Reach (down from 4) and deals 30-60 Damage (down from 30-75)
 - **Throwing Spears** no longer inflict any fatigue when hitting a shield. They now have 4 Weight (down from 6) and costs 60 Crowns (down from 80)
@@ -1044,7 +1044,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 ## Combat General
 
 - Low Morale no longer reduces the Resolve of the character
-- Every Defender of a Location which was fortified now gets a new **Defenders Advantage** effect for that fight, which grants +2 Vision and +10 Resolve
+- Every Defender of a fortified Location which was fortified now gets a new **Defenders Advantage** effect for that fight, which grants +2 Vision and +10 Resolve
 - **Encumbrance** no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level. It no longer requires a minimum armor weight of 20
 - **Wait** now debuffs the actual Initiative by 25% until the start of that brothers next turn
 - Equipped Ammo Items can no longer be dropped to the ground or into an empty inventory slot
@@ -1518,7 +1518,6 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix shieldwall animation still showing up on NPCs who lost the shieldwall effect offscreen
 - Fix spearwall animation showing up on NPCs who lost the spearwall effect offscreen
 - Fix barbarian **Drum** being double grippable despite being a two-handed weapon
-- Fix the impact delay of most throwable utility items not lining up with their projectiles, especially on higher game speed
 - Fix **Headhunter** and **Fast Adaption** sometimes not triggering correctly from zone of control attacks
 - Fix keyboard inputs for camera movement in combat not being combinable
 - Fix caravans rarely despawning when loading a save
@@ -1534,7 +1533,8 @@ This section talks about adjustments made to other optional mods, when present a
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
 - Every accessory now plays a default sound when moved around in the inventory
-- Roads will no longer be generated directly on the map border
+- Fix Roads spawning directly on the map border
+- Fix Settlements with water access sometimes not generating a port
 - Fix Armor Damage combat logs being generated for non-visible actors
 - Change the inventory icon of the **Witchhunter's Hat** to look exactly like the sprite on the brother
 - Characters under berserker mushroom effect no longer yell when they use ranged attacks
@@ -1549,7 +1549,6 @@ This section talks about adjustments made to other optional mods, when present a
 ### Reforged
 
 - Fix various compatibility Issues when trying to start or end Tactical Scenarios
-- Fix crash in Kraken fight when playing at higher combat speed
 - **Calculated Strikes** now works against stunned enemies
 - **Cheap Trick** now works with delayed skill executions (like Lunge or Aimed Shot)
 - The perks **Strengh in Numbers** and **Dynamic Duo** now instantly update the actors stats, if another actor moves adjacent to or away from them

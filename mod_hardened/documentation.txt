@@ -30,6 +30,12 @@
 
 # Changelog
 
+1.17.9
+	- Remove Reach penalty for **Overhead Strike** on **Swordstaff**
+	- Fix **Warhounds** using the same base stats as **Wardogs**
+	- Fix(Vanilla) Settlements at water sometimes not spawning a port
+	- Fix misleading tooltip on **Fresh and Furious** effect
+
 1.17.8
 	- Regular Goblins no longer have a 20% chance to drop a loot item
 	- **Orc Warlords** can now only spawn in Parties which have at least 600 Resources available
