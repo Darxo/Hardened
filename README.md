@@ -498,6 +498,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Misc
 
+- **Bandage Ally**, **Use Antidote**, **Goblin Whip**, **Serpent Hook**, **Shoot Bolt**, **Shoot Stake** and **Retreat** can now be used while inside a Smoke**
+- **Bandage Ally** and **Use Antidote** can now target allies that are inside **Smoke**
 - Add new **Battle Song** skill while holding a **Lute** for applying a temporary Resolve buff to nearby allies
 - All Weapon Attacks that deal neither 0% nor 100% Armor Penetration will now inherit the Armor Penetration value of the weapon they come from
 - Add sound effect for **Cheap Trick**, **Hold Steady**, **Onslaught** and **Take Aim** skills
@@ -1376,6 +1378,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Display all enemy NPCs in the combat dialog with a scroll wheel
 - Display participating brothers in arena contract dialog
 - **Frenzied Hyenas**, **Frenzied Direwolfs**, **Medium Nachzehrer** and **Large Nachzehrer** now use unique names on the world map and are no longer merged under one name
+- While playing the **Cultist Origin**, display in backgrounds tooltip whether they are convertable to a cultist
 - Any location that you discover now removes fog of war from the tile it is sitting on
 - Add option in arena contract dialog to "think it over", if too few, or the wrong brothers were selected for the fight
 - Relation changes that come with a reason now also show the value in brackets, that you gained or lost from this action
@@ -1417,16 +1420,16 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Supplies (Crowns, Tools, Medicine, Ammo) are now consumed instantly after buying, looting
 - Display current and maximum amount of servings in tooltips of food items
 - Quiver and Weapons that contain Ammo now display the supply cost for replacing ammunition in them
-- Add new Concepts for **Armor Penetration**, **Critical Damage**, **Displacement**, **Hitchance**, **Mood**, **Rally**, **Threat** and **Weight** and and apply these Concepts to existing weapons, items, perks skills
+- Add new Concepts for **Armor Penetration**, **Critical Damage**, **Displacement**, **Hitchance**, **Mood**, **Rally**, **Recently**, **Threat** and **Weight** and and apply these Concepts to existing weapons, items, perks skills
 - Add setting (on) to show the absolute mood value instead of a percentage in the mood tooltip
 - List the exact mood changes in brackets in the mood tooltip
 - Slightly move the dismiss button downwards
 - Improve the Vanilla Concepts **Chance to hit head**, **Vision**, **Renown** and **Morale** and add nested tooltip for all morale states (except **Steady**)
-- Improve the Reforged Concept for **Turn**
+- Improve the Reforged Concept for **Turn** and **Zone of Control**/**Engaged in Melee**
 - Display amount of Overdoses (`PotionsUsed`) in the background tooltip, if > 0
 - Improve Goblin Poison, Spider Poison item, skill and effect tooltips
 - Display item type names for Ammunition, Accessories, Consumables, Food and Quest Items in the item tooltips
-- Improve tooltips of **Battleforged** and **Nine Lives** perks and **Chop** skill
+- Improve tooltips of **Battleforged** and **Nine Lives** perks and **Chop**, **Bandage Ally** and **Use Antidote** skills
 - Clarify in **Rebuke** perk description that it does not stack with other effects that grant counter attacks
 - Improve artwork for **Nimble** perk and remove effective hitpoint calculation from its tooltip
 - Improve artwork for **Tattered Sackcloth** item to make it stand out more from **Sackcloth**
@@ -1522,6 +1525,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix Non-Scaled Experience gained (e.g. via Event or Dismissing Brothers) still being scaled by XP effects on the receiving character
 - Fix **Goblin Wolfrider** having no `ShakeLayer` for `BodyPart.All` defined
 - Fix **Wolf**, spawned by a dying **Goblin Wolfrider**, sometimes having an action in the round it spawned
+- Fix **Drums of War** (from Barbarian Drummer) spawning 2 overlay icons on each target
 - Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
 - Every accessory now plays a default sound when moved around in the inventory
@@ -1570,6 +1574,8 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add `HD_UsableInZoneOfControl = true` member for `skill.nut` which can be set to `false` to make an active skill unusable while engaged in melee and adding boilerplate tooltips for that
+- Add `actor::HD_isInZoneOfControl()` which returns `true`, if that actor is currently engaged in melee
 - Add `::Tactical.TurnSequenceBar.HD_protectTurnEnd()` for briefly preventing the player from ending the curren turn, if the setting is enabled
 - Add shared boilerplate code for location build actions into `faction_action`
 - Add `actor.m.ChestConditionRoll = null` and `actor.m.HelmetConditionRoll = null` which can be assigned WeightedContainer to define armor condtition percentages of the assigned armors

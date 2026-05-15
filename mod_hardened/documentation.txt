@@ -30,6 +30,22 @@
 
 # Changelog
 
+1.17.5
+	- While playing the **Cultist Origin**, display in backgrounds tooltip whether they are convertable to a cultist
+	- **Bandage Ally**, **Use Antidote**, **Goblin Whip**, **Serpent Hook**, **Shoot Bolt**, **Shoot Stake** and **Retreat** can now be used while inside a Smoke**
+	- **Bandage Ally** and **Use Antidote** can now target allies that are inside **Smoke**
+	- Improve tooltip of **Bandage Ally** and **Use Antidote**
+	- Improve wording in some perks emphasizing that they revolve around an **Attack Skill** instead of just any attack
+	- Introduce new concept **Recently** which describes anything that happened either in the last round or in the current round
+		- Streamline **Killing Frenzy** perk description using that new concept
+	- Improve the concept for **Zone of Control**/**Engaged in Melee**
+	- Fix(Vanilla) **Drums of War** (from Barbarian Drummer) spawning 2 overlay icons on each target
+	- Fix **Footwork** being usable while rooted
+	- Fix music sometimes not playing during combat
+	- Fix **Play Battle Song** being usable while Engaged in Melee
+	- Add `HD_UsableInZoneOfControl = true` member for `skill.nut` which can be set to `false` to make an active skill unusable while engaged in melee and adding boilerplate tooltips for that
+	- Add `actor::HD_isInZoneOfControl()` which returns `true`, if that actor is currently engaged in melee
+
 1.17.4
 	- Lower UI Order of **Gain Ground** and **Passing Step** skills
 	- Fix compatibility issue with breditor

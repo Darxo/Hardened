@@ -133,7 +133,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Deal " + ::MSU.Text.colorPositive("20%") + " more damage against [injured|Concept.InjuryTemporary] or [rooted|Concept.Rooted] characters",
+					"Deal " + ::MSU.Text.colorPositive("20%") + " more Damage against [injured|Concept.InjuryTemporary] or [rooted|Concept.Rooted] characters",
 				]
 			}]
 		})
@@ -462,7 +462,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Spear Skills cost " + ::MSU.Text.colorizeMultWithText(::Hardened.Global.WeaponSpecFatigueMult, {InvertColor = true}) + " [Fatigue|Concept.Fatigue]",
-						"[Spearwall|Skill+spearwall] can be used while [engaged|Concept.ZoneOfControl] in melee and is no longer disabled when enemies overcome it",
+						"[Spearwall|Skill+spearwall] can be used while [Engaged in Melee|Concept.ZoneOfControl] and is no longer disabled when enemies overcome it",
 						"[Reach Advantage|Concept.ReachAdvantage] grants an additional " + ::MSU.Text.colorizeMultWithText(::Reforged.Reach.ReachAdvantageMult) + " [Melee Skill|Concept.MeleeSkill]",
 					],
 				},
@@ -498,7 +498,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Throwing Skills cost " + ::MSU.Text.colorizeMultWithText(::Hardened.Global.WeaponSpecFatigueMult, {InvertColor = true}) + " [Fatigue|Concept.Fatigue]",
-					"Your first Throwing Attack each [round|Concept.Round] deals " + ::MSU.Text.colorizeMultWithText(1.3) + " damage",
+					"Your first Throwing Attack each [round|Concept.Round] deals " + ::MSU.Text.colorizeMultWithText(1.3) + " Damage",
 					"Once per [round|Concept.Round], after you use a Throwing Attack, swapping any item becomes a free action",
 				],
 			}],
@@ -556,7 +556,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Enemies will never have [Reach Advantage|Concept.ReachAdvantage] against you",
-						"Your shield takes " + ::MSU.Text.colorPositive("50%") + " less damage up to a minimum of 1",
+						"Your shield takes " + ::MSU.Text.colorPositive("50%") + " less Damage up to a minimum of 1",
 					],
 				},
 				{
@@ -658,7 +658,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"For every character [surrounding|Concept.Surrounding] your target, except the first one, deal " + ::MSU.Text.colorPositive("10%") + " more damage, gain " + ::MSU.Text.colorPositive("+10%") + " [Armor Penetration|Concept.ArmorPenetration] and " + ::MSU.Text.colorNegative("-10%") + " [chance to hit the head|Concept.ChanceToHitHead]"
+					"For every character [surrounding|Concept.Surrounding] your target, except the first one, deal " + ::MSU.Text.colorPositive("10%") + " more Damage, gain " + ::MSU.Text.colorPositive("+10%") + " [Armor Penetration|Concept.ArmorPenetration] and " + ::MSU.Text.colorNegative("-10%") + " [chance to hit the head|Concept.ChanceToHitHead]"
 				],
 			}],
 		}),
@@ -741,7 +741,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Deal " + ::MSU.Text.colorPositive("10%") + " more damage against characters with a lower [morale|Concept.Morale] than you",
+					"Deal " + ::MSU.Text.colorPositive("10%") + " more Damage against characters with a lower [morale|Concept.Morale] than you",
 					::MSU.Text.colorPositive("+5") + " [Melee Defense|Concept.MeleeDefense] against characters with less maximum [Hitpoints|Concept.Hitpoints] than you",
 				],
 			}],
@@ -768,7 +768,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Deal " + ::MSU.Text.colorPositive("20%") + " more damage against anyone who has not started their [turn|Concept.Turn] yet in the current [round|Concept.Round]"
+					"Deal " + ::MSU.Text.colorPositive("20%") + " more Damage against anyone who has not started their [turn|Concept.Turn] yet in the current [round|Concept.Round]"
 					"Have " + ::MSU.Text.colorNegative("15%") + " less [Initiative|Concept.Initiative]",
 				],
 			}],
@@ -782,7 +782,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlock [Cheap Trick|Skill+rf_cheap_trick_skill], which increases the [Hitchance|Concept.Hitchance] of your next Attack skill but reduces its damage",
+					"Unlock [Cheap Trick|Skill+rf_cheap_trick_skill], which increases the [Hitchance|Concept.Hitchance] of your next Attack skill but reduces its Damage",
 				],
 			}],
 		}),
@@ -853,7 +853,7 @@ local adjustedDescriptions = [
 					"Gain a stack whenever you end your [turn|Concept.Turn] without having used [Wait|Concept.Wait], up to a maximum of 3 stacks",
 					"Have " + ::MSU.Text.colorPositive("15%") + " more [Initiative|Concept.Initiative] while you have at least 1 stack",
 					"Skills build up " + ::MSU.Text.colorPositive("15%") + " less [Fatigue|Concept.Fatigue] while you have at least 2 stacks",
-					"Deal " + ::MSU.Text.colorPositive("15%") + " more damage while you have 3 stacks",
+					"Deal " + ::MSU.Text.colorPositive("15%") + " more Damage while you have 3 stacks",
 					"You lose all stacks if you use [Wait|Concept.Wait]",
 				],
 			}],
@@ -1062,7 +1062,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever you use an Attack Skill during your [turn|Concept.Turn], perform a free extra use of the same Skill on a different valid enemy within 2 tiles. This Attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
+					"Whenever you use an Attack Skill during your [turn|Concept.Turn], perform a free extra use of the same Skill on a different valid enemy within 2 tiles. This Attack deals " + ::MSU.Text.colorNegative("50%") + " less Damage",
 				],
 			}],
 		}),
@@ -1161,7 +1161,7 @@ local adjustedDescriptions = [
 						"Piercing Throwing Attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body",
 						"Cutting Throwing Attacks apply [Overwhelmed|Skill+overwhelmed_effect]",
 						"Headshots with Blunt Throwing Attacks apply [Staggered|Skill+staggered_effect]. All hits with Blunt Throwing Attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
-						"[Throwing Spears|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(2.0) + " damage to shields",
+						"[Throwing Spears|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(2.0) + " Damage to shields",
 					],
 				},
 			],

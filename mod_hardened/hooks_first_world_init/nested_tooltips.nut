@@ -125,7 +125,7 @@
 	Rally = ::MSU.Class.BasicTooltip("Rally", ::Reforged.Mod.Tooltips.parseString(
 		"Rallying is a type of positive [Morale Check|Concept.Morale] that can only occur on a character who is currently [fleeing|Skill+hd_dummy_morale_state_fleeing]\n\n" +
 		"A successful rally immediately raises the character's [Morale|Concept.Morale] to [Wavering|Skill+hd_dummy_morale_state_wavering] but removes " + ::MSU.Text.colorNegative(::Math.abs(::Hardened.Global.ActionPointChangeOnRally)) + " [Action Points|Concept.ActionPoints] from them.\n\n" +
-		"Characters will automatically attempt to rally at the start of their [turn|Concept.Turn], as long as they are not engaged in melee combat."
+		"Characters will automatically attempt to rally at the start of their [turn|Concept.Turn], as long as they are not [Engaged in Melee|Concept.ZoneOfControl]."
 	)),
 	Recently = ::MSU.Class.BasicTooltip("Recently", ::Reforged.Mod.Tooltips.parseString(
 		"Anything that happened either in the last [round|Concept.Round] or in the current [round|Concept.Round] is considered to have happened recently."
