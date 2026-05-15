@@ -7,7 +7,7 @@
 		{
 			if (entry.id == 20 && entry.icon == "ui/icons/warning.png")
 			{
-				entry.text = ::Reforged.Mod.Tooltips.parseString("The effect is lost when you use an attack, [wait|Concept.Wait] or end your [turn|Concept.Turn]");
+				entry.text = ::Reforged.Mod.Tooltips.parseString("The effect is lost when you use an Attack Skill, [wait|Concept.Wait] or end your [turn|Concept.Turn]");
 			}
 		}
 

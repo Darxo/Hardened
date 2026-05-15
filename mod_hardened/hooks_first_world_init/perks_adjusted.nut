@@ -1049,7 +1049,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever you use an Attack during your [turn|Concept.Turn], perform a free extra Attack of the same type to a different valid enemy within 2 tiles. This Attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
+					"Whenever you use an Attack Skill during your [turn|Concept.Turn], perform a free extra use of the same Skill on a different valid enemy within 2 tiles. This Attack deals " + ::MSU.Text.colorNegative("50%") + " less damage",
 				],
 			}],
 		}),
@@ -1437,7 +1437,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Whenever you use an Attack during your [turn|Concept.Turn], spend all remaining [Action Points|Concept.ActionPoints] and deal " + ::MSU.Text.colorPositive("8%") + " more Damage and Shield Damage during this Skill for every [Action Point|Concept.ActionPoints] spent this way",
+					"Whenever you use an Attack Skill during your [turn|Concept.Turn], spend all remaining [Action Points|Concept.ActionPoints] and deal " + ::MSU.Text.colorPositive("8%") + " more Damage and Shield Damage during that Skill for every [Action Point|Concept.ActionPoints] spent this way",
 					"This bonus is " + ::MSU.Text.colorPositive("doubled") + " for one-handed weapons",
 				],
 			}],
@@ -1496,7 +1496,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Your Attacks that inflict [bleeding|Skill+bleeding_effect] inflict 5 additional stacks of [bleeding|Skill+bleeding_effect]",
+					"Your Attacks that inflict [bleeding|Skill+bleeding_effect] inflict " + ::MSU.Text.colorPositive("5") + " additional stacks of [bleeding|Skill+bleeding_effect]",
 				],
 			}],
 		}),
@@ -1609,7 +1609,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per [round|Concept.Round], if you use an Attack on an adjacent enemy, gain " + ::MSU.Text.colorPositive("+5") + " [Melee Defense|Concept.MeleeDefense] for every adjacent enemy until the start of your next [turn|Concept.Turn]",
+					"Once per [round|Concept.Round], if you use an Attack Skill on an adjacent enemy, gain " + ::MSU.Text.colorPositive("+5") + " [Melee Defense|Concept.MeleeDefense] for every adjacent enemy until the start of your next [turn|Concept.Turn]",
 				],
 			}],
 		}),
@@ -1825,7 +1825,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"For every 2 tiles moved during your [turn|Concept.Turn], your next Attack costs " + ::MSU.Text.colorPositive(-1) + " [Action Point|Concept.ActionPoints]",
-					"The effect is lost when you use an attack, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
+					"The effect is lost when you use an Attack Skill, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
 				],
 			}],
 		}),
