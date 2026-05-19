@@ -575,7 +575,7 @@
 
 		if (::Hardened.util.willBeAttackedLeavingZoneOfControl(_entity))
 		{
-			if (_entity.getTile().getZoneOfControlCountOtherThan(_entity.getAlliedFactions()) == 0)
+			if (_entity.HD_isEngagedInMelee())
 			{
 				ret.insert(0, {
 					id = 200,

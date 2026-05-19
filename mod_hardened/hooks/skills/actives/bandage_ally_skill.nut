@@ -3,6 +3,16 @@
 	// 0 means, that an injury is only treatable during the same round
 	q.m.TreatableRoundWindow <- 1;
 
+// Hardened
+	q.m.HD_UsableInZoneOfControl = false;
+
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.Description = "Save yourself or another character by applying pressure and provisional bandaging to any fresh wound.";
+	}
+
 	q.onAdded = @(__original) function()
 	{
 		__original();
@@ -16,17 +26,23 @@
 		}
 	}
 
-	q.getTooltip = @(__original) function()
+	q.getTooltip = @() function()
 	{
-		local ret = __original();
+		local ret = this.skill.getDefaultUtilityTooltip();
 
-		foreach (entry in ret)
-		{
-			if (entry.id == 7 && ::String.contains(entry.text, "Cut Artery"))
-			{
-				entry.text = ::Reforged.Mod.Tooltips.parseString("Treats any injury that was received at most " + ::MSU.Text.colorPositive(this.m.TreatableRoundWindow) + " [Round(s)|Concept.Round] ago");
-			}
-		}
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Target yourself or an ally who is not [Engaged in Melee|Concept.ZoneOfControl]. Remove [Bleeding|Skill+bleeding_effect] from that target and treat any [Injuries|Concept.InjuryTemporary] that were received [recently|Concept.Recently]"),
+		});
+
+		ret.push({
+			id = 11,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a range of " + ::MSU.Text.colorizeValue(this.getMaxRange()) + " tiles",
+		});
 
 		return ret;
 	}
@@ -34,30 +50,19 @@
 	// We replace the vanilla function because cut artery, cut throat and grazed neck now behave like the other injuries
 	q.onVerifyTarget = @() function( _originTile, _targetTile )
 	{
-		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
-		{
-			return false;
-		}
+		if (!this.skill.onVerifyTarget(_originTile, _targetTile)) return false;
 
 		local target = _targetTile.getEntity();
 		if (!this.getContainer().getActor().isAlliedWith(target)) return false;
-		if (_targetTile.hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions())) return false;
+		if (target.HD_isEngagedInMelee()) return false;
+		if (!this.HD_hasTreatableEffects(target)) return false;
 
-		foreach (skill in target.getSkills().m.Skills)
-		{
-			if (skill.getID() == "effects.bleeding")
-			{
-				return true;
-			}
-			if (skill.isType(::Const.SkillType.TemporaryInjury) && skill.isFresh() && !skill.isTreated())
-			{
-				local roundsSinceAdded = ::Tactical.TurnSequenceBar.getCurrentRound() - skill.m.RoundAdded;
-				if (roundsSinceAdded <= this.m.TreatableRoundWindow)
-				{
-					return true;
-				}
-			}
-		}
+		return true;
+	}
+
+	q.isUsable = @() function()
+	{
+		return this.skill.isUsable();
 	}
 
 	// We replace the vanilla function because cut artery, cut throat and grazed neck are no longer removed
@@ -93,5 +98,27 @@
 
 		this.updateAchievement("FirstAid", 1, 1);
 		return true;
+	}
+
+// New Functions
+	q.HD_hasTreatableEffects <- function( _target )
+	{
+		foreach (skill in _target.getSkills().m.Skills)
+		{
+			if (skill.getID() == "effects.bleeding")
+			{
+				return true;
+			}
+			if (skill.isType(::Const.SkillType.TemporaryInjury) && skill.isFresh() && !skill.isTreated())
+			{
+				local roundsSinceAdded = ::Tactical.TurnSequenceBar.getCurrentRound() - skill.m.RoundAdded;
+				if (roundsSinceAdded <= this.m.TreatableRoundWindow)
+				{
+					return true;
+				}
+			}
+		}
+
+		return false;
 	}
 });
