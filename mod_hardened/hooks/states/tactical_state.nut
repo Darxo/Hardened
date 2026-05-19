@@ -84,28 +84,6 @@
 		return __original(_mouse);
 	}
 
-	q.onShow = @(__original) { function onShow()
-	{
-		__original();
-
-		// Discovering enemies you see during the first round happens before `onShow`, so we return early in that case
-		if (this.m.HD_HasDiscoveredEnemy) return;
-
-		foreach (party in ::Tactical.State.getStrategicProperties().Parties)
-		{
-			if (party.isAlliedWithPlayer()) continue;
-			if (!party.isLocation()) continue;
-			if (party.isShowingDefenders()) continue;
-
-			// Feat: Combat Music no longer plays right from the start, when fighting locations which hide their defender
-			// 	Instead the music will start later, when you discover the first enemy
-			// We overwrite the vanilla setTrackList call by calling it again with our neutral track list
-			::Music.setTrackList(this.m.HD_NeutralCombatTracks, 1000);
-			this.m.HD_IsHidingMusic = true;
-			break;
-		}
-	}}.onShow;
-
 	q.tactical_retreat_screen_onYesPressed = @(__original) function()
 	{
 		// Vanilla Fix: We prevent a rare end-of-combat freeze, when "something" is animating while we click the "It\'s over" button
