@@ -4,7 +4,7 @@
 	q.m.TreatableRoundWindow <- 1;
 
 // Hardened
-	q.m.HD_UsableInZoneOfControl = false;
+	q.m.HD_UsableWhileEngagedInMelee = false;
 
 	q.create = @(__original) function()
 	{

@@ -7,7 +7,7 @@ this.hd_battle_song_skill <- ::inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.hd_battle_song";
 		this.m.Name = "Play Battle Song";
-		this.m.Description = "Play a song on your musical instrument to raise the Resolve of nearby allies. Cannot be used while engaged in melee."
+		this.m.Description = "Play a song on your musical instrument to raise the Resolve of nearby allies."
 		this.m.Icon = "skills/hd_battle_song_skill.png";
 		this.m.IconDisabled = "skills/hd_battle_song_skill_bw.png";
 		this.m.Overlay = "hd_battle_song_skill";
@@ -22,6 +22,9 @@ this.hd_battle_song_skill <- ::inherit("scripts/skills/skill", {
 		this.m.IsActive = true;
 		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 20;
+
+	// Hardened
+		this.m.HD_UsableWhileEngagedInMelee = false;
 	}
 
 	function getTooltip()
@@ -42,17 +45,6 @@ this.hd_battle_song_skill <- ::inherit("scripts/skills/skill", {
 				text = "Does not affect allies who are currently inspired by someone else\'s song",
 			},
 		]);
-
-		local actor = this.getContainer().getActor();
-		if (actor.isPlacedOnMap() && actor.getTile().hasZoneOfControlOtherThan(actor.getAlliedFactions()))
-		{
-			ret.push({
-				id = 21,
-				type = "text",
-				icon = "ui/tooltips/warning.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Cannot be used because this character is [engaged|Concept.ZoneOfControl] in melee"),
-			});
-		}
 
 		return ret;
 	}

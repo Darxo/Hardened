@@ -2,7 +2,11 @@
 	q.create = @(__original) function()
 	{
 		__original();
+		this.m.Description = "Ready another bolt to be fired.";		// Remove mention, that this cannot be used while engaged in melee
 		this.m.IsRemovedAfterBattle = false;	// Vanilla: true
+
+	// Hardened
+		this.m.HD_UsableWhileEngagedInMelee = false;
 	}
 
 	// Overwrite, because we improve the usability logic
@@ -12,8 +16,7 @@
 		if (::MSU.isNull(this.getItem())) return false;		// Ideally a reload skill should always be attached to its weapon, but Vanilla or a mod may add it disconnected too
 		if (!this.getItem().HD_canBeLoaded()) return false;		// We now use the new weapon utility function instead of checking the ammo count manually
 
-		local actor = this.getContainer().getActor();
-		return actor.isPlacedOnMap() && !actor.getTile().hasZoneOfControlOtherThan(actor.getAlliedFactions());
+		return true;
 	}
 
 	// Overwrite, because we prevent it from removing itself
