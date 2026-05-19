@@ -21,16 +21,10 @@
 	{
 		local ret = this.getDefaultTooltip();
 
-		// Remove the existing tooltips
-		for (local index = (ret.len() - 1); index >= 0; index--)
-		{
-			local entry = ret[index];
-			// We remove the tooltips about
-			if (entry.id == 6 && entry.icon == "ui/icons/special.png")
-			{
-				ret.remove(index);
-			}
-		}
+		// We remove the tooltips about skill functionality
+		::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
+			return (_entry.id == 6) && (_entry.icon == "ui/icons/special.png");
+		});
 
 		ret.push({
 			id = 10,

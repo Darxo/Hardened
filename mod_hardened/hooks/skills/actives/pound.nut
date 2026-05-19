@@ -12,18 +12,17 @@
 	{
 		local ret = __original();
 
-		for (local index = (ret.len() - 1); index >= 0; index--)
+		// We delete the Vanilla entry about the extra Armor Penetration on a head shot. This skill no longer naturally grants it. And the flail mastery produces its own tooltip
+		::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
+			return (_entry.id == 5) && (_entry.icon == "ui/icons/special.png");
+		});
+
+		if (this.m.StunChance == 0)
 		{
-			local entry = ret[index];
-			// We delete the Vanilla entry about the extra Armor Penetration on a head shot. This skill no longer naturally grants it. And the flail mastery produces its own tooltip
-			if (entry.id == 5 && entry.icon == "ui/icons/special.png")
-			{
-				ret.remove(index);
-			}
-			else if (this.m.StunChance == 0 && entry.id == 7 && entry.icon == "ui/icons/special.png")
-			{
-				ret.remove(index);
-			}
+			// We remove the tooltip about stun chance, when this skill has no natural globla stun chance
+			::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
+				return (_entry.id == 7) && (_entry.icon == "ui/icons/special.png");
+			});
 		}
 
 		if (this.m.HD_HeadshotStunChance > 0)

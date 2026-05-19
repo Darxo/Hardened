@@ -4,18 +4,11 @@
 		local ret = __original();
 
 		// Remove the existing tooltips
-		for (local index = (ret.len() - 1); index >= 0; index--)
-		{
-			local entry = ret[index];
-			if (entry.id == 10 && entry.icon == "ui/icons/regular_damage.png")	// Remove the tooltip about life leech as that is now handled by the hd_life_leech_effect
-			{
-				ret.remove(index);
-			}
-			else if (entry.id == 22 && entry.icon == "ui/icons/special.png")	// Remove the tooltip about poison immunity
-			{
-				ret.remove(index);
-			}
-		}
+		::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
+			if (_entry.id == 10 && _entry.icon == "ui/icons/regular_damage.png") return true;	// Remove the tooltip about life leech as that is now handled by the hd_life_leech_effect
+			if (_entry.id == 22 && _entry.icon == "ui/icons/special.png") return true;			// Remove the tooltip about poison immunity
+			return false;
+		});
 
 		return ret;
 	}

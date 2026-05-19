@@ -11,6 +11,12 @@
 	{
 		local ret = __original();
 
+		// We delete the Reforged entry about "Applicable masteries" as that whole system is no longer relevant under Hardened
+		// We delete the Reforged entry about "Free Dagger Swaps" as that whole system is no longer relevant under Hardened
+		::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
+			return (_entry.id == 20 || _entry.id == 30) && (_entry.icon == "ui/icons/special.png");
+		});
+
 		foreach (entry in ret)
 		{
 			if (entry.id == 64 && entry.icon == "ui/icons/direct_damage.png")
@@ -46,21 +52,6 @@
 			else if (entry.id == 20 && entry.icon == "ui/icons/rf_reach.png")
 			{
 				entry.text = ::Reforged.Mod.Tooltips.parseString("[Reach|Concept.Reach]: ") + this.m.Reach;
-			}
-		}
-
-		for (local index = (ret.len() - 1); index >= 0; index--)
-		{
-			local entry = ret[index];
-			// We delete the Reforged entry about "Applicable masteries" as that whole system is no longer relevant under Hardened
-			if (entry.id == 20 && entry.icon == "ui/icons/special.png")
-			{
-				ret.remove(index);
-			}
-			// We delete the Reforged entry about "Free Dagger Swaps" as that whole system is no longer relevant under Hardened
-			if (entry.id == 30 && entry.icon == "ui/icons/special.png")
-			{
-				ret.remove(index);
 			}
 		}
 

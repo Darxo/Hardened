@@ -270,13 +270,9 @@
 				});
 
 				// Remove all vanilla relation entries, as we add them slightly differently
-				for (local i = ret.len() - 1; i >= 0; --i)
-				{
-					if (ret[i].id == 11 && (ret[i].icon == "ui/tooltips/positive.png" || ret[i].icon == "ui/tooltips/negative.png"))
-					{
-						ret.remove(i);
-					}
-				}
+				::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
+					return _entry.id == 11 && (_entry.icon == "ui/tooltips/positive.png" || _entry.icon == "ui/tooltips/negative.png");
+				});
 
 				local changes = ::World.FactionManager.getFaction(_entityId).getPlayerRelationChanges();
 				foreach (change in changes)
@@ -563,15 +559,10 @@
 		}
 
 		// We remove the Reforged tooltips about chance to be hit when moving, except about fatigue cost
-		for (local index = (ret.len() - 1); index >= 0; index--)
-		{
-			local entry = ret[index];
-
-			if (entry.id == 100 && entry.icon == "ui/icons/warning.png")
-			{
-				ret.remove(index);
-			}
-		}
+		::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
+			if (_entry.id == 100 && _entry.icon == "ui/icons/warning.png") return true;
+			return false;
+		});
 
 		if (::Hardened.util.willBeAttackedLeavingZoneOfControl(_entity))
 		{

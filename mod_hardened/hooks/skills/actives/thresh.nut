@@ -10,15 +10,12 @@
 	{
 		local ret = __original();
 
-		for (local index = (ret.len() - 1); index >= 0; index--)
+		if (this.m.StunChance == 0)
 		{
-			// We remove the tooltip about the chance to stun, if the skill has no stun-chance
-			local entry = ret[index];
-			if (this.m.StunChance == 0 && entry.id == 8 && entry.icon == "ui/icons/special.png")
-			{
-				ret.remove(index);
-				break;
-			}
+			// We remove the tooltip about stun chance, when this skill has no natural globla stun chance
+			::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
+				return (_entry.id == 8) && (_entry.icon == "ui/icons/special.png");
+			});
 		}
 
 		return ret;

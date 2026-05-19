@@ -13,18 +13,11 @@
 		local ret = __original();
 
 		// We delete the no longer needed damage reduction entries
-		for (local index = (ret.len() - 1); index >= 0; index--)
-		{
-			local entry = ret[index];
-			if (entry.id == 30 && entry.icon == "skills/status_effect_86.png")
-			{
-				ret.remove(index);	// Remove the tooltip about the vanilla 70% damage mitigation. That is now implemented via a new perk
-			}
-			else if (entry.id == 11 && entry.icon == "ui/icons/ranged_defense.png")
-			{
-				ret.remove(index);
-			}
-		}
+		::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
+			if (_entry.id == 11 && _entry.icon == "ui/icons/ranged_defense.png") return true;
+			if (_entry.id == 30 && _entry.icon == "skills/status_effect_86.png") return true;		// Remove the tooltip about the vanilla 70% damage mitigation. That is now implemented via a new perk
+			return false;
+		});
 
 		// Adjust the one remaining damage reduction tooltip according to our standardized reduction
 		foreach (entry in ret)

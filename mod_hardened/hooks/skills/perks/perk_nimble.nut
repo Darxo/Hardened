@@ -9,23 +9,12 @@
 	{
 		local ret = __original();
 
-		// Remove the existing tooltips
-		for (local index = (ret.len() - 1); index >= 0; index--)
-		{
-			local entry = ret[index];
-			if (entry.id == 12 && entry.icon == "ui/icons/rf_reach.png")
-			{
-				ret.remove(index);
-			}
-			else if (entry.id == 13)	// Remove mention about effectiveness difference depending on weight
-			{
-				ret.remove(index);
-			}
-			else if (entry.id == 6 && entry.icon == "ui/icons/special.png")		// We remove
-			{
-				ret.remove(index);
-			}
-		}
+		::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
+			if (_entry.id == 6 && _entry.icon == "ui/icons/special.png") return true;		// Remove the vanilla mitigation tooltip
+			if (_entry.id == 12 && _entry.icon == "ui/icons/special.png") return true;		// Remove the reforged reach advantage tooltip
+			if (_entry.id == 13 && _entry.icon == "ui/icons/fatigue.png") return true;		// Remove the reforged effectiveness hint
+			return false;
+		});
 
 		local armorDamageMult = this.getArmorDamage();
 		if (armorDamageMult > 1.0)

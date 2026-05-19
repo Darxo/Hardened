@@ -8,13 +8,9 @@
 		local ret = __original();
 
 		// Remove the existing tooltips
-		for (local index = (ret.len() - 1); index >= 0; index--)
-		{
-			if (ret[index].id == 10 || ret[index].id == 11)
-			{
-				ret.remove(index);
-			}
-		}
+		::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
+			return (_entry.id == 10 || _entry.id == 11);
+		});
 
 		if (this.m.MeleeDefenseMult != 1.0)
 		{
