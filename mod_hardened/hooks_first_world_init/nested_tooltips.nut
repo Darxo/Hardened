@@ -122,6 +122,9 @@
 		"A successful rally immediately raises the character's [Morale|Concept.Morale] to [Wavering|Skill+hd_dummy_morale_state_wavering] but removes " + ::MSU.Text.colorNegative(::Math.abs(::Hardened.Global.ActionPointChangeOnRally)) + " [Action Points|Concept.ActionPoints] from them.\n\n" +
 		"Characters will automatically attempt to rally at the start of their [turn|Concept.Turn], as long as they are not engaged in melee combat."
 	)),
+	Recently = ::MSU.Class.BasicTooltip("Recently", ::Reforged.Mod.Tooltips.parseString(
+		"Anything that happened either in the last [round|Concept.Round] or in the current [round|Concept.Round] is considered to have happened recently."
+	)),
 	Weight = ::MSU.Class.BasicTooltip("Weight", ::Reforged.Mod.Tooltips.parseString(
 		"Each equippable item can have a weight value, which determines how much it impacts a character\'s performance.\n\n" +
 		"When equipped, an item\'s weight is subtracted from both [Stamina|Concept.MaximumFatigue] and [Initiative|Concept.Initiative] after multipliers.\n\n" +
