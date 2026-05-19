@@ -180,6 +180,22 @@
 		return (this.getID() == ::Tactical.TurnSequenceBar.m.CurrentEntities[0].getID());
 	}
 
+	/// Determine, whether this actor is currently "engaged in melee" or "in an enemies Zone of Control"
+	q.HD_isEngagedInMelee <- function()
+	{
+		if (!this.getTile().hasZoneOfControlOtherThan(this.getAlliedFactions()))
+		{
+			return false;
+		}
+
+		if (this.getTile().Properties.Effect != null && this.getTile().Properties.Effect.Type == "smoke")
+		{
+			return false;
+		}
+
+		return true;
+	}
+
 	q.setPreviewSkillID = @(__original) function( _skillId )
 	{
 		__original(_skillId);
