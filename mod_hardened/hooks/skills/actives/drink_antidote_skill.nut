@@ -8,7 +8,31 @@
 	{
 		__original();
 		this.m.Name = "Use Antidote";	// In Vanilla this is "Drink or Give Antidote"
-		this.m.Description = "Save yourself or another character from poisons. Can not be used while engaged in melee.";	// We remove any mention of "giving it to allies"
+		this.m.Description = "Save yourself or another character from poisons.";	// We remove any mention of "giving it to allies"
+
+	// Hardened
+		this.m.HD_UsableWhileEngagedInMelee = false;
+	}
+
+	q.getTooltip = @() function()
+	{
+		local ret = this.skill.getDefaultUtilityTooltip();
+
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Target yourself or an ally who is not [Engaged in Melee|Concept.ZoneOfControl]. Remove all poison effects from that target and grant it immunity against poison for " + ::MSU.Text.colorPositive(3) + " [turns|Concept.Turn]"),
+		});
+
+		ret.push({
+			id = 11,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a range of " + ::MSU.Text.colorizeValue(this.getMaxRange()) + " tiles",
+		});
+
+		return ret;
 	}
 
 	// Overwrite, because we no longer produce a custom icon for when we highlight an ally
