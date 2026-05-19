@@ -55,7 +55,7 @@
 
 	q.isUsable = @() function()
 	{
-		return this.skill.isUsable();
+		return this.skill.isUsable() && !this.getContainer().getActor().getCurrentProperties().IsRooted;
 	}
 
 	q.onAnySkillExecuted = @(__original) function( _skill, _targetTile, _targetEntity, _forFree )
