@@ -505,6 +505,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.killing_frenzy",
+		Key = "KillingFrenzy",
+		Description = ::UPD.getDescription({
+			Fluff = "Go into a killing frenzy!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Deal " + ::MSU.Text.colorPositive("25%") + " more Damage if you killed an enemy [recently|Concept.Recently]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.quick_hands",
 		Key = "QuickHands",
 		Description = ::UPD.getDescription({
