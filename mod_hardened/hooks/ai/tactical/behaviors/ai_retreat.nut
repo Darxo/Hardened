@@ -23,8 +23,7 @@
 		}
 
 		// If the entity is not in a Zone of Control or is not fleeing, then the vanilla behavior will be used
-		local isInZoneOfControl = _entity.getTile().hasZoneOfControlOtherThan(_entity.getAlliedFactions());
-		if (!isInZoneOfControl || _entity.getMoraleState() != ::Const.MoraleState.Fleeing)
+		if (!_entity.HD_isEngagedInMelee() || _entity.getMoraleState() != ::Const.MoraleState.Fleeing)
 		{
 			local generator = __original(_entity);	// Get the original generator
 			local ret = resume generator;	// Variable to hold the value yielded by the generator
