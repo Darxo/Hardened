@@ -70,10 +70,10 @@ local resourceMult = ::Hardened.Const.ResourceTierMult;
 		},
 
 	// Dynamic Spawns
-		IdealSizeBase = 12.0,
+		IdealSizeBase = 10.0,
 		FieldableBrothersDefault = 10.0,
 		FieldableBrothersPull = 0.5,
-		BellCurveMult = [0.75, 1.25],
+		BellCurveMult = [0.70, 1.30],
 		CompressionMin = 6.0,
 		CompressionMax = 24.0,
 		CompressionPull = 0.5,
@@ -101,9 +101,9 @@ local resourceMult = ::Hardened.Const.ResourceTierMult;
 			Zombies = 1.2,
 		},
 		PartySizeMult = {
-			Location = 1.5,		// Locations have more quantity of units in general
-			Caravan = 0.5,		// The main purpose of the units is transportation of themselves or some goods
-			Scouts = 0.5,		// Fewer units, not meant to be a fighting force
+			Location = 1.4,		// Locations have more quantity of units in general
+			Caravan = 0.6,		// The main purpose of the units is transportation of themselves or some goods
+			Scouts = 0.6,		// Fewer units, not meant to be a fighting force
 			Offensive = 1.2,	// A special greater type of raiding party
 			Specialists = 0.25,		// Specialists of one type, usually added on top of another party in a scripted combat
 		},
