@@ -2,6 +2,15 @@
 	// Private
 	q.m.LastSkillCounter <- null;	// Keep track of the last main-skill that produced logs
 
+	q.log_newline = @(__original) function()
+	{
+		// Our feature to combine logs explicitely wants no newlines in betwee, so we interrupt all of these calls
+		if (!this.HD_isCombiningLogs())
+		{
+			__original();
+		}
+	}
+
 	q.log = @(__original) function( _text )
 	{
 		if (this.HD_isCombiningLogs())
