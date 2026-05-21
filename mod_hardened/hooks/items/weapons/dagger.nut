@@ -4,6 +4,7 @@
 		__original();
 		this.m.RegularDamage = 20;		// Vanilla: 15
 		this.m.RegularDamageMax = 30;	// Vanilla: 35
+		this.m.ArmorDamageMult = 0.5;	// Vanilla: 0.6
 	}
 
 	// We overwrite Reforged skill additions, because we dont hand out any discounts
