@@ -14,27 +14,30 @@
 		local banditFrontline = ::Reforged.Spawns.Parties["RF_BanditFrontline"];
 		foreach (unitBlock in banditFrontline.DynamicDefs.UnitBlocks)
 		{
-			if (unitBlock.BaseID == "UnitBlock.RF.BanditFast") unitBlock.RatioMax = 0.4;	// Reforged: 0.5
-			if (unitBlock.BaseID == "UnitBlock.RF.BanditTough") unitBlock.RatioMax = 0.4;	// Reforged: 0.5
+			if (unitBlock.BaseID == "UnitBlock.RF.BanditFast") unitBlock.RatioMax = 0.35;	// Reforged: 0.5
+			if (unitBlock.BaseID == "UnitBlock.RF.BanditTough") unitBlock.RatioMax = 0.35;	// Reforged: 0.5
 		}
 	}
 
 	{	// BanditRoamers
 		local banditRoamer = ::Reforged.Spawns.Parties["BanditRoamers"];
-		foreach (unitBlock in banditRoamer.DynamicDefs.UnitBlocks)
-		{
-			if (unitBlock.BaseID == "UnitBlock.RF.BanditDog")
-			{
-				// Increase the exclusion chance for dogs to make their inclusion rarer and more of a novelty
-				unitBlock.ExclusionChance = 70;	// Reforged: 40
-			}
-		}
+
+		// We overwrite the Reforged function to disable the dynamic ExclusionChance and Ratios for Ranged Units
+		banditRoamer.onBeforeSpawnStart = function() { base.onBeforeSpawnStart(); }
 	}
 
 	{	// BanditRaiders
 		local banditRaider = ::Reforged.Spawns.Parties["BanditRaiders"];
+
+		// We overwrite the Reforged function to disable the dynamic ExclusionChance and Ratios for Ranged Units
+		banditRaider.onBeforeSpawnStart = function() { base.onBeforeSpawnStart(); }
+
 		foreach (unitBlock in banditRaider.DynamicDefs.UnitBlocks)
 		{
+			if (unitBlock.BaseID == "UnitBlock.RF.BanditRanged")
+			{
+				unitBlock.ExclusionChance <- 20;	// Reforged: 0
+			}
 			if (unitBlock.BaseID == "UnitBlock.RF.BanditElite")
 			{
 				unitBlock.RatioMax = 0.15;	// Reforged: 0.13
@@ -45,6 +48,10 @@
 
 	{	// BanditDefenders
 		local banditDefenderParty = ::Reforged.Spawns.Parties["BanditDefenders"];
+
+		// We overwrite the Reforged function to disable the dynamic chances and values for many blocks
+		banditDefenderParty.onBeforeSpawnStart = function() { base.onBeforeSpawnStart(); }
+
 		foreach (unitBlock in banditDefenderParty.DynamicDefs.UnitBlocks)
 		{
 			if (unitBlock.BaseID == "UnitBlock.RF.BanditRanged")
