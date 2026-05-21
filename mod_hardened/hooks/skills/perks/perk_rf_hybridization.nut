@@ -8,6 +8,12 @@
 		__original();
 		this.m.RangedSkillToMeleeMult = 0.0;	// In Reforged this is 0.1
 		this.m.MeleeSkillToRangedMult = 0.0;	// In Reforged this is 0.2
+
+		this.m.SoundOnHit = [
+			"sounds/combat/impale_hit_01.wav",
+			"sounds/combat/impale_hit_02.wav",
+			"sounds/combat/impale_hit_03.wav",
+		];
 	}
 
 	// Overwrite because we no longer grant melee defense
@@ -119,6 +125,7 @@
 				if (!actor.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer)
 				{
 					::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(actor) + " has impaled " + ::Const.UI.getColorizedEntityName(_targetEntity) + " for " + effect.m.HD_LastsForTurns + " turns");
+					::Sound.play(::MSU.Array.rand(this.m.SoundOnHit), ::Const.Sound.Volume.Skill * this.m.SoundVolume, _targetEntity.getPos());
 				}
 			}
 		}
