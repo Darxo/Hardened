@@ -30,6 +30,14 @@
 
 # Changelog
 
+1.17.6
+	- All enemy parties are now ~15% smaller in size and use more upgraded units instead
+	- Locations now field 40% additional units before upgrading (down from 50%)
+	- Brigand Parties spawn slightly fewer **Fast**, **Tough** and **Ranged** Brigands
+	- **Ancient Auxiliaries** now have a 50% chance to spawn with 80% condition on their helmet
+	- Play unique sound effect when a piercing throwing effect triggers **Arrow to the Knee**
+	- Fix some skills still producing a newline while the setting for combining logs is active
+
 1.17.5
 	- While playing the **Cultist Origin**, display in backgrounds tooltip whether they are convertable to a cultist
 	- **Bandage Ally**, **Use Antidote**, **Goblin Whip**, **Serpent Hook**, **Shoot Bolt**, **Shoot Stake** and **Retreat** can now be used while inside a Smoke**

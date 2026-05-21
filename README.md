@@ -854,7 +854,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 	- This effect is given to all **Dogs**, **Wolfs** and **Hyenas**
 - Weapons in the bags of NPCs will now have randomized Condition, similar to their equipped weapons
 - Noble Armies with a Banner are no longer under the effect of **For the Realm**
-- The following units now have a 50% chance to spawn with 80% condition on their armor: All Brigands (except Leader and Baron), Barbarians (except Madman), Peasants, Caravan Hands and Caravan Guards
+- The following units now have a 50% chance to spawn with 80% condition on their armor: All Brigands (except Leader and Baron), Barbarians (except Madman), Ancient Auxiliaries, Peasants, Caravan Hands and Caravan Guards
 
 ### Specific Changes
 
@@ -1552,7 +1552,6 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix **Sergeant** perk not showing any perk description
 - Fix Item Swaps sometimes requiring a different amount of Action Points than advertised at first
 - **Net Pull** is no longer considered an Attack
-- Fix **Line Breaker** granted by **Onslaught** being usable multiple times
 - Fix crash when trying to sling the same type of pot multiple times with the same character
 - Change the icon of **Sapling Harvest** to that of the sapling overlay icon
 - Mention in **Professional**, that it will never roll **Dagger Group**
