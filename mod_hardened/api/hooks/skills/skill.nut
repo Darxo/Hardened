@@ -236,7 +236,7 @@
 	{
 		local ret = __original();
 
-		local actor = this.getContainer().getActor();
+		local actor = this.getContainer() == null ? ::MSU.getDummyPlayer() : this.getContainer().getActor();
 		if (!this.m.HD_UsableWhileEngagedInMelee)
 		{
 			// We try to detect the vanilla/reforged tooltip about zone of control and delete it
