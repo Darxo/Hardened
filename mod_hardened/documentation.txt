@@ -30,6 +30,9 @@
 
 # Changelog
 
+1.17.7
+	- Fix several effect tooltips showing up incomplete or not at all
+
 1.17.6
 	- All enemy parties are now ~15% smaller in size and use more upgraded units instead
 	- Locations now field 40% additional units before upgrading (down from 50%)

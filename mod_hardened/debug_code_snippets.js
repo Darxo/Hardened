@@ -233,7 +233,21 @@ foreach (location in faction.getSettlements())
 ::World.FactionManager.get().isGreenskinInvasion = function() {return true;}
 ::World.FactionManager.get().isHolyWar = function() {return true;}
 ::World.FactionManager.get().isUndeadScourge = function() {return true;}
-
-
-
 return ::World.FactionManager.isGreenskinInvasion();
+
+
+## Scan/Clean the whole world of glitched parties with 0 units in them and clean those
+
+local allParties = ::World.getAllEntitiesAtPos(::World.State.getPlayer().getPos(), 50000);
+::logWarning("Hardened: total parties: " + allParties.len());
+local invalidParties = 0;
+foreach (entity in allParties)
+{
+	if (entity.isLocation()) continue;
+	if (::MSU.isKindOf(entity, "player_party")) continue;
+	if (entity.m.Troops.len() > 0) continue;
+	::logWarning("Hardened: entity.getName() " + entity.getName() + " entity.getBaseMovementSpeed() " + entity.getBaseMovementSpeed());
+	entity.die();
+	invalidParties++;
+}
+::logWarning("Hardened: invalid parties: " + invalidParties);
