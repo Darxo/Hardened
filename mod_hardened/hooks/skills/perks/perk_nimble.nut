@@ -11,7 +11,7 @@
 
 		::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
 			if (_entry.id == 6 && _entry.icon == "ui/icons/special.png") return true;		// Remove the vanilla mitigation tooltip
-			if (_entry.id == 12 && _entry.icon == "ui/icons/special.png") return true;		// Remove the reforged reach advantage tooltip
+			if (_entry.id == 12 && _entry.icon == "ui/icons/rf_reach.png") return true;		// Remove the reforged reach advantage tooltip
 			if (_entry.id == 13 && _entry.icon == "ui/icons/fatigue.png") return true;		// Remove the reforged effectiveness hint
 			return false;
 		});
