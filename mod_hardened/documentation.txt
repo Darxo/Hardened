@@ -30,6 +30,15 @@
 
 # Changelog
 
+1.17.8
+	- Regular Goblins no longer have a 20% chance to drop a loot item
+	- **Orc Warlords** can now only spawn in Parties which have at least 600 Resources available
+	- **Necrosavant Lords** can now only spawn in Parties which have at least 600 Resources available (up from 290)
+	- **Wiederganger Orc Warlords** can now only spawn in Parties which have at least 500 Resources available (up from 235)
+	- **Caravan Hands** now have 100 Stamina (down from 120)
+	- Lower saturation of spider corpses
+	- Remove misleading tooltip line in nimble effect
+
 1.17.7
 	- Fix several effect tooltips showing up incomplete or not at all
 

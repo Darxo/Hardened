@@ -877,6 +877,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Champion **Fallen Heroes** now always spawn with full armor condition
 
 **Greenskins:**
+- Regular Goblins no longer have a 20% chance to drop a loot item
 - Add **Goblin Fighter** (higher tier version of **Goblin Skirmisher**)
 - Add **Goblin Stalker** (higher tier version of **Goblin Ambusher**)
 - **Goblin Racial** now grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
@@ -927,7 +928,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Brigand Leader** 5% Chance (up from 1%)
 - **Brigand Killer**: 2% Chance (up from 1%)
 - **Brigand Marauder** 2% Chance (up from 1%)
-- **Brigand Robber Baron** 10% Chance (up from 1%)
+- **Brigand Baron** 10% Chance (up from 1%)
 - **Desert Stalker** 3% Chance (up from 2%)
 - **Gladiator** 3% Chance (up from 2%)
 - **Hedge Knight** 3% Chance (up from 2%)
@@ -970,13 +971,16 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 	- **Brigand Robber** now require 120 (up from 100)
 	- **Brigand Bandit** now require 185 (up from 150)
 	- **Brigand Killer** now require 250 (up from 225)
-	- **Brigand Robber Baron** now require 500 (up from 350)
+	- **Brigand Baron** now require 500 (up from 350)
+	- **Necrosavant Lord** now require 600 (up from 290)
+	- **Orc Warlords** now require 600 (previously unrestricted)
+	- **Wiederganger Orc Warlords** now require 500 (up from 235)
 
 ### AI General
 
 - NPC ranged troops now ignore the score from potential scatter targets when picking a ranged target. They also ignore the score penalty from obstacles blocking line of sight (that penalty is already implicitely handled by the predicted hitchance)
 - Any faction that receives at least 3 hits from enemies more than they themselves inflicted onto their enemies, will stop playing defensive
-- **Nomad Leader**, **Bandit Leader**, **Robber Baron**, **Militia Captain**, **Seargeant**, **Marshal** and **Officer** are now less likely to flank, protect allies, engage multiple opponents at once or use crowd control skills. They are more likely to stay in formation and allies are more likely to gather around them
+- **Nomad Leader**, **Bandit Leader**, **Brigand Baron**, **Militia Captain**, **Seargeant**, **Marshal** and **Officer** are now less likely to flank, protect allies, engage multiple opponents at once or use crowd control skills. They are more likely to stay in formation and allies are more likely to gather around them
 - **Blade Dancer**, **Executioner**, **Gladiators**, **Hedge Knight** and **Oathbringer** are now less likely to flank, protect allies, act defensive or use crowd control skills. Allies are slightly more likely to gather around them
 - **Noble** and **Militia** Ranged Troops are now 50% less likely to shoot at enemies they could kill and 100% more likely to shoot at enemies they have a good hitchance against
 - Ranged Troops from **Brigands**, **Nomads**, **Mercenaries**, **Goblins** and **Golems** Ranged Troops are 33% less likely to shoot at enemies they could kill and ~100% more likely to shoot at enemies they have a good hitchance against
@@ -1298,13 +1302,14 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Reduce scroll speed of combat log to 0.5 (down from 15)
 - Increase saturation of ambient light during midnight fights to 70% (up from 50%)
 - Colorize corpse name in tile tooltips
-- Regular (non-Champion) **Brigand Leader**, **Robber Barons**, **Nomad Leader** and **Orc Warlords** no longer spawn with a unique name
+- Regular (non-Champion) **Brigand Leader**, **Brigand Barons**, **Nomad Leader** and **Orc Warlords** no longer spawn with a unique name
 - Add setting (on) to generate combat logs about chances and rolls for bypassing cover, when aiming at targets that are in cover
 - Add setting (on) for showing your uncapped hitchance during combat, when it would exceed the maximum possible hitchance
 - Add Setting (on) for displaying skill tags in the descriptions of active skills
 - Add setting (on) for displaying combat log entries whenever a Non-Attack skill is used
 - Add setting (1 second delay) for preventing the player from accidentally ending their turn shortly after the active entity recovered action points, or the movement was paused because an NPC was discovered
 - Improve visibility of Miasma and Burning Ground
+- Lower saturation of spider corpses
 - Spawn an overlay animation when depleting a throwing weapon or a quiver
 - **Hand to Hand** and **Zombie Bite** skills will now always be sorted to the front in the UI
 - **Knock Back**, **Hook** and **Repel** can no longer be used on enemies which are immune to Displacement or which are Rooted. Using them will now print a combat log with the roll and hitchance of the attack
@@ -1740,18 +1745,27 @@ This section can be skipped by any regular user. It is only meant as an overview
 
 # Known Issues:
 
-- Loading the game over an enemy allows them to instantly engage the player in battle
 - Map Seeds for Vanilla or Reforged are unlikely to work the same under Hardened
 - Injuries now heal at the start of the day and wages are paid at the start of the day; instead of during midday
 - Hitchances of Lunge-Like attacks can be inaccurate as the act of moving next to your target can enable/disable various effects
+- Oathtaker on existing saves (outside of the Oathtaker Origin), which gained an Oath while playing regular Reforged are stuck with that oath after adding Hardened
+- Stunning with a Lute no longer grants the Lute Achievement
+- Brigand Killer spawning as "Disguised Bandits" in that contract twist, blow the cover when looking at their tooltip
+- The first time you open a combat dialog each session: the list of enemies will be very briefly be rendered very small
 
 # Compatibility
+
+## General
 
 - Is safe to remove from- and add to any savegame
 - Removing or adding this mod will not update existing perk trees.
 	- Only after some days you will encounter brothers with the changed perk trees
 	- Perk Groups may not be identified correctly on old brothers after adding or removing this mod. This is just visual
 - New perks introduced by this mod are refunded and removed from your perk tree, when you remove Hardened mod and re-learned when you add Hardened back in (if you have the available perk points)
+
+## With other Mods
+
+- **Elite Few**: Hardlock, when trying to negotiate for better pay in contracts
 
 # License
 
