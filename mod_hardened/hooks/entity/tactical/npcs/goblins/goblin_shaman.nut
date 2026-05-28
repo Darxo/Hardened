@@ -31,6 +31,13 @@
 		this.HD_assignArmor();
 	}}.assignRandomEquipment;
 
+	q.getLootForTile = @(__original) { function getLootForTile( _killer, _loot )
+	{
+		local ret = __original(_killer, _loot);
+		ret.push(::new("scripts/items/loot/goblin_rank_insignia_item"));
+		return ret;
+	}}.getLootForTile;
+
 // Reforged Functions
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
 	q.onSpawned = @() function()
