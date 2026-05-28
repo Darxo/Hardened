@@ -11,6 +11,14 @@
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
 
+	q.onDeath = @(__original) function( _killer, _skill, _tile, _fatalityType )
+	{
+		// Lower saturation of spider sprites when they die, so that their corpses are more distinct from living spiders
+		this.getSprite("body").Saturation *= 0.5;
+		this.getSprite("head").Saturation *= 0.5;
+		__original(_killer, _skill, _tile, _fatalityType);
+	}
+
 // New Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()
