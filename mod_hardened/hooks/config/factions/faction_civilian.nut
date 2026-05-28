@@ -26,7 +26,7 @@
 	::Const.Tactical.Actor.CaravanHand.ActionPoints = 9;
 	::Const.Tactical.Actor.CaravanHand.Hitpoints = 60;
 	::Const.Tactical.Actor.CaravanHand.Bravery = 30;
-	::Const.Tactical.Actor.CaravanHand.Stamina = 120;
+	::Const.Tactical.Actor.CaravanHand.Stamina = 100;
 	::Const.Tactical.Actor.CaravanHand.MeleeSkill = 55;
 	::Const.Tactical.Actor.CaravanHand.RangedSkill = 30;
 	::Const.Tactical.Actor.CaravanHand.MeleeDefense = 0;
