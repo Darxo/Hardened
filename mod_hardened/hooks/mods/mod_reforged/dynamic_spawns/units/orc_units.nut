@@ -16,4 +16,6 @@
 {	// Hooks
 	// We remove the figure without a helmet
 	::Reforged.Spawns.Units["Unit.RF.OrcYoung"].Figure = "figure_orc_02";
+
+	::Reforged.Spawns.Units["Unit.RF.OrcWarlord"].StartingResourceMin <- 600;	// Reforged: unrestricted
 }
