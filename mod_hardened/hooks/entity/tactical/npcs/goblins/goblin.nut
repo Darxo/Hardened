@@ -11,6 +11,12 @@
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
 
+	// Overwrite, to overwrite the reforged changes. We now assign loot in the individual goblin scripts
+	q.getLootForTile = @() { function getLootForTile( _killer, _loot )
+	{
+		return this.actor.getLootForTile(_killer, _loot);
+	}}.getLootForTile;
+
 // New Functions
 	// Assign Socket and adjust Sprites
 	q.HD_onInitSprites <- function()
