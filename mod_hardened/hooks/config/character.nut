@@ -1,150 +1,160 @@
-// Adjusting Vanilla Values
-::Const.CharacterProperties.InitiativeAfterWaitMult = 1.0;	// In Vanilla this is 0.75; This debuff is now applied via a new effect instead
-::Const.LevelXP = [
-	0,
-	200,
-	500,
-	1000,
-	2000,
-	3500,
-	5500,	// Vanilla: 5000
-	8000,	// Vanilla: 7000
-	11000,	// Vanilla: 9000
-	14500,	// Vanilla: 12000
-	18500,	// Vanilla: 15000
-];
-::Const.Combat.GlobalXPMult = 1.0;		// Vanilla: 0.85
-::Const.Combat.SpawnArrowDecalAttempts = 10;	// In Vanila this is 3; potentially causing several missiles producing now decal on impact. Not sure why though
-::Const.Combat.WeaponSpecFatigueMult = 1.0;		// We set this to 1.0 to deactivate the vanilla/modular-vanilla way of applying the fatigue discount
-
-// Adjusted Reforged Values
-::Const.Morale.RF_AllyFleeingBraveryModifierPerAlly = 0;	// In Reforged this is 1
-
-// Adjusting Modular Vanilla Values
-// Vanilla Fix: Revert hidden vanilla 1.25 threshold multiplier for headshots
-::Const.Combat.MV_HeadshotInjuryThresholdMult = 1.0;	// Modular Vanilla: 1.25
-
-// Overwrite vanilla function
-// The minimum vision of any character is now 2 (up from 1)
-// A few AI scripts access this.Vision directly, instead of using this getter. Those are currently unaffected by this change
-::Const.CharacterProperties.getVision = function()
-{
-	return ::Math.max(::Hardened.Global.MinimumVision, ::Math.floor(this.Vision * this.VisionMult));
-}
-
-::Const.CharacterProperties.getBravery = function()
-{
-	// Vanilla Fix: We add a "roundToDec" into the calculation, because multiplications like 120 * 1.05 produce 125.999992, which is falsely floored to 15 then
-	return ::Math.floor(::MSU.Math.roundToDec(this.Bravery * (this.Bravery >= 0 ? this.BraveryMult : 1.0 / this.BraveryMult), 3));
-}
-
-::Const.CharacterProperties.getInitiative = function()
-{
-	// Vanilla Fix: We add a "roundToDec" into the calculation, because multiplications like 120 * 1.05 produce 125.999992, which is falsely floored to 15 then
-	return ::Math.floor(::MSU.Math.roundToDec(this.Initiative * (this.Initiative >= 0 ? this.InitiativeMult : 1.0 / this.InitiativeMult), 3));
-}
-
-// Hook Vanilla Functions
-local oldGetHitChance = ::Const.CharacterProperties.getHitchance;
-::Const.CharacterProperties.getHitchance = function( _bodyPart )
-{
-	if (::Hardened.Temp.UserWantingToHit == null)
-	{
-		return oldGetHitChance(_bodyPart);
+{	// Adjusting Values
+	{	// Vanilla
+		::Const.CharacterProperties.InitiativeAfterWaitMult = 1.0;	// In Vanilla this is 0.75; This debuff is now applied via a new effect instead
+		::Const.LevelXP = [
+			0,
+			200,
+			500,
+			1000,
+			2000,
+			3500,
+			5500,	// Vanilla: 5000
+			8000,	// Vanilla: 7000
+			11000,	// Vanilla: 9000
+			14500,	// Vanilla: 12000
+			18500,	// Vanilla: 15000
+		];
+		::Const.Combat.GlobalXPMult = 1.0;		// Vanilla: 0.85
+		::Const.Combat.SpawnArrowDecalAttempts = 10;	// In Vanila this is 3; potentially causing several missiles producing now decal on impact. Not sure why though
+		::Const.Combat.WeaponSpecFatigueMult = 1.0;		// We set this to 1.0 to deactivate the vanilla/modular-vanilla way of applying the fatigue discount
 	}
-	else
-	{
-		// SkillToBeHitWith is a WeakTableRef. In theory that should cause (skill == this) tests to fail, but somehow they don't. If they ever do then the solution would be to call `get()` here
-		return this.getHeadHitchance(_bodyPart, ::Hardened.Temp.UserWantingToHit, ::Hardened.Temp.SkillToBeHitWith, ::Hardened.Temp.TargetToBeHit);
+
+	{	// Reforged
+		::Const.Morale.RF_AllyFleeingBraveryModifierPerAlly = 0;	// In Reforged this is 1
+	}
+
+	{	// Modular Vanilla
+		::Const.Combat.MV_HeadshotInjuryThresholdMult = 1.0;	// Modular Vanilla: 1.25
 	}
 }
 
-local oldGetClone = ::Const.CharacterProperties.getClone;
-::Const.CharacterProperties.getClone = function()
-{
-	local ret = oldGetClone();
-	ret.WeightStaminaMult = clone this.WeightStaminaMult;
-	ret.WeightInitiativeMult = clone this.WeightInitiativeMult;
-	return ret;
-}
+{	// Overwrite Functions
+	{	// Vanilla
+		// The minimum vision of any character is now 2 (up from 1)
+		// A few AI scripts access this.Vision directly, instead of using this getter. Those are currently unaffected by this change
+		::Const.CharacterProperties.getVision = function()
+		{
+			return ::Math.max(::Hardened.Global.MinimumVision, ::Math.floor(this.Vision * this.VisionMult));
+		}
 
-::Const.CharacterProperties.WeightStaminaMult <- array(::Const.ItemSlotSpaces.len(), 1.0);		// StaminaMult for every equipment slot
-::Const.CharacterProperties.WeightInitiativeMult <- array(::Const.ItemSlotSpaces.len(), 1.0);		// InitiativeMult for every equipment slot
-::Const.CharacterProperties.WeightStaminaMult[::Const.ItemSlot.Bag] = 0.5;
-::Const.CharacterProperties.WeightInitiativeMult[::Const.ItemSlot.Bag] = 0.5;
+		::Const.CharacterProperties.getBravery = function()
+		{
+			// Vanilla Fix: We add a "roundToDec" into the calculation, because multiplications like 120 * 1.05 produce 125.999992, which is falsely floored to 15 then
+			return ::Math.floor(::MSU.Math.roundToDec(this.Bravery * (this.Bravery >= 0 ? this.BraveryMult : 1.0 / this.BraveryMult), 3));
+		}
 
-// New Values
-::Const.Combat.ShakeEffectZOCHighlight <- this.createColor("#ff5555");
-// Blink color when highlighting enemies excerting zone of control onto us
-::Const.CharacterProperties.BagSlots <- 2;	// In Vanilla this is 4 for NPCs, but we normalize it to 2 for every character
-::Const.CharacterProperties.ShowFrenzyEyes <- false;
-::Const.CharacterProperties.CanEnemiesHaveReachAdvantage <- true;
-::Const.CharacterProperties.ReachAdvantageMult <- ::Reforged.Reach.ReachAdvantageMult;
-::Const.CharacterProperties.getReachAdvantageMult <- function()
-{
-	return this.ReachAdvantageMult;
-}
-
-// If set to "false", then this prevents this actor from ever having a zone of control
-// Is set to "true", nothing happens
-::Const.CharacterProperties.CanExertZoneOfControl <- true;
-
-// Shield damage dealt by this character is multiplied with this value
-// 	- Actual Effect: Shield damage taken is multiplied by this value, if this actor used the last skill during this combat
-::Const.CharacterProperties.ShieldDamageMult <- 1.0;
-
-// Shield damage taken by this character is multiplied with this value
-::Const.CharacterProperties.ShieldDamageReceivedMult <- 1.0;
-
-// Any condition loss via the vanilla "function lowerCondition" is scaled by this value
-// Will only react to changes made in regular "onUpdate" or "onAfterUpdate" cycles
-::Const.CharacterProperties.WeaponDurabilityLossMult <- 1.0;
-
-// Headshot chance of Attacks targeting this character, will be modified by this value during attacks & expected damage calculation
-// If you want incoming attacks to be a guaranteed headshot you probably wanna give them a very high value here
-::Const.CharacterProperties.HeadshotReceivedChance <- 0;
-
-// Headshot chance of Attacks targeting this character, will be multiplied by this value during attacks & expected damage calculation
-// If this is 0, incoming attacks will never hit the head
-::Const.CharacterProperties.HeadshotReceivedChanceMult <- 1.0;
-
-// New Functions
-
-// Return the chance as _user to hit _bodyPart of _target with _skill
-::Const.CharacterProperties.getHeadHitchance <- function( _bodyPart, _user = null, _skill = null, _target = null )
-{
-	if (::MSU.isNull(_user) || ::MSU.isNull(_skill) || ::MSU.isNull(_target))
-	{
-		return oldGetHitChance(_bodyPart);
-	}
-
-	local defenderProps = _target.getSkills().buildPropertiesForDefense(_user, _skill);
-
-	local headshotChance = this.HitChance[::Const.BodyPart.Head] + defenderProps.HeadshotReceivedChance;
-
-	headshotChance *= this.HitChanceMult[::Const.BodyPart.Head];
-	headshotChance *= defenderProps.HeadshotReceivedChanceMult;
-	headshotChance = ::Math.min(100.0, ::Math.floor(headshotChance));
-
-	if (_bodyPart == ::Const.BodyPart.Head)
-	{
-		return headshotChance;
-	}
-	else
-	{
-		return 100.0 - headshotChance;
+		::Const.CharacterProperties.getInitiative = function()
+		{
+			// Vanilla Fix: We add a "roundToDec" into the calculation, because multiplications like 120 * 1.05 produce 125.999992, which is falsely floored to 15 then
+			return ::Math.floor(::MSU.Math.roundToDec(this.Initiative * (this.Initiative >= 0 ? this.InitiativeMult : 1.0 / this.InitiativeMult), 3));
+		}
 	}
 }
 
-// New function for gaining the Stamina before weight reductions
-::Const.CharacterProperties.getStamina <- function()
-{
-	// A negative Stamina should get worse from a positive StaminaMult, so we reverse the effect of the StaminaMult in this case
-	local staminaMult = (this.Stamina >= 0) ? this.StaminaMult : (1 / this.StaminaMult);
-	// We add a "roundToDec" into the calculation, because multiplications like 120 * 1.05 produce 125.999992, which is falsely floored to 15 then
-	return ::Math.floor(::MSU.Math.roundToDec(this.Stamina * staminaMult, 3));
+{	// Hook Functions
+	{	// Vanilla
+		local oldGetHitChance = ::Const.CharacterProperties.getHitchance;
+		::Const.CharacterProperties.getHitchance = function( _bodyPart )
+		{
+			if (::Hardened.Temp.UserWantingToHit == null)
+			{
+				return oldGetHitChance(_bodyPart);
+			}
+			else
+			{
+				// SkillToBeHitWith is a WeakTableRef. In theory that should cause (skill == this) tests to fail, but somehow they don't. If they ever do then the solution would be to call `get()` here
+				return this.getHeadHitchance(_bodyPart, ::Hardened.Temp.UserWantingToHit, ::Hardened.Temp.SkillToBeHitWith, ::Hardened.Temp.TargetToBeHit);
+			}
+		}
+
+		local oldGetClone = ::Const.CharacterProperties.getClone;
+		::Const.CharacterProperties.getClone = function()
+		{
+			local ret = oldGetClone();
+			ret.WeightStaminaMult = clone this.WeightStaminaMult;
+			ret.WeightInitiativeMult = clone this.WeightInitiativeMult;
+			return ret;
+		}
+	}
 }
 
-// Corpse
-::Const.Corpse.HD_CorpseTouched <- 0;	// Used during resurrection to prevent recursions from usage of mockFunction
-::Const.Corpse.HD_FatalityType <- ::Const.FatalityType.None;	// Fatality type that caused the death of this character
+{	// New Values
+	::Const.CharacterProperties.WeightStaminaMult <- array(::Const.ItemSlotSpaces.len(), 1.0);		// StaminaMult for every equipment slot
+	::Const.CharacterProperties.WeightInitiativeMult <- array(::Const.ItemSlotSpaces.len(), 1.0);		// InitiativeMult for every equipment slot
+	::Const.CharacterProperties.WeightStaminaMult[::Const.ItemSlot.Bag] = 0.5;
+	::Const.CharacterProperties.WeightInitiativeMult[::Const.ItemSlot.Bag] = 0.5;
+	::Const.Combat.ShakeEffectZOCHighlight <- this.createColor("#ff5555");		// Blink color when highlighting enemies excerting zone of control onto us
+	::Const.CharacterProperties.BagSlots <- 2;	// In Vanilla this is 4 for NPCs, but we normalize it to 2 for every character
+	::Const.CharacterProperties.ShowFrenzyEyes <- false;
+	::Const.CharacterProperties.CanEnemiesHaveReachAdvantage <- true;
+	::Const.CharacterProperties.ReachAdvantageMult <- ::Reforged.Reach.ReachAdvantageMult;
+
+	// If set to "false", then this prevents this actor from ever having a zone of control
+	// Is set to "true", nothing happens
+	::Const.CharacterProperties.CanExertZoneOfControl <- true;
+
+	// Shield damage dealt by this character is multiplied with this value
+	// 	- Actual Effect: Shield damage taken is multiplied by this value, if this actor used the last skill during this combat
+	::Const.CharacterProperties.ShieldDamageMult <- 1.0;
+
+	// Shield damage taken by this character is multiplied with this value
+	::Const.CharacterProperties.ShieldDamageReceivedMult <- 1.0;
+
+	// Any condition loss via the vanilla "function lowerCondition" is scaled by this value
+	// Will only react to changes made in regular "onUpdate" or "onAfterUpdate" cycles
+	::Const.CharacterProperties.WeaponDurabilityLossMult <- 1.0;
+
+	// Headshot chance of Attacks targeting this character, will be modified by this value during attacks & expected damage calculation
+	// If you want incoming attacks to be a guaranteed headshot you probably wanna give them a very high value here
+	::Const.CharacterProperties.HeadshotReceivedChance <- 0;
+
+	// Headshot chance of Attacks targeting this character, will be multiplied by this value during attacks & expected damage calculation
+	// If this is 0, incoming attacks will never hit the head
+	::Const.CharacterProperties.HeadshotReceivedChanceMult <- 1.0;
+
+	// Corpse
+	::Const.Corpse.HD_CorpseTouched <- 0;	// Used during resurrection to prevent recursions from usage of mockFunction
+	::Const.Corpse.HD_FatalityType <- ::Const.FatalityType.None;	// Fatality type that caused the death of this character
+}
+
+{	// New Functions
+	::Const.CharacterProperties.getReachAdvantageMult <- function()
+	{
+		return this.ReachAdvantageMult;
+	}
+
+	// Return the chance as _user to hit _bodyPart of _target with _skill
+	::Const.CharacterProperties.getHeadHitchance <- function( _bodyPart, _user = null, _skill = null, _target = null )
+	{
+		if (::MSU.isNull(_user) || ::MSU.isNull(_skill) || ::MSU.isNull(_target))
+		{
+			return oldGetHitChance(_bodyPart);
+		}
+
+		local defenderProps = _target.getSkills().buildPropertiesForDefense(_user, _skill);
+
+		local headshotChance = this.HitChance[::Const.BodyPart.Head] + defenderProps.HeadshotReceivedChance;
+
+		headshotChance *= this.HitChanceMult[::Const.BodyPart.Head];
+		headshotChance *= defenderProps.HeadshotReceivedChanceMult;
+		headshotChance = ::Math.min(100.0, ::Math.floor(headshotChance));
+
+		if (_bodyPart == ::Const.BodyPart.Head)
+		{
+			return headshotChance;
+		}
+		else
+		{
+			return 100.0 - headshotChance;
+		}
+	}
+
+	// New function for gaining the Stamina before weight reductions
+	::Const.CharacterProperties.getStamina <- function()
+	{
+		// A negative Stamina should get worse from a positive StaminaMult, so we reverse the effect of the StaminaMult in this case
+		local staminaMult = (this.Stamina >= 0) ? this.StaminaMult : (1 / this.StaminaMult);
+		// We add a "roundToDec" into the calculation, because multiplications like 120 * 1.05 produce 125.999992, which is falsely floored to 15 then
+		return ::Math.floor(::MSU.Math.roundToDec(this.Stamina * staminaMult, 3));
+	}
+}
