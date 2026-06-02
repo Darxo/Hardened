@@ -1,26 +1,20 @@
+::Hardened.wipeClass("scripts/skills/perks/perk_rf_fresh_and_furious", [
+	"create",
+]);
+
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_fresh_and_furious", function(q) {
 	q.m.ActionPointModifier <- -5;	// Attacks Action Point Cost is modified by this, while this effect is active
 
-	q.getTooltip = @(__original) function()
+	q.getTooltip = @() function()
 	{
-		local ret = __original();
+		local ret = this.skill.getTooltip();
 
-		foreach (entry in ret)
-		{
-			if (entry.id == 11)
-			{
-				entry.text = "Your next Attack costs " + ::MSU.Text.colorizeValue(this.m.ActionPointModifier, {AddSign = true, InvertColor = true}) + ::Reforged.Mod.Tooltips.parseString(" [Action Points|Concept.ActionPoints]");
-			}
-		}
-
-		foreach (index, entry in ret)
-		{
-			if (entry.id == 12)
-			{
-				ret.remove(index);	// Remove mention about being disabled after using recover, as it currently is disabled. so that line is not relevant
-				break;
-			}
-		}
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/action_points.png",
+			text = "Your next Attack costs " + ::MSU.Text.colorizeValue(this.m.ActionPointModifier, {AddSign = true, InvertColor = true}) + ::Reforged.Mod.Tooltips.parseString(" [Action Points|Concept.ActionPoints]"),
+		});
 
 		return ret;
 	}
@@ -56,12 +50,6 @@
 			}
 		}
 	}
-
-	// Overwrite because we implement this logic now in the more accurate onReallyBeforeSkillExecuted function
-	q.onAnySkillExecuted = @() function( _skill, _targetTile, _targetEntity, _forFree ) {}
-
-	// Overwrite because the fatigue check no longer happens at the start of the turn
-	q.onTurnStart = @() function() {}
 
 	q.onCombatFinished = @(__original) function()
 	{
