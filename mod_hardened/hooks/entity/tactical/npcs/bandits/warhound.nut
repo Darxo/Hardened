@@ -40,7 +40,7 @@
 	{
 		// Tweak Base Properties
 		local b = this.getBaseProperties();
-		b.setValues(::Const.Tactical.Actor.Wardog);
+		b.setValues(::Const.Tactical.Actor.Warhound);
 		b.TargetAttractionMult = 0.1;
 		// b.IsAffectedByInjuries = false;
 		b.IsImmuneToDisarm = true;
