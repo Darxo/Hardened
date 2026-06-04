@@ -1,7 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/states/tactical_state", function(q) {
 	// Public
 	q.m.HD_CameraPanSpeed <- 1200.0;		// Vanilla: 1500.0
-	q.m.HD_NeutralCombatTracks <- ["music/hd_silent_music.ogg"];	// Playlist of songs that are played at the start of battle, while you haven't discovered any enemy yet
 
 	// Private
 	q.m.HD_HasDiscoveredEnemy <- false;
