@@ -19,6 +19,7 @@
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/ancient/broken_ancient_sword"],
 			[12, "scripts/items/weapons/ancient/falx"],
+			[3, "scripts/items/weapons/ancient/broken_bladed_pike"],	// Skeleton Lights now double up as lowest-tier polearm skeletons
 		]);
 
 		this.m.ChanceForNoOffhand = 33;

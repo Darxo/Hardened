@@ -16,3 +16,10 @@
 		::Reforged.Spawns.UnitBlocks[blockDef.ID] <- blockDef;
 	}
 }
+
+{	// Hooks
+	{	// UnitBlock.RF.SkeletonBackline
+		local skeletonBackline = ::Reforged.Spawns.UnitBlocks["UnitBlock.RF.SkeletonBackline"];
+		skeletonBackline.DynamicDefs.Units.push({ BaseID = "Unit.RF.SkeletonLight" });
+	}
+}
