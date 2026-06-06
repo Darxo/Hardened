@@ -86,6 +86,7 @@
 					}
 				}
 				affectedTiles.extend(newTiles);
+				newTiles = [];
 			}
 		}
 
