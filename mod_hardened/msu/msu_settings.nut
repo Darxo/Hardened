@@ -94,24 +94,32 @@
 {
 	local qolCombatPage = ::Hardened.Mod.ModSettings.addPage("Combat (QoL)");
 
-	qolCombatPage.addBooleanSetting("HoldOnDiscoverHostile", true, "Hold on Hostile Discovery", "Whenever you discover a hostile entity during your movement in combat, any further movement will be cancelled.");
-	qolCombatPage.addBooleanSetting("HoldOnDiscoverAlly", false, "Hold on Ally Discovery", "Whenever you discover an ally entity during your movement in combat, any further movement will be cancelled.");
-
-	qolCombatPage.addBooleanSetting("HideTileTooltipsDuringNPCTurn", false, "Hide Tooltips during NPC Turn", "Tile and Character tooltips will not show up, while it is not your turn.");
-
-	qolCombatPage.addRangeSetting("MouseWheelZoomMultiplier",0.1 ,0.05 , 0.4, 0.01, "Mouse Wheel Zoom Multiplier", "This controls how fast your mouse wheel will change your camera zoom during combat. 0.3 is the vanilla default value.");
+	qolCombatPage.addBooleanSetting("DisplayHitchanceOverlays", true, "Display Hitchance Overlays", "Whenever you preview an Attack that is using Hitchance, generate a text label with your hitchance on every character you can attack from your current position.");
+	qolCombatPage.addEnumSetting("HitchanceOverlayColoring", "Green <-> Red", ["Green <-> Red", "Black & White"], "Hitchance Coloring", "Define how you want the Hitchance numbers to appear.\n\nGreen <-> Red: High hitchance numbers are colored green, which then turns into yellow, orange and red as the chances get lower.\n\nWhite & Black: All hitchance numbers are colored white with a black outline.");
+	qolCombatPage.addRangeSetting("HitchanceOverlayFontSize", 2.0, 0.5, 2.5, 0.1, "Hitchance Overlay Font Size", "This controls the font size of the hitchance text on enemies. A bigger font size may clip into neighboring tiles making it more difficult to target those.");
 
 	qolCombatPage.addDivider("MiscDivider1");
 
-	qolCombatPage.addBooleanSetting("ShowGlowingEyes", true, "Show Red Glowing Eyes", "Display red glowing eyes on a humans and human-like characters, who have certain temporary damage buffs active.");
-	qolCombatPage.addBooleanSetting("FullForceCameraShake", true, "Shake Camera On Full Force", "Shake the camera as part of the impact animation of a successful Full Force attack");
-	qolCombatPage.addBooleanSetting("ShowUncappedHitchances", true, "Show Uncapped Hitchances", "If your uncapped Hitchance would be larger than the one you currently have when aiming at an enemy, display it in brackets");
+	qolCombatPage.addBooleanSetting("AutoCameraLevelSkillUse", true, "Auto Camera Level when using Skills", "Adjust the Camera Level automatically whenever you preview a skill, so that all potential targets are visible. If that is not possible, then the priority lies on no target being hidden by hills.\n\nWhen you stop previewing a skill, adjust the camera so that your character and its surrounding tiles are visible.");
+	qolCombatPage.addRangeSetting("MouseWheelZoomMultiplier",0.1 ,0.05 , 0.4, 0.01, "Mouse Wheel Zoom Multiplier", "This controls how fast your mouse wheel will change your camera zoom during combat. 0.3 is the vanilla default value.");
 
 	qolCombatPage.addDivider("MiscDivider2");
 
-	qolCombatPage.addBooleanSetting("UseSoundEngineFix", true, "Use Sound Engine Fix", "Rework directional sound during combat to be according to the real direction where the sound is coming from.");
+	qolCombatPage.addBooleanSetting("HoldOnDiscoverHostile", true, "Hold on Hostile Discovery", "Whenever you discover a hostile entity during your movement in combat, any further movement will be cancelled.");
+	qolCombatPage.addBooleanSetting("HoldOnDiscoverAlly", false, "Hold on Ally Discovery", "Whenever you discover an ally entity during your movement in combat, any further movement will be cancelled.");
+	qolCombatPage.addRangeSetting("EndTurnProtectionDuration", 1.0, 0, 3.0, 0.1, "End Turn Protection Duration", "Duration in seconds,for how long the 'End Turn' action cannot be used by the player after one of the following actions have happened:\n\n- The active character recovered Action Points\n- Movement was paused because an NPC was discovered");
 
 	qolCombatPage.addDivider("MiscDivider3");
+
+	qolCombatPage.addBooleanSetting("CombineCombatSkillLogs", true, "Combine Combat Logs of Skills", "Combat Logs, which are the result of the same skill execution no longer produce empty halflines.");
+	qolCombatPage.addBooleanSetting("ShowCoverCombatLogs", true, "Show Cover Combat Logs", "Generate an additional combat log when targeting someone with a ranged attack, who is in cover. This log contains the chance and roll for bypassing the cover and also the initial target and the new target.");
+	qolCombatPage.addRangeSetting("CombatLogForNonAttackUse", 0, 0, 10, 1, "Combat Logs for Non-Attack use", "Generate a combat log line with user, skill and target, whenever anyone uses a Non-Attack skill, which costs at least this many Action Points");
+
+	qolCombatPage.addDivider("MiscDivider4");
+
+	qolCombatPage.addBooleanSetting("UseSoundEngineFix", true, "Use Sound Engine Fix", "Rework directional sound during combat to be according to the real direction where the sound is coming from.");
+	qolCombatPage.addBooleanSetting("HideTileTooltipsDuringNPCTurn", false, "Hide Tooltips during NPC Turn", "Tile and Character tooltips will not show up, while it is not your turn.");
+	qolCombatPage.addBooleanSetting("FullForceCameraShake", true, "Shake Camera On Full Force", "Shake the camera as part of the impact animation of a successful Full Force attack");
 
 	local continuousWaitKeybindSetting = qolCombatPage.addBooleanSetting("ContinuousWaitKeybind", false , "Continuous Wait Keybind", "While active it is enough to hold down your 'wait' Keybind in order to wait so you can more easily wait with multiple brothers.");
 	local continuousWaitKeybindCallback = function( _oldValue )
@@ -127,26 +135,10 @@
 	};
 	continuousWaitKeybindSetting.addAfterChangeCallback(continuousWaitKeybindCallback);
 
-	qolCombatPage.addDivider("MiscDivider4");
-
-	qolCombatPage.addBooleanSetting("DisplayHitchanceOverlays", true, "Display Hitchance Overlays", "Whenever you preview an Attack that is using Hitchance, generate a text label with your hitchance on every character you can attack from your current position.");
-	qolCombatPage.addEnumSetting("HitchanceOverlayColoring", "Green <-> Red", ["Green <-> Red", "Black & White"], "Hitchance Coloring", "Define how you want the Hitchance numbers to appear.\n\nGreen <-> Red: High hitchance numbers are colored green, which then turns into yellow, orange and red as the chances get lower.\n\nWhite & Black: All hitchance numbers are colored white with a black outline.");
-	qolCombatPage.addRangeSetting("HitchanceOverlayFontSize", 2.0, 0.5, 2.5, 0.1, "Hitchance Overlay Font Size", "This controls the font size of the hitchance text on enemies. A bigger font size may clip into neighboring tiles making it more difficult to target those.");
-
 	qolCombatPage.addDivider("MiscDivider5");
 
-	qolCombatPage.addBooleanSetting("DisplaySkillTags", true, "Display Skill Tags", "List common tags and the damage types at the top of the descriptions of active skill.");
-	qolCombatPage.addBooleanSetting("AutoCameraLevelSkillUse", true, "Auto Camera Level when using Skills", "Adjust the Camera Level automatically whenever you preview a skill, so that all potential targets are visible. If that is not possible, then the priority lies on no target being hidden by hills. When you stop previewing a skill, adjust the camera so that your character and its surrounding tiles are visible");
-
-	qolCombatPage.addDivider("MiscDivider6");
-
-	qolCombatPage.addBooleanSetting("CombineCombatSkillLogs", true, "Combine Combat Logs of Skills", "Combat Logs, which are the result of the same skill execution no longer produce empty halflines.");
-	qolCombatPage.addBooleanSetting("ShowCoverCombatLogs", true, "Show Cover Combat Logs", "Generate an additional combat log when targeting someone with a ranged attack, who is in cover. This log contains the chance and roll for bypassing the cover and also the initial target and the new target.");
-	qolCombatPage.addRangeSetting("CombatLogForNonAttackUse", 0, 0, 10, 1, "Combat Logs for Non-Attack use", "Generate a combat log line with user, skill and target, whenever anyone uses a Non-Attack skill, which costs at least this many Action Points");
-
-	qolCombatPage.addDivider("MiscDivider7");
-
-	qolCombatPage.addRangeSetting("EndTurnProtectionDuration", 1.0, 0, 3.0, 0.1, "End Turn Protection Duration", "Duration in seconds,for how long the 'End Turn' action cannot be used by the player after one of the following actions have happened:\n\n- The active character recovered Action Points\n- Movement was paused because an NPC was discovered");
+	qolCombatPage.addBooleanSetting("ShowGlowingEyes", true, "Show Red Glowing Eyes", "Display red glowing eyes on a humans and human-like characters, who have certain temporary damage buffs active.");
+	qolCombatPage.addBooleanSetting("ShowUncappedHitchances", true, "Show Uncapped Hitchances", "If your uncapped Hitchance would be larger than the one you currently have when aiming at an enemy, display it in brackets");
 }
 
 // QOL: Character Screen
@@ -186,6 +178,7 @@
 	qolCharScreenPage.addDivider("MiscDivider2");
 
 	qolCharScreenPage.addBooleanSetting("ShowAbsoluteMoodValue", true, "Show Absolute Mood Value", "When viewing the mood tooltip of a brother, display the current mood as an absolute value between 0.0 and 6.95. This improves your understanding on how much impact certain mood changes will have. In Vanilla this value is shows as a percentage.");
+	qolCharScreenPage.addBooleanSetting("DisplaySkillTags", true, "Display Skill Tags", "List common tags and the damage types at the top of the descriptions of active skill.");
 
 	qolCharScreenPage.addDivider("MiscDivider3");
 
