@@ -6,8 +6,8 @@
 	{
 		__original();
 
-		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/armor/mail_hauberk"],
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 130 - 170
+			[12, "scripts/items/armor/light_scale_armor"],
 			[12, "scripts/items/armor/mail_shirt"],
 			[12, "scripts/items/armor/basic_mail_shirt"],
 		]);
