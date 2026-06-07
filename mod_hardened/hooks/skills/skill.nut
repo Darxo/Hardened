@@ -212,6 +212,16 @@
 		return ret;
 	 }}.MV_getDiversionTarget;
 
+// MSU Functions
+	q.verifyTargetAndRange = @(__original) function( _targetTile, _userTile = null )
+	{
+		// Feat: make MSUs verify function also respect tile visibility, just like the vanilla `isUsableOn` function does
+		// 	but only do so, if this skills owner is the active entity. Otherwise it's fine to ignore that condition as it would be incorrect
+		if (this.m.IsVisibleTileNeeded && this.getContainer().getActor().isActiveEntity() && !_targetTile.IsVisibleForEntity) return false;
+
+		return __original(_targetTile, _userTile);
+	}
+
 // Reforged Functions
 	// Overwrite, because we have different conditions for duelistValid
 	// This is more for mod-compatibility, because our Duelist Perk is reworked and does not use this check
