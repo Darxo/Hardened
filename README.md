@@ -511,21 +511,22 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 
 ### Weapons
 
-- **Ancient Bladed Pike** now deals 55-75 Damage (down from 55-80), 130% Armor Damage (up from 125%), has 42 Condition (up from 30) and costs 800 Crowns (up from 600). They gain the **Spear** Weapontype
+- **Ancestral Sword** now deals 42-47 Damage (up from 40-45), 85% Armor Damage (up from 80%), 8 Weigh (up rom 6), 72 Condition (up from 52) and costs 3000 Crowns (up from 1000)
+- **Ancient Bladed Pike** now deals 55-75 Damage (down from 55-80), 130% Armor Damage (up from 125%), has 42 Condition (up from 30) and costs 800 Crowns (up from 600). It gain the **Spear** Weapontype
 - **Ancient Spear** now deals 30-40 damage (up from 20-35), has 10 Weight (up from 6) and costs 750 Crowns (up from 150)
 - **Ancient Sword** loses **Stab** and gains **Deathblow** (costing 5 Action Points and 15 Fatigue)
 - **Barrowkin Axe** now deals 35-50 Damage (up from 30-45), 130% Armor Damage (up from 120%), 30% Armor Penetration (down from 35%), 16 Shielddamage (up from 14), has 4 Reach (up from 3), 80 Condition (up from 76) and costs 2300 Crowns (up from 800)
 - **Barrowkin Battle Axe** now deals 60-80 Damage (up from 45-65), 140% Armor Damage (up from 135%), 40% Armor Penetration (down from 45%), +0% Headshot Chance (down from +5%), 12 Weight (down from 14), 32 Shielddamge (down from 24), 64 Condition (down from 72), 6 Reach (up from 5) and costs 1700 Crowns (up from 1650). It no longer has any discount on its weapon skills, loses **Chop** and gains **Roundswing**
 - **Barrowkin Cleaver** now deals 45-55 Damage (up from 30-45), 85% Armor Damage (up from 80%), 25% Armor Penetration (down from 30%), 4 Reach (up from 3), 12 Weight (up from 10), 80 Condition (up from 60) and costs 1900 Crowns (up from 650)
 - **Barrowkin Greataxe** now deals 80-100 Damage (up from 80-95), 40% Armor Penetration (down from 45%), 32 Shielddamage (down from 40), 80 Condition (down from 88), 6 Reach (up from 5) and costs 2800 Crowns (Up from 2000)
-- **Ancestral Sword** now deals 42-47 Damage (up from 40-45), 85% Armor Damage (up from 80%), 8 Weigh (up rom 6), 72 Condition (up from 52) and costs 3000 Crowns (up from 1000)
 - **Barrowkin Voulge** now deals 60-85 Damage (up from 55-70), 30% Armor Penetration (down from 35%), +5% Headshot Chance (down from +10%), 7 Reach (up from 6), 64 Condition (up from 60) and costs 1600 Crowns (down from 2000)
 - **Named Barrowkin 2H Axe** is now fully based on the **Barrowkin Greataxe** instead of a **Bardiche**
 - **Named Barrowkin 2H Sword** is now based on a **Warbrand**. Additionally it gains **Split**, deals 60-80 Damage (up from 55-75) and has 14 Weight (up from 12)
 - **Battle Axe** now deals 60-80 Damage (up from 50-70), 32 Shield Damage (up from 26), has 10 Weight (down from 14), 140% Armor Damage (up from 125%), 0% Headshot Chance (down from 5%) and costs 1200 Crowns (down from 1950). It now has the skills **Split Man**, **Round Swing** and **Split Shield**. Named **Battle Axes** will no longer appear
 - **Berserk Chain** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5) and deals 65-100 Damage (down from 60-110)
 - **Boondock Bow** now deals 30-45 Damage (up from 25-40), has 50% Armor Damage (down from 55%) and 40% Armor Penetration (up from 30%)
-- **Cruel Falchion** are now a Sword/Dagger hybrid. They now also grant **Stab**
+- **Broken Ancient Bladed Pike** now deals 130% Armor Damage (up from 80%). It gains the **Spear** Weapontype
+- **Cruel Falchion** is now a Sword/Dagger hybrid. It now also grant **Stab**
 - **Crossbow** now has 60% Armor Penetration (up from 50%), 50% Armor Damage (down from 70%) and costs 900 Crowns (up from 750)
 - **Composite Bow** now costs 800 Crowns (up from 400)
 - **Cudgel** now deals 45-65 damage (up from 30-50), has 120% Armor Damage (up from 90%), has 4 Reach (up from 3), costs 600 Crowns (up from 300). **Bash** now costs 5 AP (up from 4). It loses **Knock Out** and gains **Strike Down**
@@ -1329,9 +1330,10 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Combat Log entries about Hitpoints taking damage now also display the hitpoint value before the hit
 - Print combat log for hitpoint damage dealt, when an attack kills the target and include the hitpoints of the target before the kill
 - **Fling Back** (used by Unholds) now has an animation delay of 250ms (down from 750ms)
-- Improve automatic camera level adjustment, to make sure that neither the character itself (priority), nor any adjacent tiles within 1 level are hidden by hills
-- Adjust camera level automatically after every move
-- Add Setting (on) for automatically adjusting the camera level, whenever you preview a skill, so that none of your valid targets are hidden by hills
+- Improve automatic camera level adjustment, to make sure that you can always look at least 1 level upwards
+- Adjust camera level automatically whenever a player character finishes movement
+- Add Setting (on) for automatically adjusting the camera level, when previewing movement, to make sure that the targeted tile is visible and no adjacent tile is hidden by a hill. When you stop previewing a movement, reset the camera level to what it was previously
+- Add Setting (on) for automatically adjusting the camera level, whenever you preview a skill, so that as many valid targets as possible are visible at the same time. When you stop previewing a skill, reset the camera level to what it was previously
 - **Throw Fire Bomb** now only marks tiles for impact, if they would be affected by its fire damage. You can no longer throw it on a tile, if no tiles in the impact zone would be affected
 - Print a combat log whenever **Battle Flow** recover Fatigue
 - Display the actual minimum armor penetration damage in attack skills, instead of always showing a 0 there
@@ -1497,6 +1499,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix undead (skeleton) faction spawning zombie locations (it is the job of the zombie faction to spawn their own locations)
 - Fix poisons inflicted by coated weapons not playing a sound effect
 - Fix Goblin Settlements not respecting the distance to other locations when spawning
+- Fix overlay icon y-offset on hills which are currently cut-off because of a low camera level
 - Fix **Blacksmith Follower** increasing the odds of looting weapons from NPCs
 - Fix some positional effects (e.g. Lone Wolf or Entrenched) visually persisting outside of combat
 - Dying enemies no longer set the LastCombatResult to `EnemyDestroyed`, unless they were the last one to die. This fixes a rare Sunken Library exploit
@@ -1565,6 +1568,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix **End Turn** button not showing the up-to-date keybind combinations in its tooltip
 - Fix keybind for ending the current turn not including the vanilla keybind "F" by default
 - Fix vanilla keybinds for ending turn still being active
+- Improve `skill::verifyTargetAndRange` by checking for visibility if the skill owner is the active entity
 
 ### Other Mods
 
@@ -1577,6 +1581,7 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add `skill::HD_getAllTargets()` which returns an array of all tiles that can be currently targeted by that skill
 - Add `HD_UsableInZoneOfControl = true` member for `skill.nut` which can be set to `false` to make an active skill unusable while engaged in melee and adding boilerplate tooltips for that
 - Add `actor::HD_isInZoneOfControl()` which returns `true`, if that actor is currently engaged in melee
 - Add `::Tactical.TurnSequenceBar.HD_protectTurnEnd()` for briefly preventing the player from ending the curren turn, if the setting is enabled

@@ -114,7 +114,7 @@ foreach (location in ::World.EntityManager.getLocations())
 
 ## Check states of neighbors on battle field
 
-foreach (tile in ::MSU.Tile.getNeighbors(::getBro("Thorben").getTile()))
+foreach (tile in ::MSU.Tile.getNeighbors(::Tactical.TurnSequenceBar.getActiveEntity().getTile()))
 {
 	if (!tile.IsOccupiedByActor) continue;
 	local neighbor = tile.getEntity();
@@ -160,7 +160,7 @@ foreach (unitBlock in ::DynamicSpawns.Public.getUnitBlock("UnitBlock.RF.Necroman
 
 ## Inspect neighboring tiles and do something to them
 
-local bro = ::getBro("Gernot");
+local bro = ::Tactical.TurnSequenceBar.getActiveEntity();
 foreach (nextTile in ::MSU.Tile.getNeighbors(bro.getTile()))
 {
 	if (nextTile.IsEmpty) continue;
@@ -191,7 +191,7 @@ return ::World.FactionManager.m.GreaterEvil.Phase;
 ::Const.DLC.Mask = 343;
 
 ## Add injury to a brother
- ::getBro("Edmund").getSkills().add(::new("scripts/skills/injury/cut_leg_muscles_injury"));
+::Tactical.TurnSequenceBar.getActiveEntity().getSkills().add(::new("scripts/skills/injury/cut_leg_muscles_injury"));
 
 ## Learn something about a nearby settlement/faction
 

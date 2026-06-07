@@ -30,6 +30,23 @@
 
 # Changelog
 
+1.17.10
+	- **Noble Footman** now spawn with **Light Scale Armors** instead of **Mail Hauberks**
+	- **Broken Ancient Bladed Pike** now deals 130% Armor Damage (up from 80%). It is now also considered a **Spear** in addition to being a **Polearm**
+	- **Ancient Auxiliaries** can now rarely spawn with a **Broken Ancient Bladed Pike**
+	- **Ancient Legionaries** with bladed pikes now appear slightly later
+	- Add Setting (on) for automatically adjusting the camera level, when previewing movement, to make sure that the targeted tile is visible and no adjacent tile is hidden by a hill
+	- Simplify auto-camera level adjustment by only making sure that it is always set at least 1 level higher than the tile being looked at
+	- Improve camera level adjustment for skills to always choose the level at which the most targets can be seen at the same time
+	- Reset camera level to what it was previously when stop previewing a skill or a movement
+	- Improve structure and order of mod settings
+	- Fix(MSU): Improve skill::verifyTargetAndRange by also checking for visibility if the skill owner is the active entity
+	- Fix(Vanilla): overlay icon offset on hills which are currently cut-off because of a low camera level
+	- Fix triangle handgonne pattern hitting the two center tiles twice
+	- Fix hitchance previews for some AoE attacks not showing up correctly
+	- Remove leftover debug log when a dismissed brother shares his experience
+	- Add `skill::HD_getAllTargets()` which returns an array of all tiles that can be currently targeted by that skill
+
 1.17.9
 	- Remove Reach penalty for **Overhead Strike** on **Swordstaff**
 	- Fix **Warhounds** using the same base stats as **Wardogs**
