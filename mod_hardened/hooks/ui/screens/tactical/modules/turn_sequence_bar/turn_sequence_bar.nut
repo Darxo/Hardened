@@ -26,6 +26,17 @@
 		}
 	}
 
+	q.resetActiveEntityCostsPreview = @(__original) { function resetActiveEntityCostsPreview()
+	{
+		__original();
+
+		if (::Hardened.Camera.PreviousCameraLevel != null)
+		{
+			::Tactical.getCamera().Level = ::Hardened.Camera.PreviousCameraLevel;
+			::Hardened.Camera.PreviousCameraLevel = null;
+		}
+	}}.resetActiveEntityCostsPreview;
+
 	if (::Hooks.hasMod("mod_extra_keybinds"))
 	{
 		// Extra Keybinds Fix: script error, when findEntityByID returns null

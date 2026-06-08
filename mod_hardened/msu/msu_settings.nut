@@ -100,7 +100,8 @@
 
 	qolCombatPage.addDivider("MiscDivider1");
 
-	qolCombatPage.addBooleanSetting("AutoCameraLevelSkillUse", true, "Auto Camera Level when using Skills", "Adjust the Camera Level automatically whenever you preview a skill, so that all potential targets are visible. If that is not possible, then the priority lies on no target being hidden by hills.\n\nWhen you stop previewing a skill, adjust the camera so that your character and its surrounding tiles are visible.");
+	qolCombatPage.addBooleanSetting("AutoCameraLevelSkillUse", true, "Adjust Camera Level when previewing Skills", "Adjust the Camera Level automatically whenever you preview a skill, so that as many potential targets are visible as possible.\n\nWhen you stop previewing a skill, reset the camera level to what it was previously");
+	qolCombatPage.addBooleanSetting("AutoCameraLevelMovement", true, "Adjust Camera Level when previewing movement", "Adjust the Camera Level automatically whenever you start previewing movement, so that all important tiles around the targeted location are visible. If that is not possible, then the priority lies on no tile being hidden by hills.\n\nWhen you stop previewing a skill, reset the camera level to what it was previously.");
 	qolCombatPage.addRangeSetting("MouseWheelZoomMultiplier",0.1 ,0.05 , 0.4, 0.01, "Mouse Wheel Zoom Multiplier", "This controls how fast your mouse wheel will change your camera zoom during combat. 0.3 is the vanilla default value.");
 
 	qolCombatPage.addDivider("MiscDivider2");

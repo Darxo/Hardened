@@ -204,24 +204,19 @@
 		// When the player stops previewing, we reset the calculated hitchances from all entities
 		this.HD_toggleHitchanceOverlay(_skillId);
 
-		if (::Settings.getGameplaySettings().AdjustCameraLevel && ::Hardened.Mod.ModSettings.getSetting("AutoCameraLevelSkillUse").getValue())
+		if (_skillId != "" && ::Settings.getGameplaySettings().AdjustCameraLevel && ::Hardened.Mod.ModSettings.getSetting("AutoCameraLevelSkillUse").getValue())
 		{
-			if (_skillId == "")
+			foreach (skill in this.getSkills().m.Skills)
 			{
-				// Todo: Reset old Camera Level
-				::Tactical.getCamera().Level = ::Hardened.Camera.getBestLevelForMoving(this.getTile());
-			}
-			else
-			{
-				foreach (skill in this.getSkills().m.Skills)
+				if (skill.getID() != _skillId) continue;
+
+				if (::Hardened.Camera.PreviousCameraLevel == null)
 				{
-					if (skill.getID() == _skillId)
-					{
-						// Todo: Save old Camera Level
-						::Tactical.getCamera().Level = ::Hardened.Camera.getBestLevelForTargeting(skill);
-						break;
-					}
+					::Hardened.Camera.PreviousCameraLevel = ::Tactical.getCamera().Level;
 				}
+
+				::Tactical.getCamera().Level = ::Hardened.Camera.getBestLevelForTargeting(skill);
+				break;
 			}
 		}
 	}

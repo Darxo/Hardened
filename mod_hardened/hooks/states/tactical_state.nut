@@ -6,6 +6,25 @@
 	q.m.HD_HasDiscoveredEnemy <- false;
 	q.m.HD_IsHidingMusic <- false;
 
+	q.computeEntityPath = @(__original) function( _activeEntity, _mouseEvent )
+	{
+		__original(_activeEntity, _mouseEvent);
+
+		local activeEntity = ::Tactical.TurnSequenceBar.getActiveEntity();
+		if (activeEntity != null && this.m.CurrentActionState == ::Const.Tactical.ActionState.ComputePath)
+		{
+			if (::Settings.getGameplaySettings().AdjustCameraLevel && ::Hardened.Mod.ModSettings.getSetting("AutoCameraLevelMovement").getValue())
+			{
+				if (::Hardened.Camera.PreviousCameraLevel == null)
+				{
+					::Hardened.Camera.PreviousCameraLevel = ::Tactical.getCamera().Level;
+				}
+
+				::Tactical.getCamera().Level = ::Hardened.Camera.getBestLevelForMoving(this.m.LastTileSelected);
+			}
+		}
+	}
+
 	q.gatherLoot = @(__original) function()
 	{
 		// In Hardened we default initialize this.m.StrategicProperties to improve compatibility of tactical scenarios

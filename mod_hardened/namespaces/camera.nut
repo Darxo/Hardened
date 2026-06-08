@@ -1,5 +1,7 @@
 // Namespace for camera related functions
-::Hardened.Camera <- {};
+::Hardened.Camera <- {
+	PreviousCameraLevel = null,		// Save previous camera level before previewing to return to after previewing has ended
+};
 
 /// Find the ideal level for the camera, so _tile and its important surrounding are visible
 ::Hardened.Camera.getBestLevelForMoving <- function( _targetedTile )
