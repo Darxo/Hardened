@@ -157,6 +157,26 @@
 		return item.isItemType(::Const.Items.ItemType.Weapon)
 	}
 
+	/// Return an array of all tiles that can be targeted by this skill from the current position
+	q.HD_getAllTargets <- function()
+	{
+		local tileTargets = [];
+		for (local x = 0; x < ::Tactical.getMapSize().X; ++x)
+		{
+			for (local y = 0; y < ::Tactical.getMapSize().Y; ++y)
+			{
+				local tile = ::Tactical.getTileSquare(x, y);
+
+				if (this.verifyTargetAndRange(tile))
+				{
+					tileTargets.push(tile);
+				}
+			}
+		}
+
+		return tileTargets;
+	}
+
 	// Return the expected shield damage multiplier incluencing this skill, when targeting the shield of _target
 	q.getExpectedShieldDamageMult <- function( _target = null )
 	{
