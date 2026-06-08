@@ -31,32 +31,40 @@
 
 ::Hardened.Camera.getBestLevelForTargeting <- function( _skill )
 {
-	local validTargets = [];
-	foreach (otherActor in ::Tactical.Entities.getAllInstancesAsArray())
+	// First we calculate how many valid enemies are visible at each camera level
+	local visibleTargetsPerLevel = array(4, 0);		// There are 4 levels in total
+
+	foreach (tile in _skill.HD_getAllTargets())
 	{
-		if (!otherActor.isPlacedOnMap()) continue;
-		if (!_skill.isUsableOn(otherActor.getTile())) continue;
+		local levelRequiredForVisibilityMax = 3;
 
-		validTargets.push(otherActor.getTile());
-	}
-
-	// Between min and max, all targets are visible
-	local minRequiredLevel = 0;		// min camera level required, so that no character is sitting on a black cut-off tile
-	local maxRequiredLevel = 3;		// max camera level, beyond which some character are hidden by hills
-
-	foreach (tile in validTargets)
-	{
-		minRequiredLevel = ::Math.max(minRequiredLevel, tile.Level);
-
-		if (tile.hasNextTile(::Const.Direction.S) && tile.getNextTile(::Const.Direction.S).Level >= (tile.Level + 2))
+		if (::Hardened.Camera.isHiddenByHill(tile))
 		{
-			maxRequiredLevel = ::Math.min(maxRequiredLevel, tile.Level + 1);
+			levelRequiredForVisibilityMax = tile.Level + 1;
+		}
+
+		foreach (level, amount in visibleTargetsPerLevel)
+		{
+			if (level >= tile.Level && level <= levelRequiredForVisibilityMax)
+			{
+				visibleTargetsPerLevel[level]++;
+			}
 		}
 	}
 
-	// For now we only ever return maxRequiredLevel
-	// In the future we might employ some logic, where the level is returned, which displays the most characters
-	return maxRequiredLevel;
+	local mostEnemies = 0;
+	local bestLevel = 3;
+
+	foreach (level, amount in visibleTargetsPerLevel)
+	{
+		if (amount >= mostEnemies)	// On a tie we always prefer the highest tile level possible
+		{
+			mostEnemies = amount;
+			bestLevel = level;
+		}
+	}
+
+	return bestLevel;
 }
 
 {	// Private
