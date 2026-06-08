@@ -209,7 +209,7 @@
 			if (_skillId == "")
 			{
 				// Todo: Reset old Camera Level
-				::Tactical.getCamera().Level = ::Hardened.util.getBestLevelForTile(this.getTile());
+				::Tactical.getCamera().Level = ::Hardened.Camera.getBestLevelForTile(this.getTile());
 			}
 			else
 			{
@@ -218,7 +218,7 @@
 					if (skill.getID() == _skillId)
 					{
 						// Todo: Save old Camera Level
-						::Tactical.getCamera().Level = ::Hardened.util.getBestLevelForTargeting(skill);
+						::Tactical.getCamera().Level = ::Hardened.Camera.getBestLevelForTargeting(skill);
 						break;
 					}
 				}
