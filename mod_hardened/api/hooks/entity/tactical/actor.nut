@@ -340,15 +340,17 @@
 				if (!skill.isUsingHitchance()) return;
 
 				::Hardened.Private.IsPreviewingAttackWithHitChance = true;
-				foreach (otherActor in ::Tactical.Entities.getAllInstancesAsArray())
+				foreach (tile in skill.HD_getAllTargets())
 				{
-					if (!otherActor.isPlacedOnMap()) continue;
-					if (skill.isUsableOn(otherActor.getTile()))
-					{
-						otherActor.m.HD_ChanceToBeHit = skill.getHitchance(otherActor);
+					if (!skill.isUsableOn(tile)) continue;
 
-						this.HD_showHitchanceTargetSelected(skill, otherActor);
+					if (tile.IsOccupiedByActor)
+					{
+						local target = tile.getEntity();
+						target.m.HD_ChanceToBeHit = skill.getHitchance(target);
 					}
+
+					this.HD_showHitchanceTargetSelected(skill, tile);
 				}
 
 				break;
@@ -359,7 +361,7 @@
 	}
 
 	// Call this.onTargetSelected, but intercept any overlay highlighting and instead assign all targets
-	q.HD_showHitchanceTargetSelected <- function( _skill, _target )
+	q.HD_showHitchanceTargetSelected <- function( _skill, _tile )
 	{
 		local mockObject = ::Hardened.mockFunction(::Tactical.getHighlighter(), "addOverlayIcon", function( _icon, _tile, _x, _y ) {
 			if (_icon == ::Const.Tactical.Settings.AreaOfEffectIcon)
@@ -373,7 +375,7 @@
 			}
 		});
 
-		_skill.onTargetSelected(_target.getTile());
+		_skill.onTargetSelected(_tile);
 
 		mockObject.cleanup();
 	}
