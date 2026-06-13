@@ -21,18 +21,18 @@
 		return ret;
 	}
 
-	q.onUpdate = @(__original) function( _properties )
+	// Overwrite, because we disable two vanilla effects and remove the sprite that's turned on by vanilla
+	q.onUpdate = @() function( _properties )
 	{
-		local oldDamageTotalMult = _properties.DamageTotalMult;
-		local oldStaminaMult = _properties.StaminaMult;
-		__original(_properties);
-		_properties.DamageTotalMult = oldDamageTotalMult;
-		_properties.StaminaMult = oldStaminaMult;	// Revert any changes to StaminaMult
-
 		local actor = this.getContainer().getActor();
-		if (actor.getCurrentProperties().IsImmuneToDaze) return;
-
-		_properties.DamageTotalMult *= this.m.DamageTotalMult;
+		if (actor.getCurrentProperties().IsImmuneToDaze)
+		{
+			this.removeSelf();
+		}
+		else
+		{
+			_properties.DamageTotalMult *= this.m.DamageTotalMult;
+		}
 	}
 
 	q.onAfterUpdate <- function( _properties )
