@@ -1,4 +1,4 @@
-::Hardened.HooksMod.hook("scripts/items/weapons/greenskins/goblin_falchion", function(q) {
+::Hardened.HooksMod.hook("scripts/items/weapons/greenskins/goblin_notched_blade", function(q) {
 	// We overwrite Reforged skill additions, because we dont hand out any discounts
 	q.onEquip = @(__original) function()
 	{
