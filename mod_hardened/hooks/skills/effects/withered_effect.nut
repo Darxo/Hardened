@@ -1,5 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/effects/withered_effect", function(q) {
 	q.m.NonAttackFatigueMultPct <- 0.50;	// Non-Attacks cost this much more per turn left on this effect
+	q.m.DamageTotalPctPerTurn <- -0.25;
+	q.m.InitiativePctPerTurn <- -0.25;
 
 	q.getTooltip = @(__original) function()
 	{
@@ -26,13 +28,11 @@
 		return ret;
 	}
 
-	q.onUpdate = @(__original) function( _properties )
+	// Overwrite, because we disable stamina, fatigue recovery and remove the sprite that's turned on by vanilla
+	q.onUpdate = @() function( _properties )
 	{
-		local oldStaminaMult = _properties.StaminaMult;
-		local oldFatigueRecoveryRate = _properties.FatigueRecoveryRate;
-		__original(_properties);
-		_properties.StaminaMult = oldStaminaMult;	// Revert any changes to StaminaMult
-		_properties.FatigueRecoveryRate = oldFatigueRecoveryRate;	// Revert any changes to FatigueRecoveryRate
+		_properties.DamageTotalMult *= this.HD_getDamageTotalMult();
+		_properties.InitiativeMult *= this.HD_getInitiativeMult();
 	}
 
 	q.onAfterUpdate <- function( _properties )
@@ -49,6 +49,16 @@
 // New Functions
 	q.getNonAttackFatigueMult <- function()
 	{
-		return 1.0 + this.m.TurnsLeft * this.m.NonAttackFatigueMultPct;
+		return ::Math.maxf(0.0, 1.0 + this.m.TurnsLeft * this.m.NonAttackFatigueMultPct);
+	}
+
+	q.HD_getDamageTotalMult <- function()
+	{
+		return ::Math.maxf(0.0, 1.0 + this.m.TurnsLeft * this.m.DamageTotalPctPerTurn);
+	}
+
+	q.HD_getInitiativeMult <- function()
+	{
+		return ::Math.maxf(0.0, 1.0 + this.m.TurnsLeft * this.m.InitiativePctPerTurn);
 	}
 });
