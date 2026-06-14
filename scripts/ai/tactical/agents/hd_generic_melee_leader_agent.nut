@@ -32,8 +32,10 @@ this.hd_generic_melee_leader_agent <- ::inherit("scripts/ai/tactical/agents/band
 		this.m.Properties.BehaviorMult[::Const.AI.Behavior.ID.Distract] = 0.5;	// Only relevant for Nomads
 	}
 
-	// We just overwrite the onUpdate of the base script, to disable all the hard-coded rules it applies during it
+	// We just overwrite the onUpdate of the base script, to disable all the hard-coded rules vanilla applies during it
 	function onUpdate()
 	{
+		// We still need to set the engage range based on weapon according to base unit
+		this.setEngageRangeBasedOnWeapon();
 	}
 });

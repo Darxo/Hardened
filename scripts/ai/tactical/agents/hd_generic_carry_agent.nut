@@ -35,9 +35,12 @@ this.hd_generic_carry_agent <- ::inherit("scripts/ai/tactical/agents/bounty_hunt
 		this.m.Properties.BehaviorMult[::Const.AI.Behavior.ID.Distract] = 0.5;	// Only relevant for Nomads
 	}
 
-	// We overwrite the onUpdate of the base script, to disable all the hard-coded rules it applies during it
+	// We overwrite the onUpdate of the base script, to disable all the hard-coded rules vanilla applies during it
 	function onUpdate()
 	{
+		// We still need to set the engage range based on weapon according to base unit
+		this.setEngageRangeBasedOnWeapon();
+
 		// The one thing we like from the base script is that backline-carries want to be tucked into formation more often
 		if (this.m.Properties.EngageRangeIdeal > 1)
 		{
