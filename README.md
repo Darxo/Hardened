@@ -866,7 +866,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Reanimated Humans how have 120 Hitpoints (down from 130) and 200 Stamina (up from 100)
 - All **Skeletons** no longer grant experience after being resurected
 - **Barrowkin Racial** no longer grants 10% less Melee Damage taken per Attacker Morale State below Steady
-- **Ghost Racial** no longer grants +10 Melee Defend and +10 Ranged Defense per tile between the attacker and you. It now grants the **Ethereal** perk
+- **Ghost Racial** no longer grants +10 Melee Defend and +10 Ranged Defense per tile between the attacker and you. It now grants the **Ethereal** perk. It also makes the user ignore movement penalty on any terrain
 - **Skeleton Racial** now explicitely causes 100% less **Fatigue** build-up
 - **Flesh Golems** take 50% more burning damage to hitpoints
 - **Necromancer** lose 20 natural body armor. **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)

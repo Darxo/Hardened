@@ -30,6 +30,12 @@
 
 # Changelog
 
+1.17.11
+	- Make **Ghost Racial** cause its user to ignore the movement penalty on any terrain
+	- Fix rare combat freeze when fighting against NPCs with a 2-tile melee weapon
+	- Fix **Goblin Falchion** granting wrong skills
+	- Slightly improve wording in **Shield Sergeant** perk
+
 1.17.10
 	- **Noble Footman** now spawn with **Light Scale Armors** instead of **Mail Hauberks**
 	- **Broken Ancient Bladed Pike** now deals 130% Armor Damage (up from 80%). It is now also considered a **Spear** in addition to being a **Polearm**
