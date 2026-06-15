@@ -19,9 +19,8 @@ local parties = [
 				{ BaseID = "UnitBlock.RF.NobleBackline", RatioMax = 0.30 },
 				{ BaseID = "UnitBlock.RF.NobleRanged", RatioMax = 0.25, ExclusionChance = 20 },
 				{ BaseID = "UnitBlock.RF.NobleElite",  RatioMin = 0.1, RatioMax = 0.25, PartySizeMin = 15, ExclusionChance = 20 }, // vanilla greatswords spawn at 19+
-				{ BaseID = "UnitBlock.RF.NobleSupport", RatioMin = 1.0, HardMax = 1, PartySizeMin = 10, ExclusionChance = 30 },
-				{ BaseID = "UnitBlock.RF.NobleSupport", RatioMin = 1.0, HardMax = 1, PartySizeMin = 20, ExclusionChance = 30 },
-				{ BaseID = "UnitBlock.RF.NobleOfficer", RatioMin = 1.0, HardMax = 1,  PartySizeMin = 15, ExclusionChance = 30 }, // vanilla sergeants spawn at 8+
+				{ BaseID = "UnitBlock.RF.NobleSupport", RatioMin = 1.0, HardMax = 1, PartySizeMin = 10, ExclusionChance = 40 },
+				{ BaseID = "UnitBlock.RF.NobleOfficer", RatioMin = 1.0, HardMax = 1,  PartySizeMin = 15, ExclusionChance = 50 }, // vanilla sergeants spawn at 8+
 				{ BaseID = "UnitBlock.RF.NobleLeader", RatioMax = 0.15, PartySizeMin = 12 }, // vanilla knights spawn at 18+
 				{ BaseID = "UnitBlock.RF.NobleFlank", RatioMax = 0.25, HardMax = 3, ExclusionChance = 40, PartySizeMax = 15 },		// dogs only spawn in smaller parties
 			],
@@ -35,19 +34,22 @@ local parties = [
 
 		function excludeSpawnables()
 		{
+			local unitIDs = [];
+			local obj = this.getSpawnable("UnitBlock.RF.NobleElite");
+			if (obj != null)
+			{
+				foreach (spawnable in obj.__DynamicSpawnables)
+				{
+					unitIDs.push(spawnable.getID());
+				}
+			}
+
 			base.excludeSpawnables();
 
-			local maxEliteTypes = 2;	// We make sure, that no roaming party contains more than this many elites will appear at the same time
-			foreach (index, nobleBlock in this.__DynamicSpawnables)
-			{
-				if (nobleBlock.getID().find("UnitBlock.RF.NobleElite") == null) continue;
+			::Hardened.util.enforceFlexSpawnable(this, unitIDs, 2);		// We make sure, that no noble party contains more than this many elites at the same time
 
-				while (nobleBlock.__DynamicSpawnables.len() > maxEliteTypes)
-				{
-					::MSU.Array.removeByValue(nobleBlock.__DynamicSpawnables, ::MSU.Array.rand(nobleBlock.__DynamicSpawnables));
-				}
-				break;
-			}
+			local unitBlockIDs = ["UnitBlock.RF.NobleSupport", "UnitBlock.RF.NobleOfficer", "UnitBlock.RF.NobleLeader"];
+			::Hardened.util.enforceFlexSpawnable(this, unitBlockIDs, 2);
 		},
 	},
 	{
