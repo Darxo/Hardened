@@ -1,13 +1,4 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/throw_fire_bomb_skill", function(q) {
-	q.m.HD_ForbiddenTerrainSubtypes <- [
-		::Const.Tactical.TerrainSubtype.Snow,
-		::Const.Tactical.TerrainSubtype.LightSnow,
-	];
-	q.m.HD_ForbiddenTerrainTypes <- [
-		::Const.Tactical.TerrainType.ShallowWater,
-		::Const.Tactical.TerrainType.DeepWater,
-	];
-
 	// Overwrite, because we don't highlight tiles, which would be forbidden
 	q.onTargetSelected = @() function( _targetTile )
 	{
@@ -51,15 +42,16 @@
 	q.getAffectedTiles <- function( _targetTile )
 	{
 		local affectedTiles = [];
-		if ((this.m.HD_ForbiddenTerrainSubtypes.find(_targetTile.Subtype) == null) && (this.m.HD_ForbiddenTerrainTypes.find(_targetTile.Type) == null))
+		local forbiddenSubTypes = ::Tactical.Entities.getNonFlammableTileSubtypes();
+
+		if (forbiddenSubTypes.find(_targetTile.Subtype) == null)
 		{
 			affectedTiles.push(_targetTile);
 		}
 
 		foreach (nextTile in ::MSU.Tile.getNeighbors(_targetTile))
 		{
-			if (this.m.HD_ForbiddenTerrainSubtypes.find(nextTile.Subtype) != null) continue;
-			if (this.m.HD_ForbiddenTerrainTypes.find(nextTile.Type) != null) continue;
+			if (forbiddenSubTypes.find(_targetTile.Subtype) != null) continue;
 
 			affectedTiles.push(nextTile);
 		}
