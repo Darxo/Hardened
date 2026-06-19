@@ -1,13 +1,12 @@
 ::Hardened.HooksMod.hook("scripts/skills/special/weapon_breaking_warning", function(q) {
+	// Public
+	q.m.DamageTotalMult <- 0.50;	// Weapon Damage multiplier, while the weapon is in the broken state
+	q.m.HD_WeaponSkillFatigueMult <- 1.50;	// All Weapon skills have this fatigue multiplier applied to them, while the weapon is about to break
+
 	q.create = @(__original) function()
 	{
 		__original();
 		this.m.Description = "This character\'s weapon is in poor condition.";	// Remove mention of permanently breaking, as that is removed in Reforged
-
-		// Vanilla has no member table so we need to add our member variables like this
-		// Public
-		this.m.DamageTotalMult <- 0.50;	// Weapon Damage multiplier, while the weapon is in the broken state
-		this.m.HD_WeaponSkillFatigueMult <- 1.50;	// All Weapon skills have this fatigue multiplier applied to them, while the weapon is about to break
 	}
 
 	q.getTooltip = @(__original) function()
