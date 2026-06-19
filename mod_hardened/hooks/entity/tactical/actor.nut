@@ -108,34 +108,6 @@
 		this.HD_dodgeSidewaysAnimation(_attacker.getTile());
 	}
 
-	// Vanilla Fix: We prevent a dying NPC from flipping the setLastCombatResult, unless they were the last enemy to die
-	// This prevents a bug in the Sunken Library, where the player wins if his last brother dies from a Flying Skull detonation
-	// The issue in Vanilla is that the Skull dies first, within its Kill function the player dies
-	// but the last thing happening is the skull registering its death for setLastCombatResult, making this a player win
-	q.kill = @(__original) function( _killer = null, _skill = null, _fatalityType = ::Const.FatalityType.None, _silent = false )
-	{
-		// We first filter out two paths, that we are not interested in, to reduce performance impact and simplify later conditions
-		if (this.isPlayerControlled() || ::Tactical.State.isAutoRetreat())
-		{
-			return __original(_killer, _skill, _fatalityType, _silent);
-		}
-
-		// We make sure that setLastCombatResult(::Const.Tactical.CombatResult.EnemyDestroyed) has no effect, while there are still enemies alive
-		local mockObject = ::Hardened.mockFunction(::Tactical.Entities, "setLastCombatResult", function( _combatResult ) {
-			// We no longer allow anyone to set the CombatResult to "EnemyDestroyed", if there are still enemies left, while our actor dies
-			if (::Tactical.Entities.getHostilesNum() == 0 && _combatResult == ::Const.Tactical.CombatResult.EnemyDestroyed)
-			{
-				return { value = null };
-			}
-		});
-
-		local oldLastCombatResult = ::Tactical.Entities.m.LastCombatResult
-
-		__original(_killer, _skill, _fatalityType, _silent);
-
-		mockObject.cleanup();
-	}
-
 	q.wait = @(__original) function()
 	{
 		__original();
