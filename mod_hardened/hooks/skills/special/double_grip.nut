@@ -1,6 +1,7 @@
+::Const.Combat.DoubleGripDamageMult = 1.2;	// Vanilla: 1.25
+
 ::Hardened.HooksMod.hook("scripts/skills/special/double_grip", function(q) {
 	// Public
-	q.m.HD_DamageMult <- 1.2;
 	q.m.HD_NonAttackFatigueMult <- 0.8;
 
 	// When true, double grip will always be active
@@ -25,7 +26,7 @@
 		{
 			if (entry.id == 11 && entry.icon == "ui/icons/regular_damage.png")
 			{
-				entry.text = "Deal " + ::MSU.Text.colorizeMultWithText(this.m.HD_DamageMult) + " damage";
+				entry.text = "Deal " + ::MSU.Text.colorizeMultWithText(::Const.Combat.DoubleGripDamageMult) + " damage";
 				break;
 			}
 		}
@@ -55,7 +56,7 @@
 		this.m.IsInEffect = false;
 		if (this.canDoubleGrip())
 		{
-			_properties.MeleeDamageMult *= this.m.HD_DamageMult;
+			_properties.MeleeDamageMult *= ::Const.Combat.DoubleGripDamageMult;
 			this.m.IsInEffect = true;
 		}
 	}
