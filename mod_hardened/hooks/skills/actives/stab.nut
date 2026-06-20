@@ -6,6 +6,7 @@
 	{
 		__original();
 		this.m.ActionPointCost = 3;
+		this.m.FatigueCost = 8;		// Vanilla: 7
 	}
 
 	q.getTooltip = @(__original) function()
