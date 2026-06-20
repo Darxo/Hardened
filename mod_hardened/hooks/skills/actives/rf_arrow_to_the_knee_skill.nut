@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/rf_arrow_to_the_knee_skill", function(q) {
+	q.m.HD_UsableWhileEngagedInMelee = false;
+
 	q.create = @(__original) function()
 	{
 		__original();

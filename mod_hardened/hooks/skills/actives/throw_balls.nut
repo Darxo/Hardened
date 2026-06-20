@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/throw_balls", function(q) {
+	q.m.HD_UsableWhileEngagedInMelee = false;
+
 	q.create = @(__original) function()
 	{
 		__original();

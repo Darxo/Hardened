@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/throw_javelin", function(q) {
+	q.m.HD_UsableWhileEngagedInMelee = false;
+
 	q.create = @(__original) function()
 	{
 		__original();

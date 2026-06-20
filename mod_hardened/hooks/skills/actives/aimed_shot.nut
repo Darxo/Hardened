@@ -1,6 +1,8 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/aimed_shot", function(q) {
 	q.m.HD_DamageRegularMult <- 1.0;		// Vanilla: 1.1
 
+	q.m.HD_UsableWhileEngagedInMelee = false;
+
 	q.create = @(__original) function()
 	{
 		__original();

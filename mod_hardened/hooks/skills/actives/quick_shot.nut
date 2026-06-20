@@ -2,6 +2,8 @@
 	// Public
 	q.m.HD_WeaponMaxRangeDifference <- -2;	// This skills MaxRange will be set to the equipped weapons + this value; Vanilla: -1
 
+	q.m.HD_UsableWhileEngagedInMelee = false;
+
 	q.create = @(__original) function()
 	{
 		__original();

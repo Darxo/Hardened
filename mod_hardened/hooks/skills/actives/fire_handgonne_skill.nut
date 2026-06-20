@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/fire_handgonne_skill", function(q) {
+	q.m.HD_UsableWhileEngagedInMelee = false;
+
 	// Overwrite, because we prevent Vanilla from adding the reload skill whenever this skill is used
 	// Because of stack-based-skills, those additional reloads, clog up the skill UI list otherwise
 	q.onUse = @(__original) function( _user, _targetTile )
