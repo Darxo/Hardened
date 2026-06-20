@@ -85,28 +85,7 @@
 		skills.removeByID("effects.shieldwall");
 		skills.removeByID("effects.spearwall");
 		skills.removeByID("effects.riposte");
-		_target.setCurrentMovementType(::Const.Tactical.MovementType.Involuntary);
-		local damage = ::Math.max(0, ::Math.abs(knockToTile.Level - _targetTile.Level) - 1) * ::Const.Combat.FallingDamage;
 
-		if (damage == 0)
-		{
-			::Tactical.getNavigator().teleport(_target, knockToTile, null, null, true);
-		}
-		else
-		{
-			local p = this.getContainer().getActor().getCurrentProperties();
-			local tag = {
-				Attacker = _user,
-				Skill = this,
-				HitInfo = clone ::Const.Tactical.HitInfo
-			};
-			tag.HitInfo.DamageRegular = damage;
-			tag.HitInfo.DamageDirect = 1.0;
-			tag.HitInfo.BodyPart = ::Const.BodyPart.Body;
-			tag.HitInfo.BodyDamageMult = 1.0;
-			tag.HitInfo.FatalityChanceMult = 1.0;
-			::Tactical.getNavigator().teleport(_target, knockToTile, this.onKnockedDown, tag, true);
-		}
+		::Tactical.State.handleInvoluntaryMovement(_target, _user, _targetTile, knockToTile, this, null, null);
 	}
-
 });
