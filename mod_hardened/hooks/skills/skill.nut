@@ -150,14 +150,18 @@
 
 	 q.MV_getDiversionTarget = @(__original) { function MV_getDiversionTarget( _user, _targetEntity, _propertiesForUse = null )
 	 {
+		if (!::Hardened.Mod.ModSettings.getSetting("ShowCoverCombatLogs").getValue())
+		{
+			return __original(_user, _targetEntity, _propertiesForUse);
+		}
+
 		local divertedTarget
 		local roll = 0;
 		local chance = 0;
 		local aboutToRoll = false;
 
 		local blockedTiles = ::Const.Tactical.Common.getBlockedTiles(_user.getTile(), _targetEntity.getTile(), _user.getFaction());
-		// Target is not in cover, or the setting is not active, so we do nothing
-		if (blockedTiles.len() == 0 || !::Hardened.Mod.ModSettings.getSetting("ShowCoverCombatLogs").getValue())
+		if (blockedTiles.len() == 0)	// Target is not in cover
 		{
 			return __original(_user, _targetEntity, _propertiesForUse);
 		}
