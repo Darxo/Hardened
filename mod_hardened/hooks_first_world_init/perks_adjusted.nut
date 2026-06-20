@@ -579,7 +579,7 @@ local adjustedDescriptions = [
 					"Gain " + ::MSU.Text.colorPositive(1) + " perk point when you reach [level|Concept.Level] 8",
 				],
 			}],
-			Footer = ::MSU.Text.colorNegative("This perk cannot be refunded."),
+			Footer = ::MSU.Text.colorNegative("This perk cannot be picked if you are already level 8. This perk cannot be refunded."),
 		}),
 	},
 	{
