@@ -10,8 +10,8 @@
 		if (_entity.getCurrentProperties().IsStunned) return zeroScore;
 		if (!this.getAgent().hasVisibleOpponent()) return zeroScore;
 
-		local items = _entity.getItems().getAllItemsAtSlot(::Const.ItemSlot.Bag);
-		if (items.len() == 0) return zeroScore;
+		local bagItems = _entity.getItems().getAllItemsAtSlot(::Const.ItemSlot.Bag);
+		if (bagItems.len() == 0) return zeroScore;
 
 		local mainhandItem = _entity.getMainhandItem();
 		local scoreMult = this.getProperties().BehaviorMult[this.m.ID];
@@ -70,7 +70,7 @@
 			bestWeapon = mainhandItem;
 		}
 
-		foreach (it in items)
+		foreach (it in bagItems)
 		{
 			if (!it.isItemType(::Const.Items.ItemType.MeleeWeapon)) continue;
 
