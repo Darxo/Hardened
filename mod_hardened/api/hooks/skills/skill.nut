@@ -262,7 +262,8 @@
 			// We try to detect the vanilla/reforged tooltip about zone of control and delete it
 			::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
 				if (_entry.icon != "ui/tooltips/warning.png") return false;
-				if (_entry.text.find("engaged in melee") == null) return false;
+				if (_entry.text.find("engaged") == null) return false;
+				if (_entry.text.find("in melee") == null) return false;
 				if (_entry.text.find("because this character") == null) return false;
 				return true;
 			});
