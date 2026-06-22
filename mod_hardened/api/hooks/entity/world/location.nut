@@ -52,6 +52,13 @@
 	}
 
 // New Functions
+	// Return an array of all factions related to this location
+	// This is meant as a compatibility function for settlements, which implement this function. So that you don't have to check the type of location before calling this function
+	q.getFactions <- function()
+	{
+		return [this.getFaction()];
+	}
+
 	// Determines, whether this location is allowed to spawn parties
 	q.HD_canSpawnParties <- function()
 	{
