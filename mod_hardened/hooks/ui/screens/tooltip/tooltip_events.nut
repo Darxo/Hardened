@@ -546,6 +546,18 @@
 		return ret;
 	}
 
+	q.onQueryFollowerTooltipData = @(__original) function( _followerID )
+	{
+		if (typeof _followerID == "string" && _followerID.find("locked;") != null)
+		{
+			// In retinue_manager::getCurrentFollowersForUI we coded the slot number of the follower in this ID
+			// Now we extract it to display the correct type of locked-tooltip, despite this slot now being clickable
+			_followerID = split(_followerID, ";")[1].tointeger();
+		}
+
+		return __original(_followerID);
+	}
+
 // Reforged Functions
 	q.RF_getHitchancesForMovementPreview = @(__original) function( _entity )
 	{
