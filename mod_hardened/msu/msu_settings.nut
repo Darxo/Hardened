@@ -178,6 +178,8 @@
 
 	qolCharScreenPage.addDivider("MiscDivider2");
 
+	qolCharScreenPage.addBooleanSetting("DisplayAmmoWarningIcon", true, "Display Ammo Warning Icon", "Display an icon for the Ammo Warning effect, if relevant, on top of the character figure in the character screen, next to their injuries. This might not show up if the character already displays too many effects.");
+	qolCharScreenPage.addBooleanSetting("DisplayEncumbranceIcon", true, "Display Encumbrance Icon", "Display an icon for the Encumbrance effect, if relevant, on top of the character figure in the character screen, next to their injuries. This might not show up if the character already displays too many effects");
 	qolCharScreenPage.addBooleanSetting("ShowAbsoluteMoodValue", true, "Show Absolute Mood Value", "When viewing the mood tooltip of a brother, display the current mood as an absolute value between 0.0 and 6.95. This improves your understanding on how much impact certain mood changes will have. In Vanilla this value is shows as a percentage.");
 	qolCharScreenPage.addBooleanSetting("DisplaySkillTags", true, "Display Skill Tags", "List common tags and the damage types at the top of the descriptions of active skill.");
 

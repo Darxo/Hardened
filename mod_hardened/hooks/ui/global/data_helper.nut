@@ -69,4 +69,37 @@
 
 		return ret;
 	}
+
+	q.convertEntityToUIData = @(__original) function( _entity, _activeEntity )
+	{
+		local ret = __original(_entity, _activeEntity);
+
+		// Feat: we display the ammo warning on the character figure in the character screen
+		if (::Hardened.Mod.ModSettings.getSetting("DisplayAmmoWarningIcon").getValue())
+		{
+			local noAmmoWarning = _entity.getSkills().getSkillByID("special.no_ammo_warning");
+			if (noAmmoWarning != null && !noAmmoWarning.isHidden())
+			{
+				ret.injuries.push({
+					id = noAmmoWarning.getID(),
+					imagePath = noAmmoWarning.getIconColored(),
+				});
+			}
+		}
+
+		// Feat: we display the encumbrance warning on the character figure in the character screen
+		if (::Hardened.Mod.ModSettings.getSetting("DisplayEncumbranceIcon").getValue())
+		{
+			local encumbrance = _entity.getSkills().getSkillByID("effects.rf_encumbrance");
+			if (encumbrance != null && !encumbrance.isHidden())
+			{
+				ret.injuries.push({
+					id = encumbrance.getID(),
+					imagePath = encumbrance.getIconColored(),
+				});
+			}
+		}
+
+		return ret;
+	}
 });
