@@ -24,7 +24,7 @@ this.hd_generic_carry_agent <- ::inherit("scripts/ai/tactical/agents/bounty_hunt
 		// Stunning/Disarming someone
 		this.m.Properties.BehaviorMult[::Const.AI.Behavior.ID.KnockOut] = 0.25;
 		// Protecting allies
-		this.m.Properties.BehaviorMult[::Const.AI.Behavior.ID.Protect] = 0.5;
+		this.m.Properties.BehaviorMult[::Const.AI.Behavior.ID.Protect] = 0.0;
 		// Using defensive options
 		this.m.Properties.BehaviorMult[::Const.AI.Behavior.ID.Shieldwall] = 0.5;
 		// Splitting a shield
