@@ -111,6 +111,16 @@
 	{
 		__original();
 
+		// Feat: Discovering a location now always sets its factions as discovered
+		foreach (factionID in this.getFactions())
+		{
+			local faction = ::World.FactionManager.getFaction(factionID);
+			if (faction == null) continue;		// The first 3 factions are always null
+			if (faction.isDiscovered()) continue;
+
+			faction.setDiscovered(true);
+		}
+
 		local player = ::World.State.getPlayer();
 		if (player != null && player.isAbleToSee(this) && !this.m.IsBattlesite)
 		{
