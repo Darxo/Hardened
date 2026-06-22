@@ -4,6 +4,17 @@
 	q.m.HD_PricePctPerNegativeRelation <- -0.006;	// For every point of Relation below HD_NeutralRelation, prices are this much worse
 	q.m.HD_NeutralRelation <- 50;	// At this relation, there is no price impact
 
+	q.isHidden = @(__original) function()
+	{
+		// Feat: Factions with exactly 50 PlayerRelation Relation no longer count as hidden
+		local oldPlayerRelation = this.m.PlayerRelation;
+		this.m.PlayerRelation = 0;
+		local ret = __original();
+		this.m.PlayerRelation = oldPlayerRelation;
+
+		return ret;
+	}
+
 // New Functions
 	q.HD_getMaxConcurrentContracts <- function()
 	{
