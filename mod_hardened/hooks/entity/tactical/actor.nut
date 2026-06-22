@@ -184,6 +184,12 @@
 
 	q.kill = @(__original) function( _killer = null, _skill = null, _fatalityType = ::Const.FatalityType.None, _silent = false )
 	{
+		// Feat: Humans who got decapitated or whose head was smashed in, no longer produce death sounds
+		if (this.isHuman() && (_fatalityType == ::Const.FatalityType.Decapitated || _fatalityType == ::Const.FatalityType.Smashed))
+		{
+			_silent = true;
+		}
+
 		local wasAlive = this.isAlive();	// We have to save that state here, because it flips during the execution of __original
 
 		local oldRelationUnitKilled = ::Const.World.Assets.RelationUnitKilled;
