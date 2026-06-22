@@ -120,6 +120,7 @@ this.bounty_hunter_manager <- {
 		{
 			party.setFaction(originSettlement.getFactionOfType(::Const.FactionType.Settlement).getID());
 		}
+		party.setVisionRadius(party.m.VisionRadius * 1.25);		// Bounty Hunter have 25% more Vision
 
 		this.__refreshTroops(party);
 
