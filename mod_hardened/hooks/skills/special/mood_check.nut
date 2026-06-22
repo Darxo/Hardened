@@ -37,6 +37,17 @@
 			}
 		}
 
+		// Tooltip about new feature, that we implemented in data_helper::addCharacterToUIData
+		if (this.getContainer().getActor().getMoodState() <= ::Const.MoodState.Angry)
+		{
+			ret.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Cannot be dismissed",
+			});
+		}
+
 		local moodModifier = this.m.HD_MoodModifierArray[this.getContainer().getActor().getMoodState()];
 		if (moodModifier != 0)
 		{

@@ -20,6 +20,13 @@
 		_target.xpValueMax = nextLevelXPThreshold - prevLevelXPThreshold;
 
 		_target.id <- _entity.getID();	// This is a little redundant, but we need it for the experience tooltip
+
+		// We hijack isPlayerCharacter in order to disable the dismiss button for characters who are angry and may desert at any moment
+		// This has no sideffects, because in Vanilla isPlayerCharacter is only ever used to disable that button the js side
+		if (_entity.getMoodState() <= ::Const.MoodState.Angry)
+		{
+			_target.isPlayerCharacter = true;
+		}
 	}
 
 	q.convertAssetsInformationToUIData = @(__original) function()
