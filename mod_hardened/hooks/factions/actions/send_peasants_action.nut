@@ -10,5 +10,6 @@
 
 		lastSpawnedParty.getSprite("banner").Visible = true;
 		lastSpawnedParty.getLoot().Money = 0;	// Loot
+		lastSpawnedParty.setVisionRadius(lastSpawnedParty.m.VisionRadius * 0.8);		// Peasants have 20% less Vision
 	}
 });
