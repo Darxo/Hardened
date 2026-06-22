@@ -5,6 +5,18 @@
 		this.buildExtraLocations();
 	}
 
+	q.createFactions = @(__original) function()
+	{
+		__original();
+
+		// Feat: we set all factions as not-discovered. They are now discovered as you discover locations owned by them
+		foreach (faction in this.m.Factions)
+		{
+			if (faction == null) continue;
+			faction.setDiscovered(false);
+		}
+	}
+
 // New Functions
 	q.buildExtraLocations <- function()
 	{
