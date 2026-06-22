@@ -20,6 +20,13 @@
 	{
 		__original(_active);
 
+		if (_active)
+		{
+			// Feat: We now also shuffle the CombatSeed whenever an attached location is set to active
+			// This will change its tactical map, as this is one of the salts used there
+			this.m.CombatSeed = ::Math.rand();
+		}
+
 		if (this.isRaidable())
 		{
 			this.m.IsSpawningDefenders = _active;
