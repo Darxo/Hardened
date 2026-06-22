@@ -33,10 +33,7 @@
 		__original(_properties);
 		_properties.StaminaMult = oldStaminaMult;
 
-		if (!_properties.IsAffectedByInjuries || this.m.IsFresh && !_properties.IsAffectedByFreshInjuries)
-		{
-			return;
-		}
+		if (!this.HD_isAffectedByInjuries(_properties)) return;
 
 		// Instead we apply our custom Stamina Multiplier
 		_properties.StaminaMult *= this.m.StaminaMult;

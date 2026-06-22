@@ -22,10 +22,7 @@
 		__original(_properties);
 		_properties.StaminaMult = oldStaminaMult;
 
-		if (!_properties.IsAffectedByInjuries || this.m.IsFresh && !_properties.IsAffectedByFreshInjuries)
-		{
-			return;
-		}
+		if (!this.HD_isAffectedByInjuries(_properties)) return;
 
 		// Collapsed Lung now also disables the use of Recover
 		local recoverSkill = this.getContainer().getSkillByID("actives.recover");

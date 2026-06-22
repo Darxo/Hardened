@@ -33,10 +33,7 @@
 		_properties.MeleeDefenseMult = oldMeleeDefenseMult;
 		_properties.InitiativeMult = oldInitiativeMult;
 
-		if (!_properties.IsAffectedByInjuries || this.m.IsFresh && !_properties.IsAffectedByFreshInjuries)
-		{
-			return;
-		}
+		if (!this.HD_isAffectedByInjuries(_properties)) return;
 
 		_properties.MeleeDefenseMult *= this.m.HD_MeleeDefenseMult;
 		_properties.InitiativeMult *= this.m.HD_InitiativeMult;
