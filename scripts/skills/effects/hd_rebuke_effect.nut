@@ -24,7 +24,7 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 			id = 10,
 			type = "text",
 			icon = "ui/icons/stat_screen_dmg_dealt.png",	// Same Icon as Reach in Reforged
-			text = ::Reforged.Mod.Tooltips.parseString("Trigger a free melee attack on any enemy who misses a melee attack against you"),
+			text = ::Reforged.Mod.Tooltips.parseString("Trigger a free [Attack of Opportunity|Concept.ZoneOfControl] on any enemy who misses a melee attack against you"),
 			children = [
 				{
 					id = 10,

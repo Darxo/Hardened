@@ -7,7 +7,8 @@
 	q.m.InitiativeMult <- 1.0;	// In Vanilla this is 0.5
 	q.m.DisablesZoneOfControl <- true;
 
-	q.getTooltip = @(__original) function()
+	// Overwrite, because we change too many lines at once
+	q.getTooltip = @() function()
 	{
 		local ret = this.skill.getTooltip();
 

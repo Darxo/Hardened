@@ -63,7 +63,7 @@
 				unitBlock.RatioMax <- 0.25;	// Reforged: 0.55
 				unitBlock.StartingResourceMin <- 150;
 			}
-			else if (unitBlock.BaseID == "UnitBlock.RF.BanditElite")
+			if (unitBlock.BaseID == "UnitBlock.RF.BanditElite")
 			{
 				unitBlock.StartingResourceMin <- 400;
 			}

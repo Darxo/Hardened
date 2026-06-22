@@ -30,6 +30,64 @@
 
 # Changelog
 
+1.18.0
+	- **Stab** now costs 8 Fatigue (up from 7)
+	- **Wail** (from **Klagmutter**) now costs 5 Action Points (down from 6)
+	- **Fractured Skull** now causes the character to receive +50% Critical Damage on a hit to the head. It also grants -1 Vision (down from -2), 30% less Melee Skill (down from 50%), 30% less Ranged Skill (down from 50%), 30% less Melee Defense (down from 50%), 30% less Ranged Defense (down from 50%) and 30% less Initiative (down from 50%)
+	- **Dagger** now deals 50% Armor Damage (down from 60%)
+	- **Rondel Dagger** now deals 50% Armor Damage (down from 70%)
+	- **Qatal Dagger** now deals 50% Armor Damage (down from 70%)
+	- **Two-Handed Falchion** now deals 45-65 Damage (down from 50-65) and has 5 Reach (up from 4)
+	- **Skull Crusher** now has a Weight of 40 (down from 45)
+	- **Two-Handed Hammer** now deals 55-75 Damage (down from 60-75)
+	- **Rachegeist's Helm** is now called **Rachegeist's Full Helm**. It now has 23 Weight (up from 18) and grants +10 Threat
+	- Restrict Noble Parties to only contain at most 2 of the following 3 Unit Blocks: Bannermen, Sergeant, Knight
+	- Delay first appearance of **Brigand Highwayman** in brigand parties
+	- Delay first appearance of **Hollenhund** and **Klagmutter** in zombie parties
+	- Allow **Hollenhunds** to appear in ghost-only parties
+	- **Bounty Hunter** now have 125% Vision (up from 100%)
+	- **Peasants** now have 80% Vision (down from 100%)
+	- Reroll tactical map seed when Attached Locations are rebuilt
+	- Units from Unique Locations can no longer randomly become champions
+	- **Angry** Characters are no longer dismissable
+	- **Full Nets** causes **Fishermen** and **Daytaler** to not be available for hire
+	- **Good Harvest** causes **Farmhand**, **Miller** and **Daytaler** to not be available for hire
+	- **Hunting Season** causes **Hunter**, **Poacher** and **Butcher** to not be available for hire
+	- **Preprating Feast** causes **Servants** and **Butcher** to not be available for hire
+	- **Rebuilding Efforts** causes **Masons** and **Lumberjacks** to not be available for hire
+	- **Rich Veins** causes **Miner** and **Daytaler** to not be available for hire
+	- **Safe Roads** causes **Caravan Hands** and **Peddler** to not be available for hire
+	- Make Elite NPCs never protect their allies
+	- **Fat guy gets fit** no longer triggers for **Gluttonous** characters
+	- **Glutton eats Apple** now puts you before a choice
+		- **Stop him:** he loses 1.0 mood
+		- **Let him eat:** same as vanilla but he also loses **Gluttonous**
+	- **Civilwar Dead Knight** now grants a random **Full Helm** (instead of an **Decorated Full Helmet**)
+	- Allow the Retinue Hiring Screen to be opened, while not having a Retinue Slot unlocked yet
+	- Add settings for **Encumbrance** (on) and **Ammo Warning** (on) for displaying mini icon on top of individual characters in the character screen, when those effects are active
+	- Display placeholder in Faction & Relation screen for any civilian faction that you have not yet discovered
+	- Display Factions in the Faction & Relation screen, even if they have 50 Relation with you
+	- Discover any undiscovered faction when discovering any location from it
+	- Improve zone of control related tooltips for many ranged skills
+	- Set previewed Action Points to 0 when previewing a valid skill that works with **Full Force**
+	- NPCs now have a minimum Stamina of 15 (up from 10)
+	- **Dazed** and **Withered** no longer display a custom sprite above the character on the tactical map
+	- Humans who die from a decapitation or head-smashing, no longer produce a death-sound
+	- Reduce cases of duplicate zone of control tooltips
+	- Sort skill bullet points about requirements you passed (check mark) to the bottom, just above warning bullet points
+	- Explain in perk description of **Student** that it can't be picked if you are already level 8
+	- Revert icon change in tooltip of NPC-only tactician skills
+	- remove various vanilla fixes that became redundant with Vanilla 1.5.2.2
+	- Fix **Overhead Strike** displaying a hitchance bonus
+	- Fix tooltip for **Slave Revolt** not showing up
+	- Fix some situation tooltips showing duplicate background names
+	- Improve plural background names in situation tooltips
+	- Add `faction::HD_getHighestUIBanner()` for getting the UI banner of the owner of the faction, if there is one, or that of the faction otherwise
+	- Add `character_background::HD_getNamePlural()` for getting the `getNameOnly` in a simple auto-generated plural form
+	- Have every faction start as undiscovered when starting a new scenario
+	- Add `location::getFactions()` for returning an array of all factionIDs, who this location belongs to. This is similar to the settlements::getFactions() function
+	- Add `injury::HD_isAffectedByInjuries(_properties)` which combines all injury immunity checks and returns true or false
+
 1.17.11
 	- Make **Ghost Racial** cause its user to ignore the movement penalty on any terrain
 	- Fix rare combat freeze when fighting against NPCs with a 2-tile melee weapon

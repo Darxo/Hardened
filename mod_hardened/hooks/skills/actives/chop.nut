@@ -14,7 +14,7 @@
 			if (entry.id == 6)
 			{
 				// Improve clarity of this tooltip to hopefully emphasize enough, that this bonus is negated with Steelbrow
-				entry.text = "Deal " + ::MSU.Text.colorPositive("+50% ") + ::Reforged.Mod.Tooltips.parseString("[Critical Damage|Concept.CriticalDamage]") + " on a hit to the head";
+				entry.text = "Deal " + ::MSU.Text.colorPositive("+50% ") + ::Reforged.Mod.Tooltips.parseString("[Critical Damage|Concept.CriticalDamage] on a [hit to the head|Concept.ChanceToHitHead]");
 				break;
 			}
 		}

@@ -161,7 +161,8 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - The **Stamina** penalty from **Weight** is now applied last (after Stamina Multiplier from effects). This is similar to how the **Initiative** penalty from **Weight** is applied in Vanilla
   - Therefore percentage based debuffs and injuries affecting **Stamina** are worse
   - And percentage based buffs affecting **Stamina** are stronger
-- No Character can ever have less than 10 **Stamina**
+- No Player Character can ever have less than 10 **Stamina**
+- No NPC can ever have less than 15 **Stamina**
 
 ### Numeral Rework
 
@@ -242,7 +243,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack. Riposte no longer has a penalty to Hitchance. It can now be used multiple times per round
 - **Shuffle** (granted by **Dynamic Duo**) no longer puts your partner to the next position in the turn order. It now costs 0 Action Points and 5 Fatigue on all tile types
 - **Spider Poison** now also reduces the Hitpoints Recovery of the target by 50%
-- **Stab** now costs 3 Action Points (down from 4) and has a 25% higher threshold to inflict injuries
+- **Stab** now costs 3 Action Points (down from 4), 8 Fatigue (up from 7) and has a 25% higher threshold to inflict injuries
 - **Strike Down** now has a 100% Chance to Stun (up from 75%) and has a Stun Duration of 1 Turn (down from 2)
 - **Swallow Whole** (from **Large Nachzehrer**) can no longer be used while rooted
 - **Sword Thrust** now has 0% additional Hitchance (up from -20%)
@@ -252,6 +253,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Throw Axe** now has a 50% chance to decapitate (up from 0%) and 25% chance to disembowel (up from 0%)
 - **Throw Net** now costs 4 Action Points (down from 5), has a Range of 3 (up from 2) and no longer requires the targets Base Reach to be below a certain value
 - **Unnerving Presence** (From Barrowkin Huskarl) now has +0 Difficulty for the Morale Check it inflicts (down from +10)
+- **Wail** (from **Klagmutter**) now costs 5 Action Points (down from 6)
 - **Weave Web** (from **Webknecht**) now costs 50 Fatigue (up from 25)
 - **Whip** (from **Goblin Overseer**) can no longer be used while engage in melee
 - **Withered** no longer reduces Stamina or Fatigue Recovery. It now causes Non-Attacks to cost 50% more Fatigue per remaining turns on the effect duration
@@ -489,6 +491,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Crushed Windpipe** no longer reduces the Stamina. Instead it now disables the use of **Recover**
 - **Dislocated Jaw** now causes you to have 30% less Resolve during your turn, instead of only while using Non-Attacks
 - **Dislocated Shoulder** no longer reduces the maximum available Action Points by 3. Instead it now increases the Action Point cost of all skills by 3
+- **Fractured Skull** now causes the character to receive +50% Critical Damage on a hit to the head. It grants -1 Vision (down from -2), 30% less Melee Skill (down from 50%), 30% less Ranged Skill (down from 50%), 30% less Melee Defense (down from 50%), 30% less Ranged Defense (down from 50%) and 30% less Initiative (down from 50%)
 - **Pierced Lung** now reduces Stamina by 30% (down from 60%) and disables the use of **Recover**
 - **Grazed Neck**, **Cut Artery** and **Cut Throat** are no longer removed, when bandaged
 - **Grazed Neck**, **Cut Artery** and **Cut Throat** no longer deals damage over time
@@ -530,7 +533,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Crossbow** now has 60% Armor Penetration (up from 50%), 50% Armor Damage (down from 70%) and costs 900 Crowns (up from 750)
 - **Composite Bow** now costs 800 Crowns (up from 400)
 - **Cudgel** now deals 45-65 damage (up from 30-50), has 120% Armor Damage (up from 90%), has 4 Reach (up from 3), costs 600 Crowns (up from 300). **Bash** now costs 5 AP (up from 4). It loses **Knock Out** and gains **Strike Down**
-- **Dagger** now deals 20-30 Damage (from 15-35)
+- **Dagger** now deals 20-30 Damage (from 15-35) and has 50% Armor Damage (down from 60%)
 - **Estoc** now has 6 Reach (up from 5)
 - **Goblin Skewer** are now a Spear/Dagger hybrid. **Thrust** is replaced with **Stab**. **Riposte** is removed
 - **Goedendag** no longer grants **Cudgel** skill. It loses **Knock Out** and gains **Strike Down**
@@ -557,11 +560,13 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Player Banner** now causes -5 to Ranged Defense and it grants **Repel**
 - **Poleaxe** and its named versions can no longer be bought or found
 - **Poleflail** now has 5 Reach (down from 6) and costs 1600 Crowns (up from 1400). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
+- **Qatal Dagger** now has 50% Armor Damage (down from 70%)
 - **Reinforced Boondock Bow** now deals 40-55 Damage (up from 30-50), has 50% Armor Damage (down from 60%) and 40% Armor Penetration (up from 35%)
 - **Reinforced Wooden Poleflail** now has 5 Reach (down from 6). Its skills **Flail** and **Lash** now cost 6 Action Points (up from 5)
-- **Rondel Dagger** now deals 25-35 Damage (from 20-40) and costs 500 Crowns
+- **Rondel Dagger** now deals 25-35 Damage (from 20-40), has 50% Armor Damage (down from 70%) and costs 500 Crowns
 - **Rusty Warblade** loses **Decapitate** and gains **Split**
 - **Short Bow** now deals 35-50 damage (up from 30-50), has a Range of 6 (down from 7) and costs 300 Crowns (up from 200)
+- **Skull Crusher** now has a Weight of 40 (down from 45)
 - **Spetum** now has 7 Reach (up from 6), 12 Weight (down from 14) and costs 900 Crowns (down from 1050). The named variant now costs 2800 Crowns (down from 3500)
 - **Spiked Impaler** now has 80% Armor Damage (up from 75%) now has +2 Fatigue Cost for its weapon skills
 - **Swordstaff** now has 12 Weight (up from 10). **Overhead Strike** no longer has a Reach Penalty
@@ -569,6 +574,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Three-Headed Flail** now attacks 2 times per skill use (down from 3) and deals 50% weapon damage per attack (up from 33%). It now has 3 Reach (down from 4) and deals 30-60 Damage (down from 30-75)
 - **Throwing Spears** no longer inflict any fatigue when hitting a shield. They now have 4 Weight (down from 6) and costs 60 Crowns (down from 80)
 - **Tree Limb** now deals 40-60 damage (up from 25-40), deals 90% Armor Damage (up from 75%), has 4 Reach (up from 3), 18 Weight (down from 20), costs 450 Crowns (up from 150). **Bash** now costs 5 AP (up from 4). It loses **Knock Out** and gains **Strike Down**
+- **Two-handed Falchion** now deals 45-65 Damage (down from 50-65) and has 5 Reach (up from 4)
 - **Two-handed Flail** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5), deals 55-90 Damage (down from 60-95) and costs 1800 Crowns (up from 1400)
 - **Two-handed Wooden Hammer** now deals 40-60 Damage (down from 40-70) and 200% Armor Damage (up from 150%)
 - **Two-handed Wooden Flail** now has 40% Armor Penetration (up from 30%), 4 Reach (down from 5), deals 35-65 Damage (instead of 40-60) and costs 600 Crowns (up from 500). It no longer has any discount on its weapon skills
@@ -722,6 +728,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Padded Kettle hat** now has 130 Condition (down from 140) and costs 500 Crowns (down from 650)
 - **Padded Nasal Helmet** now has 120 Condition (down from 130), -2 Vision (down from -1) and costs 350 Crowns (down from 550)
 - **Physician's Mask** now has 5 Weight (up from 3), -3 Vision (down from -1) and costs 150 Crowns (down from 170)
+- **Rachegeist's Helm** is now called **Rachegeist's Full Helm**. It now has 23 Weight (up from 18) and grants +10 Threat
 - **Reinforced Mail Coif** now has 120 Condition (up from 100), 6 Weight (up from 5), -2 Vision (down from -1) and costs 600 Crowns (up from 300)
 - **Rusty Mail Coif** now has 8 Weight (up from 4) and costs 200 Crowns (up from 150)
 - **Occult Eye Mask** now has 20 Condition (up from 10) and costs 200 Crowns (up from 0)
@@ -946,11 +953,12 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ### Dynamic Party Adjustments
 
-- Tweak the party compositions of many factions
+- Change the party compositions of many factions
 	- reducing on average the amount of different entity types in that party
 	- increasing the amount of higher tier units allowed at the same time
 - Add **Brigand Highwayman** as new T1 of the BanditLeader Unitblock
 - Add **Nomad Outlaw** as the new T1 of the NomadLeader UnitBlock
+- Add **Hollenhund** as possible unit for ghost-only parties
 - **Gladiators** have a 10% chance to appear in southern Caravans during the later parts of the game
 - **Slaves** have a 40% chance to appear in southern Caravans (instead of being almost guaranteed)
 - Mercenaries will more gradually appear in caravan parties, instead of suddenly and in great numbers
@@ -981,7 +989,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 - NPC ranged troops now ignore the score from potential scatter targets when picking a ranged target. They also ignore the score penalty from obstacles blocking line of sight (that penalty is already implicitely handled by the predicted hitchance)
 - Any faction that receives at least 3 hits from enemies more than they themselves inflicted onto their enemies, will stop playing defensive
-- **Nomad Leader**, **Bandit Leader**, **Brigand Baron**, **Militia Captain**, **Seargeant**, **Marshal** and **Officer** are now less likely to flank, protect allies, engage multiple opponents at once or use crowd control skills. They are more likely to stay in formation and allies are more likely to gather around them
+- **Nomad Leader**, **Bandit Leader**, **Brigand Baron**, **Militia Captain**, **Seargeant**, **Marshal** and **Officer** are now less likely to flank, engage multiple opponents at once or use crowd control skills. They are more likely to stay in formation and allies are more likely to gather around them. They will never protect allies
 - **Blade Dancer**, **Executioner**, **Gladiators**, **Hedge Knight** and **Oathbringer** are now less likely to flank, protect allies, act defensive or use crowd control skills. Allies are slightly more likely to gather around them
 - **Noble** and **Militia** Ranged Troops are now 50% less likely to shoot at enemies they could kill and 100% more likely to shoot at enemies they have a good hitchance against
 - Ranged Troops from **Brigands**, **Nomads**, **Mercenaries**, **Goblins** and **Golems** Ranged Troops are 33% less likely to shoot at enemies they could kill and ~100% more likely to shoot at enemies they have a good hitchance against
@@ -1030,7 +1038,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - NPCs are now 150% more likely to use **Insect Swarm**
 - NPCs now take into account all swap-discount perks when considering whether to swap to a (better) melee weapon
 
-## AI Specific
+### AI Specific
 
 - **Dogs** are much less likely to engage multiple enemies at the same time
 - **Goblin-, Brigand-, Nomad- and Mercenary** ranged units now play around 35% more defensive
@@ -1066,6 +1074,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - Prevent most skills from playing sounds while their user is hidden
 - Completely rework, how Melee Weapons worn by player characters lose Condition on an Attack. As long as the Attack does not ignore armor (like puncture), the weapon will always lose condition, if the Armor on the body part hit has at least 1 Condition remaining after the attack.
 - Weapons no longer drop to the ground when their condition goes to 0. Instead they drop when the condition is lowered, while it was at 0 condition. Weapons are now considered *In poor condition*, when they have 0 Condition (down from 12 or less). A weapon that has 0 Condition now deals 50% less damage and its skills cost 50% more Fatigue
+- **Dazed** and **Withered** no longer display a custom sprite on the affected character
+- Humans who die from a decapitation or head-smashing, no longer produce a death-sound
 - Weapons with 0 Condition now deal 50% less damage
 - The combat map is no longer revealed at the end of a battle
 - Tactical Forest Maps no longer randomly spawn **Grassland** tiles (2 AP per move)
@@ -1123,6 +1133,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - **Fletcher** now sell roughly 5 times as many **Throwing Spears** but with a price multiplier of 1.5 (up from 1.0)
 - Nets sold by **Fletcher** now have a price multiplier of 2.0 (down from 3.0)
 - Any settlement which does not produce any regular item currently will count as producing **Crowns**, so their caravans will transport stacks of crowns instead of transporting nothing
+- Discovering a location now also discovers all factions belonging to it for the purpose of the Faction & Relation screen
 
 ### Attached Locations
 
@@ -1139,6 +1150,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - The **Stone Pillars** (Kraken) now always requires 3 Hides and 3 Dust, no matter how much you already had in your inventory
 - Restrict the allowed Y coordinates for many unique locations to where their allowed tiles usually spawn to speed up map generation
 - Most Unique Locations have a `DistanceToOthers` of 10 tiles (down from 15), allowing them to be placed closer to settlements and other locations during map generation. This will improve map generation speed and prevent cases of missing unique locations when too many settlements are generated
+- Units from Unique Locations can no longer randomly become champions
 - Restrict the Y-position of the **Oracle** unique location to be between 10% and 35% (previously unrestricted)
 - **Flesh Cradles** now drop **Strange Meat** on death
 
@@ -1191,7 +1203,8 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 ### World Parties
 
 - Add many new name combinations for roaming Mercenary Parties
-- Introduce a roaming **Bounty Hunter** company. They behave very similar to roaming Mercenary Companies but use different units to fight
+- Introduce a roaming **Bounty Hunter** company. They behave very similar to roaming Mercenary Companies but use different units to fight. They have 25% more Vision
+- **Peasants** have 20% less Vision
 - World Parties are no longer stunned, when you cancel the combat dialog with them
 - Food Products transported by Caravans now always drop at full stacksize and freshness
 - Caravans from Tier 1 and Tier 2 civilian settlements now transport 2 produces (down from 3)
@@ -1221,15 +1234,30 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 ## Events
 
 - The Retinue-Slot Event will now trigger shortly after you unlock a new slot and will no longer replace a regular event
-- The Event **Caravan Hand expands Cart** can now also trigger after you have already upgraded your cart
-- The Event **Civilwar Conscription** now grants +7.5 Relation with the Noble House when you side with them (up from +2.5)
-- The Event **Drunkard loses Item** no longer targets named items. It can now also target items that are equipped to a brother. It now has an option where you order the Drunkard to search for the item. This recovers the item, but causes the same mood debuff on the drunkard as if he was flogged
-- The Event **Player plays dice** now has 50% less score
-- The Event **Infected Wound** now has a cooldown of 14 days (down from 21 days) and is thrice as likely to trigger, if you have no Medicine left
-- The Event **Wardogs fight each other** now only triggers, while you have more than 1 dog per 2 brothers (instead of at least 2 dogs in your inventory) and it will count any dog you own, even those currently equipped
-- The Event **Bird shits on Sellsword** now costs 5 Ammunition for shooting down the bird
-- The **Orc Slayer** and **Crusader** (temporary Crisis backgrounds) now share 100% of their experience with your remaining party, when they leave you after the Crisis ended
+- **Caravan Hand expands Cart** can now also trigger after you have already upgraded your cart
+- **Civilwar Conscription** now grants +7.5 Relation with the Noble House when you side with them (up from +2.5)
+- **Drunkard loses Item** no longer targets named items. It can now also target items that are equipped to a brother. It now has an option where you order the Drunkard to search for the item. This recovers the item, but causes the same mood debuff on the drunkard as if he was flogged
+- **Player plays dice** now has 50% less score
+- **Infected Wound** now has a cooldown of 14 days (down from 21 days) and is thrice as likely to trigger, if you have no Medicine left
+- **Wardogs fight each other** now only triggers, while you have more than 1 dog per 2 brothers (instead of at least 2 dogs in your inventory) and it will count any dog you own, even those currently equipped
+- **Bird shits on Sellsword** now costs 5 Ammunition for shooting down the bird
 - **Drunkard loses Item**, **Bad Omen** and **Player plays Dice** Events now have a cooldown of 21 days (up from 14)
+- **Fat guy gets fit** no longer triggers for **Gluttonous** characters
+- **Glutton eats Apple** now offers you a choice:
+	- **Stop him:** he loses 1.0 mood
+	- **Let him eat:** same as vanilla but he also loses **Gluttonous**
+- **Civilwar Dead Knight** now grants a random **Full Helm** (instead of an **Decorated Full Helmet**)
+- The **Orc Slayer** and **Crusader** (temporary Crisis backgrounds) now share 100% of their experience with your remaining party, when they leave you after the Crisis ended
+
+## Situations
+
+- **Full Nets** causes **Fishermen** and **Daytaler** to not be available for hire
+- **Good Harvest** causes **Farmhand**, **Miller** and **Daytaler** to not be available for hire
+- **Hunting Season** causes **Hunter**, **Poacher** and **Butcher** to not be available for hire
+- **Preprating Feast** causes **Servants** and **Butcher** to not be available for hire
+- **Rebuilding Efforts** causes **Masons** and **Lumberjacks** to not be available for hire
+- **Rich Veins** causes **Miner** and **Daytaler** to not be available for hire
+- **Safe Roads** causes **Caravan Hands** and **Peddler** to not be available for hire
 
 ## Difficulty
 
@@ -1270,6 +1298,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 - The Retreat tooltip during combat now also lists the Melee Defense bonus your characters receive during Auto-Retreat
+- **Angry** characters are no longer dismissable
 
 ## Quality of Life
 
@@ -1340,6 +1369,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Display combat log entry with round number when a new round starts
 - Improve description of **Additional Fur Padding**,  **Bone Plating** and **Unhold Fur Cloak** and clarify that they only protect against body attacks
 - Slightly improve wording of "weapon skills build up fatigue" tooltip on weapons
+- Slightly improve zone of control related tooltips on many several skills
 - Automatically re-equip the accessory that you had previously equiped after an arena fight
 - Reduce pan speed of tactical camera by 20%
 - Improve smoke tooltip on tiles by linking to smoke effect
@@ -1405,6 +1435,8 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Display reason when the owner-faction of a faction loses relation with you, because you lost relation with that child-faction
 - Add tooltip for undesirable food (e.g. Strange Meat) explaining that their are eaten last
 - Add Setting (on) for displaying non-settlement location names and numerals while they are within your vision (Lairs, Unique Locations, Attached Locations)
+- Display placeholder in Faction & Relation screen for any civilian faction that you have not yet discovered
+- Display Factions in the Faction & Relation screen, even if they have 50 Relation with you
 - Brothers that "die" outside of combat (e.g. Events) will now always transfer their equipment into your stash
 - List the effects of camping in the camping tooltip
 - Reduce lag when opening Taxidermist or crafting in Taxidermist, when many blueprints are avaiable or the player inventory is large
@@ -1424,12 +1456,14 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Add setting (on) for displaying silhouettes of items from the bagslots on the character
 - Display relative XP in Character Screen instead of absolute values
 - List total XP in experience tooltip
+- Allow the Retinue Hiring Screen to be opened, while not having a Retinue Slot unlocked yet
 - Supplies (Crowns, Tools, Medicine, Ammo) are now consumed instantly after buying, looting
 - Display current and maximum amount of servings in tooltips of food items
 - Quiver and Weapons that contain Ammo now display the supply cost for replacing ammunition in them
 - Add new Concepts for **Armor Penetration**, **Critical Damage**, **Displacement**, **Hitchance**, **Mood**, **Rally**, **Recently**, **Threat** and **Weight** and and apply these Concepts to existing weapons, items, perks skills
 - Add setting (on) to show the absolute mood value instead of a percentage in the mood tooltip
 - List the exact mood changes in brackets in the mood tooltip
+- Add settings for **Encumbrance** (on) and **Ammo Warning** (on) for displaying mini icon on top of individual characters in the character screen, when those effects are active
 - Slightly move the dismiss button downwards
 - Improve the Vanilla Concepts **Chance to hit head**, **Vision**, **Renown** and **Morale** and add nested tooltip for all morale states (except **Steady**)
 - Improve the Reforged Concept for **Turn** and **Zone of Control**/**Engaged in Melee**
@@ -1481,8 +1515,8 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix "Minimum Damage" (appears on one-handed hammer attacks) not being mitigated by Melee-, Ranged- and Hitpoint Damage Mitigation
 - Fix **Battle Standard** resolve effect not updating on allies when equipping or unequipping it
 - Fix Ranged AI ignoring hitchance and expected damage, when calculating the best target to attack
+- Reroll tactical map seed when Attached Locations are rebuilt
 - **Repel** can no longer push someone back in a 90° angle
-- **Copper Ingot** price is now affected by `BuildingPriceMult`, which causes them to be affected by **Rebuilding Efforts**
 - Economic Difficulty now affects all prices instead of just some of them
 - Other Actors moving in or out of the range of someone with **Lone Wolf** now cause that effect to update instantly
 - Allow cut, copy and mark operations in input fields that are full. Limit Ctrl-Combinations, Delete and Arrow Key presses in input fields to one per press
@@ -1502,7 +1536,6 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix overlay icon y-offset on hills which are currently cut-off because of a low camera level
 - Fix **Blacksmith Follower** increasing the odds of looting weapons from NPCs
 - Fix some positional effects (e.g. Lone Wolf or Entrenched) visually persisting outside of combat
-- Dying enemies no longer set the LastCombatResult to `EnemyDestroyed`, unless they were the last one to die. This fixes a rare Sunken Library exploit
 - Unique Locations are no longer attackable, if there is a party, hostile to the player, directly next to it (fixes exploit for skipping Goblin City quest)
 - **Knock Back** now displays its hitchance bonus correctly in the preview
 - Fix Armor Items and Accessories not being swappable during Tactical Scenarios
@@ -1525,7 +1558,6 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix keyboard inputs for camera movement in combat not being combinable
 - Fix caravans rarely despawning when loading a save
 - Fix rare end-of-combat freeze, when clicking "It's over"
-- Fix named one-handed mace icon art not lining up with their sprite art
 - Fix world parties able to join the same fight multiple times
 - Fix the same Human being able to play the same sound effect twice in a row
 - Fix destroyed locations being able to generate defenders
@@ -1533,7 +1565,6 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix **Goblin Wolfrider** having no `ShakeLayer` for `BodyPart.All` defined
 - Fix **Wolf**, spawned by a dying **Goblin Wolfrider**, sometimes having an action in the round it spawned
 - Fix **Drums of War** (from Barbarian Drummer) spawning 2 overlay icons on each target
-- Releasing a dog within 2 seconds of killing someone no longer skips the dogs turn
 - Two entities can no longer accidentally get teleported (e.g. via Knockback) onto the same tile
 - Every accessory now plays a default sound when moved around in the inventory
 - Fix Roads spawning directly on the map border
@@ -1581,6 +1612,11 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add `faction::HD_getHighestUIBanner()` for getting the UI banner of the owner of the faction, if there is one, or that of the faction otherwise
+- Add `character_background::HD_getNamePlural()` for getting the `getNameOnly` in a simple auto-generated plural form
+- Have every faction start as undiscovered when starting a new scenario
+- Add `location::getFactions()` for returning an array of all factionIDs, who this location belongs to. This is similar to the settlements::getFactions() function
+- Add `injury::HD_isAffectedByInjuries(_properties)` which combines all injury immunity checks and returns true or false
 - Add `skill::HD_getAllTargets()` which returns an array of all tiles that can be currently targeted by that skill
 - Add `HD_UsableInZoneOfControl = true` member for `skill.nut` which can be set to `false` to make an active skill unusable while engaged in melee and adding boilerplate tooltips for that
 - Add `actor::HD_isInZoneOfControl()` which returns `true`, if that actor is currently engaged in melee
