@@ -13,6 +13,18 @@
 	q.m.SpentActionPoints <- 0;	// We save this so we can scale our impact animation to the amount of spent action points
 	q.m.HD_LastTileTargeted <- null;	// We save the last tile that was targeted by our boosted attack so that we have it available after the hit, as then the actor might be dead
 
+// Modular Vanilla functions
+	q.onCostsPreview = @(__original) function( _costsPreview )
+	{
+		__original(_costsPreview);
+
+		local skill = this.getContainer().getActor().getPreviewSkill();
+		if (skill != null && this.isSkillValid(skill))
+		{
+			_costsPreview.actionPointsPreview = 0;
+		}
+	}
+
 // Hardened Events
 	q.onReallyBeforeSkillExecuted = @(__original) function( _skill, _targetTile )
 	{
