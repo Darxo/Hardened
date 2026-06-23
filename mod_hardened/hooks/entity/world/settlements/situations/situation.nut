@@ -146,25 +146,36 @@
 
 	q.addRecruitTooltipEntries <- function( _tooltip )
 	{
-		foreach (newBackground in this.getNewBackgrounds())
+		local getUniqueBackgroundNames = function( _backgroundScriptArray )
 		{
-			local background = ::new("scripts/skills/backgrounds/" + newBackground);
+			local backgroundNames = [];
+			foreach (backgroundScript in _backgroundScriptArray)
+			{
+				local background = ::new("scripts/skills/backgrounds/" + backgroundScript);
+				backgroundNames.push(background.HD_getNamePlural());
+			}
+
+			// Some different background scripts may use the same visual name. This usually happens when southern-variants of backgrounds are included
+			return ::MSU.Array.uniques(backgroundNames);
+		}
+
+		foreach (backgroundName in getUniqueBackgroundNames(this.getNewBackgrounds()))
+		{
 			_tooltip.push({
 				id = 15,
 				type = "text",
 				icon = "ui/icons/asset_brothers.png",
-				text = background.getNameOnly() + "s are " + ::MSU.Text.colorPositive("more") + " common",
+				text = backgroundName + " are " + ::MSU.Text.colorPositive("more") + " common",
 			});
 		}
 
-		foreach (removedBackground in this.getRemovedBackgrounds())
+		foreach (backgroundName in getUniqueBackgroundNames(this.getRemovedBackgrounds()))
 		{
-			local background = ::new("scripts/skills/backgrounds/" + removedBackground);
 			_tooltip.push({
 				id = 16,
 				type = "text",
 				icon = "ui/icons/asset_brothers.png",
-				text = background.getNameOnly() + "s are " + ::MSU.Text.colorNegative("not") + " available for hire",
+				text = backgroundName + " are " + ::MSU.Text.colorNegative("not") + " available for hire",
 			});
 		}
 	}
