@@ -67,11 +67,11 @@
 
 	q.getRemovedBackgrounds <- function()
 	{
-		local allCharacterBackgrounds = clone ::Const.CharacterBackgrounds;
+		local allCharacterBackgrounds = clone ::Const.MV_getHireableCharacterBackgrounds();
 		this.onUpdateDraftList(allCharacterBackgrounds);
 
 		local removedBackgrounds = [];
-		foreach (background in ::Const.CharacterBackgrounds)
+		foreach (background in ::Const.MV_getHireableCharacterBackgrounds())
 		{
 			if (allCharacterBackgrounds.find(background) != null) continue;
 
@@ -159,11 +159,12 @@
 
 		foreach (removedBackground in this.getRemovedBackgrounds())
 		{
+			local background = ::new("scripts/skills/backgrounds/" + removedBackground);
 			_tooltip.push({
 				id = 16,
 				type = "text",
 				icon = "ui/icons/asset_brothers.png",
-				text = removedBackground.getNameOnly() + "s are " + ::MSU.Text.colorNegative("not") + " available for hire",
+				text = background.getNameOnly() + "s are " + ::MSU.Text.colorNegative("not") + " available for hire",
 			});
 		}
 	}
