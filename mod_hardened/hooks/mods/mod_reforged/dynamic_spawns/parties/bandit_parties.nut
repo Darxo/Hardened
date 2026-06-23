@@ -43,6 +43,10 @@
 				unitBlock.RatioMax = 0.15;	// Reforged: 0.13
 				unitBlock.StartingResourceMin = 400;	// Reforged: 320
 			}
+			if (unitBlock.BaseID == "UnitBlock.RF.BanditBoss")
+			{
+				if ("StartingResourceMin" in unitBlock) delete unitBlock.StartingResourceMin;	// Reforged: 140
+			}
 		}
 	}
 
@@ -62,6 +66,10 @@
 			else if (unitBlock.BaseID == "UnitBlock.RF.BanditElite")
 			{
 				unitBlock.StartingResourceMin <- 400;
+			}
+			if (unitBlock.BaseID == "UnitBlock.RF.BanditBoss")
+			{
+				if ("StartingResourceMin" in unitBlock) delete unitBlock.StartingResourceMin;	// Reforged: 140
 			}
 		}
 		// We add a new low-resource-only ranged block, that is much more freqently missing, so that you face pure frontline battles more often during the early game
