@@ -1,3 +1,8 @@
+{	// UnitBlock.RF.Ghost
+	local hollenhundBlock = ::Reforged.Spawns.UnitBlocks["UnitBlock.RF.Hollenhund"];
+	delete hollenhundBlock.DynamicDefs.Units[0].HardMax;	// Reforged: 3
+}
+
 {	// UnitBlock.RF.ZombieFrontline
 	local zombieFrontline = ::Reforged.Spawns.UnitBlocks["UnitBlock.RF.ZombieFrontline"];
 	zombieFrontline.DynamicDefs.Units[0].RatioMin = 0.0;		// Reforged: 0.05

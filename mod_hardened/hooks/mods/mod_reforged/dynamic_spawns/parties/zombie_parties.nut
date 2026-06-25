@@ -1,5 +1,11 @@
 // Hooking
 {
+	local ghostParty = ::Reforged.Spawns.Parties["Ghosts"];
+	ghostParty.DynamicDefs.UnitBlocks.extend([
+		{ BaseID = "UnitBlock.RF.Hollenhund", RatioMax = 0.2, ExclusionChance = 30 },
+		{ BaseID = "UnitBlock.RF.Hollenhund", StartingResourceMin = 500, RatioMin = 0.3, RatioMax = 0.7, ExclusionChance = 50 },
+	]);
+
 	::Reforged.Spawns.Parties["ZombieOrcs"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Orcs;
 	::Reforged.Spawns.Parties["ZombieOrcs"].getIdealSizeMult <- function() {
 		local ret = base.getIdealSizeMult();
