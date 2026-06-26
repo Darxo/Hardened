@@ -14,6 +14,7 @@
 		this.m.HD_XPValueBase = 50;				// Vanilla: 70
 		this.m.HD_XPValuePerRegularLevel = 50;		// Vanilla: 30
 		this.m.HD_XPValuePerVeteranLevel = 10;		// Vanilla: 30
+		this.m.StaminaMin = 10;		// Hardened: 15
 	}
 
 	q.improveMood = @(__original) function( _a = 1.0, _reason = "" )

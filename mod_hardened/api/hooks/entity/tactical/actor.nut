@@ -1,7 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/actor", function(q) {
 	// Public
 	q.m.GrantsXPOnDeath <- true;	// After initialisation this should ideally only ever be set in one direction (to false)
-	q.m.StaminaMin <- 10;	// This actor can never have less than this amount of Stamina
+	q.m.StaminaMin <- 15;	// This actor can never have less than this amount of Stamina
 
 	q.m.ChanceForNoChest <- 0;		// Value between 1 and 100 determining the chance for this actor to get no Body Armor assigned from ChestWeightedContainer
 	q.m.ChestWeightedContainer <- null;		// If defined, the Body Armor worn by this actor will by assigned by this weighted container
