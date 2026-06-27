@@ -1,7 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/actor", function(q) {
 	// Public
 	q.m.GrantsXPOnDeath <- true;	// After initialisation this should ideally only ever be set in one direction (to false)
-	q.m.StaminaMin <- 15;	// This actor can never have less than this amount of Stamina
+	q.m.HD_StaminaMin <- 15;	// This actor can never have less than this amount of Stamina
 
 	q.m.ChanceForNoChest <- 0;		// Value between 1 and 100 determining the chance for this actor to get no Body Armor assigned from ChestWeightedContainer
 	q.m.ChestWeightedContainer <- null;		// If defined, the Body Armor worn by this actor will by assigned by this weighted container
@@ -132,7 +132,7 @@
 		stamina += this.getStaminaModifierFromWeight();	// Stamina modifiers from weight are now applied AFTER the StaminaMult from effects (injuries, perks) is applied
 		// New: We now introduce a minimum Stamina value. At worst a character should still be able to throw a fist or move one tile
 		// We need to return a float value, because vanilla does not check against division by 0 in their getFatigueScoreMult function. The only way it doesnt crash is if the 0 is a float value
-		return ::Math.maxf(stamina, this.m.StaminaMin);
+		return ::Math.maxf(stamina, this.m.HD_StaminaMin);
 	}
 
 	// Calculate the total Stamina Modifier from the Weight of all equipped gear
