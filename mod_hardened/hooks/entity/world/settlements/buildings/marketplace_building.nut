@@ -3,7 +3,7 @@
 	{
 		local ret = __original();
 
-		foreach (entry in _list)
+		foreach (entry in ret)
 		{
 			if (entry.S == "shields/wooden_shield")
 			{
@@ -44,14 +44,14 @@
 		if (this.getSettlement().getSize() <= 2 && !this.getSettlement().isMilitary())
 		{
 			// Add old wooden shields to lower tier settlements
-			_list.push({
+			ret.push({
 				R = 30,
 				P = 1.0,
 				S = "shields/wooden_shield_old",
 			});
 
 			// Add lute to lower tier settlements
-			_list.push({
+			ret.push({
 				R = 90,
 				P = 1.0,
 				S = "weapons/lute",
@@ -61,13 +61,13 @@
 		// Add worn kite/heater shields to higher tier settlements
 		if (this.getSettlement().getSize() == 3 || this.getSettlement().isMilitary())
 		{
-			_list.push({
+			ret.push({
 				R = 60,
 				P = 1.0,
 				S = "shields/worn_kite_shield",
 			});
 
-			_list.push({
+			ret.push({
 				R = 60,
 				P = 1.0,
 				S = "shields/worn_heater_shield",

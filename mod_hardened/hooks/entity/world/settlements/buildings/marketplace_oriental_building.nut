@@ -3,7 +3,7 @@
 	{
 		local ret = __original();
 
-		foreach (entry in _list)
+		foreach (entry in ret)
 		{
 			if (entry.S == "accessory/wardog_item")
 			{
@@ -18,7 +18,7 @@
 		if (this.getSettlement().getSize() <= 2 && !this.getSettlement().isMilitary())
 		{
 			// Add lute to lower tier settlements
-			_list.push({
+			ret.push({
 				R = 90,
 				P = 1.0,
 				S = "weapons/lute",
