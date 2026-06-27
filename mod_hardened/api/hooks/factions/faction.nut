@@ -46,6 +46,13 @@
 
 		return ret;
 	}
+
+	// Return the most important banner for this faction
+	// e.g. civilian facitons return the banner of the noble house they belong to
+	q.HD_getHighestUIBanner <- function()
+	{
+		return this.HD_getOwner() == null ? this.getUIBanner() : this.HD_getOwner().getUIBanner();
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/factions/faction", function(q) {
