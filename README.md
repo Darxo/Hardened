@@ -1254,7 +1254,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - **Full Nets** causes **Fishermen** and **Daytaler** to not be available for hire
 - **Good Harvest** causes **Farmhand**, **Miller** and **Daytaler** to not be available for hire
 - **Hunting Season** causes **Hunter**, **Poacher** and **Butcher** to not be available for hire
-- **Preprating Feast** causes **Servants** and **Butcher** to not be available for hire
+- **Preparing Feast** causes **Servants** and **Butcher** to not be available for hire
 - **Rebuilding Efforts** causes **Masons** and **Lumberjacks** to not be available for hire
 - **Rich Veins** causes **Miner** and **Daytaler** to not be available for hire
 - **Safe Roads** causes **Caravan Hands** and **Peddler** to not be available for hire

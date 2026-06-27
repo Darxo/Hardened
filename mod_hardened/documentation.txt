@@ -30,6 +30,9 @@
 
 # Changelog
 
+1.18.1
+	- Fix settlement screens not opening
+
 1.18.0
 	- **Stab** now costs 8 Fatigue (up from 7)
 	- **Wail** (from **Klagmutter**) now costs 5 Action Points (down from 6)
