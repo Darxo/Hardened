@@ -25,7 +25,7 @@
 				if (entry.id == 50 && entry.type == "hint")
 				{
 					local f = ::World.FactionManager.getFaction(this.getFaction());
-					local banner = ::MSU.isNull(f.getOwner()) ? f.getUIBanner() : f.getOwner().getUIBanner();
+					local banner = ::MSU.isNull(f.HD_getOwner()) ? f.getUIBanner() : f.HD_getOwner().getUIBanner();
 					entry.icon = banner;
 					break;
 				}
