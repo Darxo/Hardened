@@ -10,6 +10,26 @@
 		__original(_fatalityType);
 	}
 
+// MSU Functions
+	q.onQueryTooltip = @(__original) { function onQueryTooltip( _skill, _tooltip )
+	{
+		// Feat: we sort all passed requirements to the very end, just above the warnings
+		// We need to do this before __original, so that our sorting happens before Reforged does its sorting of warning bullet points
+		local passedRequirements = [];
+		for (local i = _tooltip.len() - 1; i >= 0; i--)
+		{
+			local entry = _tooltip[i];
+			if (!("icon" in entry)) continue;
+			if (entry.icon != "ui/icons/unlocked_small.png") continue;	// Identifier for being a passed requirement
+
+			_tooltip.remove(i);
+			passedRequirements.push(entry);
+		}
+		_tooltip.extend(passedRequirements);
+
+		return __original(_skill, _tooltip);
+	}}.onQueryTooltip;
+
 // New Functions
 	// Helper function for AI considerations.
 	// Return the cheapest melee attack, that this user has access to and can currently use.
