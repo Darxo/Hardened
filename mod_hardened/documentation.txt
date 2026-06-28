@@ -30,6 +30,9 @@
 
 # Changelog
 
+1.18.2
+	- Fix glitch when a brother receives collapsed lungs during battle
+
 1.18.1
 	- Fix settlement screens not opening
 
