@@ -22,8 +22,6 @@
 		__original(_properties);
 		_properties.StaminaMult = oldStaminaMult;
 
-		if (!this.HD_isAffectedByInjuries(_properties)) return;
-
 		// Collapsed Lung now also disables the use of Recover
 		local recoverSkill = this.getContainer().getSkillByID("actives.recover");
 		if (recoverSkill != null)
