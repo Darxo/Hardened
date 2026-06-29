@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/rf_take_aim_skill", function(q) {
+	q.m.HD_UsableWhileEngagedInMelee = false;
+
 	q.create = @(__original) function()
 	{
 		__original();
@@ -36,10 +38,8 @@
 
 	q.isUsable = @() function()
 	{
+		if (!this.skill.isUsable()) return false;
 		if (!this.isEnabled()) return false;
-
-		local actor = this.getContainer().getActor();
-		if (actor.isEngagedInMelee()) return false;
 		if (this.getContainer().hasSkill("effects.rf_take_aim")) return false;
 
 		// We make sure, that this character has at least one usable attack skill, before allowing them to use this skill
