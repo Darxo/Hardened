@@ -311,7 +311,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Bow Skills cost " + ::MSU.Text.colorizeMultWithText(::Hardened.Global.WeaponSpecFatigueMult, {InvertColor = true}) + " [Fatigue|Concept.Fatigue]",
-						"Shooting range with Bows is increased by " + ::MSU.Text.colorPositive("+1"),
+						"Bow Ranged Attacks have " + ::MSU.Text.colorPositive("+1") + " Range",
 					],
 				},
 				{

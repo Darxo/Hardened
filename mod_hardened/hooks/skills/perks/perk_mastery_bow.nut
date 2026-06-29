@@ -1,6 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_mastery_bow", function(q) {
 	// Public
 	q.m.HD_FatigueCostMult <- ::Hardened.Global.WeaponSpecFatigueMult;
+	q.m.HD_RangedAttackMaxRangeModifier <- 1;
 
 	q.onAfterUpdate = @(__original) function( _properties )
 	{
@@ -13,6 +14,12 @@
 				if (this.isSkillValid(skill))
 				{
 					skill.m.FatigueCostMult *= this.m.HD_FatigueCostMult;
+
+					if (skill.isAttack() && skill.isRanged())
+					{
+						// Feat: adjust the shooting range directly from the mastery instead of in the individual skills
+						skill.m.MaxRange += this.m.HD_RangedAttackMaxRangeModifier;
+					}
 				}
 			}
 		}
@@ -24,6 +31,9 @@
 		local oldVision = _properties.Vision;
 		__original(_properties);
 		_properties.Vision = oldVision;
+
+		// We no longer support this flag. Instead we adjust the shooting range of skills directly from within the mastery
+		_properties.IsSpecializedInBows = false;
 	}
 
 // New Functions
