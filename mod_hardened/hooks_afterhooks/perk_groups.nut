@@ -187,6 +187,11 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 		changePerkTier(pgSpearGroup, "perk.rf_king_of_all_weapons", 6);	// Move "Spear Flurry" to Tier 6 (down from Tier 7)
 	}
 
+	{	// Swordmaster Group
+		// We introduce our own new swordmaster group
+		::DynamicPerks.PerkGroups.add(::new("scripts/mods/mod_hardened/perk_groups/pg_hd_swordmaster"));
+	}
+
 	{	// Special Marksman Group
 		::DynamicPerks.PerkGroups.remove("pg.special.rf_marksmanship");	// This group does no longer exist in Hardened
 	}

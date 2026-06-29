@@ -73,12 +73,36 @@
 		IconDisabled = "skills/terrain_icon_06.png",
 	},
 	{
+		ID = "perk.hd_precise",
+		Script = "scripts/skills/perks/perk_hd_precise",
+		Name = ::Const.Strings.PerkName.HD_Precise,
+		Tooltip = ::Const.Strings.PerkDescription.HD_Precise,
+		Icon = "ui/perks/perk_rf_swordmaster_precise.png",
+		IconDisabled = "ui/perks/perk_rf_swordmaster_precise_sw.png",
+	},
+	{
+		ID = "perk.hd_versatile",
+		Script = "scripts/skills/perks/perk_hd_versatile",
+		Name = ::Const.Strings.PerkName.HD_Versatile,
+		Tooltip = ::Const.Strings.PerkDescription.HD_Versatile,
+		Icon = "ui/perks/perk_rf_swordmaster_versatile_swordsman.png",
+		IconDisabled = "ui/perks/perk_rf_swordmaster_versatile_swordsman_sw.png",
+	},
+	{
 		ID = "perk.hd_warden",
 		Script = "scripts/skills/perks/perk_hd_warden",
 		Name = ::Const.Strings.PerkName.HD_Warden,
 		Tooltip = ::Const.Strings.PerkDescription.HD_Warden,
 		Icon = "ui/perks/perk_rf_phalanx.png",
 		IconDisabled = "ui/perks/perk_rf_phalanx_sw.png",
+	},
+	{
+		ID = "perk.hd_zweikampf",
+		Script = "scripts/skills/perks/perk_hd_zweikampf",
+		Name = ::Const.Strings.PerkName.HD_Zweikampf,
+		Tooltip = ::Const.Strings.PerkDescription.HD_Zweikampf,
+		Icon = "ui/perks/perk_rf_swordmaster_juggernaut.png",
+		IconDisabled = "ui/perks/perk_rf_swordmaster_juggernaut_sw.png",
 	},
 ]);
 

@@ -80,7 +80,7 @@ local newPerks = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Once per [round|Concept.Round], swapping two weapons with no shared weapon type becomes a free action",
+						"Once per [round|Concept.Round], swapping two weapons with no shared Weapon Type becomes a free action",
 						"Gain " + ::MSU.Text.colorPositive("+10") + " [Melee Defense|Concept.MeleeDefense], if you have at least " + ::MSU.Text.colorPositive("70") + " [Base|Concept.BaseAttribute] [Ranged Skill|Concept.RangeSkill]",
 						"Gain " + ::MSU.Text.colorPositive("+10") + " [Ranged Defense|Concept.RangeDefense], if you have at least " + ::MSU.Text.colorPositive("70") + " [Base|Concept.BaseAttribute] [Melee Skill|Concept.MeleeSkill]",
 					],
@@ -177,6 +177,38 @@ local newPerks = [
 		}),
 	},
 	{
+		Key = "HD_Precise",
+		Name = "Precise",
+		Description = ::UPD.getDescription({
+			Fluff = "Let me show you how to thread a needle... blindfolded!",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						::MSU.Text.colorPositive("+5%") + " [Hitchance|Concept.Hitchance]",
+						::MSU.Text.colorPositive("+5%") + " maximum [Hitchance|Concept.Hitchance]",
+					],
+				},
+			],
+		}),
+	},
+	{
+		Key = "HD_Versatile",
+		Name = "Versatile",
+		Description = ::UPD.getDescription({
+			Fluff = "A sword is all you need.",
+			Requirement = "Sword",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Your Mainhand Weapon has all Weapon Types",
+					],
+				},
+			],
+		}),
+	},
+	{
 		Key = "HD_Warden",
 		Name = "Warden",
 		Description = ::UPD.getDescription({
@@ -188,6 +220,21 @@ local newPerks = [
 						"Adjacent allies take " + ::MSU.Text.colorPositive("30%") + " less damage from Attacks from enemies that are adjacent to you. This does not affect allies who also have [Warden|Perk+perk_hd_warden]",
 						"Whenever an adjacent ally takes damage, move to the next position in the [turn|Concept.Turn] sequence",
 						"Does not work while [fleeing|Skill+hd_dummy_morale_state_fleeing]",
+					],
+				},
+			],
+		}),
+	},
+	{
+		Key = "HD_Zweikampf",
+		Name = "Zweikampf",
+		Description = ::UPD.getDescription({
+			Fluff = "Let's Dance!",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"While adjacent to exactly one character, gain " + ::MSU.Text.colorPositive("+20") + " [Resolve|Concept.Bravery], " + ::MSU.Text.colorPositive("+20") + " [Initiative|Concept.Initiative] and take " + ::MSU.Text.colorPositive("25%") + " less Damage from adjacent characters",
 					],
 				},
 			],
