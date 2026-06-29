@@ -2,7 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.ActionPointCost -= 1;
+		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 15;	// Vanilla: 25;
 	}
 
