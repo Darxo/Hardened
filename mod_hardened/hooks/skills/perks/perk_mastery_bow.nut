@@ -25,6 +25,15 @@
 		}
 	}
 
+	q.onEquip = @(__original) { function onEquip( _item )
+	{
+		// We gate reforged' arrow to the knee skill addition to only happen on ranged weapons
+		if (_item.isItemType(::Const.Items.ItemType.RangedWeapon))
+		{
+			__original(_item);
+		}
+	}}.onEquip;
+
 	q.onUpdate = @(__original) function( _properties )
 	{
 		// We revert the vision change made by Vanilla

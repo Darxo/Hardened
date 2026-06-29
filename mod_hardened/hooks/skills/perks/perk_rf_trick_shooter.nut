@@ -77,10 +77,11 @@
 
 	q.onEquip = @() function( _item )
 	{
-		if (_item.isItemType(::Const.Items.ItemType.Weapon) && _item.isWeaponType(::Const.Items.WeaponType.Bow))
-		{
-			_item.addSkill(::new("scripts/skills/actives/rf_flaming_arrows_skill"));
-		}
+		if (!_item.isItemType(::Const.Items.ItemType.Weapon)) return;
+		if (!_item.isItemType(::Const.Items.ItemType.RangedWeapon)) return;
+		if (!_item.isWeaponType(::Const.Items.WeaponType.Bow)) return;
+
+		_item.addSkill(::new("scripts/skills/actives/rf_flaming_arrows_skill"));
 	}
 
 	q.onRemoved = @() function()
