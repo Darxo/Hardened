@@ -35,4 +35,13 @@
 		local targetTile = ::MSU.Array.rand(potentialTargets);
 		__original(_skill, targetTile, targetTile.getEntity(), _forFree);
 	}
+
+	q.doSpinAttack = @(__original) function( _skill, _user, _targetEntity, _targetTile )
+	{
+		// Fix: Flail Spinner triggering combat log, if the new target is no longer viable
+		// This may happen if other effects trigger/vanish during onAnySkillExecutedFully, which change the conditions as how the used skill may be used
+		if (!_skill.HD_isUsableOnForFree(_targetTile, _user.getTile())) return;
+
+		__original(_skill, _user, _targetEntity, _targetTile);
+	}
 });
