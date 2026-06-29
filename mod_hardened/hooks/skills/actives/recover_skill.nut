@@ -16,7 +16,22 @@
 			text = ::Reforged.Mod.Tooltips.parseString("Gain the [Waiting|Skill+hd_wait_effect] effect"),
 		});
 
+		ret.push({
+			id = 12,
+			type = "text",
+			icon = "ui/icons/action_points.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Never costs more than your maximum [Action Points|Concept.ActionPoints]"),
+		});
+
 		return ret;
+	}
+
+	q.onAfterUpdate = @(__original) function( _properties )
+	{
+		__original(_properties);
+
+		// Feat: We make recover never cost more action points than the maximum action points available
+		this.m.ActionPointCost = ::Math.min(this.m.ActionPointCost, _properties.ActionPoints);
 	}
 
 	q.onUse = @(__original) function( _user, _targetTile )
