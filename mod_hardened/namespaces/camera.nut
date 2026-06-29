@@ -57,9 +57,11 @@
 	local mostEnemies = 0;
 	local bestLevel = 3;
 
+	local currentCameraLevel = ::Tactical.getCamera().Level;
 	foreach (level, amount in visibleTargetsPerLevel)
 	{
-		if (amount >= mostEnemies)	// On a tie we always prefer the highest tile level possible
+		// On a tie we always prefer the highest tile level possible, but never higher than the current camera level
+		if (amount > mostEnemies || (amount == mostEnemies && level <= currentCameraLevel))
 		{
 			mostEnemies = amount;
 			bestLevel = level;
