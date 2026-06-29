@@ -139,6 +139,9 @@
 // New Functions
 	q.isSkillValid <- function( _skill )
 	{
+		if (!_skill.isAttack()) return false;
+		if (!_skill.isUsingHitchance()) return false;
+
 		if (_skill.getID() in this.m.UsedSkills)
 		{
 			return false;
