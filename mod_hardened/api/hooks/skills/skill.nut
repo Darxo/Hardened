@@ -27,6 +27,17 @@
 	q.m.HD_Temp_IsFree <- false;	// Ignore fatigue and action point cost during isAffordable check
 	q.m.HD_ForFree <- false;		// Is always set to the _forFree value of the last skill::use call of this skill. We use it to access this value in our onUse hook
 
+	q.attackEntity = @(__original) { function attackEntity( _user, _targetEntity, _allowDiversion = true )
+	{
+		// Switcheroo value of MV_HitChanceMax, to apply our new character property
+		local oldMV_HitChanceMax = ::Const.Combat.MV_HitChanceMax;
+		::Const.Combat.MV_HitChanceMax = this.getContainer().getActor().getCurrentProperties().HD_HitChanceMax;
+		local ret = __original(_user, _targetEntity, _allowDiversion);
+		::Const.Combat.MV_HitChanceMax = oldMV_HitChanceMax;
+
+		return ret;
+	}}.attackEntity;
+
 	q.isAffordable = @(__original) function()
 	{
 		if (this.m.HD_Temp_IsFree) return true;	// Allows us to do a vanilla isUsableOn check without considering the cost. Useful for triggering other characters skills
@@ -118,6 +129,17 @@
 		::Hardened.Temp.LastAttackInfo = ::MSU.asWeakTableRef(_attackInfo);
 		__original(_attackInfo);
 	}
+
+	q.MV_getHitchance = @(__original) { function MV_getHitchance( _targetEntity, _considerDiversion = true, _propertiesForUse = null, _propertiesForDefense = null )
+	{
+		// Switcheroo value of MV_HitChanceMax, to apply our new character property
+		local oldMV_HitChanceMax = ::Const.Combat.MV_HitChanceMax;
+		::Const.Combat.MV_HitChanceMax = this.getContainer().getActor().getCurrentProperties().HD_HitChanceMax;
+		local ret = __original(_targetEntity, _considerDiversion, _propertiesForUse, _propertiesForDefense);
+		::Const.Combat.MV_HitChanceMax = oldMV_HitChanceMax;
+
+		return ret;
+	}}.MV_getHitchance;
 
 // New Functions
 	// New virtual function that is already used various times in different vanilla skills

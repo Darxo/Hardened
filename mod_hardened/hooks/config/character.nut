@@ -88,6 +88,7 @@
 	::Const.CharacterProperties.ShowFrenzyEyes <- false;
 	::Const.CharacterProperties.CanEnemiesHaveReachAdvantage <- true;
 	::Const.CharacterProperties.ReachAdvantageMult <- ::Reforged.Reach.ReachAdvantageMult;
+	::Const.CharacterProperties.HD_HitChanceMax <- ::Const.Combat.MV_HitChanceMax;		// Maximum chance to hit for this actor
 
 	// If set to "false", then this prevents this actor from ever having a zone of control
 	// Is set to "true", nothing happens

@@ -40,13 +40,14 @@
 				{
 					local hitchance =  _targetedWithSkill.getHitchance(this);
 					local uncappedHitchance = null;
-					if (hitchance == ::Const.Combat.MV_HitChanceMax && ::Hardened.Mod.ModSettings.getSetting("ShowUncappedHitchances").getValue())
+					local currentProperties = _targetedWithSkill.getContainer().getActor().getCurrentProperties();
+					if (hitchance == currentProperties.HD_HitChanceMax && ::Hardened.Mod.ModSettings.getSetting("ShowUncappedHitchances").getValue())
 					{
 						// We do a switcheroo, so we can fetch the true uncapped hitchance value
-						local oldMV_HitChanceMax = ::Const.Combat.MV_HitChanceMax;
-						::Const.Combat.MV_HitChanceMax = 9000;
+						local oldHD_HitChanceMax = currentProperties.HD_HitChanceMax;
+						currentProperties.HD_HitChanceMax = 9000;
 						uncappedHitchance = _targetedWithSkill.getHitchance(this);
-						::Const.Combat.MV_HitChanceMax = oldMV_HitChanceMax;
+						currentProperties.HD_HitChanceMax = oldHD_HitChanceMax;
 
 						if (uncappedHitchance == hitchance) uncappedHitchance = null;	// We only want to show the uncapped hitchance if it is really higher than max hitchance
 					}
