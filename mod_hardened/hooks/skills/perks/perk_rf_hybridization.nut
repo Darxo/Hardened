@@ -83,6 +83,16 @@
 		return ret;
 	}
 
+// Reforged Functions
+	// Overwrite, because we tweak the Reforged condition a bit
+	q.isSkillValid = @() function( _skill )
+	{
+		if (!_skill.isAttack()) return false;
+
+		local weapon = _skill.getItem();
+		return !::MSU.isNull(weapon) && weapon.isItemType(::Const.Items.ItemType.Weapon) && weapon.isWeaponType(::Const.Items.WeaponType.Throwing);
+	}
+
 // New Functions
 	// This implementation is mostly a copy of REforged mastery implementation
 	q.applyHitEffect <- function( _skill, _targetEntity, _bodyPart )
