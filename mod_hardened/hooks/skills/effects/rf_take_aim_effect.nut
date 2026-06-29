@@ -63,10 +63,31 @@
 		}
 	}
 
+	// Fix: We no longer remove this effect on a hit or miss, as that might invalidate AoE attacks mid-use, when the bonus range is missing for the remaining hits
+	q.onTargetHit = @() function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor ) {}
+	q.onTargetMissed = @() function( _skill, _targetEntity ) {}
+
+// MSU Functions
+	q.onAnySkillExecutedFully = @(__original) function( _skill, _targetTile, _targetEntity, _forFree )
+	{
+		__original(_skill, _targetTile, _targetEntity, _forFree);
+
+		// Feat: we now remove this effect after the valid skill was fully executed, instead of immediately after the first hit/miss
+		if (this.isSkillValid(_skill))
+		{
+			this.removeSelf();
+		}
+	}
+
 // New Functions
+	q.isSkillValid <- function( _skill )
+	{
+		return _skill.isAttack();
+	}
+
 	q.isSkillValidForCrossbow <- function( _skill )
 	{
-		if (!_skill.isAttack()) return false;
+		if (!this.isSkillValid(_skill)) return false;
 
 		local item = _skill.getItem();
 		if (::MSU.isNull(item)) return false;
@@ -78,7 +99,7 @@
 
 	q.isSkillValidForFirearm <- function( _skill )
 	{
-		if (!_skill.isAttack()) return false;
+		if (!this.isSkillValid(_skill)) return false;
 
 		local item = _skill.getItem();
 		if (::MSU.isNull(item)) return false;
