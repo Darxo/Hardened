@@ -150,7 +150,6 @@
 	q.isSkillValid <- function( _skill )
 	{
 		if (!_skill.isAttack()) return false;
-		if (!_skill.isRanged()) return false;
 
 		local skillItem = _skill.getItem();
 		if (::MSU.isNull(skillItem)) return false;
