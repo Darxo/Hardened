@@ -181,8 +181,11 @@
 	}
 
 	/// Determine, whether this actor is currently "engaged in melee" or "in an enemies Zone of Control"
+	/// This is very similar to MSU's actor::isEngagedInMelee, except that we also check for the smoke effect
 	q.HD_isEngagedInMelee <- function()
 	{
+		if (!this.isPlacedOnMap()) return false;
+
 		if (!this.getTile().hasZoneOfControlOtherThan(this.getAlliedFactions()))
 		{
 			return false;
