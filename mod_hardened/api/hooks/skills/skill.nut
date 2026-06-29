@@ -163,6 +163,18 @@
 		return ret;
 	}
 
+	// Same as isUsableOn, but we skip the affordability
+	q.HD_isUsableOnForFree <- function( _targetTile, _userTile = null )
+	{
+		// Switcheroo to make the isAffordable() check always pass
+		local oldIsAffordable = this.isAffordable;
+		this.isAffordable = function() { return true };
+		local ret = this.isUsableOn(_targetTile, _userTile);
+		this.isAffordable = oldIsAffordable;
+
+		return ret;
+	}
+
 // New Getter
 	q.isOnCooldown <- function()
 	{
