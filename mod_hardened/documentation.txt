@@ -30,6 +30,18 @@
 
 # Changelog
 
+1.18.3
+	- **Warhounds** lose **Wear them down**
+	- **Skeleton Bodyguards** lose **Line Breaker**
+	- Tweak skeleton and vampire location to upgrade their units slightly later
+	- Add zone of control tooltip to **Take Aim** tooltip
+	- Show minimum and maximum chance to hit in **Hitchance** concept
+	- Slightly improve automatic camera adjustment when previewing skills
+	- Fix **Riposte** costing less action points than intended
+	- Fix **Goblin Trophy** showing wrong immunity in its tooltip
+	- Fix **Brace for Impact** not triggering when using skills like **Rotate** or **Shuffle**
+	- Add missing full stops in many mod setting descriptions
+
 1.18.2
 	- Fix glitch when a brother receives collapsed lungs during battle
 

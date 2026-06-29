@@ -240,7 +240,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Recover** now applies the same Initiative debuff as using **Wait**
 - **Reload Handgonne** now costs 25 Fatigue (up from 20)
 - **Reverse Grip** (Versatile Swordsman) now adds -1 Reach while active (down from -30% less)
-- **Riposte** now costs 3 Action Points (down from 4), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack. Riposte no longer has a penalty to Hitchance. It can now be used multiple times per round
+- **Riposte** now costs 3 Action Points (up from 2), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack. Riposte no longer has a penalty to Hitchance. It can now be used multiple times per round
 - **Shuffle** (granted by **Dynamic Duo**) no longer puts your partner to the next position in the turn order. It now costs 0 Action Points and 5 Fatigue on all tile types
 - **Spider Poison** now also reduces the Hitpoints Recovery of the target by 50%
 - **Stab** now costs 3 Action Points (down from 4), 8 Fatigue (up from 7) and has a 25% higher threshold to inflict injuries
@@ -1369,7 +1369,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Display combat log entry with round number when a new round starts
 - Improve description of **Additional Fur Padding**,  **Bone Plating** and **Unhold Fur Cloak** and clarify that they only protect against body attacks
 - Slightly improve wording of "weapon skills build up fatigue" tooltip on weapons
-- Slightly improve zone of control related tooltips on many several skills
+- Slightly improve zone of control related tooltips on many skills
 - Automatically re-equip the accessory that you had previously equiped after an arena fight
 - Reduce pan speed of tactical camera by 20%
 - Improve smoke tooltip on tiles by linking to smoke effect
