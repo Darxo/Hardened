@@ -50,11 +50,11 @@
 		::Hardened.Numerals.updateAllParties();
 	}
 
-	local myEnumSetting = ::MSU.Class.EnumSetting("WorldPartyRepresentation", "Numeral", ["Numeral", "Range"], "World Party Size", "Define how the party size of entities on the world map are shown. 'Numeral' is a word/string while 'Range' is the range that is represented by that word");
+	local myEnumSetting = ::MSU.Class.EnumSetting("WorldPartyRepresentation", "Numeral", ["Numeral", "Range"], "World Party Size", "Define how the party size of entities on the world map are shown. 'Numeral' is a word/string while 'Range' is the range that is represented by that word.");
 	myEnumSetting.addAfterChangeCallback(updateEntitiyStrengthCallback);
 	qolWorldPage.addElement(myEnumSetting);
 
-	myEnumSetting = ::MSU.Class.EnumSetting("CombatDialogRepresentation", "Numeral (Range)", ["Numeral", "Numeral (Range)", "Range"], "Combat Dialog Size", "Define how the size of entities in combat dialogs and tooltips are shown. 'Numeral' is a word/string while 'Range' is the range that is represented by that word");
+	myEnumSetting = ::MSU.Class.EnumSetting("CombatDialogRepresentation", "Numeral (Range)", ["Numeral", "Numeral (Range)", "Range"], "Combat Dialog Size", "Define how the size of entities in combat dialogs and tooltips are shown. 'Numeral' is a word/string while 'Range' is the range that is represented by that word.");
 	qolWorldPage.addElement(myEnumSetting);
 
 	qolWorldPage.addBooleanSetting("DisplayTownDayRanges", true, "Display Town Day Ranges", "Display the day ranges in brackets, when given estimates for contract and situation durations.");
@@ -108,19 +108,19 @@
 
 	qolCombatPage.addBooleanSetting("HoldOnDiscoverHostile", true, "Hold on Hostile Discovery", "Whenever you discover a hostile entity during your movement in combat, any further movement will be cancelled.");
 	qolCombatPage.addBooleanSetting("HoldOnDiscoverAlly", false, "Hold on Ally Discovery", "Whenever you discover an ally entity during your movement in combat, any further movement will be cancelled.");
-	qolCombatPage.addRangeSetting("EndTurnProtectionDuration", 1.0, 0, 3.0, 0.1, "End Turn Protection Duration", "Duration in seconds,for how long the 'End Turn' action cannot be used by the player after one of the following actions have happened:\n\n- The active character recovered Action Points\n- Movement was paused because an NPC was discovered");
+	qolCombatPage.addRangeSetting("EndTurnProtectionDuration", 1.0, 0, 3.0, 0.1, "End Turn Protection Duration", "Duration in seconds,for how long the 'End Turn' action cannot be used by the player after one of the following actions have happened:\n\n- The active character recovered Action Points\n- Movement was paused because an NPC was discovered.");
 
 	qolCombatPage.addDivider("MiscDivider3");
 
 	qolCombatPage.addBooleanSetting("CombineCombatSkillLogs", true, "Combine Combat Logs of Skills", "Combat Logs, which are the result of the same skill execution no longer produce empty halflines.");
 	qolCombatPage.addBooleanSetting("ShowCoverCombatLogs", true, "Show Cover Combat Logs", "Generate an additional combat log when targeting someone with a ranged attack, who is in cover. This log contains the chance and roll for bypassing the cover and also the initial target and the new target.");
-	qolCombatPage.addRangeSetting("CombatLogForNonAttackUse", 0, 0, 10, 1, "Combat Logs for Non-Attack use", "Generate a combat log line with user, skill and target, whenever anyone uses a Non-Attack skill, which costs at least this many Action Points");
+	qolCombatPage.addRangeSetting("CombatLogForNonAttackUse", 0, 0, 10, 1, "Combat Logs for Non-Attack use", "Generate a combat log line with user, skill and target, whenever anyone uses a Non-Attack skill, which costs at least this many Action Points.");
 
 	qolCombatPage.addDivider("MiscDivider4");
 
 	qolCombatPage.addBooleanSetting("UseSoundEngineFix", true, "Use Sound Engine Fix", "Rework directional sound during combat to be according to the real direction where the sound is coming from.");
 	qolCombatPage.addBooleanSetting("HideTileTooltipsDuringNPCTurn", false, "Hide Tooltips during NPC Turn", "Tile and Character tooltips will not show up, while it is not your turn.");
-	qolCombatPage.addBooleanSetting("FullForceCameraShake", true, "Shake Camera On Full Force", "Shake the camera as part of the impact animation of a successful Full Force attack");
+	qolCombatPage.addBooleanSetting("FullForceCameraShake", true, "Shake Camera On Full Force", "Shake the camera as part of the impact animation of a successful Full Force attack.");
 
 	local continuousWaitKeybindSetting = qolCombatPage.addBooleanSetting("ContinuousWaitKeybind", false , "Continuous Wait Keybind", "While active it is enough to hold down your 'wait' Keybind in order to wait so you can more easily wait with multiple brothers.");
 	local continuousWaitKeybindCallback = function( _oldValue )
@@ -139,7 +139,7 @@
 	qolCombatPage.addDivider("MiscDivider5");
 
 	qolCombatPage.addBooleanSetting("ShowGlowingEyes", true, "Show Red Glowing Eyes", "Display red glowing eyes on a humans and human-like characters, who have certain temporary damage buffs active.");
-	qolCombatPage.addBooleanSetting("ShowUncappedHitchances", true, "Show Uncapped Hitchances", "If your uncapped Hitchance would be larger than the one you currently have when aiming at an enemy, display it in brackets");
+	qolCombatPage.addBooleanSetting("ShowUncappedHitchances", true, "Show Uncapped Hitchances", "If your uncapped Hitchance would be larger than the one you currently have when aiming at an enemy, display it in brackets.");
 }
 
 // QOL: Character Screen
@@ -170,7 +170,7 @@
 
 	qolCharScreenPage.addRangeSetting("BagSilhouetteAlpha", 200, 0, 255, 5, "Bag Silhouette Alpha", "This controls the alpha value of the bag item silhouettes during combat only. In the character screen they always show up with an alpha of 255. A value of 0 makes them invisible everywhere and effectively turns off this feature.").addAfterChangeCallback(silhouetteCallback);
 	qolCharScreenPage.addRangeSetting("BagSilhouetteColor", 60, 0, 255, 5, "Bag Silhouette Color", "This controls the color value of the bag item silhouettes. A value of 0 makes item completely black while a value of 255 keeps its original color.").addAfterChangeCallback(silhouetteCallback);
-	qolCharScreenPage.addBooleanSetting("ShowShieldSilhouettes", false, "Show Shield Silhouettes", "Display silhouettes for shields in your bag slots. These sprites look most out of place, so not everyone might want them to show up").addAfterChangeCallback(silhouetteCallback);
+	qolCharScreenPage.addBooleanSetting("ShowShieldSilhouettes", false, "Show Shield Silhouettes", "Display silhouettes for shields in your bag slots. These sprites look most out of place, so not everyone might want them to show up.").addAfterChangeCallback(silhouetteCallback);
 
 	qolCharScreenPage.addDivider("MiscDivider1");
 
@@ -179,7 +179,7 @@
 	qolCharScreenPage.addDivider("MiscDivider2");
 
 	qolCharScreenPage.addBooleanSetting("DisplayAmmoWarningIcon", true, "Display Ammo Warning Icon", "Display an icon for the Ammo Warning effect, if relevant, on top of the character figure in the character screen, next to their injuries. This might not show up if the character already displays too many effects.");
-	qolCharScreenPage.addBooleanSetting("DisplayEncumbranceIcon", true, "Display Encumbrance Icon", "Display an icon for the Encumbrance effect, if relevant, on top of the character figure in the character screen, next to their injuries. This might not show up if the character already displays too many effects");
+	qolCharScreenPage.addBooleanSetting("DisplayEncumbranceIcon", true, "Display Encumbrance Icon", "Display an icon for the Encumbrance effect, if relevant, on top of the character figure in the character screen, next to their injuries. This might not show up if the character already displays too many effects.");
 	qolCharScreenPage.addBooleanSetting("ShowAbsoluteMoodValue", true, "Show Absolute Mood Value", "When viewing the mood tooltip of a brother, display the current mood as an absolute value between 0.0 and 6.95. This improves your understanding on how much impact certain mood changes will have. In Vanilla this value is shows as a percentage.");
 	qolCharScreenPage.addBooleanSetting("DisplaySkillTags", true, "Display Skill Tags", "List common tags and the damage types at the top of the descriptions of active skill.");
 
