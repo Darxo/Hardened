@@ -68,7 +68,9 @@
 	)),
 	Hitchance = ::MSU.Class.BasicTooltip("Hitchance", ::Reforged.Mod.Tooltips.parseString(
 		"Hitchance is a unified term representing both [Melee Skill|Concept.MeleeSkill] and [Ranged Skill|Concept.RangeSkill].\n\n" +
-		"Any modifier or multiplier to Hitchance apply equally to both Melee Skill and Ranged Skill, and are affected by their respective multipliers."
+		"Any modifier or multiplier to Hitchance applies equally to both Melee Skill and Ranged Skill, and are affected by their respective multipliers.\n\n" +
+		"Minimum Hitchance: " + ::MSU.Text.colorNeutral(::Const.Combat.MV_HitChanceMin + "%") + "\n" +
+		"Maximum Hitchance: " + ::MSU.Text.colorNeutral(::Const.Combat.MV_HitChanceMax + "%")
 	)),
 	Mood = ::MSU.Class.BasicTooltip("Mood", ::Reforged.Mod.Tooltips.parseString(
 		"Mood reflects how satisfied member of your company are.\n\n" +
