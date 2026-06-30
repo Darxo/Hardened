@@ -94,8 +94,15 @@ this.perk_hd_brace_for_impact <- ::inherit("scripts/skills/skill", {
 
 	function onMovementFinished()
 	{
-		this.addStacks(this.m.DelayedTriggerFromMovementStep);
+		local stacks = this.m.DelayedTriggerFromMovementStep;
 		this.m.DelayedTriggerFromMovementStep = 0;
+
+		if (stacks == 0)		// This means movement without onMovementStep has triggered, e.g. from swap or teleport
+		{
+			stacks = this.getTriggersAtTile(this.getContainer().getActor().getTile());
+		}
+
+		this.addStacks(stacks);
 	}
 
 // MSU Functions
@@ -104,10 +111,8 @@ this.perk_hd_brace_for_impact <- ::inherit("scripts/skills/skill", {
 		// We don't count tiles that are blocked by allies/objects we pass over
 		if (_tile.IsEmpty)
 		{
-			local actor = this.getContainer().getActor();
-			local adjacentEnemies = ::Tactical.Entities.getHostileActors(actor.getFaction(), _tile, 1, true);
-			this.m.DelayedTriggerFromMovementStep += adjacentEnemies.len();
-			// We can't trigger the effect at this point, because we don't know the final tile to animate the overlay icon on
+			this.m.DelayedTriggerFromMovementStep += this.getTriggersAtTile(_tile);
+			// We can't trigger the effect at this point, because we don't know the final tile to animate the overlay icon on, so we just collect the triggers
 		}
 	}
 
@@ -124,6 +129,11 @@ this.perk_hd_brace_for_impact <- ::inherit("scripts/skills/skill", {
 				this.spawnIcon(this.m.Overlay, actor.getTile());
 			}
 		}
+	}
+
+	function getTriggersAtTile( _tile )
+	{
+		return ::Tactical.Entities.getHostileActors(this.getContainer().getActor().getFaction(), _tile, 1, true).len();
 	}
 
 	function isSkillValid( _skill )
