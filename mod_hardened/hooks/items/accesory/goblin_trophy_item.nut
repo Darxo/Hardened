@@ -9,7 +9,7 @@
 		{
 			if (entry.id == 10 && entry.icon == "ui/icons/special.png")
 			{
-				entry.text = ::Reforged.Mod.Tooltips.parseString("Immune to [Displacement|Concept.Displacement]");
+				entry.text = ::Reforged.Mod.Tooltips.parseString("Immune to [Rooted|Concept.Rooted]");
 			}
 		}
 
