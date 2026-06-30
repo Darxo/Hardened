@@ -66,6 +66,7 @@
 		{
 			Strength = 80,	// Reforged: 50;
 			Cost = 80,		// Reforged: 50;
+			Variant = 0,	// Reforged: 10
 		},
 		{
 			XP = 800 * ::Hardened.Global.FactionExperience.Zombies, // Reforged: 550
