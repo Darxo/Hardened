@@ -418,6 +418,7 @@
 		if (_entity.isAlliedWith(this)) return false;
 		if (_entity.isNonCombatant()) return false;
 		if (_entity.getCurrentProperties().IsStunned) return false;
+		if (_entity.getMoraleState() == ::Const.MoraleState.Fleeing) return false;	// This condition is new, compared to vanilla
 		if (_entity.isArmedWithRangedWeapon()) return false;
 
 		return true;
