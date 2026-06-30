@@ -2,6 +2,13 @@
 {
 	local undeadArmyParty = ::Reforged.Spawns.Parties["UndeadArmy"];
 	undeadArmyParty.Variants.filter(function(_item, _weight) {
+		_item.IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Skeletons;
+		_item.getIdealSizeMult <- function() {
+			local ret = base.getIdealSizeMult();
+			if (this.getTopParty().HD_isLocation()) ret *= ::Hardened.Global.PartySizeMult.Location;
+			return ret;
+		};
+
 		if (_item.ID == "UndeadArmy_0")
 		{
 			_item.HardMin = 6;	// Reforged: 10
@@ -27,6 +34,13 @@
 
 	local vampiresAndSkeletonsParty = ::Reforged.Spawns.Parties["VampiresAndSkeletons"];
 	vampiresAndSkeletonsParty.Variants.filter(function(_item, _weight) {
+		_item.IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Skeletons;
+		_item.getIdealSizeMult <- function() {
+			local ret = base.getIdealSizeMult();
+			if (this.getTopParty().HD_isLocation()) ret *= ::Hardened.Global.PartySizeMult.Location;
+			return ret;
+		};
+
 		if (_item.ID == "VampiresAndSkeletons_0")
 		{
 			foreach (unitBlock in _item.DynamicDefs.UnitBlocks)
@@ -48,4 +62,12 @@
 			});
 		}
 	});
+
+	local vampiresParty = ::Reforged.Spawns.Parties["Vampires"];
+	vampiresParty.IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Vampires;
+	vampiresParty.getIdealSizeMult <- function() {
+		local ret = base.getIdealSizeMult();
+		if (this.getTopParty().HD_isLocation()) ret *= ::Hardened.Global.PartySizeMult.Location;
+		return ret;
+	};
 }
