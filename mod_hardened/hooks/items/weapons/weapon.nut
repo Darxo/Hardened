@@ -152,6 +152,13 @@
 
 		mockObject.cleanup();
 	}
+
+// MSU Functions
+	q.buildCategoriesFromWeaponType = @(__original) function()
+	{
+		__original();
+		this.m.Categories = ::MSU.String.replace(this.m.Categories, "/", "/[wbr][/wbr]", true);
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/items/weapons/weapon", function(q) {
