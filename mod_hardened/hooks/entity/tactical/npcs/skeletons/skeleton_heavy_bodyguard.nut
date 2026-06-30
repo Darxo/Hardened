@@ -40,7 +40,6 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rotation"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_rebuke"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_exploit_opening"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_line_breaker"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_mastery_cleaver"));
 	}
 });
