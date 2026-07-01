@@ -44,8 +44,13 @@
 		{
 			if (!skill.isAttack())
 			{
+				// Feat: new effect that replaces the vanilla stamina mult
 				skill.m.FatigueCostMult *= this.m.NonAttackFatigueMult;
 			}
 		}
 	}
+
+// Reforged Functions
+	// Overwrite, because we want to disable any sprite display originating from this skill
+	q.updateSprite = @() function() {}
 });
