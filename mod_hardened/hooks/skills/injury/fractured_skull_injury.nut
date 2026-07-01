@@ -81,6 +81,9 @@
 				text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeMultWithText(this.m.InitiativeMult) + " [Initiative|Concept.Initiative]"),
 			});
 		}
+
+		this.addTooltipHint(ret);
+
 		return ret;
 	}
 
