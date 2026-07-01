@@ -493,13 +493,13 @@ local adjustedDescriptions = [
 		Key = "SpecThrowing",
 		Description = ::UPD.getDescription({
 			Fluff = "Master throwing weapons to wound or kill the enemy before they even get close",
-			Requirement = "Throwing Weapon",
+			Requirement = "Throwable",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Throwing Skills cost " + ::MSU.Text.colorizeMultWithText(::Hardened.Global.WeaponSpecFatigueMult, {InvertColor = true}) + " [Fatigue|Concept.Fatigue]",
-					"Your first Throwing Attack each [round|Concept.Round] deals " + ::MSU.Text.colorizeMultWithText(1.3) + " Damage",
-					"Once per [round|Concept.Round], after you use a Throwing Attack, swapping any item becomes a free action",
+					"Throwable Skills cost " + ::MSU.Text.colorizeMultWithText(::Hardened.Global.WeaponSpecFatigueMult, {InvertColor = true}) + " [Fatigue|Concept.Fatigue]",
+					"Your first Throwable Attack each [round|Concept.Round] deals " + ::MSU.Text.colorizeMultWithText(1.3) + " Damage",
+					"Once per [round|Concept.Round], after you use a Throwable Attack, swapping any item becomes a free action",
 				],
 			}],
 		}),
@@ -1158,9 +1158,9 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Unlock one extra [bag slot|Concept.BagSlots]. This does not work if you have [Weapon Master|Perk+perk_rf_weapon_master]",
-						"Piercing Throwing Attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body",
-						"Cutting Throwing Attacks apply [Overwhelmed|Skill+overwhelmed_effect]",
-						"Headshots with Blunt Throwing Attacks apply [Staggered|Skill+staggered_effect]. All hits with Blunt Throwing Attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
+						"Piercing Throwable Attacks apply [Arrow to the Knee|Skill+rf_arrow_to_the_knee_debuff_effect] when hitting the body",
+						"Cutting Throwable Attacks apply [Overwhelmed|Skill+overwhelmed_effect]",
+						"Headshots with Blunt Throwable Attacks apply [Staggered|Skill+staggered_effect]. All hits with Blunt Throwable Attacks will [stun|Skill+stunned_effect] the target if already [staggered|Skill+staggered_effect]",
 						"[Throwing Spears|Item+throwing_spear] deal " + ::MSU.Text.colorizeMultWithText(2.0) + " Damage to shields",
 					],
 				},
@@ -1417,11 +1417,11 @@ local adjustedDescriptions = [
 		Key = "RF_Opportunist",
 		Description = ::UPD.getDescription({
 			Fluff = "Glide over terrain and strike before your enemies even see you coming.",
-			Requirement = "Throwing Weapon",
+			Requirement = "Throwable",
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"After moving 3 tiles during your [turn|Concept.Turn], Throwing Attacks cost " + ::MSU.Text.colorPositive(-5) + " [Action Points|Concept.ActionPoints], until you use a throwing attack, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
+					"After moving 3 tiles during your [turn|Concept.Turn], Throwable Attacks cost " + ::MSU.Text.colorPositive(-5) + " [Action Points|Concept.ActionPoints], until you use a Throwable Attack, [wait|Concept.Wait] or end your [turn|Concept.Turn]",
 					"Moving costs " + ::MSU.Text.colorPositive(-2) + " [Fatigue|Concept.Fatigue]",
 				],
 			}],

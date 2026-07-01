@@ -30,14 +30,14 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/action_points.png",
-				text = "Your next throwing attack costs " + ::MSU.Text.colorizeValue(this.getActionPointModifier(), {InvertColor = true, AddSign = true}) + ::Reforged.Mod.Tooltips.parseString(" [Action Point|Concept.ActionPoints]"),
+				text = "Your next Throwable Attack costs " + ::MSU.Text.colorizeValue(this.getActionPointModifier(), {InvertColor = true, AddSign = true}) + ::Reforged.Mod.Tooltips.parseString(" [Action Point|Concept.ActionPoints]"),
 			});
 
 			ret.push({
 				id = 20,
 				type = "text",
 				icon = "ui/icons/warning.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Will expire upon using a throwing attack, [waiting|Concept.Wait] or ending the turn."),
+				text = ::Reforged.Mod.Tooltips.parseString("Expires when using a Throwable Attack, [waiting|Concept.Wait] or ending the turn."),
 			});
 		}
 

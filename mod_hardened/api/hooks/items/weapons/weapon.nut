@@ -79,6 +79,18 @@
 			return null;
 	}
 
+// MSU Functions
+	q.initWeaponType = @(__original) function()
+	{
+		if (this.m.MSU_WeaponTypeInit) return;
+
+		// Existing hard-coded Cateogires strings are not affected by our changes to ::Const.Items.WeaponType in items.nut, so we need to manually adjust them here too
+		this.m.Categories = ::MSU.String.replace(this.m.Categories, "Throwing Weapon", "Throwable");
+		this.m.Categories = ::MSU.String.replace(this.m.Categories, "Musical Instrument", "Instrument");
+
+		__original();
+	}
+
 // New Functions
 	q.isHybridWeapon <- function()
 	{

@@ -156,6 +156,10 @@
 	return true;
 }
 
+::Const.Strings.PerkName.SpecThrowing = "Throwable Mastery";	// We streamline the name of the throwing mastery to align with the weapon type name change we did
+local throwingMasteryPerkDef = ::Const.Perks.findById("perk.mastery.throwing");
+throwingMasteryPerkDef.Name = ::Const.Strings.PerkName.SpecThrowing;
+
 ::Const.Strings.PerkName.RF_ConcussiveStrikes = "Shockwave";
 ::Const.Perks.findById("perk.rf_concussive_strikes").Name = ::Const.Strings.PerkName.RF_ConcussiveStrikes;
 

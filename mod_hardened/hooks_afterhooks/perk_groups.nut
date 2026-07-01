@@ -219,6 +219,7 @@ local changePerkTier = function( _perkGroup, _perkID, _newTier )
 
 	{	// Throwing Group
 		local pgThrowingPerkGroup = ::DynamicPerks.PerkGroups.findById("pg.rf_throwing");
+		pgThrowingPerkGroup.m.Name = "Throwable";	// Reforged: Throwing
 		changePerkTier(pgThrowingPerkGroup, "perk.rf_hybridization", 2);		// Move Hybridization (now Toolbox) to tier 2 (down from Tier 3)
 	}
 
