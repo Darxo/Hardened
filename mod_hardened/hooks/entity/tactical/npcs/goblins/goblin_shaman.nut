@@ -34,7 +34,12 @@
 	q.getLootForTile = @(__original) { function getLootForTile( _killer, _loot )
 	{
 		local ret = __original(_killer, _loot);
-		ret.push(::new("scripts/items/loot/goblin_rank_insignia_item"));
+
+		if (this.RF_canDropLootForPlayer(_killer))
+		{
+			ret.push(::new("scripts/items/loot/goblin_rank_insignia_item.nut"));
+		}
+
 		return ret;
 	}}.getLootForTile;
 
