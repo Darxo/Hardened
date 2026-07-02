@@ -32,7 +32,8 @@
 			hitInfo.DamageArmor = armorDamageSpread;
 			hitInfo.BodyPart = newBodyPart;
 
-			_targetEntity.onDamageReceived(this.getContainer().getActor(), _skill, hitInfo);
+			// We pass null as the skill so that hammer attacks don't trigger two attack hits per attack. Otherwise effects like Anticipation would trigger twice
+			_targetEntity.onDamageReceived(this.getContainer().getActor(), null, hitInfo);
 		}
 	}
 
