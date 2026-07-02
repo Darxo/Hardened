@@ -384,6 +384,20 @@
 	{
 		local ret = __original();
 
+		if (!this.getContainer().getActor().isPlayerControlled())
+		{
+			// Feat: hide tooltip about remaining ammo for NPCs, as they use infinite ammo anyways
+			::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
+				return _entry.text.find("[/color] bolts left") != null;
+			});
+			::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
+				return _entry.text.find("[/color] arrows left") != null;
+			});
+			::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
+				return _entry.text.find("[/color] shots left") != null;
+			});
+		}
+
 		foreach (entry in ret)
 		{
 			if (entry.id == 4 && entry.type == "text" && entry.icon == "ui/icons/regular_damage.png")
