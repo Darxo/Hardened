@@ -2,11 +2,13 @@
 // Reforged Functions
 	q.getLootForTile = @(__original) function( _killer, _loot )
 	{
-		if (_killer == null || _killer.getFaction() == ::Const.Faction.Player || _killer.getFaction() == ::Const.Faction.PlayerAnimals)
+		local ret = __original(_killer, _loot);
+
+		if (this.RF_canDropLootForPlayer(_killer))
 		{
-			_loot.push(this.new("scripts/items/supplies/strange_meat_item"));
+			ret.push(::new("scripts/items/supplies/strange_meat_item"));
 		}
 
-		return __original(_killer, _loot);
+		return ret;
 	}
 });
