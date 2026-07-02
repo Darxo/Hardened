@@ -1,7 +1,11 @@
 ::Hardened.HooksMod.hook("scripts/items/shields/shield", function(q) {
+// Private
 	q.m.HardenedShieldConditionMax <- null;	// Condition this item would have in hardened
 	q.m.ReforgedShieldConditionMax <- null;	// Condition this item would have in reforged
 	q.m.ShieldConditionMult <- 1.0;	// Bonus Condition rolled by named items
+
+// Public
+	q.m.HD_BraveryModifierInCompanyColors <- 5;
 
 	q.create = @(__original) function()
 	{
@@ -87,6 +91,16 @@
 		{
 			return null;
 		}
+	}
+
+	q.getBraveryModifier = @(__original) function()
+	{
+		local braveryModifier = __original();
+		if (this.HD_hasCompanyColors())
+		{
+			braveryModifier += this.m.HD_BraveryModifierInCompanyColors;
+		}
+		return braveryModifier;
 	}
 
 // New Functions
