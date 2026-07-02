@@ -8,6 +8,21 @@
 		this.vampire.onInit();
 	}}.onInit;
 
+	// Overwrite, because we want to replace the vampire base function which generates a random vampire dust
+	// Feat: vampire lords now guarantee a vampire dust and also drop a jeweled crown
+	q.getLootForTile = @() { function getLootForTile(_killer, _loot)
+	{
+		local ret = this.actor.getLootForTile(_killer, _loot);
+
+		if (this.RF_canDropLootForPlayer(_killer))
+		{
+			ret.push(::new("scripts/items/misc/vampire_dust_item"));
+			ret.push(::new("scripts/items/loot/jeweled_crown_item"));
+		}
+
+		return ret;
+	}}.getLootForTile;
+
 // Reforged Functions
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
 	q.onSpawned = @() function()
