@@ -70,6 +70,12 @@
 	q.setFaction <- function( _bannerID )		// virtual
 	{
 	}
+
+	// @return true, if this shield is currently colored in the colors of any mercenary company
+	q.HD_hasCompanyColors <- function()
+	{
+		return false;
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/items/shields/shield", function(q) {

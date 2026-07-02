@@ -44,4 +44,10 @@
 			this.updateAppearance();
 		}
 	}
+
+	q.HD_hasCompanyColors = @() function()
+	{
+		// This might stop working, if someone ever introduces more variants than 11 or uses strings
+		return this.getVariant() > 11;
+	}
 });
