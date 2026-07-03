@@ -605,6 +605,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Dark Rugged Surcoat** now has 7 Weight (up from 4) and costs 120 Crowns (up from 100)
 - **Dark Thick Tunic** now has 40 Condition (up from 35), 5 Weight (up from 2) and costs 80 Crowns (up from 75)
 - **Gambeson** now has 70 Condition (up from 65) and 9 Weight (up from 6)
+- **Headsman's Vest** now has 50 Condition (up from 25), 8 Weight (up from 0), and costs 80 Crowns (up from 55)
 - **Heavy Iron Armor** now costs 1000 Crowns (up from 700)
 - **Hide and Bone Armor** now has 100 Condition (up from 95), 15 Weight (up from 10) and costs 250 Crowns (up from 220)
 - **Leather Lamellar Armor** now has 90 Condition (down from 95), 11 Weight (up from 10) and costs 250 Crowns (down from 300)
@@ -690,6 +691,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Desert Stalker's Head Wrap** now has 50 Condition (up from 45), 1 Weight (up from 0) and costs 900 Crowns (up from 120)
 - **Duelist's Hat** now has 60 Condition (down from 70), 1 Weight (down from 3), -1 Vision (down from 0) and costs 900 Crowns (up from 200)
 - **Engineer's Hat** now has 60 Condition (up from 30), 4 Weight (up from 0) and costs 500 Crowns (up from 50)
+- **Executioner's Hood** now has 80 Condition (up from 40), 5 Weight (up from 0), -3 Vision (down from -1) and costs 150 Crowns (up from 40)
 - **Feathered Hat** now has 40 Condition (up from 30), 5 Weight (up from 0) and costs 50 Crowns (down from 80)
 - **Flat Top with Closed Mail** now has 260 Condition (down from 265) and costs 2500 Crowns (down from 2600)
 - **Flat Top with Mail** now has 240 Condition (up from 230), 16 Weight (up from 15) and -2 Vision (down from -1)
@@ -1383,12 +1385,14 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Improve tooltip of **Whip Disarm**, **Goblin Trophy** and **Orc Trophy** using a nested tooltips
 - Create a combat log when **Bolster** triggers at least one morale check
 - Lower UI Order of **Gain Ground** and **Passing Step** skills
+- Remove tooltip in ranged skills on NPCs that mention remaining ammo
 - Add Settings to immediately stop the player movement halfway through, when it reveals an enemy (on) or an ally (off)
 - Add Setting (on) to prevent combat logs, which are the result of the same skill execution, from producing empty newlines
 - Add Setting (off) for preventing tile/enemy tooltips from being generated while it is not your turn
 - Play a sound effect and print a combat log whenever your craftable schrat shield recovers condition
 - **Armored Wiederganger** now display their complete name during battle, instead of just **Wiederganger**
 - Add Setting (off) for making the hotkeys for **Wait** fire continuously, instead of only when released
+- Improve saturation of tactical hollenhund sprite
 - Reduce the Attack sfx volume of Wardogs and Warhounds by 20%
 - Lower size and alpha value of blizzard special effects
 - Change the name of all tactical objects called "Brush" into "Bush"

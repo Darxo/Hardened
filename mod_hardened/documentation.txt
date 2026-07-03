@@ -30,6 +30,17 @@
 
 # Changelog
 
+1.18.4
+	- **Executioner's Hood** now has 80 Condition (up from 40), 5 Weight (up from 0), -3 Vision (down from -1) and costs 150 Crowns (up from 40)
+	- **Headsman's Vest** now has 50 Condition (up from 25), 8 Weight (up from 0), and costs 80 Crowns (up from 55)
+	- Improve saturation of tactical hollenhund sprite
+	- Slightly improve zone of control tooltip for orc charge skill
+	- Remove tooltip in ranged skills on NPC that mention limited ammo
+	- Change the overflow armor damage from **Hammer Mastery** to count as an non-attack hit (instead of attack hit). As a result it will no longer trigger **Anticipation**, **Survival Instinct** or **Feral Rage** twice and it will no longer be mitigated by **Battle Forged** or **Flexible** twice
+	- Fix **Fractured Skull** tooltip not displaying the remaining injury time
+	- Fix **Goblin Shamans** and **Goblin Overseers** dropping loot, even if the player has not done enough damage to them
+	- Fix dazed sprite sometimes still showing up
+
 1.18.3
 	- **Warhounds** lose **Wear them down**
 	- **Skeleton Bodyguards** lose **Line Breaker**
