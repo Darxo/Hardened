@@ -21,7 +21,7 @@
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Cannot use Weapon Skills",
+			text = "Cannot use Skills from " + ::Reforged.NestedTooltips.getNestedItemName(this.getContainer().getActor().getMainhandItem()),
 		});
 
 		ret.push({
