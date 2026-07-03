@@ -585,4 +585,14 @@
 
 		this.getSkills().onSpawned();
 	}
+
+	q.RF_canDropLootForPlayer = @(__original) { function RF_canDropLootForPlayer( _killer )
+	{
+		if (this.getSkills().hasSkill("effects.hd_worthless"))
+		{
+			return false;
+		}
+
+		return __original(_killer);
+	}}.RF_canDropLootForPlayer;
 });
