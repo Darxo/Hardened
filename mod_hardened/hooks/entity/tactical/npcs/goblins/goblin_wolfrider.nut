@@ -47,7 +47,7 @@
 				local ret = mockObject.original(vargv[0], vargv[1], vargv[2]);
 				if (ret != null)
 				{
-					ret.getSkills().add(::new("scripts/skills/effects/hd_unworthy_effect"));
+					ret.getSkills().add(::new("scripts/skills/special/hd_unworthy_effect"));
 				}
 				return { done = true, value = ret };
 			}
@@ -68,7 +68,7 @@
 				local ret = mockObject.original(vargv[0], vargv[1], vargv[2]);
 				if (ret != null)
 				{
-					ret.getSkills().add(::new("scripts/skills/effects/hd_unworthy_effect"));
+					ret.getSkills().add(::new("scripts/skills/special/hd_unworthy_effect"));
 				}
 				return { done = true, value = ret };
 			}

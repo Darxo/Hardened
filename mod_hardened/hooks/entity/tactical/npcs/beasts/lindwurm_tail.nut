@@ -86,7 +86,7 @@
 		// Generic Effects
 		this.getSkills().add(::new("scripts/skills/racial/hd_lindwurm_tail_racial"));	// Unlike the normal racial, this one does not grant immunity to stun/root
 		this.getSkills().add(::new("scripts/skills/effects/hd_headless_effect"));
-		this.getSkills().add(::new("scripts/skills/effects/hd_unworthy_effect"));	// Only the head provides experience on a kill
+		this.getSkills().add(::new("scripts/skills/special/hd_unworthy_effect"));	// Only the head provides experience on a kill
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_hold_out"));

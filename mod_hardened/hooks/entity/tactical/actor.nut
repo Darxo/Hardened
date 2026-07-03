@@ -568,7 +568,7 @@
 		// The player no longer gains any experience when allies are dying
 		if (!this.isPlayerControlled() && (this.m.XP == 0 || this.isAlliedWithPlayer()))
 		{
-			this.getSkills().add(::new("scripts/skills/effects/hd_unworthy_effect"));	// Every NPC who grants 0 XP now gains this effect to showcase that fact
+			this.getSkills().add(::new("scripts/skills/special/hd_unworthy_effect"));	// Every NPC who grants 0 XP now gains this effect to showcase that fact
 		}
 
 		if (this.m.IsNonCombatant)
