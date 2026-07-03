@@ -399,6 +399,7 @@
 			});
 		}
 
+		local hasRangeTooltip = false;
 		foreach (entry in ret)
 		{
 			if (entry.id == 4 && entry.type == "text" && entry.icon == "ui/icons/regular_damage.png")
@@ -407,7 +408,11 @@
 				local damage_regular_min = ::Math.floor(p.DamageRegularMin * p.DamageRegularMult * p.DamageTotalMult * p.MeleeDamageMult);
 				local damage_direct_min = ::Math.floor(damage_regular_min * ::Math.minf(1.0, p.DamageDirectMult * (this.m.DirectDamageMult + p.DamageDirectAdd + p.DamageDirectMeleeAdd)));
 				entry.text = ::MSU.String.replace(entry.text, "of which [color=" + ::Const.UI.Color.DamageValue + "]0[/color]", "of which " + ::MSU.Text.colorDamage(damage_direct_min));
-				break;
+			}
+			else if (!hasRangeTooltip && "icon" in entry && entry.icon == "ui/icons/vision.png" && entry.text.find("Has a range of ") != null)
+			{
+				hasRangeTooltip = true;
+				entry.text = this.HD_generateRangeTooltipString();
 			}
 		}
 
