@@ -39,13 +39,6 @@ this.hd_onslaught_skill <- this.inherit("scripts/skills/actives/rf_onslaught_ski
 			}
 		}
 
-		ret.push({
-			id = 15,
-			type = "text",
-			icon = "ui/icons/vision.png",
-			text = "Has a range of " + ::MSU.Text.colorizeValue(this.getMaxRange()) + " tiles",
-		});
-
 		return ret;
 	}
 

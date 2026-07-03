@@ -25,13 +25,6 @@
 			text = ::Reforged.Mod.Tooltips.parseString("Target yourself or an ally who is not [Engaged in Melee|Concept.ZoneOfControl]. Remove all poison effects from that target and grant it immunity against poison for " + ::MSU.Text.colorPositive(3) + " [turns|Concept.Turn]"),
 		});
 
-		ret.push({
-			id = 11,
-			type = "text",
-			icon = "ui/icons/vision.png",
-			text = "Has a range of " + ::MSU.Text.colorizeValue(this.getMaxRange()) + " tiles",
-		});
-
 		return ret;
 	}
 

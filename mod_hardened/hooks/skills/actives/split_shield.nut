@@ -23,16 +23,6 @@
 			text = "Deal " + ::MSU.Text.colorDamage(expectedShieldDamage) + " Shield Damage",
 		});
 
-		if (this.getMaxRange() > 1)
-		{
-			ret.push({
-				id = 8,
-				type = "text",
-				icon = "ui/icons/vision.png",
-				text = "Has a range of " + ::MSU.Text.colorPositive(this.m.MaxRange) + " tiles",
-			});
-		}
-
 		return ret;
 	}
 

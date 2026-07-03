@@ -29,13 +29,6 @@ this.hd_blitzkrieg_skill <- this.inherit("scripts/skills/actives/rf_blitzkrieg_s
 			}
 		}
 
-		ret.push({
-			id = 15,
-			type = "text",
-			icon = "ui/icons/vision.png",
-			text = "Has a range of " + ::MSU.Text.colorizeValue(this.getMaxRange()) + " tiles",
-		});
-
 		return ret;
 	}
 

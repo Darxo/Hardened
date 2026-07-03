@@ -24,13 +24,6 @@
 			text = ::Reforged.Mod.Tooltips.parseString("Target an empty tile. Reveal all tiles within " + ::MSU.Text.colorPositive(this.m.HD_Radius) + " of that target until the start of the next round"),
 		});
 
-		ret.push({
-			id = 11,
-			type = "text",
-			icon = "ui/icons/vision.png",
-			text = "Has a range of " + ::MSU.Text.colorPositive(this.m.MaxRange) + " tiles",
-		});
-
 		if (this.m.Item.isReleased())
 		{
 			ret.push({

@@ -416,6 +416,16 @@
 			}
 		}
 
+		if (!hasRangeTooltip && this.isTargeted())
+		{
+			ret.push({
+				id = 15,
+				type = "text",
+				icon = "ui/icons/vision.png",
+				text = this.HD_generateRangeTooltipString(),
+			});
+		}
+
 		return ret;
 	}
 

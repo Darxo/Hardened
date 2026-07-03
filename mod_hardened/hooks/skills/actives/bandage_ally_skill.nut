@@ -37,13 +37,6 @@
 			text = ::Reforged.Mod.Tooltips.parseString("Target yourself or an ally who is not [Engaged in Melee|Concept.ZoneOfControl]. Remove [Bleeding|Skill+bleeding_effect] from that target and treat any [Injuries|Concept.InjuryTemporary] that were received [recently|Concept.Recently]"),
 		});
 
-		ret.push({
-			id = 11,
-			type = "text",
-			icon = "ui/icons/vision.png",
-			text = "Has a range of " + ::MSU.Text.colorizeValue(this.getMaxRange()) + " tiles",
-		});
-
 		return ret;
 	}
 
