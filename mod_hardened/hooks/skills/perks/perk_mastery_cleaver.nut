@@ -70,9 +70,6 @@
 	{
 		if (::MSU.isNull(_target)) return false;
 
-		if (_target.isDisarmed()) return true;
-
-		local item = _target.getMainhandItem();
-		return (::MSU.isNull(item) || !item.isItemType(::Const.Items.ItemType.Weapon));
+		return _target.HD_isUnarmed();
 	}
 });

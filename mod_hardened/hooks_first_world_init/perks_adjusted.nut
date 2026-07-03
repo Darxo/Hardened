@@ -335,7 +335,7 @@ local adjustedDescriptions = [
 					Description = [
 						"Cleaver Skills cost " + ::MSU.Text.colorizeMultWithText(::Hardened.Global.WeaponSpecFatigueMult, {InvertColor = true}) + " [Fatigue|Concept.Fatigue]",
 						"[Disarm|Skill+disarm_skill] gains " + ::MSU.Text.colorPositive("+10%") + " [Hitchance|Concept.Hitchance]",
-						"Deal " + ::MSU.Text.colorPositive("+50%") + " [Critical Damage|Concept.CriticalDamage] when hitting the Body of someone who is [disarmed|Skill+disarmed_effect] or who doesn\'t wield a Weapon",
+						"Deal " + ::MSU.Text.colorPositive("+50%") + " [Critical Damage|Concept.CriticalDamage] when hitting an [$ $|Concept.Unarmed] character in the Body",
 					],
 				},
 			],
