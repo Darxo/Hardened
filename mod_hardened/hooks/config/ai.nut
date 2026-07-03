@@ -1,5 +1,6 @@
 ::MSU.AI.addBehavior("HD_Bandage_Ally", "HD.Bandage_Ally", 100, 100);
 ::MSU.AI.addBehavior("HD_Defend_Stance", "HD.Defend_Stance", ::Const.AI.Behavior.Order.Spearwall, ::Const.AI.Behavior.Score.Spearwall);
+::MSU.AI.addBehavior("HD_Trickster_Teleport", "HD.Trickster_Teleport", ::Const.AI.Behavior.Order.Idle, ::Const.AI.Behavior.Score.AlwaysUse);
 
 // Adjusted Vanilla Values
 {

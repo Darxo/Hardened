@@ -277,6 +277,28 @@
 	::Const.Tactical.Actor.Lindwurm.Reach <- 7;
 }
 
+// scripts/entity/tactical/enemies/trickster_god
+{
+	// Mandatory stats
+	::Const.Tactical.Actor.TricksterGod.XP = 4000 * ::Hardened.Global.FactionExperience.Beasts;		// Vanilla: 1500
+	::Const.Tactical.Actor.TricksterGod.ActionPoints = 9;
+	::Const.Tactical.Actor.TricksterGod.Hitpoints = 2200;		// Vanilla: 2200
+	::Const.Tactical.Actor.TricksterGod.Bravery = 999;
+	::Const.Tactical.Actor.TricksterGod.Stamina = 400;
+	::Const.Tactical.Actor.TricksterGod.MeleeSkill = 90;		// Vanilla: 95
+	::Const.Tactical.Actor.TricksterGod.RangedSkill = 0;
+	::Const.Tactical.Actor.TricksterGod.MeleeDefense = 20;		// Vanilla: 20
+	::Const.Tactical.Actor.TricksterGod.RangedDefense = 15;		// Vanilla: 15
+	::Const.Tactical.Actor.TricksterGod.Initiative = 50;		// Vanilla: 95
+
+	::Const.Tactical.Actor.TricksterGod.Armor = [500, 500],	// Vanilla: 140, 140
+
+	// Optional Stats
+	::Const.Tactical.Actor.TricksterGod.DamageRegularMin <- 80;
+	::Const.Tactical.Actor.TricksterGod.DamageRegularMax <- 100;
+	::Const.Tactical.Actor.TricksterGod.Reach <- 7;
+}
+
 // New Beast Stats
 {
 	// scripts/entity/tactical/enemies/lindwurm_tail
