@@ -357,7 +357,7 @@
 			}
 			else
 			{
-				cooldownText += ::MSU.Text.colorNegative(remainingCooldown) + ::Reforged.Mod.Tooltips.parseString("next [round|Concept.Round]");
+				cooldownText += ::Reforged.Mod.Tooltips.parseString("next [round|Concept.Round]");
 			}
 
 			ret.push({
