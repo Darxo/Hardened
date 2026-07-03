@@ -1,4 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/rf_hollenhund", function(q) {
+	q.m.BodyAlphaMin = 180;		// Reforged: 145
+	q.m.BodyAlphaMax = 200;		// Reforged: 255
+
 	q.onInit = @(__original) { function onInit()
 	{
 		__original();
