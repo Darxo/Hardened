@@ -2,7 +2,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Description = "This characters weapon has been temporarily pulled out of their hand. Switching to a different weapon will remove this effect immediately";
+		this.m.Description = "This characters weapon has been temporarily pulled out of their hand.";
 
 		this.m.HD_LastsForTurns = 1;
 	}
@@ -22,6 +22,13 @@
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Cannot use Weapon Skills",
+		});
+
+		ret.push({
+			id = 11,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Is removed when you swap away from your weapon",
 		});
 
 		return ret;
