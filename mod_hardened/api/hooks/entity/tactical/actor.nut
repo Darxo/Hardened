@@ -306,6 +306,14 @@
 		return this.m.HD_ChanceToBeHit;
 	}
 
+	// Determine, whether this actor is currently unarmed. This is defined as them having
+	// @return true, if this actor has currently no weapon "at hand" and must rely on their natural weapons (e.g. fists)
+	//
+	q.HD_isUnarmed <- function()
+	{
+		return this.getMainhandItem() == null || this.isDisarmed();
+	}
+
 	// This is called whenever an actors Morale is changed to Fleeing, if they were not previously fleeing before
 	// This only covers changes from the functions checkMorale or setMoraleState
 	q.HD_onStartFleeing <- function()

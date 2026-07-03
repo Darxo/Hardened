@@ -132,6 +132,10 @@
 	Recently = ::MSU.Class.BasicTooltip("Recently", ::Reforged.Mod.Tooltips.parseString(
 		"Anything that happened either in the last [round|Concept.Round] or in the current [round|Concept.Round] is considered to have happened recently."
 	)),
+	Unarmed = ::MSU.Class.BasicTooltip("Unarmed", ::Reforged.Mod.Tooltips.parseString(
+		"An unarmed character does not have a weapon equipped in their main hand or is currently [disarmed|Skill+disarmed_effect].\n\n" +
+		"While [disarmed|Skill+disarmed_effect], an equipped weapon provides no [Reach|Concept.Reach] and none of its skills can be used."
+	)),
 	Weight = ::MSU.Class.BasicTooltip("Weight", ::Reforged.Mod.Tooltips.parseString(
 		"Each equippable item can have a weight value, which determines how much it impacts a character\'s performance.\n\n" +
 		"When equipped, an item\'s weight is subtracted from both [Stamina|Concept.MaximumFatigue] and [Initiative|Concept.Initiative] after multipliers.\n\n" +
