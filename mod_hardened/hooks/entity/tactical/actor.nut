@@ -517,7 +517,7 @@
 		{
 			this.m.HD_IsDiscovered = true;	// We use this variable, so that we don't trigger the following behavior repeatidly on already discovered entities
 			local activeEntity = ::Tactical.TurnSequenceBar.getActiveEntity();
-			if (activeEntity != null && activeEntity.isPlayerControlled())
+			if (activeEntity != null && activeEntity.isPlayerControlled() && ::MSU.isKindOf(activeEntity, "player"))
 			{
 				if (this.isAlliedWithPlayer() && ::Hardened.Mod.ModSettings.getSetting("HoldOnDiscoverAlly").getValue())
 					activeEntity.m.HD_HasDiscoveredSomething = true;
