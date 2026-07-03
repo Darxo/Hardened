@@ -20,7 +20,14 @@
 					::Hardened.Camera.PreviousCameraLevel = ::Tactical.getCamera().Level;
 				}
 
-				::Tactical.getCamera().Level = ::Hardened.Camera.getBestLevelForMoving(this.m.LastTileSelected);
+				::Tactical.getCamera().setLevelToHighestOnMap();
+				local highestOnMap = ::Tactical.getCamera().Level;
+
+				local idealHeight = ::Hardened.Camera.getBestLevelForMoving(this.m.LastTileSelected);
+				if (idealHeight < highestOnMap)
+				{
+					::Tactical.getCamera().Level = idealHeight;
+				}
 			}
 		}
 	}
