@@ -180,6 +180,26 @@
 		return ret;
 	}
 
+	// Generate and return a string that contains information about the current Range of this skill
+	q.HD_generateRangeTooltipString <- function()
+	{
+		local rangeString = "Range: ";
+
+		if (this.getMinRange() > 1 && this.getMinRange() != this.getMaxRange())
+		{
+			rangeString += ::MSU.Text.colorPositive(this.getMinRange()) + "-";
+		}
+
+		rangeString += ::MSU.Text.colorPositive(this.getMaxRange()) + " tiles";
+
+		if (this.isRanged())
+		{
+			rangeString += " (affected by height)";
+		}
+
+		return rangeString;
+	}
+
 // New Getter
 	q.isOnCooldown <- function()
 	{
