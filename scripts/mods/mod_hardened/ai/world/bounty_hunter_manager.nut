@@ -150,9 +150,14 @@ this.bounty_hunter_manager <- {
 
 	function __refreshTroops( _party )
 	{
+		// We preserve the figure we gave this party when we generated it
+		local oldWorldFigure = _party.getSprite("body").getBrush().Name;
+
 		_party.clearTroops();
 		local resources = this.m.BaseResources * ::Hardened.Global.getWorldDifficultyMult() * ::Hardened.Global.FactionDifficulty.Mercenaries;
 		::Const.World.Common.assignTroops(_party, ::Const.World.Spawn.BountyHunters, resources);
+
+		_party.getSprite("body").setBrush(oldWorldFigure);
 	}
 
 	function __addLoot( _party )
@@ -184,9 +189,7 @@ this.bounty_hunter_manager <- {
 		if (newDestinationSettlement == null) return;
 
 		// First thing we need to do is refreshing the units in our party
-		local brush = _party.getSprite("body").getBrush().Name;
 		this.__refreshTroops(_party);
-		_party.getSprite("body").setBrush(brush);	// We preserve the previous brush
 
 		// Replace all existing orders with a fresh set
 		local controller = _party.getController();
