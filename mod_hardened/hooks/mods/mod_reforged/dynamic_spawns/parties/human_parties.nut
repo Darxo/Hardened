@@ -67,3 +67,54 @@
 // Overwriting
 {
 }
+
+// New Parties
+{
+	local parties = [
+		{	// HD_AttachedProduction
+			ID = "HD_AttachedProduction",
+			HardMin = 3,
+			IdealSizeMult = ::Hardened.Global.FactionIdealSizeMult.Civilians,
+			MovementSpeedMult = 1.0,
+			VisibilityMult = 1.0,
+			VisionMult = 1.0,
+			DynamicDefs = {
+				UnitBlocks = [
+					{ BaseID = "UnitBlock.RF.Peasant", RatioMin = 0.20, RatioMax = 1.00 },
+					{ BaseID = "UnitBlock.RF.SouthernPeasant", RatioMin = 0.20, RatioMax = 1.00 },
+					{ BaseID = "UnitBlock.RF.MilitiaFrontline", RatioMin = 0.20, RatioMax = 0.6, StartingResourceMin = 100 },
+					{ BaseID = "UnitBlock.RF.MilitiaRanged", RatioMin = 0.0, RatioMax = 0.2, StartingResourceMin = 150 },
+				],
+			},
+
+			function getIdealSizeMult() {
+				local ret = base.getIdealSizeMult();
+				if (this.getTopParty().HD_isLocation()) ret *= ::Hardened.Global.PartySizeMult.Location;
+				return ret;
+			},
+
+			function excludeSpawnables()
+			{
+				local topParty = this.getTopParty();
+				if (topParty.HD_isLocation())
+				{
+					if (topParty.getWorldEntity().isSouthern())
+					{
+						this.removeSpawnable("UnitBlock.RF.Peasant");
+					}
+					else
+					{
+						this.removeSpawnable("UnitBlock.RF.SouthernPeasant");
+					}
+				}
+
+				base.excludeSpawnables();
+			},
+		},
+	];
+
+	foreach(partyDef in parties)
+	{
+		::Reforged.Spawns.Parties[partyDef.ID] <- partyDef;
+	}
+}
