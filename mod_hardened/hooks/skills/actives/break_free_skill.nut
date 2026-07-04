@@ -20,6 +20,8 @@
 		// Feat: We make the chance bonus moddable, that you gain per fail
 		this.m.ChanceBonus += this.m.HD_ChanceBonusPerFail;
 
+		this.HD_playBreakFreeAnimation();
+
 		return ret;
 	}
 
@@ -32,5 +34,35 @@
 		local ret = __original();
 		this.m.ChanceBonus = oldChanceBonus;
 		return ::Math.clamp(ret, 0, 100);
+	}
+
+// New Functions
+	q.HD_playBreakFreeAnimation <- function()
+	{
+		local actor = this.getContainer().getActor();
+		if (actor.isHiddenToPlayer()) return;
+
+		switch (this.m.Decal)
+		{
+			case "roots_destroyed":
+			{
+				foreach (bloodEffect in ::Const.Tactical.BloodEffects[::Const.BloodType.Wood])
+				{
+					::Tactical.spawnParticleEffect(false, bloodEffect.Brushes, actor.getTile(), bloodEffect.Delay, ::Math.max(1, bloodEffect.Quantity), ::Math.max(1, bloodEffect.LifeTimeQuantity), ::Math.max(1, bloodEffect.SpawnRate), bloodEffect.Stages);
+				}
+				break;
+			}
+			case "net_destroyed":
+			case "net_destroyed_02":
+			{
+				foreach (bloodEffect in ::Const.Tactical.BloodEffects[::Const.BloodType.Wood])
+				{
+					::Tactical.spawnParticleEffect(false, bloodEffect.Brushes, actor.getTile(), bloodEffect.Delay, ::Math.max(1, bloodEffect.Quantity), ::Math.max(1, bloodEffect.LifeTimeQuantity), ::Math.max(1, bloodEffect.SpawnRate), bloodEffect.Stages);
+				}
+				break;
+			}
+		}
+
+		::Tactical.getShaker().shake(actor, ::MSU.Array.rand(::MSU.Tile.getNeighbors(actor.getTile())), 3);
 	}
 });
