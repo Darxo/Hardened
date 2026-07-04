@@ -28,12 +28,11 @@
 // New Functions
 	q.HD_getFormationSize <- function()
 	{
-		// Todo: test against the expanded reserve mod from discord
 		local ret = 0;
 
 		foreach (bro in ::World.getPlayerRoster().getAll())
 		{
-			if (bro.getPlaceInFormation() < 18) ++ret;
+			if (bro.getPlaceInFormation() < this.m.HD_FormationSlots) ++ret;
 		}
 
 		return ret;
