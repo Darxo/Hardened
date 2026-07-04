@@ -1,5 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/entity/world/attached_location", function(q) {
 	q.m.IsRaidable <- false;	// If true, then this attached location can be attacked and temporarily destroyed
+	q.m.GoesIntoLockdown <- false;	// If true, then this locations becomes unattackable while its settlement has the raided_situation
 
 	q.create = @(__original) function()
 	{
@@ -77,6 +78,13 @@
 		this.onSpawned();
 	}
 
+	q.isAttackable = @(__original) function()
+	{
+		if (this.isInLockdown()) return false;
+
+		return __original();
+	}
+
 // Hardened Functions
 	q.isSouthern = @() function()
 	{
@@ -88,6 +96,11 @@
 	{
 		return this.m.IsRaidable;
 	}
+
+	q.isInLockdown <- function()
+	{
+		return (this.m.GoesIntoLockdown && this.getSettlement().hasSituation("situation.raided"));
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/entity/world/attached_location", function(q) {
@@ -98,6 +111,17 @@
 		this.m.HD_IsTemporaryUnallied = true;
 		local ret = __original();
 		this.m.HD_IsTemporaryUnallied = false;
+
+		if (this.isActive() && this.isInLockdown())
+		{
+			ret.push({
+				id = 20,
+				type = "text",
+				icon = "ui/icons/locked_small.png",
+				text = "Is in Lockdown and cannot be attacked",
+			});
+		}
+
 		return ret;
 	}
 });
