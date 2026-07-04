@@ -99,7 +99,13 @@
 
 	q.isInLockdown <- function()
 	{
-		return (this.m.GoesIntoLockdown && this.getSettlement().hasSituation("situation.raided"));
+		if (!this.m.GoesIntoLockdown) return false;
+		if (!this.getSettlement().hasSituation("situation.raided")) return false;
+
+		// Attached Locations that are currently target of a contract are never in lockdown
+		if (this.getSettlement().getSprite("selection").Visible) return false;
+
+		return true;
 	}
 });
 
