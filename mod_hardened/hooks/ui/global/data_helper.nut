@@ -13,7 +13,7 @@
 		local prevLevelXPThreshold = 0;
 		foreach (xpEntry in ::Const.LevelXP)
 		{
-			if (xpEntry > _entity.getXP()) break;
+			if (xpEntry >= nextLevelXPThreshold) break;
 			prevLevelXPThreshold = xpEntry;
 		}
 		_target.xpValue = currentXP- prevLevelXPThreshold;
