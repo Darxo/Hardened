@@ -30,6 +30,9 @@
 
 # Changelog
 
+1.19.1
+	- Fix throwables not being detected for throwable perks correctly
+
 1.19.0
 	- Completely rework the **Ijirok** bossfight. Check out the **Ijirok** skirmish to see its changes in person
 		- Ijirok loses **Steelbrow** and **Crippling Strikes**. It gains **Rebuke**, **Brace for Impact** and **Decisive**
