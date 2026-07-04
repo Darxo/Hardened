@@ -1,4 +1,12 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/rf_banshee", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.AIAgent = ::new("scripts/ai/tactical/agents/hd_banshee_agent");
+		this.m.AIAgent.setActor(this);
+	}
+
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
 	q.onInit = @() { function onInit()
 	{
