@@ -66,6 +66,8 @@
 	{
 		local ret = __original();
 
+		if (::Tactical.isActive() && ::Tactical.State.isScenarioMode()) return ret;
+
 		// Some origins may use very small frontline sizes. For those we don't want to nerf the size at all
 		// This value was chosen somewhat arbitruary
 		local constMinimumFrontline = 6;
