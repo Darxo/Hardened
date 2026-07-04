@@ -55,14 +55,14 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 	- **Wooden Skirmisher Shields** now have 2 Weight (down from 4). They lose **Shieldwall** and gain **Knock Back**
 	- **Worn Heater Shields** now have 23 Melee Defense (up from 20), 13 Ranged Defense (down from 15) and lose **Shieldwall**
 	- **Worn Kite Shields** now have 13 Melee Defense (down from 15), 23 Ranged Defense (down from 25) and lose **Knock Back**
-- Wooden Shields, Kite Shields and Heater Shields which are colored in Mercenary Colors (e.g. your own) grant +5 Resolve while equipped
+- Wooden Shields, Kite Shields and Heater Shields which are colored in Mercenary Colors (e.g. your own) grant +5 Resolve while equipped and cost +50 Crowns
 
 ### Streamlined Difficulty Scaling
 
 - Most vanilla difficulty scaling methods (day/player strength/renown scaling) are disabled
 - Instead the following streamlined system is added:
-	- Contracts are 1% more difficult for every 12.5 Renown, up to a maximum of 1000% more
-	- Contracts pay 1% more Crowns for every 12.5 Renown, up to a maximum of 1000% more
+	- Contracts are 1% more difficult for every 10 Renown, up to a maximum of 1000% more
+	- Contracts pay 1% more Crowns for every 10 Renown, up to a maximum of 1000% more
 	- Contracts with 1 Skull no longer apply the penalty to pay twice and those with 3 Skulls no longer apply the bonus to pay twice
 	- Settlement have 1,3% more resources available per day (e.g. for spawning Caravans and Militia), up to a maximum of 400% at day ~300
 	- Every other scaling encounter in the world becomes 1,3% more difficult per day, up to a maximum of 400% at day ~300
@@ -142,9 +142,12 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - Add new **Elusive** perk in Tier 2 of **Swift Group**: It reduces the AP cost for movement on all terrain by 1 to a minimum of 2. This does not stack with **Pathfinder** or **Scout**. After moving 2 tiles during your turn, become immune to rooted effects, until the start of your next turn
 - Add new **One with the Shield** perk in Tier 1 of **Shield Group**: It requires a shield. While you have Shieldwall effect you take 40% less Hitpoint damage from head attack. While you don't have Shieldwall effect you take 40% less Hitpoint damage from body attacks
 - Add new **Parry** perk in Tier 3 of **Swift Group**: It requires a one handed melee weapon. It grants Melee Defense equal to your base Ranged Defense against weapon attacks. While engage with someone wielding a melee weapon, you have 70% less Ranged Defense. Does not work with shields, while stunned, fleeing or disarmed
-- Add new **Scout** perk in Tier 1 of **Ranged Group**: It grants +1 Vision for every 3 adjacent tiles that are either empty or at least 2 levels below your tile. It reduces the AP cost for movement on all terrain by 1 to a minimum of 2. This does not stack with **Elusive** or **Pathfinder**.
+- Add new **Precise** perk to Tier 5 of **Swordmaster**. It grants +5% Hitchance and +5% maximum Hitchance
+- Add new **Scout** perk in Tier 1 of **Ranged Group**: It grants +1 Vision for every 3 adjacent tiles that are either empty or at least 2 levels below your tile. It reduces the AP cost for movement on all terrain by 1 to a minimum of 2. This does not stack with **Elusive** or **Pathfinder**
+- Add new **Versatile** perk to Tier 7 of **Swordmaster**. It requires a Sword and grants: Your Mainhand Weapon has all Weapon Types
 - Add new **Warden** perk to Tier 5 of **Trained**: Adjacent allies take 30% less damage from Attacks from enemies that are adjacent to you. This does not affect allies who also have the **Warden** perk. Whenever an adjacent ally takes damage, move to the next position in the turn sequence
 - Add the existing enemy-only perk **Wear them Down** in Tier 3 of **Fast Group**
+- Add **Zweikampf** perk to Tier 3 of **Swordmaster**. While adjacent to exactly one character, gain +20 Resolve, +20 Initiative and take 25% less Damage from adjacent characters
 
 ### Reworked Day-Night-Cycle
 
@@ -237,7 +240,8 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Pound** no longer has +10% Armor Penetration on a hit to the head or 30% chance to stun on a hit
 - **Puncture** now requires the target to be surrounded by atleast 2 enemies. It is now affected by **Double Grip** but deals 15% less damage at all times
 - **Pummel** is now an Attack. It now costs 4 AP, when used with a One-Handed Hammer
-- **Recover** now applies the same Initiative debuff as using **Wait**
+- **Recover** now applies the same Initiative debuff as using **Wait**. Its action points can never be higher than your maximum action points
+- **Release Falcon** now targets a tile at most 7 tiles away from the user and reveals all tiles in a radius of 8 tiles around that target
 - **Reload Handgonne** now costs 25 Fatigue (up from 20)
 - **Reverse Grip** (Versatile Swordsman) now adds -1 Reach while active (down from -30% less)
 - **Riposte** now costs 3 Action Points (up from 2), 15 Fatigue (down from 25). It now grants +10 Melee Defense during its effect. It is now disabled when you get hit or after your first counter-attack. Riposte no longer has a penalty to Hitchance. It can now be used multiple times per round
@@ -456,13 +460,13 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Bowyer** now has -5 minimum Hitpoints (down from 0), +15 minimum Ranged Skill (up from +10) and +15 maximum Ranged Skill (up from +10)
 - **Butcher** loses the Hitchance Bonus with **Butchers Cleaver**
 - **Farmhand** loses the Hitchance Bonus with **Pitchforks** and **Hooked Blades**
-- **Indebted** now randomly roll any one of the exclusive perk groups (except pauper and swordmaster). Their stat ranges are reverted to how they are in vanilla
+- **Indebted** now randomly roll any one of the exclusive perk groups (except pauper). Their stat ranges are reverted to how they are in vanilla
 - **Lumberjack** loses the Hitchance Bonus with **Woodcutter's Axe** and **Hatchet**
 - **Miner** loses the Hitchance Bonus with **Pickaxe**
 - **Oathtaker** now spawn with +1 Weapon Group (down from +2). **Oathtaker** (outside of the Oathtaker origin) no longer gain random oaths every 15 days
 - **Pimp** now has 0 to minimum Melee Skill (up from -5) and +5 to maximum Melee Skill (up from -5)
 - **Shepherd** loses the Hitchance Bonus with **Slings**
-- **Swordmaster** no longer has **Sword Mastery** unlocked by default
+- **Swordmaster** no longer has **Sword Mastery** unlocked by default. They now cost 1400 Crowns (down from 2400). They now come with 4 Weapon Masteries (up from 1). They can now have a talent in Ranged Defense (just like in Vanilla)
 - **Thiefs** can now roll a maximum Ranged Defense of 10 (down from 13)
 
 ### Traits
@@ -770,6 +774,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 ### Other Item Changes
 
+- Streamline the base value of every named weapons to always be twice that of their base weapon version, if one exists
 - Prevent any drug use from incrementing `PotionUsed` (relevant for addict related events) if you have not used any other drug in the last 24 hours
 - Items with Condition now have 50% of their value at 0 Condition (up from 0% value), which increases linearly to 100% value as the item gains condition
 - Loot from beasts (like webbed valueables, ancient amber, etc.) are no longer affected by situations like **Collector**
@@ -805,6 +810,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - The Named **Norse Helmet** now has 170 Condition (up from 125), 8 Weight (up from 6) and -3 Vision (down from -1) and costs 3000 Crowns (up from 2000)
 - Named **Wolf Helmets** and **Norse Helmets** are now twice as likely to appear as rewards or in shops
 - **Orc Trophy** now also grant +5 Resolve
+- **Paint Set** crafting recipe now produces 3 items (up from 1)
 - **Phantom Draught** no longer grants +5 Melee Defense or +10 Ranged Defense. It now grants the **Ethereal** perk
 - **Poisoned Oil** now costs 200 Crowns (up from 150)
 - **Powder Bag** now costs 2 **Ammunition Supply** each (up from 1) and costs 150 Crowns (up from 50)
@@ -874,12 +880,14 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - All **Zombie Orcs** now have a 100% resurrection chance (up from 66%-90%)
 - Reanimated Humans how have 120 Hitpoints (down from 130) and 200 Stamina (up from 100)
 - All **Skeletons** no longer grant experience after being resurected
+- **Alps** now take 50% less piercing damage (from 50% less melee piercing damage and 66% less ranged piercing damage). They no longer take reduced damage from ranged blunt damage. They now take 50% less damage from characters with **Bite Reach** (up from 66% less)
 - **Barrowkin Racial** no longer grants 10% less Melee Damage taken per Attacker Morale State below Steady
 - **Ghost Racial** no longer grants +10 Melee Defend and +10 Ranged Defense per tile between the attacker and you. It now grants the **Ethereal** perk. It also makes the user ignore movement penalty on any terrain
-- **Skeleton Racial** now explicitely causes 100% less **Fatigue** build-up
+- **Skeleton Racial** now explicitely causes 100% less **Fatigue** build-up. It now grants 50% less piercing damage (instead of 50% less melee piercing damage and 66% less ranged piercing damage)
 - **Flesh Golems** take 50% more burning damage to hitpoints
 - **Necromancer** lose 20 natural body armor. **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)
 - **Necrosavants** now require the target to have red blood in order to leech life from them, instead of being able to leech life from anyone. They lose immunity against poison
+- **Necrosavant Lords** now always drop a **Vampire Dust** and a **Jeweled Crown**
 - **Phylacteries** (Sunken Library Fight) now remain visible after you discovered them once
 - **The Conqueror** now has **Savage Strength**. This has no gameplay impact and is only meant to visualize that he is immune to **Disarm**
 - **Ancient Palatini** with polearms can now appear as Champions
@@ -941,6 +949,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Brigand Baron** 10% Chance (up from 1%)
 - **Desert Stalker** 3% Chance (up from 2%)
 - **Gladiator** 3% Chance (up from 2%)
+- **Klagmutter** 0% Chance (down from 10%)
 - **Hedge Knight** 3% Chance (up from 2%)
 - **Man at Arms** 2% Chance (up from 1%)
 - **Master Archer** 3% Chance (up from 2%)
@@ -1050,10 +1059,12 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Orc Warlord** are now 50% less likely to flank
 - Skeleton Commander now prefer to use wait
 - **Swordmaster** are 20% less likely to flank
-- **Hollenhunds** are 250% more likely to flanke
+- **Hollenhunds** are 250% more likely to flank
+- **Klagmutter** are 200% more likely to stay in formation and attract allies around them 50% more. Their ideal engagement range is now 4 tiles (up from 3)
 
 ## Combat General
 
+- Fleeing characters no longer count for surround bonus
 - Low Morale no longer reduces the Resolve of the character
 - Every Defender of a fortified Location which was fortified now gets a new **Defenders Advantage** effect for that fight, which grants +2 Vision and +10 Resolve
 - **Encumbrance** no longer lowers the fatigue recovery. It now only adds 1 fatigue per tile travelled per encumbrance level. It no longer requires a minimum armor weight of 20
@@ -1139,10 +1150,19 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 
 ### Attached Locations
 
-- You can now attack the attached locations **Barracks** (350 Resources), **Militia Barracks** (200 Resources), **Southern Militia Barracks** (350 Resources), **Wooden Watchtower** (210 Resources), **Stone Watchtower** (280 Resources) and **Southern Stone Watchtower** (280 Resources). They drop supplies, paint and may also contain named items
+- Allow every attached location, which produces something, to be raided. They are lightly defended and drop their produce and a paint item as loot. These locations go into lockdown while their settlement has the **Raided** situation making them unable to be attacked. They drop 1-2 of their produce and a paint
+- Allow the following military attached locations to be attacked: **Barracks** (350 Resources), **Militia Barracks** (200 Resources), **Southern Militia Barracks** (350 Resources), **Wooden Watchtower** (210 Resources), **Stone Watchtower** (280 Resources) and **Southern Stone Watchtower** (280 Resources). They drop supplies, paint and may also contain named items
+- Trigger **Raided** situation in a settlement when any of its attached locations is destroyed
 
 ### Unique Locations
 
+- Completely rework the **Ijirok** bossfight:
+	- **Ijirok** loses **Steelbrow** and **Crippling Strikes**. It gains **Rebuke**, **Brace for Impact** and **Decisive**
+	- **Ijirok** now has 500/500 Armor (up from 140/140), 90 Melee Skill (down from 95), 50 Initiative (down from 95), deals 80-100 Damage (down from 100-130) and 100% Armor Damage (up from 75%). It now grants 8000 experience on death (up from 1500)
+	- **Ijirok** now recovers 5% Hitpoints per turn (down from 6%). It now removes 1 stack of bleed per turn
+	- **Spirit Walk** now costs 6 Action Points (up from 3) and it spawns a **Hollenhund** in the old position
+	- **Gore** now has a cooldown of 2 rounds and can no longer be used while engaged in melee. It can only target tiles with at most 3 adjacent hostiles
+	- Add new **Antler Sweep** melee attack which costs 6 AP, has a 2 round cooldown and deals +20 Damage. It hits up to 3 enemies, knocks them back and staggers them (even on a miss)
 - Unique Locations that are not invisible now always have a VisibilityMult of 1.0, no matter what tile they are standing on, resulting in you always discovering them when they enter your field of view
 - Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken
 - The **Ancient Spire** now reveals an area of 3000 (up from 1900)
@@ -1301,6 +1321,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Level-Ups for Attribute with 2 stars have -1 to minimum roll and +1 to maximum roll (compared to Vanilla) and are fully randomized in that range (compared to Reforged)
 - The Retreat tooltip during combat now also lists the Melee Defense bonus your characters receive during Auto-Retreat
 - **Angry** characters are no longer dismissable
+- Add sound effect when unlocking a perk
 
 ## Quality of Life
 
@@ -1352,6 +1373,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - The **Reload** skill is now always visible, even if your weapon is fully loaded
 - All Unhold variants now use their full name in Tooltips and the Combat Dialog
 - Add skill descriptions for all skills from the **Lorekeeper**
+- Add wiggle animation whenever someone uses **Break Free**
 - **Fast Adaption** now shows the amount of stacks in brackets behind the effect name
 - Add tooltip about remaining duration of **Arrow to the Knee** effect
 - Corpses will now display the round, in which they were created
@@ -1376,15 +1398,17 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Reduce pan speed of tactical camera by 20%
 - Improve smoke tooltip on tiles by linking to smoke effect
 - Turn **Decisive** effect icon grey, while a character has 0 stacks
-- Improve brightness and contrast of **Hold Steady**,  **Line Breaker**, **Net Pull** and **Onslaught** skills
+- Improve brightness and contrast of **Hold Steady**,  **Line Breaker**, **Net Pull** and **Onslaught** icons
 - Use unique icon for **Sergeant** perk
 - Change delay of **Aimed Shot** animation to 800ms (down from 1000ms)
 - Play the **Ignite Firelance** animation in the actual direction you aim at
 - Idle sounds of enemies during combat now play up to 50% less freqently
+- Streamline existing range tooltips and generate streamlined range tooltips on all remaining skills automatically
 - Improve tooltip of **Disarmed effect**
 - Improve tooltip of **Whip Disarm**, **Goblin Trophy** and **Orc Trophy** using a nested tooltips
 - Create a combat log when **Bolster** triggers at least one morale check
 - Lower UI Order of **Gain Ground** and **Passing Step** skills
+- **Pummel** now only produces a scream when actually moving a tile after a successful hit
 - Remove tooltip in ranged skills on NPCs that mention remaining ammo
 - Add Settings to immediately stop the player movement halfway through, when it reveals an enemy (on) or an ally (off)
 - Add Setting (on) to prevent combat logs, which are the result of the same skill execution, from producing empty newlines
@@ -1392,7 +1416,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Play a sound effect and print a combat log whenever your craftable schrat shield recovers condition
 - **Armored Wiederganger** now display their complete name during battle, instead of just **Wiederganger**
 - Add Setting (off) for making the hotkeys for **Wait** fire continuously, instead of only when released
-- Improve saturation of tactical hollenhund sprite
+- Improve saturation of tactical hollenhund sprite and make transparency values less random
 - Reduce the Attack sfx volume of Wardogs and Warhounds by 20%
 - Lower size and alpha value of blizzard special effects
 - Change the name of all tactical objects called "Brush" into "Bush"
@@ -1468,6 +1492,8 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Add setting (on) to show the absolute mood value instead of a percentage in the mood tooltip
 - List the exact mood changes in brackets in the mood tooltip
 - Add settings for **Encumbrance** (on) and **Ammo Warning** (on) for displaying mini icon on top of individual characters in the character screen, when those effects are active
+- **Throwing Weapon** and **Throwing** are now called **Throwable**
+- **Musical Instrument** are now called **Instrument**
 - Slightly move the dismiss button downwards
 - Improve the Vanilla Concepts **Chance to hit head**, **Vision**, **Renown** and **Morale** and add nested tooltip for all morale states (except **Steady**)
 - Improve the Reforged Concept for **Turn** and **Zone of Control**/**Engaged in Melee**
@@ -1529,6 +1555,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
 - Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
 - Hitpoints recovery on brothers is now more accurate (camping recovery fix)
+- Fix duplicate sound effect when moving an equipped item to the bag slow via a right click
 - Fix **Swallow Whole** setting morale of fleeing characters to breaking
 - Fix fleeing enemies in Zone of Control sometimes not breaking themselves free from roots
 - Fix Armor Damage on Weapon tooltips sometimes being off by 1%
@@ -1604,6 +1631,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix keybind for ending the current turn not including the vanilla keybind "F" by default
 - Fix vanilla keybinds for ending turn still being active
 - Improve `skill::verifyTargetAndRange` by checking for visibility if the skill owner is the active entity
+- Fix Weapon Types not breaking into new lines correctly
 
 ### Other Mods
 
@@ -1616,6 +1644,15 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add **MV_HitChanceMax** character property which can be used to do incremental changes to the hitchance cap
+- Add `skill::HD_isUsableOnForFree()` for checking if a skill can be used on something, ignoring cost and cooldowns
+- Change Ranged Ambition to check for the existance of ranged mastery perk instead of `IsSpecialized` flags
+- **Bow Mastery** no longer sets `IsSpecializedInBows = true`. The shooting range for bow skills is now granted directly by bow mastery
+- Support squirrel tag `[wbr][/wbr]` which translate into the html tag `<wbr>`
+- Add `shield::HD_hasCompanyColors()` which returns true, if this shield has the colors of a mercenay company
+- Add `actor::HD_isUnarmed()`, which returns true, if the actor has no mainhand item equipped or is currently disarmed
+- Add `location::isSouthern()` which tries to determine, if this location is southern or northern
+- Add `attached_location::m.GoesIntoLockdown = false` which can be set to true to prevent this location from being attacked while its settlement has the **Raided** situation
 - Add `faction::HD_getHighestUIBanner()` for getting the UI banner of the owner of the faction, if there is one, or that of the faction otherwise
 - Add `character_background::HD_getNamePlural()` for getting the `getNameOnly` in a simple auto-generated plural form
 - Have every faction start as undiscovered when starting a new scenario

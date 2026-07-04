@@ -1,4 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/states/world/asset_manager", function(q) {
+// Public
 	q.m.IsAlwaysShowingScoutingReport <- false;		// Same effect as Vanilla Poacher Origin
 	q.m.HD_NegotiationPaymentMult <- 1.0;
 	q.m.TerrainTypeVisionMult <- [];

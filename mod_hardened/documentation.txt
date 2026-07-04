@@ -30,6 +30,72 @@
 
 # Changelog
 
+1.19.0
+	- Completely rework the **Ijirok** bossfight. Check out the **Ijirok** skirmish to see its changes in person
+		- Ijirok loses **Steelbrow** and **Crippling Strikes**. It gains **Rebuke**, **Brace for Impact** and **Decisive**
+		- Ijirok now has 500/500 Armor (up from 140/140), 90 Melee Skill (down from 95), 50 Initiative (down from 95), deals 80-100 Damage (down from 100-130) and 100% Armor Damage (up from 75%). It now grants 8000 experience on death (up from 1500)
+		- Ijirok now recovers 5% Hitpoints per turn (down from 6%). It now removes 1 stack of bleed per turn
+		- **Spirit Walk** now costs 6 Action Points (up from 3) and it spawns a **Hollenhund** in the old position
+		- **Gore** now has a cooldown of 2 rounds and can no longer be used while engaged in melee. It can only target tiles with at most 3 adjacent hostiles
+		- Add new **Antler Sweep** melee attack which costs 6 AP, has a 2 round cooldown and deals +20 Damage. It hits up to 3 enemies, knocks them back and staggers them (even on a miss)
+	- Add 3 new swordmaster perks to replace the 6 existing swordmaster perks. The old perks now only appear in the **Old Swordmaster** origin
+		- Add **Zweikampf** perk for Tier 3. While adjacent to exactly one character, gain +20 Resolve, +20 Initiative and take 25% less Damage from adjacent characters.
+		- Add **Precice** perk for Tier 5. It grants +5% Hitchance and +5% maximum Hitchance.
+		- Add **Versatile** perk for Tier 7. It requires a Sword and grants: Your Mainhand Weapon has all Weapon Types
+	- **Swordmaster** now cost 1400 Crowns (down from 2400). They now come with 4 Weapon Masteries (up from 1). They can now have a talent in Ranged Defense (just like in Vanilla)
+	- **Indebted** now have a 1% chance to come with the **Swordmaster** group and 4% chance to come with **Noble** group (Down from 5%)
+	- Allow every attached location, which produces something, to be raided. They are lightly defended and drop their produce and a paint item as loot. These locations go into lockdown while their settlement has the **Raided** situation making them unable to be attacked
+	- Trigger **Raided** situation in a settlement when any of its attached locations is destroyed
+	- Fleeing characters no longer count for surround bonus
+	- **Release Falcon** now targets a tile at most 7 tiles away from the user and reveals all tiles in a radius of 8 tiles around that target
+	- Restrict **Recover** AP cost to never be higher than your maximum action points
+	- Contracts now scale by 1% per 10 Renown (up from 1% per 12,5 Renown)
+	- Streamline base value of named weapons to always be twice that of their base weapon version
+	- **Paint Set** crafting recipe now produces 3 items (up from 1)
+	- **Alps** now take 50% less piercing damage (from 50% less melee piercing damage and 66% less ranged piercing damage). They no longer take reduced damage from ranged blunt damage. They now take 50% less damage from characters with **Bite Reach** (up from 66% less)
+	- **Skeletons** now take 50% less piercing damage (instead of 50% less melee piercing damage and 66% less ranged piercing damage)
+	- **Necrosavant Lords** now always drop a **Vampire Dust** and a **Jeweled Crown**
+	- **Klagmutter** can no longer become champions
+	- Improve AI of **Klagmutter** making her stay more in formation, cause allies to stay closer around it. Her ideal engage range is now 4 (up from 3)
+	- Streamline the terms **Throwing Weapon**/*Throwing** into **Throwable**
+	- Streamline the terms **Musical Instrument** into **Instrument**
+	- Streamline existing range tooltips and generate streamlined range tooltips on all remaining skills automatically
+	- Add new **Worthless** special effect that causes a character to not drop any loot
+	- Add new **Unarmed** concept and apply it in **Cleaver Mastery**
+	- Improve auto camera level adjustment when previewing movement
+	- make transparency values of hollenhund bodies less random
+	- Add wiggle animation whenever someone uses **Break Free**
+	- Slightly improve **Disarmed Effect** tooltip
+	- Add simple sound effect when unlocking a perk
+	- Shields in mercenay company colors now have +50 Value
+	- **Pummel** now only produces a scream when actually moving a tile after a successful hit
+	- Fix **Toolbox** not working with Melee Attacks
+	- Fix **Flail Spinner** rarely producing a combat log without triggering an attack
+	- Fix **Take Aim** effect expiring mid attack
+	- Fix **Swing** not handling higher max range
+	- Fix **Trick Shooter** working on skills that don't use hitchance
+	- Fix(MSU) Weapon Types not breaking into new lines correctly
+	- Fix AoE attacks with cooldowns potentially not working correctly
+	- Prevent bow perks from adding ranged attacks to non-ranged weapons
+	- Fix some cases of skills not displaying tooltips correctly
+	- Fix typo in cooldown tooltip when only 1 round is remaining
+	- Fix non ranged skills sometimes being counted as ranged skills
+	- Fix alp tooltips not showing up while they are player controlled
+	- Fix experience bar looking empty in combat on a character that has a pending level up
+	- Fix Bounty Hunter not using the correct world figure
+	- Fix(Vanilla) duplicate sound effect when moving an equipped item to the bag slow via a right click
+	- Fix maximum number of brothers sometimes being larger than the physical space in formation and reserve resulting in a corrupted save when hiring too many brothers
+	- Fix tactical scenarios not starting correctly
+	- Add **MV_HitChanceMax** character property which can be used to do incremental changes to the hitchance cap
+	- Add skill::HD_isUsableOnForFree() for checking if a skill can be used on something, ignoring cost and cooldowns
+	- Change Ranged Ambition to check for the existance of ranged mastery perk instead of `IsSpecialized` flags
+	- **Bow Mastery** no longer sets `IsSpecializedInBows = true`. The shooting range for bow skills is now granted directly by bow mastery
+	- Support squirrel tag `[wbr][/wbr]` which translate into the html tag `<wbr>`
+	- Add `shield::HD_hasCompanyColors()` which returns true, if this shield has the colors of a mercenay company
+	- Add `actor::HD_isUnarmed()`, which returns true, if the actor has no mainhand item equipped or is currently disarmed
+	- Add `location::isSouthern()` which tries to determine, if this location is southern or northern
+	- Add `attached_location::m.GoesIntoLockdown = false` which can be set to true to prevent this location from being attacked while its settlement has the **Raided** situation
+
 1.18.4
 	- **Executioner's Hood** now has 80 Condition (up from 40), 5 Weight (up from 0), -3 Vision (down from -1) and costs 150 Crowns (up from 40)
 	- **Headsman's Vest** now has 50 Condition (up from 25), 8 Weight (up from 0), and costs 80 Crowns (up from 55)

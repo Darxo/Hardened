@@ -10,8 +10,5 @@ local oldSetValue = ::Const.CharacterProperties.setValues;
 	oldSetValue(_table);
 
 	// We now also support the new Reforged value "Reach" in this function
-	if (_table.rawin("Reach"))
-	{
-		this.Reach = _table.Reach;
-	}
+	if (_table.rawin("Reach")) this.Reach = _table.Reach;
 }

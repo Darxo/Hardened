@@ -18,7 +18,7 @@
 				entry.text = ::MSU.String.replace(entry.text, "Move the target", "If the target is not fleeing, move it");
 
 				local actualResolveBonus = "";
-				if (this.getContainer().getActor().getID() != ::MSU.getDummyPlayer().getID())
+				if (!::MSU.isEqual(this.getContainer().getActor(), ::MSU.getDummyPlayer()))
 				{
 					actualResolveBonus = " (" + ::MSU.Text.colorizeValue(this.getCommandBonus(), {AddSign = true}) + ")";
 				}
