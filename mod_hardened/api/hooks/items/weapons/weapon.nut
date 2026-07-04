@@ -84,11 +84,13 @@
 	{
 		if (this.m.MSU_WeaponTypeInit) return;
 
+		__original();
+
 		// Existing hard-coded Cateogires strings are not affected by our changes to ::Const.Items.WeaponType in items.nut, so we need to manually adjust them here too
+		// We need to do our adjustments after __original(), because MSU uses the keys from ::Const.Items.WeaponType to detect weapon types
+		// If we changed "Throwing Weapon" to "Throwable" before that, then the WeaponType key "Throwing" would no longer be a match and throwables lose their weapon type
 		this.m.Categories = ::MSU.String.replace(this.m.Categories, "Throwing Weapon", "Throwable");
 		this.m.Categories = ::MSU.String.replace(this.m.Categories, "Musical Instrument", "Instrument");
-
-		__original();
 	}
 
 // New Functions
