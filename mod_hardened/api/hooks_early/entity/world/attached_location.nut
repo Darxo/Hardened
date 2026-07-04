@@ -55,10 +55,16 @@
 	{
 		__original();
 
-		// Winning against raidable attached locations now sets them to inactive (into a ruined state)
 		if (this.isRaidable())
 		{
+			// Winning against a raidable attached locations sets them to inactive
 			this.setActive(false);
+
+			// Winning against a raidable attached locations always triggerd a raided situation, if not already present
+			if (!this.getSettlement().hasSituation("situation.raided"))
+			{
+				this.getSettlement().addSituation(::new("scripts/entity/world/settlements/situations/raided_situation"));
+			}
 		}
 	}
 
