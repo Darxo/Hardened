@@ -40,6 +40,14 @@
 		__original(_data);
 	}
 
+	q.onUnlockPerk = @(__original) function( _data )
+	{
+		// Feat: play simple sound effect when unlocking a perk via the character screen
+		::Sound.play("sounds/move_pot_clay_01.wav", ::Const.Sound.Volume.Inventory);
+
+		return __original(_data);
+	}
+
 	q.helper_dropItemIntoBag = @(__original) function( _data, _pay = true )
 	{
 		// Vanilla Fix: duplicate sound effect when moving an equipped item into the bag slot with a right click
