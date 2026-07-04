@@ -77,7 +77,13 @@
 		this.onSpawned();
 	}
 
-// New Function
+// Hardened Functions
+	q.isSouthern = @() function()
+	{
+		return this.getSettlement().isSouthern();
+	}
+
+// New Functions
 	q.isRaidable <- function()
 	{
 		return this.m.IsRaidable;

@@ -59,6 +59,11 @@
 		return [this.getFaction()];
 	}
 
+	q.isSouthern <- function()
+	{
+		return this.getTile().SquareCoords.Y <= (::World.getMapSize().Y * 0.2);
+	}
+
 	// Determines, whether this location is allowed to spawn parties
 	q.HD_canSpawnParties <- function()
 	{
