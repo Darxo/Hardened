@@ -4,11 +4,15 @@
 	q.m.TerrainTypeVisionMult <- [];
 	q.m.HD_AdditionalCivilianContracts <- 0;	// Factions have this many additional Contracts available
 	q.m.HD_CivilianContractDayDelayModifier <- 0.0;		// Civilian Factions require this many additional days until they spawn another contract
+	q.m.HD_FormationSlots <- 18;	// Number of visual formation slots in the character screen in which a brother can be moved into
+	q.m.HD_ReserveSlots <- 9;		// Number of visual reserve slots in the character screen in which a brother can be moved into
 
 	q.create = @(__original) function()
 	{
 		__original();
 		this.m.TerrainTypeVisionMult = array(::Const.World.TerrainFoodConsumption.len(), 1.0);
+
+		this.HD_calculateRosterSlots();
 	}
 
 	q.resetToDefaults = @(__original) function()
@@ -92,5 +96,38 @@
 
 		this.getStash().remove(_itemInstance);
 		return true;
+	}
+
+	// Calculate how many theoretical slots are available for Formation and Reserve
+	// These values are very hard to fetch from Vanilla and the magic numbers used there become invalid, should any mod tweak them
+	q.HD_calculateRosterSlots <- function()
+	{
+		local roster = ::World.getTemporaryRoster();
+		local dummyArray = [];
+		local dummyBroAmount = 45;
+		for (local i = 1; i <= dummyBroAmount; ++i)
+		{
+			dummyArray.push(roster.create("scripts/entity/tactical/player"));
+		}
+
+		local oldGetPlayerRoster = ::World.getPlayerRoster;
+		::World.getPlayerRoster = function() return { function getAll() { return dummyArray; } }
+		this.updateFormation();
+		::World.getPlayerRoster = oldGetPlayerRoster;
+
+		local NOT_IN_FORMATION = 255;
+		local combatSlots = dummyArray[this.getBrothersMaxInCombat()].getPlaceInFormation();
+		local reserveSlots = dummyBroAmount - combatSlots;
+		foreach (index, dummy in dummyArray)
+		{
+			if (dummy.getPlaceInFormation() == NOT_IN_FORMATION)
+			{
+				reserveSlots = dummyArray[index - 1].getPlaceInFormation() + 1 - combatSlots;
+				break;
+			}
+		}
+
+		this.m.HD_FormationSlots = combatSlots;
+		this.m.HD_ReserveSlots = reserveSlots;
 	}
 });
