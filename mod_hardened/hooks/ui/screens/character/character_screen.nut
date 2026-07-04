@@ -38,6 +38,21 @@
 		}
 
 		__original(_data);
+	}
 
+	q.helper_dropItemIntoBag = @(__original) function( _data, _pay = true )
+	{
+		// Vanilla Fix: duplicate sound effect when moving an equipped item into the bag slot with a right click
+		// We mock playInventorySound to prevent it from playing any sound, because general_onDropPaperdollItemIntoBag already plays the same sound effect a little later
+		local mockObject = ::Hardened.mockFunction(_data.sourceItem, "playInventorySound", function( _eventType ) {
+			if (_eventType == ::Const.Items.InventoryEventType.PlacedInBag)
+			{
+				return { done = true, value = null };
+			}
+		});
+		local ret = __original(_data, _pay);
+		mockObject.cleanup();
+
+		return ret;
 	}
 });
