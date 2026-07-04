@@ -53,6 +53,15 @@
 		}
 	}
 
+	q.getBrothersMax = @(__original) function()
+	{
+		local ret = __original();
+
+		local brotherSlotLimit = this.getBrothersMaxInCombat() + this.m.HD_ReserveSlots;
+
+		return ::Math.min(ret, brotherSlotLimit);
+	}
+
 	q.getBrothersMaxInCombat = @(__original) function()
 	{
 		local ret = __original();
