@@ -74,6 +74,15 @@
 		}
 	}
 
+	q.getValue = @(__original) function()
+	{
+		local ret = __original();
+
+		if (this.HD_hasCompanyColors()) ret += 50;
+
+		return ret;
+	}
+
 // Reforged Functions
 	q.RF_getDefenseMult = @() function()
 	{
