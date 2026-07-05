@@ -10,7 +10,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - Simplified Reach Mechanic and Double Grip effect
 - Shields are destructible again
 - Streamlined world and contract scaling
-- [8 New Perks](https://github.com/Darxo/Hardened/wiki/New-Perks)
+- [11 New Perks](https://github.com/Darxo/Hardened/wiki/New-Perks)
 - [~100 Perks are tweaked or reworked](https://github.com/Darxo/Hardened/wiki/Perk-changes-Side%E2%80%90By%E2%80%90Side)
 - ~55 Weapons and Shields are tweaked
 - [~50 Body Armors are reworked](https://github.com/Darxo/Hardened/wiki/Vanilla-Hardened-Armor-Changes)
@@ -1157,7 +1157,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 ### Unique Locations
 
 - Completely rework the **Ijirok** bossfight:
-	- **Ijirok** loses **Steelbrow** and **Crippling Strikes**. It gains **Rebuke**, **Brace for Impact** and **Decisive**
+	- **Ijirok** loses **Crippling Strikes**, **Dent Armor**, **Return the Favor** and **Steelbrow** and . It gains **Rebuke**, **Brace for Impact** and **Decisive**
 	- **Ijirok** now has 500/500 Armor (up from 140/140), 90 Melee Skill (down from 95), 50 Initiative (down from 95), deals 80-100 Damage (down from 100-130) and 100% Armor Damage (up from 75%). It now grants 8000 experience on death (up from 1500)
 	- **Ijirok** now recovers 5% Hitpoints per turn (down from 6%). It now removes 1 stack of bleed per turn
 	- **Spirit Walk** now costs 6 Action Points (up from 3) and it spawns a **Hollenhund** in the old position

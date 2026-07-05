@@ -30,6 +30,14 @@
 
 # Changelog
 
+1.19.2
+	- Fix daggers being swappable for free
+	- Fix **Savage Strength** not affecting non-attacks
+	- Fix nighttime speed penalty not aligning with actual night time
+	- Fix missing word in release falcon tooltip
+	- Fix possible errors during map generation
+	- Prevent quest locations from going into lockdown
+
 1.19.1
 	- Fix throwables not being detected for throwable perks correctly
 
