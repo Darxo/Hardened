@@ -77,9 +77,6 @@
 		this.m.HD_ForceActive = false;
 	}
 
-	// Overwrite because we no longer allow free swaps to dagger in the bag
-	q.getItemActionCost = @() function( _items ) {}
-
 // Private Vanilla Functions
 	q.canDoubleGrip = @(__original) function()
 	{
@@ -96,5 +93,4 @@
 
 		return __original();
 	}
-
 });
