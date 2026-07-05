@@ -27,3 +27,9 @@ local oldGetTime = ::World.getTime;
 
 	return ret;
 };
+
+// This is an alternative function that is only used in a single place in vanilla: for applying NighttimeMult
+// We assume that it is meant to behave exactly like IsDayTime
+::World.isDaytime = function() {
+	return ::World.getTime().IsDaytime;
+}
