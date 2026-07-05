@@ -21,7 +21,7 @@
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Target an empty tile. Reveal all tiles within " + ::MSU.Text.colorPositive(this.m.HD_Radius) + " of that target until the start of the next round"),
+			text = ::Reforged.Mod.Tooltips.parseString("Target an empty tile. Reveal all tiles within " + ::MSU.Text.colorPositive(this.m.HD_Radius) + " tiles of that target until the start of the next round"),
 		});
 
 		if (this.m.Item.isReleased())
