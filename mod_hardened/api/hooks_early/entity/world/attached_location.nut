@@ -86,9 +86,16 @@
 	}
 
 // Hardened Functions
-	q.isSouthern = @() function()
+	q.isSouthern = @(__original) function()
 	{
-		return this.getSettlement().isSouthern();
+		if (this.getSettlement() == null)	// This could happen during map generation, when these are not yet attached to a location
+		{
+			return __original();
+		}
+		else
+		{
+			return this.getSettlement().isSouthern();
+		}
 	}
 
 // New Functions
@@ -100,6 +107,7 @@
 	q.isInLockdown <- function()
 	{
 		if (!this.m.GoesIntoLockdown) return false;
+		if (this.getSettlement() == null) return false;		// This could happen during map generation, when these are not yet attached to a location
 		if (!this.getSettlement().hasSituation("situation.raided")) return false;
 
 		// Attached Locations that are currently target of a contract are never in lockdown
