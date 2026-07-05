@@ -22,18 +22,6 @@ No artwork included in this mod is covered by the Zero-Money License unless expl
 
 ## Third-Party Audio Assets
 
-### "fanfare announcement 2.wav"
-- **Original Author:** zagi2
-- **Original File:** *fanfare announcement 2.wav*
-- **License:** [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
-- **Source:** https://freesound.org/s/249404/
-- **Derived Files in This Mod:**
-  - `hd_fanfare_announcement_01.wav`
-  - `hd_fanfare_announcement_02.wav`
-- **Modifications:**
-  - Trimmed
-  - Converted to mono
-
 ### "Mandolin_bpm_105_07" (Soundsnap)
 - **Original File:** https://www.soundsnap.com/mandolin_bpm_105_07
 - **Derived Files in This Mod:**

@@ -20,11 +20,3 @@ function lowerAnnoyingKid( _soundArray )
 lowerAnnoyingKid(::Const.SoundAmbience.GeneralSettlement);
 lowerAnnoyingKid(::Const.SoundAmbience.LargeSettlement);
 lowerAnnoyingKid(::Const.SoundAmbience.VeryLargeSettlement);
-
-// New Entries
-{
-	::Const.Sound.HD_UniqueLocationDiscoveredOnWorldmap <- [
-		"sounds/world/hd_fanfare_announcement_01.wav",
-		"sounds/world/hd_fanfare_announcement_02.wav",
-	];
-}
