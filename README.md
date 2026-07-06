@@ -1158,11 +1158,12 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 
 - Completely rework the **Ijirok** bossfight:
 	- **Ijirok** loses **Crippling Strikes**, **Dent Armor**, **Return the Favor** and **Steelbrow** and . It gains **Rebuke**, **Brace for Impact** and **Decisive**
-	- **Ijirok** now has 500/500 Armor (up from 140/140), 90 Melee Skill (down from 95), 50 Initiative (down from 95), deals 80-100 Damage (down from 100-130) and 100% Armor Damage (up from 75%). It now grants 8000 experience on death (up from 1500)
+	- **Ijirok** now has 2000 Hitpoints (down from 2200), 600/600 Armor (up from 140/140), 90 Melee Skill (down from 95), 50 Initiative (down from 95), deals 80-100 Damage (down from 100-130) and 100% Armor Damage (up from 75%). It now grants 8000 experience on death (up from 1500)
+	- The Ijirok starts the combat now with 3 additional **Hollenhunds**, which skip their first turn
 	- **Ijirok** now recovers 5% Hitpoints per turn (down from 6%). It now removes 1 stack of bleed per turn
-	- **Spirit Walk** now costs 6 Action Points (up from 3) and it spawns a **Hollenhund** in the old position
-	- **Gore** now has a cooldown of 2 rounds and can no longer be used while engaged in melee. It can only target tiles with at most 3 adjacent hostiles
-	- Add new **Antler Sweep** melee attack which costs 6 AP, has a 2 round cooldown and deals +20 Damage. It hits up to 3 enemies, knocks them back and staggers them (even on a miss)
+	- **Spirit Walk** now costs 6 Action Points (up from 3) and it spawns a **Hollenhund** in the old position. It now has a range of 7 (down from unlimited) and can only target tiles that have no enemies within 4 tiles of them
+	- **Gore** now has a cooldown of 2 rounds and can no longer be used while engaged in melee. It can only target tiles with at most 3 adjacent hostiles. It now knocks back its targets 2 tiles (up from 1). It now has a range of 7 (up from 6)
+	- Add new **Antler Sweep** melee attack which costs 6 AP, has a 2 round cooldown and deals +20 Damage. It hits up to 3 enemies, knocks them back 2 tiles and staggers them (even on a miss)
 - Unique Locations that are not invisible now always have a VisibilityMult of 1.0, no matter what tile they are standing on, resulting in you always discovering them when they enter your field of view
 - Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken
 - The **Ancient Spire** now reveals an area of 3000 (up from 1900)
