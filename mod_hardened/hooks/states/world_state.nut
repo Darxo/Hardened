@@ -6,19 +6,12 @@
 
 	q.enterLocation = @(__original) function( _location )
 	{
-		local ret = __original(_location);
+		local targetingAlliedRaidableLocation = _location.isAttackable() && _location.isLocationType(::Const.World.LocationType.AttachedLocation) && _location.isRaidable() && _location.isAlliedWithPlayer();
 
-		if (ret)
-		{
-			if (_location.isAttackable() && _location.isLocationType(::Const.World.LocationType.AttachedLocation) && _location.isRaidable() && _location.isAlliedWithPlayer())
-			{
-				local faction = ::World.FactionManager.getFaction(_location.getFaction());
-				faction.setIsTemporaryEnemy(true);
-				this.showCombatDialog(true, _location.isShowingDefenders());
-			}
-		}
-
-		return ret;
+		// Vanilla only allows attacking of allied locations. So if we target a raidable allied location, we briefly turn it into temporary enemies
+		local faction = ::World.FactionManager.getFaction(_location.getFaction());
+		if (targetingAlliedRaidableLocation) faction.setIsTemporaryEnemy(true);
+		return __original(_location);
 	}
 
 	q.updateTopbarAssets = @(__original) function()		// In Vanilla this triggers once per hour
