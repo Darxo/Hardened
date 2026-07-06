@@ -30,6 +30,16 @@
 
 # Changelog
 
+1.19.3
+	- **Ijirok** now has 2000 Hitpoints (down from 2200) and 600/600 Armor (up from 500/500). It gains **Underdog**. It now spawns 3 **Hollenhund** on adjacent tiles at the start of combat
+		- **Antler Sweep** now knocks back targets 2 tiles (up from 1)
+		- **Gore** now has 7 Range (up from 6) and knocks back targets 2 tiles (up from 1)
+		- **Spirit Walk** now has 7 Range (up from 6)
+	- Fix some contracts targeting attached locations resulting in softlock
+	- Fix **Dazed** not reducing the Initiative of the target correctly
+	- Fix typos in tooltips of **Reload Bolt** and **Reload Handgonne**
+	- Fix **Worthless** effect not using a wrong name
+
 1.19.2
 	- Fix daggers being swappable for free
 	- Fix **Savage Strength** not affecting non-attacks

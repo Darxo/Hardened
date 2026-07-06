@@ -1,5 +1,5 @@
 ::Hardened.HooksMod.hook("scripts/entity/world/attached_location", function(q) {
-	q.m.IsRaidable <- false;	// If true, then this attached location can be attacked and temporarily destroyed
+	q.m.IsRaidable <- false;	// If true, then this attached location can be attacked and temporarily destroyed, even if allied
 	q.m.GoesIntoLockdown <- false;	// If true, then this locations becomes unattackable while its settlement has the raided_situation
 
 	q.create = @(__original) function()

@@ -15,7 +15,6 @@ WorldEventScreen.prototype.show = function (_data)
 		}
 	}
 
-
 	Hardened.Hooks.WorldEventScreen_show.call(this, _data);
 }
 
