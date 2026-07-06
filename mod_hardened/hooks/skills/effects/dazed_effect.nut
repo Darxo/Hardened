@@ -1,6 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/effects/dazed_effect", function(q) {
 	q.m.NonAttackFatigueMult <- 1.25;
 	q.m.DamageTotalMult <- 0.8;		// Vanilla: 0.75
+	q.m.InitiativeMult <- 0.75;		// Vanilla: 0.75
 
 	q.getTooltip = @(__original) function()
 	{
@@ -32,6 +33,7 @@
 		else
 		{
 			_properties.DamageTotalMult *= this.m.DamageTotalMult;
+			_properties.InitiativeMult *= this.m.InitiativeMult;
 		}
 	}
 
