@@ -20,7 +20,7 @@
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Gain [Reload Orientation|Skill+hd_reload_disorientation_effect]"),
+			text = ::Reforged.Mod.Tooltips.parseString("Gain [$ $|Skill+hd_reload_disorientation_effect]"),
 			children = reloadDisorientationEffect.getTooltip().slice(2),	// Remove name and description tooltip lines
 		});
 
