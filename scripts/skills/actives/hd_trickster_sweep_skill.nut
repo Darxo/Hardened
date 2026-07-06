@@ -45,6 +45,7 @@ this.hd_trickster_sweep_skill <- this.inherit("scripts/skills/skill", {
 
 	// Hardened
 		this.m.HD_Cooldown = 2;		// So that it is only used every second turn
+		this.m.HD_KnockBackDistance = 2;
 	}
 
 	function getTooltip()
@@ -64,7 +65,7 @@ this.hd_trickster_sweep_skill <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Knock all attacked characters back " + ::MSU.Text.colorPositive(this.m.HD_KnockBackDistance) + " tile",
+				text = "Knock all attacked characters back " + ::MSU.Text.colorPositive(this.m.HD_KnockBackDistance) + " tiles",
 			});
 
 			ret.push({

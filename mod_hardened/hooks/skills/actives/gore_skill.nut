@@ -7,6 +7,14 @@
 	q.m.HD_UsableWhileEngagedInMelee = false;
 	q.m.HD_Cooldown = 2;		// So that it is only used every second turn
 
+	q.create = @(__original) function()
+	{
+		__original();
+
+		this.m.MaxRange = 7;	// Vanilla: 6
+		this.m.HD_KnockBackDistance = 2;
+	}
+
 	// Overwrite, because we remove the vanilla condition where the line from us to the target must be "free"/"empty"
 	q.getTooltip = @() { function getTooltip()
 	{

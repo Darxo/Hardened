@@ -66,6 +66,7 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_battering_ram"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hold_out"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_stalwart"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_underdog"));
 
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_decisive"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_rebuke"));

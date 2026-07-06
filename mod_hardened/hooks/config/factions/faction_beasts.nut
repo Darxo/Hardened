@@ -282,7 +282,7 @@
 	// Mandatory stats
 	::Const.Tactical.Actor.TricksterGod.XP = 4000 * ::Hardened.Global.FactionExperience.Beasts;		// Vanilla: 1500
 	::Const.Tactical.Actor.TricksterGod.ActionPoints = 9;
-	::Const.Tactical.Actor.TricksterGod.Hitpoints = 2200;		// Vanilla: 2200
+	::Const.Tactical.Actor.TricksterGod.Hitpoints = 2000;		// Vanilla: 2200
 	::Const.Tactical.Actor.TricksterGod.Bravery = 999;
 	::Const.Tactical.Actor.TricksterGod.Stamina = 400;
 	::Const.Tactical.Actor.TricksterGod.MeleeSkill = 90;		// Vanilla: 95
@@ -291,7 +291,7 @@
 	::Const.Tactical.Actor.TricksterGod.RangedDefense = 15;		// Vanilla: 15
 	::Const.Tactical.Actor.TricksterGod.Initiative = 50;		// Vanilla: 95
 
-	::Const.Tactical.Actor.TricksterGod.Armor = [500, 500],	// Vanilla: 140, 140
+	::Const.Tactical.Actor.TricksterGod.Armor = [600, 600],	// Vanilla: 140, 140
 
 	// Optional Stats
 	::Const.Tactical.Actor.TricksterGod.DamageRegularMin <- 80;

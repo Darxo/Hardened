@@ -4,13 +4,12 @@
 	q.m.HD_MinimumDistanceToEnemies <- 4;
 	q.m.HD_FadeDuration <- 900;		// Time in Milliseconds in that the Ijirok will fade in/out during teleport
 
-
 	q.create = @(__original) function()
 	{
 		__original();
 
 		this.m.MinRange = 3;
-		this.m.MaxRange = 6;
+		this.m.MaxRange = 7;
 
 		this.m.ActionPointCost = 6;		// Vanilla: 3
 		this.m.FatigueCost = 0;			// Vanilla: 10

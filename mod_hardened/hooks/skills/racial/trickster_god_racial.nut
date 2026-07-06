@@ -2,6 +2,7 @@
 // Public
 	q.m.HD_RecoveredHitpointPct <- 0.05;	// Vanilla: 0.06
 	q.m.HD_BleedStacksRemoved <- 1;
+	q.m.HD_HollenhundSpawnsOnCombatStart <- 3;
 
 	q.create = @(__original) function()
 	{
@@ -28,6 +29,13 @@
 			type = "text",
 			icon = "ui/icons/health.png",
 			text = ::Reforged.Mod.Tooltips.parseString("At the start of each [turn|Concept.Turn], remove " + ::MSU.Text.colorPositive(this.m.HD_BleedStacksRemoved) + " stacks of [$ $|Skill+bleeding_effect]"),
+		});
+
+		ret.push({
+			id = 12,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString("At the start of each battle, summon " + ::MSU.Text.colorPositive(this.m.HD_HollenhundSpawnsOnCombatStart) + ::MSU.Text.colorNeutral(" Hollenhund")),
 		});
 
 		return ret;
@@ -60,6 +68,25 @@
 			{
 				::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " loses " + ::MSU.Text.colorPositive(this.m.HD_BleedStacksRemoved) + " bleed stacks");
 			}
+		}
+	}
+
+	q.onSpawned = @(__original) function()
+	{
+		__original();
+
+		local dogsToSummon = this.m.HD_HollenhundSpawnsOnCombatStart;
+
+		local actor = this.getContainer().getActor();
+		foreach (tile in ::MSU.Tile.getNeighbors(actor.getTile()))
+		{
+			if (!tile.IsEmpty) continue;
+
+			local entity = ::Tactical.spawnEntity("scripts/entity/tactical/enemies/hd_trickster_hollenhund", tile.Coords);
+			entity.setFaction(actor.getFaction());
+
+			--dogsToSummon;
+			if (dogsToSummon <= 0) return;
 		}
 	}
 });
