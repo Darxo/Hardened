@@ -4,7 +4,7 @@ this.hd_worthless_effect <- ::inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "effects.hd_worthless";
-		this.m.Name = "Unworthy";
+		this.m.Name = "Worthless";
 		this.m.Description = "This character is worthless.";
 		this.m.Icon = "ui/backgrounds/background_18.png";	// Vanilla icon for the begger background
 		this.m.Type = ::Const.SkillType.StatusEffect;
