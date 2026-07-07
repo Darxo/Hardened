@@ -14,6 +14,7 @@
 		// Values are Tables with the entries: Reforged and Hardened
 		EntityIDFallback = {},
 		CustomTacticalScenarios = [],
+		LastSpawnedActor = null,
 	},
 }
 

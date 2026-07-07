@@ -33,3 +33,15 @@ local oldGetTime = ::World.getTime;
 ::World.isDaytime = function() {
 	return ::World.getTime().IsDaytime;
 }
+
+local oldSpawnEntity = ::Tactical.spawnEntity;
+::Tactical.spawnEntity = { function spawnEntity( ... )
+{
+	vargv.insert(0, this);
+	local ret = oldSpawnEntity.acall(vargv);
+
+	// Feat: we now save a reference to the last spawned entity to make hooking of some summoning skills easier to hook
+	::Hardened.Private.LastSpawnedActor = ::MSU.asWeakTableRef(ret);
+
+	return ret;
+}}.spawnEntity;
