@@ -95,8 +95,12 @@ this.perk_hd_anchor <- ::inherit("scripts/skills/skill", {
 		if (this.m.StartingTile.isSameTileAs(actor.getTile()))
 		{
 			this.m.IsInEffect = true;
-			this.spawnIcon("perk_hd_anchor", actor.getTile());
-			::Sound.play(::MSU.Array.rand(this.m.SoundOnHit), ::Const.Sound.Volume.Skill * this.m.SoundVolume, actor.getPos(), 0.5);
+
+			if (!actor.isHiddenToPlayer())
+			{
+				this.spawnIcon("perk_hd_anchor", actor.getTile());
+				::Sound.play(::MSU.Array.rand(this.m.SoundOnHit), ::Const.Sound.Volume.Skill * this.m.SoundVolume, actor.getPos(), 0.5);
+			}
 		}
 	}
 
