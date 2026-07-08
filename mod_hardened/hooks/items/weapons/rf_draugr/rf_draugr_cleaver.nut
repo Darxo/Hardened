@@ -3,6 +3,10 @@
 	{
 		__original();
 
+		// We restrict this weapon to one visual type to improve clarity on the battlefield
+		this.m.Variant = 1;		// Reforged: ::Math.rand(1, 3);
+		this.updateVariant();
+
 		// Same State as Military Cleaver, except RegularDamageMax and Reach
 		this.m.ConditionMax = 80.0;			// Reforged: 60.0
 		this.m.StaminaModifier = -12;		// Reforged: -10

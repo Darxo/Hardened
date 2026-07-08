@@ -3,6 +3,10 @@
 	{
 		__original();
 
+		// We restrict this weapon to one visual type to improve clarity on the battlefield
+		this.m.Variant = 1;		// Reforged: ::Math.rand(1, 3);
+		this.updateVariant();
+
 		// Same State as Battle Axe, except Value and Reach
 		this.m.Value = 1700;				// Reforged: 1650
 		this.m.RegularDamage = 60;			// Reforged: 45
