@@ -506,3 +506,43 @@
 	}
 	return removedEntry;
 }
+
+/// Return _numberOfTiles tiles, starting with _targetTile, and going _clockWise around our _pivot
+/// This is useful when implementing round-swing like skills with a non-standard amount of total tiles hit
+/// @param _pivot center of the circle
+/// @param _targetTile first tile and start of the half-circle
+/// @param _numberOfTiles total amount of tiles we are looking to be returned
+/// @param _clockWise direction in which we look for tiles
+/// @return array with all tiles that we found, including _targetTile as the first element
+::Hardened.util.getAllTilesHalfMoon <- function( _pivot, _targetTile, _numberOfTiles, _clockWise = false )
+{
+	if (_numberOfTiles <= 0) return [];
+
+	local circleTiles = [];
+	local distance = _pivot.getDistanceTo(_targetTile);
+	::Tactical.queryTilesInRange(_pivot, distance, distance, false, [], function( _tile, _result ) { _result.push(_tile) }, circleTiles);
+
+	local startingIndex = null;
+	foreach (index, tile in circleTiles)
+	{
+		if (tile.ID != _targetTile.ID) continue;
+
+		startingIndex = index;
+		break;
+	}
+	if (startingIndex == null) return [_targetTile];
+
+	local ret = [];
+	local remainingTiles = _numberOfTiles;
+	for (local index = startingIndex; remainingTiles > 0; _clockWise ? ++index : --index)
+	{
+		if (index < 0) index = circleTiles.len() - 1;
+		if (index >= circleTiles.len()) index = 0;
+
+		ret.push(circleTiles[index]);
+
+		--remainingTiles;
+	}
+
+	return ret;
+}
