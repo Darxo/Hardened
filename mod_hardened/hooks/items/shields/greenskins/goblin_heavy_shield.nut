@@ -11,7 +11,7 @@
 		this.m.ConditionMax = 16;
 
 	// Hardened Adjustments
-		this.m.Value = 65;		// In Vanilla this is 45
+		this.m.Value = 100;		// In Vanilla this is 45
 		this.m.MeleeDefense = 15;
 		this.m.RangedDefense = 15;
 		this.m.StaminaModifier = -4;
