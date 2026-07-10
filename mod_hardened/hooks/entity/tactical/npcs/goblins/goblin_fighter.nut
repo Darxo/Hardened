@@ -41,12 +41,23 @@
 	{
 		if (!this.actor.makeMiniboss()) return false;
 
-		local weapon = ::MSU.Class.WeightedContainer([
+		local namedItem = ::MSU.Class.WeightedContainer([
 			[12, "scripts/items/weapons/named/named_goblin_falchion"],
 			[12, "scripts/items/weapons/named/named_goblin_pike"],
 			[12, "scripts/items/weapons/named/named_goblin_spear"],
+			[12, "scripts/items/shields/named/named_buckler_shield"],
 		]).roll();
-		this.getItems().equip(::new(weapon));
+		this.getItems().equip(::new(namedItem));
+
+		// When spawning with a shield we make sure to force a fitting melee weapon on this character, as that is not guaranteed otherwise with a goblin_pike in the pool
+		if (this.getMainhandItem() == null)
+		{
+			local weapon = ::MSU.Class.WeightedContainer([
+				[12, "scripts/items/weapons/named/named_goblin_falchion"],
+				[12, "scripts/items/weapons/named/named_goblin_spear"],
+			]).roll();
+			this.getItems().equip(::new(weapon));
+		}
 
 		this.getSkills().add(::new("scripts/skills/perks/perk_nimble"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_unstoppable"));
