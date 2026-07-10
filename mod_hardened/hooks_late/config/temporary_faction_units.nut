@@ -3,7 +3,7 @@
 		"HD_HyenaHigh",
 		"Frenzied Hyena",
 		"Frenzied Hyenas",
-		::Const.EntityIcon[::Const.EntityType.Hyena],
+		"hd_hyena_high_orientation",
 		::Const.EntityType.getDefaultFaction(::Const.EntityType.Hyena),
 		"scripts/entity/tactical/enemies/hyena_high",
 		::Const.EntityType.Hyena
@@ -13,7 +13,7 @@
 		"HD_DirewolfHIGH",
 		"Frenzied Direwolf",
 		"Frenzied Direwolfs",
-		::Const.EntityIcon[::Const.EntityType.Direwolf],
+		"hd_direwolf_high_orientation",
 		::Const.EntityType.getDefaultFaction(::Const.EntityType.Direwolf),
 		"scripts/entity/tactical/enemies/direwolf_high",
 		::Const.EntityType.Direwolf

@@ -553,6 +553,12 @@
 		::Const.Tactical.Actor.ZombieKnight.Initiative = 60;		// Vanilla: 60
 	}
 
+	// scripts/entity/tactical/enemies/rf_zombie_hero
+	// scripts/entity/tactical/enemies/rf_zombie_hero_bodyguard
+	{
+		::Const.EntityIcon[::Const.EntityType.RF_ZombieHero] = "hd_fallen_hero_orientation";
+	}
+
 	// scripts/entity/tactical/enemies/necromancer
 	{
 		// Mandatory stats
@@ -581,6 +587,8 @@
 		::Const.Tactical.Actor.ZombieBetrayer.MeleeDefense = 20;	// Vanilla: 5
 		::Const.Tactical.Actor.ZombieBetrayer.RangedDefense = 20;	// Vanilla: 0
 		::Const.Tactical.Actor.ZombieBetrayer.Initiative = 70;		// Vanilla: 60
+
+		::Const.EntityIcon[::Const.EntityType.ZombieBetrayer] = "hd_fallen_hero_orientation";
 	}
 
 	// scripts/entity/tactical/enemies/zombie_boss
@@ -599,6 +607,8 @@
 
 		::Const.Tactical.Actor.ZombieBoss.Armor[0] = 400;		// Vanilla: 400
 		::Const.Tactical.Actor.ZombieBoss.Armor[1] = 250;		// Vanilla: 250
+
+		::Const.EntityIcon[::Const.EntityType.ZombieBoss] = "hd_fallen_hero_orientation";
 	}
 }
 
