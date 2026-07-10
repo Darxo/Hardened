@@ -1,5 +1,6 @@
 this.hd_trickster_sweep_skill <- this.inherit("scripts/skills/skill", {
 	m = {
+		HD_ArcSize = 3,
 	},
 
 	function create()
@@ -56,7 +57,7 @@ this.hd_trickster_sweep_skill <- this.inherit("scripts/skills/skill", {
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Target an adjacent character. Attack that character and the next two adjacent tiles in a counter-clockwise order",
+			text = "Target a character. Attack that target and the next " + ::MSU.Text.colorPositive(this.m.HD_ArcSize - 1) + " tiles in a counter-clockwise order",
 		});
 
 		if (this.m.HD_KnockBackDistance > 0)
@@ -143,30 +144,6 @@ this.hd_trickster_sweep_skill <- this.inherit("scripts/skills/skill", {
 	// Similar implementation logic as the vanilla reap skill has
 	function getAffectedTiles( _targetTile )
 	{
-		local myTile = this.m.Container.getActor().getTile();
-		local distance = myTile.getDistanceTo(_targetTile);
-		local onQueryTilesHit = function( _tile, _result ) {
-			_result.push(_tile);
-		}
-		local possibleTiles = [];
-
-		this.Tactical.queryTilesInRange(myTile, distance, distance, false, [], onQueryTilesHit, possibleTiles);
-
-		local affectedTiles = [];
-		for (local i = 0; i != possibleTiles.len(); ++i)
-		{
-			if (possibleTiles[i].ID != _targetTile.ID) continue;
-
-			affectedTiles.push(possibleTiles[i]);
-			if (--i < 0) i += possibleTiles.len();
-
-			affectedTiles.push(possibleTiles[i]);
-			if (--i < 0) i += possibleTiles.len();
-
-			affectedTiles.push(possibleTiles[i]);
-			break;
-		}
-
-		return affectedTiles;
+		return ::Hardened.util.getAllTilesHalfMoon(this.getContainer().getActor().getTile(), _targetTile, this.m.HD_ArcSize, false);
 	}
 });
