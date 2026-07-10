@@ -407,7 +407,7 @@
 
 		if (_printLog && ::MSU.Utils.hasState("tactical_state") && flooredRecoveredHitpoints > 0 && this.isPlacedOnMap() && !this.isHiddenToPlayer())
 		{
-			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + " recovers " + ::MSU.Text.colorPositive(flooredRecoveredHitpoints) + " Hitpoints");
+			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(this) + " recovers " + ::MSU.Text.colorPositive(flooredRecoveredHitpoints) + " Hitpoints");
 		}
 
 		this.onUpdateInjuryLayer();
