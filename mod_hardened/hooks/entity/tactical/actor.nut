@@ -355,7 +355,26 @@
 
 	q.onTurnResumed = @(__original) function()
 	{
+		// Feat: force a newline into the next combat log that is produced, whenever a new turn resumes
+		::Tactical.EventLog.m.HD_IsForcingNewLine = true;
+
 		this.logDebug("Turn resumed for " + this.getName());	// Vanilla only prints this log for when the turn starts. But resuming a turn is just as interesting of a state
+		__original();
+	}
+
+	q.onTurnStart = @(__original) function()
+	{
+		// Feat: force a newline into the next combat log that is produced, whenever a new turn starts
+		::Tactical.EventLog.m.HD_IsForcingNewLine = true;
+
+		__original();
+	}
+
+	q.onTurnEnd = @(__original) function()
+	{
+		// Feat: force a newline into the next combat log that is produced, whenever a turn ends
+		::Tactical.EventLog.m.HD_IsForcingNewLine = true;
+
 		__original();
 	}
 
