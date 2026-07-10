@@ -14,6 +14,21 @@
 		return ret;
 	}
 
+	q.onEnemyTurnEnd = @(__original) function( _enemy )
+	{
+		// We delete the combat log produced by Reforged, because our recoverHitpoints mechanic automatically produces its own better combat log
+		local mockObject = ::Hardened.mockFunction(::Tactical.EventLog, "logEx", function( _text ) {
+			if (_text.find(" heals for ") != null && _text.find(" points") != null)
+			{
+				return { done = true, value = null };
+			}
+		});
+
+		local ret = __original(_enemy);
+
+		mockObject.cleanup();
+	}
+
 // Reforged Functions
 	q.onEnemyTurnStart = @() function( _enemy )
 	{
