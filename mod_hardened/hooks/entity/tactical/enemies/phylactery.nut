@@ -10,4 +10,12 @@
 			myTile.addVisibilityForFaction(::Const.Faction.Player);
 		}
 	}
+
+	q.onInit = @(__original) function()
+	{
+		__original();
+
+		this.getSkills().getSkillByID("racial.skeleton").m.Name = "Phylactery";
+		this.getSkills().getSkillByID("racial.skeleton").m.Icon = "ui/orientation/phylactery_orientation.png";
+	}
 });
