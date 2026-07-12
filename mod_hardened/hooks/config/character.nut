@@ -89,6 +89,7 @@
 	::Const.CharacterProperties.CanEnemiesHaveReachAdvantage <- true;
 	::Const.CharacterProperties.ReachAdvantageMult <- ::Reforged.Reach.ReachAdvantageMult;
 	::Const.CharacterProperties.HD_HitChanceMax <- ::Const.Combat.MV_HitChanceMax;		// Maximum chance to hit for this actor
+	::Const.CharacterProperties.HD_ImmuneToChilled <- false;	// Are we immune to chilled_effect?
 
 	// If set to "false", then this prevents this actor from ever having a zone of control
 	// Is set to "true", nothing happens
