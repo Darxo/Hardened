@@ -38,7 +38,21 @@
 			text = ::Reforged.Mod.Tooltips.parseString("At the start of each battle, summon " + ::MSU.Text.colorPositive(this.m.HD_HollenhundSpawnsOnCombatStart) + ::MSU.Text.colorNeutral(" Hollenhund")),
 		});
 
+		ret.push({
+			id = 13,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Immune to [$ $|Skill+chilled_effect] and [$ $|Skill+rf_frostbound_effect]"),
+		});
+
 		return ret;
+	}
+
+	q.onAdded = @(__original) function()
+	{
+		__original();
+
+		this.getContainer().getActor().getBaseProperties().HD_ImmuneToChilled = true;
 	}
 
 	// Overwrite, because we re-implement the hard-coded vanilla hitpoint recovery.
