@@ -79,7 +79,7 @@
 		// Generic Effects
 		this.getSkills().add(::new("scripts/skills/racial/ghost_racial"));
 		this.getSkills().add(::new("scripts/skills/racial/skeleton_racial"));
-		this.getSkills().add(::new("scripts/skills/effects/rf_ethereal_shroud_effect"));
+		this.getSkills().add(::new("scripts/skills/effects/hd_grave_chill_effect"));
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_fearsome"));
