@@ -23,6 +23,13 @@
 			text = ::Reforged.Mod.Tooltips.parseString("Ignore movement penalty on any terrain"),
 		});
 
+		ret.push({
+			id = 31,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Immune to [$ $|Skill+chilled_effect] and [$ $|Skill+rf_frostbound_effect]"),
+		});
+
 		return ret;
 	}
 
@@ -51,6 +58,8 @@
 
 		actor.m.ActionPointCosts = clone ::Const.SameMovementAPCost;
 		actor.m.LevelActionPointCost = 0;
+
+		actor.getBaseProperties().HD_ImmuneToChilled = true;
 	}
 
 	q.onRemoved = @(__original) function()
