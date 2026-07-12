@@ -83,6 +83,7 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_fearsome"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_nimble"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_overwhelm"));
 
 		// Generic Actives

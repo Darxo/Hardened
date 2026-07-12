@@ -92,7 +92,7 @@
 		{
 			XP = 500 * ::Hardened.Global.FactionExperience.Zombies, // Reforged: 400
 			ActionPoints = 12,	// Reforged: 12
-			Hitpoints = 150, // Reforged: 150
+			Hitpoints = 60, // Reforged: 150
 			Bravery = 90, // Reforged: 90
 			Stamina = 100, // Reforged: 100
 			MeleeSkill = 80, // Reforged: 80
