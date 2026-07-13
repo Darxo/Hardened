@@ -142,6 +142,36 @@
 	}}.MV_getHitchance;
 
 // New Functions
+	/// Generate a HitInfo for dealing damage to _target for this skill
+	/// _target must be an actor who is placed on map
+	/// _bodyPart the chosen bodypart where we wanna deal the damage to
+	/// @return prepared clone of ::Const.Tactical.HitInfo
+	q.HD_generateHitInfo <- function( _target, _bodyPart = ::Const.BodyPart.Body, _playArmorSound = false )
+	{
+		local prop = this.getContainer().buildPropertiesForUse(this, _target);
+
+		local totalDamage = ::Math.rand(prop.DamageRegularMin, prop.DamageRegularMax) * prop.DamageTotalMult;
+		local armorPenetration = (this.m.DirectDamageMult + prop.DamageDirectAdd) * prop.DamageDirectMult;
+
+		local hitInfo = clone ::Const.Tactical.HitInfo;
+		hitInfo.DamageRegular = totalDamage * prop.DamageRegularMult;
+		hitInfo.DamageArmor = totalDamage * prop.DamageArmorMult;
+		hitInfo.DamageDirect = armorPenetration;
+		hitInfo.DamageFatigue = ::Const.Combat.FatigueReceivedPerHit * prop.FatigueDealtPerHitMult;
+		hitInfo.DamageMinimum = prop.DamageMinimum;
+		hitInfo.BodyPart = _bodyPart;
+		hitInfo.BodyDamageMult = prop.DamageAgainstMult[_bodyPart];
+		hitInfo.FatalityChanceMult = prop.FatalityChanceMult;
+		hitInfo.Injuries = _bodyPart == ::Const.BodyPart.Body ? this.m.InjuriesOnBody : this.m.InjuriesOnHead;
+		hitInfo.InjuryThresholdMult = prop.ThresholdToInflictInjuryMult;
+		hitInfo.IsPlayingArmorSound = _playArmorSound;
+
+		// MSU Entries
+		hitInfo.DamageType = this.getDamageType().roll();
+
+		return hitInfo;
+	}
+
 	// New virtual function that is already used various times in different vanilla skills
 	q.findTileToKnockBackTo <- function( _userTile, _targetTile )
 	{
