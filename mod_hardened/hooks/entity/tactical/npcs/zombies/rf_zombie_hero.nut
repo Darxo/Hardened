@@ -108,7 +108,7 @@
 		__original();
 		// Tweak Base Properties
 		local b = this.getBaseProperties();
-		b.setValues(::Const.Tactical.Actor.ZombieBetrayer);
+		b.setValues(::Const.Tactical.Actor.RF_ZombieHero);
 
 		// Generic Effects
 		this.getSkills().add(::new("scripts/skills/effects/hd_cursed_effect"));

@@ -561,6 +561,24 @@
 	// scripts/entity/tactical/enemies/rf_zombie_hero
 	// scripts/entity/tactical/enemies/rf_zombie_hero_bodyguard
 	{
+		::Reforged.Entities.editEntity("RF_ZombieHero",
+			{
+				Cost = 50,			// Reforged: 32
+				Strength = 50,		// Reforged: 30
+			},
+			{
+				XP = 500 * ::Hardened.Global.FactionExperience.Zombies,		// Reforged: 350
+				ActionPoints = 8,		// Reforged: 7
+				Hitpoints = 200,		// Reforged: 230
+				Bravery = 100,			// Reforged: 110
+				Stamina = 200,			// Reforged: 100
+				MeleeSkill = 80,		// Reforged: 70
+				MeleeDefense = 5,		// Reforged: 10
+				RangedDefense = 5,		// Reforged: 0
+				Initiative = 60,		// Reforged: 70
+			}
+		);
+
 		::Const.EntityIcon[::Const.EntityType.RF_ZombieHero] = "hd_fallen_hero_orientation";
 	}
 
