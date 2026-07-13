@@ -99,7 +99,7 @@ this.scenario_hd_sunken_library <- this.inherit("scripts/scenarios/tactical/scen
 			{
 				local x = this.Math.rand(9, 10);
 				local y = this.Math.rand(15, 17);
-				local tile = this.Tactical.getTileSquare(x, y);
+				local tile = ::Tactical.getTileSquare(x, y);
 
 				if (!tile.IsEmpty) continue;
 
@@ -117,7 +117,7 @@ this.scenario_hd_sunken_library <- this.inherit("scripts/scenarios/tactical/scen
 			{
 				local x = this.Math.rand(9, 11);
 				local y = this.Math.rand(11, 21);
-				local tile = this.Tactical.getTileSquare(x, y);
+				local tile = ::Tactical.getTileSquare(x, y);
 				if (!tile.IsEmpty) continue;
 
 				local e = ::Tactical.spawnEntity("scripts/entity/tactical/enemies/zombie_treasure_hunter", tile.Coords);
@@ -135,10 +135,10 @@ this.scenario_hd_sunken_library <- this.inherit("scripts/scenarios/tactical/scen
 			{
 				local x = this.Math.rand(9, 14);
 				local y = this.Math.rand(8, 20);
-				local tile = this.Tactical.getTileSquare(x, y);
+				local tile = ::Tactical.getTileSquare(x, y);
 				if (!tile.IsEmpty) continue;
 
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/skeleton_heavy", tile.Coords);
+				local e = ::Tactical.spawnEntity("scripts/entity/tactical/enemies/skeleton_heavy", tile.Coords);
 				e.setFaction(::Const.Faction.Undead);
 				e.assignRandomEquipment();
 				local item = e.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
@@ -153,10 +153,10 @@ this.scenario_hd_sunken_library <- this.inherit("scripts/scenarios/tactical/scen
 			{
 				local x = this.Math.rand(12, 14);
 				local y = this.Math.rand(12, 26);
-				local tile = this.Tactical.getTileSquare(x, y);
+				local tile = ::Tactical.getTileSquare(x, y);
 				if (!tile.IsEmpty) continue;
 
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/skeleton_heavy_polearm", tile.Coords);
+				local e = ::Tactical.spawnEntity("scripts/entity/tactical/enemies/skeleton_heavy_polearm", tile.Coords);
 				e.setFaction(::Const.Faction.Undead);
 				e.assignRandomEquipment();
 				local item = e.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);

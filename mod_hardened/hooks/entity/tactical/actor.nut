@@ -99,7 +99,7 @@
 		if (_dontShake) return;
 		if (this.isHiddenToPlayer()) return;
 		if (!this.m.IsShakingOnHit) return;
-		if (this.Tactical.getNavigator().isTravelling(this)) return;
+		if (::Tactical.getNavigator().isTravelling(this)) return;
 
 		// Vanilla explicitely does only shake, when the attack is Non-Ranged or at a Distance of 1 Tile, so we filter this specific case out here
 		if (!_skill.isRanged()) return;

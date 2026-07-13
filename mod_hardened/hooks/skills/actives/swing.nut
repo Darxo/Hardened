@@ -72,7 +72,7 @@
 		}
 		local possibleTiles = [];
 
-		this.Tactical.queryTilesInRange(myTile, distance, distance, false, [], onQueryTilesHit, possibleTiles);
+		::Tactical.queryTilesInRange(myTile, distance, distance, false, [], onQueryTilesHit, possibleTiles);
 
 		local affectedTiles = [];
 		for (local i = 0; i != possibleTiles.len(); ++i)

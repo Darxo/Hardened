@@ -55,8 +55,8 @@
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
 
-		this.m.ActionPointCosts = this.Const.ImmobileMovementAPCost;
-		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
+		this.m.ActionPointCosts = ::Const.ImmobileMovementAPCost;
+		this.m.FatigueCosts = ::Const.DefaultMovementFatigueCost;
 
 		// Generic Effects
 		this.getSkills().add(::new("scripts/skills/racial/trickster_god_racial"));

@@ -117,11 +117,12 @@
 	// @return null if this entity does not belong to a world party or that party became null for whatever reason
 	q.getParty <- function()
 	{
-		if (::MSU.isNull(this.m.WorldTroop)) return null;
-		if (!("Party" in this.m.WorldTroop)) return null;
-		if (::MSU.isNull(this.m.WorldTroop.Party)) return null;
+		local worldTroop = this.getWorldTroop();
+		if (::MSU.isNull(worldTroop)) return null;
+		if (!("Party" in worldTroop)) return null;
+		if (::MSU.isNull(worldTroop.Party)) return null;
 
-		return this.m.WorldTroop.Party;
+		return worldTroop.Party;
 	}
 
 	// Return the Stamina of this character utilizing the new Hardened formula
@@ -452,7 +453,7 @@
 		local party = this.getParty();
 		if (party != null)	// We belong to a world party
 		{
-			local bannerID = this.getWorldTroop().Party.getBannerID();
+			local bannerID = party.getBannerID();
 			if (bannerID != -1)		// If that world party has a usable banner
 			{
 				return bannerID;

@@ -19,7 +19,7 @@
 		}
 	);
 
-	// scripts/entity/tactical/enemies/rf_bandit_pillager
+	// scripts/entity/tactical/enemies/skeleton_heavy_bodyguard
 	::Reforged.Entities.editEntity("SkeletonHeavyBodyguard",
 		{
 			Cost = 40,			// Vanilla: 30
@@ -29,7 +29,7 @@
 
 	// We dont need to adjust the troop
 
-	// scripts/entity/tactical/enemies/rf_bandit_pillager
+	// scripts/entity/tactical/enemies/rf_skeleton_heavy_elite
 	::Reforged.Entities.editEntity("RF_SkeletonHeavyElite",
 		{
 			Cost = 60, 		// Reforged: 45

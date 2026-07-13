@@ -101,8 +101,8 @@
 	{
 		if (_tag.TargetTile.IsEmpty)
 		{
-			_tag.Actor.setCurrentMovementType(this.Const.Tactical.MovementType.Default);
-			this.Tactical.getNavigator().teleport(_tag.Actor, _tag.TargetTile, null, null, false);
+			_tag.Actor.setCurrentMovementType(::Const.Tactical.MovementType.Default);
+			::Tactical.getNavigator().teleport(_tag.Actor, _tag.TargetTile, null, null, false);
 		}
 	}
 });
