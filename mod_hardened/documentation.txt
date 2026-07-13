@@ -30,6 +30,41 @@
 
 # Changelog
 
+1.20.0
+	- **Castigate** (from **Censer of the Diviner**) now hits 4 tiles (up from 3). It can now target empty tiles
+	- **Chilled Effect** is completely reworked. It is now stackable and lasts 2 turns by default. It now causes 10% less Damage dealt per turn and -1 Action Points per turn
+	- **Ethereal Bite** (form **Hollenhunds**) no longer inflicts **Grave Chill**
+	- **Ethereal Shroud** (form **Hollenhunds**) no longer inflicts **Numbness**. It now inflicts a stacking 2 turns of **Chilled**
+	- **Explode** (from **Flying Skulls**) now deals 25-35 (from 20-40) Fire Damage (instead of unspecified damage)
+	- **Gravechill Bomb** now inflicts a stacking 2 turns of **Chilled** instead of **Grave Chill**
+	- **Lute** now costs 200 Crowns (up from 120)
+	- **Named Buckler** gain +5 Base Melee Defense and +5 Base Ranged Defense
+	- **Reinforced Skirmisher Shield** now costs 100 Crowns (up from 65)
+	- Make ghost type enemies immune to **Chilled** and **Frostbound**
+	- Make **Ijirok** enemies immune to **Chilled** and **Frostbound**
+	- Rework **Fallen Betrayer** (Rachegeist Fight). They now use the same base line equipment and perks as **Fallen Heroes**. Additionally they gain **Devastating Strikes**
+	- **Flying Skulls** now have 20 Hitpoints (down from 25). They gain **Skeleton Effect** and **Unworthy**
+	- **Rachegeist** now has 300 Head Armor (up from 250)
+	- **Hollenhunds** now have 60 Hipoints (down from 150). They gain **Overwhelm** and **Nimble**
+	- **Champion Necromancer** lose **Nine Lives** and **Wither**
+	- Allow **Champion Goblin Fighter** to spawn with a **Named Buckler**
+	- Add **Unworthy** and **Worthless** to Barrowkins created by **Ancestral Summon**
+	- Restrict **Barrowkin Cleaver** and **Barrowking Battle Axe** to only use a single visual variant
+	- Improve display name and icon of **Skeleton** effect on **Phylactery**
+	- Add new **Explosive** effect to **Flying Skulls** which explains in detail, how their damage on death works
+	- Add new orientation icons for **Frenzied Hyena**, **Frenzied Direwolf**, **Fallen Hero**, **Fallen Betrayer** and **Rachegeist**
+	- Force the first combat log after starting, resuming or ending a turn, to come with a newline
+	- Fix **Fallen Heroes** using wrong costs and stats. They now cost 50 Resources (up from 32), have 5 Melee Defense (down from 20), 5 Ranged Defense (down from 20) and grant 800 XP (up from 350)
+	- Fix infinite loading screen when attacking civilian watchtowers or military camps
+	- Fix **Anchor** producing a sound effect and icon while the character is hidden to the player
+	- Fix **Lost Treasure Hunter** using wrong weapons and wrong armor
+	- Fix duplicate combat log, when **Barrowkin** recover hitpoints from **Frostbound**
+	- Fix harmless log error when viewing some tooltips
+	- Support `::Hardened.Private.LastSpawnedActor` which is a WeakTableRef to the last entity, that was spawned during combat using `spawnEntity`
+	- Add `::Hardened.util.getAllTilesHalfMoon`, which can be used to fetch all tiles belonging to a moon-shaped attack pattern
+	- Add `::Const.CharacterProperties.HD_ImmuneToChilled = false`, which makes a character immune ti **Chilled** and **Frostbound**
+	- Add `skill::HD_generateHitInfo` for generating a standardized ready-to-use HitInfo instance for applying non-attack damage with skills
+
 1.19.3
 	- **Ijirok** now has 2000 Hitpoints (down from 2200) and 600/600 Armor (up from 500/500). It gains **Underdog**. It now spawns 3 **Hollenhund** on adjacent tiles at the start of combat
 		- **Antler Sweep** now knocks back targets 2 tiles (up from 1)

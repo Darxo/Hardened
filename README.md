@@ -49,7 +49,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 	- **Lindwurm Shields** now have 20 Melee Defense (up from 17), 20 Ranged Defense (down from 25)
 	- **Heavy Metal Shields** now have 20 Melee Defense (up from 15) and 20 Ranged Defense (up from 15) and 24 Weight (up from 22)
 	- **Old Wooden Shields** now have 13 Melee Defense (down from 15) and 13 Ranged Defense (down from 15)
-	- **Reinforced Skirmisher Shields** now have 15 Melee Defense (up from 10), 15 Ranged Defense (up from 10) and 4 Weight (down from 8). They lose **Shieldwall** and gain **Knock Back**
+	- **Reinforced Skirmisher Shields** now have 15 Melee Defense (up from 10), 15 Ranged Defense (up from 10), 4 Weight (down from 8) and cost 100 Crowns (up from 65). They lose **Shieldwall** and gain **Knock Back**
 	- **Schrat Shields** now have 25 Melee Defense (up from 20), 20 Ranged Defense (up from 17) and lose **Shieldwall**
 	- **Tower Shields** now have 30 Condition (up from 24) and lose **Knock Back**
 	- **Wooden Skirmisher Shields** now have 2 Weight (down from 4). They lose **Shieldwall** and gain **Knock Back**
@@ -206,11 +206,14 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 
 ### Active/Passive Skills
 
+- **Ancestral Summons** (from **Barrowkin Seer**) now grants the summoned unit **Unworthy** and **Worthless**
 - **Arrow to the Knee** can now also be used on undead, that can receive leg injuries. It now has -5% Hitchance per tile (down from -4%)
 - **Bearded Blade** (granted by **Axe Mastery**) is completely reworked. It now costs 4 Action Points and 25 Fatigue and it is an attack, that deals no damage and will disarm your opponent for 1 turn on a hit
 - **Blitzkrieg** is completely reworked for the player: Each character can only use it once per battle. It now costs 9 AP (up from 7) and 50 Fatigue (up from 30). It now targets a tile (range of 4) and affects all tiles within 1 tile of that target. It grants all allies of your faction on those tiles **Adrenaline** until the start of their turn in the next round. NPCs still use the Reforged version of **Blitzkrieg**, which now also costs 9 AP (up from 7) and 50 Fatigue (up from 50)
 - **Break Free** and **Break Free Ally** now cost 3 Action Points (down from 4). They now have -20% base chance to succeed (down from 0%). They now gain +30% chance to succeed on a failed attempt (up from +10%)
+- **Castigate** (from **Censer of the Diviner**) now hits 4 tiles (up from 3). It can now target empty tiles
 - **Charmed Effect** (from **Hexen**) now grants **Resilient**
+- **Chilled Effect** is completely reworked. It is now stackable and lasts 2 turns by default. It now causes 10% less Damage dealt per turn and -1 Action Points per turn
 - **Chop** now has a 50% chance to decapitate (up from 25%)
 - **Cover Ally** (granted by **Shield Expert**) is completely reworked. It costs 4 Action Points and 20 Fatigue and can be used on adjacent allies. It grants the target defenses equal to the base defenses of the users equipped shield and it causes the user to lose an equal amount of defenses. It lasts until the start of the users next turn or until the user gets stunned, flees or moves away from the target
 - **Dazed** no longer reduces the Stamina by 25%. It now increases the fatigue cost of all non-attacks by 25%. It now causes you to deal 20% less damage (up from 25% less)
@@ -219,7 +222,10 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
 - **Drink Night Owl Elixir** (from **Hexen** and **Assassins**) now costs 5 AP (up from 2)
 - **Drums of War** now costs 30 Fatigue (up from 15)
-- **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance.
+- **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance
+- **Ethereal Bite** (form **Hollenhunds**) no longer inflicts **Grave Chill**
+- **Ethereal Shroud** (form **Hollenhunds**) no longer inflicts **Numbness**. It now inflicts a stacking 2 turns of **Chilled**
+- **Explode** (from **Flying Skulls**) is now called **Self Destruct**
 - **Flaming Arrow** (granted by **Trick Shooter**) no longer causes an extra morale check on the main target. It now deals 100% Burning Damage (instead of 25% Burning and 75% Piercing Damage)
 - **Footwork** (granted by **Footwork**) now costs -1 Action Point for every tile you move during your turn, until you use Footwork or end your turn. It can now only be used once per round. It can now be used even while not the the Zone of Control of an enemy
 - **Frostbound** (from Barrowkin) no longer builds up 2 Fatigue, when you start your turn next to those Barrowkins. Instead it now applies **Worn Down** on everyone, starting their turn adjacent to those enemies
@@ -513,6 +519,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - Knockback of all skills is reworked and standardized. It still always knocks someone back in a straight line, if user and target are on the same axis and there is space behind the target. In all other cases the destination is now random, instead of fixed/clock-wise
 - Add NPC-Only perk **Forestbond**. It recovers 3% Hitpoints per adjacent tree obstacle at the start of each turn
 - Add NPC-Only perk **Ethereal**. It grants +10 Melee Defense and +10 Ranged Defense against Attacks for each tile between the Attacker and you
+- Add new **Explosive** Effect and **Explode** skill  for **Flying Skulls**, which replaces their built-in on-death effect and provides a better explanation of it. **Explode** deals 25-35 (from 20-40) Fire Damage (instead of unspecified damage)
 
 ## Items
 
@@ -522,8 +529,8 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Ancient Bladed Pike** now deals 55-75 Damage (down from 55-80), 130% Armor Damage (up from 125%), has 42 Condition (up from 30) and costs 800 Crowns (up from 600). It gain the **Spear** Weapontype
 - **Ancient Spear** now deals 30-40 damage (up from 20-35), has 10 Weight (up from 6) and costs 750 Crowns (up from 150)
 - **Ancient Sword** loses **Stab** and gains **Deathblow** (costing 5 Action Points and 15 Fatigue)
-- **Barrowkin Axe** now deals 35-50 Damage (up from 30-45), 130% Armor Damage (up from 120%), 30% Armor Penetration (down from 35%), 16 Shielddamage (up from 14), has 4 Reach (up from 3), 80 Condition (up from 76) and costs 2300 Crowns (up from 800)
-- **Barrowkin Battle Axe** now deals 60-80 Damage (up from 45-65), 140% Armor Damage (up from 135%), 40% Armor Penetration (down from 45%), +0% Headshot Chance (down from +5%), 12 Weight (down from 14), 32 Shielddamge (down from 24), 64 Condition (down from 72), 6 Reach (up from 5) and costs 1700 Crowns (up from 1650). It no longer has any discount on its weapon skills, loses **Chop** and gains **Roundswing**
+- **Barrowkin Axe** now deals 35-50 Damage (up from 30-45), 130% Armor Damage (up from 120%), 30% Armor Penetration (down from 35%), 16 Shielddamage (up from 14), has 4 Reach (up from 3), 80 Condition (up from 76) and costs 2300 Crowns (up from 800). It no longer uses different visual variants
+- **Barrowkin Battle Axe** now deals 60-80 Damage (up from 45-65), 140% Armor Damage (up from 135%), 40% Armor Penetration (down from 45%), +0% Headshot Chance (down from +5%), 12 Weight (down from 14), 32 Shielddamge (down from 24), 64 Condition (down from 72), 6 Reach (up from 5) and costs 1700 Crowns (up from 1650). It no longer has any discount on its weapon skills, loses **Chop** and gains **Roundswing**. It no longer uses different visual variants
 - **Barrowkin Cleaver** now deals 45-55 Damage (up from 30-45), 85% Armor Damage (up from 80%), 25% Armor Penetration (down from 30%), 4 Reach (up from 3), 12 Weight (up from 10), 80 Condition (up from 60) and costs 1900 Crowns (up from 650)
 - **Barrowkin Greataxe** now deals 80-100 Damage (up from 80-95), 40% Armor Penetration (down from 45%), 32 Shielddamage (down from 40), 80 Condition (down from 88), 6 Reach (up from 5) and costs 2800 Crowns (Up from 2000)
 - **Barrowkin Voulge** now deals 60-85 Damage (up from 55-70), 30% Armor Penetration (down from 35%), +5% Headshot Chance (down from +10%), 7 Reach (up from 6), 64 Condition (up from 60) and costs 1600 Crowns (down from 2000)
@@ -556,7 +563,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Knife** now deals 15-20 Damage (down from 15-25)
 - **Light Crossbow** now has 60% Armor Penetration (up from 50%), 50% Armor Damage (down from 60%) and costs 400 Crowns (up from 300)
 - **Longsword** now deals 45-55 damage (down from 65-85) has Armor Penetration of 30% (up from 25%), 75% Armor Damage (down from 100%), +0% Headshot Chance (down from +5%), 6 Reach (up from 5) and costs 1200 Crowns (down from 2400). It loses **Overhead Strike** and gains **Swing**. Its skills no longer have any discount. It can no longer appear as a named weapon
-- **Lute** now has 6 Condition (up from 2) and 50% Armor Damage (up from 10%). It gains the **Mace** Weapontype. It loses **Knock Out** and gains **Strike Down**
+- **Lute** now has 6 Condition (up from 2), 50% Armor Damage (up from 10%) and costs 200 Crowns (up from 120). It gains the **Mace** Weapontype. It loses **Knock Out** and gains **Strike Down**
 - **Military Cleaver** now has 3 Reach (down from 4)
 - **Military Pick** now has 10 Weight (up from 8)
 - **Pickaxe** now has 12 Weight (up from 10)
@@ -797,6 +804,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Geist Tear** now costs 800 Crowns (up from 300)
 - **Goblin Poison** now costs 300 Crowns (up from 100). It now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1
 - **Goblin Trophy** now also grant +5 Resolve
+- **Gravechill Bomb** now inflicts a stacking 2 turns of **Chilled** instead of **Grave Chill**
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 2000 Value (up from 200) and grants 10 Resolve (up from 5)
 - **Hexen Trophy** now makes NPCs 50% less likely to target you with **Charm** and **Hex**. It now grants +5 Resolve (down from +6)
 - **Holy Water** now costs 300 Crowns (up from 100) and is now considered `IsMedical` causing it to be affected by medical-related settlement situations
@@ -804,6 +812,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Kriegsmesser** now appear ~half as often in weapon smiths
 - **Masterfully Cured Ration** now has a Stacksize of 50 (up from 25) and costs 300 Crowns (up from 150)
 - **Nachzehrer Trophy** now makes NPCs 50% less likely to target you with **Ghoul Claw** and **Swallow Whole**. It now grants +5 Resolve (up from +4)
+- **Named Buckler** gain +5 Base Melee Defense and +5 Base Ranged Defense
 - Named Helmets now have a minumum possible weight of 3 (down from 4)
 - Named Shields can now roll Weight between 60%-80% (down from 70%-90%)
 - The Named **Wolf Helmet** now has 120 Condition (down from 140), 6 Weight (down from 8) and -1 Vision (down from 0) and costs 3000 Crowns (up from 2000)
@@ -882,10 +891,11 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - All **Skeletons** no longer grant experience after being resurected
 - **Alps** now take 50% less piercing damage (from 50% less melee piercing damage and 66% less ranged piercing damage). They no longer take reduced damage from ranged blunt damage. They now take 50% less damage from characters with **Bite Reach** (up from 66% less)
 - **Barrowkin Racial** no longer grants 10% less Melee Damage taken per Attacker Morale State below Steady
-- **Ghost Racial** no longer grants +10 Melee Defend and +10 Ranged Defense per tile between the attacker and you. It now grants the **Ethereal** perk. It also makes the user ignore movement penalty on any terrain
+- **Ghost Racial** no longer grants +10 Melee Defend and +10 Ranged Defense per tile between the attacker and you. It now grants the **Ethereal** perk. It grants immune to **Chilled** and **Frostbound** and it makes the user ignore movement penalty on any terrain
 - **Skeleton Racial** now explicitely causes 100% less **Fatigue** build-up. It now grants 50% less piercing damage (instead of 50% less melee piercing damage and 66% less ranged piercing damage)
 - **Flesh Golems** take 50% more burning damage to hitpoints
 - **Necromancer** lose 20 natural body armor. **Raise Undead** and **Possess Undead** now cost 15 Fatigue (up from 10)
+- Champion **Necromancer** lose **Nine Lives** and **Wither**
 - **Necrosavants** now require the target to have red blood in order to leech life from them, instead of being able to leech life from anyone. They lose immunity against poison
 - **Necrosavant Lords** now always drop a **Vampire Dust** and a **Jeweled Crown**
 - **Phylacteries** (Sunken Library Fight) now remain visible after you discovered them once
@@ -897,6 +907,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 **Greenskins:**
 - Regular Goblins no longer have a 20% chance to drop a loot item
 - Add **Goblin Fighter** (higher tier version of **Goblin Skirmisher**)
+- Allow **Champion Goblin Fighter** to spawn with a **Named Buckler**
 - Add **Goblin Stalker** (higher tier version of **Goblin Ambusher**)
 - **Goblin Racial** now grants 50% increased defenses from equipped shield and allows them to use **Shieldwall** with any shield
 
@@ -1157,13 +1168,14 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 ### Unique Locations
 
 - Completely rework the **Ijirok** bossfight:
-	- **Ijirok** loses **Crippling Strikes**, **Dent Armor**, **Return the Favor** and **Steelbrow** and . It gains **Rebuke**, **Brace for Impact** and **Decisive**
+	- **Ijirok** loses **Crippling Strikes**, **Dent Armor**, **Return the Favor** and **Steelbrow** and . It gains **Rebuke**, **Brace for Impact**, **Decisive** and Immunity to **Chilled** and **Frostbound**
 	- **Ijirok** now has 2000 Hitpoints (down from 2200), 600/600 Armor (up from 140/140), 90 Melee Skill (down from 95), 50 Initiative (down from 95), deals 80-100 Damage (down from 100-130) and 100% Armor Damage (up from 75%). It now grants 8000 experience on death (up from 1500)
 	- The Ijirok starts the combat now with 3 additional **Hollenhunds**, which skip their first turn
 	- **Ijirok** now recovers 5% Hitpoints per turn (down from 6%). It now removes 1 stack of bleed per turn
 	- **Spirit Walk** now costs 6 Action Points (up from 3) and it spawns a **Hollenhund** in the old position. It now has a range of 7 (down from unlimited) and can only target tiles that have no enemies within 4 tiles of them
 	- **Gore** now has a cooldown of 2 rounds and can no longer be used while engaged in melee. It can only target tiles with at most 3 adjacent hostiles. It now knocks back its targets 2 tiles (up from 1). It now has a range of 7 (up from 6)
 	- Add new **Antler Sweep** melee attack which costs 6 AP, has a 2 round cooldown and deals +20 Damage. It hits up to 3 enemies, knocks them back 2 tiles and staggers them (even on a miss)
+- The **Rachegeist** in the **Watermill** location now spawns with 2 undead squires by his side
 - Unique Locations that are not invisible now always have a VisibilityMult of 1.0, no matter what tile they are standing on, resulting in you always discovering them when they enter your field of view
 - Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken
 - The **Ancient Spire** now reveals an area of 3000 (up from 1900)
@@ -1363,6 +1375,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Add setting (on) for displaying combat log entries whenever a Non-Attack skill is used
 - Add setting (1 second delay) for preventing the player from accidentally ending their turn shortly after the active entity recovered action points, or the movement was paused because an NPC was discovered
 - Improve visibility of Miasma and Burning Ground
+- Improve display name and icon of **Skeleton** effect on **Phylacteries**
 - Lower saturation of spider corpses
 - Spawn an overlay animation when depleting a throwing weapon or a quiver
 - **Hand to Hand** and **Zombie Bite** skills will now always be sorted to the front in the UI
@@ -1401,6 +1414,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Turn **Decisive** effect icon grey, while a character has 0 stacks
 - Improve brightness and contrast of **Hold Steady**,  **Line Breaker**, **Net Pull** and **Onslaught** icons
 - Use unique icon for **Sergeant** perk
+- Force the first combat log after starting, resuming or ending a turn, to come with a newline
 - Change delay of **Aimed Shot** animation to 800ms (down from 1000ms)
 - Play the **Ignite Firelance** animation in the actual direction you aim at
 - Idle sounds of enemies during combat now play up to 50% less freqently
@@ -1444,6 +1458,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Display all enemy NPCs in the combat dialog with a scroll wheel
 - Display participating brothers in arena contract dialog
 - **Frenzied Hyenas**, **Frenzied Direwolfs**, **Medium Nachzehrer** and **Large Nachzehrer** now use unique names on the world map and are no longer merged under one name
+- Add new orientation icons for **Frenzied Hyena**, **Frenzied Direwolf**, **Fallen Hero**, **Fallen Betrayer** and **Rachegeist**
 - While playing the **Cultist Origin**, display in backgrounds tooltip whether they are convertable to a cultist
 - Any location that you discover now removes fog of war from the tile it is sitting on
 - Add option in arena contract dialog to "think it over", if too few, or the wrong brothers were selected for the fight
@@ -1645,6 +1660,10 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Support `::Hardened.Private.LastSpawnedActor` which is a WeakTableRef to the last entity, that was spawned during combat using `spawnEntity`
+- Add `::Hardened.util.getAllTilesHalfMoon`, which can be used to fetch all tiles belonging to a moon-shaped attack pattern
+- Add `::Const.CharacterProperties.HD_ImmuneToChilled = false`, which makes a character immune ti **Chilled** and **Frostbound**
+- Add `skill::HD_generateHitInfo` for generating a standardized ready-to-use HitInfo instance for applying non-attack damage with skills
 - Add **MV_HitChanceMax** character property which can be used to do incremental changes to the hitchance cap
 - Add `skill::HD_isUsableOnForFree()` for checking if a skill can be used on something, ignoring cost and cooldowns
 - Change Ranged Ambition to check for the existance of ranged mastery perk instead of `IsSpecialized` flags
@@ -1748,7 +1767,7 @@ This section can be skipped by any regular user. It is only meant as an overview
 - Add new `isHybridWeapon` helper function for `weapon.nut`
 - Parties that are spawned without a banner will be assigned the banner of the faction who owns their faction (mostly relevant for civilian factions)
 - Add new `LastSpawnedParty` member for `faction.nut` which always contains the last party spawned by that faction
-- Add new `getOwner` function for factions, which returns the owner of this factions first settlement
+- Add new `HD_getOwner` function for factions, which returns the owner of this factions first settlement
 - Add new `isLootAssignedToPlayer` function for `actor.nut` which should be used, when deciding, whether to drop loot during custom implementations of `getLootForTile`
 - Add new `::Hardened.TileReservation` with `function isReserved( _tileID )` which can be used to check whether a targeted tile is about to be filled with an entity from a vanilla `teleport` call
 - Add new `IsHidingIconMini` flag for skills (`false` by default), that can be used by modder to force-hide the mini icon
