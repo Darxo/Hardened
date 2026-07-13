@@ -496,13 +496,15 @@
 	for (local i = _tooltip.len() - 1; i >= 0; --i)
 	{
 		local entry = _tooltip[i];
-		if (!("icon" in entry)) entry.icon <- "";	// Not every tooltip line has an icon defined
+		// Not every tooltip line has an icon defined, so we temporarily add one, to make the checks on the caller side easier to do
+		if (!("icon" in entry)) entry.icon <- "HD_TempDummyIcon";
 		if (_filter(entry))
 		{
 			_tooltip.remove(i);
 			if(!_all) return true;
 			removedEntry = true;
 		}
+		if (entry.icon == "HD_TempDummyIcon") delete entry.icon;
 	}
 	return removedEntry;
 }
