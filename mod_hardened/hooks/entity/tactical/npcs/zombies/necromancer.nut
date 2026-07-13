@@ -21,6 +21,23 @@
 		this.HD_onInitStatsAndSkills();
 	}}.onInit;
 
+	// Overwrite, because we revert any changes done by Reforged
+	q.makeMiniboss = @() { function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss()) return false;
+
+		this.getSprite("miniboss").setBrush("bust_miniboss");
+
+		local namedWeapons = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/weapons/named/named_dagger"],
+			[6, "scripts/items/weapons/named/named_qatal_dagger"],
+		]);
+
+		this.getItems().equip(::new(namedWeapons.roll()));
+		this.getBaseProperties().ActionPoints = 9;
+		return true;
+	}}.makeMiniboss;
+
 // Reforged Functions
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
 	q.onSpawned = @() function()
