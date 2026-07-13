@@ -4,5 +4,11 @@
 		__original();
 
 		this.getSkills().add(::new("scripts/skills/special/hd_unworthy_effect"));
+		this.getSkills().add(::new("scripts/skills/effects/hd_explosive_effect"));
 	}}.onInit;
+
+	// Overwrite, because we disable the native explosion triggered by vanilla. Instead we handle that with a new hd_explosive_effect
+	q.onDeath = @() { function onDeath( _killer, _skill, _tile, _fatalityType )
+	{
+	}}.onDeath;
 });

@@ -898,3 +898,5 @@ Mod Description:
 - lower cooldown of some contracts? (like how return item has more cooldown than caravan)
 
 - give geists combo, so that they can melee attack and scream at the same time
+
+- give flying skulls a spawnlist registering, so that they can be spawned naturally with combat simulator
