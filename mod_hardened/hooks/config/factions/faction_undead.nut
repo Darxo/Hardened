@@ -292,6 +292,11 @@
 }
 
 {	// Skeletons
+	// scripts/entity/tactical/enemies/flying_skull
+	{
+		::Const.Tactical.Actor.FlyingSkull.Hitpoints = 20;		// Vanilla: 25
+	}
+
 	// scripts/entity/tactical/enemies/skeleton_light
 	{
 		// Mandatory stats
