@@ -629,7 +629,7 @@
 		::Const.Tactical.Actor.ZombieBoss.Initiative = 80;		// Vanilla: 75
 
 		::Const.Tactical.Actor.ZombieBoss.Armor[0] = 400;		// Vanilla: 400
-		::Const.Tactical.Actor.ZombieBoss.Armor[1] = 250;		// Vanilla: 250
+		::Const.Tactical.Actor.ZombieBoss.Armor[1] = 300;		// Vanilla: 250
 
 		::Const.EntityIcon[::Const.EntityType.ZombieBoss] = "hd_fallen_hero_orientation";
 	}
