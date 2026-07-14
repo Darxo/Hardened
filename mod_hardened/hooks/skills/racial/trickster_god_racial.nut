@@ -31,12 +31,16 @@
 			text = ::Reforged.Mod.Tooltips.parseString("At the start of each [turn|Concept.Turn], remove " + ::MSU.Text.colorPositive(this.m.HD_BleedStacksRemoved) + " stacks of [$ $|Skill+bleeding_effect]"),
 		});
 
-		ret.push({
-			id = 12,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = ::Reforged.Mod.Tooltips.parseString("At the start of each battle, summon " + ::MSU.Text.colorPositive(this.m.HD_HollenhundSpawnsOnCombatStart) + ::MSU.Text.colorNeutral(" Hollenhund")),
-		});
+
+		if (this.isIjirok())
+		{
+			ret.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = ::Reforged.Mod.Tooltips.parseString("At the start of each battle, summon " + ::MSU.Text.colorPositive(this.m.HD_HollenhundSpawnsOnCombatStart) + ::MSU.Text.colorNeutral(" Hollenhund")),
+			});
+		}
 
 		ret.push({
 			id = 13,
@@ -89,6 +93,8 @@
 	{
 		__original();
 
+		if (!this.isIjirok()) return;
+
 		local dogsToSummon = this.m.HD_HollenhundSpawnsOnCombatStart;
 
 		local actor = this.getContainer().getActor();
@@ -102,5 +108,11 @@
 			--dogsToSummon;
 			if (dogsToSummon <= 0) return;
 		}
+	}
+
+// New Functions
+	q.isIjirok <- function()
+	{
+		return ::MSU.isKindOf(this.getContainer().getActor(), "trickster_god");
 	}
 });
