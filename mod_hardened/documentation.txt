@@ -30,6 +30,9 @@
 
 # Changelog
 
+1.20.1
+	- Fix **Barbarian Madman** spawning with 3 **Hollenhunds**
+
 1.20.0
 	- **Castigate** (from **Censer of the Diviner**) now hits 4 tiles (up from 3). It can now target empty tiles
 	- **Chilled Effect** is completely reworked. It is now stackable and lasts 2 turns by default. It now causes 10% less Damage dealt per turn and -1 Action Points per turn
