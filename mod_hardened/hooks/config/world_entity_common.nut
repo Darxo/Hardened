@@ -7,5 +7,5 @@ local oldAddTroop = ::Const.World.Common.addTroop;
 		_minibossify = -999;
 	}
 
-	oldAddTroop(_party, _troop, _updateStrength, _minibossify);
+	return oldAddTroop(_party, _troop, _updateStrength, _minibossify);
 }
