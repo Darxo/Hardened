@@ -30,6 +30,9 @@
 
 # Changelog
 
+1.20.2
+	- Fix some world parties (e.g. **Ifrits**) not despawning correctly after winning a fight against them
+
 1.20.1
 	- Fix **Barbarian Madman** spawning with 3 **Hollenhunds**
 

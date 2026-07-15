@@ -251,3 +251,7 @@ foreach (entity in allParties)
 	invalidParties++;
 }
 ::logWarning("Hardened: invalid parties: " + invalidParties);
+
+## Improve debugging of ironman saves
+
+::World.Assets.m.IsIronman = false;
