@@ -1,7 +1,7 @@
 this.hd_inspiring_presence_buff_effect <- ::inherit("scripts/skills/skill", {
 	m = {
-		BonusActionPoints = 3
-		HasHadTurnYet = false
+		BonusActionPoints = 3,
+		HasHadTurnYet = false,
 	},
 	function create()
 	{
@@ -48,7 +48,9 @@ this.hd_inspiring_presence_buff_effect <- ::inherit("scripts/skills/skill", {
 
 		if (this.m.HasHadTurnYet == false)
 		{
-			this.getContainer().getActor().setActionPoints(this.getContainer().getActor().getActionPointsMax() + this.m.BonusActionPoints);
+			// Effects that manipulate AP and are added mid-round will miss the vanilla ap recovery timing
+			// Therefors we need to manually recover action points for them once
+			this.getContainer().getActor().recoverActionPoints(this.m.BonusActionPoints, false);
 			this.m.HasHadTurnYet = true;
 		}
 	}
