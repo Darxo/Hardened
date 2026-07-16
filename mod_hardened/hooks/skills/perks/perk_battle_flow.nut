@@ -1,14 +1,16 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_battle_flow", function(q) {
-	q.onTargetKilled = @(__original) { function onTargetKilled( _targetEntity, _skill )
-	{
-		local actor = this.getContainer().getActor();
-		local oldFatigue = actor.getFatigue();
-		__original(_targetEntity, _skill);
-		local recoveredFatigue = oldFatigue - actor.getFatigue();
+	q.m.StaminaRecoveredMult = 0.15;	// Reforged: 0.1
 
-		if (recoveredFatigue > 0 && actor.isPlacedOnMap() && actor.getTile().IsVisibleForPlayer)
+	// Overwrite, because we use current stamina instead of base stamina as reference and use our standardized recoverFatigue function to handle recovery
+	q.onTargetKilled = @() { function onTargetKilled( _targetEntity, _skill )
+	{
+		if (!this.m.IsSpent)
 		{
-			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(actor) + " recovers " + ::MSU.Text.colorPositive(recoveredFatigue) + " Fatigue (" + this.getName() + ")");
+			this.m.IsSpent = true;
+			local actor = this.getContainer().getActor();
+			local recoveredFatigue = actor.getStamina() * this.m.StaminaRecoveredMult;
+			actor.HD_recoverFatigue(recoveredFatigue);
+			actor.setDirty(true);
 		}
 	}}.onTargetKilled;
 

@@ -54,7 +54,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per [round|Concept.Round], killing an opponent recovers [Fatigue|Concept.Fatigue] equal to " + ::MSU.Text.colorPositive("10%") + " of [Base|Concept.BaseAttribute] [Stamina|Concept.MaximumFatigue]"
+					"Once per [round|Concept.Round], killing an enemy recovers [Fatigue|Concept.Fatigue] equal to " + ::MSU.Text.colorPositive("15%") + " of your [Stamina|Concept.MaximumFatigue]",
 				],
 			}],
 		}),
