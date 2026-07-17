@@ -974,7 +974,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Gain " + ::MSU.Text.colorPositive("+10") + " [Melee Skill|Concept.MeleeSkill] while it is not your [turn|Concept.Turn]",
 					"[Riposte|Skill+riposte_effect] is no longer removed when you get hit or do a counter attack",
-					"Recover " + ::MSU.Text.colorPositive("1") + " [Action Point|Concept.ActionPoints] whenever an opponent misses a Melee Attack against you",
+					"Recover " + ::MSU.Text.colorPositive("1") + " [Action Point|Concept.ActionPoints] whenever an enemy misses a Melee Attack against you",
 				],
 			}],
 		}),
@@ -1002,7 +1002,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain a stacking " + ::MSU.Text.colorPositive("+10%") + " [Hitchance|Concept.Hitchance] whenever an opponent misses an Attack against you",
+					"Gain a stacking " + ::MSU.Text.colorPositive("+10%") + " [Hitchance|Concept.Hitchance] whenever an enemy misses an Attack against you",
 					"Bonus is reset upon landing a hit",
 				],
 			}],
@@ -1351,7 +1351,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Every time an opponent attacks you in melee or you attack an opponent, gain a stacking " + ::MSU.Text.colorPositive("+2") + " [Melee Skill|Concept.MeleeSkill] and [Melee Defense|Concept.MeleeDefense] against that opponent for the remainder of the battle.",
+					"Whenever an enemy attacks you in melee or you attack an enemy, gain a stacking " + ::MSU.Text.colorPositive("+2") + " [Melee Skill|Concept.MeleeSkill] and [Melee Defense|Concept.MeleeDefense] against that enemy for the remainder of the battle.",
 				],
 			}],
 		}),
@@ -1465,7 +1465,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Whenever an opponent misses a Melee Attack against you while it is not your [turn|Concept.Turn], gain the [Rebuke|Skill+hd_rebuke_effect] effect until the start of your next [turn|Concept.Turn]",
+						"Whenever an enemy misses a Melee Attack against you while it is not your [turn|Concept.Turn], gain the [Rebuke|Skill+hd_rebuke_effect] effect until the start of your next [turn|Concept.Turn]",
 						"Requires a usable [Attack of Opportunity|Concept.ZoneOfControl]. Does not work while [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]",
 					],
 				},
@@ -1737,7 +1737,7 @@ local adjustedDescriptions = [
 			{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlock [Passing Step|Skill+rf_passing_step_skill], which allows you to dance around your opponent after a successful attack",
+					"Unlock [Passing Step|Skill+rf_passing_step_skill], which allows you to dance around your enemy after a successful attack",
 				],
 			}],
 		}),
@@ -1823,7 +1823,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlock [Gain Ground|Skill+rf_gain_ground_skill], which, immediately after killing an adjacent opponent, allows you to move into their tile for free, ignoring [Zone of Control|Concept.ZoneOfControl]"
+						"Unlock [Gain Ground|Skill+rf_gain_ground_skill], which, immediately after killing an adjacent enemy, allows you to move into their tile for free, ignoring [Zone of Control|Concept.ZoneOfControl]"
 					],
 				},
 			],
