@@ -548,3 +548,24 @@
 
 	return ret;
 }
+
+/// Save an arbitruary piece of data persistently across savegames
+/// Using the same _name will overwrite previous data
+/// Each call will cause a write to harddrive action. So this function should be called sparingly
+/// @param _name must be a unique key
+/// @param _data any type of data
+::Hardened.util.savePersistentData <- function( _name, _data )
+{
+	::Hardened.Private.PersistentData[_name] <- _data;
+	::Hardened.Mod.PersistentData.createFile("Data", ::Hardened.Private.PersistentData);
+}
+
+::Hardened.util.hasPersistentData <- function( _name )
+{
+	return _name in ::Hardened.Private.PersistentData;
+}
+
+::Hardened.util.getPersistentData <- function( _name )
+{
+	return ::Hardened.Private.PersistentData[_name];
+}

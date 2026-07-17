@@ -15,6 +15,7 @@
 		EntityIDFallback = {},
 		CustomTacticalScenarios = [],
 		LastSpawnedActor = null,
+		PersistentData = {},	// Cached copy of persistent data to make readings more performant
 	},
 }
 
@@ -46,6 +47,11 @@
 
 	::include("mod_hardened/load");		// Load Hardened-Adjustments and other hooks
 	::include("mod_hardened/ui/load");	// Load Hardened JS Adjustments and Hooks
+
+	if (::Hardened.Mod.PersistentData.hasFile("Data"))
+	{
+		::Hardened.Private.PersistentData = ::Hardened.Mod.PersistentData.loadFile("Data");
+	}
 
 	// Remove the Fangshire Helmet
 	foreach (index, itemScript in ::Const.World.Assets.NewCampaignEquipment)
