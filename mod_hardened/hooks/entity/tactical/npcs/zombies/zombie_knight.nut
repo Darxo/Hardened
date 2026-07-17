@@ -30,8 +30,7 @@
 
 		this.m.ChanceForNoOffhand = 50;
 		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/shields/worn_heater_shield"],
-			[12, "scripts/items/shields/worn_kite_shield"],
+			[12, "scripts/items/shields/wooden_shield_old"],
 		]);
 
 		this.m.ChestConditionRoll = ::MSU.Class.WeightedContainer([
