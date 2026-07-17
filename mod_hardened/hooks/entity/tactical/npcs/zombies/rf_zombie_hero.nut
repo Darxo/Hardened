@@ -21,6 +21,16 @@
 			[12, "scripts/items/weapons/two_handed_flail"],
 			[12, "scripts/items/weapons/two_handed_flanged_mace"],
 			[12, "scripts/items/weapons/two_handed_hammer"],
+
+			[8, "scripts/items/weapons/fighting_axe"],
+			[8, "scripts/items/weapons/three_headed_flail"],
+			[8, "scripts/items/weapons/winged_mace"],
+			[8, "scripts/items/weapons/warhammer"],
+		]);
+
+		this.m.OffhandWeightContainer = ::MSU.Class.WeightedContainer([
+			[12, "scripts/items/shields/worn_heater_shield"],
+			[12, "scripts/items/shields/worn_kite_shield"],
 		]);
 
 		this.m.ChestConditionRoll = ::MSU.Class.WeightedContainer([
@@ -81,7 +91,7 @@
 			if (weapon.isWeaponType(::Const.Items.WeaponType.Axe))
 			{
 				this.getSkills().add(::new("scripts/skills/perks/perk_rf_dismemberment"));
-				this.getSkills().add(::new("scripts/skills/perks/perk_rf_death_dealer"));
+				this.getSkills().add(::new("scripts/skills/perks/perk_coup_de_grace"));
 			}
 			else if (weapon.isWeaponType(::Const.Items.WeaponType.Flail))
 			{
@@ -91,7 +101,7 @@
 			else if (weapon.isWeaponType(::Const.Items.WeaponType.Hammer))
 			{
 				this.getSkills().add(::new("scripts/skills/perks/perk_mastery_hammer"));
-				this.getSkills().add(::new("scripts/skills/perks/perk_rf_rattle"));			// Full Force
+				this.getSkills().add(::new("scripts/skills/perks/perk_coup_de_grace"));
 			}
 			else if (weapon.isWeaponType(::Const.Items.WeaponType.Mace))
 			{
@@ -114,9 +124,17 @@
 		this.getSkills().add(::new("scripts/skills/effects/hd_cursed_effect"));
 
 		// Generic Perks
-		this.getSkills().add(::new("scripts/skills/perks/perk_hd_anchor"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hold_out"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_formidable_approach"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_hd_anchor"));
+
+		if (this.getOffhandItem() == null)	// Variant with two handed weapon
+		{
+			this.getSkills().add(::new("scripts/skills/perks/perk_rf_formidable_approach"));
+		}
+		else
+		{
+			this.getSkills().add(::new("scripts/skills/perks/perk_duelist"));
+		}
 	}
 
 	// Assign Head and Body armor to this character
