@@ -50,7 +50,7 @@
 
 	if (::Hardened.Mod.PersistentData.hasFile("Data"))
 	{
-		::Hardened.Private.PersistentData = ::Hardened.Mod.PersistentData.loadFile("Data");
+		::Hardened.Private.PersistentData = ::Hardened.Mod.PersistentData.readFile("Data");
 	}
 
 	// Remove the Fangshire Helmet
