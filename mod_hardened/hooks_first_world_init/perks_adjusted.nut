@@ -1885,10 +1885,11 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Unlock one extra [bag slot|Concept.BagSlots]",
-						"When you equip a weapon whose perk group you have access to, gain the first, second, or third perk in that weapon\'s perk group if you have the corresponding perk in another weapon\'s perk group, regardless of its tier."
+						"If you have the weapon group for your equipped weapon, gain all weapon perks from that perk group",
 					],
 				},
 			],
+			Footer = ::MSU.Text.colorNegative("This perk can only be unlocked after unlocking 3 weapon perks"),
 		}),
 	},
 	{

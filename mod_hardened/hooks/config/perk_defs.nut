@@ -156,6 +156,38 @@
 	return true;
 }
 
+// Overwrite, because we completely change the perk requirements for Weapon Master
+::Const.Perks.findById("perk.rf_weapon_master").verifyPrerequisites <- function( _player, _tooltip )
+{
+	local requiredWeaponPerks = 3;
+	foreach (pgID in ::DynamicPerks.PerkGroupCategories.findById("pgc.rf_weapon").getGroups())
+	{
+		if (!_player.getPerkTree().hasPerkGroup(pgID)) continue;
+
+		foreach (row in ::DynamicPerks.PerkGroups.findById(pgID).getTree())
+		{
+			foreach (perkID in row)
+			{
+				if (!_player.getSkills().hasSkill(perkID)) continue;
+				if (--requiredWeaponPerks <= 0) break;
+			}
+		}
+	}
+
+	if (requiredWeaponPerks > 0)
+	{
+		_tooltip.push({
+			id = 3,
+			type = "hint",
+			icon = "ui/icons/icon_locked.png",
+			text = "Locked until this character has unlocked " + requiredWeaponPerks + " more weapon perks",
+		});
+		return false;
+	}
+
+	return true;
+}
+
 // We completely remove the prerequisites of this perk
 ::Const.Perks.findById("perk.rf_promised_potential").verifyPrerequisites <- function( _player, _tooltip )
 {
