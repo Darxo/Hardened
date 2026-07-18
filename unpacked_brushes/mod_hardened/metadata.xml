@@ -28,6 +28,11 @@
 	<sprite id="hd_inspired_by_song_effect_mini" ic = "FF23165B" img="mini\hd_inspired_by_song_effect_mini.png" />
 	<sprite id="hd_reload_disorientation_effect_mini" ic = "FF23165B" img="mini\hd_reload_disorientation_effect_mini.png" />
 	<sprite id="hd_whirling_death_effect_mini" ic = "FF23165B" img="mini\hd_whirling_death_effect_mini.png" />
+	<sprite id="hd_bleeding_mini_1" ic = "FF23165B" img="mini\hd_bleeding_mini_1.png" />
+	<sprite id="hd_bleeding_mini_2" ic = "FF23165B" img="mini\hd_bleeding_mini_2.png" />
+	<sprite id="hd_bleeding_mini_3" ic = "FF23165B" img="mini\hd_bleeding_mini_3.png" />
+	<sprite id="hd_bleeding_mini_4" ic = "FF23165B" img="mini\hd_bleeding_mini_4.png" />
+	<sprite id="hd_bleeding_mini_5" ic = "FF23165B" img="mini\hd_bleeding_mini_5.png" />
 
 	<sprite id="hd_brace_for_impact_effect" ic = "FF23165B" img="..\..\gfx\ui\perks\perk_hd_brace_for_impact.png" />
 	<sprite id="hd_warden_effect" ic = "FF23165B" img="..\..\gfx\ui\perks\perk_rf_phalanx.png" />
