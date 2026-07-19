@@ -569,3 +569,15 @@
 {
 	return ::Hardened.Private.PersistentData[_name];
 }
+
+::Hardened.util.addNewDamageType <- function( _id, _name, _bodyInjuries = [], _headInjuries = [] )
+{
+	local newType = ::Const.Damage.DamageType.len();
+
+	::Const.Damage.DamageType[_id] <- newType;
+	::Const.Damage.DamageTypeName.push(_name);
+	::Const.Damage.DamageTypeInjuries.push({
+			Head = _bodyInjuries,
+			Body = _headInjuries,
+	});
+}
