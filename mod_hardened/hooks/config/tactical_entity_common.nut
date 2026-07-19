@@ -27,6 +27,9 @@
 			// We call the original manually, so that our custom _attacker is passed correctly
 			mockObject.original(_attacker, _skill, _hitInfo);
 
+			// Feat: Each procc of Miasma now applies 1 stack of Intoxication, after the initial damage was applied
+			this.getSkills().add(::new("scripts/skills/effects/hd_intoxication_effect"));
+
 			return { done = true, value = null };
 		});
 

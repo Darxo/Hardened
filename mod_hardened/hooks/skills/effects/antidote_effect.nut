@@ -37,6 +37,13 @@
 			text = "Immune to Miasma",		// This already implied by granting immunity to poison, but it may not be apparent to the player
 		});
 
+		ret.push({
+			id = 12,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Immune to [$ $|Skill+hd_intoxication_effect]"),
+		});
+
 		return ret;
 	}
 });
