@@ -11,6 +11,30 @@
 		oldOnApplyFire(_tile, _entity);
 	}
 
+	local oldOnApplyMiasma = ::Const.Tactical.Common.onApplyMiasma;
+	::Const.Tactical.Common.onApplyMiasma = function( _tile, _entity )
+	{
+		if (_entity.getCurrentProperties().IsImmuneToPoison) return;
+
+		local mockObject;
+		mockObject = ::Hardened.mockFunction(_entity, "onDamageReceived", function( _attacker, _skill, _hitInfo ) {
+			// Feat: We turn the miasma damage type into our newly introduced "Toxic" damage type
+			_hitInfo.DamageType <- ::Const.Damage.DamageType.Toxic;
+
+			// Feat: We change the damage source to null, as opposed to be the receiver itself
+			_attacker = null;
+
+			// We call the original manually, so that our custom _attacker is passed correctly
+			mockObject.original(_attacker, _skill, _hitInfo);
+
+			return { done = true, value = null };
+		});
+
+		oldOnApplyMiasma(_tile, _entity);
+
+		mockObject.cleanup();
+	}
+
 	local oldCheckDrugEffect = ::Const.Tactical.Common.checkDrugEffect;
 	::Const.Tactical.Common.checkDrugEffect = function( _actor )
 	{
