@@ -8,7 +8,7 @@
 	{
 		__original();
 		this.m.Name = "Use Antidote";	// In Vanilla this is "Drink or Give Antidote"
-		this.m.Description = "Save yourself or another character from poisons.";	// We remove any mention of "giving it to allies"
+		this.m.Description = "Save yourself or another character from toxins.";		// We change "poisons" into "toxins" and remove any mention of "giving it to allies"
 
 	// Hardened
 		this.m.HD_UsableWhileEngagedInMelee = false;
@@ -22,7 +22,7 @@
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Target yourself or an ally who is not [Engaged in Melee|Concept.ZoneOfControl]. Remove all poison effects from that target and grant it immunity against poison for " + ::MSU.Text.colorPositive(3) + " [turns|Concept.Turn]"),
+			text = ::Reforged.Mod.Tooltips.parseString("Target yourself or an ally who is not [Engaged in Melee|Concept.ZoneOfControl]. Grant the target [$ $|Skill+antidote_effect]"),
 		});
 
 		return ret;
