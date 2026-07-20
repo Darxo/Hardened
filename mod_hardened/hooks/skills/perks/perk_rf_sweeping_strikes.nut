@@ -41,10 +41,10 @@
 
 	q.onBeforeAnySkillExecuted <- function( _skill, _targetTile, _targetEntity, _forFree )
 	{
-		if (this.m.CurrentMeleeDefenseModifier == 0 && this.isSkillValid(_skill))
+		if (this.m.CurrentMeleeDefenseModifier == 0 && this.isSkillValid(_skill) && this.isTargetValid(_targetTile))
 		{
 			local actor = this.getContainer().getActor();
-			if (actor.getTile().getDistanceTo(_targetEntity.getTile()) == 1)
+			if (actor.getTile().getDistanceTo(_targetTile) == 1)
 			{
 				local adjacentHostiles = ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true);
 				this.m.CurrentMeleeDefenseModifier += adjacentHostiles.len() * this.m.MeleeDefenseModifier;
@@ -101,5 +101,10 @@
 
 		local weapon = _skill.getItem();
 		return !::MSU.isNull(weapon) && weapon.isItemType(::Const.Items.ItemType.Weapon) && weapon.isItemType(this.m.RequiredItemType);
+	}
+
+	q.isTargetValid <- function( _targetTile )
+	{
+		return _targetTile.IsOccupiedByActor;
 	}
 });
