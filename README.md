@@ -187,6 +187,14 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - You can no longer swap your weapon with a dagger from your bag for free
 - Attachments no longer randomly spawn on NPCs
 
+### Toxic Damage
+
+- Add new **Toxic** Damage Type
+- Change **Miasma** and **Spider Poison** to inflict **Toxic Damage** instead of unspecified damage
+- Add new stackable **Intoxication** debuff. Each stack causes 50% more Toxic Damage taken. You lose 1 stack at the end of the round, if you haven't taken Toxic Damage this round
+- Make **Miasma** inflict 1 stack of **Intoxication** each time it applies its damage
+- Make **Antidote** also grant immunity to **Intoxication**
+
 ### Other Notable Changes
 
 - You can now bring 2 fewer Brothers into Battle, compared to what your origin allows. The first two Cart Upgrades allow you to bring +1 Brother into battle each
@@ -293,6 +301,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Backstabber** is rewritten. It now grants +5% Hitchance per character surrounding your target, except the first one. It now also affects ranged attacks
 - **Bags and Belts** now also includes two-handed weapons but no longer grants Initiative
 - **Battle Fervor** is completely reworked. It grants 10% more Resolve. It also grants 10% more Melee Skill, Melee Defense, Ranged Skill and Ranged Defense while at Steady Morale
+- **Battle Flow** now recovers 15% of your Stamina (instead of 10% of your Base Stamina)
 - **Battle Forged** no longer has any prerequisites. It no longer provide any Reach Ignore
 - **Bestial Vigor** is completely reworked. It is now called **Backup Plan** and grants the skill **Backup Plan** which can be used once per battle to recover 7 Action Points and disable all Attack-Skills for the rest of this turn. It has been removed from the **Wildling** perk group and added to the **Tactician** perk group at Tier 2
 - **Bully** is completely reworked. It now grants 10% more damage against anyone with a lower morale than you. It also grants +5 Melee Defense against anyone with less maximum Hitpoints than you
@@ -365,10 +374,12 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Poise** is now called **Flexible** and is completely reworked: It now reduces damage which ignores Armor by 60%. This is reduced by 1% for each combined helmet and body armor weight. You take 2% less Armor Damage from Attacks for every 5 Initiative you have, up to a maximum of 40%.
 - **Polearm Mastery** now makes skills cost 20% less Fatigue (down from 25%). It no longer reduces the Action Point cost of 2 handed reach weapons by 1. It now grants +15% chance to hit for **Repel** and **Hook**.
 - **Professional** now reduces the experience gained by 5%
+- **Promised Potential** is completely reworked. It transforms into **Realized Potential** 4 levels after picking the perk
 - **Quickhands** can now also swap two two-handed weapons, just like in Vanilla. It now stacks with other effects that grant free swaps
 - **Rally the Troops** skill and tooltip is streamlined: It now explicitely has a cooldown of 1 round. It can now be used, even after you were rallied by someone else. Multiple uses of **Rally the Troops** can now affect the same character multiple times. Morale Checks now have a penalty of -15 per tile between the target and you (instead of -10 per tile distance). Rallying a fleeing character is now also affected by the distance penalty
 - **Rattle** is now called **Full Force** and has been completely reworked. It now causes you to spend all remaining Action Points whenever you attack during your turn and gain 8% more Damage and 8% more Shield Samage per Action Point spent. The effect is double for one-handed weapons
 - **Rebuke** is completely reworked. It now grants the **Rebuke Effect** whenever an opponent misses a melee attack against you while it's not your turn, until the start of your next turn. This effect reduces your damage by 25% but will make you retaliate every melee attack miss against you
+- **Realized Potential** is completely reworked. It refunds all perks, grants 1 Level-Up and grants 1 random Shared Perk Group. It is not refundable
 - **Resilient** is completely reworked: Negative status effects on you last -1 turn (to a minimum of 1). Whenever **stunned** expires on you, become immune to being stunned until the start of your next turn
 - **Rising Star** now only grants 20% experience until you are level 12. It now grants +2 Perk Points at Level 12, instead of 5 levels after picking the perk
 - **Rush of Battle** is completely reworked. While adjacent to an ally and an enemy, gain 20% more Injury Threshold per adjacent enemy and Skills cost 10% less Fatigue per adjacent ally
@@ -395,7 +406,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Unstoppable** is completely reworked. Once per round during your turn, if you hit an enemy with an attack, gain 1 stack up to a maximum of 3. Each stack grants +1 Action Points and 10% more Initiative. Lose 1 stack whenever you use a Non-Attack skill. Lose all stacks when you use recover, get stunned or staggered
 - **Vanquisher** is completely reworked. After you step on a corpse that has been created this round, you become Immune to **Displacement** and take 25% less Damage until the start of your next turn. **Gain Ground** (granted by **Vanquisher** perk) is now free
 - **Vigorous Assault** is mostly reworked. It now works with all attacks. It no longer provides a fatigue discount. The discount is no longer lost when swapping weapons or using non-attack skills.
-- **Weapon Master** no longer grants weapon perks while wielding a hybrid weapons. It now grants +1 Bag Slot at all times
+- **Weapon Master** now requires 3 unlocked weapon perks in order to be unlockable (up from 1). It now grants +1 Bag Slot at all times. It now requires a Non-Hybrid weapon in order to receive related perks. It now always grants all weapon perks for your equipped non-hybrid weapon
 - **Wears it well** now grants 50% of combined Mainhand and Offhand Weight as Stamina and Initiative (Instead of 20% of Mainhand, Offhand, Helmet and Chest Weight)
 - **Wear them Down** is completely reworked. It now causes your hits to apply an additional 10 Fatigue on the target and your misses to apply 5 Fatigue. After your attack, if your target is fully fatigued, apply **Worn Down** effect until the end of their turn, which applies 30% less Melee Defense and 30% less Ranged Defense and causes Non-Attack Skills to cost 50% more Fatigue
 - **Whirling Death** is completely reworked. It now grants a new active skill which creates a buff for 3 turns granting 25% more damage, +2 Reach and 10 Melee Defense to the user
@@ -812,7 +823,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Kriegsmesser** now appear ~half as often in weapon smiths
 - **Masterfully Cured Ration** now has a Stacksize of 50 (up from 25) and costs 300 Crowns (up from 150)
 - **Nachzehrer Trophy** now makes NPCs 50% less likely to target you with **Ghoul Claw** and **Swallow Whole**. It now grants +5 Resolve (up from +4)
-- **Named Buckler** gain +5 Base Melee Defense and +5 Base Ranged Defense
+- **Named Buckler** gain +5 Base Melee Defense, +5 Base Ranged Defense and cost 500 Crowns (up from 150)
 - Named Helmets now have a minumum possible weight of 3 (down from 4)
 - Named Shields can now roll Weight between 60%-80% (down from 70%-90%)
 - The Named **Wolf Helmet** now has 120 Condition (down from 140), 6 Weight (down from 8) and -1 Vision (down from 0) and costs 3000 Crowns (up from 2000)
@@ -1011,6 +1022,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 
 - NPC ranged troops now ignore the score from potential scatter targets when picking a ranged target. They also ignore the score penalty from obstacles blocking line of sight (that penalty is already implicitely handled by the predicted hitchance)
 - Any faction that receives at least 3 hits from enemies more than they themselves inflicted onto their enemies, will stop playing defensive
+- Prevent Ranged NPCs from pushing beyond their frontline while their strategy is defending
 - **Nomad Leader**, **Bandit Leader**, **Brigand Baron**, **Militia Captain**, **Seargeant**, **Marshal** and **Officer** are now less likely to flank, engage multiple opponents at once or use crowd control skills. They are more likely to stay in formation and allies are more likely to gather around them. They will never protect allies
 - **Blade Dancer**, **Executioner**, **Gladiators**, **Hedge Knight** and **Oathbringer** are now less likely to flank, protect allies, act defensive or use crowd control skills. Allies are slightly more likely to gather around them
 - **Noble** and **Militia** Ranged Troops are now 50% less likely to shoot at enemies they could kill and 100% more likely to shoot at enemies they have a good hitchance against
@@ -1410,6 +1422,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Slightly improve zone of control related tooltips on many skills
 - Automatically re-equip the accessory that you had previously equiped after an arena fight
 - Reduce pan speed of tactical camera by 20%
+- Add unique bleed icons for the first 5 stacks
 - Improve smoke tooltip on tiles by linking to smoke effect
 - Turn **Decisive** effect icon grey, while a character has 0 stacks
 - Improve brightness and contrast of **Hold Steady**,  **Line Breaker**, **Net Pull** and **Onslaught** icons
@@ -1421,6 +1434,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Streamline existing range tooltips and generate streamlined range tooltips on all remaining skills automatically
 - Improve tooltip of **Disarmed effect**
 - Improve tooltip of **Whip Disarm**, **Goblin Trophy** and **Orc Trophy** using a nested tooltips
+- Improve tooltip of **Antidote** and its effects to emphasize that it also grants immunity against **Miasma**
 - Create a combat log when **Bolster** triggers at least one morale check
 - Lower UI Order of **Gain Ground** and **Passing Step** skills
 - **Pummel** now only produces a scream when actually moving a tile after a successful hit
@@ -1452,7 +1466,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Display the current XP Multiplier of the viewed character when hovering over the Experience bar
 - World Parties with champions will display an orange skull on top of their socket
 - Hostile Locations now display a tooltip line if they hide defender
-- Play new sound effect, when discovering a unique location on the world map
+- Display Base Chances for special perk groups and hint towards additional conditions that influence their appearance
 - Play unique sound effect, when crafting potions, elixirs, oils or antidote in the taxidermist
 - Display duplicate Situations in towns
 - Display all enemy NPCs in the combat dialog with a scroll wheel
@@ -1496,6 +1510,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 
 ### Misc
 
+- Save last campaign settings persistently across game sessions
 - Reduce the height of "autosave" and "quicksave" savegame entries in the main menu by around 25%
 - Add setting (on) for displaying silhouettes of items from the bagslots on the character
 - Display relative XP in Character Screen instead of absolute values
@@ -1576,7 +1591,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix fleeing enemies in Zone of Control sometimes not breaking themselves free from roots
 - Fix Armor Damage on Weapon tooltips sometimes being off by 1%
 - Fix noble troops spawning for a settlement faction, failing to spawn tabards during combat and glitching out
-- Fix contracts rarely triggering start function multiple times
+- Fix rare cases of contracts triggering start function multiple times
 - Fix undead (skeleton) faction spawning zombie locations (it is the job of the zombie faction to spawn their own locations)
 - Fix poisons inflicted by coated weapons not playing a sound effect
 - Fix Goblin Settlements not respecting the distance to other locations when spawning
@@ -1603,7 +1618,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix barbarian **Drum** being double grippable despite being a two-handed weapon
 - Fix **Headhunter** and **Fast Adaption** sometimes not triggering correctly from zone of control attacks
 - Fix keyboard inputs for camera movement in combat not being combinable
-- Fix caravans rarely despawning when loading a save
+- Fix rare cases of caravans despawning when loading a save
 - Fix rare end-of-combat freeze, when clicking "It's over"
 - Fix world parties able to join the same fight multiple times
 - Fix the same Human being able to play the same sound effect twice in a row

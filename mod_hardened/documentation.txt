@@ -30,6 +30,26 @@
 
 # Changelog
 
+1.21.0
+	- **Promised Potential** is completely reworked. It transforms into **Realized Potential** 4 levels after picking the perk
+	- **Realized Potential** is completely reworked. It refunds all perks, grants 1 Level-Up and grants 1 random Shared Perk Group. It is not refundable
+	- **Battle Flow** now recovers 15% of your Stamina (instead of 10% of your Base Stamina)
+	- **Weapon Master** now requires 3 unlocked weapon perks in order to be unlockable (up from 1). It now always grants all weapon perks for your equipped non-hybrid weapon
+	- Add new **Toxic** Damage Type
+	- Change **Miasma** and **Spider Poison** to inflict **Toxic Damage** instead of unspecified damage
+	- Add new stackable **Intoxication** debuff. Each stack causes 50% more Toxic Damage taken. You lose 1 stack at the end of the round, if you haven't taken Toxic Damage this round
+	- Taking damage from **Miasma** now also inflicts 1 stack of **Intoxication**
+	- Make **Antidote** also grant immunity to **Intoxication**
+	- **Fallen Soldiers** now spawn with **Old Wooden Shields** instead of **Decayed Heater/Kite Shields**
+	- **Fallen Heroes** with an Axe gain **Executioner** and lose **Death Dealer**. Those spawning with a Hammer gain **Executioner** and lose **Full Force. They now have a 40% chance to spawn with a one-handed weapon and shield instead, in which case they gain **Duelist** instead of **Formidable Approach**
+	- **Named Buckler** now cost 500 Crowns (up from 150)
+	- Prevent Ranged NPCs from pushing beyond their frontline while their strategy is defending
+	- Save last campaign settings persistently between game sessions
+	- Improve tooltip of **Antidote** and its effects to emphasize that it also grants immunity against **Miasma**
+	- Add unique bleed icons for the first 5 stacks
+	- Display Base Chances for special perk groups to appear and hint towards additional conditions that influence their appearance
+	- Remove sound effect for unique legendary locations. This feature moved into my **Time Stone** mod
+
 1.20.2
 	- Fix some world parties (e.g. **Ifrits**) not despawning correctly after winning a fight against them
 
