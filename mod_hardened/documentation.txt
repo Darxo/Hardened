@@ -30,6 +30,9 @@
 
 # Changelog
 
+1.21.1
+	- Fix crash when using **Castigate** on empty tiles on a brother with **Sweeping Strikes**
+
 1.21.0
 	- **Promised Potential** is completely reworked. It transforms into **Realized Potential** 4 levels after picking the perk
 	- **Realized Potential** is completely reworked. It refunds all perks, grants 1 Level-Up and grants 1 random Shared Perk Group. It is not refundable
