@@ -1,7 +1,7 @@
 this.hd_inspiring_presence_buff_effect <- ::inherit("scripts/skills/skill", {
 	m = {
 		BonusActionPoints = 3,
-		HasHadTurnYet = false,
+		HasHadUpdateYet = false,
 	},
 	function create()
 	{
@@ -13,7 +13,7 @@ this.hd_inspiring_presence_buff_effect <- ::inherit("scripts/skills/skill", {
 		this.m.SoundOnUse = [
 			"sounds/combat/rf_inspiring_presence_01.wav",
 			"sounds/combat/rf_inspiring_presence_02.wav",
-			"sounds/combat/rf_inspiring_presence_03.wav"
+			"sounds/combat/rf_inspiring_presence_03.wav",
 		];
 		this.m.IsSerialized = false;
 		this.m.IsRemovedAfterBattle = true;
@@ -46,12 +46,12 @@ this.hd_inspiring_presence_buff_effect <- ::inherit("scripts/skills/skill", {
 	{
 		_properties.ActionPoints += this.m.BonusActionPoints;
 
-		if (this.m.HasHadTurnYet == false)
+		if (!this.m.HasHadUpdateYet)
 		{
 			// Effects that manipulate AP and are added mid-round will miss the vanilla ap recovery timing
 			// Therefors we need to manually recover action points for them once
 			this.getContainer().getActor().recoverActionPoints(this.m.BonusActionPoints, false);
-			this.m.HasHadTurnYet = true;
+			this.m.HasHadUpdateYet = true;
 		}
 	}
 
