@@ -48,9 +48,9 @@ this.hd_inspiring_presence_buff_effect <- ::inherit("scripts/skills/skill", {
 
 		if (!this.m.HasHadUpdateYet)
 		{
-			// Effects that manipulate AP and are added mid-round will miss the vanilla ap recovery timing
-			// Therefors we need to manually recover action points for them once
-			this.getContainer().getActor().recoverActionPoints(this.m.BonusActionPoints, false);
+			// This effect can miss the onRoundStart AP recovery timing, as it is added during onRoundStart of a different actor
+			// We solve this by manually recovering the 3 action points, surpassing maximum, the first time this effect raises its owners maximum action points
+			this.getContainer().getActor().recoverActionPoints(this.m.BonusActionPoints, false, true);
 			this.m.HasHadUpdateYet = true;
 		}
 	}
