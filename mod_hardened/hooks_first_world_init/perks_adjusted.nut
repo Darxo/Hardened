@@ -1270,7 +1270,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Enemies at a distance of 2 tiles are [surrounded|Concept.Surrounding] by you while it is not your [turn|Concept.Turn]",
+					"Enemies at a distance of 2 tiles, which you can target with any polearm skill, are [surrounded|Concept.Surrounding] by you, while it is not your [turn|Concept.Turn]",
 				],
 			}],
 		}),
