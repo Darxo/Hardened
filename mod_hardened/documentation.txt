@@ -30,6 +30,10 @@
 
 # Changelog
 
+1.21.2
+	- Fix **Inspiring Presence** sometimes not putting the receivers Action Points to their maximum correctly
+	- Clarify in **Long Reach** effect, that the polearm needs to have at least one polearm skill that is able to target those enemies at 2 tile distance for it to count for surrounding
+
 1.21.1
 	- Fix crash when using **Castigate** on empty tiles on a brother with **Sweeping Strikes**
 
