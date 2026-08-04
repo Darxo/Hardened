@@ -30,6 +30,10 @@
 
 # Changelog
 
+1.22.1
+	- Fix combat crash during turn of NPC crossbowmen
+	- Fix missing space in **Imitating** tooltip
+
 1.22.0
 	- Add new **Keep it Simple** perk for Tier 1 of **Laborer**: It grants +10 Melee Skill, +10 Ranged Skill, -5 Melee Defense and -5 Ranged Defense
 	- Add new **Play for Time** perk for Tier 2 of **Knave**: Gain +15 Melee Defense and +15 Ranged Defense against characters that are bleeding or poisoned
