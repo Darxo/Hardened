@@ -124,7 +124,7 @@
 		__original();
 
 		// Feat: We now let our skill_container know, that we were garbaged. That causes it to repeat an update()
-		this.getContainer().m.HD_HasSkillBeenGarbaged = true;
+		if (!::MSU.isNull(this.getContainer())) this.getContainer().m.HD_HasSkillBeenGarbaged = true;
 	}
 
 // MSU Functions
