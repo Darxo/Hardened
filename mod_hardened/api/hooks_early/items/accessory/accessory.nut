@@ -6,7 +6,7 @@
 	{
 		if (!__original()) return false;
 
-		local isPlayer = this.m.LastEquippedByFaction == ::Const.Faction.Player || this.getContainer() != null && ::MSU.isKindOf(this.getContainer().getActor(), "player");
+		local isPlayer = this.m.LastEquippedByFaction == ::Const.Faction.Player || !::MSU.isNull(this.getContainer()) && ::MSU.isKindOf(this.getContainer().getActor(), "player");
 		if (isPlayer) return true;	// Accessories worn by player characters always drop
 
 		// Random Chance-Based drop
