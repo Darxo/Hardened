@@ -8,6 +8,9 @@
 	q.create = @(__original) function()
 	{
 		__original();
+
+		// We turn off attack flag to make this skill produce a combat log on-use
+		this.m.IsAttack = false;
 	}
 
 	// Vanilla doesn't have a getTooltip function defined for this skill
@@ -82,7 +85,7 @@
 		{
 			if (!this.getContainer().getActor().isHiddenToPlayer() && !target.isHiddenToPlayer())
 			{
-				::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(target) + " resists being charmed thanks to his resolve");
+				::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(target) + " resists being charmed thanks to their resolve");
 			}
 		}
 		else
@@ -97,18 +100,13 @@
 		this.m.Slaves.push(_target.getID());
 
 		local charmed = ::new("scripts/skills/effects/charmed_effect");
-		charmed.m.TurnsLeft = _successfulMentalAttacks;
+		charmed.m.HD_LastsForTurns = _successfulMentalAttacks;
 		local actor = this.getContainer().getActor();
 		charmed.setMasterFaction(actor.getFaction() == ::Const.Faction.Player ? ::Const.Faction.PlayerAnimals : actor.getFaction());
 		charmed.setMaster(this);
 		_target.getSkills().add(charmed);
 
-		// We don't display a combat log here, because the charmed_effect now handles the combat log, including an accurate turn duration
-
-		if (!_target.getCurrentProperties().IsImmuneToStun)
-		{
-			_target.getSkills().add(::new("scripts/skills/effects/stunned_effect"));
-		}
+		_target.getSkills().add(::new("scripts/skills/effects/stunned_effect"));
 	}
 
 	q.HD_getMentalAttackDifficulty <- function()
