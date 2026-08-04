@@ -596,14 +596,18 @@
 // Reforged Functions
 	q.onSkillsUpdated = @(__original) function()
 	{
-		// Feat: streamline handling for immunities which prevent this effect
-		local properties = this.getContainer().getActor().getCurrentProperties();
-		foreach (immunityKey in this.m.HD_PreventedByProperties)
+		// Reforged can call this event for skills, which are no longer attached to a skill container, because they removed themselves
+		if (!::MSU.isNull(this.getContainer()))
 		{
-			if (properties[immunityKey])
+			// Feat: streamline handling for immunities which prevent this effect
+			local properties = this.getContainer().getActor().getCurrentProperties();
+			foreach (immunityKey in this.m.HD_PreventedByProperties)
 			{
-				this.removeSelf();
-				return;
+				if (properties[immunityKey])
+				{
+					this.removeSelf();
+					return;
+				}
 			}
 		}
 
