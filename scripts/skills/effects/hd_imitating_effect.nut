@@ -70,7 +70,7 @@ this.hd_imitating_effect <- ::inherit("scripts/skills/skill", {
 				id = 12,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(this.m.MissingMasteryHitchanceModifier, {AddSign = true, AddPercent = true}) + "[$ $|Concept.Hitchance], if you have not unlocked the weapon mastery from the chosen weapon type"),
+				text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(this.m.MissingMasteryHitchanceModifier, {AddSign = true, AddPercent = true}) + " [$ $|Concept.Hitchance], if you have not unlocked the weapon mastery from the chosen weapon type"),
 			});
 		}
 		else
