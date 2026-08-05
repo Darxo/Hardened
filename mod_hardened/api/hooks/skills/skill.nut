@@ -184,6 +184,14 @@
 		return hitInfo;
 	}
 
+	// Calculate the debuff duration for this character, using NegativeStatusEffectDuration and making sure it is always at least 1
+	// This skill must already be attached to the character in question, when call this function
+	q.HD_getDebuffDuration <- function( _duration )
+	{
+		local ret = _duration + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration;
+		return ::Math.max(1, ret);
+	}
+
 	// New virtual function that is already used various times in different vanilla skills
 	q.findTileToKnockBackTo <- function( _userTile, _targetTile )
 	{
