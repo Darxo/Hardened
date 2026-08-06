@@ -1681,6 +1681,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix crash when trying to sling the same type of pot multiple times with the same character
 - Change the icon of **Sapling Harvest** to that of the sapling overlay icon
 - Mention in **Professional**, that it will never roll **Dagger Group**
+- Disable incompatible Reforged Settings **Auto-Negotiate Attempts** and **Skip Contracts To**
 
 ### MSU
 
@@ -1701,6 +1702,7 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add `HD_hide(_defaultValue)` for MSU Settings, which hides settings introduced by other mods and causes them to instead return the passed default value
 - Add `weapon::HD_getWeaponTypesAsArray()` which returns an array of all individual weapon types on the weapon, excluding `None`
 - Add `item::HD_addConnectedBuff(_skill)` for adding connected buffs to an item, which will survive Item Refreshes
 - Add `item::HD_refreshItem()` for refreshing (unequipping and re-equipping) an item, without removing connected buffs

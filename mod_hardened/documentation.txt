@@ -30,6 +30,12 @@
 
 # Changelog
 
+1.22.3
+	- Fix **En Garde** perk not extending **Riposte** uses correctly
+	- Disable Reforged **Auto-Negotiate Attempts** contract setting
+	- Disable Reforged **Skip Contracts To** contract setting
+	- Add `HD_hide(_defaultValue)` for MSU Settings, which hides settings introduced by other mods and causes them to instead return the passed default value
+
 1.22.2
 	- Fix rare case of pathfinding glitching out during combat
 	- Fix **Charmed** always lasting 2 turns
