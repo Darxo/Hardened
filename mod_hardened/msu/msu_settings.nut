@@ -1,3 +1,10 @@
+// Disable existing settings
+{
+	// These contract settings cause issues with Hardened
+	::Reforged.Mod.ModSettings.getSetting("AutoNegotiateAttempts").HD_hide(0);
+	::Reforged.Mod.ModSettings.getSetting("SkipContractsToScreen").HD_hide(false);
+}
+
 // QOL: World
 {
 	local qolWorldPage = ::Hardened.Mod.ModSettings.addPage("World (QoL)");
