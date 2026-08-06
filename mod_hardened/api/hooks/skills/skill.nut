@@ -543,7 +543,7 @@
 		__original();
 
 		// This skill might have additional conditions that invalidate itself. In those cases we trigger no additional events
-		if (this.isGarbage())
+		if (!this.isGarbage())
 		{
 			this.getContainer().onOtherSkillAdded(this);
 		}
