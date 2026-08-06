@@ -102,15 +102,14 @@
 		this.getSkills().add(::new("scripts/skills/racial/rf_orc_racial"));
 		this.getSkills().add(::new("scripts/skills/special/double_grip"));
 		this.getSkills().add(::new("scripts/skills/effects/captain_effect"));
-		this.getSkills().add(::new("scripts/skills/effects/berserker_rage_effect"));
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_berserk"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hold_out"));
 
-		this.getSkills().add(::new("scripts/skills/perks/perk_battering_ram"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_killing_frenzy"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_pathfinder"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_feral_rage"));		// Replaces the vanilla berserker rage and battering ram
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vigorous_assault"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_brace_for_impact"));
 
