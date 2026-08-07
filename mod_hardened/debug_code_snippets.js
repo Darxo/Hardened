@@ -29,6 +29,11 @@ if (tile != null)
 ## Print Stacktrace
 ::MSU.Log.printStackTrace();
 
+## Pop MenuStacks
+
+::World.State.m.MenuStack.pop();
+::Tactical.State.m.MenuStack.pop();
+
 ## Fire Event
 
 local eventID = "event.crisis.civilwar_conscription";
@@ -99,6 +104,14 @@ foreach (factionID, faction in ::World.FactionManager.m.Factions)
 		// ::logWarning("Hardened: factionID " + factionID + " faction " + faction.getType());
 		::logWarning("Hardened: unit.getName() " + unit.getName() + " unit.getBaseMovementSpeed() " + unit.getBaseMovementSpeed());
 	}
+}
+
+// Look at a nearby Merc Party
+foreach (merc in ::World.EntityManager.m.Mercenaries)
+{
+	if (merc.getTile().getDistanceTo(::World.State.getPlayer().getTile()) > 6) continue;
+	::logWarning("Hardened: merc.getName() " + merc.getName() + " merc.getBaseMovementSpeed() " + merc.getBaseMovementSpeed());
+	::logWarning("Hardened: merc.getSprite(banner).getBrush().Name " + merc.getSprite("banner").getBrush().Name);
 }
 
 ## See stats of nearby locations

@@ -30,6 +30,10 @@
 
 # Changelog
 
+1.22.4
+	- Fix world map ui sometimes going invisible when cancelling the combat dialog
+	- Fix log error related to disabled **SkipContractsToScreen** setting
+
 1.22.3
 	- Fix **En Garde** perk not extending **Riposte** uses correctly
 	- Disable Reforged **Auto-Negotiate Attempts** contract setting

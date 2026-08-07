@@ -10,7 +10,7 @@ Hardened reflects my personal vision of Battle Brothers overhaul mod: A balanced
 - Simplified Reach Mechanic and Double Grip effect
 - Shields are destructible again
 - Streamlined world and contract scaling
-- [11 New Perks](https://github.com/Darxo/Hardened/wiki/New-Perks)
+- [15 New Perks](https://github.com/Darxo/Hardened/wiki/New-Perks)
 - [~100 Perks are tweaked or reworked](https://github.com/Darxo/Hardened/wiki/Perk-changes-Side%E2%80%90By%E2%80%90Side)
 - ~55 Weapons and Shields are tweaked
 - [~50 Body Armors are reworked](https://github.com/Darxo/Hardened/wiki/Vanilla-Hardened-Armor-Changes)

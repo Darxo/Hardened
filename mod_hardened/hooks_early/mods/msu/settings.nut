@@ -1,9 +1,10 @@
 local oldEnumerateFiles = ::IO.enumerateFiles;
 ::IO.enumerateFiles = function ( _path )
 {
+	// We can only change classes, if they have not been inherited from, or instantiated yet
+	// That's why we do our changes to AbstractSetting directly before all of its child classes are created
 	if (_path == "msu/systems/mod_settings/elements/")
 	{
-		// Adjust some Settings classes
 		::MSU.Class.AbstractSetting.HD_Hidden <- false;
 		local oldGetUIData = ::MSU.Class.AbstractSetting.getUIData;
 		::MSU.Class.AbstractSetting.getUIData <- function( _flags = [] )

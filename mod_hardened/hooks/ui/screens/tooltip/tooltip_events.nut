@@ -584,7 +584,7 @@
 					id = 200,
 					type = "text",
 					// icon = "ui/icons/hitchance.png",
-					text = ::Reforged.Mod.Tooltips.parseString("You are not in an enemy [$ $|Concept.ZoneOfControl]"),
+					text = ::Reforged.Mod.Tooltips.parseString("You are not in anyones [$ $|Concept.ZoneOfControl]"),
 				});
 			}
 			else

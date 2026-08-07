@@ -250,7 +250,7 @@ local newPerks = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"Using Wait delays your turn by 6 turns, instead of until the end of the current round",
+						"Using [Wait|Concept.Wait] delays your turn by 6 turns, instead of until the end of the current round",
 						"When you use [Wait|Concept.Wait], gain [$ $|Skill+hd_payoff_effect]",
 					],
 				},
