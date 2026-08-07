@@ -41,6 +41,16 @@ var formatTerrainName = function(image) {
 	return name;
 }
 
+// In order to fix another bug, we now allow this classes show function to be called,
+// 	even while the velocity function from the hide function is still being executed
+// In order for our show to have an effect, we therefore must explicitely stop any previous velocity on our container
+Hardened.Hooks.WorldCombatDialog_show = WorldCombatDialog.prototype.show;
+WorldCombatDialog.prototype.show = function ( _data )
+{
+	this.mContainer.velocity("stop", true);
+	Hardened.Hooks.WorldCombatDialog_show.call(this, _data);
+};
+
 Hardened.Hooks.WorldCombatDialog_loadFromData = WorldCombatDialog.prototype.loadFromData;
 WorldCombatDialog.prototype.loadFromData = function ( _data )
 {
