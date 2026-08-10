@@ -398,7 +398,11 @@
 				if (_tile.IsOccupiedByActor)
 				{
 					local target = _tile.getEntity();
-					target.m.HD_ChanceToBeHit = _skill.getHitchance(target);
+
+					if (!target.isHiddenToPlayer())
+					{
+						target.m.HD_ChanceToBeHit = _skill.getHitchance(target);
+					}
 				}
 				return { value = null };	// We don't want to call the original
 			}
