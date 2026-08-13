@@ -8,6 +8,91 @@ local resourceMult = ::Hardened.Const.ResourceTierMult;
 		MinimumVision = 2,				// Vision of characters can never be reduced below this value. In Vanilla this is 1
 		WeaponSpecFatigueMult = 0.8,	// Fatigue Multiplier for weapon skills, granted by all Weapon Masteries; Vanilla: 0.75
 
+	// Character Screen
+		SupportedBreakdowns = {
+			"character-stats.ArmorHead": [
+				{ Key = "Armor", Index = ::Const.BodyPart.Head, BaseIcon = "ui/icons/armor_head.png", Prefix = "Base: " },
+				{ Key = "Armor", Index = ::Const.BodyPart.Head },
+			],
+			"character-stats.ArmorBody": [
+				{ Key = "Armor", Index = ::Const.BodyPart.Body, BaseIcon = "ui/icons/armor_body.png", Prefix = "Base: " },
+				{ Key = "Armor", Index = ::Const.BodyPart.Body },
+			],
+			"character-stats.Hitpoints": [
+				{ Key = "Hitpoints", BaseIcon = "ui/icons/health.png", Prefix = "Base: " },
+				{ Key = "Hitpoints" },
+				{ Key = "HitpointsMult", IsMult = true },
+			],
+			"character-stats.ActionPoints": [
+				{ Key = "ActionPoints", BaseIcon = "ui/icons/action_points.png", Prefix = "Base: " },
+				{ Key = "ActionPoints" },
+				{ Key = "ActionPointsMult", IsMult = true },
+			],
+			"character-stats.Fatigue": [
+				{ Key = "Stamina", BaseIcon = "ui/icons/fatigue.png", Prefix = "Base: " },
+				{ Key = "Stamina" },
+				{ Key = "StaminaMult", IsMult = true },
+				{ Key = "getStaminaModifierFromWeight", IsFunc = true, BaseIcon = "ui/icons/bag.png", IsActor = true, Prefix = "From Weight: " },
+				{ Key = "FatigueRecoveryRate", BaseIcon = "ui/icons/fatigue.png", Suffix = " Fatigue Recovery", Prefix = "Base: " },
+				{ Key = "FatigueRecoveryRate", Suffix = " Fatigue Recovery" },
+			],
+			"Concept.Reach": [
+				{ Key = "Reach", BaseIcon = "ui/icons/rf_reach.png", Prefix = "Base: " },
+				{ Key = "Reach" },
+				{ Key = "ReachMult", IsMult = true },
+			],
+			"character-stats.Bravery": [
+				{ Key = "Bravery", BaseIcon = "ui/icons/bravery.png", Prefix = "Base: " },
+				{ Key = "Bravery" },
+				{ Key = "BraveryMult", IsMult = true },
+			],
+			"character-stats.Initiative": [
+				{ Key = "Initiative", BaseIcon = "ui/icons/initiative.png", Prefix = "Base: " },
+				{ Key = "Initiative" },
+				{ Key = "InitiativeMult", IsMult = true },
+				{ Key = "getInitiativeModifierFromWeight", IsFunc = true, BaseIcon = "ui/icons/bag.png", IsActor = true, Prefix = "From Weight: " },
+				{ Key = "HD_getInitiativeModifierFromFatigue", IsFunc = true, BaseIcon = "ui/icons/initiative.png", IsActor = true, Prefix = "From Fatigue: " },
+			],
+
+			"character-stats.MeleeSkill": [
+				{ Key = "MeleeSkill", BaseIcon = "ui/icons/melee_skill.png", Prefix = "Base: " },
+				{ Key = "MeleeSkill" },
+				{ Key = "MeleeSkillMult", IsMult = true },
+			],
+			"character-stats.RangeSkill": [
+				{ Key = "RangedSkill", BaseIcon = "ui/icons/ranged_skill.png", Prefix = "Base: " },
+				{ Key = "RangedSkill" },
+				{ Key = "RangedSkillMult", IsMult = true },
+			],
+			"character-stats.MeleeDefense": [
+				{ Key = "MeleeDefense", BaseIcon = "ui/icons/melee_defense.png", Prefix = "Base: " },
+				{ Key = "MeleeDefense" },
+				{ Key = "MeleeDefenseMult", IsMult = true },
+			],
+			"character-stats.RangeDefense": [
+				{ Key = "RangedDefense", BaseIcon = "ui/icons/ranged_defense.png", Prefix = "Base: " },
+				{ Key = "RangedDefense" },
+				{ Key = "RangedDefenseMult", IsMult = true },
+			],
+			"character-stats.RegularDamage": [
+				{ Key = "DamageTotalMult", IsMult = true },
+			],
+			"character-stats.CrushingDamage": [
+				// This does not work well, because the base armor damage value is always 100% and weapons replace that value. This results in weird breakdowns coming from the weapon
+				// { Key = "DamageArmorMult", BaseIcon = "ui/icons/armor_damage.png", IsPct = true },
+			],
+			"character-stats.ChanceToHitHead": [
+				{ Key = "HitChance", BaseIcon = "ui/icons/chance_to_hit_head.png", Index = ::Const.BodyPart.Head, Prefix = "Base: ", Suffix = "%" },
+				{ Key = "HitChance", Index = ::Const.BodyPart.Head, Suffix = "%" },
+				{ Key = "HitChanceMult", Index = ::Const.BodyPart.Head, IsMult = true },
+			],
+			"character-stats.SightDistance": [
+				{ Key = "Vision", BaseIcon = "ui/icons/vision.png", Prefix = "Base: " },
+				{ Key = "Vision" },
+				{ Key = "VisionMult", IsMult = true },
+			],
+		},
+
 	// World
 		LabelBackgroundAlpha = 150,		// Alpha value for the backgrounds of the world party and location labels
 

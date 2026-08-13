@@ -623,25 +623,24 @@
 		return ret;
 	}
 
-	q.getBaseAttributesTooltip = @(__original) function( _entityId, _elementId, _elementOwner )
+// Reforged Functions
+	// Overwrite, because we implement these values way more standardized than reforged and additional qol features
+	q.getBaseAttributesTooltip = @() function( _entityId, _elementId, _elementOwner )
 	{
-		local ret = __original(_entityId, _elementId, _elementOwner);
+		local ret = [];
 
 		local entity = _entityId == null ? null : ::Tactical.getEntityByID(_entityId);
 		if (entity == null || entity == ::MSU.getDummyPlayer()) return ret;
 
-		// We need to manually recalculate the fatigue tooltip, because Reforged uses actor::getFatigueMax, to try to fetch the base value.
-		// But that function always includes the penalty from item weight in Hardened
-		if (_elementId == "character-stats.Fatigue")
+		foreach (key, breakdownEntry in ::Hardened.Global.SupportedBreakdowns)
 		{
-			local baseValue = entity.getBaseProperties().getStamina();
-			foreach (entry in ret)
+			if (key != _elementId) continue;
+
+			foreach (breakdownProperty in breakdownEntry)
 			{
-				if (entry.id == 3)
-				{
-					entry.text = "Base: " + ::MSU.Text.colorizeValue(baseValue, {AddSign = baseValue < 0});
-				}
+				entity.HD_addPropertyBreakdown(ret, breakdownProperty.Key, breakdownProperty);
 			}
+			break;
 		}
 
 		return ret;

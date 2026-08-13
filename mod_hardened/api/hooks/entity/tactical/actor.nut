@@ -231,6 +231,131 @@
 	}
 
 // New functions
+	/// Check how each skill on this actor influences _propertyName, given various _customOptions, create tooltips about the breakdown and add them to _tooltip
+	q.HD_addPropertyBreakdown <- function( _tooltip, _propertyName, _customOptions = {} )
+	{
+		local options = {
+			BaseIcon = null,	// If not null, then we produce an extra base value for this property, using this stored icon
+			IsMult = false,
+			IsPct = false,
+			IsActor = false,	// If true, then we look for _propertyName in the actor belonging to those properties
+			IsFunc = false,		// If true, then _propertyName is a function and we call it without arguments
+			Index = null,	// If not null, then _propertyName is an array
+			Prefix = "",
+			Suffix = "",		// If not null, then this text is put after the property value in the tooltip
+			ID = 150,		// Starting ID for bullet points
+		};
+		::MSU.Table.merge(options, _customOptions);		// overwrite defaults with passed options
+
+		local bulletPointID = options.ID;
+
+		local propertySources = [];
+		{	// Fetch Property Sources
+			local current = this.getBaseProperties().getClone();
+
+			this.getSkills().m.IsUpdating = true;
+			for (local state = 1; state <= 3; ++state)
+			{
+				foreach (skill in this.getSkills().m.Skills)
+				{
+					local oldProperty;
+					{
+						// Switcheroo of CurrentProperties so that function calls, which work off of that, return the correct value
+						local oldCurrentProperties = this.m.CurrentProperties;
+						this.m.CurrentProperties = current;
+						oldProperty = options.IsActor ? this[_propertyName] : current[_propertyName];
+						if (options.Index != null) oldProperty = oldProperty[options.Index];
+						if (options.IsFunc) oldProperty = oldProperty();
+						this.m.CurrentProperties = oldCurrentProperties;
+					}
+
+					// Feat: properties that are marked to produce a single base-like value, will do so with the very first property that was ever fetched and then exit the function
+					if (options.BaseIcon != null)
+					{
+						local propertyText = ::MSU.Text.colorizeValue(oldProperty, {AddSign = (options.Prefix != "Base: ")});
+						if (options.IsMult) propertyText = ::MSU.Text.colorizeMultWithText(oldProperty);
+						if (options.IsPct) propertyText = ::MSU.Text.colorizePct(oldProperty);
+						propertyText = options.Prefix + propertyText + options.Suffix;
+
+						_tooltip.push({
+							id = ++bulletPointID,
+							type = "text",
+							icon = options.BaseIcon,
+							text = propertyText,
+						});
+						return;
+					}
+
+					switch (state)
+					{
+						case 1:
+							skill.onUpdate(current);
+							break;
+						case 2:
+							skill.onAfterUpdate(current);
+							break;
+						case 3:
+							skill.getContainer().onSkillsUpdated();		// Reforged Event, which might also introduce stat changes
+							break;
+					}
+
+					local newProperty;
+					{
+						// Switcheroo of CurrentProperties so that function calls, which work off of that, return the correct value
+						local oldCurrentProperties = this.m.CurrentProperties;
+						this.m.CurrentProperties = current;
+						newProperty = options.IsActor ? this[_propertyName] : current[_propertyName];
+						if (options.Index != null) newProperty = newProperty[options.Index];
+						if (options.IsFunc) newProperty = newProperty();
+						this.m.CurrentProperties = oldCurrentProperties;
+					}
+
+					local propertyDifference =  newProperty - oldProperty;
+					if (propertyDifference == 0) continue;
+
+					if (options.IsMult) propertyDifference = newProperty / oldProperty;
+
+					propertySources.push({
+						Skill = skill,
+						Difference = propertyDifference,
+					});
+				}
+			}
+			this.getSkills().m.IsUpdating = false;
+		}
+		if (propertySources.len() == 0) return;
+		// Add tooltips for the changes
+		foreach (entry in propertySources)
+		{
+			local nestedIcon = "";
+			if (entry.Skill.getID() == "items.generic")	// For bonus gained from items, we save the item reference instead
+			{
+				nestedIcon = ::Reforged.NestedTooltips.getNestedItemImage(entry.Skill.getItem(), "entityId:" + this.getID());
+			}
+			else
+			{
+				nestedIcon = ::Reforged.NestedTooltips.getNestedSkillImage(entry.Skill, "entityId:" + this.getID());
+			}
+
+			local propertyText = ::MSU.Text.colorizeValue(entry.Difference, {AddSign = true});
+			if (options.IsMult) propertyText = ::MSU.Text.colorizeMultWithText(entry.Difference);
+			if (options.IsPct) propertyText = ::MSU.Text.colorizePct(entry.Difference);
+
+			_tooltip.push({
+				id = bulletPointID++,
+				type = "text",
+				icon = ::Reforged.Mod.Tooltips.parseString(nestedIcon),
+				text = options.Prefix + propertyText + options.Suffix,
+			});
+		}
+
+		_tooltip.push({
+			id = bulletPointID++,
+			type = "text",
+			text = "rf_divider",
+		});
+	}
+
 	/*
 	Try to recover up to _amount Action Points
 	@param _printLog if true, print a combat log entry stating how many Action Points were recovered
