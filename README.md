@@ -1531,9 +1531,11 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 
 ### Misc
 
+- Add calculation breakdown for many attribute tooltips in the character screen, listing all skills which influence that attribute
 - Save last campaign settings persistently across game sessions
 - Reduce the height of "autosave" and "quicksave" savegame entries in the main menu by around 25%
 - Add setting (on) for displaying silhouettes of items from the bagslots on the character
+- Increase size and spacing of all colored instances of the minus-sign in tooltips, to be in line with the size of the plus sign
 - Display relative XP in Character Screen instead of absolute values
 - List total XP in experience tooltip
 - Allow the Retinue Hiring Screen to be opened, while not having a Retinue Slot unlocked yet
@@ -1702,6 +1704,7 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add `actor::HD_getInitiativeModifierFromFatigue()`
 - Add `HD_hide(_defaultValue)` for MSU Settings, which hides settings introduced by other mods and causes them to instead return the passed default value
 - Add `weapon::HD_getWeaponTypesAsArray()` which returns an array of all individual weapon types on the weapon, excluding `None`
 - Add `item::HD_addConnectedBuff(_skill)` for adding connected buffs to an item, which will survive Item Refreshes

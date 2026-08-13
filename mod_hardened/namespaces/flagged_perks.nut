@@ -1,9 +1,12 @@
-// Namespace for Framework that serializes newly introduced perks with flags to guarantee savegame compatibility
-// This framework will get into trouble, if a newly introduced perk is not refundable or if it serializes additional data. It is undefined, what should happen in this case
+// Namespace for Framework that serializes new perks, introduced by Hardened, with flags to guarantee savegame compatibility
+// This framework will get into trouble, if a newly introduced perk:
+// - is not refundable and the player plans to switch between versions frequently
+// - or if it serializes additional data.
+// It is undefined, what should happen in these cases
 
 /*
 Problem:
-- If this perk introduces new perks, that will prevent it from being removable without corrupting savegames, but we want to keep the ability to remove Hardened
+- If this mod introduces new perks, that will prevent it from being removable without corrupting savegames, but we want to keep the ability to remove Hardened
 
 Goal:
 - When we serialize a save, we temporarily refund all perks newly introduced by Hardened from the player but also from the perk tree of the player

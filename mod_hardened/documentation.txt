@@ -30,6 +30,12 @@
 
 # Changelog
 
+1.22.5
+	- Add calculation breakdown for many attribute tooltips in the character screen, listing all skills which influence that attribute
+	- Increase size and spacing of all colored instances of the minus-sign in tooltips, to be in line with the size of the plus sign
+	- Fix hitchances sometimes being visible for hidden enemies
+	- Add `actor::HD_getInitiativeModifierFromFatigue()`
+
 1.22.4
 	- Fix world map ui sometimes going invisible when cancelling the combat dialog
 	- Fix log error related to disabled **SkipContractsToScreen** setting
