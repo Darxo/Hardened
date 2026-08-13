@@ -1,9 +1,27 @@
 // Modified Reforged Concepts
-::Reforged.NestedTooltips.Tooltips.Concept.Reach = ::MSU.Class.BasicTooltip("Reach", ::Reforged.Mod.Tooltips.parseString(
-	"Reach is a depiction of how far a character\'s attacks can reach, making melee combat easier against targets with shorter reach.\n\n" +
-	"Gain " + ::MSU.Text.colorizeMultWithText(::Reforged.Reach.ReachAdvantageMult) + " [$ $|Concept.MeleeSkill] when attacking someone with shorter reach.\n\n" +
-	"Characters who are [stunned|Skill+stunned_effect], [fleeing|Skill+hd_dummy_morale_state_fleeing], or without a viable [Attack of Opportunity|Concept.ZoneOfControl] skill have no Reach."
-));
+::Reforged.NestedTooltips.Tooltips.Concept.Reach = ::MSU.Class.CustomTooltip(function(_data){
+	local ret = [
+		{
+			id = 1,
+			type = "title",
+			text = "Reach",
+		},
+		{
+			id = 2,
+			type = "description",
+			text = ::Reforged.Mod.Tooltips.parseString(
+				"Reach is a depiction of how far a character\'s attacks can reach, making melee combat easier against targets with shorter reach.\n\n" +
+				"Gain " + ::MSU.Text.colorizeMultWithText(::Reforged.Reach.ReachAdvantageMult) + " [$ $|Concept.MeleeSkill] when attacking someone with shorter reach.\n\n" +
+				"Characters who are [stunned|Skill+stunned_effect], [fleeing|Skill+hd_dummy_morale_state_fleeing], or without a viable [Attack of Opportunity|Concept.ZoneOfControl] skill have no Reach."
+			),
+		},
+	];
+	if ("entityId" in _data && "TooltipEvents" in this.getroottable())
+	{
+		ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+	}
+	return ret;
+});
 ::Reforged.NestedTooltips.Tooltips.Concept.ReachAdvantage = ::MSU.Class.BasicTooltip("Reach Advantage", ::Reforged.Mod.Tooltips.parseString(
 	"A character is considered to have Reach Advantage when their [Reach|Concept.Reach] is greater than that of the other character during a melee attack."
 ));
