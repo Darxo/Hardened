@@ -47,7 +47,7 @@
 	q.getInitiative = @() function()
 	{
 		local initiative = this.m.CurrentProperties.getInitiative();	// This includes base initiative, modifier and multiplier
-		initiative -= this.getFatigue() * this.m.CurrentProperties.FatigueToInitiativeRate;		// Subtract Accumulated Fatigue from Initiative
+		initiative += this.HD_getInitiativeModifierFromFatigue();	// Subtract Accumulated Fatigue from Initiative
 		initiative += this.getInitiativeModifierFromWeight();	// Subtract Weight from Initiative
 		return ::Math.round(initiative);
 	}

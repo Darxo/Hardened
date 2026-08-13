@@ -166,6 +166,11 @@
 		return ::Math.round(initiativeModifier);
 	}
 
+	q.HD_getInitiativeModifierFromFatigue <- function()
+	{
+		return -1.0 * this.getFatigue() * this.getCurrentProperties().FatigueToInitiativeRate;
+	}
+
 	/// Utility function similar to the MSU function ::Tactical.TurnSequenceBar.isActiveEntity except that it first checks whether we are even in combat
 	/// @return true if it is currently this entities turn
 	/// @return false otherwise
