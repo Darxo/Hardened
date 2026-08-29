@@ -5,7 +5,7 @@
 	{
 		local items = [];
 
-		local mainhand = this.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
+		local mainhand = this.getMainhandItem();
 		if (mainhand != null) items.push(mainhand);
 
 		local bags = this.getItems().getAllItemsAtSlot(::Const.ItemSlot.Bag);
@@ -41,7 +41,7 @@
 	{
 		local items = [];
 
-		local mainhand = this.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
+		local mainhand = this.getMainhandItem();
 		if (mainhand != null) items.push(mainhand);
 
 		local bags = this.getItems().getAllItemsAtSlot(::Const.ItemSlot.Bag);

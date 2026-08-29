@@ -66,10 +66,10 @@
 		local doubleGripSkill = actor.getSkills().getSkillByID("special.double_grip");
 		if (doubleGripSkill != null)
 		{
-			local main = actor.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
+			local main = actor.getMainhandItem();
 			if (main != null && main.isDoubleGrippable())
 			{
-				local off = actor.getItems().getItemAtSlot(::Const.ItemSlot.Offhand);
+				local off = actor.getOffhandItem();
 				if (off != null && off.isItemType(::Const.Items.ItemType.Tool))
 				{
 					doubleGripSkill.m.HD_ForceActive = true;	// For this update cycle, the Double Grip will always be active (unless actor is disarmed)

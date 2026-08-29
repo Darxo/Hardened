@@ -21,7 +21,7 @@
 // New Functions
 	q.__usesEmptyThrowingWeapon <- function()
 	{
-		local mainhand = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
+		local mainhand = this.getContainer().getActor().getMainhandItem();
 		return (mainhand != null && mainhand.isWeaponType(::Const.Items.WeaponType.Throwing) && mainhand.getAmmo() == 0 && mainhand.getAmmoMax() != 0);
 	}
 });

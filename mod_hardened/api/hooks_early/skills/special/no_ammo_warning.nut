@@ -3,7 +3,7 @@
 	// We also fix how this function was needlessly flipping this.m.IsHidden
 	q.isHidden = @() function()
 	{
-		local item = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
+		local item = this.getContainer().getActor().getMainhandItem();
 		if (item == null) return true;
 		if (!item.isItemType(::Const.Items.ItemType.RangedWeapon)) return true;
 

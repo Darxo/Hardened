@@ -104,7 +104,7 @@
 
 				score *= (1.0 + (targetsScore + targetsNotLockedDown * ::Const.AI.Behavior.CharmTargetLockdownMult) * ::Const.AI.Behavior.CharmTargetsMult);
 
-				if (targets > 1 && target.isArmedWithMeleeWeapon() && target.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand).isAoE())
+				if (targets > 1 && target.isArmedWithMeleeWeapon() && target.getMainhandItem().isAoE())
 				{
 					score *= ::Const.AI.Behavior.CharmAoEMult;
 				}
@@ -134,7 +134,7 @@
 				score *= ::Const.AI.Behavior.CharmTargetUnarmedMult;
 			}
 
-			if (target.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand) != null && target.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand).getID() == "weapon.wooden_stick")
+			if (target.getMainhandItem() != null && target.getMainhandItem().getID() == "weapon.wooden_stick")
 			{
 				if (!target.getSkills().hasSkill("perk.quick_hands"))
 				{

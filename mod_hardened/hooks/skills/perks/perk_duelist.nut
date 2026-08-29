@@ -11,7 +11,7 @@
 
 	q.onUpdate <- function( _properties )	// This will maybe cause issues with Lunge.
 	{
-		local mainhandItem = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
+		local mainhandItem = this.getContainer().getActor().getMainhandItem();
 		if (mainhandItem == null) return;
 		if (mainhandItem.isItemType(::Const.Items.ItemType.OneHanded) == false) return;
 

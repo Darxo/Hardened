@@ -76,7 +76,7 @@
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
 	q.onSpawned = @() function()
 	{
-		if (this.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand).isItemType(::Const.Items.ItemType.TwoHanded))
+		if (this.getMainhandItem().isItemType(::Const.Items.ItemType.TwoHanded))
 		{
 			this.getSkills().add(::new("scripts/skills/perks/perk_rf_long_reach"));
 		}
@@ -117,7 +117,7 @@
 	// Assign all other gear to this character
 	q.HD_assignOtherGear <- function()
 	{
-		if (this.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand).getID() == "weapon.goblin_falchion")
+		if (this.getMainhandItem().getID() == "weapon.goblin_falchion")
 		{
 			local throwingWeapon = ::new("scripts/items/weapons/greenskins/goblin_spiked_balls");
 			throwingWeapon.m.Ammo = 4;

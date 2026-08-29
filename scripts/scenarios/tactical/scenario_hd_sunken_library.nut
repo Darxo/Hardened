@@ -123,7 +123,7 @@ this.scenario_hd_sunken_library <- this.inherit("scripts/scenarios/tactical/scen
 				local e = ::Tactical.spawnEntity("scripts/entity/tactical/enemies/zombie_treasure_hunter", tile.Coords);
 				e.setFaction(::Const.Faction.Undead);
 				e.assignRandomEquipment();
-				local item = e.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
+				local item = e.getMainhandItem();
 				item.setCondition(this.Math.rand(item.getConditionMax() / 2, item.getConditionMax()));
 				--treasureHunters;
 			}
@@ -141,7 +141,7 @@ this.scenario_hd_sunken_library <- this.inherit("scripts/scenarios/tactical/scen
 				local e = ::Tactical.spawnEntity("scripts/entity/tactical/enemies/skeleton_heavy", tile.Coords);
 				e.setFaction(::Const.Faction.Undead);
 				e.assignRandomEquipment();
-				local item = e.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
+				local item = e.getMainhandItem();
 				item.setCondition(::Math.rand(item.getConditionMax() / 2, item.getConditionMax()));
 				--heavy;
 			}
@@ -159,7 +159,7 @@ this.scenario_hd_sunken_library <- this.inherit("scripts/scenarios/tactical/scen
 				local e = ::Tactical.spawnEntity("scripts/entity/tactical/enemies/skeleton_heavy_polearm", tile.Coords);
 				e.setFaction(::Const.Faction.Undead);
 				e.assignRandomEquipment();
-				local item = e.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
+				local item = e.getMainhandItem();
 				item.setCondition(::Math.rand(item.getConditionMax() / 2, item.getConditionMax()));
 				--heavy_polearm;
 			}

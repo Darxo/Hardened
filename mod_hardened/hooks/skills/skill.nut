@@ -231,7 +231,7 @@
 	// This is more for mod-compatibility, because our Duelist Perk is reworked and does not use this check
 	q.isDuelistValid = @() function()
 	{
-		local mainhandItem = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
+		local mainhandItem = this.getContainer().getActor().getMainhandItem();
 		if (::MSU.isNull(mainhandItem)) return false;
 		if (!mainhandItem.isItemType(::Const.Items.ItemType.OneHanded)) return false;
 

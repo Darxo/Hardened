@@ -46,7 +46,7 @@
 	{
 		// In Vanilla shieldwall_effect will be removed, whenever shieldwall (skill) is removed. But in Hardened someone without shieldwall (skill) can gain that effect
 		// This effect would not be removed when they switch away from the shield, causing glitches. So now we implement a check, that vanilla should have implemented themselves
-		local item = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Offhand);
+		local item = this.getContainer().getActor().getOffhandItem();
 		if (item == null || !item.isItemType(::Const.Items.ItemType.Shield))
 		{
 			this.removeSelf();

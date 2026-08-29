@@ -39,7 +39,7 @@
 		__original(_properties);
 		if (this.isEnabled())
 		{
-			local helmet = this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Head);
+			local helmet = this.getContainer().getActor().getHeadItem();
 			if (helmet != null && helmet.m.Vision < 0)
 			{
 				_properties.Vision += 1;

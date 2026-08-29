@@ -18,7 +18,7 @@
 	q.onUpdate <- function( _properties )
 	{
 		local actor = this.getContainer().getActor();
-		local mainhand = actor.getItems().getItemAtSlot(::Const.ItemSlot.Mainhand);
+		local mainhand = actor.getMainhandItem();
 		if (mainhand != null && mainhand.isWeaponType(::Const.Items.WeaponType.Spear) && !actor.isDisarmed())
 		{
 			_properties.DamageTotalMult *= this.m.HD_DamageTotalMult;
