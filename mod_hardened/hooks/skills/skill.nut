@@ -398,10 +398,13 @@
 				local damage_direct_min = ::Math.floor(damage_regular_min * ::Math.minf(1.0, p.DamageDirectMult * (this.m.DirectDamageMult + p.DamageDirectAdd + p.DamageDirectMeleeAdd)));
 				entry.text = ::MSU.String.replace(entry.text, "of which [color=" + ::Const.UI.Color.DamageValue + "]0[/color]", "of which " + ::MSU.Text.colorDamage(damage_direct_min));
 			}
-			else if (!hasRangeTooltip && "icon" in entry && entry.icon == "ui/icons/vision.png" && entry.text.find("Has a range of ") != null)
+			else if (!hasRangeTooltip && "icon" in entry && entry.icon == "ui/icons/vision.png")
 			{
-				hasRangeTooltip = true;
-				entry.text = this.HD_generateRangeTooltipString();
+				if (entry.text.find("Has a range of ") == 0 || entry.text.find("Range: ") == 0)
+				{
+					hasRangeTooltip = true;
+					entry.text = this.HD_generateRangeTooltipString();
+				}
 			}
 		}
 
