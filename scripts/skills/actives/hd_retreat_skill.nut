@@ -35,14 +35,14 @@ this.hd_retreat_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (::Tactical.State.getStrategicProperties().IsFleeingProhibited) return false;	// e.g. Icy Cave or Arena Fights
 
-		if (!this.isAtMapBorder()) return false;	// We assume (just like vanilla ai_retreat), that all border tiles are valid for retreating
+		if (!this.isOnFleeTile()) return false;	// We assume (just like vanilla ai_retreat), that all border tiles are valid for retreating
 
 		return this.skill.isUsable();
 	}
 
 	function isHidden()
 	{
-		return !this.isAtMapBorder();
+		return !this.isOnFleeTile();
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -63,7 +63,7 @@ this.hd_retreat_skill <- this.inherit("scripts/skills/skill", {
 
 // New Functions
 	// This is a copy to the simple check that vanilla ai_retreat uses to determine whether a character is allowed to leave the battle
-	function isAtMapBorder()
+	function isOnFleeTile()
 	{
 		local actor = this.getContainer().getActor();
 		if (!actor.isPlacedOnMap()) return false;
