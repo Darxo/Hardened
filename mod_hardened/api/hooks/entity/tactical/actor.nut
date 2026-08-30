@@ -55,6 +55,32 @@
 		this.__possiblyChangedTileSituation();
 	}
 
+	q.onMovementFinish = @(__original) function ( _tile )
+	{
+		if (!::Tactical.State.m.HD_IsUsingHexagonLayout)
+		{
+			return __original(_tile);
+		}
+
+		// We prevent the hard-coded vanilla morale loss when entering supposed flee tiles at the border, so that we can re-implement them more moddable
+		local mockObject = ::Hardened.mockFunction(this, "checkMorale", function( _change, _difficulty, _type = ::Const.MoraleCheckType.Default, _showIconBeforeMoraleIcon = "", _noNewLine = false ) {
+			if (_difficulty == -1000)
+			{
+				return { done = true, value = false };
+			}
+		});
+
+		__original(_tile);
+
+		mockObject.cleanup();
+
+		if (this.getMoraleState() > ::Const.MoraleState.Breaking && ::Hardened.Tactical.MapInfo.isFleeTile(_tile))
+		{
+			local change = this.getMoraleState() - ::Const.MoraleState.Breaking;
+			this.checkMorale(-change, -1000);
+		}
+	}
+
 	q.hasZoneOfControl = @(__original) function()
 	{
 		return __original() && this.getCurrentProperties().CanExertZoneOfControl;

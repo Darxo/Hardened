@@ -68,9 +68,7 @@ this.hd_retreat_skill <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		if (!actor.isPlacedOnMap()) return false;
 
-		if (::MSU.Tile.getNeighbors(actor.getTile()).len() != 6) return true;	// We assume that only tiles at the border are missing neighboring tiles
-
-		return false;
+		return ::Hardened.Tactical.MapInfo.isFleeTile(actor.getTile());
 	}
 });
 
