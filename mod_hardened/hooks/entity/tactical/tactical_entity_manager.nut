@@ -122,4 +122,16 @@
 		// We randomize the seed again, as we are done with its usage for our purpose. We dont want following random calls to be influenced too
 		::Math.seedRandom(::Time.getRealTime());
 	}
+
+	q.isTileIsolated = @(__original) function( _tile )
+	{
+		if (::Tactical.State.m.HD_IsUsingHexagonLayout)
+		{
+			return ::Hardened.Tactical.MapInfo.isTileIsolated(_tile);
+		}
+		else
+		{
+			return __original(_tile);
+		}
+	}
 });
