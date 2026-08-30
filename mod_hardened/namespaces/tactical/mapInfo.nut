@@ -45,6 +45,17 @@
 			this.m.CornerTiles.push(::Tactical.getTileSquare(size.X - 1, size.Y - 1));
 			this.m.CornerTiles.push(::Tactical.getTileSquare(size.X - 1, 0));
 		}
+
+		if (this.m.CurrentShape == this.m.Shape.Hexagon)
+		{
+			// Todo: Check if those tiles are blocked with an object, and then choose another one
+			this.m.CornerTiles.push(::Tactical.getTileSquare(this.m.OffsetX + this.m.HexagonRadius, this.m.OffsetY + this.m.HexagonRadius * 2));
+			this.m.CornerTiles.push(::Tactical.getTileSquare(this.m.OffsetX + this.m.HexagonRadius * 2, this.m.OffsetY + ::Math.ceil(this.m.HexagonRadius * 1.5)));
+			this.m.CornerTiles.push(::Tactical.getTileSquare(this.m.OffsetX + this.m.HexagonRadius * 2, this.m.OffsetY + ::Math.ceil(this.m.HexagonRadius * 0.5)));
+			this.m.CornerTiles.push(::Tactical.getTileSquare(this.m.OffsetX + this.m.HexagonRadius, this.m.OffsetY));
+			this.m.CornerTiles.push(::Tactical.getTileSquare(this.m.OffsetX, this.m.OffsetY + ::Math.ceil(this.m.HexagonRadius * 0.5)));
+			this.m.CornerTiles.push(::Tactical.getTileSquare(this.m.OffsetX, this.m.OffsetY + ::Math.ceil(this.m.HexagonRadius * 1.5)));
+		}
 	}
 
 // Public Utility Functions
@@ -158,3 +169,40 @@
 	}
 }
 
+// Functions related to transforming a tactical map into a hexagon shape
+::Hardened.Tactical.HexagonShape <- {
+	// Called at the start of spawn()
+	function turnIntoHexagon()
+	{
+		local mapInfo = ::Hardened.Tactical.MapInfo;
+		mapInfo.m.CurrentShape = mapInfo.m.Shape.Hexagon;
+
+		this.carveCircle();
+		mapInfo.spawnFleeTiles();
+	}
+
+// Private
+	// Turn all tiles into void, which do not belong to the hexagon shape we aim for
+	function carveCircle()
+	{
+		local mapInfo = ::Hardened.Tactical.MapInfo;
+		local center = mapInfo.getCenter();
+		local radius = mapInfo.getRadius();
+		for (local x = 0; x < mapInfo.m.DimensionX; ++x)
+		{
+			for (local y = 0; y < mapInfo.m.DimensionY; ++y)
+			{
+				local tile = ::Tactical.getTileSquare(x, y);
+				if (tile.getDistanceTo(center) > radius)
+				{
+					tile.Type = ::Const.World.TerrainType.Impassable;
+					tile.Subtype = ::Const.Tactical.TerrainSubtype.None;
+					tile.setBrush("");
+					tile.clear();	// Remove any details on the tile
+					tile.Level = 0;
+					tile.removeObject();	// Remove any object or entity on top of the tile
+				}
+			}
+		}
+	}
+}

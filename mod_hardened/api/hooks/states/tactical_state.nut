@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/states/tactical_state", function(q) {
+	q.m.HD_IsUsingHexagonLayout <- false;
+
 	q.updateCursorAndTooltip = @(__original) function( _skillSelected = false )
 	{
 		if (!::Hardened.Private.IsPreviewingAttackWithHitChance) return __original(_skillSelected);
@@ -19,4 +21,10 @@
 
 		__original(_skillSelected);
 	}
+
+	q.initMap = @(__original) { function initMap()
+	{
+		::Tactical.State.m.HD_IsUsingHexagonLayout = false;
+		__original();
+	}}.initMap;
 });

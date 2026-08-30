@@ -48,6 +48,11 @@
 	q.spawn = @(__original) { function spawn( _properties )
 	{
 		::Hardened.Tactical.MapInfo.init();
+		if (::Tactical.State.m.HD_IsUsingHexagonLayout)
+		{
+			// Feat: Turn this tactical map into a hexagon shape, if chosen by its template
+			::Hardened.Tactical.HexagonShape.turnIntoHexagon();
+		}
 		::Hardened.Tactical.MapInfo.calculateCornerTiles();
 
 		__original(_properties);
