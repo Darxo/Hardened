@@ -17,6 +17,14 @@
 		::Const.Combat.GlobalXPMult = 1.0;		// Vanilla: 0.85
 		::Const.Combat.SpawnArrowDecalAttempts = 10;	// In Vanila this is 3; potentially causing several missiles producing now decal on impact. Not sure why though
 		::Const.Combat.WeaponSpecFatigueMult = 1.0;		// We set this to 1.0 to deactivate the vanilla/modular-vanilla way of applying the fatigue discount
+
+		// Vanilla Fix: Enforce an unpayably high AP cost for moving through impassable terrain
+		// Vanilla defines 0 as the value for impassable terrain but this is not enforced everywhere correctly
+		//	Instead, during retreating, characters where able to move through impassable terrain at a cost of 1 AP
+		//	A player character teleporting into impassable terrain can also move out of it for 1 AP per tile
+		::Const.DefaultMovementAPCost[0] = 9999;	// Vanilla: 0
+		::Const.PathfinderMovementAPCost[0] = 9999;	// Vanilla: 0
+		::Const.SameMovementAPCost[0] = 9999;		// Vanilla: 0
 	}
 
 	{	// Reforged
