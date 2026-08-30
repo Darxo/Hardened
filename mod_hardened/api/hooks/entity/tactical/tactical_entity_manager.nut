@@ -45,6 +45,14 @@
 		return ret;
 	}
 
+	q.spawn = @(__original) { function spawn( _properties )
+	{
+		::Hardened.Tactical.MapInfo.init();
+		::Hardened.Tactical.MapInfo.calculateCornerTiles();
+
+		__original(_properties);
+	}}.spawn;
+
 // New Functions
 	// Function for scheduling resurrections
 	q.HD_scheduleResurrection <- function( _rounds, _corpse )

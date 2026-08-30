@@ -17,6 +17,7 @@
 		LastSpawnedActor = null,
 		PersistentData = {},	// Cached copy of persistent data to make readings more performant
 	},
+	Tactical = {},	// Namespace for tactical related frameworks
 }
 
 ::Hardened.HooksMod <- ::Hooks.register(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
