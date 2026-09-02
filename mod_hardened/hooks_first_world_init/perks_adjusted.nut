@@ -6,6 +6,19 @@
 local adjustedDescriptions = [
 	// Vanilla Perks
 	{
+		ID = "perk.adrenaline",
+		Key = "Adrenaline",
+		Description = ::UPD.getDescription({
+			Fluff = "Feel the adrenaline rushing through your veins!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Unlock [$ $|Skill+adrenaline_skill]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.anticipation",
 		Key = "Anticipation",
 		Description = ::UPD.getDescription({
@@ -317,7 +330,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlock [$ $|Skill+rf_arrow_to_the_knee_skill], which debilitate your opponents\' capability to move around the battlefield",
+						"Unlock [$ $|Skill+rf_arrow_to_the_knee_skill]",
 					],
 				},
 			],
@@ -957,7 +970,7 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Active,
 					Description = [
-						"Unlock [$ $|Skill+rf_dynamic_duo_select_partner_skill], which allows you to choose a Partner, if you don\'t already have one",
+						"Unlock [$ $|Skill+rf_dynamic_duo_select_partner_skill]",
 					],
 				},
 			],
@@ -1929,7 +1942,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Active,
 				Description = [
-					"Unlock [$ $|Skill+hd_whirling_death_skill], allowing you to prepare a devastating attack",
+					"Unlock [$ $|Skill+hd_whirling_death_skill]",
 				]
 			}],
 		}),
