@@ -26,4 +26,12 @@
 		__original();
 		this.getContainer().getActor().setActionPoints(0);
 	}
+
+	q.setTurns = @(__original) { function setTurns( _turns )
+	{
+		// Vanilla Fix: Vanilla only does a basic null check for the state of getContainer() but the returned values is a WeakTableRef and requires an additional check
+		if (::MSU.isNull(this.getContainer())) return;
+
+		__original(_turns);
+	}}.setTurns;
 });
