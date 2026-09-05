@@ -207,6 +207,20 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.gifted",
+		Key = "Gifted",
+		Description = ::UPD.getDescription({
+			Fluff = "Mercenary life comes easy when you\'re naturally gifted.",
+			Effects = [{
+				Type = ::UPD.EffectType.OneTimeEffect,
+				Description = [
+					"Gain " + ::MSU.Text.colorPositive("1") + " [$ $|Concept.LevelUp] with maximum rolls but ignoring [$ $|Concept.Talent]",
+				],
+			}],
+			Footer = ::MSU.Text.colorNegative("This perk cannot be refunded."),
+		}),
+	},
+	{
 		ID = "perk.hold_out",
 		Key = "HoldOut",
 		Description = ::UPD.getDescription({
