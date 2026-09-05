@@ -4,5 +4,8 @@
 		__original();
 		this.m.ActionPointCost = 4;	// Vanilla: 3
 		this.m.FatigueCost = 20;	// Vanilla: 5
+		this.m.MaxRange = 6;		// Vanilla: 8
+
+		this.m.Cooldown = 0;		// Vanilla: 1-2
 	}
 });
