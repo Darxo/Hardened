@@ -8,6 +8,22 @@
 		this.m.IsHidden = true;
 	}
 
+	q.onAdded = @(__original) function()
+	{
+		__original();
+
+		local encumbrance = this.getContainer().getSkillByID("effects.rf_encumbrance");
+		if (encumbrance != null) encumbrance.m.HD_EncumbranceMinWeight = 9999;
+	}
+
+	q.onRemoved = @(__original) function()
+	{
+		__original();
+
+		local encumbrance = this.getContainer().getSkillByID("effects.rf_encumbrance");
+		if (encumbrance != null) encumbrance.m.HD_EncumbranceMinWeight = encumbrance.b.HD_EncumbranceMinWeight;
+	}
+
 	// Replace Reforged calculation
 	q.onUpdate = @() function( _properties )
 	{

@@ -1607,8 +1607,8 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Receive " + ::MSU.Text.colorPositive("50%") + " less [$ $|Concept.Initiative] penalty from your [Fatigue|Concept.Fatigue]",
 					::MSU.Text.colorPositive("50%") + " less [$ $|Concept.Initiative] penalty from your Body Armor [$ $|Concept.Weight]",
+					"Unaffected by [$ $|Skill+rf_encumbrance_effect]",
 				],
 			}],
 		}),
