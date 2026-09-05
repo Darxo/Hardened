@@ -1,3 +1,15 @@
+local removeBlock = function( _party, _unitBlockID )
+{
+	foreach (index, entry in _party.DynamicDefs.UnitBlocks)
+	{
+		if (entry.BaseID == _unitBlockID)
+		{
+			_party.DynamicDefs.UnitBlocks.remove(index);
+			break;
+		}
+	}
+}
+
 // Hooking
 {
 	::Reforged.Spawns.Parties["Cultists"].IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Civilians;
@@ -11,13 +23,23 @@
 
 	local mercParty = ::Reforged.Spawns.Parties["Mercenaries"];
 	mercParty.HardMin = 6;	// Reforged: 8
+
+	// Remove the first forced merc elite added by reforged
+	removeBlock(mercParty, "UnitBlock.RF.MercenaryElite");
+
 	foreach (unitBlock in mercParty.DynamicDefs.UnitBlocks)
 	{
 		if (unitBlock.BaseID == "UnitBlock.RF.Wardog")
 		{
 			unitBlock.ExclusionChance <- 0.4;	// Reforged: 0.0
 			unitBlock.HardMax <- 4;		// Reforged: unlimited
-			break;
+		}
+		else if (unitBlock.BaseID == "UnitBlock.RF.MercenaryElite")
+		{
+			delete unitBlock.getSpawnWeight;
+			unitBlock.StartingResourceMin <- 200;	// Reforged: 300
+			unitBlock.ExclusionChance <- 0.2;		// Reforged: -
+			unitBlock.RatioMin <- 0.1;				// Reforged: -
 		}
 	}
 
