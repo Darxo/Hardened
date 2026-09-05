@@ -8,4 +8,19 @@
 
 		this.m.Cooldown = 0;		// Vanilla: 1-2
 	}
+
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original();
+
+		foreach (entry in ret)
+		{
+			if (entry.text.find("The target gains the") != null)
+			{
+				entry.text = ::Reforged.Mod.Tooltips.parseString("Choose an enemy. It gains [$ $|Skill+hex_slave_effect] and you gain [$ $|Skill+hex_master_effect]");
+			}
+		}
+
+		return ret;
+	}
 });
