@@ -1489,7 +1489,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.OneTimeEffect,
 					Description = [
 						"Refund all spent Perk Points",
-						"Gain " + ::MSU.Text.colorPositive("1") + " Level Up",
+						"Gain " + ::MSU.Text.colorPositive("1") + " [$ $|Concept.LevelUp]",
 						"Gain " + ::MSU.Text.colorPositive("1") + " random Shared Perk Group",
 					],
 				},

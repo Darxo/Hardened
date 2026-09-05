@@ -112,6 +112,14 @@
 		"Minimum Hitchance: " + ::MSU.Text.colorNeutral(::Const.Combat.MV_HitChanceMin + "%") + "\n" +
 		"Maximum Hitchance: " + ::MSU.Text.colorNeutral(::Const.Combat.MV_HitChanceMax + "%")
 	)),
+	LevelUp = ::MSU.Class.BasicTooltip("Level Up", ::Reforged.Mod.Tooltips.parseString(
+		"A Level Up is gained whenever a character reaches a new level and allows you to improve three of their attributes.\n\n" +
+		"During a Level Up, an increase is rolled for each attribute, influenced by its [Talent|Concept.Talent]. You must then choose " + ::MSU.Text.colorPositive(3) + " attributes and increase them by their rolled amounts:\n" +
+		"• [$ $|Concept.MeleeSkill] and [$ $|Concept.MeleeDefense] roll between " + ::MSU.Text.colorPositive(1) + " and " + ::MSU.Text.colorPositive(3) + " points\n" +
+		"• [$ $|Concept.RangeSkill], [$ $|Concept.RangeDefense], [$ $|Concept.Hitpoints], [Stamina|Concept.MaximumFatigue] and [$ $|Concept.Bravery] roll between " + ::MSU.Text.colorPositive(2) + " and " + ::MSU.Text.colorPositive(4) + " points\n" +
+		"• [$ $|Concept.Initiative] rolls between " + ::MSU.Text.colorPositive(3) + " and " + ::MSU.Text.colorPositive(5) + " points\n\n" +
+		"Level Ups beyond level " + ::MSU.Text.colorPositive(::Const.XP.MaxLevelWithPerkpoints) + " grant at most " + ::MSU.Text.colorPositive(1) + " point in each chosen attribute and ignore [Talent|Concept.Talent]."
+	)),
 	Mood = ::MSU.Class.BasicTooltip("Mood", ::Reforged.Mod.Tooltips.parseString(
 		"Mood reflects how satisfied member of your company are.\n\n" +
 		"It is expressed as a value between " + ::MSU.Text.colorNeutral(0.0) + " and " + ::MSU.Text.colorNeutral(6.95) + " which translates into the following seven mood states: Angry, Disgruntled, Dissatisfied, Content, In good spirit, Eager and Euphoric.\n\n" +
