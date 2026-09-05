@@ -119,6 +119,8 @@
 		__original();
 		foreach (screen in this.m.Screens)
 		{
+			this.scaleRenownToContractTier(screen);
+
 			if (screen.Options.len() != 1) continue;
 
 			local skipScreen = true;	// by default we dont hook contract screens
@@ -226,6 +228,25 @@
 			mockObject.cleanup();
 
 			return ret;
+		}
+	}
+
+	/// Hook the getResult functions of all options in the passed screen and scale the renown you receive or lose during them
+	q.scaleRenownToContractTier <- function( _screen )
+	{
+		foreach (option in _screen.Options)
+		{
+			local oldGetResult = option.getResult;
+			option.getResult = function()
+			{
+				// Feat: scale busines reputation depending on the tier of the current contract
+				local oldBusinessReputationRate = ::World.Assets.m.BusinessReputationRate;
+				::World.Assets.m.BusinessReputationRate = 0.6 + (this.Contract.HD_getDifficultyTier() * 0.2);
+				::logWarning("Hardened: BusinessReputationRate downscaled to " + ::World.Assets.m.BusinessReputationRate);
+				local ret = oldGetResult();
+				::World.Assets.m.BusinessReputationRate = oldBusinessReputationRate;
+				return ret;
+			}
 		}
 	}
 });
