@@ -643,6 +643,23 @@
 			break;
 		}
 
+		// Feat: Show base weight in tooltip of Stamina and Initiative Attributes
+		if (_elementId == "character-stats.Fatigue" || _elementId == "character-stats.Initiative")
+		{
+			ret.push({
+				id = 80,
+				type = "text",
+				text = "rf_divider",
+			});
+
+			ret.push({
+				id = 80,
+				type = "text",
+				icon = "ui/icons/bag.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Base [$ $|Concept.Weight]: ") + ::MSU.Text.colorPositive(entity.getItems().getWeight()),
+			});
+		}
+
 		return ret;
 	}
 });
