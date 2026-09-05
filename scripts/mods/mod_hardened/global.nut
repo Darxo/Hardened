@@ -33,6 +33,7 @@ local resourceMult = ::Hardened.Const.ResourceTierMult;
 				{ Key = "Stamina" },
 				{ Key = "StaminaMult", IsMult = true },
 				{ Key = "getStaminaModifierFromWeight", IsFunc = true, BaseIcon = "ui/icons/bag.png", IsActor = true, Prefix = "From Weight: " },
+				{ Key = "getStaminaModifierFromWeight", IsFunc = true, IsActor = true},
 				{ Key = "FatigueRecoveryRate", BaseIcon = "ui/icons/fatigue.png", Suffix = " Fatigue Recovery", Prefix = "Base: " },
 				{ Key = "FatigueRecoveryRate", Suffix = " Fatigue Recovery" },
 			],
@@ -51,7 +52,9 @@ local resourceMult = ::Hardened.Const.ResourceTierMult;
 				{ Key = "Initiative" },
 				{ Key = "InitiativeMult", IsMult = true },
 				{ Key = "getInitiativeModifierFromWeight", IsFunc = true, BaseIcon = "ui/icons/bag.png", IsActor = true, Prefix = "From Weight: " },
+				{ Key = "getInitiativeModifierFromWeight", IsFunc = true, IsActor = true },
 				{ Key = "HD_getInitiativeModifierFromFatigue", IsFunc = true, BaseIcon = "ui/icons/initiative.png", IsActor = true, Prefix = "From Fatigue: " },
+				{ Key = "HD_getInitiativeModifierFromFatigue", IsFunc = true, IsActor = true },
 			],
 
 			"character-stats.MeleeSkill": [
