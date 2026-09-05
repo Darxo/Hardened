@@ -1045,10 +1045,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorPositive("1") + " Rage Stack whenever you miss a Non-AoE Attack or get hit by an Attack from an Enemy, up to a maximum of " + ::MSU.Text.colorNeutral("4") + " Stacks",
-					"Lose all Rage Stacks when you hit with a Non-AoE Attack",
-					"Deal " + ::MSU.Text.colorPositive("25%") + " more Damage with Non-AoE Attacks for each Rage Stack",
-					"While you have at least " + ::MSU.Text.colorNeutral("4") + " Rage Stacks, become Immune to [$ $|Skill+stunned_effect] and take " + ::MSU.Text.colorPositive("20%") + " less [Hitpoint|Concept.Hitpoints] Damage",
+					"Gain " + ::MSU.Text.colorPositive("1") + " Stack of [$ $|Skill+hd_feral_rage_effect] whenever you miss a Non-AoE Attack or get hit by an Attack from an Enemy, up to a maximum of " + ::MSU.Text.colorNeutral("4") + " Stacks",
 				],
 			}],
 		}),
