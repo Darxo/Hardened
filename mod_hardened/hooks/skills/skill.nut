@@ -339,7 +339,14 @@
 			}
 		}
 
+		if (::MSU.isEqual(this, this.getContainer().getAttackOfOpportunity()))
+		{
+			itemTags += "[Attack of Opportunity|Concept.ZoneOfControl], ";
+		}
+
 		if (itemTags != "") itemTags = itemTags.slice(0, -2);
+
+		itemTags = ::Reforged.Mod.Tooltips.parseString(itemTags);
 
 		return ::MSU.Text.color("#1e468f", "Tags: ") + itemTags;
 	}
