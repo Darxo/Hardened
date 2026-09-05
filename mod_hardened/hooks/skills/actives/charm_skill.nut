@@ -9,6 +9,7 @@
 	{
 		__original();
 
+		this.m.ActionPointCost = 7;		// Vanilla: 5
 		// We turn off attack flag to make this skill produce a combat log on-use
 		this.m.IsAttack = false;
 	}

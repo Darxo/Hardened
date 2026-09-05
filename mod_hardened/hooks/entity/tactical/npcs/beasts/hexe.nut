@@ -58,6 +58,7 @@
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_recover"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_soul_link"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_rf_vigilant"));
 
 		// Generic Actives
 		this.getSkills().add(::new("scripts/skills/actives/charm_skill"));
