@@ -4,6 +4,13 @@
 	q.m.HD_NearbyLocations <- [];	// Array of "nearby" locations for the purpose of calculating, whether to show their names. They are updated once per hour
 	q.m.HD_LocationTypesToDisplay <- 0;		// combined types of all locations, whose name and optionally numeral we wanna display when they are in range
 
+	q.startNewCampaign = @(__original) function()
+	{
+		::logInfo("Hardened: Starting new campaign with seed " + this.m.CampaignSettings.Seed);
+
+		__original();
+	}
+
 	q.enterLocation = @(__original) function( _location )
 	{
 		local targetingAlliedRaidableLocation = _location.isAttackable() && _location.isLocationType(::Const.World.LocationType.AttachedLocation) && _location.isRaidable() && _location.isAlliedWithPlayer();
