@@ -1,5 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/spider_eggs", function(q) {
-	q.m.MaximumSpiderTimer <- 2;
+	q.m.MinimumSpiderTimer <- 2;	// Vanilla: 1
+	q.m.MaximumSpiderTimer <- 3;	// Vanilla: 2
 
 	// Private
 	q.m.CurrentSpiderTimer <- 0;
@@ -64,6 +65,6 @@
 // New Functions
 	q.resetSpiderTimer <- function()
 	{
-		this.m.CurrentSpiderTimer = ::Math.rand(1, this.m.MaximumSpiderTimer);
+		this.m.CurrentSpiderTimer = ::Math.rand(this.m.MinimumSpiderTimer, this.m.MaximumSpiderTimer);
 	}
 });
