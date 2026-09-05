@@ -666,8 +666,8 @@
 // scripts/entity/tactical/enemies/unhold_armored
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.BarbarianUnhold.Cost = 60;
-	::Const.World.Spawn.Troops.BarbarianUnhold.Strength = 60;
+	::Const.World.Spawn.Troops.BarbarianUnhold.Cost = 80;
+	::Const.World.Spawn.Troops.BarbarianUnhold.Strength = 80;
 }
 
 // scripts/entity/tactical/enemies/hexe
@@ -680,8 +680,8 @@
 // scripts/entity/tactical/enemies/unhold
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.Unhold.Cost = 60;
-	::Const.World.Spawn.Troops.Unhold.Strength = 60;
+	::Const.World.Spawn.Troops.Unhold.Cost = 80;
+	::Const.World.Spawn.Troops.Unhold.Strength = 80;
 }
 
 // scripts/entity/tactical/humans/hedge_knight
@@ -725,8 +725,8 @@
 // scripts/entity/tactical/enemies/unhold_bog
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.UnholdBog.Cost = 70;
-	::Const.World.Spawn.Troops.UnholdBog.Strength = 70;
+	::Const.World.Spawn.Troops.UnholdBog.Cost = 80;
+	::Const.World.Spawn.Troops.UnholdBog.Strength = 80;
 }
 
 // scripts/entity/tactical/enemies/rf_bandit_baron
@@ -747,8 +747,8 @@
 // scripts/entity/tactical/enemies/unhold_frost
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.UnholdFrost.Cost = 80;
-	::Const.World.Spawn.Troops.UnholdFrost.Strength = 80;
+	::Const.World.Spawn.Troops.UnholdFrost.Cost = 100;
+	::Const.World.Spawn.Troops.UnholdFrost.Strength = 100;
 }
 
 // scripts/entity/tactical/enemies/schrat
@@ -800,8 +800,8 @@
 // scripts/entity/tactical/enemies/unhold_frost_armored
 {
 	// Mandatory Entries
-	::Const.World.Spawn.Troops.BarbarianUnholdFrost.Cost = 100;
-	::Const.World.Spawn.Troops.BarbarianUnholdFrost.Strength = 100;
+	::Const.World.Spawn.Troops.BarbarianUnholdFrost.Cost = 110;
+	::Const.World.Spawn.Troops.BarbarianUnholdFrost.Strength = 110;
 }
 
 // scripts/entity/tactical/enemies/sand_golem_high

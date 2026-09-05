@@ -1,6 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/racial/unhold_racial", function(q) {
 	// Public
-	q.m.HD_RecoveredHitpointPct <- 0.15;	// This percentage of maximum Hitpoints is recovered at the start of each turn
+	q.m.HD_RecoveredHitpointPct <- 0.1;	// This percentage of maximum Hitpoints is recovered at the start of each turn
 	q.m.HD_NegativeStatusEffectDurationModifier <- -1;
 
 	q.getTooltip = @(__original) function()

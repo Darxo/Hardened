@@ -47,9 +47,7 @@
 		b.IsImmuneToRotation = true;
 
 		// Generic Effects
-		this.getSkills().add(::Reforged.new("scripts/skills/racial/unhold_racial", function(o) {
-			o.m.HD_RecoveredHitpointPct = 0.1;	// Reforged: 0.15
-		}));
+		this.getSkills().add(::new("scripts/skills/racial/unhold_racial"));
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_stalwart"));

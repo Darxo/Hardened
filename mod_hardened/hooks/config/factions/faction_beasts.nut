@@ -207,14 +207,16 @@
 	// Mandatory stats
 	::Const.Tactical.Actor.Unhold.XP = 600 * ::Hardened.Global.FactionExperience.Beasts;		// Vanilla: 400
 	::Const.Tactical.Actor.Unhold.ActionPoints = 9;
-	::Const.Tactical.Actor.Unhold.Hitpoints = 600;				// Vanilla: 500
+	::Const.Tactical.Actor.Unhold.Hitpoints = 700;				// Vanilla: 500
 	::Const.Tactical.Actor.Unhold.Bravery = 130;
 	::Const.Tactical.Actor.Unhold.Stamina = 400;
-	::Const.Tactical.Actor.Unhold.MeleeSkill = 70;
+	::Const.Tactical.Actor.Unhold.MeleeSkill = 80;				// Vanilla: 70
 	::Const.Tactical.Actor.Unhold.RangedSkill = 0;
 	::Const.Tactical.Actor.Unhold.MeleeDefense = 10;
 	::Const.Tactical.Actor.Unhold.RangedDefense = 0;
 	::Const.Tactical.Actor.Unhold.Initiative = 70;				// Vanilla: 75
+	::Const.Tactical.Actor.Unhold.Armor[0] = 150;				// Vanilla: 0
+	::Const.Tactical.Actor.Unhold.Armor[1] = 150;				// Vanilla: 0
 
 	// Optional Stats
 	::Const.Tactical.Actor.Unhold.Reach <- 6;
@@ -225,10 +227,10 @@
 	// Mandatory stats
 	::Const.Tactical.Actor.UnholdBog.XP = 700 * ::Hardened.Global.FactionExperience.Beasts;			// Vanilla: 400
 	::Const.Tactical.Actor.UnholdBog.ActionPoints = 9;
-	::Const.Tactical.Actor.UnholdBog.Hitpoints = 500;
+	::Const.Tactical.Actor.UnholdBog.Hitpoints = 700;			// Vanilla: 500
 	::Const.Tactical.Actor.UnholdBog.Bravery = 130;
 	::Const.Tactical.Actor.UnholdBog.Stamina = 400;
-	::Const.Tactical.Actor.UnholdBog.MeleeSkill = 70;
+	::Const.Tactical.Actor.UnholdBog.MeleeSkill = 80;			// Vanilla: 70
 	::Const.Tactical.Actor.UnholdBog.RangedSkill = 0;
 	::Const.Tactical.Actor.UnholdBog.MeleeDefense = 10;
 	::Const.Tactical.Actor.UnholdBog.RangedDefense = 15;		// Vanilla: 0
@@ -244,16 +246,16 @@
 	// Mandatory stats
 	::Const.Tactical.Actor.UnholdFrost.XP = 800 * ::Hardened.Global.FactionExperience.Beasts;
 	::Const.Tactical.Actor.UnholdFrost.ActionPoints = 9;
-	::Const.Tactical.Actor.UnholdFrost.Hitpoints = 600;
+	::Const.Tactical.Actor.UnholdFrost.Hitpoints = 800;			// Vanilla: 600
 	::Const.Tactical.Actor.UnholdFrost.Bravery = 150;
 	::Const.Tactical.Actor.UnholdFrost.Stamina = 400;
-	::Const.Tactical.Actor.UnholdFrost.MeleeSkill = 75;
+	::Const.Tactical.Actor.UnholdFrost.MeleeSkill = 85;			// Vanilla: 75
 	::Const.Tactical.Actor.UnholdFrost.RangedSkill = 0;
-	::Const.Tactical.Actor.UnholdFrost.MeleeDefense = 10;
+	::Const.Tactical.Actor.UnholdFrost.MeleeDefense = 15;
 	::Const.Tactical.Actor.UnholdFrost.RangedDefense = 0;
 	::Const.Tactical.Actor.UnholdFrost.Initiative = 80;			// Vanilla: 85
-	::Const.Tactical.Actor.UnholdFrost.Armor[0] = 150;			// Vanilla: 90
-	::Const.Tactical.Actor.UnholdFrost.Armor[1] = 150;			// Vanilla: 90
+	::Const.Tactical.Actor.UnholdFrost.Armor[0] = 200;			// Vanilla: 90
+	::Const.Tactical.Actor.UnholdFrost.Armor[1] = 200;			// Vanilla: 90
 
 	// Optional Stats
 	::Const.Tactical.Actor.UnholdFrost.Reach <- 7;
