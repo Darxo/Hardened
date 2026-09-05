@@ -1,11 +1,9 @@
 ::Hardened.HooksMod.hook("scripts/ai/world/orders/mercenary_order", function(q) {
-	q.m.HD_MercenariesBaseResources <- 180;
-
 	q.onExecute = @(__original) function(_entity, _hasChanged)
 	{
 		// We mock ::Math.min in order to target a specific day-scaling done by vanilla and disable it
 		//	because spawn scaling is now done by ::Hardened.Global.getWorldDifficultyMult() globally
-		local baseResources = this.m.HD_MercenariesBaseResources;
+		local baseResources = ::World.EntityManager.m.HD_MercenariesBaseResources;
 		local mockObject = ::Hardened.mockFunction(::Math, "min", function( _a, _b ) {
 			if (_a == 350 && _b == 150 + ::World.getTime().Days)
 			{
