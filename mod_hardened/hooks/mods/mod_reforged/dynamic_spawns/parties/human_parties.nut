@@ -42,6 +42,8 @@ local removeBlock = function( _party, _unitBlockID )
 			unitBlock.RatioMin <- 0.1;				// Reforged: -
 		}
 	}
+	// Allow lategame mercenary companies to spawn with many more elite units
+	mercParty.DynamicDefs.UnitBlocks.push({ BaseID = "UnitBlock.RF.MercenaryElite", RatioMax = 0.3, DeterminesFigure = false, StartingResourceMin = 400 });
 
 	local militiaParty = ::Reforged.Spawns.Parties["Militia"];
 	foreach (unitBlock in militiaParty.DynamicDefs.UnitBlocks)
