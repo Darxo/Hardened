@@ -896,8 +896,9 @@ local adjustedDescriptions = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"[$ $|Skill+shatter_skill] always knocks back enemies you hit",
-						"[$ $|Skill+shatter_skill] knocks enemies back an additional tile",
+						"Knockback chance with [$ $|Skill+shatter_skill] is equal to your [$ $|Concept.RangeSkill] as a percentage",
+						"[$ $|Skill+shatter_skill] knocks enemies back an additional tile for every " + ::MSU.Text.colorNeutral("40") + " [$ $|Concept.RangeSkill] you have",
+						"Stagger chance with [$ $|Skill+shatter_skill] is equal to your [$ $|Concept.Initiative] as a percentage",
 					],
 				},
 				{
