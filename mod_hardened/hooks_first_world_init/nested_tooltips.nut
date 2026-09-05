@@ -120,39 +120,39 @@
 		"A character who is Angry might desert you and leave your company.\n\n" +
 		"The default mood value is " + ::MSU.Text.colorNeutral(3.15) + ". Every hour, each character\'s mood shifts toward this value by at least " + ::MSU.Text.colorPositive(::Const.MoodChange.RecoveryPerHour) + ".\n\n" +
 		"Mood is typically gained from:\n" +
-		"- Visiting a city (" + ::MSU.Text.colorizeValue(::Const.MoodChange.NearCity, {AddSign = true}) + ")\n" +
-		"- Winning a battle (" + ::MSU.Text.colorizeValue(::Const.MoodChange.BattleWon, {AddSign = true}) + ")\n" +
-		"- Getting drunk in a tavern (" + ::MSU.Text.colorizeValue(::Const.MoodChange.DrunkAtTavern, {AddSign = true}) + ")\n" +
-		"- Fulfulling an Ambition (" + ::MSU.Text.colorizeValue(::Const.MoodChange.AmbitionFulfilled, {AddSign = true}) + ")\n" +
-		"- Various Events\n\n" +
+		"• Visiting a city (" + ::MSU.Text.colorizeValue(::Const.MoodChange.NearCity, {AddSign = true}) + ")\n" +
+		"• Winning a battle (" + ::MSU.Text.colorizeValue(::Const.MoodChange.BattleWon, {AddSign = true}) + ")\n" +
+		"• Getting drunk in a tavern (" + ::MSU.Text.colorizeValue(::Const.MoodChange.DrunkAtTavern, {AddSign = true}) + ")\n" +
+		"• Fulfulling an Ambition (" + ::MSU.Text.colorizeValue(::Const.MoodChange.AmbitionFulfilled, {AddSign = true}) + ")\n" +
+		"• Various Events\n\n" +
 		"Mood is typically lost from:\n" +
-		"- Sitting out a battle (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.BattleWithoutMe, {AddSign = true}) + ")\n" +
-		"- Retreating from a battle (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.BattleRetreat, {AddSign = true}) + ")\n" +
-		"- Losing a battle (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.BattleLost, {AddSign = true}) + ")\n" +
-		"- Not getting paid (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.NotPaid, {AddSign = true}) + ")\n" +
-		"- No food (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.NotEaten, {AddSign = true}) + ")\n" +
-		"- Brother died (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.BrotherDied, {AddSign = true}) + ")\n" +
-		"- Dismissing Brother (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.BrotherDismissed, {AddSign = true}) + ")\n" +
-		"- Dismissing Veteran (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.VeteranDismissed, {AddSign = true}) + ")\n" +
-		"- Receiving an Injury (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.Injury, {AddSign = true}) + ")\n" +
-		"- Permanent Injury (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.PermanentInjury, {AddSign = true}) + ")\n" +
-		"- Failing an Ambition (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.AmbitionFailed, {AddSign = true}) + ")\n" +
-		"- Various Events"
+		"• Sitting out a battle (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.BattleWithoutMe, {AddSign = true}) + ")\n" +
+		"• Retreating from a battle (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.BattleRetreat, {AddSign = true}) + ")\n" +
+		"• Losing a battle (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.BattleLost, {AddSign = true}) + ")\n" +
+		"• Not getting paid (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.NotPaid, {AddSign = true}) + ")\n" +
+		"• No food (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.NotEaten, {AddSign = true}) + ")\n" +
+		"• Brother died (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.BrotherDied, {AddSign = true}) + ")\n" +
+		"• Dismissing Brother (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.BrotherDismissed, {AddSign = true}) + ")\n" +
+		"• Dismissing Veteran (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.VeteranDismissed, {AddSign = true}) + ")\n" +
+		"• Receiving an Injury (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.Injury, {AddSign = true}) + ")\n" +
+		"• Permanent Injury (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.PermanentInjury, {AddSign = true}) + ")\n" +
+		"• Failing an Ambition (" + ::MSU.Text.colorizeValue(-::Const.MoodChange.AmbitionFailed, {AddSign = true}) + ")\n" +
+		"• Various Events"
 	)),
 	Morale = ::MSU.Class.BasicTooltip("Morale", ::Reforged.Mod.Tooltips.parseString(
 		"Morale represents the mental condition of characters and influences their effectiveness in battle. It exists in one of five states: [$ $|Skill+hd_dummy_morale_state_fleeing], [$ $|Skill+hd_dummy_morale_state_breaking], [$ $|Skill+hd_dummy_morale_state_wavering], Steady or [$ $|Skill+hd_dummy_morale_state_confident].\n\n" +
 		"A positive morale check raises morale on success, a negative check lowers it, and a neutral check does not change morale but may trigger other effects.\n\n" +
 		"A Mental Attack is a special type of morale check, triggered by supernatural skills such as fear or mind control. It has no implicit effect and instead triggers unique effects.\n\n" +
 		"Typical positive checks:\n" +
-		"- Killing an enemy\n" +
-		"- Seeing an enemy killed by an ally\n" +
-		"- Beginning a [turn|Concept.Turn] while [$ $|Skill+hd_dummy_morale_state_fleeing] and not in a [$ $|Concept.ZoneOfControl] triggers a [Rally|Concept.Rally]\n\n" +
+		"• Killing an enemy\n" +
+		"• Seeing an enemy killed by an ally\n" +
+		"• Beginning a [turn|Concept.Turn] while [$ $|Skill+hd_dummy_morale_state_fleeing] and not in a [$ $|Concept.ZoneOfControl] triggers a [Rally|Concept.Rally]\n\n" +
 		"Typical negative checks:\n" +
-		"- Seeing an ally killed\n" +
-		"- Seeing an ally flee\n" +
-		"- Being hit for at least 15 damage to hitpoints\n" +
-		"- Being engaged by multiple opponents\n" +
-		"- Being [displaced|Concept.Displacement] into more opponents"
+		"• Seeing an ally killed\n" +
+		"• Seeing an ally flee\n" +
+		"• Being hit for at least 15 damage to hitpoints\n" +
+		"• Being engaged by multiple opponents\n" +
+		"• Being [displaced|Concept.Displacement] into more opponents"
 	)),
 	Stunned = ::MSU.Class.BasicTooltip("Stunned", ::Reforged.Mod.Tooltips.parseString(
 		"A stunned character is incapacitated and unable to act. Their turns are skipped until they are no longer stunned.\n\n" +
