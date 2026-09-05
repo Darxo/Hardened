@@ -8,12 +8,16 @@
 	// Overwrite because we now apply a different effect on a hit
 	q.onTargetHit = @() function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		this.applyFatigueToTarget(_targetEntity, this.m.FatigueDamageOnHit);
+		local properties = _targetEntity.getCurrentProperties();
+		local fatigueDamage = this.m.FatigueDamageOnHit * properties.FatigueReceivedPerHitMult * properties.FatigueLossOnAnyAttackMult;
+		this.applyFatigueToTarget(_targetEntity, fatigueDamage);
 	}
 
 	q.onTargetMissed = @(__original) function( _skill, _targetEntity )
 	{
-		this.applyFatigueToTarget(_targetEntity, this.m.FatigueDamageOnMiss);
+		local properties = _targetEntity.getCurrentProperties();
+		local fatigueDamage = this.m.FatigueDamageOnMiss * properties.FatigueLossOnAnyAttackMult;
+		this.applyFatigueToTarget(_targetEntity, fatigueDamage);
 	}
 
 	q.onBeingAttacked = @() function( _attacker, _skill, _properties ) {}	// This perk no longer rerolls attacks
@@ -46,10 +50,7 @@
 	// Apply _fatigue to _targetEntity and add rf_worn_down_effect to it, if they are fully fatigued after that
 	q.applyFatigueToTarget <- function( _targetEntity, _fatigue )
 	{
-		if (_fatigue != 0)
-		{
-			_targetEntity.setFatigue(::Math.min(_targetEntity.getFatigueMax(), _targetEntity.getFatigue() + _fatigue));
-		}
+		_targetEntity.HD_inflictFatigue(_fatigue, false);
 
 		if (_targetEntity.getFatigue() == _targetEntity.getFatigueMax())
 		{
