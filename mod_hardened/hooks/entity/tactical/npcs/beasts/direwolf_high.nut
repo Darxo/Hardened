@@ -6,6 +6,7 @@
 	q.onInit = @() { function onInit()
 	{
 		this.direwolf.onInit();
+		this.HD_setSize(1.1);
 	}}.onInit;
 
 // Hardened Functions

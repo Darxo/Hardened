@@ -61,4 +61,15 @@
 		this.getSkills().add(::new("scripts/skills/actives/recover_skill"));
 		this.getSkills().add(::new("scripts/skills/actives/wake_ally_skill"));
 	}
+
+	q.HD_setSize <- function( _size )
+	{
+		this.m.DecapitateBloodAmount = _size;
+		this.getSprite("body").Scale = _size;
+		this.getSprite("head").Scale = _size;
+		this.getSprite("head_frenzy").Scale = _size;
+		this.getSprite("injury").Scale = _size;
+		this.getSprite("body_blood").Scale = _size;
+		this.getSprite("status_rooted").Scale = _size * 0.54;
+	}
 });
