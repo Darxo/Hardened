@@ -120,7 +120,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"The [Stamina|Concept.MaximumFatigue] penalty from your Body Armor and Helmet [$ $|Concept.Weight] is reduced by " + ::MSU.Text.colorPositive("30%"),
+					::MSU.Text.colorPositive("30%") + " less [Stamina|Concept.MaximumFatigue] penalty from your Body Armor and Helmet [$ $|Concept.Weight]",
 				],
 			}],
 		}),
@@ -1608,7 +1608,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Receive " + ::MSU.Text.colorPositive("50%") + " less [$ $|Concept.Initiative] penalty from your [Fatigue|Concept.Fatigue]",
-					"The [$ $|Concept.Initiative] penalty from your Body Armor [$ $|Concept.Weight] is reduced by " + ::MSU.Text.colorPositive("50%"),
+					::MSU.Text.colorPositive("50%") + " less [$ $|Concept.Initiative] penalty from your Body Armor [$ $|Concept.Weight]",
 				],
 			}],
 		}),
@@ -1940,7 +1940,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"The [Stamina|Concept.MaximumFatigue] and [$ $|Concept.Initiative] penalty from your Mainhand and Offhand [$ $|Concept.Weight] is reduced by " + ::MSU.Text.colorPositive("50%"),
+					::MSU.Text.colorPositive("50%") + " less [Stamina|Concept.MaximumFatigue] and [$ $|Concept.Initiative] penalty from your Mainhand and Offhand [$ $|Concept.Weight]",
 				],
 			}],
 		}),
