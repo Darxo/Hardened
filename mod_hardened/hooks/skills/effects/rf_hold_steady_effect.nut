@@ -27,7 +27,7 @@
 			id = 11,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Immune to being [$ $|Skill+stunned_effect]")
+			text = ::Reforged.Mod.Tooltips.parseString("Immune to being [$ $|Concept.Stunned]")
 		});
 
 		ret.push({

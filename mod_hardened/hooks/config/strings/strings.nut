@@ -151,7 +151,7 @@ local newPerks = [
 					Description = [
 						"Gain [$ $|Concept.MeleeDefense] equal to your [Base|Concept.BaseAttribute] [$ $|Concept.RangeDefense] against Weapon Attacks",
 						"Have " + ::MSU.Text.colorNegative("70%") + " less [$ $|Concept.RangeDefense] while adjacent to an enemy wielding a Melee Weapon",
-						"Does not work with shields. Does not work while [$ $|Skill+disarmed_effect], [$ $|Skill+stunned_effect] or [$ $|Skill+hd_dummy_morale_state_fleeing]",
+						"Does not work with shields. Does not work while [$ $|Skill+disarmed_effect], [Stunned|Concept.Stunned] or [$ $|Skill+hd_dummy_morale_state_fleeing]",
 					],
 				},
 				{

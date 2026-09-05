@@ -21,7 +21,7 @@ this.hd_lindwurm_tail_racial <- this.inherit("scripts/skills/racial/lindwurm_rac
 			}
 			else if (entry.id == 28)
 			{
-				entry.text = ::Reforged.Mod.Tooltips.parseString("Whenever the head moves away, remove [stunned|Skill+stunned_effect]");
+				entry.text = ::Reforged.Mod.Tooltips.parseString("Whenever the head moves away, remove [$ $|Concept.Stunned]");
 			}
 		}
 

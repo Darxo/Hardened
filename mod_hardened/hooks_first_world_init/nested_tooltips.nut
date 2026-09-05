@@ -34,7 +34,7 @@
 	"Using Wait applies the [$ $|Skill+hd_wait_effect] effect, causing you to act later in the following [round|Concept.Round]."
 ));
 ::Reforged.NestedTooltips.Tooltips.Concept.ZoneOfControl = ::MSU.Class.BasicTooltip("Zone of Control", ::Reforged.Mod.Tooltips.parseString(
-	"Zone of Control is exerted onto adjacent tiles by any character with a viable melee attack. Characters that are [$ $|Skill+stunned_effect] or [$ $|Skill+hd_dummy_morale_state_fleeing] do not exert Zone of Control.\n\n" +
+	"Zone of Control is exerted onto adjacent tiles by any character with a viable melee attack. Characters that are [Stunned|Concept.Stunned] or [$ $|Skill+hd_dummy_morale_state_fleeing] do not exert Zone of Control.\n\n" +
 	"A character is considered Engaged in Melee while standing inside the Zone of Control of an enemy faction. Characters standing in smoke are not considered Engaged in Melee.\n\n" +
 	"A character attempting to move while Engaged in Melee will trigger one free Attack of Opportunity from each enemy exerting Zone of Control on them. If any of these attacks hit, the movement is interrupted."
 ));

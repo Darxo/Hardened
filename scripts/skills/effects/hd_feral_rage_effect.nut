@@ -82,7 +82,7 @@ this.hd_feral_rage_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Immune to [$ $|Skill+stunned_effect]"),
+				text = ::Reforged.Mod.Tooltips.parseString("Immune to [$ $|Concept.Stunned]"),
 			});
 		}
 		else
@@ -91,7 +91,7 @@ this.hd_feral_rage_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/icon_locked.png",
-				text = ::Reforged.Mod.Tooltips.parseString("While you have at least " + ::MSU.Text.colorNeutral(this.m.StackThreshold) + " Rage Stacks, become Immune to [$ $|Skill+stunned_effect]"),
+				text = ::Reforged.Mod.Tooltips.parseString("While you have at least " + ::MSU.Text.colorNeutral(this.m.StackThreshold) + " Rage Stacks, become Immune to [$ $|Concept.Stunned]"),
 			});
 		}
 

@@ -215,7 +215,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Negative [status effects|Concept.StatusEffect] on you last " + ::MSU.Text.colorPositive(-1) + " [turn|Concept.Turn] (to a minimum of 1)",
-					"Whenever [$ $|Skill+stunned_effect] expires on you, become immune to being [$ $|Skill+stunned_effect] until the start of your next [turn|Concept.Turn]",
+					"Whenever [$ $|Concept.Stunned] expires on you, become immune to being [$ $|Concept.Stunned] until the start of your next [turn|Concept.Turn]",
 				],
 			}],
 		}),
@@ -230,7 +230,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Have " + ::MSU.Text.colorNegative("10%") + " less [$ $|Concept.Bravery]",
 					"At the start of each [round|Concept.Round] every adjacent ally from your company, with less [$ $|Concept.Bravery] than you, gains [$ $|Skill+hd_inspiring_presence_buff_effect] if they are adjacent to an enemy",
-					"Does not affect [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing] allies.",
+					"Does not affect [$ $|Concept.Stunned] or [fleeing|Skill+hd_dummy_morale_state_fleeing] allies.",
 				],
 			}],
 		}),
@@ -1507,7 +1507,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Whenever an enemy misses a Melee Attack against you while it is not your [turn|Concept.Turn], gain [$ $|Skill+hd_rebuke_effect]",
-						"Requires a usable [Attack of Opportunity|Concept.ZoneOfControl]. Does not work while [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]",
+						"Requires a usable [Attack of Opportunity|Concept.ZoneOfControl]. Does not work while [$ $|Concept.Stunned] or [fleeing|Skill+hd_dummy_morale_state_fleeing]",
 					],
 				},
 				{
@@ -1844,7 +1844,7 @@ local adjustedDescriptions = [
 					"Once per [round|Concept.Round], during your [turn|Concept.Turn], if you hit an enemy with an Attack gain 1 stack, up to a maximum of 3 stacks",
 					"Each stack grants " + ::MSU.Text.colorPositive("+1") + " [Action Point|Concept.ActionPoints] and " + ::MSU.Text.colorPositive("10%") + " more [$ $|Concept.Initiative]",
 					"Lose 1 stack whenever you use a Non-Attack skill",
-					"Lose all stacks when you use [$ $|Skill+recover_skill], gain [$ $|Skill+stunned_effect] or gain [$ $|Skill+staggered_effect]",
+					"Lose all stacks when you use [$ $|Skill+recover_skill], gain [$ $|Concept.Stunned] or gain [$ $|Skill+staggered_effect]",
 				],
 			}],
 		}),

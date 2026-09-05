@@ -34,7 +34,7 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 				{
 					id = 11,
 					type = "text",
-					text = ::Reforged.Mod.Tooltips.parseString("Does not work while [stunned|Skill+stunned_effect] or [fleeing|Skill+hd_dummy_morale_state_fleeing]"),
+					text = ::Reforged.Mod.Tooltips.parseString("Does not work while [$ $|Concept.Stunned] or [fleeing|Skill+hd_dummy_morale_state_fleeing]"),
 				},
 			],
 		});

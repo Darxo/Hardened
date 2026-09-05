@@ -61,7 +61,7 @@ this.hd_whirling_death_effect <- this.inherit("scripts/skills/skill", {
 			id = 21,
 			type = "text",
 			icon = "ui/icons/warning.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Is removed when you gain [$ $|Skill+disarmed_effect], [$ $|Skill+stunned_effect] or start [fleeing|Skill+hd_dummy_morale_state_fleeing]"),
+			text = ::Reforged.Mod.Tooltips.parseString("Is removed when you get [$ $|Skill+disarmed_effect], [$ $|Concept.Stunned] or start [fleeing|Skill+hd_dummy_morale_state_fleeing]"),
 		});
 
 		return ret;
