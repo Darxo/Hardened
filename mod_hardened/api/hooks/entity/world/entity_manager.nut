@@ -33,6 +33,7 @@
 				// We now have mercenaries start with 180 Base Resources (up from 150) at day 1, so that they scale a bit faster
 				// This doesnt make them harder in the early game because their party has a HardMin of 6 anyways
 				local newResources = baseResources * ::Hardened.Global.getWorldDifficultyMult() * ::Hardened.Global.FactionDifficulty.Mercenaries;
+				newResources *= ::MSU.Math.randf(0.7, 1.3);
 				return { done = true, value = newResources };
 			}
 		});
