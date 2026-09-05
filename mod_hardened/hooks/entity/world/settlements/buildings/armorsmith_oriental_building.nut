@@ -17,6 +17,24 @@
 		}
 
 		ret.push({
+			R = 95,
+			P = 1.0,
+			S = "armor/oriental/assassin_robe",
+		});
+
+		ret.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/oriental/gladiator_harness",
+		});
+
+		ret.push({
+			R = 90,
+			P = 1.0,
+			S = "armor_upgrades/light_gladiator_upgrade",
+		});
+
+		ret.push({
 			R = 0,
 			P = 1.25,	// Note that these buildings have an inherent price multiplier of 1.25
 			S = "supplies/armor_parts_item",
