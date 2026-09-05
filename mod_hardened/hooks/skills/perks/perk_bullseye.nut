@@ -35,6 +35,6 @@
 // New Functions
 	q.isSkillValid <- function( _skill )
 	{
-		return _skill != null && _skill.isAttack() && _skill.isRanged();
+		return _skill != null && _skill.isAttack() && _skill.isRanged() && !_skill.isAOE();
 	}
 });
