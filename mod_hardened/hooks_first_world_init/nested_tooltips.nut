@@ -154,6 +154,11 @@
 		"- Being engaged by multiple opponents\n" +
 		"- Being [displaced|Concept.Displacement] into more opponents"
 	)),
+	Stunned = ::MSU.Class.BasicTooltip("Stunned", ::Reforged.Mod.Tooltips.parseString(
+		"A stunned character is incapacitated and unable to act. Their turns are skipped until they are no longer stunned.\n\n" +
+		"Stunned characters exert no [Zone of Control|Concept.ZoneOfControl].\n\n" +
+		"Effects that cause a character to be stunned include [Stunned|Skill+stunned_effect], [Horrified|Skill+horrified_effect] and [Sleeping|Skill+sleeping_effect]."
+	)),
 	Threat = ::MSU.Class.BasicTooltip("Threat", ::Reforged.Mod.Tooltips.parseString(
 		"Threat is a character property that represents how intimidating or dangerous a combatant appears on the battlefield.\n\n" +
 		"Each point of Threat increases the difficulty of [Morale Checks|Concept.Morale] made by adjacent enemies by 1. Only characters who are not [fleeing|Skill+hd_dummy_morale_state_fleeing] apply their Threat.\n\n" +
