@@ -159,6 +159,17 @@
 		"Stunned characters exert no [Zone of Control|Concept.ZoneOfControl].\n\n" +
 		"Effects that cause a character to be stunned include [Stunned|Skill+stunned_effect], [Horrified|Skill+horrified_effect] and [Sleeping|Skill+sleeping_effect]."
 	)),
+	Talent = ::MSU.Class.BasicTooltip("Talent", ::Reforged.Mod.Tooltips.parseString(
+		"Talent represents a character\'s aptitude for developing an attribute. It is represented by up to " + ::MSU.Text.colorPositive(3) + " stars\n\n" +
+		"Newly generated characters have " + ::MSU.Text.colorPositive(3) + " talented attributes by default. Their number of Talent Stars is determined randomly:\n" +
+		"• 1 Talent Star: " + ::MSU.Text.colorPositive("60%") + "\n" +
+		"• 2 Talent Stars: " + ::MSU.Text.colorPositive("30%") + "\n" +
+		"• 3 Talent Stars: " + ::MSU.Text.colorPositive("10%") + "\n\n" +
+		"Talent Stars improve the attribute's rolls during each [Level Up|Concept.LevelUp]:\n" +
+		"• The first star grants " + ::MSU.Text.colorPositive("+1") + " to the minimum attribute roll\n" +
+		"• The second star grants " + ::MSU.Text.colorPositive("+1") + " to the maximum attribute roll\n" +
+		"• The first star grants " + ::MSU.Text.colorPositive("+1") + " to the minimum attribute roll\n\n"
+	)),
 	Threat = ::MSU.Class.BasicTooltip("Threat", ::Reforged.Mod.Tooltips.parseString(
 		"Threat is a character property that represents how intimidating or dangerous a combatant appears on the battlefield.\n\n" +
 		"Each point of Threat increases the difficulty of [Morale Checks|Concept.Morale] made by adjacent enemies by 1. Only characters who are not [fleeing|Skill+hd_dummy_morale_state_fleeing] apply their Threat.\n\n" +
