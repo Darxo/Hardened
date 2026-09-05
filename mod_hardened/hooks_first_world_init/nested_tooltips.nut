@@ -57,6 +57,21 @@
 		"Ranged Attacks against characters that are in cover have a " + ::MSU.Text.colorPositive("75%") + " chance to instead hit one of the covering tiles at random."
 	)),
 	DayTime = ::MSU.Class.CustomTooltip(function( _data ) {
+		local tierConditions = [
+			{
+				id = 56,
+				type = "hint",
+				icon = (::World.Ambitions.getCompleted() == 0) ? "ui/icons/icon_locked.png" : "ui/icons/unlocked_small.png",
+				text = "Complete any Ambition",
+			},
+			{
+				id = 57,
+				type = "hint",
+				icon = ::World.Ambitions.getAmbition("ambition.make_nobles_aware").isDone() ? "ui/icons/unlocked_small.png" : "ui/icons/icon_locked.png",
+				text = "Make Nobles Aware",
+			},
+		];
+
 		return [
 			{
 				id = 1,
@@ -77,6 +92,13 @@
 				type = "hint",
 				icon = "ui/icons/miniboss.png",
 				text = "World Difficulty: " + ::MSU.Text.colorizePct(::Hardened.Global.getWorldDifficultyMult()),
+			},
+			{
+				id = 55,
+				type = "hint",
+				icon = "ui/icons/miniboss.png",
+				text = "Maximum Contract Tier: " + ::MSU.Text.colorPositive(::World.Contracts.HD_getMaxContractTier()),
+				children = tierConditions,
 			},
 		];
 	}),
