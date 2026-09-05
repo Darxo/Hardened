@@ -76,9 +76,50 @@
 		}
 		this.m.BufferedListItems = [];
 	}
+
+	q.HD_setDifficultyTier <- function( _tier )
+	{
+		_tier = ::Math.min(_tier, ::World.Contracts.HD_getMaxContractTier());
+		switch (_tier)
+		{
+			case 1:
+				this.m.DifficultyMult = ::MSU.Math.randf(0.7, 0.85);
+				break;
+			case 2:
+				this.m.DifficultyMult = ::MSU.Math.randf(0.95, 1.05);
+				break;
+			case 3:
+				this.m.DifficultyMult = ::MSU.Math.randf(1.15, 1.35);
+				break;
+		}
+	}
+
+	q.HD_getDifficultyTier <- function()
+	{
+		if (this.m.DifficultyMult < 0.9)
+		{
+			return 1;
+		}
+		else if (this.m.DifficultyMult <= 1.1)
+		{
+			return 2;
+		}
+		else
+		{
+			return 3;
+		}
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/contracts/contract", function(q) {
+	q.create = @(__original) function()
+	{
+		__original();
+
+		// Feat: Downscale difficulty of contracts, depending on currently allowed difficulty
+		this.HD_setDifficultyTier(this.HD_getDifficultyTier());
+	}
+
 	// We make sure that all screens of all contracts contain at least an empty start() function
 	q.createScreens = @(__original) function()
 	{

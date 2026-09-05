@@ -6,4 +6,9 @@
 		_c.m.HD_CalledPrematureSetScreen = false;	// We disable this flag, as the contract is now officially visible
 		__original(_c);
 	}
+
+	q.HD_getMaxContractTier <- function()
+	{
+		return 3;
+	}
 });
