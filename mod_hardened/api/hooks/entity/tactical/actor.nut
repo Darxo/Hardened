@@ -424,6 +424,34 @@
 		return recoveredFatigue;
 	}
 
+	/// Try to build up fatigue on this actor
+	/// Will apply FatigueEffectMult of the target but ignore FatigueReceivedPerHitMult and FatigueLossOnAnyAttackMult
+	/// @param _amount unsigned value of fatigue that will then be added to the current fatigue value
+	/// @param _printLog if true, print a combat log entry stating how much Fatigue was recovered
+	/// @return actual amount of Fatigue built up
+	q.HD_inflictFatigue <- function( _amount, _printLog = true )
+	{
+		if (_amount <= 0) return 0;
+
+		local oldFatigue = this.getFatigue();
+
+		local properties = this.getCurrentProperties();
+		_amount *= properties.FatigueEffectMult;
+
+		this.setFatigue(::Math.clamp(this.getFatigue() + _amount, 0, this.getFatigueMax()));
+
+		local inflictedFatigue = this.getFatigue() - oldFatigue;
+		if (inflictedFatigue > 0 && this.isPlacedOnMap())
+		{
+			if (this.getTile().IsVisibleForPlayer)
+			{
+				if (_printLog) ::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + " builds up " + ::MSU.Text.colorNegative(inflictedFatigue) + " Fatigue");
+			}
+		}
+
+		return inflictedFatigue;
+	}
+
 	// Get the usable fatigue, that this brother has, for using skills and such
 	q.HD_getUsableFatigue <- function()
 	{
