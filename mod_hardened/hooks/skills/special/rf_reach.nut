@@ -8,7 +8,7 @@
 	q.create = @(__original) function()
 	{
 		__original();
-		this.m.Description = ::Reforged.Mod.Tooltips.parseString("Reach is a depiction of how far a character\'s attacks can reach, making melee combat easier against targets with shorter reach.\n\nGain " + ::MSU.Text.colorizeMultWithText(::Reforged.Reach.ReachAdvantageMult) + " [Melee Skill|Concept.MeleeSkill] when attacking someone with shorter reach. Characters who are [stunned|Skill+stunned_effect], [fleeing|Skill+hd_dummy_morale_state_fleeing], or without a melee attack have no Reach.");
+		this.m.Description = ::Reforged.Mod.Tooltips.parseString("Reach is a depiction of how far a character\'s attacks can reach, making melee combat easier against targets with shorter reach.\n\nGain " + ::MSU.Text.colorizeMultWithText(::Reforged.Reach.ReachAdvantageMult) + " [Melee Skill|Concept.MeleeSkill] when attacking someone with shorter reach. Characters who are [fleeing|Skill+hd_dummy_morale_state_fleeing], or without a melee attack have no Reach.");
 	}
 
 	q.getTooltip = @(__original) function()
@@ -57,7 +57,7 @@
 	{
 		local actor = this.getContainer().getActor();
 		// We could normally also just ask actor.hasZoneOfControl(). However in Hardened the ZOC can also be disabled by an additional character property, so this check is not correct anymore
-		if (actor.getCurrentProperties().IsStunned || actor.m.MoraleState == ::Const.MoraleState.Fleeing || actor.getSkills().getAttackOfOpportunity() == null)
+		if (actor.m.MoraleState == ::Const.MoraleState.Fleeing || actor.getSkills().getAttackOfOpportunity() == null)
 		{
 			_properties.ReachMult = 0.0;
 		}

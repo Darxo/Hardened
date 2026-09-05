@@ -12,7 +12,7 @@
 			text = ::Reforged.Mod.Tooltips.parseString(
 				"Reach is a depiction of how far a character\'s attacks can reach, making melee combat easier against targets with shorter reach.\n\n" +
 				"Gain " + ::MSU.Text.colorizeMultWithText(::Reforged.Reach.ReachAdvantageMult) + " [$ $|Concept.MeleeSkill] when attacking someone with shorter reach.\n\n" +
-				"Characters who are [stunned|Skill+stunned_effect], [fleeing|Skill+hd_dummy_morale_state_fleeing], or without a viable [Attack of Opportunity|Concept.ZoneOfControl] skill have no Reach."
+				"Characters who are [fleeing|Skill+hd_dummy_morale_state_fleeing] or without a viable [Attack of Opportunity|Concept.ZoneOfControl] skill have no Reach."
 			),
 		},
 	];
