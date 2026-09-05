@@ -9,7 +9,9 @@
 
 	q.addBusinessReputation = @(__original) function( _f )
 	{
+		local oldRenown = this.m.BusinessReputation;
 		__original(_f);
+		local difference = this.m.BusinessReputation - oldRenown;
 
 		if (_f == 0) return;
 
@@ -34,7 +36,7 @@
 			activeObject.addListItem({
 				id = 30,
 				icon = "ui/icons/ambition_tooltip.png",
-				text = format("You %s %s Renown", _f > 0 ? "gain" : "lose", ::MSU.Text.colorizeValue(_f, {HD_UseEventColors = true})),
+				text = format("You %s %s Renown", difference > 0 ? "gain" : "lose", ::MSU.Text.colorizeValue(difference, {HD_UseEventColors = true})),
 			});
 		}
 	}
