@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/rotation", function(q) {
+	q.m.HD_IsMobilitySkill = true;
+
 	q.create = @(__original) { function create()
 	{
 		__original();

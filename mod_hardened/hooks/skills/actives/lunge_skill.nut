@@ -5,6 +5,8 @@
 	q.m.HD_DamageTotalPctPerInitiative <- 0.01;		// Lunge will deal this much more/less damage per Initiative above/below HD_InitiativeBaseValue
 	q.m.HD_InitiativeBaseValue <- 100;		// Any point of initiative above or below this value, will trigger DamageTotalPctPerInitiative in the respective direction
 
+	q.m.HD_IsMobilitySkill = true;
+
 	q.create = @(__original) function()
 	{
 		__original();

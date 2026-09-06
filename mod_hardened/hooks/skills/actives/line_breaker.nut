@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/line_breaker", function(q) {
+	q.m.HD_IsMobilitySkill = true;
+
 	q.create = @(__original) function()
 	{
 		__original();

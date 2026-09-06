@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/rf_passing_step_skill", function(q) {
+	q.m.HD_IsMobilitySkill = true;
+
 	q.create = @(__original) function()
 	{
 		__original();

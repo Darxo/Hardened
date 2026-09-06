@@ -6,6 +6,7 @@
 	// This skill can no longer be used while engaged in melee
 	q.m.HD_UsableWhileEngagedInMelee = false;
 	q.m.HD_Cooldown = 2;		// So that it is only used every second turn
+	q.m.HD_IsMobilitySkill = true;
 
 	q.create = @(__original) function()
 	{

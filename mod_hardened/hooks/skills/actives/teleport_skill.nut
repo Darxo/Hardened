@@ -4,6 +4,8 @@
 	q.m.HD_MinimumDistanceToEnemies <- 4;
 	q.m.HD_FadeDuration <- 900;		// Time in Milliseconds in that the Ijirok will fade in/out during teleport
 
+	q.m.HD_IsMobilitySkill = true;
+
 	q.create = @(__original) function()
 	{
 		__original();

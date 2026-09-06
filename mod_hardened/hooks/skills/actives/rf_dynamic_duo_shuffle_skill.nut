@@ -1,4 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/rf_dynamic_duo_shuffle_skill", function(q) {
+	q.m.HD_IsMobilitySkill = true;
+
 	q.create = @(__original) function()
 	{
 		__original();
