@@ -76,13 +76,12 @@
 		{
 			stun = ::new("scripts/skills/effects/stunned_effect");
 			_target.getSkills().add(stun);
-			stun.setTurns(this.m.HD_StunDuration);
 		}
 		else
 		{
 			if (stun.getTurns() >= this.m.HD_StunDuration) return false;
-			stun.setTurns(this.m.HD_StunDuration);
 		}
+		stun.setTurns(this.m.HD_StunDuration);
 
 		if (!_user.isHiddenToPlayer() && !_target.isHiddenToPlayer())
 		{

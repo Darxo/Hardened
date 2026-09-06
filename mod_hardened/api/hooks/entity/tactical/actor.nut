@@ -440,7 +440,6 @@
 		local recoveredFatigue = oldFatigue - this.getFatigue();
 		if (recoveredFatigue > 0 && this.isPlacedOnMap())
 		{
-			// Todo: Only display these logs for the player?
 			if (this.getTile().IsVisibleForPlayer)
 			{
 				if (_printLog) ::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + " recovers " + ::MSU.Text.colorPositive(recoveredFatigue) + " Fatigue");

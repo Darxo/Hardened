@@ -30,6 +30,65 @@
 
 # Changelog
 
+1.23.0
+	- Most tactical maps now take the shape of a hexagon, rather than that of a rectangle
+	- Rework **Emcumbrance** level calculation: Player Characters now have 1 Encumbrance Level for every 20 Weight above 30, up to maximum to 4 Levels
+	- Randomize available resources for roaming mercenaries between 70% and 130%
+	- Being **Stunned** no longer sets the **Reach** of a character to 0
+	- **Bullseye** now requires the Ranged Attack to be Non-AoE
+	- **Breakthrough** no longer guarantees a knockback with **Shatter** or increases its knockback range by 1 tile. Your knockback chance with **Shatter** is now equal to your **Ranged Skill**, as a percentage. **Shatter** now knocks enemies back an additional tile for every 40 **Ranged Skill** you have. **Stagger** chance with **Shatter** is now equal to your **Initiative**, as a percentage
+	- **Skirmisher** no longer reduces the Initiative penalty from Fatigue. It now makes you unaffected by **Encumbrance**
+	- **Charm** (Hexen) now costs 7 Action Points (up from 5)
+	- **Hex** (Hexen) now costs 4 Action Points (up from 3) and has a Range of 6 tiles (down from 8). It no longer has a cooldown before it first can be used. It now causes the user to take 50% less Hitpoint damage during its effect
+	- **Sanguine Curse Skill** (Necorsavant Lord) is completely reworked. It targets any tile and affects all enemies on that tiles and its adjacent tiles. Trigger a mental morale check with every affected character with a difficulty of 30 and apply **Sanguine Curse** on a success
+	- **Sanguine Curse Effect** is completely reworked. It lasts 2 rounds. Once per round, if the characters move a tile, deal 15 direct hitpoint damage to it and recover hitpoints on the Necrosavant Lord equal to the damage dealt
+	- **Gladiator Harness** now has 60 Condition (up from 40) and costs 600 Crowns (up from 150)
+	- **Padded Armor Pieces** (Light Gladiator Attackement) now has 50 Condition (down from 60) and 3 Weight (down from 4). It now grants -5 Ranged Defense
+	- **Metal Armor Pieces** (Heavy Gladiator Attackement) now grants -5 Ranged Defense
+	- **Assassins Robes**, **Gladiator Harness** and **Padded Armor Pieces** are now sometimes sold in southern armorsmiths
+	- **Strange Meat** now costs 30 Crowns (down from 35)
+	- **Orc Berserker** lose **Berserker Rage** and **Battering Ram**. They gain **Feral Rage**
+	- **Unholds** now cost 80 Resources (up from 60), have 700 Hitpoints (up from 600), 150/150 Armor (up from 0/0) and 80 Melee Skill (up from 70)
+	- **Bog Unholds** now cost 80 Resources (up from 70), have 700 Hipoints (up from 500) and 80 Melee Skill (up rom 70)
+	- **Frost Unholds** now cost 100 Resources (up from 80), have 800 Hitpoints (up from 600), 85 Melee Skill (up from 75), 15 Melee Defense (up from 10) and 200/200 armor (up from 150/150)
+	- **Armored Unholds** now cost 80 Resources (up from 60) and have 50/50 additional armor from equipped gear (up from 35/35)
+	- **Armored Frost Unholds** now cost 11080 Resources (up from 100) and have 300/300 additional armor from equipped gear (down from 400/400)
+	- **Spider Eggs** now spawn a spider every 2-3 turns (up from 1-2)
+	- **Hexen** gain **Vigilant**
+	- The maximum contract tier is now 1 (down from 3)
+		- Completing any ambition increases the maximum contract tier by 1
+		- Completing the **Make Nobles Aware** ambition increases the contract tier by 1
+	- Tier 1 Contracts now add and subtract 20% less Renown. Tier 3 Contracts now add and subtract 20% more Renown
+	- Reduce frequency of elite units in early game mercenary companies
+	- Increase frequency of elite units in lategame mercenary companies´
+	- **Beast Hunters** no longer loot 50% more trophies, they no longer have 10% worse prices and they no longer have **Fortified Mind** perk in every perk tree. Instead they no longer care about undesirable food (e.g. Strange Meat)
+	- **Burning Torch** now also grants Immune to **Chilled** and **Frostbound**
+	- Display quest state for goblin city in its tooltip
+	- Display base weight in attribute tooltips of stamina and initiative
+	- Add new concepts for **Stunned**, **Talent**, **Level Up**
+	- **Frenzied Hyenas/Direwolfs** are now visually 10% larger
+	- Display in the tags of a skill, if it is currently the **Attack of Opportunity** skill for this character
+	- Add tags and additional rooted-related tooltips to many active skills, which move the user when used
+	- Streamline several perk descriptions
+	- Add new **Feral Rage** effect to split up **Feral Rage** perk
+	- Show nested tooltip for weight term in attribute breakdown
+	- Improve bullet points in a few concepts
+	- **Flesh Pull** is no longer considered an Attack
+	- Write campaign seed in the log when starting a new campaign
+	- Add **AoE** tag to tacticion skills
+	- Change perk icon of **Feral Rage**
+	- Fix(Vanilla): ai being able to traverse impassable terrain
+	- Fix(Vanilla): incomplete null check in stunned effect
+	- Fix(Vanilla) Condition tooltip on attachements not being up to date
+	- Fix a few skills displaying duplicate range bullet points
+	- Fix missing stamina and initiative modifiers related to weight in attribute breakdown
+	- Fix **Wear them Down** building fatigue on enemies which ignore fatigue
+	- Fix event renown changes sometimes not being accurate
+	- Add `actor.HD_inflictFatigue(_amount, _printLog = true)` for inflicting fatigue damage to a target
+	- Add `contract.HD_getDifficultyTier()` for fetching the difficulty tier (amount of skulls) of a contract
+	- Add `contract.HD_getDifficultyTier()` for setting the difficulty tier (amount of skulls) for a contract
+	- Add `HD_IsMobilitySkill = false` member for `skill` which can be used to declare a skill as a `Mobility` skill requiring to not be rooted to be used
+
 1.22.5
 	- Add calculation breakdown for many attribute tooltips in the character screen, listing all skills which influence that attribute
 	- Increase size and spacing of all colored instances of the minus-sign in tooltips, to be in line with the size of the plus sign

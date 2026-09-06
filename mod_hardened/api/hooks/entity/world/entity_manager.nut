@@ -1,6 +1,6 @@
 ::Hardened.HooksMod.hook("scripts/entity/world/entity_manager", function(q) {
 	// Public
-	q.m.HD_MercenariesBaseResources <- 180;		// Vanilla: 150
+	q.m.HD_MercenariesBaseResources <- 180;		// Vanilla: 150; This is unaffected by difficulty setting multipliers
 
 	// Private
 	q.m.HD_BountyHunterManager <- null;		// weakrefs on all bounty hunter parties existing in the world
