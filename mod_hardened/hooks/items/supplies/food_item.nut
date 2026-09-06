@@ -16,6 +16,13 @@
 		return ret;
 	}
 
+	q.isDesirable = @(__original) function()
+	{
+		if (::World.Assets.getOrigin().getID() == "scenario.beast_hunters") return true;
+
+		return __original();
+	}
+
 // Hardened Functions
 	q.HD_getShelfLifeMult = @(__original) function()
 	{

@@ -16,6 +16,9 @@
 // Completely Revert Reforged changes to the militia scenario (Adding Militia Perk Group to everyone)
 ::Hardened.snipeHook("scripts/scenarios/world/militia_scenario", "mod_reforged");
 
+// Completely Revert Reforged changes to the militia scenario (Adding Militia Perk Group to everyone)
+::Hardened.snipeHook("scripts/scenarios/world/beast_hunters_scenario", "mod_reforged");
+
 // Perks
 {
 	// Completely Revert Reforged Footwork additions (sprint skill)
