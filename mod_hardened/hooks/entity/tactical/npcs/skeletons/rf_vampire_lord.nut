@@ -47,8 +47,8 @@
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_sanguinary"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_fearsome"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hold_out"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_rf_terrifying_visage"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_unstoppable"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_hd_elusive"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_formidable_approach"));
