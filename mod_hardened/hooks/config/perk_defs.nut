@@ -93,8 +93,8 @@
 		Script = "scripts/skills/perks/perk_hd_play_for_time",
 		Name = ::Const.Strings.PerkName.HD_PlayForTime,
 		Tooltip = ::Const.Strings.PerkDescription.HD_PlayForTime,
-		Icon = "ui/perks/perk_34.png",		// Unused Vanilla art showing a missing finger with bleed
-		IconDisabled = "ui/perks/perk_34_sw.png",
+		Icon = "ui/perks/perk_hd_play_for_time.png",		// Unused Vanilla art showing a missing finger with bleed
+		IconDisabled = "ui/perks/perk_hd_play_for_time_sw.png",
 	},
 	{
 		ID = "perk.hd_precise",
