@@ -15,6 +15,7 @@ this.hd_onslaught_skill <- this.inherit("scripts/skills/actives/rf_onslaught_ski
 		this.m.IsTargeted = true;			// Reforged: unspecified
 		this.m.IsTargetingActor = false;	// Reforged: unspecified
 		this.m.MaxLevelDifference = 3;		// Reforged: unspecified
+		this.m.IsAOE = true;
 	}
 
 	function getTooltip()

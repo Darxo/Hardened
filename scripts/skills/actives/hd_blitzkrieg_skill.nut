@@ -15,6 +15,7 @@ this.hd_blitzkrieg_skill <- this.inherit("scripts/skills/actives/rf_blitzkrieg_s
 		this.m.IsTargeted = true;			// Reforged: unspecified
 		this.m.IsTargetingActor = false;	// Reforged: unspecified
 		this.m.MaxLevelDifference = 3;		// Reforged: unspecified
+		this.m.IsAOE = true;
 	}
 
 	function getTooltip()
