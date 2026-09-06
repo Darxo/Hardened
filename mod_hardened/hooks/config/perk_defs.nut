@@ -263,6 +263,8 @@ hybridizationPerkDef.IconDisabled = "ui/perks/perk_hd_toolbox_sw.png";	// Give T
 
 ::Const.Perks.findById("perk.rf_dismantle").Icon = "ui/perks/perk_13.png";		// Unused vanilla shield-destroy icon
 ::Const.Perks.findById("perk.rf_dismantle").IconDisabled = "ui/perks/perk_13_sw.png";
+::Const.Perks.findById("perk.rf_feral_rage").Icon = "ui/perks/perk_hd_feral_rage.png";			// Orc Berserker Rage icon
+::Const.Perks.findById("perk.rf_feral_rage").IconDisabled = "ui/perks/perk_hd_feral_rage_sw.png";
 ::Const.Perks.findById("perk.rf_phalanx").Icon = "ui/perks/perk_hd_phalanx.png";
 ::Const.Perks.findById("perk.rf_phalanx").IconDisabled = "ui/perks/perk_hd_phalanx_sw.png";
 ::Const.Perks.findById("perk.rf_iron_sights").Icon = "ui/perks/perk_hd_iron_sights.png";
