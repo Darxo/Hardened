@@ -302,6 +302,7 @@
 		else itemTags += "Non-Attack, ";
 
 		if (this.isAOE()) itemTags += "AoE, ";
+		if (this.m.HD_IsMobilitySkill) itemTags += "Mobility, ";
 
 		local item = this.getItem();
 		if (!::MSU.isNull(item))

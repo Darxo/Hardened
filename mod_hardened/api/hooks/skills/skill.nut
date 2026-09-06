@@ -21,6 +21,7 @@
 	q.m.HD_LastsForRounds <- null;	// When not null, this will decrement at the end of each round and remove this skill, when it reaches 0
 	q.m.HD_KnockBackDistance <- 1;	// [SoftReset] Might be used by certain active skills to determine, how far they knock back a target
 	q.m.HD_UsableWhileEngagedInMelee <- true;	// If false, then this skill is not usable while in enemy zone of control and a tooltip is added
+	q.m.HD_IsMobilitySkill <- false;	// If true, then this skill cannot be used while rooted
 	q.m.HD_IsBleed <- false;	// Is this effect a type of bleed?
 	q.m.HD_IsPoison <- false;	// Is this effect a type of poison?
 	q.m.HD_PreventedByProperties <- [];	// CharacterProperties flags that prevent this skill from being added or remaining active. Can be used to enforce immunities
@@ -413,6 +414,28 @@
 			}
 		}
 
+		if (this.m.HD_IsMobilitySkill)
+		{
+			if (actor.getCurrentProperties().IsRooted)
+			{
+				ret.push({
+					id = 41,
+					type = "text",
+					icon = "ui/tooltips/warning.png",
+					text = ::Reforged.Mod.Tooltips.parseString("Cannot be used, because you are [$ $|Concept.Rooted]"),
+				});
+			}
+			else
+			{
+				ret.push({
+					id = 41,
+					type = "text",
+					icon = "ui/icons/unlocked_small.png",
+					text = ::Reforged.Mod.Tooltips.parseString("Cannot be used while [$ $|Concept.Rooted]"),
+				});
+			}
+		}
+
 		if (this.isOnCooldown())
 		{
 			local remainingCooldown = this.m.HD_RoundLastUsed + this.m.HD_Cooldown - ::Time.getRound();
@@ -522,6 +545,11 @@
 		if (!this.m.HD_UsableWhileEngagedInMelee && ::Tactical.isActive())
 		{
 			if (this.getContainer().getActor().HD_isEngagedInMelee()) return false;
+		}
+
+		if (this.m.HD_IsMobilitySkill && this.getContainer().getActor().getCurrentProperties().IsRooted)
+		{
+			return false;
 		}
 
 		if (this.isOnCooldown()) return false;
