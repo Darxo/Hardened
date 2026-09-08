@@ -242,7 +242,6 @@
 				// Feat: scale busines reputation depending on the tier of the current contract
 				local oldBusinessReputationRate = ::World.Assets.m.BusinessReputationRate;
 				::World.Assets.m.BusinessReputationRate = 0.6 + (this.Contract.HD_getDifficultyTier() * 0.2);
-				::logWarning("Hardened: BusinessReputationRate downscaled to " + ::World.Assets.m.BusinessReputationRate);
 				local ret = oldGetResult();
 				::World.Assets.m.BusinessReputationRate = oldBusinessReputationRate;
 				return ret;
