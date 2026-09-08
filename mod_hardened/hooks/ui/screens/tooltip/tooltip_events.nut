@@ -368,7 +368,7 @@
 				ret.push({
 					id = 14,
 					type = "text",
-					icon = "ui/icons/miniboss.png",
+					icon = "ui/icons/contract_scroll.png",
 					text = "Contracts are " + ::MSU.Text.colorizeMultWithText(::Hardened.Global.getWorldContractMult(), {InvertColor = true}) + " difficult",
 				});
 				break;

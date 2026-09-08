@@ -89,14 +89,14 @@
 			},
 			{
 				id = 50,
-				type = "hint",
+				type = "text",
 				icon = "ui/icons/miniboss.png",
 				text = "World Difficulty: " + ::MSU.Text.colorizePct(::Hardened.Global.getWorldDifficultyMult()),
 			},
 			{
 				id = 55,
-				type = "hint",
-				icon = "ui/icons/miniboss.png",
+				type = "text",
+				icon = "ui/icons/contract_scroll.png",
 				text = "Maximum Contract Tier: " + ::MSU.Text.colorPositive(::World.Contracts.HD_getMaxContractTier()),
 				children = tierConditions,
 			},

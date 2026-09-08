@@ -12,7 +12,7 @@
 
 		this.m.SuccessList.push({
 			id = 10,
-			icon = "ui/icons/miniboss.png",
+			icon = "ui/icons/contract_scroll.png",
 			text = ::MSU.Text.colorPositive("+1") + " maximum Contract Tier",	// See HD_getMaxContractTier
 		});
 	}
@@ -24,7 +24,7 @@
 		ret.push({
 			id = 10,
 			type = "text",
-			icon = "ui/icons/miniboss.png",
+			icon = "ui/icons/contract_scroll.png",
 			text = ::MSU.Text.colorPositive("+1") + " maximum Contract Tier",	// See HD_getMaxContractTier
 		});
 
