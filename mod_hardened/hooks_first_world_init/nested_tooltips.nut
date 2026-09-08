@@ -100,6 +100,12 @@
 				text = "Maximum Contract Tier: " + ::MSU.Text.colorPositive(::World.Contracts.HD_getMaxContractTier()),
 				children = tierConditions,
 			},
+			{
+				id = 60,
+				type = "text",
+				icon = "ui/icons/miniboss.png",
+				text = "Champion Chance: " + ::MSU.Text.colorPositive("+" + ::World.Assets.m.ChampionChanceAdditional + "%"),
+			},
 		];
 	}),
 	Displacement = ::MSU.Class.BasicTooltip("Displacement", ::Reforged.Mod.Tooltips.parseString(
