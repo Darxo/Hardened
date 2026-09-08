@@ -1,4 +1,4 @@
-::Hardened.HooksMod.hook("scripts/ambitions/ambitions/sergeant_ambition", function(q) {
+::Hardened.HooksMod.hook("scripts/ambitions/ambitions/defeat_orc_location_ambition", function(q) {
 	q.m.HD_TempNestedItem <- null;	// temporary item holder so that our reference item survives long enough for it to show up in a nested tooltip
 
 	q.create = @(__original) { function create()
@@ -11,7 +11,7 @@
 	{
 		local ret = __original();
 
-		this.m.HD_TempNestedItem = ::new("scripts/items/accessory/sergeant_badge_item");
+		this.m.HD_TempNestedItem = ::new("scripts/items/accessory/orc_trophy_item");
 		ret.push({
 			id = 10,
 			type = "text",
@@ -21,11 +21,4 @@
 
 		return ret;
 	}}.getButtonTooltip;
-
-	q.onUpdateScore = @(__original) function()
-	{
-		if (::World.Assets.getBusinessReputation() < 1000) return;
-
-		__original();
-	}
 });
