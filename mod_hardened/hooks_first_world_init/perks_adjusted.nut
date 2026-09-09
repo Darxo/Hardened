@@ -11,7 +11,7 @@ local adjustedDescriptions = [
 		Description = ::UPD.getDescription({
 			Fluff = "Feel the adrenaline rushing through your veins!",
 			Effects = [{
-				Type = ::UPD.EffectType.Passive,
+				Type = ::UPD.EffectType.Active,
 				Description = [
 					"Unlock [$ $|Skill+adrenaline_skill]",
 				],
