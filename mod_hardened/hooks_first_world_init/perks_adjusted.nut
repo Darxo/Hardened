@@ -1008,6 +1008,27 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_supporter",
+		Key = "RF_Supporter",
+		Description = ::UPD.getDescription({
+			Fluff = "I\'ve got your back!",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"Once per [turn|Concept.Turn], after you use a skill targeting an adjacent ally, recover " + ::MSU.Text.colorPositive("3") + " [Action Points|Concept.ActionPoints].",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Active,
+					Description = [
+						"Unlock [$ $|Skill+rf_encourage_skill]",
+					],
+				},
+			],
+		}),
+	},
+	{
 		ID = "perk.rf_entrenched",
 		Key = "RF_Entrenched",
 		Description = ::UPD.getDescription({
