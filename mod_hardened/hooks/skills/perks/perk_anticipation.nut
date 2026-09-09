@@ -30,6 +30,11 @@
 		return (this.isEnabled() == false);
 	}}.isHidden;
 
+	q.getName = @(__original) { function getName()
+	{
+		return __original() + " (x" + this.m.UsesRemaining + ")";
+	}}.getName;
+
 	q.getTooltip = @() { function getTooltip()
 	{
 		local ret = this.skill.getTooltip();
