@@ -414,6 +414,11 @@
 					entry.text = this.HD_generateRangeTooltipString();
 				}
 			}
+			else if (entry.text.find("[color=" + ::Const.UI.Color.NegativeValue + "]Unable to move[/color]") != null)
+			{
+				// Feat: improve the vanilla-style debuff bullet point, inflicted by rooting skills
+				entry.text = ::Reforged.Mod.Tooltips.parseString("[$ $|Concept.Rooted]");
+			}
 		}
 
 		if (!hasRangeTooltip && this.isTargeted())
