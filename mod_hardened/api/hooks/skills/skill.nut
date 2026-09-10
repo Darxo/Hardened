@@ -416,6 +416,14 @@
 
 		if (this.m.HD_IsMobilitySkill)
 		{
+			// We try to detect duplicate tooltips of the following one, which can appear if skills inherit from other skills
+			::Hardened.util.HD_deleteBulletPoint(ret, function(_entry) {
+				if (_entry.id != 41) return false;
+				if (_entry.text.find("Cannot be used") == null) return false;
+				if (_entry.text.find("Rooted") == null) return false;
+				return true;
+			});
+
 			if (actor.getCurrentProperties().IsRooted)
 			{
 				ret.push({
