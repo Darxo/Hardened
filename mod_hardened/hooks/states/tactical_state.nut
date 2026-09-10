@@ -70,6 +70,12 @@
 			// Examples are Lone Wolf, Entrenched, Scout, Militia
 			bro.getSkills().update();
 		}
+
+		if (::World.Assets.isIronman())
+		{
+			// Fix(Vanilla): auto-looted items not being saved correctly during ironman after-battle saves
+			::World.State.autosave();
+		}
 	}
 
 	q.onBattleEnded = @(__original) function()
