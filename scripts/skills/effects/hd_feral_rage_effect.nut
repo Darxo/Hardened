@@ -107,6 +107,19 @@ this.hd_feral_rage_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
+		if (this.getContainer().getActor().hasSkill("racial.rf_orc"))
+		{
+			// Replace the default human-sounds with orc ones
+			this.m.SoundOnUse = [
+				"sounds/enemies/orc_rage_01.wav",
+				"sounds/enemies/orc_rage_02.wav",
+				"sounds/enemies/orc_rage_03.wav",
+				"sounds/enemies/orc_rage_04.wav",
+				"sounds/enemies/orc_rage_05.wav",
+				"sounds/enemies/orc_rage_06.wav",
+			];
+		}
+
 		this.onAddedRageStack();
 	}
 
