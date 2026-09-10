@@ -99,7 +99,7 @@ this.hd_feral_rage_effect <- this.inherit("scripts/skills/skill", {
 			id = 20,
 			type = "text",
 			icon = "ui/icons/warning.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Lose all Rage Stacks when you hit with a Non-AoE Attack"),
+			text = ::Reforged.Mod.Tooltips.parseString("Lose all Rage Stacks when you deal damage with a Non-AoE Attack"),
 		});
 
 		return ret;
@@ -129,6 +129,7 @@ this.hd_feral_rage_effect <- this.inherit("scripts/skills/skill", {
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		if (!this.isSkillValid(_skill)) return;
+		if (_damageInflictedArmor == 0 && _damageInflictedHitpoints == 0) return;
 
 		this.removeSelf();
 		local actor = this.getContainer().getActor();
