@@ -133,7 +133,7 @@ this.hd_feral_rage_effect <- this.inherit("scripts/skills/skill", {
 
 		this.removeSelf();
 		local actor = this.getContainer().getActor();
-		::Sound.play(::MSU.Array.rand(this.m.SoundOnUse), ::Const.Sound.Volume.Actor * 1.0, actor.getPos(), ::MSU.Math.randf(0.9, 1.1) * actor.getSoundPitch());
+		this.playOnUseSound(1.0);
 	}
 
 	function onRefresh()
@@ -182,9 +182,16 @@ this.hd_feral_rage_effect <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		if (!actor.isHiddenToPlayer())
 		{
-			::Sound.play(::MSU.Array.rand(this.m.SoundOnUse), ::Const.Sound.Volume.Actor * 0.6, actor.getPos(), ::MSU.Math.randf(0.9, 1.1) * actor.getSoundPitch());
+			this.playOnUseSound(0.6);
 			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(actor) + " gains rage!");
 		}
+	}
+
+	function playOnUseSound( _volume )
+	{
+		if (this.m.SoundOnUse.len() == 0) return;
+
+		::Sound.play(::MSU.Array.rand(this.m.SoundOnUse), ::Const.Sound.Volume.Actor * _volume, actor.getPos(), ::MSU.Math.randf(0.9, 1.1) * actor.getSoundPitch());
 	}
 
 	function isMeetingThreshold()
