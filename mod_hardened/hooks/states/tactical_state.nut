@@ -71,10 +71,18 @@
 			bro.getSkills().update();
 		}
 
-		if (::World.Assets.isIronman())
+		if (!::World.Assets.m.IsGameOver)	// We prevent these autosaves from trapping the player in a softlock after a loss. Ironman saves are already autosaved in these situations by vanilla
 		{
-			// Fix(Vanilla): auto-looted items not being saved correctly during ironman after-battle saves
-			::World.State.autosave();
+			if (::World.Assets.isIronman())
+			{
+				// Fix(Vanilla): auto-looted items not being saved correctly during ironman after-battle saves
+				::World.State.autosave();
+			}
+			else if (::Hardened.Mod.ModSettings.getSetting("AutosaveAfterCombat").getValue())
+			{
+				// Feat: enable after-battle saves for non-ironman saves
+				::World.State.autosave();
+			}
 		}
 	}
 

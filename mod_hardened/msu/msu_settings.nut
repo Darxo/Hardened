@@ -194,3 +194,13 @@
 
 	qolCharScreenPage.addBooleanSetting("EnableSmartAutoLoot", true, "Enable Smart Auto Loot", "Replace the default Auto-Loot Feature with a smarter system.\n\nSupply Items are consumed automatically.\nWhen the Playerstash is full, the least valueable items are replaced with the excess loot.\n\nThe following itemtypes are ignored, when trying to make room:\n- Unique\n- Precious\n- Crafting\n- Food\n- Loot\n- Tool\n- Usable");
 }
+
+// QOL: Misc
+{
+	local qolMiscPage = ::Hardened.Mod.ModSettings.addPage("Misc (QoL)");
+
+	qolMiscPage.addBooleanSetting("AutosaveAfterCombat", false, "Autosave after Combat", "Trigger an autosave after every combat, as if you were playing Ironman mode.");
+
+	qolWorldPage.addDivider("MiscDivider1");
+}
+
