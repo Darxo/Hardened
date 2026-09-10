@@ -30,6 +30,26 @@
 
 # Changelog
 
+1.23.1
+	- Display global champion chance in daytime tooltip
+	- List nested tooltip for reward item in several ambitions
+	- Display amount of remaining stacks in perk name of **Anticipation**
+	- Add setting (off) for triggering an autosave after every combat
+	- **Feral Rage** now requires the attack to deal damage to consume all stacks
+	- Play orc screams when **Feral Rage** triggers on an orc
+	- Improve icon for contract tier bullet points
+	- Remove redundant reward text in **Allied Civlians** ambition
+	- Slightly improve perk description of **Supporter**
+	- Improve bullet points in rooting effects by linking directly to rooted concept
+	- Fix(Vanilla) rare situation in which town screens won't open correctly
+	- Fix(Vanilla) ironman autosaves after battle not saving autolooted items
+	- Fix **Skirmisher** still lowering initiative penalty from fatigue
+	- Fix wrong keyword in adrenaline perk description
+	- Fix Caravan Contracts not respecting maximum difficulty tier
+	- Fix some skills displaying duplicate warning bullet points about rooted
+	- Fix nested tooltips in **Scout** and **Elusive** perk descriptions not working correctly
+	- Remove "BusinessReputationRate" debug log
+
 1.23.0
 	- Most tactical maps now take the shape of a hexagon, rather than that of a rectangle
 	- Rework **Emcumbrance** level calculation: Player Characters now have 1 Encumbrance Level for every 20 Weight above 30, up to maximum to 4 Levels
@@ -52,7 +72,7 @@
 	- **Bog Unholds** now cost 80 Resources (up from 70), have 700 Hipoints (up from 500) and 80 Melee Skill (up rom 70)
 	- **Frost Unholds** now cost 100 Resources (up from 80), have 800 Hitpoints (up from 600), 85 Melee Skill (up from 75), 15 Melee Defense (up from 10) and 200/200 armor (up from 150/150)
 	- **Armored Unholds** now cost 80 Resources (up from 60) and have 50/50 additional armor from equipped gear (up from 35/35)
-	- **Armored Frost Unholds** now cost 11080 Resources (up from 100) and have 300/300 additional armor from equipped gear (down from 400/400)
+	- **Armored Frost Unholds** now cost 110 Resources (up from 100) and have 300/300 additional armor from equipped gear (down from 400/400)
 	- **Spider Eggs** now spawn a spider every 2-3 turns (up from 1-2)
 	- **Hexen** gain **Vigilant**
 	- The maximum contract tier is now 1 (down from 3)

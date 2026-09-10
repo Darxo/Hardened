@@ -11,7 +11,6 @@ Hardened reflects my personal vision for a Battle Brothers overhaul: a well-poli
 - Simplified and reworked core mechanics, including **Reach**, **Double Grip**, **Crowded**, **Stamina/Weight** and destructible Shields
 - Reworked world generation, faction strength, locations, contracts and difficulty scaling
 - [15 New Perks](https://github.com/Darxo/Hardened/wiki/New-Perks) and [110+ Perks are tweaked or reworked](https://github.com/Darxo/Hardened/wiki/Perk-changes-Side%E2%80%90By%E2%80%90Side)
-- ~75 Weapons and Shields are tweaked
 - 240+ Weapons, Shields, [Body Armors](https://github.com/Darxo/Hardened/wiki/Vanilla-Hardened-Armor-Changes) and [Helmets](https://github.com/Darxo/Hardened/wiki/Hardened-Helmet-Changes) are rebalanced
 - [Almost all NPCs rebalanced or redesigned]((https://docs.google.com/spreadsheets/d/1fOc6TcgiVm9P_iOyVoqwYNoXETsnuc9I_4YbblBHV18/edit?gid=1891685024#gid=1891685024)) around Hardened's mechanics
 - High level of polish with precise descriptions, nested tooltips and Concepts explaining mechanics where you encounter them
@@ -1479,6 +1478,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Add Setting (on) to prevent combat logs, which are the result of the same skill execution, from producing empty newlines
 - Add Setting (off) for preventing tile/enemy tooltips from being generated while it is not your turn
 - Play a sound effect and print a combat log whenever your craftable schrat shield recovers condition
+- Improve bullet points in rooting effects by linking directly to rooted concept
 - **Armored Wiederganger** now display their complete name during battle, instead of just **Wiederganger**
 - Add Setting (off) for making the hotkeys for **Wait** fire continuously, instead of only when released
 - Improve saturation of tactical hollenhund sprite and make transparency values less random
@@ -1498,6 +1498,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Display Noble Faction Banner in the tooltip of Mercenary Parties
 - Add Setting (on) for displaying forbidden destination ports (e.g. when they are hostile to you or the origin port)
 - Add setting (off) for skipping the confirmation dialog when dismissing a freshly hired recruit (0 days with the company)
+- Add setting (off) for triggering an autosave after every combat
 - Distance text in rumors and contracts now display the tile distance range in brackets
 - Display the current XP Multiplier of the viewed character when hovering over the Experience bar
 - World Parties with champions will display an orange skull on top of their socket
@@ -1508,6 +1509,8 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Display all enemy NPCs in the combat dialog with a scroll wheel
 - Display participating brothers in arena contract dialog
 - Display quest state for goblin city in its tooltip
+- Display global champion chance in daytime tooltip
+- List nested tooltip for reward item in several ambitions
 - **Frenzied Hyenas**, **Frenzied Direwolfs**, **Medium Nachzehrer** and **Large Nachzehrer** now use unique names on the world map and are no longer merged under one name
 - **Frenzied Hyenas** and **Frenzied Direwolfs** are now visually 10% larger
 - Add new orientation icons for **Frenzied Hyena**, **Frenzied Direwolf**, **Fallen Hero**, **Fallen Betrayer** and **Rachegeist**
@@ -1545,6 +1548,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - The Player Banner is no longer hidden while camping
 - Add Concept and Tooltip for Day-Night Cycle, when hovering over the day-night disk
 - Slightly Lower the volume of the annoying kid sfx in towns
+- Remove redundant reward text in **Allied Civlians** ambition
 
 ### Tooltips & Documentation
 
@@ -1659,6 +1663,8 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix Quivers needing to re-use the same ID to be correctly identified as ammo
 - Fix **Overwhelmed Effect** being removed at the start of a new round
 - Fix **Necrosavants** sometimes walking instead of teleporting
+- Fix rare situation in which town screens won't open correctly
+- Fix ironman autosaves after battle not saving autolooted items
 - Fix shieldwall animation still showing up on NPCs who lost the shieldwall effect offscreen
 - Fix spearwall animation showing up on NPCs who lost the spearwall effect offscreen
 - Fix barbarian **Drum** being double grippable despite being a two-handed weapon

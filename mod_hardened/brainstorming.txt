@@ -900,3 +900,37 @@ Mod Description:
 - give geists combo, so that they can melee attack and scream at the same time
 
 - give flying skulls a spawnlist registering, so that they can be spawned naturally with combat simulator
+
+
+
+
+- use World.spawnParticleEffect to spawn effect, when discovering a location
+
+- category system for bullet points, used to sort bullet points and put divider between categories
+	- Warning, Condition, Effect (text), Hint (hint), Lokal, Global (text)
+
+- give player party 10% more speed at all times
+- lower player party speed by 5% for the first two donkey cart upgrades
+
+- restrict bleed effect on break free to only situations, where the effect is removed (success)
+
+- early game contract where you fight a band of wild dogs
+	- restore location contract could have a twist where there is a pack of wild dogs at the location.
+		- You can choose to kill them in order to complete the contract but lose a little bit of morale repuration
+		- Or you choost to let them there, in which case you fail the contract, gain a little bit of morale reputation, and you get the option to pay a meat item in order to gain a dog
+	- perhaps a new type of "feral dog"
+
+- remove the color coding (tag) line added by MSU, when fetching blueprint recipe tooltips
+
+- make peasant ai much more likely to engage someone who is already engaged (= pile on)
+
+- make sure that civilian attached locations don't join fights
+
+- allow system, where instead of banners, you can see location images shown in the combat dialog on the respective side
+	- perhaps also world party images
+
+- exploration mode, where certain information is hidden, until you encounter that kind of enemy once
+
+- keep it simple perk for wildling (replacing the injury perk)
+
+- fix throwing spears that divert, not damaging the shield correctly
