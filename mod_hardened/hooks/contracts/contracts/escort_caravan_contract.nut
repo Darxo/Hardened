@@ -56,6 +56,15 @@
 		__original();
 	}
 
+	q.setup = @(__original) function()
+	{
+		__original();
+
+		// Feat: Downscale difficulty of this contract, depending on currently allowed difficulty
+		// We have to do this here, because vanilla sets the difficulty in this function, which happens after this contracts create function
+		this.HD_setDifficultyTier(this.HD_getDifficultyTier());
+	}
+
 	q.spawnCaravan = @(__original) function()
 	{
 		local home = (typeof this.m.Home == "instance" && this.m.Home instanceof ::WeakTableRef) ? this.m.Home.get() : this.m.Home;
