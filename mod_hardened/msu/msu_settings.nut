@@ -201,6 +201,6 @@
 
 	qolMiscPage.addBooleanSetting("AutosaveAfterCombat", false, "Autosave after Combat", "Trigger an autosave after every combat, as if you were playing Ironman mode.");
 
-	qolWorldPage.addDivider("MiscDivider1");
+	qolMiscPage.addDivider("MiscDivider1");
 }
 
