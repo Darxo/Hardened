@@ -107,7 +107,7 @@ this.hd_feral_rage_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (this.getContainer().getActor().hasSkill("racial.rf_orc"))
+		if (this.getContainer().getActor().getSkills().hasSkill("racial.rf_orc"))
 		{
 			// Replace the default human-sounds with orc ones
 			this.m.SoundOnUse = [
@@ -204,6 +204,7 @@ this.hd_feral_rage_effect <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.m.SoundOnUse.len() == 0) return;
 
+		local actor = this.getContainer().getActor();
 		::Sound.play(::MSU.Array.rand(this.m.SoundOnUse), ::Const.Sound.Volume.Actor * _volume, actor.getPos(), ::MSU.Math.randf(0.9, 1.1) * actor.getSoundPitch());
 	}
 
