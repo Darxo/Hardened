@@ -30,6 +30,11 @@
 
 # Changelog
 
+1.23.2
+	- Fix glitches when attacking someone with **Feral Rage**
+	- Fix autosave after combat not working correctly
+	- Fix harmless settings-related log error when starting the game
+
 1.23.1
 	- Display global champion chance in daytime tooltip
 	- List nested tooltip for reward item in several ambitions
