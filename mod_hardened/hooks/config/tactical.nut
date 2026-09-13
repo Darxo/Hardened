@@ -33,3 +33,7 @@
 
 // Is the player hostile to the location?
 ::Const.Tactical.CombatInfo.HD_IsAttackingLocation <- false;
+
+// Does the location spawn small raised outpusts at the corners?
+// This will not work, if the camp already is at a level of 3
+::Const.Tactical.LocationTemplate.HD_HasWatchposts <- false;
