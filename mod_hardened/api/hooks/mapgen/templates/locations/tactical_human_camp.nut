@@ -32,6 +32,17 @@
 				}
 			}
 		}
+
+		// Feat construct a cosmetic watchtower
+		// We do not create one if the camp is already at max leve, because the tower would then look pretty bad
+		if (_properties.HD_WatchtowerRadius > 0 && centerTile.Level < 3)
+		{
+			local towerRadius = _properties.HD_WatchtowerRadius;
+			local cc = ::Hardened.Tactical.CubeCoordinates;
+			local direction = ::Tactical.State.getStrategicProperties().HD_IsAttackingLocation ? cc.NorthEast(radius - towerRadius) : cc.NorthWest(radius - towerRadius)
+			local towerCenter = cc.toTacticalTile(cc.add(cc.fromTacticalTile(centerTile), direction))
+			this.HD_makeTower(_rect, _properties, towerCenter, towerRadius);
+		}
 	}}.fill;
 
 // New Functions
@@ -84,5 +95,30 @@
 
 		local radius = ::Const.Tactical.Settings.CampRadius + _properties.AdditionalRadius;
 		object.setDirBasedOnCenter(_centerTile, radius);
+	}
+
+	q.HD_makeTower <- function( _rect, _properties, _towerCenter, _towerRadius )
+	{
+		local normalLevel = _towerCenter.Level;
+		for (local x = _rect.X; x < _rect.X + _rect.W; ++x)
+		{
+			for (local y = _rect.Y; y < _rect.Y + _rect.H; ++y)
+			{
+				local tile = ::Tactical.getTileSquare(x, y);
+				local distance = _towerCenter.getDistanceTo(tile);
+
+				if (distance > _towerRadius) continue;
+
+				if (distance == _towerRadius)
+				{
+					::logWarning("Hardened: raising border");
+					tile.Level = ::Math.min(3, normalLevel);
+				}
+				else
+				{
+					tile.Level = 10;
+				}
+			}
+		}
 	}
 });
