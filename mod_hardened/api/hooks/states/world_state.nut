@@ -18,4 +18,22 @@
 			__original(_isPlayerInitiated, _isCombatantsVisible, _allowFormationPicking, _properties, _pos);
 		}
 	}
+
+	q.getLocalCombatProperties = @(__original) { function getLocalCombatProperties( _pos, _ignoreNoEnemies = false )
+	{
+		local combatInfo = __original(_pos, _ignoreNoEnemies);
+
+		combatInfo.HD_IsFightingAtLocation = combatInfo.IsAttackingLocation;
+
+		foreach (party in combatInfo.Parties)
+		{
+			if (party.isLocation() && !party.isAlliedWithPlayer())
+			{
+				combatInfo.HD_IsAttackingLocation = true;
+				break;
+			}
+		}
+
+		return combatInfo;
+	}}.getLocalCombatProperties;
 });

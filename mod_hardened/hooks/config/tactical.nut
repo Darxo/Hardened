@@ -27,3 +27,9 @@
 	0.7,	// Dawn
 	0.9,	// Sunrise
 ];
+
+// Is at least one location drawn into this combat?
+::Const.Tactical.CombatInfo.HD_IsFightingAtLocation <- false;
+
+// Is the player hostile to the location?
+::Const.Tactical.CombatInfo.HD_IsAttackingLocation <- false;

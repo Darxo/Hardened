@@ -40,6 +40,19 @@
 		}
 	}
 
+	q.campify = @(__original) { function campify( _rect, _properties )
+	{
+		local oldShiftX = _properties.ShiftX;
+		if (!::Tactical.State.getStrategicProperties().HD_IsAttackingLocation)
+		{
+			_properties.ShiftX *= -1;
+		}
+
+		__original(_rect, _properties);
+
+		_properties.ShiftX = oldShiftX;
+	}}.campify;
+
 	q.init = @(__original) { function init()
 	{
 		__original();
