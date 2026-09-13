@@ -11,7 +11,8 @@
 		this.m.CombatLocation.Template[0] = "tactical.human_camp";
 		this.m.CombatLocation.Fortification = ::Const.Tactical.FortificationType.Walls;
 		this.m.CombatLocation.CutDownTrees = true;
-		this.m.CombatLocation.AdditionalRadius = 1;
+		this.m.CombatLocation.AdditionalRadius = 2;
+		this.m.CombatLocation.HD_HasWatchposts = true;
 
 		// Defender
 		this.m.Resources = 250 * ::Hardened.Global.FactionDifficulty.CityState;
