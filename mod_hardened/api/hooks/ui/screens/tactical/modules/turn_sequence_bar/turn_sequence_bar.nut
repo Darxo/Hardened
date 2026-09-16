@@ -12,6 +12,10 @@
 	{
 		if (this.m.CurrentEntities.len() == 0) return __original(_force);
 
+		// Vanilla Fix: cancel the current action state correctly for more mod compatibility
+		// Vanilla only cleans up some of the action side-effects, like the overlay highlights when previewing movement/skills
+		::Tactical.State.cancelCurrentAction();
+
 		local activeEntity = this.m.CurrentEntities[0];
 		local oldTurnPosition = this.m.TurnPosition;
 
