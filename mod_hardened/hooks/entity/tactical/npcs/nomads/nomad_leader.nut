@@ -9,10 +9,10 @@
 		// We make it so regular Nomad Leaders no longer use a unique name, so they don't get confused for Champions
 		this.m.Name = ::Const.Strings.EntityName[this.m.Type];
 
-		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 170 - 200
 			[12, "scripts/items/armor/light_scale_armor"],
+			[12, "scripts/items/armor/mail_hauberk"],
 			[12, "scripts/items/armor/oriental/southern_long_mail_with_padding"],
-			[12, "scripts/items/armor/lamellar_harness"],
 		]);
 
 		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
