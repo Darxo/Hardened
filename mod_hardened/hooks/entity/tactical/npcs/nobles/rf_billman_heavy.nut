@@ -91,28 +91,28 @@
 				local banner = ::Tactical.State.isScenarioMode() ? this.getFaction() : ::World.FactionManager.getFaction(this.getFaction()).getBanner();
 				if (banner <= 4)
 				{
-					helmet = ::new(::MSU.Class.WeightedContainer([
+					helmet = ::new(::MSU.Class.WeightedContainer([		// 230
 						[1, "scripts/items/helmets/kettle_hat_with_mail"],
 					]).roll());
 				}
 				else if (banner <= 7)
 				{
-					helmet = ::new(::MSU.Class.WeightedContainer([
+					helmet = ::new(::MSU.Class.WeightedContainer([		// 240
 						[1, "scripts/items/helmets/flat_top_with_mail"],
 					]).roll());
 				}
 				else
 				{
-					helmet = ::new(::MSU.Class.WeightedContainer([
+					helmet = ::new(::MSU.Class.WeightedContainer([		// 200
 						[1, "scripts/items/helmets/nasal_helmet_with_mail"],
 					]).roll());
 				}
 			}
 			else
 			{
-				helmet = ::new(::MSU.Class.WeightedContainer([
-					[1, "scripts/items/helmets/rf_padded_skull_cap"],
-					[1, "scripts/items/helmets/rf_padded_skull_cap_with_rondels"],
+				helmet = ::new(::MSU.Class.WeightedContainer([			// 180 - 190
+					[12, "scripts/items/helmets/rf_skull_cap_with_mail"],
+					[12, "scripts/items/helmets/rf_sallet_helmet_with_mail"],
 				]).roll());
 			}
 
