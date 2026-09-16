@@ -10,17 +10,16 @@
 		// We make it so regular Brigand Leaders no longer use a unique name, so they don't get confused for Champions
 		this.m.Name = ::Const.Strings.EntityName[this.m.Type];
 
-		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 190 - 230
-			[12, "scripts/items/armor/footman_armor"],
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 220 - 240
 			[12, "scripts/items/armor/lamellar_harness"],
-			[12, "scripts/items/armor/reinforced_mail_hauberk"],
+			[12, "scripts/items/armor/patchwork_scale_armor"],
+			[12, "scripts/items/armor/pillaged_heavy_lamellar_armor"],
 		]);
 
-		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 180 - 230
-			[12, "scripts/items/helmets/closed_flat_top_helmet"],
-			[12, "scripts/items/helmets/closed_flat_top_with_neckguard"],
-			[12, "scripts/items/helmets/nasal_helmet_with_mail"],
-			[12, "scripts/items/helmets/bascinet_with_mail"],
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 220 - 250
+			[12, "scripts/items/helmets/kettle_hat_with_rusty_mail"],
+			[12, "scripts/items/helmets/flat_top_with_rusty_mail"],
+			[12, "scripts/items/helmets/marauder_helmet_with_closed_mail"],
 		]);
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([

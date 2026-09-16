@@ -11,15 +11,18 @@
 		this.m.Bodies = ::Const.Bodies.Skinny;	// Reforged ::Const.Bodies.AllMale
 		__original();
 
-		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 170 - 190
+		this.m.ChestWeightedContainer = ::MSU.Class.WeightedContainer([		// 150 - 190
+			[12, "scripts/items/armor/mail_shirt"],
 			[12, "scripts/items/armor/light_scale_armor"],
-			[12, "scripts/items/armor/mail_hauberk"],
 			[12, "scripts/items/armor/footman_armor"],
 		]);
 
-		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 140 - 160
-			[12, "scripts/items/helmets/rf_padded_skull_cap"],
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 160 - 180
 			[12, "scripts/items/helmets/padded_flat_top_helmet"],
+			[12, "scripts/items/helmets/marauder_helmet_with_rusty_mail"],
+			[12, "scripts/items/helmets/marauder_helmet_with_rusty_mail_cloth"],
+			[12, "scripts/items/helmets/closed_flat_top_helmet"],
+			[12, "scripts/items/helmets/closed_flat_top_with_neckguard"],
 		]);
 
 		this.m.WeaponWeightContainer = ::MSU.Class.WeightedContainer([
