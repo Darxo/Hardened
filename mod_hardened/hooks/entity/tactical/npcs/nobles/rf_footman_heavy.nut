@@ -74,32 +74,35 @@
 		{
 			local banner = ::Tactical.State.isScenarioMode() ? this.getFaction() : ::World.FactionManager.getFaction(this.getFaction()).getBanner();
 			local helmet;
-			if (banner <= 4)
+
+			if (::Math.rand(1, 2) == 1)
 			{
-				helmet = ::new(::MSU.Class.WeightedContainer([
-					[12, "scripts/items/helmets/kettle_hat_with_mail"],
-					[6, "scripts/items/helmets/rf_skull_cap_with_mail"],
-					[6, "scripts/items/helmets/rf_sallet_helmet_with_mail"],
-				]).roll());
-			}
-			else if (banner <= 7)
-			{
-				helmet = ::new(::MSU.Class.WeightedContainer([
-					[12, "scripts/items/helmets/flat_top_with_mail"],
-					[6, "scripts/items/helmets/rf_skull_cap_with_mail"],
-					[6, "scripts/items/helmets/rf_sallet_helmet_with_mail"],
-				]).roll());
+				helmet = ::new("scripts/items/helmets/bascinet_faction_helmet");	// 250
+				helmet.setVariant(banner);
 			}
 			else
 			{
-				helmet = ::new(::MSU.Class.WeightedContainer([
-					[12, "scripts/items/helmets/nasal_helmet_with_closed_mail"],
-					[6, "scripts/items/helmets/rf_skull_cap_with_mail"],
-					[6, "scripts/items/helmets/rf_sallet_helmet_with_mail"],
-				]).roll());
+				if (banner <= 4)
+				{
+					helmet = ::new(::MSU.Class.WeightedContainer([		// 230
+						[12, "scripts/items/helmets/kettle_hat_with_mail"],
+					]).roll());
+				}
+				else if (banner <= 7)
+				{
+					helmet = ::new(::MSU.Class.WeightedContainer([		// 240
+						[12, "scripts/items/helmets/flat_top_with_mail"],
+					]).roll());
+				}
+				else
+				{
+					helmet = ::new(::MSU.Class.WeightedContainer([		// 200
+						[12, "scripts/items/helmets/nasal_helmet_with_closed_mail"],
+					]).roll());
+				}
+				helmet.setPlainVariant();
 			}
 
-			helmet.setPlainVariant();
 			this.getItems().equip(helmet);
 		}
 	}
