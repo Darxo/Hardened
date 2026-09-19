@@ -85,7 +85,6 @@
 		// Generic Effects
 		this.getSkills().add(::new("scripts/skills/racial/skeleton_racial"));
 		this.getSkills().add(::new("scripts/skills/special/double_grip"));
-		this.getSkills().add(::new("scripts/skills/effects/rf_legatus_command_effect"));
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_calculated_strikes"));

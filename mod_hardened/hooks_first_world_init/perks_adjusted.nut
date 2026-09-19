@@ -1311,6 +1311,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_legatus",
+		Key = "RF_Legatus",
+		Description = ::UPD.getDescription({
+			Fluff = "Conquer them all!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Allied skeletons within " + ::MSU.Text.colorPositive(5) + " tiles, have [$ $|Skill+rf_legatus_command_effect]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_leverage",
 		Key = "RF_Leverage",
 		Description = ::UPD.getDescription({
