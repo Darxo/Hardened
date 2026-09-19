@@ -883,6 +883,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_decanus",
+		Key = "RF_Decanus",
+		Description = ::UPD.getDescription({
+			Fluff = "Fight in formation!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Allied skeletons within " + ::MSU.Text.colorPositive(3) + " tiles, have [$ $|Skill+rf_decanus_command_effect]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_decisive",
 		Key = "RF_Decisive",
 		Description = ::UPD.getDescription({
