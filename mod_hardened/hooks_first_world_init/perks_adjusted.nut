@@ -815,6 +815,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.rf_centurion",
+		Key = "RF_Centurion",
+		Description = ::UPD.getDescription({
+			Fluff = "Faster!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Allied skeletons within " + ::MSU.Text.colorPositive(4) + " tiles, have [$ $|Skill+rf_centurion_command_effect]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.rf_cheap_trick",
 		Key = "RF_CheapTrick",
 		Description = ::UPD.getDescription({
