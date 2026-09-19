@@ -613,6 +613,12 @@
 			this.getSkills().add(::new("scripts/skills/effects/hd_defenders_advantage"));
 		}
 
+		// Feat: move the vanilla night_effect addition into this more central function
+		if (!::World.getTime().IsDaytime && this.getBaseProperties().IsAffectedByNight)
+		{
+			this.getSkills().add(::new("scripts/skills/special/night_effect"));
+		}
+
 		this.getSkills().onSpawned();
 	}
 
