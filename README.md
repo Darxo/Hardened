@@ -1636,6 +1636,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Newly spawned faction parties no longer teleport a few tiles towards their destination during the first tick
 - Hitpoint and Armor damage base damage rolls for attacks are no longer separate. The same base damage roll is now used for both damage types
 - Hitpoints recovery on brothers is now more accurate (camping recovery fix)
+- Fix current preview not being fully cancelled when ending the turn before stopping preview
 - Fix duplicate sound effect when moving an equipped item to the bag slow via a right click
 - Fix **Swallow Whole** setting morale of fleeing characters to breaking
 - Fix fleeing enemies in Zone of Control sometimes not breaking themselves free from roots

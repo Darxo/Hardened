@@ -30,6 +30,11 @@
 
 # Changelog
 
+1.23.3
+	- Lower number of brigand leader-tier units able to spawn at the same time
+	- Fix **Weapon Master** stop working during combat
+	- Fix hitchance overlay briefly persisting when ending the turn while previewing
+
 1.23.2
 	- Fix glitches when attacking someone with **Feral Rage**
 	- Fix autosave after combat not working correctly
