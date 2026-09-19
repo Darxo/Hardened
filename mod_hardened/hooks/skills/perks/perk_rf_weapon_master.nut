@@ -7,6 +7,8 @@
 	{
 		if (!this.HD_isEnabledFor(_item)) return;
 
+		this.m.PerksAdded.clear();
+
 		this.HD_addPerksForPerkGroup(this.HD_getWeaponPerkGroupForItem(_item));
 	}
 
