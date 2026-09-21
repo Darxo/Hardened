@@ -1,5 +1,7 @@
 // Namespace for camera related functions
 ::Hardened.Camera <- {
+// Private
+	HighestLevel = 3,	// Set to the highest tile level for the current tactical map
 	PreviousCameraLevel = null,		// Save previous camera level before previewing to return to after previewing has ended
 };
 

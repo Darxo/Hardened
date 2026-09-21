@@ -9,8 +9,9 @@ local oldGetBestLevelForTile = ::Tactical.getCamera().getBestLevelForTile;
 ::Tactical.getCamera().getBestLevelForTile = function( _tile ) {
 	local ret = oldGetBestLevelForTile(_tile);
 
-	// The camera level should always be at least 1 higher than the tile in question, so that you can look as much uphill as possible without your tile being hidden by a hill below you
-	ret = ::Math.max(ret, _tile.Level + 1);
+	// Feat: The camera level should always be at least 1 higher than the tile in question, so that you can look as much uphill as possible without your tile being hidden by a hill below you
+	local highestAllowedLevel = ::Math.min(_tile.Level + 1, ::Hardened.Camera.HighestLevel);
+	ret = ::Math.max(ret, highestAllowedLevel);
 
 	return ret;
 }

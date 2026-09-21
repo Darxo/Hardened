@@ -48,6 +48,11 @@
 	q.spawn = @(__original) { function spawn( _properties )
 	{
 		::Hardened.Tactical.MapInfo.init();
+
+		// Feat: calculate the highest tile level at the beginning of a fight
+		::Tactical.getCamera().setLevelToHighestOnMap();
+		::Hardened.Camera.HighestLevel = ::Tactical.getCamera().Level;
+
 		if (::Tactical.State.m.HD_IsUsingHexagonLayout)
 		{
 			// Feat: Turn this tactical map into a hexagon shape, if chosen by its template
