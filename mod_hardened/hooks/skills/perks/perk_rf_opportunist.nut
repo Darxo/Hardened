@@ -51,7 +51,7 @@
 
 	q.onAnySkillExecuted <- function( _skill, _targetTile, _targetEntity, _forFree )
 	{
-		if (this.isSkillValid(_skill))
+		if (this.isSkillValid(_skill) && this.getActionPointModifier() != 0)
 		{
 			this.m.TilesMovedThisTurn = 0;
 		}

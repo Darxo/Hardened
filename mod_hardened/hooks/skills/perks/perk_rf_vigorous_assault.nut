@@ -26,7 +26,7 @@
 	// Overwrite, because we only reset the effect when a valid skill was used
 	q.onAnySkillExecuted = @() function( _skill, _targetTile, _targetEntity, _forFree )
 	{
-		if (this.isSkillValid(_skill))
+		if (this.isSkillValid(_skill) && this.getActionPointCostModifier() != 0)
 		{
 			this.m.NumTilesMoved = 0;
 		}
