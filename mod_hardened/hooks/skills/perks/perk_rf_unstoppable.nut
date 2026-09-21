@@ -76,7 +76,7 @@
 		{
 			this.setStacks(0);
 		}
-		else if (!_skill.isAttack())
+		else if (!this.isSkillValid(_skill))
 		{
 			this.setStacks(this.m.Stacks - 1);
 		}
