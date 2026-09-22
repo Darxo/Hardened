@@ -28,6 +28,11 @@
 ::Reforged.NestedTooltips.Tooltips.Concept.ReachDisadvantage = ::MSU.Class.BasicTooltip("Reach Disadvantage", ::Reforged.Mod.Tooltips.parseString(
 	"A character is considered to have Reach Disadvantage when their [Reach|Concept.Reach] is lower than that of the other character during a melee attack."
 ));
+::Reforged.NestedTooltips.Tooltips.Concept.Surrounding = ::MSU.Class.BasicTooltip("Surrounding", ::Reforged.Mod.Tooltips.parseString(
+	"A character is considered to be surrounding another character when they are adjacent, within one level of elevation and hostile to them. [Stunned|Concept.Stunned] and [fleeing|Skill+hd_dummy_morale_state_fleeing] characters and characters armed with a ranged weapon do not count as surrounding.\n\n" +
+	"When attacking a character in melee, each character surrounding them, except the first, grants an additional " + ::MSU.Text.colorPositive("+5%") + " chance to hit"
+	// Perhaps add the term "Surrounded" in the future, which requires being surrounded by at least two characters. But only when the term is actually used
+));
 ::Reforged.NestedTooltips.Tooltips.Concept.Wait = ::MSU.Class.BasicTooltip("Wait", ::Reforged.Mod.Tooltips.parseString(
 	"If you are not the last character in the [turn order|Concept.Turn] in a [round|Concept.Round], you may use the Wait action, which delays your [turn|Concept.Turn] to the end of the current [round|Concept.Round].\n\n" +
 	"You can only use Wait once per [round|Concept.Round].\n\n" +
