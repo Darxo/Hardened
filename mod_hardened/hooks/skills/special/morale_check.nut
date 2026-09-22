@@ -69,7 +69,7 @@
 					id = 18,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text =  "Take " + ::MSU.Text.colorizeMultWithText(this.m.DamageReceivedRegularMultWhileFleeing, {InvertColor = true}) + ::Reforged.Mod.Tooltips.parseString(" Damage to [$ $|Concept.Hitpoints], while fully surrounded, after the player has won"),
+					text =  "Take " + ::MSU.Text.colorizeMultWithText(this.m.DamageReceivedRegularMultWhileFleeing, {InvertColor = true}) + ::Reforged.Mod.Tooltips.parseString(" Damage to [$ $|Concept.Hitpoints], while no adjacent tile is empty, after the player has won"),
 				});
 			}
 		}
