@@ -31,11 +31,6 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 					type = "text",
 					text = ::Reforged.Mod.Tooltips.parseString("Requires a usable [Attack of Opportunity|Concept.ZoneOfControl]"),
 				},
-				{
-					id = 11,
-					type = "text",
-					text = ::Reforged.Mod.Tooltips.parseString("Does not work while [$ $|Concept.Stunned] or [fleeing|Skill+hd_dummy_morale_state_fleeing]"),
-				},
 			],
 		});
 
@@ -54,6 +49,13 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 			type = "text",
 			icon = "ui/icons/action_points.png",
 			text = ::Reforged.Mod.Tooltips.parseString("Lasts until the start of your [turn|Concept.Turn]"),
+		});
+
+		ret.push({
+			id = 22,
+			type = "text",
+			icon = "ui/icons/warning.png",
+			text = ::Reforged.Mod.Tooltips.parseString("Is removed when you get [$ $|Concept.Stunned] or start [fleeing|Skill+hd_dummy_morale_state_fleeing]"),
 		});
 
 		return ret;
@@ -79,6 +81,8 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
+		if (!this.isValid()) this.removeSelf();
+
 		_properties.DamageTotalMult *= this.m.DamageTotalMult;
 	}
 
@@ -116,8 +120,18 @@ this.hd_rebuke_effect <- ::inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		if (!actor.isAlive()) return false;
 		if (actor.isActiveEntity()) return false;	// This perk only works while it is not our turn
-		if (actor.getMoraleState() == ::Const.MoraleState.Fleeing || actor.getCurrentProperties().IsStunned) return false;
+		if (!this.isValid()) return false;
 		if (actor.m.RiposteSkillCounter == ::Const.SkillCounter) return false;	// This is a shared variable used by all riposte effects and ensures that no two riposte effects can trigger from the same attack
+
+		return true;
+	}
+
+	// Is this effect still allowed to persist on this character?
+	function isValid()
+	{
+		local actor = this.getContainer().getActor();
+		if (actor.getMoraleState() == ::Const.MoraleState.Fleeing) return false;
+		if (actor.getCurrentProperties().IsStunned) return false;
 
 		return true;
 	}
