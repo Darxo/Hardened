@@ -367,7 +367,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Leverage** is completely reworked. It now reduces the Action Point cost of your first polearm attack each turn by 1 for each adjacent ally.
 - **Line Breaker** no longer grants **Shield Bash**. It now causes **Knock Back** to stagger the target on a hit
 - **Lone Wolf** is now only active if no ally from your company is within 2 tiles
-- **Long Reach** now only works while it is NOT your turn
+- **Long Reach** now only works while it is NOT your turn. It also stops working while **Stunned** or **Fleeing**
 - **Mace Mastery** no longer grants the **Bear Down** perk. It now causes all mace hits to the head to apply dazed for 1 turn. It now also causes the stun from **Strike Down** to last for 1 additional turn
 - **Man of Steel** is completely reworked. It now makes you take less Armor Penetration damage from Attacks damage equal your Helmet or Body Armor Weight as a percentage, whichever is lower
 - **Marksmanship** is completely reworked. It now grants +10 minimum and maximum damage while there are no enemies within 3 tiles

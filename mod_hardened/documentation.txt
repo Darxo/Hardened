@@ -30,6 +30,13 @@
 
 # Changelog
 
+1.23.4
+	- **Long Reach** now also requires the user to be neither **Stunned** nor **Fleeing** for its effect to be active
+	- Improve the nested concept for **Surrounding**
+	- Improve description for the condition of the bonus damage dealt to retreating, fleeing NPCs
+	- Fix **Opportunist** and **Vigorous Assaults** losing tile progress from using skills, before their discount was active
+	- Fix automatic camera level adjustment setting the camera level too high
+
 1.23.3
 	- Lower number of brigand leader-tier units able to spawn at the same time
 	- Fix **Weapon Master** stop working during combat
