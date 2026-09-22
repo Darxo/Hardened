@@ -2,8 +2,12 @@
 // Reforged Functions
 	q.isEnabled = @(__original) function()
 	{
-		// This perk is now only active while this actor is NOT the active entity
-		return __original() && !this.getContainer().getActor().isActiveEntity();
+		local actor = this.getContainer().getActor();
+		if (!actor.isActiveEntity()) return false;		// This perk is now only active while this actor is NOT the active entity
+		if (actor.getCurrentProperties().IsStunned) return false;
+		if (actor.getMoraleState() == ::Const.MoraleState.Fleeing) return false;
+
+		return __original();
 	}
 
 // New Functions

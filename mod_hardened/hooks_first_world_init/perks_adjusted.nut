@@ -1317,6 +1317,7 @@ local adjustedDescriptions = [
 				Type = ::UPD.EffectType.Passive,
 				Description = [
 					"Enemies at a distance of 2 tiles, which you can target with any polearm skill, are [surrounded|Concept.Surrounding] by you, while it is not your [turn|Concept.Turn]",
+					"Does not work while [$ $|Concept.Stunned] or [$ $|Skill+hd_dummy_morale_state_fleeing]",
 				],
 			}],
 		}),
