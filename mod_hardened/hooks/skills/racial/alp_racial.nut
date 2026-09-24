@@ -56,4 +56,37 @@
 			_properties.DamageReceivedRegularMult *= this.m.BiteReachDamageMult;
 		}
 	}}.onBeforeDamageReceived;
+
+	// Overwrite, because we implement a hard-coded custom animation for rooted alps
+	// Should alp teleport ever be allowed while netted, then this must be adjusted
+	// Feat: play shake animation on rooted alps when them being rooted was the deciding factor to them not being able to fade
+	q.teleport = @() { function teleport( _tag )
+	{
+		foreach (ally in ::Tactical.Entities.getAllInstancesAsArray())
+		{
+			if (ally.getType() != ::Const.EntityType.Alp) continue;
+			if (ally.getHitpoints() == 0) continue;
+
+			local behav = ally.getAIAgent().getBehavior(::Const.AI.Behavior.ID.AlpTeleport);
+			if (behav == null) continue;
+
+			// Switcheroo of IsRooted property, so that we can find out, if IsRooted was the deciding factor to making Fade usable
+			local oldIsRooted = ally.getCurrentProperties().IsRooted;
+			ally.getCurrentProperties().IsRooted = false;
+			behav.onEvaluate(ally);
+			ally.getCurrentProperties().IsRooted = oldIsRooted;
+
+			if (behav.m.TargetTile != null)
+			{
+				if (oldIsRooted)
+				{
+					::Tactical.getShaker().shake(ally, ::MSU.Array.rand(::MSU.Tile.getNeighbors(ally.getTile())), 4);
+				}
+				else
+				{
+					behav.onExecute(ally);
+				}
+			}
+		}
+	}}.teleport;
 });
