@@ -610,6 +610,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.taunt",
+		Key = "Taunt",
+		Description = ::UPD.getDescription({
+			Fluff = "You fight like a dairy farmer!",
+			Effects = [{
+				Type = ::UPD.EffectType.Active,
+				Description = [
+					"Unlock [$ $|Skill+taunt]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.underdog",
 		Key = "Underdog",
 		Description = ::UPD.getDescription({
