@@ -316,7 +316,8 @@
 				{
 					itemTags += ::Const.Items.getWeaponTypeName(weaponType) + "/" + invisibleBreakTag;
 				}
-				itemTags = itemTags.slice(0, -invisibleBreakTag.len());
+				itemTags = itemTags.slice(0, -1);							// Remove last slash
+				itemTags = itemTags.slice(0, -invisibleBreakTag.len());		// Remove invisible break
 				itemTags += "), ";
 			}
 
