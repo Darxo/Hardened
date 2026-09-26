@@ -105,6 +105,21 @@ local newPerks = [
 		}),
 	},
 	{
+		Key = "HD_Judgement",
+		Name = "Judgement",
+		Description = ::UPD.getDescription({
+			Fluff = "Your assessment starts now!",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						::MSU.Text.colorPositive("+10%") + " [Hitchance|Concept.Hitchance] against anyone whose [turn|Concept.Turn] has already started",
+					],
+				},
+			],
+		}),
+	},
+	{
 		Key = "HD_KeepItSimple",
 		Name = "Keep it Simple",
 		Description = ::UPD.getDescription({

@@ -82,6 +82,7 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_crippling_strikes"));
 
 		this.getSkills().add(::new("scripts/skills/perks/perk_backstabber"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_hd_judgement"));
 	}
 
 	// Assign Head and Body armor to this character

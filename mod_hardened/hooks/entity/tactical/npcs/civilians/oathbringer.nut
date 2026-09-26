@@ -138,6 +138,7 @@
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_fresh_and_furious"));
 
 		this.getSkills().add(::new("scripts/skills/perks/perk_rf_savage_strength"));
+		this.getSkills().add(::new("scripts/skills/perks/perk_hd_judgement"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_berserk"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_killing_frenzy"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_battle_forged"));

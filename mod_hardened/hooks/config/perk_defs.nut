@@ -41,6 +41,14 @@
 		IconDisabled = "ui/perks/perk_rf_hybridization_sw.png",
 	},
 	{
+		ID = "perk.hd_judgement",
+		Script = "scripts/skills/perks/perk_hd_judgement",
+		Name = ::Const.Strings.PerkName.HD_Judgement,
+		Tooltip = ::Const.Strings.PerkDescription.HD_Judgement,
+		Icon = "ui/perks/perk_hd_judgement.png",
+		IconDisabled = "ui/perks/perk_hd_judgement_sw.png",
+	},
+	{
 		ID = "perk.hd_keep_it_simple",
 		Script = "scripts/skills/perks/perk_hd_keep_it_simple",
 		Name = ::Const.Strings.PerkName.HD_KeepItSimple,
