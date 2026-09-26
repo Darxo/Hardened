@@ -61,7 +61,6 @@
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_backstabber"));
 		this.getSkills().add(::new("scripts/skills/perks/perk_footwork"));
-		this.getSkills().add(::new("scripts/skills/perks/perk_quick_hands"));
 
 		// Generic Actives
 		this.getSkills().add(::new("scripts/skills/actives/hand_to_hand"));
