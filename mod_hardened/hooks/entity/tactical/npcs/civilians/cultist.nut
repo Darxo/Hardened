@@ -22,6 +22,9 @@
 			[12, "scripts/items/weapons/scramasax"],
 			[12, "scripts/items/weapons/barbarians/thorned_whip"],
 		]);
+
+		// Feat: cultists now prefer to wait to enable their new Judgement perk more consistently
+		this.getAIAgent().m.PreferWait = true;
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
