@@ -90,7 +90,7 @@
 	::Const.Tactical.Actor.Cultist.Hitpoints = 90;		// Vanilla: 60
 	::Const.Tactical.Actor.Cultist.Bravery = 60;		// Vanilla: 80
 	::Const.Tactical.Actor.Cultist.Stamina = 110;		// Vanilla: 110
-	::Const.Tactical.Actor.Cultist.MeleeSkill = 70;		// Vanilla: 60
+	::Const.Tactical.Actor.Cultist.MeleeSkill = 65;		// Vanilla: 60
 	::Const.Tactical.Actor.Cultist.RangedSkill = 40;	// Vanilla: 40
 	::Const.Tactical.Actor.Cultist.MeleeDefense = 10;	// Vanilla: 10
 	::Const.Tactical.Actor.Cultist.RangedDefense = 10;	// Vanilla: 10
@@ -240,3 +240,12 @@
 	::Const.Tactical.Actor.Swordmaster.RangedDefense = 70;
 	::Const.Tactical.Actor.Swordmaster.Initiative = 130;
 }
+
+// scripts/entity/tactical/civilians/oathbringer
+::Reforged.Entities.editEntity("Oathbringer",
+	null,
+	{
+		XP = 600 * ::Hardened.Global.FactionExperience.Mercenaries, // Vanilla: 375
+		MeleeSkill = 75, // Vanilla: 80
+	}
+);
