@@ -5,6 +5,9 @@
 	q.m.HD_Completion <- null;
 	q.m.HD_PerHead <- null;
 
+	// Add a Target as a dummy member to make hooks targeting this variable easier to create
+	q.m.Target <- null;
+
 	q.clear = @(__original) function()
 	{
 		__original();
@@ -248,4 +251,16 @@
 			}
 		}
 	}
+
+	q.onClear = @(__original) { function onClear()
+	{
+		__original();
+
+		if (!::MSU.isNull(this.m.Target))
+		{
+			// Vanilla Fix: Make contract target attackable by AI again when the contract is abandoned
+			// Many vanilla contracts forget to do this (e.g. roaming_beasts_contract or return_item_contract)
+			this.m.Target.setAttackableByAI(true);
+		}
+	}}.onClear;
 });
