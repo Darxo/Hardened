@@ -1,10 +1,13 @@
 ::Hardened.HooksMod.hook("scripts/skills/items/generic_item", function(q) {
+	q.m.HD_sourceItemScript <- "";
+
 	q.onUpdate = @(__original) function( _properties )
 	{
 		// Vanilla Fix: incomplete isNull check, by streamlining the value of this.m.Item to the one which Vanilla checks for
 		// this.m.Item contains a WeakTableRef in Vanilla but they fail to do an .isNull() check on it
 		if (::MSU.isNull(this.m.Item))
 		{
+			::logWarning("Hardened: The item " + this.m.HD_sourceItemScript + " was deconstructed before its generic_item was cleaned up. Please report this");
 			this.m.Item = null;
 		}
 
@@ -20,9 +23,19 @@
 		// this.m.Item contains a WeakTableRef in Vanilla but they fail to do an .isNull() check on it
 		if (::MSU.isNull(this.m.Item))
 		{
+			::logWarning("Hardened: The item " + this.m.HD_sourceItemScript + " was deconstructed before its generic_item was cleaned up. Please report this");
 			this.m.Item = null;
 		}
 
 		__original();
 	}}.onTurnStart;
+});
+
+::Hardened.HooksMod.hookTree("scripts/skills/items/generic_item", function(q) {
+	q.onAdded = @(__original) function()
+	{
+		__original();
+
+		this.m.HD_sourceItemScript = ::IO.scriptFilenameByHash(this.m.Item.ClassNameHash);
+	}
 });
