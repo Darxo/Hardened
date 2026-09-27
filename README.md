@@ -1303,7 +1303,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Necrosavants in the scripted Ambush from the **Escort Caravan** contract now idle during the first round
 - **Escort Caravan** contracts that are declined or which expire now spawn a caravan towards the destination if the town hasn't spawned one in a while
 - **Find Location** and **Barbarian King** contracts no longer spawn a hint directly after loading and display the direction information of your last hint in your bullet points
-- **Find Location** contract can now also choose **Barrowkin-**, **Brigand-**, **Barbarian-**, **Beast-**, **Goblin-**, **Orc-** and **Nomad** Location as the target (instead of just Skeleton and Zombie locations)
+- **Find Location** contract can now also choose **Barrowkin-**, **Brigand-**, **Barbarian-**, **Beast-**, **Goblin-**, **Orc-** and **Nomad** Location as the target (instead of just Skeleton and Zombie locations). It can now target locations which are in undiscovered regions. It can now appear as higher tier versions when targeting locations with lower visibility. It no longer grants +100 Crowns while playing with an **Unexplored Map**. It no longer has a guaranteed minimum pay of 300 Crowns
 - **Find Location** and **Return Item** contract now have a 100% base chance to be in the contract pool -1% chance for every 10 Renown you have, down to a minimum of 10%. In Vanilla they have a 80% chance during day 1-3 and 10% afterwards
 - During the **Escort Envoy** Contract: You move 20% slower, while the Envoy is in your party. The Envoy has 6 Action Points (down from 9) and the contract grants 50% more Crowns. The envoy now always takes 16 hours at the destination and that number is displayed and counted down in the contract description
 
@@ -1665,6 +1665,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix **Overwhelmed Effect** being removed at the start of a new round
 - Fix **Necrosavants** sometimes walking instead of teleporting
 - Fix rare situation in which town screens won't open correctly
+- Fix incomplete null check in `generic_item`
 - Fix ironman autosaves after battle not saving autolooted items
 - Fix shieldwall animation still showing up on NPCs who lost the shieldwall effect offscreen
 - Fix spearwall animation showing up on NPCs who lost the spearwall effect offscreen
