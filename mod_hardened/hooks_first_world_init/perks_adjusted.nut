@@ -454,7 +454,7 @@ local adjustedDescriptions = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Mace Skills cost " + ::MSU.Text.colorizeMultWithText(::Hardened.Global.WeaponSpecFatigueMult, {InvertColor = true}) + " [Fatigue|Concept.Fatigue]",
-						"Every [hit to the head|Concept.ChanceToHitHead] applies [$ $|Skill+dazed_effect] to your target for " + ::MSU.Text.colorPositive(1) + " [Turn|Concept.Turn]",
+						"Whenever you hit a [Staggered|Skill+staggered_effect] character, apply [$ $|Skill+dazed_effect] for " + ::MSU.Text.colorPositive(1) + " [Turn|Concept.Turn]",
 						"[$ $|Skill+knock_out] and [$ $|Skill+knock_over_skill] have a " + ::MSU.Text.colorPositive("100%") + " chance to apply [$ $|Skill+stunned_effect]",
 						"[$ $|Skill+strike_down_skill] [stuns|Skill+stunned_effect] the target for an additional [Turn|Concept.Turn]",
 					],
