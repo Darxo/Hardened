@@ -50,6 +50,10 @@
 	{
 		__original();	// During this time ::Tactical.State will be destroyed, turning off all most combat-only checks
 
+		// When the player quits out of a Battle into main menu, onFinish is called too, but ::World.Asset is null by then
+		// If that happens, then we can skip all the following logic
+		if (::World.Assets == null)	return;
+
 		// We remove tactical_state entry early, because most of it was already deconstructed anyways.
 		// Otherwise we potentially run into issues with the following restoreEquipment call, when something uses hasState to check for TacticalState presence
 		::MSU.Utils.States.rawdelete("tactical_state");
@@ -58,10 +62,7 @@
 		// By that time none of the ground- or camp items have been looted. So dropped items will not be able to be restored correctly
 		if (::Settings.getGameplaySettings().RestoreEquipment)
 		{
-			if (::World.Assets != null)		// When the player Quits out of Battle into main menu, onFinish is called too, but ::World.Asset is null by then
-			{
-				::World.Assets.restoreEquipment();
-			}
+			::World.Assets.restoreEquipment();
 		}
 
 		foreach (bro in ::World.getPlayerRoster().getAll())
