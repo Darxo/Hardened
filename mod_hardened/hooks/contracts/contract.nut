@@ -4,6 +4,7 @@
 	q.m.HD_Advance <- null;
 	q.m.HD_Completion <- null;
 	q.m.HD_PerHead <- null;
+	q.m.HD_UnitsSpawnedSelectionFlag <- "HD_UnitsSpawnedSelectionFlag";
 
 	// Add a Target as a dummy member to make hooks targeting this variable easier to create
 	q.m.Target <- null;
@@ -88,6 +89,18 @@
 
 		return __original(_screen, _restartIfAlreadyActive);
 	}
+
+	q.spawnEnemyPartyAtBase = @(__original) { function spawnEnemyPartyAtBase( _factionType, _resources )
+	{
+		local ret = __original(_factionType, _resources);
+
+		// Feat: Automatically mark quest targets for contracts using this function to spawn them
+		// In Vanilla that is only used by defend_settlement_bandits_contract and defend_settlement_greenskins_contract
+		ret.getSprite("selection").Visible = true;
+		ret.getFlags().set(this.m.HD_UnitsSpawnedSelectionFlag, true);
+
+		return ret;
+	}}.spawnEnemyPartyAtBase;
 });
 
 ::Hardened.HooksMod.hookTree("scripts/contracts/contract", function(q) {
@@ -263,4 +276,19 @@
 			this.m.Target.setAttackableByAI(true);
 		}
 	}}.onClear;
+
+	q.onDeserialize = @(__original) { function onDeserialize( _in )
+	{
+		__original(_in);
+
+		foreach (entityId in this.m.UnitsSpawned)
+		{
+			local entity = ::World.getEntityByID(entityId);
+			// Feat: Mark serialized quest targets again, if we marked them before
+			if (entity != null && entity.getFlags().has(this.m.HD_UnitsSpawnedSelectionFlag))
+			{
+				entity.getSprite("selection").Visible = true;
+			}
+		}
+	}}.onDeserialize;
 });
