@@ -1,4 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/skills/racial/vampire_racial", function(q) {
+// Public
+	q.m.HD_FireDamageMult <- 1.5;
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
@@ -9,6 +12,16 @@
 			if (_entry.id == 22 && _entry.icon == "ui/icons/special.png") return true;			// Remove the tooltip about poison immunity
 			return false;
 		});
+
+		if (this.m.HD_FireDamageMult != 1.0)
+		{
+			ret.push({
+				id = 25,
+				type = "text",
+				icon = "ui/icons/campfire.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Your [$ $|Concept.Hitpoints] take ") + ::MSU.Text.colorizeMultWithText(this.m.FireDamageMult, {InvertColor = true}) + " Fire Damage",
+			});
+		}
 
 		return ret;
 	}
@@ -24,4 +37,16 @@
 
 	// Overwrite, because we now handle the life leech within the new hd_life_leech_effect effect
 	q.onTargetHit = @() function(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor) {}
+
+	q.onBeforeDamageReceived = @(__original) { function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	{
+		__original(_attacker, _skill, _hitInfo, _properties);
+
+		switch (_hitInfo.DamageType)
+		{
+			case ::Const.Damage.DamageType.Burning:
+				_properties.DamageReceivedRegularMult *= this.m.HD_FireDamageMult;
+				break;
+		}
+	}}.onBeforeDamageReceived;
 });
