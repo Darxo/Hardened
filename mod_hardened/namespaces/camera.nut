@@ -10,7 +10,7 @@
 {
 	// Goal: Our Actor needs to be visible
 	local minLevelForActor = 0;		// min camera level required, so that _actor is visible
-	local maxLevelForActor = 3;		// max camera level, beyond which _actor is hidden by hills
+	local maxLevelForActor = ::Hardened.Camera.HighestLevel;		// max camera level, beyond which _actor is hidden by hills
 
 	minLevelForActor = _targetedTile.Level;
 	if (::Hardened.Camera.isHiddenByHill(_targetedTile)) maxLevelForActor = ::Math.min(maxLevelForActor, _targetedTile.Level + 1);
@@ -18,7 +18,7 @@
 
 	// Goal: All our accessible neighboring tiles need to be visible
 	local minLevelForNeighbor = 0;		// min camera level required, so that all neighbors are visible; This is currently not used, because we always prioritize maxLevel
-	local maxLevelForNeighbor = 3;		// max camera level, beyond which some neighbors are hidden by hills
+	local maxLevelForNeighbor = ::Hardened.Camera.HighestLevel;		// max camera level, beyond which some neighbors are hidden by hills
 	foreach (nextTile in ::MSU.Tile.getNeighbors(_targetedTile))
 	{
 		// We are only interested in adjacent tiles, that we can talk to/melee attack on
@@ -40,7 +40,7 @@
 
 	foreach (tile in _skill.HD_getAllTargets())
 	{
-		local levelRequiredForVisibilityMax = 3;
+		local levelRequiredForVisibilityMax = ::Hardened.Camera.HighestLevel;
 
 		if (::Hardened.Camera.isHiddenByHill(tile))
 		{
@@ -57,7 +57,7 @@
 	}
 
 	local mostEnemies = 0;
-	local bestLevel = 3;
+	local bestLevel = ::Hardened.Camera.HighestLevel;
 
 	local currentCameraLevel = ::Tactical.getCamera().Level;
 	foreach (level, amount in visibleTargetsPerLevel)
