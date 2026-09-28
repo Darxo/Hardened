@@ -9,6 +9,7 @@
 	"Hardened: A lot of the UI changes can be turned off in the mod settings.",
 	"Hardened: Corpses will delay their reanimation if the character on top of them is immune to knockback.",
 	"Hardened: Entering combat against an ally or killing their troops will cause you to lose some Relation with them.",
+	"Hardened: Whenever an ally dies during combat, you lose a small amount of relation, even if it was not by your hand.",
 	"Hardened: Wiederganger who are about to reanimate by themselves, emit a purple smoke.",
 	"Hardened: At a Training Hall, you can purchase a missing Weapon or Armor perk group, once per brother.",
 ]);

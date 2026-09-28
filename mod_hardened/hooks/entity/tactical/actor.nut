@@ -177,11 +177,19 @@
 		local currentContract = ::World.Contracts.getActiveContract();
 		if (currentContract != null && this.getFaction() == currentContract.getFaction()) return;
 
-		// This code is mostly a copy of vanillas checks, except that we don't check for ::World.FactionManager.getFaction(this.getFaction()).isTemporaryEnemy()
 		local faction = ::World.FactionManager.getFaction(this.getFaction());
-		if (faction != null && _killer != null && (_killer.getFaction() == ::Const.Faction.Player || _killer.getFaction() == ::Const.Faction.PlayerAnimals))
+		if (faction != null)
 		{
-			faction.addPlayerRelation(::Const.World.Assets.RelationUnitKilled, "Killed one of their units");
+			if (_killer != null && (_killer.getFaction() == ::Const.Faction.Player || _killer.getFaction() == ::Const.Faction.PlayerAnimals))
+			{
+				// Feat: Apply new moddable penalty, whenever any character is killed by the player
+				faction.addPlayerRelation(::Const.World.Assets.RelationUnitKilled, "Killed one of their units");
+			}
+			else if (faction.isAlliedWithPlayer())
+			{
+				// Feat: Apply new moddable penalty, whenever any allied character dies by the hand of a non-player
+				faction.addPlayerRelation(::Const.World.Assets.HD_RelationWatchUnitDie, "Let one of their units die");
+			}
 		}
 	}
 

@@ -30,6 +30,7 @@
 
 	// Renown-Hit, when you cancel a contract for which you took payment in advance
 	::Const.World.Assets.HD_ReputationOnContractCancelAdvance <- -50;		// Vanilla: -100
+	::Const.World.Assets.HD_RelationWatchUnitDie <- -0.5;	// Relation modifier, whenever an ally dies during combat, except by the players hand
 
 	// This many inventory slots are gained when purchasing the respective cart upgrade
 	::Const.World.HD_InventoryUpgradeSlots <- [
