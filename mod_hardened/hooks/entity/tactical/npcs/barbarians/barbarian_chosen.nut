@@ -24,6 +24,8 @@
 			[12, 1.0],
 		]);
 		this.m.HelmetConditionRoll = this.m.ChestConditionRoll;
+
+		this.m.SoundPitch = 0.85;	// Vanilla: 0.95
 	}
 
 	// Overwrite, because we completely replace Reforged stats/skill adjustments with our own
