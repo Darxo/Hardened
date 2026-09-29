@@ -4,10 +4,9 @@
 		if (!__original(_originTile, _targetTile)) return false;
 
 		local target = _targetTile.getEntity();
+		if (target.HD_isUnarmed()) return false;
 		if (target.getCurrentProperties().IsImmuneToDisarm) return false;
 		if (target.getCurrentProperties().IsStunned) return false;			// Stun already skips the turn which would also wait out the disarm, so we prevent this
-		if (target.getSkills().hasSkill("effects.disarmed")) return false;	// Disarm does not stack so we prevent the player from making a mistake
-		if (target.getMainhandItem() == null) return false;		// We can't disarm someone who has no weapon equipped
 
 		return true;
 	}
