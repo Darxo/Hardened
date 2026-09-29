@@ -195,7 +195,7 @@ this.hd_feral_rage_effect <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		if (!actor.isHiddenToPlayer())
 		{
-			this.playOnUseSound(0.6);
+			this.playOnUseSound(0.5);
 			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(actor) + " gains rage!");
 		}
 	}
