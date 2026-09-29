@@ -24,6 +24,9 @@
 
 	q.initMap = @(__original) { function initMap()
 	{
+		// Reset PreviousCameraLevel as sometimes resetActiveEntityCostsPreview may not be called before a fight ends
+		::Hardened.Camera.PreviousCameraLevel = null;
+
 		::Tactical.State.m.HD_IsUsingHexagonLayout = false;
 		__original();
 	}}.initMap;
