@@ -56,8 +56,8 @@ this.hd_bearded_blade_skill <- this.inherit("scripts/skills/skill", {
 		if (!this.skill.onVerifyTarget(_originTile, _targetTile)) return false;
 
 		local target = _targetTile.getEntity();
+		if (target.HD_isUnarmed()) return false;
 		if (target.getCurrentProperties().IsImmuneToDisarm) return false;
-		if (target.getSkills().hasSkill("effects.disarmed")) return false;	// Disarm does not stack so we prevent the player from making a mistake
 
 		return true;
 	}
