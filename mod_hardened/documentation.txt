@@ -30,6 +30,15 @@
 
 # Changelog
 
+1.23.6
+	- Slightly lower volume of screams when gaining **Feral Rage** stacks
+	- Allow **Bearded Blade** to target **Stunned** characters
+	- Fix **Bearded Blade** being usable on **Unarmed** characters
+	- Fix(Vanilla) some parties, spawned by contracts, continue being ignored by NPCs after the contract has been cancelled
+	- Fix tactical leaf forest maps still spawning 2 AP tiles
+	- Fix automatic camera adjustment when previewing sometimes setting too high of a targeted camera level
+	- Fix automatic camera adjustment at the start of combat sometimes setting camera level too low
+
 1.23.5
 	- Allow **Discover Location** contract to target locations in undiscovered regions
 	- Increase contract tier of **Discover Location** when the target has low visibility

@@ -1666,6 +1666,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix **Necrosavants** sometimes walking instead of teleporting
 - Fix rare situation in which town screens won't open correctly
 - Fix incomplete null check in `generic_item`
+- Fix some parties, spawned by contracts, continue being ignored by NPCs after the contract has been cancelled
 - Fix ironman autosaves after battle not saving autolooted items
 - Fix shieldwall animation still showing up on NPCs who lost the shieldwall effect offscreen
 - Fix spearwall animation showing up on NPCs who lost the spearwall effect offscreen
