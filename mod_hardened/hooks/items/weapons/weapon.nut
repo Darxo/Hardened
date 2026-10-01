@@ -53,6 +53,11 @@
 			{
 				entry.text = ::Reforged.Mod.Tooltips.parseString("[Reach|Concept.Reach]: ") + this.m.Reach;
 			}
+			else if (entry.id == 10 && entry.icon == "ui/icons/hitchance.png" && entry.text.find("Has an additional [color=") != null)
+			{
+				// Feat: Shorten hitchance tooltip to fit into one line and add nested tooltip
+				entry.text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeValue(this.m.AdditionalAccuracy, {AddSign = true, AddPercent = true}) + " [Hitchance|Concept.Hitchance]");
+			}
 		}
 
 		return ret;
