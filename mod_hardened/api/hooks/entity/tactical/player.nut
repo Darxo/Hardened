@@ -22,12 +22,12 @@
 	}
 
 // New Functions
-	q.getXPMult <- function()
+	q.HD_getXPMult <- function()
 	{
 		local oldCombatStatsXP = this.m.CombatStats.XPGained;
 		local oldXP = this.m.XP;
-		this.addXP(1000);
 
+		this.addXP(1000);
 		local xpDifference = this.m.XP - oldXP;
 
 		this.m.CombatStats.XPGained = oldCombatStatsXP;

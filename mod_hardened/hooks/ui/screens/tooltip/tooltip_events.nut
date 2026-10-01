@@ -159,7 +159,7 @@
 							id = 6,
 							type = "text",
 							icon = "/ui/icons/xp_received.png",
-							text = "Current XP Mult: " + ::MSU.Text.colorizePct(entity.getXPMult(), {CompareTo = 1.0}),
+							text = "Current XP Mult: " + ::MSU.Text.colorizePct(entity.HD_getXPMult(), {CompareTo = 100}),
 						},
 					]);
 				}
