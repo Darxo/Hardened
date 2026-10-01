@@ -14,7 +14,7 @@
 			id = 10,
 			type = "text",
 			icon = "ui/icons/fatigue.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Recover " + ::MSU.Text.colorPositive("50%") + " of your [Fatigue|Concept.Fatigue]"),
+			text = ::Reforged.Mod.Tooltips.parseString("Recover [Fatigue|Concept.Fatigue] equal to " + ::MSU.Text.colorPositive("50%") + " of your [Stamina|Concept.MaximumFatigue]"),
 		});
 
 		ret.push({
@@ -82,4 +82,11 @@
 
 		return true;
 	}}.onUse;
+
+// Reforged Functions
+	// Overwrite, because we change the effect to using Stamina as reference, rather than built-up Fatigue
+	q.getFatigueRecovered = @() { function getFatigueRecovered()
+	{
+		return ::Math.ceil(this.getContainer().getActor().getStamina() * 0.5);;
+	}}.getFatigueRecovered;
 });
