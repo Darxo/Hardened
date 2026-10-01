@@ -273,6 +273,40 @@
 	);
 }
 
+{	// Leader
+	// scripts/entity/tactical/enemies/bandit_leader
+	::Reforged.Entities.editEntity("BanditLeader",	// Brigand Leader
+		null,
+		{
+			XP = 500 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 400
+			Hitpoints = 120, 	// Reforged: 100
+			Bravery = 100, 		// Reforged: 80
+			Stamina = 150, 		// Reforged: 130
+			MeleeSkill = 80, 	// Reforged: 80
+			RangedSkill = 45, 	// Reforged: 45
+			MeleeDefense = 20,	// Reforged: 20
+			RangedDefense = 15, // Reforged: 5
+			Initiative = 125,	// Reforged: 125
+		}
+	);
+
+	// scripts/entity/tactical/enemies/rf_bandit_baron
+	::Reforged.Entities.editEntity("RF_BanditBaron",	// Brigand Baron
+		null,
+		{
+			XP = 800 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 500
+			Hitpoints = 150, 	// Reforged: 120
+			Bravery = 130, 		// Reforged: 100
+			Stamina = 180, 		// Reforged: 150
+			MeleeSkill = 100, 	// Reforged: 90
+			RangedSkill = 45, 	// Reforged: 45
+			MeleeDefense = 30,	// Reforged: 30
+			RangedDefense = 30, // Reforged: 0
+			Initiative = 125,	// Reforged: 125
+		}
+	);
+}
+
 // scripts/entity/tactical/wardog
 // scripts/entity/tactical/armored_wardog
 {
@@ -311,34 +345,4 @@
 	// Optional Stats
 	::Const.Tactical.Actor.Warhound.Vision <- 5;		// Vanilla: 7
 	::Const.Tactical.Actor.Warhound.Reach <- 2;
-}
-
-// scripts/entity/tactical/enemies/bandit_leader
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.BanditLeader.XP = 500 * ::Hardened.Global.FactionExperience.Brigands;
-	::Const.Tactical.Actor.BanditLeader.ActionPoints = 9;
-	::Const.Tactical.Actor.BanditLeader.Hitpoints = 120;
-	::Const.Tactical.Actor.BanditLeader.Bravery = 100;
-	::Const.Tactical.Actor.BanditLeader.Stamina = 150;
-	::Const.Tactical.Actor.BanditLeader.MeleeSkill = 80;
-	::Const.Tactical.Actor.BanditLeader.RangedSkill = 45;
-	::Const.Tactical.Actor.BanditLeader.MeleeDefense = 20;
-	::Const.Tactical.Actor.BanditLeader.RangedDefense = 15;
-	::Const.Tactical.Actor.BanditLeader.Initiative = 125;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_baron
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_BanditBaron.XP = 800 * ::Hardened.Global.FactionExperience.Brigands;
-	::Const.Tactical.Actor.RF_BanditBaron.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_BanditBaron.Hitpoints = 150;
-	::Const.Tactical.Actor.RF_BanditBaron.Bravery = 130;
-	::Const.Tactical.Actor.RF_BanditBaron.Stamina = 180;
-	::Const.Tactical.Actor.RF_BanditBaron.MeleeSkill = 100;
-	::Const.Tactical.Actor.RF_BanditBaron.RangedSkill = 45;
-	::Const.Tactical.Actor.RF_BanditBaron.MeleeDefense = 30;
-	::Const.Tactical.Actor.RF_BanditBaron.RangedDefense = 30;
-	::Const.Tactical.Actor.RF_BanditBaron.Initiative = 125;
 }
