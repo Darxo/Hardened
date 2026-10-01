@@ -26,13 +26,13 @@
 	{
 		local oldCombatStatsXP = this.m.CombatStats.XPGained;
 		local oldXP = this.m.XP;
-		this.addXP(10000);
+		this.addXP(1000);
 
 		local xpDifference = this.m.XP - oldXP;
 
 		this.m.CombatStats.XPGained = oldCombatStatsXP;
 		this.m.XP = oldXP;
 
-		return xpDifference / 10000.0;
+		return xpDifference / 1000.0;
 	}
 });
