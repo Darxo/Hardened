@@ -1,8 +1,8 @@
 // Hooks
 {
-	::Reforged.Spawns.Units["Unit.RF.RF_BanditPillagerTough"].Figure = "figure_hd_bandit_vandal";	// Reforged: figure_rf_bandit_pillager
-	::Reforged.Spawns.Units["Unit.RF.RF_BanditRaiderTough"].Figure = "figure_hd_bandit_pillager";		// Reforged: figure_bandit_03
-	::Reforged.Spawns.Units["Unit.RF.RF_BanditMarauderTough"].Figure = "figure_hd_bandit_marauder";	// Reforged: figure_rf_bandit_marauder
+	::Hardened.util.registerCustomUnitFigure(::Reforged.Spawns.Units["Unit.RF.RF_BanditPillagerTough"], "figure_hd_bandit_vandal");		// Reforged: figure_rf_bandit_pillager
+	::Hardened.util.registerCustomUnitFigure(::Reforged.Spawns.Units["Unit.RF.RF_BanditRaiderTough"], "figure_hd_bandit_pillager");		// Reforged: figure_bandit_03
+	::Hardened.util.registerCustomUnitFigure(::Reforged.Spawns.Units["Unit.RF.RF_BanditMarauderTough"], "figure_hd_bandit_marauder");	// Reforged: figure_rf_bandit_marauder
 
 	// Change world figure for bandit leader from the classic vanilla icon to that of how he actually looks like in Hardened due to equipment
 	::Reforged.Spawns.Units["Unit.RF.BanditLeader"].Figure = "figure_bandit_05";	// Reforged: figure_bandit_04
