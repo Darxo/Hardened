@@ -110,7 +110,7 @@ this.bounty_hunter_manager <- {
 		party.setDescription("A group of bounty hunters travelling the lands and lending their swords to the highest bidder.");
 		party.setFootprintType(::Const.World.FootprintsType.Mercenaries);
 		party.getSprite("base").setBrush("world_base_07");
-		party.getSprite("body").setBrush("figure_mercenary_0" + ::Math.rand(1, 2));		// Todo: find unique unused world figure??
+		party.getSprite("body").setBrush("figure_hd_bounty_hunter_01");
 		party.getSprite("banner").setBrush(::Hardened.util.findUnusedMercenaryBanner());
 		if (originSettlement.getFactions().len() == 1)
 		{

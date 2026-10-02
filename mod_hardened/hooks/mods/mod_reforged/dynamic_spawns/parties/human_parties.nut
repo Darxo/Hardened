@@ -55,6 +55,9 @@ local removeBlock = function( _party, _unitBlockID )
 		}
 	}
 
+	local bountyHuntersParty = ::Reforged.Spawns.Parties["BountyHunters"];
+	::Hardened.util.registerCustomPartyFigure(bountyHuntersParty, "figure_hd_bounty_hunter_01");
+
 	local caravanParty = ::Reforged.Spawns.Parties["Caravan"];
 	caravanParty.Variants.filter(function(_item, _weight) {
 		_item.IdealSizeMult <- ::Hardened.Global.FactionIdealSizeMult.Civilians * ::Hardened.Global.PartySizeMult.Caravan;
