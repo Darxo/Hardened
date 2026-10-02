@@ -480,6 +480,18 @@
 	});
 }
 
+::Hardened.util.registerCustomPartyFigure <- function( _partyDef, _newFigure )
+{
+	::Hardened.Private.WorldFigureFallback[_newFigure] <- _partyDef.DefaultFigure;
+	_partyDef.DefaultFigure = _newFigure;
+}
+
+::Hardened.util.registerCustomUnitFigure <- function( _unitDef, _newFigure )
+{
+	::Hardened.Private.WorldFigureFallback[_newFigure] <- _unitDef.Figure;
+	_unitDef.Figure = _newFigure;
+}
+
 /// Remove one, or all bullet points from _tooltip, for which _filter( _entry ) returns true
 /// @param _function function, that takes exactly one argument, the bullet point table, currently viewed
 /// @return true, if at least one bullet point was found and removed

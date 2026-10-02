@@ -110,9 +110,28 @@
 		}
 	}
 
+	q.onSerialize = @(__original) { function onSerialize( _out )
+	{
+		// Feat: Change world party figure into a reforged compatible format before serialization, to allow mod-removable
+		local worldFigure = this.getSprite("body").getBrush().Name;
+		if (worldFigure in ::Hardened.Private.WorldFigureFallback)
+		{
+			this.getFlags().set("HD_FigureOverwrite", worldFigure);
+			this.getSprite("body").setBrush(::Hardened.Private.WorldFigureFallback[worldFigure]);
+		}
+
+		__original(_out);
+	}}.onSerialize;
+
 	q.onDeserialize = @(__original) function( _in )
 	{
 		__original(_in);
+
+		// Feat: Restore Hardened-exclusive custom world party figures, if one was present
+		if (this.getFlags().has("HD_FigureOverwrite"))
+		{
+			this.getSprite("body").setBrush(this.getFlags().get("HD_FigureOverwrite"));
+		}
 
 		if (this.getFlags().has("IsCaravan") && this.hasSprite("banner"))
 		{
