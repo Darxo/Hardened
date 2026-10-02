@@ -52,7 +52,15 @@
 				}
 			}
 
-			if (!party.isAlliedWithPlayer())
+			if (party.isAlliedWithPlayer())
+			{
+				if (party.isInCombat())
+				{
+					// Feat: add new relation bonus when joining allies in active battles
+					faction.addPlayerRelation(::Const.World.Assets.HD_RelationCameToTheirHelp, "Has come to their help");
+				}
+			}
+			else
 			{
 				faction.addPlayerRelation(::Const.World.Assets.HD_RelationAttackedThem, "Attacked them");
 			}

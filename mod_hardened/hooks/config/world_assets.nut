@@ -24,6 +24,7 @@
 	// This controls what percentage of a recruits hiring cost is needed to try them out
 	::Const.World.Assets.TryoutCostPct <- 0.2;	// In Vanilla this is 0.1
 	::Const.World.Assets.HD_RelationAttackedThem <- -5.0;	// Relationship penalty, when we enter a fight against any enemy faction (including temporary enemies)
+	::Const.World.Assets.HD_RelationCameToTheirHelp <- 3.0;	// Relationship penalty, when we enter a fight alongside an ally who was already engaged in battle
 	::Const.World.Assets.HD_RelationLuredEnemiesToThem <- -3.0;	// Relationship penalty, when we enter a fight alongside an allied location
 
 	::Const.World.Assets.HD_MoraleReputationAttackedThem <- -2;	// Morale Reputation hit, when we enter a fight against a temporary enemy
