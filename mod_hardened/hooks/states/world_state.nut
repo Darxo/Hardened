@@ -29,6 +29,29 @@
 		// We need to call RootState.get to get access to ::Tactical.State, because at this point that global variable is not yet set
 		local tacticalState = ::RootState.get("TacticalFromWorldState");
 
+		// Feat: Whenever you start any battle,
+		//	you gain a relationship hit against any faction that you fight against with the reason "Attacked them"
+		//	you gain a morale reputation hit, if you fight against temporary enemies
+		local currentContract = ::World.Contracts.getActiveContract();
+		local stratProps = tacticalState.getStrategicProperties();
+		foreach (party in stratProps.Parties)
+		{
+			local faction = ::World.FactionManager.getFaction(party.getFaction());
+			if (faction == null) continue;	// The first three entries in the this.m.Factions array are always null
+			if (currentContract != null && factionID == currentContract.getFaction()) continue;	// Some contracts force you to fight against their own (deserter twist), we dont want those cases to cause non-scripted relation damage
+
+			if (!party.isAlliedWithPlayer())
+			{
+				faction.addPlayerRelation(::Const.World.Assets.HD_RelationAttackedThem, "Attacked them");
+			}
+
+			if (faction.isTemporaryEnemy())
+			{
+				// Similar to what vanilla subtracts, when you attack a party
+				::World.Assets.addMoralReputation(::Const.World.Assets.HD_MoraleReputationAttackedThem);
+			}
+		}
+
 		// Vanilla Fix: Prevent world combat from being cancelled, before the autosave happens
 		// Vanilla triggers the autosave() during startCombat, but after getLocalCombatProperties (where vanilla calls abortCombatWithParty)
 		// We move the abortCombatWithParty call to the end of startCombat
