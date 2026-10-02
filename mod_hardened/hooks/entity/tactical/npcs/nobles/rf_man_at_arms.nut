@@ -143,11 +143,11 @@
 
 			if (this.getItems().hasEmptySlot(::Const.ItemSlot.Head))
 			{
-				this.getItems().equip(::new(::MSU.Class.WeightedContainer([
-					[1, "scripts/items/helmets/rf_skull_cap_with_mail"],
+				this.getItems().equip(::new(::MSU.Class.WeightedContainer([		// 140 - 190
 					[1, "scripts/items/helmets/rf_conical_billed_helmet"],
+					[1, "scripts/items/helmets/rf_padded_conical_billed_helmet"],
 					[1, "scripts/items/helmets/rf_sallet_helmet_with_mail"],
-					[1, "scripts/items/helmets/rf_padded_conical_billed_helmet"]
+					[1, "scripts/items/helmets/rf_skull_cap_with_mail"],
 				]).roll()));
 			}
 		}
