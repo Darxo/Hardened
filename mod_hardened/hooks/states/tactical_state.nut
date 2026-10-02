@@ -44,6 +44,28 @@
 		__original();
 	}
 
+	q.init = @(__original) { function init()
+	{
+		// Vanilla Fix: Prevent vanilla from triggering the first round (and its sound effect) too early
+		// Switcheroo initNextRound to prevent vanilla from ex
+		// Vanilla first triggers initNextRound and only after that it loads all required tactical resources
+		// Loading the tactical resources can take several seconds. Around 9 seconds in some situations.
+		// As a result a player might hear a misleading new-round sfx thinking that the loading has finished but still looking at a loading screen for several seconds
+		// They might think, the game has crashed
+		// We fix that by moving the execution of initNextRound() to the end of init
+		local oldInitNextRound = ::Tactical.TurnSequenceBar.get().initNextRound;
+		::Tactical.TurnSequenceBar.get().initNextRound = function() {};
+
+		__original();
+
+		::Tactical.TurnSequenceBar.get().initNextRound = oldInitNextRound;
+
+		if (this.Stash.isLocked() == false && this.m.Scenario != null)
+		{
+			::Tactical.TurnSequenceBar.initNextRound();
+		}
+	}}.init;
+
 	// We have to hook onFinish, because it is the last thing that happens, before tactical_state is deconstructed
 	// And it is happening right after the combat loot is added to the stash
 	q.onFinish = @(__original) function()
