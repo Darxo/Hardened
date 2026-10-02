@@ -289,6 +289,7 @@
 			Initiative = 125,	// Reforged: 125
 		}
 	);
+	::Const.EntityIcon[::Const.EntityType.BanditLeader] = "bandit_marauder_orientation";
 
 	// scripts/entity/tactical/enemies/rf_bandit_baron
 	::Reforged.Entities.editEntity("RF_BanditBaron",	// Brigand Baron
