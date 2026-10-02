@@ -21,6 +21,42 @@
 		return __original(_location);
 	}
 
+	q.startCombat = @(__original) { function startCombat( _pos )
+	{
+		local ret = __original(_pos);	// autosave(); happens in here
+		if (!ret) return ret;
+
+		// We need to call RootState.get to get access to ::Tactical.State, because at this point that global variable is not yet set
+		local tacticalState = ::RootState.get("TacticalFromWorldState");
+
+		// Vanilla Fix: Prevent world combat from being cancelled, before the autosave happens
+		// Vanilla triggers the autosave() during startCombat, but after getLocalCombatProperties (where vanilla calls abortCombatWithParty)
+		// We move the abortCombatWithParty call to the end of startCombat
+		foreach (party in tacticalState.getStrategicProperties().Parties)
+		{
+			::World.Combat.abortCombatWithParty(party);
+		}
+
+		return ret;
+	}}.startCombat;
+
+	q.getLocalCombatProperties = @(__original) { function getLocalCombatProperties( _pos, _ignoreNoEnemies = false )
+	{
+		// Vanilla Fix: Prevent world combat from being cancelled, before the autosave happens
+		// Switcheroo, to prevent vanilla from cancelling auto-combat from nearby parties, while collecting the combat properties
+		// This cancellation should not be happening inside this getter function. Instead we move it into the `startCombat` function
+		// Currently getLocalCombatProperties happens before autosave. As a result, when you load this autosave, those nearby parties won't be in an autobattle anymore
+		// This changes the engagement, should you decide to engage again. And if you decide to not engage, then those parties might choose to not fight anymore
+		local oldAbortCombatWithParty = ::World.Combat.abortCombatWithParty;
+		::World.Combat.get().abortCombatWithParty = function(_) {};
+
+		local ret = __original(_pos, _ignoreNoEnemies);
+
+		::World.Combat.get().abortCombatWithParty = oldAbortCombatWithParty;
+
+		return ret;
+	}}.getLocalCombatProperties;
+
 	q.updateTopbarAssets = @(__original) function()		// In Vanilla this triggers once per hour
 	{
 		__original();
