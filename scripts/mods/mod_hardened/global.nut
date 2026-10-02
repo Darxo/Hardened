@@ -290,5 +290,14 @@ local resourceMult = ::Hardened.Const.ResourceTierMult;
 				}
 			}
 		}
+
+		// Create a dummy world entity with one brush from every hardened spritemaps, to force that to be loaded at all times
+		createBrushRefresher = function()
+		{
+			// We secretly spawn a permanent, invisible dummy party at the bottom left corner of the map just so it keeps our newly introduced brushes permanently in memory
+			local party = ::World.spawnEntity("scripts/entity/world/party", createVec(0,0));
+			party.getSprite("body").setBrush("figure_hd_invisible_dummy");
+			return party;
+		}
 	});
 }

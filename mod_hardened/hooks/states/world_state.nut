@@ -1,6 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/states/world_state", function(q) {
 	// Private
 	q.m.HD_WaypointReference <- null;	// WeakReference to the waypoint, that displays our current destination
+	q.m.HD_BrushRefresher <- null;		// Reference to the brush refresher dummy entity
 	q.m.HD_NearbyLocations <- [];	// Array of "nearby" locations for the purpose of calculating, whether to show their names. They are updated once per hour
 	q.m.HD_LocationTypesToDisplay <- 0;		// combined types of all locations, whose name and optionally numeral we wanna display when they are in range
 
@@ -9,6 +10,8 @@
 		::logInfo("Hardened: Starting new campaign with seed " + this.m.CampaignSettings.Seed);
 
 		__original();
+
+		this.m.HD_BrushRefresher = ::Hardened.Global.createBrushRefresher();
 	}
 
 	q.enterLocation = @(__original) function( _location )
@@ -122,7 +125,12 @@
 	{
 		if (!::MSU.isNull(this.m.HD_WaypointReference)) this.m.HD_WaypointReference.die();
 
+		// Remove the brush refresher entity to remain compatible with Reforged as it serves no purpose in base Reforged
+		if (!::MSU.isNull(this.m.HD_BrushRefresher)) this.m.HD_BrushRefresher.die();
+
 		__original(_campaignFileName, _campaignLabel);
+
+		this.m.HD_BrushRefresher = ::Hardened.Global.createBrushRefresher();
 	}
 
 	q.loadCampaign = @(__original) function( _campaignFileName )
@@ -130,6 +138,7 @@
 		__original(_campaignFileName);
 
 		this.HD_safeUpdatePlayerVision();
+		this.m.HD_BrushRefresher = ::Hardened.Global.createBrushRefresher();
 	}
 
 	q.onCombatFinished = @(__original) function()
