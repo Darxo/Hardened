@@ -17,6 +17,42 @@
 		__original(_combat, _party);
 	}
 
+	q.startCombat = @(__original) { function startCombat( _p1, _p2 )
+	{
+		local oldLength = this.m.Combats.len();
+		__original(_p1, _p2);
+
+		if (this.m.Combats.len() > oldLength)
+		{
+			this.m.Combats[this.m.Combats.len() - 1].HD_skippingFirstTick <- true;
+		}
+
+	}}.startCombat;
+
+	q.tickCombat = @(__original) { function tickCombat( _combat )
+	{
+		// Feat: skip the first tick of every ai world combat to make them last a bit longer
+		if (_combat.HD_skippingFirstTick)
+		{
+			_combat.HD_skippingFirstTick = false;
+			return;
+		}
+
+		__original(_combat);
+	}}.tickCombat;
+
+	q.onDeserialize = @(__original) { function onDeserialize( _in )
+	{
+		__original(_in);
+
+		foreach (combat in this.m.Combats)
+		{
+			// We choose the easy way and pretend like any combat from a loaded save already had skipped a tick
+			// This is a good enough approximation and saves a lot of additional management
+			combat.HD_skippingFirstTick <- false;
+		}
+	}}.onDeserialize;
+
 // New Functions
 	// Return true, if _party is already in _combat; false otherwise
 	q.isInCombat <- function( _combat, _party )
