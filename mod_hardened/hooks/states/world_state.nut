@@ -40,6 +40,18 @@
 			if (faction == null) continue;	// The first three entries in the this.m.Factions array are always null
 			if (currentContract != null && factionID == currentContract.getFaction()) continue;	// Some contracts force you to fight against their own (deserter twist), we dont want those cases to cause non-scripted relation damage
 
+			if (party.isLocation())
+			{
+				foreach (otherParty in stratProps.Parties)
+				{
+					if (party.isAlliedWith(otherParty)) continue;
+
+					// Feat: add new relation penalty when fighting alongside allied locations
+					faction.addPlayerRelation(::Const.World.Assets.HD_RelationLuredEnemiesToThem, "Has lured enemies to them");
+					break;
+				}
+			}
+
 			if (!party.isAlliedWithPlayer())
 			{
 				faction.addPlayerRelation(::Const.World.Assets.HD_RelationAttackedThem, "Attacked them");
