@@ -109,6 +109,20 @@
 			return 3;
 		}
 	}
+
+	q.HD_getDifficultyImage <- function()
+	{
+		switch (this.HD_getDifficultyTier())
+		{
+			case 1:
+				return "ui/images/difficulty_easy.png";
+			case 2:
+				return "ui/images/difficulty_medium.png";
+			case 3:
+				return "ui/images/difficulty_hard.png";
+		}
+		return "ui/images/difficulty_easy.png";
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/contracts/contract", function(q) {
