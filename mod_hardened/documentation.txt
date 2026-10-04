@@ -30,6 +30,9 @@
 
 # Changelog
 
+1.24.1
+	- Fix combat not starting correctly while on a contract
+
 1.24.0
 	- **Mace Mastery** no longer applies **Dazed** on a headshot. It now applies **Dazed** when hitting a staggered character
 	- **Recover** now recovery Fatigue equal to 50% of your Stamina (instead of 50% of your Fatigue)
