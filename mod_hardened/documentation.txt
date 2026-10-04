@@ -30,6 +30,60 @@
 
 # Changelog
 
+1.24.0
+	- **Mace Mastery** no longer applies **Dazed** on a headshot. It now applies **Dazed** when hitting a staggered character
+	- **Recover** now recovery Fatigue equal to 50% of your Stamina (instead of 50% of your Fatigue)
+	- **Decanus Aura** (**Ancient Decanus**) now has a Range of 3 tiles (down from 4). It now makes **Shieldwall** cost -2 Action Points (up from free). It now also causes affected targets to receive 15% less damage from any source
+	- **Centurion Aura** (**Ancient Centurion**) now has a Range of 4 tiles (down from 6). It now also grants +1 Maximum Action Point to all affected targets
+	- **Legatus Aura** (**Ancient Legatus**) now has a Range of 5 tiles (down from 8). It no longer grants **Resolve** or a Damage reduction. It now grants +5 **Threat** to all affected targets
+	- **Patchwork Scale Armor** now has 200 Condition (down from 220), 30 Weight (up from 29) and costs 2200 Crowns (up from 2000)
+	- **Pillaged Heavy Lamellar Armor** now has 250 Condition (down from 255), 40 Weight (up from 42) and costs 2200 Crowns (up from 2750)
+	- **Rusted Mail Hauberk** now has 150 Condition (up from 140), 19 Weight (up from 18) and costs 1300 Crowns (up from 650)
+	- **Soldier's Heraldic Bascinet** now has 250 Condition (up from 220), 16 Weight (up from 13) and costs 2000 Crowns (up from 1400)
+	- **Flat Top with Rusty Mail** now has 240 Condition (down from 245) and costs 1400 Crowns (up from 1250)
+	- **Kettle Hat with Rusty Mail** now has 220 Condition (down from 245), -1 Vision (up from -2) and costs 1700 Crowns (up from 1250)
+	- **Marauder Helmet with Closed Mail** now has 250 Condition (up from 245), -3 Vision (down from -2) and costs 1400 Crowns (up from 1250)
+	- **Marauder Helmet with Rusty Mail** now has -3 Vision (down from -2) and costs 900 Crowns (up from 700)
+	- **Decayed Full Helm** now costs 1250 Crowns (down from 1500)
+	- Champions no longer grant additional Resolve to nearby allies
+	- Skeletons and Zombies no longer have 33% more injury threshold
+	- All Goblins, except **Goblin Stalker** and **Goblin Overseer**, lose **Quickhands**
+	- Necrosavants now take 50% more hitpoint damage from fire
+	- Add new NPC-Only perk **Judgement**. It grants +10% Hitchance against anyone whose turn has already started
+	- **Oathbringer** gain **Judgement** and lose 5 Melee Skill
+	- **Cultists** gain **Judgement** and lose 5 Melee Skill. They now prefer to wait during combat
+	- **Brigand Raider** spawn with **Rusted Mail Hauberk** instead of **Mail Shirt**
+	- **Brigand Highwayman** spawn with **Mail Shirt** instead of **Mail Hauberk**. They no longer spawn with a **Padded Skull Cap**. They can spawn with a **Marauder Helmet with Rusty Mail** or **Closed Flat Top Helmet**
+	- **Brigand Raider** spawn with **Rusted Mail Hauberk** instead of **Mail Shirt**
+	- **Brigand Highwayman** spawn with **Mail Shirt** instead of **Mail Hauberk**
+	- Rework **Brigand Leader** armor loadout involving new vanilla armors. Body Armor Condition changes to 220-240 (up from 190-230). Helmet Condition changes to 220-250 (up from 180-230)
+	- Rework **Brigand Baron** now spawn with a **Scale Armor** instead of **Reinforced Footman Armor**
+	- **Heavy Footmen** can now spawn with **Soldier's Heraldic Bascinet**. They no longer spawn with **Skull Cap with Mail** or with **Sallet Helmet with Mail**
+	- **Men at Arms** can now spawn with **Skull Cap with Mail**
+	- Rework **Halbedier** helmet loadout. They now have 180-240 Helmet Condition (up from 140-240)
+	- **Nomad Leader** now spawn with a **Mail Hauberk** instead of **Lamellar Harness**
+	- Joining an ongoing battle involving an ally, causes you to gain 3 Relation with them
+	- Luring enemies into an allied location now causes you to lose 3 Relation with that allied faction
+	- Allies which die during combat now causes you to lose 0.5 Relation with their faction, even if you didnt kill them
+	- Skip the first tick of every new world combat, causing them to last slightly longer on average
+	- **Defend Settlement** contracts now mark all attacking parties which need to be defeated
+	- Roaming **Bounty Hunters** are now twice as likely to work for settlements which are hostile to the player
+	- Display contract difficulty tier in the contract details on the world map
+	- Add unique world figure for bounty hunters
+	- Improve Bandit Leader world figure to closer resemble their look on the battlefield
+	- Add Frenzy Eyes effect for **Unholds** and **Orc Berserkers**
+	- Add bloodied visual effect on orc berserkers for every kill they do (similar to Vanilla)
+	- Streamline Hitchance tooltip on weapons including a nested tooltip
+	- Slightly lower sound pitch of barbarian king and barbarian chosen
+	- Add simple sound effect when expanding or collapsing the contract details
+	- Display the providing item in active skills, which come from an equipped item
+	- Fix(Vanilla) AI Combat being cancelled when loading an autosave from before attacking them
+	- Fix(Vanilla) sound effect for the first round triggering too early during the loading screen of a battle
+	- Fix XP Multiplier percentage in Character Screen XP tooltip sometimes showing wrong values for characters from level 8-10
+	- Fix missing world figure on some bandit parties
+	- Fix missing skull icon in combat dialog for champions
+	- Add `contract::HD_getDifficultyImage()` for fetching the difficulty icon representing this contracts difficulty
+
 1.23.6
 	- Slightly lower volume of screams when gaining **Feral Rage** stacks
 	- Allow **Bearded Blade** to target **Stunned** characters

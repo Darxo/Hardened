@@ -268,3 +268,14 @@ foreach (entity in allParties)
 ## Improve debugging of ironman saves
 
 ::World.Assets.m.IsIronman = false;
+
+## Spawn world party
+
+local partyId = ::Const.World.Spawn.BanditBoss;
+local resources = 600;
+::World.FactionManager.getFactionsOfType(::Const.FactionType.Orcs)[0].spawnEntity(::World.State.getPlayer().getTile(), "TestParty", false, partyId, resources);
+::World.FactionManager.getFactionsOfType(::Const.FactionType.Bandits)[0].spawnEntity(::World.State.getPlayer().getTile(), "TestParty", false, partyId, resources);
+::World.FactionManager.getFactionsOfType(::Const.FactionType.OrientalBandits)[0].spawnEntity(::World.State.getPlayer().getTile(), "TestParty", false, partyId, resources);
+::World.FactionManager.getFactionsOfType(::Const.FactionType.NobleHouse)[1].spawnEntity(::World.State.getPlayer().getTile(), "TestParty", false, partyId, resources);
+::World.FactionManager.getFactionsOfType(::Const.FactionType.NobleHouse)[2].spawnEntity(::World.State.getPlayer().getTile(), "TestParty", false, partyId, resources);
+// ::World.FactionManager.getFactionsOfType(::Const.FactionType.Settlement)[10].spawnEntity(::World.State.getPlayer().getTile(), "TestParty", false, partyId, resources);
