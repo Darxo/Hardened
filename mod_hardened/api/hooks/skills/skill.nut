@@ -534,7 +534,7 @@
 				id = 43,
 				type = "text",
 				icon = "ui/icons/warning.png",
-				text = "Requires " + ::Reforged.Mod.Tooltips.parseString(::Reforged.NestedTooltips.getNestedItemName(this.getItem())),
+				text = "Provided by: " + ::Reforged.Mod.Tooltips.parseString(::Reforged.NestedTooltips.getNestedItemName(this.getItem())),
 			});
 		}
 
