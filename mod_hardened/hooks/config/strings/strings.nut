@@ -32,8 +32,13 @@ local newPerks = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"If you end your [turn|Concept.Turn] on the same tile you started it on, become immune to [Displacement|Concept.Displacement] until the start of your next [turn|Concept.Turn]",
 						"During your [turn|Concept.Turn], take " + ::MSU.Text.colorPositive("50%") + " less damage",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"If you end your [turn|Concept.Turn] on the same tile you started it on, become immune to [Displacement|Concept.Displacement] until the start of your next [turn|Concept.Turn]",
 					],
 				},
 			],
@@ -188,7 +193,13 @@ local newPerks = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Gain " + ::MSU.Text.colorPositive("+1") + " [Vision|Concept.SightDistance] for every 3 adjacent tiles that are either empty or at least 2 levels below your tile",
-						"[Action Point|Concept.ActionPoints] costs for movement on all terrain is reduced by 1 to a minimum of 2 [Action Points|Concept.ActionPoints] per tile. This does not stack with [Pathfinder|Perk+perk_pathfinder] or [Elusive|Perk+perk_hd_elusive]",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"[Action Point|Concept.ActionPoints] costs for movement on all terrain is reduced by 1 to a minimum of 2 [Action Points|Concept.ActionPoints] per tile.",
+						"Does not stack with [Pathfinder|Perk+perk_pathfinder] or [Elusive|Perk+perk_hd_elusive]",
 					],
 				},
 			],
@@ -203,7 +214,13 @@ local newPerks = [
 				{
 					Type = ::UPD.EffectType.Passive,
 					Description = [
-						"[Action Point|Concept.ActionPoints] costs for movement on all terrain is reduced by 1 to a minimum of 2 [Action Points|Concept.ActionPoints] per tile. This does not stack with [Pathfinder|Perk+perk_pathfinder] or [Scout|Perk+perk_hd_scout]",
+						"[Action Point|Concept.ActionPoints] costs for movement on all terrain is reduced by 1 to a minimum of 2 [Action Points|Concept.ActionPoints] per tile.",
+						"Does not stack with [Pathfinder|Perk+perk_pathfinder] or [Scout|Perk+perk_hd_scout]",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
 						"After moving 2 tiles during your [turn|Concept.Turn], become immune to [rooted|Concept.Rooted] effects, until the start of your next [turn|Concept.Turn]",
 					],
 				},
@@ -298,6 +315,12 @@ local newPerks = [
 					Type = ::UPD.EffectType.Passive,
 					Description = [
 						"Adjacent allies take " + ::MSU.Text.colorPositive("30%") + " less damage from Attacks from enemies that are adjacent to you. This does not affect allies who also have [Warden|Perk+perk_hd_warden]",
+						"Does not work while [fleeing|Skill+hd_dummy_morale_state_fleeing]",
+					],
+				},
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
 						"Whenever an adjacent ally takes damage, move to the next position in the [turn|Concept.Turn] sequence",
 						"Does not work while [fleeing|Skill+hd_dummy_morale_state_fleeing]",
 					],
