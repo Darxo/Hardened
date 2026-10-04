@@ -1,0 +1,18 @@
+.world-screen .active-contract-panel-module .header-container .HD-contract-tier-container
+{
+	position: absolute;
+	left: 50%;	/* centered */
+	transform: translate(-50%, 100%);	/* centered horizontally and moved to the bottom border */
+	width: 4.5rem;
+	height: 4.1rem;
+	z-index: 5;
+}
+
+.HD-contract-tier-image
+{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
