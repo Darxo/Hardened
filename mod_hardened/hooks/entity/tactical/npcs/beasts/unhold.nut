@@ -61,3 +61,17 @@
 		this.getSkills().add(::new("scripts/skills/actives/unstoppable_charge_skill"));
 	}
 });
+
+::Hardened.HooksMod.hookTree("scripts/entity/tactical/enemies/unhold", function(q) {
+	q.HD_onInitSprites = @(__original) { function HD_onInitSprites()
+	{
+		__original();
+
+		local frenzyEyes = this.addSprite("HD_frenzy_eyes");
+		frenzyEyes.setBrush("zombie_rage_eyes");
+		frenzyEyes.Alpha = 200;
+		frenzyEyes.Scale = 1.25;
+		this.setSpriteOffset("HD_frenzy_eyes", ::createVec(-27, 7));
+		this.setSpriteRenderToTexture("HD_frenzy_eyes", false);		// The offset does not show up correctly in the turn sequence bar, so we just disable the sprite there
+	}}.HD_onInitSprites;
+});

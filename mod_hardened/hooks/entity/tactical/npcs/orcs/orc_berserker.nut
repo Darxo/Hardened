@@ -88,6 +88,13 @@
 		body_rage.Alpha = 220;
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.6;
+
+		local frenzyEyes = this.addSprite("HD_frenzy_eyes");
+		frenzyEyes.setBrush("zombie_rage_eyes");
+		frenzyEyes.Alpha = 200;
+		frenzyEyes.Scale = 1.2;
+		this.setSpriteOffset("HD_frenzy_eyes", ::createVec(-3, -5));
+		this.setSpriteRenderToTexture("HD_frenzy_eyes", false);		// The offset does not show up correctly in the turn sequence bar, so we just disable the sprite there
 	}
 
 	// Assign Stats and Unconditional Immunities, Perks and Actives
