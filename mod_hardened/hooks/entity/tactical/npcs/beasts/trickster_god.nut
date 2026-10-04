@@ -60,7 +60,6 @@
 
 		// Generic Effects
 		this.getSkills().add(::new("scripts/skills/racial/trickster_god_racial"));
-		this.getSkills().add(::new("scripts/skills/special/hd_frenzy_eyes_manager"));
 
 		// Generic Perks
 		this.getSkills().add(::new("scripts/skills/perks/perk_battering_ram"));

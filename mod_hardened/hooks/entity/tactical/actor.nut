@@ -574,7 +574,10 @@
 				this.getSkills().add(::new("scripts/skills/special/hd_frenzy_eyes_manager"));	// We add the new frenzy eyes manager special skill, that spawns the effect
 				return ret;
 			}
-			return { done = false };
+			else if (_spriteName == "HD_frenzy_eyes")
+			{
+				this.getSkills().add(::new("scripts/skills/special/hd_frenzy_eyes_manager"));
+			}
 		});
 		__original();
 		mockObject.cleanup();
