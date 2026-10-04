@@ -2,6 +2,8 @@
 // For that we overwrite the core generation functions onInit, makeMiniboss, assignRandomEquipment and onSpawned because we completely disregard Reforged or Vanillas design
 
 ::Hardened.HooksMod.hook("scripts/entity/tactical/enemies/orc_berserker", function(q) {
+	q.m.HD_KillingBlows <- 0;		// cosmetic counter just to enable varying stages of visual rage effect
+
 	q.create = @(__original) function()
 	{
 		__original();
@@ -38,6 +40,18 @@
 	{
 		this.HD_assignArmor();
 	}}.assignRandomEquipment;
+
+	// Overwrite, because we completely replace Reforged item adjustments with our own
+	q.onActorKilled = @(__original) { function onActorKilled( _actor, _tile, _skill )
+	{
+		__original(_actor, _tile, _skill);
+
+		if (!this.isAlive()) return;
+
+		// We preserve the vanilla berserker blood effect from rage stacks by adding a custom kill counter and controlling the visual effect with that
+		this.m.HD_KillingBlows += 1;
+		this.updateRageVisuals(1 + (this.m.HD_KillingBlows * 6));
+	}}.onActorKilled;
 
 // Reforged Functions
 	// Overwrite, because we completely replace Reforged Perks/Skills that are depending on assigned Loadout
