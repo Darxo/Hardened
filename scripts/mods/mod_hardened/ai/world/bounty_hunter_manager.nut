@@ -232,6 +232,12 @@ this.bounty_hunter_manager <- {
 			if (settlement.isIsolated()) continue;
 			if (!settlement.isAlliedWith(_party)) continue;
 			validSettlements.push(settlement);
+
+			// Feat: Settlements, hostile to the player, are twice as likely to be the target for bounty hunters
+			if (!settlement.isAlliedWithPlayer())
+			{
+				validSettlements.push(settlement);
+			}
 		}
 		if (validSettlements.len() == 0) return null;
 
