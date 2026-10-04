@@ -93,6 +93,13 @@ WorldCombatDialog.prototype.loadFromData = function ( _data )
 			left.append('<img src="' + Path.GFX + 'ui/orientation/' + entity.Icon + '.png" />');
 			row.append(left);
 
+			if (entity.Overlay != null)
+			{
+				row.append(
+					'<img src="' + Path.GFX + 'ui/' + entity.Overlay + '" class="HD-entity-overlay" />'
+				);
+			}
+
 			var right = $('<div class="entity-right">');
 			right.append('<span class="entity-name text-font-medium font-color-description">' + entity.Name + '</span>');
 			row.append(right);

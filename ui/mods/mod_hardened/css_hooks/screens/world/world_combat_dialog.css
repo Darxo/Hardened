@@ -5,6 +5,7 @@
 }
 
 .world-combat-dialog > .l-dialog-container .right-column .entity-table .entity-row {
+	position: relative;
 	display: flex;
 	align-items: center;
 	height: 48px;	/* Same height as Vanilla */
@@ -25,3 +26,11 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
   }
+
+.world-combat-dialog > .l-dialog-container .right-column .entity-table .HD-entity-overlay
+{
+	position: absolute;
+	left: 28px;
+	top: 27px;
+	z-index: 2;
+}
