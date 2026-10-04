@@ -528,7 +528,7 @@
 		}
 
 		// Feat: Display a tooltip indicating, that this effect is connected to an item, and will be removed when that item is unequipped
-		if (!this.isActive() && !::MSU.isNull(this.getItem()))
+		if (!::MSU.isNull(this.getItem()))
 		{
 			ret.push({
 				id = 43,
