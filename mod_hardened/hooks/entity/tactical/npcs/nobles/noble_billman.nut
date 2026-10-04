@@ -72,25 +72,25 @@
 				if (banner <= 4)
 				{
 					helmet = ::new(::MSU.Class.WeightedContainer([
-						[1, "scripts/items/helmets/padded_kettle_hat"],
+						[1, "scripts/items/helmets/padded_kettle_hat"],		// 130
 					]).roll());
 				}
 				else if (banner <= 7)
 				{
-					helmet = ::new(::MSU.Class.WeightedContainer([
+					helmet = ::new(::MSU.Class.WeightedContainer([			// 160
 						[1, "scripts/items/helmets/padded_flat_top_helmet"],
 					]).roll());
 				}
 				else
 				{
-					helmet = ::new(::MSU.Class.WeightedContainer([
+					helmet = ::new(::MSU.Class.WeightedContainer([			// 120
 						[1, "scripts/items/helmets/padded_nasal_helmet"],
 					]).roll());
 				}
 			}
 			else
 			{
-				helmet = ::new(::MSU.Class.WeightedContainer([
+				helmet = ::new(::MSU.Class.WeightedContainer([		// 80
 					[1, "scripts/items/helmets/mail_coif"],
 				]).roll());
 			}

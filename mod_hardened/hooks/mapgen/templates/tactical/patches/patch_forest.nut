@@ -4,7 +4,7 @@
 		// Feat: forest maps no longer randomly (5% chance) spawn grass tiles
 		// Those tiles just randomly screw decision making, where usually all tiles require 3 AP to traverse
 		local mockObject = ::Hardened.mockFunction(::MapGen, "get", function( _tileName ) {
-			if (_tileName == "tactical.tile.grass1")	// 1 as argument because within mockFunctions, there is an additional function inbetween us and our caller
+			if (_tileName == "tactical.tile.grass1")
 			{
 				return { done = true, value = ::MapGen.get("tactical.tile.moss1") };
 			}

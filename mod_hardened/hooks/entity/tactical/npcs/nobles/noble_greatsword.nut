@@ -14,8 +14,7 @@
 		]);
 
 		this.m.ChanceForNoHelmet = 25;	// If no helmet is assigned here, we will guarantee a faction themed helmet later
-		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([
-			[12, "scripts/items/helmets/rf_padded_sallet_helmet"],
+		this.m.HelmetWeightedContainer = ::MSU.Class.WeightedContainer([	// 180 - 200
 			[12, "scripts/items/helmets/barbute_helmet"],
 			[12, "scripts/items/helmets/rf_half_closed_sallet"],
 		]);

@@ -7,6 +7,7 @@
 
 	q.startNewCampaign = @(__original) function()
 	{
+		// Feat: print seed of a new campaign in the log to potentially improve debugging
 		::logInfo("Hardened: Starting new campaign with seed " + this.m.CampaignSettings.Seed);
 
 		__original();

@@ -82,7 +82,7 @@ this.hd_bearded_blade_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		// We make sure that this attack does not deal any damage and never hits the ead
+		// We make sure that this attack does not deal any damage and never hits the head
 		if (_skill == this)
 		{
 			_properties.DamageTotalMult = 0.0;
