@@ -42,7 +42,7 @@
 		{
 			local faction = ::World.FactionManager.getFaction(party.getFaction());
 			if (faction == null) continue;	// The first three entries in the this.m.Factions array are always null
-			if (currentContract != null && factionID == currentContract.getFaction()) continue;	// Some contracts force you to fight against their own (deserter twist), we dont want those cases to cause non-scripted relation damage
+			if (currentContract != null && faction.getID() == currentContract.getFaction()) continue;	// Some contracts force you to fight against their own (deserter twist), we dont want those cases to cause non-scripted relation damage
 
 			if (party.isLocation())
 			{
