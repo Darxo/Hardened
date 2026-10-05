@@ -3,5 +3,8 @@
 	{
 		__original();
 		this.m.Value = 300;		// Vanilla: 100
+
+		this.m.SlotType = ::Const.ItemSlot.Offhand;
+		this.m.ItemType = ::Const.Items.ItemType.Tool;
 	}
 });
