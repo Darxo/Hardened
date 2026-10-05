@@ -5,6 +5,10 @@
 
 		foreach (entry in ret)
 		{
+			if (entry.id == 10 && entry.icon == "ui/icons/health.png")
+			{
+				entry.text = ::MSU.String.replace(entry.text, "Characters ending", "Enemies ending");
+			}
 			if (entry.id == 11 && entry.icon == "ui/icons/fatigue.png")
 			{
 				entry.text = ::Reforged.Mod.Tooltips.parseString("Enemies starting their [turn|Concept.Turn] adjacent to you, gain [$ $|Skill+rf_worn_down_effect]");
