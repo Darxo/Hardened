@@ -10,7 +10,7 @@
 		__original();
 	}
 
-	q.onTurnStart = @(__original) function()
+	q.onTurnEnd = @(__original) function()
 	{
 		// We only prevent the effects, so that we can handle temporary immunities
 		if (this.getContainer().getActor().getCurrentProperties().HD_ImmuneToChilled) return;
