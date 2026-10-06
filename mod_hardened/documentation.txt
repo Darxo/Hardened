@@ -30,6 +30,11 @@
 
 # Changelog
 
+1.24.2
+	- Emphasizing in damage portion of **Frostbound** tooltip that it only affects enemies
+	- Fix characters with **Immune to Frostbound** still taking damage from that effect
+	- Fix **Nightmare** (Alps) being mitigated by effects that lower attack damage (e.g. **Nimble**, **Brace for Impact**, **One with the Shield**)
+
 1.24.1
 	- Fix combat not starting correctly while on a contract
 
