@@ -18,6 +18,20 @@
 	q.m.HD_recoveredHitpointsOverflow <- 0.0;	// float between 0.0 and 1.0. Is not deserialized, meaning that we lose a tiny bit hitpoint recovery when saving/loading often
 	q.m.HD_ChanceToBeHit <- null;	// Contains an unsigned integer with the % chance that we will hit this entity when we are previewing a skill; null, if no hitchance should be displayed
 
+	q.getTooltip = @(__original) { function getTooltip( _targetedWithSkill = null )
+	{
+		local ret = __original(_targetedWithSkill);
+
+		local activeEntity = ::Tactical.TurnSequenceBar.getActiveEntity();
+		if (::MSU.isKindOf(_targetedWithSkill, "skill"))
+		{
+			_targetedWithSkill.getContainer().HD_onGetTargetingTooltipAsUser(_targetedWithSkill, this, ret);
+			this.getSkills().HD_onGetTargetingTooltipAsTarget(_targetedWithSkill, activeEntity, ret);
+		}
+
+		return ret;
+	}}.getTooltip;
+
 	q.checkMorale = @(__original) function( _change, _difficulty, _type = ::Const.MoraleCheckType.Default, _showIconBeforeMoraleIcon = "", _noNewLine = false )
 	{
 		local oldMoraleState = this.getMoraleState();

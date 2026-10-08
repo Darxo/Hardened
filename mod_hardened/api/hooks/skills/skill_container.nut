@@ -120,4 +120,22 @@
 			_skill,
 		], false);
 	}
+
+	q.HD_onGetTargetingTooltipAsUser <- function( _previewedSkill, _targetActor, _tooltip )
+	{
+		this.callSkillsFunction("HD_onGetTargetingTooltipAsUser", [
+			_previewedSkill,
+			_targetActor,
+			_tooltip,
+		], false);
+	}
+
+	q.HD_onGetTargetingTooltipAsTarget <- function( _previewedSkill, _user, _tooltip )
+	{
+		this.callSkillsFunction("HD_onGetTargetingTooltipAsTarget", [
+			_previewedSkill,
+			_user,
+			_tooltip,
+		], false);
+	}
 });

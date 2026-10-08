@@ -375,6 +375,14 @@
 	q.onAfterShieldDamageReceived <- function( _initialDamage, _damageReceived, _shield, _attacker = null, _skill = null )
 	{
 	}
+
+	q.HD_onGetTargetingTooltipAsUser <- function( _previewedSkill, _targetActor, _tooltip )
+	{
+	}
+
+	q.HD_onGetTargetingTooltipAsTarget <- function( _previewedSkill, _user, _tooltip )
+	{
+	}
 });
 
 ::Hardened.HooksMod.hookTree("scripts/skills/skill", function(q) {
