@@ -39,19 +39,6 @@
 
 // MSU Functions
 	// Overwrite, because even if Reforged had hitfactors, we display them under different conditions
-	q.onGetHitFactors = @() function( _skill, _targetTile, _tooltip )
-	{
-		if (!_targetTile.IsOccupiedByActor) return;
-		if (this.getDamageTotalMult(_targetTile.getEntity()) != 1.0)
-		{
-			_tooltip.push({
-				icon = this.getIconColored(),
-				text = this.getName(),
-			});
-		}
-	}
-
-	// Overwrite, because even if Reforged had hitfactors, we display them under different conditions
 	q.onGetHitFactorsAsTarget = @() function( _skill, _targetTile, _tooltip )
 	{
 		if (!_skill.isAttack() || !_skill.isUsingHitchance() || _skill.isRanged()) return;	// This is just an approximation. In reality the perk grants +5 MDef against anything
@@ -64,6 +51,22 @@
 			text = ::MSU.Text.colorNegative(meleeDefenseModifier + "% ") + this.getName(),
 		});
 	}
+
+// Hardened Functions
+	q.HD_onGetTargetingTooltipAsUser = @(__original) { function HD_onGetTargetingTooltipAsUser( _skill, _targetEntity, _tooltip )
+	{
+		__original(_skill, _targetEntity, _tooltip);
+
+		if (this.getDamageTotalMult(_targetEntity) == 1.0) return;
+
+		local extraData = "entityId:" + this.getContainer().getActor().getID();
+		_tooltip.push({
+			id = 10,
+			type = "headerText",
+			icon = this.getIconColored(),
+			text = ::Reforged.Mod.Tooltips.parseString(::Reforged.NestedTooltips.getNestedSkillName(this, extraData)),
+		});
+	}}.HD_onGetTargetingTooltipAsUser;
 
 // New Functions
 	q.getDamageTotalMult <- function( _targetEntity )

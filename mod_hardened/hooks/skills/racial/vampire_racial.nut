@@ -19,7 +19,7 @@
 				id = 25,
 				type = "text",
 				icon = "ui/icons/campfire.png",
-				text = ::Reforged.Mod.Tooltips.parseString("Your [$ $|Concept.Hitpoints] take ") + ::MSU.Text.colorizeMultWithText(this.m.FireDamageMult, {InvertColor = true}) + " Fire Damage",
+				text = ::Reforged.Mod.Tooltips.parseString("Your [$ $|Concept.Hitpoints] take ") + ::MSU.Text.colorizeMultWithText(this.m.HD_FireDamageMult, {InvertColor = true}) + " Fire Damage",
 			});
 		}
 

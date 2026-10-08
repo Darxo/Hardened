@@ -17,20 +17,30 @@
 	}
 
 // MSU Functions
-	// Overwrite because we are more restrictive
+	// Overwrite because we implement this in our HD_onGetTargetingTooltipAsUser event instead
 	q.onGetHitFactors = @() function( _skill, _targetTile, _tooltip )
 	{
+	}
+
+// Hardened Functions
+	q.HD_onGetTargetingTooltipAsUser = @(__original) { function HD_onGetTargetingTooltipAsUser( _skill, _targetActor, _tooltip )
+	{
+		__original(_skill, _targetActor, _tooltip);
+
 		if (!this.isSkillValid(_skill)) return;
 
 		local actor = this.getContainer().getActor();
-		if (::Const.Tactical.Common.getBlockedTiles(actor.getTile(), _targetTile, actor.getFaction()).len() == 0)
+		if (::Const.Tactical.Common.getBlockedTiles(actor.getTile(), _targetActor.getTile(), actor.getFaction()).len() == 0)
 		{
+			local extraData = "entityId:" + this.getContainer().getActor().getID();
 			_tooltip.push({
+				id = 10,
+				type = "headerText",
 				icon = this.getIconColored(),
-				text = this.getName(),
+				text = ::Reforged.Mod.Tooltips.parseString(::Reforged.NestedTooltips.getNestedSkillName(this, extraData)),
 			});
 		}
-	}
+	}}.HD_onGetTargetingTooltipAsUser;
 
 // New Functions
 	q.isSkillValid <- function( _skill )

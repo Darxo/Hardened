@@ -47,7 +47,7 @@
 
 	q.onAnySkillUsed <- function( _skill, _targetEntity, _properties )
 	{
-		if (this.m.IsInEffect && _targetEntity != null && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) <= 1)
+		if (this.m.IsInEffect && this.HD_isTargetValid(_targetEntity))
 		{
 			_properties.DamageDirectAdd += this.m.DirectDamageModifier;
 			_properties.DamageTotalMult *= this.m.DamageTotalMult;
@@ -80,18 +80,36 @@
 	}
 
 // MSU Functions
-	q.onGetHitFactors <- function( _skill, _targetTile, _tooltip )
+	// Overwrite because we implement this in our HD_onGetTargetingTooltipAsUser event instead
+	q.onGetHitFactors = @() function( _skill, _targetTile, _tooltip )
 	{
-		if (this.m.IsInEffect && !_targetTile.IsEmpty && _targetTile.IsOccupiedByActor && this.getContainer().getActor().getTile().getDistanceTo(_targetTile) <= 1)
-		{
-			_tooltip.push({
-				icon = "ui/icons/damage_dealt.png",
-				text = this.getName(),
-			});
-		}
 	}
 
+// Hardened Functions
+	q.HD_onGetTargetingTooltipAsUser = @(__original) { function HD_onGetTargetingTooltipAsUser( _skill, _targetActor, _tooltip )
+	{
+		__original(_skill, _targetActor, _tooltip);
+
+		if (this.m.IsInEffect && this.HD_isTargetValid(_targetActor))
+		{
+			local extraData = "entityId:" + this.getContainer().getActor().getID();
+			_tooltip.push({
+				id = 10,
+				type = "headerText",
+				icon = this.getIconColored(),
+				text = ::Reforged.Mod.Tooltips.parseString(::Reforged.NestedTooltips.getNestedSkillName(this, extraData)),
+			});
+		}
+	}}.HD_onGetTargetingTooltipAsUser;
+
 // New Functions
+	q.HD_isTargetValid <- function( _target )
+	{
+		if (_target == null) return false;
+
+		return this.getContainer().getActor().getTile().getDistanceTo(_target.getTile()) <= 1;
+	}
+
 	q.getMeleeDefenseModifier <- function( _properties )
 	{
 		if (this.getContainer().getActor().isActiveEntity())

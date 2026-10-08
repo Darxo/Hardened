@@ -75,20 +75,21 @@ this.hd_warded_effect <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-// MSU Functions
-	function onGetHitFactorsAsTarget( _skill, _targetTile, _tooltip )
+// Hardened Functions
+	function HD_onGetTargetingTooltipAsTarget( _skill, _user, _tooltip )
 	{
 		if (!this.isEnabled()) return;
 		if (!this.isSkillValid(_skill)) return;
-		if (!this.isAttackerValid(_skill.getContainer().getActor())) return;
+		if (!this.isAttackerValid(_user)) return;
+		if (this.getDamageReceivedTotalMult() == 1.0) return;
 
-		if (this.getDamageReceivedTotalMult() != 1.0)
-		{
-			_tooltip.push({
-				icon = this.getIconColored(),
-				text = "Warded by " + ::MSU.Text.colorNeutral(this.m.SourceWarden.getName()),
-			});
-		};
+		local extraData = "entityId:" + this.getContainer().getActor().getID();
+		_tooltip.push({
+			id = 10,
+			type = "headerText",
+			icon = this.getIconColored(),
+			text = ::Reforged.Mod.Tooltips.parseString(::Reforged.NestedTooltips.getNestedSkillName(this, extraData)) + " by " + ::MSU.Text.colorNeutral(this.m.SourceWarden.getName()),
+		});
 	}
 
 // New Functions

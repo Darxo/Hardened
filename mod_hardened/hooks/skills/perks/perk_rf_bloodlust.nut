@@ -36,28 +36,21 @@
 		}
 	}
 
-// MSU Events
-	q.onGetHitFactors <- function( _skill, _targetTile, _tooltip )
+// Hardened Functions
+	q.HD_onGetTargetingTooltipAsUser = @(__original) { function HD_onGetTargetingTooltipAsUser( _skill, _targetActor, _tooltip )
 	{
-		if (_targetTile.IsOccupiedByActor && this.isEnabledFor(_targetTile.getEntity()) && this.isEnabled())
-		{
-			_tooltip.push({
-				icon = "ui/icons/damage_dealt.png",
-				text = this.getName(),
-			});
-		}
-	}
+		__original(_skill, _targetActor, _tooltip);
 
-	q.onGetHitFactorsAsTarget <- function( _skill, _targetTile, _tooltip )
-	{
-		if (this.isEnabled() && this.isEnabledFor(_skill.getContainer().getActor()))
+		if (this.isEnabled() && this.isEnabledFor(_targetActor))
 		{
 			_tooltip.push({
-				icon = "ui/tooltips/negative.png",
+				id = 10,
+				type = "headerText",
+				icon = this.getIconColored(),
 				text = this.getName(),
 			});
 		}
-	}
+	}}.HD_onGetTargetingTooltipAsUser;
 
 // New Functions
 	q.isEnabled <- function()
