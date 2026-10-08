@@ -54,6 +54,30 @@ WorldCombatDialog.prototype.show = function ( _data )
 Hardened.Hooks.WorldCombatDialog_loadFromData = WorldCombatDialog.prototype.loadFromData;
 WorldCombatDialog.prototype.loadFromData = function ( _data )
 {
+	var allyLocations = [];
+	_data.AllyBanners = _data.AllyBanners.filter(function (_banner)
+	{
+		if (_banner.indexOf('tacticalentity(') === 0)
+		{
+			allyLocations.push(_banner);
+			return false;
+		}
+
+		return true;
+	});
+
+	var enemyLocations = [];
+	_data.EnemyBanners = _data.EnemyBanners.filter(function (_banner)
+	{
+		if (_banner.indexOf('tacticalentity(') === 0)
+		{
+			enemyLocations.push(_banner);
+			return false;
+		}
+
+		return true;
+	});
+
 	var oldCreateDialog = $.fn.createDialog;
 	$.fn.createDialog = function(_title, _subTitle, _headerImagePath, _withTabs, _classes)
 	{
@@ -106,5 +130,21 @@ WorldCombatDialog.prototype.loadFromData = function ( _data )
 
 			scrollContainer.append(row);
 		}
+	}
+
+	var allyBanners = this.mContentContainer.find('.ally-banners');
+	for (var i = 0; i < allyLocations.length; ++i)
+	{
+		allyBanners.append(
+			$('<img src="' + Path.PROCEDURAL + allyLocations[i] + '" class="HD-location-banner"/>')
+		);
+	}
+
+	var enemyBanners = this.mContentContainer.find('.enemy-banners');
+	for (var i = 0; i < enemyLocations.length; ++i)
+	{
+		enemyBanners.append(
+			$('<img src="' + Path.PROCEDURAL + enemyLocations[i] + '" class="HD-location-banner"/>')
+		);
 	}
 };

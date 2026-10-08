@@ -34,3 +34,9 @@
 	top: 27px;
 	z-index: 2;
 }
+
+.world-combat-dialog > .l-dialog-container .content .HD-location-banner
+{
+	width: 18.8rem;
+	height: auto;
+}
