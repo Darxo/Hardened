@@ -5,6 +5,25 @@
 
 	q.show = @(__original) function( _entities, _allyBanners, _enemyBanners, _allowDisengage, _allowFormationPicking, _text, _image, _disengageText = "Cancel" )
 	{
+		local localProperties = ::World.State.getLocalCombatProperties(::World.State.m.EngageCombatPos);
+		local roster = ::World.getTemporaryRoster();
+		foreach (party in localProperties.Parties)
+		{
+			if (!party.isLocation()) continue;
+
+			local imageHolder = roster.create("scripts/entity/tactical/hd_dynamic_image_holder");
+			imageHolder.HD_assignBrush(party.getSprite("body").getBrush().Name);
+
+			if (party.isAlliedWithPlayer())
+			{
+				_allyBanners.push(imageHolder.getImagePath());
+			}
+			else
+			{
+				_enemyBanners.push(imageHolder.getImagePath());
+			}
+		}
+
 		// Vanilla Fix: World Map invisible UI freeze when cancelling a combat dialog and getting attacked right after
 		// Hiding the combat dialog (via hide()) takes a little time, during which this class counts as animating/visible
 		// If during that time show() is called, then the show window will not appear
