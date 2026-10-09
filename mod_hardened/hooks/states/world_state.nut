@@ -33,11 +33,16 @@
 		// We need to call RootState.get to get access to ::Tactical.State, because at this point that global variable is not yet set
 		local tacticalState = ::RootState.get("TacticalFromWorldState");
 
+		local stratProps = tacticalState.getStrategicProperties();
+
+		// Vanilla Fix: guarantee to fill PartiesInCombat only once per startCombat call instead of during each getLocalCombatProperties
+		this.m.PartiesInCombat = [];
+		this.m.PartiesInCombat.extend(stratProps.Parties);
+
 		// Feat: Whenever you start any battle,
 		//	you gain a relationship hit against any faction that you fight against with the reason "Attacked them"
 		//	you gain a morale reputation hit, if you fight against temporary enemies
 		local currentContract = ::World.Contracts.getActiveContract();
-		local stratProps = tacticalState.getStrategicProperties();
 		foreach (party in stratProps.Parties)
 		{
 			local faction = ::World.FactionManager.getFaction(party.getFaction());
@@ -89,6 +94,13 @@
 
 	q.getLocalCombatProperties = @(__original) { function getLocalCombatProperties( _pos, _ignoreNoEnemies = false )
 	{
+		// Vanilla Fix: prevent getLocalCombatProperties from writing directly into PartiesInCombat, by preserving its previous state
+		// Vanilla fills this array whenever anything calls getLocalCombatProperties but it only ever clears it when a combat finishes
+		// That causes multiple calls to getLocalCombatProperties to fill it up a lot
+		// Instead we fill this array inside of a startCombat hook
+		local oldPartiesInCombat = this.m.PartiesInCombat;
+		this.m.PartiesInCombat = [];
+
 		// Vanilla Fix: Prevent world combat from being cancelled, before the autosave happens
 		// Switcheroo, to prevent vanilla from cancelling auto-combat from nearby parties, while collecting the combat properties
 		// This cancellation should not be happening inside this getter function. Instead we move it into the `startCombat` function
@@ -99,6 +111,7 @@
 
 		local ret = __original(_pos, _ignoreNoEnemies);
 
+		this.m.PartiesInCombat = oldPartiesInCombat;
 		::World.Combat.get().abortCombatWithParty = oldAbortCombatWithParty;
 
 		return ret;
