@@ -54,6 +54,8 @@
 			this.clearTroops();
 		}
 
+		this.HD_updateSaturation();
+
 		__original(_active);
 	}
 
@@ -130,6 +132,20 @@
 		// Defender
 		this.m.Resources = 150 * ::Hardened.Global.FactionDifficulty.Civilians;
 		this.setDefenderSpawnList(::Const.World.Spawn.HD_AttachedProduction);
+	}
+
+	q.HD_updateSaturation <- function()
+	{
+		local colorGrey = false;
+		if (!this.isActive() && ::Hardened.Mod.ModSettings.getSetting("GreyInactiveLocations").getValue())
+		{
+			colorGrey = true;
+		}
+
+		if (this.hasSprite("body"))
+		{
+			this.getSprite("body").Saturation = colorGrey ? 0.5 : 1.0;
+		}
 	}
 });
 

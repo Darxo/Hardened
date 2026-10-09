@@ -14,6 +14,19 @@
 
 	qolWorldPage.addDivider("MiscDivider1");
 
+	local updateAttachedLocationsCallback = function( _oldValue )
+	{
+		if (!::MSU.Utils.hasState("world_state")) return;	// otherwise the game crashes when changing settings in main menu
+
+		foreach (worldEntity in ::Hardened.util.getAllWorldEntities())
+		{
+			if (!worldEntity.isLocation()) continue;
+			if (!worldEntity.isLocationType(::Const.World.LocationType.AttachedLocation)) continue;
+
+			worldEntity.HD_updateSaturation();
+		}
+	}
+	qolWorldPage.addBooleanSetting("GreyInactiveLocations", true, "Grey Inactive Attached Locations", "Enable this setting to grey-out of Attached Locations, which are currently Inactive (Ruins). This is done by setting their Saturation to 50%.").addAfterChangeCallback(updateAttachedLocationsCallback);
 	qolWorldPage.addBooleanSetting("DisplayForbiddenPorts", true, "Display forbidden Ports", "Enable this setting to also list Ports which are currently considered 'forbidden' due to hostile status with the player or the origin port.");
 
 	qolWorldPage.addDivider("MiscDivider2");
