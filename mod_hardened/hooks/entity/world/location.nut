@@ -145,6 +145,22 @@
 		mockObjectRand.cleanup();
 	}
 
+	q.getTroops = @(__original) { function getTroops()
+	{
+		// Vanilla Fix: Prevent multiple different locations from entering the same fight against the player
+		// Vanilla adds any participating party into a global ::World.State.m.PartiesInCombat array.
+		// The best way to make vanilla ignore any party is by pretending like we have no troops
+		foreach (party in ::World.State.m.PartiesInCombat)
+		{
+			if (party.isLocation())
+			{
+				return [];
+			}
+		}
+
+		return __original();
+	}}.getTroops;
+
 // New Functions
 	// Determines, whether there is another party in CombatPlayerDistance range, which is hostile to the player
 	q.hasCloseByHostileParty <- function()
