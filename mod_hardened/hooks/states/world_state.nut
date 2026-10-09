@@ -17,11 +17,12 @@
 
 	q.enterLocation = @(__original) function( _location )
 	{
+		// Feat: Turn location into a temporary enemey, if we ForceAttacking a "raidable" location while within engagement distance
+		// Engaging raidable locations over longer distances is realized in onMouseInput()
+		// Vanilla only allows attacking of hostile locations and will automatically open the combat dialog when we try to enter a hostile location
 		local targetingAlliedRaidableLocation = _location.isAttackable() && _location.isLocationType(::Const.World.LocationType.AttachedLocation) && _location.isRaidable() && _location.isAlliedWithPlayer();
-
-		// Vanilla only allows attacking of allied locations. So if we target a raidable allied location, we briefly turn it into temporary enemies
 		local faction = ::World.FactionManager.getFaction(_location.getFaction());
-		if (targetingAlliedRaidableLocation) faction.setIsTemporaryEnemy(true);
+		if (this.m.IsForcingAttack && targetingAlliedRaidableLocation) faction.setIsTemporaryEnemy(true);
 		return __original(_location);
 	}
 
@@ -220,7 +221,22 @@
 			}
 		}
 
-		return __original(_mouse);
+		local oldAutoEnterLocation = this.m.AutoEnterLocation;
+
+		local ret = __original(_mouse);
+
+		if (this.m.IsForcingAttack && !::MSU.isNull(this.m.AutoEnterLocation) && !::MSU.isEqual(oldAutoEnterLocation, this.m.AutoEnterLocation))
+		{
+			local targetingAlliedRaidableLocation = this.m.AutoEnterLocation.isAttackable() && this.m.AutoEnterLocation.isLocationType(::Const.World.LocationType.AttachedLocation) && this.m.AutoEnterLocation.isRaidable() && this.m.AutoEnterLocation.isAlliedWithPlayer();
+
+			if (targetingAlliedRaidableLocation)
+			{
+				this.m.AutoAttack = this.m.AutoEnterLocation;
+				this.m.AutoEnterLocation = null;
+			}
+		}
+
+		return ret;
 	}
 
 	q.onUpdate = @(__original) function()
