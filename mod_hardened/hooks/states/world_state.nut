@@ -104,6 +104,29 @@
 		return ret;
 	}}.getLocalCombatProperties;
 
+	q.updateCursorAndTooltip = @(__original) { function updateCursorAndTooltip()
+	{
+		if (this.m.IsForcingAttack)
+		{
+			local entities = ::World.getAllEntitiesAndOneLocationAtPos(::World.getCamera().screenToWorld(::Cursor.getX(), ::Cursor.getY()), 1.0)
+			foreach (entity in entities)
+			{
+				if (entity.getID() == this.m.Player.getID()) continue;
+				if (!entity.isDiscovered()) continue;
+				if (!entity.isLocation()) continue;		// Vanilla already covers parties, so we only focus on allied locations, which vanilla never accounted for
+				if (!entity.isAlliedWithPlayer()) continue;
+				if (!entity.isAttackable()) continue;
+
+				::Cursor.m.HD_CursorOverwrite = ::Const.UI.Cursor.Attack;
+				break;
+			}
+		}
+
+		__original();
+
+		::Cursor.m.HD_CursorOverwrite = null;
+	}}.updateCursorAndTooltip;
+
 	q.updateTopbarAssets = @(__original) function()		// In Vanilla this triggers once per hour
 	{
 		__original();
