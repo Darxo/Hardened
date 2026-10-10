@@ -1,0 +1,16 @@
+/*
+This overlay icon is intended to appear at the bottom right of the vanilla icon
+Since the left column is about twice as wide as the vanilla icon that means we want the overlay positioned centred
+This overlay is intended to be small to imitate the miniboss skull seen in combat dialogs
+*/
+.tooltip-module .row .l-left-column .HD-tooltip-icon-overlay
+{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 1.0rem;
+	height: auto;
+	float: none;
+	z-index: 1;
+}

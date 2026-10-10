@@ -60,6 +60,21 @@
 		local oldEngageEnemyNumbers = ::Const.Strings.EngageEnemyNumbers = oldEngageEnemyNumbers;
 		mockObjectMinf.cleanup();
 
+		foreach (troop in this.m.Troops)
+		{
+			if (troop.Script.len() == "") continue;
+			if (troop.Variant == 0) continue;
+
+			foreach (entry in ret)
+			{
+				if (troop.Name == entry.text)
+				{
+					entry.iconOverlay <- "ui/icons/miniboss.png";
+					break;
+				}
+			}
+		}
+
 		return ret;
 	}
 });
