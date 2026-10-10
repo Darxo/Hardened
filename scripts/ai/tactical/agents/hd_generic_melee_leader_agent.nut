@@ -25,11 +25,11 @@ this.hd_generic_melee_leader_agent <- ::inherit("scripts/ai/tactical/agents/band
 		// Melee Leader are usually more proficient in Melee Combat than the average ally, so we want them to focus more on attacks in general
 		this.m.Properties.BehaviorMult[::Const.AI.Behavior.ID.KnockBack] = 0.8;
 		this.m.Properties.BehaviorMult[::Const.AI.Behavior.ID.KnockOut] = 0.8;
-		this.m.Properties.BehaviorMult[::Const.AI.Behavior.ID.Protect] = 0.8;
+		this.m.Properties.BehaviorMult[::Const.AI.Behavior.ID.Protect] = 0.5;
 		this.m.Properties.BehaviorMult[::Const.AI.Behavior.ID.Shieldwall] = 0.8;
 		this.m.Properties.BehaviorMult[::Const.AI.Behavior.ID.SplitShield] = 0.8;
 
-		this.m.Properties.BehaviorMult[::Const.AI.Behavior.ID.Distract] = 0.5;	// Only relevant for Nomads
+		this.m.Properties.BehaviorMult[::Const.AI.Behavior.ID.Distract] = 0.5;	// Only relevant for Nomads (throw sand)
 	}
 
 	// We just overwrite the onUpdate of the base script, to disable all the hard-coded rules vanilla applies during it
