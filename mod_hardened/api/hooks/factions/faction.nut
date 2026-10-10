@@ -67,7 +67,7 @@
 		local oldContracts = this.m.Contracts;
 		if (maxContracts != null) this.m.Contracts = [];
 		local oldLastContractTime = this.m.LastContractTime;
-		if (contractDelay != null) this.m.LastContractTime == 0;
+		if (contractDelay != null) this.m.LastContractTime = 0;
 
 		local ret = __original();
 
