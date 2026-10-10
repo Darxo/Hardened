@@ -115,6 +115,7 @@
 				}
 				else
 				{
+					tile.removeObject();
 					tile.Level = 10;
 				}
 			}

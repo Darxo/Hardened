@@ -24,7 +24,7 @@
 			_properties.BeforeDeploymentCallback();
 		}
 
-		::Hardened.Tactical.Deployment.spawn();
+		::Hardened.Tactical.Deployment.spawn(::Tactical.State.getStrategicProperties());
 
 		/*
 		this.HD_calculatePlayerDeploymentType(_properties);

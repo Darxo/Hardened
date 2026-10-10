@@ -32,6 +32,7 @@
 
 	function init( _customRadius = null )
 	{
+		::logInfo("Hardened: MapInfo init");
 		this.m.CurrentShape = this.m.Shape.Square;
 
 		this.m.DimensionX = ::Tactical.getMapSize().X;

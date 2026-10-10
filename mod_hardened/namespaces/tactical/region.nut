@@ -47,7 +47,7 @@
 					region = this.createRegionLandscape(_height, _width);
 					break;
 				}
-				case this.Shape.Hexagon:
+				case this.Shape.Hexagon:	// Hexagon shape that is facing outwards
 				{
 					region = this.createRegionHexagonal(_height, _width);
 					break;
@@ -119,6 +119,8 @@
 		function createRegionHexagonal( _radiusMax, _radiusMin = 0 )
 		{
 			local region = ::Hardened.Tactical.Region.Region(::Hardened.Tactical.Region.Shape.Hexagon);
+			region.CreationParameters.RadiusMin = _radiusMin;
+			region.CreationParameters.RadiusMax = _radiusMax;
 
 			local center = ::Hardened.Tactical.MapInfo.m.CenterTile;
 			foreach (tile in ::Hardened.Tactical.MapInfo.getAllTiles())
@@ -187,6 +189,13 @@
 		Tiles = null;
 		SubRegions = null;
 
+		CreationParameters = {
+			Width = null,
+			Height = null,
+			RadiusMin = null,
+			RadiusMax = null,
+		}
+
 		// Enum for determining where a certain unit prefers to spawn
 		// If all spawn positions of a type are full, the following order is employed
 		// Front -> Flank -> Backline -> Center -> Ranged -> Siege -> Ranged -> Center -> Backline -> Flank -> Front
@@ -238,7 +247,7 @@
 
 		// Public
 			// Must be called, before this region is transformed around
-			function initSubRegions( _isReversed, _useSingleRegion )
+			function initSubRegions( _isReversed = false, _useSingleRegion = false )
 			{
 				this.SubRegions = {};
 				foreach (key, value in this.FormationRole)
@@ -294,6 +303,28 @@
 								this.SubRegions[this.FormationRole.Ranged].push(tile);
 								break;
 							case centerTile.SquareCoords.Y + 3:
+								this.SubRegions[this.FormationRole.Siege].push(tile);
+								break;
+							default:
+								this.SubRegions[this.FormationRole.Random].push(tile);
+						}
+					}
+					else if (this.Shape == ::Hardened.Tactical.Region.Shape.Hexagon)
+					{
+						local distanceToCenter = tile.getDistanceTo(centerTile);
+						distanceToCenter = ::Math.clamp(distanceToCenter, this.CreationParameters.RadiusMin, this.CreationParameters.RadiusMax);
+						switch (distanceToCenter)
+						{
+							case this.CreationParameters.RadiusMax:
+								this.SubRegions[this.FormationRole.Front].push(tile);
+								break;
+							case this.CreationParameters.RadiusMax - 1:
+								this.SubRegions[this.FormationRole.Backline].push(tile);
+								break;
+							case this.CreationParameters.RadiusMax - 2:
+								this.SubRegions[this.FormationRole.Ranged].push(tile);
+								break;
+							case this.CreationParameters.RadiusMax - 3:
 								this.SubRegions[this.FormationRole.Siege].push(tile);
 								break;
 							default:
@@ -512,7 +543,7 @@
 				{
 					if (!tile.IsEmpty) continue;
 
-					::logInfo("Hardened: found strict empty tile in role " + formationRole);
+					// ::logInfo("Hardened: found strict empty tile in role " + formationRole);
 					return tile;
 				}
 
@@ -524,7 +555,7 @@
 					{
 						if (!tile.IsEmpty) continue;
 
-						::logInfo("Hardened: found non-strict empty tile in role " + role);
+						// ::logInfo("Hardened: found non-strict empty tile in role " + role);
 						return tile;
 					}
 				}
@@ -580,7 +611,7 @@
 				this.Tiles = newTiles;
 			}
 
-			// Remove all tiles from subregions, who are no longer present in this.Tiles. This can happen during intersect and exclude calls
+			// Remove all tiles from subregions, that are no longer present in this.Tiles. This can happen during intersect and exclude calls
 			function synchronizeSubRegions()
 			{
 				foreach (tile in this.Tiles)

@@ -77,8 +77,6 @@
 		}
 
 		// We need to do this here, so that we get the accurate isInCombat states, before those are aborted
-		::logWarning("Hardened: Hardened.Tactical.Deployment.init");
-		::MSU.Log.printData(stratProps, 2);
 		::Hardened.Tactical.Deployment.init(stratProps);
 
 		// Vanilla Fix: Prevent world combat from being cancelled, before the autosave happens
