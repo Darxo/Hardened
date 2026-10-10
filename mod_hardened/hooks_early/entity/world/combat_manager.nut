@@ -66,4 +66,36 @@
 
 		return false;
 	}
+
+	// Todo: use this so that "finished combats" don't cause parties to still be considered fighting for when the player engages them
+	q.HD_hasOpponent <- function( _party )
+	{
+		if (!party.isInCombat()) return false;
+
+		local combat = this.HD_getCombat(party.m.CombatID);
+		if (combat == null) return false;
+
+		for (local factionID = 0; factionID < combat.Factions.len(); ++factionID)
+		{
+			if (_party.getFaction() == factionID) continue;
+			if (combat.Factions[factionID].len() == 0) continue;
+			if (::World.FactionManager.isAllied(_party.getFaction(), factionID)) continue;
+
+			return true;
+		}
+		return false;
+	}
+
+	q.HD_getCombat <- function( _combatID )
+	{
+		foreach (combat in this.m.Combats)
+		{
+			if (combat.ID == _combatID)
+			{
+				return combat;
+			}
+		}
+
+		return null;
+	}
 });

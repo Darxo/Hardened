@@ -112,4 +112,24 @@
 			return __original(_tile);
 		}
 	}
+
+	q.onFactionCompare = @(__original) { function onFactionCompare( _e1, _e2 )
+	{
+		local ret = __original(_e1, _e2);
+
+		// Feat: sort all troops of the same participant to the front, which are already engaged in combat
+		if (ret == 0)
+		{
+			if (_e1.Party.isInCombat() && !_e2.Party.isInCombat())
+			{
+				return -1;
+			}
+			else (!_e1.Party.isInCombat() && _e2.Party.isInCombat())
+			{
+				return 1;
+			}
+		}
+
+		return ret;
+	}}.onFactionCompare;
 });

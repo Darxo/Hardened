@@ -900,3 +900,5 @@ Mod Description:
 - give geists combo, so that they can melee attack and scream at the same time
 
 - give flying skulls a spawnlist registering, so that they can be spawned naturally with combat simulator
+
+- display in description of CHampion Racial which the base entity name of this entity is

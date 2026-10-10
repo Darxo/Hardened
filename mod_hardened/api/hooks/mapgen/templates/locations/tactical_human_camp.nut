@@ -111,7 +111,6 @@
 
 				if (distance == _towerRadius)
 				{
-					::logWarning("Hardened: raising border");
 					tile.Level = ::Math.min(3, normalLevel);
 				}
 				else

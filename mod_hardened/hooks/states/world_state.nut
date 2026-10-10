@@ -76,10 +76,15 @@
 			}
 		}
 
+		// We need to do this here, so that we get the accurate isInCombat states, before those are aborted
+		::logWarning("Hardened: Hardened.Tactical.Deployment.init");
+		::MSU.Log.printData(stratProps, 2);
+		::Hardened.Tactical.Deployment.init(stratProps);
+
 		// Vanilla Fix: Prevent world combat from being cancelled, before the autosave happens
 		// Vanilla triggers the autosave() during startCombat, but after getLocalCombatProperties (where vanilla calls abortCombatWithParty)
 		// We move the abortCombatWithParty call to the end of startCombat
-		foreach (party in tacticalState.getStrategicProperties().Parties)
+		foreach (party in stratProps.Parties)
 		{
 			::World.Combat.abortCombatWithParty(party);
 		}

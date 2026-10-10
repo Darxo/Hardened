@@ -24,6 +24,9 @@
 			_properties.BeforeDeploymentCallback();
 		}
 
+		::Hardened.Tactical.Deployment.spawn();
+
+		/*
 		this.HD_calculatePlayerDeploymentType(_properties);
 		local playerCharacters = this.HD_preparePlayerCharacters(_properties);
 		this.HD_deployPlayerCharacters(_properties, playerCharacters);
@@ -32,7 +35,7 @@
 
 		this.HD_calculateDeploymentTypes(_properties, aiParticipants);
 		this.HD_deployAIParticipants(_properties, aiParticipants);
-
+*/
 		// Callback after all AI participants have been deployed
 		if (_properties.EnemyDeploymentCallback != null)
 		{
@@ -263,6 +266,11 @@
 
 	q.HD_deployPlayerCharacters <- function( _properties, _playerCharacters )
 	{
+		::logWarning("Hardened: HD_deployPlayerCharacters");
+		local region = ::Hardened.Tactical.Region.createRegion(_properties.PlayerDeploymentType, 2, 9, {IsPlayer = true});
+		::Hardened.Tactical.Region.placeCharactersInFormation(_playerCharacters, region);
+		return;
+
 		local shiftX = _properties.LocationTemplate != null ? _properties.LocationTemplate.ShiftX : 0;
 		local shiftY = _properties.LocationTemplate != null ? _properties.LocationTemplate.ShiftY : 0;
 		switch(_properties.PlayerDeploymentType)
