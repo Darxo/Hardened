@@ -138,6 +138,11 @@
 				// Feat: restrict individual northern military settlements to at most 2 noble contract at a time
 				this.m.HD_OwnContractsMax = 2;
 			}
+			else
+			{
+				// Feat: restrict individual northern civilian settlements to at most 1 noble contract at a time
+				this.m.HD_ForeignContractsMax = 1;
+			}
 		}
 	}}.create;
 });
