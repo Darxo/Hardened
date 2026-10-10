@@ -125,3 +125,19 @@
 		}
 	}
 });
+
+::Hardened.HooksMod.hookTree("scripts/entity/world/settlement", function(q) {
+	q.create = @(__original) { function create()
+	{
+		__original();
+
+		if (!this.isSouthern())
+		{
+			if (this.isMilitary())
+			{
+				// Feat: restrict individual northern military settlements to at most 2 noble contract at a time
+				this.m.HD_OwnContractsMax = 2;
+			}
+		}
+	}}.create;
+});
