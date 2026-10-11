@@ -308,42 +308,44 @@
 	);
 }
 
-// scripts/entity/tactical/wardog
-// scripts/entity/tactical/armored_wardog
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.Wardog.XP = 80;				// Vanilla: 75
-	::Const.Tactical.Actor.Wardog.ActionPoints = 12;
-	::Const.Tactical.Actor.Wardog.Hitpoints = 50;
-	::Const.Tactical.Actor.Wardog.Bravery = 50;			// Vanilla: 40
-	::Const.Tactical.Actor.Wardog.Stamina = 130;
-	::Const.Tactical.Actor.Wardog.MeleeSkill = 40;		// Vanilla: 50
-	::Const.Tactical.Actor.Wardog.RangedSkill = 0;
-	::Const.Tactical.Actor.Wardog.MeleeDefense = 25;	// Vanilla: 20
-	::Const.Tactical.Actor.Wardog.RangedDefense = 25;
-	::Const.Tactical.Actor.Wardog.Initiative = 130;
+{	// Dogs
+	// scripts/entity/tactical/enemies/wardog
+	// scripts/entity/tactical/enemies/armored_wardog
+	::Reforged.Entities.editEntity("Wardog",	// Wardog
+		null,
+		{
+			XP = 80,				// Vanilla: 75
+			ActionPoints = 12,
+			Hitpoints = 50,
+			Bravery = 50,			// Vanilla: 40
+			Stamina = 130,
+			MeleeSkill = 40,		// Vanilla: 50
+			RangedSkill = 0,
+			MeleeDefense = 25,	// Vanilla: 20
+			RangedDefense = 25,
+			Initiative = 130,
+			Vision = 5,			// Vanilla: 7
+			Reach = 2,
+		}
+	);
 
-	// Optional Stats
-	::Const.Tactical.Actor.Wardog.Vision <- 5;			// Vanilla: 7
-	::Const.Tactical.Actor.Wardog.Reach <- 2;
-}
-
-// scripts/entity/tactical/warhound
-// scripts/entity/tactical/armored_warhound
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.Warhound.XP = 100;
-	::Const.Tactical.Actor.Warhound.ActionPoints = 10;	// Vanilla: 11
-	::Const.Tactical.Actor.Warhound.Hitpoints = 70;
-	::Const.Tactical.Actor.Warhound.Bravery = 50;
-	::Const.Tactical.Actor.Warhound.Stamina = 140;
-	::Const.Tactical.Actor.Warhound.MeleeSkill = 50;	// Vanilla: 55
-	::Const.Tactical.Actor.Warhound.RangedSkill = 0;
-	::Const.Tactical.Actor.Warhound.MeleeDefense = 20;
-	::Const.Tactical.Actor.Warhound.RangedDefense = 20;
-	::Const.Tactical.Actor.Warhound.Initiative = 100;	// Vanilla: 110
-
-	// Optional Stats
-	::Const.Tactical.Actor.Warhound.Vision <- 5;		// Vanilla: 7
-	::Const.Tactical.Actor.Warhound.Reach <- 2;
+	// scripts/entity/tactical/warhound
+	// scripts/entity/tactical/armored_warhound
+	::Reforged.Entities.editEntity("Warhound",	// Warhound
+		null,
+		{
+			XP = 100,
+			ActionPoints = 10,	// Vanilla: 11
+			Hitpoints = 70,
+			Bravery = 50,
+			Stamina = 140,
+			MeleeSkill = 50,	// Vanilla: 55
+			RangedSkill = 0,
+			MeleeDefense = 20,
+			RangedDefense = 20,
+			Initiative = 100,	// Vanilla: 110
+			Vision = 5,		// Vanilla: 7
+			Reach = 2,
+		}
+	);
 }

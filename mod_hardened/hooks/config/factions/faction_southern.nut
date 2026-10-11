@@ -1,190 +1,288 @@
-// scripts/entity/tactical/humans/nomad_cutthroat
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.NomadCutthroat.XP = 150 * ::Hardened.Global.FactionExperience.Nomads;
-	::Const.Tactical.Actor.NomadCutthroat.ActionPoints = 9;
-	::Const.Tactical.Actor.NomadCutthroat.Hitpoints = 55;
-	::Const.Tactical.Actor.NomadCutthroat.Bravery = 50;
-	::Const.Tactical.Actor.NomadCutthroat.Stamina = 100;
-	::Const.Tactical.Actor.NomadCutthroat.MeleeSkill = 60;
-	::Const.Tactical.Actor.NomadCutthroat.RangedSkill = 45;
-	::Const.Tactical.Actor.NomadCutthroat.MeleeDefense = 0;
-	::Const.Tactical.Actor.NomadCutthroat.RangedDefense = 0;
-	::Const.Tactical.Actor.NomadCutthroat.Initiative = 130;
+{	// Nomads
+	{	// Leader
+		// scripts/entity/tactical/humans/nomad_leader
+		::Reforged.Entities.editEntity("NomadLeader",	// Nomad Leader
+			null,
+			{
+				XP = 500 * ::Hardened.Global.FactionExperience.Nomads,		// Vanilla: 375
+				ActionPoints = 9,
+				Hitpoints = 100,		// Vanilla: 100
+				Bravery = 100,			// Vanilla: 75
+				Stamina = 150,			// Vanilla: 130
+				MeleeSkill = 85,		// Vanilla: 75
+				RangedSkill = 70,		// Vanilla: 65
+				MeleeDefense = 15,		// Vanilla: 20
+				RangedDefense = 15,		// Vanilla: 15
+				Initiative = 125,		// Vanilla: 125
+				Vision = 8,				// Vanilla: 7
+			}
+		);
+	}
 
-	// Optional Stats
-	::Const.Tactical.Actor.NomadCutthroat.Vision <- 8;			// Vanilla: 7
+	{	// Frontline
+		// scripts/entity/tactical/humans/nomad_cutthroat
+		::Reforged.Entities.editEntity("NomadCutthroat",	// Nomad Cutthroat
+			null,
+			{
+				XP = 150 * ::Hardened.Global.FactionExperience.Nomads,
+				ActionPoints = 9,
+				Hitpoints = 55,
+				Bravery = 50,
+				Stamina = 100,
+				MeleeSkill = 60,
+				RangedSkill = 45,
+				MeleeDefense = 0,
+				RangedDefense = 0,
+				Initiative = 130,
+				Vision = 8,			// Vanilla: 7
+			}
+		);
+
+		// scripts/entity/tactical/humans/nomad_outlaw
+		::Reforged.Entities.editEntity("NomadOutlaw",	// Nomad Outlaw
+			null,
+			{
+				XP = 300 * ::Hardened.Global.FactionExperience.Nomads,		// Vanilla: 250
+				ActionPoints = 9,
+				Hitpoints = 75,			// Vanilla: 75
+				Bravery = 70,			// Vanilla: 60
+				Stamina = 120,			// Vanilla: 125
+				MeleeSkill = 75,		// Vanilla: 65
+				RangedSkill = 70,		// Vanilla: 55
+				MeleeDefense = 15,		// Vanilla: 15
+				RangedDefense = 15,		// Vanilla: 15
+				Initiative = 140,		// Vanilla: 115
+				Vision = 8,				// Vanilla: 7
+			}
+		);
+	}
+
+	{	// Ranged
+		// scripts/entity/tactical/humans/nomad_slinger
+		::Reforged.Entities.editEntity("NomadSlinger",	// Nomad Slinger
+			null,
+			{
+				XP = 150 * ::Hardened.Global.FactionExperience.Nomads,
+				ActionPoints = 9,
+				Hitpoints = 50,
+				Bravery = 50,
+				Stamina = 100,
+				MeleeSkill = 45,
+				RangedSkill = 65,
+				MeleeDefense = 0,
+				RangedDefense = 5,
+				Initiative = 110,
+				Vision = 8,			// Vanilla: 7
+			}
+		);
+
+		// scripts/entity/tactical/humans/nomad_archer
+		::Reforged.Entities.editEntity("NomadArcher",	// Nomad Archer
+			null,
+			{
+				XP = 240 * ::Hardened.Global.FactionExperience.Nomads,		// Vanilla: 225
+				ActionPoints = 9,
+				Hitpoints = 60,			// Vanilla: 60
+				Bravery = 60,			// Vanilla: 55
+				Stamina = 110,			// Vanilla: 115
+				MeleeSkill = 60,		// Vanilla: 50
+				RangedSkill = 75,		// Vanilla: 65
+				MeleeDefense = 0,		// Vanilla: 5
+				RangedDefense = 20,		// Vanilla: 15
+				Initiative = 120,		// Vanilla: 110
+				Vision = 8,
+			}
+		);
+	}
+
+	{	// Elite
+		// scripts/entity/tactical/humans/executioner
+		::Reforged.Entities.editEntity("Executioner",	// Nomad Executioner
+			null,
+			{
+				XP = 400 * ::Hardened.Global.FactionExperience.Nomads,		// Vanilla: 450
+				ActionPoints = 9,
+				Hitpoints = 120,		// Vanilla: 170
+				Bravery = 90,			// Vanilla: 90
+				Stamina = 160,			// Vanilla: 160
+				MeleeSkill = 85,		// Vanilla: 85
+				RangedSkill = 50,		// Vanilla: 50
+				MeleeDefense = 25,		// Vanilla: 30
+				RangedDefense = 10,		// Vanilla: 20
+				Initiative = 140,		// Vanilla: 115
+				Vision = 8,				// Vanilla: 7
+			}
+		);
+
+		// scripts/entity/tactical/humans/desert_devil
+		::Reforged.Entities.editEntity("DesertDevil",	// Blade Dancer
+			null,
+			{
+				XP = 500 * ::Hardened.Global.FactionExperience.Nomads,
+				ActionPoints = 9,
+				Hitpoints = 70,
+				Bravery = 90,
+				Stamina = 130,
+				MeleeSkill = 90,
+				RangedSkill = 50,
+				MeleeDefense = 40,
+				RangedDefense = 20,
+				Initiative = 150,
+				Vision = 8,			// Vanilla: 7
+			}
+		);
+
+		// scripts/entity/tactical/humans/desert_stalker
+		::Reforged.Entities.editEntity("DesertStalker",	// Desert Stalker
+			null,
+			{
+				XP = 500 * ::Hardened.Global.FactionExperience.Nomads,
+				ActionPoints = 9,
+				Hitpoints = 60,
+				Bravery = 70,
+				Stamina = 135,
+				MeleeSkill = 70,
+				RangedSkill = 90,
+				MeleeDefense = 10,
+				RangedDefense = 40,
+				Initiative = 140,
+				Vision = 8,
+			}
+		);
+	}
 }
 
-// scripts/entity/tactical/humans/nomad_slinger
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.NomadSlinger.XP = 150 * ::Hardened.Global.FactionExperience.Nomads;
-	::Const.Tactical.Actor.NomadSlinger.ActionPoints = 9;
-	::Const.Tactical.Actor.NomadSlinger.Hitpoints = 50;
-	::Const.Tactical.Actor.NomadSlinger.Bravery = 50;
-	::Const.Tactical.Actor.NomadSlinger.Stamina = 100;
-	::Const.Tactical.Actor.NomadSlinger.MeleeSkill = 45;
-	::Const.Tactical.Actor.NomadSlinger.RangedSkill = 65;
-	::Const.Tactical.Actor.NomadSlinger.MeleeDefense = 0;
-	::Const.Tactical.Actor.NomadSlinger.RangedDefense = 5;
-	::Const.Tactical.Actor.NomadSlinger.Initiative = 110;
+{	// City State
+	{	// Frontline
+		// scripts/entity/tactical/humans/conscript
+		::Reforged.Entities.editEntity("Conscript",	// Conscript
+			null,
+			{
+				XP = 250 * ::Hardened.Global.FactionExperience.CityStates,
+				ActionPoints = 9,
+				Hitpoints = 70,
+				Bravery = 70,
+				Stamina = 120,
+				MeleeSkill = 70
+				RangedSkill = 50,
+				MeleeDefense = 10,
+				RangedDefense = 0,
+				Initiative = 110,
+			}
+		);
+	}
 
-	// Optional Stats
-	::Const.Tactical.Actor.NomadSlinger.Vision <- 8;			// Vanilla: 7
-}
+	{	// Ranged
+		// scripts/entity/tactical/humans/gunner
+		::Reforged.Entities.editEntity("Gunner",	// Gunner
+			null,
+			{
+				XP = 300 * ::Hardened.Global.FactionExperience.CityStates,
+				ActionPoints = 9,
+				Hitpoints = 60,
+				Bravery = 70,
+				Stamina = 120,
+				MeleeSkill = 65,
+				RangedSkill = 75,
+				MeleeDefense = 5,
+				RangedDefense = 20,
+				Initiative = 120,
+			}
+		);
+	}
 
-// scripts/entity/tactical/humans/nomad_archer
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.NomadArcher.XP = 240 * ::Hardened.Global.FactionExperience.Nomads;		// Vanilla: 225
-	::Const.Tactical.Actor.NomadArcher.ActionPoints = 9;
-	::Const.Tactical.Actor.NomadArcher.Hitpoints = 60;			// Vanilla: 60
-	::Const.Tactical.Actor.NomadArcher.Bravery = 60;			// Vanilla: 55
-	::Const.Tactical.Actor.NomadArcher.Stamina = 110;			// Vanilla: 115
-	::Const.Tactical.Actor.NomadArcher.MeleeSkill = 60;			// Vanilla: 50
-	::Const.Tactical.Actor.NomadArcher.RangedSkill = 75;		// Vanilla: 65
-	::Const.Tactical.Actor.NomadArcher.MeleeDefense = 0;		// Vanilla: 5
-	::Const.Tactical.Actor.NomadArcher.RangedDefense = 20;		// Vanilla: 15
-	::Const.Tactical.Actor.NomadArcher.Initiative = 120;		// Vanilla: 110
+	{	// Elite
+		// scripts/entity/tactical/humans/assassin
+		::Reforged.Entities.editEntity("Assassin",	// Assassin
+			null,
+			{
+				XP = 400 * ::Hardened.Global.FactionExperience.CityStates,
+				ActionPoints = 9,
+				Hitpoints = 80,
+				Bravery = 85,
+				Stamina = 125,
+				MeleeSkill = 80,
+				RangedSkill = 70,
+				MeleeDefense = 10,
+				RangedDefense = 10,
+				Initiative = 180,
+			}
+		);
+	}
 
-	// Optional Stats
-	::Const.Tactical.Actor.NomadArcher.Vision <- 8;
-}
+	{	// Leader
+		// scripts/entity/tactical/humans/officer
+		::Reforged.Entities.editEntity("Officer",	// Officer
+			null,
+			{
+				XP = 500 * ::Hardened.Global.FactionExperience.CityStates,
+				ActionPoints = 9,
+				Hitpoints = 110,
+				Bravery = 85,
+				Stamina = 150,
+				MeleeSkill = 85,
+				RangedSkill = 60,
+				MeleeDefense = 25,
+				RangedDefense = 10,
+				Initiative = 110,
+			}
+		);
+	}
 
-// scripts/entity/tactical/humans/nomad_outlaw
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.NomadOutlaw.XP = 300 * ::Hardened.Global.FactionExperience.Nomads;		// Vanilla: 250
-	::Const.Tactical.Actor.NomadOutlaw.ActionPoints = 9;
-	::Const.Tactical.Actor.NomadOutlaw.Hitpoints = 75;			// Vanilla: 75
-	::Const.Tactical.Actor.NomadOutlaw.Bravery = 70;			// Vanilla: 60
-	::Const.Tactical.Actor.NomadOutlaw.Stamina = 120;			// Vanilla: 125
-	::Const.Tactical.Actor.NomadOutlaw.MeleeSkill = 75;			// Vanilla: 65
-	::Const.Tactical.Actor.NomadOutlaw.RangedSkill = 70;		// Vanilla: 55
-	::Const.Tactical.Actor.NomadOutlaw.MeleeDefense = 15;		// Vanilla: 15
-	::Const.Tactical.Actor.NomadOutlaw.RangedDefense = 15;		// Vanilla: 15
-	::Const.Tactical.Actor.NomadOutlaw.Initiative = 140;		// Vanilla: 115
+	{	// Siege
+		// scripts/entity/tactical/humans/engineer
+		::Reforged.Entities.editEntity("Engineer",	// Engineer
+			null,
+			{
+				XP = 200 * ::Hardened.Global.FactionExperience.CityStates,
+				ActionPoints = 9,
+				Hitpoints = 60,
+				Bravery = 70,
+				Stamina = 120,
+				MeleeSkill = 60,
+				RangedSkill = 80,
+				MeleeDefense = 0,
+				RangedDefense = 10,
+				Initiative = 100,
+			}
+		);
+	}
 
-	// Optional Stats
-	::Const.Tactical.Actor.NomadOutlaw.Vision <- 8;			// Vanilla: 7
-}
+	{	// Misc
+		// scripts/entity/tactical/humans/slave
+		::Reforged.Entities.editEntity("Slave",	// Slave
+			null,
+			{
+				XP = 30 * ::Hardened.Global.FactionExperience.Slaves,		// Vanilla: 50
+				ActionPoints = 9,
+				Hitpoints = 45,			// Vanilla: 55
+				Bravery = 30,			// Vanilla: 40
+				Stamina = 100,			// Vanilla: 100
+				MeleeSkill = 40,		// Vanilla: 40
+				RangedSkill = 35,		// Vanilla: 35
+				MeleeDefense = 0,		// Vanilla: 5
+				RangedDefense = 0,		// Vanilla: 5
+				Initiative = 90,		// Vanilla: 90
+			}
+		);
 
-// scripts/entity/tactical/humans/executioner
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.Executioner.XP = 400 * ::Hardened.Global.FactionExperience.Nomads;		// Vanilla: 450
-	::Const.Tactical.Actor.Executioner.ActionPoints = 9;
-	::Const.Tactical.Actor.Executioner.Hitpoints = 120;			// Vanilla: 170
-	::Const.Tactical.Actor.Executioner.Bravery = 90;			// Vanilla: 90
-	::Const.Tactical.Actor.Executioner.Stamina = 160;			// Vanilla: 160
-	::Const.Tactical.Actor.Executioner.MeleeSkill = 85;			// Vanilla: 85
-	::Const.Tactical.Actor.Executioner.RangedSkill = 50;		// Vanilla: 50
-	::Const.Tactical.Actor.Executioner.MeleeDefense = 25;		// Vanilla: 30
-	::Const.Tactical.Actor.Executioner.RangedDefense = 10;		// Vanilla: 20
-	::Const.Tactical.Actor.Executioner.Initiative = 140;		// Vanilla: 115
-
-	// Optional Stats
-	::Const.Tactical.Actor.Executioner.Vision <- 8;			// Vanilla: 7
-}
-
-// scripts/entity/tactical/humans/gladiator
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.Gladiator.XP = 450 * ::Hardened.Global.FactionExperience.Nomads;		// Vanilla: 350
-	::Const.Tactical.Actor.Gladiator.ActionPoints = 9;
-	::Const.Tactical.Actor.Gladiator.Hitpoints = 110;		// Vanilla: 110
-	::Const.Tactical.Actor.Gladiator.Bravery = 100;			// Vanilla: 90
-	::Const.Tactical.Actor.Gladiator.Stamina = 150;			// Vanilla: 135
-	::Const.Tactical.Actor.Gladiator.MeleeSkill = 85;		// Vanilla: 75
-	::Const.Tactical.Actor.Gladiator.RangedSkill = 75;		// Vanilla: 65
-	::Const.Tactical.Actor.Gladiator.MeleeDefense = 20;		// Vanilla: 20
-	::Const.Tactical.Actor.Gladiator.RangedDefense = 0;		// Vanilla: 10
-	::Const.Tactical.Actor.Gladiator.Initiative = 130;		// Vanilla: 125
-}
-
-// scripts/entity/tactical/humans/nomad_leader
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.NomadLeader.XP = 500 * ::Hardened.Global.FactionExperience.Nomads;		// Vanilla: 375
-	::Const.Tactical.Actor.NomadLeader.ActionPoints = 9;
-	::Const.Tactical.Actor.NomadLeader.Hitpoints = 100;			// Vanilla: 100
-	::Const.Tactical.Actor.NomadLeader.Bravery = 100;			// Vanilla: 75
-	::Const.Tactical.Actor.NomadLeader.Stamina = 150;			// Vanilla: 130
-	::Const.Tactical.Actor.NomadLeader.MeleeSkill = 85;			// Vanilla: 75
-	::Const.Tactical.Actor.NomadLeader.RangedSkill = 70;		// Vanilla: 65
-	::Const.Tactical.Actor.NomadLeader.MeleeDefense = 15;		// Vanilla: 20
-	::Const.Tactical.Actor.NomadLeader.RangedDefense = 15;		// Vanilla: 15
-	::Const.Tactical.Actor.NomadLeader.Initiative = 125;		// Vanilla: 125
-
-	// Optional Stats
-	::Const.Tactical.Actor.NomadLeader.Vision <- 8;			// Vanilla: 7
-}
-
-// scripts/entity/tactical/humans/desert_devil
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.DesertDevil.XP = 500 * ::Hardened.Global.FactionExperience.Nomads;
-	::Const.Tactical.Actor.DesertDevil.ActionPoints = 9;
-	::Const.Tactical.Actor.DesertDevil.Hitpoints = 70;
-	::Const.Tactical.Actor.DesertDevil.Bravery = 90;
-	::Const.Tactical.Actor.DesertDevil.Stamina = 130;
-	::Const.Tactical.Actor.DesertDevil.MeleeSkill = 90;
-	::Const.Tactical.Actor.DesertDevil.RangedSkill = 50;
-	::Const.Tactical.Actor.DesertDevil.MeleeDefense = 40;
-	::Const.Tactical.Actor.DesertDevil.RangedDefense = 20;
-	::Const.Tactical.Actor.DesertDevil.Initiative = 150;
-
-	// Optional Stats
-	::Const.Tactical.Actor.DesertDevil.Vision <- 8;			// Vanilla: 7
-}
-
-// scripts/entity/tactical/humans/desert_stalker
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.DesertStalker.XP = 500 * ::Hardened.Global.FactionExperience.Nomads;
-	::Const.Tactical.Actor.DesertStalker.ActionPoints = 9;
-	::Const.Tactical.Actor.DesertStalker.Hitpoints = 60;
-	::Const.Tactical.Actor.DesertStalker.Bravery = 70;
-	::Const.Tactical.Actor.DesertStalker.Stamina = 135;
-	::Const.Tactical.Actor.DesertStalker.MeleeSkill = 70;
-	::Const.Tactical.Actor.DesertStalker.RangedSkill = 90;
-	::Const.Tactical.Actor.DesertStalker.MeleeDefense = 10;
-	::Const.Tactical.Actor.DesertStalker.RangedDefense = 40;
-	::Const.Tactical.Actor.DesertStalker.Initiative = 140;
-
-	// Optional Stats
-	::Const.Tactical.Actor.DesertStalker.Vision <- 8;
-}
-
-// scripts/entity/tactical/humans/slave
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.Slave.XP = 30 * ::Hardened.Global.FactionExperience.Slaves;		// Vanilla: 50
-	::Const.Tactical.Actor.Slave.ActionPoints = 9;
-	::Const.Tactical.Actor.Slave.Hitpoints = 45;		// Vanilla: 55
-	::Const.Tactical.Actor.Slave.Bravery = 30;			// Vanilla: 40
-	::Const.Tactical.Actor.Slave.Stamina = 100;			// Vanilla: 100
-	::Const.Tactical.Actor.Slave.MeleeSkill = 40;		// Vanilla: 40
-	::Const.Tactical.Actor.Slave.RangedSkill = 35;		// Vanilla: 35
-	::Const.Tactical.Actor.Slave.MeleeDefense = 0;		// Vanilla: 5
-	::Const.Tactical.Actor.Slave.RangedDefense = 0;		// Vanilla: 5
-	::Const.Tactical.Actor.Slave.Initiative = 90;		// Vanilla: 90
-}
-
-// scripts/entity/tactical/humans/engineer
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.Engineer.XP = 200 * ::Hardened.Global.FactionExperience.CityStates;
-	::Const.Tactical.Actor.Engineer.ActionPoints = 9;
-	::Const.Tactical.Actor.Engineer.Hitpoints = 60;
-	::Const.Tactical.Actor.Engineer.Bravery = 70;
-	::Const.Tactical.Actor.Engineer.Stamina = 120;
-	::Const.Tactical.Actor.Engineer.MeleeSkill = 60;
-	::Const.Tactical.Actor.Engineer.RangedSkill = 80;
-	::Const.Tactical.Actor.Engineer.MeleeDefense = 0;
-	::Const.Tactical.Actor.Engineer.RangedDefense = 10;
-	::Const.Tactical.Actor.Engineer.Initiative = 100;
+		// scripts/entity/tactical/humans/gladiator
+		::Reforged.Entities.editEntity("Gladiator",	// Gladiator
+			null,
+			{
+				XP = 450 * ::Hardened.Global.FactionExperience.Nomads,		// Vanilla: 350
+				ActionPoints = 9,
+				Hitpoints = 110,		// Vanilla: 110
+				Bravery = 100,			// Vanilla: 90
+				Stamina = 150,			// Vanilla: 135
+				MeleeSkill = 85,		// Vanilla: 75
+				RangedSkill = 75,		// Vanilla: 65
+				MeleeDefense = 20,		// Vanilla: 20
+				RangedDefense = 0,		// Vanilla: 10
+				Initiative = 130,		// Vanilla: 125
+			}
+		);
+	}
 }
 
 // scripts/entity/tactical/humans/conscript_polearm
@@ -201,64 +299,3 @@
 	Initiative = 110,
 	Armor = [0, 0],
 };
-
-// scripts/entity/tactical/humans/conscript
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.Conscript.XP = 250 * ::Hardened.Global.FactionExperience.CityStates;
-	::Const.Tactical.Actor.Conscript.ActionPoints = 9;
-	::Const.Tactical.Actor.Conscript.Hitpoints = 70;
-	::Const.Tactical.Actor.Conscript.Bravery = 70;
-	::Const.Tactical.Actor.Conscript.Stamina = 120;
-	::Const.Tactical.Actor.Conscript.MeleeSkill = 70;
-	::Const.Tactical.Actor.Conscript.RangedSkill = 50;
-	::Const.Tactical.Actor.Conscript.MeleeDefense = 10;
-	::Const.Tactical.Actor.Conscript.RangedDefense = 0;
-	::Const.Tactical.Actor.Conscript.Initiative = 110;
-}
-
-// scripts/entity/tactical/humans/gunner
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.Gunner.XP = 300 * ::Hardened.Global.FactionExperience.CityStates;
-	::Const.Tactical.Actor.Gunner.ActionPoints = 9;
-	::Const.Tactical.Actor.Gunner.Hitpoints = 60;
-	::Const.Tactical.Actor.Gunner.Bravery = 70;
-	::Const.Tactical.Actor.Gunner.Stamina = 120;
-	::Const.Tactical.Actor.Gunner.MeleeSkill = 65;
-	::Const.Tactical.Actor.Gunner.RangedSkill = 75;
-	::Const.Tactical.Actor.Gunner.MeleeDefense = 5;
-	::Const.Tactical.Actor.Gunner.RangedDefense = 20;
-	::Const.Tactical.Actor.Gunner.Initiative = 120;
-}
-
-// scripts/entity/tactical/humans/assassin
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.Assassin.XP = 400 * ::Hardened.Global.FactionExperience.CityStates;
-	::Const.Tactical.Actor.Assassin.ActionPoints = 9;
-	::Const.Tactical.Actor.Assassin.Hitpoints = 80;
-	::Const.Tactical.Actor.Assassin.Bravery = 85;
-	::Const.Tactical.Actor.Assassin.Stamina = 125;
-	::Const.Tactical.Actor.Assassin.MeleeSkill = 80;
-	::Const.Tactical.Actor.Assassin.RangedSkill = 70;
-	::Const.Tactical.Actor.Assassin.MeleeDefense = 10;
-	::Const.Tactical.Actor.Assassin.RangedDefense = 10;
-	::Const.Tactical.Actor.Assassin.Initiative = 180;
-}
-
-// scripts/entity/tactical/humans/officer
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.Officer.XP = 500 * ::Hardened.Global.FactionExperience.CityStates;
-	::Const.Tactical.Actor.Officer.ActionPoints = 9;
-	::Const.Tactical.Actor.Officer.Hitpoints = 110;
-	::Const.Tactical.Actor.Officer.Bravery = 85;
-	::Const.Tactical.Actor.Officer.Stamina = 150;
-	::Const.Tactical.Actor.Officer.MeleeSkill = 85;
-	::Const.Tactical.Actor.Officer.RangedSkill = 60;
-	::Const.Tactical.Actor.Officer.MeleeDefense = 25;
-	::Const.Tactical.Actor.Officer.RangedDefense = 10;
-	::Const.Tactical.Actor.Officer.Initiative = 110;
-}
-

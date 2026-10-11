@@ -1,3 +1,96 @@
+{	// Noble Army
+	{	// Leader
+		// scripts/entity/tactical/humans/noble_sergeant
+		::Reforged.Entities.editEntity("Sergeant",	// Noble Sergeant
+			null,
+			{
+				XP = 350 * ::Hardened.Global.FactionExperience.Nobles,
+				ActionPoints = 9,
+				Hitpoints = 120,
+				Bravery = 90,
+				Stamina = 130,
+				MeleeSkill = 75,
+				RangedSkill = 60,
+				MeleeDefense = 0,
+				RangedDefense = 30,
+				Initiative = 110,
+			}
+		);
+
+		// scripts/entity/tactical/humans/rf_marshal
+		::Reforged.Entities.editEntity("RF_Marshal",	// Noble Marshal
+			null,
+			{
+				XP = 600 * ::Hardened.Global.FactionExperience.Nobles,
+				ActionPoints = 9,
+				Hitpoints = 150,
+				Bravery = 120,
+				Stamina = 140,
+				MeleeSkill = 85,
+				RangedSkill = 60,
+				MeleeDefense = 10,
+				RangedDefense = 50,
+				Initiative = 120,
+			}
+		);
+	}
+
+	{	// Knights
+		// scripts/entity/tactical/humans/knight
+		::Reforged.Entities.editEntity("Knight",	// Noble Knight
+			null,
+			{
+				XP = 700 * ::Hardened.Global.FactionExperience.Nobles,
+				ActionPoints = 9,
+				Hitpoints = 150,
+				Bravery = 70,
+				Stamina = 150,
+				MeleeSkill = 95,
+				RangedSkill = 40,
+				MeleeDefense = 30,
+				RangedDefense = 10,
+				Initiative = 115,
+			}
+		);
+
+		// scripts/entity/tactical/humans/rf_knight_anointed
+		::Reforged.Entities.editEntity("RF_KnightAnointed",	// Noble Anointed Knight
+			null,
+			{
+				XP = 1000 * ::Hardened.Global.FactionExperience.Nobles,
+				ActionPoints = 9,
+				Hitpoints = 170,
+				Bravery = 80,
+				Stamina = 170,
+				MeleeSkill = 100,
+				RangedSkill = 40,
+				MeleeDefense = 40,
+				RangedDefense = 15,
+				Initiative = 125,
+			}
+		);
+	}
+
+	{	// Elite
+		// scripts/entity/tactical/humans/rf_fencer
+		::Reforged.Entities.editEntity("RF_Fencer",	// Noble Fencer
+			null,
+			{
+				XP = 500 * ::Hardened.Global.FactionExperience.Nobles,
+				ActionPoints = 9,
+				Hitpoints = 55,
+				Bravery = 70,
+				Stamina = 150,
+				MeleeSkill = 100,
+				RangedSkill = 50,
+				MeleeDefense = 20,
+				RangedDefense = 10,
+				Initiative = 160,
+			}
+		);
+	}
+}
+
 // scripts/entity/tactical/humans/noble_billman
 {
 	// Mandatory stats
@@ -76,21 +169,6 @@
 	::Const.Tactical.Actor.StandardBearer.Initiative = 105;
 }
 
-// scripts/entity/tactical/humans/noble_sergeant
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.Sergeant.XP = 350 * ::Hardened.Global.FactionExperience.Nobles;
-	::Const.Tactical.Actor.Sergeant.ActionPoints = 9;
-	::Const.Tactical.Actor.Sergeant.Hitpoints = 120;
-	::Const.Tactical.Actor.Sergeant.Bravery = 90;
-	::Const.Tactical.Actor.Sergeant.Stamina = 130;
-	::Const.Tactical.Actor.Sergeant.MeleeSkill = 75;
-	::Const.Tactical.Actor.Sergeant.RangedSkill = 60;
-	::Const.Tactical.Actor.Sergeant.MeleeDefense = 0;
-	::Const.Tactical.Actor.Sergeant.RangedDefense = 30;
-	::Const.Tactical.Actor.Sergeant.Initiative = 110;
-}
-
 // scripts/entity/tactical/humans/rf_arbalester_heavy
 {
 	// Mandatory stats
@@ -154,21 +232,6 @@
 	::Const.Tactical.Actor.Greatsword.Initiative = 115;
 }
 
-// scripts/entity/tactical/humans/rf_fencer
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_Fencer.XP = 500 * ::Hardened.Global.FactionExperience.Nobles;
-	::Const.Tactical.Actor.RF_Fencer.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_Fencer.Hitpoints = 55;
-	::Const.Tactical.Actor.RF_Fencer.Bravery = 70;
-	::Const.Tactical.Actor.RF_Fencer.Stamina = 150;
-	::Const.Tactical.Actor.RF_Fencer.MeleeSkill = 100;
-	::Const.Tactical.Actor.RF_Fencer.RangedSkill = 50;
-	::Const.Tactical.Actor.RF_Fencer.MeleeDefense = 20;
-	::Const.Tactical.Actor.RF_Fencer.RangedDefense = 10;
-	::Const.Tactical.Actor.RF_Fencer.Initiative = 160;
-}
-
 // scripts/entity/tactical/humans/rf_man_at_arms
 {
 	// Mandatory stats
@@ -212,49 +275,4 @@
 	::Const.Tactical.Actor.RF_HeraldsBodyguard.MeleeDefense = 15;
 	::Const.Tactical.Actor.RF_HeraldsBodyguard.RangedDefense = 0;
 	::Const.Tactical.Actor.RF_HeraldsBodyguard.Initiative = 130;
-}
-
-// scripts/entity/tactical/humans/rf_marshal
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_Marshal.XP = 600 * ::Hardened.Global.FactionExperience.Nobles;
-	::Const.Tactical.Actor.RF_Marshal.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_Marshal.Hitpoints = 150;
-	::Const.Tactical.Actor.RF_Marshal.Bravery = 120;
-	::Const.Tactical.Actor.RF_Marshal.Stamina = 140;
-	::Const.Tactical.Actor.RF_Marshal.MeleeSkill = 85;
-	::Const.Tactical.Actor.RF_Marshal.RangedSkill = 60;
-	::Const.Tactical.Actor.RF_Marshal.MeleeDefense = 10;
-	::Const.Tactical.Actor.RF_Marshal.RangedDefense = 50;
-	::Const.Tactical.Actor.RF_Marshal.Initiative = 120;
-}
-
-// scripts/entity/tactical/humans/knight
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.Knight.XP = 700 * ::Hardened.Global.FactionExperience.Nobles;
-	::Const.Tactical.Actor.Knight.ActionPoints = 9;
-	::Const.Tactical.Actor.Knight.Hitpoints = 150;
-	::Const.Tactical.Actor.Knight.Bravery = 70;
-	::Const.Tactical.Actor.Knight.Stamina = 150;
-	::Const.Tactical.Actor.Knight.MeleeSkill = 95;
-	::Const.Tactical.Actor.Knight.RangedSkill = 40;
-	::Const.Tactical.Actor.Knight.MeleeDefense = 30;
-	::Const.Tactical.Actor.Knight.RangedDefense = 10;
-	::Const.Tactical.Actor.Knight.Initiative = 115;
-}
-
-// scripts/entity/tactical/humans/rf_knight_anointed
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_KnightAnointed.XP = 1000 * ::Hardened.Global.FactionExperience.Nobles;
-	::Const.Tactical.Actor.RF_KnightAnointed.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_KnightAnointed.Hitpoints = 170;
-	::Const.Tactical.Actor.RF_KnightAnointed.Bravery = 80;
-	::Const.Tactical.Actor.RF_KnightAnointed.Stamina = 170;
-	::Const.Tactical.Actor.RF_KnightAnointed.MeleeSkill = 100;
-	::Const.Tactical.Actor.RF_KnightAnointed.RangedSkill = 40;
-	::Const.Tactical.Actor.RF_KnightAnointed.MeleeDefense = 40;
-	::Const.Tactical.Actor.RF_KnightAnointed.RangedDefense = 15;
-	::Const.Tactical.Actor.RF_KnightAnointed.Initiative = 125;
 }
