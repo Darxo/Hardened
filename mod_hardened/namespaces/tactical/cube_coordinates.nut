@@ -135,6 +135,19 @@
 		return ::Tactical.getTile(_ccTile.X, _ccTile.Y);
 	}
 
+	function fromSquareCoords( _squareCoords )
+	{
+		return this.CCTile(_squareCoords.X, _squareCoords.Y, -_squareCoords.X - _squareCoords.Y);
+	}
+
+	function toSquareCoords( _ccTile )
+	{
+		return {
+			X = _ccTile.X,
+			Y = _ccTile.Y,
+		};
+	}
+
 	function cloneTile( _tile )
 	{
 		return this.CCTile(_tile.X, _tile.Y, _tile.Z);

@@ -454,14 +454,14 @@
 				case ::Hardened.Tactical.EngagementType.LineBattle:
 				{
 					::logWarning("Hardened: generatePlayerRegion LineBattle");
-					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 2, 9, { IsPlayer = true, OffsetX = -3 });
+					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 2, 9, { OffsetX = -3 });
 					this.RegionPlan.m.PersonalAlly = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 6, 12, { OffsetX = -3 });
 					break;
 				}
 				case ::Hardened.Tactical.EngagementType.JoinBattle:
 				{
 					::logWarning("Hardened: generatePlayerRegion JoinBattle");
-					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 2, 9, { IsPlayer = true, OffsetX = -13 });
+					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 2, 9, { OffsetX = -13 });
 					this.RegionPlan.m.PersonalAlly = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 4, 12, { OffsetX = -13 });
 					break;
 				}
@@ -475,7 +475,7 @@
 					offsetX += shiftX;
 
 					::logWarning("Hardened: generatePlayerRegion AttackFortification");
-					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 2, 9, { IsPlayer = true, OffsetX = offsetX });
+					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 2, 9, { OffsetX = offsetX });
 					this.RegionPlan.m.PersonalAlly = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 4, 12, { OffsetX = offsetX });
 					break;
 				}
@@ -489,14 +489,14 @@
 					offsetX -= shiftX;
 
 					::logWarning("Hardened: generatePlayerRegion DefendFortification");
-					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 2, 9, { IsPlayer = true, OffsetX = offsetX });
+					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 2, 9, { OffsetX = offsetX });
 					this.RegionPlan.m.PersonalAlly = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 4, 12, { OffsetX = offsetX });
 					break;
 				}
 				case ::Hardened.Tactical.EngagementType.GetAmbushed:
 				{
 					::logWarning("Hardened: generatePlayerRegion GetAmbushed");
-					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 0, 3, { IsPlayer = true });
+					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 0, 3);
 					this.RegionPlan.m.Player.RandomPosition = true;
 					this.RegionPlan.m.PersonalAlly = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 0, 3);
 					this.RegionPlan.m.PersonalAlly.RandomPosition = true;
@@ -505,7 +505,7 @@
 				case ::Hardened.Tactical.EngagementType.DoAmbush:
 				{
 					::logWarning("Hardened: generatePlayerRegion DoAmbushed");
-					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 11, 12, { IsPlayer = true });
+					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 11, 12);
 					this.RegionPlan.m.Player.RandomPosition = true;
 					this.RegionPlan.m.PersonalAlly = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 11, 12);
 					this.RegionPlan.m.PersonalAlly.RandomPosition = true;
@@ -514,13 +514,13 @@
 				case ::Hardened.Tactical.EngagementType.FightInfestation:
 				{
 					::logWarning("Hardened: generatePlayerRegion FightInfestation");
-					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 2, 9, { IsPlayer = true, OffsetX = -13 });
+					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 2, 9, { OffsetX = -13 });
 					this.RegionPlan.m.PersonalAlly = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 4, 12, { OffsetX = -13 });
 					break;
 				}
 				default:
 					::logWarning("Hardened: Unsupported EngagementType: " + this.EngagementType + "! Defaulting to LineBattle");
-					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 2, 9, { IsPlayer = true, OffsetX = -3 });
+					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 2, 9, { OffsetX = -3 });
 					this.RegionPlan.m.PersonalAlly = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 6, 12, { OffsetX = -3 });
 					break;
 			}

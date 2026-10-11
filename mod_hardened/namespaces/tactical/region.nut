@@ -15,7 +15,6 @@
 		function createRegion( _shape, _width, _height, _options = {} )
 		{
 			local options = {
-				IsPlayer = false,	// Is this region specifically for the player, where other positioning rules exist?
 				OffsetX = 0,		// tile offset of this region on the X axis after generation and before rotation
 				OffsetY = 0,		// tile offset of this region on the Y axis after generation and before rotation
 				Rotation = 0,		// rotate the region for 60° clockwise (positive) or counter-clockwise (negative) for every 1 value
@@ -53,7 +52,8 @@
 					break;
 				}
 			}
-			region.initSubRegions(options.IsPlayer, options.IsPlayer);
+			// region.Tiles.reverse();		// Regions are normally starting bottom left. But the player needs it exactly the other way around. NPCs dont care.
+			region.initSubRegions();
 			region.transformRegion(options.OffsetX, options.OffsetY, options.Rotation);
 			return region;
 		}
@@ -147,7 +147,7 @@
 				if (distanceToCenter < _radiusMin) continue;
 				if (distanceToCenter > _radiusMax) continue;
 
-				region.Tiles.push(tile);
+				region.Tiles.push({X = tile.X, Y = tile.Y});
 			}
 
 			// We randomize validTiles, so that we have a fresh random list of tiles to iterate over for trying to place the settlement
@@ -173,7 +173,7 @@
 			{
 				for (local y = bottomLeft.SquareCoords.Y; y < bottomLeft.SquareCoords.Y + _height; ++y)
 				{
-					region.Tiles.push(::Tactical.getTileSquare(x, y));
+					region.Tiles.push({X = x, Y = y});
 				}
 			}
 
@@ -195,7 +195,7 @@
 			{
 				for (local y = bottomLeft.SquareCoords.Y; y < bottomLeft.SquareCoords.Y + _height; ++y)
 				{
-					region.Tiles.push(::Tactical.getTileSquare(x, y));
+					region.Tiles.push({X = x, Y = y});
 				}
 			}
 
@@ -204,7 +204,7 @@
 
 	Region = class {
 		Shape = null;
-		Tiles = null;
+		Tiles = null;		// Array of SquareCoords, so that we can deal with coords out of bound
 		SubRegions = null;
 		RandomPosition = false;
 
@@ -266,7 +266,7 @@
 
 		// Public
 			// Must be called, before this region is transformed around
-			function initSubRegions( _isReversed = false, _useSingleRegion = false )
+			function initSubRegions()
 			{
 				// Prefer raised/covered positions for the type of Ranged
 
@@ -276,80 +276,76 @@
 					this.SubRegions[value] <- [];
 				}
 
-				if (_isReversed)
-				{
-					this.Tiles.reverse();		// Regions are normally starting bottom left. But we need it exactly inversed for the player
-				}
-
-				if (_useSingleRegion)
-				{
-					this.SubRegions[this.FormationRole.Front].extend(this.Tiles);
-					return;
-				}
-
 				local centerTile = ::Hardened.Tactical.MapInfo.m.CenterTile;
-				foreach (tile in this.Tiles)
+				foreach (coordPair in this.Tiles)
 				{
 					if (this.Shape == ::Hardened.Tactical.Region.Shape.Portrait)
 					{
-						switch (tile.SquareCoords.X)
+						switch (coordPair.X)
 						{
 							case centerTile.SquareCoords.X:
-								this.SubRegions[this.FormationRole.Front].push(tile);
+								this.SubRegions[this.FormationRole.Front].push(coordPair);
 								break;
 							case centerTile.SquareCoords.X - 1:
-								this.SubRegions[this.FormationRole.Backline].push(tile);
+								this.SubRegions[this.FormationRole.Backline].push(coordPair);
 								break;
 							case centerTile.SquareCoords.X - 2:
-								this.SubRegions[this.FormationRole.Ranged].push(tile);
+								this.SubRegions[this.FormationRole.Ranged].push(coordPair);
 								break;
 							case centerTile.SquareCoords.X - 3:
-								this.SubRegions[this.FormationRole.Siege].push(tile);
+								this.SubRegions[this.FormationRole.Siege].push(coordPair);
 								break;
 							default:
-								this.SubRegions[this.FormationRole.Random].push(tile);
+								this.SubRegions[this.FormationRole.Random].push(coordPair);
 						}
 					}
 					else if (this.Shape == ::Hardened.Tactical.Region.Shape.Landscape)
 					{
-						switch (tile.SquareCoords.Y)
+						switch (coordPair.Y)
 						{
 							case centerTile.SquareCoords.Y:
-								this.SubRegions[this.FormationRole.Front].push(tile);
+								this.SubRegions[this.FormationRole.Front].push(coordPair);
 								break;
 							case centerTile.SquareCoords.Y + 1:
-								this.SubRegions[this.FormationRole.Backline].push(tile);
+								this.SubRegions[this.FormationRole.Backline].push(coordPair);
 								break;
 							case centerTile.SquareCoords.Y + 2:
-								this.SubRegions[this.FormationRole.Ranged].push(tile);
+								this.SubRegions[this.FormationRole.Ranged].push(coordPair);
 								break;
 							case centerTile.SquareCoords.Y + 3:
-								this.SubRegions[this.FormationRole.Siege].push(tile);
+								this.SubRegions[this.FormationRole.Siege].push(coordPair);
 								break;
 							default:
-								this.SubRegions[this.FormationRole.Random].push(tile);
+								this.SubRegions[this.FormationRole.Random].push(coordPair);
 						}
 					}
 					else if (this.Shape == ::Hardened.Tactical.Region.Shape.Hexagon)
 					{
+						if (!::Tactical.isValidTileSquare(coordPair.X, coordPair.Y))
+						{
+							this.SubRegions[this.FormationRole.Random].push(coordPair);
+							continue;
+						}
+
+						local tile = ::Tactical.getTileSquare(coordPair.X, coordPair.Y);
 						local distanceToCenter = tile.getDistanceTo(centerTile);
 						distanceToCenter = ::Math.clamp(distanceToCenter, this.CreationParameters.RadiusMin, this.CreationParameters.RadiusMax);
 						switch (distanceToCenter)
 						{
 							case this.CreationParameters.RadiusMax:
-								this.SubRegions[this.FormationRole.Front].push(tile);
+								this.SubRegions[this.FormationRole.Front].push(coordPair);
 								break;
 							case this.CreationParameters.RadiusMax - 1:
-								this.SubRegions[this.FormationRole.Backline].push(tile);
+								this.SubRegions[this.FormationRole.Backline].push(coordPair);
 								break;
 							case this.CreationParameters.RadiusMax - 2:
-								this.SubRegions[this.FormationRole.Ranged].push(tile);
+								this.SubRegions[this.FormationRole.Ranged].push(coordPair);
 								break;
 							case this.CreationParameters.RadiusMax - 3:
-								this.SubRegions[this.FormationRole.Siege].push(tile);
+								this.SubRegions[this.FormationRole.Siege].push(coordPair);
 								break;
 							default:
-								this.SubRegions[this.FormationRole.Random].push(tile);
+								this.SubRegions[this.FormationRole.Random].push(coordPair);
 						}
 					}
 				}
@@ -363,32 +359,24 @@
 
 			function transformRegion( _offsetX, _offsetY, _rotation = 0 )
 			{
-				local offsetTiles = [];
-
 				foreach (tile in this.Tiles)
 				{
-					if (!::Tactical.isValidTileSquare(tile.SquareCoords.X + _offsetX, tile.SquareCoords.Y + _offsetY))
-					{
-						::logError("Hardened: _offsetX " + _offsetX + " and _offsetY " + _offsetY + " produced an invalid tile for a region! Tile was skipped.");
-						return;
-					}
-
-					offsetTiles.push(::Tactical.getTileSquare(tile.SquareCoords.X + _offsetX, tile.SquareCoords.Y + _offsetY));
+					tile.X += _offsetX;
+					tile.Y += _offsetY;
 				}
-
-				this.Tiles = offsetTiles;
-
+/*
 				foreach (key, subRegion in this.SubRegions)
 				{
 					local offsetTiles = [];
 
 					foreach (tile in subRegion)
 					{
-						offsetTiles.push(::Tactical.getTileSquare(tile.SquareCoords.X + _offsetX, tile.SquareCoords.Y + _offsetY));
+						tile.X += _offsetX;
+						tile.Y += _offsetY;
 					}
 
 					this.SubRegions[key] = offsetTiles;
-				}
+				}*/
 
 				while (::Math.abs(_rotation) >= 60)
 				{
@@ -418,19 +406,27 @@
 				}
 			}
 
-			function getAllTiles()
+			function getAllTiles( _subRegionType = null )
 			{
-				// return this.Tiles;	// temp solution to allow player characters spawning
-
-				local combinedArray = [];
+				local squarecoordsArray = [];
 				foreach (key, value in this.SubRegions)
 				{
-					combinedArray.extend(value);
+					if (key != _subRegionType) continue;
+					squarecoordsArray.extend(value);
 				}
 
-				if (combinedArray.len() == 0) return this.Tiles;	// temp solution to allow player characters spawning
+				if (squarecoordsArray.len() == 0) squarecoordsArray = this.Tiles;	// temp solution to allow player characters spawning
 
-				return combinedArray;
+				local allTiles = [];
+
+				foreach (coords in squarecoordsArray)
+				{
+					if (!::Tactical.isValidTileSquare(coords.X, coords.Y)) continue;
+
+					allTiles.push(::Tactical.getTileSquare(coords.X, coords.Y));
+				}
+
+				return allTiles;
 			}
 
 			function placeTroop( _troopDef, _strict )
@@ -449,33 +445,27 @@
 		// Private
 			function rotateAllTiles( _clockwise )
 			{
-				foreach (key, subRegionTiles in this.SubRegions)
+				local ccCenterTile = ::Hardened.Tactical.CubeCoordinates.fromTacticalTile(::Hardened.Tactical.MapInfo.m.CenterTile);
+				foreach (coordPair in this.Tiles)
 				{
-					local rotatedTiles = [];
-
-					local ccCenterTile = ::Hardened.Tactical.CubeCoordinates.fromTacticalTile(::Hardened.Tactical.MapInfo.m.CenterTile);
-					foreach (tile in subRegionTiles)
+					local ccTile = ::Hardened.Tactical.CubeCoordinates.fromSquareCoords(coordPair);
+					if (_clockwise)
 					{
-						local ccTile = ::Hardened.Tactical.CubeCoordinates.fromTacticalTile(tile);
-						if (_clockwise)
-						{
-							ccTile.rotateClockWise(ccCenterTile);
-						}
-						else
-						{
-							ccTile.rotateCounterClockWise(ccCenterTile);
-						}
-						rotatedTiles.push(::Hardened.Tactical.CubeCoordinates.toTacticalTile(ccTile));
+						ccTile.rotateClockWise(ccCenterTile);
 					}
-
-					this.SubRegions[key] = rotatedTiles;
+					else
+					{
+						ccTile.rotateCounterClockWise(ccCenterTile);
+					}
+					coordPair.X = ccTile.X;
+					coordPair.Y = ccTile.Y;
 				}
 			}
 
 			// Remove all objects from this region and a border around them of _borderSize distance
 			function clearArea( _borderSize = 0 )
 			{
-				local affectedTiles = this.getAllTiles();	// Todo: respect _borderSize
+				local affectedTiles = this.getAllTiles();
 				foreach (tile in affectedTiles)
 				{
 					tile.removeObject();
@@ -484,7 +474,7 @@
 
 			function downsizeArea(  _borderSize = 0 )
 			{
-				local affectedTiles = this.getAllTiles();	// Todo: respect _borderSize
+				local affectedTiles = this.getAllTiles();
 
 				// Remove all tower- or wall-like structures in the region
 				foreach (tile in affectedTiles)
@@ -513,6 +503,8 @@
 				}
 			}
 
+			/// Sort all tile in _tileArray, so that the tile which is the closest to a center tile comes first
+			/// If no _centerTile is passed, the center of all passed tiles as a tile is used
 			function sortByDistanceToCenter( _tileArray, _centerTile = null )
 			{
 				if (_tileArray.len() == 0) return;
@@ -524,21 +516,23 @@
 
 					foreach (tile in _tileArray)
 					{
-						center.X += tile.SquareCoords.X;
-						center.Y += tile.SquareCoords.Y;
+						center.X += tile.X;
+						center.Y += tile.Y;
 					}
 					center.X /= ::Math.round(_tileArray.len());
 					center.Y /= ::Math.round(_tileArray.len());
-					_centerTile = ::Tactical.getTileSquare(center.X, center.Y)
+					_centerTile = ::Tactical.getTileSquare(center.X, center.Y);
 				}
 
 				local sort = function( _a, _b )
 				{
-					if (_a.getDistanceTo(_centerTile) < _b.getDistanceTo(_centerTile))
+					local tileA = ::Tactical.getTileSquare(_a.X, _a.Y);
+					local tileB = ::Tactical.getTileSquare(_b.X, _b.Y);
+					if (tileA.getDistanceTo(_centerTile) < tileB.getDistanceTo(_centerTile))
 					{
 						return -1;
 					}
-					else if (_a.getDistanceTo(_centerTile) > _b.getDistanceTo(_centerTile))
+					else if (tileA.getDistanceTo(_centerTile) > tileB.getDistanceTo(_centerTile))
 					{
 						return 1;
 					}
@@ -561,7 +555,7 @@
 				{
 					::logWarning("Hardened: find random empty tile")
 					local validTiles = [];
-					foreach (tile in this.Tiles)
+					foreach (tile in this.getAllTiles())
 					{
 						if (!tile.IsEmpty) continue;
 						validTiles.push(tile);
@@ -571,7 +565,7 @@
 
 				local formationRole = "HD_FormationRole" in _troopDef ? _troopDef.HD_FormationRole : this.translateVanillaRow(_troopDef.Row);
 
-				foreach (tile in this.SubRegions[formationRole])
+				foreach (tile in this.getAllTiles(formationRole))
 				{
 					if (!tile.IsEmpty) continue;
 
@@ -583,7 +577,7 @@
 
 				foreach (role in this.FillUpOrder)
 				{
-					foreach (tile in this.SubRegions[role])
+					foreach (tile in this.getAllTiles(role))
 					{
 						if (!tile.IsEmpty) continue;
 
@@ -603,7 +597,7 @@
 					local tile = this.Tiles[index];
 					foreach (otherTile in _otherRegion.Tiles)
 					{
-						if (!tile.isSameTileAs(otherTile)) continue;
+						if (tile != otherTile) continue;
 
 						this.Tiles.remove(index);
 						break;
@@ -618,7 +612,7 @@
 				{
 					foreach (tile in this.Tiles)
 					{
-						if (tile.isSameTileAs(otherTile)) continue;
+						if (tile == otherTile) continue;
 
 						this.Tiles.push(otherTile);
 						break;
@@ -634,7 +628,7 @@
 				{
 					foreach (otherTile in _otherRegion.Tiles)
 					{
-						if (!tile.isSameTileAs(otherTile)) continue;
+						if (tile != otherTile) continue;
 
 						newTiles.push(tile);
 						break;
@@ -655,7 +649,7 @@
 						local stillPresent = false;
 						foreach (tile in this.Tiles)
 						{
-							if (tile.isSameTileAs(subregionTile))
+							if (tile == subregionTile)
 							{
 								stillPresent = true;
 								break;
