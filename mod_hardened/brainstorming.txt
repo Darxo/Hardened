@@ -902,3 +902,7 @@ Mod Description:
 - give flying skulls a spawnlist registering, so that they can be spawned naturally with combat simulator
 
 - display in description of CHampion Racial which the base entity name of this entity is
+
+- make archers with defenders advantage instantly swap positions with other allies with defenders advantage during first round start
+
+- allow a random deployment option for a region

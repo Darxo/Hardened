@@ -69,10 +69,18 @@
 			local placedActors = 0;
 			foreach (player in _playerCharacters)
 			{
-				local index = player.getPlaceInFormation();
-				if (index >= allTiles.len()) continue;
-
-				local tile = allTiles[index];
+				local tile = null;
+				if (_region.RandomPosition)
+				{
+					tile = _region.findEmptyTile();
+				}
+				else
+				{
+					local index = player.getPlaceInFormation();
+					if (index >= allTiles.len()) continue;
+					tile = allTiles[index];
+				}
+				if (tile == null) break;;
 				if (!tile.IsEmpty) continue;
 
 				::Tactical.addEntityToMap(player, tile.Coords.X, tile.Coords.Y);
@@ -99,7 +107,17 @@
 			for (local index = _entityDefs.len() - 1; index >= 0; --index)
 			{
 				local entityDef = _entityDefs[index];
-				if (_region.placeTroop(entityDef))
+				if (_region.placeTroop(entityDef, true))
+				{
+					++placedActors;
+					_entityDefs.remove(index);
+				}
+			}
+
+			for (local index = _entityDefs.len() - 1; index >= 0; --index)
+			{
+				local entityDef = _entityDefs[index];
+				if (_region.placeTroop(entityDef, false))
 				{
 					++placedActors;
 					_entityDefs.remove(index);
@@ -188,6 +206,7 @@
 		Shape = null;
 		Tiles = null;
 		SubRegions = null;
+		RandomPosition = false;
 
 		CreationParameters = {
 			Width = null,
@@ -249,6 +268,8 @@
 			// Must be called, before this region is transformed around
 			function initSubRegions( _isReversed = false, _useSingleRegion = false )
 			{
+				// Prefer raised/covered positions for the type of Ranged
+
 				this.SubRegions = {};
 				foreach (key, value in this.FormationRole)
 				{
@@ -412,14 +433,13 @@
 				return combinedArray;
 			}
 
-			function placeTroop( _troopDef )
+			function placeTroop( _troopDef, _strict )
 			{
-				local validTile = this.findEmptyTile(_troopDef, true);
+				local validTile = this.findEmptyTile(_troopDef, _strict);
 				if (validTile == null)
 				{
-					validTile = this.findEmptyTile(_troopDef, false);
+					return false;
 				}
-				if (validTile == null) return false;
 
 				local entity = ::Tactical.spawnEntity(_troopDef.Script, validTile.Coords.X, validTile.Coords.Y);
 				::Tactical.Entities.setupEntity(entity, _troopDef);
@@ -535,8 +555,20 @@
 			/// Try to find a valid tile to fit the passed _troopDef onto
 			/// @param _strict if true, then the troop can only be placed in its designated formationRole, otherwise it will fill up any empty tile
 			/// @return empty tile from our region, if one could be found, or null if no valid tile was found
-			function findEmptyTile( _troopDef, _strict = true )
+			function findEmptyTile( _troopDef = null, _strict = true )
 			{
+				if (_troopDef == null || this.RandomPosition)
+				{
+					::logWarning("Hardened: find random empty tile")
+					local validTiles = [];
+					foreach (tile in this.Tiles)
+					{
+						if (!tile.IsEmpty) continue;
+						validTiles.push(tile);
+					}
+					return validTiles.len() == 0 ? null : ::MSU.Array.rand(validTiles);
+				}
+
 				local formationRole = "HD_FormationRole" in _troopDef ? _troopDef.HD_FormationRole : this.translateVanillaRow(_troopDef.Row);
 
 				foreach (tile in this.SubRegions[formationRole])
@@ -614,18 +646,25 @@
 			// Remove all tiles from subregions, that are no longer present in this.Tiles. This can happen during intersect and exclude calls
 			function synchronizeSubRegions()
 			{
-				foreach (tile in this.Tiles)
+				::logWarning("Hardened: synchronizeSubRegions");
+				foreach (subregion in this.SubRegions)
 				{
-					foreach (key, value in this.SubRegions)
+					for (local index = subregion.len() - 1; index >= 0; --index)
 					{
-						this.sortByDistanceToCenter(value, centerTile);
-					}
-					foreach (otherTile in _otherRegion.Tiles)
-					{
-						if (!tile.isSameTileAs(otherTile)) continue;
-
-						newTiles.push(tile);
-						break;
+						local subregionTile = subregion[index];
+						local stillPresent = false;
+						foreach (tile in this.Tiles)
+						{
+							if (tile.isSameTileAs(subregionTile))
+							{
+								stillPresent = true;
+								break;
+							}
+						}
+						if (!stillPresent)
+						{
+							subregion.remove(index);
+						}
 					}
 				}
 			}

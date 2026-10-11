@@ -79,8 +79,15 @@
 			count += this.m.Allies.len();
 			count += this.m.Enemies.len();
 			return count;
-		}
+		},
 
+		function sort()
+		{
+			this.m.EngagedAllies.sort(this.onParticipantCompare);
+			this.m.EngagedEnemies.sort(this.onParticipantCompare);
+			this.m.Allies.sort(this.onParticipantCompare);
+			this.m.Enemies.sort(this.onParticipantCompare);
+		},
 		function clear()
 		{
 			foreach (key, _ in this.m)
@@ -98,6 +105,31 @@
 			}
 			return allParticipants;
 		},
+		// Sort Participants so that the "strongest" one comes first. For know we determine this by party size
+		function onParticipantCompare( _p1, _p2 )
+		{
+			// Particiapnt escorted by the player is always sorted to the front so it always takes the position by the player
+			foreach (party in _p1.Parties)
+			{
+				if (::MSU.isEqual(party, ::World.State.getEscortedEntity()))
+				{
+					return -1;
+				}
+			}
+
+			if (_p1.getTroopDefs().len() > _p2.getTroopDefs().len())
+			{
+				return -1;
+			}
+			else if (_p1.getTroopDefs().len() < _p2.getTroopDefs().len())
+			{
+				return 1;
+			}
+			else
+			{
+				return 0;
+			}
+		}
 	},
 
 	// public
@@ -109,6 +141,7 @@
 			this.Participants.clear();
 			this.preparePlayerCharacters(_combatInfo);
 			this.prepareAIParticipants(_combatInfo);
+			this.Participants.sort();
 
 			this.EngagementType = _combatInfo.HD_EngagementType != null ? _combatInfo.HD_EngagementType : this.generateEngagementType(_combatInfo);
 		}
@@ -170,7 +203,7 @@
 		{
 			::logWarning("Hardened: prepareAIParticipants sort");
 			// Sort parties to get the same factions grouped together
-			// _combatInfo.Entities.sort(::Tactical.Entities.onFactionCompare);
+			_combatInfo.Parties.sort(this.onFactionCompare);
 
 			local lastFaction = null;
 			local lastCombatState = null;
@@ -201,7 +234,7 @@
 					currentParticipant.IsAlliedWithPlayer = party.isAlliedWithPlayer();
 					currentParticipant.InCombatAlready = party.isInCombat();
 
-					if (_combatInfo.LocationTemplate != null && ::World.FactionManager.isAllied(currentParticipant.Faction, _combatInfo.LocationTemplate.OwnedByFaction))
+					if (_combatInfo.LocationTemplate != null && currentParticipant.Faction == _combatInfo.LocationTemplate.OwnedByFaction)
 					{
 						currentParticipant.IsOwningLocation = true;
 					}
@@ -266,6 +299,7 @@
 		{
 			if (_participant.IsOwningLocation)
 			{
+				::logWarning("Hardened: found defender participant");
 				this.Participants.m.Defender = _participant;
 				return;
 			}
@@ -339,7 +373,7 @@
 			::Hardened.Tactical.Region.placePlayersInFormation(this.Participants.m.Player.Entities, this.RegionPlan.m.Player);
 
 		// Personal Ally
-			if (this.Participants.m.Allies.len() > 0)
+			if (this.RegionPlan.m.PersonalAlly != null && this.Participants.m.Allies.len() > 0)
 			{
 				::Hardened.Tactical.Region.placeNPCsInFormation(this.Participants.m.Allies[0].getTroopDefs(), this.RegionPlan.m.PersonalAlly);
 				this.Participants.m.Allies.remove(0);
@@ -449,8 +483,50 @@
 					this.RegionPlan.m.PersonalAlly = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 4, 12, { OffsetX = offsetX });
 					break;
 				}
+				case ::Hardened.Tactical.EngagementType.DefendFortification:
+				{
+					local radius = ::Const.Tactical.Settings.CampRadius + _combatInfo.LocationTemplate.AdditionalRadius;
+					local shiftX = _combatInfo.LocationTemplate.ShiftX;
+
+					local offsetX = -6;
+					offsetX += radius;
+					offsetX -= shiftX;
+
+					::logWarning("Hardened: generatePlayerRegion DefendFortification");
+					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 2, 9, { IsPlayer = true, OffsetX = offsetX });
+					this.RegionPlan.m.PersonalAlly = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 4, 12, { OffsetX = offsetX });
+					break;
+				}
+				case ::Hardened.Tactical.EngagementType.GetAmbushed:
+				{
+					::logWarning("Hardened: generatePlayerRegion GetAmbushed");
+					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 0, 3, { IsPlayer = true });
+					this.RegionPlan.m.Player.RandomPosition = true;
+					this.RegionPlan.m.PersonalAlly = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 0, 3);
+					this.RegionPlan.m.PersonalAlly.RandomPosition = true;
+					break;
+				}
+				case ::Hardened.Tactical.EngagementType.DoAmbush:
+				{
+					::logWarning("Hardened: generatePlayerRegion DoAmbushed");
+					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 11, 12, { IsPlayer = true });
+					this.RegionPlan.m.Player.RandomPosition = true;
+					this.RegionPlan.m.PersonalAlly = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 11, 12);
+					this.RegionPlan.m.PersonalAlly.RandomPosition = true;
+					break;
+				}
+				case ::Hardened.Tactical.EngagementType.FightInfestation:
+				{
+					::logWarning("Hardened: generatePlayerRegion FightInfestation");
+					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 2, 9, { IsPlayer = true, OffsetX = -13 });
+					this.RegionPlan.m.PersonalAlly = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 4, 12, { OffsetX = -13 });
+					break;
+				}
 				default:
-					::logWarning("Hardened: Unsupported EngagementType: " + this.EngagementType);
+					::logWarning("Hardened: Unsupported EngagementType: " + this.EngagementType + "! Defaulting to LineBattle");
+					this.RegionPlan.m.Player = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 2, 9, { IsPlayer = true, OffsetX = -3 });
+					this.RegionPlan.m.PersonalAlly = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 6, 12, { OffsetX = -3 });
+					break;
 			}
 			return null;
 		}
@@ -514,8 +590,100 @@
 					defaultRegions.push(::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 4, 12, { OffsetX = -13 }));
 					break;
 				}
+				case ::Hardened.Tactical.EngagementType.DefendFortification:
+				{
+					// Defender
+					local radius = ::Const.Tactical.Settings.CampRadius + _combatInfo.LocationTemplate.AdditionalRadius;
+					local shiftX = _combatInfo.LocationTemplate.ShiftX;
+					::logWarning("Hardened: _combatInfo.LocationTemplate.ShiftX " + _combatInfo.LocationTemplate.ShiftX);
+					local shiftY = _combatInfo.LocationTemplate.ShiftY;
+					local offsetX = radius - shiftX;
+					local defenderPortrait = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 4, 12, { OffsetX = offsetX, OffsetY = -shiftY });
+					local defenderHexagon = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 0, radius, { OffsetX = -shiftX, OffsetY = shiftY });
+					defenderPortrait.intersectRegion(defenderHexagon);
+					defenderPortrait.synchronizeSubRegions();
+					defaultRegions.push(defenderPortrait);
+
+					// Right (Main Attacker)
+					local defenderOffsetX = -6;
+					defenderOffsetX -= radius;
+					defenderOffsetX += shiftX;
+					defaultRegions.push(::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 4, 12, { OffsetX = defenderOffsetX, Rotation = 180 }));
+					// Top
+					defaultRegions.push(::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 4, 12, { OffsetX = -10, Rotation = 90 }));
+					// Bottom
+					defaultRegions.push(::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 4, 12, { OffsetX = -10, Rotation = 270 }));
+					break;
+				}
+				case ::Hardened.Tactical.EngagementType.GetAmbushed:
+				{
+					local region = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 9, 10);
+					region.RandomPosition = true;
+					// Additional parties and allies all spawn in the circle for simplicity reasons
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					break;
+				}
+				case ::Hardened.Tactical.EngagementType.DoAmbush:
+				{
+					local region = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 0, 5);
+					region.RandomPosition = true;
+					// The first 5 hostile parties will spawn in the center of the map
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+
+					// The first 5 allied parties will spawn at the border together with the player
+					local allyRegions = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 11, 12);
+					region.RandomPosition = true;
+					defaultRegions.push(allyRegions);
+					defaultRegions.push(allyRegions);
+					defaultRegions.push(allyRegions);
+					defaultRegions.push(allyRegions);
+					defaultRegions.push(allyRegions);
+					break;
+				}
+				case ::Hardened.Tactical.EngagementType.FightInfestation:
+				{
+					::logWarning("Hardened: generatePlayerRegion FightInfestation");
+					local region = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 0, 13);
+					region.RandomPosition = true;
+					region.excludeRegion(this.RegionPlan.m.PersonalAlly);
+					region.synchronizeSubRegions();
+
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					defaultRegions.push(region);
+					break;
+				}
 				default:
-					::logWarning("Hardened: Unsupported EngagementType: " + this.EngagementType);
+					::logWarning("Hardened: Unsupported EngagementType: " + this.EngagementType + "! Defaulting to LineBattle");
+					// Center Right (extra large region)
+					defaultRegions.push(::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 6, 12, { OffsetX = -3, Rotation = 180 }));
+					// Top
+					defaultRegions.push(::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 4, 12, { OffsetX = -10, Rotation = 90 }));
+					// Bottom
+					defaultRegions.push(::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 4, 12, { OffsetX = -10, Rotation = 270 }));
+					// Far Right
+					defaultRegions.push(::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 4, 12, { OffsetX = -13, Rotation = 180 }));
+					// Far Left
+					defaultRegions.push(::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Portrait, 4, 12, { OffsetX = -13 }));
+					break;
 			}
 			return defaultRegions;
 		}
@@ -538,5 +706,21 @@
 					::logWarning("Hardened: EngagementType: " + this.EngagementType + " supports no Defender Regions!");
 			}
 			return defenderRegions;
+		}
+
+		function onFactionCompare( _party1, _party2 )
+		{
+			if (_party1.getFaction() < _party2.getFaction())
+			{
+				return -1;
+			}
+			else if (_party1.getFaction() > _party2.getFaction())
+			{
+				return 1;
+			}
+			else
+			{
+				return 0;
+			}
 		}
 }

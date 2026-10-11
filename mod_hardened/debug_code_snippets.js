@@ -279,3 +279,33 @@ local resources = 600;
 ::World.FactionManager.getFactionsOfType(::Const.FactionType.NobleHouse)[1].spawnEntity(::World.State.getPlayer().getTile(), "TestParty", false, partyId, resources);
 ::World.FactionManager.getFactionsOfType(::Const.FactionType.NobleHouse)[2].spawnEntity(::World.State.getPlayer().getTile(), "TestParty", false, partyId, resources);
 // ::World.FactionManager.getFactionsOfType(::Const.FactionType.Settlement)[10].spawnEntity(::World.State.getPlayer().getTile(), "TestParty", false, partyId, resources);
+
+## Look into CombatInfo
+
+local combatInfo = ::Tactical.State.getStrategicProperties();
+return combatInfo.Parties.len();
+
+
+
+
+
+foreach (factionID, faction in ::World.FactionManager.m.Factions)
+{
+	if (faction == null) continue;
+	foreach (unit in faction.m.Units)
+	{
+		if (unit.getTile().getDistanceTo(::World.State.getPlayer().getTile()) > 6) continue;
+		// ::logWarning("Hardened: factionID " + factionID + " faction " + faction.getType());
+		::logWarning("Hardened: unit.getName() " + unit.getName() + " unit.getFaction() " + unit.getFaction());
+	}
+	foreach (settlement in faction.m.Settlements)
+	{
+		if (!::MSU.isKindOf(settlement, "settlement")) continue;
+		foreach (unit in settlement.getAttachedLocations())
+		{
+			if (unit.getTile().getDistanceTo(::World.State.getPlayer().getTile()) > 6) continue;
+			// ::logWarning("Hardened: factionID " + factionID + " faction " + faction.getType());
+			::logWarning("Hardened: unit.getName() " + unit.getName() + " unit.getFaction() " + unit.getFaction());
+		}
+	}
+}
