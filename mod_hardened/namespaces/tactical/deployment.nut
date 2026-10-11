@@ -619,56 +619,42 @@
 				{
 					local region = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 9, 10);
 					region.RandomPosition = true;
-					// Additional parties and allies all spawn in the circle for simplicity reasons
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
+					// Additional enemies and allies all spawn in the ring for simplicity reasons
+					for (local n = 0; n < 10; ++n)
+					{
+						defaultRegions.push(region);
+					}
 					break;
 				}
 				case ::Hardened.Tactical.EngagementType.DoAmbush:
 				{
+					// The first 5 hostile parties will spawn in the center of the map
 					local region = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 0, 5);
 					region.RandomPosition = true;
-					// The first 5 hostile parties will spawn in the center of the map
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
+					for (local n = 0; n < 5; ++n)
+					{
+						defaultRegions.push(region);
+					}
 
 					// The first 5 allied parties will spawn at the border together with the player
 					local allyRegions = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 11, 12);
 					region.RandomPosition = true;
-					defaultRegions.push(allyRegions);
-					defaultRegions.push(allyRegions);
-					defaultRegions.push(allyRegions);
-					defaultRegions.push(allyRegions);
-					defaultRegions.push(allyRegions);
+					for (local n = 0; n < 5; ++n)
+					{
+						defaultRegions.push(allyRegions);
+					}
 					break;
 				}
 				case ::Hardened.Tactical.EngagementType.FightInfestation:
 				{
 					::logWarning("Hardened: generatePlayerRegion FightInfestation");
-					local region = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 0, 13);
+					local region = ::Hardened.Tactical.Region.createRegion(::Hardened.Tactical.Region.Shape.Hexagon, 0, 13, { OffsetX = 4 });
 					region.RandomPosition = true;
-					region.excludeRegion(this.RegionPlan.m.PersonalAlly);
-					region.synchronizeSubRegions();
 
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
-					defaultRegions.push(region);
+					for (local n = 0; n < 10; ++n)
+					{
+						defaultRegions.push(region);
+					}
 					break;
 				}
 				default:
