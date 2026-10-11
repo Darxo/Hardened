@@ -64,33 +64,6 @@
 		__original(_properties);
 	}}.spawn;
 
-// Hardened Functions
-	q.HD_calculatePlayerDeploymentType = @(__original) function( _properties )
-	{
-		// Feat: We set the player deployment type to an unused vanilla one, which we change to position the player in the center, defending a location
-		// Their defending allies will receive the same deployment type which spawns them a few tiles closer to the walls, in front of the player
-		if (_properties.LocationTemplate != null && _properties.LocationTemplate.Fortification != ::Const.Tactical.FortificationType.None && !_properties.LocationTemplate.ForceLineBattle && ::World.FactionManager.isAlliedWithPlayer(::Tactical.State.getStrategicProperties().LocationTemplate.OwnedByFaction))
-		{
-			_properties.PlayerDeploymentType = ::Const.Tactical.DeploymentType.Camp;
-		}
-
-		__original(_properties);
-	}
-
-	q.HD_deployPlayerCharacters = @(__original) function( _properties, _playerCharacters )
-	{
-		__original(_properties, _playerCharacters);
-
-		switch(_properties.PlayerDeploymentType)
-		{
-			case ::Const.Tactical.DeploymentType.Camp:
-				// We ignore any shift and just put the player in the center of the map, which we assume is within the camp
-				// 3 would be the center of the map, but we move the player 2 tiles left for the default radius to have enough space for the whole player formation
-				this.placePlayersInFormation(_playerCharacters, 1 - _properties.LocationTemplate.AdditionalRadius);
-				break;
-		}
-	}
-
 // New Functions
 	// Function for scheduling resurrections
 	q.HD_scheduleResurrection <- function( _rounds, _corpse )
