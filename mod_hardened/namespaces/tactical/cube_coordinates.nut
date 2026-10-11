@@ -137,14 +137,17 @@
 
 	function fromSquareCoords( _squareCoords )
 	{
-		return this.CCTile(_squareCoords.X, _squareCoords.Y, -_squareCoords.X - _squareCoords.Y);
+		local x = _squareCoords.X;
+		local y = _squareCoords.Y - (x - (x & 1)) / 2;
+
+		return this.CCTile(x, y, -x - y);
 	}
 
 	function toSquareCoords( _ccTile )
 	{
 		return {
 			X = _ccTile.X,
-			Y = _ccTile.Y,
+			Y = _ccTile.Y + (_ccTile.X - (_ccTile.X & 1)) / 2
 		};
 	}
 

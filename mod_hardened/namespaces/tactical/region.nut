@@ -52,7 +52,7 @@
 					break;
 				}
 			}
-			// region.Tiles.reverse();		// Regions are normally starting bottom left. But the player needs it exactly the other way around. NPCs dont care.
+			region.Tiles.reverse();		// Regions are normally starting bottom left. But the player needs it exactly the other way around. NPCs dont care.
 			region.initSubRegions();
 			region.transformRegion(options.OffsetX, options.OffsetY, options.Rotation);
 			return region;
@@ -364,19 +364,6 @@
 					tile.X += _offsetX;
 					tile.Y += _offsetY;
 				}
-/*
-				foreach (key, subRegion in this.SubRegions)
-				{
-					local offsetTiles = [];
-
-					foreach (tile in subRegion)
-					{
-						tile.X += _offsetX;
-						tile.Y += _offsetY;
-					}
-
-					this.SubRegions[key] = offsetTiles;
-				}*/
 
 				while (::Math.abs(_rotation) >= 60)
 				{
@@ -426,6 +413,15 @@
 					allTiles.push(::Tactical.getTileSquare(coords.X, coords.Y));
 				}
 
+				// Remove all tiles that count as impassable. Vanilla does not place such tiles, but in Hardened we define Void Tiles as such
+				for (local index = allTiles.len() - 1; index >= 0; --index)
+				{
+					if (allTiles[index].Type == ::Const.World.TerrainType.Impassable)
+					{
+						allTiles.remove(index);
+					}
+				}
+
 				return allTiles;
 			}
 
@@ -457,8 +453,9 @@
 					{
 						ccTile.rotateCounterClockWise(ccCenterTile);
 					}
-					coordPair.X = ccTile.X;
-					coordPair.Y = ccTile.Y;
+					local rotatedCoords = ::Hardened.Tactical.CubeCoordinates.toSquareCoords(ccTile);
+					coordPair.X = rotatedCoords.X;
+					coordPair.Y = rotatedCoords.Y;
 				}
 			}
 
