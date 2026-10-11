@@ -49,8 +49,6 @@
 			Player = null,			// Region reserved for the player
 			PersonalAlly = null,	// Ally spawning directly alongside the player
 			Default = [],			// Normal participant placement. Front: Enemies; Back: Allies
-		// Optional:
-			Defender = null,		// Defender of a location
 		}
 
 		function clear()
@@ -58,7 +56,6 @@
 			this.m.Player = null;
 			this.m.PersonalAlly = null;
 			this.m.Default = [];
-			this.m.Defender = null;
 		},
 	},
 	Participants = {	// A participant is a faction
@@ -447,7 +444,6 @@
 			this.RegionPlan.clear();
 			this.generatePlayerRegion(_combatInfo);
 			this.RegionPlan.m.Default = this.generateDefaultRegions(_combatInfo);
-			this.RegionPlan.m.Defender = this.generateDefenderRegion();
 		}
 
 		// We write our results into the member variables directly, because we generate two different regions
@@ -672,26 +668,6 @@
 					break;
 			}
 			return defaultRegions;
-		}
-
-		function generateDefenderRegion()
-		{
-			local defenderRegions = [];
-			switch (this.EngagementType)
-			{
-				case ::Hardened.Tactical.EngagementType.AttackFortification:
-				{
-					break;
-				}
-				case ::Hardened.Tactical.EngagementType.DefendFortification:
-				{
-					break;
-				}
-				default:
-					// Todo: comment out this log
-					::logWarning("Hardened: EngagementType: " + this.EngagementType + " supports no Defender Regions!");
-			}
-			return defenderRegions;
 		}
 
 		function onFactionCompare( _party1, _party2 )
