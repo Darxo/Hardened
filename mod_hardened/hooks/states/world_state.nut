@@ -5,6 +5,9 @@
 	q.m.HD_NearbyLocations <- [];	// Array of "nearby" locations for the purpose of calculating, whether to show their names. They are updated once per hour
 	q.m.HD_LocationTypesToDisplay <- 0;		// combined types of all locations, whose name and optionally numeral we wanna display when they are in range
 
+	// Temp
+	q.m.HD_IsGeneratingCombatProperties <- [];		// Indicator for locations, which other location might have already been fetched by getLocalCombatProperties
+
 	q.startNewCampaign = @(__original) function()
 	{
 		// Feat: print seed of a new campaign in the log to potentially improve debugging
@@ -98,6 +101,8 @@
 		// Vanilla fills this array whenever anything calls getLocalCombatProperties but it only ever clears it when a combat finishes
 		// That causes multiple calls to getLocalCombatProperties to fill it up a lot
 		this.m.PartiesInCombat = [];
+		// We point HD_IsGeneratingCombatProperties to the array of PartiesInCombat during this function call only
+		this.m.HD_IsGeneratingCombatProperties = this.m.PartiesInCombat;
 
 		// Vanilla Fix: Prevent world combat from being cancelled, before the autosave happens
 		// Switcheroo, to prevent vanilla from cancelling auto-combat from nearby parties, while collecting the combat properties
@@ -111,6 +116,7 @@
 
 		::World.Combat.get().abortCombatWithParty = oldAbortCombatWithParty;
 
+		this.m.HD_IsGeneratingCombatProperties = [];
 		return ret;
 	}}.getLocalCombatProperties;
 
