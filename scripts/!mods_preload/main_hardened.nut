@@ -8,6 +8,7 @@
 	},
 	Const = {},
 	Global = {},
+	Comp = {},
 	Private = {
 		IsPreviewingAttackWithHitChance = false,		// If true, then the player is currently previewing an attack with a hitchance
 		// Key are full entity scripts
