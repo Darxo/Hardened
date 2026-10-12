@@ -88,6 +88,7 @@
 		{
 			Strength = 50,	// Reforged: 40;
 			Cost = 50,		// Reforged: 20;
+			HD_FormationRole = ::Hardened.Deployment.FormationRole.Flank,
 		},
 		{
 			XP = 500 * ::Hardened.Global.FactionExperience.Zombies, // Reforged: 400
@@ -448,34 +449,40 @@
 	}
 }
 
-// scripts/entity/tactical/enemies/vampire
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.Vampire.XP = 500 * ::Hardened.Global.FactionExperience.Skeletons;
-	::Const.Tactical.Actor.Vampire.ActionPoints = 9;
-	::Const.Tactical.Actor.Vampire.Hitpoints = 225;
-	::Const.Tactical.Actor.Vampire.Bravery = 50;
-	::Const.Tactical.Actor.Vampire.Stamina = 200;
-	::Const.Tactical.Actor.Vampire.MeleeSkill = 85;
-	::Const.Tactical.Actor.Vampire.RangedSkill = 0;
-	::Const.Tactical.Actor.Vampire.MeleeDefense = 5;
-	::Const.Tactical.Actor.Vampire.RangedDefense = 5;
-	::Const.Tactical.Actor.Vampire.Initiative = 130;
-}
+{	// Vampires
+	// scripts/entity/tactical/enemies/vampire
+	::Reforged.Entities.editEntity("Vampire",	// Necrosavant
+		null,
+		{
+			XP = 500 * ::Hardened.Global.FactionExperience.Skeletons,
+			ActionPoints = 9,
+			Hitpoints = 225,
+			Bravery = 50,
+			Stamina = 200,
+			MeleeSkill = 85,
+			RangedSkill = 0,
+			MeleeDefense = 5,
+			RangedDefense = 5,
+			Initiative = 130,
+		}
+	);
 
-// scripts/entity/tactical/enemies/rf_vampire_lord
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_VampireLord.XP = 1000 * ::Hardened.Global.FactionExperience.Skeletons;
-	::Const.Tactical.Actor.RF_VampireLord.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_VampireLord.Hitpoints = 350;
-	::Const.Tactical.Actor.RF_VampireLord.Bravery = 100;
-	::Const.Tactical.Actor.RF_VampireLord.Stamina = 200;
-	::Const.Tactical.Actor.RF_VampireLord.MeleeSkill = 85;
-	::Const.Tactical.Actor.RF_VampireLord.RangedSkill = 0;
-	::Const.Tactical.Actor.RF_VampireLord.MeleeDefense = 20;
-	::Const.Tactical.Actor.RF_VampireLord.RangedDefense = 20;
-	::Const.Tactical.Actor.RF_VampireLord.Initiative = 130;
+	// scripts/entity/tactical/enemies/rf_vampire_lord
+	::Reforged.Entities.editEntity("RF_VampireLord",	// Necrosavant Lord
+		null,
+		{
+			XP = 1000 * ::Hardened.Global.FactionExperience.Skeletons,
+			ActionPoints = 9,
+			Hitpoints = 350,
+			Bravery = 100,
+			Stamina = 200,
+			MeleeSkill = 85,
+			RangedSkill = 0,
+			MeleeDefense = 20,
+			RangedDefense = 20,
+			Initiative = 130,
+		}
+	);
 }
 
 {	// Zombies

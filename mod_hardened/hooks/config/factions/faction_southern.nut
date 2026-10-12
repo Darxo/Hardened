@@ -2,7 +2,9 @@
 	{	// Leader
 		// scripts/entity/tactical/humans/nomad_leader
 		::Reforged.Entities.editEntity("NomadLeader",	// Nomad Leader
-			null,
+			{
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
+			},
 			{
 				XP = 500 * ::Hardened.Global.FactionExperience.Nomads,		// Vanilla: 375
 				ActionPoints = 9,
@@ -194,7 +196,9 @@
 	{	// Elite
 		// scripts/entity/tactical/humans/assassin
 		::Reforged.Entities.editEntity("Assassin",	// Assassin
-			null,
+			{
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Flank,
+			},
 			{
 				XP = 400 * ::Hardened.Global.FactionExperience.CityStates,
 				ActionPoints = 9,
@@ -213,7 +217,9 @@
 	{	// Leader
 		// scripts/entity/tactical/humans/officer
 		::Reforged.Entities.editEntity("Officer",	// Officer
-			null,
+			{
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
+			},
 			{
 				XP = 500 * ::Hardened.Global.FactionExperience.CityStates,
 				ActionPoints = 9,

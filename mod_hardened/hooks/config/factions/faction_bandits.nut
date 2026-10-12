@@ -276,7 +276,9 @@
 {	// Leader
 	// scripts/entity/tactical/enemies/bandit_leader
 	::Reforged.Entities.editEntity("BanditLeader",	// Brigand Leader
-		null,
+		{
+			HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
+		},
 		{
 			XP = 500 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 400
 			Hitpoints = 120, 	// Reforged: 100
@@ -293,7 +295,9 @@
 
 	// scripts/entity/tactical/enemies/rf_bandit_baron
 	::Reforged.Entities.editEntity("RF_BanditBaron",	// Brigand Baron
-		null,
+		{
+			HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
+		},
 		{
 			XP = 800 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 500
 			Hitpoints = 150, 	// Reforged: 120
@@ -310,9 +314,12 @@
 
 {	// Dogs
 	// scripts/entity/tactical/enemies/wardog
-	// scripts/entity/tactical/enemies/armored_wardog
 	::Reforged.Entities.editEntity("Wardog",	// Wardog
-		null,
+		{
+			HD_FormationRole = ::Hardened.Deployment.FormationRole.Flank,
+		},
+		// scripts/entity/tactical/enemies/wardog
+		// scripts/entity/tactical/enemies/armored_wardog
 		{
 			XP = 80,				// Vanilla: 75
 			ActionPoints = 12,
@@ -329,10 +336,20 @@
 		}
 	);
 
+	// scripts/entity/tactical/enemies/armored_wardog
+	::Reforged.Entities.editEntity("ArmoredWardog",	// Armored Wardog
+		{
+			// Todo: Why is  this not taking effect?
+			HD_FormationRole = ::Hardened.Deployment.FormationRole.Flank,
+		}
+	);
+
 	// scripts/entity/tactical/warhound
 	// scripts/entity/tactical/armored_warhound
 	::Reforged.Entities.editEntity("Warhound",	// Warhound
-		null,
+		{
+			HD_FormationRole = ::Hardened.Deployment.FormationRole.Flank,
+		},
 		{
 			XP = 100,
 			ActionPoints = 10,	// Vanilla: 11

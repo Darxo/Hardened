@@ -2,7 +2,9 @@
 	{	// Leader
 		// scripts/entity/tactical/humans/militia_captain
 		::Reforged.Entities.editEntity("MilitiaCaptain",	// Militia Captain
-			null,
+			{
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
+			},
 			{
 				XP = 350 * ::Hardened.Global.FactionExperience.Militia,		// Vanilla: 200; Reforged: 250
 				ActionPoints = 9,
