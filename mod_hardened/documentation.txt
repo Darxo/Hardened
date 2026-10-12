@@ -30,6 +30,32 @@
 
 # Changelog
 
+1.26.0-alpha-1
+	- Completely rework deployment and positioning of units during non-scripted combat
+		- Allow at least 1 ally and 5 additional world parties to join any fight (up from 1 ally and 3 world parties)
+		- Very large world parties no longer spill into other regions on the battlefield. Instead, if their designated region does not fit them, the remaining units are just not spawned
+		- Mirror Fortifications correctly when defending a location
+		- Support new Flank and Center formation positions for unit types
+		- The following units are now prefer spawning in the center of a formation:
+			- **Brigand Leader**, **Brigand Baron**, **Militia Captain**, **Sergeant**, **Marshal**, **Knight**, **Anointed Knight**, **Nomad Leader**, **Officer**
+		- The following units are now prefer spawning on the flanks of a formation:
+			- **Wardogs**, **Warhounds**, **Fencer**, **Assassin**, **Hollenhunds**
+	- Guarantee an open fortification wall in all six directions, instead of just in 4 of the directions
+	- Generate a cosmetic tower structure in military **Stone Watchtwer** and **Wooden Watchtower** attached locations
+	- Generate a raised watchpost in every fortification corner for all military attached locations
+	- **Stone Watchtower** fortifications now have +1 additional radius (up from +0)
+	- **Military Camp** fortifications now have +2 additional radius (up from +1)
+	- Change cursor into red cross when trying to force-attack an allied location while on a contract
+	- Fix cursor showing sowrd over allied locations while on a contract
+	- Fix adjacent allied locations being raidable while on a contract
+	- Fix **Brigand** follower granting speed bonus when force attacking allied locations
+	- Known Issues:
+		- All Black Monolith units now spawn east of the player instead of being split-up
+		- Alps now spawn east of the player, instead of in random positions
+		- Noble Wardogs do not spawn correctly in flanking position
+		- Scripted Battles do not use the new system
+		- Scenarios do not use the new system
+		
 1.25.4
 	- Fix **Brigand Follower** granting speed boost when attacking allied locations
 	- Fix(Vanilla) missing-sprite errors when `onUpdateInjuryLayer` of an actor is called before it is fully initialized
