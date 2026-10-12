@@ -30,6 +30,32 @@
 
 # Changelog
 
+1.25.0
+	- **Goblin Poison** no longer reduces Initiative on the target
+	- **Possess Undead** (Necromancer) now moves the target to the end of the turn sequence
+	- **Goblin Poison** and **Spider Poison** are now classified as a **Tool** and can be equipped in- and used from the offhand
+	- Northern Military Settlements can now only display at most 2 contracts from their own faction
+	- Northern Civilian Settlements can now only display at most 1 contract from the Noble Faction which owns them
+	- Noble Factions can now have up to 3 Contracts at the same time (up from 1)
+	- Noble Factions now have a 1 day cooldown before spawning a new contract (down from 3)
+	- Make Leader NPCs 40% less likely to protect allies
+	- Display location image in combat dialog
+	- Require a Force-Attack (holding ctrl) to engage allied raidable locations
+	- Display Sword Cursor when hovering over attackable attached locations while holding CTRL
+	- Add Setting (on) to grey-out inactive attached locations
+	- Display a small skull over icons of champions in world party troop composition tooltips
+	- Improve target-related tooltips for **Bullseye**, **Bloodlust**, **Bully**, **Ghostlike** and **Warded**
+	- Add two mercenary party suffix names
+	- Fix(Vanilla) multiple adjacent locations being attackable at the same time
+	- Fix **Agent** follower not reducing cooldown for civilian contracts correctly
+	- Fix scenarios starting in round two and being locked until manually ending a round
+	- Fix errors when finishing scenario fights
+	- Rewrite ::World.State.showCombatDialog by using getLocalCombatProperties as the one source of truth for compiling the dialog information
+	- Add `settlement::m.HD_OwnContractChance` and `settlement::m.HD_OwnContractChance` for determining seeded chances whether available contracts from the pool are actually displayed to the player
+	- Add `settlement::m.HD_OwnContractsMax` and `settlement::m.HD_ForeignContractsMax` restricting how many contracts from those pools can be displayed at the same time in a settlement
+	- Add skill::HD_onGetTargetingTooltipAsUser` and `skill::HD_onGetTargetingTooltipAsTarget` for adding targeting related tooltips that are not related to hitchance
+	- Prevent multiple calls of getLocalCombatProperties from filling `PartiesInCombat` multiple times. It is now only set by `startCombat`
+
 1.24.2
 	- Emphasizing in damage portion of **Frostbound** tooltip that it only affects enemies
 	- Fix characters with **Immune to Frostbound** still taking damage from that effect

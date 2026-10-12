@@ -27,7 +27,6 @@
 });
 
 ::Hardened.HooksMod.hookTree("scripts/mapgen/tactical_template", function(q) {
-	// Overwrite, because we change how the spectator seats are generated
 	q.fill = @(__original) function( _rect, _properties, _pass = 1 )
 	{
 		__original(_rect, _properties, _pass);

@@ -262,7 +262,8 @@ Hardened reflects my personal vision for a Battle Brothers overhaul: a well-poli
 - **Sanguine Curse Effect** is completely reworked. It lasts 2 rounds. Once per round, if the characters moves a tile, deal 15 direct hitpoint damage to it and recover hitpoints on the Necrosavant Lord equal to the damage dealt
 - **Shieldwall** effect is now called **Shieldwalling**
 - **Shuffle** (granted by **Dynamic Duo**) no longer puts your partner to the next position in the turn order. It now costs 0 Action Points and 5 Fatigue on all tile types
-- **Spider Poison** now also reduces the Hitpoints Recovery of the target by 50%
+- **Poisoned (Spider)** now also reduces the Hitpoints Recovery of the target by 50%
+- **Poisoned (Goblin)** no longer reduces the Initiative
 - **Stab** now costs 3 Action Points (down from 4), 8 Fatigue (up from 7) and has a 25% higher threshold to inflict injuries
 - **Strike Down** now has a 100% Chance to Stun (up from 75%) and has a Stun Duration of 1 Turn (down from 2)
 - **Swallow Whole** (from **Large Nachzehrer**) can no longer be used while rooted
@@ -828,7 +829,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Feral Shield** now costs 400 Crowns (up from 50)
 - **Fermented Unhold Heart** now has an expiry date of 40 days (up from 20) and has 50 Servings (up from 25)
 - **Geist Tear** now costs 800 Crowns (up from 300)
-- **Goblin Poison** now costs 300 Crowns (up from 100). It now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1
+- **Goblin Poison** is now considered a **Tool** and can be equipped in- and used from in the Offhand. It now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1. It now costs 300 Crowns (up from 100)
 - **Goblin Trophy** now also grant +5 Resolve
 - **Gravechill Bomb** now inflicts a stacking 2 turns of **Chilled** instead of **Grave Chill**
 - **Heraldic Cape** attachement now has 20 Condition (up from 5), 0 Weight (down from 1), 2000 Value (up from 200) and grants 10 Resolve (up from 5)
@@ -854,7 +855,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - **Reinforced Throwing Net** now has 8 Weight (up from 2)
 - **Sergeant's Sash** now only provides the +10 Resolve if its user has the perk **Rally the Troops**
 - **Sipar** is now called **Sipar Shield** (just like in Vanilla)
-- **Spider Poison** now costs 300 Crowns (up from 150). It now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1. It now deals 15 Damage per turn (up from 10)
+- **Spider Poison** is now considered a **Tool** and can be equipped in- and used from in the Offhand. It now only applies/uses-up by Weapon Attacks. It no longer has a Action Point discount when used during Round 1. It now deals 15 Damage per turn (up from 10). It now costs 300 Crowns (up from 150)
 - **Smoked Ham** now has a Stacksize of 30 (up from 25) and cost 115 Crowns (up from 95)
 - **Strange Meat** now has a Stacksize of 20 (down from 25) and costs 30 Crowns (down from 50)
 - **Strange Mushrooms** now cost 200 Crowns (up from 100)
@@ -1045,8 +1046,8 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - NPC ranged troops now ignore the score from potential scatter targets when picking a ranged target. They also ignore the score penalty from obstacles blocking line of sight (that penalty is already implicitely handled by the predicted hitchance)
 - Any faction that receives at least 3 hits from enemies more than they themselves inflicted onto their enemies, will stop playing defensive
 - Prevent Ranged NPCs from pushing beyond their frontline while their strategy is defending
-- **Nomad Leader**, **Bandit Leader**, **Brigand Baron**, **Militia Captain**, **Seargeant**, **Marshal** and **Officer** are now less likely to flank, engage multiple opponents at once or use crowd control skills. They are more likely to stay in formation and allies are more likely to gather around them. They will never protect allies
-- **Blade Dancer**, **Executioner**, **Gladiators**, **Hedge Knight** and **Oathbringer** are now less likely to flank, protect allies, act defensive or use crowd control skills. Allies are slightly more likely to gather around them
+- **Nomad Leader**, **Bandit Leader**, **Brigand Baron**, **Militia Captain**, **Seargeant**, **Marshal** and **Officer** are now less likely to flank, engage multiple opponents at once, protect allies or use crowd control skills. They are more likely to stay in formation and allies are more likely to gather around them.
+- **Blade Dancer**, **Executioner**, **Gladiators**, **Hedge Knight** and **Oathbringer** are now less likely to flank, protect allies, act defensive or use crowd control skills. Allies are slightly more likely to gather around them. They will never protect allies
 - **Noble** and **Militia** Ranged Troops are now 50% less likely to shoot at enemies they could kill and 100% more likely to shoot at enemies they have a good hitchance against
 - Ranged Troops from **Brigands**, **Nomads**, **Mercenaries**, **Goblins** and **Golems** Ranged Troops are 33% less likely to shoot at enemies they could kill and ~100% more likely to shoot at enemies they have a good hitchance against
 - Ranged **Goblin** Troops are 233% more likely to target enemies that they can deal good hitpoint damage against
@@ -1301,6 +1302,10 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 
 ### General
 
+- Noble Factions can now have up to 3 Contracts at the same time (up from 1)
+- Noble Factions now have a 1 day cooldown before spawning a new contract (down from 3)
+- Northern Civilian Settlements can now only display at most 1 contract from the Noble Faction which owns them
+- Northern Military Settlements can now only display at most 2 contracts from their own faction
 - The maximum contract tier is now 1 (down from 3), allowing only 1 skull contracts to appear at the start of the game
 	- Completing any ambition increases the maximum contract tier by 1
 	- Completing the **Make Nobles Aware** ambition increases the contract tier by 1
@@ -1514,6 +1519,8 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Display terrain type name and day/night status in the subtitle of combat dialog
 - Display Noble Faction Banner in the tooltip of Mercenary Parties
 - Display contract difficulty tier in the contract details on the world map
+- Display location image in combat dialog
+- Display a small skull over icons of champions in world party troop composition tooltips
 - Add Setting (on) for displaying forbidden destination ports (e.g. when they are hostile to you or the origin port)
 - Add setting (off) for skipping the confirmation dialog when dismissing a freshly hired recruit (0 days with the company)
 - Add setting (off) for triggering an autosave after every combat
@@ -1547,6 +1554,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Add Setting (on) for displaying the exact Morale Reputation whenever its indirect term appears anywhere
 - Add Setting (on) for displaying the exact Renown whenever its indirect term appears anywhere
 - Add Setting (on) to display the AI intent of world parties (attacking/fleeing)
+- Add Setting (on) to grey-out inactive attached locations
 - Add Setting (on) for displaying the accurate day ranges in brackets for estimated contract/situation durations and the time you last visited a settlement
 - Peasants and Caravans on the world map display a banner
 - Display reason when the owner-faction of a faction loses relation with you, because you lost relation with that child-faction
@@ -1663,6 +1671,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix rare cases of contracts triggering start function multiple times
 - Fix undead (skeleton) faction spawning zombie locations (it is the job of the zombie faction to spawn their own locations)
 - Fix poisons inflicted by coated weapons not playing a sound effect
+- Fix multiple adjacent locations being attackable at the same time
 - Fix Goblin Settlements not respecting the distance to other locations when spawning
 - Fix overlay icon y-offset on hills which are currently cut-off because of a low camera level
 - Fix **Blacksmith Follower** increasing the odds of looting weapons from NPCs
@@ -1754,6 +1763,11 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Rewrite `::World.State.showCombatDialog` by using `getLocalCombatProperties` as the one source of truth for compiling the dialog information
+- Add `settlement::m.HD_OwnContractChance` and `settlement::m.HD_OwnContractChance` for determining seeded chances whether available contracts from the pool are actually displayed to the player
+- Add `settlement::m.HD_OwnContractsMax` and `settlement::m.HD_ForeignContractsMax` restricting how many contracts from those pools can be displayed at the same time in a settlement
+- Add skill::HD_onGetTargetingTooltipAsUser` and `skill::HD_onGetTargetingTooltipAsTarget` for adding targeting related tooltips that are not related to hitchance
+- Prevent multiple calls of getLocalCombatProperties from filling `PartiesInCombat` multiple times. It is now only set by `startCombat`
 - Add `contract::HD_getDifficultyImage()` for fetching the difficulty icon representing this contracts difficulty
 - Add `actor.HD_inflictFatigue(_amount, _printLog = true)` for inflicting fatigue damage to a target
 - Add `contract.HD_getDifficultyTier()` and `contract.HD_setDifficultyTier()` for the difficulty tier (amount of skulls) of a contract
