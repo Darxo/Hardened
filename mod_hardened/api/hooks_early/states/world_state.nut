@@ -21,6 +21,15 @@
 		{
 			if (party.isAlliedWithPlayer()) continue;
 			hasOpponents = true;
+			break;
+		}
+		foreach (troopDef in _properties.Entities)
+		{
+			if (hasOpponents) break;
+
+			if (::World.FactionManager.isAlliedWithPlayer(troopDef.Faction) && _properties.TemporaryEnemies.find(troopDef.Faction) == null) continue;
+
+			hasOpponents = true;
 		}
 		if (!hasOpponents)
 		{
@@ -171,8 +180,9 @@
 
 	q.HD_troopShownInCombatDialog <- function( _troopDef )
 	{
-		local party = _troopDef.Party;
+		if (!("Party" in _troopDef)) return true;
 
+		local party = _troopDef.Party;
 		if (party.isLocation() && !party.isShowingDefenders()) return false;
 
 		return true;
