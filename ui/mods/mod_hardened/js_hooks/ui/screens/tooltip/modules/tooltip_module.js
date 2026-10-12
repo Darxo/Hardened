@@ -1,7 +1,7 @@
 Hardened.Hooks.TooltipModule_addContentTextDiv = TooltipModule.prototype.addContentTextDiv;
-TooltipModule.prototype.addContentTextDiv = function (_parentDiv, _data)
+TooltipModule.prototype.addContentTextDiv = function (_parentDiv, _data, _isChildRow, _isParentFullWidth)
 {
-	var result = Hardened.Hooks.TooltipModule_addContentTextDiv.call(this, _parentDiv, _data);
+	var result = Hardened.Hooks.TooltipModule_addContentTextDiv.call(this, _parentDiv, _data, _isChildRow, _isParentFullWidth);
 
 	if (result !== null && 'iconOverlay' in _data && 'icon' in _data)
 	{
