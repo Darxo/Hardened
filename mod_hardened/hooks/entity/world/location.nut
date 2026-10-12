@@ -150,7 +150,7 @@
 		// Vanilla Fix: Prevent multiple different locations from entering the same fight against the player
 		// Vanilla adds any participating party into a global ::World.State.m.PartiesInCombat array.
 		// The best way to make vanilla ignore any party is by pretending like we have no troops
-		foreach (party in ::World.State.m.PartiesInCombat)
+		foreach (party in ::World.State.m.HD_IsGeneratingCombatProperties)
 		{
 			if (party.isLocation())
 			{
