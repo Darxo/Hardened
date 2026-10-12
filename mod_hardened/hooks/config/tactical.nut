@@ -36,3 +36,10 @@
 
 // Do we use a custom engagement type? If not, then it will be auto-assigned using other information in CombatInfo
 ::Const.Tactical.CombatInfo.HD_EngagementType <- null;
+
+// Does the location spawn small raised outpusts at the corners?
+// This will not work, if the camp already is at a level of 3
+::Const.Tactical.LocationTemplate.HD_HasWatchposts <- false;
+
+// How large should a cosmetic tower shape be? If 0, then no tower will be created
+::Const.Tactical.LocationTemplate.HD_WatchtowerRadius <- 0;
