@@ -11,7 +11,7 @@
 		this.m.CombatLocation.Template[0] = "tactical.human_camp";
 		this.m.CombatLocation.Fortification = ::Const.Tactical.FortificationType.Walls;
 		this.m.CombatLocation.CutDownTrees = true;
-		this.m.CombatLocation.AdditionalRadius = 0;
+		this.m.CombatLocation.AdditionalRadius = 1;
 		this.m.CombatLocation.HD_HasWatchposts = true;
 		this.m.CombatLocation.HD_WatchtowerRadius = 3;
 
