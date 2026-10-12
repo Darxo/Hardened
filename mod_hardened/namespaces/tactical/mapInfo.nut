@@ -130,6 +130,19 @@
 		return true;
 	}
 
+	function getAllTiles()
+	{
+		local ret = [];
+		for (local x = 0; x < this.m.DimensionX; ++x)
+		{
+			for (local y = 0; y < this.m.DimensionY; ++y)
+			{
+				ret.push(::Tactical.getTileSquare(x, y));
+			}
+		}
+		return ret;
+	}
+
 // Private
 	function spawnFleeTiles()
 	{
