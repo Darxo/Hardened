@@ -148,16 +148,12 @@
 	{
 		this.m.FleeTiles = [];
 
-		for (local x = 0; x < this.m.DimensionX; ++x)
+		foreach (tile in this.getAllTiles())
 		{
-			for (local y = 0; y < this.m.DimensionY; ++y)
-			{
-				local tile = ::Tactical.getTileSquare(x, y);
-				if (!this.isFleeTile(tile)) continue;
+			if (!this.isFleeTile(tile)) continue;
 
-				this.m.FleeTiles.push(tile);
-				::Tactical.State.spawnRetreatIcon(tile);
-			}
+			this.m.FleeTiles.push(tile);
+			::Tactical.State.spawnRetreatIcon(tile);
 		}
 	}
 
