@@ -19,6 +19,7 @@
 		PersistentData = {},	// Cached copy of persistent data to make readings more performant
 	},
 	Tactical = {},	// Namespace for tactical related frameworks
+	Deployment = {},	// Namespace for deployment related functionality
 }
 
 ::Hardened.HooksMod <- ::Hooks.register(::Hardened.ID, ::Hardened.Version, ::Hardened.Name);
