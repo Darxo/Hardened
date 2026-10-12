@@ -36,10 +36,6 @@
 
 		local stratProps = tacticalState.getStrategicProperties();
 
-		// Vanilla Fix: guarantee to fill PartiesInCombat only once per startCombat call instead of during each getLocalCombatProperties
-		this.m.PartiesInCombat = [];
-		this.m.PartiesInCombat.extend(stratProps.Parties);
-
 		// Feat: Whenever you start any battle,
 		//	you gain a relationship hit against any faction that you fight against with the reason "Attacked them"
 		//	you gain a morale reputation hit, if you fight against temporary enemies
@@ -95,11 +91,9 @@
 
 	q.getLocalCombatProperties = @(__original) { function getLocalCombatProperties( _pos, _ignoreNoEnemies = false )
 	{
-		// Vanilla Fix: prevent getLocalCombatProperties from writing directly into PartiesInCombat, by preserving its previous state
+		// Vanilla Fix: prevent getLocalCombatProperties filling up PartiesInCombat potentially too many times
 		// Vanilla fills this array whenever anything calls getLocalCombatProperties but it only ever clears it when a combat finishes
 		// That causes multiple calls to getLocalCombatProperties to fill it up a lot
-		// Instead we fill this array inside of a startCombat hook
-		local oldPartiesInCombat = this.m.PartiesInCombat;
 		this.m.PartiesInCombat = [];
 
 		// Vanilla Fix: Prevent world combat from being cancelled, before the autosave happens
@@ -112,7 +106,6 @@
 
 		local ret = __original(_pos, _ignoreNoEnemies);
 
-		this.m.PartiesInCombat = oldPartiesInCombat;
 		::World.Combat.get().abortCombatWithParty = oldAbortCombatWithParty;
 
 		return ret;
