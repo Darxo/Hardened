@@ -6,6 +6,7 @@
 				Cost = 50,
 				Strength = 50,
 				Variant = 5,		// Vanilla: 1
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
 				XP = 500 * ::Hardened.Global.FactionExperience.Nomads,		// Vanilla: 375
@@ -231,6 +232,7 @@
 			{
 				Cost = 40,
 				Strength = 40,
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Flank,
 			},
 			{
 				XP = 400 * ::Hardened.Global.FactionExperience.CityStates,
@@ -254,6 +256,7 @@
 				Cost = 50,
 				Strength = 50,
 				Variant = 5,		// Vanilla: 1
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
 				XP = 500 * ::Hardened.Global.FactionExperience.CityStates,

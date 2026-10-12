@@ -5,6 +5,7 @@
 			{
 				Cost = 35,
 				Strength = 35,
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
 				XP = 350 * ::Hardened.Global.FactionExperience.Militia,		// Vanilla: 200; Reforged: 250
@@ -28,6 +29,7 @@
 			{
 				Cost = 35,
 				Strength = 35,
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
 				XP = 350 * ::Hardened.Global.FactionExperience.Militia,		// Vanilla: 200; Reforged: 250

@@ -280,6 +280,7 @@
 			Cost = 50,
 			Strength = 50,
 			Variant = 5,		// Reforged: 1
+			HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 		},
 		{
 			XP = 500 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 400
@@ -301,6 +302,7 @@
 			Cost = 80,
 			Strength = 80,
 			Variant = 10,		// Reforged: 1
+			HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 		},
 		{
 			XP = 800 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 500
@@ -322,6 +324,7 @@
 		{
 			Cost = 8,
 			Strength = 8,
+			HD_FormationRole = ::Hardened.Deployment.FormationRole.Flank,
 		},
 		// scripts/entity/tactical/enemies/wardog
 		// scripts/entity/tactical/enemies/armored_wardog
@@ -346,6 +349,7 @@
 		{
 			Cost = 12,
 			Strength = 12,
+			HD_FormationRole = ::Hardened.Deployment.FormationRole.Flank,
 		}
 	);
 
@@ -355,6 +359,7 @@
 		{
 			Cost = 10,
 			Strength = 10,
+			HD_FormationRole = ::Hardened.Deployment.FormationRole.Flank,
 		},
 		{
 			XP = 100,

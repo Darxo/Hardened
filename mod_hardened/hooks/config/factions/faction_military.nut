@@ -5,6 +5,7 @@
 			{
 				Cost = 35,
 				Strength = 35,
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
 				XP = 350 * ::Hardened.Global.FactionExperience.Nobles,
@@ -25,6 +26,7 @@
 			{
 				Cost = 60,
 				Strength = 60,
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
 				XP = 600 * ::Hardened.Global.FactionExperience.Nobles,
@@ -48,6 +50,7 @@
 				Cost = 70,
 				Strength = 70,
 				Variant = 5,		// Vanilla: 2
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
 				XP = 700 * ::Hardened.Global.FactionExperience.Nobles,
@@ -69,6 +72,7 @@
 				Cost = 100,
 				Strength = 100,
 				Variant = 10,		// Reforged: 2
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
 				XP = 1000 * ::Hardened.Global.FactionExperience.Nobles,
@@ -92,6 +96,7 @@
 				Cost = 50,
 				Strength = 50,
 				Variant = 2,		// Reforged: 1
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Flank,
 			},
 			{
 				XP = 500 * ::Hardened.Global.FactionExperience.Nobles,
