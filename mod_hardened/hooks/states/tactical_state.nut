@@ -52,15 +52,19 @@
 		// Loading the tactical resources can take several seconds. Around 9 seconds in some situations.
 		// As a result a player might hear a misleading new-round sfx thinking that the loading has finished but still looking at a loading screen for several seconds
 		// They might think, the game has crashed
-		// We fix that by moving the execution of initNextRound() to the end of init
+		// We fix that by moving the execution of initNextRound() to the end of init, if it was triggered in the __original call
+		// Scenarios do not trigger that here
+		local skippedInitNextRound = false;
 		local oldInitNextRound = ::Tactical.TurnSequenceBar.get().initNextRound;
-		::Tactical.TurnSequenceBar.get().initNextRound = function() {};
+		::Tactical.TurnSequenceBar.get().initNextRound = function() {
+			skippedInitNextRound = true;
+		};
 
 		__original();
 
 		::Tactical.TurnSequenceBar.get().initNextRound = oldInitNextRound;
 
-		if (this.Stash.isLocked() == false && this.m.Scenario != null)
+		if (skippedInitNextRound)
 		{
 			::Tactical.TurnSequenceBar.initNextRound();
 		}
