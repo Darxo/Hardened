@@ -68,6 +68,7 @@
 				Cost = 40,
 				Strength = 40,
 				Variant = 0,
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
 				XP = 400 * ::Hardened.Global.FactionExperience.Skeletons,
@@ -88,6 +89,7 @@
 			{
 				Cost = 60,
 				Strength = 60,
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
 				XP = 600 * ::Hardened.Global.FactionExperience.Skeletons,
@@ -109,6 +111,7 @@
 				Cost = 80,
 				Strength = 80,
 				Variant = 5,		// Reforged: 1
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
 				XP = 800 * ::Hardened.Global.FactionExperience.Skeletons,
@@ -128,7 +131,9 @@
 	{	// Unique
 		// scripts/entity/tactical/enemies/zombie_boss
 		::Reforged.Entities.editEntity("ZombieBoss",	// Conqueror (Black Monolith)
-			null,
+			{
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Siege,	// Vanilla: Ranged
+			},
 			{
 				XP = 900 * ::Hardened.Global.FactionExperience.Zombies,	// Vanilla: 500
 				ActionPoints = 7,		// Vanilla: 7
@@ -174,6 +179,7 @@
 			{
 				Strength = 50,	// Reforged: 40;
 				Cost = 50,		// Reforged: 20;
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Flank,
 			},
 			{
 				XP = 500 * ::Hardened.Global.FactionExperience.Zombies, // Reforged: 400
