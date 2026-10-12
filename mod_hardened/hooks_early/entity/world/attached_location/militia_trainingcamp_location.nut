@@ -12,6 +12,7 @@
 		this.m.CombatLocation.Fortification = ::Const.Tactical.FortificationType.Palisade;
 		this.m.CombatLocation.CutDownTrees = true;
 		this.m.CombatLocation.AdditionalRadius = 1;
+		this.m.CombatLocation.HD_HasWatchposts = true;
 
 		// Defender
 		this.m.Resources = 250 * ::Hardened.Global.FactionDifficulty.Militia;
