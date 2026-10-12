@@ -18,6 +18,15 @@
 
 	// Private
 		CornerTiles = [],
+		Corners = {
+			North = null,
+			NorthEast = null,
+			SouthEast = null,
+			South = null,
+			SouthWest = null,
+			NorthWest = null,
+		}
+
 		FleeTiles = [],		// Reference to every tile, which was valid for fleeing at the start of combat
 	}
 
@@ -36,25 +45,41 @@
 	function calculateCornerTiles()
 	{
 		this.m.CornerTiles = [];
+		foreach (entry in this.m.Corners)
+		{
+			entry = null;
+		}
 
 		if (this.m.CurrentShape == this.m.Shape.Square)
 		{
 			local size = ::Tactical.getMapSize();
-			this.m.CornerTiles.push(::Tactical.getTileSquare(0, 0));
-			this.m.CornerTiles.push(::Tactical.getTileSquare(0, size.Y -1));
-			this.m.CornerTiles.push(::Tactical.getTileSquare(size.X - 1, size.Y - 1));
-			this.m.CornerTiles.push(::Tactical.getTileSquare(size.X - 1, 0));
+			this.m.Corners.SouthWest = ::Tactical.getTileSquare(0, 0);
+			this.m.Corners.NorthWest = ::Tactical.getTileSquare(0, size.Y -1);
+			this.m.Corners.NorthEast = ::Tactical.getTileSquare(size.X - 1, size.Y - 1);
+			this.m.Corners.SouthEast = ::Tactical.getTileSquare(size.X - 1, 0);
+
+			foreach (entry in this.m.Corners)
+			{
+				if (entry == null) continue;
+				this.m.CornerTiles.push(entry);
+			}
 		}
 
 		if (this.m.CurrentShape == this.m.Shape.Hexagon)
 		{
-			// Todo: Check if those tiles are blocked with an object, and then choose another one
-			this.m.CornerTiles.push(::Tactical.getTileSquare(this.m.OffsetX + this.m.HexagonRadius, this.m.OffsetY + this.m.HexagonRadius * 2));
-			this.m.CornerTiles.push(::Tactical.getTileSquare(this.m.OffsetX + this.m.HexagonRadius * 2, this.m.OffsetY + ::Math.ceil(this.m.HexagonRadius * 1.5)));
-			this.m.CornerTiles.push(::Tactical.getTileSquare(this.m.OffsetX + this.m.HexagonRadius * 2, this.m.OffsetY + ::Math.ceil(this.m.HexagonRadius * 0.5)));
-			this.m.CornerTiles.push(::Tactical.getTileSquare(this.m.OffsetX + this.m.HexagonRadius, this.m.OffsetY));
-			this.m.CornerTiles.push(::Tactical.getTileSquare(this.m.OffsetX, this.m.OffsetY + ::Math.ceil(this.m.HexagonRadius * 0.5)));
-			this.m.CornerTiles.push(::Tactical.getTileSquare(this.m.OffsetX, this.m.OffsetY + ::Math.ceil(this.m.HexagonRadius * 1.5)));
+			local cc = ::Hardened.Deployment.CubeCoordinates;
+			this.m.Corners.North = cc.toTacticalTile(cc.add(cc.fromTacticalTile(this.m.CenterTile), cc.North(this.m.HexagonRadius)));
+			this.m.Corners.NorthEast = cc.toTacticalTile(cc.add(cc.fromTacticalTile(this.m.CenterTile), cc.NorthEast(this.m.HexagonRadius)));
+			this.m.Corners.SouthEast = cc.toTacticalTile(cc.add(cc.fromTacticalTile(this.m.CenterTile), cc.SouthEast(this.m.HexagonRadius)));
+			this.m.Corners.South = cc.toTacticalTile(cc.add(cc.fromTacticalTile(this.m.CenterTile), cc.South(this.m.HexagonRadius)));
+			this.m.Corners.SouthWest = cc.toTacticalTile(cc.add(cc.fromTacticalTile(this.m.CenterTile), cc.SouthWest(this.m.HexagonRadius)));
+			this.m.Corners.NorthWest = cc.toTacticalTile(cc.add(cc.fromTacticalTile(this.m.CenterTile), cc.NorthWest(this.m.HexagonRadius)));
+
+			foreach (entry in this.m.Corners)
+			{
+				if (entry == null) continue;
+				this.m.CornerTiles.push(entry);
+			}
 		}
 	}
 
