@@ -30,6 +30,9 @@
 
 # Changelog
 
+1.25.1
+	- Fix autosave after combat not working anymore
+
 1.25.0
 	- **Goblin Poison** no longer reduces Initiative on the target
 	- **Possess Undead** (Necromancer) now moves the target to the end of the turn sequence
