@@ -98,7 +98,7 @@
 			bro.getSkills().update();
 		}
 
-		if (!::Tactical.State.isScenarioMode() && !::World.State.m.IsGameOver)	// We prevent these autosaves from trapping the player in a softlock after a loss. Ironman saves are already autosaved in these situations by vanilla
+		if (!this.isScenarioMode() && !::World.State.m.IsGameOver)	// We prevent these autosaves from trapping the player in a softlock after a loss. Ironman saves are already autosaved in these situations by vanilla
 		{
 			if (::World.Assets.isIronman())
 			{
