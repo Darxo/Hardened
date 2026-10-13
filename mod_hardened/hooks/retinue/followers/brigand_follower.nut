@@ -32,6 +32,7 @@
 		local autoAttack = ::World.State.m.AutoAttack;
 		if (::MSU.isNull(autoAttack)) return false;
 		if (!autoAttack.isAlive()) return false;
+		if (!autoAttack.isParty()) return false;	// In Hardened, m.AutoAttack can also be a location so we need to filter that one out
 		if (autoAttack.isHiddenToPlayer()) return false;
 		if (autoAttack.isAlliedWithPlayer()) return false;
 
