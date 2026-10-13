@@ -24,8 +24,12 @@
 		// Engaging raidable locations over longer distances is realized in onMouseInput()
 		// Vanilla only allows attacking of hostile locations and will automatically open the combat dialog when we try to enter a hostile location
 		local targetingAlliedRaidableLocation = _location.isAttackable() && _location.isLocationType(::Const.World.LocationType.AttachedLocation) && _location.isRaidable() && _location.isAlliedWithPlayer();
-		local faction = ::World.FactionManager.getFaction(_location.getFaction());
-		if (this.m.IsForcingAttack && targetingAlliedRaidableLocation) faction.setIsTemporaryEnemy(true);
+		if (this.m.IsForcingAttack && targetingAlliedRaidableLocation && ::World.Contracts.getActiveContract() == null)
+		{
+			local faction = ::World.FactionManager.getFaction(_location.getFaction());
+			faction.setIsTemporaryEnemy(true);
+		}
+
 		return __original(_location);
 	}
 
@@ -233,7 +237,8 @@
 
 			if (targetingAlliedRaidableLocation)
 			{
-				this.m.AutoAttack = this.m.AutoEnterLocation;
+				// this.m.AutoAttack does not check for isParty, so we can re-use that vanilla framework to trigger a raid on an allied location from afar
+				this.m.AutoAttack = ::MSU.asWeakTableRef(this.m.AutoEnterLocation);
 				this.m.AutoEnterLocation = null;
 			}
 		}
