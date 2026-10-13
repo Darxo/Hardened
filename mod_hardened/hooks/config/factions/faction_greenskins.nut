@@ -1,39 +1,3 @@
-// scripts/entity/tactical/enemies/goblin_leader
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.GoblinLeader.XP = 500 * ::Hardened.Global.FactionExperience.Goblins;
-	::Const.Tactical.Actor.GoblinLeader.ActionPoints = 9;
-	::Const.Tactical.Actor.GoblinLeader.Hitpoints = 70;
-	::Const.Tactical.Actor.GoblinLeader.Bravery = 80;
-	::Const.Tactical.Actor.GoblinLeader.Stamina = 130;
-	::Const.Tactical.Actor.GoblinLeader.MeleeSkill = 75;
-	::Const.Tactical.Actor.GoblinLeader.RangedSkill = 80;
-	::Const.Tactical.Actor.GoblinLeader.MeleeDefense = 15;
-	::Const.Tactical.Actor.GoblinLeader.RangedDefense = 15;
-	::Const.Tactical.Actor.GoblinLeader.Initiative = 120;
-
-	// Optional Stats
-	::Const.Tactical.Actor.GoblinLeader.Vision <- 8;		// Vanilla: 7
-}
-
-// scripts/entity/tactical/enemies/goblin_shaman
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.GoblinShaman.XP = 500 * ::Hardened.Global.FactionExperience.Goblins;
-	::Const.Tactical.Actor.GoblinShaman.ActionPoints = 9;
-	::Const.Tactical.Actor.GoblinShaman.Hitpoints = 70;
-	::Const.Tactical.Actor.GoblinShaman.Bravery = 80;
-	::Const.Tactical.Actor.GoblinShaman.Stamina = 110;
-	::Const.Tactical.Actor.GoblinShaman.MeleeSkill = 60;
-	::Const.Tactical.Actor.GoblinShaman.RangedSkill = 60;
-	::Const.Tactical.Actor.GoblinShaman.MeleeDefense = 10;
-	::Const.Tactical.Actor.GoblinShaman.RangedDefense = 10;
-	::Const.Tactical.Actor.GoblinShaman.Initiative = 110;
-
-	// Optional Stats
-	::Const.Tactical.Actor.GoblinShaman.Vision <- 8;
-}
-
 // scripts/entity/tactical/enemies/orc_berserker
 {
 	// Mandatory stats
@@ -62,21 +26,6 @@
 	::Const.Tactical.Actor.OrcWarrior.MeleeDefense = -5;
 	::Const.Tactical.Actor.OrcWarrior.RangedDefense = -10;
 	::Const.Tactical.Actor.OrcWarrior.Initiative = 120;
-}
-
-// scripts/entity/tactical/enemies/orc_warlord
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.OrcWarlord.XP = 1000 * ::Hardened.Global.FactionExperience.Orcs;
-	::Const.Tactical.Actor.OrcWarlord.ActionPoints = 9;
-	::Const.Tactical.Actor.OrcWarlord.Hitpoints = 300;
-	::Const.Tactical.Actor.OrcWarlord.Bravery = 80;
-	::Const.Tactical.Actor.OrcWarlord.Stamina = 300;
-	::Const.Tactical.Actor.OrcWarlord.MeleeSkill = 85;
-	::Const.Tactical.Actor.OrcWarlord.RangedSkill = 50;
-	::Const.Tactical.Actor.OrcWarlord.MeleeDefense = 10;
-	::Const.Tactical.Actor.OrcWarlord.RangedDefense = 0;
-	::Const.Tactical.Actor.OrcWarlord.Initiative = 125;
 }
 
 {	// Goblins
@@ -218,6 +167,53 @@
 			);
 		}
 	}
+
+	{	// Leader
+		// scripts/entity/tactical/enemies/goblin_leader
+		::Reforged.Entities.editEntity("GoblinLeader",
+			null,
+			{
+				XP = 500 * ::Hardened.Global.FactionExperience.Goblins,
+				ActionPoints = 9,
+				Hitpoints = 70,
+				Bravery = 80,
+				Stamina = 130,
+				MeleeSkill = 75,
+				RangedSkill = 80,
+				MeleeDefense = 15,
+				RangedDefense = 15,
+				Initiative = 120,
+				Vision = 8,
+			}
+		);
+		::Reforged.Entities.editEntity("GoblinOverseer",
+			{
+				Cost = 50,
+				Strength = 50,
+			}
+		);
+
+		// scripts/entity/tactical/enemies/goblin_shaman
+		::Reforged.Entities.editEntity("GoblinShaman",
+			{
+				Cost = 80,
+				Strength = 80,
+			}
+			{
+				XP = 500 * ::Hardened.Global.FactionExperience.Goblins,
+				ActionPoints = 9,
+				Hitpoints = 70,
+				Bravery = 80,
+				Stamina = 110,
+				MeleeSkill = 60,
+				RangedSkill = 60,
+				MeleeDefense = 10,
+				RangedDefense = 10,
+				Initiative = 110,
+				Vision = 8,
+			}
+		);
+	}
 }
 
 {	// Orcs
@@ -278,5 +274,27 @@
 				}
 			);
 		}
+	}
+
+	{	// Orc Leader
+		// scripts/entity/tactical/enemies/orc_warlord
+		::Reforged.Entities.editEntity("OrcWarlord",
+			{
+				Cost = 100,
+				Strength = 100,
+			}
+			{
+				XP = 1000 * ::Hardened.Global.FactionExperience.Orcs,
+				ActionPoints = 9,
+				Hitpoints = 300,
+				Bravery = 80,
+				Stamina = 300,
+				MeleeSkill = 85,
+				RangedSkill = 50,
+				MeleeDefense = 10,
+				RangedDefense = 0,
+				Initiative = 125,
+			}
+		);
 	}
 }

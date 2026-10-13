@@ -3,6 +3,9 @@
 		// scripts/entity/tactical/humans/nomad_leader
 		::Reforged.Entities.editEntity("NomadLeader",	// Nomad Leader
 			{
+				Cost = 50,
+				Strength = 50,
+				Variant = 5,		// Vanilla: 1
 				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
@@ -24,7 +27,10 @@
 	{	// Frontline
 		// scripts/entity/tactical/humans/nomad_cutthroat
 		::Reforged.Entities.editEntity("NomadCutthroat",	// Nomad Cutthroat
-			null,
+			{
+				Cost = 15,
+				Strength = 15,
+			},
 			{
 				XP = 150 * ::Hardened.Global.FactionExperience.Nomads,
 				ActionPoints = 9,
@@ -42,7 +48,10 @@
 
 		// scripts/entity/tactical/humans/nomad_outlaw
 		::Reforged.Entities.editEntity("NomadOutlaw",	// Nomad Outlaw
-			null,
+			{
+				Cost = 30,
+				Strength = 30,
+			},
 			{
 				XP = 300 * ::Hardened.Global.FactionExperience.Nomads,		// Vanilla: 250
 				ActionPoints = 9,
@@ -62,7 +71,10 @@
 	{	// Ranged
 		// scripts/entity/tactical/humans/nomad_slinger
 		::Reforged.Entities.editEntity("NomadSlinger",	// Nomad Slinger
-			null,
+			{
+				Cost = 15,
+				Strength = 15,
+			},
 			{
 				XP = 150 * ::Hardened.Global.FactionExperience.Nomads,
 				ActionPoints = 9,
@@ -80,7 +92,10 @@
 
 		// scripts/entity/tactical/humans/nomad_archer
 		::Reforged.Entities.editEntity("NomadArcher",	// Nomad Archer
-			null,
+			{
+				Cost = 24,
+				Strength = 24,
+			},
 			{
 				XP = 240 * ::Hardened.Global.FactionExperience.Nomads,		// Vanilla: 225
 				ActionPoints = 9,
@@ -100,7 +115,11 @@
 	{	// Elite
 		// scripts/entity/tactical/humans/executioner
 		::Reforged.Entities.editEntity("Executioner",	// Nomad Executioner
-			null,
+			{
+				Cost = 40,
+				Strength = 40,
+				Variant = 3,	// Vanilla: 2
+			},
 			{
 				XP = 400 * ::Hardened.Global.FactionExperience.Nomads,		// Vanilla: 450
 				ActionPoints = 9,
@@ -118,7 +137,11 @@
 
 		// scripts/entity/tactical/humans/desert_devil
 		::Reforged.Entities.editEntity("DesertDevil",	// Blade Dancer
-			null,
+			{
+				Cost = 50,
+				Strength = 50,
+				Variant = 3,	// Vanilla: 2
+			},
 			{
 				XP = 500 * ::Hardened.Global.FactionExperience.Nomads,
 				ActionPoints = 9,
@@ -136,7 +159,11 @@
 
 		// scripts/entity/tactical/humans/desert_stalker
 		::Reforged.Entities.editEntity("DesertStalker",	// Desert Stalker
-			null,
+			{
+				Cost = 50,
+				Strength = 50,
+				Variant = 3,	// Vanilla: 2
+			},
 			{
 				XP = 500 * ::Hardened.Global.FactionExperience.Nomads,
 				ActionPoints = 9,
@@ -158,7 +185,10 @@
 	{	// Frontline
 		// scripts/entity/tactical/humans/conscript
 		::Reforged.Entities.editEntity("Conscript",	// Conscript
-			null,
+			{
+				Cost = 25,
+				Strength = 25,
+			},
 			{
 				XP = 250 * ::Hardened.Global.FactionExperience.CityStates,
 				ActionPoints = 9,
@@ -177,7 +207,10 @@
 	{	// Ranged
 		// scripts/entity/tactical/humans/gunner
 		::Reforged.Entities.editEntity("Gunner",	// Gunner
-			null,
+			{
+				Cost = 30,
+				Strength = 30,
+			},
 			{
 				XP = 300 * ::Hardened.Global.FactionExperience.CityStates,
 				ActionPoints = 9,
@@ -197,6 +230,8 @@
 		// scripts/entity/tactical/humans/assassin
 		::Reforged.Entities.editEntity("Assassin",	// Assassin
 			{
+				Cost = 40,
+				Strength = 40,
 				HD_FormationRole = ::Hardened.Deployment.FormationRole.Flank,
 			},
 			{
@@ -218,6 +253,9 @@
 		// scripts/entity/tactical/humans/officer
 		::Reforged.Entities.editEntity("Officer",	// Officer
 			{
+				Cost = 50,
+				Strength = 50,
+				Variant = 5,		// Vanilla: 1
 				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
@@ -238,7 +276,10 @@
 	{	// Siege
 		// scripts/entity/tactical/humans/engineer
 		::Reforged.Entities.editEntity("Engineer",	// Engineer
-			null,
+			{
+				Cost = 20,
+				Strength = 20,
+			},
 			{
 				XP = 200 * ::Hardened.Global.FactionExperience.CityStates,
 				ActionPoints = 9,
@@ -257,7 +298,10 @@
 	{	// Misc
 		// scripts/entity/tactical/humans/slave
 		::Reforged.Entities.editEntity("Slave",	// Slave
-			null,
+			{
+				Cost = 6,
+				Strength = 6,
+			},
 			{
 				XP = 30 * ::Hardened.Global.FactionExperience.Slaves,		// Vanilla: 50
 				ActionPoints = 9,
@@ -274,7 +318,11 @@
 
 		// scripts/entity/tactical/humans/gladiator
 		::Reforged.Entities.editEntity("Gladiator",	// Gladiator
-			null,
+			{
+				Cost = 45,
+				Strength = 45,
+				Variant = 3,		// Vanilla: 2
+			},
 			{
 				XP = 450 * ::Hardened.Global.FactionExperience.Nomads,		// Vanilla: 350
 				ActionPoints = 9,

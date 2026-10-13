@@ -277,6 +277,9 @@
 	// scripts/entity/tactical/enemies/bandit_leader
 	::Reforged.Entities.editEntity("BanditLeader",	// Brigand Leader
 		{
+			Cost = 50,
+			Strength = 50,
+			Variant = 5,		// Reforged: 1
 			HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 		},
 		{
@@ -296,6 +299,9 @@
 	// scripts/entity/tactical/enemies/rf_bandit_baron
 	::Reforged.Entities.editEntity("RF_BanditBaron",	// Brigand Baron
 		{
+			Cost = 80,
+			Strength = 80,
+			Variant = 10,		// Reforged: 1
 			HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 		},
 		{
@@ -316,6 +322,8 @@
 	// scripts/entity/tactical/enemies/wardog
 	::Reforged.Entities.editEntity("Wardog",	// Wardog
 		{
+			Cost = 8,
+			Strength = 8,
 			HD_FormationRole = ::Hardened.Deployment.FormationRole.Flank,
 		},
 		// scripts/entity/tactical/enemies/wardog
@@ -339,7 +347,8 @@
 	// scripts/entity/tactical/enemies/armored_wardog
 	::Reforged.Entities.editEntity("ArmoredWardog",	// Armored Wardog
 		{
-			// Todo: Why is  this not taking effect?
+			Cost = 12,
+			Strength = 12,
 			HD_FormationRole = ::Hardened.Deployment.FormationRole.Flank,
 		}
 	);
@@ -348,6 +357,8 @@
 	// scripts/entity/tactical/armored_warhound
 	::Reforged.Entities.editEntity("Warhound",	// Warhound
 		{
+			Cost = 10,
+			Strength = 10,
 			HD_FormationRole = ::Hardened.Deployment.FormationRole.Flank,
 		},
 		{

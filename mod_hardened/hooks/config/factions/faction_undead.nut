@@ -452,7 +452,10 @@
 {	// Vampires
 	// scripts/entity/tactical/enemies/vampire
 	::Reforged.Entities.editEntity("Vampire",	// Necrosavant
-		null,
+		{
+			Cost = 50,
+			Strength = 50,
+		},
 		{
 			XP = 500 * ::Hardened.Global.FactionExperience.Skeletons,
 			ActionPoints = 9,
@@ -469,7 +472,11 @@
 
 	// scripts/entity/tactical/enemies/rf_vampire_lord
 	::Reforged.Entities.editEntity("RF_VampireLord",	// Necrosavant Lord
-		null,
+		{
+			Cost = 100,
+			Strength = 100,
+			Variant = 1,		// Reforged: 1
+		},
 		{
 			XP = 1000 * ::Hardened.Global.FactionExperience.Skeletons,
 			ActionPoints = 9,

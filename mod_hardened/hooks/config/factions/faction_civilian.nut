@@ -1,8 +1,34 @@
 {	// Militia
+	{	// Frontline
+		// scripts/entity/tactical/humans/militia_captain
+		::Reforged.Entities.editEntity("MilitiaCaptain",	// Militia Captain
+			{
+				Cost = 35,
+				Strength = 35,
+				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
+			},
+			{
+				XP = 350 * ::Hardened.Global.FactionExperience.Militia,		// Vanilla: 200; Reforged: 250
+				ActionPoints = 9,
+				Hitpoints = 90,			// Vanilla: 70; Reforged: 80
+				Bravery = 85,			// Vanilla: 70
+				Stamina = 130,			// Vanilla: 120
+				MeleeSkill = 70,		// Vanilla: 60; Reforged: 70
+				RangedSkill = 50,
+				MeleeDefense = 15,		// Vanilla: 10; Reforged: 15
+				RangedDefense = 10,		// Vanilla: 0; Reforged: 0
+				Initiative = 100,		// Vanilla: 100
+			}
+		);
+
+	}
+
 	{	// Leader
 		// scripts/entity/tactical/humans/militia_captain
 		::Reforged.Entities.editEntity("MilitiaCaptain",	// Militia Captain
 			{
+				Cost = 35,
+				Strength = 35,
 				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{

@@ -3,6 +3,8 @@
 		// scripts/entity/tactical/humans/noble_sergeant
 		::Reforged.Entities.editEntity("Sergeant",	// Noble Sergeant
 			{
+				Cost = 35,
+				Strength = 35,
 				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
@@ -22,6 +24,8 @@
 		// scripts/entity/tactical/humans/rf_marshal
 		::Reforged.Entities.editEntity("RF_Marshal",	// Noble Marshal
 			{
+				Cost = 60,
+				Strength = 60,
 				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
@@ -43,6 +47,9 @@
 		// scripts/entity/tactical/humans/knight
 		::Reforged.Entities.editEntity("Knight",	// Noble Knight
 			{
+				Cost = 70,
+				Strength = 70,
+				Variant = 5,		// Vanilla: 2
 				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
@@ -62,6 +69,9 @@
 		// scripts/entity/tactical/humans/rf_knight_anointed
 		::Reforged.Entities.editEntity("RF_KnightAnointed",	// Noble Anointed Knight
 			{
+				Cost = 100,
+				Strength = 100,
+				Variant = 10,		// Reforged: 2
 				HD_FormationRole = ::Hardened.Deployment.FormationRole.Center,
 			},
 			{
@@ -83,6 +93,9 @@
 		// scripts/entity/tactical/humans/rf_fencer
 		::Reforged.Entities.editEntity("RF_Fencer",	// Noble Fencer
 			{
+				Cost = 50,
+				Strength = 50,
+				Variant = 2,		// Reforged: 1
 				HD_FormationRole = ::Hardened.Deployment.FormationRole.Flank,
 			},
 			{
