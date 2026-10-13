@@ -126,7 +126,7 @@
 
 	q.updateCursorAndTooltip = @(__original) { function updateCursorAndTooltip()
 	{
-		if (this.m.IsForcingAttack && World.Contracts.getActiveContract() == null)
+		if (this.m.IsForcingAttack)
 		{
 			local entities = ::World.getAllEntitiesAndOneLocationAtPos(::World.getCamera().screenToWorld(::Cursor.getX(), ::Cursor.getY()), 1.0)
 			foreach (entity in entities)
@@ -137,7 +137,14 @@
 				if (!entity.isAlliedWithPlayer()) continue;
 				if (!entity.isAttackable()) continue;
 
-				::Cursor.m.HD_CursorOverwrite = ::Const.UI.Cursor.Attack;
+				if (World.Contracts.getActiveContract() == null)
+				{
+					::Cursor.m.HD_CursorOverwrite = ::Const.UI.Cursor.Attack;
+				}
+				else
+				{
+					::Cursor.m.HD_CursorOverwrite = ::Const.UI.Cursor.Denied;
+				}
 				break;
 			}
 		}
