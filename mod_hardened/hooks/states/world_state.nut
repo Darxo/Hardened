@@ -126,7 +126,7 @@
 
 	q.updateCursorAndTooltip = @(__original) { function updateCursorAndTooltip()
 	{
-		if (this.m.IsForcingAttack)
+		if (this.m.IsForcingAttack && World.Contracts.getActiveContract() == null)
 		{
 			local entities = ::World.getAllEntitiesAndOneLocationAtPos(::World.getCamera().screenToWorld(::Cursor.getX(), ::Cursor.getY()), 1.0)
 			foreach (entity in entities)
