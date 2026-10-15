@@ -30,6 +30,9 @@
 
 # Changelog
 
+1.26.0-alpha-2
+	- Fix(Vanilla) potential division by 0 bug from updateOverlay()
+
 1.26.0-alpha-1
 	- Completely rework deployment and positioning of units during non-scripted combat
 		- Allow at least 1 ally and 5 additional world parties to join any fight (up from 1 ally and 3 world parties)
