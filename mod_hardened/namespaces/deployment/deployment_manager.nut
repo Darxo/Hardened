@@ -134,43 +134,43 @@
 			if (_combatInfo.LocationTemplate.ForceLineBattle)
 			{
 				// We fight in the center of the camp
-				return Hardened.Deployment.EngagementType.LineBattle;
+				return ::Hardened.Deployment.EngagementType.LineBattle;
 			}
 			else if (_combatInfo.HD_IsFightingAtLocation && _combatInfo.LocationTemplate.Fortification != ::Const.Tactical.FortificationType.None)
 			{
 				if (_combatInfo.HD_IsAttackingLocation)
 				{
-					return Hardened.Deployment.EngagementType.AttackFortification;
+					return ::Hardened.Deployment.EngagementType.AttackFortification;
 				}
 				else
 				{
-					return Hardened.Deployment.EngagementType.DefendFortification;
+					return ::Hardened.Deployment.EngagementType.DefendFortification;
 				}
 			}
 		}
 
 		if (_combatInfo.InCombatAlready)
 		{
-			return Hardened.Deployment.EngagementType.JoinBattle;
+			return ::Hardened.Deployment.EngagementType.JoinBattle;
 		}
 
 		// Some terrain types force a line battle, even if the enemy engages us
 		if (::Const.World.TerrainTypeLineBattle[_combatInfo.Tile.Type])
 		{
-			return Hardened.Deployment.EngagementType.LineBattle;
+			return ::Hardened.Deployment.EngagementType.LineBattle;
 		}
 
 		if (!_combatInfo.IsPlayerInitiated)
 		{
-			return Hardened.Deployment.EngagementType.GetAmbushed;
+			return ::Hardened.Deployment.EngagementType.GetAmbushed;
 		}
 
 		// Default
-		return Hardened.Deployment.EngagementType.LineBattle;
+		return ::Hardened.Deployment.EngagementType.LineBattle;
 	}
 
 	/// Generate the fitting engagement type for a combat, given the vanilla _combatInfo
-	/// @return Hardened.Deployment.EngagementType
+	/// @return ::Hardened.Deployment.EngagementType
 	function generateEngagementType( _combatInfo )
 	{
 		if (_combatInfo.PlayerDeploymentType == ::Const.Tactical.DeploymentType.Auto)
@@ -180,7 +180,7 @@
 
 		if (_combatInfo.DeploymentType == ::Const.Tactical.DeploymentType.Random)
 		{
-			return Hardened.Deployment.EngagementType.FightInfestation;
+			return ::Hardened.Deployment.EngagementType.FightInfestation;
 		}
 
 		if (_combatInfo.DeploymentType == ::Const.Tactical.DeploymentType.Circle)
@@ -188,17 +188,17 @@
 			if (_combatInfo.PlayerDeploymentType == ::Const.Tactical.DeploymentType.Edge)
 			{
 				// E.g. break_greenskin_siege_contract
-				return Hardened.Deployment.EngagementType.FightInfestation;
+				return ::Hardened.Deployment.EngagementType.FightInfestation;
 			}
 			else
 			{
 				// E.g. decisive_battle_contract, deliver_item_contract, destroy_goblin_camp_contract
 				// In Vanilla some of these, spawn the player in Line still, keeping some of their formation alive. We streamline it to always and up in a circle
-				return Hardened.Deployment.EngagementType.GetAmbushed;
+				return ::Hardened.Deployment.EngagementType.GetAmbushed;
 			}
 		}
 
-		return Hardened.Deployment.EngagementType.LineBattle;
+		return ::Hardened.Deployment.EngagementType.LineBattle;
 	}
 
 	/// Go through Participants according to EngagementType, create Regions for each of them and trigger the spawning on those Regions
@@ -287,19 +287,19 @@
 	{
 		switch (this.EngagementType)
 		{
-			case Hardened.Deployment.EngagementType.LineBattle:
+			case ::Hardened.Deployment.EngagementType.LineBattle:
 			{
 				this.RegionPlan.Player = ::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Portrait, 2, 9, { OffsetX = -3 });
 				this.RegionPlan.PersonalAlly = ::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Portrait, 6, 12, { OffsetX = -3 });
 				break;
 			}
-			case Hardened.Deployment.EngagementType.JoinBattle:
+			case ::Hardened.Deployment.EngagementType.JoinBattle:
 			{
 				this.RegionPlan.Player = ::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Portrait, 2, 9, { OffsetX = -13 });
 				this.RegionPlan.PersonalAlly = ::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Portrait, 4, 12, { OffsetX = -13 });
 				break;
 			}
-			case Hardened.Deployment.EngagementType.AttackFortification:
+			case ::Hardened.Deployment.EngagementType.AttackFortification:
 			{
 				local radius = ::Const.Tactical.Settings.CampRadius + _combatInfo.LocationTemplate.AdditionalRadius;
 				local shiftX = _combatInfo.LocationTemplate.ShiftX;
@@ -312,7 +312,7 @@
 				this.RegionPlan.PersonalAlly = ::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Portrait, 4, 12, { OffsetX = offsetX });
 				break;
 			}
-			case Hardened.Deployment.EngagementType.DefendFortification:
+			case ::Hardened.Deployment.EngagementType.DefendFortification:
 			{
 				local radius = ::Const.Tactical.Settings.CampRadius + _combatInfo.LocationTemplate.AdditionalRadius;
 				local shiftX = _combatInfo.LocationTemplate.ShiftX;
@@ -325,7 +325,7 @@
 				this.RegionPlan.PersonalAlly = ::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Portrait, 4, 12, { OffsetX = offsetX });
 				break;
 			}
-			case Hardened.Deployment.EngagementType.GetAmbushed:
+			case ::Hardened.Deployment.EngagementType.GetAmbushed:
 			{
 				this.RegionPlan.Player = ::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Hexagon, 0, 3);
 				this.RegionPlan.Player.RandomPosition = true;
@@ -333,7 +333,7 @@
 				this.RegionPlan.PersonalAlly.RandomPosition = true;
 				break;
 			}
-			case Hardened.Deployment.EngagementType.DoAmbush:
+			case ::Hardened.Deployment.EngagementType.DoAmbush:
 			{
 				this.RegionPlan.Player = ::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Hexagon, 11, 12);
 				this.RegionPlan.Player.RandomPosition = true;
@@ -341,7 +341,7 @@
 				this.RegionPlan.PersonalAlly.RandomPosition = true;
 				break;
 			}
-			case Hardened.Deployment.EngagementType.FightInfestation:
+			case ::Hardened.Deployment.EngagementType.FightInfestation:
 			{
 				this.RegionPlan.Player = ::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Portrait, 2, 9, { OffsetX = -13 });
 				this.RegionPlan.PersonalAlly = ::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Portrait, 4, 12, { OffsetX = -13 });
@@ -363,7 +363,7 @@
 		local defaultRegions = [];
 		switch (this.EngagementType)
 		{
-			case Hardened.Deployment.EngagementType.LineBattle:
+			case ::Hardened.Deployment.EngagementType.LineBattle:
 			{
 				// Center Right (extra large region)
 				defaultRegions.push(::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Portrait, 6, 12, { OffsetX = -3, Rotation = 180 }));
@@ -377,7 +377,7 @@
 				defaultRegions.push(::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Portrait, 4, 12, { OffsetX = -13 }));
 				break;
 			}
-			case Hardened.Deployment.EngagementType.JoinBattle:
+			case ::Hardened.Deployment.EngagementType.JoinBattle:
 			{
 				// Top
 				defaultRegions.push(::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Portrait, 4, 12, { OffsetX = -2, Rotation = 90 }));
@@ -394,7 +394,7 @@
 				defaultRegions.push(::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Portrait, 4, 12, { OffsetX = -10, Rotation = 270 }));
 				break;
 			}
-			case Hardened.Deployment.EngagementType.AttackFortification:
+			case ::Hardened.Deployment.EngagementType.AttackFortification:
 			{
 				// Defender
 				local radius = ::Const.Tactical.Settings.CampRadius + _combatInfo.LocationTemplate.AdditionalRadius;
@@ -415,7 +415,7 @@
 				defaultRegions.push(::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Portrait, 4, 12, { OffsetX = -13 }));
 				break;
 			}
-			case Hardened.Deployment.EngagementType.DefendFortification:
+			case ::Hardened.Deployment.EngagementType.DefendFortification:
 			{
 				// Defender
 				local radius = ::Const.Tactical.Settings.CampRadius + _combatInfo.LocationTemplate.AdditionalRadius;
@@ -439,7 +439,7 @@
 				defaultRegions.push(::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Portrait, 4, 12, { OffsetX = -10, Rotation = 270 }));
 				break;
 			}
-			case Hardened.Deployment.EngagementType.GetAmbushed:
+			case ::Hardened.Deployment.EngagementType.GetAmbushed:
 			{
 				local region = ::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Hexagon, 9, 10);
 				region.RandomPosition = true;
@@ -450,7 +450,7 @@
 				}
 				break;
 			}
-			case Hardened.Deployment.EngagementType.DoAmbush:
+			case ::Hardened.Deployment.EngagementType.DoAmbush:
 			{
 				// The first 5 hostile parties will spawn in the center of the map
 				local region = ::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Hexagon, 0, 5);
@@ -469,7 +469,7 @@
 				}
 				break;
 			}
-			case Hardened.Deployment.EngagementType.FightInfestation:
+			case ::Hardened.Deployment.EngagementType.FightInfestation:
 			{
 				local region = ::Hardened.Deployment.RegionManager.createRegion(::Hardened.Deployment.RegionShape.Hexagon, 0, 13, { OffsetX = 4 });
 				region.RandomPosition = true;
