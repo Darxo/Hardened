@@ -42,6 +42,9 @@
 
 		// Vanilla Fix: We add a "roundToDec" into the calculation, because multiplications like 120 * 1.05 produce 125.999992, which is falsely floored to 15 then
 		hitpointsMax = ::Math.floor(::MSU.Math.roundToDec(hitpointsMax, 3));
+
+		// Vanilla Fix: prevent potential division by 0 during actor::updateOverlay() by preventing this value from ever becoming 0
+		hitpointsMax = ::Math.maxf(1.0, hitpointsMax);
 		return hitpointsMax;
 	}
 
