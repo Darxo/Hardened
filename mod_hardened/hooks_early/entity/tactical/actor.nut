@@ -36,8 +36,13 @@
 	// Overwrite, because its not possible to apply our fix otherwise
 	q.getHitpointsMax = @() function()
 	{
+		local hitpointsMax = this.m.CurrentProperties.Hitpoints;
+		local hitpointsMult = this.m.CurrentProperties.HitpointsMult >= 0 ? this.m.CurrentProperties.HitpointsMult : 1.0 / this.m.CurrentProperties.HitpointsMult;
+		hitpointsMax *= hitpointsMult;
+
 		// Vanilla Fix: We add a "roundToDec" into the calculation, because multiplications like 120 * 1.05 produce 125.999992, which is falsely floored to 15 then
-		return ::Math.floor(::MSU.Math.roundToDec(this.m.CurrentProperties.Hitpoints * (this.m.CurrentProperties.HitpointsMult >= 0 ? this.m.CurrentProperties.HitpointsMult : 1.0 / this.m.CurrentProperties.HitpointsMult), 3));
+		hitpointsMax = ::Math.floor(::MSU.Math.roundToDec(hitpointsMax, 3));
+		return hitpointsMax;
 	}
 
 	// Overwrite because we don't want the Vanilla way of calculating
