@@ -86,21 +86,23 @@
 	function prepareAIParticipants( _combatInfo )
 	{
 		// Sort parties to get the same factions grouped together
-		_combatInfo.Parties.sort(this.onFactionCompare);
-
 		local lastFaction = null;
 		local lastCombatState = null;
 		local currentParticipant = null;
 
 		local participatingAIFactions = [];
-		foreach (party in _combatInfo.Parties)
+
+		_combatInfo.Entities.sort(this.onFactionCompare);
+		// We need to loop through
+		foreach (troopDef in _combatInfo.Entities)
 		{
-			// Is this is a party from a faction we haven't had yet, we sort the current entry
-			//	and create a new entry
-			if (lastFaction != party.getFaction() || lastCombatState != party.isInCombat())
+			local isInCombat = "Party" in troopDef ? troopDef.Party.isInCombat() : false;
+
+			// Is this is a troop from a faction we haven't had yet, we create a new participant and sort its troops into it
+			if (lastFaction != troopDef.Faction || lastCombatState != isInCombat)
 			{
-				lastFaction = party.getFaction();
-				lastCombatState = party.isInCombat();
+				lastFaction = troopDef.Faction;
+				lastCombatState = isInCombat;
 
 				// Store the previous entry
 				if (currentParticipant != null)
@@ -110,9 +112,9 @@
 
 				// Create a new participant
 				currentParticipant = ::Hardened.Deployment.Participant();
-				currentParticipant.Faction = party.getFaction();
-				currentParticipant.IsAlliedWithPlayer = party.isAlliedWithPlayer();
-				currentParticipant.InCombatAlready = party.isInCombat();
+				currentParticipant.Faction = troopDef.Faction;
+				currentParticipant.IsAlliedWithPlayer = ::World.FactionManager.isAlliedWithPlayer(troopDef.Faction);
+				currentParticipant.InCombatAlready = isInCombat;
 
 				if (_combatInfo.LocationTemplate != null && currentParticipant.Faction == _combatInfo.LocationTemplate.OwnedByFaction)
 				{
@@ -120,7 +122,7 @@
 				}
 			}
 
-			currentParticipant.Parties.push(party);
+			currentParticipant.addTroopDef(troopDef);
 		}
 
 		this.ParticipantCollection.registerParticipant(currentParticipant);
@@ -496,18 +498,28 @@
 		return defaultRegions;
 	}
 
-	function onFactionCompare( _party1, _party2 )
+	// Exact of the vanilla ::Tactical.Entities.onFactionCompare function, because that global object is not yet available during initialisation
+	function onFactionCompare( _e1, _e2 )
 	{
-		if (_party1.getFaction() < _party2.getFaction())
+		if (this.World.FactionManager.isAlliedWithPlayer(_e1.Faction) && !this.World.FactionManager.isAlliedWithPlayer(_e2.Faction))
 		{
 			return -1;
 		}
-		else if (_party1.getFaction() > _party2.getFaction())
+		else if (!this.World.FactionManager.isAlliedWithPlayer(_e1.Faction) && this.World.FactionManager.isAlliedWithPlayer(_e2.Faction))
 		{
 			return 1;
 		}
 		else
 		{
+			if (_e1.Faction < _e2.Faction)
+			{
+				return -1;
+			}
+			else if (_e1.Faction > _e2.Faction)
+			{
+				return 1;
+			}
+
 			return 0;
 		}
 	}
