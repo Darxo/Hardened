@@ -62,6 +62,11 @@
 	// @return numeral entry table consisting of StartsAt, Name, Suffix and Range strings
 	function getNumeralEntryByAmount( _amount )
 	{
+		if (_amount <= 0)
+		{
+			return this.IndefiniteNumerals[0];
+		}
+
 		foreach (index, numeralTable in this.IndefiniteNumerals)
 		{
 			if (_amount < numeralTable.StartsAt)
