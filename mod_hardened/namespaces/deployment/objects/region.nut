@@ -41,7 +41,7 @@
 			::Hardened.Deployment.FormationRole.Backline,
 			::Hardened.Deployment.FormationRole.Ranged,
 			::Hardened.Deployment.FormationRole.Siege,
-			::Hardened.Deployment.FormationRole.Random,
+			::Hardened.Deployment.FormationRole.Leftover,
 		];
 	}
 
@@ -70,7 +70,7 @@
 						this.SubRegions[::Hardened.Deployment.FormationRole.Siege].push(coordPair);
 						break;
 					default:
-						this.SubRegions[::Hardened.Deployment.FormationRole.Random].push(coordPair);
+						this.SubRegions[::Hardened.Deployment.FormationRole.Leftover].push(coordPair);
 				}
 			}
 			else if (this.Shape == ::Hardened.Deployment.RegionShape.Landscape)
@@ -90,14 +90,14 @@
 						this.SubRegions[::Hardened.Deployment.FormationRole.Siege].push(coordPair);
 						break;
 					default:
-						this.SubRegions[::Hardened.Deployment.FormationRole.Random].push(coordPair);
+						this.SubRegions[::Hardened.Deployment.FormationRole.Leftover].push(coordPair);
 				}
 			}
 			else if (this.Shape == ::Hardened.Deployment.RegionShape.Hexagon)
 			{
 				if (!::Tactical.isValidTileSquare(coordPair.X, coordPair.Y))
 				{
-					this.SubRegions[::Hardened.Deployment.FormationRole.Random].push(coordPair);
+					this.SubRegions[::Hardened.Deployment.FormationRole.Leftover].push(coordPair);
 					continue;
 				}
 
@@ -119,7 +119,7 @@
 						this.SubRegions[::Hardened.Deployment.FormationRole.Siege].push(coordPair);
 						break;
 					default:
-						this.SubRegions[::Hardened.Deployment.FormationRole.Random].push(coordPair);
+						this.SubRegions[::Hardened.Deployment.FormationRole.Leftover].push(coordPair);
 				}
 			}
 		}

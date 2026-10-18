@@ -6,4 +6,5 @@
 	Ranged = "HD_Ranged",		// Archers
 	Siege = "HD_Siege",		// Mortar, Necromancer, Shamans
 	Random = "HD_Random",		// Vanilla uses this
+	Leftover = "HD_Leftover",		// Additional buffer tiles that couldnt be sorted into any other category
 };
