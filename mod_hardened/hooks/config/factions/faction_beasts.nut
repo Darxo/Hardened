@@ -339,6 +339,7 @@
 		{
 			Cost = 25,
 			Strength = 25,
+			HD_FormationRole = ::Hardened.Deployment.FormationRole.Backline,
 		},
 		{
 			XP = 300 * ::Hardened.Global.FactionExperience.Beasts,		// Vanilla: 300
