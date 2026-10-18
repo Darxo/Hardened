@@ -44,6 +44,10 @@
 	}
 
 // New Functions
+	q.setup <- function()	// Virtual function to make modding easier. In vanilla only a few contracts have this function
+	{
+	}
+
 	// Add a list item either to the active screen or the next screen over
 	q.addListItem <- function( _listItem )
 	{
