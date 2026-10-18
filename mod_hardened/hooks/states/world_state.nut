@@ -99,6 +99,22 @@
 		return ret;
 	}}.startCombat;
 
+	q.startScriptedCombat = @(__original) { function startScriptedCombat( _properties = null, _isPlayerInitiated = true, _isCombatantsVisible = true, _allowFormationPicking = true )
+	{
+		local combatProperties = this.m.CombatProperties;	// Vanilla sets them to null at the end of the second call, so we need to fetch this early
+
+		local ret = __original(_properties, _isPlayerInitiated, _isCombatantsVisible, _allowFormationPicking);
+		if (!ret) return ret;
+
+		// Vanilla calls this function twice for every scripted combat. Once to trigger the combat dialog and then later to actually start the combat
+		// We are only interested in the second call, when _properties is null
+		if (_properties != null) return ret;
+
+		::Hardened.Deployment.DeploymentManager.init(combatProperties);
+
+		return ret;
+	}}.startScriptedCombat;
+
 	q.getLocalCombatProperties = @(__original) { function getLocalCombatProperties( _pos, _ignoreNoEnemies = false )
 	{
 		// Vanilla Fix: prevent getLocalCombatProperties filling up PartiesInCombat potentially too many times

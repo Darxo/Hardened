@@ -180,12 +180,12 @@
 			return this.translateAutoEngagementType(_combatInfo);
 		}
 
-		if (_combatInfo.DeploymentType == ::Const.Tactical.DeploymentType.Random)
+		if (_combatInfo.EnemyDeploymentType == ::Const.Tactical.DeploymentType.Random)
 		{
 			return ::Hardened.Deployment.EngagementType.FightInfestation;
 		}
 
-		if (_combatInfo.DeploymentType == ::Const.Tactical.DeploymentType.Circle)
+		if (_combatInfo.EnemyDeploymentType == ::Const.Tactical.DeploymentType.Circle)
 		{
 			if (_combatInfo.PlayerDeploymentType == ::Const.Tactical.DeploymentType.Edge)
 			{
