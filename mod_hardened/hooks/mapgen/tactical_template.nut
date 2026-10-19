@@ -17,7 +17,7 @@
 		"tactical.mountain",
 		"tactical.oasis",
 		"tactical.plains",
-		// "tactical.quarry",		// Black Monolith
+		"tactical.quarry",		// Black Monolith
 		// "tactical.sinkhole",		// Sunken Library
 		"tactical.snow",
 		"tactical.steppe",
