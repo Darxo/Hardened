@@ -24,7 +24,7 @@
 			::logWarning("Hardened: registerParticipant, but no troopDef is in _participant " + _participant.Parties[0].getName());
 		}
 
-		if (_participant.IsOwningLocation)
+		if (_participant.IsLocationDefender)
 		{
 			this.Defender = _participant;
 			return;

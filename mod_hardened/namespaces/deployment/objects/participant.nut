@@ -4,7 +4,7 @@
 ::Hardened.Deployment.Participant <- class {
 	Faction = null;
 	IsAlliedWithPlayer = null;
-	IsOwningLocation = null;	// Do we own the location or are allied to the faction who owns the location?
+	IsLocationDefender = null;	// Do we own the location or are allied to the faction who owns the location?
 	InCombatAlready = null;
 	WorldParty = null;		// Reference to the world party, if it exists
 	Parties = null;		// World parties belonging to this participant
@@ -15,7 +15,7 @@
 	{
 		this.Faction = ::Const.Faction.None;
 		this.IsAlliedWithPlayer = false;
-		this.IsOwningLocation = false;
+		this.IsLocationDefender = false;
 		this.InCombatAlready = false;
 		this.WorldParty = null;
 		this.Parties = [];

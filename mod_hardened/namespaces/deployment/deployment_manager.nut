@@ -123,9 +123,14 @@
 				currentParticipant.IsAlliedWithPlayer = ::World.FactionManager.isAlliedWithPlayer(troopDef.Faction);
 				currentParticipant.InCombatAlready = isInCombat;
 
-				if (_combatInfo.LocationTemplate != null && currentParticipant.Faction == _combatInfo.LocationTemplate.OwnedByFaction)
+				local eType = ::Hardened.Deployment.EngagementType;
+
+				if (this.EngagementType == eType.AttackFortification || this.EngagementType == eType.DefendFortification)
 				{
-					currentParticipant.IsOwningLocation = true;
+					if (currentParticipant.Faction == _combatInfo.LocationTemplate.OwnedByFaction)
+					{
+						currentParticipant.IsLocationDefender = true;
+					}
 				}
 			}
 
