@@ -17,6 +17,7 @@
 	// Private
 	q.m.HD_recoveredHitpointsOverflow <- 0.0;	// float between 0.0 and 1.0. Is not deserialized, meaning that we lose a tiny bit hitpoint recovery when saving/loading often
 	q.m.HD_ChanceToBeHit <- null;	// Contains an unsigned integer with the % chance that we will hit this entity when we are previewing a skill; null, if no hitchance should be displayed
+	q.m.HD_WasInit <- false;	// Is set to true after onInit ran and can be used to prevent certain code execution from happening too early
 
 	q.getTooltip = @(__original) { function getTooltip( _targetedWithSkill = null )
 	{
@@ -811,6 +812,8 @@
 			this.m.Hitpoints = b.Hitpoints;
 			this.m.CurrentProperties = clone b;	// Feat: we initialize the CurrentProperties once. That way we can save one line in every NPC implementation
 		}
+
+		this.m.HD_WasInit = true;
 	}
 
 	// For Vanilla you'd hook onActorKilled on player.nut. But Reforged moved the exp calculation over into the onDeath of actor.nut
