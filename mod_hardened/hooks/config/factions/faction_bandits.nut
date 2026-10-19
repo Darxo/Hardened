@@ -276,7 +276,11 @@
 {	// Leader
 	// scripts/entity/tactical/enemies/bandit_leader
 	::Reforged.Entities.editEntity("BanditLeader",	// Brigand Leader
-		null,
+		{
+			Cost = 50,
+			Strength = 50,
+			Variant = 5,		// Reforged: 1
+		},
 		{
 			XP = 500 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 400
 			Hitpoints = 120, 	// Reforged: 100
@@ -293,7 +297,11 @@
 
 	// scripts/entity/tactical/enemies/rf_bandit_baron
 	::Reforged.Entities.editEntity("RF_BanditBaron",	// Brigand Baron
-		null,
+		{
+			Cost = 80,
+			Strength = 80,
+			Variant = 10,		// Reforged: 1
+		},
 		{
 			XP = 800 * ::Hardened.Global.FactionExperience.Brigands, // Reforged: 500
 			Hitpoints = 150, 	// Reforged: 120
@@ -310,9 +318,13 @@
 
 {	// Dogs
 	// scripts/entity/tactical/enemies/wardog
-	// scripts/entity/tactical/enemies/armored_wardog
 	::Reforged.Entities.editEntity("Wardog",	// Wardog
-		null,
+		{
+			Cost = 8,
+			Strength = 8,
+		},
+		// scripts/entity/tactical/enemies/wardog
+		// scripts/entity/tactical/enemies/armored_wardog
 		{
 			XP = 80,				// Vanilla: 75
 			ActionPoints = 12,
@@ -329,10 +341,21 @@
 		}
 	);
 
+	// scripts/entity/tactical/enemies/armored_wardog
+	::Reforged.Entities.editEntity("ArmoredWardog",	// Armored Wardog
+		{
+			Cost = 12,
+			Strength = 12,
+		}
+	);
+
 	// scripts/entity/tactical/warhound
 	// scripts/entity/tactical/armored_warhound
 	::Reforged.Entities.editEntity("Warhound",	// Warhound
-		null,
+		{
+			Cost = 10,
+			Strength = 10,
+		},
 		{
 			XP = 100,
 			ActionPoints = 10,	// Vanilla: 11

@@ -2,7 +2,10 @@
 	{	// Leader
 		// scripts/entity/tactical/humans/noble_sergeant
 		::Reforged.Entities.editEntity("Sergeant",	// Noble Sergeant
-			null,
+			{
+				Cost = 35,
+				Strength = 35,
+			},
 			{
 				XP = 350 * ::Hardened.Global.FactionExperience.Nobles,
 				ActionPoints = 9,
@@ -19,7 +22,10 @@
 
 		// scripts/entity/tactical/humans/rf_marshal
 		::Reforged.Entities.editEntity("RF_Marshal",	// Noble Marshal
-			null,
+			{
+				Cost = 60,
+				Strength = 60,
+			},
 			{
 				XP = 600 * ::Hardened.Global.FactionExperience.Nobles,
 				ActionPoints = 9,
@@ -38,7 +44,11 @@
 	{	// Knights
 		// scripts/entity/tactical/humans/knight
 		::Reforged.Entities.editEntity("Knight",	// Noble Knight
-			null,
+			{
+				Cost = 70,
+				Strength = 70,
+				Variant = 5,		// Vanilla: 2
+			},
 			{
 				XP = 700 * ::Hardened.Global.FactionExperience.Nobles,
 				ActionPoints = 9,
@@ -55,7 +65,11 @@
 
 		// scripts/entity/tactical/humans/rf_knight_anointed
 		::Reforged.Entities.editEntity("RF_KnightAnointed",	// Noble Anointed Knight
-			null,
+			{
+				Cost = 100,
+				Strength = 100,
+				Variant = 10,		// Reforged: 2
+			},
 			{
 				XP = 1000 * ::Hardened.Global.FactionExperience.Nobles,
 				ActionPoints = 9,
@@ -74,7 +88,11 @@
 	{	// Elite
 		// scripts/entity/tactical/humans/rf_fencer
 		::Reforged.Entities.editEntity("RF_Fencer",	// Noble Fencer
-			null,
+			{
+				Cost = 50,
+				Strength = 50,
+				Variant = 2,		// Reforged: 1
+			},
 			{
 				XP = 500 * ::Hardened.Global.FactionExperience.Nobles,
 				ActionPoints = 9,

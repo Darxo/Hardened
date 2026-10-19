@@ -1,63 +1,150 @@
-{	// Elite
-	// scripts/entity/tactical/enemies/skeleton_heavy
-	::Reforged.Entities.editEntity("SkeletonHeavy",
-		{
-			Cost = 40,
-			Strength = 40, 	// Reforged: 35; Vanilla: 30
-			Variant = 0,	// Reforged: 0; Vanilla: 1
-		},
-		{
-			XP = 400 * ::Hardened.Global.FactionExperience.Skeletons, 	// Reforged: 350
-			Hitpoints = 75, // Reforged: 75
-			Bravery = 90, // Reforged: 90
-			Stamina = 200, // Reforged: 100
-			MeleeSkill = 75, // Reforged: 75
-			RangedSkill = 0, // Reforged: 0
-			MeleeDefense = 10,	// Reforged: 10
-			RangedDefense = 0, // Reforged: 0
-			Initiative = 75,	// Reforged: 75
-		}
-	);
+{	// Skeletons
+	{	// Elite
+		// scripts/entity/tactical/enemies/skeleton_heavy
+		::Reforged.Entities.editEntity("SkeletonHeavy",
+			{
+				Cost = 40,
+				Strength = 40, 	// Reforged: 35; Vanilla: 30
+				Variant = 0,	// Reforged: 0; Vanilla: 1
+			},
+			{
+				XP = 400 * ::Hardened.Global.FactionExperience.Skeletons, 	// Reforged: 350
+				Hitpoints = 75, // Reforged: 75
+				Bravery = 90, // Reforged: 90
+				Stamina = 200, // Reforged: 100
+				MeleeSkill = 75, // Reforged: 75
+				RangedSkill = 0, // Reforged: 0
+				MeleeDefense = 10,	// Reforged: 10
+				RangedDefense = 0, // Reforged: 0
+				Initiative = 75,	// Reforged: 75
+			}
+		);
 
-	// scripts/entity/tactical/enemies/skeleton_heavy_bodyguard
-	::Reforged.Entities.editEntity("SkeletonHeavyBodyguard",
-		{
-			Cost = 40,			// Vanilla: 30
-			Strength = 40,		// Vanilla: 30
-		}
-	);
+		// scripts/entity/tactical/enemies/skeleton_heavy_bodyguard
+		::Reforged.Entities.editEntity("SkeletonHeavyBodyguard",
+			{
+				Cost = 40,			// Vanilla: 30
+				Strength = 40,		// Vanilla: 30
+			}
+		);
 
-	// We dont need to adjust the troop
+		// We dont need to adjust the troop
 
-	// scripts/entity/tactical/enemies/rf_skeleton_heavy_elite
-	::Reforged.Entities.editEntity("RF_SkeletonHeavyElite",
-		{
-			Cost = 60, 		// Reforged: 45
-			Strength = 60, 	// Reforged: 45
-			Variant = 2,	// Reforged: 1
-		},
-		{
-			XP = 600 * ::Hardened.Global.FactionExperience.Skeletons, // Reforged: 450
-			Hitpoints = 90, // Reforged: 90
-			Bravery = 100, // Reforged: 100
-			Stamina = 200, // Reforged: 100
-			MeleeSkill = 90, // Reforged: 80
-			RangedSkill = 55, // Reforged: 0
-			MeleeDefense = 20,	// Reforged: 15
-			RangedDefense = 0, // Reforged: 0
-			Initiative = 75,	// Reforged: 75
-		}
-	);
+		// scripts/entity/tactical/enemies/rf_skeleton_heavy_elite
+		::Reforged.Entities.editEntity("RF_SkeletonHeavyElite",
+			{
+				Cost = 60, 		// Reforged: 45
+				Strength = 60, 	// Reforged: 45
+				Variant = 2,	// Reforged: 1
+			},
+			{
+				XP = 600 * ::Hardened.Global.FactionExperience.Skeletons, // Reforged: 450
+				Hitpoints = 90, // Reforged: 90
+				Bravery = 100, // Reforged: 100
+				Stamina = 200, // Reforged: 100
+				MeleeSkill = 90, // Reforged: 80
+				RangedSkill = 55, // Reforged: 0
+				MeleeDefense = 20,	// Reforged: 15
+				RangedDefense = 0, // Reforged: 0
+				Initiative = 75,	// Reforged: 75
+			}
+		);
 
-	// Same as what Reforged does
-	::Reforged.Entities.addTroop(
-		"RF_SkeletonHeavyEliteBodyguard",
-		::MSU.Table.merge(clone ::Const.World.Spawn.Troops.RF_SkeletonHeavyElite, {
-			Variant = 0,
-			Row = 2,
-			Script = "scripts/entity/tactical/enemies/rf_skeleton_heavy_elite_bodyguard"
-		})
-	);
+		// Same as what Reforged does
+		::Reforged.Entities.addTroop(
+			"RF_SkeletonHeavyEliteBodyguard",
+			::MSU.Table.merge(clone ::Const.World.Spawn.Troops.RF_SkeletonHeavyElite, {
+				Variant = 0,
+				Row = 2,
+				Script = "scripts/entity/tactical/enemies/rf_skeleton_heavy_elite_bodyguard"
+			})
+		);
+	}
+
+	{	// Leader
+		// scripts/entity/tactical/enemies/rf_skeleton_decanus
+		::Reforged.Entities.editEntity("RF_SkeletonDecanus",	// Ancient Decanus (Shield)
+			{
+				Cost = 40,
+				Strength = 40,
+				Variant = 0,
+			},
+			{
+				XP = 400 * ::Hardened.Global.FactionExperience.Skeletons,
+				ActionPoints = 9,
+				Hitpoints = 70,
+				Bravery = 80,
+				Stamina = 200,
+				MeleeSkill = 70,
+				RangedSkill = 0,
+				MeleeDefense = 0,
+				RangedDefense = 0,
+				Initiative = 75,
+			}
+		);
+
+		// scripts/entity/tactical/enemies/rf_skeleton_centurion
+		::Reforged.Entities.editEntity("RF_SkeletonCenturion",	// Ancient Centurion (Initiative)
+			{
+				Cost = 60,
+				Strength = 60,
+			},
+			{
+				XP = 600 * ::Hardened.Global.FactionExperience.Skeletons,
+				ActionPoints = 9,
+				Hitpoints = 80,
+				Bravery = 90,
+				Stamina = 200,
+				MeleeSkill = 80,
+				RangedSkill = 0,
+				MeleeDefense = 20,
+				RangedDefense = 20,
+				Initiative = 120,
+			}
+		);
+
+		// scripts/entity/tactical/enemies/rf_skeleton_legatus
+		::Reforged.Entities.editEntity("RF_SkeletonLegatus",	// Ancient Legatus (Menacing)
+			{
+				Cost = 80,
+				Strength = 80,
+				Variant = 5,		// Reforged: 1
+			},
+			{
+				XP = 800 * ::Hardened.Global.FactionExperience.Skeletons,
+				ActionPoints = 9,
+				Hitpoints = 90,
+				Bravery = 100,
+				Stamina = 200,
+				MeleeSkill = 85,
+				RangedSkill = 0,
+				MeleeDefense = 20,
+				RangedDefense = 20,
+				Initiative = 80,
+			}
+		);
+	}
+
+	{	// Unique
+		// scripts/entity/tactical/enemies/zombie_boss
+		::Reforged.Entities.editEntity("ZombieBoss",	// Conqueror (Black Monolith)
+			null,
+			{
+				XP = 900 * ::Hardened.Global.FactionExperience.Zombies,	// Vanilla: 500
+				ActionPoints = 7,		// Vanilla: 7
+				Hitpoints = 300,		// Vanilla: 500
+				Bravery = 110,		// Vanilla: 110
+				Stamina = 200,		// Vanilla: 100
+				MeleeSkill = 95,		// Vanilla: 95
+				RangedSkill = 0,		// Vanilla: 0
+				MeleeDefense = 25,	// Vanilla: 25
+				RangedDefense = 0,	// Vanilla: 0
+				Initiative = 80,		// Vanilla: 75
+				Armor = [400, 300],		// Vanilla: 400 / 250
+			}
+		);
+		::Const.EntityIcon[::Const.EntityType.ZombieBoss] = "hd_fallen_hero_orientation";
+	}
 }
 
 {	// Ghosts
@@ -80,28 +167,28 @@
 			Initiative = 100,	// Reforged: 100
 		}
 	);
-}
 
-{	// Flank
-	// scripts/entity/tactical/enemies/rf_hollenhund
-	::Reforged.Entities.editEntity("RF_Hollenhund",
-		{
-			Strength = 50,	// Reforged: 40;
-			Cost = 50,		// Reforged: 20;
-		},
-		{
-			XP = 500 * ::Hardened.Global.FactionExperience.Zombies, // Reforged: 400
-			ActionPoints = 12,	// Reforged: 12
-			Hitpoints = 60, // Reforged: 150
-			Bravery = 90, // Reforged: 90
-			Stamina = 100, // Reforged: 100
-			MeleeSkill = 80, // Reforged: 80
-			RangedSkill = 0, // Reforged: 0
-			MeleeDefense = 30,	// Reforged: 30
-			RangedDefense = 30, // Reforged: 50
-			Initiative = 110,	// Reforged: 110
-		}
-	);
+	{	// Flank
+		// scripts/entity/tactical/enemies/rf_hollenhund
+		::Reforged.Entities.editEntity("RF_Hollenhund",
+			{
+				Strength = 50,	// Reforged: 40;
+				Cost = 50,		// Reforged: 20;
+			},
+			{
+				XP = 500 * ::Hardened.Global.FactionExperience.Zombies, // Reforged: 400
+				ActionPoints = 12,	// Reforged: 12
+				Hitpoints = 60, // Reforged: 150
+				Bravery = 90, // Reforged: 90
+				Stamina = 100, // Reforged: 100
+				MeleeSkill = 80, // Reforged: 80
+				RangedSkill = 0, // Reforged: 0
+				MeleeDefense = 30,	// Reforged: 30
+				RangedDefense = 30, // Reforged: 50
+				Initiative = 110,	// Reforged: 110
+			}
+		);
+	}
 }
 
 {	// Zombie Orcs
@@ -342,21 +429,6 @@
 		Armor = [0, 0],
 	};
 
-	// scripts/entity/tactical/enemies/rf_skeleton_decanus
-	{
-		// Mandatory stats
-		::Const.Tactical.Actor.RF_SkeletonDecanus.XP = 400 * ::Hardened.Global.FactionExperience.Skeletons;
-		::Const.Tactical.Actor.RF_SkeletonDecanus.ActionPoints = 9;
-		::Const.Tactical.Actor.RF_SkeletonDecanus.Hitpoints = 70;
-		::Const.Tactical.Actor.RF_SkeletonDecanus.Bravery = 80;
-		::Const.Tactical.Actor.RF_SkeletonDecanus.Stamina = 200;
-		::Const.Tactical.Actor.RF_SkeletonDecanus.MeleeSkill = 70;
-		::Const.Tactical.Actor.RF_SkeletonDecanus.RangedSkill = 0;
-		::Const.Tactical.Actor.RF_SkeletonDecanus.MeleeDefense = 0;
-		::Const.Tactical.Actor.RF_SkeletonDecanus.RangedDefense = 0;
-		::Const.Tactical.Actor.RF_SkeletonDecanus.Initiative = 75;
-	}
-
 	// scripts/entity/tactical/enemies/rf_skeleton_medium_elite
 	{
 		// Mandatory stats
@@ -402,21 +474,6 @@
 		::Const.Tactical.Actor.SkeletonPriest.Initiative = 10;
 	}
 
-	// scripts/entity/tactical/enemies/rf_skeleton_centurion
-	{
-		// Mandatory stats
-		::Const.Tactical.Actor.RF_SkeletonCenturion.XP = 600 * ::Hardened.Global.FactionExperience.Skeletons;
-		::Const.Tactical.Actor.RF_SkeletonCenturion.ActionPoints = 9;
-		::Const.Tactical.Actor.RF_SkeletonCenturion.Hitpoints = 80;
-		::Const.Tactical.Actor.RF_SkeletonCenturion.Bravery = 90;
-		::Const.Tactical.Actor.RF_SkeletonCenturion.Stamina = 200;
-		::Const.Tactical.Actor.RF_SkeletonCenturion.MeleeSkill = 80;
-		::Const.Tactical.Actor.RF_SkeletonCenturion.RangedSkill = 0;
-		::Const.Tactical.Actor.RF_SkeletonCenturion.MeleeDefense = 20;
-		::Const.Tactical.Actor.RF_SkeletonCenturion.RangedDefense = 20;
-		::Const.Tactical.Actor.RF_SkeletonCenturion.Initiative = 120;
-	}
-
 	// scripts/entity/tactical/enemies/skeleton_heavy_bodyguard
 	::Const.Tactical.Actor.HD_SkeletonHeavyBodyguard <- {
 		XP = 600 * ::Hardened.Global.FactionExperience.Skeletons,
@@ -431,51 +488,49 @@
 		Initiative = 25,
 		Armor = [0, 0],
 	};
-
-	// scripts/entity/tactical/enemies/rf_skeleton_legatus
-	{
-		// Mandatory stats
-		::Const.Tactical.Actor.RF_SkeletonLegatus.XP = 800 * ::Hardened.Global.FactionExperience.Skeletons;
-		::Const.Tactical.Actor.RF_SkeletonLegatus.ActionPoints = 9;
-		::Const.Tactical.Actor.RF_SkeletonLegatus.Hitpoints = 90;
-		::Const.Tactical.Actor.RF_SkeletonLegatus.Bravery = 100;
-		::Const.Tactical.Actor.RF_SkeletonLegatus.Stamina = 200;
-		::Const.Tactical.Actor.RF_SkeletonLegatus.MeleeSkill = 85;
-		::Const.Tactical.Actor.RF_SkeletonLegatus.RangedSkill = 0;
-		::Const.Tactical.Actor.RF_SkeletonLegatus.MeleeDefense = 20;
-		::Const.Tactical.Actor.RF_SkeletonLegatus.RangedDefense = 20;
-		::Const.Tactical.Actor.RF_SkeletonLegatus.Initiative = 80;
-	}
 }
 
-// scripts/entity/tactical/enemies/vampire
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.Vampire.XP = 500 * ::Hardened.Global.FactionExperience.Skeletons;
-	::Const.Tactical.Actor.Vampire.ActionPoints = 9;
-	::Const.Tactical.Actor.Vampire.Hitpoints = 225;
-	::Const.Tactical.Actor.Vampire.Bravery = 50;
-	::Const.Tactical.Actor.Vampire.Stamina = 200;
-	::Const.Tactical.Actor.Vampire.MeleeSkill = 85;
-	::Const.Tactical.Actor.Vampire.RangedSkill = 0;
-	::Const.Tactical.Actor.Vampire.MeleeDefense = 5;
-	::Const.Tactical.Actor.Vampire.RangedDefense = 5;
-	::Const.Tactical.Actor.Vampire.Initiative = 130;
-}
+{	// Vampires
+	// scripts/entity/tactical/enemies/vampire
+	::Reforged.Entities.editEntity("Vampire",	// Necrosavant
+		{
+			Cost = 50,
+			Strength = 50,
+		},
+		{
+			XP = 500 * ::Hardened.Global.FactionExperience.Skeletons,
+			ActionPoints = 9,
+			Hitpoints = 225,
+			Bravery = 50,
+			Stamina = 200,
+			MeleeSkill = 85,
+			RangedSkill = 0,
+			MeleeDefense = 5,
+			RangedDefense = 5,
+			Initiative = 130,
+		}
+	);
 
-// scripts/entity/tactical/enemies/rf_vampire_lord
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.RF_VampireLord.XP = 1000 * ::Hardened.Global.FactionExperience.Skeletons;
-	::Const.Tactical.Actor.RF_VampireLord.ActionPoints = 9;
-	::Const.Tactical.Actor.RF_VampireLord.Hitpoints = 350;
-	::Const.Tactical.Actor.RF_VampireLord.Bravery = 100;
-	::Const.Tactical.Actor.RF_VampireLord.Stamina = 200;
-	::Const.Tactical.Actor.RF_VampireLord.MeleeSkill = 85;
-	::Const.Tactical.Actor.RF_VampireLord.RangedSkill = 0;
-	::Const.Tactical.Actor.RF_VampireLord.MeleeDefense = 20;
-	::Const.Tactical.Actor.RF_VampireLord.RangedDefense = 20;
-	::Const.Tactical.Actor.RF_VampireLord.Initiative = 130;
+	// scripts/entity/tactical/enemies/rf_vampire_lord
+	::Reforged.Entities.editEntity("RF_VampireLord",	// Necrosavant Lord
+		{
+			Cost = 100,
+			Strength = 100,
+			Variant = 1,		// Reforged: 1
+		},
+		{
+			XP = 1000 * ::Hardened.Global.FactionExperience.Skeletons,
+			ActionPoints = 9,
+			Hitpoints = 350,
+			Bravery = 100,
+			Stamina = 200,
+			MeleeSkill = 85,
+			RangedSkill = 0,
+			MeleeDefense = 20,
+			RangedDefense = 20,
+			Initiative = 130,
+		}
+	);
 }
 
 {	// Zombies
@@ -612,26 +667,6 @@
 		::Const.Tactical.Actor.ZombieBetrayer.Initiative = 70;		// Vanilla: 60
 
 		::Const.EntityIcon[::Const.EntityType.ZombieBetrayer] = "hd_fallen_hero_orientation";
-	}
-
-	// scripts/entity/tactical/enemies/zombie_boss
-	{
-		// Mandatory stats
-		::Const.Tactical.Actor.ZombieBoss.XP = 900 * ::Hardened.Global.FactionExperience.Zombies;	// Vanilla: 500
-		::Const.Tactical.Actor.ZombieBoss.ActionPoints = 7;		// Vanilla: 7
-		::Const.Tactical.Actor.ZombieBoss.Hitpoints = 300;		// Vanilla: 500
-		::Const.Tactical.Actor.ZombieBoss.Bravery = 110;		// Vanilla: 110
-		::Const.Tactical.Actor.ZombieBoss.Stamina = 200;		// Vanilla: 100
-		::Const.Tactical.Actor.ZombieBoss.MeleeSkill = 95;		// Vanilla: 95
-		::Const.Tactical.Actor.ZombieBoss.RangedSkill = 0;		// Vanilla: 0
-		::Const.Tactical.Actor.ZombieBoss.MeleeDefense = 25;	// Vanilla: 25
-		::Const.Tactical.Actor.ZombieBoss.RangedDefense = 0;	// Vanilla: 0
-		::Const.Tactical.Actor.ZombieBoss.Initiative = 80;		// Vanilla: 75
-
-		::Const.Tactical.Actor.ZombieBoss.Armor[0] = 400;		// Vanilla: 400
-		::Const.Tactical.Actor.ZombieBoss.Armor[1] = 300;		// Vanilla: 250
-
-		::Const.EntityIcon[::Const.EntityType.ZombieBoss] = "hd_fallen_hero_orientation";
 	}
 }
 

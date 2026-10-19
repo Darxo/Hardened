@@ -1,104 +1,147 @@
-// scripts/entity/tactical/humans/barbarian_thrall
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.BarbarianThrall.XP = 150 * ::Hardened.Global.FactionExperience.Barbarians;
-	::Const.Tactical.Actor.BarbarianThrall.ActionPoints = 9;
-	::Const.Tactical.Actor.BarbarianThrall.Hitpoints = 80;
-	::Const.Tactical.Actor.BarbarianThrall.Bravery = 70;
-	::Const.Tactical.Actor.BarbarianThrall.Stamina = 115;
-	::Const.Tactical.Actor.BarbarianThrall.MeleeSkill = 65;
-	::Const.Tactical.Actor.BarbarianThrall.RangedSkill = 50;
-	::Const.Tactical.Actor.BarbarianThrall.MeleeDefense = -10;
-	::Const.Tactical.Actor.BarbarianThrall.RangedDefense = 0;
-	::Const.Tactical.Actor.BarbarianThrall.Initiative = 115;
-}
+{	// Barbarians
+	{	// Frontline
+		// scripts/entity/tactical/humans/barbarian_thrall
+		::Reforged.Entities.editEntity("BarbarianThrall",
+			{
+				Cost = 12,
+				Strength = 12,
+			},
+			{
+				XP = 150 * ::Hardened.Global.FactionExperience.Barbarians,
+				ActionPoints = 9,
+				Hitpoints = 80,
+				Bravery = 70,
+				Stamina = 115,
+				MeleeSkill = 65,
+				RangedSkill = 50,
+				MeleeDefense = -10,
+				RangedDefense = 0,
+				Initiative = 115,
+			}
+		);
 
-// scripts/entity/tactical/humans/barbarian_beastmaster
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.BarbarianBeastmaster.XP = 200 * ::Hardened.Global.FactionExperience.Barbarians;
-	::Const.Tactical.Actor.BarbarianBeastmaster.ActionPoints = 9;
-	::Const.Tactical.Actor.BarbarianBeastmaster.Hitpoints = 70;
-	::Const.Tactical.Actor.BarbarianBeastmaster.Bravery = 90;
-	::Const.Tactical.Actor.BarbarianBeastmaster.Stamina = 120;
-	::Const.Tactical.Actor.BarbarianBeastmaster.MeleeSkill = 70;
-	::Const.Tactical.Actor.BarbarianBeastmaster.RangedSkill = 55;
-	::Const.Tactical.Actor.BarbarianBeastmaster.MeleeDefense = 0;
-	::Const.Tactical.Actor.BarbarianBeastmaster.RangedDefense = 20;
-	::Const.Tactical.Actor.BarbarianBeastmaster.Initiative = 110;
-}
+		// scripts/entity/tactical/humans/barbarian_marauder
+		::Reforged.Entities.editEntity("BarbarianMarauder",
+			{
+				Cost = 30,
+				Strength = 30,
+			},
+			{
+				XP = 300 * ::Hardened.Global.FactionExperience.Barbarians,
+				ActionPoints = 9,
+				Hitpoints = 120,
+				Bravery = 80,
+				Stamina = 150,
+				MeleeSkill = 75,
+				RangedSkill = 60,
+				MeleeDefense = 10,
+				RangedDefense = 0,
+				Initiative = 115,
+			}
+		);
 
-// scripts/entity/tactical/humans/barbarian_drummer
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.BarbarianDrummer.XP = 300 * ::Hardened.Global.FactionExperience.Barbarians;
-	::Const.Tactical.Actor.BarbarianDrummer.ActionPoints = 9;
-	::Const.Tactical.Actor.BarbarianDrummer.Hitpoints = 90;
-	::Const.Tactical.Actor.BarbarianDrummer.Bravery = 80;
-	::Const.Tactical.Actor.BarbarianDrummer.Stamina = 150;
-	::Const.Tactical.Actor.BarbarianDrummer.MeleeSkill = 65;
-	::Const.Tactical.Actor.BarbarianDrummer.RangedSkill = 40;
-	::Const.Tactical.Actor.BarbarianDrummer.MeleeDefense = 0;
-	::Const.Tactical.Actor.BarbarianDrummer.RangedDefense = 0;
-	::Const.Tactical.Actor.BarbarianDrummer.Initiative = 90;
-}
+		// scripts/entity/tactical/humans/barbarian_champion
+		::Reforged.Entities.editEntity("BarbarianChampion",		// Chosen
+			{
+				Cost = 50,
+				Strength = 50,
+				Variant = 2,	// Vanilla: 1
+			},
+			{
+				XP = 500 * ::Hardened.Global.FactionExperience.Barbarians,
+				ActionPoints = 9,
+				Hitpoints = 150,
+				Bravery = 90,
+				Stamina = 200,
+				MeleeSkill = 80,
+				RangedSkill = 60,
+				MeleeDefense = 15,
+				RangedDefense = 10,
+				Initiative = 115,
+			}
+		);
+	}
 
-// scripts/entity/tactical/humans/barbarian_marauder
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.BarbarianMarauder.XP = 300 * ::Hardened.Global.FactionExperience.Barbarians;
-	::Const.Tactical.Actor.BarbarianMarauder.ActionPoints = 9;
-	::Const.Tactical.Actor.BarbarianMarauder.Hitpoints = 120;
-	::Const.Tactical.Actor.BarbarianMarauder.Bravery = 80;
-	::Const.Tactical.Actor.BarbarianMarauder.Stamina = 150;
-	::Const.Tactical.Actor.BarbarianMarauder.MeleeSkill = 75;
-	::Const.Tactical.Actor.BarbarianMarauder.RangedSkill = 60;
-	::Const.Tactical.Actor.BarbarianMarauder.MeleeDefense = 10;
-	::Const.Tactical.Actor.BarbarianMarauder.RangedDefense = 0;
-	::Const.Tactical.Actor.BarbarianMarauder.Initiative = 115;
-}
+	{	// Leader
+		// scripts/entity/tactical/humans/barbarian_chosen
+		::Reforged.Entities.editEntity("BarbarianChosen",	// Barbarian King
+			{
+				Cost = 80,
+				Strength = 999,		// It is vital for the Barbarian King contract that this guy can do autobattles but not lose them. Thats why his strengh is this high
+			},
+			{
+				XP = 800 * ::Hardened.Global.FactionExperience.Barbarians,
+				ActionPoints = 9,
+				Hitpoints = 150,
+				Bravery = 110,
+				Stamina = 250,
+				MeleeSkill = 100,
+				RangedSkill = 65,
+				MeleeDefense = 5,
+				RangedDefense = 0,
+				Initiative = 75,
+			}
+		);
+	}
 
-// scripts/entity/tactical/humans/barbarian_champion
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.BarbarianChampion.XP = 500 * ::Hardened.Global.FactionExperience.Barbarians;
-	::Const.Tactical.Actor.BarbarianChampion.ActionPoints = 9;
-	::Const.Tactical.Actor.BarbarianChampion.Hitpoints = 150;
-	::Const.Tactical.Actor.BarbarianChampion.Bravery = 90;
-	::Const.Tactical.Actor.BarbarianChampion.Stamina = 200;
-	::Const.Tactical.Actor.BarbarianChampion.MeleeSkill = 80;
-	::Const.Tactical.Actor.BarbarianChampion.RangedSkill = 60;
-	::Const.Tactical.Actor.BarbarianChampion.MeleeDefense = 15;
-	::Const.Tactical.Actor.BarbarianChampion.RangedDefense = 10;
-	::Const.Tactical.Actor.BarbarianChampion.Initiative = 115;
-}
+	{	// Support
+		// scripts/entity/tactical/humans/barbarian_beastmaster
+		::Reforged.Entities.editEntity("BarbarianBeastmaster",
+			{
+				Cost = 20,
+				Strength = 20,
+			},
+			{
+				XP = 200 * ::Hardened.Global.FactionExperience.Barbarians,
+				ActionPoints = 9,
+				Hitpoints = 70,
+				Bravery = 90,
+				Stamina = 120,
+				MeleeSkill = 70,
+				RangedSkill = 55,
+				MeleeDefense = 0,
+				RangedDefense = 20,
+				Initiative = 110,
+			}
+		);
 
-// scripts/entity/tactical/humans/barbarian_chosen
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.BarbarianChosen.XP = 800 * ::Hardened.Global.FactionExperience.Barbarians;
-	::Const.Tactical.Actor.BarbarianChosen.ActionPoints = 9;
-	::Const.Tactical.Actor.BarbarianChosen.Hitpoints = 150;
-	::Const.Tactical.Actor.BarbarianChosen.Bravery = 110;
-	::Const.Tactical.Actor.BarbarianChosen.Stamina = 250;
-	::Const.Tactical.Actor.BarbarianChosen.MeleeSkill = 100;
-	::Const.Tactical.Actor.BarbarianChosen.RangedSkill = 65;
-	::Const.Tactical.Actor.BarbarianChosen.MeleeDefense = 5;
-	::Const.Tactical.Actor.BarbarianChosen.RangedDefense = 0;
-	::Const.Tactical.Actor.BarbarianChosen.Initiative = 75;
-}
+		// scripts/entity/tactical/humans/barbarian_beastmaster
+		::Reforged.Entities.editEntity("BarbarianDrummer",
+			{
+				Cost = 30,
+				Strength = 30,
+			},
+			{
+				XP = 300 * ::Hardened.Global.FactionExperience.Barbarians,
+				ActionPoints = 9,
+				Hitpoints = 90,
+				Bravery = 80,
+				Stamina = 150,
+				MeleeSkill = 65,
+				RangedSkill = 40,
+				MeleeDefense = 0,
+				RangedDefense = 0,
+				Initiative = 90,
+			}
+		);
+	}
 
-// scripts/entity/tactical/humans/barbarian_madman
-{
-	// Mandatory stats
-	::Const.Tactical.Actor.BarbarianMadman.XP = 800 * ::Hardened.Global.FactionExperience.Barbarians;
-	::Const.Tactical.Actor.BarbarianMadman.ActionPoints = 9;
-	::Const.Tactical.Actor.BarbarianMadman.Hitpoints = 160;
-	::Const.Tactical.Actor.BarbarianMadman.Bravery = 100;
-	::Const.Tactical.Actor.BarbarianMadman.Stamina = 200;
-	::Const.Tactical.Actor.BarbarianMadman.MeleeSkill = 80;
-	::Const.Tactical.Actor.BarbarianMadman.RangedSkill = 0;
-	::Const.Tactical.Actor.BarbarianMadman.MeleeDefense = 0;	// Vanilla: 10
-	::Const.Tactical.Actor.BarbarianMadman.RangedDefense = 0;	// Vanilla: 10
-	::Const.Tactical.Actor.BarbarianMadman.Initiative = 115;
+	{	// Special
+		// scripts/entity/tactical/humans/barbarian_madman
+		::Reforged.Entities.editEntity("BarbarianMadman",	// Barbarian Madman
+			null,
+			{
+				XP = 800 * ::Hardened.Global.FactionExperience.Barbarians,
+				ActionPoints = 9,
+				Hitpoints = 160,
+				Bravery = 100,
+				Stamina = 200,
+				MeleeSkill = 80,
+				RangedSkill = 0,
+				MeleeDefense = 0,	// Vanilla: 10
+				RangedDefense = 0,	// Vanilla: 10
+				Initiative = 115,
+			}
+		);
+	}
 }

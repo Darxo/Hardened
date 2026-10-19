@@ -1,12 +1,5 @@
 // This list is sorted by Cost
 
-// scripts/entity/tactical/humans/slave
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Slave.Cost = 6;
-	::Const.World.Spawn.Troops.Slave.Strength = 6;
-}
-
 // scripts/entity/tactical/humans/slave_northern
 {
 	// Mandatory Entries
@@ -26,13 +19,6 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.SouthernPeasant.Cost = 8;
 	::Const.World.Spawn.Troops.SouthernPeasant.Strength = 8;
-}
-
-// scripts/entity/tactical/wardog
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Wardog.Cost = 8;
-	::Const.World.Spawn.Troops.Wardog.Strength = 8;
 }
 
 // scripts/entity/tactical/objective/donkey
@@ -63,13 +49,6 @@
 	::Const.World.Spawn.Troops.PeasantArmed.Strength = 10;
 }
 
-// scripts/entity/tactical/warhound
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Warhound.Cost = 10;
-	::Const.World.Spawn.Troops.Warhound.Strength = 10;
-}
-
 // scripts/entity/tactical/humans/caravan_hand
 {
 	// Mandatory Entries
@@ -91,39 +70,11 @@
 	::Const.World.Spawn.Troops.ZombieBodyguard.Strength = 10;
 }
 
-// scripts/entity/tactical/enemies/ghoul
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.GhoulLOW.Cost = 15;
-	::Const.World.Spawn.Troops.GhoulLOW.Strength = 15;
-}
-
-// scripts/entity/tactical/enemies/spider
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Spider.Cost = 15;
-	::Const.World.Spawn.Troops.Spider.Strength = 15;
-}
-
 // scripts/entity/tactical/enemies/spider_bodyguard
 {
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.SpiderBodyguard.Cost = 12;
 	::Const.World.Spawn.Troops.SpiderBodyguard.Strength = 12;
-}
-
-// scripts/entity/tactical/enemies/sand_golem
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.SandGolem.Cost = 12;
-	::Const.World.Spawn.Troops.SandGolem.Strength = 12;
-}
-
-// scripts/entity/tactical/enemies/armored_wardog
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.ArmoredWardog.Cost = 12;
-	::Const.World.Spawn.Troops.ArmoredWardog.Strength = 12;
 }
 
 // scripts/entity/tactical/humans/militia
@@ -147,20 +98,6 @@
 	::Const.World.Spawn.Troops.SkeletonLight.Strength = 16;
 }
 
-// scripts/entity/tactical/enemies/nomad_cutthroat
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.NomadCutthroat.Cost = 15;
-	::Const.World.Spawn.Troops.NomadCutthroat.Strength = 15;
-}
-
-// scripts/entity/tactical/enemies/nomad_slinger
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.NomadSlinger.Cost = 15;
-	::Const.World.Spawn.Troops.NomadSlinger.Strength = 15;
-}
-
 // scripts/entity/tactical/enemies/zombie_yeoman
 {
 	// Mandatory Entries
@@ -175,13 +112,6 @@
 	::Const.World.Spawn.Troops.ZombieYeomanBodyguard.Strength = 18;
 }
 
-// scripts/entity/tactical/humans/barbarian_beastmaster
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.BarbarianBeastmaster.Cost = 20;
-	::Const.World.Spawn.Troops.BarbarianBeastmaster.Strength = 20;
-}
-
 // scripts/entity/tactical/humans/cultist
 {
 	// Mandatory Entries
@@ -194,27 +124,6 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.CultistAmbush.Cost = 20;
 	::Const.World.Spawn.Troops.CultistAmbush.Strength = 20;
-}
-
-// scripts/entity/tactical/enemies/direwolf
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Direwolf.Cost = 20;
-	::Const.World.Spawn.Troops.Direwolf.Strength = 20;
-}
-
-// scripts/entity/tactical/enemies/hyena
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Hyena.Cost = 20;
-	::Const.World.Spawn.Troops.Hyena.Strength = 20;
-}
-
-// scripts/entity/tactical/humans/engineer
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Engineer.Cost = 20;
-	::Const.World.Spawn.Troops.Engineer.Strength = 20;
 }
 
 // scripts/entity/tactical/humans/caravan_guard
@@ -259,32 +168,11 @@
 	::Const.World.Spawn.Troops.Footman.Strength = 24;
 }
 
-// scripts/entity/tactical/humans/nomad_archer
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.NomadArcher.Cost = 24;
-	::Const.World.Spawn.Troops.NomadArcher.Strength = 24;
-}
-
 // scripts/entity/tactical/enemies/bandit_raider_wolf
 {
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.BanditRaiderWolf.Cost = 25;
 	::Const.World.Spawn.Troops.BanditRaiderWolf.Strength = 25;
-}
-
-// scripts/entity/tactical/enemies/ghoul_medium
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Ghoul.Cost = 25;
-	::Const.World.Spawn.Troops.Ghoul.Strength = 25;
-}
-
-// scripts/entity/tactical/humans/conscript
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Conscript.Cost = 25;
-	::Const.World.Spawn.Troops.Conscript.Strength = 25;
 }
 
 // scripts/entity/tactical/humans/conscript_polearm
@@ -322,34 +210,6 @@
 	::Const.World.Spawn.Troops.BountyHunterRanged.Strength = 30;
 }
 
-// scripts/entity/tactical/humans/barbarian_drummer
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.BarbarianDrummer.Cost = 30;
-	::Const.World.Spawn.Troops.BarbarianDrummer.Strength = 30;
-}
-
-// scripts/entity/tactical/humans/barbarian_marauder
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.BarbarianMarauder.Cost = 30;
-	::Const.World.Spawn.Troops.BarbarianMarauder.Strength = 30;
-}
-
-// scripts/entity/tactical/enemies/serpent
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Serpent.Cost = 30;
-	::Const.World.Spawn.Troops.Serpent.Strength = 30;
-}
-
-// scripts/entity/tactical/enemies/alp
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Alp.Cost = 25;
-	::Const.World.Spawn.Troops.Alp.Strength = 25;
-}
-
 // scripts/entity/tactical/humans/rf_squire
 {
 	// Mandatory Entries
@@ -362,20 +222,6 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.StandardBearer.Cost = 30;
 	::Const.World.Spawn.Troops.StandardBearer.Strength = 30;
-}
-
-// scripts/entity/tactical/humans/nomad_outlaw
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.NomadOutlaw.Cost = 30;
-	::Const.World.Spawn.Troops.NomadOutlaw.Strength = 30;
-}
-
-// scripts/entity/tactical/humans/gunner
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Gunner.Cost = 30;
-	::Const.World.Spawn.Troops.Gunner.Strength = 30;
 }
 
 // scripts/entity/tactical/enemies/zombie_knight
@@ -407,20 +253,6 @@
 	::Const.World.Spawn.Troops.SkeletonMediumPolearm.Strength = 32;
 }
 
-// scripts/entity/tactical/enemies/direwolf_high
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.DirewolfHIGH.Cost = 40;
-	::Const.World.Spawn.Troops.DirewolfHIGH.Strength = 40;
-}
-
-// scripts/entity/tactical/enemies/hyena_high
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.HyenaHIGH.Cost = 40;
-	::Const.World.Spawn.Troops.HyenaHIGH.Strength = 40;
-}
-
 // scripts/entity/tactical/humans/mercenary
 {
 	// Mandatory Entries
@@ -433,34 +265,6 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.MercenaryRanged.Cost = 35;
 	::Const.World.Spawn.Troops.MercenaryRanged.Strength = 35;
-}
-
-// scripts/entity/tactical/humans/noble_sergeant
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Sergeant.Cost = 35;
-	::Const.World.Spawn.Troops.Sergeant.Strength = 35;
-}
-
-// scripts/entity/tactical/humans/militia_captain
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.MilitiaCaptain.Cost = 35;
-	::Const.World.Spawn.Troops.MilitiaCaptain.Strength = 35;
-}
-
-// scripts/entity/tactical/enemies/sand_golem_medium
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.SandGolemMEDIUM.Cost = 36;
-	::Const.World.Spawn.Troops.SandGolemMEDIUM.Strength = 36;
-}
-
-// scripts/entity/tactical/enemies/ghoul_high
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.GhoulHIGH.Cost = 40;
-	::Const.World.Spawn.Troops.GhoulHIGH.Strength = 40;
 }
 
 // scripts/entity/tactical/humans/rf_arbalester_heavy
@@ -484,35 +288,6 @@
 	::Const.World.Spawn.Troops.RF_FootmanHeavy.Strength = 40;
 }
 
-// scripts/entity/tactical/humans/executioner
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Executioner.Cost = 40;
-	::Const.World.Spawn.Troops.Executioner.Strength = 40;
-	::Const.World.Spawn.Troops.Executioner.Variant = 3;		// Vanilla: 2
-}
-
-// scripts/entity/tactical/humans/assassin
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Assassin.Cost = 40;
-	::Const.World.Spawn.Troops.Assassin.Strength = 40;
-}
-
-// scripts/entity/tactical/enemies/rf_skeleton_decanus
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_SkeletonDecanus.Cost = 40;
-	::Const.World.Spawn.Troops.RF_SkeletonDecanus.Strength = 40;
-}
-
-// scripts/entity/tactical/enemies/vampire
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Vampire.Cost = 50;
-	::Const.World.Spawn.Troops.Vampire.Strength = 50;
-}
-
 // scripts/entity/tactical/enemies/orc_berserker
 {
 	// Mandatory Entries
@@ -520,35 +295,11 @@
 	::Const.World.Spawn.Troops.OrcBerserker.Strength = 45;
 }
 
-// scripts/entity/tactical/humans/barbarian_champion
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.BarbarianChampion.Cost = 50;
-	::Const.World.Spawn.Troops.BarbarianChampion.Strength = 50;
-	::Const.World.Spawn.Troops.BarbarianChampion.Variant = 2;	// Vanilla: 1
-}
-
-// scripts/entity/tactical/humans/gladiator
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Gladiator.Cost = 45;
-	::Const.World.Spawn.Troops.Gladiator.Strength = 45;
-	::Const.World.Spawn.Troops.Gladiator.Variant = 3;		// Vanilla: 2
-}
-
 // scripts/entity/tactical/humans/noble_greatsword
 {
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.Greatsword.Cost = 50;
 	::Const.World.Spawn.Troops.Greatsword.Strength = 50;
-}
-
-// scripts/entity/tactical/humans/rf_fencer
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_Fencer.Cost = 50;
-	::Const.World.Spawn.Troops.RF_Fencer.Strength = 50;
-	::Const.World.Spawn.Troops.RF_Fencer.Variant = 2;		// Reforged: 1
 }
 
 // scripts/entity/tactical/humans/rf_man_at_arms
@@ -595,60 +346,6 @@
 	::Const.World.Spawn.Troops.Necromancer.Strength = 45;
 }
 
-// scripts/entity/tactical/enemies/bandit_leader
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.BanditLeader.Cost = 50;
-	::Const.World.Spawn.Troops.BanditLeader.Strength = 50;
-	::Const.World.Spawn.Troops.BanditLeader.Variant = 5;	// Vanilla: 1
-}
-
-// scripts/entity/tactical/enemies/goblin_leader
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.GoblinOverseer.Cost = 50;
-	::Const.World.Spawn.Troops.GoblinOverseer.Strength = 50;
-}
-
-// scripts/entity/tactical/enemies/goblin_shaman
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.GoblinShaman.Cost = 80;
-	::Const.World.Spawn.Troops.GoblinShaman.Strength = 80;
-}
-
-// scripts/entity/tactical/humans/nomad_leader
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.NomadLeader.Cost = 50;
-	::Const.World.Spawn.Troops.NomadLeader.Strength = 50;
-	::Const.World.Spawn.Troops.NomadLeader.Variant = 5;		// Vanilla: 1
-}
-
-// scripts/entity/tactical/humans/desert_devil
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.DesertDevil.Cost = 50;
-	::Const.World.Spawn.Troops.DesertDevil.Strength = 50;
-	::Const.World.Spawn.Troops.DesertDevil.Variant = 3;		// Vanilla: 2
-}
-
-// scripts/entity/tactical/humans/desert_stalker
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.DesertStalker.Cost = 50;
-	::Const.World.Spawn.Troops.DesertStalker.Strength = 50;
-	::Const.World.Spawn.Troops.DesertStalker.Variant = 3;		// Vanilla: 2
-}
-
-// scripts/entity/tactical/humans/officer
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Officer.Cost = 50;
-	::Const.World.Spawn.Troops.Officer.Strength = 50;
-	::Const.World.Spawn.Troops.Officer.Variant = 5;		// Vanilla: 1
-}
-
 // scripts/entity/tactical/enemies/skeleton_priest
 {
 	// Mandatory Entries
@@ -661,27 +358,6 @@
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.OrcWarrior.Cost = 60;
 	::Const.World.Spawn.Troops.OrcWarrior.Strength = 60;
-}
-
-// scripts/entity/tactical/enemies/unhold_armored
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.BarbarianUnhold.Cost = 80;
-	::Const.World.Spawn.Troops.BarbarianUnhold.Strength = 80;
-}
-
-// scripts/entity/tactical/enemies/hexe
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Hexe.Cost = 60;
-	::Const.World.Spawn.Troops.Hexe.Strength = 60;
-}
-
-// scripts/entity/tactical/enemies/unhold
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Unhold.Cost = 80;
-	::Const.World.Spawn.Troops.Unhold.Strength = 80;
 }
 
 // scripts/entity/tactical/humans/hedge_knight
@@ -700,120 +376,10 @@
 	::Const.World.Spawn.Troops.MasterArcher.Variant = 3;		// Vanilla: 2
 }
 
-// scripts/entity/tactical/humans/rf_marshal
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_Marshal.Cost = 60;
-	::Const.World.Spawn.Troops.RF_Marshal.Strength = 60;
-}
-
-// scripts/entity/tactical/humans/knight
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Knight.Cost = 70;
-	::Const.World.Spawn.Troops.Knight.Strength = 70;
-	::Const.World.Spawn.Troops.Knight.Variant = 5;		// Vanilla: 2
-}
-
-// scripts/entity/tactical/enemies/rf_skeleton_centurion
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_SkeletonCenturion.Cost = 60;
-	::Const.World.Spawn.Troops.RF_SkeletonCenturion.Strength = 60;
-}
-
-// scripts/entity/tactical/enemies/unhold_bog
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.UnholdBog.Cost = 80;
-	::Const.World.Spawn.Troops.UnholdBog.Strength = 80;
-}
-
-// scripts/entity/tactical/enemies/rf_bandit_baron
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_BanditBaron.Cost = 80;
-	::Const.World.Spawn.Troops.RF_BanditBaron.Strength = 80;
-	::Const.World.Spawn.Troops.RF_BanditBaron.Variant = 10;		// Reforged: 1
-}
-
-// scripts/entity/tactical/humans/barbarian_chosen
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.BarbarianChosen.Cost = 80;
-	::Const.World.Spawn.Troops.BarbarianChosen.Strength = 999;	// It is vital for the Barbarian King contract that this guy can do autobattles but not lose them. Thats why his strengh is this high
-}
-
-// scripts/entity/tactical/enemies/unhold_frost
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.UnholdFrost.Cost = 100;
-	::Const.World.Spawn.Troops.UnholdFrost.Strength = 100;
-}
-
-// scripts/entity/tactical/enemies/schrat
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Schrat.Cost = 80;
-	::Const.World.Spawn.Troops.Schrat.Strength = 80;
-}
-
 // scripts/entity/tactical/humans/swordmaster
 {
 	// Mandatory Entries
 	::Const.World.Spawn.Troops.Swordmaster.Cost = 80;
 	::Const.World.Spawn.Troops.Swordmaster.Strength = 80;
 	::Const.World.Spawn.Troops.Swordmaster.Variant = 3;		// Vanilla: 2
-}
-
-// scripts/entity/tactical/humans/rf_knight_anointed
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_KnightAnointed.Cost = 100;
-	::Const.World.Spawn.Troops.RF_KnightAnointed.Strength = 100;
-	::Const.World.Spawn.Troops.RF_KnightAnointed.Variant = 10;		// Reforged: 2
-}
-
-// scripts/entity/tactical/enemies/rf_skeleton_legatus
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_SkeletonLegatus.Cost = 80;
-	::Const.World.Spawn.Troops.RF_SkeletonLegatus.Strength = 80;
-	::Const.World.Spawn.Troops.RF_SkeletonLegatus.Variant = 5;		// Reforged: 1
-}
-
-// scripts/entity/tactical/enemies/orc_warlord
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.OrcWarlord.Cost = 100;
-	::Const.World.Spawn.Troops.OrcWarlord.Strength = 100;
-}
-
-// scripts/entity/tactical/enemies/rf_vampire_lord
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.RF_VampireLord.Cost = 100;
-	::Const.World.Spawn.Troops.RF_VampireLord.Strength = 100;
-	::Const.World.Spawn.Troops.RF_VampireLord.Variant = 5;		// Reforged: 1
-}
-
-// scripts/entity/tactical/enemies/unhold_frost_armored
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.BarbarianUnholdFrost.Cost = 110;
-	::Const.World.Spawn.Troops.BarbarianUnholdFrost.Strength = 110;
-}
-
-// scripts/entity/tactical/enemies/sand_golem_high
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.SandGolemHIGH.Cost = 108;
-	::Const.World.Spawn.Troops.SandGolemHIGH.Strength = 108;
-}
-
-// scripts/entity/tactical/enemies/lindwurm
-{
-	// Mandatory Entries
-	::Const.World.Spawn.Troops.Lindwurm.Cost = 150;
-	::Const.World.Spawn.Troops.Lindwurm.Strength = 150;
 }
