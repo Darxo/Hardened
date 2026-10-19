@@ -29,14 +29,14 @@
 ::Hardened.HooksMod.hookTree("scripts/mapgen/tactical_template", function(q) {
 	q.fill = @(__original) function( _rect, _properties, _pass = 1 )
 	{
-		__original(_rect, _properties, _pass);
-
-		if (this.m.Name.find("tactical.tile") != null) return;
-
 		if (this.m.HD_IsUsingHexagonLayout)
 		{
 			::Tactical.State.m.HD_IsUsingHexagonLayout = true;
 		}
+		// Feat: Compile various tile related information for the currently generated tactical map
+		::Hardened.Tactical.MapInfo.init();
+
+		__original(_rect, _properties, _pass);
 	}
 
 	q.campify = @(__original) { function campify( _rect, _properties )
