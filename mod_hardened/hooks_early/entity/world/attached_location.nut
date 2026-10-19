@@ -54,9 +54,9 @@
 			this.clearTroops();
 		}
 
-		this.HD_updateSaturation();
-
 		__original(_active);
+
+		this.HD_updateSaturation();
 	}
 
 	q.onDropLootForPlayer = @(__original) function( _lootTable )
