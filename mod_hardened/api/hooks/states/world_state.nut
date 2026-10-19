@@ -27,10 +27,15 @@
 
 		foreach (party in combatInfo.Parties)
 		{
-			if (party.isLocation() && !party.isAlliedWithPlayer())
+			if (party.isLocation())
 			{
-				combatInfo.HD_IsAttackingLocation = true;
-				break;
+				party.HD_onGetLocalCombatProperties(combatInfo);
+
+				if (!party.isAlliedWithPlayer())
+				{
+					combatInfo.HD_IsAttackingLocation = true;
+					break;
+				}
 			}
 		}
 
