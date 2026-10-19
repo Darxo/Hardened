@@ -30,6 +30,18 @@
 
 # Changelog
 
+1.26.0-alpha-3
+	- Enable Deployment Framework for all scripted combat
+	- Completely rework the **Black Monolith** bossfight:
+		- The player now spawns in the center
+		- You now always fight against 45 enemies (down from 47)
+		- The enemy forces are now split into three equally sized armies and placed with an angle of 120° between them around the player
+		- Fleeing from the combat always resets the complete encounter
+	- Move **Alps** forward into the second row (from fifth)
+	- Add `location::HD_onGetLocalCombatProperties(_combatInfo)`, which is called at the end of the `getLocalCombatProperties` for the location whose part of it
+	- Fix fights with some rare units, like **Necrosavants**, not loading correctly
+	- Fix freshly destroyed attached locations not being greyed out correctly
+
 1.26.0-alpha-2
 	- Fix(Vanilla) potential division by 0 bug from updateOverlay()
 
@@ -58,7 +70,7 @@
 		- Noble Wardogs do not spawn correctly in flanking position
 		- Scripted Battles do not use the new system
 		- Scenarios do not use the new system
-		
+
 1.25.4
 	- Fix **Brigand Follower** granting speed boost when attacking allied locations
 	- Fix(Vanilla) missing-sprite errors when `onUpdateInjuryLayer` of an actor is called before it is fully initialized
