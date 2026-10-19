@@ -411,6 +411,14 @@
 		}
 	}
 
+	q.updateOverlay = @(__original) { function updateOverlay()
+	{
+		// Vanilla Fix: division by 0, when this is called before full initialisation of this actor
+		if (!this.m.HD_WasInit) return;
+
+		__original();
+	}}.updateOverlay;
+
 // Modular Vanilla Functions
 	q.MV_calcHitpointsDamageReceived = @(__original) function( _skill, _hitInfo )
 	{
