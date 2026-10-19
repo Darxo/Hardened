@@ -68,4 +68,18 @@
 			this.m.MinY++;
 		}
 	}}.init;
+
+// New Functions
+	q.HD_getAllTiles <- function( _rect )
+	{
+		local ret = [];
+		for (local x = _rect.X; x < _rect.X + _rect.W; ++x)
+		{
+			for (local y = _rect.Y; y < _rect.Y + _rect.H; ++y)
+			{
+				ret.push(::Tactical.getTileSquare(x, y));
+			}
+		}
+		return ret;
+	}
 });
