@@ -254,7 +254,7 @@
 		// The only time that number is ever passed outside of 'getTroopComposition' is, when it's divided by 14 and passed to minf. So that's where we fetch it from
 		// We decide that this is also the place, where we change, which string is shown to the player for this enemy amount, by changing the values of every single EngageEnemyNumbers entry to that
 		local mockObjectMinf = ::Hardened.mockFunction(::Math, "minf", function( _first, _second ) {
-			if (_first == 1.0)
+			if (_first == 1.0 && _second > 0)
 			{
 				local originalEnemyNumber = ::Math.round(_second * 14.0);	// the 14.0 is hard-coded and needs to be adjusted if vanilla changes it
 				local newText = ::Hardened.Numerals.getNumeralString(originalEnemyNumber, false);
