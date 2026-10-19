@@ -583,6 +583,17 @@
 		mockObject.cleanup();
 	}
 
+	q.onUpdateInjuryLayer = @(__original) { function onUpdateInjuryLayer()
+	{
+		// Vanilla Fix: Enforce global onInit check
+		// This function is only valid, if this actor already has all sprites assigned, but that happens only during onInit
+		// As a result, any actor whose onUpdateInjuryLayer() is triggered before they are fully initialised, causes errors
+		// Vanilla only does a sprite check, but only does so in the actor::onUpdateInjuryLayer() base class
+		if (!this.m.HD_WasInit) return;
+
+		__original();
+	}}.onUpdateInjuryLayer;
+
 // Reforged Events
 	// This must happen as hookTree because there is no guarantee that someone overwriting it will call the child function
 	q.onSpawned = @(__original) function()
