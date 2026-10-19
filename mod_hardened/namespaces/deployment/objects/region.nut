@@ -237,7 +237,7 @@
 			return false;
 		}
 
-		local entity = ::Tactical.spawnEntity(_troopDef.Script, validTile.Coords.X, validTile.Coords.Y);
+		local entity = ::Tactical.spawnEntity(_troopDef.Script, validTile.Coords);
 		::Tactical.Entities.setupEntity(entity, _troopDef);
 		return true;
 	}

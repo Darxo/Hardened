@@ -79,13 +79,12 @@
 
 		if (_playerCharacters.len() > placedActors)
 		{
-			::logWarning("Hardened: " + (_playerCharacters.len() - placedActors) + " could not be placed because there was no space");
+			::logWarning("Hardened: " + (_playerCharacters.len() - placedActors) + " players could not be placed because there was no space");
 		}
 	}
 
 	function placeNPCsInFormation( _entityDefs, _region )
 	{
-		::logWarning("Hardened: placeNPCsInFormation _entityDefs " + _entityDefs.len());
 		_region.downsizeArea();
 
 		local placedActors = 0;
@@ -113,7 +112,7 @@
 
 		if (_entityDefs.len() > placedActors)
 		{
-			::logWarning("Hardened: " + (_entityDefs.len() - placedActors) + " could not be placed because there was no space");
+			::logWarning("Hardened: " + (_entityDefs.len() - placedActors) + " NPCs could not be placed because there was no space");
 		}
 	}
 

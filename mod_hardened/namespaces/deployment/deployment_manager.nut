@@ -12,8 +12,8 @@
 	/// @param _combatInfo vanilla combat properties instance of ::Const.Tactical.CombatInfo
 	function init( _combatInfo )
 	{
-		::logInfo("Hardened: Deployment init " + _combatInfo);
 		this.EngagementType = _combatInfo.HD_EngagementType != null ? _combatInfo.HD_EngagementType : this.generateEngagementType(_combatInfo);
+		::logInfo("Hardened: Deployment init " + _combatInfo + " EngagementType " + this.EngagementType);
 
 		if (this.EngagementType != ::Hardened.Deployment.EngagementType.Custom)
 		{
