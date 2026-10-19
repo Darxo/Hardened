@@ -17,6 +17,7 @@
 		CenterTile = null,
 
 	// Private
+		WasInit = false,
 		CornerTiles = [],
 		Corners = {
 			North = null,
@@ -32,6 +33,9 @@
 
 	function init( _customRadius = null )
 	{
+		if (this.m.WasInit) return;
+		this.m.WasInit = true;
+
 		this.m.CurrentShape = this.m.Shape.Square;
 
 		this.m.DimensionX = ::Tactical.getMapSize().X;

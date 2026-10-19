@@ -47,8 +47,8 @@
 
 	q.spawn = @(__original) { function spawn( _properties )
 	{
-		// Feat: Compile various tile related information for the currently generated tactical map
-		::Hardened.Tactical.MapInfo.init();
+		// Reset WasInit to allow future initializations to happen
+		::Hardened.Tactical.MapInfo.m.WasInit = false;
 
 		// Feat: calculate the highest tile level at the beginning of a fight
 		::Tactical.getCamera().setLevelToHighestOnMap();
