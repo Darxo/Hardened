@@ -30,6 +30,11 @@
 
 # Changelog
 
+1.25.4
+	- Fix **Brigand Follower** granting speed boost when attacking allied locations
+	- Fix(Vanilla) missing-sprite errors when `onUpdateInjuryLayer` of an actor is called before it is fully initialized
+	- Fix(Vanilla) rare division by 0 bug when `actor::updateOverlay()` is called before the actor is fully initialized
+
 1.25.3
 	- Fix some world parties after scripted combats not dying correctly
 	- Fix tooltip bulletpoints not being indented correctly

@@ -1716,6 +1716,8 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix downwards offset for accessory and ammo items images on paperdoll
 - Fix Roads spawning directly on the map border
 - Fix Settlements with water access sometimes not generating a port
+- Fix missing-sprite errors when `onUpdateInjuryLayer` of an actor is called before it is fully initialized
+- Fix rare division by 0 bug when `actor::updateOverlay()` is called before the actor is fully initialized
 - Fix Armor Damage combat logs being generated for non-visible actors
 - Change the inventory icon of the **Witchhunter's Hat** to look exactly like the sprite on the brother
 - Characters under berserker mushroom effect no longer yell when they use ranged attacks
