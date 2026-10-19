@@ -72,4 +72,10 @@
 		local playerTileDistance = ::World.State.getPlayer().getTile().getDistanceTo(this.getTile());
 		return playerTileDistance >= this.m.HD_MinPlayerDistanceForSpawn;
 	}
+
+	// Is called at the end of world_state::getLocalCombatProperties, for every location that is part of this property (in Hardened this is at most 1)
+	/// @param _combatInfo CombatInfo object just before it is returned by getLocalCombatProperties
+	q.HD_onGetLocalCombatProperties <- function( _combatInfo )
+	{
+	}
 });
