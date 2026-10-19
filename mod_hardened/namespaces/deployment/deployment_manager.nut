@@ -13,12 +13,14 @@
 	function init( _combatInfo )
 	{
 		::logInfo("Hardened: Deployment init " + _combatInfo);
-		this.ParticipantCollection = ::Hardened.Deployment.ParticipantCollection();
-		this.preparePlayerCharacters(_combatInfo);
-		this.prepareAIParticipants(_combatInfo);
-		this.ParticipantCollection.sort();
-
 		this.EngagementType = _combatInfo.HD_EngagementType != null ? _combatInfo.HD_EngagementType : this.generateEngagementType(_combatInfo);
+
+		if (this.EngagementType != ::Hardened.Deployment.EngagementType.Custom)
+		{
+			this.ParticipantCollection = ::Hardened.Deployment.ParticipantCollection();
+			this.prepareAIParticipants(_combatInfo);
+			this.ParticipantCollection.sort();
+		}
 
 		this.HasBeenInitialized = true;
 	}
@@ -32,14 +34,19 @@
 			return;
 		}
 
-		this.generateRegionPlan(_combatInfo);
-		this.deployParticipants();
-
-		local unplacedParticipants = this.ParticipantCollection.npcParticipantCount();
-		if (unplacedParticipants > 0)
+		if (this.EngagementType != ::Hardened.Deployment.EngagementType.Custom)
 		{
-			::logWarning("Hardened: " + unplacedParticipants + " Participants could not be placed because there was no space for them");
+			this.preparePlayerCharacters(_combatInfo);
+			this.generateRegionPlan(_combatInfo);
+			this.deployParticipants();
+
+			local unplacedParticipants = this.ParticipantCollection.npcParticipantCount();
+			if (unplacedParticipants > 0)
+			{
+				::logWarning("Hardened: " + unplacedParticipants + " Participants could not be placed because there was no space for them");
+			}
 		}
+
 		this.HasBeenInitialized = false;
 	}
 
