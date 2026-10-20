@@ -593,3 +593,25 @@
 			Body = _headInjuries,
 	});
 }
+
+::Hardened.util.expandTileArray <- function( _tileArray, _amount = 1 )
+{
+	local currentArray = _tileArray;
+
+	for (local i = 1; i <= _amount; ++i)
+	{
+		local newArray = {};
+
+		foreach (tile in currentArray)
+		{
+			foreach (nextTile in ::MSU.Tile.getNeighbors(tile))
+			{
+				newArray[nextTile.ID] <- nextTile;
+			}
+		}
+
+		currentArray = ::MSU.Table.values(newArray);
+	}
+
+	return currentArray;
+}
