@@ -86,6 +86,7 @@
 
 	function placeNPCsInFormation( _entityDefs, _region )
 	{
+		_region.clearArea(0, true);
 		_region.downsizeArea();
 
 		local placedActors = 0;
