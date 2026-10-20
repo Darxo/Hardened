@@ -264,12 +264,15 @@
 	}
 
 	// Remove all objects from this region and a border around them of _borderSize distance
-	function clearArea( _borderSize = 0 )
+	function clearArea( _borderSize = 0, _onlyVisionBlocking = false )
 	{
 		local affectedTiles = ::Hardened.util.expandTileArray(this.getAllTiles(), _borderSize);
 
 		foreach (tile in affectedTiles)
 		{
+			if (tile.IsEmpty) continue;
+			if (_onlyVisionBlocking && !tile.getEntity().isBlockingSight()) continue;
+
 			tile.removeObject();
 		}
 	}
