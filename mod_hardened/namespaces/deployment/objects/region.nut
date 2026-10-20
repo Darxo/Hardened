@@ -266,7 +266,8 @@
 	// Remove all objects from this region and a border around them of _borderSize distance
 	function clearArea( _borderSize = 0 )
 	{
-		local affectedTiles = this.getAllTiles();
+		local affectedTiles = ::Hardened.util.expandTileArray(this.getAllTiles(), _borderSize);
+
 		foreach (tile in affectedTiles)
 		{
 			tile.removeObject();
@@ -275,7 +276,7 @@
 
 	function downsizeArea(  _borderSize = 0 )
 	{
-		local affectedTiles = this.getAllTiles();
+		local affectedTiles = ::Hardened.util.expandTileArray(this.getAllTiles(), _borderSize);
 
 		// Remove all tower- or wall-like structures in the region
 		foreach (tile in affectedTiles)
