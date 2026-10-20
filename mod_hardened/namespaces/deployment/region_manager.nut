@@ -52,6 +52,7 @@
 	function placePlayersInFormation( _playerCharacters, _region )
 	{
 		_region.clearArea();
+		_region.clearArea(1, true);
 		_region.downsizeArea();
 
 		local allTiles = _region.getAllTiles();
