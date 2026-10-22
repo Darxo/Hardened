@@ -161,6 +161,15 @@
 		return __original();
 	}}.getTroops;
 
+	q.setDefenderSpawnList = @(__original) { function setDefenderSpawnList( _spawnlist )
+	{
+		__original(_spawnlist);
+
+		// Feat: synchronize roaming spawnlist with defender spawnlist
+		// Feat: make all undead and skeleton locations able to send out roaming parties
+		this.m.RoamerSpawnList = _spawnlist;
+	}}.setDefenderSpawnList;
+
 // New Functions
 	// Determines, whether there is another party in CombatPlayerDistance range, which is hostile to the player
 	q.hasCloseByHostileParty <- function()
