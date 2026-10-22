@@ -364,3 +364,85 @@
 		]
 	}
 ];
+
+// Grey gust cloud effect that quickly moves in all directions and dissipates thereafter
+::Const.Tactical.HD_Shockwave <- [
+	{
+		Delay = 25,
+		Quantity = 100,
+		LifeTimeQuantity = 100,
+		SpawnRate = 512,
+		Brushes = [
+			"ash_light_01",
+			"ash_light_02"
+		],
+		Stages = [
+			{
+				LifeTimeMin = 0.2,
+				LifeTimeMax = 0.4,
+				ColorMin = this.createColor("ffffff00"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 0.5,
+				ScaleMax = 0.6,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 200,
+				VelocityMax = 240,
+				DirectionMin = this.createVec(-1.0, -0.25),
+				DirectionMax = this.createVec(1.0, 0.25),
+				SpawnOffsetMin = this.createVec(-50, -60),
+				SpawnOffsetMax = this.createVec(50, 30),
+				ForceMin = this.createVec(0, 45),
+				ForceMax = this.createVec(0, 45)
+			},
+			{
+				LifeTimeMin = 0.2,
+				LifeTimeMax = 0.4,
+				ColorMin = this.createColor("ffffff60"),
+				ColorMax = this.createColor("ffffff60"),
+				ScaleMin = 0.6,
+				ScaleMax = 0.7,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 75,
+				VelocityMax = 90,
+				DirectionMin = this.createVec(-0.5, -0.25),
+				DirectionMax = this.createVec(0.5, 0.25),
+				ForceMin = this.createVec(0, 45),
+				ForceMax = this.createVec(0, 45)
+			},
+			{
+				LifeTimeMin = 0.2,
+				LifeTimeMax = 0.4,
+				ColorMin = this.createColor("ffffff40"),
+				ColorMax = this.createColor("ffffff40"),
+				ScaleMin = 0.7,
+				ScaleMax = 0.8,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 50,
+				VelocityMax = 60,
+				DirectionMin = this.createVec(0.0, 0.0),
+				DirectionMax = this.createVec(0.0, 0.0),
+				ForceMin = this.createVec(0, 45),
+				ForceMax = this.createVec(0, 45)
+			},
+			{
+				LifeTimeMin = 0.2,
+				LifeTimeMax = 0.4,
+				ColorMin = this.createColor("ffffff00"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 0.8,
+				ScaleMax = 1.0,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 50,
+				VelocityMax = 60,
+				DirectionMin = this.createVec(0.0, 0.0),
+				DirectionMax = this.createVec(0.0, 0.0),
+				ForceMin = this.createVec(0, 45),
+				ForceMax = this.createVec(0, 45)
+			}
+		]
+	}
+];

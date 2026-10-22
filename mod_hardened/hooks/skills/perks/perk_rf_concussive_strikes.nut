@@ -5,6 +5,12 @@
 ::Hardened.HooksMod.hook("scripts/skills/perks/perk_rf_concussive_strikes", function(q) {
 	// Private
 	q.m.CanSkillCauseShockwave <- false;	// Will be set to true before skill execution, when no Stun is present on the target
+	q.m.HD_SoundOnTrigger <- [
+		"sounds/combat/dlc6/daze_bomb_01.wav",
+		"sounds/combat/dlc6/daze_bomb_02.wav",
+		"sounds/combat/dlc6/daze_bomb_03.wav",
+		"sounds/combat/dlc6/daze_bomb_04.wav",
+	];
 
 	q.onTargetKilled <- function( _targetEntity, _skill )
 	{
@@ -43,6 +49,16 @@
 	{
 		local actor = this.getContainer().getActor();
 		local adjacentEnemies = ::Tactical.Entities.getHostileActors(actor.getFaction(), _centreTile, 1, true);
+
+		if (_centreTile.IsVisibleForPlayer)
+		{
+			::Sound.play(::MSU.Array.rand(this.m.HD_SoundOnTrigger), ::Const.Sound.Volume.Skill * 0.5, _centreTile.Pos, 0.4);
+			foreach (effect in ::Const.Tactical.HD_Shockwave)
+			{
+				::Tactical.spawnParticleEffect(false, effect.Brushes, _centreTile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 0));
+			}
+		}
+
 		foreach (enemy in adjacentEnemies)
 		{
 			if (!enemy.getCurrentProperties().IsImmuneToDaze && !enemy.getSkills().hasSkill("effects.dazed"))
