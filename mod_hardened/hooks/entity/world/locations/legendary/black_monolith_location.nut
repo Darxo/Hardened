@@ -1,4 +1,7 @@
 ::Hardened.HooksMod.hook("scripts/entity/world/locations/legendary/black_monolith_location", function(q) {
+	// Feat: Allow Black Monolith to send out roaming parties
+	q.m.RoamerSpawnList = ::Const.World.Spawn.UndeadArmy;
+
 	// Feat: Turn the tile below the black monolith and all adjacent tiles into badlands
 	q.onSpawned = @(__original) function()
 	{

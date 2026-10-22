@@ -141,8 +141,12 @@
 			local camp = ::World.spawnLocation("scripts/entity/world/locations/legendary/black_monolith_location", tile.Coords);
 			if (camp != null)
 			{
+				local undead = World.FactionManager.getFactionOfType(::Const.FactionType.Undead);
 				tile.TacticalType = ::Const.World.TerrainTacticalType.Quarry;
 				camp.onSpawned();
+				local banner = getAppropriateBanner(camp, undead.getSettlements(), 15, ::Const.UndeadBanners);
+				camp.setBanner(banner);
+				undead.addSettlement(camp, false);
 			}
 		}
 	}
