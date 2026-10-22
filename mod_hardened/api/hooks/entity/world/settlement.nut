@@ -11,8 +11,6 @@
 		local newBanner = _o.getBannerSmall();
 		foreach (attached in this.m.AttachedLocations)
 		{
-			if (!attached.m.IsShowingBanner) continue;
-
 			attached.setBanner(newBanner);
 		}
 	}
