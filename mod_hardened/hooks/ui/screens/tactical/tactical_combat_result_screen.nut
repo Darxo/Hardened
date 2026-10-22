@@ -126,7 +126,7 @@
 	// This makes certain itemtypes use their buy price as value, when those items are not meant to be sold as loot
 	q.HD_getLootValue <- function( _item )
 	{
-		local valueableItems = ::Const.Items.ItemType.Accessory | ::Const.Items.ItemType.Crafting | ::Const.Items.ItemType.Food | ::Const.Items.ItemType.Loot |  ::Const.Items.ItemType.Tool | Const.Items.ItemType.TradeGood | ::Const.Items.ItemType.Usable;
+		local valueableItems = ::Const.Items.ItemType.Accessory | ::Const.Items.ItemType.Crafting | ::Const.Items.ItemType.Food | ::Const.Items.ItemType.Loot |  ::Const.Items.ItemType.Tool | ::Const.Items.ItemType.TradeGood | ::Const.Items.ItemType.Usable;
 
 		if (_item.isItemType(valueableItems))
 		{

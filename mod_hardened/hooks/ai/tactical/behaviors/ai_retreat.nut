@@ -137,11 +137,11 @@
 
 				switch (dir)
 				{
-					case Const.Direction8.W:
+					case ::Const.Direction8.W:
 						dirs[Const.Direction.NW] += 4;
 						dirs[Const.Direction.SW] += 4;
 						break;
-					case Const.Direction8.E:
+					case ::Const.Direction8.E:
 						dirs[Const.Direction.NE] += 4;
 						dirs[Const.Direction.SE] += 4;
 						break;
@@ -178,10 +178,10 @@
 		{
 			++attempts;
 
-			if (attempts > Const.AI.Behavior.RetreatSoftMaxAttempts && (bestDanger == 0 || attempts > Const.AI.Behavior.RetreatHardMaxAttempts))
+			if (attempts > ::Const.AI.Behavior.RetreatSoftMaxAttempts && (bestDanger == 0 || attempts > ::Const.AI.Behavior.RetreatHardMaxAttempts))
 				break;
 
-			//logInfo("dir: " + Const.Strings.Direction[myTile.getDirectionTo(target.Tile)]);
+			//logInfo("dir: " + ::Const.Strings.Direction[myTile.getDirectionTo(target.Tile)]);
 
 			// !YIELD
 			if (isAllottedTimeReached(time))
@@ -193,14 +193,14 @@
 			local settings						= navigator.createSettings();
 			settings.ActionPointCosts			= _entity.getActionPointCosts();
 			settings.FatigueCosts				= _entity.getFatigueCosts();
-			settings.FatigueCostFactor			= Const.Movement.FatigueCostFactor;
+			settings.FatigueCostFactor			= ::Const.Movement.FatigueCostFactor;
 			settings.ActionPointCostPerLevel	= _entity.getLevelActionPointCost();
 			settings.FatigueCostPerLevel		= _entity.getLevelFatigueCost();
 			settings.AllowZoneOfControlPassing	= true;
-			settings.ZoneOfControlCost			= Const.AI.Behavior.ZoneOfControlAPPenalty * 4;
+			settings.ZoneOfControlCost			= ::Const.AI.Behavior.ZoneOfControlAPPenalty * 4;
 			settings.AlliedFactions				= _entity.getAlliedFactions();
 			settings.Faction					= _entity.getFaction();
-			settings.HeatCost					= this.getAgent().isUsingHeat() ? Const.AI.Behavior.EngageHeatCost : 0;
+			settings.HeatCost					= this.getAgent().isUsingHeat() ? ::Const.AI.Behavior.EngageHeatCost : 0;
 
 			if (!navigator.findPath(myTile, target.Tile, settings, 0))
 				continue;

@@ -220,8 +220,8 @@
 			local camp = ::World.spawnLocation("scripts/entity/world/locations/legendary/unique_goblin_city_location", tile.Coords);
 			if (camp != null)
 			{
-				local goblins = World.FactionManager.getFactionOfType(Const.FactionType.Goblins);
-				local banner = getAppropriateBanner(camp, goblins.getSettlements(), 15, Const.GoblinBanners);
+				local goblins = World.FactionManager.getFactionOfType(::Const.FactionType.Goblins);
+				local banner = getAppropriateBanner(camp, goblins.getSettlements(), 15, ::Const.GoblinBanners);
 				camp.onSpawned();
 				camp.setBanner(banner);
 				goblins.addSettlement(camp, false);
