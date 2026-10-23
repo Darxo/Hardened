@@ -39,6 +39,11 @@
 			{
 				entry.R = 99;	// Reforged: 80
 			}
+			else if (entry.S == "supplies/ground_grains_item" && this.getSettlement().getSize() >= 3)
+			{
+				// Feat: Make large towns sell bread instead of grains
+				entry.S = "supplies/bread_item";
+			}
 		}
 
 		if (this.getSettlement().getSize() <= 2 && !this.getSettlement().isMilitary())
