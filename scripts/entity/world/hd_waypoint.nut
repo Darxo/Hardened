@@ -23,6 +23,7 @@ this.hd_waypoint <- this.inherit("scripts/entity/world/party", {
 		this.party.onInit();
 		this.m.IsAttackable = false
 		// this.m.IsPlayer = true;
+		this.setVisibleInFogOfWar(true);
 		this.addSprite("waypoint");
 	}
 
