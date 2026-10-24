@@ -318,9 +318,10 @@
 						if (options.IsPct) propertyText = ::MSU.Text.colorizePct(oldProperty);
 						propertyText = options.Prefix + propertyText + options.Suffix;
 
-						// Hard-Coded nested tooltip support just for the Weight keyword
+						// Hard-Coded nested tooltip support just for the Weight and Readiness keyword
 						// Todo: find a better way to implement nested tooltips here
 						propertyText = ::MSU.String.replace(propertyText, "Weight", ::Reforged.Mod.Tooltips.parseString("[$ $|Concept.Weight]"));
+						propertyText = ::MSU.String.replace(propertyText, "Readiness", ::Reforged.Mod.Tooltips.parseString("[$ $|Concept.Readiness]"));
 
 						_tooltip.push({
 							id = ++bulletPointID,

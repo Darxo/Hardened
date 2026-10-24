@@ -82,6 +82,16 @@
 				icon = "ui/icons/bravery.png",
 				text = ::Reforged.Mod.Tooltips.parseString("Try to [Rally|Concept.Rally] at the start of your [turn|Concept.Turn], if you are not [Engaged in Melee|Concept.ZoneOfControl]"),
 			});
+
+			foreach (index, entry in ret)
+			{
+				if (entry.id == 16 && entry.text == "Acts at the end of the round")
+				{
+					entry.icon = "ui/icons/initiative.png";
+					entry.text = ::MSU.Text.colorizeValue(-1000, {AddSign = true}) + ::Reforged.Mod.Tooltips.parseString(" [$ $|Concept.Readiness]");
+					break;
+				}
+			}
 		}
 
 		return ret;

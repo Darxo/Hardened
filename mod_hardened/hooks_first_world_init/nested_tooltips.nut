@@ -204,6 +204,9 @@
 		"A successful rally immediately raises the character\'s [Morale|Concept.Morale] to [$ $|Skill+hd_dummy_morale_state_wavering] but removes " + ::MSU.Text.colorNegative(::Math.abs(::Hardened.Global.ActionPointChangeOnRally)) + " [Action Points|Concept.ActionPoints] from them.\n\n" +
 		"Characters will automatically attempt to rally at the start of their [turn|Concept.Turn], as long as they are not [Engaged in Melee|Concept.ZoneOfControl]."
 	)),
+	Readiness = ::MSU.Class.BasicTooltip("Readiness", ::Reforged.Mod.Tooltips.parseString(	// InitiativeForTurnOrderAdditional
+		"Readiness is an additional value used to determine a character\'s position in the [Turn Order|Concept.Turn]. It is added to or subtracted from [Initiative|Concept.Initiative] when determining [turn order|Concept.Turn], without affecting the character\'s actual [Initiative|Concept.Initiative]."
+	)),
 	Recently = ::MSU.Class.BasicTooltip("Recently", ::Reforged.Mod.Tooltips.parseString(
 		"Anything that happened either in the last [round|Concept.Round] or in the current [round|Concept.Round] is considered to have happened recently."
 	)),

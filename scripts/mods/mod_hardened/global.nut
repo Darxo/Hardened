@@ -55,6 +55,8 @@ local resourceMult = ::Hardened.Const.ResourceTierMult;
 				{ Key = "getInitiativeModifierFromWeight", IsFunc = true, IsActor = true },
 				{ Key = "HD_getInitiativeModifierFromFatigue", IsFunc = true, BaseIcon = "ui/icons/initiative.png", IsActor = true, Prefix = "From Fatigue: " },
 				{ Key = "HD_getInitiativeModifierFromFatigue", IsFunc = true, IsActor = true },
+				{ Key = "InitiativeForTurnOrderAdditional", BaseIcon = "ui/icons/initiative.png", Prefix = "Readiness: " },
+				{ Key = "InitiativeForTurnOrderAdditional" },
 			],
 
 			"character-stats.MeleeSkill": [
