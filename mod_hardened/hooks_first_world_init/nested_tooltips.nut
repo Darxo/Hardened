@@ -28,6 +28,60 @@
 ::Reforged.NestedTooltips.Tooltips.Concept.ReachDisadvantage = ::MSU.Class.BasicTooltip("Reach Disadvantage", ::Reforged.Mod.Tooltips.parseString(
 	"A character is considered to have Reach Disadvantage when their [Reach|Concept.Reach] is lower than that of the other character during a melee attack."
 ));
+
+{	// Autoconcepts
+	// Adding them just here only covers nested tooltips.
+	// In order to also affect tooltips directly attached to UI elements, we need an additional hook in general_queryUIElementTooltipData for each overwritten autoconcept
+	::Reforged.NestedTooltips.Tooltips.Concept.SightDistance = ::MSU.Class.CustomTooltip(function(_data){
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = "Vision",
+			},
+			{
+				id = 2,
+				type = "description",
+				text = ::Reforged.Mod.Tooltips.parseString(
+					"Vision determines how far a character can see on the battlefield and how much of the fog of war they uncover.\n\n" +
+					"Most attacks and skills require the user to have line of sight and sufficient Vision to the targeted tile.\n\n" +
+					"Tiles revealed by a character remain visible until the start of the next [Round|Concept.Round] unless still within sight.\n\n" +
+					"Vision can never be reduced below " + ::MSU.Text.colorPositive("2") + "."
+				),
+			},
+		];
+		if ("entityId" in _data && "TooltipEvents" in this.getroottable())
+		{
+			ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+		}
+		return ret;
+	});
+	::Reforged.NestedTooltips.Tooltips.Concept.ChanceToHitHead = ::MSU.Class.CustomTooltip(function(_data){
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = "Chance to hit head",
+			},
+			{
+				id = 2,
+				type = "description",
+				text = ::Reforged.Mod.Tooltips.parseString(
+					"Determines the likelihood of striking an enemy's head instead of their body.\n\n" +
+					"A hit to the head deals " + ::MSU.Text.colorizeMult(::Const.CharacterProperties.DamageAgainstMult[::Const.BodyPart.Head], {AddSign = true}) + " [$ $|Concept.CriticalDamage].\n\n" +
+					"The default chance to hit the head is " + ::MSU.Text.colorPositive(::Const.CharacterProperties.HitChance[::Const.BodyPart.Head] + "%") + ", but this can be modified by perks or specific attacks.\n\n" +
+					"Some enemies [lack a head|Skill+hd_headless_effect], resulting in all attacks hitting the body."
+				),
+			},
+		];
+		if ("entityId" in _data && "TooltipEvents" in this.getroottable())
+		{
+			ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+		}
+		return ret;
+	});
+}
+
 ::Reforged.NestedTooltips.Tooltips.Concept.Surrounding = ::MSU.Class.BasicTooltip("Surrounding", ::Reforged.Mod.Tooltips.parseString(
 	"A character is considered to be surrounding another character when they are adjacent, within one level of elevation and hostile to them. [Stunned|Concept.Stunned] and [fleeing|Skill+hd_dummy_morale_state_fleeing] characters and characters armed with a ranged weapon do not count as surrounding.\n\n" +
 	"When attacking a character in melee, each character surrounding them, except the first, grants an additional " + ::MSU.Text.colorPositive("+5%") + " chance to hit"

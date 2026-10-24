@@ -1,6 +1,19 @@
 ::Hardened.HooksMod.hook("scripts/ui/screens/tooltip/tooltip_events", function(q) {
 	q.general_queryUIElementTooltipData = @(__original) function( _entityId, _elementId, _elementOwner )
 	{
+		if (::Hooks.FirstWorldInitBucket == null)	// During FirstWorldInit, we must skip the following redirection to prevent infinite-loops
+		{
+			local supportedCharacterStats = [
+				"character-stats.SightDistance",
+				"character-stats.ChanceToHitHead",
+			];
+
+			if (supportedCharacterStats.find(_elementId) != null)
+			{
+				return ::Reforged.NestedTooltips.Tooltips.Concept[split(_elementId, ".").top()].getUIData({ entityId = _entityId, elementId = _elementId });
+			}
+		}
+
 		// Complete replacement of vanilla tooltips
 		switch (_elementId)
 		{
@@ -382,43 +395,6 @@
 					if ("id" in entry && entry.id == 2)
 					{
 						entry.text += "\n\nWhen you pay compensation to a brother, he will share " + ::MSU.Text.colorPositive("50%") + " of his experience with all other brothers in your company. Each brother can receive up to " + ::MSU.Text.colorPositive("10%") + " of this shared experience.";
-						break;
-					}
-				}
-				break;
-			}
-
-			case "character-stats.SightDistance":
-			{
-				foreach (entry in ret)
-				{
-					if ("id" in entry && entry.id == 2)
-					{
-						entry.text = ::Reforged.Mod.Tooltips.parseString(
-							"Vision determines how far a character can see on the battlefield and how much of the fog of war they uncover.\n\n" +
-							"Most attacks and skills require the user to have line of sight and sufficient Vision to the targeted tile.\n\n" +
-							"Tiles revealed by a character remain visible until the start of the next [Round|Concept.Round] unless still within sight.\n\n" +
-							"Vision can never be reduced below " + ::MSU.Text.colorPositive("2") + "."
-						);
-						break;
-					}
-				}
-				break;
-			}
-
-			case "character-stats.ChanceToHitHead":
-			{
-				foreach (entry in ret)
-				{
-					if ("id" in entry && entry.id == 2)
-					{
-						// We add an explanation about the softcap and emphasize that this stat also helps against animals and two-tile attacks
-						entry.text = ::Reforged.Mod.Tooltips.parseString(
-							"Determines the likelihood of striking an enemy's head instead of their body.\n\n" +
-							"A hit to the head deals " + ::MSU.Text.colorizeMult(::Const.CharacterProperties.DamageAgainstMult[::Const.BodyPart.Head], {AddSign = true}) + " [$ $|Concept.CriticalDamage].\n\n" +
-							"The default chance to hit the head is " + ::MSU.Text.colorPositive(::Const.CharacterProperties.HitChance[::Const.BodyPart.Head] + "%") + ", but this can be modified by perks or specific attacks.\n\n" +
-							"Some enemies [lack a head|Skill+hd_headless_effect], resulting in all attacks hitting the body."
-						);
 						break;
 					}
 				}
