@@ -7,7 +7,7 @@
 		{
 			ret.push({
 				id = 25,
-				type = "text",
+				type = "hint",
 				icon = "ui/tooltips/scroll_01.png",
 				text = ::World.Flags.get("GoblinCityCount") + "/5 Goblin Locations destroyed",
 			});
@@ -17,7 +17,7 @@
 		{
 			ret.push({
 				id = 25,
-				type = "text",
+				type = "hint",
 				icon = "ui/tooltips/scroll_01.png",
 				text = ::World.Flags.get("GoblinCityCount") + "/10 Goblin Patrols defeated",
 			});
