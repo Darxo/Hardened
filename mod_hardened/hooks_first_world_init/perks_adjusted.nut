@@ -2001,7 +2001,7 @@ local adjustedDescriptions = [
 				Description = [
 					"Any hit builds up an additional " + ::MSU.Text.colorNegative("10") + " [Fatigue|Concept.Fatigue] on the target",
 					"Any miss builds up an additional " + ::MSU.Text.colorNegative("5") + " [Fatigue|Concept.Fatigue] on the target",
-					"After your attack, if your target is fully [fatigued|Concept.Fatigue], apply [$ $|Skill+rf_worn_down_effect] until the end of their [turn|Concept.Turn]",
+					"After your attack, if your target is fully [fatigued|Concept.Fatigue], apply [$ $|Skill+rf_worn_down_effect]",
 				],
 			}],
 		}),
