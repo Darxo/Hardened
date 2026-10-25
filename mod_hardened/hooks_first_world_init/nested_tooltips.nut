@@ -32,6 +32,148 @@
 {	// Autoconcepts
 	// Adding them just here only covers nested tooltips.
 	// In order to also affect tooltips directly attached to UI elements, we need an additional hook in general_queryUIElementTooltipData for each overwritten autoconcept
+	::Reforged.NestedTooltips.Tooltips.Concept.Fatigue = ::MSU.Class.CustomTooltip(function(_data){
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = "Fatigue",
+			},
+			{
+				id = 2,
+				type = "description",
+				text = ::Reforged.Mod.Tooltips.parseString(
+					"Fatigue accumulates whenever a character performs actions, such as moving or using skills, or is hit or dodges an attack in melee.\n\n" +
+					"The amount of Fatigue a character can accumulate is limited by their [Stamina|Concept.MaximumFatigue]\n\n" +
+					"At the start of each [Turn|Concept.Turn], a character recovers at least " + ::MSU.Text.colorPositive(::Const.CharacterProperties.FatigueRecoveryRate) + " Fatigue. This recovery can be modified by traits, perks and other effects."
+				),
+			},
+		];
+		if ("entityId" in _data && "TooltipEvents" in this.getroottable())
+		{
+			ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+		}
+		return ret;
+	});
+	::Reforged.NestedTooltips.Tooltips.Concept.MaximumFatigue = ::MSU.Class.CustomTooltip(function(_data){
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = "Stamina",
+			},
+			{
+				id = 2,
+				type = "description",
+				text = ::Reforged.Mod.Tooltips.parseString(
+					"Stamina is an [Attribute|Concept.CharacterAttribute] that represents the amount of [Fatigue|Concept.Fatigue] a character can accumulate before needing to recover.\n\n" +
+					"Stamina is affected by the [Weight|Concept.Weight] of equipped items.\n\n" +
+					"Characters cannot have less than " + ::MSU.Text.colorNeutral(15) + " Stamina."
+				),
+			},
+		];
+		if ("entityId" in _data && "TooltipEvents" in this.getroottable())
+		{
+			ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+		}
+		return ret;
+	});
+	::Reforged.NestedTooltips.Tooltips.Concept.Initiative = ::MSU.Class.CustomTooltip(function(_data){
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = "Initiative",
+			},
+			{
+				id = 2,
+				type = "description",
+				text = ::Reforged.Mod.Tooltips.parseString(
+					"Initiative is an [Attribute|Concept.CharacterAttribute] that determines the [Turn Order|Concept.Turn] in which characters act during each [Round|Concept.Round]. The character with the highest Initiative acts first.\n\n" +
+					"Each point of [Fatigue|Concept.Fatigue] reduces Initiative by " + ::MSU.Text.colorNegative(1) + ".\n" +
+					"Initiative is affected by the [Weight|Concept.Weight] of equipped items.\n\n" +
+					"[Readiness|Concept.Readiness] provides an additional modifier to Initiative when determining [turn order|Concept.Turn]."
+				),
+			},
+		];
+		if ("entityId" in _data && "TooltipEvents" in this.getroottable())
+		{
+			ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+		}
+		return ret;
+	});
+	::Reforged.NestedTooltips.Tooltips.Concept.Bravery = ::MSU.Class.CustomTooltip(function(_data){
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = "Resolve",
+			},
+			{
+				id = 2,
+				type = "description",
+				text = ::Reforged.Mod.Tooltips.parseString(
+					"Resolve is an [Attribute|Concept.CharacterAttribute] that determines a character\'s ability to withstand negative [Morale Checks|Concept.Morale] and succeed at positive ones."
+				),
+			},
+		];
+		if ("entityId" in _data && "TooltipEvents" in this.getroottable())
+		{
+			ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+		}
+		return ret;
+	});
+	::Reforged.NestedTooltips.Tooltips.Concept.MeleeSkill = ::MSU.Class.CustomTooltip(function(_data){
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = "Melee Skill",
+			},
+			{
+				id = 2,
+				type = "description",
+				text = ::Reforged.Mod.Tooltips.parseString(
+					"Melee Skill is an [Attribute|Concept.CharacterAttribute] that determines a character\'s chance to hit with melee attacks.\n\n" +
+					"The base chance to hit is calculated by subtracting the target's [Melee Defense|Concept.MeleeDefense] from the attacker\'s Melee Skill.\n" +
+					"Minimum Hitchance: " + ::MSU.Text.colorNeutral(::Const.Combat.MV_HitChanceMin + "%") + "\n" +
+					"Maximum Hitchance: " + ::MSU.Text.colorNeutral(::Const.Combat.MV_HitChanceMax + "%") + "\n\n" +
+					"Many effects temporarily modify Melee Skill during a skill use only. These modifications are also affected by Melee Skill multipliers.\n\n" +
+					"Attacking a [Surrounded|Concept.Surrounding] target may grant an additional chance to hit."
+				),
+			},
+		];
+		if ("entityId" in _data && "TooltipEvents" in this.getroottable())
+		{
+			ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+		}
+		return ret;
+	});
+	::Reforged.NestedTooltips.Tooltips.Concept.RangeSkill = ::MSU.Class.CustomTooltip(function(_data){
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = "Ranged Skill",
+			},
+			{
+				id = 2,
+				type = "description",
+				text = ::Reforged.Mod.Tooltips.parseString(
+					"Ranged Skill is an [Attribute|Concept.CharacterAttribute] that determines a character\'s chance to hit with ranged attacks.\n\n" +
+					"The base chance to hit is calculated by subtracting the target's [Ranged Defense|Concept.RangeDefense] from the attacker\'s Ranged Skill.\n" +
+					"Minimum Hitchance: " + ::MSU.Text.colorNeutral(::Const.Combat.MV_HitChanceMin + "%") + "\n" +
+					"Maximum Hitchance: " + ::MSU.Text.colorNeutral(::Const.Combat.MV_HitChanceMax + "%") + "\n\n" +
+					"Many effects temporarily modify Ranged Skill during a skill use only. These modifications are also affected by Ranged Skill multipliers."
+				),
+			},
+		];
+		if ("entityId" in _data && "TooltipEvents" in this.getroottable())
+		{
+			ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+		}
+		return ret;
+	});
 	::Reforged.NestedTooltips.Tooltips.Concept.SightDistance = ::MSU.Class.CustomTooltip(function(_data){
 		local ret = [
 			{

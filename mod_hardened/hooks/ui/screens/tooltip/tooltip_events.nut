@@ -4,6 +4,12 @@
 		if (::Hooks.FirstWorldInitBucket == null)	// During FirstWorldInit, we must skip the following redirection to prevent infinite-loops
 		{
 			local supportedCharacterStats = [
+				"character-stats.Fatigue",
+				"character-stats.MaximumFatigue",
+				"character-stats.Initiative",
+				"character-stats.Bravery",
+				"character-stats.MeleeSkill",
+				"character-stats.RangeSkill",
 				"character-stats.SightDistance",
 				"character-stats.ChanceToHitHead",
 			];
