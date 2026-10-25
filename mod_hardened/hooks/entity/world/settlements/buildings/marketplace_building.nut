@@ -77,6 +77,12 @@
 				P = 1.0,
 				S = "shields/worn_heater_shield",
 			});
+
+			ret.push({
+				R = 95,
+				P = 1.0,
+				S = "weapons/barbarians/drum_item",
+			});
 		}
 
 		return ret;
