@@ -30,6 +30,9 @@
 
 # Changelog
 
+1.26.1
+	- Fix **Return Item** contracts not starting correctly
+
 1.26.0
 	- Completely reimplement deployment of participants and positioning of troops during combat (with the exception of Scenarios)
 		- Around ~2 additional world parties can join any type of combat
