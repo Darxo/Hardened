@@ -626,7 +626,7 @@
 		}
 
 		// Feat: Show base weight in tooltip of Stamina and Initiative Attributes
-		if (_elementId == "character-stats.Fatigue" || _elementId == "character-stats.Initiative")
+		if (_elementId == "character-stats.MaximumFatigue" || _elementId == "character-stats.Initiative")
 		{
 			ret.push({
 				id = 80,

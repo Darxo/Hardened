@@ -28,7 +28,7 @@ local resourceMult = ::Hardened.Const.ResourceTierMult;
 				{ Key = "ActionPoints" },
 				{ Key = "ActionPointsMult", IsMult = true },
 			],
-			"character-stats.Fatigue": [
+			"character-stats.MaximumFatigue": [
 				{ Key = "Stamina", BaseIcon = "ui/icons/fatigue.png", Prefix = "Base: " },
 				{ Key = "Stamina" },
 				{ Key = "StaminaMult", IsMult = true },
