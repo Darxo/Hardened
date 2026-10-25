@@ -86,12 +86,23 @@
 	// Sort Participants so that the "strongest" one comes first. For know we determine this by party size
 	function onParticipantCompare( _p1, _p2 )
 	{
-		// Particiapnt escorted by the player is always sorted to the front so it always takes the position by the player
+		// The sort may compare a participant against itself, which must return 0 to avoid an inconsistent comparator.
+		if (_p1 == _p2) return 0;
+
+		// Participant escorted by the player is always sorted to the front so it always takes the position by the player
 		foreach (party in _p1.Parties)
 		{
 			if (::MSU.isEqual(party, ::World.State.getEscortedEntity()))
 			{
 				return -1;
+			}
+		}
+
+		foreach (party in _p2.Parties)
+		{
+			if (::MSU.isEqual(party, ::World.State.getEscortedEntity()))
+			{
+				return 1;
 			}
 		}
 
