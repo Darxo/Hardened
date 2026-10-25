@@ -63,7 +63,6 @@
 	{
 		if (_skill == null) return false;
 		if (!_skill.isActive()) return false;
-		if (!_skill.isAttack()) return false;
 
 		local skillItem = _skill.getItem();
 		if (::MSU.isNull(skillItem)) return false;
