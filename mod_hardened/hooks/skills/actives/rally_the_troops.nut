@@ -26,7 +26,7 @@
 			id = 10,
 			type = "text",
 			icon = "ui/icons/morale.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Trigger a positive [morale check|Concept.Morale] for all members of your company within " + ::MSU.Text.colorPositive(this.m.HD_Radius) + " tiles that are [$ $|Skill+hd_dummy_morale_state_wavering] or [breaking|Skill+hd_dummy_morale_state_breaking]"),
+			text = ::Reforged.Mod.Tooltips.parseString("Trigger a positive [Morale Check|Concept.MoraleCheck] for all members of your company within " + ::MSU.Text.colorPositive(this.m.HD_Radius) + " tiles that are [$ $|Skill+hd_dummy_morale_state_wavering] or [breaking|Skill+hd_dummy_morale_state_breaking]"),
 		});
 
 		ret.push({
@@ -41,7 +41,7 @@
 			id = 12,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = ::Reforged.Mod.Tooltips.parseString("These [morale check|Concept.Morale] have a bonus of " + ::MSU.Text.colorizePct(this.m.HD_ResolveAsDifficultyPct) + " (" + ::MSU.Text.colorPositive(resolveBonus) + ") of your [$ $|Concept.Bravery] and " + ::MSU.Text.colorizeValue(this.m.HD_DifficultyPerDistance, {AddSign = true}) + " per tile between the target and you"),
+			text = ::Reforged.Mod.Tooltips.parseString("These [Morale Check|Concept.MoraleCheck] have a bonus of " + ::MSU.Text.colorizePct(this.m.HD_ResolveAsDifficultyPct) + " (" + ::MSU.Text.colorPositive(resolveBonus) + ") of your [$ $|Concept.Bravery] and " + ::MSU.Text.colorizeValue(this.m.HD_DifficultyPerDistance, {AddSign = true}) + " per tile between the target and you"),
 		});
 
 		ret.push({

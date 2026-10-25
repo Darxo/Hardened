@@ -753,7 +753,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Once per [round|Concept.Round], when you attack, trigger a Positive [Morale Check|Concept.Morale] for adjacent members of your company, who are not fleeing",
+					"Once per [round|Concept.Round], when you attack, trigger a Positive [Morale Check|Concept.MoraleCheck] for adjacent members of your company, who are not fleeing",
 					"This Attack can make at most one adjacent ally [$ $|Skill+hd_dummy_morale_state_confident]",
 				],
 			}],
@@ -1160,7 +1160,7 @@ local adjustedDescriptions = [
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"A successful [$ $|Skill+aimed_shot] will now light the target tile on fire for 2 [rounds|Concept.Round] and trigger a [Morale Check|Concept.Morale] for all adjacent enemies",
+					"A successful [$ $|Skill+aimed_shot] will now light the target tile on fire for 2 [rounds|Concept.Round] and trigger a [Morale Check|Concept.MoraleCheck] for all adjacent enemies",
 				],
 			}],
 		}),

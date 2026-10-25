@@ -30,14 +30,14 @@
 			id = 11,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = ::Reforged.Mod.Tooltips.parseString("If any are successful, apply [$ $|Skill+stunned_effect] to the target"),
+			text = ::Reforged.Mod.Tooltips.parseString("If any fail, apply [$ $|Skill+stunned_effect] to the target"),
 		});
 
 		ret.push({
 			id = 12,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = ::Reforged.Mod.Tooltips.parseString("If any are successful, apply [$ $|Skill+charmed_effect] to the target, lasting " + ::MSU.Text.colorPositive("1") + " [turn|Concept.Turn] for every successful Mental Attack"),
+			text = ::Reforged.Mod.Tooltips.parseString("If any fail, apply [$ $|Skill+charmed_effect] to the target, lasting " + ::MSU.Text.colorPositive("1") + " [turn|Concept.Turn] for every failed Mental Attack"),
 		});
 
 		return ret;

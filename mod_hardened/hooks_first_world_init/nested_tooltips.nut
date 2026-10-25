@@ -311,7 +311,7 @@
 	}),
 	Displacement = ::MSU.Class.BasicTooltip("Displacement", ::Reforged.Mod.Tooltips.parseString(
 		"Displacement is the act of moving a character to a different tile involuntarily against their will.\n\n" +
-		"A character that is displaced into a tile with more adjacent enemies than before will receive a Negative [Morale Check|Concept.Morale]."
+		"A character that is displaced into a tile with more adjacent enemies than before will receive a Negative [Morale Check|Concept.MoraleCheck]."
 	)),
 	Hitchance = ::MSU.Class.BasicTooltip("Hitchance", ::Reforged.Mod.Tooltips.parseString(
 		"Hitchance is a unified term representing both [$ $|Concept.MeleeSkill] and [$ $|Concept.RangeSkill].\n\n" +
@@ -355,9 +355,17 @@
 		"• Various Events"
 	)),
 	Morale = ::MSU.Class.BasicTooltip("Morale", ::Reforged.Mod.Tooltips.parseString(
-		"Morale represents the mental condition of characters and influences their effectiveness in battle. It exists in one of five states: [$ $|Skill+hd_dummy_morale_state_fleeing], [$ $|Skill+hd_dummy_morale_state_breaking], [$ $|Skill+hd_dummy_morale_state_wavering], Steady or [$ $|Skill+hd_dummy_morale_state_confident].\n\n" +
-		"A positive morale check raises morale on success, a negative check lowers it, and a neutral check does not change morale but may trigger other effects.\n\n" +
-		"A Mental Attack is a special type of morale check, triggered by supernatural skills such as fear or mind control. It has no implicit effect and instead triggers unique effects.\n\n" +
+		"Morale represents the mental condition of characters and influences their effectiveness in battle.\n\n" +
+		"It exists in one of five states: [Fleeing|Skill+hd_dummy_morale_state_fleeing], [Breaking|Skill+hd_dummy_morale_state_breaking], [Wavering|Skill+hd_dummy_morale_state_wavering], Steady or [Confident|Skill+hd_dummy_morale_state_confident].\n\n" +
+		"Morale can change when a character succeeds at a positive [Morale Check|Concept.MoraleCheck] or fails at a negative [Morale Check|Concept.MoraleCheck]."
+	)),
+	MoraleCheck = ::MSU.Class.BasicTooltip("Morale Check", ::Reforged.Mod.Tooltips.parseString(
+		"A Morale Check determines the outcome of an event that tests a character\'s [Resolve|Concept.Bravery].\n\n" +
+		"The receiver's [Resolve|Concept.Bravery] determines the base chance of success, capped at " + ::MSU.Text.colorNeutral("95%") + ".\n" +
+		"An additional bonus or difficulty modifier may be added to or subtracted from [Resolve|Concept.Bravery].\n" +
+		"• Positive checks: Success raises [Morale|Concept.Morale].\n" +
+		"• Negative checks: Success prevents [Morale|Concept.Morale] from decreasing.\n" +
+		"• Neutral checks: Success triggers the associated effects without changing [Morale|Concept.Morale].\n\n" +
 		"Typical positive checks:\n" +
 		"• Killing an enemy\n" +
 		"• Seeing an enemy killed by an ally\n" +
@@ -367,7 +375,8 @@
 		"• Seeing an ally flee\n" +
 		"• Being hit for at least 15 damage to hitpoints\n" +
 		"• Being engaged by multiple opponents\n" +
-		"• Being [displaced|Concept.Displacement] into more opponents"
+		"• Being [displaced|Concept.Displacement] into more opponents\n\n" +
+		"Mental Attacks are a special type Morale Checks, usually triggered by supernatural skills such as fear or mind control. They follow the same rules as other Morale Checks."
 	)),
 	Stunned = ::MSU.Class.BasicTooltip("Stunned", ::Reforged.Mod.Tooltips.parseString(
 		"A stunned character is incapacitated and unable to act. Their turns are skipped until they are no longer stunned.\n\n" +
@@ -396,7 +405,7 @@
 		"Using [Wait|Concept.Wait] pushes the remainder of the turn to the end of the current [round|Concept.Round]. When it becomes that character\'s turn again, they resume that same turn."
 	)),
 	Rally = ::MSU.Class.BasicTooltip("Rally", ::Reforged.Mod.Tooltips.parseString(
-		"Rallying is a type of positive [Morale Check|Concept.Morale] that can only occur on a character who is currently [fleeing|Skill+hd_dummy_morale_state_fleeing]\n\n" +
+		"Rallying is a type of positive [Morale Check|Concept.MoraleCheck] that can only occur on a character who is currently [fleeing|Skill+hd_dummy_morale_state_fleeing]\n\n" +
 		"A successful rally immediately raises the character\'s [Morale|Concept.Morale] to [$ $|Skill+hd_dummy_morale_state_wavering] but removes " + ::MSU.Text.colorNegative(::Math.abs(::Hardened.Global.ActionPointChangeOnRally)) + " [Action Points|Concept.ActionPoints] from them.\n\n" +
 		"Characters will automatically attempt to rally at the start of their [turn|Concept.Turn], as long as they are not [Engaged in Melee|Concept.ZoneOfControl]."
 	)),

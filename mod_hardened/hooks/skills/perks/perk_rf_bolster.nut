@@ -26,7 +26,7 @@
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = ::Reforged.Mod.Tooltips.parseString(format("Your next %sAttack, triggers a Positive [Morale Check|Concept.Morale] for adjacent members of your company, who are not fleeing. This Attack can make at most one adjacent ally [$ $|Skill+hd_dummy_morale_state_confident]", weaponTypeName)),
+			text = ::Reforged.Mod.Tooltips.parseString(format("Your next %sAttack, triggers a Positive [Morale Check|Concept.MoraleCheck] for adjacent members of your company, who are not fleeing. This Attack can make at most one adjacent ally [$ $|Skill+hd_dummy_morale_state_confident]", weaponTypeName)),
 		});
 
 		return ret;
