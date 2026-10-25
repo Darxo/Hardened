@@ -63,7 +63,6 @@
 			});
 		}
 
-		// Add worn kite/heater shields to higher tier settlements
 		if (this.getSettlement().getSize() == 3 || this.getSettlement().isMilitary())
 		{
 			ret.push({

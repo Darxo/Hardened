@@ -605,7 +605,6 @@
 		return ret;
 	}
 
-// Reforged Functions
 	// Overwrite, because we implement these values way more standardized than reforged and additional qol features
 	q.getBaseAttributesTooltip = @() function( _entityId, _elementId, _elementOwner )
 	{

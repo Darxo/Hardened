@@ -66,7 +66,7 @@
 				centreTooltipEntries.push({
 					Name = "Fortifications",
 					Icon = "palisade_01_orientation",
-					Overlay = null
+					Overlay = null,
 				});
 			}
 		}
