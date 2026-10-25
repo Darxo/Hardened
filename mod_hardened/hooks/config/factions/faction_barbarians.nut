@@ -121,7 +121,7 @@
 				RangedSkill = 40,
 				MeleeDefense = 0,
 				RangedDefense = 0,
-				Initiative = 90,
+				Initiative = 140,
 			}
 		);
 	}

@@ -78,6 +78,22 @@ local newPerks = [
 		}),
 	},
 	{
+		Key = "HD_DrumMastery",
+		Name = "Drum Mastery",
+		Description = ::UPD.getDescription({
+			Fluff = "Drums, drums in the distance.",
+			Effects = [
+				{
+					Type = ::UPD.EffectType.Passive,
+					Description = [
+						"[$ $|Skill+drums_of_war_skill] has " + ::MSU.Text.colorPositive("+3") + " Radius",
+						"[$ $|Skill+drums_of_war_skill] recovers an additional " + ::MSU.Text.colorPositive("5") + " [Fatigue|Concept.Fatigue] and removes [$ $|Skill+dazed_effect] from all affected allies",
+					],
+				},
+			],
+		}),
+	},
+	{
 		Key = "HD_Ethereal",
 		Name = "Ethereal",
 		Description = ::UPD.getDescription({

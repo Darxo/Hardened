@@ -25,6 +25,14 @@
 		IconDisabled = "ui/perks/perk_hd_copycat_sw.png",
 	},
 	{
+		ID = "perk.hd_drum_mastery",
+		Script = "scripts/skills/perks/perk_hd_drum_mastery",
+		Name = ::Const.Strings.PerkName.HD_DrumMastery,
+		Tooltip = ::Const.Strings.PerkDescription.HD_DrumMastery,
+		Icon = "ui/perks/perk_hd_drum_mastery.png",
+		IconDisabled = "ui/perks/perk_hd_drum_mastery_sw.png",
+	},
+	{
 		ID = "perk.hd_ethereal",
 		Script = "scripts/skills/perks/perk_hd_ethereal",
 		Name = ::Const.Strings.PerkName.HD_Ethereal,

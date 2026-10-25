@@ -1,6 +1,8 @@
 ::Hardened.HooksMod.hook("scripts/skills/actives/drums_of_war_skill", function(q) {
 	q.m.HD_InitiativeAsFatiguePct <- 0.05;
+	q.m.HD_AdditionalFatigueReceovery <- 0;
 	q.m.HD_Radius <- 5;
+	q.m.HD_RemoveDazed <- false;
 
 	q.create = @(__original) function()
 	{
@@ -28,12 +30,32 @@
 			text = ::Reforged.Mod.Tooltips.parseString("Cause all allies from your company within " + ::MSU.Text.colorPositive(this.m.HD_Radius) + " tiles to recover [Fatigue|Concept.Fatigue] equal to " + ::MSU.Text.colorizePct(this.m.HD_InitiativeAsFatiguePct) + exactFatigueRecovery + " of your [$ $|Concept.Initiative]"),
 		});
 
+		if (this.m.HD_AdditionalFatigueReceovery > 0)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Cause all allies from your company within " + ::MSU.Text.colorPositive(this.m.HD_Radius) + " tiles to recover " + ::MSU.Text.colorizeValue(this.m.HD_AdditionalFatigueReceovery) + " [Fatigue|Concept.Fatigue]"),
+			});
+		}
+
 		ret.push({
 			id = 11,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = ::Reforged.Mod.Tooltips.parseString("Remove [$ $|Skill+sleeping_effect] from all allies within " + ::MSU.Text.colorPositive(this.m.HD_Radius) + " tiles"),
 		});
+
+		if (this.m.HD_RemoveDazed)
+		{
+			ret.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = ::Reforged.Mod.Tooltips.parseString("Remove [$ $|Skill+dazed_effect] from all allies from your faction within " + ::MSU.Text.colorPositive(this.m.HD_Radius) + " tiles"),
+			});
+		}
 		return ret;
 	}}.getTooltip;
 
@@ -57,6 +79,12 @@
 				if (recoveredFatigue > 0) playAnimation = true;
 			}
 
+			if (this.m.HD_RemoveDazed && actor.getSkills().hasSkill("effects.dazed"))
+			{
+				actor.getSkills().removeByID("effects.dazed");
+				playAnimation = true;
+			}
+
 			if (playAnimation && !actor.isHiddenToPlayer())
 			{
 				this.spawnIcon("status_effect_105", actor.getTile());
@@ -66,10 +94,19 @@
 		return true;
 	}}.onUse;
 
+// MSU Functions
+	q.softReset = @(__original) function()
+	{
+		__original();
+		this.resetField("HD_AdditionalFatigueReceovery");
+		this.resetField("HD_Radius");
+		this.resetField("HD_RemoveDazed");
+	}
+
 // New Functions
 	q.HD_getFatigueRecovery <- function()
 	{
-		return this.HD_getFatigueRecoveryFromInitiative();
+		return this.HD_getFatigueRecoveryFromInitiative() + this.m.HD_AdditionalFatigueReceovery;
 	}
 
 	q.HD_getFatigueRecoveryFromInitiative <- function()
