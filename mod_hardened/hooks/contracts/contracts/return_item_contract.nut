@@ -40,7 +40,7 @@
 				state.end = function()
 				{
 					oldEnd();
-					if (this.HD_getDifficultyTier() == 3 && this.Flags.has("IsBandits") && ::Math.rand(1, 70) <= 20)
+					if (this.Contract.HD_getDifficultyTier() == 3 && this.Flags.has("IsBandits") && ::Math.rand(1, 70) <= 20)
 					{
 						this.Flags.set("HD_IsHexen", true);
 						this.Flags.remove("IsBandits");
