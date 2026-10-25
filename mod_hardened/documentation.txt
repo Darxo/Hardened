@@ -30,6 +30,9 @@
 
 # Changelog
 
+1.26.2
+	- Fix combat during a escort caravan contract sometimes not loading correctly
+
 1.26.1
 	- Fix **Return Item** contracts not starting correctly
 

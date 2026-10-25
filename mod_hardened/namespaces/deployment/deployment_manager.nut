@@ -13,7 +13,7 @@
 	function init( _combatInfo )
 	{
 		this.EngagementType = _combatInfo.HD_EngagementType != null ? _combatInfo.HD_EngagementType : this.generateEngagementType(_combatInfo);
-		::logInfo("Hardened: Deployment init " + _combatInfo + " EngagementType " + this.EngagementType);
+		::logInfo("Hardened: Deployment init EngagementType " + this.EngagementType);
 
 		if (this.EngagementType != ::Hardened.Deployment.EngagementType.Custom)
 		{
