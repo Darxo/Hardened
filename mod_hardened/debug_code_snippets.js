@@ -202,6 +202,7 @@ return ::World.FactionManager.m.GreaterEvil.Phase;
 
 ## Allow saves with night vision helmet fang to be loaded
 ::Const.DLC.Mask = 343;
+::Const.DLC.isCompatible = function(_meta) { return true; }
 
 ## Add injury to a brother
 ::Tactical.TurnSequenceBar.getActiveEntity().getSkills().add(::new("scripts/skills/injury/cut_leg_muscles_injury"));
@@ -279,3 +280,22 @@ local resources = 600;
 ::World.FactionManager.getFactionsOfType(::Const.FactionType.NobleHouse)[1].spawnEntity(::World.State.getPlayer().getTile(), "TestParty", false, partyId, resources);
 ::World.FactionManager.getFactionsOfType(::Const.FactionType.NobleHouse)[2].spawnEntity(::World.State.getPlayer().getTile(), "TestParty", false, partyId, resources);
 // ::World.FactionManager.getFactionsOfType(::Const.FactionType.Settlement)[10].spawnEntity(::World.State.getPlayer().getTile(), "TestParty", false, partyId, resources);
+
+## spawn contract into nearby location
+
+foreach (location in ::World.EntityManager.getSettlements())
+{
+	if (location.getTile().getDistanceTo(::World.State.getPlayer().getTile()) > 3) continue;
+
+	::logWarning("Hardened: Add Contract to Location " + location.getName());
+	local contract = ::new("scripts/contracts/contracts/break_greenskin_siege_contract");
+	local faction = ::World.FactionManager.getFaction(location.getFaction());
+	contract.setFaction(location.getFaction());
+	contract.setHome(location);
+	contract.setOrigin(location);
+	contract.setEmployerID(faction.getRandomCharacter().getID());
+	contract.setup();
+	::World.Contracts.addContract(contract);
+	return;
+}
+::.World.FactionManager.isGreenskinInvasion = function() { return true }

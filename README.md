@@ -9,7 +9,7 @@ Hardened reflects my personal vision for a Battle Brothers overhaul: a well-poli
 
 # Overview
 - Simplified and reworked core mechanics, including **Reach**, **Double Grip**, **Crowded**, **Stamina/Weight** and destructible Shields
-- Reworked world generation, faction strength, locations, contracts and difficulty scaling
+- Reworked world generation, combat deployment, faction strength, locations, contracts and difficulty scaling
 - [15 New Perks](https://github.com/Darxo/Hardened/wiki/New-Perks) and [110+ Perks are tweaked or reworked](https://github.com/Darxo/Hardened/wiki/Perk-changes-Side%E2%80%90By%E2%80%90Side)
 - 240+ Weapons, Shields, [Body Armors](https://github.com/Darxo/Hardened/wiki/Vanilla-Hardened-Armor-Changes) and [Helmets](https://github.com/Darxo/Hardened/wiki/Hardened-Helmet-Changes) are rebalanced
 - [Almost all NPCs rebalanced or redesigned]((https://docs.google.com/spreadsheets/d/1fOc6TcgiVm9P_iOyVoqwYNoXETsnuc9I_4YbblBHV18/edit?gid=1891685024#gid=1891685024)) around Hardened's mechanics
@@ -160,8 +160,7 @@ Hardened reflects my personal vision for a Battle Brothers overhaul: a well-poli
 - The **Stamina** penalty from **Weight** is now applied last (after Stamina Multiplier from effects). This is similar to how the **Initiative** penalty from **Weight** is applied in Vanilla
   - Therefore percentage based debuffs and injuries affecting **Stamina** are worse
   - And percentage based buffs affecting **Stamina** are stronger
-- No Player Character can ever have less than 10 **Stamina**
-- No NPC can ever have less than 15 **Stamina**
+- No Character can ever have less than 15 **Stamina**
 
 ### Numeral Rework
 
@@ -227,7 +226,7 @@ Hardened reflects my personal vision for a Battle Brothers overhaul: a well-poli
 - **Demolish Armor** now deals 60% more Armor Damage (up from 45% more)
 - **Distracted** (caused by **Throw Dirt**) now reduces the damage by 20% (down from 35%) and disables the targets Zone of Control during the effect
 - **Drink Night Owl Elixir** (from **Hexen** and **Assassins**) now costs 5 AP (up from 2)
-- **Drums of War** now costs 30 Fatigue (up from 15)
+- **Drum of War** now costs 30 Fatigue (up from 15) and has a range of 5 tiles (down from unlimited). It now recovers Fatigue equal to 5% of the users Initiative on all affected allies (instead of 15 Fatigue). It now wakes up all allies within 5 tiles. It is no longer usable whie engaged in melee
 - **Encourage** (granted by **Supporter**) can no longer make someone confident and it no longer requires the user to have a higher morale than the target per tile distance
 - **Encumbrance** is completly reworked. You have 1 Level of Encumbrance (up to a maximum of 4) for every 20 Weight above 30. Travelling costs +1 Fatigue for every level
 - **Ethereal Bite** (form **Hollenhunds**) no longer inflicts **Grave Chill**
@@ -532,6 +531,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - All Weapon Attacks that deal neither 0% nor 100% Armor Penetration will now inherit the Armor Penetration value of the weapon they come from
 - Add sound effect for **Cheap Trick**, **Hold Steady**, **Onslaught** and **Take Aim** skills
 - Knockback of all skills is reworked and standardized. It still always knocks someone back in a straight line, if user and target are on the same axis and there is space behind the target. In all other cases the destination is now random, instead of fixed/clock-wise
+- Add NPC-Only perk **Drum Mastery**: **Drums of War** has +3 Radius. **Drums of War** recovers and additional 5 Fatigue and removes Dazed from all affected allies
 - Add NPC-Only perk **Forestbond**. It recovers 3% Hitpoints per adjacent tree obstacle at the start of each turn
 - Add NPC-Only perk **Judgement**. It grants +10% Hitchance against anyone whose turn has already started.
 - Add NPC-Only perk **Ethereal**. It grants +10 Melee Defense and +10 Ranged Defense against Attacks for each tile between the Attacker and you
@@ -561,6 +561,7 @@ Just the images side-by-side: https://github.com/Darxo/Hardened/wiki/Perk-change
 - **Composite Bow** now costs 800 Crowns (up from 400)
 - **Cudgel** now deals 45-65 damage (up from 30-50), has 120% Armor Damage (up from 90%), has 4 Reach (up from 3), costs 600 Crowns (up from 300). **Bash** now costs 5 AP (up from 4). It loses **Knock Out** and gains **Strike Down**
 - **Dagger** now deals 20-30 Damage (from 15-35) and has 50% Armor Damage (down from 60%)
+- **Drum** is now lootable. It now now has 10 Weight (up from 0) and costs 400 Crowns (up from 0)
 - **Estoc** now has 6 Reach (up from 5)
 - **Executioners Sword** now deals 130-140 Damage (up from 95-110), has 120% Armor Damage (up from 90%), 25% Armor Penetration (down from 35%), 32 Shield Damage (up from 16) and 26 Weight (up from 12). It now has -15% Hitchance at all times
 - **Goblin Skewer** are now a Spear/Dagger hybrid. **Thrust** is replaced with **Stab**. **Riposte** is removed
@@ -920,7 +921,7 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 - All **Zombie Orcs** now have a 100% resurrection chance (up from 66%-90%)
 - Reanimated Humans how have 120 Hitpoints (down from 130) and 200 Stamina (up from 100)
 - All **Skeletons** no longer grant experience after being resurected
-- **Alps** now take 50% less piercing damage (from 50% less melee piercing damage and 66% less ranged piercing damage). They no longer take reduced damage from ranged blunt damage. They now take 50% less damage from characters with **Bite Reach** (up from 66% less)
+- **Alps** now take 50% less piercing damage (from 50% less melee piercing damage and 66% less ranged piercing damage). They no longer take reduced damage from ranged blunt damage. They now take 50% less damage from characters with **Bite Reach** (up from 66% less). They now spawn directly opposite of the player, by default
 - **Barrowkin Racial** no longer grants 10% less Melee Damage taken per Attacker Morale State below Steady
 - **Ghost Racial** no longer grants +10 Melee Defend and +10 Ranged Defense per tile between the attacker and you. It now grants the **Ethereal** perk. It grants immune to **Chilled** and **Frostbound** and it makes the user ignore movement penalty on any terrain
 - **Skeleton Racial** now explicitely causes 100% less **Fatigue** build-up. It now grants 50% less piercing damage (instead of 50% less melee piercing damage and 66% less ranged piercing damage)
@@ -1112,6 +1113,13 @@ Side-by-side comparison between Old and New: https://github.com/Darxo/Hardened/w
 ## Combat General
 
 - Most tactical maps now take the shape of a hexagon, rather than that of a rectangle
+- Completely reimplement deployment of participants and positioning of troops during combat (with the exception of Scenarios)
+	- Add two new Formation Roles **Flank** and **Center**
+		- Flank: **Wardogs**, **Warhounds**, **Fencer**, **Assassin**, **Hollenhunds**
+		- Center: **Brigand Leader**, **Brigand Baron**, **Militia Captain**, **Sergeant**, **Marshal**, **Knight**, **Anointed Knight**, **Nomad Leader**, **Officer**, **Ancient Decanus**, **Ancient Centurion**, **Ancient Legatus**
+	- Very large world parties no longer spill into other regions on the battlefield
+	- Around ~2 additional world parties can join any type of combat
+	- Joining the defender side of a fortified location now mirrors the Fortifications correctly
 - Fleeing characters no longer count for surround bonus
 - Low Morale no longer reduces the Resolve of the character
 - Every Defender of a Location which was fortified now gets a new **Defenders Advantage** effect for that fight, which grants +2 Vision and +10 Resolve
@@ -1202,7 +1210,8 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Marketplaces now sell **Crude Javelins** instead of regular **Javelins**
 - Small civilian settlements now sell **Old Wooden Shields** and **Lute**
 - Settlements with a **Temple** now regularly sell **Holy Water** in the Marketplace
-- Big northern settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields**
+- Tier 3 Settlements now sell **Bread** instead of **Grains**
+- Big northern settlements now sometimes sell **Worn Kite Shields** and **Worn Heater Shields** and they rarely sell **Drums**
 - **Weaponsmiths** and Armorsmiths now sell **Armor Parts** with a price multiplier of 1.25
 - **Kennels** now have a Price Multiplier of 1.25 (up from 0.75)
 - **Fletcher** now sell roughly 5 times as many **Throwing Spears** but with a price multiplier of 1.5 (up from 1.0)
@@ -1214,6 +1223,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 
 - Allow every attached location, which produces something, to be raided. They are lightly defended and drop their produce and a paint item as loot. These locations go into lockdown while their settlement has the **Raided** situation making them unable to be attacked. They drop 1-2 of their produce and a paint
 - Allow the following military attached locations to be attacked: **Barracks** (350 Resources), **Militia Barracks** (200 Resources), **Southern Militia Barracks** (350 Resources), **Wooden Watchtower** (210 Resources), **Stone Watchtower** (280 Resources) and **Southern Stone Watchtower** (280 Resources). They drop supplies, paint and may also contain named items
+- **
 - Trigger **Raided** situation in a settlement when any of its attached locations is destroyed
 
 ### Unique Locations
@@ -1226,13 +1236,18 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 	- **Spirit Walk** now costs 6 Action Points (up from 3) and it spawns a **Hollenhund** in the old position. It now has a range of 7 (down from unlimited) and can only target tiles that have no enemies within 4 tiles of them
 	- **Gore** now has a cooldown of 2 rounds and can no longer be used while engaged in melee. It can only target tiles with at most 3 adjacent hostiles. It now knocks back its targets 2 tiles (up from 1). It now has a range of 7 (up from 6)
 	- Add new **Antler Sweep** melee attack which costs 6 AP, has a 2 round cooldown and deals +20 Damage. It hits up to 3 enemies, knocks them back 2 tiles and staggers them (even on a miss)
+- Completely rework the **Black Monolith** bossfight:
+	- The player now spawns in the center
+	- You now always fight against 45 enemies (down from 47)
+	- The enemy forces are now split into three equally sized armies and placed with angles of 120° around the player
+	- Fleeing from the combat always resets the complete encounter
 - The **Rachegeist** in the **Watermill** location now spawns with 2 undead squires by his side
 - Unique Locations that are not invisible now always have a VisibilityMult of 1.0, no matter what tile they are standing on, resulting in you always discovering them when they enter your field of view
 - Defeating the Ijirok now also drops **Sword Blade** item, which allows you to do the Rachegeist fight without having to kill the Kraken
 - The **Ancient Spire** now reveals an area of 3000 (up from 1900)
 - The **Ancient Temple** will now reward you with a guaranteed **Mysterious Jug** (+1 Perk Point).
 - The **Ancient Temple** now allows you to hire the riddler you meet during that encounter, if you choose the **Help me kick in that gate** option. He is a random cripple with the **Mad** Trait and the **Brain Damage** injury.
-- **Black Monolith** now spawns some cosmetic badlands tiles around its location
+- **Black Monolith** now spawns some cosmetic badlands tiles around its location. It can now spawn roaming parties
 - The **Stone Pillars** (Kraken) now always requires 3 Hides and 3 Dust, no matter how much you already had in your inventory
 - Restrict the allowed Y coordinates for many unique locations to where their allowed tiles usually spawn to speed up map generation
 - Most Unique Locations have a `DistanceToOthers` of 10 tiles (down from 15), allowing them to be placed closer to settlements and other locations during map generation. This will improve map generation speed and prevent cases of missing unique locations when too many settlements are generated
@@ -1243,8 +1258,10 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 ### Attackable Locations
 
 - Hostile Locations now hide their Defender Line-Up during night
+- All Undead and Zombie locations can now send out roaming parties
 - Hostile Locations will no longer spawn roaming parties or defenders while you are within 2 tiles of it
 - At the start of each new campaign ~3 additional **Bandit Hideouts** are spawned in the world
+- Fortification Walls are now guaranteed to have an opening in all 6 directions (up from 4)
 - Named weapons now have a 40% chance to be the chosen item type for camps (up from 25,9%). Named shields, helmets and armor now have a 20% chance to be chosen (down from 24,7%)
 - All non-unique hostile world locations now have standardized resources, influenced by a faction difficulty multipliers. The following resources already include these difficulty multiplier [Visual Overview Here](https://docs.google.com/spreadsheets/d/1fOc6TcgiVm9P_iOyVoqwYNoXETsnuc9I_4YbblBHV18/edit?gid=2122483876#gid=2122483876):
 	- **Brigand Hideouts** now have 100 Resources (up from 80)
@@ -1330,6 +1347,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - **Find Location** contract can now also choose **Barrowkin-**, **Brigand-**, **Barbarian-**, **Beast-**, **Goblin-**, **Orc-** and **Nomad** Location as the target (instead of just Skeleton and Zombie locations). It can now target locations which are in undiscovered regions. It can now appear as higher tier versions when targeting locations with lower visibility. It no longer grants +100 Crowns while playing with an **Unexplored Map**. It no longer has a guaranteed minimum pay of 300 Crowns
 - **Find Location** and **Return Item** contract now have a 100% base chance to be in the contract pool -1% chance for every 10 Renown you have, down to a minimum of 10%. In Vanilla they have a 80% chance during day 1-3 and 10% afterwards
 - During the **Escort Envoy** Contract: You move 20% slower, while the Envoy is in your party. The Envoy has 6 Action Points (down from 9) and the contract grants 50% more Crowns. The envoy now always takes 16 hours at the destination and that number is displayed and counted down in the contract description
+- Add new twist to Tier 3 **Return Item** contract (20% chance), where an additional **Hexe** joins the fight on the side of the bandits. Add several new Itemnames for the contract target
 
 ## Events
 
@@ -1466,6 +1484,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Add Setting (on) for automatically adjusting the camera level, when previewing movement, to make sure that the targeted tile is visible and no adjacent tile is hidden by a hill. When you stop previewing a movement, reset the camera level to what it was previously
 - Add Setting (on) for automatically adjusting the camera level, whenever you preview a skill, so that as many valid targets as possible are visible at the same time. When you stop previewing a skill, reset the camera level to what it was previously
 - **Throw Fire Bomb** now only marks tiles for impact, if they would be affected by its fire damage. You can no longer throw it on a tile, if no tiles in the impact zone would be affected
+- Display base troop name and icon in champion effect tooltip
 - Slightly increase size of regular **Webknechts** and always generate a white mark on their back
 - Make **Webknechts** spawned from **Spider Eggs** never spawn with white marks on their back
 - Print a combat log whenever **Battle Flow** and **Recover** recover Fatigue
@@ -1591,14 +1610,15 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Supplies (Crowns, Tools, Medicine, Ammo) are now consumed instantly after buying, looting
 - Display current and maximum amount of servings in tooltips of food items
 - Quiver and Weapons that contain Ammo now display the supply cost for replacing ammunition in them
-- Add new Concepts for **Armor Penetration**, **Critical Damage**, **Displacement**, **Hitchance**, **Level Up**, **Mood**, **Rally**, **Recently**, **Stunned**, **Talent**, **Threat** and **Weight** and and apply these Concepts to existing weapons, items, perks skills
+- Add new Concepts for **Armor Penetration**, **Critical Damage**, **Displacement**, **Hitchance**, **Level Up**, **Mood**, **Rally**, **Readiness**, **Recently**, **Stunned**, **Talent**, **Threat** and **Weight** and and apply these Concepts to existing weapons, items, perks skills
 - Add setting (on) to show the absolute mood value instead of a percentage in the mood tooltip
 - List the exact mood changes in brackets in the mood tooltip
 - Add settings for **Encumbrance** (on) and **Ammo Warning** (on) for displaying mini icon on top of individual characters in the character screen, when those effects are active
+- Display required ammo type in tooltip of **Ammo Warning**
 - **Throwing Weapon** and **Throwing** are now called **Throwable**
 - **Musical Instrument** are now called **Instrument**
 - Slightly move the dismiss button downwards
-- Improve the Vanilla Concepts **Chance to hit head**, **Vision**, **Renown** and **Morale** and add nested tooltip for all morale states (except **Steady**)
+- Improve the Vanilla Concepts **Chance to hit head**, **Vision**, **Renown**, **Fatigue**, **Stamina**, **Initiative**, **Resolve**, **Melee Skill**, **Ranged Skill**, **Morale** and **Morale Check** and add nested tooltip for all morale states (except **Steady**)
 - Write campaign seed in the log when starting a new campaign
 - Improve the Reforged Concept for **Turn** and **Zone of Control**/**Engaged in Melee**
 - Display amount of Overdoses (`PotionsUsed`) in the background tooltip, if > 0
@@ -1622,6 +1642,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Regular **Caves** now have 180 Resources (up from 140)
 - **Caves** with larger beasts (Lindwurms, Unholds) now have 240 Resources (up from 210)
 - **Witch Huts** now have 280 Resources (up from 210)
+- Tier 2 **Return Item** contracts with the Necromancer twist now spawn a **Hooded Man** (instead of a **Necromancer**)
 
 ### Dynamic Spawns
 
@@ -1697,7 +1718,7 @@ This section talks about adjustments made to other optional mods, when present a
 - Fix ironman autosaves after battle not saving autolooted items
 - Fix shieldwall animation still showing up on NPCs who lost the shieldwall effect offscreen
 - Fix spearwall animation showing up on NPCs who lost the spearwall effect offscreen
-- Fix barbarian **Drum** being double grippable despite being a two-handed weapon
+- Fix barbarian **Drum** being double grippable and not blocking offhand correctly despite being a two-handed weapon
 - Fix **Headhunter** and **Fast Adaption** sometimes not triggering correctly from zone of control attacks
 - Fix keyboard inputs for camera movement in combat not being combinable
 - Fix rare cases of caravans despawning when loading a save
@@ -1765,6 +1786,7 @@ This section talks about adjustments made to other optional mods, when present a
 
 This section can be skipped by any regular user. It is only meant as an overview about the extend of new functions and members added by this mod
 
+- Add `location::HD_onGetLocalCombatProperties(_combatInfo)`, which is called at the end of the `getLocalCombatProperties` for the location whose part of it
 - Rewrite `::World.State.showCombatDialog` by using `getLocalCombatProperties` as the one source of truth for compiling the dialog information
 - Add `settlement::m.HD_OwnContractChance` and `settlement::m.HD_OwnContractChance` for determining seeded chances whether available contracts from the pool are actually displayed to the player
 - Add `settlement::m.HD_OwnContractsMax` and `settlement::m.HD_ForeignContractsMax` restricting how many contracts from those pools can be displayed at the same time in a settlement
@@ -1997,3 +2019,7 @@ This mod is licensed under the **Zero-Money License**, which is a custom license
 ## Key Differences from CC BY-NC-SA 4.0:
 
 - **No Donations:** Explicitly prohibits soliciting or accepting any form of financial contributions related to the mod.
+
+
+
+

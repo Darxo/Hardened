@@ -30,6 +30,55 @@
 
 # Changelog
 
+1.26.0
+	- Completely reimplement deployment of participants and positioning of troops during combat (with the exception of Scenarios)
+		- Around ~2 additional world parties can join any type of combat
+		- Add two new Formation Roles **Flank** and **Center**
+		- Following troops now spawn on the Flanks: **Wardogs**, **Warhounds**, **Fencer**, **Assassin**, **Hollenhunds**
+		- Following troops now spawn in the Center: **Brigand Leader**, **Brigand Baron**, **Militia Captain**, **Sergeant**, **Marshal**, **Knight**, **Anointed Knight**, **Nomad Leader**, **Officer**, **Ancient Decanus**, **Ancient Centurion**, **Ancient Legatus**
+		- Very large world parties no longer spill into other regions on the battlefield
+		- Joining the defender side of a fortified location now mirrors the Fortifications correctly
+	- Add new NPC-Only perk **Drum Mastery**. **Drums of War** has +3 Radius. **Drums of War** recovers and additional 5 Fatigue and removes Dazed from all affected allies
+	- **Drum of War** now has a range of 5 tiles (down from unlimited). It now recovers Fatigue equal 5% of the users Initiative on all affected allies (instead of 15 Fatigue). It now wakes up all allies within 5 tiles. It is no longer usable while engaged in melee
+	- **Drum** (worn by **Barbarian Drummer**) is now lootable. It now now has 10 Weight (up from 0) and costs 400 Crowns (up from 0)
+	- **Barbarian Drummer** gain **Drum Mastery** and now have 140 Initiative (up from 90)
+	- **Goblin Overseer** now have 120 Body Armor (down from 180)
+	- **Alps** now spawn directly opposite to the player in line
+	- Allow all undead and zombie locations to spawn roaming parties
+	- Northern Military Locations and Northern T3 Settlements now rarely sell **Drums**
+	- Tier 3 northern Settlements now sell **Bread** instead of **Grains**
+	- Guarantee an openening in the fortification wall in all six directions, instead of just in 4 of the directions
+	- Generate a cosmetic tower structure in **Stone Watchtwer** and **Wooden Watchtower** locations
+	- Generate a raised watchpost in every fortification corner for all military attached locations
+	- **Stone Watchtower** fortifications now have +1 additional radius (up from +0)
+	- **Military Camp** fortifications now have +2 additional radius (up from +1)
+	- Completely rework the **Black Monolith** bossfight:
+		- The player now spawns in the center
+		- You now always fight against 45 enemies (down from 47)
+		- The enemy forces are now split into three equally sized armies and placed with an angle of 120° between them around the player
+		- Fleeing from the combat always resets the complete encounter
+	- Allow **Black Monolith** to spawn roaming parties
+	- Set minimum Stamina for Player Characters to 15 (up from 10)
+	- Tier 3 **Return Item** contracts now has a 20% chance to turn into a twist where an additional Hexe joins the fight as part of the bandit party
+	- Add custom animation and sound effect whenever **Shockwave** triggers
+	- Increase number of possible item names for **Return Item** contract
+	- Add new **Readiness** concept. Readiness is an additional value used to determine a character's position in the Turn Order
+	- Improve description of **Adrenalien Rush** and **Fleeing** by using **Readiness**
+	- Move **Goblin City** quest state bullet point to the bottom of its tooltip
+	- Rework the Vanilla Concepts for **Fatigue**, **Stamina**, **Initiative**, **Resolve**, **Melee Skill**, **Ranged Skill** and **Morale**
+	- Display required ammo type in tooltip of **No Ammo Warning**
+	- Display base troop name and icon in champion effect tooltip
+	- Change cursor into red cross when trying to force-attack an allied location while on a contract
+	- Fix some attached locations not displaying the correct banner in the combat dialog
+	- Fix(Vanilla) **Drum** not blocking offhand correctly
+	- Fix Player Waypoint sometimes not being visible
+	- Fix **Mace Mastery** not providing any fatigue discount for non-attacks
+	- Fix cursor showing sword over allied locations while on a contract
+	- Fix adjacent allied locations being raidable while on a contract
+	- Fix freshly destroyed attached locations not being greyed out correctly
+	- Tier 2 **Return Item** contract with the Necromancer twist now spawns a **Hooded Man** (instead of a **Necromancer**)
+	- Add `location::HD_onGetLocalCombatProperties(_combatInfo)`, which is called at the end of the `getLocalCombatProperties` for the location whose part of it
+
 1.25.4
 	- Fix **Brigand Follower** granting speed boost when attacking allied locations
 	- Fix(Vanilla) missing-sprite errors when `onUpdateInjuryLayer` of an actor is called before it is fully initialized
