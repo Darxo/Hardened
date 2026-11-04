@@ -30,6 +30,9 @@
 
 # Changelog
 
+1.26.3
+	- Fix **Abandoned Village** fight not starting correctly
+
 1.26.2
 	- Fix combat during a escort caravan contract sometimes not loading correctly
 

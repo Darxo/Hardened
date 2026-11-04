@@ -297,7 +297,7 @@ local resourceMult = ::Hardened.Const.ResourceTierMult;
 		createBrushRefresher = function()
 		{
 			// We secretly spawn a permanent, invisible dummy party at the bottom left corner of the map just so it keeps our newly introduced brushes permanently in memory
-			local party = ::World.spawnEntity("scripts/entity/world/party", createVec(0,0));
+			local party = ::World.spawnEntity("scripts/entity/world/party", 0, 0);
 			party.getSprite("body").setBrush("figure_hd_invisible_dummy");
 			return party;
 		}

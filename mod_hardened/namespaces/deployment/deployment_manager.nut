@@ -27,7 +27,7 @@
 	// Must be called once per combat during the spawn() function
 	function spawn( _combatInfo )
 	{
-		::logInfo("Hardened: Deployment spawn " + _combatInfo);
+		::logInfo("Hardened: Deployment spawn");
 		if (!this.HasBeenInitialized)
 		{
 			::logWarning("Hardened: DeploymentManager.spawn() was called without a previous init()");
