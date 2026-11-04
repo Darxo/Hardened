@@ -137,7 +137,10 @@
 			currentParticipant.addTroopDef(troopDef);
 		}
 
-		this.ParticipantCollection.registerParticipant(currentParticipant);
+		if (currentParticipant != null)
+		{
+			this.ParticipantCollection.registerParticipant(currentParticipant);
+		}
 	}
 
 	// We assume that Auto means both player and opponent are set as auto
