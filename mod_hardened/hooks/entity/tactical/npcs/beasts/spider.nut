@@ -53,9 +53,9 @@
 
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.65;
-		this.setSpriteOffset("status_rooted", this.createVec(7, 10));
-		this.setSpriteOffset("status_stunned", this.createVec(0, -20));
-		this.setSpriteOffset("arrow", this.createVec(0, -20));
+		this.setSpriteOffset("status_rooted", ::createVec(7, 10));
+		this.setSpriteOffset("status_stunned", ::createVec(0, -20));
+		this.setSpriteOffset("arrow", ::createVec(0, -20));
 
 		// Feat: increase size of regular spiders to tell them further apart from freshly spawned ones
 		this.setSize(::MSU.Math.randf(0.85, 0.95));	// Vanilla: 0.7 - 0.9

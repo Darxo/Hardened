@@ -92,7 +92,7 @@
 		__original();
 		this.getSprite("head").setBrush("bust_goblin_01_head_0" + ::Math.rand(1, 3));
 		this.setAlwaysApplySpriteOffset(true);
-		local offset = this.createVec(8, 14);
+		local offset = ::createVec(8, 14);
 		this.setSpriteOffset("body", offset);
 		this.setSpriteOffset("armor", offset);
 		this.setSpriteOffset("head", offset);
@@ -115,13 +115,13 @@
 		wolf_injury.Visible = false;
 		local wolf_armor = this.addSprite("wolf_armor");
 		wolf_armor.setBrush("bust_wolf_02_armor_01");
-		offset = this.createVec(0, -20);
+		offset = ::createVec(0, -20);
 		this.setSpriteOffset("wolf", offset);
 		this.setSpriteOffset("wolf_head", offset);
 		this.setSpriteOffset("wolf_armor", offset);
 		this.setSpriteOffset("injury_body", offset);
 		this.addDefaultStatusSprites();
-		this.setSpriteOffset("arms_icon", this.createVec(15, 15));
+		this.setSpriteOffset("arms_icon", ::createVec(15, 15));
 		this.getSprite("arms_icon").Rotation = 13.0;
 	}
 

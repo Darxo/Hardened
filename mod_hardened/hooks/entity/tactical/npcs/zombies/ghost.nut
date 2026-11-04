@@ -37,7 +37,7 @@
 		blur_2.varyColor(0.2, 0.2, 0.2);
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
-		this.setSpriteOffset("status_rooted", this.createVec(-5, -5));
+		this.setSpriteOffset("status_rooted", ::createVec(-5, -5));
 	}
 
 	// Assign Stats and Unconditional Immunities, Perks and Actives

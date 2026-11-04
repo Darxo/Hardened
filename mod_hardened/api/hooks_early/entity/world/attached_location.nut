@@ -14,7 +14,7 @@
 	{
 		__original();
 		this.setSpriteScaling("location_banner", true);
-		this.setSpriteOffset("location_banner", this.createVec(-55, 20));
+		this.setSpriteOffset("location_banner", ::createVec(-55, 20));
 	}
 
 	q.setActive = @(__original) function( _active )
@@ -49,7 +49,7 @@
 		// Vanilla calls onAfterInit before onDeserialize and it also serializes the offsets of all sprites
 		// In order to stay compatible with old saves or those from base Reforged, we adjust the banner offset on every deserialize
 		this.setSpriteScaling("location_banner", true);
-		this.setSpriteOffset("location_banner", this.createVec(-55, 20));
+		this.setSpriteOffset("location_banner", ::createVec(-55, 20));
 	}
 
 	q.onCombatLost = @(__original) function()

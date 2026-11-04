@@ -28,10 +28,10 @@
 				ScaleMax = 2.0,
 				VelocityMin = 20,
 				VelocityMax = 40,
-				DirectionMin = this.createVec(-0.1, 1),
-				DirectionMax = this.createVec(0.1, 1),
-				ForceMin = this.createVec(0, 10),
-				ForceMax = this.createVec(0, 15),
+				DirectionMin = ::createVec(-0.1, 1),
+				DirectionMax = ::createVec(0.1, 1),
+				ForceMin = ::createVec(0, 10),
+				ForceMax = ::createVec(0, 15),
 			},
 			{	// The skull grows bigger and quickly raises straight up
 				LifeTimeMin = 2.2,
@@ -42,10 +42,10 @@
 				ScaleMax = 2.25,
 				VelocityMin = 80,
 				VelocityMax = 100,
-				DirectionMin = this.createVec(-0.1, 1),
-				DirectionMax = this.createVec(0.1, 1),
-				ForceMin = this.createVec(0, 10),
-				ForceMax = this.createVec(0, 15),
+				DirectionMin = ::createVec(-0.1, 1),
+				DirectionMax = ::createVec(0.1, 1),
+				ForceMin = ::createVec(0, 10),
+				ForceMax = ::createVec(0, 15),
 			},
 			{	// The skull stays at its position for a good second well visible
 				LifeTimeMin = 1.2,
@@ -56,8 +56,8 @@
 				ScaleMax = 3.0,
 				VelocityMin = 0,
 				VelocityMax = 0,
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 0),
+				ForceMin = ::createVec(0, 0),
+				ForceMax = ::createVec(0, 0),
 			},
 			{	// The skull vanishes quickly
 				LifeTimeMin = 0.2,
@@ -68,8 +68,8 @@
 				ScaleMax = 3.5,
 				VelocityMin = 0,
 				VelocityMax = 0,
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 0),
+				ForceMin = ::createVec(0, 0),
+				ForceMax = ::createVec(0, 0),
 			}
 		]
 	}

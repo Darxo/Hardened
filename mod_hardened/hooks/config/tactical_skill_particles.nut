@@ -21,7 +21,7 @@
 			local divider = 2 * _myTile.getDistanceTo(_theirTile);	// We normalize the tile-distance by dividing by twice the tile distance. This way we arrive roughly at the border of our own tile
 			local x = _theirTile.Pos.X - _myTile.Pos.X;
 			local y = _theirTile.Pos.Y - _myTile.Pos.Y;
-			local vector = this.createVec(x / divider , y / divider + 40);	// +40 for picturing the height
+			local vector = ::createVec(x / divider , y / divider + 40);	// +40 for picturing the height
 			this.Stages[0].SpawnOffsetMin = vector;
 			this.Stages[0].SpawnOffsetMax = vector;
 		},
@@ -42,10 +42,10 @@
 				RotationMax = 359,
 				VelocityMin = 80,
 				VelocityMax = 80,
-				DirectionMin = this.createVec(-0.5, -0.5),
-				DirectionMax = this.createVec(0.5, 0.5),
-				SpawnOffsetMin = this.createVec(500, 0),
-				SpawnOffsetMax = this.createVec(500, 0)
+				DirectionMin = ::createVec(-0.5, -0.5),
+				DirectionMax = ::createVec(0.5, 0.5),
+				SpawnOffsetMin = ::createVec(500, 0),
+				SpawnOffsetMax = ::createVec(500, 0)
 			},
 			{
 				LifeTimeMin = 0.1,
@@ -58,8 +58,8 @@
 				RotationMax = 359,
 				VelocityMin = 80,
 				VelocityMax = 80,
-				ForceMin = this.createVec(-15, -30),
-				ForceMax = this.createVec(15, 30)
+				ForceMin = ::createVec(-15, -30),
+				ForceMax = ::createVec(15, 30)
 			},
 			{
 				LifeTimeMin = 0.1,
@@ -70,8 +70,8 @@
 				RotationMax = 359,
 				VelocityMin = 80,
 				VelocityMax = 80,
-				ForceMin = this.createVec(-15, -30),
-				ForceMax = this.createVec(15, 30)
+				ForceMin = ::createVec(-15, -30),
+				ForceMax = ::createVec(15, 30)
 			}
 		]
 	}
@@ -103,12 +103,12 @@
 			TorqueMax = 10,
 			VelocityMin = 10,
 			VelocityMax = 30,
-			DirectionMin = this.createVec(-0.1, 0.5),
-			DirectionMax = this.createVec(0.1, 0.5),
-			SpawnOffsetMin = this.createVec(-5, 0),
-			SpawnOffsetMax = this.createVec(5, 0),
-			ForceMin = this.createVec(0, 20),
-			ForceMax = this.createVec(0, 30),
+			DirectionMin = ::createVec(-0.1, 0.5),
+			DirectionMax = ::createVec(0.1, 0.5),
+			SpawnOffsetMin = ::createVec(-5, 0),
+			SpawnOffsetMax = ::createVec(5, 0),
+			ForceMin = ::createVec(0, 20),
+			ForceMax = ::createVec(0, 30),
 		},
 		{
 			LifeTimeMin = 1.00,
@@ -150,12 +150,12 @@
 				RotationMax = 359,
 				VelocityMin = 60,
 				VelocityMax = 100,
-				DirectionMin = this.createVec(-1.0, -0.25),
-				DirectionMax = this.createVec(1.0, 0.25),
-				SpawnOffsetMin = this.createVec(-50, -60),
-				SpawnOffsetMax = this.createVec(50, 30),
-				ForceMin = this.createVec(0, 45),
-				ForceMax = this.createVec(0, 45)
+				DirectionMin = ::createVec(-1.0, -0.25),
+				DirectionMax = ::createVec(1.0, 0.25),
+				SpawnOffsetMin = ::createVec(-50, -60),
+				SpawnOffsetMax = ::createVec(50, 30),
+				ForceMin = ::createVec(0, 45),
+				ForceMax = ::createVec(0, 45)
 			},
 			{
 				LifeTimeMin = 0.25,
@@ -168,10 +168,10 @@
 				RotationMax = 359,
 				VelocityMin = 30,
 				VelocityMax = 50,
-				DirectionMin = this.createVec(-0.5, -0.25),
-				DirectionMax = this.createVec(0.5, 0.25),
-				ForceMin = this.createVec(0, 45),
-				ForceMax = this.createVec(0, 45)
+				DirectionMin = ::createVec(-0.5, -0.25),
+				DirectionMax = ::createVec(0.5, 0.25),
+				ForceMin = ::createVec(0, 45),
+				ForceMax = ::createVec(0, 45)
 			},
 			{
 				LifeTimeMin = 0.5,
@@ -184,10 +184,10 @@
 				RotationMax = 359,
 				VelocityMin = 20,
 				VelocityMax = 30,
-				DirectionMin = this.createVec(0.0, 0.0),
-				DirectionMax = this.createVec(0.0, 0.0),
-				ForceMin = this.createVec(0, 45),
-				ForceMax = this.createVec(0, 45)
+				DirectionMin = ::createVec(0.0, 0.0),
+				DirectionMax = ::createVec(0.0, 0.0),
+				ForceMin = ::createVec(0, 45),
+				ForceMax = ::createVec(0, 45)
 			},
 			{
 				LifeTimeMin = 0.7,
@@ -200,10 +200,10 @@
 				RotationMax = 359,
 				VelocityMin = 20,
 				VelocityMax = 30,
-				DirectionMin = this.createVec(0.0, 0.0),
-				DirectionMax = this.createVec(0.0, 0.0),
-				ForceMin = this.createVec(0, 45),
-				ForceMax = this.createVec(0, 45)
+				DirectionMin = ::createVec(0.0, 0.0),
+				DirectionMax = ::createVec(0.0, 0.0),
+				ForceMin = ::createVec(0, 45),
+				ForceMax = ::createVec(0, 45)
 			}
 		]
 	}
@@ -247,12 +247,12 @@
 				RotationMax = 359,
 				VelocityMin = 200,
 				VelocityMax = 300,
-				DirectionMin = this.createVec(1.0, -0.1),
-				DirectionMax = this.createVec(1.0, 0.1),
-				SpawnOffsetMin = this.createVec(20, -2),
-				SpawnOffsetMax = this.createVec(30, 8),
-				ForceMin = this.createVec(0, 70),
-				ForceMax = this.createVec(0, 70)
+				DirectionMin = ::createVec(1.0, -0.1),
+				DirectionMax = ::createVec(1.0, 0.1),
+				SpawnOffsetMin = ::createVec(20, -2),
+				SpawnOffsetMax = ::createVec(30, 8),
+				ForceMin = ::createVec(0, 70),
+				ForceMax = ::createVec(0, 70)
 			},
 			{
 				LifeTimeMin = 0.2,
@@ -265,10 +265,10 @@
 				RotationMax = 359,
 				VelocityMin = 200,
 				VelocityMax = 300,
-				DirectionMin = this.createVec(1.0, -0.1),
-				DirectionMax = this.createVec(1.0, 0.1),
-				ForceMin = this.createVec(0, 70),
-				ForceMax = this.createVec(0, 70)
+				DirectionMin = ::createVec(1.0, -0.1),
+				DirectionMax = ::createVec(1.0, 0.1),
+				ForceMin = ::createVec(0, 70),
+				ForceMax = ::createVec(0, 70)
 			},
 			{
 				LifeTimeMin = 0.2,
@@ -281,8 +281,8 @@
 				RotationMax = 359,
 				VelocityMin = 200,
 				VelocityMax = 300,
-				ForceMin = this.createVec(0, 70),
-				ForceMax = this.createVec(0, 70)
+				ForceMin = ::createVec(0, 70),
+				ForceMax = ::createVec(0, 70)
 			},
 			{
 				LifeTimeMin = 0.1,
@@ -295,8 +295,8 @@
 				RotationMax = 359,
 				VelocityMin = 200,
 				VelocityMax = 300,
-				ForceMin = this.createVec(0, 70),
-				ForceMax = this.createVec(0, 70)
+				ForceMin = ::createVec(0, 70),
+				ForceMax = ::createVec(0, 70)
 			}
 		]
 	},
@@ -332,10 +332,10 @@
 				RotationMax = 359,
 				VelocityMin = 60,
 				VelocityMax = 100,
-				DirectionMin = this.createVec(1.0, -0.2),
-				DirectionMax = this.createVec(1.0, 0.2),
-				SpawnOffsetMin = this.createVec(15, -2),
-				SpawnOffsetMax = this.createVec(25, 8)
+				DirectionMin = ::createVec(1.0, -0.2),
+				DirectionMax = ::createVec(1.0, 0.2),
+				SpawnOffsetMin = ::createVec(15, -2),
+				SpawnOffsetMax = ::createVec(25, 8)
 			},
 			{
 				LifeTimeMin = 2.0,
@@ -346,8 +346,8 @@
 				ScaleMax = 0.75,
 				VelocityMin = 60,
 				VelocityMax = 100,
-				ForceMin = this.createVec(0, 30),
-				ForceMax = this.createVec(0, 40)
+				ForceMin = ::createVec(0, 30),
+				ForceMax = ::createVec(0, 40)
 			},
 			{
 				LifeTimeMin = 0.2,
@@ -358,8 +358,8 @@
 				ScaleMax = 1.0,
 				VelocityMin = 0,
 				VelocityMax = 0,
-				ForceMin = this.createVec(0, 30),
-				ForceMax = this.createVec(0, 40)
+				ForceMin = ::createVec(0, 30),
+				ForceMax = ::createVec(0, 40)
 			}
 		]
 	}
@@ -388,12 +388,12 @@
 				RotationMax = 359,
 				VelocityMin = 200,
 				VelocityMax = 240,
-				DirectionMin = this.createVec(-1.0, -0.25),
-				DirectionMax = this.createVec(1.0, 0.25),
-				SpawnOffsetMin = this.createVec(-50, -60),
-				SpawnOffsetMax = this.createVec(50, 30),
-				ForceMin = this.createVec(0, 45),
-				ForceMax = this.createVec(0, 45)
+				DirectionMin = ::createVec(-1.0, -0.25),
+				DirectionMax = ::createVec(1.0, 0.25),
+				SpawnOffsetMin = ::createVec(-50, -60),
+				SpawnOffsetMax = ::createVec(50, 30),
+				ForceMin = ::createVec(0, 45),
+				ForceMax = ::createVec(0, 45)
 			},
 			{
 				LifeTimeMin = 0.2,
@@ -406,10 +406,10 @@
 				RotationMax = 359,
 				VelocityMin = 75,
 				VelocityMax = 90,
-				DirectionMin = this.createVec(-0.5, -0.25),
-				DirectionMax = this.createVec(0.5, 0.25),
-				ForceMin = this.createVec(0, 45),
-				ForceMax = this.createVec(0, 45)
+				DirectionMin = ::createVec(-0.5, -0.25),
+				DirectionMax = ::createVec(0.5, 0.25),
+				ForceMin = ::createVec(0, 45),
+				ForceMax = ::createVec(0, 45)
 			},
 			{
 				LifeTimeMin = 0.2,
@@ -422,10 +422,10 @@
 				RotationMax = 359,
 				VelocityMin = 50,
 				VelocityMax = 60,
-				DirectionMin = this.createVec(0.0, 0.0),
-				DirectionMax = this.createVec(0.0, 0.0),
-				ForceMin = this.createVec(0, 45),
-				ForceMax = this.createVec(0, 45)
+				DirectionMin = ::createVec(0.0, 0.0),
+				DirectionMax = ::createVec(0.0, 0.0),
+				ForceMin = ::createVec(0, 45),
+				ForceMax = ::createVec(0, 45)
 			},
 			{
 				LifeTimeMin = 0.2,
@@ -438,10 +438,10 @@
 				RotationMax = 359,
 				VelocityMin = 50,
 				VelocityMax = 60,
-				DirectionMin = this.createVec(0.0, 0.0),
-				DirectionMax = this.createVec(0.0, 0.0),
-				ForceMin = this.createVec(0, 45),
-				ForceMax = this.createVec(0, 45)
+				DirectionMin = ::createVec(0.0, 0.0),
+				DirectionMax = ::createVec(0.0, 0.0),
+				ForceMin = ::createVec(0, 45),
+				ForceMax = ::createVec(0, 45)
 			}
 		]
 	}

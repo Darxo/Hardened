@@ -86,13 +86,13 @@
 		body_blood.setBrush("bust_orc_04_body_bloodied");
 		body_blood.Visible = false;
 		this.addDefaultStatusSprites();
-		this.setSpriteOffset("arms_icon", this.createVec(-8, 0));
-		this.setSpriteOffset("shield_icon", this.createVec(-5, 0));
-		this.setSpriteOffset("stunned", this.createVec(0, 10));
+		this.setSpriteOffset("arms_icon", ::createVec(-8, 0));
+		this.setSpriteOffset("shield_icon", ::createVec(-5, 0));
+		this.setSpriteOffset("stunned", ::createVec(0, 10));
 		this.getSprite("status_rooted").Scale = 0.65;
-		this.setSpriteOffset("status_rooted", this.createVec(0, 16));
-		this.setSpriteOffset("status_stunned", this.createVec(-5, 30));
-		this.setSpriteOffset("arrow", this.createVec(-5, 30));
+		this.setSpriteOffset("status_rooted", ::createVec(0, 16));
+		this.setSpriteOffset("status_stunned", ::createVec(-5, 30));
+		this.setSpriteOffset("arrow", ::createVec(-5, 30));
 	}
 
 	// Assign Stats and Unconditional Immunities, Perks and Actives

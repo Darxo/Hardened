@@ -27,7 +27,7 @@
 		injury.Visible = false;
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
-		this.setSpriteOffset("status_rooted", this.createVec(0, 10));
+		this.setSpriteOffset("status_rooted", ::createVec(0, 10));
 	}
 
 	// Assign Stats and Unconditional Immunities, Perks and Actives

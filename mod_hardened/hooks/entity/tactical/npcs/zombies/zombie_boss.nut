@@ -33,8 +33,8 @@
 		head.setBrush("bust_ghost_knight_01_head_01");
 
 		this.addDefaultStatusSprites();
-		this.setSpriteOffset("status_stunned", this.createVec(0, 10));
-		this.setSpriteOffset("arrow", this.createVec(0, 10));
+		this.setSpriteOffset("status_stunned", ::createVec(0, 10));
+		this.setSpriteOffset("arrow", ::createVec(0, 10));
 	}
 
 	// Assign Stats and Unconditional Immunities, Perks and Actives

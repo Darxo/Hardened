@@ -31,9 +31,9 @@
 		injury.setBrush("bust_schrat_01_injured");
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.54;
-		this.setSpriteOffset("status_rooted", this.createVec(0, 0));
-		this.setSpriteOffset("status_stunned", this.createVec(0, 10));
-		this.setSpriteOffset("arrow", this.createVec(0, 10));
+		this.setSpriteOffset("status_rooted", ::createVec(0, 0));
+		this.setSpriteOffset("status_stunned", ::createVec(0, 10));
+		this.setSpriteOffset("arrow", ::createVec(0, 10));
 	}
 
 	// Assign Stats and Unconditional Immunities, Perks and Actives

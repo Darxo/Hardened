@@ -52,7 +52,7 @@
 			hair.setBrush("hair_" + hairColor + "_" + ::Const.Hair.ZombieOnly[::Math.rand(0, ::Const.Hair.ZombieOnly.len() - 1)]);
 		}
 
-		this.setSpriteOffset("hair", this.createVec(0, -3));
+		this.setSpriteOffset("hair", ::createVec(0, -3));
 		this.addSprite("helmet");
 		this.addSprite("helmet_damage");
 		local beard_top = this.addSprite("beard_top");

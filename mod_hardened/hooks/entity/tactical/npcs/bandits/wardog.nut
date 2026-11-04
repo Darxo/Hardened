@@ -30,9 +30,9 @@
 		injury.setBrush("bust_dog_01_injured");
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.46;
-		this.setSpriteOffset("status_rooted", this.createVec(8, -15));
-		this.setSpriteOffset("status_stunned", this.createVec(0, -25));
-		this.setSpriteOffset("arrow", this.createVec(0, -25));
+		this.setSpriteOffset("status_rooted", ::createVec(8, -15));
+		this.setSpriteOffset("status_stunned", ::createVec(0, -25));
+		this.setSpriteOffset("arrow", ::createVec(0, -25));
 	}
 
 	// Assign Stats and Unconditional Immunities, Perks and Actives

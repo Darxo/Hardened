@@ -55,7 +55,7 @@
 			::Sound.play(::MSU.Array.rand(this.m.HD_SoundOnTrigger), ::Const.Sound.Volume.Skill * 0.5, _centreTile.Pos, 0.4);
 			foreach (effect in ::Const.Tactical.HD_Shockwave)
 			{
-				::Tactical.spawnParticleEffect(false, effect.Brushes, _centreTile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 0));
+				::Tactical.spawnParticleEffect(false, effect.Brushes, _centreTile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, ::createVec(0, 0));
 			}
 		}
 

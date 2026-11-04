@@ -5,24 +5,24 @@
 		{
 			case ::Const.Direction.N:
 			{
-				return { Min = this.createVec(-_variation, 0.8), Max = this.createVec(_variation, 0.8)};
+				return { Min = ::createVec(-_variation, 0.8), Max = ::createVec(_variation, 0.8)};
 				break;
 			}
 			case ::Const.Direction.S:
 			{
-				return { Min = this.createVec(-_variation, -0.8), Max = this.createVec(_variation, -0.8)};
+				return { Min = ::createVec(-_variation, -0.8), Max = ::createVec(_variation, -0.8)};
 				break;
 			}
 			case ::Const.Direction.NE:
 			case ::Const.Direction.SE:
 			{
-				return { Min = this.createVec(1.0, -_variation), Max = this.createVec(1.0, _variation)};
+				return { Min = ::createVec(1.0, -_variation), Max = ::createVec(1.0, _variation)};
 				break;
 			}
 			case ::Const.Direction.NW:
 			case ::Const.Direction.SW:
 			{
-				return { Min = this.createVec(-1.0, -_variation), Max = this.createVec(-1.0, _variation)};
+				return { Min = ::createVec(-1.0, -_variation), Max = ::createVec(-1.0, _variation)};
 				break;
 			}
 		}
@@ -35,18 +35,18 @@
 			case ::Const.Direction.NE:
 			case ::Const.Direction.NW:
 			{
-				return this.createVec(0, _force);
+				return ::createVec(0, _force);
 				break;
 			}
 			case ::Const.Direction.SE:
 			case ::Const.Direction.SW:
 			{
-				return this.createVec(0, -_force);
+				return ::createVec(0, -_force);
 				break;
 			}
 		}
 
-		return this.createVec(0, 0);
+		return ::createVec(0, 0);
 	},
 
 	getSpawnOffset = function( _direction )
@@ -55,24 +55,24 @@
 		{
 			case ::Const.Direction.N:
 			{
-				return {Min = this.createVec(-5, 15), Max = this.createVec(5, 20)};
+				return {Min = ::createVec(-5, 15), Max = ::createVec(5, 20)};
 				break;
 			}
 			case ::Const.Direction.S:
 			{
-				return {Min = this.createVec(-5, -15), Max = this.createVec(5, -20)};
+				return {Min = ::createVec(-5, -15), Max = ::createVec(5, -20)};
 				break;
 			}
 			case ::Const.Direction.NE:
 			case ::Const.Direction.SE:
 			{
-				return {Min = this.createVec(20, -5), Max = this.createVec(30, 5)};
+				return {Min = ::createVec(20, -5), Max = ::createVec(30, 5)};
 				break;
 			}
 			case ::Const.Direction.NW:
 			case ::Const.Direction.SW:
 			{
-				return {Min = this.createVec(-20, -5), Max = this.createVec(-30, 5)};
+				return {Min = ::createVec(-20, -5), Max = ::createVec(-30, 5)};
 				break;
 			}
 		}

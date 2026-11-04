@@ -75,7 +75,7 @@
 		body_blood.Visible = false;
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.6;
-		this.setSpriteOffset("status_rooted", this.createVec(0, 5));
+		this.setSpriteOffset("status_rooted", ::createVec(0, 5));
 	}
 
 	// Assign Stats and Unconditional Immunities, Perks and Actives

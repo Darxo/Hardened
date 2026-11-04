@@ -47,7 +47,7 @@
 		this.addSprite("helmet");
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.45;
-		this.setSpriteOffset("status_rooted", this.createVec(-4, 7));
+		this.setSpriteOffset("status_rooted", ::createVec(-4, 7));
 	}
 
 	// Assign Stats and Unconditional Immunities, Perks and Actives

@@ -111,7 +111,7 @@
 		if (_spentActionPoints >= 6 && ::Hardened.Mod.ModSettings.getSetting("FullForceCameraShake").getValue())
 		{
 			local cameraDistance = 4 + ::Math.min(_spentActionPoints - 6, 4);	// We cap the camera shake as it does not look good past a certain point
-			::Tactical.getCamera().quake(this.createVec(0, -1.0), cameraDistance, 0.16, 0.35);
+			::Tactical.getCamera().quake(::createVec(0, -1.0), cameraDistance, 0.16, 0.35);
 		}
 
 		foreach (entry in ::Const.Tactical.HD_FullForce)
