@@ -18,7 +18,7 @@
 	];
 	if ("entityId" in _data && "TooltipEvents" in this.getroottable())
 	{
-		ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+		ret.extend(::TooltipEvents.getBaseAttributesTooltip(_data.entityId, _data.elementId, null));
 	}
 	return ret;
 });
@@ -51,7 +51,7 @@
 		];
 		if ("entityId" in _data && "TooltipEvents" in this.getroottable())
 		{
-			ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+			ret.extend(::TooltipEvents.getBaseAttributesTooltip(_data.entityId, _data.elementId, null));
 		}
 		return ret;
 	});
@@ -74,7 +74,7 @@
 		];
 		if ("entityId" in _data && "TooltipEvents" in this.getroottable())
 		{
-			ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+			ret.extend(::TooltipEvents.getBaseAttributesTooltip(_data.entityId, _data.elementId, null));
 		}
 		return ret;
 	});
@@ -98,7 +98,7 @@
 		];
 		if ("entityId" in _data && "TooltipEvents" in this.getroottable())
 		{
-			ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+			ret.extend(::TooltipEvents.getBaseAttributesTooltip(_data.entityId, _data.elementId, null));
 		}
 		return ret;
 	});
@@ -119,7 +119,7 @@
 		];
 		if ("entityId" in _data && "TooltipEvents" in this.getroottable())
 		{
-			ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+			ret.extend(::TooltipEvents.getBaseAttributesTooltip(_data.entityId, _data.elementId, null));
 		}
 		return ret;
 	});
@@ -145,7 +145,7 @@
 		];
 		if ("entityId" in _data && "TooltipEvents" in this.getroottable())
 		{
-			ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+			ret.extend(::TooltipEvents.getBaseAttributesTooltip(_data.entityId, _data.elementId, null));
 		}
 		return ret;
 	});
@@ -170,7 +170,7 @@
 		];
 		if ("entityId" in _data && "TooltipEvents" in this.getroottable())
 		{
-			ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+			ret.extend(::TooltipEvents.getBaseAttributesTooltip(_data.entityId, _data.elementId, null));
 		}
 		return ret;
 	});
@@ -194,7 +194,7 @@
 		];
 		if ("entityId" in _data && "TooltipEvents" in this.getroottable())
 		{
-			ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+			ret.extend(::TooltipEvents.getBaseAttributesTooltip(_data.entityId, _data.elementId, null));
 		}
 		return ret;
 	});
@@ -218,7 +218,7 @@
 		];
 		if ("entityId" in _data && "TooltipEvents" in this.getroottable())
 		{
-			ret.extend(::TooltipEvents.getBaseAttributesTooltip( _data.entityId, _data.elementId, null));
+			ret.extend(::TooltipEvents.getBaseAttributesTooltip(_data.entityId, _data.elementId, null));
 		}
 		return ret;
 	});
@@ -257,7 +257,7 @@
 		"Your allies will not provide cover for enemies that are 2 tiles away from you.\n\n" +
 		"Ranged Attacks against characters that are in cover have a " + ::MSU.Text.colorPositive("75%") + " chance to instead hit one of the covering tiles at random."
 	)),
-	DayTime = ::MSU.Class.CustomTooltip(function( _data ) {
+	DayTime = ::MSU.Class.CustomTooltip(function(_data ) {
 		local tierConditions = [
 			{
 				id = 56,
