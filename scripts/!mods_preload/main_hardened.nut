@@ -27,6 +27,7 @@
 ::Hardened.HooksMod.require([
 	// "vanilla >= 1.5.1-8",
 	"mod_reforged >= 0.9.0",
+	"mod_reforged <= 0.9.3",
 	"mod_dynamic_spawns >= 0.5.0",
 ]);
 ::Hardened.HooksMod.conflictWith([
