@@ -13,11 +13,12 @@
 	{
 		local ret = __original();
 
+		local injuryEffectiveness = 1.0 / this.m.ThresholdToInflictInjuryMult;
 		ret.push({
 			id = 10,
 			type = "text",
-			icon = "ui/icons/hitchance.png",
-			text = ::Reforged.Mod.Tooltips.parseString("Has " + ::MSU.Text.colorizeMultWithText(this.m.ThresholdToInflictInjuryMult, {InvertColor = true}) + " [Injury Threshold|Concept.Injury]"),
+			icon = "ui/icons/special.png",
+			text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeMultWithText(injuryEffectiveness) + " effective at inflicting [Injuries|Concept.Injury]"),
 		});
 
 		return ret;

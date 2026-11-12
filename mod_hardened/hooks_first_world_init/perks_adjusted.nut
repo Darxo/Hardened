@@ -152,6 +152,19 @@ local adjustedDescriptions = [
 		})
 	},
 	{
+		ID = "perk.crippling_strikes",
+		Key = "CripplingStrikes",
+		Description = ::UPD.getDescription({
+			Fluff = "Make sure to give it a nice twist when it\'s in there!",
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Become " + ::MSU.Text.colorPositive("50%") + " more effective at inflicting [Injuries|Concept.Injury]",
+				],
+			}],
+		}),
+	},
+	{
 		ID = "perk.dodge",
 		Key = "Dodge",
 		Description = ::UPD.getDescription({
