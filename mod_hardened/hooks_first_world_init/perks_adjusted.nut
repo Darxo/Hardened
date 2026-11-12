@@ -596,6 +596,19 @@ local adjustedDescriptions = [
 		}),
 	},
 	{
+		ID = "perk.steel_brow",
+		Key = "SteelBrow",
+		Description = ::UPD.getDescription({
+			Fluff = "I can take it!",
+	 		Effects = [{
+ 				Type = ::UPD.EffectType.Passive,
+ 				Description = [
+					"Take no [$ $|Concept.CriticalDamage] when receiving a [hit to the head|Concept.ChanceToHitHead]",
+				]
+ 			}]
+	 	}),
+	},
+	{
 		ID = "perk.student",	// This does not need to be the updated id
 		Key = "Student",
 		Description = ::UPD.getDescription({
