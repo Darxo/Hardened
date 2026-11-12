@@ -263,7 +263,7 @@ Hardened reflects my personal vision for a Battle Brothers overhaul: a well-poli
 - **Shuffle** (granted by **Dynamic Duo**) no longer puts your partner to the next position in the turn order. It now costs 0 Action Points and 5 Fatigue on all tile types
 - **Poisoned (Spider)** now also reduces the Hitpoints Recovery of the target by 50%
 - **Poisoned (Goblin)** no longer reduces the Initiative
-- **Stab** now costs 3 Action Points (down from 4), 8 Fatigue (up from 7) and has a 25% higher threshold to inflict injuries
+- **Stab** now costs 3 Action Points (down from 4), 8 Fatigue (up from 7) and is 20% less effective in inflicting Injuries
 - **Strike Down** now has a 100% Chance to Stun (up from 75%) and has a Stun Duration of 1 Turn (down from 2)
 - **Swallow Whole** (from **Large Nachzehrer**) can no longer be used while rooted
 - **Sword Thrust** now has 0% additional Hitchance (up from -20%)
@@ -1624,7 +1624,7 @@ Player Party Strength (influences NPC world party decisions) is the sum of your 
 - Display amount of Overdoses (`PotionsUsed`) in the background tooltip, if > 0
 - Improve Goblin Poison, Spider Poison item, skill and effect tooltips
 - Display item type names for Ammunition, Accessories, Consumables, Food and Quest Items in the item tooltips
-- Improve tooltips of **Battleforged** and **Nine Lives** perks and **Chop**, **Bandage Ally** and **Use Antidote** skills
+- Improve tooltips of **Battleforged**, **Steelbrow** and **Crippling Strikes** perks and **Chop**, **Bandage Ally** and **Use Antidote** skills
 - Clarify in **Rebuke** perk description that it does not stack with other effects that grant counter attacks
 - Improve artwork for **Nimble** perk and remove effective hitpoint calculation from its tooltip
 - Improve artwork for **Tattered Sackcloth** item to make it stand out more from **Sackcloth**

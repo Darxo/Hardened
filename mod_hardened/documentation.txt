@@ -30,6 +30,13 @@
 
 # Changelog
 
+1.26.4
+	- Streamline perk descriptions for **Steelbrow** and **Crippling Strikes**
+	- Streamline injury threshold related descriptions in **Iron Jaw** and **Stab**
+	- Fix a rare case of alp fights freezing
+	- Fix a source of savegame corruption introduced in an earlier update
+	- Enforce incompatibilty with Reforged 0.9.4 and higher
+
 1.26.3
 	- Fix **Abandoned Village** fight not starting correctly
 
